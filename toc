@@ -1,0 +1,67 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="discovery-data" audience="service" arm="1680411" href="/docs/services/discovery-data?topic=discovery-data-getting-started#getting-started" path="services/discovery-data"}
+Watson Discovery for IBM Cloud Pak for Data
+
+    {: .navgroup id="learn"}
+    getting-started-tool.md
+    index.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    {: topicgroup}
+    Installing
+        install.md
+        [Helm chart README.md](https://github.com/IBM-Bluemix-Docs/data-readmes/blob/master/discovery-README.md)
+
+    {: topicgroup}
+    Creating and configuring a collection
+        connect.md
+        fields.md
+               
+    {: topicgroup}
+    Adding enrichments
+        enrichments.md
+       
+    {: topicgroup}
+    Adding search settings
+        search-settings.md
+            
+    {: topicgroup}
+    Querying a collection
+        query-concepts.md
+        query-parameters.md
+        query-operators.md
+        query-aggregations.md
+        
+    {: topicgroup}
+    Improving relevance of results     
+        train-tooling.md
+        train-tips.md    
+    
+    logs.md
+    
+    backup.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API reference](https://cloud.ibm.com/apidocs/discovery-data)
+
+    query-reference.md
+    language-support.md
+           
+    
+    [Watson GitHub repos](https://github.com/watson-developer-cloud/)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    release-notes.md
+    troubleshooting.md
+    
+    {: .topicgroup}
+    Developer community
+        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-discovery)
+        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-discovery/)
+        [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
+    {: .navgroup-end}
