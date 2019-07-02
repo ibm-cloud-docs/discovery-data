@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-07-01"
 
 subcollection: discovery-data
 
@@ -36,7 +36,17 @@ subcollection: discovery-data
 Follow these instructions to install and configure IBM Watson&trade; {{site.data.keyword.discovery-data_short}} for {{site.data.keyword.icp4dfull}}.
 {: shortdesc}
 
-If you have already installed {{site.data.keyword.icp4dfull}}, and have purchased {{site.data.keyword.discovery-data_short}} as an add-on, follow the [instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/watson/discovery-install.html) 
+If you have already installed {{site.data.keyword.icp4dfull}}, and have purchased {{site.data.keyword.discovery-data_short}} as an add-on, follow the [instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html)
+
+## Before you begin
+{: #beforebegin}
+
+Review the following topics that relate to cluster security:
+
+[Security in {{site.data.keyword.icp4dfull}}](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html){: external}
+
+Encryption of data at rest must be handled by the storage provider.
+{: important}
 
 ## Software requirements
 {: #prereqs}
