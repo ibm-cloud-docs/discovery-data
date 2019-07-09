@@ -14,6 +14,7 @@ Watson Discovery for IBM Cloud Pak for Data
     Installing
         install.md
         [Helm chart README.md](https://github.com/IBM-Bluemix-Docs/data-readmes/blob/master/discovery-README.md)
+        manage.md
 
     {: topicgroup}
     Creating and configuring a collection

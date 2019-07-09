@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-09"
 
 subcollection: discovery-data
 
@@ -39,7 +39,7 @@ After you install and configure {{site.data.keyword.discovery-data_long}}, you c
 
 Ensure that you have the following prerequisites installed and working correctly on your local machine before performing any cluster-management tasks.
 
-1. Install the `cloudctl`, `helm`, and `kubectl` command-line tools as described at [Software requirements](/docs/services/compare-comply-data?topic=compare-comply-data-install#prereqs).
+1. Install the `cloudctl`, `helm`, and `kubectl` command-line tools as described at [Software requirements](/docs/services/discovery-data?topic=discovery-data-prereqs#prereqs).
 
 1.  Start `helm`:
   
@@ -117,7 +117,7 @@ The following are some of the tasks you can perform to monitor and maintain your
 ## Managing user access
 {: #manage-user-access}
 
-After you provision an instance, you can share the URL for the service with other users. However, those users can  log in to the service only if you give them access.
+After you provision an instance, you can share the URL for the service with other users. However, those users can log in to the service only if you give them access.
 
 If you plan to use SAML for single sign-on (SSO), complete [Configuring single sign-on](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/saml-sso.html#saml-sso) before you add users. If you add users before you configure SSO, you need to re-add the users with their SAML IDs to enable them to use SSO.
 
@@ -127,7 +127,7 @@ If you plan to use SAML for single sign-on (SSO), complete [Configuring single s
 
 1.  From the web client menu, select **My Instances**.
 
-1.  Find your Compare and Comply instance, click the more (**...**) menu, and then choose **Manage Access**.
+1.  Find your {{site.data.keyword.discovery-data_short}} instance, click the more (**...**) menu, and then choose **Manage Access**.
 
 1.  Click **Add user**.
 

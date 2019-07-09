@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-09"
 
 subcollection: discovery-data
 
@@ -33,7 +33,7 @@ subcollection: discovery-data
 # Installing Discovery bundle for Cloud Pak for Data
 {: #install}
 
-Follow these instructions to install and configure IBM Watson&trade; {{site.data.keyword.discovery-data_short}} for {{site.data.keyword.icp4dfull}}.
+Follow these instructions to install and configure {{site.data.keyword.discovery-data_long}}.
 {: shortdesc}
 
 If you have already installed {{site.data.keyword.icp4dfull}}, and have purchased {{site.data.keyword.discovery-data_short}} as an add-on, follow the [instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html)
@@ -86,4 +86,4 @@ Perform the following steps to install {{site.data.keyword.discovery-data_short}
     ```
   {: tip}
 
-1. Download the IBM Watson {{site.data.keyword.discovery-data_short}} package in `.tgz` format from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and follow the [installation instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/watson/discovery-install.html) 
+1. Download the IBM Watson {{site.data.keyword.discovery-data_short}} package in `.tgz` format from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and follow the [installation instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html).
