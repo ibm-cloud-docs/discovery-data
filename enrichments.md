@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-07-10"
 
 subcollection: discovery-data
 
@@ -173,7 +173,8 @@ This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}}
 -  Rule-based models that find entities in documents based on rules that you define. (File format: `.pear`)
 -  Machine learning models that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
 
-Create your `.pear` or `.zip` file before adding this enrichment. See the documentation for [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/knowledge-studio.html){: external} for more information.
+Create your `.pear` or `.zip` file before adding this enrichment. See the documentation for [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](https://cloud.ibm.com/docs/services/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-wks_overview_full
+){: external} for more information.
 
 The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) screen.
 
