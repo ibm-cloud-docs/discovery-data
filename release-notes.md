@@ -57,7 +57,7 @@ The following new features and changes to the service are available.
 ## 1.0.0 (General Availability release), 28 June 2019
 {: #28jun2019}
 
-The {{site.data.keyword.discovery-data_long}} service brings the cognitive capabilities of {{site.data.keyword.discoveryfull}} to the {{site.data.keyword.icp4full_notm}} platform.
+The {{site.data.keyword.discovery-data_long}} service brings the cognitive capabilities of {{site.data.keyword.discoveryfull}} to the {{site.data.keyword.icp4dfull}} platform.
 
 ## Known issues in the GA release
 {: #known-issues-ga}
