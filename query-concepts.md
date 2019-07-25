@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-07-12"
 
 subcollection: discovery-data
 
@@ -37,9 +37,11 @@ subcollection: discovery-data
 {{site.data.keyword.discovery-data_long}} offers powerful content search capabilities through queries. After your content is uploaded and enriched by {{site.data.keyword.discovery-data_short}}, you can build queries, integrate {{site.data.keyword.discovery-data_short}} into your own projects, or create a custom applications. 
 {: shortdesc}
 
-To access the **Query** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Query** tab. 
+To access the **Query** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Query** tab.
 
-You can write a natural language query, or a structured query in the {{site.data.keyword.discoveryshort}} Query Language. 
+For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data#query-a-collection-get).
+
+You can write natural language queries, or structured queries using the {{site.data.keyword.discoveryshort}} Query Language. 
 
 -  **Use natural language** - see [natural_language_query](/docs/services/discovery-data?topic=discovery-data-query-parameters#nlq). 
 -  **Use the {{site.data.keyword.discoveryshort}} Query Language** - see [query](/docs/services/discovery-data?topic=discovery-data-query-parameters#query).
@@ -129,14 +131,46 @@ This example aggregation returns the number of articles found in collection of a
 Adding `nested` before an aggregation restricts the aggregation to the area of the results specified. For example: `nested(enriched_text.entities)` means that only the `enriched_text.entities` components of any result are used to aggregate against.
 
 This can be seen easily by looking at the differences between the following two queries:
-- `filter(enriched_text.entities.disambiguation.subtype::City)` - the aggregation counts the number of *Results* that contain one or more `entity` with the type `City`
-- `nested(enriched_text.entities).filter(enriched_text.entities.disambiguation.subtype::City)` - the aggregation counts the number of instances of an `entity` with the type `City` in the results.  
+-  `filter(enriched_text.entities.disambiguation.subtype::City)` - the aggregation counts the number of *Results* that contain one or more `entity` with the type `City`
+-  `nested(enriched_text.entities).filter(enriched_text.entities.disambiguation.subtype::City)` - the aggregation counts the number of instances of an `entity` with the type `City` in the results.  
 
 Additionally, any subsequent operation will further restrict the result set that can be aggregated against. For example:
 
-- `nested(enriched_text.entities).filter(enriched_text.entities.disambiguation.subtype::City)` means that only entities of `subtype::City` will be aggregated.
-- `nested(enriched_text.entities).filter(enriched_text.entities.disambiguation.subtype::City).term(enriched_text.entities.text,count:3)` will aggregate the top 3 entities of subtype `City`
-- `filter(enriched_text.entities.disambiguation.subtype::City).term(enriched_text.entities.text,count:3)` will return the top 3 entities where the result contains at least one entity of subtype `City`.
+-  `nested(enriched_text.entities).filter(enriched_text.entities.disambiguation.subtype::City)` means that only entities of `subtype::City` will be aggregated.
+-  `nested(enriched_text.entities).filter(enriched_text.entities.disambiguation.subtype::City).term(enriched_text.entities.text,count:3)` will aggregate the top 3 entities of subtype `City`
+-  `filter(enriched_text.entities.disambiguation.subtype::City).term(enriched_text.entities.text,count:3)` will return the top 3 entities where the result contains at least one entity of subtype `City`.
 
+## Querying with document level security enabled
+{: #querydls}
+
+If you have enabled document level security on a collection, you can control search results at query time at the user level. See [Configuring document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls) for information about leveraging the security settings of your source documents.
+
+To return search results that restrict query results to the security settings of authorized users, those users: 
+-  Must be associated with your {{site.data.keyword.discovery-data_short}} instance. See [Creating users for document level security](/docs/services/discovery-data?topic=discovery-data-createusersdls#createusersdls) for instructions.
+-  Must be present in the source system (Box, SharePoint OnPrem, or SharePoint Online).
+If both criteria are not met, no results will be returned.
+
+The username associated with your {{site.data.keyword.discovery-data_short}} instance is used to generate an authorization token. That token is used in your {{site.data.keyword.discovery-data_short}} queries.
+
+To generate each access token, run the following command:
+ 
+```bash
+curl -u "<username>:<password>" "https://<icp4d_cluster_host><:port>/v1/preauth/validateAuth"
+```
+   
+Replace `<username>` and `<password>` with the user's {{site.data.keyword.discovery-data_short}} credentials, and replace `<icp4d_cluster_host>` and `<port>` with the details for your instance.
+
+To use the token in a {{site.data.keyword.discovery-data_short}} query, run the following command for each user added:
+
+```bash
+curl -k -H "Authorization: Bearer <User Access Token>" https://<Cluster_IP>:31843/discovery/wd/instances/<Instance_ID>/api/v1/environments/default/collections/<Collection_ID>/query\?version\=2019-06-07
+```
+
+Replace `<User Access Token>`, `<Cluster_IP>`, `<Instance_ID>`, and `<Collection_ID>` with the details for your instance.
+
+For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data#query-a-collection-get){: external}.
+{: tip}    
+
+Each user's query results will be restricted to their document permissions.
 
 
