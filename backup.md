@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-07-29"
 
 subcollection: discovery-data
 
@@ -70,23 +70,18 @@ The backup and restore process can be summarized as follows:
 ### Backing up
 
   1. Back up IBM Cloud Pak for Data, if required. See [Backup and restore](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/backup_restore.html) for more information.
-
   1. Ensure that the {{site.data.keyword.discovery-data_short}} instance being backed up does not have any incoming requests and that there are no outstanding in-flight requests.
      **Note:** For the purposes of the procedures described in this topic, a request is a current action being perfomed by Watson Discovery. Actions perfomed by Watson Discovery include:
      -  Performing a source crawl (scheduled or unscheduled)
      -  Ingesting documents
      -  Training a trained query model
-
   1. Copy the data from the data service to the matching service on the new pod.
-
   1. Clean or groom the data, as necessary.
 
 ### Restoring
 
-  1. Deploy a new {{site.data.keyword.discovery-data_short}} instance to the {{site.data.keyword.discovery-data_short}} cluster. Or restore a {{site.data.keyword.discovery-data_short}} instance from the backup of IBM Cloud Pak for Data.
-
+  1. Use the generated backup to restore a {{site.data.keyword.discovery-data_short}} application to an existing and/or new {{site.data.keyword.discovery-data_short}} installation.
   1. Copy the data from the new pod to the data service.
-
   1. Enable requests on the new {{site.data.keyword.discovery-data_short}} instance.
 
 ## Backup prerequisites
@@ -132,7 +127,6 @@ Perform the following steps to completely back up Watson Discovery:
     -  `ElasticSearch`
     -  `Hadoop`
     -  `<release_name>-watson-discovery-gateway-0`
-
   1. Run the `all-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which the gateway pods are deployed, if necessary:
 
       ```bash
@@ -145,49 +139,45 @@ Perform the following steps to completely back up Watson Discovery:
       tar xvf <backup_file_name>
       ```
 
-    You can also back up individual services using the following procedures. These services are backed up when using the `all-backup-restore.sh` script and do not need to be individually backed up if it is used.
-    {: note}
+  You can also back up individual services using the following procedures. These services are backed up when using the `all-backup-restore.sh` script and do not need to be individually backed up if it is used.
+  {: note}
 
 ### Backing up the Postgresql service
 {: #postgres-backup}
 
   1. Ensure that `Postgresql` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Run the `postgresql-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which Postgresql is deployed, if necessary:
       ```bash
       ./postgresql-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
       ```
 
-  1. The script generates a `pg_<timestamp>.dump` file or the file specified `-f` option in the current directory. The backup file contains the abbreviated output from the Postgresql `pg_dump` command.
+  The script generates a `pg_<timestamp>.dump` file or the file specified `-f` option in the current directory. The backup file contains the abbreviated output from the Postgresql `pg_dump` command.
 
 ### Backing up the ElasticSearch service
 {: #es-backup}
 
   1. Ensure that `ElasticSearch` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Run the `elastic-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which ElasticSearch is deployed, if necessary:
       ```bash
       ./elastic-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
       ```
-      The script generates a `elastic_<timestamp>.snapshot` file or the file specified `-f` option in the current directory. The backup file contains the snapshot files from the ElasticSearch `snapshot` function.
+  The script generates a `elastic_<timestamp>.snapshot` file or the file specified `-f` option in the current directory. The backup file contains the snapshot files from the ElasticSearch `snapshot` function.
 
 ### Backing up the Etcd service
 {: #etcd-backup}
 
   1. Ensure that `Etcd` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Run the `etcd-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which Etcd is deployed, if necessary:
       ```bash
       ./etcd-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
       ```
 
-     The script prints all of the keys and values contained in `etcd` to a text file named `etcd_<timestamp>.db` or the file specified by `-f` option in the current directory. 
+  The script prints all of the keys and values contained in `etcd` to a text file named `etcd_<timestamp>.db` or the file specified by `-f` option in the current directory. 
 
 ### Backing up the Hadoop service
 {: hdp-backup}
 
   1. Ensure that `Hadoop` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Run the `hdp-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which Hadoop is deployed, if necessary:
       ```bash
       ./hdp-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
@@ -200,7 +190,6 @@ Perform the following steps to completely back up Watson Discovery:
 {: wddata-backup}
 
   1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Run the `wddata-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which the gateway pods are deployed, if necessary:
       ```bash
       ./wddata-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
@@ -219,7 +208,6 @@ Perform the following steps to completely restore Watson Discovery:
     -  `ElasticSearch`
     -  `Hadoop`
     -  `<release_name>-watson-discovery-gateway-0`
-
   1. To ensure that no services/clients connect to the Postgresql service while restoring, change the target port of the Postgresql service by running following command:
       ```bash
       kubectl edit svc <release_name>-watson-discovery-postgresql
@@ -248,8 +236,7 @@ Perform the following steps to completely restore Watson Discovery:
       ./all-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
       ```
 
-    The gateway, ingestion, orchestrator, master pods automatically restart.
-
+  The gateway, ingestion, orchestrator, master pods automatically restart.
   1. Restore the `targetPort` of the Postgresql service from `5433` to `5432`.
 
 You can also restore individual services using the following procedures. These services are restored when using the `all-backup-restore.sh` script and, if you use it, do not need to be individually restored.
@@ -259,7 +246,6 @@ You can also restore individual services using the following procedures. These s
 {: #restore-postgres}
 
   1. Ensure that `Postgresql` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. To ensure that no services/clients connect to the Postgresql service while restoring, change the target port of the Postgresql service by running following command:
       ```bash
       kubectl edit svc <release_name>-watson-discovery-postgresql
@@ -295,7 +281,6 @@ You can also restore individual services using the following procedures. These s
 {: #es-restore}
 
   1. Ensure that `ElasticSearch` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Restore the data from the snapshot file on your local machine to the new ElasticSearch deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which ElasticSearch is deployed, if necessary:
      ```
      ./elastic-backup-restore.sh restore -f backup_file_name [-n namespace]
@@ -306,7 +291,6 @@ You can also restore individual services using the following procedures. These s
 {: etcd-restore}
 
   1. Ensure that `Etcd` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Restore the data from the text file on your local machine to the new Etcd deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Etcd is deployed, if necessary:
       ```
       ./etcd-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
@@ -317,7 +301,6 @@ You can also restore individual services using the following procedures. These s
 {: etcd-restore}
 
   1. Ensure that `Hadoop` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Restore the data from the backup file on your local machine to the new Hadoop deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Hadoop is deployed, if necessary:
       ```
       ./hdp-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
@@ -328,7 +311,6 @@ You can also restore individual services using the following procedures. These s
 {: wddata-restore}
 
   1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
   1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discovery-data_short}} deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which the `<release_name>-watson-discovery-gateway-0` is deployed, if necessary:
       ```
       ./wddata-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
