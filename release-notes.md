@@ -64,7 +64,7 @@ The {{site.data.keyword.discovery-data_long}} service brings the cognitive capab
 
 The following known issues apply to the GA release:
 
-  -  During an active web crawl, if you add an enrichment, then click the **Reprocess collection** button on the **Overview** screen, the collection will stop processing. If the collection does not return to a Syncing state on its own, clicking the **Reprocess collection** button an additional time might be required.
+  -  During an active web crawl, if you add an enrichment, then click the **Recrawl collection** button on the **Overview** screen, the collection will stop processing. If the collection does not return to a Syncing state on its own, clicking the **Recrawl collection** button an additional time might be required.
   -  While training a collection in the tooling , if you rate the relevancy of a result (for example, as`Relevant`), then switch to the opposite rating (`Not relevant`), the screen may go blank. To restore the screen, refresh the browser. Your updated rating will be retained.
   -  Chinese, Japanese, and Korean language Microsoft Word, Excel, and PowerPoint documents will not display correctly in the index or the Smart Document Understanding editor.
   -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.

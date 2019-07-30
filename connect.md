@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-29"
 
 subcollection: discovery-data
 
@@ -104,7 +104,7 @@ Example crawl status:
 }
 ```
 
-If you modify crawl settings on the **Sync settings** screen and then click **Save collection**, a crawl does not restart until you click **Reprocess collection** on the collection **Overview** screen. 
+If you modify crawl settings on the **Sync settings** screen and then click **Save collection**, the crawl will restart immediately. See the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview) screen for the collection status. Click the **Recrawl collection** button if the crawl does not start. 
 {: note}
 
 {{site.data.keyword.discovery-data_short}} can ingest the following file types; it ignores all other document types:
@@ -435,8 +435,10 @@ When querying collections that have document level security enabled, no results 
 
 Collection details include:
 
-- Number of documents 
-- Collection status
-- Details (language, creation date, last update)
-- Fields identified in the collection (`text` by default). To configure additional fields, click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right to open the [**Smart Document Understanding**](/docs/services/discovery-data?topic=discovery-data-configuring-fields#configuring-fields) editor.
+-  Number of documents 
+-  Collection status
+    -  A collection is finished processing when the status is `Synching complete` or `Upload complete`. If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button displayed will vary depending on the type of collection.
+    -  If the collection status is `Synching ...`, and you click the **Recrawl collection** button, the current crawl will stop and a new full crawl will begin. It is recommended that you wait until the status is `Synching complete` before starting a recrawl.
+-  Details (language, creation date, last update)
+-  Fields identified in the collection (`text` by default). To configure additional fields, click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right to open the [**Smart Document Understanding**](/docs/services/discovery-data?topic=discovery-data-configuring-fields#configuring-fields) editor.
 

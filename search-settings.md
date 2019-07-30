@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-21"
+lastupdated: "2019-07-29"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ To access the **Search settings** screen, [create a new collection (or open an e
  
 Upload or delete a synonyms or stopwords file by clicking the appropriate **Upload** button or **Delete** icon.
 
-If you make significant changes to your synonyms or stopwords files, you should go to the **Overview** screen and click the **Reprocess collection** button so that your documents are indexed with the updated lists.
+If you update your synonyms or stopwords files, you should go to the **Overview** screen and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated lists. The button displayed will vary depending on the type of collection.
 
 Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/services/discovery-data?topic=discovery-data-stopwords#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/services/discovery-data?topic=discovery-data-query-expansion#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discovery-data_short}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
 {: important}
@@ -162,5 +162,5 @@ Notes about stopwords:
 -  Do not upload or delete a custom stopword file at the same time documents are being ingested into your collection. This could cause the index to be unavailable for that brief period and queries will fail.
 -  Stopwords are removed at both index and query time. A good best practice is to upload your custom stopword file before crawling/uploading all of your documents.
    - If your documents have already been indexed with the default stopwords file, and you then add a custom stopwords file, the new custom stopwords will remain in the index for those documents. In that case, queries containing the new stopwords will filter them out at query time.
-   - If a user searches for a word that was a stopword at one point in time, but has since been removed from the custom stopwords file, they will not find documents that match the original stopword because the term was removed at index time. To fix this issue, go to the **Overview** screen and click **Reprocess collection** so that your documents are indexed with the updated custom stopwords file.
+   - If a user searches for a word that was a stopword at one point in time, but has since been removed from the custom stopwords file, they will not find documents that match the original stopword because the term was removed at index time. To fix this issue, go to the **Overview** screen and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated custom stopwords file. The button displayed will vary depending on the type of collection.
 
