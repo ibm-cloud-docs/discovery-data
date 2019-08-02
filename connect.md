@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-08-02"
 
 subcollection: discovery-data
 
@@ -360,14 +360,13 @@ The Web Crawl has the following properties:
 
 **Start URLs** - The URLs where the crawler has to start crawling. By default, the Web Crawl enables subtree crawling and URLs to be crawled only from the path supplied in the seed. The starting URL in the Web Crawl has two limitations, as to what it crawls to:
 
-1. The same host as the start URL.
-
-1. The same subtree, in which "subtree" means the only crawl items where the beginning URL matches the beginning of the starting URL. Here, "beginning" means everything up to and including the last slash (`/`) in the starting URL.
+   1. The same host as the start URL.
+   1. The same subtree, in which "subtree" means the only crawl items where the beginning URL matches the beginning of the starting URL. Here, "beginning" means everything up to and including the last slash (`/`) in the starting URL.
 
 **Advanced Configuration**
 - **Code page to use** - The field used to enter the character encoding.
 
-If you enter invalid information in the **Code page to use** field, the crawl slows down because there is too much load on the cluster. Three simultaneous Web Crawls is the limit you can crawl, without affecting performance.
+If you enter invalid information in the **Code page to use** field, the crawl slows down because there is too much load on the cluster. Three simultaneous Web Crawls is the limit you can ingest, without affecting performance.
 {: note}
 
 The default max hop limit is 16. After selecting the **collection type** of **Web crawl** and entering the **General** information:
