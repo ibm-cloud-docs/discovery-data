@@ -61,7 +61,7 @@ Also see
 The queries you write will vary by collection, because all collections contain unique content.
 {: tip}
 
-When you create a query or filter, ({site.data.keyword.discovery-data_short}} looks at each result and tries to match the paths you have defined. When matches occur, they are added to the results set. When creating a query, you can be as vague or as specific as you want. The more specific the query, the more targeted the results.
+When you create a query or filter, {{site.data.keyword.discovery-data_short}} looks at each result and tries to match the paths you have defined. When matches occur, they are added to the results set. When creating a query, you can be as vague or as specific as you want. The more specific the query, the more targeted the results.
 
 ## The Discovery data schema
 {: #discovery-schema}

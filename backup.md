@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-08-02"
 
 subcollection: discovery-data
 
@@ -68,6 +68,7 @@ In the following procedures, angle brackets (`< >`) are used to indicate variabl
 The backup and restore process can be summarized as follows:
 
 ### Backing up
+{: #backingup}
 
   1. Back up IBM Cloud Pak for Data, if required. See [Backup and restore](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/backup_restore.html) for more information.
   1. Ensure that the {{site.data.keyword.discovery-data_short}} instance being backed up does not have any incoming requests and that there are no outstanding in-flight requests.
@@ -79,6 +80,7 @@ The backup and restore process can be summarized as follows:
   1. Clean or groom the data, as necessary.
 
 ### Restoring
+{: #restoring}
 
   1. Use the generated backup to restore a {{site.data.keyword.discovery-data_short}} application to an existing and/or new {{site.data.keyword.discovery-data_short}} installation.
   1. Copy the data from the new pod to the data service.
@@ -117,7 +119,7 @@ To make a script executable, run the following command (for each script download
 Where `<script-name>` is the name of the script.
 
 ## Backing up Watson Discovery
-{: wddata-backup}
+{: #wddata-backup}
 
 Perform the following steps to completely back up Watson Discovery:
 
@@ -139,8 +141,12 @@ Perform the following steps to completely back up Watson Discovery:
       tar xvf <backup_file_name>
       ```
 
-  You can also back up individual services using the following procedures. These services are backed up when using the `all-backup-restore.sh` script and do not need to be individually backed up if it is used.
-  {: note}
+You can also back up individual services using the following procedures. These services are backed up when using the `all-backup-restore.sh` script and do not need to be individually backed up if it is used.
+{: note}
+
+
+If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [backup instructions](/docs/services/discovery-data?topic=discovery-data-wddata-backup#wddata-backup) to back up the data you want to copy to a new instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/services/discovery-data?topic=discovery-data-copy-data-new-clusters#copy-data-new-clusters).
+{: note}
 
 ### Backing up the Postgresql service
 {: #postgres-backup}
@@ -175,7 +181,7 @@ Perform the following steps to completely back up Watson Discovery:
   The script prints all of the keys and values contained in `etcd` to a text file named `etcd_<timestamp>.db` or the file specified by `-f` option in the current directory. 
 
 ### Backing up the Hadoop service
-{: hdp-backup}
+{: #hdp-backup}
 
   1. Ensure that `Hadoop` is running on your {{site.data.keyword.discovery-data_short}} instance.
   1. Run the `hdp-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which Hadoop is deployed, if necessary:
@@ -187,7 +193,7 @@ Perform the following steps to completely back up Watson Discovery:
 
 
 ### Backing up the Backend service
-{: wddata-backup}
+{: #wddata-backup}
 
   1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
   1. Run the `wddata-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which the gateway pods are deployed, if necessary:
@@ -198,7 +204,7 @@ Perform the following steps to completely back up Watson Discovery:
      The script generates a `wddata_<timestamp>.backup` file or the file specified by `-f` option in the current directory, including the files for the configuration of crawler and logging, the credential files; and `jar` files, such as JDBC connecter for the crawler.
 
 ## Restoring Watson Discovery
-{: wddata-restore}
+{: #wddata-restore}
 
 Perform the following steps to completely restore Watson Discovery:
 
@@ -240,6 +246,9 @@ Perform the following steps to completely restore Watson Discovery:
   1. Restore the `targetPort` of the Postgresql service from `5433` to `5432`.
 
 You can also restore individual services using the following procedures. These services are restored when using the `all-backup-restore.sh` script and, if you use it, do not need to be individually restored.
+{: note}
+
+If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [restore instructions](/docs/services/discovery-data?topic=discovery-data-wddata-restore#wddata-restore) to copy existing data to a new {{site.data.keyword.discovery-data_short}} instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/services/discovery-data?topic=discovery-data-copy-data-new-clusters#copy-data-new-clusters).
 {: note}
 
 ### Restoring the Postgresql service
@@ -288,7 +297,7 @@ You can also restore individual services using the following procedures. These s
 
 
 ### Restoring the Etcd service
-{: etcd-restore}
+{: #etcd-restore}
 
   1. Ensure that `Etcd` is running on your {{site.data.keyword.discovery-data_short}} instance.
   1. Restore the data from the text file on your local machine to the new Etcd deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Etcd is deployed, if necessary:
@@ -298,20 +307,31 @@ You can also restore individual services using the following procedures. These s
 
 
 ### Restoring the Hadoop service
-{: etcd-restore}
+{: #hdp-restore}
 
   1. Ensure that `Hadoop` is running on your {{site.data.keyword.discovery-data_short}} instance.
   1. Restore the data from the backup file on your local machine to the new Hadoop deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Hadoop is deployed, if necessary:
+
       ```
       ./hdp-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
       ```
 
 
 ### Restoring the Backend service
-{: wddata-restore}
+{: #wddata-restore}
 
   1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
   1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discovery-data_short}} deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which the `<release_name>-watson-discovery-gateway-0` is deployed, if necessary:
+
       ```
       ./wddata-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
       ```
+
+
+## Copying Discovery for Cloud Pak for Data data across Discovery for Cloud Pak for Data clusters
+{: #copy-data-new-clusters}
+
+It is recommended that you only copy data to newly created instances, as copying data to a cluster already in use might result in data loss.
+{: important}
+
+If you are installing multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. To copy data across {{site.data.keyword.discovery-data_short}} add-on instances deployed on different clusters, follow the [backup steps](/docs/services/discovery-data?topic=discovery-data-wddata-backup#wddata-backup) from the instance you want to copy data from, and follow the [restore steps](/docs/services/discovery-data?topic=discovery-data-wddata-restore#wddata-restore) to copy the data to your new {{site.data.keyword.discovery-data_short}} instance.
