@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-08-12"
 
 subcollection: discovery-data
 
@@ -124,7 +124,7 @@ If you modify crawl settings on the **Sync settings** screen and then click **Sa
    - GZIP\*\*\*
    - TAR\*\*\*
     
-\* JSON, HTML, TXT, and CSV documents are supported by {{site.data.keyword.discovery-data_short}}, but you cannot customize fields within these files, using the Smart Document Understanding editor. CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. 
+\* JSON, HTML, TXT, and CSV documents are supported by {{site.data.keyword.discovery-data_short}}, but you cannot customize fields within these files using the Smart Document Understanding editor. 
 
 \*\* Individual image files (PNG, TIFF, JPG) are scanned, and the text (if any) is extracted. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also scanned, and the text (if any) is extracted.
 
@@ -139,7 +139,16 @@ The following general requirements apply to all connectors:
 -  You need the credentials and file locations (or URLs) for each data source, which a developer/system administrator of the data source typically provides. 
 -  You need to manually provide the resources to crawl. Auto discovery is not supported. 
 -  {{site.data.keyword.discovery-data_short}} source crawls do not delete documents that are stored in a collection. When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
+-  Depending on the type of installation chosen (default or High Availability), the number of collections you can ingest simultaneously varies. A default installation includes 1 ingestion pod, which allows three collections to be processed simultaneously. A High Availability installation includes 2 ingestion pods, which can process six collections  simultaneously.
 
+     With the default installation, if you are currently running crawls or uploads to three collections, then start a crawl or upload to a fourth collection, that crawl or upload will not begin until the first three collections have finished processing. To process more collections simultaneously, you need to increase the number of ingestion pods. To do so:
+
+     ```bash
+     kubectl edit statefulset <ingestion-statefulset>
+     kubectl scale statefulset release-name-watson-discovery-ingestion --replicas=<number-of-replicas>
+     ```
+
+     Each `number-of-replicas` allows 3 simultaneous crawls, so `number-of-replicas=2` will increase the replicas to 6 and `number-of -replicas=3` will increase them to 9.
 
 ## Crawling data sources
 {: #data-sources}
@@ -364,10 +373,11 @@ The Web Crawl has the following properties:
    1. The same subtree, in which "subtree" means the only crawl items where the beginning URL matches the beginning of the starting URL. Here, "beginning" means everything up to and including the last slash (`/`) in the starting URL.
 
 **Advanced Configuration**
+
 - **Code page to use** - The field used to enter the character encoding.
 
-If you enter invalid information in the **Code page to use** field, the crawl slows down because there is too much load on the cluster. Three simultaneous Web Crawls is the limit you can ingest, without affecting performance.
-{: note}
+If you are crawling Chinese language websites, enter `UTF-8` as the character set in the **Code page to use** field.
+{: tip}
 
 The default max hop limit is 16. After selecting the **collection type** of **Web crawl** and entering the **General** information:
 
@@ -377,17 +387,13 @@ The default max hop limit is 16. After selecting the **collection type** of **We
 
 After the crawl begins, you are directed to the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview), which updates as documents are added to the collection.
 
-If you are crawling Chinese language websites, enter `UTF-8` as the character set in the **Code page to use** field.
-{: tip}
-
-
 ### Upload data
 {: #upload-data}
 
 Use this option to upload data you have stored locally. Only documents supported by {{site.data.keyword.discovery-data_short}} are crawled; all others are ignored.
 {: shortdesc}
 
-See [Supported document types](/docs/services/discovery-data?topic=discovery-data-collections#collections) for the list of available data sources you can use to create collections. After the upload begins, you are directed to the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview), which updates as documents are added to the collection.
+See [Supported document types](/docs/services/discovery-data?topic=discovery-data-collections#collections) for the list of available data sources you can use to create collections and the file size limit. After the upload begins, you are directed to the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview), which updates as documents are added to the collection.
 
 
 ## Configuring document level security
