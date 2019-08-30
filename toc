@@ -13,7 +13,7 @@ Watson Discovery for IBM Cloud Pak for Data
     {: topicgroup}
     Installing
         install.md
-        [Helm chart README.md](https://github.com/IBM-Bluemix-Docs/data-readmes/blob/master/discovery-README.md)
+        [Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md)
         manage.md
 
     {: topicgroup}

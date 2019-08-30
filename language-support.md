@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-08-30"
 
 subcollection: discovery-data
 
@@ -37,7 +37,8 @@ The following languages are supported in {{site.data.keyword.discovery-data_long
 
 - English (`en`)               
 - Arabic (`ar`)                     
-- Chinese, simplified (`zh-CN`)     
+- Chinese, simplified (`zh-CN`)
+- Chinese, traditional (`zh-TW`)     
 - Dutch (`nl`)                     
 - French (`fr`)                     
 - German (`de`)                     

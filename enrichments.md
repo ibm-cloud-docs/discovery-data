@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-10"
+lastupdated: "2019-08-30"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 
 <!-- Help for the Enrichments screen in WD ICP4D -->
 
-You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), or extract entities and relationships/apply rules (**Machine Learning**) to fields in your collection.
+You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning**), or classify your documents into categories (**Classifier**).
 {: shortdesc}
 
 
@@ -48,6 +48,7 @@ To create a new enrichment:
     - [**Dictionary**](/docs/services/discovery-data?topic=discovery-data-dictionary-enrichment#dictionary-enrichment) 
     - [**Character Pattern**](/docs/services/discovery-data?topic=discovery-data-characterpattern-enrichment#characterpattern-enrichment)
     - [**Machine Learning**](/docs/services/discovery-data?topic=discovery-data-machinelearning-enrichment#machinelearning-enrichment) 
+    - [**Classifier**](/docs/services/discovery-data?topic=discovery-data-classifier-enrichment#classifier-enrichment) 
 1. Click the **Create** button.
 
 After you create an enrichment, you must apply it to a field (or fields) in your collection. See [Enriching fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) for instructions.
@@ -127,7 +128,7 @@ Notes about writing regular expressions:
 -  It is best to extract common patterns. For example, use `a(b|c|d)` instead of `(ab|ac|ad)`.
 -  The regular expression engine may fail if it backtracks because it can't make a negative match towards the end of the string and then attempts too many permutations. To avoid this, consider using a possessive quantifier, for example, `(a+b*)++c`.
 
-Example:
+**Example:**
 
 This regular expression will find credit card numbers of a specific format and length in your collection. 
 
@@ -168,13 +169,16 @@ Result: The query `enriched_text.entities.type: cccardnumber` will return all re
 ## Machine Learning enrichments
 {: #machinelearning-enrichment}
 
-This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} to enrich your collection. There are two types of models:
+This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} or Watson Explorer Content Analytics Studio to enrich your collection. There are three types of models:
 
--  Rule-based models that find entities in documents based on rules that you define. (File format: `.pear`)
--  Machine learning models that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
+-  Rule-based models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}  that find entities in documents based on rules that you define. (File format: `.pear`)
+-  Machine learning models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
+-  Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: `.pear`)
 
-Create your `.pear` or `.zip` file before adding this enrichment. See the documentation for [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](https://cloud.ibm.com/docs/services/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-wks_overview_full
-){: external} for more information.
+Create your `.pear` or `.zip` file before adding this enrichment. See the following documentation for more information:
+  -  [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](https://cloud.ibm.com/docs/services/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-wks_overview_full
+){: external}
+  -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_11.0.2/com.ibm.discovery.es.ta.doc/iiystacastudio.html){: external}
 
 The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) screen.
 
@@ -293,3 +297,73 @@ In the JSON output:
            . . .              
 ] 
 ```	
+
+## Classifier enrichments
+{: #classifier-enrichment}
+
+The Classifier enrichment allows you to classify the documents in your collection into categories. {{site.data.keyword.discovery-data_short}} uses the labels and text examples you have specified to predict the categories of the documents in your collection. 
+
+You must create and upload a classifier csv file to apply this enrichment. The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) screen.
+
+Enrichment-specific fields:
+
+-  **Collection language** - Select the language of your classifier `.csv` file.
+-  **Select a .csv file** - Select the file and upload it.
+
+After you upload the csv file, the Classifier enrichment is not ready to use until the **Status** changes from `Training` to `Ready` on the **Enrichments** screen. You may need to refresh the screen to view the updated status.
+{: important}
+
+Classifier .csv file requirements:
+
+-  The .csv file must use UTF-8 encoding.
+-  The format is `text`,`label`. The `text` is the example text, and the `label` is the category.
+-  The .csv must have at least two columns, with no header. The first column contains the `text` and the second column contains the `label`. You can add additional `label` columns if you need to apply more than one label to the `text` column. (`text`,`label`,`label`)
+-  There should be at least ten examples (10 `text`,`label` pairs) for each `label`. The minimum is 3 examples. The more examples you provide per label, the more accurately the classifier will predict the categories of the documents in your collection. 
+
+**Example:**
+
+This .csv file could be used to classify conference attendee feedback.
+
+```
+The rooms were too cold.,facility_temperature
+Breakfast did not include gluten-free options.,catering
+The rooms were too warm.,facility_temperature
+I was very comfortable in the session rooms.,facility_temperature
+The awards dinner was delicious.,catering
+Coffee ran out during one of the breaks.,catering
+The temperature was not comfortable.,facility_temperature
+I was very happy with the selection at lunch.,catering
+It was nice that you provided tea and coffee. Tea drinkers are often ignored.,catering
+Can you turn up the air conditioning? I was very warm.,facility_temperature
+My teeth were chattering because I was so cold.,facility_temperature
+The speaker left the room to find someone to adjust the temperature.,facility_temperature
+Would you consider an all-vegan menu next year?,catering
+I would like lemonade and iced tea to be served during the breaks.,catering
+The lunch staff was excellent.,catering
+Appreciated the fresh blueberry muffins at breakfast.,catering
+The hotel staff adjusted the temperature in my session room as soon as I asked. Excellent service!,facility_temperature
+Every meal was delicious and there was something for everyone.,catering
+The seats under the skylights were not comfortable. Too hot.,facility_temperature
+I was comfortable everywhere in the conference center. I never needed my emergency sweater.,facility_temperature
+```
+
+In the output, the classifier enrichment applied the `facility_temperature` label to this document in the collection. The `label` can be found under `enriched_text`, within the `classes` array.
+
+In this example snippet, the field selected for enrichment was `text`.
+
+```JSON
+"enriched_text": [
+  {
+    "classes": [
+	  {
+	    "score": 0.999692440032959,
+		  "label": "facility_temperature"
+	  }
+	]
+  }
+],
+. . .
+"text": [
+  "I think more attendees would stay awake in the sessions if the rooms were colder."
+]  
+```
