@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-09"
+lastupdated: "2019-08-30"
 
 subcollection: discovery-data
 
@@ -136,3 +136,35 @@ If you plan to use SAML for single sign-on (SSO), complete [Configuring single s
     The users you added in the previous steps are listed. Select a name, choose **User** or **Admin** as their access role, and then click **Add**. 
 
     If you are not connected to an existing user registry and have not enabled single sign-on, then temporary passwords are created for the users you add. The temporary passwords are sent to users by way of the email addresses you specified.
+
+## Scaling
+{: #scaling}
+
+You can improve ingestion and indexing throughput as well as queries per second by increasing the number of replicas of certain system resources.
+
+Scaling should be used in conjunction with a data architecture that leverages multiple collections in order to fully realize its benefits.
+
+The following table describes the stateful set details.
+
+| Component | Resource | Type | Effect of scaling |
+| ----------- | --------- | ------ | ---------------- |
+| Ingestion  | {release-name}-watson-discovery-ingestion | StatefulSet  | Increase number of collections that can be ingested to concurrently|
+| Indexing | {release-name}-watson-discovery-elastic | StatefulSet | Increase indexing throughput, queries per second supported, and maximum number of indexable documents |
+| Enrichment and SDU | {release-name}-watson-discovery-hdp-worker | StatefulSet | Increase enrichment and SDU page processing throughput  |
+| SDU | {release-name}-watson-discovery-sdu-api | Deployment | Increase SDU OCR and document reconstruction throughput |
+
+You can scale Resources of type `StatefulSet` by executing the following command:
+
+```bash
+kubectl scale statefulset <resource> --replicas=<number>
+```
+{: pre}
+
+You can scale Resources of type `Deployment` by executing the following command:
+
+```bash
+kubectl scale deployment.v1.apps/<resource> --replicas=<number>
+```
+{: pre}
+
+Increasing the capacity of elastic can increase the overall performance. Others will increase the number of collections concurrently updated.

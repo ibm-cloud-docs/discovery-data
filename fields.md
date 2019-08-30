@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-27"
+lastupdated: "2019-08-19"
 
 subcollection: discovery-data
 
@@ -40,6 +40,9 @@ With SDU, you annotate fields within your documents to train custom conversion m
 PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types supported by {{site.data.keyword.discovery-data_short}}, see [Configuring collection types](/docs/services/discovery-data?topic=discovery-data-collection-types#collection-types).
 
 To access the Smart Document Understanding editor, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right.
+
+When you build a custom Smart Document Understanding model, the conversion time for your collection may increase due to the resources required to apply the AI model to your documents. The resource requirements will result in a significant decrease in throughput speed.
+{: note}
 
 Navigating the Smart Document Understanding editor:
 

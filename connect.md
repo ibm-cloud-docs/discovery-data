@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-12"
+lastupdated: "2019-08-28"
 
 subcollection: discovery-data
 
@@ -49,8 +49,11 @@ To create a new collection:
     - **SharePoint Online** 
     - **SharePoint OnPrem** 
     - **Box** 
-    - **Web crawl** 
+    - **Web crawl**
+    - **Database**
+    - **Windows File System** 
     - **Upload your own data** (no crawl or authentication information required)
+    
 1. Name your collection, and choose the language of that collection. (See [supported languages](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages) for the list).
 1. Select the crawl schedule. See [Configuring collection types](/docs/services/discovery-data?topic=discovery-data-collection-types#collection-types) for available options and details.
 1. Configure the authentication. See [Configuring collection types](/docs/services/discovery-data?topic=discovery-data-collection-types#collection-types) for detailed information about configuring each type.
@@ -85,6 +88,8 @@ You can configure the following types of collection types:
 -  [Microsoft SharePoint Online](/docs/services/discovery-data?topic=discovery-data-connectsp#connectsp)
 -  [Microsoft SharePoint OnPrem](/docs/services/discovery-data?topic=discovery-data-connectsp_op#connectsp_op)
 -  [Web Crawl](/docs/services/discovery-data?topic=discovery-data-connectwebcrawl#connectwebcrawl)
+-  [Database](/docs/services/discovery-data?topic=discovery-data-databaseconnect#databaseconnect)
+-  [Windows File System](/docs/services/discovery-data?topic=discovery-data-windowsfilesystemconnect#windowsfilesystemconnect)
 -  [Upload your own data](/docs/services/discovery-data?topic=discovery-data-upload-data#upload-data)
 
 When you use a connector to create a collection and then set a crawl schedule, the initial crawl starts immediately. The frequency you choose determines when the next crawl starts in relation to the first. You can schedule crawls to update:
@@ -134,12 +139,12 @@ The following general requirements apply to all connectors:
 
 -  The individual file size limit is 32 MB per file, including compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file.
 -  Each collection can only support one data source.
--  Connectors are available, only via the Tooling. 
--  [Document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls) is supported with Box, SharePoint Online, and SharePoint OnPrem (2013, 2016, and 2019) connectors. 
+-  Connectors are not available when using the API. 
+-  [Document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls) is supported with Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), and Windows File System (Windows Server 2012 R2, 2016, and 2019) connectors. 
 -  You need the credentials and file locations (or URLs) for each data source, which a developer/system administrator of the data source typically provides. 
 -  You need to manually provide the resources to crawl. Auto discovery is not supported. 
 -  {{site.data.keyword.discovery-data_short}} source crawls do not delete documents that are stored in a collection. When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
--  Depending on the type of installation chosen (default or High Availability), the number of collections you can ingest simultaneously varies. A default installation includes 1 ingestion pod, which allows three collections to be processed simultaneously. A High Availability installation includes 2 ingestion pods, which can process six collections  simultaneously.
+-  Depending on the type of installation chosen (default or High Availability), the number of collections you can ingest simultaneously varies. A default installation includes 1 ingestion pod, which allows three collections to be processed simultaneously. A High Availability installation includes 2 ingestion pods, which can process six collections simultaneously.
 
      With the default installation, if you are currently running crawls or uploads to three collections, then start a crawl or upload to a fourth collection, that crawl or upload will not begin until the first three collections have finished processing. To process more collections simultaneously, you need to increase the number of ingestion pods. To do so:
 
@@ -177,72 +182,61 @@ Before you create a Box developer app, you need to establish an RSA key pair. To
    openssl rsa -in private-box.pem -pubout -out public-box.pem
    ```
 
-1. Make a copy of `public-box.pem`. If you create an RSA key pair with a passphrase, you must install unlimited strength JCE Policy files (`local_policy.jar` and `US_export_policy.jar`). You can download these unlimited strength JCE Policy files from Unrestricted SDK JCE policy files. Copy these files to the persistent volume in the folder `config/certs/jvm/`, for example `config/certs/jvm/local_policy.jar` and `config/certs/jvm/US_export_policy.jar`. The certificates are imported into the JVM trust store when the container starts.
+1. Make a copy of `public-box.pem`. If you create an RSA key pair with a passphrase, you must install unlimited strength JCE Policy files, or JAR files (`local_policy.jar` and `US_export_policy.jar`). You can download these unlimited strength JCE Policy files from Unrestricted SDK JCE policy files. Copy these files to the persistent volume in the folder `config/certs/jvm/`, for example `config/certs/jvm/local_policy.jar` and `config/certs/jvm/US_export_policy.jar`. The certificates are imported into the JVM trust store when the container starts.
 
-Next, create an app on the Box developer site:
+Next, create an app on the Box developer site. Log in to your [Box Developers account](https://developer.box.com/){: external}, and create a new Enterprise Integration App. After you log in to your Box account, make sure to:
 
-1. Log in to [Box Developers](https://developer.box.com/){: external}, and create a new Enterprise Integration App.
-1. Select OAuth 2.0 with JWT (Server Authentication), and create the app. 
-1. View the App, and select Configuration.
-1. Copy the Client ID and Client Secret. You need these items when configuring the crawler.
-1. Select Enterprise as Application Access.
-1. Enable all options of Application Scopes.
-1. Enable Perform Actions as Users and Generate User Access Tokens options in Advanced Features.
-1. Click Save Changes.
-1. Click Add a Public Key and enter the content of `public-box.pem`.
-1. Copy the Public Key 1 ID. You need this item when configuring the crawler.
+- When you configure the app, in `Authentication Type`, choose OAuth 2.0 with JWT (Server Authentication). 
+- Copy the Client ID and Client Secret. You need this information later when configuring the {{site.data.keyword.discovery-data_short}} Box connector. If you need to reset the `client_secret`, you can erase what is in the provided text box and save your configuration, and your `client_secret` is reset.
+- In `User Access`, select All Users for the application to request authorization for access.
+- Set the Application Access to Enterprise. In `Scopes - Enterprise`, check the Manage users and Manage app users options. Leave all other options unchecked. 
+- Enable all the options for Application Scopes. In `Scopes - Content`, check the Read and write all files and folders stored in Box option, which ensures that users authenticate to have read permissions in the files contained in your application.
+- Enable the Perform Actions as Users and Generate User Access Tokens options in Advanced Features. Checking these options ensures that the Managing users and App users options are checked for the `Scopes - Enterprise` parameter.
+- In `Scopes - Advanced Features`, select the Perform actions on behalf of users and Generate access tokens for users options.
+- Enter the content of `public-box.pem` that you generated when you created the RSA key pair, when you Add a Public Key.
+- Copy the Public Key 1 ID. You need this information later when configuring the {{site.data.keyword.discovery-data_short}} Box connector.
 
-Next, you need to authorize the app. Follow these steps:
+Next, you must authorize the app. In the Box Admin Console:
 
-1. Go to Admin Console.
-1. Select any department, check that you are managing a team, and then click Get Started.
-1. On the Admin Console, click Business Settings.
-1. On the Account info tab, copy the Enterprise ID. You need this item when configuring the crawler.
-1. On the Apps tab, click Authorize New App.
-1. Enter the Client ID as API Key, and click Authorize. If you modify the app, you have to authorize it again.
+- Select any department, and confirm that you are managing a team.
+- Under the Account info tab, copy the Enterprise ID. You need this information later when configuring the {{site.data.keyword.discovery-data_short}} Box connector.
+- Click Authorize New App.
+- Enter the Client ID as API Key in the API Key field, and click Authorize. You copied the Client ID when you created the app. If you modify the app later, you must authorize it again.
 
-Finally, you need to establish the OAuth2 parameters:
+The final step is to establish the OAuth2 parameters. Make sure to:
 
-1. **General Information** - Ensure that your application name is correct and that the support e-mail is accurate. The support e-mail is generally defaulted to the one used to create the application. You can also provide a description of your application or a custom website URL.
-1. **OAuth2 Parameters** - Set the following options:
+- Under General Information, ensure that your app name is correct. You can also provide a description of your app or a custom website URL.
+- Under Public Key Management, paste your public key into the provided text box, and click the Verify button.
+- After the key is verified, click Save to finish setting up your public key.
 
-    - `client_id` and `client_secret` - The first two items listed are your `client_id` and `client_secret`. These two items are used to authenticate, when using the Box connector. If you need to reset the `client_secret` field, you can erase what is in the provided text box and save your configuration, and your `client_secret` is reset.
+For more information about authentication, see [JWT Application Setup](https://developer.box.com/docs/setting-up-a-jwt-app){: external}.
 
-    - `Authentication Type` - Select Server Authentication (OAuth2.0 with JWT).
-
-    - `User Access` - Select All Users for the application to request authorization for access.
-
-    - `Scopes - Content` - Check the Read and write all files and folders stored in Box option, which ensures that users authenticate to have read permissions on the files contained in your application.
-
-    - `Scopes - Enterprise` - Check the Manage users and Manage app users options. Leave all other options unchecked.
-
-    - `Scopes - Advanced Features` - Select the Perform actions on behalf of users and Generate access tokens for users options. Checking these options also ensures that the Managing users and App users options are checked for the `Scopes - Enterprise` parameter.
-
-1. **Public Key Management** - Authorization to access your application requires a private and public key pair. The Add Public Key button redirects you to a screen that prompts you for your public key. Paste your public key into the provided text box, and click the Verify button. After the key is verified, click Save to finish setting up your public key. For information about authentication, see [JWT Application Setup](https://developer.box.com/docs/setting-up-a-jwt-app){: external}.
+The field names and functions in Box might change. Consult the [Box developer documentation](https://developer.box.com/){: external} for updates.
+{: note}
 
 
 After selecting the **collection type** of **Box** and entering the **General** information:
 
 1. Under **Authentication**, enter the:
-    - **Client ID** - The private key specified by the Box App configuration.
-    - **Client Secret** - The client secret specified by the Box App configuration.
-    - **Private Key Path** - The path to the location of the private key that is part of the key pair generated for communication with box.com. The private key must be in DER or PEM format with either a .der or .pem extension. If the private key is encrypted, you must install the unlimited strength JCE Policy files (JAR files) previously mentioned to support AES256 encoding. Next, copy the private key to the persistent volume, named `wex-userdata`, which is mounted on gateway or ingestion pods. To mount the private key, complete the following.
+    - **Client ID** - The private key specified while you configure your Box app.
+    - **Client Secret** - The client secret specified while you configure your Box app.
+    - **Private Key Path** - The path to the location of the private key that is part of the key pair generated for communication with box.com. The private key must be in DER or PEM format with either a .der or .pem extension. If the private key is encrypted, you must install the unlimited strength JCE Policy files (JAR files) previously mentioned to support AES256 encoding. Next, copy the private key to the persistent volume, named `wex-userdata`, which is mounted on gateway or ingestion pods. To mount the private key:
+
         1. Log on to your {{site.data.keyword.discovery-data_short}} cluster, using `clouctl`.
-
         1. Find the ingestion pod by entering `kubectl get pods| grep ingestion`.
-
         1. Copy the files to the `/mnt` directory on the ingestion pod or the gateway pod. The copied private key files apply to all the gateway and ingestion pods. The default number of ingestion pods is 1.
+
     - **Private Key Passphrase** - (Optional) The passphrase required to decrypt the key if the private key is an encrypted file.
     - **Key ID** - The public key ID generated by Box.
     - **Enterprise ID** - The Enterprise ID of the Box account.
     - **Box Folder or User URL to crawl** - (Optional) Enables crawling a specific user content or folder content. If unspecified, it crawls all content. You can crawl different types of URLs, such as the following:
+
         - To crawl an entire enterprise, enter `box://app.box.com/`.
         - To crawl a specific folder, enter `box://app.box.com/user/USER_ID/folder/FOLDER_ID/FolderName`.
         - To crawl a specific user, enter `box://app.box.com/user/USER_ID/`.
-    - **Enable Document Level Security** - This toggle is `off` by default. This option must be enabled to activate document level security. For more information, see [Configuring document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls).
-1. Click the **Create collection** button.
 
-For more information about Box, see [Box developer documentation](https://developer.box.com/){: external}.
+    - **Enable Document Level Security** - This toggle is `off` by default. You must enable this option to activate document level security. When enabled, this option ensures that users can crawl and query content they have access to when logged in to Box. For more information, see [Configuring document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls).
+1. Click the **Create collection** button.
 
 
 ### Salesforce
@@ -251,19 +245,21 @@ For more information about Box, see [Box developer documentation](https://develo
 Use this option to crawl Salesforce. Only documents supported by {{site.data.keyword.discovery-data_short}} in your Salesforce folders are crawled; all others are ignored.
 {: shortdesc}
 
-Before crawling to Salesforce, you need to generate Java™ SOAP binding libraries. The following links explain how to generate the libraries. Create two libraries from Partner WSDL and Metadata WSDL.
+Before crawling to Salesforce, make sure you:
 
-- [Generate or Obtain the Web Service WSDL](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_generate_wsdl.htm){: external}
-- [Import the WSDL File Into Your Development Platform](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_import_wsdl.htm){: external}
+- Generate Java™ SOAP binding libraries. The following links explain how to generate the libraries. Create two libraries from Partner WSDL and Metadata WSDL:
 
-The following JAR files must be mounted and available in the local filesystem:
+    - [Generate or Obtain the Web Service WSDL](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_generate_wsdl.htm){: external}
+    - [Import the WSDL File Into Your Development Platform](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_import_wsdl.htm){: external}
 
-- `force-partner.jar` (from Partner WSDL)
-- `force-metadata.jar` (from Metadata WSDL)
-- `force-wsc.jar` (from Force Wsc)
-- `commons-beanutils.jar` (from Apache Commons BeanUtils)
+- Mount and make available the following JAR files in the local filesystem:
 
-Use the `wex-userdata` PVC for copying the Salesforce JAR files. To copy and mount the JAR files, complete the following:
+    - `force-partner.jar` (from Partner WSDL)
+    - `force-metadata.jar` (from Metadata WSDL)
+    - `force-wsc.jar` (from Force Wsc)
+    - `commons-beanutils.jar` (from Apache Commons BeanUtils)
+
+You must use the `wex-userdata` PVC for copying the Salesforce JAR files. To copy and mount the JAR files:
 
 1. Log on to the {{site.data.keyword.discovery-data_short}} cluster, using `clouctl`.
 1. Find the ingestion pod by entering `kubectl get pods| grep ingestion`.
@@ -276,7 +272,7 @@ After selecting the **collection type** of **Salesforce** and entering the **Gen
     - **Password** - The password of the specified user.
     - **Security Token** - The security token of the user to call Salesforce API.
     - **JARs location** - The path to the prerequisite JAR libraries. The folder that contains the JAR libraries must be mounted so it is available. 
-    - **Object Types to crawl** - Specifies the object types to crawl. The default behavior is to crawl all object types. For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, regarding MyCustomObject, specify `MyCustomObject__c`. Do not specify comment objects, such as FeedComment, CaseComment, IdeaComment without FeedItem, Case, Idea, respectively. If you specify a tag object, you must also specify its parent, for example AccountTag without Account.
+    - **Object Types to crawl** - Specifies the object types to crawl. The default behavior is to crawl all object types. For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, regarding MyCustomObject, specify `MyCustomObject__c`. Do not specify comment objects, such as FeedComment, CaseComment, IdeaComment without FeedItem, Case, Idea, respectively. If you specify a tag object, you must also specify its parent. For example, do not specify AccountTag without Account.
 1. Click the **Create collection** button.
 
 Copy the JAR files and private keys to the `ingestion-pod`.
@@ -300,7 +296,7 @@ After selecting the **collection type** of **SharePoint Online** and entering th
     -  **Password** - The password of the SharePoint user. This value is never returned and is only used when creating or modifying credentials.
     -  **Site Collection URL** - The SharePoint web service URL. For example, https://wss.com/. 
     -  **Site Collection Name** - The name you must obtain from site collection settings. The name the site collection uses.
-    -  **Enable Document Level Security** - By default, this toggle is `off`. You must enable this option to activate document level security and supply the application ID. For more information, see [Configuring document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls).
+    -  **Enable Document Level Security** - By default, this toggle is `off`. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When enabled, this option ensures that users can crawl and query content they have access to. For more information, see [Configuring document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls).
         - **Application ID** - The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [Registering with SharePoint Online](/docs/services/discovery-data?topic=discovery-data-register-sp#register-sp) for instructions.
 1. Click the **Create collection** button.
 
@@ -312,7 +308,7 @@ When you enable document level security, you need to register your app with Shar
 While registering your app, you receive an Azure application (client) ID, which you need to create and query a collection with document level security enabled. Make sure you note the application ID after you obtain it.
 {: important}
 
-Before you enter your application ID, check to make sure you add the required APIs and the permissions associated with each API. For more instructions about adding permissions, see [To configure the list of statically requested permissions for an application](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#using-the-admin-consent-endpoint){: external} in the Using the admin consent endpoint section of the SharePoint documentation. Also, check the following table to make sure you add and apply one of the following permissions in each row. Make sure to grant the permissions after you add them by clicking the "Grant admin consent for <insert organization name>" button at the bottom of the API permissions page:
+Before you enter your application ID, check to make sure you add the required APIs and the permissions associated with each API. For more instructions about adding permissions, see [To configure the list of statically requested permissions for an application](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#using-the-admin-consent-endpoint){: external} in the Using the admin consent endpoint section of the SharePoint documentation. Also, check the following table to make sure you add and apply one of the following permissions in each row:
 
 | API  | Permissions | Type   |                           
 | --------------- | ------------------------------- | ------------- |
@@ -322,8 +318,8 @@ Before you enter your application ID, check to make sure you add the required AP
 
 After you register your app:
 
-1. In the Azure Portal, set the client type to treat it as a public client. You can set it by navigating to Authentication, then Advanced settings, and finally Default client type and setting it to Yes.
-1. Enter your application ID in the **Application ID** field in {{site.data.keyword.discovery-data_short}} to enable document level security. Using the application ID you generated in this procedure, finish creating your collection, as described in [SharePoint Online](/docs/services/discovery-data?topic=discovery-data-connectsp#connectsp).
+- In the Azure Portal, set the client type to treat it as a public client.
+- Enter your application ID in the **Application ID** field in {{site.data.keyword.discovery-data_short}} to enable document level security. Using the application ID you generated in this procedure, finish creating your collection, as described in [SharePoint Online](/docs/services/discovery-data?topic=discovery-data-connectsp#connectsp).
 
 For more details on how to register an app and/or grant permissions, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
 
@@ -370,11 +366,10 @@ The Web Crawl has the following properties:
 **Start URLs** - The URLs where the crawler has to start crawling. By default, the Web Crawl enables subtree crawling and URLs to be crawled only from the path supplied in the seed. The starting URL in the Web Crawl has two limitations, as to what it crawls to:
 
    1. The same host as the start URL.
-   1. The same subtree, in which "subtree" means the only crawl items where the beginning URL matches the beginning of the starting URL. Here, "beginning" means everything up to and including the last slash (`/`) in the starting URL.
+   1. Only crawls items where the beginning URL matches the beginning of the starting URL. Here, "beginning" means everything up to and including the last slash (`/`) in the starting URL, i.e. subtree crawling.
 
 **Advanced Configuration**
-
-- **Code page to use** - The field used to enter the character encoding.
+   - **Code page to use** - The field used to enter the character encoding.
 
 If you are crawling Chinese language websites, enter `UTF-8` as the character set in the **Code page to use** field.
 {: tip}
@@ -386,6 +381,188 @@ The default max hop limit is 16. After selecting the **collection type** of **We
 1. Click the **Create collection** button.
 
 After the crawl begins, you are directed to the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview), which updates as documents are added to the collection.
+
+
+### Database
+{: #databaseconnect}
+
+Use this option to crawl documents from IBM Db2, Microsoft SQL Server, Postgresql, Oracle, and other databases that support JDBC. {{site.data.keyword.discovery-data_short}} supports the following data source versions:
+
+- IBM Db2: 10.5, 11.1, 11.5
+- Microsoft SQL Server: 2012, 2014, 2016, 2017
+- Oracle Database: 11g, 12c, 18c, 19c
+- Postgres: 9.4, 9.5, 9.6, 10, 11
+
+Only documents supported by {{site.data.keyword.discovery-data_short}} are crawled; all others are ignored.
+{: shortdesc}
+
+Before creating a collection, you need to copy the JAR files corresponding to the database you are crawling from; copy the Oracle DB, Postgres, MSSQL, Db2, or JDBC JAR files associated with the database you are crawling. After you copy the files:
+
+1. Log on to your {{site.data.keyword.discovery-data_short}} cluster, using `clouctl`.
+1. Find the ingestion pod by entering `kubectl get pods| grep ingestion`.
+1. Copy the files to the `/mnt` directory on the ingestion pod or the gateway pod. The default number of ingestion pods is 1.
+
+After selecting the **collection type** of **Database** and entering the **General** information:
+
+1. Under **Authentication**, enter the:
+    -  **JDBC Driver Type** - The default is **DB2**. Lists the four databases that {{site.data.keyword.discovery-data_short}} supports: Db2, Microsoft SQL Server, Postgresql, and Oracle and provides an option to crawl from `OTHER` databases.
+    -  **JDBC Driver Classname** - The JDBC driver class name you obtain from the database you select. Depending on the database you select in **JDBC Driver Type**, this field is autofilled, except if you select **OTHER**.
+    -  **JDBC Driver Classpath** - The file path where you copy the JAR files from and the location of the JDBC driver. You must mount the folder that contains the JAR file so that it is available. Some examples of driver classpaths are:
+       - Db2 - `/mnt/jdbc/db2jcc4.jar`
+       - Oracle - `/mnt/jdbc/ojdbc8.jar`
+       - SQL Server - `/mnt/jdbc/mssql-jdbc-7.2.2.jre8.jar`
+       - Postgresql - `/mnt/jdbc/postgresql-42.2.6.jar`
+    -  **Database URL** - The main URL to the database you select. Some examples are:
+       - Db2 - `jdbc:db2://localhost:50000/sample`
+       - Oracle - `jdbc:oracle:thin:@localhost:1521:sample`
+       - SQL Server - `jdbc:sqlserver://localhost:1433;DatabaseName=sample`
+       - Postgresql - `jdbc:postgresql://localhost/sample`
+    -  **User** - Your username that you obtain from the database you selected. You use this username to crawl the source. Your username is different from database to database.
+    -  **Password** - Your password that you obtain from the database you selected. Your password is associated with your username. Your password is different from database to database.
+    -  **Schema Name** - The schema you want to crawl data from. You obtain the schema name from the database you are crawling.
+    -  **Table Name** - The table within a schema you want to crawl data from. You obtain the table name from the database you are crawling.
+1. Click the **Create collection** button.
+
+
+### Windows File System
+{: #windowsfilesystemconnect}
+
+Use this option to crawl Windows file systems from the {{site.data.keyword.discovery-data_short}} server. The Windows File System connector supports the Windows Server 2012 R2, 2016, and 2019 versions. Only documents supported by {{site.data.keyword.discovery-data_short}} are crawled; all others are ignored.
+{: shortdesc}
+
+Before configuring a Windows File System collection, you must install the agent server on a remote Windows file server or on a remote Windows server that mounts one or more file servers so that the agent can crawl remote Windows file systems. The agent server is a Windows service that retrieves data from data source servers and sends data to {{site.data.keyword.discovery-data_short}}. The Windows agent can crawl remote Windows file systems, the agent local drives, and shared network folders. To install the agent server:
+
+1. Log in to {{site.data.keyword.discovery-data_short}} as an admin, and navigate to **Windows File System**.
+1. Under **Download & install Windows Agent**, click the **Download Windows Installer** button. Clicking this link downloads the .zip file to run the agent installer. Follow the prompts. While running the installer, you receive the host name, username, password, agent authentication port number, and port number that you enter later in Windows File System on {{site.data.keyword.discovery-data_short}}, so note them when you receive them. Also during installation, a checkbox appears that, when checked, enables you to create a user account; when unchecked, it assigns you administrative permissions.
+1. Extract all files in the `WindowsAgentServer.zip`.
+1. Double-click the `install.exe` file, or enter `install.exe` in a command window. You can choose one of the following methods to run the installation program:
+
+   - Console installation: To run the installation program in text mode from a console, change to the agent directory, and enter the following command. The screens are rendered in text and prompt you for the same information as the graphical installation:
+     ```bash
+     install.exe -i console
+     ```
+   
+     After you enter the command, a process runs in the background for several seconds before the console installation program displays.
+     {: tip}
+
+   - Silent installation: To install the product silently, change to the `Agent/responseFiles` directory, and edit the `DistributedFileSystemCrawler.properties` template response file to provide information about your environment. To run the installation program, change to the agent directory, and specify the name of the file that you edited. For example:
+      ```bash
+      install.exe -i silent -f responseFiles/DistributedFileSystemCrawler.properties
+      ```
+
+      If you copy a template file to another location to edit, specify the fully qualified path for the file when you run the installation program. If the response file path includes a space, enclose the path in double quotation marks (`"`). For example:
+      ```bash
+      install.exe -i silent -f "c:\My Documents\DistributedFileSystemCrawler.properties"
+      ```
+1. Specify installation options by entering or verifying the fully qualified host name of the computer you are installing the agent server on.
+
+   You cannot specify an IPv6 address as the host name of the server.
+   {: important}
+
+1. Enter a username and password of an account that can be used to authorize access to the agent server. When you configure the agent for Windows File System in the administration console, you must specify this username and password. If the username does not exist, you can select the checkbox to create the account. 
+
+   To crawl a domain in a secure collection, the username must be an existing domain user that has permission to access the files to be crawled. To specify a domain user, use the format `<username>@<domain name>`. The agent installation program does not create the domain user.
+   {: important}
+
+1. Click **Install** to use the default settings for all other installation options and to start installing the software.
+1. (Optional): If you want to change the default settings, click **Advanced Options**, instead of clicking **Install**. Use the following guidelines when you specify advanced installation options:
+
+   - You can change the paths for the installation directory and data directory.
+   - The agent server uses three TCP/IP ports for authenticating connections to the server, transferring data between the file systems and {{site.data.keyword.discovery-data_short}}, and monitoring the agent server. The default port numbers are `8397`, `8398`, and `8399`. If those values conflict with other port assignments in your system, change the port numbers.
+
+1. On the summary page, review the options that you selected, and click **Install** to start installing the software.
+1. Restart your computer.
+
+After the software is installed, you must set up shared network directories that the Windows File System agent can access. To define a new file system share, you export a local or remote network directory. You can also list the shares that are already defined or delete a share that you previously defined. To configure shared directories on an agent server:
+
+1. Export a local directory from the server where the agent is installed:
+   ```bash
+   esagent --addshare <d:><\example>
+   ```
+
+   Where `d:` represents the drive letter you want to use and where `\example` represents the path to the local directory.
+1. Export a remote network directory that is accessible from the server where the agent is installed:
+   ```bash
+   esagent --addshare <\\files.example.com\data>
+   ```
+
+   Where `\\files.example.com\data` represents the host name or IP address of the remote server or the path to the remote directory. 
+1. List shares that are defined on the server where the agent is installed:
+   ```bash
+   esagent --lsshare
+   ```
+1. Delete a share that is defined on the server where the agent is installed:
+   ```bash
+   esagent --rmshare \\files.example.com\data
+   ```
+
+After you install the agent server, you can enter commands to start, stop, and see the status of the server. Use the following commands to start or stop the agent server. Stopping the agent server also stops the crawler. For example, if the crawler stops unexpectedly, you can close connections and release resources for that crawler:
+
+To start the server, run:
+
+```bash
+esagent start
+```
+
+To stop the server, run:
+
+```bash
+esagent stop
+```
+
+To get the status of the agent server, run:
+
+```bash
+esagent getStatus
+```
+
+The output of the `getStatus` command is an XML file in the following output:
+
+```bash
+<AgentStatus>
+  <SpaceStatus>
+    <SpaceId>012</SpaceId>
+    <RootFolder>E:\\Projects\Analytics\\data\test1</RootFolder>
+    <ConnectionNumber>9</ConnectionNumber>
+    <StartTime>1244709336093</StartTime>
+    <LastTime>1244709385843</LastTime>
+    <IdlePeriod>219</IdlePeriod>
+  </SpaceStatus>
+  <SpaceStatus>
+    <SpaceId>013</SpaceId>
+    <RootFolder>E:\\Projects\Analytics\\data\test2</RootFolder>
+    <ConnectionNumber>10</ConnectionNumber>
+    <StartTime>1244709336093</StartTime>
+    <LastTime>1244709385843</LastTime>
+    <IdlePeriod>219</IdlePeriod>
+  </SpaceStatus>
+  ```
+
+After selecting the **collection type** of **File System** and entering the **General** information:
+ 
+1. Under **Authentication**, enter the:
+    -  **Host** - The host name that Windows agent is installed on. Obtain the host name while installing the agent server.
+    -  **User** - The user name to connect the agent server, which you obtain when you install the agent server. Enables {{site.data.keyword.discovery-data_short}} to connect to the shared network folders and crawl content.
+    -  **Password** - The password of the specified user, which you obtain when you install the agent server. Enables {{site.data.keyword.discovery-data_short}} to connect to the shared network folders and crawl content.
+    -  **Agent Authentication Port** - The default port value is `8397`. The port for authenticating, which you obtain when you install the agent server.
+    -  **Port** - The default port value is `8398`. The port for transferring data, which you obtain when you install the agent server.
+    -  **Enable Document Level Security** - By default, this toggle is `off`. You must enable this option to activate document level security. When enabled, this option ensures that users can crawl and query content they have access to. For more information about Document Level Security, see [Configuring document level security](/docs/services/discovery-data?topic=discovery-data-configuredls#configuredls).
+         - **LDAP server URL** - The LDAP server URL to connect to.
+         - **LDAP binding username** - Username used to bind to the directory service. In most cases, this username is a Distinguished Name (the log-on name might sometimes work with Active Directory, though unlike the general Windows log on, it is case-sensitive. But it is recommended to use the DN, which always works).
+         - **LDAP binding user password** - Password used to bind to the directory service.
+         - **LDAP base DN** - Starting point for searching user entries in LDAP (e.g., CN=Users,DC=example,DC=com). 
+         - **LDAP user filter** - User filter to search user entries in LDAP. If empty, default value used is `(userPrincipalName={0})`.
+1. Under **Configuration**, enter the:
+    - **Path** - The file path that you need to enter to crawl documents from. You can enter multiple file paths.
+1. After entering the path, click the **Add** button next to the field to add one or more file paths.
+1. Click the **Create collection** button.
+
+When you specify a file path in **Path**, the letter case in this path must be the same as the letter case in the file path you specified when you configured the shared directories on the agent server. For example, if you configure the shared directories on the agent server as `C:\Foo\Test`, you must enter `C:\Foo\Test` as the file path in **Path** when you create a collection in Windows File System. If you do not match the letter case in both file paths exactly, you receive an error message, and your collection does not generate.
+{: important}
+
+The remote agent server and the file servers to be crawled must belong to the same Windows domain. A crawler can gather access control list (ACL) data from a single Windows domain.
+{: important}
+
 
 ### Upload data
 {: #upload-data}
@@ -399,14 +576,18 @@ See [Supported document types](/docs/services/discovery-data?topic=discovery-dat
 ## Configuring document level security
 {: #configuredls}
 
-Document level security enables you to leverage the security settings from your source documents to control the search results returned to different users, and it is supported in the Box, SharePoint OnPrem, and SharePoint Online data sources. To enable document level security, you need to configure these components:
+Document level security enables you to leverage the security settings from your source documents to control the search results returned to different users, and it is supported in the Box, SharePoint OnPrem, SharePoint Online, and Windows File System data sources. To enable document level security, you need to configure these components:
 
 - Enable document level security for your collection
-  See [Enable Document Level Security for SharePoint OnPrem](/docs/services/discovery-data?topic=discovery-data-connectsp_op#connectsp_op) for a description of the feature in the SharePoint OnPrem data source. Similarly, see [Enable Document Level Security for SharePoint Online](/docs/services/discovery-data?topic=discovery-data-connectsp#connectsp) for a description of the feature in this data source.
-- Configure document level security parameters for your [SharePoint Online collection](/docs/services/discovery-data?topic=discovery-data-connectsp#connectsp) and your [SharePoint OnPrem collection](/docs/services/discovery-data?topic=discovery-data-connectsp_op#connectsp_op)
+  See [Enable Document Level Security for SharePoint OnPrem](/docs/services/discovery-data?topic=discovery-data-connectsp_op#connectsp_op) for a description of the feature in the SharePoint OnPrem data source. See [Enable Document Level Security for SharePoint Online](/docs/services/discovery-data?topic=discovery-data-connectsp#connectsp) for a description of the feature in this data source. Consult [Enable Document Level Security for Windows File System](/docs/services/discovery-data?topic=discovery-data-windowsfilesystemconnect#windowsfilesystemconnect) for a description of the feature in this data source and the information required to configure the crawler.
+- Configure document level security parameters for your [SharePoint Online collection](/docs/services/discovery-data?topic=discovery-data-connectsp#connectsp), [SharePoint OnPrem collection](/docs/services/discovery-data?topic=discovery-data-connectsp_op#connectsp_op), or [Windows File System collection](/docs/services/discovery-data?topic=discovery-data-windowsfilesystemconnect#windowsfilesystemconnect).
   Document level security configuration options are visible when document level security is enabled in your collection configuration.
 - Create {{site.data.keyword.discovery-data_short}} users that match the users available on the source system
 - Associate users with your {{site.data.keyword.discovery-data_short}} instance
+
+{{site.data.keyword.discovery-data_short}} only supports pre-filtering. Pre-filtering involves replicating the document's source ACL at crawl time into the index and relying on the search engine to compare user credentials to the replicated document ACLs. {{site.data.keyword.discovery-data_short}} performs the best when documents are pre-filtered and when you control which documents you add to the index. However, it is difficult to model all of the security policies of the various back-end sources in the index and implement comparison logic uniformly. Also, pre-filtering is not as responsive to any changes that might occur in the source ACLs after the most recent crawl.
+{: note}
+
 
 ### Creating users for document level security
 {: #createusersdls}
@@ -429,6 +610,9 @@ Next, you need to associate the users you created with a {{site.data.keyword.dis
 When querying collections that have document level security enabled, no results are returned if the users associated with your {{site.data.keyword.discovery-data_short}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/services/discovery-data?topic=discovery-data-querydls#querydls).
 {: important}
 
+Because {{site.data.keyword.discovery-data_short}} does not sync any changes to the users from the LDAP server, {{site.data.keyword.discovery-data_short}} administrators must ensure that the users list is current and remove any non-current users.
+{: note}
+
 
 ## Collection overview
 {: #collection-overview}
@@ -442,8 +626,8 @@ Collection details include:
 
 -  Number of documents 
 -  Collection status
-    -  A collection is finished processing when the status is `Synching complete` or `Upload complete`. If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button displayed will vary depending on the type of collection.
-    -  If the collection status is `Synching ...`, and you click the **Recrawl collection** button, the current crawl will stop and a new full crawl will begin. It is recommended that you wait until the status is `Synching complete` before starting a recrawl.
+    -  A collection is finished processing when the status is `Syncing complete` or `Upload complete`. If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button displayed will vary depending on the type of collection.
+    -  If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl will stop and a new full crawl will begin. It is recommended that you wait until the status is `Syncing complete` before starting a recrawl.
 -  Details (language, creation date, last update)
 -  Fields identified in the collection (`text` by default). To configure additional fields, click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right to open the [**Smart Document Understanding**](/docs/services/discovery-data?topic=discovery-data-configuring-fields#configuring-fields) editor.
 
