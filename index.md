@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-09-05"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.discovery-data_short}} lets you visually train AI for deep understanding of your content, including tables and images, to help you find business-value hidden in your enterprise. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere using powerful API interfaces.
 
-Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
+Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
 
 On the top right of any screen, click the **Help** ![Help](images/help_icon.png) icon to open the documentation.
 {: tip}
