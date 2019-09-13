@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-09"
+lastupdated: "2019-09-13"
 
 subcollection: discovery-data
 
@@ -37,6 +37,9 @@ Follow these instructions to install and configure {{site.data.keyword.discovery
 {: shortdesc}
 
 If you have already installed {{site.data.keyword.icp4dfull}}, and have purchased {{site.data.keyword.discovery-data_short}} as an add-on, follow the [instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html)
+
+Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discovery-data_long}}.
+{: note}
 
 ## Before you begin
 {: #beforebegin}
