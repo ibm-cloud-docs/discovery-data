@@ -32,12 +32,12 @@ subcollection: discovery-data
 # Query overview
 {: #query-concepts}
 
-<!-- Help for the Query screen in WD ICP4D -->
+<!-- Help for the Query page in WD ICP4D -->
 
 {{site.data.keyword.discovery-data_long}} offers powerful content search capabilities through queries. After your content is uploaded and enriched by {{site.data.keyword.discovery-data_short}}, you can build queries, integrate {{site.data.keyword.discovery-data_short}} into your own projects, or create a custom applications. 
 {: shortdesc}
 
-To access the **Query** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Query** tab.
+To access the **Query** page, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Query** tab.
 
 For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data#query-a-collection-get).
 
@@ -68,7 +68,7 @@ When you create a query or filter, {{site.data.keyword.discovery-data_short}} lo
 
 To understand how to build a query using the {{site.data.keyword.discoveryshort}} Query Language, you need to be familiar with the JSON produced by {{site.data.keyword.discovery-data_short}} after it enriches the documents in your collection. Once you are familiar with the data schema of your documents, it will be easier to write queries in the {{site.data.keyword.discoveryshort}} Query Language. 
 
-The best way to do this is to run an "empty" query to view the JSON. Open an existing collection. On the **Query** screen, click the **Run query** button. The results display on the right.
+The best way to do this is to run an "empty" query to view the JSON. Open an existing collection. On the **Query** page, click the **Run query** button. The results display on the right.
 
 -  Each document will be preceded by an `id` number.
 -  Scroll down to the `enriched_text` field. Examine each enrichment to learn about the JSON fields you can query on.

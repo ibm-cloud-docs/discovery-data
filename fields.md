@@ -39,7 +39,7 @@ With SDU, you annotate fields within your documents to train custom conversion m
 
 PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types supported by {{site.data.keyword.discovery-data_short}}, see [Configuring collection types](/docs/services/discovery-data?topic=discovery-data-collection-types#collection-types).
 
-To access the Smart Document Understanding editor, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right.
+To access the Smart Document Understanding editor, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click **Data settings** ![Data settings icon](images/datasettings_icon.png) on the upper right.
 
 When you build a custom Smart Document Understanding model, the conversion time for your collection may increase due to the resources required to apply the AI model to your documents. The resource requirements will result in a significant decrease in throughput speed.
 {: note}
@@ -172,7 +172,7 @@ If you plan to develop a model and import it into a new collection, it is a good
 You can enrich fields (including custom fields identified with Smart Document Understanding) in your collection with cognitive metadata. 
 Before you can apply enrichments to selected fields, you must create them. See [Creating enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#create-enrichments). 
 
-To access the **Enrich Fields** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right. Click the **Enrich Fields** tab.
+To access the **Enrich Fields** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click **Data settings** ![Data settings icon](images/datasettings_icon.png) on the upper right. Click the **Enrich Fields** tab.
 
 To apply an enrichment to a field:
 
@@ -186,13 +186,13 @@ After you apply the enrichment, it will be listed on the **Overview** screen for
 ## Managing fields
 {: #field-settings}
 
-<!-- Help for the Manage fields SDU screen in WD ICP4D -->
+<!-- Help for the Manage fields SDU page in WD ICP4D -->
 
 The **Manage fields** tab contains two options:
 -  **Identify fields to index**
 -  **Improve query results by splitting your documents**
 
-To access the **Manage Fields** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right. Click the **Manage Fields** tab.
+To access the **Manage Fields** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click **Data settings** ![Data settings icon](images/datasettings_icon.png) on the upper right. Click the **Manage Fields** tab.
 
 **Identify fields to index** - This option allows you to choose which fields should be included in the index for this collection. You can switch off any fields you do not want to index. For example, your PDFs may contain a running header or footer that does not contain useful information, so you can exclude those fields from the index. 
 

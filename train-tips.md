@@ -50,7 +50,7 @@ If using the API, see [List training data](https://{DomainName}/apidocs/discover
 ### How do I check errors and warnings?
 {: #understanding-errors}
 
-Check the **Logs** screen. See [Viewing system logs](/docs/services/discovery-data?topic=discovery-data-logs#logs)
+Check the **Logs** page. See [Viewing system logs](/docs/services/discovery-data?topic=discovery-data-logs#logs)
 
 ### How do I interpret the `confidence` score that appears in natural language query results after training?
 {: #interpret-confidence}

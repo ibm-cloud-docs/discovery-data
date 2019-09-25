@@ -58,7 +58,7 @@ To create a collection:
 1.  Click **Create new collection**.
 1.  Click **Upload data**. In this tutorial, we are manually uploading files from a local machine, the other options on this page allow you to configure the automatic collection of data from supported applications.
 1.  Enter `example collection` into the **Collection name** field and leave the **Collection language** as `English`. By selecting a language at this point you define which built-in processors will be used when ingesting your documents. If the documents you upload are written in more than one language, select the language of the majority of documents.
-1.  Click **Create collection**. Once the collection has been initialized, the **Upload data to get started** screen is displayed.
+1.  Click **Create collection**. Once the collection has been initialized, the **Upload data to get started** page is displayed.
 
 ## Step 2: Download the sample document and upload to your collection
 {: create-custom-configuration}
@@ -72,7 +72,7 @@ To create a collection:
     -  The number of documents (1).
     -  The fields identified from your document. You should see one field identified, `text`. We will identify additional fields in a bit.
 1.  Let's try a quick natural language query to level set. Click **Build your own query** on the lower right.
-1.  On the **Query** screen, enter `What are the minimum hardware requirements` in the **Use natural language** field, and click **Run query**. The result is not as precise as it could be, so let's improve it with Smart Document Understanding.
+1.  On the **Query** page, enter `What are the minimum hardware requirements` in the **Use natural language** field, and click **Run query**. The result is not as precise as it could be, so let's improve it with Smart Document Understanding.
 1.  Click the **Data settings** link on the upper right. The **Data settings** page opens.
 
 ## Step 3: Annotate your document
@@ -109,7 +109,7 @@ After {{site.data.keyword.discovery-data_short}} finishes processing and indexin
 {: #build-a-query}
 
 1.  Click **Build your own query** on the bottom right.
-1.  On the **Query** screen, enter `What are the minimum hardware requirements` in the **Use natural language** field and click **Run query**.
+1.  On the **Query** page, enter `What are the minimum hardware requirements` in the **Use natural language** field and click **Run query**.
 1.  In the output, look at the `text` field under the `results` section. The answers that are returned from the query are much more precise.
 
 Additional resources:
