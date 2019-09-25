@@ -69,10 +69,10 @@ and [Windows File System connector](/docs/services/discovery-data?topic=discover
 ### Known issues in this release:
 {: #30aug2019ki}
 
-  -  After you create a Machine Learning enrichment using a {{site.data.keyword.knowledgestudiofull}} model, two identically named enrichments may display on the **Enrich fields** screen. This will not affect the enrichments, but it is best to use only one of them to select and apply the enrichment to one or more fields.
-  -  When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Overview** screen, but no further processing status displays until the number of documents increases.
-  -  If a web crawl appears to be stuck processing at a fixed number of documents, and the message displayed on the **Logs** screen is `The ingestion job <jobid> is terminated incorrectly`, contact IBM support for assistance restarting the crawl.
-  -  If one or more of your collections is trained, the training data from one of those collection may display on the **Train** screen of an untrained collection. Refresh the screen to clear that training data.
+  -  After you create a Machine Learning enrichment using a {{site.data.keyword.knowledgestudiofull}} model, two identically named enrichments may display on the **Enrich fields** page. This will not affect the enrichments, but it is best to use only one of them to select and apply the enrichment to one or more fields.
+  -  When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Overview** page, but no further processing status displays until the number of documents increases.
+  -  If a web crawl appears to be stuck processing at a fixed number of documents, and the message displayed on the **Logs** page is `The ingestion job <jobid> is terminated incorrectly`, contact IBM support for assistance restarting the crawl.
+  -  If one or more of your collections is trained, the training data from one of those collection may display on the **Train** page of an untrained collection. Refresh the page to clear that training data.
   -  The following types of documents will not be processed if they do not have the proper file extension: .docx, .pptx, .xlsx.
 
 
@@ -97,8 +97,8 @@ The {{site.data.keyword.discovery-data_long}} service brings the cognitive capab
 
 The following known issues apply to the GA release:
 
-  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] During an active web crawl, if you add an enrichment, then click the **Recrawl collection** button on the **Overview** screen, the collection will stop processing. If the collection does not return to a Syncing state on its own, clicking the **Recrawl collection** button an additional time might be required.
-  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] While training a collection in the tooling , if you rate the relevancy of a result (for example, as`Relevant`), then switch to the opposite rating (`Not relevant`), the screen may go blank. To restore the screen, refresh the browser. Your updated rating will be retained.
+  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] During an active web crawl, if you add an enrichment, then click the **Recrawl collection** button on the **Overview** page, the collection will stop processing. If the collection does not return to a Syncing state on its own, clicking the **Recrawl collection** button an additional time might be required.
+  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] While training a collection in the tooling , if you rate the relevancy of a result (for example, as`Relevant`), then switch to the opposite rating (`Not relevant`), the page may go blank. To restore the page, refresh the browser. Your updated rating will be retained.
   -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] Chinese, Japanese, and Korean language Microsoft Word, Excel, and PowerPoint documents will not display correctly in the index or the Smart Document Understanding editor.
   -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.
   -  All JSON files ingested into {{site.data.keyword.discovery-data_short}} should include the .json file extension.

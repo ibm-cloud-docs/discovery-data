@@ -54,7 +54,7 @@ Collection details include the following information:
     -  A collection is finished processing when the status is `Syncing complete` or `Upload complete`. If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button displayed varies, depending on the type of collection.
     -  If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl stops, and a new full crawl begins. It is recommended that you wait until the status is `Syncing complete` before starting a recrawl.
 -  Details (language, creation date, last update)
--  Fields identified in the collection (`text` by default). To configure additional fields, click **Data settings** ![datasettings](images/datasettings_icon.png) on the upper right to open the [**Smart Document Understanding**](/docs/services/discovery-data?topic=discovery-data-configuring-fields#configuring-fields) editor.
+-  Fields identified in the collection (`text` by default). To configure additional fields, click **Data settings** ![Data Settings icon](images/datasettings_icon.png) on the upper right to open the [**Smart Document Understanding**](/docs/services/discovery-data?topic=discovery-data-configuring-fields#configuring-fields) editor.
 
 
 ### Accessing collections
@@ -62,15 +62,15 @@ Collection details include the following information:
 
 You can also access a collection you already created:
 
-1. Click the **Collections** ![Collections](images/collection_icon.png) icon on the left. Existing collections display the document count and last updated date.
+1. Click the **Collections** ![Collections icon](images/collection_icon.png) icon on the left. Existing collections display the document count and last updated date.
 1. Select the collection you need. The **Overview** tab displays.
 
 
 #### Tips
 {: #collectiontips}
 
-- To open the documentation, click the **Help** ![Help](images/help_icon.png) icon on the top right of any screen.
-- To view the available storage space and the number of documents and collections in your environment, click the **Environment details** ![Env](images/env_icon.png) icon.
+- To open the documentation, click the **Help** ![Help icon](images/help_icon.png) icon on the top right of any screen.
+- To view the available storage space and the number of documents and collections in your environment, click the **Environment details** ![Environment details icon](images/env_icon.png) icon.
 - To delete all the collections in your environment, click **Delete environment**.
 - To open the **IBM Cloud Pak for Data** hub, click **{{site.data.keyword.icp4dfull}}** in the upper left. 
 
@@ -78,7 +78,7 @@ You can also access a collection you already created:
 ## Creating a collection
 {: #createcollection}
 
-1. Click the **Collections** ![Collections](images/collection_icon.png) icon on the left.
+1. Click the **Collections** ![Collections icon](images/collection_icon.png) icon on the left.
 1. Click **Create new collection**.
 1. Choose a collection type.
 1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages).

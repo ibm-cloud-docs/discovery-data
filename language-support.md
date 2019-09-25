@@ -48,7 +48,7 @@ The following languages are supported in {{site.data.keyword.discovery-data_long
 - Portuguese, Brazilian (`pt-br`)   
 - Spanish (`es`)   
 
-You can choose the collection language when you create it. See [Creating a new collection](/docs/services/discovery-data?topic=discovery-data-collections#collections). You can view the language of an existing collection on the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview) screen.  
+You can choose the collection language when you create it. See [Creating a new collection](/docs/services/discovery-data?topic=discovery-data-collections#collections). You can view the language of an existing collection on the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview) page.  
 {: tip}
 
 

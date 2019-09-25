@@ -205,8 +205,8 @@ You can integrate a {{site.data.keyword.knowledgestudioshort}} custom model into
 You cannot apply multiple custom models to the same field using the {{site.data.keyword.discoveryshort}} tooling. It is possible to apply more than one custom model to identical fields using the API. See [Integrating your custom model with the API](/docs/services/discovery?topic=discovery-integrating-with-wks#integrate-customAPI).
 
 1. Get the `Model ID` of your {{site.data.keyword.knowledgestudioshort}} model.
-1. In the {{site.data.keyword.discoveryshort}} tooling, click the **Manage Data** icon on the upper left to open the **Manage data** screen, then create or open a collection. **Note:** If you choose an existing collection, it should be empty. If not, you should reingest those documents after creating your new configuration file.
-1. In the **Configuration** section of the **Manage Data** screen for your collection, click **Switch**, then **Create a New Configuration**. Name the configuration. 
+1. In the {{site.data.keyword.discoveryshort}} tooling, click the **Manage Data** icon on the upper left to open the **Manage data** page, then create or open a collection. **Note:** If you choose an existing collection, it should be empty. If not, you should reingest those documents after creating your new configuration file.
+1. In the **Configuration** section of the **Manage Data** page for your collection, click **Switch**, then **Create a New Configuration**. Name the configuration. 
 1. Click **Add enrichments** and select either the **Entity Extraction** or **Relation Extraction** enrichments.
 1. Enter the `Model ID` in the `Custom Model ID` box of the selected enrichment. The custom {{site.data.keyword.knowledgestudiofull}} model will override the default for that enrichment. 
 1. Click **Apply**, then **Done**.

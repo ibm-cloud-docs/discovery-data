@@ -39,7 +39,7 @@ subcollection: discovery-data
 
 Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
 
-On the top right of any screen, click the **Help** ![Help](images/help_icon.png) icon to open the documentation.
+On the top right of any page, click the **Help** ![Help icon](images/help_icon.png) icon to open the documentation.
 {: tip}
 
 

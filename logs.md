@@ -32,11 +32,11 @@ subcollection: discovery-data
 # Viewing system logs
 {: #logs}
 
-{{site.data.keyword.discovery-data_short}} provides the **Logs** screen so you can easily access all of the error and warning messages for the collections in this environment.
+{{site.data.keyword.discovery-data_short}} provides the **Logs** page so you can easily access all of the error and warning messages for the collections in this environment.
 {: shortdesc}
 
-<!-- Help for the Logs screen -->
+<!-- Help for the Logs page -->
 
-To view the **Logs** screen, click the **Logs** ![logs](images/logs_icon.png) icon on the left.
+To view the **Logs** page, click the **Logs** ![Logs icon](images/logs_icon.png) icon on the left.
 
 You can view the `Type`, `Message`, and `Date` for each item.

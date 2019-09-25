@@ -33,7 +33,7 @@ subcollection: discovery-data
 # Creating enrichments
 {: #create-enrichments}
 
-<!-- Help for the Enrichments screen in WD ICP4D -->
+<!-- Help for the Enrichments page in WD ICP4D -->
 
 You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning**), or classify your documents into categories (**Classifier**).
 {: shortdesc}
@@ -41,7 +41,7 @@ You can create enrichments that will add related terms (**Dictionary**), identif
 
 To create a new enrichment:
 
-1. Click the **Enrichments** ![Enrichments](images/enrichments_icon.png) icon on the left.
+1. Click the **Enrichments** ![Enrichments icon](images/enrichments_icon.png) icon on the left.
 1. Click **Add new**
 1. Enter a **Name** and choose the enrichment **Type**.
 1. Configure the enrichment:
@@ -62,7 +62,7 @@ Once you create an enrichment, it is not possible to edit or delete it. If you n
 
 The Dictionary enrichment allows you to enrich document fields in your collection. The enrichment terms can be synonyms (car, automotive, auto), or words in the same category (carburetor, piston, valves). 
 
-You must create and upload a dictionary csv file to apply this enrichment. The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) screen.
+You must create and upload a dictionary csv file to apply this enrichment. The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
 
 Enrichment-specific fields:
 
@@ -113,7 +113,7 @@ Result: The query `enriched_text.entities.text:engine` will also return results 
 
 The Character Pattern enrichment uses regular expressions to identify and extract information from fields in your collection.
 
-The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) screen.
+The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
 
 Enrichment-specific fields:
 
@@ -180,7 +180,7 @@ Create your `.pear` or `.zip` file before adding this enrichment. See the follow
 ){: external}
   -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_11.0.2/com.ibm.discovery.es.ta.doc/iiystacastudio.html){: external}
 
-The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) screen.
+The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
 
 Enrichment-specific fields:
 
@@ -303,14 +303,14 @@ In the JSON output:
 
 The Classifier enrichment allows you to classify the documents in your collection into categories. {{site.data.keyword.discovery-data_short}} uses the labels and text examples you have specified to predict the categories of the documents in your collection. 
 
-You must create and upload a classifier csv file to apply this enrichment. The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) screen.
+You must create and upload a classifier csv file to apply this enrichment. The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
 
 Enrichment-specific fields:
 
 -  **Collection language** - Select the language of your classifier `.csv` file.
 -  **Select a .csv file** - Select the file and upload it.
 
-After you upload the csv file, the Classifier enrichment is not ready to use until the **Status** changes from `Training` to `Ready` on the **Enrichments** screen. You may need to refresh the screen to view the updated status.
+After you upload the csv file, the Classifier enrichment is not ready to use until the **Status** changes from `Training` to `Ready` on the **Enrichments** page. You may need to refresh the page to view the updated status.
 {: important}
 
 Classifier .csv file requirements:

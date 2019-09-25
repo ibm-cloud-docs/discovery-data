@@ -32,14 +32,14 @@ subcollection: discovery-data
 # Improving result relevance with training
 {: #train}
 
-<!-- Help topic "Train" screen Discovery ICP4D  -->
+<!-- Help topic "Train" page Discovery ICP4D  -->
 
 The relevance of natural language query results can be improved in {{site.data.keyword.discovery-data_long}} with training. 
 {: shortdesc}
 
 Relevancy training is optional; if the results of your queries meet your needs, no further training is necessary. For information about use cases for relevancy training, see [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external}.
 
-To access the **Train** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Train** tab. 
+To access the **Train** page, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Train** tab. 
 
 In order to train Watson, you'll need to:
 
@@ -64,7 +64,7 @@ Training consists of three parts:
 
 To train a collection:
 
-1.  On the **Train** screen, enter a natural language query in the **Enter a question to train** field. Do not include a question mark in your query. Click the **Add+** button.
+1.  On the **Train** page, enter a natural language query in the **Enter a question to train** field. Do not include a question mark in your query. Click the **Add+** button.
 1.  Click the **Rate results** button next to the query.
 1.  After the results appear, select the **Relevant** or **Not relevant** button under each one. In order to train the collection efficiently, you should select an option for each result.
 1.  When you are finished, click the **Back to queries** button.
