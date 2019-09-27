@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-09-27"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 
 <!-- Help for the Enrichments page in WD ICP4D -->
 
-You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning**), or classify your documents into categories (**Classifier**).
+You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), or classify your documents into categories (**Classifier**).
 {: shortdesc}
 
 
@@ -47,7 +47,7 @@ To create a new enrichment:
 1. Configure the enrichment:
     - [**Dictionary**](/docs/services/discovery-data?topic=discovery-data-dictionary-enrichment#dictionary-enrichment) 
     - [**Character Pattern**](/docs/services/discovery-data?topic=discovery-data-characterpattern-enrichment#characterpattern-enrichment)
-    - [**Machine Learning**](/docs/services/discovery-data?topic=discovery-data-machinelearning-enrichment#machinelearning-enrichment) 
+    - [**Machine Learning and Watson Explorer Content Analytics Studio models**](/docs/services/discovery-data?topic=discovery-data-machinelearning-enrichment#machinelearning-enrichment) 
     - [**Classifier**](/docs/services/discovery-data?topic=discovery-data-classifier-enrichment#classifier-enrichment) 
 1. Click the **Create** button.
 
@@ -166,7 +166,7 @@ In the JSON output:
 Result: The query `enriched_text.entities.type: cccardnumber` will return all results that include a credit card number of the specified type.
 
 
-## Machine Learning enrichments
+## Machine Learning enrichments and Watson Explorer Content Analytics Studio models
 {: #machinelearning-enrichment}
 
 This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} or Watson Explorer Content Analytics Studio to enrich your collection. There are three types of models:
