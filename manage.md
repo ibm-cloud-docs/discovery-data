@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-10-04"
 
 subcollection: discovery-data
 
@@ -167,4 +167,136 @@ kubectl scale deployment.v1.apps/<resource> --replicas=<number>
 ```
 {: pre}
 
-Increasing the capacity of elastic can increase the overall performance. Others will increase the number of collections concurrently updated.
+Increasing the capacity of Elastic can increase the overall performance. Others will increase the number of collections concurrently updated.
+
+### Scaling Etcd clusters
+{: #scalingetcd}
+
+`Etcd` clusters are scaled up or down manually using backup and restoration scripts. 
+
+Multi-node `Etcd` clusters must be configured during deployment. Scaling the `Etcd` cluster up or down after deployment is not recommended.
+{: important}
+
+1.  Backup the `Etcd` cluster.
+    
+    ```bash
+    etcd-backup-restore.sh backup <release_name>
+    ```
+    {: pre}
+    
+1.  Scale the `Etcd` pod to 0.
+    
+    ```bash
+    kubectl scale statefulset <release_name>-watson-discovery-etcd --replicas=0
+    ```
+    {: pre}
+
+1.  Delete the PVC and PV of `Etcd`. List the {{site.data.keyword.discovery-data_short}} PVC:
+    
+    ```bash
+    kubectl get pvc -l release=<release-name>
+    ```
+     {: pre}
+
+    Delete the PVC for `Etcd`.
+
+    ```bash
+    kuvectl delete pvc <pvc_name>
+    ```
+    {: pre}
+
+    List the PV:
+    
+    ```bash
+    kubectl get pv | grep <release_name>
+    ```
+    {: pre}
+
+    Delete the PV for `Etcd`.
+    
+    ```bash
+    kubectl delete pv <pv_name>
+    ```
+    {: pre}
+
+1. Edit the StatefulSet. Please find and edit the following lines by running 
+  
+    ```bash
+    kubectl edit sts <release_name>-watson-discovery-etcd`
+    ```
+    {: pre}
+
+    This example scales the cluster to 3 nodes.
+
+    - Edit the replica number.
+    
+      ```
+      spec:
+      podManagementPolicy: Parallel
+      replicas: 3 [Set the replica number here. The replica count should always be an odd number, and never exceed 7 (ideally 5)]
+      revisionHistoryLimit: 10
+      ```
+      {: pre}
+
+    - Edit the endpoints for the `etcdctl` command and the peer endpoints.
+    
+      ```bash
+      [Create the data dir if not exists]
+      if [ ! -d '${DATA_DIR}' ]; then
+      echo "==> Creating data dir..."
+      mkdir -p ${DATA_DIR}
+      fi
+      export ETCDCTL_ENDPOINTS="https://<release-name>-watson-discovery-etcd-0.<release-name>-watson-discovery-etcd-svc-headless:2379,https://<release-name>-watson-discovery-etcd-1.<release-name>-watson-discovery-etcd-svc-headless:2379,https://<release-name>-watson-discovery-etcd-2.<release-name>-watson-discovery-etcd-svc-headless:2379," 
+      [Add the URL of endpoints here. Replace <release_name> with your environment. The last character should be ','.]
+      export ETCD_PEER_ENDPOINTS="http://<release-name>-watson-discovery-etcd-0.<release-name>-watson-discovery-etcd-svc-headless:2380,http://<release-name>-watson-discovery-etcd-1.<release-name>-watson-discovery-etcd-svc-headless:2380,http://<release-name>-watson-discovery-etcd-2.<release-name>-watson-discovery-etcd-svc-headless:2380," 
+      [Edit this line the same as above. Set the port number carefully.]
+      ETCDCTL_ENDPOINTS=${ETCDCTL_ENDPOINTS%","}
+      ETCD_PEER_ENDPOINTS=${ETCD_PEER_ENDPOINTS%","}
+      ```
+      {: pre}
+
+    - Edit the replica number in the `if` statement.
+    
+      ```bash
+      [Adding a new member to the cluster]
+      elif [ "${ID}" -ge 3 ]; then [Put the number of replica after '-ge']
+      echo "==> Adding member to existing cluster."
+      ```
+      {: pre}
+
+    - Edit the environment variables ETCD_INITIAL_CLUSTER and ETCD_INITIAL_CLUSTER_TOKEN.
+    
+      ```bash
+      name: ETCD_INITIAL_CLUSTER_TOKEN
+      value: ibm-wd-etcd-cluster-zen-wd
+        
+      name: ETCD_INITIAL_CLUSTER
+      value: zen-wd-watson-discovery-etcd-0=http://zen-wd-watson-discovery-etcd-0.zen-wd-watson-discovery-etcd-svc-headless:2380,zen-wd-watson-discovery-etcd-1=http://zen-wd-watson-discovery-etcd-1.zen-wd-watson-discovery-etcd-svc-headless:2380,zen-wd-watson-discovery-etcd-2=http://zen-wd-watson-discovery-etcd-2.zen-wd-watson-discovery-etcd-svc-headless:2380, 
+      [Edit this line the same as step ⅱ.]
+      image: mycluster.icp:8500/zen/ibm-wex-ee:12.0.3.1055
+      ```
+      {: pre}
+
+    - Restore the data to the `Etcd` cluster. After all `Etcd` nodes have started, run:
+    
+      ```bash
+      etcd-backup-restore.sh restore <release_name> -f <backup_file>
+      ```
+      {: pre}
+
+    - Restart the `Gateway`, `Ingestion`, `Orchestrator`, and `Ranker` Master pods. List them by running:
+    
+      ```bash
+      kubectl get pod -l release=zen-wd | grep -e gateway -e ingestion -e orchestrator -e ranker-master
+      ```
+      {: pre}
+
+    - Then delete these pods.
+    
+      ```bash
+      kubectl delete pod <pod_name>...
+      ```
+      {: pre}
+
+      The pods will restart automatically.
+
