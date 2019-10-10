@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-28"
+lastupdated: "2019-10-10"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ By using collections, {{site.data.keyword.discovery-data_short}} pulls documents
 1. Choose a collection type.
 1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages).
 1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/services/discovery-data?topic=discovery-data-crawlschedule#crawlschedule).
-1. [Configure the data sources](/docs/services/discovery-data?topic=discovery-data-data-sources#data-sources).
+1. [Configure the data sources](/docs/services/discovery-data?topic=discovery-data-collection-types#collection-types).
 1. Click **Create collection**, which starts the crawling process. The **Overview** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.
 
 The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discovery-data_short}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
@@ -666,7 +666,9 @@ The remote agent server and the file servers to be crawled must belong to the sa
 Use this option to upload data you stored locally. Only documents supported by {{site.data.keyword.discovery-data_short}} are crawled; all others are ignored.
 {: shortdesc}
 
-See [Configuring data sources](/docs/services/discovery-data?topic=discovery-data-data-sources#data-sources) for the list of supported data sources you can use to create collections. After the upload begins, the **Overview** tab opens and updates as documents are added to the collection.
+For a list of file types that you can upload to {{site.data.keyword.discovery-data_short}}, see [Supported file types](/docs/services/discovery-data?topic=discovery-data-supportedfiletypes#supportedfiletypes). After the upload begins, the **Overview** tab opens and updates as documents are added to the collection.
+
+For the list of supported data sources that you can use to create collections, see [Configuring data sources](/docs/services/discovery-data?topic=discovery-data-collection-types#collection-types). 
 
 
 ## Collection overview
