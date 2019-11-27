@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-28"
+lastupdated: "2019-11-27"
 
 subcollection: discovery-data
 
@@ -35,3 +35,48 @@ subcollection: discovery-data
 If you cannot find a solution to the issue you are having, try the resources available from the **Developer community** section of the table of contents.
 
 You can also get help by creating a case here: [IBM Cloud Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window}.
+
+## Clearing a lock state
+{: #troubleshoot-ls}
+
+When the `gateway` pod restarts it runs a database validation plugin that checks for changes and applies the latest changesets to the shared database. If the pod is restarted while this check is in process, the plugin may remain in a lock state preventing the service from starting. Manual database intervention may be needed to clear the lock.
+
+If the Discovery API doesn't come online, or if the `gateway-0` pod looks like it is in a constant crash loop, you can try checking the Liberty server logs for the API service located here: `/opt/ibm/wlp/output/wdapi/logs/messages.log`
+
+The logs would indicate if liquidbase is failing and unable to run. If the system is locked you may see something like this:
+
+```
+[11/7/19 5:07:51:491 UTC] 0000002f liquibase.executor.jvm.JdbcExecutor I SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+[11/7/19 5:07:51:593 UTC] 0000002f liquibase.lockservice.StandardLockService I Waiting for changelog lock....
+[11/7/19 5:08:01:601 UTC] 0000002f liquibase.executor.jvm.JdbcExecutor I SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+[11/7/19 5:08:02:091 UTC] 0000002f liquibase.lockservice.StandardLockService I Waiting for changelog lock....
+[11/7/19 5:08:12:097 UTC] 0000002f liquibase.executor.jvm.JdbcExecutor I SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
+[11/7/19 5:08:12:197 UTC] 0000002f liquibase.lockservice.StandardLockService I Waiting for changelog lock....
+[11/7/19 5:08:22:203 UTC] 0000002f liquibase.executor.jvm.JdbcExecutor I SELECT ID,LOCKED,LOCKGRANTED,LOCKEDBY FROM public.databasechangeloglock WHERE ID=1
+[11/7/19 5:08:22:613 UTC] 0000002f com.ibm.ws.logging.internal.impl.IncidentImpl I FFDC1015I: An FFDC Incident has been created: "org.jboss.weld.exceptions.DeploymentException: WELD-000049: Unable to invoke public void liquibase.integration.cdi.CDILiquibase.onStartup() on liquibase.integration.cdi.CDILiquibase@7f02a07 com.ibm.ws.container.service.state.internal.ApplicationStateManager 31" at ffdc\_19.11.07\_05.08.22.0.log
+```
+
+It is possible to manually unlock the plugin by executing the following command on the postgres database the `gateway-0` pod is looking at:
+
+`psql dadmin`
+`UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null where ID=1;`
+
+If you can then restart the gateway pod everything should resume normally.
+
+## Environment variable settings for Smart Document Understanding
+{: #troubleshoot-sdu}
+
+There are two environment variables that need adjusted for Smart Document Understanding in {{site.data.keyword.discovery-data_long}} version 2.1.0:
+
+`SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS`
+`SDU_YOLO_TIMEOUT_SEC`
+
+Both of these should be set to their respective `hour` value. These values must be set in the `<release-name>-watson-discovery-hdp` ConfigMap.
+
+The values should be:
+
+`SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS` should be set to `3600000`
+
+`SDU_YOLO_TIMEOUT_SEC` should be set to `3600`
+
+These values should be set when the software is installed or reinstalled.

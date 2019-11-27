@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-12"
+lastupdated: "2019-11-22"
 
 subcollection: discovery-data
 
@@ -32,51 +32,42 @@ subcollection: discovery-data
 # Query overview
 {: #query-concepts}
 
-<!-- Help for the Query page in WD ICP4D -->
-
-{{site.data.keyword.discovery-data_long}} offers powerful content search capabilities through queries. After your content is uploaded and enriched by {{site.data.keyword.discovery-data_short}}, you can build queries, integrate {{site.data.keyword.discovery-data_short}} into your own projects, or create a custom applications. 
+{{site.data.keyword.discovery-data_long}} offers powerful content search capabilities through queries. After your content is uploaded and customized by {{site.data.keyword.discovery-data_short}}, you can build queries, integrate {{site.data.keyword.discovery-data_short}} into your own projects, or create a custom applications. For more information, see [Building and deploying components](/docs/services/discovery-data?topic=discovery-data-deploy).
 {: shortdesc}
 
-To access the **Query** page, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Query** tab.
+In the {{site.data.keyword.discovery-data_short}} tooling, you can write and test [natural language queries](/docs/services/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/services/discovery-data?topic=discovery-data-improve) page.
+{: tip}
 
-For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data#query-a-collection-get).
+When querying using the API, the entire {{site.data.keyword.discoveryshort}} Query Language is supported. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data#query-a-collection-get).
+{: important}
 
-You can write natural language queries, or structured queries using the {{site.data.keyword.discoveryshort}} Query Language. 
-
--  **Use natural language** - see [natural_language_query](/docs/services/discovery-data?topic=discovery-data-query-parameters#nlq). 
--  **Use the {{site.data.keyword.discoveryshort}} Query Language** - see [query](/docs/services/discovery-data?topic=discovery-data-query-parameters#query).
--  **Write an aggregation query using the {{site.data.keyword.discoveryshort}} Query Language** - see [aggregation](/docs/services/discovery-data?topic=discovery-data-query-parameters#aggregation).
--  **Write a filter to narow down the documentation set using the {{site.data.keyword.discoveryshort}} Query Language** - see [filter](/docs/services/discovery-data?topic=discovery-data-query-parameters#filter).
--  **Fields to return** - see [return](/docs/services/discovery-data?topic=discovery-data-query-parameters#return).
--  **Number of documents to return** - see [count](/docs/services/discovery-data?topic=discovery-data-query-parameters#count).
--  **Number of query results to skip at the beginning** - see [offset](/docs/services/discovery-data?topic=discovery-data-query-parameters#offset).
-
-Also see
+For more information about the {{site.data.keyword.discoveryshort}} Query Language, see:
 
 -  [Query operators](/docs/services/discovery-data?topic=discovery-data-query-operators#query-operators)
 -  [Query aggregations](/docs/services/discovery-data?topic=discovery-data-query-aggregations#query-aggregations)
 -  [Query reference](/docs/services/discovery-data?topic=discovery-data-query-reference#query-reference)
--  [Getting started with {{site.data.keyword.discovery-data_short}}](/docs/services/discovery-data?topic=discovery-data-getting-started#getting-started)
 
-The queries you write will vary by collection, because all collections contain unique content.
-{: tip}
+Also see:
+
+-  **Use the {{site.data.keyword.discoveryshort}} Query Language** - see [query](/docs/services/discovery-data?topic=discovery-data-query-parameters#query).
+-  **Write an aggregation query using the {{site.data.keyword.discoveryshort}} Query Language** - see [aggregation](/docs/services/discovery-data?topic=discovery-data-query-parameters#aggregation).
+-  **Write a filter to narrow down the documentation set using the {{site.data.keyword.discoveryshort}} Query Language** - see [filter](/docs/services/discovery-data?topic=discovery-data-query-parameters#filter).
+-  **Fields to return** - see [return](/docs/services/discovery-data?topic=discovery-data-query-parameters#return).
+-  **Number of documents to return** - see [count](/docs/services/discovery-data?topic=discovery-data-query-parameters#count).
+-  **Number of query results to skip at the beginning** - see [offset](/docs/services/discovery-data?topic=discovery-data-query-parameters#offset).
 
 When you create a query or filter, {{site.data.keyword.discovery-data_short}} looks at each result and tries to match the paths you have defined. When matches occur, they are added to the results set. When creating a query, you can be as vague or as specific as you want. The more specific the query, the more targeted the results.
 
-## The Discovery data schema
-{: #discovery-schema}
+Documents you do not have permissions for will not be returned in query results.
+{: important}
 
-To understand how to build a query using the {{site.data.keyword.discoveryshort}} Query Language, you need to be familiar with the JSON produced by {{site.data.keyword.discovery-data_short}} after it enriches the documents in your collection. Once you are familiar with the data schema of your documents, it will be easier to write queries in the {{site.data.keyword.discoveryshort}} Query Language. 
+The queries you write will vary by collection/project, because all collections/projects contain unique content.
+{: tip}
 
-The best way to do this is to run an "empty" query to view the JSON. Open an existing collection. On the **Query** page, click the **Run query** button. The results display on the right.
-
--  Each document will be preceded by an `id` number.
--  Scroll down to the `enriched_text` field. Examine each enrichment to learn about the JSON fields you can query on.
-    
-### How to structure a basic query
+## How to structure a basic query
 {: #structure-basic-query}
 
-As you have noticed, the JSON is hierarchical, so {{site.data.keyword.discoveryshort}} Query Language queries need to be written using that same hierarchy. So if your JSON looks like this:
+JSON is hierarchical, so {{site.data.keyword.discoveryshort}} Query Language queries need to be written using that same hierarchy. So if your JSON looks like this:
 
 ```json
 "enriched_text": {
@@ -155,18 +146,18 @@ The username associated with your {{site.data.keyword.discovery-data_short}} ins
 To generate each access token, run the following command:
  
 ```bash
-curl -u "<username>:<password>" "https://<icp4d_cluster_host><:port>/v1/preauth/validateAuth"
+curl -u "{username}:{password}" "https://{hostname}:{port}/v1/preauth/validateAuth"
 ```
    
-Replace `<username>` and `<password>` with the user's {{site.data.keyword.discovery-data_short}} credentials, and replace `<icp4d_cluster_host>` and `<port>` with the details for your instance.
+Replace `{username}` and `{password}` with the user's {{site.data.keyword.discovery-data_short}} credentials, and replace `{hostname}` and `{port}` with the details for your instance.
 
 To use the token in a {{site.data.keyword.discovery-data_short}} query, run the following command for each user added:
 
 ```bash
-curl -k -H "Authorization: Bearer <User Access Token>" https://<Cluster_IP>:31843/discovery/wd/instances/<Instance_ID>/api/v1/environments/default/collections/<Collection_ID>/query\?version\=2019-06-07
+curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{Collection_ID}/query\?version\=2019-11-29
 ```
 
-Replace `<User Access Token>`, `<Cluster_IP>`, `<Instance_ID>`, and `<Collection_ID>` with the details for your instance.
+Replace `{hostmame}` and other fields with the details for your instance.
 
 For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data#query-a-collection-get){: external}.
 {: tip}    

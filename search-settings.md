@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-29"
+lastupdated: "2019-11-25"
 
 subcollection: discovery-data
 
@@ -33,24 +33,19 @@ subcollection: discovery-data
 # Search settings
 {: #search-settings}
 
-<!-- Help for Search settings page -->
+<!-- c/s help for *Search settings* page. Do not delete. -->
 
-You can improve the quality of search results by using the **Search settings** page to upload a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file.
+You can improve the quality of search results by uploading a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file. For more information, see [Customizing and improving your project](/docs/services/discovery-data?topic=discovery-data-improve)
 {: shortdesc}
-
-In addition, you can use the API to enable autocomplete, see the
-[Autocomplete](https://{DomainName}/apidocs/discovery-data#get-autocomplete-suggestions){: external} method. 
-
-To access the **Search settings** page, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Search settings** tab. 
  
 Upload or delete a synonyms or stopwords file by clicking the appropriate **Upload** button or **Delete** icon.
 
-If you update your synonyms or stopwords files, you should go to the **Overview** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated lists. The button displayed will vary depending on the type of collection.
+If you update your synonyms or stopwords files, you should go to the **Activity** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated lists. The button displayed will vary depending on the type of collection.
 
 Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/services/discovery-data?topic=discovery-data-stopwords#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/services/discovery-data?topic=discovery-data-query-expansion#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discovery-data_short}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
 {: important}
 
-## Implementing query expansion
+## Implementing synonyms
 {: #query-expansion}
 
 You can expand the scope of a query beyond exact matches - for example, you can expand a query for "ibm" to include "international business machines" and "big blue" - by uploading a list of query expansion terms. Query expansion terms are usually synonyms, antonyms, or typical misspellings for common terms.
@@ -150,8 +145,12 @@ Following are stopword files for several other supported languages. They all inc
 -  Spanish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_es.json" download>custom_stopwords_es.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
 -  Portuguese: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_pt.json" download>custom_stopwords_pt.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
 -  Arabic: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ar.json" download>custom_stopwords_ar.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
+-  Romanian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/ro_stop.json" download>ro_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Russian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/ru_stop.json" download>ru_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Polish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/pl_stop.json" download>pl_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Czech: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/cs_stop.json" download>cs_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
 
-See [supported languages](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages) for the list of all languages supported by {{site.data.keyword.discovery-data_short}} . Several supported languages do not have a default stopwords list.
+See [supported languages](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages) for the list of all languages supported by {{site.data.keyword.discovery-data_short}}. Several supported languages do not have a default stopwords list.
 
 Notes about stopwords:
 
@@ -162,5 +161,5 @@ Notes about stopwords:
 -  Do not upload or delete a custom stopword file at the same time documents are being ingested into your collection. This could cause the index to be unavailable for that brief period and queries will fail.
 -  Stopwords are removed at both index and query time. A good best practice is to upload your custom stopword file before crawling/uploading all of your documents.
    - If your documents have already been indexed with the default stopwords file, and you then add a custom stopwords file, the new custom stopwords will remain in the index for those documents. In that case, queries containing the new stopwords will filter them out at query time.
-   - If a user searches for a word that was a stopword at one point in time, but has since been removed from the custom stopwords file, they will not find documents that match the original stopword because the term was removed at index time. To fix this issue, go to the **Overview** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated custom stopwords file. The button displayed will vary depending on the type of collection.
+   - If a user searches for a word that was a stopword at one point in time, but has since been removed from the custom stopwords file, they will not find documents that match the original stopword because the term was removed at index time. To fix this issue, go to the **Activity** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated custom stopwords file. The button displayed will vary depending on the type of collection.
 

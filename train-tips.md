@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-18"
+lastupdated: "2019-11-20"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ If using the API, see [List training data](https://{DomainName}/apidocs/discover
 ### How do I check errors and warnings?
 {: #understanding-errors}
 
-Check the **Logs** page. See [Viewing system logs](/docs/services/discovery-data?topic=discovery-data-logs#logs)
+Open your project, then select the **Manage collections** icon on the navigation panel. Choose your collection, then open the **Activity** tab. For details, see [Collection activity](/docs/services/discovery-data?topic=discovery-data-collections#collection-overview).
 
 ### How do I interpret the `confidence` score that appears in natural language query results after training?
 {: #interpret-confidence}
@@ -87,14 +87,14 @@ This warning indicates that you might have one or more failed queries. It is not
 ### Error: `Training data quality standards not met: Insufficient number of unique training queries. Expected at least n, but found m.`
 {: #error-notunique}
 
-- In order to meet the minimum training requirements; you need at least 49 unique training queries at a minimum, and each one needs at least one rated document. If you have more than that and are still receiving this error message, you should check your notices for additional errors.  
+- In order to meet the minimum training requirements; you need at least 50 unique training queries at a minimum, and each one needs at least one rated document. If you have more than that and are still receiving this error message, you should check your notices for additional errors.  
 
 ### Error: `Training data quality standards not met: No documents found with non-zero relevance labels.`
 {: #error-relevance}
 
-- Training data needs enough labeled data that specifies what documents are high value. This means that you need to rate some documents with non-zero values. You need to rate some documents as `Relevant` and some as `Not relevant`. 
+- Training data needs enough labeled data that specifies what documents are high value. This means that you need to rate some documents with non-zero values. You need to rate some documents as `Relevant` and some as `Not relevant`. At least one document must be rated `Relevant`.
 
 ### Error: `Training data quality standards not met: Training examples have no relevance label variety for X queries.`
 {: #error-variety}
 
-- One of the requirements for training is to have sufficient label diversity. At least 25% of the trained queries must have some label variety.   
+- One of the requirements for training is to have sufficient label diversity. This means at least 25% of the training queries must include both `Relevant` and `Not relevant` labels (if using the API, at least 25% of the queries should include two different numeric labels.)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-30"
+lastupdated: "2019-11-21"
 
 subcollection: discovery-data
 
@@ -35,26 +35,41 @@ subcollection: discovery-data
 The following languages are supported in {{site.data.keyword.discovery-data_long}}.
 {: shortdesc}
 
-- English (`en`)               
-- Arabic (`ar`)                     
-- Chinese, simplified (`zh-CN`)
-- Chinese, traditional (`zh-TW`)     
-- Dutch (`nl`)                     
-- French (`fr`)                     
-- German (`de`)                     
-- Italian (`it`)                    
-- Japanese (`ja`)                 
-- Korean (`ko`)                    
-- Portuguese, Brazilian (`pt-br`)   
-- Spanish (`es`)   
+-  English (`en`)               
+-  Arabic (`ar`)                     
+-  Chinese, simplified (`zh-CN`)
+-  Chinese, traditional (`zh-TW`)
+-  Czech (`cs`)     
+-  Dutch (`nl`)                     
+-  French (`fr`)                     
+-  German (`de`)                     
+-  Italian (`it`)                    
+-  Japanese (`ja`)                 
+-  Korean (`ko`)
+-  Polish (`pl`)                    
+-  Portuguese, Brazilian (`pt-br`)
+-  Romanian (`ro`)
+-  Russian (`ru`)
+-  Slovak (`sk`)   
+-  Spanish (`es`)   
 
-You can choose the collection language when you create it. See [Creating a new collection](/docs/services/discovery-data?topic=discovery-data-collections#collections). You can view the language of an existing collection on the [Collection overview](/docs/services/discovery-data?topic=discovery-data-collection-overview#collection-overview) page.  
+You can choose the collection language when you create it. See [Creating and managing a collection](/docs/services/discovery-data?topic=discovery-data-collections#collections). 
 {: tip}
 
 
 ## English-only support
 {: #feature-support}
 
+The following feature is currently supported in English only:
+
+-  [Discovery for Content Intelligence](/docs/services/discovery-data?topic=discovery-data-output_schema).
+
 The following feature (available using the API-only) is currently supported in English only:
 
-- Spelling correction
+-  Spelling correction
+
+The following [enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) are supported in English only, unless you download and install `ibm-watson-discovery-pack1-prod` from Passport Advantage:
+
+-  Entities
+-  Keyword
+-  Sentiment of documents

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-11-27"
 
 subcollection: discovery-data
 
@@ -99,16 +99,7 @@ Changes to the data stored in Watson Discovery during a backup can cause the bac
 There is no precise order in which you need to back up or restore the data services, provided no in-flight requests are permitted during the backup period. However, as read-only operations, queries are permitted during the backup period.
 {: note}
 
-Download and make executable the following backup and restore scripts:
-
-- <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery-data/elastic-backup-restore.sh" download>elastic-backup-restore.sh <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>
-- <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery-data/hdp-backup-restore.sh" download>hdp-backup-restore.sh <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>
-- <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery-data/wddata-backup-restore.sh" download>wddata-backup-restore.sh <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>
-- <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery-data/etcd-backup-restore.sh" download>etcd-backup-restore.sh <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>
-- <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery-data/postgresql-backup-restore.sh" download>postgresql-backup-restore.sh <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>
-- <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery-data/all-backup-restore.sh" download>all-backup-restore.sh <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>
-
-Here is a direct link to the directory containing these scripts: (https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data)
+Here is a direct link to the directory containing the backup and restore scripts: (https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data).
 
 To make a script executable, run the following command (for each script downloaded):
 
@@ -255,35 +246,11 @@ If you want to install multiple {{site.data.keyword.discovery-data_short}} add-o
 {: #restore-postgres}
 
   1. Ensure that `Postgresql` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. To ensure that no services/clients connect to the Postgresql service while restoring, change the target port of the Postgresql service by running following command:
-      ```bash
-      kubectl edit svc <release_name>-watson-discovery-postgresql
-      ```
-    
-      After running the command, change the `targetPort` from `5432` to `5433`, as shown in the following, and save the change:
-      ```
-      apiVersion: v1
-      kind: Service
-      metadata:
-      ......
-      spec:
-        clusterIP: xx.xx.xx.xx
-        ports:
-        - name: pgport
-          port: 5432
-          protocol: TCP
-          targetPort: 5433
-        selector:
-          app: watson-discovery
-      ......
-      ```
 
   1. Run the following command to restore the data to the new Postgresql deployment. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Postgresql is deployed, if necessary:
       ```bash
       ./postgresql-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
       ```
-
-  1. Restore the `targetPort` of the Postgresql service from `5433` to `5432`.
 
 
 ### Restoring the ElasticSearch service
@@ -326,6 +293,9 @@ If you want to install multiple {{site.data.keyword.discovery-data_short}} add-o
       ```
       ./wddata-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
       ```
+  
+If you restore the services individually, you must restart the {{site.data.keyword.discovery-data_short}} pods. If you use the `all-backup-restore.sh` script to restore the services, the script automatically restarts the pods.
+{: important}
 
 
 ## Copying Discovery for Cloud Pak for Data data across Discovery for Cloud Pak for Data clusters

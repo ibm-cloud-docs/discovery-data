@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-11-20"
 
 subcollection: discovery-data
 
@@ -32,14 +32,14 @@ subcollection: discovery-data
 # Improving result relevance with training
 {: #train}
 
-<!-- Help topic "Train" page Discovery ICP4D  -->
+<!-- c/s help for the *Train* page. Do not delete.  -->
 
 The relevance of natural language query results can be improved in {{site.data.keyword.discovery-data_long}} with training. 
 {: shortdesc}
 
 Relevancy training is optional; if the results of your queries meet your needs, no further training is necessary. For information about use cases for relevancy training, see [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external}.
 
-To access the **Train** page, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Train** tab. 
+To access the **Train** page, open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Improve relevance**, then **Relevancy training**.
 
 In order to train Watson, you'll need to:
 
@@ -73,11 +73,14 @@ To train a collection:
     - Rate more results
     - Add more variety to your ratings
     
-    You will need to train a minimum of 50 unique queries to meet all three training thresholds. 
+    A minimum of 50 unique queries must be trained, though more may be required to meet the training threshold. 
 1.  You can continue adding queries and rating results after you have reached the threshold. You should enter all queries you think your users will ask.
 
 Write your training queries the same way your users would ask them, for example: "IBM Watson in healthcare". Training queries should be written with some term overlap between the query and the desired answer; this will improve initial results when the natural language query is run.
 {: tip}
+
+If two or more users attempt to train identical queries at the same time, one of the users will overwrite the others.
+{: note}
 
 You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training data in your collection at one time, you must do so using the API. See [Delete all training data](https://{DomainName}/discovery-data#delete-all-training-data){: external} for more information. 
 
@@ -96,7 +99,7 @@ For additional training guidance, see [Relevancy training tips](/docs/services/d
 ## Confidence scores
 {: #confidence}
 
-{{site.data.keyword.discovery-data_short}} returns a `confidence` score for natural language queries of trained collections.
+{{site.data.keyword.discovery-data_short}} returns a `confidence` score for natural language queries of trained collections. This `confidence` score is not interchangeble with `confidence` scores returned by untrained collections.
 
 The `confidence` score can range from `0.0` to `1.0`. The higher the number, the more relevant the result.
 

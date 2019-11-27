@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-24"
+lastupdated: "2019-11-22"
 
 subcollection: discovery-data
 
@@ -32,12 +32,10 @@ subcollection: discovery-data
 # Query parameters
 {: #query-parameters}
 
-{{site.data.keyword.discovery-data_long}} queries can include both search and structure parameters.
+These parameters are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data#query-a-collection-get). For an overview of query concepts, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
-{{site.data.keyword.discovery-data_short}} includes the following parameters. Most are available on the **Query** screen, though a few are only available when using the API. To access the **Query** screen, [create a new collection (or open an existing one)](/docs/services/discovery-data?topic=discovery-data-collections#collections), and click the **Query** tab. 
-
-See [Query concepts](/docs/services/discovery-data?topic=discovery-data-query-concepts#query-concepts) for more on querying. 
+Queries written in the {{site.data.keyword.discoveryshort}} Query Language can include both search and structure parameters.
 
 **Search parameters**
 
@@ -51,29 +49,21 @@ Documents you do not have permissions for will not be returned in query results.
 ## natural_language_query
 {: #nlq}
 
-Field on the **Query** screen: **Use natural language**
-
 A natural language query enables you to perform queries expressed in natural language, as might be received from an end user in a conversational or free-text interface - for example: "IBM Watson in healthcare". The parameter uses the entire input as the query text. It does **not** recognize operators. The `natural_language_query` parameter enables capabilities such as relevancy training. Query results will include a `confidence` score. See [confidence scores](/docs/services/discovery-data?topic=discovery-data-confidence#confidence). The maximum query string length for a natural language query is `2048`.
 
 ## query
 {: #query}
 
-Field on the **Query** screen: **Use the {{site.data.keyword.discoveryshort}} Query Language** 
-
-A query search returns all documents in your data set with full enrichments and full text in order of relevance. A query also excludes any documents that don't mention the query content. These queries are written using the [{{site.data.keyword.discoveryshort}} Query Language](/docs/services/discovery-data?topic=discovery-data-query-operators#query-operators).
+A query search returns all documents in your data set with full enrichments and full text in order of relevance. A query also excludes any documents that don't mention the query content.
 
 ## aggregation
 {: #aggregation}
-
-Field on the **Query** screen: **Write an aggregation query using the {{site.data.keyword.discoveryshort}} Query Language** 
 
 Aggregation queries return a count of documents matching a set of data values. For the full list of aggregation options, see the [Aggregations table](/docs/services/discovery-data?topic=discovery-data-query-aggregations#query-aggregations). 
 
 
 ## filter
 {: #filter}
-
-Field on the **Query** screen: **Write a filter to narrow down the document set using the Discovery Query Language** 
 
 A cacheable query that excludes any documents that don't mention the query content. Filter search results are **not** returned in order of relevance. 
 
@@ -99,21 +89,15 @@ Structure parameters define the content and organization of the documents in the
 ## return
 {: #return}
 
-Field on the **Query** screen: **Fields to return** 
-
 A comma-separated list of the portion of the document hierarchy to return. Any of the document hierarchy are valid values.
 
 ## count
 {: #count}
 
-Field on the **Query** screen: **Number of documents to return** 
-
 The number of documents that you want returned in the response. The default is `10`. The maximum for the `count` and `offset` values together in any one query is `10000`.
 
 ## offset
 {: #offset}
-
-Field on the **Query** screen: **Number of query results to skip at the beginning** 
 
 For example, if the total number of results that are returned is 10, and the offset is 8, it returns the last two results. The default is `0`. The maximum for the `count` and `offset` values together in any one query is `10000`.
 
@@ -125,23 +109,17 @@ In natural language queries, you can spell check the `natural_language_query` pa
 ## sort
 {: #sort}
 
-The `sort` parameter is currently available for use only with the API.
-{: note}
-
 A comma-separated list of fields in the document to sort on. You can optionally specify a sort direction by prefixing the field with `-` for descending order or `+` for ascending order. Ascending order is the default sort direction.
 
 ## highlight
 {: #highlight}
-
-The `highlight` parameter is currently available for use only with the API.
-{: note}
 
 A boolean that specifies whether the returned output includes a `highlight` object in which the keys are field names and the values are arrays that contain segments of query-matching text highlighted by the HTML `*` tag.
 
 The output lists the `highlight` object after the `enriched_text` object, as shown in the following example.
 
 ```bash
-curl -u "apikey":"{apikey_value}" "https://gateway.watsonplatform.net/discovery/api/v1/environments/{environment_id}/collections/{collection_id}/query?version=2017-06-25&natural_language_query=Hybrid%20cloud%20companies&highlight=true"
+curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=Hybrid%20cloud%20companies&highlight=true"
 ```
 {: pre}
 
@@ -179,3 +157,186 @@ The JSON that is returned will be of the following format:
 }
 ```
 {: codeblock}
+
+## passages
+{: #passages}
+
+A boolean that specifies whether the service returns a set of the most relevant passages from the documents returned by a query that uses the `natural_language_query` parameter. The passages are generated by sophisticated Watson algorithms to determine the best passages of text from all of the documents returned by the query. The default is `false`.
+
+{{site.data.keyword.discovery-data_short}} attempts to return passages that start at the beginning of a sentence and stop at the end using sentence boundary detection. To do so, it first searches for passages approximately the length specified in the [`passages.characters` parameter](/docs/services/discovery-data?topic=discovery-data-query-parameters#passages_characters) (default `400`). It then expands each passage to the limit of twice the specified length in order to return full sentences. If your `passages.characters` parameter is short and/or the sentences in your documents are very long there may be no sentence boundaries close enough to return the full sentence without going over twice the requested length. In that case, {{site.data.keyword.discovery-data_short}} stays within the limit of twice the `passages.characters` parameter, so the passage returned will not include the entire sentence and omit the beginning, end, or both.
+
+Since sentence boundary adjustments expand passage size, you will see a substantial increase in average passage length. If your application has limited screen space, you may want to set a smaller value for `passages.characters` and/or truncate the passages that are returned by {{site.data.keyword.discovery-data_short}}. Sentence boundary detection works for all supported languages and uses language-specific logic.
+
+Passages are returned `per_document` by default. This means they will appear as a section within each document result ordered by passage relevance. Including passage retrieval in queries can increase response times as it includes additional scoring of the passages.
+
+You can adjust the fields in the documents over which passage retrieval searches with the [`passages.fields`](/docs/services/discovery-data?topic=discovery-data-query-parameters#passages_fields) parameter.
+
+The `passages` parameter returns matching passages (`passage_text`), as well as the `score`, `document_id`, the name of the field the passage was extracted from (`field`), and the starting and ending characters of the passage text within the field (`start_offset` and `end_offset`), as shown in the following example.
+
+```bash
+ curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query='Hybrid%20cloud%20companies'&passages=true"
+```
+{: pre}
+
+The JSON that is returned from the query will be of the following format:
+
+```json
+ {
+   "matching_results":2,
+   "passages":[
+     {
+       "document_id":"ab7be56bcc9476493516b511169739f0",
+       "passage_score":15.230205287402338,
+       "passage_text":"a privately held company that provides hybrid cloud recovery, cloud migration and business continuity software for enterprise data centers and cloud infrastructure."
+       "start_offset":120
+       "end_offset":300
+       "field":"text"       
+     },
+     {
+       "passage_text":"Disaster Recovery Services for Hybrid Cloud</title></head>\n<body>\n\n\n<p>Published: Thu, 27 Oct 2016 07:01:21 GMT</p>\n"
+       "passage_score":10.153470191601558,
+       "document_id":"fbb5dcb4d8a6a29f572ebdeb6fbed20e",              
+       "start_offset":70
+       "end_offset":120
+       "field":"html"
+     },
+  ...
+```
+{: codeblock}                        
+
+### passages.fields
+{: #passages_fields}
+
+A comma-separated list of fields in the index that passages will be drawn from. If this parameter not specified then all top level field are included.
+
+### passages.count
+{: #passages_count}
+
+The maximum number of passages to return. The search will return fewer passages if that is the total number found. The default is `10`. The maximum is `100`.
+
+### passages.characters
+{: #passages_characters}
+
+The approximate number of characters that any one passage should have. The default is `400`. The minimum is `50`. The maximum is `2000`. Passages returned may be up to twice the requested length (if necessary) to get them to begin and end at sentence boundaries.
+
+## table retrieval
+{: #table_retrieval}
+
+If [Table understanding](/docs/services/discovery-data?topic=discovery-data-understanding_tables) is enabled in your collection, a `natural_language_query` will find tables whose content or context match a search query.
+
+Example query:
+
+```bash
+ curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query='interest%20appraised'&table_results=true"
+```
+{: pre}
+
+The JSON that is returned from the query will be of the following format:
+
+```json
+{
+  “matching_results”: 1,
+  “session_token”: “1_FDjAVkn9SW6oH9y5_9Ek3KsNFG”,
+  “results”: [
+    {
+     ...
+    }
+  ],
+{
+  "table_results": [
+    {
+      "table_id": "e883d3df1d45251121cd3d5aef86e4edc9658b21",
+      "source_document_id": "c774c3df0c90255191cc0d4bb8b5e8edc6638d96",
+      "collection_id": "collection_id",
+      "table_html": "html snippet of the table info",
+      "table_html_offset": 42500,
+      "table": [
+        {
+          "location": {
+            "begin": 42878,
+            "end": 44757
+          },
+          "text": "Appraisal Premise Interest Appraised Date of Value Value Conclusion\nMarket Value \"As Is\" Fee Simple Estate January 12, 2016 $1,100,000\n",
+          "section_title": {
+            "location": {
+              "begin": 42300,
+              "end": 42323
+            },
+            "text": "MARKET VALUE CONCLUSION"
+          },
+          "title": {},
+          "table_headers": [],
+          "row_headers": [
+            {
+              "cell_id": "rowHeader-42878-42896",
+              "location": {
+                "begin": 42878,
+                "end": 42896
+              },
+              "text": "Appraisal Premise",
+              "text_normalized": "Appraisal Premise",
+              "row_index_begin": 0,
+              "row_index_end": 0,
+              "column_index_begin": 0,
+              "column_index_end": 0
+            }
+          ],
+          "column_headers": [],
+          "body_cells": [
+            {
+              "cell_id": "bodyCell-43410-43424",
+              "location": {
+                "begin": 43410,
+                "end": 43424
+              },
+              "text": "Date of Value",
+              "row_index_begin": 0,
+              "row_index_end": 0,
+              "column_index_begin": 2,
+              "column_index_end": 2,
+              "row_header_ids": [
+                "rowHeader-42878-42896",
+                "rowHeader-43145-43164"
+              ],
+              "row_header_texts": [
+                "Appraisal Premise",
+                "Interest Appraised"
+              ],
+              "row_header_texts_normalized": [
+                "Appraisal Premise",
+                "Interest Appraised"
+              ],
+              "column_header_ids": [],
+              "column_header_texts": [],
+              "column_header_texts_normalized": [],
+              "attributes": []
+            }
+          ],
+          "contexts": [
+            {
+              "location": {
+                "begin": 44980,
+                "end": 44996
+              },
+              "text": "Compiled by CBRE"
+            }
+          ],
+          "key_value_pairs": []
+        }
+      ]
+    }
+  ]
+}
+```
+{: codeblock}
+
+### table_results.enabled
+{: #table_results}
+
+When `true`, a `table_results` array will appear in the response with a list of table objects that match the given `natural_language_query` in order of scored relevance. The default is `false`.
+
+### table_results.count
+{: #table_count}
+
+This parameter specifies the maximum number of tables that can appear in the `table_results` array. Only returned if `table_results.enabled`=`true`. The default is `10`.
+

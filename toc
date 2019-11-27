@@ -13,36 +13,70 @@ Watson Discovery for IBM Cloud Pak for Data
     {: topicgroup}
     Installing
         install.md
-        [Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md)
+        [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md)
+        [Content Intelligence Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-ci-README.md)
         manage.md
 
     {: topicgroup}
-    Creating and configuring a collection
+    Creating and configuring projects
+        projects.md
+
+    {: topicgroup}
+    Managing collections
         connect.md
         fields.md
-               
+
+    {: topicgroup}
+    Improving and customizing
+        improve.md
+        facets.md
+
     {: topicgroup}
     Adding enrichments
         enrichments.md
-       
+        tables.md
+
     {: topicgroup}
     Adding search settings
         search-settings.md
-            
+
     {: topicgroup}
-    Querying a collection
+    Querying
         query-concepts.md
         query-parameters.md
         query-operators.md
         query-aggregations.md
-        
+
     {: topicgroup}
-    Improving relevance of results     
+    Improving relevance of results
         train-tooling.md
-        train-tips.md    
-    
-    logs.md
-    
+        train-tips.md
+
+    {: topicgroup}
+    Discovery for Content Intelligence
+        schema.md
+        contracts.md
+        parsing.md
+        doc_structure.md
+        invoices.md
+        pos.md        
+
+    {: topicgroup}
+    Integrating and deploying
+        components.md
+        contentminerapp.md
+
+    {: topicgroup}
+    Building and deploying a custom connector
+        connectors.md
+        connector-dev.md
+        assemble.md
+        example-connector.md
+        compile-connector.md
+        install-connector.md
+        ccs-tooling.md
+        connector-notes.md
+
     backup.md
     {: .navgroup-end}
 
@@ -51,15 +85,14 @@ Watson Discovery for IBM Cloud Pak for Data
 
     query-reference.md
     language-support.md
-           
-    
+
     [Watson GitHub repos](https://github.com/watson-developer-cloud/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     release-notes.md
     troubleshooting.md
-    
+
     {: .topicgroup}
     Developer community
         [StackOverflow](http://stackoverflow.com/questions/tagged/watson-discovery)
