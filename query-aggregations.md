@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-11-19"
 
 subcollection: discovery-data
 
@@ -31,6 +31,9 @@ subcollection: discovery-data
 
 # Query aggregations
 {: #query-aggregations}
+
+These agrregations are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data#query-a-collection-get). For an overview of query concepts, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts).
+{: shortdesc}
 
 Aggregations return a set of data values. For the complete list of available aggregations, see the [Query reference](/docs/services/discovery-data?topic=discovery-data-query-reference#aggregations).
 

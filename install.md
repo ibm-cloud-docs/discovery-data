@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-13"
+lastupdated: "2019-11-27"
 
 subcollection: discovery-data
 
@@ -36,7 +36,7 @@ subcollection: discovery-data
 Follow these instructions to install and configure {{site.data.keyword.discovery-data_long}}.
 {: shortdesc}
 
-If you have already installed {{site.data.keyword.icp4dfull}}, and have purchased {{site.data.keyword.discovery-data_short}} as an add-on, follow the [instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html)
+If you have already installed {{site.data.keyword.icp4dfull}}, and have purchased {{site.data.keyword.discovery-data_short}} as an add-on, follow the [instructions listed here](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
 
 Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discovery-data_long}}.
 {: note}
@@ -46,7 +46,7 @@ Gluster File System (GlusterFS) is not a supported storage option for {{site.dat
 
 Review the following topics that relate to cluster security:
 
-[Security in {{site.data.keyword.icp4dfull}}](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html){: external}
+[Security in {{site.data.keyword.icp4dfull}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
 
 Encryption of data at rest must be handled by the storage provider.
 {: important}
@@ -54,39 +54,34 @@ Encryption of data at rest must be handled by the storage provider.
 ## Software requirements
 {: #prereqs}
 
-- {{site.data.keyword.icp4dfull_notm}} 2.1.0 or later, including the IBM Cloud Pak CLI
+- {{site.data.keyword.icp4dfull_notm}} 2.5.0.0 or later, including the IBM Cloud Pak CLI
 - Kubernetes 1.12.4 or later
 - Helm 2.9.1 or later
 
 Because the installation of the chart needs to be performed from the command line, you must install and configure the following command-line tools:
 
   - [`cloudctl`](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_cli.html){: external}
-  - [`kubectl`](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/kubectl-access.html){: external}
+  - [`kubectl`](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/kubectl-access.html){: external}
   - [`helm`](https://helm.sh){: external}
 
-See the general software requirements listed in [Pre-installation tasks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}.
+See the general software requirements listed in [Pre-installation tasks](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/install/preinstall-overview.html){: external}.
 
 ## System requirements
 {: #system-requirements}
 
-See the system requirements listed in [Pre-installation tasks](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}.
+See the system requirements listed in [Pre-installation tasks](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/install/preinstall-overview.html){: external}.
 
 {{site.data.keyword.discovery-data_short}} has the following specific requirements:
-  - Minimum CPU: 2200m
-  - Minimum memory: 10.25Gi
+  - Minimum CPU: 20 for dev, 40 for HA
+  - Minimum RAM: 92GB for dev, 124GB for HA
+  - Cluster configuration:
+       -  Dev: 1 load balancing node, 3 master nodes, 3 worker nodes
+       -  HA: 1 load balancing node, 3 master nodes, 4 worker nodes
 
 ## Installing the service bundle
 {: #installing}
 
 Perform the following steps to install {{site.data.keyword.discovery-data_short}}.
 
-1. Download and install the {{site.data.keyword.icp4dfull_notm}} package as described in [Installing IBM Cloud Pak for Data](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/zen/install/ovu.html){: external}.
-
-  When installing {{site.data.keyword.icp4dfull_notm}}, specifying the following in the `wdp.conf` file will automatically configure NFS storage.
-    ```
-    nfs_server=172.16.28.28
-    nfs_dir=/data
-    ```
-  {: tip}
-
-1. Download the IBM Watson {{site.data.keyword.discovery-data_short}} package in `.tgz` format from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and follow the [installation instructions listed here](https://docs-icpdata.mybluemix.net/docs/content/SSQNUZ_current/com.ibm.icpdata.doc/watson/discovery-install.html).
+1. Download and install the {{site.data.keyword.icp4dfull_notm}} package as described in [Installing IBM Cloud Pak for Data](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+1. Download the IBM Watson {{site.data.keyword.discovery-data_short}} package in `.tgz` format from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and follow the [installation instructions listed here](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}

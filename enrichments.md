@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-11-27"
 
 subcollection: discovery-data
 
@@ -33,41 +33,50 @@ subcollection: discovery-data
 # Creating enrichments
 {: #create-enrichments}
 
-<!-- Help for the Enrichments page in WD ICP4D -->
-
-You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), or classify your documents into categories (**Classifier**).
+You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**.
 {: shortdesc}
 
+The enrichments available will vary based on the **Project type**.
 
-To create a new enrichment:
+To create a new enrichment: 
 
-1. Click the **Enrichments** ![Enrichments icon](images/enrichments_icon.png) icon on the left.
-1. Click **Add new**
-1. Enter a **Name** and choose the enrichment **Type**.
+1. Open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Teach domain concepts** and choose the enrichment.
+1. Click **Upload** or **New**.
 1. Configure the enrichment:
     - [**Dictionary**](/docs/services/discovery-data?topic=discovery-data-dictionary-enrichment#dictionary-enrichment) 
     - [**Character Pattern**](/docs/services/discovery-data?topic=discovery-data-characterpattern-enrichment#characterpattern-enrichment)
     - [**Machine Learning and Watson Explorer Content Analytics Studio models**](/docs/services/discovery-data?topic=discovery-data-machinelearning-enrichment#machinelearning-enrichment) 
-    - [**Classifier**](/docs/services/discovery-data?topic=discovery-data-classifier-enrichment#classifier-enrichment) 
-1. Click the **Create** button.
+    - [**Classifier**](/docs/services/discovery-data?topic=discovery-data-classifier-enrichment#classifier-enrichment)
+    - [**Advanced rule models** (beta)](/docs/services/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
 
-After you create an enrichment, you must apply it to a field (or fields) in your collection. See [Enriching fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) for instructions.
+Other available enrichments: [Extracting meaning](/docs/services/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) and [Discovery for Content Intelligence](/docs/services/discovery-data?topic=discovery-data-create-enrichments#content-intelligence).
+
+
+The enrichment will be applied only to the collection(s) and field(s) you specify, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page. The enrichment **Status** should be **Ready** before you apply it.
 {: important}
 
-Once you create an enrichment, it is not possible to edit or delete it. If you need to update an existing enrichment, create a new one.
-{: note}
 
 ## Dictionary enrichments
 {: #dictionary-enrichment}
 
 The Dictionary enrichment allows you to enrich document fields in your collection. The enrichment terms can be synonyms (car, automotive, auto), or words in the same category (carburetor, piston, valves). 
 
-You must create and upload a dictionary csv file to apply this enrichment. The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
+You can create a new dictionary using the tooling, or you can upload a dictionary csv file. The enrichment will be applied only to the collection(s) and field(s) you specify after you create your dictionary, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.  
 
-Enrichment-specific fields:
+To create a new dictionary:
 
--  **Collection language** - Select the language of your dictionary `.csv` file.
--  **Facet Path** - Used as a field value in the index. To specify hierarchy, use a period `.` to separate values, for example `automobiles.motorsports`.
+1. Select the **New** button.
+1. Name your dictionary and choose the language.
+1. Enter a term and select the **+** button. Continue adding terms. When enough terms have been added, addtional terms will be suggested.
+1. Click **Save dictionary**.
+1. Choose the collections(s) and fields(s) you want to apply the dictionary to and click **Apply**. 
+
+To upload a dictionary:
+
+1. Select the **Upload** button.
+1. Name your dictionary and choose the language.
+1. Enter the **Facet Path**, which is used as a field value in the index. To specify hierarchy, use a period `.` to separate values, for example `automobiles.motorsports`.
+1. Choose the .csv file to upload and click the **Create** button.
 
 Dictionary files must be .csv files using UTF-8 encoding in the following format. For example:
 
@@ -79,9 +88,7 @@ flag,checkered,green,caution,yellow,red
 
 Each line of the csv file is a separate enrichment. For example, this line: `engine,gasket,carburetor,piston,valves` will apply the enrichment `engine` to the specified field(s) in your collection that contain the terms `engine`,`gasket`,`carburetor`,`piston`, or `valves`.
 
-In the output, the dictionary enrichment can be found under `enriched_text`, within the `entities` array.
-
-In this example, the **Facet Path** specified was `automobiles.motorsports`, and the field selected for enrichment was `text`.
+In this example, the **Facet Path** specified was `automobiles.motorsports`, and the field selected for enrichment was `text`. The dictionary enrichment can be found under `enriched_text`, within the `entities` array.
 
  In the JSON output
  -  `path` = entire **Facet Path**
@@ -113,7 +120,7 @@ Result: The query `enriched_text.entities.text:engine` will also return results 
 
 The Character Pattern enrichment uses regular expressions to identify and extract information from fields in your collection.
 
-The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
+The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.  
 
 Enrichment-specific fields:
 
@@ -180,7 +187,7 @@ Create your `.pear` or `.zip` file before adding this enrichment. See the follow
 ){: external}
   -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_11.0.2/com.ibm.discovery.es.ta.doc/iiystacastudio.html){: external}
 
-The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
+The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page. 
 
 Enrichment-specific fields:
 
@@ -298,12 +305,30 @@ In the JSON output:
 ] 
 ```	
 
+## Advanced rule models enrichment (beta)
+{: #advanced-rules}
+
+This beta enrichment uses a text extraction model created and exported from the Advanced Rule Editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} (file format: `.zip`). 
+
+The Advanced rule models enrichment is currently supported only as a beta capability. See [Beta features](/docs/services/discovery-data?topic=discovery-data-release-notes#beta-features) in the Release notes for more information.  
+{: note}
+
+The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page. 
+
+Enrichment-specific fields:
+
+-  **Result field** - Field in the index that will contain the output of this enrichment.
+-  **Collection language** - Select the language of your `.zip` file.
+-  **Select a .zip file** - Select the file and upload it.
+
+For more information, see the documentation for [{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](https://cloud.ibm.com/docs/services/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-create-advanced-rules-model){: external}.
+
 ## Classifier enrichments
 {: #classifier-enrichment}
 
 The Classifier enrichment allows you to classify the documents in your collection into categories. {{site.data.keyword.discovery-data_short}} uses the labels and text examples you have specified to predict the categories of the documents in your collection. 
 
-You must create and upload a classifier csv file to apply this enrichment. The enrichment will be applied only to the field(s) you specify on the [Enrich fields](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
+You must create and upload a classifier csv file to apply this enrichment. The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page. 
 
 Enrichment-specific fields:
 
@@ -367,3 +392,63 @@ In this example snippet, the field selected for enrichment was `text`.
   "I think more attendees would stay awake in the sessions if the rooms were colder."
 ]  
 ```
+
+## Extracting meaning
+{: #extract-meaning}
+
+The **Entities**, **Keywords**, and **Sentiment of documents** enrichments are supported in English only, unless you download and install `ibm-watson-discovery-pack1-prod` from Passport Advantage.
+{: note}
+
+### Entities
+{: #entities}
+
+Identifies people, cities, organizations, and other entities in the content. 
+
+For example:
+
+**Input**
+> text: "IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries."
+
+**Response**
+> IBM: Company </br>
+> Armonk: Location </br>
+> New York: Location </br>
+> United States: Location
+
+### Parts of speech
+{: #pos}
+
+Extracts parts of speech, such as nouns, verbs, adjectives, adverbs, conjunctions, interjections, and numerals.
+
+### Keywords
+{: #keywords}
+
+Returns important keywords in the content. For example:
+
+**Input**
+>url: "[http://www.ibm.com/press/us/en/pressrelease/51493.wss](http://www.ibm.com/press/us/en/pressrelease/51493.wss)"
+
+**Response**
+>Australian Open </br>
+>Tennis Australia </br>
+>IBM SlamTracker analytics
+
+### Sentiment of documents
+{: #sentiment}
+
+Extracts the positive, neutral, and negative sentiments of the overall document. For example:
+
+**Input**
+>text: "Thank you and have a nice day!"
+
+**Response**
+>Positive sentiment (score: 0.91)
+
+
+## Discovery for Content Intelligence
+{: #content-intelligence}
+
+The `Contracts`, `Invoices`, and `Purchase orders` enrichments are available if you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence and chosen the **Project type** of **Document retrieval**.
+{: note}
+
+For more information, see [Understanding Discovery for Content Intelligence](/docs/services/discovery-data?topic=discovery-data-output_schema).

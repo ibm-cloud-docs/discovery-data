@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-20"
+lastupdated: "2019-11-25"
 
 subcollection: discovery-data
 
@@ -28,18 +28,28 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
+{:xml: .ph data-hd-programlang='xml'}
+{:properties: .ph data-hd-programlang='properties'}
 
-# Viewing warnings and errors
-{: #logs}
+# Customizing the example connector
+{: #customize-connector}
 
-{{site.data.keyword.discovery-data_short}} provides the **Warnings and errors** page so you can easily access all of the error and warning messages for the collections in this environment.
-{: shortdesc}
+You can customize the example connector for a specific data source.
+{:shortdesc}
 
-<!-- Help for the Logs page -->
+Customizing the example connector requires the information listed in [Custom connector requirements](/docs/discovery-data?topic=discovery-data-connectors#about-ccs).
 
-<!-- V Nov -->
-<!-- The page name may change to "Errors" and there may be subtabs -->
+## Customizing the Java source
+{: #customize-java}
 
-To view the **Errors and warnings** page, select the **Manage collection** icon on the navigation pane and choose **Advanced**.
+**BREAK THIS OUT**
 
-You can view the `Type`, `Message`, and `Date` for each message.
+## Customizing the XML template
+{: #customize-xml}
+
+**BREAK THIS OUT**
+
+## Customizing the properties file
+{: #customize-properties}
+
+**BREAK THIS OUT**

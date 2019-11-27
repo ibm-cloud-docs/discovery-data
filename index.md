@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-05"
+lastupdated: "2019-11-05"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 {{site.data.keyword.discovery-data_long}} is an AI-powered search engine that allows you to extract answers from complex business documents.
 {: shortdesc}
 
-{{site.data.keyword.discovery-data_short}} lets you visually train AI for deep understanding of your content, including tables and images, to help you find business-value hidden in your enterprise. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere using powerful API interfaces.
+{{site.data.keyword.discovery-data_short}} lets you visually train AI for deep understanding of your content, including tables and images, to help you find business-value hidden in your enterprise. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere using powerful API interfaces or included reusable UI components.
 
 Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
 
