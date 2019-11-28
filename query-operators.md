@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Query operators
 {: #query-operators}
 
-These operators are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data#query-a-collection-get). For an overview of query concepts, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts).
+These operators are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data-v2#query-a-collection-get). For an overview of query concepts, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
 Operators are the separators between different parts of a query. For the complete list of available operators, see the [Query reference](/docs/services/discovery-data?topic=discovery-data-query-reference#operators).
