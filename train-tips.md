@@ -45,7 +45,7 @@ Answers to common questions about training a collection.
 
 Run a natural language query and check the `document_retrieval_strategy`. See [confidence scores](/docs/services/discovery-data?topic=discovery-data-confidence#confidence).
 
-If using the API, see [List training data](https://{DomainName}/apidocs/discovery-data#list-training-data){: external}.
+If using the API, see [List training data](https://{DomainName}/apidocs/discovery-data-v2#list-training-data){: external}.
 
 ### How do I check errors and warnings?
 {: #understanding-errors}
