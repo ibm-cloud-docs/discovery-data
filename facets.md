@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-25"
+lastupdated: "2019-12-09"
 
 subcollection: discovery-data
 
@@ -56,7 +56,7 @@ For content mining projects, by default, facets are extracted from your collecti
 For content mining projects, the **Dynamic facets** toggle at the bottom right side of the page is off by default because it does not apply to content mining projects.
 {: note}
 
-![Default facets in content mining projects](images/cmdeffacets.png "The "Improve and customize" page showing part of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a content mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
+![Default facets in content mining projects](images/cmdeffacetsnhtsa.png "The "Improve and customize" page showing part of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a content mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
 
 ### Adding facets to a content mining project
 {: #facetcma}
@@ -74,7 +74,7 @@ For content mining projects, the **Dynamic facets** toggle at the bottom right s
 ## Facets in document retrieval projects
 {: #facetdr}
 
-For document retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see the content mining section of [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects#doc-retrieval).
+For document retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see the document retrieval section of [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects#doc-retrieval).
 
 For document retrieval projects, notice the **Dynamic facets** toggle at the bottom right side of the page, which is on by default. When you have over 100 documents in your collection and the **Part of Speech** enrichment is enabled (as it is by default) this feature creates facets as you test and refine searches. When dynamic facets are generated, you see a facet called **Dynamic Facets** along with **Top Entities** or any other facets you configure.
 {: tip}
