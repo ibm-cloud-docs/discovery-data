@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-09"
 
 subcollection: discovery-data
 
@@ -136,7 +136,7 @@ The guided analysis view toolbar contains the following commands:
 ### Dashboard
 {: #cmodb}
 
-![Dashboard view](images/cmdashboardview.png "The Dashboard view showing the Part of Speech facet"){: caption="Figure 5. The Dashboard view showing the Part of Speech facet" caption-side="bottom"}
+![Dashboard view](images/cmdashboardview.png "The Dashboard view showing the Parts of Speech facet"){: caption="Figure 5. The Dashboard view showing the Parts of Speech facet" caption-side="bottom"}
 
 To save your analysis work for quick access later, you can save the analysis dashboard. Note the following features of the Dashboard:
 

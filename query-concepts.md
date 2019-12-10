@@ -38,7 +38,7 @@ subcollection: discovery-data
 In the {{site.data.keyword.discovery-data_short}} tooling, you can write and test [natural language queries](/docs/services/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/services/discovery-data?topic=discovery-data-improve) page.
 {: tip}
 
-When querying using the API, the entire {{site.data.keyword.discoveryshort}} Query Language is supported. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data-v2#query-a-collection-get).
+When querying using the API, the entire {{site.data.keyword.discoveryshort}} Query Language is supported. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data-v2#query-a-project).
 {: important}
 
 For more information about the {{site.data.keyword.discoveryshort}} Query Language, see:
@@ -159,7 +159,7 @@ curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2
 
 Replace `{hostmame}` and other fields with the details for your instance.
 
-For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data-v2#query-a-collection-get){: external}.
+For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data-v2#query-a-project){: external}.
 {: tip}    
 
 Each user's query results will be restricted to their document permissions.
