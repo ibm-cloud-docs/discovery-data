@@ -147,7 +147,7 @@ To save your analysis work for quick access later, you can save the analysis das
   - **Add to Facet Analysis** option. A new analysis type is added to **Facet analysis** pane.
   - You can select **Save** or **Save As**.
 - To delete the layout, click the **Delete** icon.
-- If you modified the saved layout, an asterisk (*) is added to the layout name. To revert, click the **Reset** icon.
+- If you modified the saved layout, an asterisk (\*) is added to the layout name. To revert, click the **Reset** icon.
 - Click the **Auto Layout** icon to redo the layout by using the system default layout.
 
 #### Analysis dashboard customization
@@ -178,7 +178,7 @@ When you save the dashboard analysis, the following parts of the dashboard are s
     - **Close**: Remove analysis result from current dashboard (not saved)
     - **Show Toolbar** or **Hide Toolbar** (saved)
 
-When you save a dashboard analysis, you can access it quickly from **Dashboard** tab on the launch page. From there, select the saved dashboard that you want to see and click **Analyze More**, which opens the dashboard for deeper analysis.
+When you save a dashboard analysis, you can access it quickly from the **Dashboard** tab on the launch page. From there, select the saved dashboard that you want to see and click **Analyze More**, which opens the dashboard for deeper analysis.
 {: tip}
 
 ### Facet analysis pane
@@ -186,7 +186,7 @@ When you save a dashboard analysis, you can access it quickly from **Dashboard**
 
 ![Facet analysis pane](images/cmfap.png "Default view of the facet analysis pane showing the Relevancy analysis type"){: caption="Figure 6. The Facet Analysis pane showing the default facets" caption-side="bottom"}
 
-To open the **Facet analysis** pane, from the navigation on the right side of the window. This pane is the default view when you enter the analysis view. To begin facet analysis, select the analysis type and options, and then select a facet from the analysis tree. The options in this pane are described in the following list:
+The **Facet analysis** pane is the default view when you enter the analysis view. To begin facet analysis, select the analysis type and options, and then select a facet from the analysis tree. The options in this pane are described in the following list:
 
 - **Analysis type**: Select the type of analysis you want to perform. Options: **Relevancy**, **Topic**, **Trends**, **Pairs**, **Connections**, **Factor** or **Dynamic cluster**.
 - **Number of facets**: Specify the number of facets to analyze. The default value and available options vary based on the analysis type.
@@ -205,7 +205,7 @@ To open the **Facet analysis** pane, from the navigation on the right side of th
 
 ![Repository pane](images/cmrepopane.png "Default view of the Repository pane"){: caption="Figure 7. The Repository pane showing the default view" caption-side="bottom"}
 
-You can click **Repository** to open the **Repository** pane. This pane contains exported documents. You can download exported documents to your local file system from this pane. Click **Facet analysis** to return to the **Facet analysis** pane.
+The **Repository** pane contains exported documents. You can download exported documents to your local file system from this pane. Click **Facet analysis** to return to the **Facet analysis** pane.
 
 ### Documents view
 {: docview}
@@ -241,9 +241,9 @@ In the **Documents** view, the pane lists all documents in summary form. Click a
 ### Report pane
 {: #cmorepv}
 
-![Report pane](images/cmreppane.png "Report pane showing one snapshot of a Noun Trends analysis"){: caption="Figure 9. The Report pane showing a snapshot of a Noun trends analysis" caption-side="bottom"}
+![Report pane](images/cmreppane.png "Report pane showing one snapshot of a Noun Trends analysis"){: caption="Figure 9. The Report pane showing a snapshot of a Noun Trends analysis" caption-side="bottom"}
 
-When you find good insights while analyzing, you can save and share that insight by creating a report, which consists of snapshots and notes about the analysis.
+When you find good insights while analyzing, you can save and share that insight by creating a report, which consists of snapshots and notes about the analysis. Snapshots are shown in the **Report** pane.
 
 #### Taking a snapshot
 {: #cmosnap}
@@ -255,7 +255,7 @@ When you find good insights while analyzing, you can save and share that insight
 
 2. Thumbnails of the snapshot are displayed in the Report pane, which is a temporary store for snapshots. This store will be cleared when the browser is refreshed, or another collection is opened.
 3. From the Menu icon of the snapshot's thumbnail, you can enter comments, or delete the snapshot. You can also edit comments later.
-4. Choose thumbnails that you want to add a new report, then click the **Create** button.
+4. Choose thumbnails that you want to add to a new report, and then click the **Create** button.
 
 #### Creating a report
 {: #cmorepcr}
@@ -342,7 +342,7 @@ The facet toolbar is displayed when you click **Show Toolbar**.
 ##### Second facet toolbar
 {: #cmotssftb}
 
-This toolbat controls the content of the individual time series.
+This toolbar controls the content of the individual time series.
 
 - **Show Timeseries**: Show or hide mini-time series to show the current date range of analysis results. You can move and change the size of the blue area to specify an analysis target.
 - **Zoom in**: Zoom into the chart.
