@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-02"
 
 subcollection: discovery-data
 
@@ -43,6 +43,9 @@ The interfaces listed in this document are available in the JAR packge file that
 ## Initialization interface
 {: #ccs-init-interface}
 
+### `CustomCrawler`
+{: #customcrawler}
+
 Use the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface to initialize or terminate a custom crawler or to crawl documents from a path. The interface has the following methods.
 
 |Method               |Description
@@ -54,6 +57,9 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface to initialize or
 ## Configuration interfaces
 {: #ccs-config-interfaces}
 
+### `CustomCrawlerConfiguration`
+{: #customcrawlerconfiguration}
+
 Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration` interface to validate the configuration and to discover available crawl spaces on the data source. The interface has the following methods.
 
 |Method               |Description
@@ -62,6 +68,8 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration` interface to 
 |`getFieldsFor`       |List known fields and their types|
 |`discoverySubspaces` |Discover crawl spaces on the data source|
 
+### `ConfigProvider`
+{: #configprovider}
 
 Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration.ConfigProvider` interface to map the settings of the data source and to list the crawl-space settings on the data source. The interface has the following methods:
 
@@ -70,6 +78,8 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration.ConfigProvider
 |`get`                |Get a map of the settings in a section|
 |`getCrawlspaceSettings` |Get a list of crawl-space settings|
 
+### `SubspaceConsumer`
+{: #subspaceconsumer}
 
 Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration.SubspaceConsumer` interface to add a path to a crawl space. The interface has the following method:
 
@@ -77,9 +87,11 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration.SubspaceConsum
 |---------------------|-----------------------|
 |`add`                |Add a path to the crawl space|
 
-
 ## Crawler interface
 {: #ccs-crawler-interface}
+
+### `RecordKeeper`
+{: #recordkeeper}
 
 Use the `com.ibm.es.ama.custom.crawler.CustomCrawler.RecordKeeper` interface to keep records of crawls and to publish crawled documents. The interface has the following methods:
 
@@ -93,6 +105,9 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawler.RecordKeeper` interface to 
 
 ## Security interface
 {: #ccs-security-interface}
+
+### `CustomCrawlerSecurityHandler`
+{: #customcrawlersecurityhandler}
 
 Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface to implement security for your custom crawler. Note that this interface is not used in the example connector code. The interface has the following methods:
 

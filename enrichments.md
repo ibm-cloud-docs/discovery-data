@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-03"
 
 subcollection: discovery-data
 
@@ -61,7 +61,7 @@ The enrichment will be applied only to the collection(s) and field(s) you specif
 
 The Dictionary enrichment allows you to enrich document fields in your collection. The enrichment terms can be synonyms (car, automotive, auto), or words in the same category (carburetor, piston, valves). 
 
-You can create a new dictionary using the tooling, or you can upload a dictionary csv file. The enrichment will be applied only to the collection(s) and field(s) you specify after you create your dictionary, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.  
+You can create a new dictionary using the tooling, or you can upload a dictionary csv file. The enrichment will be applied only to the collection(s) and field(s) you specify after you create your dictionary, or you can do so later on the [Enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields) page.
 
 To create a new dictionary:
 
@@ -70,6 +70,9 @@ To create a new dictionary:
 1. Enter a term and select the **+** button. Continue adding terms. When enough terms have been added, addtional terms will be suggested.
 1. Click **Save dictionary**.
 1. Choose the collections(s) and fields(s) you want to apply the dictionary to and click **Apply**. 
+
+Dictionary suggestions will not generate unless the **Parts of Speech** enrichment is turned on.
+{: tip}
 
 To upload a dictionary:
 

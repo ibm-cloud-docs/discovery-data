@@ -35,7 +35,7 @@ subcollection: discovery-data
 Use the following procedures to back up and restore user data in your {{site.data.keyword.discovery-data_long}} instance.
 {: shortdesc}
 
-The procedures on this page are for advanced users who have experience administering {{site.data.keyword.discovery-data_short}} clusters. You do not need to back up and restore data, as part of standard use or maintenance.
+The procedures on this page are for advanced users who have experience administering {{site.data.keyword.discovery-data_short}} clusters. You do not need to back up and restore data as part of standard use or maintenance.
 {: important}
 
 ## General prerequisites

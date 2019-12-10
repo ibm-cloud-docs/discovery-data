@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-02"
 
 subcollection: discovery-data
 
@@ -65,4 +65,4 @@ A custom connector needs the following capabilities:
   - Retrieving ACL information for the username that authenticates to the data source.
   - Filtering documents for each user. **Note**: The example connector code does not implement document filtering.
 
-These capabilities can be implemented by using the interfaces and methods described in [Developing custom connector code](/docs-discovery-data?topic=discovery-data-connector-dev).
+These capabilities can be implemented by using the interfaces and methods described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).

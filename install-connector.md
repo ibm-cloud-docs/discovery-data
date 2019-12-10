@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-02"
 
 subcollection: discovery-data
 
@@ -49,7 +49,7 @@ You can install your custom connector to your {{site.data.keyword.discovery-data
      bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file}
      ```
      {: pre}
-    where `{built_connector_zip_file}` is the name of the file you packaged in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-compile-package-connector). The example value `my-sftp-connector` is used in the examples on this page.
+    where `{built_connector_zip_file}` is the name of the file you packaged in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-compile-package-connector).
 
     **Important**: If your {{site.data.keyword.discovery-data_short}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
       ```sh

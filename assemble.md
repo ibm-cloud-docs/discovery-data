@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-02"
 
 subcollection: discovery-data
 
@@ -109,7 +109,7 @@ Conditional settings are represented by the `<condition />` element. A condition
 ### Conditional setting examples
 {: #conditional-examples}
 
-To anable a section by using a `boolean` condition, use code similar to the following:
+To enable a section by using a `boolean` condition, use code similar to the following:
 
 ```xml
 <declare type="boolean" name="use_key" initial-value="true" />

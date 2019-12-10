@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-02"
 
 subcollection: discovery-data
 
@@ -65,7 +65,7 @@ Note the following when using Discovery for Content Intelligence:
     - The improvement tools enabled include Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval.
   - Discovery for Content Intelligence processes all collections with the `Contracts` enrichment unless otherwise specified. You can specify a different enrichment as follows:
     1. After you have created a collection in the {{site.data.keyword.discovery-data_short}} tooling, select it on the **Projects** page.
-    1. On the **Improve and customize** page, select **Extract meaning** under **I want to...**.
+    1. On the **Improve and customize** page, select **I want to...** **=>** **Extract meaning**.
     1. Select **Entities**.
     1. On the **Available enrichments** page, unselect **Contracts** and select either **Invoices** or **Purchase Orders**. Only one of **Contracts**, **Invoices**, and **Purchase Orders** can be applied to a given collection.
     1. Click **Apply changes and reprocess**.

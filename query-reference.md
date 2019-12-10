@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Query reference
 {: #query-reference}
 
-The full list of {{site.data.keyword.discovery-data_short}} query parameters, operators, and aggregations. These are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data-v2#query-a-collection-get). For an overview of query concepts, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts).
+The full list of {{site.data.keyword.discovery-data_short}} query parameters, operators, and aggregations. These are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data-v2#query-a-project). For an overview of query concepts, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
 In the {{site.data.keyword.discovery-data_short}} tooling, you can write and test [natural language queries](/docs/services/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/services/discovery-data?topic=discovery-data-improve) page.
