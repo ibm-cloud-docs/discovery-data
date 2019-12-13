@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-13"
 
 subcollection: discovery-data
 
@@ -30,23 +30,25 @@ subcollection: discovery-data
 {:go: .ph data-hd-programlang='go'}
 
 
-# Installing Discovery bundle for Cloud Pak for Data
+# Installing Discovery for Cloud Pak for Data
 {: #install}
 
-Follow these instructions to install and configure {{site.data.keyword.discovery-data_long}}.
+Requirements and installation information for {{site.data.keyword.discovery-data_long}}.
 {: shortdesc}
 
-If you have already installed {{site.data.keyword.icp4dfull}}, and have purchased {{site.data.keyword.discovery-data_short}} as an add-on, follow the [instructions listed here](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+You should install {{site.data.keyword.icp4dfull}} before installing the {{site.data.keyword.discovery-data_short}} service.
 
-Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discovery-data_long}}.
-{: note}
+{{site.data.keyword.icp4dfull_notm}} is available for download from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} 
+
 
 ## Before you begin
 {: #beforebegin}
 
-Review the following topics that relate to cluster security:
+Review the security information in:
 
-[Security in {{site.data.keyword.icp4dfull}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+[{{site.data.keyword.discovery-data_long}} installation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+
+[Security considerations in {{site.data.keyword.icp4dfull_notm}} 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/security.html){: external}
 
 Encryption of data at rest must be handled by the storage provider.
 {: important}
@@ -54,34 +56,31 @@ Encryption of data at rest must be handled by the storage provider.
 ## Software requirements
 {: #prereqs}
 
-- {{site.data.keyword.icp4dfull_notm}} 2.5.0.0 or later, including the IBM Cloud Pak CLI
-- Kubernetes 1.12.4 or later
-- Helm 2.9.1 or later
+{{site.data.keyword.icp4dfull_notm}} 2.1.0.2 or 2.5.0.0 or later, including the IBM Cloud Pak CLI.
 
-Because the installation of the chart needs to be performed from the command line, you must install and configure the following command-line tools:
+See the general software requirements listed here:
 
-  - [`cloudctl`](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_cli.html){: external}
-  - [`kubectl`](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/kubectl-access.html){: external}
-  - [`helm`](https://helm.sh){: external}
+  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html#rhos-reqs__software). 
+  -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html)
+ 
 
-See the general software requirements listed in [Pre-installation tasks](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/install/preinstall-overview.html){: external}.
+Portworx **must** be installed before you install {{site.data.keyword.discovery-data_short}}. A Portworx license is included with {{site.data.keyword.icp4dfull}} 2.5.0.0.
+{: important}.
 
 ## System requirements
 {: #system-requirements}
 
-See the system requirements listed in [Pre-installation tasks](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/install/preinstall-overview.html){: external}.
+See the system requirements listed here:
+
+  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html). 
+  -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html)
 
 {{site.data.keyword.discovery-data_short}} has the following specific requirements:
-  - Minimum CPU: 20 for dev, 40 for HA
-  - Minimum RAM: 92GB for dev, 124GB for HA
-  - Cluster configuration:
-       -  Dev: 1 load balancing node, 3 master nodes, 3 worker nodes
-       -  HA: 1 load balancing node, 3 master nodes, 4 worker nodes
 
-## Installing the service bundle
-{: #installing}
+|                      | Minimum VPC available | Minimum RAM available |
+|----------------------|:---------------------:|:---------------------:|
+| Development (non-HA) | 21                    | 86 GB                 |
+| Production (HA)      | 26                    | 116 GB                |
 
-Perform the following steps to install {{site.data.keyword.discovery-data_short}}.
-
-1. Download and install the {{site.data.keyword.icp4dfull_notm}} package as described in [Installing IBM Cloud Pak for Data](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
-1. Download the IBM Watson {{site.data.keyword.discovery-data_short}} package in `.tgz` format from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} and follow the [installation instructions listed here](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discovery-data_long}}.
+{: note}

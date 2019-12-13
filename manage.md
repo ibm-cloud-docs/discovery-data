@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-04"
+lastupdated: "2019-12-13"
 
 subcollection: discovery-data
 
@@ -50,10 +50,10 @@ Ensure that you have the following prerequisites installed and working correctly
 
 1.  Verify that the tools are installed correctly by running the following test commands.
 
-    - Test the IBM Cloud Private CLI (`cloudctl`):
+    - Test the OpenShift CLI (`oc`):
 
       ```bash
-      cloudctl login -a https://{hostname}:8443 -u {admin_user_id} -p {admin_password}
+      oc login https://{hostname}:8443
       ```
       {: pre}
     
