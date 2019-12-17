@@ -9,7 +9,7 @@ subcollection: discovery-data
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
 {:pre: .pre}
@@ -34,7 +34,7 @@ subcollection: discovery-data
 
 If you cannot find a solution to the issue you are having, try the resources available from the **Developer community** section of the table of contents.
 
-You can also get help by creating a case here: [IBM Cloud Support ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/unifiedsupport/supportcenter){: new_window}.
+You can also get help by creating a case here: [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
 
 ## Clearing a lock state
 {: #troubleshoot-ls}

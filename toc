@@ -35,6 +35,7 @@ Watson Discovery for IBM Cloud Pak for Data
     Adding enrichments
         enrichments.md
         tables.md
+        enrichmig.md
 
     {: topicgroup}
     Adding search settings

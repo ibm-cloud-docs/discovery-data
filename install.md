@@ -9,7 +9,7 @@ subcollection: discovery-data
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
 {:pre: .pre}
@@ -41,7 +41,7 @@ You should install {{site.data.keyword.icp4dfull}} before installing the {{site.
 
 {{site.data.keyword.icp4dfull_notm}} is available for download from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} 
 
-Full installation instructions for {{site.data.keyword.discovery-data_long}} are available at [Installing {{site.data.keyword.discovery-data_short}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}.
+Full installation instructions for {{site.data.keyword.discovery-data_long}} are available at [Installing {{site.data.keyword.discovery-data_short}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
 
 
 ## Before you begin
@@ -63,8 +63,8 @@ Encryption of data at rest must be handled by the storage provider.
 
 See the general software requirements listed here:
 
-  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html#rhos-reqs__software). 
-  -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html)
+  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html#rhos-reqs__software){: external} 
+  -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}
  
 
 Portworx **must** be installed before you install {{site.data.keyword.discovery-data_short}}. A Portworx license is included with {{site.data.keyword.icp4dfull}} 2.5.0.0.
@@ -75,8 +75,8 @@ Portworx **must** be installed before you install {{site.data.keyword.discovery-
 
 See the system requirements listed here:
 
-  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html). 
-  -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html)
+  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html){: external} 
+  -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}
 
 
 {{site.data.keyword.discovery-data_short}} has the following specific requirements:
