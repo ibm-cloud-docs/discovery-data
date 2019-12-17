@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-13"
+lastupdated: "2019-12-16"
 
 subcollection: discovery-data
 
@@ -28,6 +28,7 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
+{:external: target="_blank" .external}
 
 
 # Installing Discovery for Cloud Pak for Data
@@ -39,6 +40,8 @@ Requirements and installation information for {{site.data.keyword.discovery-data
 You should install {{site.data.keyword.icp4dfull}} before installing the {{site.data.keyword.discovery-data_short}} service.
 
 {{site.data.keyword.icp4dfull_notm}} is available for download from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} 
+
+Full installation instructions for {{site.data.keyword.discovery-data_long}} are available at [Installing {{site.data.keyword.discovery-data_short}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}.
 
 
 ## Before you begin
@@ -74,6 +77,7 @@ See the system requirements listed here:
 
   -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html). 
   -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html)
+
 
 {{site.data.keyword.discovery-data_short}} has the following specific requirements:
 
