@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-21"
+lastupdated: "2019-12-16"
 
 subcollection: discovery-data
 
@@ -28,32 +28,41 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
+{:external: target="_blank" .external}
 
 # Language support
 {: #language-support}
 
-The following languages are supported in {{site.data.keyword.discovery-data_long}}.
+The following languages are supported in {{site.data.keyword.discovery-data_long}} when the `ibm-watson-discovery-pack1-prod`language pack is installed.
 {: shortdesc}
 
--  English (`en`)               
--  Arabic (`ar`)                     
--  Chinese, simplified (`zh-CN`)
--  Chinese, traditional (`zh-TW`)
--  Czech (`cs`)     
--  Dutch (`nl`)                     
--  French (`fr`)                     
--  German (`de`)                     
--  Italian (`it`)                    
--  Japanese (`ja`)                 
--  Korean (`ko`)
--  Polish (`pl`)                    
--  Portuguese, Brazilian (`pt-br`)
--  Romanian (`ro`)
--  Russian (`ru`)
--  Slovak (`sk`)   
--  Spanish (`es`)   
+Installation instructions for `ibm-watson-discovery-pack1-prod` are available in the [Installing the optional language pack](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external} section of the {{site.data.keyword.discovery-data_long}} installation instructions.
 
-You can choose the collection language when you create it. See [Creating and managing a collection](/docs/services/discovery-data?topic=discovery-data-collections#collections). 
+`S` = Supported with installed language pack
+
+`NS` = Not supported
+
+| Language | Parts of speech | Keywords | Entities | Document sentiment | Phrase sentiment | Dictionary | Character Pattern | Machine Learning | Advanced rule models | Smart Document Understanding |
+|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+| Arabic (`ar`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
+| Chinese, simplified (`zh-CN`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
+| Chinese, traditional (`zh-TW`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`S`|`S`|`S`|
+| Dutch (`nl`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
+| French (`fr`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
+| German (`de`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
+| Italian (`it`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
+| Japanese (`ja`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
+| Korean (`ko`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
+| Portuguese, Brazilian (`pt-br`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
+| Spanish (`es`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
+| Czech (`cs`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`NS`|`NS`|`S`|
+| Slovak (`sk`) |`S`|`NS`|`NS`|`NS`|`NS`|`S`|`S`|`NS`|`NS`|`S`|
+| Russian (`ru`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`NS`|`NS`|`S`|
+| Polish (`pl`) |`S`|`NS`|`NS`|`NS`|`NS`|`S`|`S`|`NS`|`NS`|`S`|
+| Romanian (`ro`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`NS`|`NS`|`S`|
+
+
+You can select the collection language when you create your collection. See [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections#collections). 
 {: tip}
 
 
@@ -67,9 +76,3 @@ The following feature is currently supported in English only:
 The following feature (available using the API-only) is currently supported in English only:
 
 -  Spelling correction
-
-The following [enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) are supported in English only, unless you download and install `ibm-watson-discovery-pack1-prod` from Passport Advantage:
-
--  Entities
--  Keyword
--  Sentiment of documents
