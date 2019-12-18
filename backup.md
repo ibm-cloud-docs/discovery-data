@@ -9,7 +9,7 @@ subcollection: discovery-data
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
 {:pre: .pre}
@@ -46,7 +46,7 @@ The procedures on this page are for advanced users who have experience administe
 
 Before backing up or restoring data, ensure that you have the following tools installed on your machine:
 
-  - `kubectl`, which is available as described at [Installing the Kubernetes CLI (kubectl) ![External link icon](../../icons/launch-glyph.svg"External link icon")](<https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_kubectl.html>){: new_window}.
+  - `kubectl`, which is available as described at [Installing the Kubernetes CLI (kubectl)](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_kubectl.html){: external}.
 
 ### Required permissions
 {: #perms}

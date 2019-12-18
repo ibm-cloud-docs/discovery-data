@@ -9,7 +9,7 @@ subcollection: discovery-data
 ---
 
 {:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
+{:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
 {:pre: .pre}
@@ -33,33 +33,31 @@ subcollection: discovery-data
 # Language support
 {: #language-support}
 
-The following languages are supported in {{site.data.keyword.discovery-data_long}} when the `ibm-watson-discovery-pack1-prod`language pack is installed.
-{: shortdesc}
+The `English` language pack is included with the default installation of {{site.data.keyword.discovery-data_long}}. If you do not install `ibm-watson-discovery-pack1-prod` the languages listed below are not supported.
+{: important}
 
-Installation instructions for `ibm-watson-discovery-pack1-prod` are available in the [Installing the optional language pack](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external} section of the {{site.data.keyword.discovery-data_long}} installation instructions.
+Installation instructions for `ibm-watson-discovery-pack1-prod` are available in the [Installing the optional language pack](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}  section of the {{site.data.keyword.discovery-data_long}} installation instructions.
 
-`S` = Supported with installed language pack
-
-`NS` = Not supported
+**X** = Supported with installed language pack
 
 | Language | Parts of speech | Keywords | Entities | Document sentiment | Phrase sentiment | Dictionary | Character Pattern | Machine Learning | Advanced rule models | Smart Document Understanding |
-|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
-| Arabic (`ar`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
-| Chinese, simplified (`zh-CN`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
-| Chinese, traditional (`zh-TW`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`S`|`S`|`S`|
-| Dutch (`nl`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
-| French (`fr`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
-| German (`de`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
-| Italian (`it`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
-| Japanese (`ja`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
-| Korean (`ko`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
-| Portuguese, Brazilian (`pt-br`) |`S`|`S`|`S`|`S`|`NS`|`S`|`S`|`S`|`S`|`S`|
-| Spanish (`es`) |`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|`S`|
-| Czech (`cs`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`NS`|`NS`|`S`|
-| Slovak (`sk`) |`S`|`NS`|`NS`|`NS`|`NS`|`S`|`S`|`NS`|`NS`|`S`|
-| Russian (`ru`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`NS`|`NS`|`S`|
-| Polish (`pl`) |`S`|`NS`|`NS`|`NS`|`NS`|`S`|`S`|`NS`|`NS`|`S`|
-| Romanian (`ro`) |`S`|`NS`|`NS`|`NS`|`S`|`S`|`S`|`NS`|`NS`|`S`|
+|------|------|------|------|------|------|------|------|------|------|------|
+| Arabic (`ar`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
+| Chinese, simplified (`zh-CN`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
+| Chinese, traditional (`zh-TW`) | **X** | | | | **X** | **X** | **X** | **X** | **X** | **X** |
+| Dutch (`nl`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
+| French (`fr`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
+| German (`de`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
+| Italian (`it`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
+| Japanese (`ja`) | **X**| **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
+| Korean (`ko`) | **X**| **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
+| Portuguese, Brazilian (`pt-br`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
+| Spanish (`es`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
+| Czech (`cs`) | **X** | | | | **X** | **X** | **X** | | | **X** |
+| Slovak (`sk`) | **X** | | | | | **X**| **X** | | | **X** |
+| Russian (`ru`) | **X** | | | | **X** | **X** | **X** | | | **X** |
+| Polish (`pl`) | **X** | | | | | **X** | **X** | | | **X** |
+| Romanian (`ro`) | **X** | | | | **X** | **X**| **X** | | | **X** |
 
 
 You can select the collection language when you create your collection. See [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections#collections). 
