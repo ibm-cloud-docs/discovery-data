@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -70,7 +70,7 @@ The following new features and changes to the service are available.
   -  **Passage retrieval** - Will return the most relevant passages from your documents, plus you can specify the number of passages returned per document. See [passages](/docs/services/discovery-data?topic=discovery-data-query-parameters#passages).
   -  **Project level querying and relevancy training** - Query multiple collections at once including relevance training. For more information, see [Customizing and improving your project](/docs/services/discovery-data?topic=discovery-data-improve)
   -  Improvements and additional options to the **Web crawl connector** - For more information, see [Web crawl](/docs/services/discovery-data?topic=discovery-data-collections#connectwebcrawl).
-  -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/services/discovery-data?topic=discovery-data-localfilesystemconnect#localfilesystemconnect)
+  -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/services/discovery-data?topic=discovery-data-collections#localfilesystemconnect)
   -  **Dynamic Facets** - Automatically generate facets based on the understanding of your data. For more information, see [Facets](/docs/services/discovery-data?topic=discovery-data-facets).
   -  **Dictionary suggestions** - Dictionary terms will be suggested to you based on your content. For more information, see [Dictionary enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
   -  **Curations** (beta) - Specify a particular result for a given query. For more information, see [Curations](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#create-curation).
@@ -108,11 +108,11 @@ See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-no
 
 **{{site.data.keyword.discovery-data_long}} version 2.0.1 is available.** {{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.1.0.1. The following changes were made in this release:
 
-  -  Added the Windows File System and Database connectors.  See [Database connector](/docs/services/discovery-data?topic=discovery-data-databaseconnect#databaseconnect)
-and [Windows File System connector](/docs/services/discovery-data?topic=discovery-data-windowsfilesystemconnect#windowsfilesystemconnect) for details.
+  -  Added the Windows File System and Database connectors.  See [Database connector](/docs/services/discovery-data?topic=discovery-data-collections#databaseconnect)
+and [Windows File System connector](/docs/services/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect) for details.
   -  Added support for Traditional Chinese. For more information, see [Language support](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages).
   -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
-  -  Released the Classifier enrichment. See [Classifier enrichment](/docs/services/discovery-data?topic=discovery-data-classifier-enrichment#classifier-enrichment) for details.
+  -  Released the Classifier enrichment. See [Classifier enrichment](/docs/services/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) for details.
   -  Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift. 
 
 ### Known issues in this release:
@@ -130,7 +130,7 @@ The following known issues remain from the GA release:
   -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.
   -  All JSON files ingested into {{site.data.keyword.discovery-data_short}} should include the .json file extension.
   -  When querying  on the `collection_id` of a trained collection, the `training_status.notices` value may occasionally display as `0` instead of the correct value.
-  -  Not all query limitations are enforced in this release. See [query limitations](/docs/services/discovery-data?topic=discovery-data-query-limitations#query-limitations) for the complete list of banned fields.
+  -  Not all query limitations are enforced in this release. See [query limitations](/docs/services/discovery-data?topic=discovery-data-query-reference#query-limitations) for the complete list of banned fields.
   -  In JSON source documents, you should not duplicate the following system-generated fields: `document_id`, `parent_document_id`, `filename`, and `title`. This will cause the duplicate fields to nest within arrays and break certain features, such as ranker training.
   -  Do not include a top-level `metadata` property in your JSON documents. If you upload a JSON document that already contains a top-level `metadata` property, then the `metadata` property of the indexed document will be converted to an array in the index.
   -  CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).
@@ -154,7 +154,7 @@ The following known issues apply to the GA release:
   -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] If you upload a zip, gzip, or tar file to your collection, and that file contains multiple files/file types supported by Smart Document Understanding (PDF, Word, Excel, PowerPoint, PNG, TIFF, JPEG), only one of the files in that zip, gzip, or tar file will be available for training in the SDU editor (unless the SDU document limit has already been met). All of the documents will be available in the index. Unzip the file before uploading to avoid this issue.
   -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] Query expansion and autocomplete return the wrong error code when the `collection_id` is invalid. Query expansion will return a `500` error code instead of a `404`. Autocomplete will return a `400` when the `collection_id` is invalid and the `prefix` parameter isn’t set. It should also return a `404`.
   -  When querying  on the `collection_id` of a trained collection, the `training_status.notices` value may occasionally display as `0` instead of the correct value.
-  -  Not all query limitations are enforced in this release. See [query limitations](/docs/services/discovery-data?topic=discovery-data-query-limitations#query-limitations) for the complete list of banned fields.
+  -  Not all query limitations are enforced in this release. See [query limitations](/docs/services/discovery-data?topic=discovery-data-query-reference#query-limitations) for the complete list of banned fields.
   -  In JSON source documents, you should not duplicate the following system-generated fields: `document_id`, `parent_document_id`, `filename`, and `title`. This will cause the duplicate fields to nest within arrays and break certain features, such as ranker training.
   -  Do not include a top-level `metadata` property in your JSON documents. If you upload a JSON document that already contains a top-level `metadata` property, then the `metadata` property of the indexed document will be converted to an array in the index.
   -  CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).

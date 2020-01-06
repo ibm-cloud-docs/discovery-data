@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-09"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -102,7 +102,7 @@ For either project type, if you want to add a facet that doesn't exist as a fiel
 
 1. On the "Improve and customize" page, click **Customize display** and then click **Facets**.
 1. Click **New facet** > **By creating a dictionary**.
-1. Enter a name for the facet, and then create a dictionary as described in the dictionary enrichments section of [Creating enrichments](/docs/services/discovery-data?topic=discovery-data-dictionary-enrichment#dictionary-enrichment).
+1. Enter a name for the facet, and then create a dictionary as described in the dictionary enrichments section of [Creating enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
 
     After you save the dictionary, the name that you used for the facet label is shown in the list of facets.
 

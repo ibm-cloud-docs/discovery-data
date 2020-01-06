@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-02"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -42,7 +42,7 @@ After you have compiled and packaged your custom connector, you need to install 
 
 You can install your custom connector to your {{site.data.keyword.discovery-data_short}} instance by performing the following steps.
 
-  1. Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs-discovery-data?topic=discovery-data-compile-package-connector).
+  1. Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-compile-package-connector).
     
   1. Run the following command from the directory on your local machine where you created and compiled your custom connector:
      ```sh

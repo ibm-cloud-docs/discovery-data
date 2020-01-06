@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-25"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -37,18 +37,18 @@ subcollection: discovery-data
 A project is a convenient way to build and manage your {{site.data.keyword.discovery-data_long}} application. You can assign a **Project type** (`Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`) and add data quickly by creating a collection, or reusing an existing one. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
 {: shortdesc}
 
-A sample project is available for you to explore and experiment with. For details, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/services/discovery-data?topic=discovery-data-getting-started#getting-started). 
+A sample project is available for you to explore and experiment with. For details, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/services/discovery-data?topic=discovery-data-getting-started). 
 
 To create a project:
 
 1.  Open the **Projects** page by selecting the **Projects** icon on the navigation panel.
 1.  Select **New project**. Name your project and choose a **Project type**: `Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`. 
 1.  Click **Next**.
-1.  Choose and configure a data source (see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections#collections)), or you can reuse an existing collection by selecting **Reuse data from an existing collection**. 
+1.  Choose and configure a data source (see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections)), or you can reuse an existing collection by selecting **Reuse data from an existing collection**. 
 
 To keep track of collection sharing and clean up unused collections, select **Collection usage and sharing** on the **Projects** page. For more information see [Collection usage and sharing](/docs/services/discovery-data?topic=discovery-data-projects#collection-usage).
 
-To view all the collections in your project, or add a new collection, select the **Manage collections** icon on the navigation panel. For more information, see [Creating and managing collections]()
+To view all the collections in your project, or add a new collection, select the **Manage collections** icon on the navigation panel. For more information, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections).
 
 A **Document Retrieval**, **Conversational Search**, or **Custom** project type can contain a maximum of `5` collections. If the project type is **Content Miner**, the project can contain only `1` collection.
 {: important}

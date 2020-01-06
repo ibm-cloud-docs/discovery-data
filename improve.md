@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2020-01-06"
 
 subcollection: discovery-data
 
@@ -41,7 +41,7 @@ To access the **Improve and Customize** page, select the **Improve and customize
 
 **To improve and customize your Document Retrieval project**:
 1.  Enter a natural language query in the query box.
-1.  Review the query results displayed. You can view the source document for each result by clicking on **View* passage** or **View document**.
+1.  Review the query results displayed. You can view the source document for each result by clicking on **View passage** or **View document**.
 1.  Configure the desired improvement tools. 
 1.  For some of the tools, after you apply the improvement, a **Recrawl** or **Reprocess** of the collections in your project will start automatically. To do so manually, open the **Activity** page of each collection.
 1.  Retry the query.
@@ -95,14 +95,14 @@ The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only av
 
 **Define structure**
 -  **New fields** - Annotate fields within your documents to train a custom conversion model. As you annotate, Watson is learning and will start predicting annotations. For more information, see [Identify fields](/docs/services/discovery-data?topic=discovery-data-field-settings#identify-fields).
--  **Hidden fields** - This option allows you to choose which fields should be included in the index for this collection. You can switch off any fields you do not want to index. For more information, see [Managing fields](/docs/services/discovery-data?topic=discovery-data-field-settings#field-settings).
--  **Document splitting** - This option allows you to split your documents into segments based on a field name. Once split, each segment is a separate document that will be enriched, indexed, and returned as a separate query result. For more information, see [Managing fields](/docs/services/discovery-data?topic=discovery-data-field-settings#field-settings).
+-  **Hidden fields** - This option allows you to choose which fields should be included in the index for this collection. You can switch off any fields you do not want to index. For more information, see [Managing fields](/docs/services/discovery-data?topic=discovery-data-configuring-fields#field-settings).
+-  **Document splitting** - This option allows you to split your documents into segments based on a field name. Once split, each segment is a separate document that will be enriched, indexed, and returned as a separate query result. For more information, see [Managing fields](/docs/services/discovery-data?topic=discovery-data-configuring-fields#field-settings).
 
 **Improve relevance**
--  **Synonyms** - You can expand the scope of a query beyond exact matches - for example, you can expand a query for "ibm" to include "international business machines" and "big blue" - by uploading a list of synonyms. For more information, see [Implementing synonyms](/docs/services/discovery-data?topic=discovery-data-query-expansion#query-expansion).
--  **Stopwords** - Stopwords are filtered out of queries because they are common terms that are not useful in a search. For more information, see [Defining stopwords](/docs/services/discovery-data?topic=discovery-data-stopwords#stopwords).
--  **Data management** - Add additional data to your collections. For more information, see [Configuring data sources](/docs/services/discovery-data?topic=discovery-data-collection-types#collection-types).
--  **Relevancy training** - The relevance of natural language query results can be improved in {{site.data.keyword.discovery-data_long}} with training. For more information, see [Improving result relevance with training](/docs/services/discovery-data?topic=discovery-data-train#train).
+-  **Synonyms** - You can expand the scope of a query beyond exact matches - for example, you can expand a query for "ibm" to include "international business machines" and "big blue" - by uploading a list of synonyms. For more information, see [Implementing synonyms](/docs/services/discovery-data?topic=discovery-data-search-settings#query-expansion).
+-  **Stopwords** - Stopwords are filtered out of queries because they are common terms that are not useful in a search. For more information, see [Defining stopwords](/docs/services/discovery-data?topic=discovery-data-search-settings#stopwords).
+-  **Data management** - Add additional data to your collections. For more information, see [Configuring data sources](/docs/services/discovery-data?topic=discovery-data-collections#collection-types).
+-  **Relevancy training** - The relevance of natural language query results can be improved in {{site.data.keyword.discovery-data_long}} with training. For more information, see [Improving result relevance with training](/docs/services/discovery-data?topic=discovery-data-train).
 
 
 

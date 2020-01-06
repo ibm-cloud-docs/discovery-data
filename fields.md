@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -35,14 +35,14 @@ subcollection: discovery-data
 
 Smart Document Understanding (SDU) allows you to quickly train {{site.data.keyword.discovery-data_long}} to extract  fields in your documents, which will improve the answers returned by your application. The specified fields can also be enriched.
 
-With SDU, you annotate fields within your documents to train custom conversion models. As you annotate, Watson is learning and will start predicting annotations. Once an SDU model is created, it can be [exported](/docs/services/discovery-data?topic=discovery-data-import#import) and used on other collections.
+With SDU, you annotate fields within your documents to train custom conversion models. As you annotate, Watson is learning and will start predicting annotations. Once an SDU model is created, it can be [exported](/docs/services/discovery-data?topic=discovery-data-configuring-fields#import) and used on other collections.
 
 PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types supported by {{site.data.keyword.discovery-data_short}}, see [Supported file types](/docs/services/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
 To access the Smart Document Understanding editor:
 
 - Open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Define structure** and choose **New fields**. If your project contains more than 1 collection, you can then choose the collection.
-- Or select the **Manage collections** icon on the navigation panel and open a collection. For more information on collections, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections#collections).
+- Or select the **Manage collections** icon on the navigation panel and open a collection. For more information on collections, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections).
 
 When you build a custom Smart Document Understanding model, the conversion time for your collection may increase due to the resources required to apply the AI model to your documents. The resource requirements will result in a significant decrease in throughput speed.
 {: note}
@@ -52,8 +52,8 @@ Navigating the Smart Document Understanding editor:
 1. On the **Manage collection** page, there are three tabs that are needed to use Smart Document Understanding: **Identify fields**, **Manage fields**, and **Enrichments**.
 
    - **Identify fields** - the SDU editor
-   - **Manage fields** - see [Managing fields](/docs/services/discovery-data?topic=discovery-data-field-settings#field-settings)
-   - **Enrichments** - see [Managing enrichments](/docs/services/discovery-data?topic=discovery-data-enrich-fields#enrich-fields). 
+   - **Manage fields** - see [Managing fields](/docs/services/discovery-data?topic=discovery-data-configuring-fields#field-settings)
+   - **Enrichments** - see [Managing enrichments](/docs/services/discovery-data?topic=discovery-data-configuring-fields#enrich-fields). 
 
 1. Open the **Identify fields** tab. A maximum of forty (40) documents from your collection will automatically load in the Smart Document Understanding editor.
 
@@ -63,14 +63,14 @@ The SDU toolbar will allow you to:
 - Adjust the page view (`single page view`, `zoom in`, `zoom out`), `clear changes`, and `export/import models`. Click on `single page view` to toggle the display - you can view your annotations and document separately, or together.
 
 Also see:
-- [Getting started with {{site.data.keyword.discovery-data_short}}](/docs/services/discovery-data?topic=discovery-data-getting-started#getting-started)
+- [Getting started with {{site.data.keyword.discovery-data_short}}](/docs/services/discovery-data?topic=discovery-data-getting-started)
 
 ## Identifying fields
 {: #identify-fields}
 
 <!-- c/s help for the **Identify fields** tab. Do not delete.  -->
 
-See [Best practices for annotating documents](/docs/services/discovery-data?topic=discovery-data-bestpractices#bestpractices) before you begin annotating.
+See [Best practices for annotating documents](/docs/services/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
 
 1. A default set of fields is displayed next to your document. The available fields are `answer`, `author`, `footer`, `header`, `question`, `subtitle`, `table_of_contents`, `text`, `title`, `table`, and `image`. If you would like to create one or more new custom field labels, click **Create new** and follow the steps. 
 1. To begin annotating, click on a field label to activate it.
@@ -101,7 +101,7 @@ When you annotate one or more tables using the `table` field, you will automatic
 ### Best practices for annotating documents
 {: #bestpractices}
 
-If you want to save time reprocessing all the files in a large collection, start with a small collection of documents and build your model, then [export](/docs/services/discovery-data?topic=discovery-data-import#import) it. Create a new collection that contains only 1 document, import the model, then upload the remainder of your documents.
+If you want to save time reprocessing all the files in a large collection, start with a small collection of documents and build your model, then [export](/docs/services/discovery-data?topic=discovery-data-configuring-fields#import) it. Create a new collection that contains only 1 document, import the model, then upload the remainder of your documents.
 {: #tip}
 
 - Follow all guidelines and use consistent labeling on all documents
@@ -139,9 +139,9 @@ If you plan to develop a model and import it into a new collection, it is a soun
 
 You can enrich fields (including custom fields identified with Smart Document Understanding) in your collection with cognitive metadata. 
 
-There are a number of enrichments available in {{site.data.keyword.discovery-data_short}}. Some of the enrichments must be created before you can apply them. For details, see [Creating enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#create-enrichments). 
+There are a number of enrichments available in {{site.data.keyword.discovery-data_short}}. Some of the enrichments must be created before you can apply them. For details, see [Creating enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments). 
 
-To access the **Enrichments** page, select the **Manage collections** icon on the navigation pane and open a collection. Click the **Enrichments** tab. For more information on collections, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections#collections).
+To access the **Enrichments** page, select the **Manage collections** icon on the navigation pane and open a collection. Click the **Enrichments** tab. For more information on collections, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections).
 
 To apply an enrichment to a field:
 
@@ -162,7 +162,7 @@ The **Manage fields** tab contains several options:
 -  **Improve query results by splitting your documents**
 -  **Date format settings**
 
-To access the **Manage fields** page, click the **Manage collections** icon on the navigation pane and open a collection. Click the **Manage fields** tab. For more information on collections, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections#collections).
+To access the **Manage fields** page, click the **Manage collections** icon on the navigation pane and open a collection. Click the **Manage fields** tab. For more information on collections, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections).
 
 **Identify fields to index** - This option allows you to choose which fields should be included in the index for this collection. You can switch off any fields you do not want to index. For example, your PDFs may contain a running header or footer that does not contain useful information, so you can exclude those fields from the index. 
 
