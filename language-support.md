@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-16"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -60,7 +60,7 @@ Installation instructions for `ibm-watson-discovery-pack1-prod` are available in
 | Romanian (`ro`) | **X** | | | | **X** | **X**| **X** | | | **X** |
 
 
-You can select the collection language when you create your collection. See [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections#collections). 
+You can select the collection language when you create your collection. See [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections). 
 {: tip}
 
 

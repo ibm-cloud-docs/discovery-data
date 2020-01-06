@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-20"
+lastupdated: "2019-12-19"
 
 subcollection: discovery-data
 
@@ -48,9 +48,9 @@ In order to train Watson, you'll need to:
 
 Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your collection. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discovery-data_short}} then reorders the query results to display the most relevant results at the top. As you add more and more training data, {{site.data.keyword.discovery-data_short}} should become more accurate in the ordering of query results.
 
-Natural language query results will return a `confidence` score. See [Confidence scores](/docs/services/discovery-data?topic=discovery-data-confidence#confidence) for details.
+Natural language query results will return a `confidence` score. See [Confidence scores](/docs/services/discovery-data?topic=discovery-data-train#confidence) for details.
 
-Adding a custom stopwords list can also improve the relevance of results for natural language queries. See [Defining stopwords](/docs/services/discovery-data?topic=discovery-data-stopwords#stopwords) for more information.
+Adding a custom stopwords list can also improve the relevance of results for natural language queries. See [Defining stopwords](/docs/services/discovery-data?topic=discovery-data-search-settings#stopwords) for more information.
 {: tip}
 
 
@@ -94,7 +94,7 @@ If you would like to further improve results after testing, you could:
 -   Add more training queries.
 -   Rate more results, making sure to use both the `Relevant` and `Not relevant` ratings.
 
-For additional training guidance, see [Relevancy training tips](/docs/services/discovery-data?topic=discovery-data-relevancy-tips#relevancy-tips).
+For additional training guidance, see [Relevancy training tips](/docs/services/discovery-data?topic=discovery-data-relevancy-tips).
 
 ## Confidence scores
 {: #confidence}
@@ -125,6 +125,6 @@ The `confidence` score can be found in the query results, under the `result_meta
 
 The `document_retrieval_strategy` can be found under the `retrieval_details`. If you query a trained collection using the {{site.data.keyword.discoveryshort}} Query Language, or the trained model is temporarily unavailable, the `document_retrieval_strategy` will be `untrained`.
 
-For more information on querying, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts#query-concepts).
+For more information on querying, see the [Query overview](/docs/services/discovery-data?topic=discovery-data-query-concepts).
 
 

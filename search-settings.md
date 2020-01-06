@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-25"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -42,7 +42,7 @@ Upload or delete a synonyms or stopwords file by clicking the appropriate **Uplo
 
 If you update your synonyms or stopwords files, you should go to the **Activity** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated lists. The button displayed will vary depending on the type of collection.
 
-Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/services/discovery-data?topic=discovery-data-stopwords#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/services/discovery-data?topic=discovery-data-query-expansion#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discovery-data_short}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
+Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/services/discovery-data?topic=discovery-data-search-settings#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/services/discovery-data?topic=discovery-data-search-settings#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discovery-data_short}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
 {: important}
 
 ## Implementing synonyms

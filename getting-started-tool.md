@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-26"
+lastupdated: "2019-12-18"
 
 subcollection: discovery-data
 
@@ -41,7 +41,7 @@ The Sample Project is a great way to tour and try out {{site.data.keyword.discov
 {: #before-you-begin-tool}
 {: hide-dashboard}
 
-Install {{site.data.keyword.discovery-data_short}}. See [Installing Discovery for Cloud Pak for Data](/docs/services/discovery-data?topic=discovery-data-install#install).
+Install {{site.data.keyword.discovery-data_short}}. See [Installing Discovery for Cloud Pak for Data](/docs/services/discovery-data?topic=discovery-data-install).
 
 ## Step 1: Open the Sample Project
 {: #open-project-tool}

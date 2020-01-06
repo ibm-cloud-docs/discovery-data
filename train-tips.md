@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-20"
+lastupdated: "2019-12-19"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Relevancy training tips
 {: #relevancy-tips}
 
-Answers to common questions about training a collection and explanations of common error and warning messages. For more information on training queries see [Improving result relevance with training](/docs/services/discovery-data?topic=discovery-data-train#train).
+Answers to common questions about training a collection and explanations of common error and warning messages. For more information on training queries see [Improving result relevance with training](/docs/services/discovery-data?topic=discovery-data-train).
 {: shortdesc}
 
 ## Understanding training
@@ -43,7 +43,7 @@ Answers to common questions about training a collection.
 ### How do I know if my system is trained?
 {: #understanding-system}
 
-Run a natural language query and check the `document_retrieval_strategy`. See [confidence scores](/docs/services/discovery-data?topic=discovery-data-confidence#confidence).
+Run a natural language query and check the `document_retrieval_strategy`. See [confidence scores](/docs/services/discovery-data?topic=discovery-data-train#confidence).
 
 If using the API, see [List training data](https://{DomainName}/apidocs/discovery-data-v2#list-training-data){: external}.
 
@@ -55,7 +55,7 @@ Open your project, then select the **Manage collections** icon on the navigation
 ### How do I interpret the `confidence` score that appears in natural language query results after training?
 {: #interpret-confidence}
 
-See [confidence scores](/docs/services/discovery-data?topic=discovery-data-confidence#confidence). 
+See [confidence scores](/docs/services/discovery-data?topic=discovery-data-train#confidence). 
 
 ## Interpreting Errors and Warnings
 {: #interpreting-errors}

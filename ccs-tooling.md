@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2019-12-17"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ subcollection: discovery-data
 After you have built and deployed a custom connector, you can configure and run it in the {{site.data.keyword.discovery-data_short}} tooling to create a collection.
 {: shortdesc}
 
-You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. These instructions enable you to use a custom connector instead of one of the pre-built connectors listed in [Configuring data sources](docs/discovery-data?topic=discovery-data-collections#collection-types).
+You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. These instructions enable you to use a custom connector instead of one of the pre-built connectors listed in [Configuring data sources](/docs/services/discovery-data?topic=discovery-data-collections#collection-types).
 
   1. After you create a new project, including a name and project type, look on the **Select data source** page for your custom connector. Select the custom connector and click **Next**. The **Configure collection** page opens.
 
