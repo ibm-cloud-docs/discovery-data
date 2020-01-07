@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-01-07"
 
 subcollection: discovery-data
 
@@ -67,7 +67,7 @@ There are three other **Project types**: **Conversational Search**, **Content Mi
 Now that we've opened the Sample project and learned more about **Document Retrieval** projects, let's explore.
 
 1.  Select the **Manage collections** icon on the navigation panel. Choose the **Sample Collection**. Several tabs display but we'll concentrate on a few.
-    -  The **Activity** tab displays collecttion details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**). For more details, see [Collection activity](/docs/services/discovery-data?topic=discovery-data-collections#collection-overview).
+    -  The **Activity** tab displays collection details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**). For more details, see [Collection activity](/docs/services/discovery-data?topic=discovery-data-collections#collection-overview).
     -  The **Identify fields** tab is where you can annotate your document using [Smart Document Understanding](/docs/services/discovery-data?topic=discovery-data-configuring-fields). You can use the **Field labels** that are available or create your own.
     -  The **Manage fields** tab gives you the option to choose the fields you want to index, turn on document splitting, and set date formats. For details, see [Managing fields](/docs/services/discovery-data?topic=discovery-data-configuring-fields#field-settings).
     -  The **Enrichments** tab displays the available enrichments (you can create more). By default, the enrichments already applied to this collection include **Entities** and **Parts of speech**. Click on **Fields to enrich** and you will notice that these enrichments are applied to the `text` field. To learn more about these enrichments, see [Extracting meaning](/docs/services/discovery-data?topic=discovery-data-create-enrichments#extract-meaning). You can also create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**. See [Creating enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments).   
@@ -77,7 +77,7 @@ Now that we've opened the Sample project and learned more about **Document Retri
 1.  Select the **Improve and customize** icon on the navigation panel. The **Improve and Customize** page is where you can to try out queries, then add and test customizations to improve the query results for your project. For details, see [Customizing and improving your project](/docs/services/discovery-data?topic=discovery-data-improve).
     - There are several example queries in the **Try an example to get started** section. For `Watson`, click the **Run search** button.
     - Two of the default **Improvement tools** for this project (Facets (by Entity) and Dynamic Facets) have identified facets (IBM, Watson, Kubernetes) you can filter on. Select a few and try them out. 
-    - Query results display in the center pane. Another **Improvement tool**, passages, makes it possible to see the passages identified in the documents returned. Click **View passages in document** for the document preview. Fro more information about how passages are identified in natural language queries, see [Passages](/docs/services/discovery-data?topic=discovery-data-query-parameters#passages).
+    - Query results display in the center pane. Another **Improvement tool**, passages, makes it possible to see the passages identified in the documents returned. Click **View passages in document** for the document preview. For more information about how passages are identified in natural language queries, see [Passages](/docs/services/discovery-data?topic=discovery-data-query-parameters#passages).
     -  On the **Improvement tools** panel, select the dropdowns to see what is available to further customize your project. There are five categories of tools: **Customize display**, **Search results**, **Teach domain concepts**, **Define structure**, and **Improve relevance**. For the full list of tools, see [Improvement tools](/docs/services/discovery-data?topic=discovery-data-improve#improvement-tools).
     
 That's the tour, stay on the **Improve and Customize** page for the next step.
