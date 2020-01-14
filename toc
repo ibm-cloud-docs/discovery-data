@@ -53,17 +53,20 @@ Watson Discovery for IBM Cloud Pak for Data
         train-tips.md
 
     {: topicgroup}
+    Content mining
+        contentminerapp.md
+
+    {: topicgroup}
     Discovery for Content Intelligence
         schema.md
         contracts.md
         parsing.md
         invoices.md
-        pos.md        
+        pos.md
 
     {: topicgroup}
     Integrating and deploying
         components.md
-        contentminerapp.md
 
     {: topicgroup}
     Building and deploying a custom connector
