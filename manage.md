@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2020
+lastupdated: "2020-01-17"
 
 subcollection: discovery-data
 
@@ -196,12 +196,12 @@ Multi-node `Etcd` clusters must be configured during deployment. Scaling the `Et
     ```bash
     kubectl get pvc -l release=<release-name>
     ```
-     {: pre}
+    {: pre}
 
     Delete the PVC for `Etcd`.
 
     ```bash
-    kuvectl delete pvc <pvc_name>
+    kubectl delete pvc <pvc_name>
     ```
     {: pre}
 

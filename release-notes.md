@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2020
+lastupdated: "2020-01-24"
 
 subcollection: discovery-data
 
@@ -54,10 +54,29 @@ IBM releases services, features, and language support for your evaluation that a
 
 The following new features and changes to the service are available.
 
+## 2.1.1, 24 Jan 2020
+{: #24jan2020}
+
+**{{site.data.keyword.discovery-data_long}} version 2.1.1 is available.** 
+
+### Known issues in this release:
+{: #24jan2020ki}
+
+  -  When creating a [dictionary](/docs/services/discovery-data?topic=discovery-data-facets#facetdict), suggested dictionary terms are normalized to lower case by default (for example, Watson Assistant will be normalized to watson assistant). To ensure matching on upper case terms, they should be explicitly included as part of the `Other terms` list or as the `Base term`.
+  -  When backing up and restoring data, training data does not restore successfully. Training data can be separately retrieved from a project, see [List training queries](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#list-training-queries){: external} and uploaded to a new project, see [Create training queries](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#create-training-query){: external} if needed.
+  -  When crawling SharePoint Online or SharePoint OnPrem documents, JSON documents may not be indexed correctly and the `title` returned may be `errored`. This is because SharePoint web services use the `ows_FileRef` property to retrieve JSON files, which will return an error page. To fix this issue, contact your SharePoint Administrator and Microsoft Support.
+  -  If you migrate a collection created in version 2.0.1 to either version 2.1.0 or 2.1.1, that collection will not have a **Project type** assigned and the collection will not be available to be queried. To assign a **Project type**, open the **Projects** page by selecting the **Projects** icon on the navigation panel. Name your project and choose one of the Project types: `Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`.
+
+See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-notes#29nov2019ki) for additional issues.
+
 ## 2.1.0, 27 Nov 2019
 {: #27nov2019}
 
-**{{site.data.keyword.discovery-data_long}} version 2.1.0 is available.** {{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.5.0.0. The following changes were made in this release:
+**{{site.data.keyword.discovery-data_long}} version 2.1.0 is available.** 
+
+{{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.5.0.0.
+
+The following changes were made in this release:
 
   -  New **Project** based interface - Test your application like an end-user would with the **Document retrieval**, **Conversational Search**, and **Content Mining** project types. For more information, see [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects).
   -  **Content Mining** - Build an end user interface for extracting insights proactively from your entire corpus. For more information see [Mining Content](/docs/services/discovery-data?topic=discovery-data-contentminerapp).
@@ -81,19 +100,19 @@ The following new features and changes to the service are available.
 
   -  When you apply an enrichment to a collection, the enrichment language must match the collection language, or it will fail. The tooling displays all the collections, regardless of language.
   -  Discovery only supports .zip files from MacOS that are generated using a command such as: `zip -r my-folder.zip my-folder -x "*.DS_Store"`. Zips created by right-clicking on a folder name and selecting  `compress` are not supported. 
-  -  In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
+  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} 2.1.1 release.] In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
   -  On the Manage Fields tab, you can edit system-generated fields. The following fields should not be edited by changing the field type or turning off indexing: `document_id`, `extracted_metadata`, `metadata`.
-  -  When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit https://watson-developer-cloud.github.io/discovery-components/storybook {: external} instead to view documentation.
+  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} 2.1.1 release.] When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
   -  When you delete a Collection and select the option `Don't delete underlying data`, any incomplete document ingestion crawls will continue running in the background, which will impact the new crawl start times, until the existing crawls are completed.
   -  If you have performed relevancy training on an existing collection using the previous version of Discovery (or using the v1 API) then open that collection in a project in {{site.data.keyword.discovery-data_long}} version 2.1.0, and attempt to continue training at the project level via the UI or API, you will cause competing models to be created and block further training. The workaround is to first clear the training data from the original collection if project training is needed.
   -  Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. See [Clearing a lock state](/docs/services/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-ls) for details on identifying and resolving this issue.
-  -  If you are using Smart Document Understanding, two variables need to be set during installation or reinstallation. See [Environment variable settings for Smart Document Understanding](/docs/services/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu) for details.
+  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} 2.1.1 release.] If you are using Smart Document Understanding, two variables need to be set during installation or reinstallation. See [Environment variable settings for Smart Document Understanding](/docs/services/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu) for details.
   -  If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
   -  Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
   -  If the Parts of Speech enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.
   -  Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a top-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
   -  When viewing the Content Miner deploy page, sometimes the full application URL is not displayed for copying. To fix, refresh the page.
-  -  Deprovisioning a Discovery Instance will not delete the underlying data. Delete the collectiona and documents manually.
+  -  Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
   -  On the Improvement tools panel, the enrichment `Sentiment of phrases` is listed, but is not currently available.
   -  In Content Mining projects, the `dates` fields may not be parsed properly for display in facets.
   -  The Dynamic facets toggle should not appear in Content Mining projects.
@@ -124,18 +143,8 @@ and [Windows File System connector](/docs/services/discovery-data?topic=discover
   -  If one or more of your collections is trained, the training data from one of those collection may display on the **Train** page of an untrained collection. Refresh the page to clear that training data.
   -  The following types of documents will not be processed if they do not have the proper file extension: .docx, .pptx, .xlsx.
 
+See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-notes#known-issues-ga) for additional issues.
 
-The following known issues remain from the GA release:
-
-  -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.
-  -  All JSON files ingested into {{site.data.keyword.discovery-data_short}} should include the .json file extension.
-  -  When querying  on the `collection_id` of a trained collection, the `training_status.notices` value may occasionally display as `0` instead of the correct value.
-  -  Not all query limitations are enforced in this release. See [query limitations](/docs/services/discovery-data?topic=discovery-data-query-reference#query-limitations) for the complete list of banned fields.
-  -  In JSON source documents, you should not duplicate the following system-generated fields: `document_id`, `parent_document_id`, `filename`, and `title`. This will cause the duplicate fields to nest within arrays and break certain features, such as ranker training.
-  -  Do not include a top-level `metadata` property in your JSON documents. If you upload a JSON document that already contains a top-level `metadata` property, then the `metadata` property of the indexed document will be converted to an array in the index.
-  -  CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).
-  -  Currently, unique collection names are not enforced. Using duplicate collection names is not recommended and should be avoided.
-  
 ## 2.0.0 (General Availability release), 28 June 2019
 {: #28jun2019}
 
