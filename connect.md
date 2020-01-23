@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-17"
+  years: 2019, 2020
+lastupdated: "2020-01-23"
 
 subcollection: discovery-data
 
@@ -752,7 +752,7 @@ Use this option to crawl local file systems. Only documents supported by {{site.
 Before you crawl local file systems, make sure that the local file system folders that you want to crawl have access to the ingestion or gateway pod so that the crawler can crawl the local file systems. Before you create a Local File System collection, you must also have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 {: shortdesc}
 
-Before you create a Local File System collection, complete the following steps, replacing the `<>` and the content inside with your credentials:
+Before you create a Local File System collection, complete the following steps to copy your local file system folders to the ingestion or gateway pod, replacing the `<>` and the content inside with your credentials:
 
 1. Enter the following command to log on to your {{site.data.keyword.discovery-data_short}} cluster:
 
@@ -776,6 +776,67 @@ Before you create a Local File System collection, complete the following steps, 
    {: pre}
 
    The folders that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
+
+   If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
+   {: important}
+
+If you want to mount a persistent volume on the ingestion pod, see [Mounting a persistent volume on the ingestion pod](/docs/services/discovery-data?topic=discovery-data-collections#mount-persistent-volume).
+
+
+#### Mounting a persistent volume on the ingestion pod
+{: #mount-persistent-volume}
+
+If you do not want to copy your local file system files or folders to the ingestion or gateway pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the ingestion pod. After establishing this link and after {{site.data.keyword.discovery-data_short}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
+{: shortdesc}
+
+To mount a persistent volume on the ingestion pod, complete the following steps:
+
+1. Establish a link to your NFS, or the persistent volume. See the following example. Replace the `<>` and the content inside with the required information:
+
+   ```bash
+   apiVersion: v1
+   kind: PersistentVolume
+   metadata:
+     name: "<label-name>"
+     labels:
+       "<label-name>": "<label-value>"
+   spec:
+     capacity:
+       storage: "10Gi"
+     accessModes:
+       - ReadWriteMany
+     persistentVolumeReclaimPolicy: Retain
+     nfs:
+       server: <NFS server hostname or IP address>
+       path: <Path of NFS exported folder>
+   ```
+   {: codeblock}
+
+1. Create a file called `override.yaml` in `ibm-watson-discovery-ppa/deploy/`. This file overrides any default settings that you choose. In the `label` and `value` fields, you indicate the remote NFS folder that you want to serve as the persistent volume. See the following example of the content in the `override.yaml` file that you must enter. Replace the `<>` and the content inside with the required information:
+
+   ```bash
+   core:
+     ingestion:
+       mount:
+         useDynamicProvisioning: false
+         storageClassName: ""
+         selector:
+           label: "<label-name>"
+           value: "<label-value>"
+   ```
+   {: codeblock}
+
+1. From the `deploy` subdirectory, run the `deploy.sh` script by entering the `-d` flag, the file path to the files that you want to make accessible to `ibm-watson-discovery`, the `-O` flag, and your `override.yaml` file. You can also enter the `-e` flag with your `release-name-prefix`. If you do, your `release-name-prefix` must be 13 characters or fewer, or the installation will fail. If you do not enter the `-e` flag, the default `release-name-prefix` is `disco`. See the following example. Replace the `<>` and the content inside with the required information:
+
+   ```bash
+   ./deploy.sh -d </local root directory/subdirectory/>ibm-watson-discovery -O ./override.yaml -e <release-name-prefix>
+   ```
+   {: codeblock}
+
+   For a list of flags and their descriptions or for help, run `./deploy.sh -h`.
+   {: tip}
+
+If you want to copy your local file system folders to the ingestion or gateway pod, see [Copying local file system folders to the ingestion or gateway pod](/docs/services/discovery-data?topic=discovery-data-collections#copy-local-folders).
 
 
 #### Configuring a Local File System collection
