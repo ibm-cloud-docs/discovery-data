@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-01-29"
 
 subcollection: discovery-data
 
@@ -111,6 +111,7 @@ Unidirectional example:
 Notes about query expansion:
 
 -  Only one synonyms (query expansion) list can be uploaded per collection; if a second expansion list is uploaded, it will replace the first.
+-  If you run a query, then upload a synonyms list, you need to rerun your query in order to see the synonyms take effect.
 -  All `input_terms` and `expanded_terms` should be lowercase. Lowercase terms will expand to uppercase.
 -  The query expansion list must be written in JSON.
 -  To disable query expansion, delete the synonyms (query expansion) file.
@@ -155,6 +156,7 @@ See [supported languages](/docs/services/discovery-data?topic=discovery-data-lan
 Notes about stopwords:
 
 -  Only one custom stopwords file can be uploaded per collection; if a second custom stopwords file is uploaded, it will replace the first.
+-  If you run a query, then upload a stopwords file, you need to rerun your query in order to see the stopwords take effect.
 -  The size limit for a custom stopword list file is one million characters. However, if you upload a custom stopwords file with a large number of terms, you may negatively affect search accuracy. The number of words is dependent on the language, the document contents, and the words chosen. A good best practice would be to keep your list of stopwords under `200` total words. 
 -  All stopwords should be lowercase. 
 -  To disable a custom stopword file, delete the custom stopword file.
@@ -162,4 +164,3 @@ Notes about stopwords:
 -  Stopwords are removed at both index and query time. A good best practice is to upload your custom stopword file before crawling/uploading all of your documents.
    - If your documents have already been indexed with the default stopwords file, and you then add a custom stopwords file, the new custom stopwords will remain in the index for those documents. In that case, queries containing the new stopwords will filter them out at query time.
    - If a user searches for a word that was a stopword at one point in time, but has since been removed from the custom stopwords file, they will not find documents that match the original stopword because the term was removed at index time. To fix this issue, go to the **Activity** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated custom stopwords file. The button displayed will vary depending on the type of collection.
-
