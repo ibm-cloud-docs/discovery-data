@@ -45,11 +45,11 @@ A collection is a set of documents you upload or crawl. You can also enrich, tra
 
 By using collections, {{site.data.keyword.discovery-data_short}} pulls documents from a data source, using a process called crawling. Crawling is the process of systematically browsing and retrieving documents from a specified start location. {{site.data.keyword.discovery-data_short}} only crawls items that you explicitly specify.
 
-1. To create a collection, first create a **Project** and choose a **Project type**. For details see [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects). Alternately, you can open your project, select the **Manage collections** icon on the navigation panel, and then click **New collection**. 
+1. To create a collection, first create a **Project** and choose a **Project type**. For details see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Alternately, you can open your project, select the **Manage collections** icon on the navigation panel, and then click **New collection**. 
 1. Choose a data source, or select **Use an existing collection**.
-1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages).
-1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/services/discovery-data?topic=discovery-data-collections#crawlschedule).
-1. [Configure the data source](/docs/services/discovery-data?topic=discovery-data-collections#collection-types).
+1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support#supported-languages).
+1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+1. [Configure the data source](/docs/discovery-data?topic=discovery-data-collections#collection-types).
 1. Select **Create collection**, which starts the crawling process. The **Activity** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.
 
 The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discovery-data_short}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
@@ -75,16 +75,16 @@ Depending on your data source, the steps to configure a collection vary. See the
 
 You can configure the following data sources:
 
--  [Box](/docs/services/discovery-data?topic=discovery-data-collections#connectbox)
--  [Salesforce](/docs/services/discovery-data?topic=discovery-data-collections#connectsf)
--  [Microsoft SharePoint Online](/docs/services/discovery-data?topic=discovery-data-collections#connectsp)
--  [Microsoft SharePoint OnPrem](/docs/services/discovery-data?topic=discovery-data-collections#connectsp_op)
--  [Web crawl](/docs/services/discovery-data?topic=discovery-data-collections#connectwebcrawl)
--  [Database](/docs/services/discovery-data?topic=discovery-data-collections#databaseconnect)
--  [Windows File System](/docs/services/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect)
--  [Local File System](/docs/services/discovery-data?topic=discovery-data-collections#localfilesystemconnect)
--  [Upload your own data](/docs/services/discovery-data?topic=discovery-data-collections#upload-data)
--  [Reuse existing data](/docs/services/discovery-data?topic=discovery-data-collections#reuse) 
+-  [Box](/docs/discovery-data?topic=discovery-data-collections#connectbox)
+-  [Salesforce](/docs/discovery-data?topic=discovery-data-collections#connectsf)
+-  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-collections#connectsp)
+-  [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-collections#connectsp_op)
+-  [Web crawl](/docs/discovery-data?topic=discovery-data-collections#connectwebcrawl)
+-  [Database](/docs/discovery-data?topic=discovery-data-collections#databaseconnect)
+-  [Windows File System](/docs/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect)
+-  [Local File System](/docs/discovery-data?topic=discovery-data-collections#localfilesystemconnect)
+-  [Upload your own data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
+-  [Reuse existing data](/docs/discovery-data?topic=discovery-data-collections#reuse) 
 
 
 ### Crawl schedule options
@@ -129,7 +129,7 @@ The following general requirements apply to all connectors:
 -  The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file.
 -  Each collection can support only one data source.
 -  Connectors are not available when you use the API. 
--  [Document level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), and Windows File System (Windows Server 2012 R2, 2016, and 2019). 
+-  [Document level security](/docs/discovery-data?topic=discovery-data-collections#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), and Windows File System (Windows Server 2012 R2, 2016, and 2019). 
 -  You need the credentials and file locations, or URLs, for each data source, which a developer or system administrator of the data source typically provides. 
 -  You need to manually provide the resources to crawl. Auto discovery is not supported. 
 -  When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
@@ -283,7 +283,7 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Box** as the c
         - To crawl a specific user, enter `box://app.box.com/user/USER_ID/`.
 
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security** - By default, this switch is set to **off**. You must enable this option to activate document level security. When enabled, this option ensures that users can crawl and query content they have access to when logged in to Box. For more information, see [About document level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls).
+    - **Enable Document Level Security** - By default, this switch is set to **off**. You must enable this option to activate document level security. When enabled, this option ensures that users can crawl and query content they have access to when logged in to Box. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 1. Click **Create collection**.
 
 
@@ -378,8 +378,8 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Sharepoint Onl
     -  **Site Collection Url** - The SharePoint web service URL. For example, `http://www.example.com/`. 
     -  **Site Collection Name** - The name you must obtain from site collection settings. The name the site collection uses.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When enabled, this option ensures that users can crawl and query content they have access to. For more information, see [About document level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls).
-        - **Application ID** - The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](/docs/services/discovery-data?topic=discovery-data-collections#register-sp) for instructions.
+    -  **Enable Document Level Security** - By default, this switch is set to **off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When enabled, this option ensures that users can crawl and query content they have access to. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+        - **Application ID** - The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](/docs/discovery-data?topic=discovery-data-collections#register-sp) for instructions.
 1. Click **Create collection**.
 
 
@@ -404,7 +404,7 @@ After you register your app, check to make sure you completed the following step
 - In the Azure Portal, the client type is set to be treated as a public client.
 - Your application ID is entered in the **Application ID** field in {{site.data.keyword.discovery-data_short}} so that document level security is enabled.
 
-Using the application ID you generated in this procedure, you can finish creating your collection, as described in [Configuring a SharePoint Online collection](/docs/services/discovery-data?topic=discovery-data-collections#configuresp).
+Using the application ID you generated in this procedure, you can finish creating your collection, as described in [Configuring a SharePoint Online collection](/docs/discovery-data?topic=discovery-data-collections#configuresp).
 
 For more details on how to register an app or how to grant permissions, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
 
@@ -439,7 +439,7 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Sharepoint OnP
     -  **Web Application Url** - The SharePoint web service URL. For example, `http://www.example.com/`.
     
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security** - By default, this switch is set to **off** by default. When set to **on**, it enables search time and document level security. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls):
+    - **Enable Document Level Security** - By default, this switch is set to **off** by default. When set to **on**, it enables search time and document level security. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collections#configuredls):
         - **LDAP server URL** - The LDAP server URL to connect to.
         - **LDAP binding username** - User name used to bind to the directory service. In most cases, this user name is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works. 
         - **LDAP binding user password** - Password used to bind to the directory service.
@@ -723,7 +723,7 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Windows File S
     - **Path** - The file path that you need to enter to crawl documents from. You can enter multiple file paths.
 1. After entering the path, click **Add** to add one or more file paths.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **off**. You must enable this option to activate document level security. When enabled, this option ensures that users can crawl and query content they have access to. For more information about Document Level Security, see [About document level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls).
+    -  **Enable Document Level Security** - By default, this switch is set to **off**. You must enable this option to activate document level security. When enabled, this option ensures that users can crawl and query content they have access to. For more information about Document Level Security, see [About document level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
          - **LDAP server URL** - The LDAP server URL to connect to.
          - **LDAP binding username** - User name used to bind to the directory service. In most cases, this user name is a DN. The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
          - **LDAP binding user password** - Password used to bind to the directory service.
@@ -780,7 +780,7 @@ Before you create a Local File System collection, complete the following steps t
    If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
    {: important}
 
-If you want to mount a persistent volume on the ingestion pod, see [Mounting a persistent volume on the ingestion pod](/docs/services/discovery-data?topic=discovery-data-collections#mount-persistent-volume).
+If you want to mount a persistent volume on the ingestion pod, see [Mounting a persistent volume on the ingestion pod](/docs/discovery-data?topic=discovery-data-collections#mount-persistent-volume).
 
 
 #### Mounting a persistent volume on the ingestion pod
@@ -836,7 +836,7 @@ To mount a persistent volume on the ingestion pod, complete the following steps:
    For a list of flags and their descriptions or for help, run `./deploy.sh -h`.
    {: tip}
 
-If you want to copy your local file system folders to the ingestion or gateway pod, see [Copying local file system folders to the ingestion or gateway pod](/docs/services/discovery-data?topic=discovery-data-collections#copy-local-folders).
+If you want to copy your local file system folders to the ingestion or gateway pod, see [Copying local file system folders to the ingestion or gateway pod](/docs/discovery-data?topic=discovery-data-collections#copy-local-folders).
 
 
 #### Configuring a Local File System collection
@@ -856,9 +856,9 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Local File Sys
 Use this option to upload data you stored locally. Only documents supported by {{site.data.keyword.discovery-data_short}} are crawled; all others are ignored.
 {: shortdesc}
 
-For a list of file types that you can upload to {{site.data.keyword.discovery-data_short}}, see [Supported file types](/docs/services/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection.
+For a list of file types that you can upload to {{site.data.keyword.discovery-data_short}}, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection.
 
-For the list of supported data sources that you can use to create collections, see [Configuring data sources](/docs/services/discovery-data?topic=discovery-data-collections#collection-types).
+For the list of supported data sources that you can use to create collections, see [Configuring data sources](/docs/discovery-data?topic=discovery-data-collections#collection-types).
 
 
 ### Reuse existing data
@@ -885,7 +885,7 @@ If you make any of the following changes to a shared collection, those changes a
 The enrichments and other improvement tools are not included when a collection is shared because they are set at the project level.
 {: important}
 
-For more information about projects, see [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects#projects).
+For more information about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects#projects).
 
 
 ## Managing collections
@@ -895,7 +895,7 @@ For more information about projects, see [Creating projects](/docs/services/disc
 
  All of your collections are listed here. You can delete unused collections and view statistics.
 
- To keep track of collection sharing across projects, select the **Projects** icon on the navigation panel and choose **Collection usage and sharing**. For more information see [Collection usage and sharing](/docs/services/discovery-data?topic=discovery-data-projects#collection-usage).
+ To keep track of collection sharing across projects, select the **Projects** icon on the navigation panel and choose **Collection usage and sharing**. For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
 
 
 ## Collection activity
@@ -924,10 +924,10 @@ Document level security enables you to leverage the security settings from your 
 To enable document level security, you must configure these components:
 
 - Enable document level security for your collection.
-  - For a description of the feature in the SharePoint OnPrem data source, see [Enable Document Level Security for SharePoint OnPrem](/docs/services/discovery-data?topic=discovery-data-collections#configuresp_op).
-  - For a description of the feature in SharePoint Online, see [Enable Document Level Security for SharePoint Online](/docs/services/discovery-data?topic=discovery-data-collections#configuresp).
-  - For a description of the feature in Windows File System and the information required to configure a collection, consult [Enable Document Level Security for Windows File System](/docs/services/discovery-data?topic=discovery-data-collections#configurewindowsfilesystem).
-- Configure document level security parameters for your [SharePoint Online collection](/docs/services/discovery-data?topic=discovery-data-collections#configuresp), [SharePoint OnPrem collection](/docs/services/discovery-data?topic=discovery-data-collections#configuresp_op), or [Windows File System collection](/docs/services/discovery-data?topic=discovery-data-collections#configurewindowsfilesystem).
+  - For a description of the feature in the SharePoint OnPrem data source, see [Enable Document Level Security for SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-collections#configuresp_op).
+  - For a description of the feature in SharePoint Online, see [Enable Document Level Security for SharePoint Online](/docs/discovery-data?topic=discovery-data-collections#configuresp).
+  - For a description of the feature in Windows File System and the information required to configure a collection, consult [Enable Document Level Security for Windows File System](/docs/discovery-data?topic=discovery-data-collections#configurewindowsfilesystem).
+- Configure document level security parameters for your [SharePoint Online collection](/docs/discovery-data?topic=discovery-data-collections#configuresp), [SharePoint OnPrem collection](/docs/discovery-data?topic=discovery-data-collections#configuresp_op), or [Windows File System collection](/docs/discovery-data?topic=discovery-data-collections#configurewindowsfilesystem).
   Document level security configuration options are visible when document level security is enabled in your collection configuration.
 - Create {{site.data.keyword.discovery-data_short}} users that match the users available on the source system.
 - Associate users with your {{site.data.keyword.discovery-data_short}} instance.
@@ -958,7 +958,7 @@ You must create users that match the users available on the source system that {
 1. Click **Add user**.
 1. Add the users you want from the list by clicking **Add user**, select the desired user from the list, assign their role as **User**, and click **Add**.
 
-When querying collections that have document level security enabled, no results are returned if the users associated with your {{site.data.keyword.discovery-data_short}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/services/discovery-data?topic=discovery-data-querydls#querydls).
+When querying collections that have document level security enabled, no results are returned if the users associated with your {{site.data.keyword.discovery-data_short}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/discovery-data?topic=discovery-data-querydls#querydls).
 {: important}
 
 Because {{site.data.keyword.discovery-data_short}} does not sync any changes to the users from the LDAP server, {{site.data.keyword.discovery-data_short}} administrators must ensure that the users list is current and remove any non-current users.

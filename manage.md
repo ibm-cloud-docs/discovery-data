@@ -39,7 +39,7 @@ After you install and configure {{site.data.keyword.discovery-data_long}}, you c
 
 Ensure that you have the following prerequisites installed and working correctly on your local machine before performing any cluster-management tasks.
 
-1. Install the `cloudctl`, `helm`, and `kubectl` command-line tools as described at [Software requirements](/docs/services/discovery-data?topic=discovery-data-install#prereqs).
+1. Install the `cloudctl`, `helm`, and `kubectl` command-line tools as described at [Software requirements](/docs/discovery-data?topic=discovery-data-install#prereqs).
 
 1.  Start `helm`:
   

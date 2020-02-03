@@ -46,7 +46,7 @@ The following types of resources can be migrated from Watson Explorer to {{site.
 ## Importing dictionaries from Watson Explorer Analytical Components
 {: #enrichdictca}
 
-If you have [user dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external} from IBM Watson Explorer Analytical Components, you can import them by using the {{site.data.keyword.discovery-data_short}} [content mining application](/docs/services/discovery-data?topic=discovery-data-contentminerapp).
+If you have [user dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external} from IBM Watson Explorer Analytical Components, you can import them by using the {{site.data.keyword.discovery-data_short}} [content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 The default file location and name for dictionaries that are saved in Watson Explorer Analytical Components is `${master_server_node}/{master_configuration}/{collection_ID}/{dictionary_name}.fdic.xml`.
 {: tip}
@@ -84,7 +84,7 @@ If you have [dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW
 ## Importing character patterns from Watson Explorer oneWEX
 {: #enrichcpow}
 
-If you have [character patterns](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_char_ann.html){: external} from IBM Watson Explorer oneWEX, you can import them by using the {{site.data.keyword.discovery-data_short}} [content mining application](/docs/services/discovery-data?topic=discovery-data-contentminerapp).
+If you have [character patterns](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_char_ann.html){: external} from IBM Watson Explorer oneWEX, you can import them by using the {{site.data.keyword.discovery-data_short}} [content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 1. Log in to the content mining application and open the project that contains the collection you want to enrich with this character pattern. The link for the content mining app is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`.
 1. If the app opens within a collection, click the **Collections** link from the top of the page, which takes you to the main page of the content mining app.

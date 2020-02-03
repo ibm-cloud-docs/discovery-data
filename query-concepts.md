@@ -32,10 +32,10 @@ subcollection: discovery-data
 # Query overview
 {: #query-concepts}
 
-{{site.data.keyword.discovery-data_long}} offers powerful content search capabilities through queries. After your content is uploaded and customized by {{site.data.keyword.discovery-data_short}}, you can build queries, integrate {{site.data.keyword.discovery-data_short}} into your own projects, or create a custom applications. For more information, see [Building and deploying components](/docs/services/discovery-data?topic=discovery-data-deploy).
+{{site.data.keyword.discovery-data_long}} offers powerful content search capabilities through queries. After your content is uploaded and customized by {{site.data.keyword.discovery-data_short}}, you can build queries, integrate {{site.data.keyword.discovery-data_short}} into your own projects, or create a custom applications. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
 {: shortdesc}
 
-In the {{site.data.keyword.discovery-data_short}} tooling, you can write and test [natural language queries](/docs/services/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/services/discovery-data?topic=discovery-data-improve) page.
+In the {{site.data.keyword.discovery-data_short}} tooling, you can write and test [natural language queries](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/discovery-data?topic=discovery-data-improve) page.
 {: tip}
 
 When querying using the API, the entire {{site.data.keyword.discoveryshort}} Query Language is supported. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data-v2#query-a-project).
@@ -43,18 +43,18 @@ When querying using the API, the entire {{site.data.keyword.discoveryshort}} Que
 
 For more information about the {{site.data.keyword.discoveryshort}} Query Language, see:
 
--  [Query operators](/docs/services/discovery-data?topic=discovery-data-query-operators)
--  [Query aggregations](/docs/services/discovery-data?topic=discovery-data-query-aggregations)
--  [Query reference](/docs/services/discovery-data?topic=discovery-data-query-reference)
+-  [Query operators](/docs/discovery-data?topic=discovery-data-query-operators)
+-  [Query aggregations](/docs/discovery-data?topic=discovery-data-query-aggregations)
+-  [Query reference](/docs/discovery-data?topic=discovery-data-query-reference)
 
 Also see:
 
--  **Use the {{site.data.keyword.discoveryshort}} Query Language** - see [query](/docs/services/discovery-data?topic=discovery-data-query-parameters#query).
--  **Write an aggregation query using the {{site.data.keyword.discoveryshort}} Query Language** - see [aggregation](/docs/services/discovery-data?topic=discovery-data-query-parameters#aggregation).
--  **Write a filter to narrow down the documentation set using the {{site.data.keyword.discoveryshort}} Query Language** - see [filter](/docs/services/discovery-data?topic=discovery-data-query-parameters#filter).
--  **Fields to return** - see [return](/docs/services/discovery-data?topic=discovery-data-query-parameters#return).
--  **Number of documents to return** - see [count](/docs/services/discovery-data?topic=discovery-data-query-parameters#count).
--  **Number of query results to skip at the beginning** - see [offset](/docs/services/discovery-data?topic=discovery-data-query-parameters#offset).
+-  **Use the {{site.data.keyword.discoveryshort}} Query Language** - see [query](/docs/discovery-data?topic=discovery-data-query-parameters#query).
+-  **Write an aggregation query using the {{site.data.keyword.discoveryshort}} Query Language** - see [aggregation](/docs/discovery-data?topic=discovery-data-query-parameters#aggregation).
+-  **Write a filter to narrow down the documentation set using the {{site.data.keyword.discoveryshort}} Query Language** - see [filter](/docs/discovery-data?topic=discovery-data-query-parameters#filter).
+-  **Fields to return** - see [return](/docs/discovery-data?topic=discovery-data-query-parameters#return).
+-  **Number of documents to return** - see [count](/docs/discovery-data?topic=discovery-data-query-parameters#count).
+-  **Number of query results to skip at the beginning** - see [offset](/docs/discovery-data?topic=discovery-data-query-parameters#offset).
 
 When you create a query or filter, {{site.data.keyword.discovery-data_short}} looks at each result and tries to match the paths you have defined. When matches occur, they are added to the results set. When creating a query, you can be as vague or as specific as you want. The more specific the query, the more targeted the results.
 
@@ -85,23 +85,23 @@ Your query would be structured like this:
 
 ![Example query structure](images/query_structure2.png)
 
-  Operators that evaluate a field (`<=` , `>=`, `<`, `>`) require a `number` or `date` as the value. Using quotations around a value always makes it a `string`. Therefore `score>=0.5` is a valid query and `score>="0.5"` is not. See [Query operators](/docs/services/discovery-data?topic=discovery-data-query-operators) for a complete list of operators.
+  Operators that evaluate a field (`<=` , `>=`, `<`, `>`) require a `number` or `date` as the value. Using quotations around a value always makes it a `string`. Therefore `score>=0.5` is a valid query and `score>="0.5"` is not. See [Query operators](/docs/discovery-data?topic=discovery-data-query-operators) for a complete list of operators.
   {: tip}
 
 ## Building combined queries
 {: #building-combined-queries}
 
-You can combine query parameters together to build more targeted queries. For example, you can use the both the `filter` and `query` parameters together. For more information about filtering vs. querying, see [Differences between the filter and query parameters](/docs/services/discovery-data?topic=discovery-data-query-parameters#filtervquery).
+You can combine query parameters together to build more targeted queries. For example, you can use the both the `filter` and `query` parameters together. For more information about filtering vs. querying, see [Differences between the filter and query parameters](/docs/discovery-data?topic=discovery-data-query-parameters#filtervquery).
 
 ## How to structure an aggregation
 {: #structure-aggregation}
 
-Aggregations return a set of data values. For the full list of aggregation options, see [Aggregations](/docs/services/discovery-data?topic=discovery-data-query-reference#aggregations).
+Aggregations return a set of data values. For the full list of aggregation options, see [Aggregations](/docs/discovery-data?topic=discovery-data-query-reference#aggregations).
 
 ![Example aggregation query structure](images/aggregation_structure.png)
 
 This example aggregation will find all of the `concepts` in your collection.
-The delimiter in this query is `.` and the operator is `()`, see [Query operators](/docs/services/discovery-data?topic=discovery-data-query-operators) to learn about other operators available in the {{site.data.keyword.discoveryshort}} Query Language.
+The delimiter in this query is `.` and the operator is `()`, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators) to learn about other operators available in the {{site.data.keyword.discoveryshort}} Query Language.
 
 ### Example aggregation queries
 {: #example-aggregations}
@@ -134,10 +134,10 @@ Additionally, any subsequent operation will further restrict the result set that
 ## Querying with document level security enabled
 {: #querydls}
 
-If you have enabled document level security on a collection, you can control search results at query time at the user level. See [Configuring document level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls) for information about leveraging the security settings of your source documents.
+If you have enabled document level security on a collection, you can control search results at query time at the user level. See [Configuring document level security](/docs/discovery-data?topic=discovery-data-collections#configuredls) for information about leveraging the security settings of your source documents.
 
 To return search results that restrict query results to the security settings of authorized users, those users: 
--  Must be associated with your {{site.data.keyword.discovery-data_short}} instance. See [Creating users for document level security](/docs/services/discovery-data?topic=discovery-data-collections#createusersdls) for instructions.
+-  Must be associated with your {{site.data.keyword.discovery-data_short}} instance. See [Creating users for document level security](/docs/discovery-data?topic=discovery-data-collections#createusersdls) for instructions.
 -  Must be present in the source system (Box, SharePoint OnPrem, or SharePoint Online).
 If both criteria are not met, no results will be returned.
 

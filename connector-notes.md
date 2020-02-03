@@ -47,7 +47,7 @@ Observe the following notes and warnings when implementing a custom connector.
   - If a custom connector fails to connect to its source for any reason, it issues a generic error message such as `Failed to create connector` or `Timed out`, or a `500` HTTP error. Specific failure information is not currently provided.
   - If a custom connector is deployed and creates hidden files, undeployment takes a considerable length of time (several minutes up to several hours in extreme cases) while the script locates all of the connector's components.
 
-  See the [Release notes](/docs/services/discovery-data?topic=discovery-data-release-notes) for possible additional issues.
+  See the [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for possible additional issues.
 
 
 

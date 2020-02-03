@@ -35,7 +35,7 @@ subcollection: discovery-data
 The {{site.data.keyword.discovery-data_long}} content mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
 {: shortdesc}
 
-This page describes using the content mining application. For information about creating a {{site.data.keyword.discovery-data_short}} content mining project, which is how the application is configured and launched, see [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects).
+This page describes using the content mining application. For information about creating a {{site.data.keyword.discovery-data_short}} content mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 {: tip}
 
 ## Application launch view
@@ -53,7 +53,7 @@ The link for the content mining app is similar to the format, `https://{installa
 
 On this first page, you can enter terms that you want to search for. Or, you can select values from the bar charts of each facet. You can select multiple items.
 
-For details about configuring facets in a content mining project, see [Facets](/docs/services/discovery-data?topic=discovery-data-facets).
+For details about configuring facets in a content mining project, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
 {: tip}
 
 You can select the type of facet to display from the **Facet type** menu:
@@ -219,12 +219,12 @@ The **Documents** view is displayed when you show documents in the guided analys
 
 The toolbar contains the following commands:
 
-- **Export**: You can export documents to your local file system. You cannot export secured collections. For more information, see [About document-level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: You can export documents to your local file system. You cannot export secured collections. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Customize**: You can customize how documents are displayed. You can choose header fields to always show above documents. You can also specify a field that contains a link to a thumbnail image to display next to the document summary.
 
   You can specify a URL. When you click the title, this link is opened in a new window instead of showing the preview. Only valid URLs work as links.
 
-- **Snapshot** Saves an image of the dashboard to the Report pane, from which you can create a report. For more information, see, [Report pane](/docs/services/discovery-data?topic=discovery-data-contentminerapp#cmorepv).
+- **Snapshot** Saves an image of the dashboard to the Report pane, from which you can create a report. For more information, see, [Report pane](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorepv).
 - **Show all fields** and **Hide all fields**: You can toggle between these two buttons to show all fields or just the title and date fields.
 
 #### Documents pane
@@ -309,7 +309,7 @@ The facet toolbar is displayed when you click **Show Toolbar**.
 
 - **Search**: You can search for words.
 - **Boolean Operators**: If you select two values for analysis, you can specify whether the values are joined by Boolean AND or OR.
-- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Visualization**: The default visualization is specified on the facet option page of the collection wizard. This list contains the visualization options:
     - **Facet Table**: Shows facet value, relevancy and count. Click each item to analyze more. To clear selection, click that item again. You can sort by name, count, and relevancy by clicking on each column header.
     - **Word Cloud**: Color and size represents level of relevancy. Click each item to analyze more. To clear selection, click white space.
@@ -334,7 +334,7 @@ By default, the chart is rendered as a heat map. Each cell color indicates a lev
 The facet toolbar is displayed when you click **Show Toolbar**.
 
 - **Search**: You can search for words.
-- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Visualization**: The only option is **Timeseries**.
 - **Close**: Close this facet.
 - **Hide Toolbar**: Hide the toolbar.
@@ -363,7 +363,7 @@ By default, a two-dimensional map table is shown. Click each item to analyze fur
 
 The facet toolbar is displayed when you click **Show Toolbar**.
 
-- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/services/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Visualization**: You can change the visualization to a **Pair Table** visualization. You can change back to a two-dimensional map by choosing **2D Map**. A pair table is shown below. Click each item to analyze further. To clear the selection, click that item again.
 - **Close**: Close this facet.
 - **Hide Toolbar**: Hide the toolbar.
