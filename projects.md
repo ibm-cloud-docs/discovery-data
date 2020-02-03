@@ -37,18 +37,18 @@ subcollection: discovery-data
 A project is a convenient way to build and manage your {{site.data.keyword.discovery-data_long}} application. You can assign a **Project type** (`Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`) and add data quickly by creating a collection, or reusing an existing one. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
 {: shortdesc}
 
-A sample project is available for you to explore and experiment with. For details, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/services/discovery-data?topic=discovery-data-getting-started). 
+A sample project is available for you to explore and experiment with. For details, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started). 
 
 To create a project:
 
 1.  Open the **Projects** page by selecting the **Projects** icon on the navigation panel.
 1.  Select **New project**. Name your project and choose a **Project type**: `Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`. 
 1.  Click **Next**.
-1.  Choose and configure a data source (see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections)), or you can reuse an existing collection by selecting **Reuse data from an existing collection**. 
+1.  Choose and configure a data source (see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections)), or you can reuse an existing collection by selecting **Reuse data from an existing collection**. 
 
-To keep track of collection sharing and clean up unused collections, select **Collection usage and sharing** on the **Projects** page. For more information see [Collection usage and sharing](/docs/services/discovery-data?topic=discovery-data-projects#collection-usage).
+To keep track of collection sharing and clean up unused collections, select **Collection usage and sharing** on the **Projects** page. For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
 
-To view all the collections in your project, or add a new collection, select the **Manage collections** icon on the navigation panel. For more information, see [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections).
+To view all the collections in your project, or add a new collection, select the **Manage collections** icon on the navigation panel. For more information, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
 
 A **Document Retrieval**, **Conversational Search**, or **Custom** project type can contain a maximum of `5` collections. If the project type is **Content Miner**, the project can contain only `1` collection.
 {: important}
@@ -73,7 +73,7 @@ There are four available **Project types**: `Document Retrieval`, `Conversationa
 
 Use this project type to search and find the most relevant answers from your data.
 
-If you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence, you should use this **Project type**. For details see [{{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/services/discovery-data?topic=discovery-data-output_schema). 
+If you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence, you should use this **Project type**. For details see [{{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
 
 #### Document retrieval defaults
 {: #doc-retrieval-defaults}
@@ -82,13 +82,13 @@ If you have purchased and installed {{site.data.keyword.discovery-data_short}} f
 -  **Enrichments applied**: Entities, Parts of speech
 -  **Improvement tools enabled**: Facets (by Entity), Dynamic Facets, Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/services/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 ### Conversational Search
 {: #conversational}
 
-Use this project type to supply answers to a virtual agent built with {{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}}. For more information about building a {{site.data.keyword.conversationfull}} search skill, see [Creating a search skill](https://cloud.ibm.com/docs/services/assistant-data?topic=assistant-data-skill-search-add){: external}.
+Use this project type to supply answers to a virtual agent built with {{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}}. For more information about building a {{site.data.keyword.conversationfull}} search skill, see [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
 
 At this time, the {{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}} search skill only supports one collection.
 {: note}
@@ -101,7 +101,7 @@ At this time, the {{site.data.keyword.conversationfull}} for {{site.data.keyword
 -  **Enrichments applied**: None
 -  **Improvement tools enabled**: Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/services/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 
@@ -121,7 +121,7 @@ Each **Content Mining** project can contain only one collection.
 -  **Improvement tools enabled**: None
 -  **CSV settings**: No header, selected delimiters are comma and semicolon
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/services/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 
@@ -137,7 +137,7 @@ This option is for those who prefer not to use one of the other project types.
 -  **Enrichments applied**: None
 -  **Improvement tools enabled**: Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/services/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 ## Collection usage and sharing

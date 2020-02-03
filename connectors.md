@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Building and implementing a custom connector
 {: #build-connector}
 
-{{site.data.keyword.discovery-data_short}} provides connectors to many popular data sources, as described in [Configuring data sources](/docs/services/discovery-data?topic=discovery-data-collections#collection-types). If you need to connect to a different data source, you can write and deploy a _custom connector_. 
+{{site.data.keyword.discovery-data_short}} provides connectors to many popular data sources, as described in [Configuring data sources](/docs/discovery-data?topic=discovery-data-collections#collection-types). If you need to connect to a different data source, you can write and deploy a _custom connector_. 
 {: shortdesc}
 
 This document provides information about writing and deploying a custom connector, including example code and configuration files for a basic connector.

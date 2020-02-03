@@ -35,14 +35,14 @@ subcollection: discovery-data
 
 <!-- c/s help for *Search settings* page. Do not delete. -->
 
-You can improve the quality of search results by uploading a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file. For more information, see [Customizing and improving your project](/docs/services/discovery-data?topic=discovery-data-improve)
+You can improve the quality of search results by uploading a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve)
 {: shortdesc}
  
 Upload or delete a synonyms or stopwords file by clicking the appropriate **Upload** button or **Delete** icon.
 
 If you update your synonyms or stopwords files, you should go to the **Activity** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated lists. The button displayed will vary depending on the type of collection.
 
-Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/services/discovery-data?topic=discovery-data-search-settings#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/services/discovery-data?topic=discovery-data-search-settings#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discovery-data_short}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
+Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/discovery-data?topic=discovery-data-search-settings#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discovery-data_short}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
 {: important}
 
 ## Implementing synonyms
@@ -111,7 +111,7 @@ Unidirectional example:
 Notes about query expansion:
 
 -  Only one synonyms (query expansion) list can be uploaded per collection; if a second expansion list is uploaded, it will replace the first.
--  If you run a query, then upload a synonyms list, you must rerun your query in order to see the synonyms take effect.
+-  If you run a query, then upload a synonyms list, you need to rerun your query in order to see the synonyms take effect.
 -  All `input_terms` and `expanded_terms` should be lowercase. Lowercase terms will expand to uppercase.
 -  The query expansion list must be written in JSON.
 -  To disable query expansion, delete the synonyms (query expansion) file.
@@ -151,12 +151,12 @@ Following are stopword files for several other supported languages. They all inc
 -  Polish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_pl.json" download>pl_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
 -  Czech: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_cs.json" download>cs_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
 
-See [supported languages](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages) for the list of all languages supported by {{site.data.keyword.discovery-data_short}}. Several supported languages do not have a default stopwords list.
+See [supported languages](/docs/discovery-data?topic=discovery-data-language-support#supported-languages) for the list of all languages supported by {{site.data.keyword.discovery-data_short}}. Several supported languages do not have a default stopwords list.
 
 Notes about stopwords:
 
 -  Only one custom stopwords file can be uploaded per collection; if a second custom stopwords file is uploaded, it will replace the first.
--  If you run a query, then upload a stopwords file, you must rerun your query in order to see the stopwords take effect.
+-  If you run a query, then upload a stopwords file, you need to rerun your query in order to see the stopwords take effect.
 -  The size limit for a custom stopword list file is one million characters. However, if you upload a custom stopwords file with a large number of terms, you may negatively affect search accuracy. The number of words is dependent on the language, the document contents, and the words chosen. A good best practice would be to keep your list of stopwords under `200` total words. 
 -  All stopwords should be lowercase. 
 -  To disable a custom stopword file, delete the custom stopword file.

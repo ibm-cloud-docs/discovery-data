@@ -62,12 +62,12 @@ The following new features and changes to the service are available.
 ### Known issues in this release:
 {: #24jan2020ki}
 
-  -  When creating a [dictionary](/docs/services/discovery-data?topic=discovery-data-facets#facetdict), suggested dictionary terms are normalized to lower case by default (for example, Watson Assistant will be normalized to watson assistant). To ensure matching on upper case terms, they should be explicitly included as part of the `Other terms` list or as the `Base term`.
+  -  When creating a [dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict), suggested dictionary terms are normalized to lower case by default (for example, Watson Assistant will be normalized to watson assistant). To ensure matching on upper case terms, they should be explicitly included as part of the `Other terms` list or as the `Base term`.
   -  When backing up and restoring data, training data does not restore successfully. Training data can be separately retrieved from a project, see [List training queries](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#list-training-queries){: external} and uploaded to a new project, see [Create training queries](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#create-training-query){: external} if needed.
   -  When crawling SharePoint Online or SharePoint OnPrem documents, JSON documents may not be indexed correctly and the `title` returned may be `errored`. This is because SharePoint web services use the `ows_FileRef` property to retrieve JSON files, which will return an error page. To fix this issue, contact your SharePoint Administrator and Microsoft Support.
   -  If you migrate a collection created in version 2.0.1 to either version 2.1.0 or 2.1.1, that collection will not have a **Project type** assigned and the collection will not be available to be queried. To assign a **Project type**, open the **Projects** page by selecting the **Projects** icon on the navigation panel. Name your project and choose one of the Project types: `Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`.
 
-See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-notes#29nov2019ki) for additional issues.
+See [Known Issues](/docs/discovery-data?topic=discovery-data-release-notes#29nov2019ki) for additional issues.
 
 ## 2.1.0, 27 Nov 2019
 {: #27nov2019}
@@ -78,20 +78,20 @@ See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-no
 
 The following changes were made in this release:
 
-  -  New **Project** based interface - Test your application like an end-user would with the **Document retrieval**, **Conversational Search**, and **Content Mining** project types. For more information, see [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects).
-  -  **Content Mining** - Build an end user interface for extracting insights proactively from your entire corpus. For more information see [Mining Content](/docs/services/discovery-data?topic=discovery-data-contentminerapp).
-  -  **Content Intelligence** - Optional add-on to enrich your documents with pre-built domain knowledge for Contracts, Invoices, and Purchase Orders. For more information, see [Understanding Discovery for Content Intelligence](/docs/services/discovery-data?topic=discovery-data-output_schema).
-  -  **Reusable components** to quickly build your application using Discovery. We ship an autocomplete, rich preview, results and facets component. For more information, see [Building and deploying components](/docs/services/discovery-data?topic=discovery-data-deploy).
-  -  **Additional Language support** - Basic support for Czech, Slovak, Russian, Polish and Romanian. For more information, see [Language support](/docs/services/discovery-data?topic=discovery-data-language-support).
-  -  **Out of the box table understanding** - Extract tables from your documents without training, and optionally return tables as answers to natural language queries. For more information, see [Table understanding](/docs/services/discovery-data?topic=discovery-data-understanding_tables). 
-  -  **Connector SDK** - Build custom connectors your Discovery users can use to build their own applications. For more information, see [Building and implementing a custom connector](/docs/services/discovery-data?topic=discovery-data-build-connector).
-  -  **Sample Project** - The sample project is preloaded with data so you can learn about Discovery. For more information, see [Getting started with Watson Discovery for IBM Cloud Pak for Data](/docs/services/discovery-data?topic=discovery-data-getting-started).
-  -  **Passage retrieval** - Will return the most relevant passages from your documents, plus you can specify the number of passages returned per document. See [passages](/docs/services/discovery-data?topic=discovery-data-query-parameters#passages).
-  -  **Project level querying and relevancy training** - Query multiple collections at once including relevance training. For more information, see [Customizing and improving your project](/docs/services/discovery-data?topic=discovery-data-improve)
-  -  Improvements and additional options to the **Web crawl connector** - For more information, see [Web crawl](/docs/services/discovery-data?topic=discovery-data-collections#connectwebcrawl).
-  -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/services/discovery-data?topic=discovery-data-collections#localfilesystemconnect)
-  -  **Dynamic Facets** - Automatically generate facets based on the understanding of your data. For more information, see [Facets](/docs/services/discovery-data?topic=discovery-data-facets).
-  -  **Dictionary suggestions** - Dictionary terms will be suggested to you based on your content. For more information, see [Dictionary enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
+  -  New **Project** based interface - Test your application like an end-user would with the **Document retrieval**, **Conversational Search**, and **Content Mining** project types. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+  -  **Content Mining** - Build an end user interface for extracting insights proactively from your entire corpus. For more information see [Mining Content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+  -  **Content Intelligence** - Optional add-on to enrich your documents with pre-built domain knowledge for Contracts, Invoices, and Purchase Orders. For more information, see [Understanding Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
+  -  **Reusable components** to quickly build your application using Discovery. We ship an autocomplete, rich preview, results and facets component. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
+  -  **Additional Language support** - Basic support for Czech, Slovak, Russian, Polish and Romanian. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+  -  **Out of the box table understanding** - Extract tables from your documents without training, and optionally return tables as answers to natural language queries. For more information, see [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables). 
+  -  **Connector SDK** - Build custom connectors your Discovery users can use to build their own applications. For more information, see [Building and implementing a custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
+  -  **Sample Project** - The sample project is preloaded with data so you can learn about Discovery. For more information, see [Getting started with Watson Discovery for IBM Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-getting-started).
+  -  **Passage retrieval** - Will return the most relevant passages from your documents, plus you can specify the number of passages returned per document. See [passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
+  -  **Project level querying and relevancy training** - Query multiple collections at once including relevance training. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve)
+  -  Improvements and additional options to the **Web crawl connector** - For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-collections#connectwebcrawl).
+  -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/discovery-data?topic=discovery-data-collections#localfilesystemconnect)
+  -  **Dynamic Facets** - Automatically generate facets based on the understanding of your data. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
+  -  **Dictionary suggestions** - Dictionary terms will be suggested to you based on your content. For more information, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
   -  **Curations** (beta) - Specify a particular result for a given query. For more information, see [Curations](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#create-curation).
 
 
@@ -105,8 +105,8 @@ The following changes were made in this release:
   -  [Update: fixed in {{site.data.keyword.discovery-data_long}} 2.1.1 release.] When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
   -  When you delete a Collection and select the option `Don't delete underlying data`, any incomplete document ingestion crawls will continue running in the background, which will impact the new crawl start times, until the existing crawls are completed.
   -  If you have performed relevancy training on an existing collection using the previous version of Discovery (or using the v1 API) then open that collection in a project in {{site.data.keyword.discovery-data_long}} version 2.1.0, and attempt to continue training at the project level via the UI or API, you will cause competing models to be created and block further training. The workaround is to first clear the training data from the original collection if project training is needed.
-  -  Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. See [Clearing a lock state](/docs/services/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-ls) for details on identifying and resolving this issue.
-  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} 2.1.1 release.] If you are using Smart Document Understanding, two variables need to be set during installation or reinstallation. See [Environment variable settings for Smart Document Understanding](/docs/services/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu) for details.
+  -  Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. See [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-ls) for details on identifying and resolving this issue.
+  -  [Update: fixed in {{site.data.keyword.discovery-data_long}} 2.1.1 release.] If you are using Smart Document Understanding, two variables need to be set during installation or reinstallation. See [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu) for details.
   -  If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
   -  Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
   -  If the Parts of Speech enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.
@@ -119,7 +119,7 @@ The following changes were made in this release:
   -  A minimum of 50-100 documents should be ingested to see valid dynamic facets generated.
   -  If you click **Stop** to stop a crawler and the converter processes slowly or has errors, you might see a status of the crawler running. 
 
-See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-notes#30aug2019ki) for additional issues.
+See [Known Issues](/docs/discovery-data?topic=discovery-data-release-notes#30aug2019ki) for additional issues.
 
 
 ## 2.0.1, 30 August 2019
@@ -127,11 +127,11 @@ See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-no
 
 **{{site.data.keyword.discovery-data_long}} version 2.0.1 is available.** {{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.1.0.1. The following changes were made in this release:
 
-  -  Added the Windows File System and Database connectors.  See [Database connector](/docs/services/discovery-data?topic=discovery-data-collections#databaseconnect)
-and [Windows File System connector](/docs/services/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect) for details.
-  -  Added support for Traditional Chinese. For more information, see [Language support](/docs/services/discovery-data?topic=discovery-data-language-support#supported-languages).
+  -  Added the Windows File System and Database connectors.  See [Database connector](/docs/discovery-data?topic=discovery-data-collections#databaseconnect)
+and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect) for details.
+  -  Added support for Traditional Chinese. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support#supported-languages).
   -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
-  -  Released the Classifier enrichment. See [Classifier enrichment](/docs/services/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) for details.
+  -  Released the Classifier enrichment. See [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) for details.
   -  Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift. 
 
 ### Known issues in this release:
@@ -143,7 +143,7 @@ and [Windows File System connector](/docs/services/discovery-data?topic=discover
   -  If one or more of your collections is trained, the training data from one of those collection may display on the **Train** page of an untrained collection. Refresh the page to clear that training data.
   -  The following types of documents will not be processed if they do not have the proper file extension: .docx, .pptx, .xlsx.
 
-See [Known Issues](/docs/services/discovery-data?topic=discovery-data-release-notes#known-issues-ga) for additional issues.
+See [Known Issues](/docs/discovery-data?topic=discovery-data-release-notes#known-issues-ga) for additional issues.
 
 ## 2.0.0 (General Availability release), 28 June 2019
 {: #28jun2019}
@@ -163,7 +163,7 @@ The following known issues apply to the GA release:
   -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] If you upload a zip, gzip, or tar file to your collection, and that file contains multiple files/file types supported by Smart Document Understanding (PDF, Word, Excel, PowerPoint, PNG, TIFF, JPEG), only one of the files in that zip, gzip, or tar file will be available for training in the SDU editor (unless the SDU document limit has already been met). All of the documents will be available in the index. Unzip the file before uploading to avoid this issue.
   -  [Update: fixed in {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019.] Query expansion and autocomplete return the wrong error code when the `collection_id` is invalid. Query expansion will return a `500` error code instead of a `404`. Autocomplete will return a `400` when the `collection_id` is invalid and the `prefix` parameter isn’t set. It should also return a `404`.
   -  When querying  on the `collection_id` of a trained collection, the `training_status.notices` value may occasionally display as `0` instead of the correct value.
-  -  Not all query limitations are enforced in this release. See [query limitations](/docs/services/discovery-data?topic=discovery-data-query-reference#query-limitations) for the complete list of banned fields.
+  -  Not all query limitations are enforced in this release. See [query limitations](/docs/discovery-data?topic=discovery-data-query-reference#query-limitations) for the complete list of banned fields.
   -  In JSON source documents, you should not duplicate the following system-generated fields: `document_id`, `parent_document_id`, `filename`, and `title`. This will cause the duplicate fields to nest within arrays and break certain features, such as ranker training.
   -  Do not include a top-level `metadata` property in your JSON documents. If you upload a JSON document that already contains a top-level `metadata` property, then the `metadata` property of the indexed document will be converted to an array in the index.
   -  CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).

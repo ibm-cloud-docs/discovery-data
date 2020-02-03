@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Relevancy training tips
 {: #relevancy-tips}
 
-Answers to common questions about training a collection and explanations of common error and warning messages. For more information on training queries see [Improving result relevance with training](/docs/services/discovery-data?topic=discovery-data-train).
+Answers to common questions about training a collection and explanations of common error and warning messages. For more information on training queries see [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
 {: shortdesc}
 
 ## Understanding training
@@ -43,19 +43,19 @@ Answers to common questions about training a collection.
 ### How do I know if my system is trained?
 {: #understanding-system}
 
-Run a natural language query and check the `document_retrieval_strategy`. See [confidence scores](/docs/services/discovery-data?topic=discovery-data-train#confidence).
+Run a natural language query and check the `document_retrieval_strategy`. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
 If using the API, see [List training data](https://{DomainName}/apidocs/discovery-data-v2#list-training-data){: external}.
 
 ### How do I check errors and warnings?
 {: #understanding-errors}
 
-Open your project, then select the **Manage collections** icon on the navigation panel. Choose your collection, then open the **Activity** tab. For details, see [Collection activity](/docs/services/discovery-data?topic=discovery-data-collections#collection-overview).
+Open your project, then select the **Manage collections** icon on the navigation panel. Choose your collection, then open the **Activity** tab. For details, see [Collection activity](/docs/discovery-data?topic=discovery-data-collections#collection-overview).
 
 ### How do I interpret the `confidence` score that appears in natural language query results after training?
 {: #interpret-confidence}
 
-See [confidence scores](/docs/services/discovery-data?topic=discovery-data-train#confidence). 
+See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence). 
 
 ## Interpreting Errors and Warnings
 {: #interpreting-errors}

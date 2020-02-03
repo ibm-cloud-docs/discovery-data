@@ -35,12 +35,8 @@ subcollection: discovery-data
 Discovery for Content Intelligence enables understanding of governing business documents with pre-trained models so enterprises can start analyzing complex documents in minutes. The `Contracts`, `Invoices`, and `Purchase Orders` enrichments enable automation of complex business processes such as contract review and negotiation, invoice reconciliation, software entitlement verification, and more. Such automation of processes result in increased productivity, minimization of costs, and reduced exposure.
 {: shortdesc}
 
-<!-- V Nov -->
-
 The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
 {: note}
-
-<!-- Needs to be updated; check for duplicate anchors; check links-->
 
 ## Understanding Discovery for Content Intelligence enrichments
 {: #understand-ci-enrichments}

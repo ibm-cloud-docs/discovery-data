@@ -51,7 +51,7 @@ Facets provide a mechanism for navigating and analyzing your content and the exa
 ## Facets in content mining projects
 {: #facetcm}
 
-For content mining projects, by default, facets are extracted from your collection for the parts of speech enrichment, as shown in Figure 2. You can add facets for fields from your documents. For default project details, see the content mining section of [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects#mining).
+For content mining projects, by default, facets are extracted from your collection for the parts of speech enrichment, as shown in Figure 2. You can add facets for fields from your documents. For default project details, see the content mining section of [Creating projects](/docs/discovery-data?topic=discovery-data-projects#mining).
 
 For content mining projects, the **Dynamic facets** toggle at the bottom right side of the page is off by default because it does not apply to content mining projects.
 {: note}
@@ -75,7 +75,7 @@ For content mining projects, the **Dynamic facets** toggle at the bottom right s
 ## Facets in document retrieval projects
 {: #facetdr}
 
-For document retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see the document retrieval section of [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects#doc-retrieval).
+For document retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see the document retrieval section of [Creating projects](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval).
 
 For document retrieval projects, notice the **Dynamic facets** toggle at the bottom right side of the page, which is on by default. When you have over 100 documents in your collection and the **Parts of Speech** enrichment is enabled (as it is by default) this feature creates facets as you test and refine searches. When dynamic facets are generated, you see a facet called **Dynamic Facets** along with **Top Entities** or any other facets you configure.
 {: tip}
@@ -102,7 +102,7 @@ For either project type, if you want to add a facet that doesn't exist as a fiel
 
 1. On the "Improve and customize" page, click **Customize display** and then click **Facets**.
 1. Click **New facet** > **By creating a dictionary**.
-1. Enter a name for the facet, and then create a dictionary as described in the dictionary enrichments section of [Creating enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
+1. Enter a name for the facet, and then create a dictionary as described in the dictionary enrichments section of [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
 
     After you save the dictionary, the name that you used for the facet label is shown in the list of facets.
 

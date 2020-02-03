@@ -60,7 +60,7 @@ Installation instructions for `ibm-watson-discovery-pack1-prod` are available in
 | Romanian (`ro`) | **X** | | | | **X** | **X**| **X** | | | **X** |
 
 
-You can select the collection language when you create your collection. See [Creating and managing collections](/docs/services/discovery-data?topic=discovery-data-collections). 
+You can select the collection language when you create your collection. See [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 
 {: tip}
 
 
@@ -69,7 +69,7 @@ You can select the collection language when you create your collection. See [Cre
 
 The following feature is currently supported in English only:
 
--  [Discovery for Content Intelligence](/docs/services/discovery-data?topic=discovery-data-output_schema).
+-  [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 
 The following feature (available using the API-only) is currently supported in English only:
 
