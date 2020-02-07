@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-16"
+  years: 2019, 2020
+lastupdated: "2020-02-07"
 
 subcollection: discovery-data
 
@@ -55,6 +55,10 @@ Review the security information in:
 
 Encryption of data at rest must be handled by the storage provider.
 {: important}
+
+Review the {{site.data.keyword.discovery-data_short}} release notes and known issues:
+
+[Release notes](/docs/services/discovery-data?topic=discovery-data-release-notes)
 
 ## Software requirements
 {: #prereqs}
