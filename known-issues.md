@@ -83,7 +83,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-### Known issues identified in the 2.0.1, 30 August 2019 release:
+## Known issues identified in the 2.0.1, 30 August 2019 release:
 {: #30aug2019ki}
 
   -  After you create a Machine Learning enrichment using a {{site.data.keyword.knowledgestudiofull}} model, two identically named enrichments may display on the **Enrich fields** page. This will not affect the enrichments, but it is best to use only one of them to select and apply the enrichment to one or more fields.
