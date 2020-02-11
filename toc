@@ -94,6 +94,7 @@ Watson Discovery for IBM Cloud Pak for Data
 
     {: .navgroup id="help"}
     release-notes.md
+    known-issues.md
     troubleshooting.md
 
     {: .topicgroup}

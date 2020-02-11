@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-27"
+  years: 2018, 2020
+lastupdated: "2020-02-10"
 
 keywords: invoice,invoices,invoice parsing,parsing,invoice understanding
 
@@ -24,7 +24,7 @@ subcollection: discovery-data
 {:important: .important}
 {:preview: .preview}
 
-# Understanding the `Invoices` enrichment
+# Understanding the Invoices enrichment
 {: #invoices}
 
 The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
