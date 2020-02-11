@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-06"
+lastupdated: "2020-02-10"
 
 subcollection: discovery-data
 
@@ -29,11 +29,16 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Understanding the `Contracts` enrichment
+# Understanding the Contracts enrichment
 {: #contracts-schema}
 
-After a document is processed by the `Contracts` enrichments, the service provides JSON output in the following schema.
+You can analyze contracts by using the `Contracts` enrichment. Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for Content Intelligence processes all collections with the `Contracts` enrichment.
 {: shortdesc}
+
+The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
+{: note}
+
+After a document is processed by the `Contracts` enrichments, the service provides JSON output in the following schema.
 
 ```json
 {

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-11-27"
+  years: 2019, 2020
+lastupdated: "2020-02-10"
 
 keywords: purchase order,purchase orders,purchase order understanding,purchase order parsing,parsing
 
@@ -24,7 +24,7 @@ subcollection: discovery-data
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Understanding the `Purchase orders` enrichment
+# Understanding the Purchase orders enrichment
 {: #purchase_orders}
 
 The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
