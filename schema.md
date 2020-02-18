@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-02-10"
+  years: 2018, 2019
+lastupdated: "2020-02-17"
+
 
 subcollection: discovery-data
 
@@ -60,7 +61,7 @@ Discovery for Content Intelligence provides a set of analysis models that are pr
 - Invoices
 - Purchase orders
 
-For information about each Discovery for Content Intelligence enrichment, see:
+For information about each Discovery for Content Intelligence enrichment, see the following sections:
 
   - [Understanding the Contracts enrichment](/docs/discovery-data?topic=discovery-data-contracts-schema)
   - [Understanding the Invoices enrichment](/docs/discovery-data?topic=discovery-data-invoices)
@@ -70,10 +71,10 @@ For information about each Discovery for Content Intelligence enrichment, see:
 ### Changing the Contracts enrichment
 {: #changing-enrichment}
 
-Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for Content Intelligence processes all collections with the `Contracts` enrichment. But you can specify a different enrichment, other than the `Contracts` enrichment.
+Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for Content Intelligence processes all collections with the `Contracts` enrichment.
 {: shortdesc}
 
-To specify a different enrichment other than the `Contracts` enrichment, complete the following steps:
+To specify a different enrichment other than `Contracts`, complete the following steps:
 
 1. After you create a collection in the {{site.data.keyword.discovery-data_short}} tooling, select it on the **Projects** page.
 1. On the **Improve and customize** page, select **I want to...** **=>** **Extract meaning**.

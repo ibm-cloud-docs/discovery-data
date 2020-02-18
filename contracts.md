@@ -2,7 +2,8 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-10"
+
+lastupdated: "2020-02-17"
 
 subcollection: discovery-data
 
@@ -393,10 +394,10 @@ The `contracts` schema is arranged as follows.
         - `party`: A string that identifies the party to whom the sentence applies.
       - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
     - `categories`: An array that lists the functional categories into which the element falls; in other words, the subject matter of the element.
-      - `label`: A string that lists the identified category. You can find a list of [categories](/docs/compare-comply?topic=compare-comply-contract_parsing#contract_categories) in [Understanding element classification](/docs/compare-comply?topic=compare-comply-contract_parsing).
+      - `label`: A string that lists the identified category. You can find a list of [categories](/docs/discovery-data?topic=discovery-data-contract_parsing#contract_categories) in [Understanding contract parsing](/docs/discovery-data?topic=discovery-data-contract_parsing).
       - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
     - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
-      - `type`: The type of attribute. Possible values are `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person` as described at [Attributes](/docs/compare-comply?topic=compare-comply-contract_parsing#attributes).
+      - `type`: The type of attribute. Possible values are `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person` as described at [Attributes](/docs/discovery-data?topic=discovery-data-contract_parsing#attributes).
       - `text`: The text that is associated with the attribute.
       - `location`: The location of the attribute as defined by its `begin` and `end` indexes.
   - `effective_dates`: An array that identifies the date or dates on which the document becomes effective.
@@ -498,7 +499,7 @@ The `contracts` schema is arranged as follows.
     - `contexts`: A list of related material that precedes and follows the table, excluding its section title, which is provided in the `section_title` field. Related material includes related sentences; footnotes; and sentences from other parts of the document that refer to the table. The list is represented as an array. Each object in the array consists of the following elements:
       - `text`: The related text.
       - `location`: The location of the related text as defined by its `begin` and `end` indexes in the input document.
-    - `key_value_pairs`: An array that specifies any key-value pairs in tables in the input document. For more information, see [Understanding key-value pairs](/docs/compare-comply?topic=compare-comply-understanding_tables#key-value-pairs).
+    - `key_value_pairs`: An array that specifies any key-value pairs in tables in the input document. For more information, see [Understanding key-value pairs](/docs/discovery-data?topic=discovery-data-understanding_tables#key-value-pairs).
       - `key`: An object that specifies a key for a key-value pair.
         - `cell_id`: The unique ID of the key in the table.
         - `location`: The location of the key cell in the input document as defined by its `begin` and `end` indexes.
