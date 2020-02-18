@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2020
+lastupdated: "2020-02-17"
 
 subcollection: discovery-data
 
@@ -37,7 +37,8 @@ subcollection: discovery-data
 A project is a convenient way to build and manage your {{site.data.keyword.discovery-data_long}} application. You can assign a **Project type** (`Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`) and add data quickly by creating a collection, or reusing an existing one. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
 {: shortdesc}
 
-A sample project is available for you to explore and experiment with. For details, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started). 
+A sample project is available for you to explore and experiment with. For details, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started).
+{: tip} 
 
 To create a project:
 
