@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-07"
+lastupdated: "2020-02-27"
 
 subcollection: discovery-data
 
@@ -92,3 +92,12 @@ See the system requirements listed here:
 
 Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discovery-data_long}}.
 {: note}
+
+## Upgrading Discovery for Cloud Pak for Data
+{: #upgrade-discovery}
+
+To upgrade {{site.data.keyword.discovery-data_long}}, you must uninstall the current version, then install the newer version.
+
+For uninstall instructions, see [Uninstalling Watson Discovery](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md#uninstalling-watson-discovery){: external}.
+
+See [Backing up and restoring data](/docs/discovery-data?topic=discovery-data-backup-restore) for the procedures to back up and restore user data.
