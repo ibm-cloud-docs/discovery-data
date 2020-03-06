@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-23"
+lastupdated: "2020-03-06"
 
 subcollection: discovery-data
 
@@ -483,6 +483,9 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Web crawl** as
 1. Click **Create collection**.
 
 After the crawl begins, the **Activity** tab opens and updates as documents are added to the collection.
+
+If the web pages are updated after your initial crawl, the sync frequency is adjusted.
+{: note}
 
 
 ### Database
