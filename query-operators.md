@@ -178,7 +178,7 @@ enriched_text.concepts.text:IBM^3
 {: codeblock}
 
 ## * \[Wildcard\]
-{: #Wildcard}
+{: #wildcard}
 
 Matches unknown characters in a search expression. Do not use capital letters with wildcards.
 

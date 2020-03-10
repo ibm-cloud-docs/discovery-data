@@ -58,7 +58,7 @@ Encryption of data at rest must be handled by the storage provider.
 
 Review the {{site.data.keyword.discovery-data_short}} release notes and known issues:
 
-[Release notes](/docs/services/discovery-data?topic=discovery-data-release-notes)
+[Release notes](/docs/discovery-data?topic=discovery-data-release-notes)
 
 ## Software requirements
 {: #prereqs}
