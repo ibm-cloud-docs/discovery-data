@@ -43,7 +43,7 @@ Discovery for Content Intelligence enables understanding of governing business d
 ## Getting started
 {: #content-intelligence-gs}
 
-To use Discovery for Content Intelligence, start by creating a document retrieval project. For more information, see [Creating projects](/docs/services/discovery-data?topic=discovery-data-projects).
+To use Discovery for Content Intelligence, start by creating a document retrieval project. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
 Discovery for Content Intelligence only works on collections that contain documents in English. A Discovery for Content Intelligence project has the following default settings:
   

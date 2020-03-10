@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="discovery-data" audience="service" arm="1680411" href="/docs/discovery-data?topic=discovery-data-getting-started#getting-started" path="services/discovery-data"}
-Watson Discovery for IBM Cloud Pak for Data
+{: .toc subcollection="discovery-data" category="ai" audience="service" arm="1680411" href="/docs/discovery-data?topic=discovery-data-getting-started#getting-started" path="services/discovery-data"}
+Discovery for IBM Cloud Pak for Data
 
     {: .navgroup id="learn"}
     getting-started-tool.md
