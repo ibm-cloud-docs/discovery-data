@@ -94,7 +94,7 @@ The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only av
 
 
 **Define structure**
--  **New fields** - Annotate fields within your documents to train a custom conversion model. As you annotate, Watson is learning and will start predicting annotations. For more information, see [Identify fields](/docs/discovery-data?topic=discovery-data-field-settings#identify-fields).
+-  **New fields** - Annotate fields within your documents to train a custom conversion model. As you annotate, Watson is learning and will start predicting annotations. For more information, see [Identify fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 -  **Hidden fields** - This option allows you to choose which fields should be included in the index for this collection. You can switch off any fields you do not want to index. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings).
 -  **Document splitting** - This option allows you to split your documents into segments based on a field name. Once split, each segment is a separate document that will be enriched, indexed, and returned as a separate query result. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings).
 

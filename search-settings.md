@@ -151,7 +151,7 @@ Following are stopword files for several other supported languages. They all inc
 -  Polish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_pl.json" download>pl_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
 -  Czech: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_cs.json" download>cs_stop.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
 
-See [supported languages](/docs/discovery-data?topic=discovery-data-language-support#supported-languages) for the list of all languages supported by {{site.data.keyword.discovery-data_short}}. Several supported languages do not have a default stopwords list.
+See [supported languages](/docs/discovery-data?topic=discovery-data-language-support) for the list of all languages supported by {{site.data.keyword.discovery-data_short}}. Several supported languages do not have a default stopwords list.
 
 Notes about stopwords:
 

@@ -47,7 +47,7 @@ By using collections, {{site.data.keyword.discovery-data_short}} pulls documents
 
 1. To create a collection, first create a **Project** and choose a **Project type**. For details see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Alternately, you can open your project, select the **Manage collections** icon on the navigation panel, and then click **New collection**. 
 1. Choose a data source, or select **Use an existing collection**.
-1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support#supported-languages).
+1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1. [Configure the data source](/docs/discovery-data?topic=discovery-data-collections#collection-types).
 1. Select **Create collection**, which starts the crawling process. The **Activity** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.

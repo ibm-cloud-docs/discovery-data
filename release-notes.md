@@ -106,7 +106,7 @@ Changes made in this release:
 Changes made in this release:
 
   -  Added the Windows File System and Database connectors.  See [Database connector](/docs/discovery-data?topic=discovery-data-collections#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect) for details.
-  -  Added support for Traditional Chinese. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support#supported-languages).
+  -  Added support for Traditional Chinese. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
   -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
   -  Released the Classifier enrichment. See [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) for details.
   -  Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift.
