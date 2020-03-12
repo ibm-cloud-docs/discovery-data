@@ -136,7 +136,7 @@ You can also back up individual services using the following procedures. These s
 {: note}
 
 
-If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [backup instructions](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backup) to back up the data you want to copy to a new instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
+If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [backup instructions](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backupb) to back up the data you want to copy to a new instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
 {: note}
 
 ### Backing up the Postgresql service
@@ -184,7 +184,7 @@ If you want to install multiple {{site.data.keyword.discovery-data_short}} add-o
 
 
 ### Backing up the Backend service
-{: #wddata-backup}
+{: #wddata-backupb}
 
   1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
   1. Run the `wddata-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which the gateway pods are deployed, if necessary:
@@ -239,7 +239,7 @@ Perform the following steps to completely restore Watson Discovery:
 You can also restore individual services using the following procedures. These services are restored when using the `all-backup-restore.sh` script and, if you use it, do not need to be individually restored.
 {: note}
 
-If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [restore instructions](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restore) to copy existing data to a new {{site.data.keyword.discovery-data_short}} instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
+If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [restore instructions](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restoreb) to copy existing data to a new {{site.data.keyword.discovery-data_short}} instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
 {: note}
 
 ### Restoring the Postgresql service
@@ -285,7 +285,7 @@ If you want to install multiple {{site.data.keyword.discovery-data_short}} add-o
 
 
 ### Restoring the Backend service
-{: #wddata-restore}
+{: #wddata-restoreb}
 
   1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
   1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discovery-data_short}} deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which the `<release_name>-watson-discovery-gateway-0` is deployed, if necessary:
@@ -304,4 +304,4 @@ If you restore the services individually, you must restart the {{site.data.keywo
 It is recommended that you only copy data to newly created instances, as copying data to a cluster already in use might result in data loss.
 {: important}
 
-If you are installing multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. To copy data across {{site.data.keyword.discovery-data_short}} add-on instances deployed on different clusters, follow the [backup steps](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backup) from the instance you want to copy data from, and follow the [restore steps](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restore) to copy the data to your new {{site.data.keyword.discovery-data_short}} instance.
+If you are installing multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. To copy data across {{site.data.keyword.discovery-data_short}} add-on instances deployed on different clusters, follow the [backup steps](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backupb) from the instance you want to copy data from, and follow the [restore steps](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restoreb) to copy the data to your new {{site.data.keyword.discovery-data_short}} instance.

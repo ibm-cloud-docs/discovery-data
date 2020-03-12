@@ -42,7 +42,7 @@ When you analyze a document with the `Contracts` enrichment, the service returns
 The following sections describe how the returned JSON provides the analysis.
 
 ## Types
-{: #contract_types}
+{: #cp_types}
 
 The `types` array includes a number of objects, each of which contains `nature` and `party` keys whose values identify a couplet for the element.
 
