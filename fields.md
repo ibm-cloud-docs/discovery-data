@@ -78,7 +78,10 @@ See [Best practices for annotating documents](/docs/discovery-data?topic=discove
    - Alternately, you can select a field label and drag it to the content in the SDU editor. 
    - To clear a change, click the **Clear changes** button on the toolbar.
 1. Click the **Submit page** button.
-   **Note:** As you annotate, Watson is learning and will start predicting annotations. Continue annotating until Watson correctly and consistently identifies fields.
+   
+   As you annotate, Watson is learning and will start predicting annotations. Continue annotating until Watson correctly and consistently identifies fields.
+   {: note}
+   
 1. When you have completed annotating, click the **Apply changes and reprocess** button.
 
 Field | Definition  
@@ -102,7 +105,7 @@ When you annotate one or more tables using the `table` field, you will automatic
 {: #bestpractices}
 
 If you want to save time reprocessing all the files in a large collection, start with a small collection of documents and build your model, then [export](/docs/discovery-data?topic=discovery-data-configuring-fields#import) it. Create a new collection that contains only 1 document, import the model, then upload the remainder of your documents.
-{: #tip}
+{: tip}
 
 - Follow all guidelines and use consistent labeling on all documents
 - Do not label whitespace
@@ -130,7 +133,7 @@ Exported models have the file extension of `.sdumodel`.
 An imported model is intended to be used without any further annotations. The model will be completely overwritten if you continue annotating after importing it. 
 
 If you plan to develop a model and import it into a new collection, it is a sound best practice to create a new collection that contains only 1 document, import the model, then upload the remainder of your documents.
-{: #tip}
+{: tip}
 
 ## Managing enrichments
 {: #enrich-fields}
