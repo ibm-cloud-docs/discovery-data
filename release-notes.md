@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-03-16"
 
 keywords: release notes, known issues
 
@@ -67,7 +67,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.1 release:
 
   -  In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
   -  When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
-  -  If you are using Smart Document Understanding, two variables need to be set during installation or reinstallation. See [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu) for details.
+  -  If you are using Smart Document Understanding, two variables no longer need to be set during installation or reinstallation. See [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu) for details.
 
 
 ### 2.1.0 release, 27 Nov 2019
