@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-11-27"
+  years: 2019, 2020
+lastupdated: "2020-03-16"
 
 subcollection: discovery-data
 
@@ -66,7 +66,7 @@ If you can then restart the gateway pod everything should resume normally.
 ## Environment variable settings for Smart Document Understanding
 {: #troubleshoot-sdu}
 
-There are two environment variables that need adjusted for Smart Document Understanding in {{site.data.keyword.discovery-data_long}} version 2.1.0:
+There are two environment variables that need to be adjusted for Smart Document Understanding in {{site.data.keyword.discovery-data_long}} version 2.1.0. This was resolved in version 2.1.1, see [2.1.1 release, 24 Jan 2020](/docs/discovery-data?topic=discovery-data-release-notes#24jan2020).
 
 `SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS`
 `SDU_YOLO_TIMEOUT_SEC`
