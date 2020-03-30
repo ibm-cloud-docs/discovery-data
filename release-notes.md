@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-16"
+lastupdated: "2020-03-31"
 
 keywords: release notes, known issues
 
@@ -49,7 +49,7 @@ The current version is `2019-11-29`.
 ## Beta features
 {: #beta-features}
 
-IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment. Beta features are supported only on the [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-discovery/){: external}.
+IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
 ## Changes
 {: #change-log}
@@ -58,6 +58,26 @@ The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discovery-data_long}} known issues.
 
+### 2.1.2 release, 31 Mar 2020
+{: #31mar2020}
+
+**{{site.data.keyword.discovery-data_long}} version 2.1.2 is available.**
+
+Changes made in this release:
+
+  -  **IBM FileNet connector** added - Crawl IBM FileNet systems. For more information, see [FileNet connector](/docs/services/discovery-data?topic=discovery-data-collections#filenet-connect). 
+  -  Added basic support for Swedish, Norwegian (Bokma&#778;l and Nynorsk), and Danish. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+  - The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) is now GA.
+  - Several **enhancements to the tooling**; including improvements to the navigation, messages, and status updates.
+  - You can now view search results in a preview of your document. This feature is available for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files.
+  -  Running a query with an empty `aggregations` parameter now returns zero aggregations in the response.
+  
+Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.2 release:
+
+  -  When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`.
+  -  When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Activity** page, but no further processing status displays until the number of documents increases.
+  -  Running a query with an empty `aggregations` parameter returns an empty aggregations array. 
+  
 ### 2.1.1 release, 24 Jan 2020
 {: #24jan2020}
 

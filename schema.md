@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2020-02-17"
+  years: 2018, 2020
+lastupdated: "2020-03-31"
 
 
 subcollection: discovery-data
@@ -39,6 +39,7 @@ The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and
 Discovery for Content Intelligence enables understanding of governing business documents with pre-trained models so enterprises can start analyzing complex documents in minutes. The `Contracts`, `Invoices`, and `Purchase Orders` enrichments enable automation of complex business processes, such as contract review and negotiation, invoice reconciliation, software entitlement verification, and more. Such automation of processes result in increased productivity, minimization of costs, and reduced exposure.
 {: shortdesc}
 
+Discovery for Content Intelligence includes pre-trained models that identify lists, sections, tables, headers, footers, and other structures in your documents. These models cannot be modified, so you cannot annotate fields with [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) to train custom conversion models when using Discovery for Content Intelligence enrichments.
 
 ## Getting started
 {: #content-intelligence-gs}
@@ -68,7 +69,7 @@ For information about each Discovery for Content Intelligence enrichment, see th
   - [Understanding the Purchase orders enrichment](/docs/discovery-data?topic=discovery-data-purchase_orders)
 
 
-### Changing the Contracts enrichment
+### Changing the default enrichment
 {: #changing-enrichment}
 
 Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for Content Intelligence processes all collections with the `Contracts` enrichment.

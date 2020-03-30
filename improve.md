@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2020-01-06"
+  years: 2019, 2020
+lastupdated: "2020-03-31"
 
 subcollection: discovery-data
 
@@ -90,7 +90,7 @@ The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only av
 -  **Classifiers** - The Classifier uses the labels and text examples you have specified in a `.csv` file to predict the categories of the documents in your collection. For more information see the [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
 -  **Character patterns** - The Character pattern enrichment uses regular expressions to identify and extract information from fields in your collection. For more information see [Character pattern enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
 -  **Machine learning** - This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} or Watson Explorer Content Analytics Studio to enrich your collection. For more information, see [Machine Learning enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment).
--  **Advanced rule models** - (beta) - This beta enrichment uses a model created and exported from the Advanced rule editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}. For more information, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
+-  **Advanced rule models** - This enrichment uses a text extraction model created and exported from the Advanced rule editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}. For more information, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
 
 
 **Define structure**
