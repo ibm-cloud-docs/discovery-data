@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-03-31"
 
 subcollection: discovery-data
 
@@ -47,7 +47,7 @@ To create a new enrichment:
     - [**Character Pattern**](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment)
     - [**Machine Learning and Watson Explorer Content Analytics Studio models**](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment) 
     - [**Classifier**](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment)
-    - [**Advanced rule models** (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
+    - [**Advanced rule models**](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
 
 Other available enrichments: [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) and [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-create-enrichments#content-intelligence).
 
@@ -308,13 +308,10 @@ In the JSON output:
 ] 
 ```	
 
-## Advanced rule models enrichment (beta)
+## Advanced rule models enrichment
 {: #advanced-rules}
 
-This beta enrichment uses a text extraction model created and exported from the Advanced Rule Editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} (file format: `.zip`). 
-
-The Advanced rule models enrichment is currently supported only as a beta capability. See [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features) in the Release notes for more information.  
-{: note}
+This enrichment uses a text extraction model created and exported from the Advanced Rule editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} (file format: `.zip`). 
 
 The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page. 
 

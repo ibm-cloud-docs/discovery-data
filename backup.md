@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-17"
+  years: 2020
+lastupdated: "2020-03-31"
 
 subcollection: discovery-data
 
@@ -38,22 +38,34 @@ Use the following procedures to back up and restore user data in your {{site.dat
 The procedures on this page are for advanced users who have experience administering {{site.data.keyword.discovery-data_short}} clusters. You do not need to back up and restore data as part of standard use or maintenance.
 {: important}
 
+The following data is not part of a backup and is therefore not present when restoring data:
+
+  - Training data (see the [Known issue](/docs/services/discovery-data?topic=discovery-data-known-issues#24jan2020ki) about backup and restore of training data.)
+  - Curations (beta feature available only in the API)
+  - Dictionary suggestions models. These are created when you build a dictionary using the tooling. The dictionary will be included in the backup, but the suggestions model will not.
+  - Content Miner Document flags 
+
+The following updates are made when your collections are restored:
+
+  - Any collection that contains documents that were added by upload (the`Upload data` option in the tooling) are automatically recrawled and reindexed when restored. These documents will have new document id numbers in the restored collections.
+  - All collections used in a **Content Miner** project are automatically recrawled and reindexed when restored. Only the documents added by upload (the`Upload data` option in the tooling) will have new document id numbers in the restored collections.
+
 ## General prerequisites
 {: #gen-prereqs}
 
 ### Required tools
 {: #tools}
 
-Before backing up or restoring data, ensure that you have the following tools installed on your machine:
+Before backing up or restoring data, ensure that you have the following tool installed on your machine:
 
-  - `kubectl`, which is available as described at [Installing the Kubernetes CLI (kubectl)](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_kubectl.html){: external}.
+  - `kubectl`, which is available at [Installing the Kubernetes CLI (kubectl)](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.1.2/manage_cluster/install_kubectl.html){: external}.
 
 ### Required permissions
 {: #perms}
 
 You must also have the following permissions:
 
-  - Administrative access to the {{site.data.keyword.discovery-data_short}} instance on your {{site.data.keyword.discovery-data_short}} cluster (these data must be backed up) and administrative access to the new instance that the data are being restored to.
+  - Administrative access to the {{site.data.keyword.discovery-data_short}} instance on your {{site.data.keyword.discovery-data_short}} cluster (the data must be backed up) and administrative access to the new instance that the data are being restored to.
   - Permissions to use cluster-wide CLI tools, such as `kubectl`.
 
 ### Example syntax
@@ -70,12 +82,20 @@ The backup and restore process can be summarized as follows:
 ### Backing up
 {: #backingup}
 
-  1. Back up IBM Cloud Pak for Data, if required. See [Backup and restore](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/backup_restore.html) for more information.
-  1. Ensure that the {{site.data.keyword.discovery-data_short}} instance being backed up does not have any incoming requests and that there are no outstanding in-flight requests.
-     **Note:** For the purposes of the procedures described in this topic, a request is a current action being perfomed by Watson Discovery. Actions perfomed by Watson Discovery include:
-     -  Performing a source crawl (scheduled or unscheduled)
-     -  Ingesting documents
-     -  Training a trained query model
+Changes to the data stored in {{site.data.keyword.discovery-data_long}} during a backup can cause the backup to become corrupt and unusable (for example, adding documents to a collection).
+
+No in-flight requests are permitted during the backup period. However, as read-only operations, queries are permitted during the backup period.
+{: tip}
+
+A request is a current action being performed by {{site.data.keyword.discovery-data_long}}. Actions performed by {{site.data.keyword.discovery-data_short}} include:
+  -  Performing a source crawl (scheduled or unscheduled)
+  -  Ingesting documents
+  -  Training a trained query model
+
+  1. Back up IBM Cloud Pak for Data, if required. See [Backup and restore](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/backup_restore.html){: external} for more information.
+  1. Ensure that the {{site.data.keyword.discovery-data_short}} instance being backed up meets the following requirements:
+     - There are no incoming requests to the instance.
+     - Any in-flight requests to the instance have been handled.
   1. Copy the data from the data service to the matching service on the new pod.
   1. Clean or groom the data, as necessary.
 
@@ -86,22 +106,16 @@ The backup and restore process can be summarized as follows:
   1. Copy the data from the new pod to the data service.
   1. Enable requests on the new {{site.data.keyword.discovery-data_short}} instance.
 
-## Backup prerequisites
-{: #backup-prereqs}
+## Backup scripts
+{: #backup-scripts}
 
-Changes to the data stored in Watson Discovery during a backup can cause the backup to become corrupt and unusable (for example, adding documents to a collection). Before initiating a backup, observe the following requirements:
+There are two versions of the `all-backup-restore.sh` backup and restore script. One is for {{site.data.keyword.discovery-data_short}} versions 2.0.0 and 2.0.1; the other is for versions 2.1.0 and later. **If you are backing up a 2.0 version of {{site.data.keyword.discovery-data_short}}, and then restoring to version 2.1.0 or later -- backup with the 2.0 script and restore with the 2.1 script.** 
+{: important}
 
-  - Ensure there are no incoming requests to the instance.
-  - Ensure that any in-flight requests to the instance have been handled.
-  - Ensure the ingestion queues are empty.
-    {: important}
+ -  Backup/restore script for versions 2.1.0 and later. [Download](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
+ -  Backup/restore script for 2.0.0 and 2.0.1: [Download](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.0){: external}.
 
-There is no precise order in which you need to back up or restore the data services, provided no in-flight requests are permitted during the backup period. However, as read-only operations, queries are permitted during the backup period.
-{: note}
-
-Here is a direct link to the directory containing the backup and restore scripts: (https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data).
-
-To make a script executable, run the following command (for each script downloaded):
+To make a script executable, run the following command:
 
 ```bash
   chmod +x <script-name>
@@ -112,7 +126,7 @@ Where `<script-name>` is the name of the script.
 ## Backing up Watson Discovery
 {: #wddata-backup}
 
-Perform the following steps to completely back up Watson Discovery:
+Perform the following steps to completely back up {{site.data.keyword.discovery-data_short}}:
 
   1. Ensure that the following services are running on your {{site.data.keyword.discovery-data_short}} instance.
     -  `Postgresql`
@@ -132,67 +146,8 @@ Perform the following steps to completely back up Watson Discovery:
       tar xvf <backup_file_name>
       ```
 
-You can also back up individual services using the following procedures. These services are backed up when using the `all-backup-restore.sh` script and do not need to be individually backed up if it is used.
+If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
 {: note}
-
-
-If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [backup instructions](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backupb) to back up the data you want to copy to a new instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
-{: note}
-
-### Backing up the Postgresql service
-{: #postgres-backup}
-
-  1. Ensure that `Postgresql` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Run the `postgresql-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which Postgresql is deployed, if necessary:
-      ```bash
-      ./postgresql-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
-      ```
-
-  The script generates a `pg_<timestamp>.dump` file or the file specified `-f` option in the current directory. The backup file contains the abbreviated output from the Postgresql `pg_dump` command.
-
-### Backing up the ElasticSearch service
-{: #es-backup}
-
-  1. Ensure that `ElasticSearch` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Run the `elastic-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which ElasticSearch is deployed, if necessary:
-      ```bash
-      ./elastic-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
-      ```
-  The script generates a `elastic_<timestamp>.snapshot` file or the file specified `-f` option in the current directory. The backup file contains the snapshot files from the ElasticSearch `snapshot` function.
-
-### Backing up the Etcd service
-{: #etcd-backup}
-
-  1. Ensure that `Etcd` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Run the `etcd-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which Etcd is deployed, if necessary:
-      ```bash
-      ./etcd-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
-      ```
-
-  The script prints all of the keys and values contained in `etcd` to a text file named `etcd_<timestamp>.db` or the file specified by `-f` option in the current directory. 
-
-### Backing up the Hadoop service
-{: #hdp-backup}
-
-  1. Ensure that `Hadoop` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Run the `hdp-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which Hadoop is deployed, if necessary:
-      ```bash
-      ./hdp-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
-      ```
-
-     The script backs up all files in `HDFS` to a file named `hdp_<timestamp>.backup` or the file specified by `-f` option in the current directory. 
-
-
-### Backing up the Backend service
-{: #wddata-backupb}
-
-  1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Run the `wddata-backup-restore.sh` script, and specify the release name you are backing up. You can also specify the file name of backup and the namespace in which the gateway pods are deployed, if necessary:
-      ```bash
-      ./wddata-backup-restore.sh backup <release_name> [-f backupFileName] [-n namespace]
-      ```
-
-     The script generates a `wddata_<timestamp>.backup` file or the file specified by `-f` option in the current directory, including the files for the configuration of crawler and logging, the credential files; and `jar` files, such as JDBC connecter for the crawler.
 
 ## Restoring Watson Discovery
 {: #wddata-restore}
@@ -205,98 +160,16 @@ Perform the following steps to completely restore Watson Discovery:
     -  `ElasticSearch`
     -  `Hadoop`
     -  `<release_name>-watson-discovery-gateway-0`
-  1. To ensure that no services/clients connect to the Postgresql service while restoring, change the target port of the Postgresql service by running following command:
-      ```bash
-      kubectl edit svc <release_name>-watson-discovery-postgresql
-      ```
-    
-      After running the command, change the `targetPort` from `5432` to `5433`, as shown in the following, and save your change:
-      ```
-      apiVersion: v1
-      kind: Service
-      metadata:
-      ......
-      spec:
-        clusterIP: xx.xx.xx.xx
-        ports:
-        - name: pgport
-          port: 5432
-          protocol: TCP
-          targetPort: 5433
-        selector:
-          app: watson-discovery
-      ......
-      ```
-
-  1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discovery-data_short}} deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which the {{site.data.keyword.discovery-data_short}} service is deployed, if necessary:
+  
+  1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discovery-data_short}} deployment by running the following command. Then, specify the `<release_name>` (you can use `core` as the `<release_name>` when restoring to version 2.1.2) you are restoring to and the file name of backup. You can also specify the namespace in which the {{site.data.keyword.discovery-data_short}} service is deployed, if necessary:
       ```
       ./all-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
       ```
 
-  The gateway, ingestion, orchestrator, master pods automatically restart.
-  1. Restore the `targetPort` of the Postgresql service from `5433` to `5432`.
-
-You can also restore individual services using the following procedures. These services are restored when using the `all-backup-restore.sh` script and, if you use it, do not need to be individually restored.
-{: note}
-
-If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. Follow these [restore instructions](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restoreb) to copy existing data to a new {{site.data.keyword.discovery-data_short}} instance. For more information, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
-{: note}
-
-### Restoring the Postgresql service
-{: #restore-postgres}
-
-  1. Ensure that `Postgresql` is running on your {{site.data.keyword.discovery-data_short}} instance.
-
-  1. Run the following command to restore the data to the new Postgresql deployment. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Postgresql is deployed, if necessary:
-      ```bash
-      ./postgresql-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
-      ```
-
-
-### Restoring the ElasticSearch service
-{: #es-restore}
-
-  1. Ensure that `ElasticSearch` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Restore the data from the snapshot file on your local machine to the new ElasticSearch deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which ElasticSearch is deployed, if necessary:
-     ```
-     ./elastic-backup-restore.sh restore -f backup_file_name [-n namespace]
-     ```
-
-
-### Restoring the Etcd service
-{: #etcd-restore}
-
-  1. Ensure that `Etcd` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Restore the data from the text file on your local machine to the new Etcd deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Etcd is deployed, if necessary:
-      ```
-      ./etcd-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
-      ```
-
-
-### Restoring the Hadoop service
-{: #hdp-restore}
-
-  1. Ensure that `Hadoop` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Restore the data from the backup file on your local machine to the new Hadoop deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which Hadoop is deployed, if necessary:
-
-      ```
-      ./hdp-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
-      ```
-
-
-### Restoring the Backend service
-{: #wddata-restoreb}
-
-  1. Ensure that `<release_name>-watson-discovery-gateway-0` is running on your {{site.data.keyword.discovery-data_short}} instance.
-  1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discovery-data_short}} deployment by running the following command. Then, specify the release name you are restoring to and the file name of backup. You can also specify the namespace in which the `<release_name>-watson-discovery-gateway-0` is deployed, if necessary:
-
-      ```
-      ./wddata-backup-restore.sh restore <release_name> -f <backup_file> [-n namespace]
-      ```
+  The gateway, ingestion, orchestrator, hadoop worker, and master pods automatically restart.
   
-If you restore the services individually, you must restart the {{site.data.keyword.discovery-data_short}} pods. If you use the `all-backup-restore.sh` script to restore the services, the script automatically restarts the pods.
-{: important}
-
+If you want to install multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, see [Copying {{site.data.keyword.discovery-data_short}} data across {{site.data.keyword.discovery-data_short}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
+{: note}
 
 ## Copying Discovery for Cloud Pak for Data data across Discovery for Cloud Pak for Data clusters
 {: #copy-data-new-clusters}
@@ -304,4 +177,4 @@ If you restore the services individually, you must restart the {{site.data.keywo
 It is recommended that you only copy data to newly created instances, as copying data to a cluster already in use might result in data loss.
 {: important}
 
-If you are installing multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. To copy data across {{site.data.keyword.discovery-data_short}} add-on instances deployed on different clusters, follow the [backup steps](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backupb) from the instance you want to copy data from, and follow the [restore steps](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restoreb) to copy the data to your new {{site.data.keyword.discovery-data_short}} instance.
+If you are installing multiple {{site.data.keyword.discovery-data_short}} add-ons to different clusters, you can copy the data from a {{site.data.keyword.discovery-data_short}} instance to a new cluster. To copy data across {{site.data.keyword.discovery-data_short}} add-on instances deployed on different clusters, first backup the instance you want to copy the data from, and then restore to your new {{site.data.keyword.discovery-data_short}} instance.

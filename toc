@@ -100,6 +100,5 @@ Discovery for IBM Cloud Pak for Data
     {: .topicgroup}
     Developer community
         [StackOverflow](http://stackoverflow.com/questions/tagged/watson-discovery)
-        [IBM Developer Answers](https://developer.ibm.com/answers/topics/watson-discovery/)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
     {: .navgroup-end}

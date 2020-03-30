@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-27"
+lastupdated: "2020-03-25"
 
 subcollection: discovery-data
 
@@ -64,12 +64,16 @@ Perform the following steps to download the `custom-crawler-docs.zip` file to yo
      where `{instance_name}` is the name of an installed {{site.data.keyword.discovery-data_short}} instance.
   1. Download the `custom-crawler-docs.zip` file to your local machine by using Secure Copy (`scp`) or a similar utility:
      ```sh
-     scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}
+     scp root@{instance_name}:/root/bob/etc/sdk/custom-crawler-docs.zip {local_directory}
      ```
      {: pre}
      where:
      - `{instance_name}` is the name of the installed {{site.data.keyword.discovery-data_short}} instance
      - `{local_directory}` is the directory on your local machine where you want to build and compile your custom connector
+
+     If you are using a version of {{site.data.keyword.discovery-data_short}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
+     {: tip}
+     
   1. Expand the `custom-crawler-docs.zip` file:
      ```sh
      cd {local_directory}
