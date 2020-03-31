@@ -474,7 +474,7 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Web crawl** as
 
 1. Click the **Add** button to add one or more start URLs.
 1. Optional: Under **Proxy Settings**, set the following switch:
-    -  **Enable Proxy Settings** - Is set to **Off** by default. When set to **On**, the `type` of the first `crawlspace_settings` object that is sent to {{site.data.keyword.discovery-data_short}} is set to `PROXY`. When the switch is set to **On**, you can use it to configure a set of default `crawlspace_settings` objects that are sent to {{site.data.keyword.discovery-data_short}}.
+    -  **Enable Proxy Settings** - Is set to **Off** by default. When you set **Enable Proxy Settings** to **On**, you activate proxy authentication for the start URLs that you want to crawl.
        - **Username** - The username that you use to authenticate with a proxy server. You can obtain your username from the website administrator.
        - **Password** - The password that you use to authenticate with a proxy server. You can obtain your password from the website administrator.
        - **Proxy server domain(s)** - The domain(s) that the host resides in. You can specify a wildcard in this field, such as an asterisk (`*`) to crawl all domains or a leading asterisk (`*.server1.bar.com`) to crawl domains that match a pattern.
@@ -587,7 +587,7 @@ Before configuring a Windows File System collection, you must install the agent 
 
 1. Log in to {{site.data.keyword.discovery-data_short}} as an admin, and navigate to **Windows File System**.
 1. Under **Download & install Windows Agent**, click **Download Windows Installer**. Clicking this link downloads the .zip file to run the agent installer.
-1. Follow the prompts. While the installer runs, you receive the host name, username, password, agent authentication port number, and port number that you enter later in Windows File System on {{site.data.keyword.discovery-data_short}}, so note them when you receive them. Also during installation, a check box appears that, when you check it, you can use to create a user account; when the check box is unchecked, it assigns you administrative permissions.
+1. Follow the prompts. While the installer runs, you receive the host name, username, password, agent authentication port number, and port number that you enter later in Windows File System on {{site.data.keyword.discovery-data_short}}, so note them when you receive them. Also during installation, a check box appears that, when you check it, you can use to create a user account; when the check box is unchecked, you have administrative permissions.
 1. Extract all files in the `WindowsAgentServer.zip`.
 1. Double-click the `install.exe` file, or enter `install.exe` in a command window. You can choose one of the following methods to run the installation program:
 
