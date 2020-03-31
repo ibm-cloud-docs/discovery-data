@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-02-17"
+lastupdated: "2020-03-31"
 
 subcollection: discovery-data
 
@@ -61,6 +61,7 @@ Options available at the top of the tooling:
 -  To open the documentation, select the **Help** ![Help icon](images/help_icon.png) icon.
 -  To view the available storage space and the number of documents and collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon. To delete all the collections in your environment, choose **Delete environment**.
 -  To open the **IBM Cloud Pak for Data** hub, select **IBM Watson Discovery**.
+-  To return to the **My projects** page, click **My projects**.
 
 ## Project types
 {: #project-type}
