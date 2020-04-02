@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-04-02"
 
 keywords: known issues
 
@@ -46,8 +46,13 @@ Known issues are listed by the release in which they were identified.
   -  In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
   -  Smart Document Understanding does not support `.doc`, `.docx`, `.odf`, `.xls`, `.xlsx`, `.ods`, `.ppt`, `.pptx`, and `.odp` conversion when FIPS (Federal Information Processing Standards) is enabled.
   -  In a Content Mining application, any document flags set will disappear if the index is rebuilt for that collection.
-  -  There was a small change to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. The change was to the description of the `--cluster-pull-prefix PREFIX` argument. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
-
+  -  Beginning with the 2.1.2 release, uploading and managing relevancy training data using the v1 APIs will not train a relevancy training model. The v1 APIs have been superseded by the [Projects relevancy training v2 APIs](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#create-training-query){: external}. If your training data needs to be preserved, it can be listed using the v1 API, then added to a project with the v2 API.
+  -  Multiple [Character Pattern enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment) cannot be applied to a collection at the same time.
+  -  There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
+     -  A change to the description of the `--cluster-pull-prefix PREFIX` argument.
+     -  The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
+  
+  
   Also see the issues identified in all previous releases.
 
 ## Known issues identified in the 2.1.1, 24 Jan 2020 release:
@@ -78,7 +83,6 @@ Also see the issues identified in all previous releases.
   -  Discovery only supports .zip files from MacOS that are generated using a command such as: `zip -r my-folder.zip my-folder -x "*.DS_Store"`. Zips created by right-clicking on a folder name and selecting  `compress` are not supported. 
   -  On the Manage Fields tab, you can edit system-generated fields. The following fields should not be edited by changing the field type or turning off indexing: `document_id`, `extracted_metadata`, `metadata`.
   -  When you delete a Collection and select the option `Don't delete underlying data`, any incomplete document ingestion crawls will continue running in the background, which will impact the new crawl start times, until the existing crawls are completed.
-  -  If you have performed relevancy training on an existing collection using the previous version of Discovery (or using the v1 API) then open that collection in a project in {{site.data.keyword.discovery-data_long}} version 2.1.0, and attempt to continue training at the project level via the UI or API, you will cause competing models to be created and block further training. The workaround is to first clear the training data from the original collection if project training is needed.
   -  Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. See [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-ls) for details on identifying and resolving this issue.
   -  If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
   -  Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
