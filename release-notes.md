@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-04-02"
 
 keywords: release notes, known issues
 
@@ -70,7 +70,8 @@ Changes made in this release:
   - The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) is now GA.
   - Several **enhancements to the tooling**; including improvements to the navigation, messages, and status updates.
   - You can now view search results in a preview of your document. This feature is available for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files.
-  -  Running a query with an empty `aggregations` parameter now returns zero aggregations in the response.
+  -  The [Web Crawl connector](/docs/services/discovery-data?topic=discovery-data-collections#connectwebcrawl) has proxy support. 
+  -  Running a query with an empty `aggregations` parameter returns zero aggregations in the response.
   
 Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.2 release:
 
