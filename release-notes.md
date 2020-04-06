@@ -69,7 +69,7 @@ Changes made in this release:
   -  Added basic support for Swedish, Norwegian (Bokma&#778;l and Nynorsk), and Danish. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
   - The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) is now GA.
   - Several **enhancements to the tooling**; including improvements to the navigation, messages, and status updates.
-  - You can now view search results in a preview of your document. This feature is available for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files.
+  - You can now view your search results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document — making the context clearer.
   -  The [Web Crawl connector](/docs/services/discovery-data?topic=discovery-data-collections#connectwebcrawl) has proxy support. 
   -  Running a query with an empty `aggregations` parameter returns zero aggregations in the response.
   

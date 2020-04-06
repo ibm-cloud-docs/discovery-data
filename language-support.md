@@ -73,4 +73,4 @@ You can select the collection language when you create your collection. See [Cre
 
 The following feature is currently supported in English only:
 
--  [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
+-  [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema)
