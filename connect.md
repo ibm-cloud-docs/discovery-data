@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-15"
+lastupdated: "2020-03-31"
 
 subcollection: discovery-data
 
@@ -488,7 +488,7 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Web crawl** as
        {: tip}
 
     -  **URL Path Depth** - The depth of a website to crawl, indicated by subtrees in a link. For example, `https://www.example.com/some/more/examples/index.html` has a path depth of 4, `/some/more/examples/index`. You can only enter a positive value. If unspecified, the default value is `5`. The maximum path depth is `20`.
-    -  **Maximum hops** - The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Start URLs** to crawl the web page.
+    -  **Maximum number of links to follow** - The maximum number of links located on the webpage of the start URL that you want to crawl. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Start URLs** to crawl the web page.
 
 1. Click **Finish**.
 
