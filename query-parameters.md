@@ -161,7 +161,7 @@ The JSON that is returned will be of the following format:
 ## suggested_refinements
 {: #suggested_refinements}
 
-The `suggested_refinements` parameter enables dynamic facets for a natural language query. Dynamic facets use unsupervised machine learning models to automatically select terms that are semantically similar to the terms in the query and terms in the resulting documents. For example, you can select dynamic facets to enhance an existing query by filtering on a unique term to improve your results. Dynamic facets are trained as documents are added to a collection and might take several minutes to appear, after you create and add documents to a new collection.
+The `suggested_refinements` parameter enables dynamic facets for a natural language query. Dynamic facets use unsupervised machine learning models to automatically select terms that are semantically similar to the terms in the query and terms in the resulting documents. For example, you can select dynamic facets to enhance an existing query by filtering on a unique term to improve your results. Dynamic facets are trained as documents are added to a collection and might take several minutes to appear, after you create and add documents to a collection. To enable dynamic facets, you must first enable the **Parts of Speech** enrichment in your collection. This enrichment is enabled by default in **Document Retrieval** under **Project type**.
 
 The JSON that is returned is of the following format:
 
