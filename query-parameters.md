@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-05-04"
 
 subcollection: discovery-data
 
@@ -157,6 +157,59 @@ The JSON that is returned will be of the following format:
 }
 ```
 {: codeblock}
+
+## suggested_refinements
+{: #suggested_refinements}
+
+The `suggested_refinements` parameter enables dynamic facets for a natural language query. Dynamic facets use unsupervised machine learning models to automatically select terms that are semantically similar to the terms in the query and terms in the resulting documents. For example, you can select dynamic facets to enhance an existing query by filtering on a unique term to improve your results. Dynamic facets are trained as documents are added to a collection and might take several minutes to appear, after you create and add documents to a new collection.
+
+The JSON that is returned is of the following format:
+
+```json
+{
+  "matching_results": 40,
+  "retrieval_details": {
+  "document_retrieval_strategy": "untrained"
+  },
+  "suggested_refinements": [
+     {
+       "text": "spss"
+     },
+     {
+       "text": "environment"
+     },
+     {
+       "text": "DataEnterprise Edition"
+     },
+     {
+       "text": "InstallPackage"
+     },
+     {
+       "text": "modules"
+     },
+     {
+       "text": "refinery"
+     },
+     {
+       "text": "store"
+     },
+     {
+       "text": "iira"
+     },
+     {
+       "text": "registration"
+     },
+     {
+       "text": "put"
+     }
+  ],
+```
+{: codeblock}
+
+### suggested_refinements.count
+{: #suggested_refinements_count}
+
+The maximum number of suggested refinements returned. The default is `10`. The minimum is `1`. The maximum is `100`.
 
 ## passages
 {: #passages}
