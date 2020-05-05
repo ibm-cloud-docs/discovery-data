@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-04"
+lastupdated: "2020-05-05"
 
 subcollection: discovery-data
 
@@ -119,7 +119,7 @@ A boolean that specifies whether the returned output includes a `highlight` obje
 The output lists the `highlight` object after the `enriched_text` object, as shown in the following example.
 
 ```bash
-curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=Hybrid%20cloud%20companies&highlight=true"
+curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=Hybrid%20cloud%20companies&highlight=true'
 ```
 {: pre}
 
@@ -227,7 +227,7 @@ You can adjust the fields in the documents over which passage retrieval searches
 The `passages` parameter returns matching passages (`passage_text`), as well as the `score`, `document_id`, the name of the field the passage was extracted from (`field`), and the starting and ending characters of the passage text within the field (`start_offset` and `end_offset`), as shown in the following example.
 
 ```bash
- curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query='Hybrid%20cloud%20companies'&passages=true"
+ curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=Hybrid%20cloud%20companies&passages=true'
 ```
 {: pre}
 
@@ -280,7 +280,7 @@ If [Table understanding](/docs/discovery-data?topic=discovery-data-understanding
 Example query:
 
 ```bash
- curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query='interest%20appraised'&table_results=true"
+ curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=interest%20appraised&table_results=true'
 ```
 {: pre}
 
