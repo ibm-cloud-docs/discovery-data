@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-05-05"
 
 subcollection: discovery-data
 
@@ -148,16 +148,18 @@ To generate each access token, run the following command:
 ```bash
 curl -u "{username}:{password}" "https://{hostname}:{port}/v1/preauth/validateAuth"
 ```
+{: pre}
    
 Replace `{username}` and `{password}` with the user's {{site.data.keyword.discovery-data_short}} credentials, and replace `{hostname}` and `{port}` with the details for your instance.
 
 To use the token in a {{site.data.keyword.discovery-data_short}} query, run the following command for each user added:
 
 ```bash
-curl -H \"Authorization: Bearer {token}\" 'https://{hostmame}/{instance_name}/v2/projects/{project_id}/collections/{Collection_ID}/query\?version\=2019-11-29
+curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{Collection_ID}/query\?version\=2019-11-29'
 ```
+{: pre}
 
-Replace `{hostmame}` and other fields with the details for your instance.
+Replace `{hostname}` and other fields with the details for your instance.
 
 For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data-v2#query-a-project){: external}.
 {: tip}    
