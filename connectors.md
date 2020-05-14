@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 {{site.data.keyword.discovery-data_short}} provides connectors to many popular data sources, as described in [Configuring data sources](/docs/discovery-data?topic=discovery-data-collections#collection-types). If you need to connect to a different data source, you can write and deploy a _custom connector_. 
 {: shortdesc}
 
-This document provides information about writing and deploying a custom connector, including example code and configuration files for a basic connector.
+You can use the following information as guidance for writing and deploying a custom connector. The information also includes example code and configuration files for a basic connector.
 
 ## Custom connector requirements
 {: #about-ccs}
@@ -66,3 +66,23 @@ A custom connector needs the following capabilities:
   - Filtering documents for each user. **Note**: The example connector code does not implement document filtering.
 
 These capabilities can be implemented by using the interfaces and methods described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
+
+## Custom connector notes
+{: #connector-notes}
+
+Observe the following notes and warnings when implementing a custom connector.
+{:shortdesc}
+
+  - Custom connectors do _not_ support the following documented features in the current release:
+    - Crawl schedule settings
+    - Synchronization settings
+    - The `required` and `hidden` validation settings when the configuration is displayed in the {{site.data.keyword.discovery-data_short}} tooling
+    - The **More processing settings** menu to perform actions such as enabling OCR
+    - Document-level security
+    - The use of `<condition />` tags in the definition file. These tags are currently ignored.
+  - When you use the example connector code in the current release, the {{site.data.keyword.discovery-data_short}} tooling does not collapse and group authentication settings for the custom connector's properties. For example, if the `{connector_name}_DATASOURCE_SETTINGS_USE_KEY_LABEL` toggle is set to `Off`, the tooling still displays the fields for `{connector_name}_DATASOURCE_SETTINGS_KEY_LABEL` and `{connector_name}_DATATSOURCE_SETTINGS_PASSPHRASE_LABEL` even though they are not applicable with the toggle setting.
+  - The `list` parameter type is not supported in the {{site.data.keyword.discovery-data_short}} tooling.
+  - If a custom connector fails to connect to its source for any reason, it issues a generic error message such as `Failed to create connector` or `Timed out`, or a `500` HTTP error. Specific failure information is not currently provided.
+  - If a custom connector is deployed and creates hidden files, undeployment takes a considerable length of time (several minutes up to several hours in extreme cases) while the script locates all of the connector's components.
+
+  See the [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for possible additional issues.

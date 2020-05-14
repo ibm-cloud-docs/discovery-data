@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-17"
+  years: 2019, 2020
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Assembling a custom connector
+# Assembling, compiling, and packaging a custom connector
 {: #assemble}
 
 You package a number of component files together to create a custom connector.
@@ -49,7 +49,7 @@ A custom connector package is a ZIP file that contains the following components:
 ## Configuration template
 {: #ccs-config-template}
 
-The configuration template is an XML file that is divided into sections. Each section contains related settings. The XML snippets are taken from the example `template.xml` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-example-connector#ccs-grok-crawler-zip-file).
+The configuration template is an XML file that is divided into sections. Each section contains related settings. The XML snippets are taken from the example `template.xml` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file).
 
 ### Declaration settings
 {: #declaration-settings}
@@ -271,9 +271,58 @@ The XPath expression for this section is `/function/prototype/proto-section[@sec
 ## Properties file
 {: #ccs-properties-file}
 
-For an example of a properties file, see the example `messages.properties` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-example-connector#ccs-grok-crawler-zip-file).
+For an example of a properties file, see the example `messages.properties` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file).
 
 ## JAR files
 {: #ccs-jar-files}
 
-The JAR files for any interfaces used by your custom connector code, including the `onewex-custom-crawler-{version_numbers}.jar` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-example-connector#ccs-grok-crawler-zip-file). The `onewex-custom-crawler-{version_numbers}.jar` file includes the `com.ibm.es.ama.custom.crawler` Java package that is described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
+The JAR files for any interfaces used by your custom connector code, including the `onewex-custom-crawler-{version_numbers}.jar` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file). The `onewex-custom-crawler-{version_numbers}.jar` file includes the `com.ibm.es.ama.custom.crawler` Java package that is described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
+
+## Compiling and packaging the custom connector
+{: #compile-package-connector}
+
+After you write the source code and configuration files for your custom connector, you need to compile and package it.
+{: shortdesc}
+
+### Prerequisites
+{: #ccs-compilation-prereqs}
+
+To compile a custom connector, you need to have the following items on your local machine. See [Custom connector example](/docs/discovery-data?topic=discovery-data-connector-dev#example-connection-requirements) for details.
+
+  - JDK 1.8 or higher
+  - [Gradle](https://gradle.org/install/){: external}
+  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discovery-data_short}} instance
+  - The JSch package
+  - The following files for the example custom connector:
+    - Java source code (`SftpCrawler.java`)
+    - XML definition file (`template.xml`)
+    - Properties file (`messages.properties`)
+
+  Do not change the names or paths of the `SftpCrawler.java`, `template.xml`, and `messages.properties` files. Doing so can result in problems including build failures.
+  {: important}
+
+### Compiling and packaging the source code
+{: #compile-connector}
+
+  1. Ensure you are in the custom connector development directory on your local machine:
+     ```sh
+     cd {local_directory}
+     ```
+     {: pre}
+
+  1. Use Gradle to compile your Java source code and to create a ZIP file that includes all of the required components for the custom connector:
+    ```sh
+    gradle build packageCustomCrawler
+    ```
+    {: pre}
+
+  Gradle creates a file in `{local_directory}/build/distributions/{built_connector_zip_file}`, where the name of the `{built_connector_zip_file}` is based on the value of `initial-value` in line 7 of the `template.xml` definitions file. For example, if the line reads as follows, Gradle outputs a file named `{local_directory}/build/distributions/my-sftp-connector.zip`.
+
+  ```xml
+ <declare type="string" name="crawler_name" initial-value="my-sftp-connector"/>
+  ```
+
+### Next step
+{: #compile-next-step}
+
+Proceed to [Installing and uninstalling a custom connector](/docs/discovery-data?topic=discovery-data-install-connector) to install the custom connector to your {{site.data.keyword.discovery-data_short}} instance.

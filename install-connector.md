@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -35,21 +35,21 @@ subcollection: discovery-data
 After you have compiled and packaged your custom connector, you need to install it to your {{site.data.keyword.discovery-data_short}} instance.
 {: shortdesc}
 
-{{site.data.keyword.discovery-data_short}} provides a script named `manage_custom_crawler.sh` for installing and uninstalling custom connectors. The script is located in the `scripts` directory of the expanded `custom-crawler-docs.zip` file as described in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-example-connector#ccs-grok-crawler-zip-file).
+{{site.data.keyword.discovery-data_short}} provides a script named `manage_custom_crawler.sh` for installing and uninstalling custom connectors. The script is located in the `scripts` directory of the expanded `custom-crawler-docs.zip` file as described in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file).
 
 ## Installing a connector
 {: #installing-connector}
 
 You can install your custom connector to your {{site.data.keyword.discovery-data_short}} instance by performing the following steps.
 
-  1. Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-compile-package-connector).
+  1. Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
     
   1. Run the following command from the directory on your local machine where you created and compiled your custom connector:
      ```sh
      bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file}
      ```
      {: pre}
-    where `{built_connector_zip_file}` is the name of the file you packaged in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-compile-package-connector).
+    where `{built_connector_zip_file}` is the name of the file you packaged in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
 
     **Important**: If your {{site.data.keyword.discovery-data_short}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
       ```sh
