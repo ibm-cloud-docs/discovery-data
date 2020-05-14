@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -64,11 +64,11 @@ The improvement tools available will vary depending on the **Project type** sele
    Create hierarchical categories within your data. You can also use facets generated from the results of your search (Dynamic facets). For more information, see [Creating facets](/docs/discovery-data?topic=discovery-data-facets)
 -  **Search bar**
    Options: 
-     -  **Autocomplete** - Suggested autocompletion of queries as they are typed. For more information, see the [Autocomplete](https://{DomainName}/apidocs/discovery-data-v2#get-autocomplete-suggestions){: external} method.
+     -  **Autocomplete** - Suggested autocompletion of queries as they are typed. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#get-autocomplete-suggestions){: external}.
      -  **Spelling suggestions** - Spelling suggestions will be offered for likely typos when searching.
 -  **Search results**
    Options:
-     -  **Passages** - A relevant passage is returned as a query result. You can specify the number of passages returned per document (**Passages per document**) as well as the **Maximum characters in a passage**. For details on passage retrieval, see [passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
+     -  **Passages** - A relevant passage is returned as a query result. You can specify the number of passages returned per document (**Passages per document**) as well as the **Maximum characters in a passage**. For more information about passage retrieval, see [passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
      -  **Field** - The specified field is used as the title of a query result (the title appears under each query result, along with the collection name).
   
 **Extract meaning**
@@ -78,7 +78,7 @@ For more information about each of the following enrichments, see [Extracting me
 -  **Keywords**
 -  **Sentiment of documents**
 
-The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only available if you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence and chosen the **Project type** of **Document retrieval**. See [Understanding {{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema) for more information. You can select only one of these enrichments.
+The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only available if you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence and chosen the **Project type** of **Document retrieval**. For more information, see [Understanding {{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). You can select only one of these enrichments.
 
 -  **Contracts**
 -  **Invoices**
@@ -86,9 +86,9 @@ The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only av
 
 
 **Teach domain concepts**
--  **Dictionaries** - Dictionaries allows you to enrich document fields in your collection. The enrichment terms can be synonyms (car, automotive, auto), or words in the same category (carburetor, piston, valves). For more information see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
+-  **Dictionaries** - Dictionaries allows you to enrich document fields in your collection. The enrichment terms can be synonyms (car, automotive, auto), or words in the same category (carburetor, piston, valves). For more information, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
 -  **Classifiers** - The Classifier uses the labels and text examples you have specified in a `.csv` file to predict the categories of the documents in your collection. For more information see the [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
--  **Character patterns** - The Character pattern enrichment uses regular expressions to identify and extract information from fields in your collection. For more information see [Character pattern enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
+-  **Character patterns** - The Character pattern enrichment uses regular expressions to identify and extract information from fields in your collection. For more information, see [Character pattern enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
 -  **Machine learning** - This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} or Watson Explorer Content Analytics Studio to enrich your collection. For more information, see [Machine Learning enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment).
 -  **Advanced rule models** - This enrichment uses a text extraction model created and exported from the Advanced rule editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}. For more information, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
 

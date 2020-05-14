@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-03"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -67,7 +67,7 @@ You must also have the following permissions:
 
 Summary of the backup process:
 
-  1. Back up IBM Cloud Pak for Data, if required. See [Backup and restore](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/backup_restore.html){: external} for more information.
+  1. Back up IBM Cloud Pak for Data, if required. For more information, see [Backup and restore](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/backup_restore.html){: external}.
   1. Ensure that the {{site.data.keyword.discovery-data_short}} instance being backed up meets the prerequisites listed in [Backing up {{site.data.keyword.discovery-data_long}}](/docs/services/discovery-data?topic=discovery-data-backup-restore#wddata-backup).
   1. Copy the data from the data service to the matching service on the new pod.
   1. Clean or groom the data, as necessary.

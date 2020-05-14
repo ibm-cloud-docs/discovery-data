@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-19"
+  years: 2019, 2020
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -48,9 +48,9 @@ In order to train Watson, you'll need to:
 
 Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your collection. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discovery-data_short}} then reorders the query results to display the most relevant results at the top. As you add more and more training data, {{site.data.keyword.discovery-data_short}} should become more accurate in the ordering of query results.
 
-Natural language query results will return a `confidence` score. See [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence) for details.
+Natural language query results will return a `confidence` score. For more information, see [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
-Adding a custom stopwords list can also improve the relevance of results for natural language queries. See [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords) for more information.
+Adding a custom stopwords list can also improve the relevance of results for natural language queries. For more information, see [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).
 {: tip}
 
 
@@ -82,7 +82,7 @@ Write your training queries the same way your users would ask them, for example:
 If two or more users attempt to train identical queries at the same time, one of the users will overwrite the others.
 {: note}
 
-You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training data in your collection at one time, you must do so using the API. See [Delete all training data](https://{DomainName}/discovery-data#delete-all-training-data){: external} for more information. 
+You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training data in your collection at one time, you must do so using the API. For more information, see [Delete all training data](https://{DomainName}/discovery-data#delete-all-training-data){: external}. 
 
 ## Testing and iterating on the relevancy of results
 {: #testing-results}

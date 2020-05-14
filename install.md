@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-27"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -72,7 +72,7 @@ See the general software requirements listed here:
  
 
 Portworx **must** be installed before you install {{site.data.keyword.discovery-data_short}}. A Portworx license is included with {{site.data.keyword.icp4dfull}} 2.5.0.0.
-{: important}.
+{: important}
 
 ## System requirements
 {: #system-requirements}

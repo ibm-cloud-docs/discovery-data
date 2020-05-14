@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -132,7 +132,7 @@ Enrichment-specific fields:
 
 Notes about writing regular expressions:
 
--  Use a Java&trade; regular expression. See the [Java documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html){: external} for more information. 
+-  Use a Java&trade; regular expression. For more information, see the [Java documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html){: external}. 
 -  Your regular expression should be short and understandable.
 -  The optimal regular expression would lead to a match or a non-match quickly.
 -  It is best to extract common patterns. For example, use `a(b|c|d)` instead of `(ab|ac|ad)`.
@@ -185,7 +185,7 @@ This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}}
 -  Machine learning models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
 -  Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: `.pear`)
 
-Create your `.pear` or `.zip` file before adding this enrichment. See the following documentation for more information:
+Create your `.pear` or `.zip` file before adding this enrichment. For more information, see the following documentation:
   -  [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-wks_overview_full
 )
   -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_11.0.2/com.ibm.discovery.es.ta.doc/iiystacastudio.html){: external}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -49,4 +49,4 @@ On the top right of any page, click the **Help** ![Help icon](images/help_icon.p
 To learn more, see:
 
 -  [Getting started with {{site.data.keyword.discovery-data_short}}](/docs/discovery-data?topic=discovery-data-getting-started)
--  {{site.data.keyword.discovery-data_short}} [API reference](https://{DomainName}/apidocs/discovery-data-v2){: external}
+-  {{site.data.keyword.discovery-data_short}} [API reference](https://{DomainName}/apidocs/discovery-data){: external}
