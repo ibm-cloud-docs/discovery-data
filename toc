@@ -74,11 +74,8 @@ Discovery for IBM Cloud Pak for Data
         connectors.md
         connector-dev.md
         assemble.md
-        example-connector.md
-        compile-connector.md
         install-connector.md
         ccs-tooling.md
-        connector-notes.md
 
     backup.md
     {: .navgroup-end}
