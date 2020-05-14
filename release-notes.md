@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-05-13"
 
 keywords: release notes, known issues
 
@@ -88,7 +88,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.1 release:
 
   -  In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
   -  When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
-  -  If you are using Smart Document Understanding, two variables no longer need to be set during installation or reinstallation. See [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu) for details.
+  -  If you are using Smart Document Understanding, two variables no longer need to be set during installation or reinstallation. For more information, see [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu).
 
 
 ### 2.1.0 release, 27 Nov 2019
@@ -101,7 +101,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.1 release:
 Changes made in this release:
 
   -  New **Project** based interface - Test your application like an end-user would with the **Document retrieval**, **Conversational Search**, and **Content Mining** project types. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
-  -  **Content Mining** - Build an end user interface for extracting insights proactively from your entire corpus. For more information see [Mining Content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+  -  **Content Mining** - Build an end user interface for extracting insights proactively from your entire corpus. For more information, see [Mining Content](/docs/discovery-data?topic=discovery-data-contentminerapp).
   -  **Content Intelligence** - Optional add-on to enrich your documents with pre-built domain knowledge for Contracts, Invoices, and Purchase Orders. For more information, see [Understanding Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
   -  **Reusable components** to quickly build your application using Discovery. We ship an autocomplete, rich preview, results and facets component. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
   -  **Additional Language support** - Basic support for Czech, Slovak, Russian, Polish and Romanian. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
@@ -114,7 +114,7 @@ Changes made in this release:
   -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/discovery-data?topic=discovery-data-collections#localfilesystemconnect)
   -  **Dynamic Facets** - Automatically generate facets based on the understanding of your data. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
   -  **Dictionary suggestions** - Dictionary terms will be suggested to you based on your content. For more information, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
-  -  **Curations** (beta) - Specify a particular result for a given query. For more information, see [Curations](https://cloud.ibm.com/apidocs/discovery/discovery-data-v2#create-curation){: external}.
+  -  **Curations** (beta) - Specify a particular result for a given query. For more information, see the [API reference](https://{DomainName}/apidocs/discovery/discovery-data#create-curation){: external}.
 
 
 ### 2.0.1 release, 30 August 2019
@@ -126,10 +126,10 @@ Changes made in this release:
 
 Changes made in this release:
 
-  -  Added the Windows File System and Database connectors.  See [Database connector](/docs/discovery-data?topic=discovery-data-collections#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect) for details.
+  -  Added the Windows File System and Database connectors.  For more information, see [Database connector](/docs/discovery-data?topic=discovery-data-collections#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect).
   -  Added support for Traditional Chinese. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
   -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
-  -  Released the Classifier enrichment. See [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) for details.
+  -  Released the Classifier enrichment. For more information, see [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
   -  Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift.
 
 Issues resolved in {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-24"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 
 <!-- c/s help for *Search settings* page. Do not delete. -->
 
-You can improve the quality of search results by uploading a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve)
+You can improve the quality of search results by uploading a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve).
 {: shortdesc}
  
 Upload or delete a synonyms or stopwords file by clicking the appropriate **Upload** button or **Delete** icon.

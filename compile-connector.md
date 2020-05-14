@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-11-26"
+  years: 2019, 2020
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -40,7 +40,7 @@ After you write the source code and configuration files for your custom connecto
 ## Prerequisites
 {: #ccs-compilation-prereqs}
 
-To compile a custom connector, you need to have the following items on your local machine. See [Custom connector example](/docs/discovery-data?topic=discovery-data-example-connector#example-connection-requirements) for details.
+To compile a custom connector, you need to have the following items on your local machine. For more information, see [Custom connector example](/docs/discovery-data?topic=discovery-data-example-connector#example-connection-requirements).
 
   - JDK 1.8 or higher
   - [Gradle](https://gradle.org/install/){: external}

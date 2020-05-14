@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ subcollection: discovery-data
 A project is a convenient way to build and manage your {{site.data.keyword.discovery-data_long}} application. You can assign a **Project type** (`Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`) and add data quickly by creating a collection, or reusing an existing one. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
 {: shortdesc}
 
-A sample project is available for you to explore and experiment with. For details, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started).
+A sample project is available for you to explore and experiment with. For more information, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip} 
 
 To create a project:
@@ -75,7 +75,7 @@ There are four available **Project types**: `Document Retrieval`, `Conversationa
 
 Use this project type to search and find the most relevant answers from your data.
 
-If you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence, you should use this **Project type**. For details see [{{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
+If you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence, you should use this **Project type**. For more information, see [{{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
 
 #### Document retrieval defaults
 {: #doc-retrieval-defaults}
@@ -84,7 +84,7 @@ If you have purchased and installed {{site.data.keyword.discovery-data_short}} f
 -  **Enrichments applied**: Entities, Parts of speech
 -  **Improvement tools enabled**: Facets (by Entity), Dynamic Facets, Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 ### Conversational Search
@@ -103,7 +103,7 @@ At this time, the {{site.data.keyword.conversationfull}} for {{site.data.keyword
 -  **Enrichments applied**: None
 -  **Improvement tools enabled**: Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 
@@ -123,7 +123,7 @@ Each **Content Mining** project can contain only one collection.
 -  **Improvement tools enabled**: None
 -  **CSV settings**: No header, selected delimiters are comma and semicolon
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 
@@ -139,7 +139,7 @@ This option is for those who prefer not to use one of the other project types.
 -  **Enrichments applied**: None
 -  **Improvement tools enabled**: Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For details see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
+Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
 {: note}
 
 ## Collection usage and sharing

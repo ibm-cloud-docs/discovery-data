@@ -84,7 +84,7 @@ Discovery for IBM Cloud Pak for Data
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API reference](https://cloud.ibm.com/apidocs/discovery-data-v2)
+    [API reference](https://cloud.ibm.com/apidocs/discovery-data)
 
     query-reference.md
     language-support.md

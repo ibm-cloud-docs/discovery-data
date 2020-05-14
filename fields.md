@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -142,7 +142,7 @@ If you plan to develop a model and import it into a new collection, it is a soun
 
 You can enrich fields (including custom fields identified with Smart Document Understanding) in your collection with cognitive metadata. 
 
-There are a number of enrichments available in {{site.data.keyword.discovery-data_short}}. Some of the enrichments must be created before you can apply them. For details, see [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments). 
+There are a number of enrichments available in {{site.data.keyword.discovery-data_short}}. Some of the enrichments must be created before you can apply them. For more information, see [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments). 
 
 To access the **Enrichments** page, select the **Manage collections** icon on the navigation pane and open a collection. Click the **Enrichments** tab. For more information on collections, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
 
@@ -174,7 +174,6 @@ Documents are split based on a single field name, for example: `title`, `author`
 Considerations:
 
 -  PDF and Word metadata, as well as any custom metadata, is extracted and included in the index with each segment. Every segment of a document will include identical metadata.
--  If a split document has been updated and needs to be re-uploaded, the document should be replaced using the Update document method. The document should be uploaded using the POST method of the `/environments/{environment_id}/collections/{collection_id}/documents/{parent_document_id}` API, specifying the contents of the `parent_document_id` field of one of the current segments as the {parent_document_id} path variable. All segments will be overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments will remain in the index and may be individually deleted using the API. See the [API Reference](https://{DomainName}/apidocs/discovery-data-v2#delete-a-document){: external} for details. 
+-  If a split document has been updated and needs to be re-uploaded, the document should be replaced using the Update document method. The document should be uploaded using the POST method of the `/environments/{environment_id}/collections/{collection_id}/documents/{parent_document_id}` API, specifying the contents of the `parent_document_id` field of one of the current segments as the {parent_document_id} path variable. All segments will be overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments will remain in the index and may be individually deleted using the API. For more information, see the [API Reference](https://{DomainName}/apidocs/discovery-data#delete-a-document){: external}. 
 
--  **Date format settings** - add or delete date formats used to convert date strings to date-type dataset fields. You can also select the **Time zone ID** and the **Locale string**. 
-
+-  **Date format settings** - add or delete date formats used to convert date strings to date-type dataset fields. You can also select the **Time zone ID** and the **Locale string**.

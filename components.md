@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -54,7 +54,7 @@ The following components are available on the **Explore UI components** tab:
 -  **Search results** - A set of results that rank the most relevant passages and tables to a query. 
 -  **Facets** - Refine your results with facets that help drill down to specific categories and domains.
 -  **Document preview** - Displays your results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document — making the context clearer.
--  **Document preview with Content Intelligence** - (Available only if you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence. See [Understanding Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema) for more information.) Displays contract, invoices, or purchase orders in a browser, regardless of the format of the original document. In addition, it recognizes key elements of the documents and gives you the ability to navigate to them quickly. For example, if you are searching for the payment terms clauses in a contract, **Document preview with Content Intelligence** detects those clauses and highlights the passages.
+-  **Document preview with Content Intelligence** - (Available only if you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence. For more information, see [Understanding Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).) Displays contract, invoices, or purchase orders in a browser, regardless of the format of the original document. In addition, it recognizes key elements of the documents and gives you the ability to navigate to them quickly. For example, if you are searching for the payment terms clauses in a contract, **Document preview with Content Intelligence** detects those clauses and highlights the passages.
 
 
 ## Conversational Search project components

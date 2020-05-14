@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-05-13"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ A collection is a set of documents you upload or crawl. You can also enrich, tra
 
 When you create a collection, {{site.data.keyword.discovery-data_short}} pulls documents from a data source, using a process called crawling. Crawling is the process of systematically browsing and retrieving documents from a specified start location. {{site.data.keyword.discovery-data_short}} only crawls items that you explicitly specify.
 
-1. To create a collection, first create a **Project** and choose a **Project type**. For details see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Alternately, you can open your project, select the **Manage collections** icon on the navigation panel, and then click **New collection**. 
+1. To create a collection, first create a **Project** and choose a **Project type**. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Alternately, you can open your project, select the **Manage collections** icon on the navigation panel, and then click **New collection**. 
 1. Choose a data source, or select **Use an existing collection**.
 1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
@@ -407,7 +407,7 @@ After you register your app, check to make sure you completed the following step
 
 Using the application ID you generated in this procedure, you can finish creating your collection, as described in [Configuring a SharePoint Online collection](/docs/discovery-data?topic=discovery-data-collections#configuresp).
 
-For more details on how to register an app or how to grant permissions, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
+For more information on how to register an app or how to grant permissions, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
 
 
 ### SharePoint OnPrem

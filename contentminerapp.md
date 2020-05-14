@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-09"
+lastupdated: "2019-05-13"
 
 subcollection: discovery-data
 
@@ -53,7 +53,7 @@ The link for the content mining app is similar to the format, `https://{installa
 
 On this first page, you can enter terms that you want to search for. Or, you can select values from the bar charts of each facet. You can select multiple items.
 
-For details about configuring facets in a content mining project, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
+For more information about configuring facets in a content mining project, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
 {: tip}
 
 You can select the type of facet to display from the **Facet type** menu:
@@ -224,7 +224,7 @@ The toolbar contains the following commands:
 
   You can specify a URL. When you click the title, this link is opened in a new window instead of showing the preview. Only valid URLs work as links.
 
-- **Snapshot** Saves an image of the dashboard to the Report pane, from which you can create a report. For more information, see, [Report pane](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorepv).
+- **Snapshot** Saves an image of the dashboard to the Report pane, from which you can create a report. For more information, see [Report pane](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorepv).
 - **Show all fields** and **Hide all fields**: You can toggle between these two buttons to show all fields or just the title and date fields.
 
 #### Documents pane
