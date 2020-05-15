@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-14"
 
 subcollection: discovery-data
 
@@ -47,9 +47,12 @@ Install {{site.data.keyword.discovery-data_short}}. See [Installing Discovery fo
 {: #open-project-tool}
 
 1.  Open the **Projects** page by selecting the **Projects** icon on the navigation panel. For more about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
-1.  Select **Sample Project**. The **Improve and Customize** page opens. 
+1.  Select **Sample Project**. The **Improve and Customize** page opens.
 
-The [**Project type**](/docs/discovery-data?topic=discovery-data-projects#project-type) of the Sample project is **Document Retrieval**. **Document Retrieval** projects are used to search and find the most relevant answers from your data. It includes one collection that contains 40 documents.
+If you just installed {{site.data.keyword.discovery-data_short}}, the Sample Project will need time to finish processing documents. Wait until processing is complete to start experimenting. You can confirm that all 40 documents have finished processing by selecting the **Manage collections** icon on the navigation panel and checking the **Sample Collection**.
+{: note}
+
+The [**Project type**](/docs/discovery-data?topic=discovery-data-projects#project-type) of the Sample Project is **Document Retrieval**. **Document Retrieval** projects are used to search and find the most relevant answers from your data. It includes one collection that contains 40 documents.
 
 **Document Retrieval** projects have the following defaults (we'll learn more about these later):
    -  **Settings**: Optical Character Recognition (OCR) `on` 
@@ -64,7 +67,7 @@ There are three other **Project types**: **Conversational Search**, **Content Mi
 ## Step 2: Tour the Sample Project
 {: #tour-project-tool}
 
-Now that we've opened the Sample project and learned more about **Document Retrieval** projects, let's explore.
+Now that we've opened the Sample Project and learned more about **Document Retrieval** projects, let's explore.
 
 1.  Select the **Manage collections** icon on the navigation panel. Choose the **Sample Collection**. Several tabs display but we'll concentrate on a few.
     -  The **Activity** tab displays collection details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**). For more information, see [Collection activity](/docs/discovery-data?topic=discovery-data-collections#collection-overview).
@@ -93,7 +96,7 @@ Now, let's customize a bit. Starting on the **Improve and Customize** page ...
 ## Step 4: Keep exploring and experimenting
 {: #next-steps-tool}
 
-Continue experimenting with the Sample project. A few other things you might want to try:
+Continue experimenting with the Sample Project. A few other things you might want to try:
   -  Select the **Manage collections** icon on the navigation panel. Click the **New collection** button. Choose **Upload data** and create a new collection with a few of your own documents.
   -  Select the **Integrate and Deploy** icon on the navigation panel. On the **Share preview link** tab, copy the link and paste it in your browser to preview your application. On the **Explore UI components** tab, click the **Try it on Storybook** link for any of the components.
   -  Select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display**, then choose **Search results**. In the **Select field to display as titles**, choose `document_id` from the dropdown and click **Apply**. The document identifier in each search result will switch from the document name to the document id number.
