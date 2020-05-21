@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-31"
+lastupdated: "2020-05-20"
 
 
 subcollection: discovery-data
@@ -41,12 +41,15 @@ Discovery for Content Intelligence enables understanding of governing business d
 
 Discovery for Content Intelligence includes pre-trained models that identify lists, sections, tables, headers, footers, and other structures in your documents. These models cannot be modified, so you cannot annotate fields with [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) to train custom conversion models when using Discovery for Content Intelligence enrichments.
 
+Discovery for Content Intelligence supports English language documents only. The pre-trained models cannot be modified.
+{: important}
+
 ## Getting started
 {: #content-intelligence-gs}
 
 To use Discovery for Content Intelligence, start by creating a document retrieval project. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
-Discovery for Content Intelligence only works on collections that contain documents in English. A Discovery for Content Intelligence project has the following default settings:
+A Discovery for Content Intelligence project has the following default settings:
   
 - The setting **Optical Character Reader Advanced** is set to `on`.
 - The enrichments applied include `Entities`, `Parts of speech`, `Table Understanding`, and `Contracts`.
