@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-14"
+lastupdated: "2020-05-22"
 
 subcollection: discovery-data
 
@@ -43,7 +43,18 @@ The Sample Project is a great way to tour and try out {{site.data.keyword.discov
 
 Install {{site.data.keyword.discovery-data_short}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
 
-## Step 1: Open the Sample Project
+## Step 1: Open Watson Discovery
+{: #getting-started-launch-tool}
+
+1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
+1.  On the **Provisioned instances** tab, find your {{site.data.keyword.discovery-data_short}} instance, and then hover over the last column to show and click the ellipsis icon ![Ellipsis icon](images/cp4d-sideways-kebab.png).
+1.  Choose **View details**.
+1.  Click **Open Watson Discovery**.
+
+A new browser tab or window opens and {{site.data.keyword.discovery-data_short}} is displayed.
+
+
+## Step 2: Open the Sample Project
 {: #open-project-tool}
 
 1.  Open the **Projects** page by selecting the **Projects** icon on the navigation panel. For more about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
@@ -64,7 +75,7 @@ A **Document Retrieval** project can contain a maximum of `5` collections.
 There are three other **Project types**: **Conversational Search**, **Content Miner**, and **Custom**. 
 {: tip}
 
-## Step 2: Tour the Sample Project
+## Step 3: Tour the Sample Project
 {: #tour-project-tool}
 
 Now that we've opened the Sample Project and learned more about **Document Retrieval** projects, let's explore.
@@ -85,7 +96,7 @@ Now that we've opened the Sample Project and learned more about **Document Retri
     
 That's the tour, stay on the **Improve and Customize** page for the next step.
     
-## Step 3: Customize the Sample Project
+## Step 4: Customize the Sample Project
 {: #customize-project-tool}
 
 Now, let's customize a bit. Starting on the **Improve and Customize** page ...
@@ -93,7 +104,7 @@ Now, let's customize a bit. Starting on the **Improve and Customize** page ...
 1.  Review the query results displayed. View the source document for each result by clicking on **View* passage in document**.
 1.  On the **Improvement tools** panel, choose **Customize display**, and select **Facets**. Select **New facet**, then click the **From existing fields in a collection** button. Choose `enriched_text.entities.type` from the dropdown and click **Apply**. The new facets will display. You can change the name of the facet label, and the filtering behavior.
 
-## Step 4: Keep exploring and experimenting
+## Step 5: Keep exploring and experimenting
 {: #next-steps-tool}
 
 Continue experimenting with the Sample Project. A few other things you might want to try:
