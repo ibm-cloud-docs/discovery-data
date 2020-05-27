@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-27"
 
 subcollection: discovery-data
 
@@ -86,6 +86,7 @@ You can configure the following data sources:
 -  [FileNet P8](/docs/discovery-data?topic=discovery-data-collections#filenet-connect)
 -  [Upload your own data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 -  [Reuse data from an existing collection](/docs/discovery-data?topic=discovery-data-collections#reuse)
+-  [Building and implementing a custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
 
 
 ### Crawl schedule options
@@ -859,7 +860,7 @@ In {{site.data.keyword.discovery-data_short}}, after you select **Local File Sys
 
 1. Under **Specify what you want to crawl**, complete the following field:
     - **Path** - The file path that you need to enter to crawl folders and documents from. You can enter multiple file paths.
-1. After you enter one or more paths, click **Add** and then **Finish**.
+1. After you enter one or more paths, click **Add** and then **Finish**
 
 
 ### FileNet P8
