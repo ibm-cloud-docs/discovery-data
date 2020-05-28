@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-27"
 
 subcollection: discovery-data
 
@@ -128,3 +128,24 @@ The `document_retrieval_strategy` can be found under the `retrieval_details`. If
 For more information on querying, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 
 
+## Curations
+{: #curations}
+
+Curations (beta) can be used to specify the exact document returned in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query will always be `1.00000`.
+
+This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#create-curation){: external} in the API reference.
+
+This example shows how a curation is added with the API. When querying with the same or similar `natural_language_query` the document with the `document_id` of `document_id1234` is returned.
+
+```JSON
+{
+  "natural_language_query": "curations in watson discovery",
+  "curated_results": [
+     {
+       "document_id": "document_id1234",
+      "collection_id": "collection_id1234"
+     }
+   ]
+ }
+```
+{: codeblock}
