@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-13"
+lastupdated: "2019-05-26"
 
 subcollection: discovery-data
 
@@ -309,7 +309,7 @@ The facet toolbar is displayed when you click **Show Toolbar**.
 
 - **Search**: You can search for words.
 - **Boolean Operators**: If you select two values for analysis, you can specify whether the values are joined by Boolean AND or OR.
-- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Visualization**: The default visualization is specified on the facet option page of the collection wizard. This list contains the visualization options:
     - **Facet Table**: Shows facet value, relevancy and count. Click each item to analyze more. To clear selection, click that item again. You can sort by name, count, and relevancy by clicking on each column header.
     - **Word Cloud**: Color and size represents level of relevancy. Click each item to analyze more. To clear selection, click white space.
@@ -334,7 +334,7 @@ By default, the chart is rendered as a heat map. Each cell color indicates a lev
 The facet toolbar is displayed when you click **Show Toolbar**.
 
 - **Search**: You can search for words.
-- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Visualization**: The only option is **Timeseries**.
 - **Close**: Close this facet.
 - **Hide Toolbar**: Hide the toolbar.
@@ -363,7 +363,7 @@ By default, a two-dimensional map table is shown. Click each item to analyze fur
 
 The facet toolbar is displayed when you click **Show Toolbar**.
 
-- **Export**: You can export documents to your local file system. Select the file name, format, encoding, and date and time format. You can also specify the number of results. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Visualization**: You can change the visualization to a **Pair Table** visualization. You can change back to a two-dimensional map by choosing **2D Map**. A pair table is shown below. Click each item to analyze further. To clear the selection, click that item again.
 - **Close**: Close this facet.
 - **Hide Toolbar**: Hide the toolbar.

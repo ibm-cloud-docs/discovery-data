@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-22"
 
 subcollection: discovery-data
 
@@ -53,6 +53,15 @@ To access the **Improve and Customize** page, select the **Improve and customize
 1.  For some of the tools, after you apply the improvement, a **Recrawl** or **Reprocess** of the collections in your project will start automatically. To do so manually, open the **Activity** page of each collection.
 1.  Retry the question.
 
+**To improve and customize your Content Mining project**:
+1.  Explore the facets. For more information, see [Facets in content mining projects](/docs/discovery-data?topic=discovery-data-facets#facetcm).
+1.  Apply filters and add facets. 
+1.  Configure the desired improvement tools. 
+1.  For some of the tools, after you apply the improvement, a **Recrawl** or **Reprocess** of the collections in your project will start automatically. To do so manually, open the **Activity** page of each collection.
+1.  Review the facets.
+
+You can open your application by choosing **Launch application**. For more information about the application, see [Mining content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+
 
 ## Improvement tools
 {: #improvement-tools}
@@ -61,7 +70,7 @@ The improvement tools available will vary depending on the **Project type** sele
 
 **Customize display**
 -  **Facets**
-   Create hierarchical categories within your data. You can also use facets generated from the results of your search (Dynamic facets). For more information, see [Creating facets](/docs/discovery-data?topic=discovery-data-facets)
+   Create hierarchical categories within your data. You can also use facets generated from the results of your search (Dynamic facets). For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets)
 -  **Search bar**
    Options: 
      -  **Autocomplete** - Suggested autocompletion of queries as they are typed. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#get-autocomplete-suggestions){: external}.

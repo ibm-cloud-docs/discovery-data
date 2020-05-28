@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-22"
 
 subcollection: discovery-data
 
@@ -67,7 +67,7 @@ A **Conversational Search** project can be integrated with a {{site.data.keyword
 ## Content Mining application
 {: #cm-deploy}
 
-You can launch your **Content Mining** application by selecting the **Launch application** tab and clicking the **Launch app** button. For more information about the app, see [Mining content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+You can launch your **Content Mining** application by selecting the **Launch application** tab and clicking the **Launch** button. For more information about the application, see [Mining content](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 When you copy the link for the content mining app, ensure that the URL is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`. If the URL isn't complete, such as, `/cm/miner`, before copying the link, refresh the page.
 {: important}
