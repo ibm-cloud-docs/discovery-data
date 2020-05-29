@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-26"
+lastupdated: "2019-05-29"
 
 subcollection: discovery-data
 
@@ -171,7 +171,7 @@ When you save the dashboard analysis, the following parts of the dashboard are s
       When you enable a filter, and select items from the filter enabled pane, then other panes are updated. The data of each pane is updated but its item selections remain. This behavior may be confusing because each pane shows the top `N` items in the pane (default is 50), but because a selected item is not included in the top `N` items, it might not always be shown in the pane.
 
     - **Boolean Operator**: Select AND or OR operator to create query from multiple values (not saved)
-    - **Export**: Download as Image is added. You can get the screenshot PNG File of current analysis (not saved)
+    - **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls). (not saved)
     - **Visualization**: You can select visualization type (saved)
     - **Maximize/Minimize**: Maximize, Minimize current analysis result (not saved)
     - **Snapshot**: Saves an image of the dashboard to the Report pane, from which you can create a report (not saved)
@@ -219,7 +219,7 @@ The **Documents** view is displayed when you show documents in the guided analys
 
 The toolbar contains the following commands:
 
-- **Export**: You can export documents to your local file system. You cannot export secured collections. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: You can download and export searched documents in a specified file format. You cannot export secured collections. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
 - **Customize**: You can customize how documents are displayed. You can choose header fields to always show above documents. You can also specify a field that contains a link to a thumbnail image to display next to the document summary.
 
   You can specify a URL. When you click the title, this link is opened in a new window instead of showing the preview. Only valid URLs work as links.
