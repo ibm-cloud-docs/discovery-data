@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-01"
 
 subcollection: discovery-data
 
@@ -80,12 +80,11 @@ If you have purchased and installed {{site.data.keyword.discovery-data_short}} f
 #### Document retrieval defaults
 {: #doc-retrieval-defaults}
 
--  **Settings**: Optical Character Recognition (OCR) `on` 
+-  **Settings**: Optical Character Recognition (OCR) `off` 
 -  **Enrichments applied**: Entities, Parts of speech
 -  **Improvement tools enabled**: Facets (by Entity), Dynamic Facets, Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
-{: note}
+Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
 ### Conversational Search
 {: #conversational}
@@ -99,12 +98,11 @@ At this time, the {{site.data.keyword.conversationfull}} for {{site.data.keyword
 #### Conversational Search defaults
 {: #conversational-defaults}
 
--  **Settings**: Optical Character Recognition (OCR) `on`
+-  **Settings**: Optical Character Recognition (OCR) `off`
 -  **Enrichments applied**: None
 -  **Improvement tools enabled**: Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
-{: note}
+Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
 
 ### Content Mining
@@ -118,13 +116,12 @@ Each **Content Mining** project can contain only one collection.
 #### Content Mining defaults
 {: #mining-defaults}
 
--  **Settings**: Optical Character Recognition (OCR) `on`
+-  **Settings**: Optical Character Recognition (OCR) `off`
 -  **Enrichment applied**: Parts of speech
 -  **Improvement tools enabled**: None
 -  **CSV settings**: No header, selected delimiters are comma and semicolon
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
-{: note}
+Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
 
 ### Custom
@@ -135,12 +132,11 @@ This option is for those who prefer not to use one of the other project types.
 #### Custom defaults
 {: #custom-defaults}
 
--  **Settings**: Optical Character Recognition (OCR) `on`
+-  **Settings**: Optical Character Recognition (OCR) `off`
 -  **Enrichments applied**: None
 -  **Improvement tools enabled**: Passages
 
-Changing the Optical Character Recognition (OCR) setting to `off` will increase processing speed. For more information, see [Processing settings](/docs/discovery-data?topic=discovery-data-collections#processing-options).
-{: note}
+Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
 ## Collection usage and sharing
 {: #collection-usage}
