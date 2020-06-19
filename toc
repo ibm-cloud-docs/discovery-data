@@ -1,35 +1,50 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="discovery-data" category="cloud_pak" audience="service" arm="1680411" href="/docs/discovery-data?topic=discovery-data-getting-started#getting-started" path="services/discovery-data"}
+{: .toc subcollection="discovery-data" category="cloud_pak" audience="service" href="/docs/discovery-data?topic=discovery-data-getting-started#getting-started" path="discovery-data"}
 Discovery for IBM Cloud Pak for Data
 
     {: .navgroup id="learn"}
     getting-started-tool.md
     index.md
+
+    {: topicgroup}
+    Videos and more
+        sample-apps.md
+        [Videos](https://ibm.biz/wds_videos)
+        additional-resources.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
     {: topicgroup}
-    Installing
+    Installing Discovery for Cloud Pak for Data
         install.md
-        [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md)
-        [Content Intelligence Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-ci-README.md)
         manage.md
 
     {: topicgroup}
-    Creating and configuring projects
+    Creating projects and collections
         projects.md
-
+        collections.md
+    
     {: topicgroup}
-    Managing collections
+    Configuring data sources   
         connect.md
-        fields.md
+        
+        {: topicgroup}
+        Configuring a Cloud Pak for Data custom connector
+            connectors.md
+            connector-dev.md
+            assemble.md
+            install-connector.md
+            ccs-tooling.md
 
     {: topicgroup}
     Improving and customizing
         improve.md
+        search-settings.md
         facets.md
+
+    fields.md   
 
     {: topicgroup}
     Adding enrichments
@@ -37,9 +52,7 @@ Discovery for IBM Cloud Pak for Data
         tables.md
         enrichmig.md
 
-    {: topicgroup}
-    Adding search settings
-        search-settings.md
+    analyze.md
 
     {: topicgroup}
     Querying
@@ -56,9 +69,13 @@ Discovery for IBM Cloud Pak for Data
     {: topicgroup}
     Content mining
         contentminerapp.md
+    
+    {: topicgroup}
+    Integrating and deploying
+        components.md
 
     {: topicgroup}
-    Discovery for Content Intelligence
+    Discovery for Content Intelligence for Cloud Pak for Data
         schema.md
         contracts.md
         parsing.md
@@ -66,34 +83,24 @@ Discovery for IBM Cloud Pak for Data
         pos.md
 
     {: topicgroup}
-    Integrating and deploying
-        components.md
-
-    {: topicgroup}
-    Building and deploying a custom connector
-        connectors.md
-        connector-dev.md
-        assemble.md
-        install-connector.md
-        ccs-tooling.md
-
-    backup.md
+    Backup and restore
+        backup.md        
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     [API reference](https://cloud.ibm.com/apidocs/discovery-data)
+    /watson/watson-using-sdks
+    [Watson GitHub repos](https://github.com/watson-developer-cloud/)
 
     query-reference.md
     language-support.md
-
-    [Watson GitHub repos](https://github.com/watson-developer-cloud/)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     release-notes.md
     known-issues.md
     troubleshooting.md
-
+    
     {: .topicgroup}
     Developer community
         [StackOverflow](http://stackoverflow.com/questions/tagged/watson-discovery)

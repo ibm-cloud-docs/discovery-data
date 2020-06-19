@@ -34,10 +34,10 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Projects* page. Do not delete. -->
 
-A project is a convenient way to build and manage your {{site.data.keyword.discovery-data_long}} application. You can assign a **Project type** (`Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`) and add data quickly by creating a collection, or reusing an existing one. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
+A project is a convenient way to build and manage your {{site.data.keyword.discoveryfull}} application. You can assign a **Project type** (`Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`) and add data quickly by creating a collection, or reusing an existing one. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
 {: shortdesc}
 
-A sample project is available for you to explore and experiment with. For more information, see the [Getting started with {{site.data.keyword.discovery-data_short}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started).
+A sample project is available for you to explore and experiment with. For more information, see the [Getting started with {{site.data.keyword.discoveryshort}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip} 
 
 To create a project:
@@ -75,7 +75,7 @@ There are four available **Project types**: `Document Retrieval`, `Conversationa
 
 Use this project type to search and find the most relevant answers from your data.
 
-If you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence, you should use this **Project type**. For more information, see [{{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
+If you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence, you should use this **Project type**. For more information, see [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
 
 #### Document retrieval defaults
 {: #doc-retrieval-defaults}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-06-12"
 
 subcollection: discovery-data
 
@@ -13,6 +13,7 @@ subcollection: discovery-data
 {:tip: .tip}
 {:note: .note}
 {:pre: .pre}
+{:beta: .beta}
 {:important: .important}
 {:deprecated: .deprecated}
 {:codeblock: .codeblock}
@@ -34,7 +35,7 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Train* page. Do not delete.  -->
 
-The relevance of natural language query results can be improved in {{site.data.keyword.discovery-data_long}} with training. 
+The relevance of natural language query results can be improved in {{site.data.keyword.discoveryfull}} with training. 
 {: shortdesc}
 
 Relevancy training is optional; if the results of your queries meet your needs, no further training is necessary. For information about use cases for relevancy training, see [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external}.
@@ -46,13 +47,14 @@ In order to train Watson, you'll need to:
   -   Identify natural language queries that are representative of the queries your users would request.
   -   Rate the results of each query as `relevant` or `not relevant`.
 
-Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your collection. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discovery-data_short}} then reorders the query results to display the most relevant results at the top. As you add more and more training data, {{site.data.keyword.discovery-data_short}} should become more accurate in the ordering of query results.
+Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your collection. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results at the top. As you add more and more training data, {{site.data.keyword.discoveryshort}} should become more accurate in the ordering of query results.
 
 Natural language query results will return a `confidence` score. For more information, see [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
 Adding a custom stopwords list can also improve the relevance of results for natural language queries. For more information, see [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).
 {: tip}
 
+If you would prefer to use the {{site.data.keyword.discoveryshort}} API to train {{site.data.keyword.discoveryshort}}, see the [API reference](https://{DomainName}/apidocs/discovery-data#list-training-queries){: external}.
 
 ## Adding queries and rating results
 {: #results}
@@ -66,7 +68,9 @@ To train a collection:
 
 1.  On the **Train** page, enter a natural language query in the **Enter a question to train** field. Do not include a question mark in your query. Click the **Add+** button.
 1.  Click the **Rate results** button next to the query.
-1.  After the results appear, select the **Relevant** or **Not relevant** button under each one. In order to train the collection efficiently, you should select an option for each result.
+1.  After the results appear, select the **Relevant** or **Not relevant** button under each one. In order to train the collection efficiently, you should select an option for each result. 
+
+    In the {{site.data.keyword.discoveryshort}} tooling, **Relevant** has a score of `10` and **Not relevant** has a score of `0`. You can use a different scoring scale if rating results using the API, but you can't mix scoring scales within the same collection. 
 1.  When you are finished, click the **Back to queries** button.
 1.  Continue adding queries and rating them. As you reach relevant training thresholds, the **Watson will learn which are the best results for your queries after you've rated enough** section will indicate your status by striking out the requirements as you meet them:
     - Add more queries
@@ -82,7 +86,7 @@ Write your training queries the same way your users would ask them, for example:
 If two or more users attempt to train identical queries at the same time, one of the users will overwrite the others.
 {: note}
 
-You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training data in your collection at one time, you must do so using the API. For more information, see [Delete all training data](https://{DomainName}/discovery-data#delete-all-training-data){: external}. 
+You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training queries in your collection at one time, you must do so using the API. For more information, see [Delete training queries](https://{DomainName}/apidocs/discovery-data#delete-training-queries){: external}. 
 
 ## Testing and iterating on the relevancy of results
 {: #testing-results}
@@ -99,7 +103,7 @@ For additional training guidance, see [Relevancy training tips](/docs/discovery-
 ## Confidence scores
 {: #confidence}
 
-{{site.data.keyword.discovery-data_short}} returns a `confidence` score for natural language queries of trained collections. This `confidence` score is not interchangeble with `confidence` scores returned by untrained collections.
+{{site.data.keyword.discoveryshort}} returns a `confidence` score for natural language queries of trained collections. This `confidence` score is not interchangeble with `confidence` scores returned by untrained collections.
 
 The `confidence` score can range from `0.0` to `1.0`. The higher the number, the more relevant the result.
 
@@ -131,7 +135,10 @@ For more information on querying, see the [Query overview](/docs/discovery-data?
 ## Curations
 {: #curations}
 
-Curations (beta) can be used to specify the exact document returned in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query will always be `1.00000`.
+The Curations feature is beta functionality.
+{: beta}
+
+Curations can be used to specify the exact document returned in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query will always be `1.00000`.
 
 This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#create-curation){: external} in the API reference.
 

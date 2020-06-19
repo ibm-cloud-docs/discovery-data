@@ -29,10 +29,10 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Managing the cluster
+# Managing a Cloud Pak for Data cluster
 {: #manage}
 
-After you install and configure {{site.data.keyword.discovery-data_long}}, you can manage the instance and the cluster.
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> After you install and configure {{site.data.keyword.discoveryfull}}, you can manage the instance and the cluster.
 
 ## Preparing your local machine
 {: #manage-prep-local-machine}
@@ -80,7 +80,7 @@ Ensure that you have the following prerequisites installed and working correctly
 ## Performing management tasks
 {: perform-mgmt-tasks}
 
-The following are some of the tasks you can perform to monitor and maintain your {{site.data.keyword.discovery-data_short}} instance.
+The following are some of the tasks you can perform to monitor and maintain your {{site.data.keyword.discoveryshort}} instance.
 
   - Identify the cluster nodes to which the product is deployed:
     ```bash
@@ -127,7 +127,7 @@ If you plan to use SAML for single sign-on (SSO), complete [Configuring single s
 
 1.  From the web client menu, select **My Instances**.
 
-1.  Find your {{site.data.keyword.discovery-data_short}} instance, click the more (**...**) menu, and then choose **Manage Access**.
+1.  Find your {{site.data.keyword.discoveryshort}} instance, click the more (**...**) menu, and then choose **Manage Access**.
 
 1.  Click **Add user**.
 
@@ -191,7 +191,7 @@ Multi-node `Etcd` clusters must be configured during deployment. Scaling the `Et
     ```
     {: pre}
 
-1.  Delete the PVC and PV of `Etcd`. List the {{site.data.keyword.discovery-data_short}} PVC:
+1.  Delete the PVC and PV of `Etcd`. List the {{site.data.keyword.discoveryshort}} PVC:
     
     ```bash
     kubectl get pvc -l release=<release-name>

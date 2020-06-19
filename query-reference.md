@@ -32,10 +32,10 @@ subcollection: discovery-data
 # Query reference
 {: #query-reference}
 
-The full list of {{site.data.keyword.discovery-data_short}} query parameters, operators, and aggregations. These are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discovery-data_short}} [API reference](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+The full list of {{site.data.keyword.discoveryshort}} query parameters, operators, and aggregations. These are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
-In the {{site.data.keyword.discovery-data_short}} tooling, you can write and test [natural language queries](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/discovery-data?topic=discovery-data-improve) page.
+In the {{site.data.keyword.discoveryshort}} tooling, you can write and test [natural language queries](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/discovery-data?topic=discovery-data-improve) page.
 {: tip}
 
 ## Parameters descriptions

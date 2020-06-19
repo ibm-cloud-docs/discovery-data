@@ -29,8 +29,10 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Assembling, compiling, and packaging a custom connector
+# Assembling and compiling a custom Cloud Pak for Data connector
 {: #assemble}
+
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->
 
 You package a number of component files together to create a custom connector.
 {: shortdesc}
@@ -40,11 +42,11 @@ You package a number of component files together to create a custom connector.
 
 A custom connector package is a ZIP file that contains the following components:
 
-|Path               |Description|
+| Path              | Description |
 |-------------------|------------|
-|`config/template.xml` | A [configuration template](#ccs-config-template)|
-|`config/messages.properties` | A [properties file](#ccs-properties-file) for UI messages|
-|`lib/*.jar` | [JAR files](#ccs-jar-files) required by the custom connector, not including the connector code that you write|
+| `config/template.xml` | A [configuration template](#ccs-config-template)|
+| `config/messages.properties` | A [properties file](#ccs-properties-file) for UI messages|
+| `lib/*.jar` | [JAR files](#ccs-jar-files) required by the custom connector, not including the connector code that you write|
 
 ## Configuration template
 {: #ccs-config-template}
@@ -56,16 +58,16 @@ The configuration template is an XML file that is divided into sections. Each se
 
 Declared settings are represented by the `<declare />` element. The element has the following attributes:
 
-|Attribute name  |Description|
+| Attribute name  | Description |
 |----------------|-----------|
-|`type`          |Data type; one of `string`, `long`, `boolean`, `list` of strings, or `enum`|
-|`name`          |The name of the setting|
-|`initial-value` |The initial value of the setting|
-|`enum-value`    |A list of `enum` values separated by vertical bars (<tt>&#124;</tt>)|
-|`required`      |Indicates that the setting is required|
-|`hidden`        |Indicates whether to hide the setting from the UI. Specify a value of `true` to hide the setting.|
+| `type`          | Data type; one of `string`, `long`, `boolean`, `list` of strings, or `enum`|
+| `name`          | The name of the setting|
+| `initial-value` | The initial value of the setting|
+| `enum-value`    | A list of `enum` values separated by vertical bars (<tt>&#124;</tt>)|
+| `required`      | Indicates that the setting is required|
+| `hidden`        | Indicates whether to hide the setting from the UI. Specify a value of `true` to hide the setting.|
 
-  In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discovery-data_short}} tooling.
+  In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discoveryshort}} tooling.
   {: note}
 
 ### Declaration setting examples
@@ -97,13 +99,13 @@ To declare a required `long`, use code similar to the following:
 
 Conditional settings are represented by the `<condition />` element. A conditional setting is displayed only if the condition is satisfied. The element has the following attributes:
 
-|Attribute name  |Description|
+| Attribute name  | Description |
 |----------------|-----------|
-|`name`          |The name of the setting|
-|`enable`        |Enable the setting if the value of the `name` attribute equals the value of the `enable` attribute|
-|`in`            |Enable the setting if the value of the `name` attribute is included in a specified list of values|
+| `name`          | The name of the setting|
+| `enable`        | Enable the setting if the value of the `name` attribute equals the value of the `enable` attribute|
+| `in`            | Enable the setting if the value of the `name` attribute is included in a specified list of values|
 
-  In the current release, conditional settings are not applied in the {{site.data.keyword.discovery-data_short}} tooling.
+  In the current release, conditional settings are not applied in the {{site.data.keyword.discoveryshort}} tooling.
   {: note}
 
 ### Conditional setting examples
@@ -291,7 +293,7 @@ To compile a custom connector, you need to have the following items on your loca
 
   - JDK 1.8 or higher
   - [Gradle](https://gradle.org/install/){: external}
-  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discovery-data_short}} instance
+  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance
   - The JSch package
   - The following files for the example custom connector:
     - Java source code (`SftpCrawler.java`)
@@ -325,4 +327,4 @@ To compile a custom connector, you need to have the following items on your loca
 ### Next step
 {: #compile-next-step}
 
-Proceed to [Installing and uninstalling a custom connector](/docs/discovery-data?topic=discovery-data-install-connector) to install the custom connector to your {{site.data.keyword.discovery-data_short}} instance.
+Proceed to [Installing and uninstalling a custom connector](/docs/discovery-data?topic=discovery-data-install-connector) to install the custom connector to your {{site.data.keyword.discoveryshort}} instance.

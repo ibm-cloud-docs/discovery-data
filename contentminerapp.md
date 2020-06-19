@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-29"
+lastupdated: "2020-06-19"
 
 subcollection: discovery-data
 
@@ -32,16 +32,16 @@ subcollection: discovery-data
 # Mining content
 {: #contentminerapp}
 
-The {{site.data.keyword.discovery-data_long}} content mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
+The {{site.data.keyword.discoveryfull}} content mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
 {: shortdesc}
 
-This page describes using the content mining application. For information about creating a {{site.data.keyword.discovery-data_short}} content mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+This page describes using the content mining application. For information about creating a {{site.data.keyword.discoveryshort}} content mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 {: tip}
 
 ## Application launch view
 {: #cmolaunch}
 
-When you launch the application from a {{site.data.keyword.discovery-data_short}} content mining project, you see something similar to the window in Figure 1. The window shows sample text on the **Facets** tab, which shows the extracted facets that were configured in the {{site.data.keyword.discovery-data_short}} content mining project.
+When you launch the application from a {{site.data.keyword.discoveryshort}} content mining project, you see something similar to the window in Figure 1. The window shows sample text on the **Facets** tab, which shows the extracted facets that were configured in the {{site.data.keyword.discoveryshort}} content mining project.
 
 The link for the content mining app is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`.
 {: note}
@@ -78,7 +78,7 @@ The guided analysis view contains four main parts, which are described in more d
 - **Mining graph**: Displays a guided visualization of your analysis.
 - **Toolbar**: The toolbar at the top of the window, which contains buttons that execute global commands.
 - **Dashboard**: Used to select and save different layouts.
-- **"Facet analysis" pane**: Used to customize your analysis.
+- **Facet analysis pane**: Used to customize your analysis.
 
 ### Mining graph
 {: #cmomg}
@@ -171,7 +171,7 @@ When you save the dashboard analysis, the following parts of the dashboard are s
       When you enable a filter, and select items from the filter enabled pane, then other panes are updated. The data of each pane is updated but its item selections remain. This behavior may be confusing because each pane shows the top `N` items in the pane (default is 50), but because a selected item is not included in the top `N` items, it might not always be shown in the pane.
 
     - **Boolean Operator**: Select AND or OR operator to create query from multiple values (not saved)
-    - **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls). (not saved)
+    - **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls). (not saved)
     - **Visualization**: You can select visualization type (saved)
     - **Maximize/Minimize**: Maximize, Minimize current analysis result (not saved)
     - **Snapshot**: Saves an image of the dashboard to the Report pane, from which you can create a report (not saved)
@@ -189,6 +189,7 @@ When you save a dashboard analysis, you can access it quickly from the **Dashboa
 The **Facet analysis** pane is the default view when you enter the analysis view. To begin facet analysis, select the analysis type and options, and then select a facet from the analysis tree. The options in this pane are described in the following list:
 
 - **Analysis type**: Select the type of analysis you want to perform. Options: **Relevancy**, **Topic**, **Trends**, **Pairs**, **Connections**, **Factor** or **Dynamic cluster**.
+- **Contextual view selection**: Select a contextual view to analyze that you defined. This option only appears when you create a contextual view in the **Contextual view** tab.
 - **Number of facets**: Specify the number of facets to analyze. The default value and available options vary based on the analysis type.
 - **Date facet**: Select the date facet to analyze. This options is enabled only for **Trends** and **Topics** analysis types.
 - **Time scale**: Select the time scale to analyze. This options is enabled only for **Trends** and **Topics** analysis types.
@@ -219,7 +220,7 @@ The **Documents** view is displayed when you show documents in the guided analys
 
 The toolbar contains the following commands:
 
-- **Export**: You can download and export searched documents in a specified file format. You cannot export secured collections. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: You can download and export searched documents in a specified file format. You cannot export secured collections. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - **Customize**: You can customize how documents are displayed. You can choose header fields to always show above documents. You can also specify a field that contains a link to a thumbnail image to display next to the document summary.
 
   You can specify a URL. When you click the title, this link is opened in a new window instead of showing the preview. Only valid URLs work as links.
@@ -309,7 +310,7 @@ The facet toolbar is displayed when you click **Show Toolbar**.
 
 - **Search**: You can search for words.
 - **Boolean Operators**: If you select two values for analysis, you can specify whether the values are joined by Boolean AND or OR.
-- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - **Visualization**: The default visualization is specified on the facet option page of the collection wizard. This list contains the visualization options:
     - **Facet Table**: Shows facet value, relevancy and count. Click each item to analyze more. To clear selection, click that item again. You can sort by name, count, and relevancy by clicking on each column header.
     - **Word Cloud**: Color and size represents level of relevancy. Click each item to analyze more. To clear selection, click white space.
@@ -324,9 +325,18 @@ When one or more values in the dashboard are selected, the following toolbar ite
 #### Time series dashboard
 {: #cmotsdb}
 
-The time series dashboard is displayed when you choose **Analyze trends and anomaly** in the guided analysis view. This view shows multiple time series charts for multiple facet values at a glance.
+The time series dashboard is displayed when you choose **Analyze trends and anomaly** in the guided analysis view. This view shows multiple time series charts for multiple facet values at a glance. You can choose to analyze facets by **Month**, **Day**, **Year**, or **Hour**, or you can choose from the following cyclic time scale options:
 
-By default, the chart is rendered as a heat map. Each cell color indicates a level of relevancy. In addition, a line chart is overlayed on the chart. You can change from a heat map to a bar graph by clicking next to a facet label. To select items for further analysis click or shift-click individual items. You can also drag the mouse cursor to select contiguous items.
+- **Days of the month**: Displays facet analysis for all of the days in the current month.
+- **Months of the year**: Displays facet analysis for all of the months of the year.
+- **Days of the week**: Displays facet analysis for each day of the week.
+
+The cyclic data is calculated from the current time zone setting of your collection. You can change the time zone by clicking the expandable menu icon on your collection and then **Edit collection > Time zone**. If you change your time zone, the index rebuilds automatically.
+
+By default, the time series chart is rendered as a heat map. Each cell color indicates a level of relevancy. In addition, a line chart is overlayed on the chart. You can change from a heat map to a bar graph by clicking next to a facet label. To select items for further analysis click or shift-click individual items. You can also drag the mouse cursor to select contiguous items.
+
+Trends analysis does not support the cyclic time scale options, and the cyclic time scale options are only available for collections created in {{site.data.keyword.discovery-data_short}} version 2.1.3 and later.
+{: note}
 
 ##### Facet toolbar
 {: #cmotsftb}
@@ -334,7 +344,7 @@ By default, the chart is rendered as a heat map. Each cell color indicates a lev
 The facet toolbar is displayed when you click **Show Toolbar**.
 
 - **Search**: You can search for words.
-- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - **Visualization**: The only option is **Timeseries**.
 - **Close**: Close this facet.
 - **Hide Toolbar**: Hide the toolbar.
@@ -363,7 +373,7 @@ By default, a two-dimensional map table is shown. Click each item to analyze fur
 
 The facet toolbar is displayed when you click **Show Toolbar**.
 
-- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collections#configuredls).
+- **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - **Visualization**: You can change the visualization to a **Pair Table** visualization. You can change back to a two-dimensional map by choosing **2D Map**. A pair table is shown below. Click each item to analyze further. To clear the selection, click that item again.
 - **Close**: Close this facet.
 - **Hide Toolbar**: Hide the toolbar.
@@ -380,3 +390,40 @@ In the content mining app, you see the collection that was configured for the pr
 1. Enter names, select files, and review the default information, changing any of the selections, if necessary.
 1. Click Save.
     After the saving process is complete, the new collection is available on the Create a Collection page.
+
+This feature is specific to the content mining app. Each **Content Mining** [project](/docs/discovery-data?topic=discovery-data-projects#project-type) can contain only one collection.
+{: note}
+
+## Contextual view
+{: #contextual-view}
+
+You can use the **Contextual view** tab to simultaneously analyze multiple text fields in your documents.
+{: shortdesc}
+
+By default, a content mining collection is configured to analyze the content of one text field, but if you have data that includes two or more fields that you want to analyze, such as **question** and **answer** data, contextual view is a useful tool. You can access the **Contextual view** tab by clicking **Edit collection**.
+
+### Enabling multiple text fields
+{: #enable-multiple-fields}
+
+1. In your content mining app on the **Create a collection** page, click **Edit collection** on the expandable menu icon.
+1. Click the **Fields** tab, and in the **Index type** column, select **Analyzable text content** for the fields that you want to analyze.
+1. Click **Save > OK** to clear and rebuild the index.
+    The collection updates are now applied. If the index does not rebuild immediately, you might need to click **Refresh** for the rebuild to complete. When you navigate to documents view, you can see the documents and the facets that are generated for the fields that you selected. Although the content is separated by field type, it is not labeled by field type. You can label the fields in documents view by clicking **Customize** on the toolbar and selecting **Show document content with name** in **Display mode for document contents**.
+    
+    However, if you selected multiple fields to analyze, you cannot see the facet analysis for only one field at this point. To view the analysis for multiple fields, you must group them.
+
+### Grouping multiple text fields
+{: #group-multiple-fields}
+
+1. On your content mining app on the **Create a collection** page, click **Edit collection**.
+1. Click **Contextual view > Add view**.
+1. Complete the following fields:
+
+   - **Name**: The name or label of your grouped view.
+   - **Id**: The alphanumeric ID that {{site.data.keyword.discoveryshort}} uses when you submit a text query. Use the following format when you complete this field, replacing the `<>` and the content within with your view name and the word that you want to search for: `<View_ID>:<term>`. For example, if you specify an ID for a grouped view called `answer`, its ID being `ans1`, and if you want to search a document that has an answer field that includes the word `test`, you can enter the following text query: `ans1:test`.
+   - **Fields**: The text fields that have the **Analyzable text content** setting applied. Select one or multiple text fields that you want to group for facet analysis.
+
+1. Click **Add**.
+    Repeat this task if you want to add more text fields that you want to group for facet analysis.
+1. Click **Save > OK** to clear and rebuild the index.
+    You can navigate to the **Facet analysis** pane, where you can see a new drop-down menu, **Contextual view selection**, between **Analysis type** and **Number of facets**. This new menu contains the text fields that you selected for grouping. You can select one of the text fields to view the facet analysis for that field. If you select **Pairs** analysis, you can select two grouped views.

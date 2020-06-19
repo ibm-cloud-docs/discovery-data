@@ -29,18 +29,18 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Installing and uninstalling a custom connector
+# Installing a custom Cloud Pak for Data connector
 {: #install-connector}
 
-After you have compiled and packaged your custom connector, you need to install it to your {{site.data.keyword.discovery-data_short}} instance.
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> After you have compiled and packaged your custom connector, you need to install it to your {{site.data.keyword.discoveryshort}} instance.
 {: shortdesc}
 
-{{site.data.keyword.discovery-data_short}} provides a script named `manage_custom_crawler.sh` for installing and uninstalling custom connectors. The script is located in the `scripts` directory of the expanded `custom-crawler-docs.zip` file as described in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file).
+{{site.data.keyword.discoveryshort}} provides a script named `manage_custom_crawler.sh` for installing and uninstalling custom connectors. The script is located in the `scripts` directory of the expanded `custom-crawler-docs.zip` file as described in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file).
 
 ## Installing a connector
 {: #installing-connector}
 
-You can install your custom connector to your {{site.data.keyword.discovery-data_short}} instance by performing the following steps.
+You can install your custom connector to your {{site.data.keyword.discoveryshort}} instance by performing the following steps.
 
   1. Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
     
@@ -51,7 +51,7 @@ You can install your custom connector to your {{site.data.keyword.discovery-data
      {: pre}
     where `{built_connector_zip_file}` is the name of the file you packaged in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
 
-    **Important**: If your {{site.data.keyword.discovery-data_short}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
+    **Important**: If your {{site.data.keyword.discoveryshort}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
       ```sh
       bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file} -o true
       ```
@@ -60,17 +60,17 @@ You can install your custom connector to your {{site.data.keyword.discovery-data
 ## Verifying an installed connector
 {: #verify-connector-install}
 
-Verify that the connector has been deployed to the {{site.data.keyword.discovery-data_short}} instance by logging into the {{site.data.keyword.discovery-data_short}} tooling and ensuring that an icon for the connector is displayed on the **Configure collection** page.
+Verify that the connector has been deployed to the {{site.data.keyword.discoveryshort}} instance by logging into the {{site.data.keyword.discoveryshort}} tooling and ensuring that an icon for the connector is displayed on the **Configure collection** page.
 
-## Using an installed connector on {{site.data.keyword.discovery-data_short}}
+## Using an installed connector on {{site.data.keyword.discoveryshort}}
 {: #use-installed-connector}
 
-To use the installed custom connector, follow the steps listed in [Creating a collection](/docs/discovery-data?topic=discovery-data-collections#createcollection). The custom connector appears in the list of connectors provided at [Configuring data sources](/docs/discovery-data?topic=discovery-data-collections#collection-types). For further information, see [Using a custom connector with the {{site.data.keyword.discovery-data_short}} tooling](/docs/discovery-data?topic=discovery-data-ccs-tooling).
+To use the installed custom connector, follow the steps listed in [Creating a collection](/docs/discovery-data?topic=discovery-data-collections#createcollection). The custom connector appears in the list of connectors provided at [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types). For further information, see [Using a custom connector with the {{site.data.keyword.discoveryshort}} tooling](/docs/discovery-data?topic=discovery-data-ccs-tooling).
 
 ## Uninstalling a connector
 {: #uninstall-connector}
 
-To uninstall a custom connector from a {{site.data.keyword.discovery-data_short}} instance, run the following command at the root of the unzipped `custom-crawler-docs.zip` directory:
+To uninstall a custom connector from a {{site.data.keyword.discoveryshort}} instance, run the following command at the root of the unzipped `custom-crawler-docs.zip` directory:
 
 ```sh
 bash scripts/manage_custom_crawler.sh undeploy -n {built_connector_name}
@@ -78,7 +78,7 @@ bash scripts/manage_custom_crawler.sh undeploy -n {built_connector_name}
 {: pre}
 where `{build_connector_name}` is the name, not the zip file, of the installed connector.
 
-**Important**: If your {{site.data.keyword.discovery-data_long}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
+**Important**: If your {{site.data.keyword.discoveryfull}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
 ```sh
 bash scripts/manage_custom_crawler.sh undeploy -n {built_connector_name} -o true
 ```

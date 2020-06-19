@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-15"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ If using the API, see [List training queries](https://{DomainName}/apidocs/disco
 ### How do I check errors and warnings?
 {: #understanding-errors}
 
-Open your project, then select the **Manage collections** icon on the navigation panel. Choose your collection, then open the **Activity** tab. For more information, see [Collection activity](/docs/discovery-data?topic=discovery-data-collections#collection-overview).
+Open your project, then select the **Manage collections** icon on the navigation panel. Choose your collection, then open the **Activity** tab. For more information, see [Collection activity](/docs/discovery-data?topic=discovery-data-collection-types#collection-overview).
 
 ### How do I interpret the `confidence` score that appears in natural language query results after training?
 {: #interpret-confidence}

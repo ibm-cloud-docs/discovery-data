@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-22"
+lastupdated: "2020-06-19"
 
 subcollection: discovery-data
 
@@ -34,7 +34,7 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Improve and customize* page. Do not delete. -->
 
-You can use the **Improve and Customize** page in the {{site.data.keyword.discovery-data_long}} to try out queries, then add and test customizations to improve the query results for your project.
+You can use the **Improve and Customize** page in the {{site.data.keyword.discoveryfull}} to try out queries, then add and test customizations to improve the query results for your project.
 {: shortdesc}
 
 To access the **Improve and Customize** page, select the **Improve and customize** icon on the navigation panel.
@@ -87,7 +87,7 @@ For more information about each of the following enrichments, see [Extracting me
 -  **Keywords**
 -  **Sentiment of documents**
 
-The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only available if you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence and chosen the **Project type** of **Document retrieval**. For more information, see [Understanding {{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). You can select only one of these enrichments.
+The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only available if you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence and chosen the **Project type** of **Document retrieval**. For more information, see [Understanding {{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). You can select only one of these enrichments.
 
 -  **Contracts**
 -  **Invoices**
@@ -97,7 +97,7 @@ The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only av
 **Teach domain concepts**
 -  **Dictionaries** - Dictionaries allows you to enrich document fields in your collection. The enrichment terms can be synonyms (car, automotive, auto), or words in the same category (carburetor, piston, valves). For more information, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
 -  **Classifiers** - The Classifier uses the labels and text examples you have specified in a `.csv` file to predict the categories of the documents in your collection. For more information see the [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
--  **Character patterns** - The Character pattern enrichment uses regular expressions to identify and extract information from fields in your collection. For more information, see [Character pattern enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
+-  **Regular expressions** - The Regular expressions enrichment uses regular expressions to identify and extract information from fields in your collection. For more information, see [Regular expressions enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
 -  **Machine learning** - This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} or Watson Explorer Content Analytics Studio to enrich your collection. For more information, see [Machine Learning enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment).
 -  **Advanced rule models** - This enrichment uses a text extraction model created and exported from the Advanced rule editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}. For more information, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
 
@@ -110,8 +110,8 @@ The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only av
 **Improve relevance**
 -  **Synonyms** - You can expand the scope of a query beyond exact matches - for example, you can expand a query for "ibm" to include "international business machines" and "big blue" - by uploading a list of synonyms. For more information, see [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
 -  **Stopwords** - Stopwords are filtered out of queries because they are common terms that are not useful in a search. For more information, see [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).
--  **Data management** - Add additional data to your collections. For more information, see [Configuring data sources](/docs/discovery-data?topic=discovery-data-collections#collection-types).
--  **Relevancy training** - The relevance of natural language query results can be improved in {{site.data.keyword.discovery-data_long}} with training. For more information, see [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
+-  **Data management** - Add additional data to your collections. For more information, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
+-  **Relevancy training** - The relevance of natural language query results can be improved in {{site.data.keyword.discoveryfull}} with training. For more information, see [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
 
 
 

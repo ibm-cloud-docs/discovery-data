@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-19"
 
 keywords: release notes, known issues
 
@@ -34,7 +34,7 @@ subcollection: discovery-data
 # Release notes
 {: #release-notes}
 
-The release notes provide information about changes to {{site.data.keyword.discovery-data_long}} since the previous release.
+The release notes provide information about changes to {{site.data.keyword.discoveryfull}} since the previous release.
 {: shortdesc}
 
 ## Service API Versioning
@@ -56,7 +56,28 @@ IBM releases services, features, and language support for your evaluation that a
 
 The following new features and changes to the service are available.
 
-See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discovery-data_long}} known issues.
+See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+### 2.1.3 release, 19 June 2020
+{: #19jun2020}
+
+**{{site.data.keyword.discovery-data_long}} version 2.1.3 is available.**
+
+{{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 3.0.1.
+
+Changes made in this release:
+
+-  Added basic support for Finnish and Hebrew. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+-  The Analyze endpoint, which supports stateless document ingestion workflows. For details, see the [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi). Use of the Analyze API affects license usage, please reference the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery){: external}.
+-  The content mining application includes two new options: [Cyclic time scale](/docs/discovery-data?topic=discovery-data-contentminerapp#cmotsdb) on the Time series dashboard, and the [Contextual view](/docs/discovery-data?topic=discovery-data-contentminerapp#contextual-view) tab.
+-  For **Content Mining** projects only, the **Improve and customize** page includes a shortcut: the **Launch application** button. Previously, you were required to open the **Integrate and deploy** page, select the **Launch application** tab, and click the **Launch** button.
+-  The segment limit when splitting documents has been increased to 1,000. For details, see **Improve query results by splitting your documents** in [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings). 
+-  The [Filenet connector](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect) has document level security.
+-  You can specify up to 1,000 curations. For details about this beta feature, see [Curations](/docs/discovery-data?topic=discovery-data-train#curations).
+
+Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.3 release:
+
+-  In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
 
 ### 2.1.2 release, 31 Mar 2020
 {: #31mar2020}
@@ -65,19 +86,20 @@ See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for t
 
 Changes made in this release:
 
-  -  **IBM FileNet connector** added - Crawl IBM FileNet systems. For more information, see [FileNet connector](/docs/services/discovery-data?topic=discovery-data-collections#filenet-connect). 
+  -  **IBM FileNet connector** added - Crawl IBM FileNet systems. For more information, see [FileNet connector](/docs/services/discovery-data?topic=discovery-data-collection-types#filenet-connect). 
   -  Added basic support for Swedish, Norwegian (Bokma&#778;l and Nynorsk), and Danish. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
   - The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) is now GA.
   - Several **enhancements to the tooling**; including improvements to the navigation, messages, and status updates.
   - You can now view your search results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document — making the context clearer.
-  -  The [Web Crawl connector](/docs/services/discovery-data?topic=discovery-data-collections#connectwebcrawl) has proxy support. 
+  -  The [Web Crawl connector](/docs/services/discovery-data?topic=discovery-data-collection-types#connectwebcrawl) has proxy support. 
   -  Running a query with an empty `aggregations` parameter returns zero aggregations in the response.
   
 Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.2 release:
 
   -  When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`.
   -  When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Activity** page, but no further processing status displays until the number of documents increases.
-  -  Running a query with an empty `aggregations` parameter returns an empty aggregations array. 
+  -  Running a query with an empty `aggregations` parameter returns an empty aggregations array.
+  -  Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
   
 ### 2.1.1 release, 24 Jan 2020
 {: #24jan2020}
@@ -89,6 +111,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.1 release:
   -  In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
   -  When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
   -  If you are using Smart Document Understanding, two variables no longer need to be set during installation or reinstallation. For more information, see [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu).
+  -  Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a top-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
 
 
 ### 2.1.0 release, 27 Nov 2019
@@ -110,8 +133,8 @@ Changes made in this release:
   -  **Sample Project** - The sample project is preloaded with data so you can learn about Discovery. For more information, see [Getting started with Watson Discovery for IBM Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-getting-started).
   -  **Passage retrieval** - Will return the most relevant passages from your documents, plus you can specify the number of passages returned per document. See [passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
   -  **Project level querying and relevancy training** - Query multiple collections at once including relevance training. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve)
-  -  Improvements and additional options to the **Web crawl connector** - For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-collections#connectwebcrawl).
-  -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/discovery-data?topic=discovery-data-collections#localfilesystemconnect)
+  -  Improvements and additional options to the **Web crawl connector** - For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-collection-types#connectwebcrawl).
+  -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/discovery-data?topic=discovery-data-collection-types#localfilesystemconnect)
   -  **Dynamic Facets** - Automatically generate facets based on the understanding of your data. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
   -  **Dictionary suggestions** - Dictionary terms will be suggested to you based on your content. For more information, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
   -  **Curations** (beta) - Specify a particular result for a given query. For more information, see the [API reference](https://{DomainName}/apidocs/discovery/discovery-data#create-curation){: external}.
@@ -126,9 +149,9 @@ Changes made in this release:
 
 Changes made in this release:
 
-  -  Added the Windows File System and Database connectors.  For more information, see [Database connector](/docs/discovery-data?topic=discovery-data-collections#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collections#windowsfilesystemconnect).
+  -  Added the Windows File System and Database connectors.  For more information, see [Database connector](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collection-types#windowsfilesystemconnect).
   -  Added support for Traditional Chinese. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-  -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
+  -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
   -  Released the Classifier enrichment. For more information, see [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
   -  Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift.
 

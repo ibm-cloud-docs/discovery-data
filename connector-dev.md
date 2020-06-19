@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-19"
 
 subcollection: discovery-data
 
@@ -29,10 +29,10 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Developing custom connector code and custom connector example
+# Developing custom Cloud Pak for Data connector code
 {: #connector-dev}
 
-The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when writing your own custom connector.
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when writing your own custom connector.
 {: shortdesc}
 
 ## Interfaces and JavaDoc
@@ -137,31 +137,45 @@ The example connector includes three components:
 The Java source code for the example connector has the following dependencies:
 
   - JDK 1.8 or higher.
-  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discovery-data_short}} instance as described at [Downloading the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
+  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
   - The [JSch](http://www.jcraft.com/jsch/){: external} Java package, as described [Downloaded JSch](#download-jsch). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}.
 
 #### Downloading the `custom-crawler-docs.zip` file
 {: #download-ccs-zip}
 
-Perform the following steps to download the `custom-crawler-docs.zip` file to your local machine. You need root access to an installed {{site.data.keyword.discovery-data_short}} instance.
+Perform the following steps to download the `custom-crawler-docs.zip` file to your local machine. You need root access to an installed {{site.data.keyword.discoveryshort}} instance.
 
-  1. Verify that you can access the installed {{site.data.keyword.discovery-data_short}} instance:
-     ```sh
-     ssh root@{instance_name}
+  1. Obtain the entitlement key by navigating to your [container software library](https://myibm.ibm.com/products-services/containerlibrary){: external}.
+
+  1. Enter the following command to log in to the Docker registry where your {{site.data.keyword.discoveryshort}} images are available. Include your entitlement key in the following command:
+     
+     ```
+     docker login cp.icr.io -u cp -p {entitlement_key}
      ```
      {: pre}
-     where `{instance_name}` is the name of an installed {{site.data.keyword.discovery-data_short}} instance.
-  1. Download the `custom-crawler-docs.zip` file to your local machine by using Secure Copy (`scp`) or a similar utility:
-     ```sh
-     scp root@{instance_name}:/root/bob/etc/sdk/custom-crawler-docs.zip {local_directory}
+  
+  1. Enter the following command to pull the `custom-crawler-sdk` image:
+     
+     ```
+     docker pull cp.icr.io/cp/watson-discovery/custom-crawler-sdk:2.1.3
      ```
      {: pre}
-     where:
-     - `{instance_name}` is the name of the installed {{site.data.keyword.discovery-data_short}} instance
-     - `{local_directory}` is the directory on your local machine where you want to build and compile your custom connector
+  
+  1. Enter the following command to run the `custom-crawler-sdk` image:
+     
+     ```
+     docker run cp.icr.io/cp/watson-discovery/custom-crawler-sdk:2.1.3
+     ```
+     {: pre}
 
-     If you are using a version of {{site.data.keyword.discovery-data_short}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
-     {: tip}
+  1. Enter the following command to copy `custom-crawler-docs.zip` from the container where the image is running:
+  
+     ```
+     docker cp {container_name}:/crawler/custom-crawler-docs.zip .
+     ```
+     {: pre}
+
+     To find the image, enter `docker ps -a | grep custom-crawler-sdk`.
      
   1. Expand the `custom-crawler-docs.zip` file:
      ```sh
@@ -177,6 +191,9 @@ Perform the following steps to download the `custom-crawler-docs.zip` file to yo
 
      If your local machine does not have the `unzip` utility, try using the `gunzip` command instead, or see the documentation for your local machine's operating system for other alternatives to expanding ZIP files.
      {: note}
+
+     If you are using a version of {{site.data.keyword.discoveryshort}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
+     {: tip}
 
 #### Understanding the `custom-crawler-docs.zip` file
 {: #ccs-grok-crawler-zip-file}
