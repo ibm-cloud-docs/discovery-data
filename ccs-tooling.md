@@ -31,13 +31,13 @@ subcollection: discovery-data
 {:xml: .ph data-hd-programlang='xml'}
 {:properties: .ph data-hd-programlang='properties'}
 
-# Using a custom connector with the {{site.data.keyword.discovery-data_short}} tooling 
+# Using a custom Cloud Pak for Data connector with the Discovery tooling 
 {: #ccs-tooling}
 
-After you have built and deployed a custom connector, you can configure and run it in the {{site.data.keyword.discovery-data_short}} tooling to create a collection.
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> After you have built and deployed a custom connector, you can configure and run it in the {{site.data.keyword.discoveryshort}} tooling to create a collection.
 {: shortdesc}
 
-You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. These instructions enable you to use a custom connector instead of one of the pre-built connectors listed in [Configuring data sources](/docs/discovery-data?topic=discovery-data-collections#collection-types).
+You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. These instructions enable you to use a custom connector instead of one of the pre-built connectors listed in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
   1. After you create a new project, including a name and project type, look on the **Select data source** page for your custom connector. Select the custom connector and click **Next**. The **Configure collection** page opens.
 

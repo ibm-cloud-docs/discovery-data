@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-19"
 
 subcollection: discovery-data
 
@@ -29,18 +29,35 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# About Watson Discovery for IBM Cloud Pak for Data
+# About Watson Discovery
 {: #about}
 
-{{site.data.keyword.discovery-data_long}} is an AI-powered search engine that allows you to extract answers from complex business documents.
+{{site.data.keyword.discoveryfull}} is an AI-powered search engine that allows you to extract answers from complex business documents.
 {: shortdesc}
 
-{{site.data.keyword.discovery-data_short}} lets you visually train AI for deep understanding of your content, including tables and images, to help you find business-value hidden in your enterprise. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere using powerful API interfaces or included reusable UI components.
+{{site.data.keyword.discoveryshort}} lets you visually train AI for deep understanding of your content, including tables and images, to help you find business-value hidden in your enterprise. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere using powerful API interfaces or included reusable UI components.
 
-Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
+![Discovery architecture diagram](images/about-discovery1.png)
 
-On the top right of any page, click the **Help** ![Help icon](images/help_icon.png) icon to open the documentation.
+<!-- This documentation covers both {{site.data.keyword.discovery-data_short}} and {{site.data.keyword.discoveryshort}} Premium on the IBM Public Cloud. In cases where information applies exclusively to one service, you will see the appropriate icon: ![Cloud Pak for Data only](images/cpdonly.png) or ![IBM Cloud only](images/cloudonly.png).
+{: important} --> 
+
+On the top right of any tooling page, click the **Help** ![Help icon](images/help_icon.png) icon to open the documentation.
 {: tip}
+
+## Browser support
+{: #about-browser}
+
+<!-- ![IBM Cloud only](images/cloudonly.png) For the list of {{site.data.keyword.cloud}} prerequisites and supported browsers, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external} -->
+
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> 
+
+The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For details, see [Supported web browsers](https://www.ibm.com/support/knowledgecenter/SSQNUZ_current/cpd/plan/rhos-reqs.html#rhos-reqs__web){: external}
+
+## Language support
+{: #about-language}
+
+Language support by feature is detailed in the [Supported languages](/docs/discovery-data?topic=discovery-data-language-support) topic.
 
 
 ## Next steps
@@ -48,5 +65,5 @@ On the top right of any page, click the **Help** ![Help icon](images/help_icon.p
 
 To learn more, see:
 
--  [Getting started with {{site.data.keyword.discovery-data_short}}](/docs/discovery-data?topic=discovery-data-getting-started)
--  {{site.data.keyword.discovery-data_short}} [API reference](https://{DomainName}/apidocs/discovery-data){: external}
+-  [Getting started with {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-getting-started)
+-  {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data){: external}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-19"
 
 subcollection: discovery-data
 
@@ -34,14 +34,19 @@ subcollection: discovery-data
 # Installing Discovery for Cloud Pak for Data
 {: #install}
 
-Requirements and installation information for {{site.data.keyword.discovery-data_long}}.
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> Requirements and installation information for {{site.data.keyword.discovery-data_short}}.
 {: shortdesc}
 
 You should install {{site.data.keyword.icp4dfull}} before installing the {{site.data.keyword.discovery-data_short}} service.
 
-{{site.data.keyword.icp4dfull_notm}} is available for download from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/){: external} 
 
-Full installation instructions for {{site.data.keyword.discovery-data_long}} are available at [Installing {{site.data.keyword.discovery-data_short}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+Full installation instructions: 
+
+-  {{site.data.keyword.discoveryfull}} 3.0.1 [Installing {{site.data.keyword.discoveryshort}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}
+
+-  {{site.data.keyword.discoveryfull}} 2.5.0.0 [Installing {{site.data.keyword.discoveryshort}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+
+Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 (or later) version. {{site.data.keyword.discoveryfull}} is FISMA High Ready.
 
 
 ## Before you begin
@@ -49,16 +54,24 @@ Full installation instructions for {{site.data.keyword.discovery-data_long}} are
 
 Review the security information in:
 
-[{{site.data.keyword.discovery-data_long}} installation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+[{{site.data.keyword.discoveryfull}} 3.0.1 installation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}
+
+
+[{{site.data.keyword.discoveryfull}} 2.5.0.0 installation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+
+
+[Security considerations in {{site.data.keyword.icp4dfull_notm}} 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/plan/security.html){: external}
 
 [Security considerations in {{site.data.keyword.icp4dfull_notm}} 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/security.html){: external}
+
 
 Encryption of data at rest must be handled by the storage provider.
 {: important}
 
-Review the {{site.data.keyword.discovery-data_short}} release notes and known issues:
+Review the {{site.data.keyword.discoveryshort}} release notes and known issues:
 
-[Release notes](/docs/discovery-data?topic=discovery-data-release-notes)
+  -  [Release notes](/docs/discovery-data?topic=discovery-data-release-notes)
+  -  [Known issues](/docs/discovery-data?topic=discovery-data-known-issues)
 
 ## Software requirements
 {: #prereqs}
@@ -67,11 +80,12 @@ Review the {{site.data.keyword.discovery-data_short}} release notes and known is
 
 See the general software requirements listed here:
 
+  -  [IBM® Cloud Pak for Data 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/plan/rhos-reqs.html#rhos-reqs__software){: external} 
   -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html#rhos-reqs__software){: external} 
   -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}
  
 
-Portworx **must** be installed before you install {{site.data.keyword.discovery-data_short}}. A Portworx license is included with {{site.data.keyword.icp4dfull}} 2.5.0.0.
+Portworx **must** be installed before you install {{site.data.keyword.discoveryshort}}. A Portworx license is included with {{site.data.keyword.icp4dfull}} 2.5.0.0 or later.
 {: important}
 
 ## System requirements
@@ -79,25 +93,26 @@ Portworx **must** be installed before you install {{site.data.keyword.discovery-
 
 See the system requirements listed here:
 
+  -  [IBM® Cloud Pak for Data 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/plan/rhos-reqs.html){: external} 
   -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html){: external} 
   -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}
 
 
-{{site.data.keyword.discovery-data_short}} has the following specific requirements:
+{{site.data.keyword.discoveryshort}} has the following specific requirements:
 
 |                      | Minimum VPC available | Minimum RAM available |
 |----------------------|:---------------------:|:---------------------:|
 | Development (non-HA) | 21                    | 86 GB                 |
 | Production (HA)      | 26                    | 116 GB                |
 
-Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discovery-data_long}}.
+Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discoveryfull}}.
 {: note}
 
 ## Upgrading Discovery for Cloud Pak for Data
 {: #upgrade-discovery}
 
-To upgrade {{site.data.keyword.discovery-data_long}}, you must uninstall the current version, then install the newer version.
+To upgrade {{site.data.keyword.discoveryfull}}, you must uninstall the current version, then install the newer version.
 
-For uninstall instructions, see [Uninstalling Watson Discovery](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md#uninstalling-watson-discovery){: external}.
+For uninstall instructions, see [Uninstalling Watson Discovery](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/svc/watson/discovery-uninstall.html){: external}.
 
-See [Backing up and restoring data](/docs/discovery-data?topic=discovery-data-backup-restore) for the procedures to back up and restore user data.
+See [Backing up and restoring data](/docs/discovery-data?topic=discovery-data-backup-restore) for the procedures to back up and restore user data in {{site.data.keyword.discovery-data_short}}.

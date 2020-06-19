@@ -32,13 +32,13 @@ subcollection: discovery-data
 # Facets
 {: #facets}
 
-To help you analyze the results of linguistic processing and text analysis, {{site.data.keyword.discovery-data_short}} organizes and classifies documents that share similar patterns or content.
+To help you analyze the results of linguistic processing and text analysis, {{site.data.keyword.discoveryshort}} organizes and classifies documents that share similar patterns or content.
 {: shortdesc}
 
 ## Overview
 {: #facetov}
 
-Facets represent the different aspects or dimensions of the documents in your collection. In {{site.data.keyword.discovery-data_short}}, you add facets on the "Improve and customize" page in your project. Facets are available in the "Customize display" section, as shown in Figure 1.
+Facets represent the different aspects or dimensions of the documents in your collection. In {{site.data.keyword.discoveryshort}}, you add facets on the "Improve and customize" page in your project. Facets are available in the "Customize display" section, as shown in Figure 1.
 
 Facets provide a mechanism for navigating and analyzing your content and the exact functionality varies depending on the project type:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-19"
 
 subcollection: discovery-data
 
@@ -33,7 +33,7 @@ subcollection: discovery-data
 # Creating enrichments
 {: #create-enrichments}
 
-You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**.
+You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**.
 {: shortdesc}
 
 The enrichments available will vary based on the **Project type**.
@@ -44,7 +44,7 @@ To create a new enrichment:
 1. Click **Upload** or **New**.
 1. Configure the enrichment:
     - [**Dictionary**](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment) 
-    - [**Character Pattern**](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment)
+    - [**Regular expressions**](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment)
     - [**Machine Learning and Watson Explorer Content Analytics Studio models**](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment) 
     - [**Classifier**](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment)
     - [**Advanced rule models**](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
@@ -118,17 +118,17 @@ In this example, the **Facet Path** specified was `automobiles.motorsports`, and
 
 Result: The query `enriched_text.entities.text:engine` will also return results that include `carburetor`. 
 
-## Character Pattern enrichments
+## Regular expressions enrichments
 {: #characterpattern-enrichment}
 
-The Character Pattern enrichment uses regular expressions to identify and extract information from fields in your collection.
+The Regular expressions enrichment uses regular expressions to identify and extract information from fields in your collection.
 
 The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page.  
 
 Enrichment-specific fields:
 
 -  **Facet Path** - The text matched to this regular expression will be included in this facet. To specify hierarchy, use a period `.` to separate values, for example `regex.cccardnumber`.
--  **Character Pattern** - Your regular expression string. 
+-  **Regular expression** - Your regular expression string. 
 
 Notes about writing regular expressions:
 
@@ -146,7 +146,7 @@ This regular expression will find credit card numbers of a specific format and l
 4[0-9]{15}
 ```
 
-In the output, the information extracted by the Character Pattern enrichment can be found under `enriched_text`, within the `entities` array.
+In the output, the information extracted by the Regular expression enrichment can be found under `enriched_text`, within the `entities` array.
 
 In this example, the **Facet Path** specified was `regex.cccardnumber`, and the field selected for enrichment was `text`.
 
@@ -326,7 +326,7 @@ For more information, see the documentation for [{{site.data.keyword.knowledgest
 ## Classifier enrichments
 {: #classifier-enrichment}
 
-The Classifier enrichment allows you to classify the documents in your collection into categories. {{site.data.keyword.discovery-data_short}} uses the labels and text examples you have specified to predict the categories of the documents in your collection. 
+The Classifier enrichment allows you to classify the documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples you have specified to predict the categories of the documents in your collection. 
 
 You must create and upload a classifier csv file to apply this enrichment. The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page. 
 
@@ -396,59 +396,150 @@ In this example snippet, the field selected for enrichment was `text`.
 ## Extracting meaning
 {: #extract-meaning}
 
-The **Entities**, **Keywords**, and **Sentiment of documents** enrichments are supported in English only, unless you download and install `ibm-watson-discovery-pack1-prod` from Passport Advantage.
-{: note}
-
-### Entities
-{: #entities}
-
-Identifies people, cities, organizations, and other entities in the content. 
-
-For example:
-
-**Input**
-> text: "IBM is an American multinational technology company headquartered in Armonk, New York, United States, with operations in over 170 countries."
-
-**Response**
-> IBM: Company </br>
-> Armonk: Location </br>
-> New York: Location </br>
-> United States: Location
-
 ### Parts of speech
 {: #pos}
 
 Extracts parts of speech, such as nouns, verbs, adjectives, adverbs, conjunctions, interjections, and numerals.
 
+### Entities
+{: #entities}
+
+Identifies people, cities, organizations, and other entities in the content. It can be applied on fields with `text` or `html` content.
+
+For example:
+
+**Input**
+text: "IBM is an American multinational technology company headquartered in Armonk."
+
+**Response**
+
+In the JSON output:
+
+  - `text` = string. The entity text
+  - `type` = string. The entity type, including but not limited to `Organization`, `Company`, `EmailAddress`, `JobTitle`, `Location`, `Person`, `Quantity`.
+  - `mentions` = array. The entity mentions and locations
+  - `model_name` = string. For custom models, this field will contain the user-provided model name. Otherwise, this field will contain the default name of the model: `watson_knowledge_studio`, `dictionary`, `character_pattern`, or `natural_language_understanding`
+
+```Json
+ "entities": [
+  {
+   "model_name": "natural_language_understanding",
+   "mentions": [
+    {
+     "location": {
+      "end": 3,
+      "begin": 0
+     },
+     "text": "IBM"
+    }
+   ],
+   "text": "IBM",
+   "type": "Company"
+  },
+  {
+   "model_name": "natural_language_understanding",
+   "mentions": [
+    {
+     "location": {
+      "end": 75,
+      "begin": 69
+     },
+     "text": "Armonk"
+    }
+   ],
+   "text": "Armonk",
+   "type": "Location"
+  }
+ ]
+ ```
+ {: codeblock}
+
+
 ### Keywords
 {: #keywords}
 
-Returns important keywords in the content. For example:
+Returns important keywords in the content. It can be applied on fields with `text` or `html` content. For example:
 
 **Input**
->url: "[http://www.ibm.com/press/us/en/pressrelease/51493.wss](http://www.ibm.com/press/us/en/pressrelease/51493.wss)"
+text: "Watson Discovery is an award-winning AI search technology."
 
 **Response**
->Australian Open </br>
->Tennis Australia </br>
->IBM SlamTracker analytics
+
+In the JSON output:
+  - `text` = The keyword text
+  - `mentions` = The entity mentions and locations
+
+```Json
+ "keywords": [
+  {
+   "mentions": [
+    {
+     "location": {
+      "end": 157,
+      "begin": 141
+     },
+     "text": "Watson Discovery"
+    }
+   ],
+   "text": "Watson Discovery"
+  },
+  {
+   "mentions": [
+    {
+     "location": {
+      "end": 177,
+      "begin": 164
+     },
+     "text": "award-winning"
+    }
+   ],
+   "text": "award-winning"
+  },
+  {
+   "mentions": [
+    {
+     "location": {
+      "end": 198,
+      "begin": 181
+     },
+     "text": "search technology"
+    }
+   ],
+   "text": "search technology"
+  }
+ ]
+```
+{: codeblock}
 
 ### Sentiment of documents
 {: #sentiment}
 
-Extracts the positive, neutral, and negative sentiments of the overall document. For example:
+Analyzes the overall sentiment of the document and returns `positive`, `neutral`, or `negative` sentiment. It can be applied on fields with `text` or `html` content. For example:
 
 **Input**
->text: "Thank you and have a nice day!"
+text: "It is powerful and easy to use and integrate with third party applications."
 
 **Response**
->Positive sentiment (score: 0.91)
+
+In the JSON output:
+  -  `score` = Sentiment score from `-1` (negative) to `1` (positive)
+  -  `label` = `positive`, `negative`, or `neutral`
+  -  `mixed` = Indicates if the document has a mix of emotions or not
+
+```Json
+ "sentiment": {
+   "score": 0.9255063900060722,
+   "mixed": false,
+   "label": "positive"
+ }
+ ```
+{: codeblock}
 
 
 ## Discovery for Content Intelligence
 {: #content-intelligence}
 
-The `Contracts`, `Invoices`, and `Purchase orders` enrichments are available if you have purchased and installed {{site.data.keyword.discovery-data_short}} for Content Intelligence and chosen the **Project type** of **Document retrieval**.
+The `Contracts`, `Invoices`, and `Purchase orders` enrichments are available if you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence and chosen the **Project type** of **Document retrieval**.
 {: note}
 
 For more information, see [Understanding Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-27"
+lastupdated: "2020-06-11"
 
 subcollection: discovery-data
 
@@ -33,11 +33,11 @@ subcollection: discovery-data
 # Configuring your collection with Smart Document Understanding
 {: #configuring-fields}
 
-You can use Smart Document Understanding (SDU) to quickly train {{site.data.keyword.discovery-data_long}} to extract fields in your documents, which will improve the answers that your application returns. The specified fields can also be enriched.
+You can use Smart Document Understanding (SDU) to quickly train {{site.data.keyword.discoveryfull}} to extract fields in your documents, which will improve the answers that your application returns. The specified fields can also be enriched.
 
 With SDU, you can annotate fields within your documents to train custom conversion models. As you annotate, Watson is learning and will start predicting annotations. After an SDU model is created, it can be [exported](/docs/discovery-data?topic=discovery-data-configuring-fields#import) and used on other collections.
 
-PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types that {{site.data.keyword.discovery-data_short}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
 To access the Smart Document Understanding editor:
 
@@ -56,14 +56,14 @@ To navigate the Smart Document Understanding editor, view the following informat
    - **Manage fields** - see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings)
    - **Enrichments** - see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
 
-1. Open the **Identify fields** tab. A maximum of forty (40) documents from your collection will automatically load in the Smart Document Understanding editor.
+1. Open the **Identify fields** tab. A subset of documents will be available for annotation purposes. Between 20 - 50 documents will appear in the dropdown list. The number will depend on several factors, including the number of documents in your collection in the supported file formats. 
 
 Use the SDU toolbar to perform the following tasks:
 - Choose a document to annotate
 - Navigate the document displayed
 - Adjust the page view (`single page view`, `zoom in`, `zoom out`), `clear changes`, and `export/import models`. Click on `single page view` to toggle the display. You can view your annotations and document separately or together.
 
-Also see [Getting started with {{site.data.keyword.discovery-data_short}}](/docs/discovery-data?topic=discovery-data-getting-started).
+Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-getting-started).
 
 ## Identifying fields
 {: #identify-fields}
@@ -141,7 +141,7 @@ If you plan to develop a model and import it into a new collection, it is a soun
 
 You can enrich fields (including custom fields identified with Smart Document Understanding) in your collection with cognitive metadata.
 
-There are a number of enrichments available in {{site.data.keyword.discovery-data_short}}. You must create some of the enrichments before you can apply them. For more information, see [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).
+There are a number of enrichments available in {{site.data.keyword.discoveryshort}}. You must create some of the enrichments before you can apply them. For more information, see [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).
 
 To access the **Enrichments** page, select the **Manage collections** icon on the navigation pane and open a collection. Click the **Enrichments** tab. For more information on collections, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
 
@@ -166,11 +166,12 @@ To access the **Manage fields** page, click the **Manage collections** icon on t
 
 **Identify fields to index** - Use this option to choose which fields should be included in the index for this collection. You can switch off any fields that you do not want to index. For example, your PDFs may contain a running header or footer that does not contain useful information, so you can exclude those fields from the index.
 
-**Improve query results by splitting your documents**. Use this option to split your documents into segments based on a field name. After your documents are split, each segment is a separate document that will be enriched, indexed, and returned as a separate query result. Documents are split based on a single field name, for example `title`, `author`, `question`.
+**Improve query results by splitting your documents**. Use this option to split your documents into segments based on a field name. After your documents are split, each segment is a separate document that will be enriched, indexed, and returned as a separate query result. Documents are split based on a single field name, for example `title`, `author`, `question`. 
+  - The number of segments per document is limited to `1,000`. Any document content remaining after `999` segments are stored within segment `1,000`.
+  - PDF and Word metadata, as well as any custom metadata, is extracted and included in the index with each segment. Every segment of a document includes identical metadata.
+  - If a split document is updated and needs to be re-uploaded, you should replace the document using the **Update document** method in the [API reference](https://{DomainName}/apidocs/discovery-data#update-a-document){: external}. Upload the document, using the POST method of the `/environments/{environment_id}/collections/{collection_id}/documents/{document_id}` API, specifying the contents of the `parent_id` field of one of the current segments as the {document_id} path variable. All segments will be overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments remain in the index and can be individually deleted using the API. For more information, see the [API Reference](https://{DomainName}/apidocs/discovery-data#delete-a-document){: external}.
 
 **Date format settings** - The following options are useful if you want to use time series visualization in the **Content Mining** project type or if you want to correctly parse dates from text in different languages. Use this option to add or delete date formats that are used to convert date strings to date-type data set fields. Only strings that are compatible with the Java `SimpleDateFormat` class are supported. You cannot add any documents that include alternative date formats to the index.
-  - **Date formats** - Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. This field supports the Java `SimpleDateFormat` class, so the date formats string can be in any format that the `SimpleDateFormat` class supports. If you know that your data does not match any of the predefined date formats, you can add a format that the Java `SimpleDateFormat` class supports, or you can delete any of the predefined formats. {{site.data.keyword.discovery-data_short}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the top of the list. You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
-  - **Time zone ID** - You can use this option to designate a time zone for a document that has a generated time but no time-zone information. For example, you can use this option to store a document creation time into a date-type data set field. For example, if a document is generated on `1 January 2020 1:00 AM Eastern Standard Time (EST)`, the document metadata only stores `2020-01-01 01:00 a.m.`. In this case, {{site.data.keyword.discovery-data_short}} cannot parse `2020-01-01 01:00 a.m.` because, without time-zone information that is associated with the document, `2020-01-01 01:00 a.m.` is not specific. Because `1 January 2020 1:00 AM Eastern Standard Time (EST)` and `1 January 2020 1:00 AM Pacific Standard Time (PST)` are different times, you must select **(GMT-05:00) Eastern Standard Time** as the time zone ID so that {{site.data.keyword.discovery-data_short}} parses `1 January 2020 1:00 AM` with the EST time zone, as intended.
-  - **Locale string** - Use this option to choose the locale to parse a string value that represents the date for the date-type data set fields. You can also use this option to manage any cultural- or language-specific patterns of the dates in your documents. For example, using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
-
-PDF and Word metadata, as well as any custom metadata, is extracted and included in the index with each segment. Every segment of a document will include identical metadata. If a split document has been updated and needs to be re-uploaded, the document should be replaced using the Update document method. The document should be uploaded using the POST method of the `/environments/{environment_id}/collections/{collection_id}/documents/{parent_document_id}` API, specifying the contents of the `parent_document_id` field of one of the current segments as the {parent_document_id} path variable. All segments will be overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments will remain in the index and may be individually deleted using the API. For more information, see the [API Reference](https://{DomainName}/apidocs/discovery-data#delete-a-document){: external}.
+  - **Date formats** - Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. This field supports the Java `SimpleDateFormat` class, so the date formats string can be in any format that the `SimpleDateFormat` class supports. If you know that your data does not match any of the predefined date formats, you can add a format that the Java `SimpleDateFormat` class supports, or you can delete any of the predefined formats. {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the top of the list. You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
+  - **Select a time zone** - You can use this option to designate a time zone for a document that has a generated time but no time-zone information. You can use this option to store a document creation time into a date-type data set field. For example, if a document is generated on `1 January 2020 1:00 AM Eastern Standard Time (EST)`, the document metadata only stores `2020-01-01 01:00 a.m.`. In this case, {{site.data.keyword.discoveryshort}} cannot parse `2020-01-01 01:00 a.m.` because, without time-zone information that is associated with the document, `2020-01-01 01:00 a.m.` is not specific. Because `1 January 2020 1:00 AM Eastern Standard Time (EST)` and `1 January 2020 1:00 AM Pacific Standard Time (PST)` are different times, you must select **(GMT-05:00) Eastern Standard Time** as the time zone ID so that {{site.data.keyword.discoveryshort}} parses `1 January 2020 1:00 AM` with the EST time zone, as intended.
+  - **Select a language** - Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. You can also use this option to manage any cultural- or language-specific patterns of the dates in your documents. For example, using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.

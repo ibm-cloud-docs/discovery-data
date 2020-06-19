@@ -33,7 +33,7 @@ subcollection: discovery-data
 # Using Discovery for Content Intelligence
 {: #output_schema}
 
-The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence and choose the **Project type** of **Document retrieval**.
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence and choose the **Project type** of **Document retrieval**.
 {: note}
 
 Discovery for Content Intelligence enables understanding of governing business documents with pre-trained models so enterprises can start analyzing complex documents in minutes. The `Contracts`, `Invoices`, and `Purchase Orders` enrichments enable automation of complex business processes, such as contract review and negotiation, invoice reconciliation, software entitlement verification, and more. Such automation of processes result in increased productivity, minimization of costs, and reduced exposure.
@@ -80,7 +80,7 @@ Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for
 
 To specify a different enrichment other than `Contracts`, complete the following steps:
 
-1. After you create a collection in the {{site.data.keyword.discovery-data_short}} tooling, select it on the **Projects** page.
+1. After you create a collection in the {{site.data.keyword.discoveryshort}} tooling, select it on the **Projects** page.
 1. On the **Improve and customize** page, select **I want to...** **=>** **Extract meaning**.
 1. Select **Entities**.
 1. On the **Available enrichments** page, unselect **Contracts**, and select either **Invoices** or **Purchase Orders**. Only one of **Contracts**, **Invoices**, and **Purchase Orders** can be applied to a given collection.

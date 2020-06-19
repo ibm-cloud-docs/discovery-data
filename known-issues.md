@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-06-19"
 
 keywords: known issues
 
@@ -34,20 +34,33 @@ subcollection: discovery-data
 # Known issues
 {: #known-issues}
 
-See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for the list of {{site.data.keyword.discovery-data_long}} release notes.
+See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for the list of {{site.data.keyword.discoveryfull}} release notes.
 {: shortdesc}
 
 Known issues are listed by the release in which they were identified.
+
+## Known issues identified in the 2.1.3, 19 June 2020 release:
+{: #19jun2020ki}
+
+  - `Entity Subtypes` in {{site.data.keyword.knowledgestudiofull}} Machine Learning models are not supported in {{site.data.keyword.discovery-data_short}} 2.1.3 or later. For instructions on converting existing models, see [Converting entity subtypes in Watson Knowledge Studio Machine Learning models](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-wksml).
+  - When performing Project level relevancy training, if you have multiple collections, and two or more of those collections contains a duplicate `document_id`, then project level relevancy training will fail. Example of duplicate `document_ids`: `Collection A` contains a document with the id of `1234`, and `Collection B` also contains a document with the id of `1234`.
+  - Only the first facet using a field with the prefix `extracted_metadata` is saved correctly after creation. Others with that prefix will appear but after a screen refresh will be gone. This only happens once per project, so the workaround is to refresh and add the facet again.
+  - During installation on {{site.data.keyword.icp4dfull}} 2.5.0.0, some Kubernetes Jobs may incorrectly report their status as `OOMKilled`, causing the install to timeout. To resolve this, once a Job returns `OOMKilled` verify the logs of the Pod associated with that Job. There should be no obvious error messages in the logs and the resources are reported in the logs as created. Manually verify these resources exist in the namespace and then delete the Job. This will cause the install to continue.
+  - Some documents may show two `html` fields when applying an enrichment. Both `html` fields shown are the same and operate as such.
+  - When creating a data source in Firefox, you may not see the entire list of options, including the **More processing settings** settings. To work around the issue, zoom out, increase the browser height, or use another supported browser.
+  - When customizing the display of search results, the changes made sometimes do not save after clicking the `Apply` button. To workaround this issue, refresh the browser and try to make the changes again.
+  - When setting up a data source or web crawler for your collection, if you enter an incorrect configuration, then try to update it on the **Processing settings** page, the data source update or crawl may not start when you click the `Apply changes and reprocess` button. You can confirm this issue by opening the **Activity** page for your collection to see if processing has started. If you see that processing has not started for your data source, click the `Recrawl` button, then the `Apply changes and reprocess` button. If you see that processing has not started for your web crawl, click the `Stop` button, then the `Recrawl` button. 
+
 
 ## Known issues identified in the 2.1.2, 31 Mar 2020 release:
 {: #31mar2020ki}
 
   -  When using passage retrieval with Korean, Polish, Japanese, Slovak or Chinese you may encounter much slower response times in this version. To resolve this, either disable passage retrieval, or upload a custom stopword list with words that are common in your documents (for example, prepositions and pronouns).  See [Defining stopwords](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-search-settings#stopwords) for example stopword lists in several languages. Also see [Stopwords ISO](https://github.com/stopwords-iso/){: external}) on GitHub.
-  -  In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
+  -  [Update: fixed in version 2.1.3] In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
   -  Smart Document Understanding does not support `.doc`, `.docx`, `.odf`, `.xls`, `.xlsx`, `.ods`, `.ppt`, `.pptx`, and `.odp` conversion when FIPS (Federal Information Processing Standards) is enabled.
   -  In a Content Mining application, any document flags set will disappear if the index is rebuilt for that collection.
   -  Beginning with the 2.1.2 release, uploading and managing relevancy training data using the v1 APIs will not train a relevancy training model. The v1 APIs have been superseded by the [Projects relevancy training v2 APIs](https://{DomainName}/apidocs/discovery/discovery-data#create-training-query){: external}. If your training data needs to be preserved, it can be listed using the v1 API, then added to a project with the v2 API.
-  -  Multiple [Character Pattern enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment) cannot be applied to a collection at the same time.
+  -  Multiple [Regular expressions enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment) cannot be applied to a collection at the same time.
   -  There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
      -  A change to the description of the `--cluster-pull-prefix PREFIX` argument.
      -  The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
@@ -87,10 +100,10 @@ Also see the issues identified in all previous releases.
   -  If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
   -  Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
   -  If the Parts of Speech enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.
-  -  Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a top-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
+  -  [Update: fixed in version 2.1.1] Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a top-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
   -  When viewing the Content Miner deploy page, sometimes the full application URL is not displayed for copying. To fix, refresh the page.
-  -  Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
-  -  On the Improvement tools panel, the enrichment `Sentiment of phrases` is listed, but is not currently available.
+  -  [Update: fixed in version 2.1.2] Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
+  -  [Update: fixed in version 2.1.3] On the Improvement tools panel, the enrichment `Sentiment of phrases` is listed, but is not currently available.
   -  In Content Mining projects, the `dates` fields may not be parsed properly for display in facets.
   -  The Dynamic facets toggle should not appear in Content Mining projects.
   -  A minimum of 50-100 documents should be ingested to see valid dynamic facets generated.
@@ -113,7 +126,7 @@ Also see the issues identified in the previous release.
 {: #known-issues-ga}
 
   -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.
-  -  All JSON files ingested into {{site.data.keyword.discovery-data_short}} should include the .json file extension.
+  -  All JSON files ingested into {{site.data.keyword.discoveryshort}} should include the .json file extension.
   -  When querying  on the `collection_id` of a trained collection, the `training_status.notices` value may occasionally display as `0` instead of the correct value.
   -  Not all query limitations are enforced in this release. See [query limitations](/docs/discovery-data?topic=discovery-data-query-reference#query-limitations) for the complete list of banned fields.
   -  In JSON source documents, you should not duplicate the following system-generated fields: `document_id`, `parent_document_id`, `filename`, and `title`. This will cause the duplicate fields to nest within arrays and break certain features, such as ranker training.

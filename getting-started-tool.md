@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-22"
+lastupdated: "2020-06-19"
 
 subcollection: discovery-data
 
@@ -29,29 +29,47 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Getting started with the Watson Discovery for IBM Cloud Pak for Data Sample Project
+# Getting started with the Watson Discovery Sample Project
 {: #getting-started}
 
-In this short tutorial, we introduce the {{site.data.keyword.discovery-data_short}} Sample Project. 
+In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. 
 {: shortdesc}
 
-The Sample Project is a great way to tour and try out {{site.data.keyword.discovery-data_short}} features. At any time, you can click **Restore project defaults** to start over.
+The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features. At any time, you can click **Restore project defaults** to start over.
 
 ## Before you begin
 {: #before-you-begin-tool}
 {: hide-dashboard}
 
-Install {{site.data.keyword.discovery-data_short}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+
+<!--![IBM Cloud only](images/cloudonly.png) Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. Go to the [{{site.data.keyword.discoveryshort}}](https://{DomainName}/catalog/services/discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a service instance. 
+
+IBM Cloud docs are available [here](https://cloud.ibm.com/docs/discovery?topic=discovery-getting-started).
+{: note}-->
 
 ## Step 1: Open Watson Discovery
 {: #getting-started-launch-tool}
 
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->
+
+{{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 3.0.1 or later:
+
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
-1.  On the **Provisioned instances** tab, find your {{site.data.keyword.discovery-data_short}} instance, and then hover over the last column to show and click the ellipsis icon ![Ellipsis icon](images/cp4d-sideways-kebab.png).
-1.  Choose **View details**.
+1.  Select your {{site.data.keyword.discoveryshort}} instance.
+1.  Click **Launch tool**.
+
+
+{{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 2.5.0.0:
+
+1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
+1.  On the **Provisioned instances** tab, find your {{site.data.keyword.discoveryshort}} instance, and then hover over the last column to display the ellipsis icon ![Ellipsis icon](images/cp4d-sideways-kebab.png) and choose **View details**.
 1.  Click **Open Watson Discovery**.
 
-A new browser tab or window opens and {{site.data.keyword.discovery-data_short}} is displayed.
+<!-- ![IBM Cloud only](images/cloudonly.png)
+
+1.  {: hide-dashboard} Click the {{site.data.keyword.discoveryshort}} instance you created to go to the service dashboard.
+1.  {: hide-dashboard} On the **Manage** page, click **Launch Watson Discovery**. If you're prompted to log in to the tooling, provide your {{site.data.keyword.cloud_notm}} credentials. -->
 
 
 ## Step 2: Open the Sample Project
@@ -60,13 +78,13 @@ A new browser tab or window opens and {{site.data.keyword.discovery-data_short}}
 1.  Open the **Projects** page by selecting the **Projects** icon on the navigation panel. For more about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 1.  Select **Sample Project**. The **Improve and Customize** page opens.
 
-If you just installed {{site.data.keyword.discovery-data_short}}, the Sample Project will need time to finish processing documents. Wait until processing is complete to start experimenting. You can confirm that all 40 documents have finished processing by selecting the **Manage collections** icon on the navigation panel and checking the **Sample Collection**.
+If you just installed {{site.data.keyword.discoveryshort}}, the Sample Project will need time to finish processing documents. Wait until processing is complete to start experimenting. You can confirm that all 40 documents have finished processing by selecting the **Manage collections** icon on the navigation panel and checking the **Sample Collection**.
 {: note}
 
 The [**Project type**](/docs/discovery-data?topic=discovery-data-projects#project-type) of the Sample Project is **Document Retrieval**. **Document Retrieval** projects are used to search and find the most relevant answers from your data. It includes one collection that contains 40 documents.
 
 **Document Retrieval** projects have the following defaults (we'll learn more about these later):
-   -  **Settings**: Optical Character Recognition (OCR) `on` 
+   -  **Settings**: Optical Character Recognition (OCR) `off` 
    -  **Enrichments applied**: Entities, Parts of speech
    -  **Improvement tools enabled**: Facets (by Entity), Dynamic Facets, Passages
 
@@ -81,13 +99,13 @@ There are three other **Project types**: **Conversational Search**, **Content Mi
 Now that we've opened the Sample Project and learned more about **Document Retrieval** projects, let's explore.
 
 1.  Select the **Manage collections** icon on the navigation panel. Choose the **Sample Collection**. Several tabs display but we'll concentrate on a few.
-    -  The **Activity** tab displays collection details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**). For more information, see [Collection activity](/docs/discovery-data?topic=discovery-data-collections#collection-overview).
+    -  The **Activity** tab displays collection details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**). For more information, see [Collection activity](/docs/discovery-data?topic=discovery-data-collection-types#collection-overview).
     -  The **Identify fields** tab is where you can annotate your document using [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). You can use the **Field labels** that are available or create your own.
     -  The **Manage fields** tab gives you the option to choose the fields you want to index, turn on document splitting, and set date formats. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings).
-    -  The **Enrichments** tab displays the available enrichments (you can create more). By default, the enrichments already applied to this collection include **Entities** and **Parts of speech**. Click on **Fields to enrich** and you will notice that these enrichments are applied to the `text` field. To learn more about these enrichments, see [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning). You can also create enrichments that will add related terms (**Dictionary**), identify and extract values (**Character Pattern**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**. See [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).   
+    -  The **Enrichments** tab displays the available enrichments (you can create more). By default, the enrichments already applied to this collection include **Entities** and **Parts of speech**. Click on **Fields to enrich** and you will notice that these enrichments are applied to the `text` field. To learn more about these enrichments, see [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning). You can also create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**. See [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).   
 1.  Select the **Integrate and Deploy** icon on the navigation panel. From here, you can share your project with colleagues and deploy. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
     -   The **Share preview** link tab makes it easy to share your project with others. Follow the instructions to add a user, then send those login credentials and the provided link to your colleague.
-    -   The **Explore UI components** tab includes several componets: **Search bar**, **Search results**, **Facets**, and **Document preview**. The code for the {{site.data.keyword.discovery-data_short}} components can be found on [GitHub](https://github.com/watson-developer-cloud/discovery-components){: external}. You can learn more about the components and preview them in [Storybook](https://watson-developer-cloud.github.io/discovery-components){: external}.
+    -   The **Explore UI components** tab includes several componets: **Search bar**, **Search results**, **Facets**, and **Document preview**. The code for the {{site.data.keyword.discoveryshort}} components can be found on [GitHub](https://github.com/watson-developer-cloud/discovery-components){: external}. You can learn more about the components and preview them in [Storybook](https://watson-developer-cloud.github.io/discovery-components){: external}.
 1.  Select the **Improve and customize** icon on the navigation panel. The **Improve and Customize** page is where you can to try out queries, then add and test customizations to improve the query results for your project. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve).
     - There are several example queries in the **Try an example to get started** section. For `Watson`, click the **Run search** button.
     - Two of the default **Improvement tools** for this project (Facets (by Entity) and Dynamic Facets) have identified facets (IBM, Watson, Kubernetes) you can filter on. Select a few and try them out. 

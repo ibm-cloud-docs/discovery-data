@@ -42,7 +42,7 @@ Upload or delete a synonyms or stopwords file by clicking the appropriate **Uplo
 
 If you update your synonyms or stopwords files, you should go to the **Activity** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated lists. The button displayed will vary depending on the type of collection.
 
-Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/discovery-data?topic=discovery-data-search-settings#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discovery-data_short}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
+Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/discovery-data?topic=discovery-data-search-settings#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discoveryshort}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
 {: important}
 
 ## Implementing synonyms
@@ -126,7 +126,7 @@ Notes about query expansion:
 Stopwords are words that are filtered out of queries because they are common terms that are not useful in a search, for example: `a, an, the`. Adding common words to a stopwords file can also improve the relevance of results for natural language queries.
 {: shortdesc}
 
- {{site.data.keyword.discovery-data_short}} applies a default stopwords file for several languages at query time. However, you can define and upload a custom stopwords file that will override the default file. {{site.data.keyword.discovery-data_short}} will apply the appropriate default or custom stopwords file to your collection based on the language specified for that collection. 
+ {{site.data.keyword.discoveryshort}} applies a default stopwords file for several languages at query time. However, you can define and upload a custom stopwords file that will override the default file. {{site.data.keyword.discoveryshort}} will apply the appropriate default or custom stopwords file to your collection based on the language specified for that collection. 
 
 Example custom stopword list:
 
@@ -151,7 +151,7 @@ Following are stopword files for several other supported languages. They all inc
 -  Russian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ru.json" download>custom_stopwords_ru.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
 -  Spanish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_es.json" download>custom_stopwords_es.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
 
-See [supported languages](/docs/discovery-data?topic=discovery-data-language-support) for the list of all languages supported by {{site.data.keyword.discovery-data_short}}. Several supported languages do not have a default stopwords list.
+See [supported languages](/docs/discovery-data?topic=discovery-data-language-support) for the list of all languages supported by {{site.data.keyword.discoveryshort}}. Several supported languages do not have a default stopwords list.
 
 Notes about stopwords:
 

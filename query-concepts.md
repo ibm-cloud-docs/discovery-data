@@ -32,13 +32,13 @@ subcollection: discovery-data
 # Query overview
 {: #query-concepts}
 
-{{site.data.keyword.discovery-data_long}} offers powerful content search capabilities through queries. After your content is uploaded and customized by {{site.data.keyword.discovery-data_short}}, you can build queries, integrate {{site.data.keyword.discovery-data_short}} into your own projects, or create a custom applications. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
+{{site.data.keyword.discoveryfull}} offers powerful content search capabilities through queries. After your content is uploaded and customized by {{site.data.keyword.discoveryshort}}, you can build queries, integrate {{site.data.keyword.discoveryshort}} into your own projects, or create a custom applications. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
 {: shortdesc}
 
-In the {{site.data.keyword.discovery-data_short}} tooling, you can write and test [natural language queries](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/discovery-data?topic=discovery-data-improve) page.
+In the {{site.data.keyword.discoveryshort}} tooling, you can write and test [natural language queries](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/discovery-data?topic=discovery-data-improve) page.
 {: tip}
 
-When querying using the API, the entire {{site.data.keyword.discoveryshort}} Query Language is supported. For more information, see the {{site.data.keyword.discovery-data_short}} [API](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}.
+When querying using the API, the entire {{site.data.keyword.discoveryshort}} Query Language is supported. For more information, see the {{site.data.keyword.discoveryshort}} [API](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}.
 {: important}
 
 For more information about the {{site.data.keyword.discoveryshort}} Query Language, see:
@@ -56,7 +56,7 @@ Also see:
 -  **Number of documents to return** - see [count](/docs/discovery-data?topic=discovery-data-query-parameters#count).
 -  **Number of query results to skip at the beginning** - see [offset](/docs/discovery-data?topic=discovery-data-query-parameters#offset).
 
-When you create a query or filter, {{site.data.keyword.discovery-data_short}} looks at each result and tries to match the paths you have defined. When matches occur, they are added to the results set. When creating a query, you can be as vague or as specific as you want. The more specific the query, the more targeted the results.
+When you create a query or filter, {{site.data.keyword.discoveryshort}} looks at each result and tries to match the paths you have defined. When matches occur, they are added to the results set. When creating a query, you can be as vague or as specific as you want. The more specific the query, the more targeted the results.
 
 Documents you do not have permissions for will not be returned in query results.
 {: important}
@@ -106,7 +106,7 @@ The delimiter in this query is `.` and the operator is `()`, see [Query operator
 ### Example aggregation queries
 {: #example-aggregations}
 
-There are several types of ways you can aggregate results with {{site.data.keyword.discovery-data_short}}, including top values, sum, min, max, average, timeslice, and histogram. You can also add filters and nest aggregations.
+There are several types of ways you can aggregate results with {{site.data.keyword.discoveryshort}}, including top values, sum, min, max, average, timeslice, and histogram. You can also add filters and nest aggregations.
 
 #### Filter aggregations
 {: #filter-aggregations}
@@ -134,14 +134,14 @@ Additionally, any subsequent operation will further restrict the result set that
 ## Querying with document level security enabled
 {: #querydls}
 
-If you have enabled document level security on a collection, you can control search results at query time at the user level. See [Configuring document level security](/docs/discovery-data?topic=discovery-data-collections#configuredls) for information about leveraging the security settings of your source documents.
+If you have enabled document level security on a collection, you can control search results at query time at the user level. See [Configuring document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls) for information about leveraging the security settings of your source documents.
 
 To return search results that restrict query results to the security settings of authorized users, those users: 
--  Must be associated with your {{site.data.keyword.discovery-data_short}} instance. See [Creating users for document level security](/docs/discovery-data?topic=discovery-data-collections#createusersdls) for instructions.
+-  Must be associated with your {{site.data.keyword.discoveryshort}} instance. See [Creating users for document level security](/docs/discovery-data?topic=discovery-data-collection-types#createusersdls) for instructions.
 -  Must be present in the source system (Box, SharePoint OnPrem, or SharePoint Online).
 If both criteria are not met, no results will be returned.
 
-The username associated with your {{site.data.keyword.discovery-data_short}} instance is used to generate an authorization token. That token is used in your {{site.data.keyword.discovery-data_short}} queries.
+The username associated with your {{site.data.keyword.discoveryshort}} instance is used to generate an authorization token. That token is used in your {{site.data.keyword.discoveryshort}} queries.
 
 To generate each access token, run the following command:
  
@@ -150,9 +150,9 @@ curl -u "{username}:{password}" "https://{hostname}:{port}/v1/preauth/validateAu
 ```
 {: pre}
    
-Replace `{username}` and `{password}` with the user's {{site.data.keyword.discovery-data_short}} credentials, and replace `{hostname}` and `{port}` with the details for your instance.
+Replace `{username}` and `{password}` with the user's {{site.data.keyword.discoveryshort}} credentials, and replace `{hostname}` and `{port}` with the details for your instance.
 
-To use the token in a {{site.data.keyword.discovery-data_short}} query, run the following command for each user added:
+To use the token in a {{site.data.keyword.discoveryshort}} query, run the following command for each user added:
 
 ```bash
 curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{Collection_ID}/query\?version\=2019-11-29'
@@ -161,7 +161,7 @@ curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/p
 
 Replace `{hostname}` and other fields with the details for your instance.
 
-For information on writing queries using the {{site.data.keyword.discovery-data_short}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}.
+For information on writing queries using the {{site.data.keyword.discoveryshort}} API, see the [API Reference](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}.
 {: tip}    
 
 Each user's query results will be restricted to their document permissions.

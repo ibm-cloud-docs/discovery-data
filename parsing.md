@@ -33,7 +33,7 @@ subcollection: discovery-data
 {: #contract_parsing}
 
 
-The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
+<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
 {: note}
 
 When you analyze a document with the `Contracts` enrichment, the service returns the contract with an analysis of each identified element.
