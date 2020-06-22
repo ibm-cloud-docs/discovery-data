@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-22"
 
 keywords: known issues
 
@@ -49,7 +49,9 @@ Known issues are listed by the release in which they were identified.
   - Some documents may show two `html` fields when applying an enrichment. Both `html` fields shown are the same and operate as such.
   - When creating a data source in Firefox, you may not see the entire list of options, including the **More processing settings** settings. To work around the issue, zoom out, increase the browser height, or use another supported browser.
   - When customizing the display of search results, the changes made sometimes do not save after clicking the `Apply` button. To workaround this issue, refresh the browser and try to make the changes again.
-  - When setting up a data source or web crawler for your collection, if you enter an incorrect configuration, then try to update it on the **Processing settings** page, the data source update or crawl may not start when you click the `Apply changes and reprocess` button. You can confirm this issue by opening the **Activity** page for your collection to see if processing has started. If you see that processing has not started for your data source, click the `Recrawl` button, then the `Apply changes and reprocess` button. If you see that processing has not started for your web crawl, click the `Stop` button, then the `Recrawl` button. 
+  - When setting up a data source or web crawler for your collection, if you enter an incorrect configuration, then try to update it on the **Processing settings** page, the data source update or crawl may not start when you click the `Apply changes and reprocess` button. You can confirm this issue by opening the **Activity** page for your collection to see if processing has started. If you see that processing has not started for your data source, click the `Recrawl` button, then the `Apply changes and reprocess` button. If you see that processing has not started for your web crawl, click the `Stop` button, then the `Recrawl` button.
+  - When running Helm tests on the `core` deployment using `helm test core`, the `core-discovery-api-post-install-test` will return a `FAILED` status. This is due to a bug within the test pod's image. The test result can be ignored as the failure is not related to anything within the deployment.
+  - By default, Optical Character Recognition (OCR)  is set to `off` when you create any **Project type** with the tooling. However, if you create a Project using the API, OCR  is set  to `on`. To work around this issue, open the Tooling and change the **Project setting** to `off`.
 
 
 ## Known issues identified in the 2.1.2, 31 Mar 2020 release:
