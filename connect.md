@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-30"
 
 subcollection: discovery-data
 
@@ -34,9 +34,9 @@ subcollection: discovery-data
 # Configuring Cloud Pak for Data data sources
 {: #collection-types}
 
-<!-- c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
+<!-- 2.1.3 c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->
+![Cloud Pak for Data only](images/cpdonly.png)
 
 In {{site.data.keyword.discovery-data_short}}, you can crawl documents you upload or connect to from a remote data source. The following sections introduce supported data sources, pre-authentication information, instructions about how to configure a collection, and links to third-party documentation for more information. For information about IBM Cloud data sources, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources).
 {:shortdesc}
@@ -848,7 +848,7 @@ You must create users that match the users available on the source system that {
 1. Click **Add user**.
 1. Add the users you want from the list by clicking **Add user**, select the desired user from the list, assign their role as **User**, and click **Add**.
 
-When you query collections that have document level security enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/discovery-data?topic=discovery-data-querydls#querydls).
+When you query collections that have document level security enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
 {: important}
 
 Because {{site.data.keyword.discoveryshort}} does not sync any changes to the users from the LDAP server, {{site.data.keyword.discoveryshort}} administrators must ensure that the users list is current and remove any non-current users.
