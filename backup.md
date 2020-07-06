@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-01"
 
 subcollection: discovery-data
 
@@ -32,7 +32,6 @@ subcollection: discovery-data
 # Backing up and restoring data in Cloud Pak for Data
 {: #backup-restore}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png)</br> --> 
 Use the following procedures to back up and restore user data in your {{site.data.keyword.discovery-data_long}} instance.
 {: shortdesc}
 
@@ -50,7 +49,7 @@ In {{site.data.keyword.discovery-data_short}} version 2.1.3, you cannot automati
 
 To back up and restore this user data from version 2.1.3, see [Backing up user data](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data) and [Restoring user data](/docs/discovery-data?topic=discovery-data-backup-restore#restore-user-data). Otherwise, you can migrate data other than those previously listed from version 2.1.2 to 2.1.3 by using the version 2.1 backup scripts. To access these scripts, see [Backup scripts](/docs/discovery-data?topic=discovery-data-backup-restore#backup-scripts).
 
-To configure your version 2.1.3 Box or Local File System crawlers as they are in older versions, log in to your {{site.data.keyword.discovery-data_short}} version 2.1.3 instance, and update the configuration of your Box or Local File System crawlers. To configure specific data sources, see [Configuring {{site.data.keyword.discovery-data_short}} data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+To configure your version 2.1.3 Salesforce, JDBC, or Local File System crawlers as they are in older versions, log in to your {{site.data.keyword.discovery-data_short}} version 2.1.3 instance, and update the configuration of your Salesforce, JDBC, or Local File System crawlers. To configure specific data sources, see [Configuring {{site.data.keyword.discovery-data_short}} data sources](/docs/discovery-data?topic=discovery-data-collection-types). You can also configure your version 2.1.3 Salesforce or JDBC crawlers as they are in older versions by using the backup and restore scripts. To migrate your Salesforce or JDBC crawlers, see [Migrating Salesforce or JDBC crawlers](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-salesforce-jdbc).
 
 In {{site.data.keyword.discovery-data_short}} version 2.1.2 and earlier, the following data is not automatically backed up and restored when you back up and restore your {{site.data.keyword.discovery-data_short}} instance:
 
@@ -165,24 +164,90 @@ To restore your user data from an instance of {{site.data.keyword.discoveryshort
 ## Migrating Box crawlers
 {: #migrate-box}
 
-In the Box data source in {{site.data.keyword.discoveryshort}} version 2.1.3, you can upload a JSON file that contains your Box credentials. This JSON file replaces the .pem file from previous versions. If you are upgrading from an older version, you can convert your .pem file to a JSON file to migrate your Box crawler to version 2.1.3.
+In the Box data source in {{site.data.keyword.discoveryshort}} version 2.1.3, you can upload a JSON file that contains your Box credentials. This JSON file replaces the .pem file from previous versions. If you are upgrading from an older version, you can convert your .pem file to a JSON file and upload it to migrate your Box crawler to version 2.1.3.
 {: shortdesc}
 
-To convert your .pem file to a JSON file, complete the following steps:
+To migrate your Box crawler, complete the following steps:
 
-1. Browse to the [Box Developer Console](https://ibm.ent.box.com/developers/console){: external} website, and download the configuration JSON file for your Box app.
-1. Click Configuration.
-1. In the App Settings section, click Download as JSON.
-1. Open the downloaded JSON file in a text editor.
-1. Paste your public key ID value in the public key ID field.
-1. Paste the contents of your private key .pem file in the private key field. Be sure to replace the line breaks with the string `/n` so that the value is a one-line string, such as the following:
+1. Back up the user data of an older version of {{site.data.keyword.discoveryshort}} that you are migrating data from. For more information about backing up user data, see [Backing up user data](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
+1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
 
    ```
-   <private_key>: "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFDjBABgaqhkiG9w0BB00wMzAbBgkqhkiG9w0BBQwwDGQIioeNq5xz2H4CAggA\nMBQ...tl0=\n-----END ENCRYPTED PRIVATE KEY-----\n",
+   oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
    ```
+   {: pre}
 
-1. If applicable, paste your private key passphrase value in the passphrase field.
-1. Save your changes.
+1. Enter the following command:
+
+   ```
+   oc project <namespace>
+   ```
+   {: pre}
+
+1. Enter the following command:
+
+   ```
+   ./migrate-box-credential.sh make-json <json_file_name>
+   ```
+   {: pre}
+   
+   A JSON file is generated that has output that looks like the following:
+
+   ```
+   {
+     "clientId_to_clientSecret": {
+       "clientId_1": "",
+       "clientId_2": "",
+       ...
+     },
+     "keyId_to_passphrase": {
+       "keyId_1": "",
+       "keyId_2": "",
+       ...
+     }
+   }
+   ```
+   {: screen}
+
+1. Open the file in a text editor, and complete the fields next to `clientId` and `keyId`. In `clientId_to_clientSecret`, enter the value of your `clientSecret` that corresponds to each `clientId`. In `keyId_to_passphrase`, enter the passphrase of the private key that corresponds to each `keyId`. If a passphrase is not set for a specific key, leave the field blank.
+1. Enter the following command to upload the JSON file that contains the Box configuration data and the .pem files:
+   
+   ```
+   ./migrate-box-credential.sh migrate <json_file_name> <user_data_directory> <backup_file_name>
+   ```
+   {:pre}
+
+To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore).
+
+## Migrating Salesforce or JDBC crawlers
+{: migrate-salesforce-jdbc}
+
+You can configure your version 2.1.3 Salesforce or JDBC crawlers as they are in older versions by using the backup and restore scripts.
+{: shortdesc}
+
+To migrate your Salesforce or JDBC crawlers, complete the following steps:
+
+1. Back up the user data of the older version of {{site.data.keyword.discoveryshort}} that you are migrating the data from. For more information about backing up user data, see [Backing up user data](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
+1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
+
+   ```
+   oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
+   ```
+   {: pre}
+
+1. Enter the following command:
+
+   ```
+   oc project <namespace>
+   ```
+   {: pre}
+
+1. Enter the following command:
+
+   ```
+   ./migrate-crawler-jar.sh <user_data_directory> <backup_file_name>
+   ```
+   {: pre}
 
 To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore).
 
@@ -228,7 +293,8 @@ In the following procedures, angle brackets (`< >`) are used to indicate variabl
 There are two versions of the `all-backup-restore.sh` backup and restore scripts. One set is for {{site.data.keyword.discoveryshort}} versions 2.0.0 and 2.0.1; the other is for versions 2.1.0 and later. **If you are backing up a 2.0 version of {{site.data.keyword.discoveryshort}}, and then restoring to version 2.1.0 or later -- backup with the 2.0 scripts and restore with the 2.1 scripts.** 
 {: important}
 
- -  Backup/restore scripts for versions 2.1.0 and later. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
+ -  Backup/restore scripts for version 2.1.3 and later. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
+ -  Backup/restore scripts for versions 2.1.0 through 2.1.2. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
  -  Backup/restore scripts for 2.0.0 and 2.0.1: [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.0){: external}.
 
 You will need all files stored in the applicable GitHub repository to perform a backup and restore. Follow the instructions in GitHub Help to clone or download a zip file of the repository.
