@@ -220,7 +220,7 @@ To migrate your Box crawler, complete the following steps:
 To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore).
 
 ## Migrating Salesforce or JDBC crawlers
-{: migrate-salesforce-jdbc}
+{: #migrate-salesforce-jdbc}
 
 You can configure your version 2.1.3 Salesforce or JDBC crawlers as they are in older versions by using the backup and restore scripts.
 {: shortdesc}
