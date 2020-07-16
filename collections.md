@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-30"
 
 subcollection: discovery-data
 
@@ -48,13 +48,13 @@ When you create a collection, {{site.data.keyword.discoveryshort}} pulls documen
 1. To create a collection, first create a **Project** and choose a **Project type**. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Alternately, you can open your project, select the **Manage collections** icon on the navigation panel, and then click **New collection**. 
 1. Choose a data source, or select **Use an existing collection**.
 1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collection-types#crawlschedule).
+1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1. Configure the data source.
    -  [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
    -  [IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources)
 1. Select **Create collection**, which starts the crawling process. The **Activity** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.
 
-The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
+![Cloud Pak for Data only](images/cpdonly.png) The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
 {: note}
 
 To stop a crawler that is in progress, click **Stop**. You can only stop a crawler that is in progress, and the crawler is only stopped for the interval between clicking **Stop** and the next scheduled crawl. For example, if you specified an hourly crawl and you click **Stop**, the crawler stops for an hour and resumes crawling hourly.
@@ -63,6 +63,8 @@ If you want to access an existing collection, complete the following steps:
 
 1. Select the **Manage collections** icon on the navigation panel. Existing collections display the document count and last updated date.
 1. Select the collection you need. The **Activity** tab displays.
+
+For information about creating a collection by using the API, see [Create a collection](https://{DomainName}/apidocs/discovery-data#create-a-collection){: external}.
 
 ## Supported file types and general requirements
 {: #supportedfiletypes}
@@ -96,3 +98,16 @@ A connector is a component that provides data connectivity and extraction capabi
 -  Connectors are not available when you use the API.
 -  You need the credentials and file locations, or URLs, for each data source, which a developer or system administrator of the data source typically provides.
 -  You need to manually provide the resources to crawl. Auto discovery is not supported.
+
+## Crawl schedule options
+{: #crawlschedule}
+
+When you create a collection, the initial crawl starts immediately. The frequency you choose for the crawl schedule determines when the next crawl starts in relation to the first. You can schedule crawls to update at the following intervals:
+    
+-  Hourly: runs every hour
+-  Daily: runs every day at the same time as the initial crawl
+-  Weekly: runs every week on the same day and time as the initial crawl
+-  Monthly: runs every 30 days at the same time as the initial crawl
+
+If you modify crawl settings on the **Processing settings** page and then click **Save collection**, the crawl restarts immediately. To view the collection status, see the **Activity** tab. 
+{: note}

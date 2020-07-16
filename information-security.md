@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-07-15"
 
 subcollection: discovery-data
 
@@ -53,18 +53,9 @@ Learn more about IBM's own GDPR readiness journey and our GDPR capabilities and 
 ## Labeling and deleting data in {{site.data.keyword.discoveryshort}}
 {: #gdpr-discovery}
 
-{{site.data.keyword.discoveryshort}} includes an API to label data per call.
+{{site.data.keyword.discoveryshort}} includes an API to label data per call. For details on how to label data using either the API or the {{site.data.keyword.discoveryshort}} tooling, see [Labeling data](/docs/discovery-data?topic=discovery-data-information-security#labeling).
 
-With this API you can:
-
-- Label your data with a customer ID.
-- Delete all data for a specific customer ID, including related notices.
-
-Data is labeled by adding a `customer_id` of your choice (see restrictions in [How to label data](/docs/discovery-data?topic=discovery-data-information-security#labeling)) to the optional `X-Watson-Metadata` header. {{site.data.keyword.discoveryshort}} can then delete it by `customer_id`.
-
-On any REST call, an optional header `X-Watson-Metadata` can be sent with semicolon separated `field=value` pairs, where currently only `customer_id` is persisted. By adding that `customer_id` in `X-Watson-Metadata` header, the request indicates that it contains data that belongs to this `customer_id`.
-
-`customer_id`s are unique within a single {{site.data.keyword.discoveryshort}} instance. They are not unique per environment or collection. Do not include personal data in these IDs.
+Customer data can be deleted using the API. For information about deleting customer data, see [Deleting labeled data](/docs/discovery-data?topic=discovery-data-information-security#deletingdata).
 
 Experimental and beta features are not intended for use with a production environment and, therefore, are not guaranteed to function, as expected, when labeling and deleting data. Do not use experimental and beta features when implementing a solution that requires the labeling and deletion of data.
 {: note}
@@ -74,63 +65,136 @@ Experimental and beta features are not intended for use with a production enviro
 
 The following stored information can be deleted using a `customer_id` if the `customer_id` was specified when the information was originally added using the associated method:
 
-- queries (`/v2/environments/{environment_id}/collections/{collection_id}/query`) Only when used with the `passages` or `natural_language_query` parameters
-- events (`/v2/events`)
-- documents (`/v2/environments/{environment_id}/collections/{collection_id}/documents`)
-- notices (`/v2/environments/{environment_id}/collections/{collection_id}/notices`) Only ingestion `notices` are labeled.
-- training data (`/v2/environments/{environment_id}/collections/{collection_id}/training_data`)
+- queries (`/v2/projects/{project_id}/query`) Only when used with the `passages` or `natural_language_query` parameters
+- documents (`/v2/projects/{project_id}/collections/{collection_id}/documents`)
+- notices (`/v2/projects/{project_id}/notices`) Only ingestion `notices` are labeled. 
+- training data (`/v2/projects/{project_id}/training_data/queries`)
+- dictionaries (Only when created in the {{site.data.keyword.discoveryshort}} tooling)
+- exported documents (Only when created in the Content Miner using the {{site.data.keyword.discoveryshort}} tooling)
+- reports (Only when created in the Content Miner using the {{site.data.keyword.discoveryshort}} tooling)
+
+Exported documents and reports can be viewed in the [Repository](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorp) and [Report](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorepv) panes of the Content Miner. They are not available using the API.
+
+For information about the options for labeling data in {{site.data.keyword.discoveryshort}}, see [Labeling data](/docs/discovery-data?topic=discovery-data-information-security#labeling).
 
 The following stored information is not explicitly labeled and cannot be deleted by specifying the `customer_id`. Personal Data is not supported in these fields.
 
 Any string fields (including but not limited to `name` and `description`) of the following stored items:
-- configurations
 - collections
-- environments
+- projects
 
 ## Labeling data
 {: #labeling}
 
-When ingesting documents, include the `X-Watson-Metadata` header using the `POST /v2/environments/{environment_id}/collections/{collection_id}/documents` or `POST /v2/environments/{environment_id}/collections/{collection_id}/documents/ID` operations. The `customer_id` field is added to the `extracted_metadata` of the documents. Your application must be configured to provide a `customer_id` in the `X-Watson-Metadata` header when performing any operation.
+Data can be labeled using the API, or using the {{site.data.keyword.discoveryshort}} tooling. For more information about labeling with the tooling, see [Labeling data with the Discovery tooling ](/docs/discovery-data?topic=discovery-data-information-security#labelingtooling).
 
-Optionally, you can include the `customer_id` field with the `metadata` multi-part form part instead of using the `X-Watson-Metadata` header.
+Data is labeled by adding the `customer_id` of your choice to the optional `X-Watson-Metadata` header. {{site.data.keyword.discoveryshort}} can then delete it by `customer_id`.
 
-If your documents are already ingested, you must reingest them to add the `X-Watson-Metadata` header and `customer_id`.
-{: note}
+There are several options to label data with the API:
+
+  - When ingesting documents using the `POST /v2/projects/{project_id}/collections/{collection_id}/documents` or `POST /v2/projects/{project_id}/collections/{collection_id}/documents/ID` operations, send an optional header `X-Watson-Metadata`. This header must include:
+    -  Semicolon separated `field=value` pairs (for example: `customer_id=123`) 
+       OR
+    -  Add the `customer_id` field to the `X-Watson-Metadata` header. By adding the `customer_id` in `X-Watson-Metadata` header, the request indicates that it contains data that belongs to this `customer_id`.
+  - Optionally, you can include the `customer_id` field with the `metadata` multi-part form part instead of using the `X-Watson-Metadata` header.
 
 If you specify a `customer_id` in the `metadata` multi-part form part and the `X-Watson-Metadata` header for the same document, then the `customer_id` in the `X-Watson-Metadata` header is used.
 {: note}
+ 
+
+This example adds the `customer_id` to both the `X-Watson-Metadata` header and the `metadata`:
+
+```bash
+curl -k -u "apikey:$API_KEY" \
+        -H "x-watson-userinfo:bluemix-instance-id=asdf" \
+        -H "x-watson-metadata:customer_id=customer_header_123" \
+        -H "x-watson-discovery-next:true" \
+        -F "file=@$FILENAME" \
+        -F "metadata={\"customer_id\": \"new123\"}" \
+        -X POST "$API_URL/v2/projects/$PROJECT_ID/collections/$COLLECTION_ID/documents?version=2020-03-08" \
+```
+{: pre}
+
+Example output:
+
+```json
+{
+    "document_id":"8b152926-e9f5-4f34-940a-c02da7ef3af4",
+    "result_metadata":{
+      "collection_id":"24265c0b-2a55-3ccf-0000-017334467b6e"
+    },
+    "metadata":{
+      "date":1594319812384,
+      "parent_document_id":"8b152926-e9f5-4f34-940a-c02da7ef3af4",
+      "customer_id":"customer_header_123"
+    },
+    "extracted_metadata":{
+      "sha1":"CEC7C1D3423C7D4ED58FC448F52681ECA93CED8A",
+      "numPages":"1",
+      "filename":"Simple.pdf",
+      "author":[
+          "Simple Man"
+      ],
+      "subject":"Simple Metadata",
+      "file_type":"pdf",
+      "title":"Simple Title",
+      "publicationdate":"2016-10-05"
+},
+```
+{: pre}
+
+If your documents are already ingested, you must reingest them to add the `X-Watson-Metadata` header and `customer_id`.
+{: important}
 
 Restrictions:
 
 - The value of the `X-Watson-Metadata` header cannot exceed 4 kilobytes of text.
 - The `X-Watson-Metadata` header must contain a semicolon separated list of `field=value` pairs. The `field` and `value` must not contain semicolons (`;`) or equals signs (`=`).
-- `customer_id`s are unique within each {{site.data.keyword.discoveryshort}} instance. They are NOT unique per environment or collection.
+- `customer_id`s are unique within each {{site.data.keyword.discoveryshort}} instance. They are NOT unique per project or collection.
 - A `customer_id` cannot be more than 256 characters in length.
 - If a `customer_id` contains only whitespace or is empty, it is treated as though the `customer_id` was not provided at all, and no error messages are returned.
 
 ### Labeling data with the Discovery tooling
 {: #labelingtooling}
 
-Data can be labeled with the `customer_id` field, when you use the {{site.data.keyword.discoveryshort}} tooling. Click the ![Environment details](images/env_icon.png)<!-- {width="20" height="20" style="padding-left:5px;padding-right:5px;"} --> and enter the `customer_id` in the **GDPR Data Label** field. After this field is set, all data uploaded using this browser session is labeled with the specified `customer_id`. If the associated customer ID changes, change this field.
+Data can be labeled using the {{site.data.keyword.discoveryshort}} tooling, or using the API. For more information about labeling with the API, see [Labeling data](/docs/discovery-data?topic=discovery-data-information-security#labeling).
 
-Adding a `customer_id` with the **GDPR Data Label** field labels the documents, notices, and training data within that URL domain from that point forward, including each instance under that domain. Any actions, including document uploads, that occurred in the {{site.data.keyword.discoveryshort}} tooling before adding the **GDPR Data Label** field are not labeled.
+To label data with the tooling:
 
-If you switch domains or browsers, empty the browser cache, or start an incognito session after you specify your `customer_id` using the **GDPR Data Label** field of the {{site.data.keyword.discoveryshort}} tooling, the `customer_id` is not retained, and your data is not labeled. If you must switch domains or browsers, re-enter the `customer_id` in the **GDPR Data Label** field.
+1.  Open the **Projects** page by selecting **My Projects**.
+1.  Select **Data usage and GDPR**. 
+1.  Choose the **GDPR data label** tab.
+1.  Set the **Label data with customer ID** toggle to `on`. The **Customer ID** field appears.
+1.  Enter a unique ID for the customer in the **Customer ID** field. Do not include personal data in a **Customer ID**.
+1.  Click **Save ID**.
+
+After the **Customer ID** (`customer_id`) field is set, all data uploaded or crawled during the current browser session is labeled with the specified **Customer ID**. 
+
+Adding a **Customer ID** labels the documents, notices, dictionaries, and training data within that URL domain from that point forward, including each instance under that domain. Any actions, including document uploads, that occurred in the {{site.data.keyword.discoveryshort}} tooling before adding the **Customer ID** field are not labeled.
+
+If you switch domains or browsers, empty the browser cache, or start an incognito session after you specify your **Customer ID** using the {{site.data.keyword.discoveryshort}} tooling, the **Customer ID** is not retained, and your data is not labeled. If you must switch domains or browsers, after the switch, open the **GDPR data label** tab, re-enter the **Customer ID** and click **Save ID**.
 {: note}
+
+If an existing **Customer ID** needs to be changed:
+
+1. Delete the data associated with that **Customer ID**. For instructions, see [Deleting labeled data](/docs/discovery-data?topic=discovery-data-information-security#deletingdata).
+1. Follow the instructions to label data with the {{site.data.keyword.discoveryshort}} tooling, or using the API.
+1. Upload or crawl the data.
 
 ## Deleting labeled data
 {: #deletingdata}
 
-To delete it later, data must be labeled with a `customer_id`.
-
-1. Use the `DELETE /v2/user_data` operation and provide the `customer_id` of the data you wish to delete. `DELETE /v2/user_data` deletes all data associated with a particular `customer_id` within that service instance, as specified in [Methods that support labeling data](/docs/discovery-data?topic=discovery-data-information-security#pi_methods). Also see the [API reference](https://{DomainName}/apidocs/discovery-data#delete-labeled-data){: external}
-
-Deletions are performed asynchronously. You cannot track the progress of deletions.
-
-To ensure all labeled content is correctly removed, run `user_delete` after the `processing` and `pending` counts for all collections in your environment return `0`.
-
-If a non-existent `customer_id` is provided, nothing is deleted, but a `200 - OK` response is returned.
-
-Environments and Collections are not labeled with a `customer_id`, even if a `X-Watson-Metadata` header is included in the request to create the environment or collection. Only the individual documents within a collection within an environment are labeled. Therefore when data is deleted, individual environments and collections are NOT deleted.
+Customer data labeled with a `customer_id` can be deleted using the API. For details on how to label data using either the API or the {{site.data.keyword.discoveryshort}} tooling, see [Labeling data](/docs/discovery-data?topic=discovery-data-information-security#labeling).
 
 You cannot delete labeled data using the {{site.data.keyword.discoveryshort}} tooling.
+{: note}
+
+1. Use the `DELETE /v2/user_data` operation and provide the `customer_id` of the data you wish to delete. 
+   -  `DELETE /v2/user_data` deletes all data associated with a particular `customer_id` within that service instance, as specified in [Methods that support labeling data](/docs/discovery-data?topic=discovery-data-information-security#pi_methods). Also see **Delete labeled data** in the [API reference](https://{DomainName}/apidocs/discovery-data#delete-labeled-data){: external}
+1. To ensure all labeled content is correctly removed, run `user_delete` after the `processing` and `pending` counts for all collections in your environment return `0`.
+
+Notes on deleting labeled data:
+
+- Deletions are performed asynchronously. You cannot track the progress of deletions.
+- If a non-existent `customer_id` is provided, nothing is deleted, but a `202 - Accepted` response is returned.
+- Projects and collections are not labeled with a `customer_id`, even if a `X-Watson-Metadata` header is included in the request to create the project or collection. Only the individual documents within a collection are labeled. Therefore when data is deleted, individual projects and collections are NOT deleted.

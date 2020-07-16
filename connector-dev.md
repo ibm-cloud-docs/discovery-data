@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-24"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Developing custom Cloud Pak for Data connector code
 {: #connector-dev}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when writing your own custom connector.
+![Cloud Pak for Data only](images/cpdonly.png) The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when writing your own custom connector.
 {: shortdesc}
 
 ## Interfaces and JavaDoc

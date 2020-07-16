@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-07-08"
 
 keywords: IBM, activity tracker, LogDNA, event, security
 
@@ -36,9 +36,10 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 
 | Action                           | Description                        | 
 |:---------------------------------|:-----------------------------------|
-| `discovery.label.delete`           | Delete one or multiple documents from one or multiple collections based on a label                  |
+| `discovery.document.create`        | Create a document                |
 | `discovery.document.add`           | Add one document                  |
-| `discovery.document.update`        | Update one document by ingesting new or modified content for a document, given a document ID, or by changing the label for a given document ID     | 
+| `discovery.document.update`        | Update one document by ingesting new or modified content for a document, given a document ID, or by changing the label for a given document ID     |
+| `discovery.document.read`          | Download a PDF version of a document |
 | `discovery.document.delete`        | Delete document by ID              |
 | `discovery.query.read`             | Search a collection for relevant documents |
 | `discovery.notices.read`           | Get notices for a collection |
@@ -58,6 +59,59 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.multi-collection-training-status.read` | Get the training status of a multi-collection training  |
 | `discovery.metric.read`            | Request a metric   |
 | `discovery.event.create`           | Add a click event to a query  |
+| `discovery.credential.create`      | Create a credential           |
+| `discovery.credential.update`      | Update a credential           |
+| `discovery.credential.delete`      | Delete a credential           |
+| `discovery.credential.read`        | Get a credential, Salesforce obects, or a list of Cloud Object Storage buckets |
+| `discovery.dataset.create`         | Create a data set             |
+| `discovery.dataset.update`         | Update a data set             |
+| `discovery.curations.create`       | Create a curated query        |
+| `discovery.curations.read`         | List currently configured curation queries |
+| `discovery.curations.update`       | Update existing curated results documents for a specified query |
+| `discovery.curations.delete`       | Delete specified curation     |
+| `discovery.dictionary.create`      | Create a dictionary           |
+| `discovery.dictionary.read`        | Read a dictionary             |
+| `discovery.dictionary.update`      | Update a dictionary           |
+| `discovery.dictionary.delete`      | Delete a dictionary           |
+| `discovery.user-data.delete`       | Delete all data associated with specified customer ID |
+| `discovery.collections.read`       | Read collection annotations   |
+| `discovery.label.read`             | Read a collection label       |
+| `discovery.label.create`           | Create a collection label     |
+| `discovery.label.delete`           | Delete one or multiple documents from one or multiple collections based on a label     |
+| `discovery.label.update`           | Update a collection label     |
+| `discovery.document-annotation.read` | Read document annotations   |
+| `discovery.page.read`              | Read document pages           |
+| `discovery.page-prediction.read`   | Read document page predictions |
+| `discovery.table-annotation.read`  | Read document page table annotations |
+| `discovery.table-cell.read`        | Read document page table cell |
+| `discovery.page-annotation.add`    | Add document page annotation  |
+| `discovery.page-view.read`         | Read document page view       |
+| `discovery.model.export`           | Export model                  |
+| `discovery.model.import`           | Import model                  |
+| `discovery.content-miner-export.create`   | Create a set of exported documents from Content Miner |
+| `discovery.content-miner-export.search`   | List sets of exported documents from Content Miner|
+| `discovery.content-miner-export.download` | Download exported documents from Content Miner|
+| `discovery.content-miner-report.create`          | Create a report from Content Miner|
+| `discovery.content-miner-report.read`            | Get report content from Content Miner|
+| `discovery.content-miner-report.update`          | Update report content from Content Miner|
+| `discovery.content-miner-report.delete`          | Delete a report from Content Miner|
+| `discovery.content-miner-csv.create`             | Import a CSV file from Content Miner|
+| `discovery.content-miner-csv.read`               | Get a CSV file from Content Miner|
+| `discovery.content-miner-csv.delete`             | Delete a CSV file from Content Miner|
+| `discovery.document-results.read`  | Search collection(s) for relevant documents |
+| `discovery.autocompletion.read`    | Suggest complete queries based on documents |
+| `discovery.collection-notices.read` | Get notices for a collection |
+| `discovery.project-notices.read` | Get notices for a project |
+| `discovery.dataset-notices.read` | Get notices for a data set |
+| `discovery.project.create` | Create a project |
+| `discovery.project.delete` | Delete a project |
+| `discovery.stopwords.create` | Add stopwords to a collection |
+| `discovery.stopwords.read`   | Get stopwords for a collection |
+| `discovery.stopwords.delete` | Delete stopwords from a collection |
+| `discovery.expansions.create` | Add synonyms to a collection |
+| `discovery.expansions.read`   | Get synonyms for a collection |
+| `discovery.expansions.delete` | Delete synonyms from a collection |
+
 {: caption="Table 1. Actions that generate events" caption-side="top"}
 
 
