@@ -1,8 +1,8 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="discovery-data" category="cloud_pak" audience="service" href="/docs/discovery-data?topic=discovery-data-getting-started#getting-started" path="discovery-data"}
-Discovery for IBM Cloud Pak for Data
+{: .toc subcollection="discovery-data" category="ai,cloud_pak" audience="service" href="/docs/discovery-data?topic=discovery-data-getting-started#getting-started" path="discovery-data"}
+Discovery
 
     {: .navgroup id="learn"}
     getting-started-tool.md
@@ -16,18 +16,17 @@ Discovery for IBM Cloud Pak for Data
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    {: topicgroup}
-    Installing Discovery for Cloud Pak for Data
-        install.md
-        manage.md
+    install.md
 
     {: topicgroup}
     Creating projects and collections
         projects.md
+        project-defaults.md
         collections.md
     
     {: topicgroup}
     Configuring data sources   
+        connectp.md
         connect.md
         
         {: topicgroup}
@@ -84,7 +83,8 @@ Discovery for IBM Cloud Pak for Data
 
     {: topicgroup}
     Backup and restore
-        backup.md        
+        backup.md
+        recovery.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -94,6 +94,13 @@ Discovery for IBM Cloud Pak for Data
 
     query-reference.md
     language-support.md
+
+    {: topicgroup}
+    IBM Cloud security
+        information-security.md
+        at-events.md
+        /watson/watson-keyservice
+        /watson/watson-public-private-endpoints
     {: .navgroup-end}
 
     {: .navgroup id="help"}

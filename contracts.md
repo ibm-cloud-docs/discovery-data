@@ -33,7 +33,7 @@ subcollection: discovery-data
 # Understanding the Contracts enrichment
 {: #contracts-schema}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> You can analyze contracts by using the `Contracts` enrichment. Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for Content Intelligence processes all collections with the `Contracts` enrichment.
+![Cloud Pak for Data only](images/cpdonly.png) You can analyze contracts by using the `Contracts` enrichment. Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for Content Intelligence processes all collections with the `Contracts` enrichment.
 {: shortdesc}
 
 The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.

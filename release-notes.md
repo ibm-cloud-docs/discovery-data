@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-16"
 
 keywords: release notes, known issues
 
@@ -58,7 +58,35 @@ The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
-### 2.1.3 release, 19 June 2020
+
+### IBM Cloud Premium General Availability (GA) release, 16 July 2020 ![IBM Cloud only](images/cloudonly.png)
+{: #16jul2020}
+
+This release of IBM Cloud is available for Premium instances of {{site.data.keyword.discoveryshort}} on IBM Cloud created after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
+
+
+New features in this release:
+
+  -  New Project-based interface, which provides you with an out-of-the-box configuration optimized for three common use cases: Document Retrieval, Conversational Search, and Content Mining. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+  -  Content Mining: This entirely new capability of Watson {{site.data.keyword.discoveryshort}} allows you to find insights in your data when you may not even know the question to ask. The powerful correlation tooling will help you unlock value from large unstructured data sets. For details, see [Mining content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+  -  Tables as Answers: Snippets of text aren't helpful if they are found in a table, so {{site.data.keyword.discoveryshort}} instead returns a formatted table as an answer if your question is best answered by a table. For more information, see [Table retrieval](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
+  -  Dynamic Faceted Search: Underspecified queries are very common. Dynamic Faceted Search automatically categorizes your search results into intelligence facets without training by understanding how they are used in the sentences. See [Facets in Document retrieval projects](/docs/discovery-data?topic=discovery-data-facets#facetdr).
+  -  Reusable Components: You no longer have to build a {{site.data.keyword.discoveryshort}} application from scratch. We now ship out of the box with reusable, open source, React components. As you configure your Discovery application, you are actually using the real components themselves. From there it is as simple as deploying to get a custom Discovery application. See [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
+  -  Domain Vocabulary: You can build a facet for your users without a Dictionary. You can use Domain Vocabulary to build a powerful facet with our understanding of how the data is used in as little as 5 minutes.  See [Facets](/docs/discovery-data?topic=discovery-data-facets).
+  -  Relevancy Training: You can train at a project level. {{site.data.keyword.discoveryshort}} ranks the best answer regardless of the data source/collection. See [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
+  -  Spelling correction: {{site.data.keyword.discoveryshort}} has spelling suggestions built-in. See [Parameters descriptions](/docs/discovery-data?topic=discovery-data-query-reference#parameter-descriptions) and [Improvement tools](/docs/discovery-data?topic=discovery-data-improve#improvement-tools).
+  -  Autocomplete: {{site.data.keyword.discoveryshort}} includes autocomplete (type-ahead) for searches, as well as a reusable component for providing this feature to your end users. See [Improvement tools](/docs/discovery-data?topic=discovery-data-improve#improvement-tools).
+  -  Language support: {{site.data.keyword.discoveryshort}} supports 12 additional languages. For the complete list, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
+Features not available in this release:
+
+  -  Deduplication is not available in this release.
+  -  Anomaly Detection is not offered.
+  -  Watson Discovery News is no longer available out-of-the-box.
+  -  Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
+  -  The SharePoint 2016 On-Premise and Box data sources are not available at this time.
+
+### 2.1.3 release, 19 June 2020 ![Cloud Pak for Data only](images/cpdonly.png)
 {: #19jun2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.3 is available.**
@@ -79,7 +107,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.3 release:
 
 -  In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
 
-### 2.1.2 release, 31 Mar 2020
+### 2.1.2 release, 31 Mar 2020 ![Cloud Pak for Data only](images/cpdonly.png)
 {: #31mar2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.2 is available.**
@@ -101,7 +129,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.2 release:
   -  Running a query with an empty `aggregations` parameter returns an empty aggregations array.
   -  Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
   
-### 2.1.1 release, 24 Jan 2020
+### 2.1.1 release, 24 Jan 2020 ![Cloud Pak for Data only](images/cpdonly.png)
 {: #24jan2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.1 is available.**
@@ -114,7 +142,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.1 release:
   -  Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a top-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
 
 
-### 2.1.0 release, 27 Nov 2019
+### 2.1.0 release, 27 Nov 2019 ![Cloud Pak for Data only](images/cpdonly.png)
 {: #27nov2019}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.0 is available.** 
@@ -140,7 +168,7 @@ Changes made in this release:
   -  **Curations** (beta) - Specify a particular result for a given query. For more information, see the [API reference](https://{DomainName}/apidocs/discovery/discovery-data#create-curation){: external}.
 
 
-### 2.0.1 release, 30 August 2019
+### 2.0.1 release, 30 August 2019 ![Cloud Pak for Data only](images/cpdonly.png)
 {: #30aug2019}
 
 **{{site.data.keyword.discovery-data_long}} version 2.0.1 is available.** 
@@ -151,7 +179,7 @@ Changes made in this release:
 
   -  Added the Windows File System and Database connectors.  For more information, see [Database connector](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collection-types#windowsfilesystemconnect).
   -  Added support for Traditional Chinese. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-  -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
+  -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
   -  Released the Classifier enrichment. For more information, see [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
   -  Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift.
 
@@ -166,7 +194,7 @@ Issues resolved in {{site.data.keyword.discovery-data_short}} offerings purchase
 -  If you delete an installation of the {{site.data.keyword.discovery-data_short}} add-on, the instance will not uninstall completely and your re-installation will fail. See the {{site.data.keyword.discovery-data_short}} Readme for post-cleanup steps.
 -  If a JSON document that contains nested JSON objects is ingested, the nested JSON will be indexed as a JSON string.    
 
-### 2.0.0, General Availability (GA) release, 28 June 2019
+### 2.0.0, General Availability (GA) release, 28 June 2019 ![Cloud Pak for Data only](images/cpdonly.png)
 {: #28jun2019}
 
 The {{site.data.keyword.discovery-data_long}} service brings the cognitive capabilities of {{site.data.keyword.discoveryfull}} to the {{site.data.keyword.icp4dfull}} platform.

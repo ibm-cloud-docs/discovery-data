@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-09"
 
 subcollection: discovery-data
 
@@ -34,11 +34,10 @@ subcollection: discovery-data
 # Installing Discovery for Cloud Pak for Data
 {: #install}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> Requirements and installation information for {{site.data.keyword.discovery-data_short}}.
+![Cloud Pak for Data only](images/cpdonly.png) Requirements and installation information for {{site.data.keyword.discovery-data_short}}.
 {: shortdesc}
 
 You should install {{site.data.keyword.icp4dfull}} before installing the {{site.data.keyword.discovery-data_short}} service.
-
 
 Full installation instructions: 
 
@@ -46,7 +45,11 @@ Full installation instructions:
 
 -  {{site.data.keyword.discoveryfull}} 2.5.0.0 [Installing {{site.data.keyword.discoveryshort}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
 
+
 Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 (or later) version. {{site.data.keyword.discoveryfull}} is FISMA High Ready.
+
+For complete information about **Cloud Pak for Data administration**, see [Administering the cluster for Cloud Pak for Data](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/admin-cluster.html){: external} and [Administering the Cloud Pak for Data web client](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/admin-web-client.html){: external}.
+{: important}
 
 
 ## Before you begin
@@ -97,13 +100,6 @@ See the system requirements listed here:
   -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html){: external} 
   -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}
 
-
-{{site.data.keyword.discoveryshort}} has the following specific requirements:
-
-|                      | Minimum VPC available | Minimum RAM available |
-|----------------------|:---------------------:|:---------------------:|
-| Development (non-HA) | 21                    | 86 GB                 |
-| Production (HA)      | 26                    | 116 GB                |
 
 Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discoveryfull}}.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-24"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Building a Cloud Pak for Data custom connector 
 {: #build-connector}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> {{site.data.keyword.discoveryshort}} provides connectors to many popular data sources, as described in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types). If you need to connect to a different data source, you can write and deploy a _custom connector_. 
+![Cloud Pak for Data only](images/cpdonly.png) {{site.data.keyword.discoveryshort}} provides connectors to many popular data sources, as described in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types). If you need to connect to a different data source, you can write and deploy a _custom connector_. 
 {: shortdesc}
 
 Example code and configuration files for a basic custom connector are included.

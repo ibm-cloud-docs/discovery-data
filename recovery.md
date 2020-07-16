@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-07-14"
 
 subcollection: discovery-data
 
@@ -34,10 +34,10 @@ subcollection: discovery-data
 
 ![IBM Cloud only](images/cloudonly.png)</br>
 
- {{site.data.keyword.discoveryfull}} is highly available within multiple {{site.data.keyword.cloud}} locations (for example, Dallas and Washington, DC). However, recovering from potential disasters that affect an entire location requires planning and preparation.
+{{site.data.keyword.discoveryfull}} is highly available in all {{site.data.keyword.cloud}} regions where {{site.data.keyword.discoveryshort}} is offered. However, recovering from potential disasters that affect an entire region requires planning and preparation.
 {: shortdesc}
 
-You are responsible for understanding your configuration, customization, and usage of the service. You are also responsible for being ready to re-create an instance of the service in a new location and to restore your data in any location. See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime){: external} for more information.
+You are responsible for understanding your customization and usage of the service. You are also responsible for being ready to re-create an instance of the service in a new region and to restore your data in any region. See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime){: external} for more information.
 
 ## High availability
 {: #ha}
@@ -49,9 +49,9 @@ You are responsible for understanding your configuration, customization, and usa
 ## Disaster recovery
 {: #dr}
 
-Disaster recovery can become an issue if an {{site.data.keyword.cloud_notm}} location experiences a significant failure that includes the potential loss of data. Because MZR is not available across locations, wait for IBM to bring a location back online if it becomes unavailable. If underlying data services are compromised by the failure, also wait for IBM to restore those data services.
+Disaster recovery can become an issue if an {{site.data.keyword.cloud_notm}} region experiences a significant failure that includes the potential loss of data. Because MZR is not available in all regions, wait for IBM to bring a region back online if it becomes unavailable. If underlying data services are compromised by the failure, also wait for IBM to restore those data services.
 
-If a catastrophic failure occurs, IBM might not be able to recover data from database backups. In this case, you need to restore your data to return your service instance to its most recent state. You can restore the data to the same or to a different location.
+If a catastrophic failure occurs, IBM might not be able to recover data from database backups. In this case, you need to restore your data to return your service instance to its most recent state. You can restore the data to the same or to a different region.
 
 Your disaster recovery plan includes knowing, preserving, and being prepared to restore all data that is maintained on {{site.data.keyword.cloud_notm}}.
 
@@ -63,7 +63,7 @@ There are several methods for backing up the data stored in {{site.data.keyword.
 -  Data that you might want a copy of, such as source documents
 -  Data that {{site.data.keyword.discoveryshort}} stores and that you want to extract and back up
   
-Some data you cannot back up and must be recreated. For example, feedback events.
+Some data you cannot back up and must be recreated.
 
 ### Ingested documents
 {: #backupdocs}
@@ -72,49 +72,21 @@ Your uploaded documents are converted, enriched, and stored in the search index.
 
 If you also import documents by doing scheduled crawls of external data sources, you might want to retain your data source credentials externally so that you can re-establish your data sources quickly. For the list of available sources and the credentials needed for each one, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources).
 
-### Configurations
-{: #backupconfigs}
-
-Back up your instance configurations, and store them locally.
-
-To back up these configurations, first [list your configurations](https://{DomainName}/apidocs/discovery#list-configurations){: external} for each instance.
-
-After obtaining the list of configurations, [get the details](https://{DomainName}/apidocs/discovery#get-configuration-details){: external} for each configuration.
-
 ### Training data
 {: #backuptraining}
 
-Back up your training data for each trained collection, and store it locally.  
+Refer to this task to back up your training data queries and examples for a trained project. Training data is used for explicit training of your projects and is stored on a per project basis. To extract the training data, use the API to download the queries and the ratings from {{site.data.keyword.discoveryshort}}. To back up training data queries and examples, complete the following steps:
 
-Training data is used for explicit training of your collections and is stored on a per collection basis.
+1. Download your training data by using the [list training queries](https://{DomainName}/apidocs/discovery-data#list-training-queries){: external} API.
+1. Save your training queries and examples locally.
 
-To extract the training data, use the API to download the queries and the ratings from {{site.data.keyword.discoveryshort}}.
-
-1.  [List the training data](https://{DomainName}/apidocs/discovery#list-training-data){: external}
-1.  [List the examples](https://{DomainName}/apidocs/discovery#list-examples-for-a-training-data-query){: external} for each query.
-1.  [Get the details](https://{DomainName}/apidocs/discovery#get-details-for-training-data-example){: external} for a training data examples.
-
-The document IDs that you use in your training data point to the documents in your current collection. Use the same IDs in your new collections to ensure that the correct documents are referenced. If the IDs do not match, your restored relevancy training will not work.
+The document IDs that you use in your training data point to the documents in your current project. Use the same IDs in your new projects to ensure that the correct documents are referenced. If the IDs do not match, your restored relevancy training will not work.
 {: important}
-
-### Queries
-{: #backupqueries}
-
-By default, {{site.data.keyword.discoveryshort}} stores the queries that you send to it, unless you opt out.
-
-If you want to be able to restore your queries for [statistical purposes](https://cloud.ibm.com/apidocs/discovery#number-of-queries-over-time), it is recommended that you store those queries separately.
-
-You can [extract queries](https://{DomainName}/apidocs/discovery#search-the-query-and-event-log){: external} from {{site.data.keyword.discoveryshort}}, however a maximum of 10,000 queries are stored. There is no paging API. Restoring queries is not recommended; we recommend starting from scratch.
-
-### Feedback/clicks
-{: #clicks}
-
-If you are storing clicks in the form of feedback events, there is currently no easy way to back up and restore this information. The recommendation is to start from scratch with the [clicks/feedback data](https://{DomainName}/apidocs/discovery#create-event){: external} API.
 
 ### Expansion lists
 {: #backupexpansions}
 
-If you are using expansions for query modification, back up your expansion list, and store it locally. To do so, request the expansion list ,using the [get expansion list](https://{DomainName}/apidocs/discovery#get-the-expansion-list){: external} API command, and store it locally.
+If you are using synonyms (query expansions) for query modification, back up your .json expansion list, and store it locally. For more information, see [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
 
 ### Stopwords
 {: #backupstopwords}
@@ -124,7 +96,7 @@ In the case of stopwords, back up the text file. For more information about sto
 ### Collection information
 {: #collectioninfo}
 
-This is not required, but it is a good best practice to [retrieve the status](https://{DomainName}/apidocs/discovery#get-collection-details){: external} for each collection on a regular basis and store the information locally. By retaining these statistics, you can later verify that your restoration processes were successful if needed.
+This is not required, but it is a good best practice to [retrieve the status](https://{DomainName}/apidocs/discovery-data#get-collection){: external} for each collection on a regular basis and store the information locally. By retaining these statistics, you can later verify that your restoration processes were successful if needed.
 {: tip} 
 
 
@@ -137,32 +109,27 @@ If you use Smart Document Understanding (SDU), you have models associated with y
 ## Restoring your data to a new Watson Discovery instance
 {: #restoredata}
 
-Consider using your backups to restore to a new {{site.data.keyword.discoveryshort}} instance in a different Data Center, also known as a region or location. For example, these regions or locations include Dallas, Houston; Washington, DC; and London).
+Consider using your backups to restore to a new {{site.data.keyword.discoveryshort}} instance in a different data center, also known as a region or location. These regions or locations include Dallas; Washington, DC; London; Seoul; Tokyo; Sydney; and Frankfurt.
 {: note}
 
 To begin restoration, first start by reviewing your list of collections and associated data sources, as well as your file backups.
 
--  Create your [environment](https://{DomainName}/apidocs/discovery#create-an-environment){: external} and [collections](https://{DomainName}/apidocs/discovery#create-a-collection){: external} using the saved configuration information. Ensure that the appropriate configuration is defined appropriately, and that the language for the collection is set properly. Failure to do so delays getting your system back up and running.
--  If you have any custom configurations set up in {{site.data.keyword.discoveryshort}}, recreate them. See the [API reference](https://{DomainName}/apidocs/discovery#add-configuration){: external} for details.
+-  Create your projects and collections. Use the {{site.data.keyword.discoveryshort}} tooling, or the API. See [Create a project](https://{DomainName}/apidocs/discovery-data#create-a-project){: external} and [Create a collection](https://{DomainName}/apidocs/discovery-data#create-a-collection){: external}.
 -  Add back stopwords into the collections. See [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).  
--  If you use custom query expansion, [add your query expansions](https://{DomainName}/apidocs/discovery#create-or-update-expansion-list){: external} for each collection, as well.
--  If you use any custom entity models from {{site.data.keyword.knowledgestudiofull}} for enrichment, [reimport that model](/docs/discovery?topic=discovery-configservice#custom-entity-model) into your {{site.data.keyword.discoveryshort}} instance.
+-  If you use custom query expansion, add your query expansions. See [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
+-  If you use any custom entity models from {{site.data.keyword.knowledgestudiofull}} for enrichment, reimport that model into your {{site.data.keyword.discoveryshort}} instance. For details, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
 
-After you set up your collections as it was before, begin ingesting your source documents. Depending upon how you ingested your documents previously, you can do so by using your own solution or one of the following methods:
--  The [API](https://{DomainName}/apidocs/discovery#add-a-document){: external}
+After you set up your projects and collections as they were before, begin ingesting your source documents. Depending upon how you ingested your documents previously, you can do so by using your own solution or one of the following methods:
+-  The [API](https://{DomainName}/apidocs/discovery-data#add-a-document){: external}
 -  A [connector](/docs/discovery-data?topic=discovery-data-sources)
 
 ### Restoring training data
 {: #restoretraining}
 
-After you restore the collections, you can begin the process of [recreating your relevancy training models](/docs/discovery-data?topic=discovery-data-train). 
+After you restore your projects, you can begin the process of recreating your relevancy training models. To restore your training data queries and examples, recreate your individual training queries and the examples by using the [create training query](https://{DomainName}/apidocs/discovery-data#create-training-query){: external} API, or you can restore your queries and examples on {{site.data.keyword.discoveryshort}}. For more information about restoring your training data by using {{site.data.keyword.discoveryshort}}, see the instructions for accessing the **Train** page in [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
 
-Retrieve the training data you backed up, then:
-
-1. [Upload your queries](https://{DomainName}/apidocs/discovery#add-query-to-training-data){: external}.
-1. [Upload the example documents](https://{DomainName}/apidocs/discovery#add-example-to-training-data-query){: external} for each query.
-1.  After training data is uploaded, review this [blog post](https://developer.ibm.com/dwblog/2017/get-relevancy-training/){: external} to ensure you meet the previous accuracy numbers. Keep in mind that old `document ids` must be transferred to the new training data, or updated to reflect the new document ids in your new collection.
-
+For the restore to work properly, note that the document IDs that you use in your training data point to the documents in your current project. Use the same IDs in your new projects to ensure that the correct documents are referenced. If the IDs do not match, your restored relevancy training will not work.
+{: important}
 
 ### Restoring connections to external data sources
 {: #restoreconnections}

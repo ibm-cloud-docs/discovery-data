@@ -34,7 +34,7 @@ subcollection: discovery-data
 # Using a custom Cloud Pak for Data connector with the Discovery tooling 
 {: #ccs-tooling}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> After you have built and deployed a custom connector, you can configure and run it in the {{site.data.keyword.discoveryshort}} tooling to create a collection.
+![Cloud Pak for Data only](images/cpdonly.png) After you have built and deployed a custom connector, you can configure and run it in the {{site.data.keyword.discoveryshort}} tooling to create a collection.
 {: shortdesc}
 
 You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. These instructions enable you to use a custom connector instead of one of the pre-built connectors listed in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).

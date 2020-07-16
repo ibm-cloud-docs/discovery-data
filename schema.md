@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-07-15"
 
 
 subcollection: discovery-data
@@ -33,7 +33,7 @@ subcollection: discovery-data
 # Using Discovery for Content Intelligence
 {: #output_schema}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence and choose the **Project type** of **Document retrieval**.
+![Cloud Pak for Data only](images/cpdonly.png) The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence and choose the **Project type** of **Document retrieval**.
 {: note}
 
 Discovery for Content Intelligence enables understanding of governing business documents with pre-trained models so enterprises can start analyzing complex documents in minutes. The `Contracts`, `Invoices`, and `Purchase Orders` enrichments enable automation of complex business processes, such as contract review and negotiation, invoice reconciliation, software entitlement verification, and more. Such automation of processes result in increased productivity, minimization of costs, and reduced exposure.
@@ -47,13 +47,13 @@ Discovery for Content Intelligence supports English language documents only. The
 ## Getting started
 {: #content-intelligence-gs}
 
-To use Discovery for Content Intelligence, start by creating a document retrieval project. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+To use Discovery for Content Intelligence, start by creating a Document Retrieval project. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
 A Discovery for Content Intelligence project has the following default settings:
   
-- The setting **Optical Character Reader Advanced** is set to `on`.
-- The enrichments applied include `Entities`, `Parts of speech`, `Table Understanding`, and `Contracts`.
-- The improvement tools enabled include Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval.
+- **Settings**: Optical Character Reader Advanced `on`
+- **Enrichments applied**: Entities, Parts of speech, Table Understanding, and Contracts
+- **Improvement tools enabled**: Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval
 
 
 ## Understanding Discovery for Content Intelligence enrichments

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-07-15"
 
 subcollection: discovery-data
 
@@ -42,12 +42,16 @@ A sample project is available for you to explore and experiment with. For more i
 
 To create a project:
 
-1.  Open the **Projects** page by selecting the **Projects** icon on the navigation panel.
+1.  Open the **Projects** page by selecting the **My Projects**.
 1.  Select **New project**. Name your project and choose a **Project type**: `Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`. 
 1.  Click **Next**.
 1.  Choose and configure a data source (see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections)), or you can reuse an existing collection by selecting **Reuse data from an existing collection**. 
 
-To keep track of collection sharing and clean up unused collections, select **Collection usage and sharing** on the **Projects** page. For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
+To keep track of collection sharing and clean up unused collections:
+ 
+  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Collection usage and sharing**. 
+  -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
+
 
 To view all the collections in your project, or add a new collection, select the **Manage collections** icon on the navigation panel. For more information, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
 
@@ -75,7 +79,7 @@ There are four available **Project types**: `Document Retrieval`, `Conversationa
 
 Use this project type to search and find the most relevant answers from your data.
 
-If you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence, you should use this **Project type**. For more information, see [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
+![Cloud Pak for Data only](images/cpdonly.png) If you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence, you should use this **Project type**. For more information, see [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
 
 #### Document retrieval defaults
 {: #doc-retrieval-defaults}
@@ -85,6 +89,14 @@ If you have purchased and installed {{site.data.keyword.discoveryshort}} for Con
 -  **Improvement tools enabled**: Facets (by Entity), Dynamic Facets, Passages
 
 Setting Optical Character Recognition (OCR) to `off` increases processing speed.
+
+Document retrieval defaults for {{site.data.keyword.discoveryshort}} for Content Intelligence:
+
+- **Settings**: Optical Character Reader Advanced `on`
+- **Enrichments applied**: Entities, Parts of speech, Table Understanding, and Contracts
+- **Improvement tools enabled**: Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval
+
+For additional default settings, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 
 ### Conversational Search
 {: #conversational}
@@ -104,6 +116,8 @@ At this time, the {{site.data.keyword.conversationfull}} for {{site.data.keyword
 
 Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
+For additional default settings, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
+
 
 ### Content Mining
 {: #mining}
@@ -122,6 +136,8 @@ Each **Content Mining** project can contain only one collection.
 -  **CSV settings**: No header, selected delimiters are comma and semicolon
 
 Setting Optical Character Recognition (OCR) to `off` increases processing speed.
+
+For additional default settings, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 
 
 ### Custom
@@ -143,7 +159,10 @@ Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
 <!-- c/s help for the *Collection usage and sharing* page. Do not delete. -->
 
-To access the **Collection usage and sharing** page, open the **Projects** page and select **Collection usage and sharing**.
+To access the **Collection usage and sharing** page, open the **Projects** page, then:
+
+  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Collection usage and sharing**. 
+  -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
 
 Collections can be:
 
@@ -166,3 +185,12 @@ If you make any of the following changes to a shared collection, *those changes 
 
 The enrichments and other improvement tools are not included when a collection is shared, because they are set at the project level.
 {: important}
+
+### GDPR data label
+{: #project-gdpr}
+
+![IBM Cloud only](images/cloudonly.png) 
+
+To access the **GDPR data label** page, open the **Projects** page, then select ***Data usage and GDPR**, then **GDPR data label**.
+
+For more information about GDPR and labeling data in the {{site.data.keyword.discoveryshort}} tooling, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).
