@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-07-17"
 
 subcollection: discovery-data
 
@@ -70,7 +70,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
 -  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
 -  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
--  [Upload data](/docs/discovery-data?topic=discovery-data-sources#upload-data-public)
+-  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 
 You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections of this document to read next:
 
@@ -163,19 +163,6 @@ Other items to note when you crawl {{site.data.keyword.blockstoragefull}}:
 -  This connector does not support crawling private endpoints.
 -  For more information about IBM Cloud Object Storage endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
 -  There is a slight performance issue if all buckets are selected. In this case, a delay is possible, before the documents complete indexing.
-
-
-### Upload data
-{: #upload-data-public}
-
-You can use this option to upload local, stored data.
-{: shortdesc}
-
-Optional: Click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, using Optical Character Recognition (OCR).
-
-For a list of file types that you can upload to {{site.data.keyword.discoveryshort}}, see [Supported file types and general requirements](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection. Your collection finishes processing when the status indicates `Processing finished. Updated documents are ready for you.`.
-
-For a list of supported data sources that you can use to create collections, see [Available data sources](/docs/discovery-data?topic=discovery-data-sources#available-sources).
 
 ## Managing collections
 {: #manage-collections-public}

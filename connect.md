@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-17"
 
 subcollection: discovery-data
 
@@ -54,7 +54,7 @@ You can configure the following data sources:
 -  [Windows File System](/docs/discovery-data?topic=discovery-data-collection-types#windowsfilesystemconnect)
 -  [Local File System](/docs/discovery-data?topic=discovery-data-collection-types#localfilesystemconnect)
 -  [FileNet P8](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect)
--  [Upload your own data](/docs/discovery-data?topic=discovery-data-collection-types#upload-data)
+-  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 -  [Reuse data from an existing collection](/docs/discovery-data?topic=discovery-data-collection-types#reuse)
 -  [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
 
@@ -757,17 +757,6 @@ In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the 
 1. Optional: Set the following switch in **Security**:
     -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 1. Click **Finish**.
-
-
-### Upload data
-{: #upload-data}
-
-Use this option to upload data you stored locally. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
-{: shortdesc}
-
-For a list of file types that you can upload to {{site.data.keyword.discoveryshort}}, see [Supported file types and general requirements](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection. Your collection is finished processing when the status indicates `Processing finished. Updated documents are ready for you.`.
-
-For the list of supported data sources that you can use to create collections, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
 
 ### Reuse data from an existing collection

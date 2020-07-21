@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-30"
+lastupdated: "2020-07-17"
 
 subcollection: discovery-data
 
@@ -52,6 +52,7 @@ When you create a collection, {{site.data.keyword.discoveryshort}} pulls documen
 1. Configure the data source.
    -  [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
    -  [IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources)
+   -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 1. Select **Create collection**, which starts the crawling process. The **Activity** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.
 
 ![Cloud Pak for Data only](images/cpdonly.png) The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
@@ -111,3 +112,17 @@ When you create a collection, the initial crawl starts immediately. The frequenc
 
 If you modify crawl settings on the **Processing settings** page and then click **Save collection**, the crawl restarts immediately. To view the collection status, see the **Activity** tab. 
 {: note}
+
+## Uploading data
+{: #upload-data}
+
+Use this option to upload data you stored locally. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
+{: shortdesc}
+
+For a list of file types that you can upload to {{site.data.keyword.discoveryshort}}, see [Supported file types and general requirements](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection. Your collection is finished processing when the status indicates `Processing finished. Updated documents are ready for you.`.
+
+Optional: Click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, using Optical Character Recognition (OCR).
+
+For additional information about supported data sources in {{site.data.keyword.discoveryshort}}, see the following links:
+- ![Cloud Pak for Data only](images/cpdonly.png) [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
+- ![IBM Cloud only](images/cloudonly.png) [Available data sources](/docs/discovery-data?topic=discovery-data-sources)
