@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-21"
 
 subcollection: discovery-data
 
@@ -179,15 +179,28 @@ Result: The query `enriched_text.entities.type: cccardnumber` will return all re
 ## Machine Learning enrichments and Watson Explorer Content Analytics Studio models
 {: #machinelearning-enrichment}
 
-This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} or Watson Explorer Content Analytics Studio to enrich your collection. There are three types of models:
+This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} or Watson Explorer Content Analytics Studio to enrich your collection. 
 
--  Rule-based models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}  that find entities in documents based on rules that you define. (File format: `.pear`)
--  Machine learning models created in {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
--  Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: `.pear`)
+![Cloud Pak for Data only](images/cpdonly.png) Watson Explorer Content Analytics Studio models are supported only on Cloud Pak for Data only.
+{: note}
+
+Your models must be created in the appropriate version of {{site.data.keyword.knowledgestudiofull}}:
+  - {{site.data.keyword.cloud_notm}} — your {{site.data.keyword.knowledgestudiofull}} rule-based or machine-learning models must be created using {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.cloud_notm}}.
+  - {{site.data.keyword.icp4dfull}} — your {{site.data.keyword.knowledgestudiofull}} rule-based or machine-learning models can be created using either {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.cloud_notm}} or {{site.data.keyword.icp4dfull}}.
+
+There are three types of models:
+
+-  Rule-based models created in {{site.data.keyword.knowledgestudiofull}} that find entities in documents based on rules that you define. (File format: `.pear`)
+-  Machine learning models created in {{site.data.keyword.knowledgestudiofull}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
+-  ![Cloud Pak for Data only](images/cpdonly.png) Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: `.pear`)
 
 Create your `.pear` or `.zip` file before adding this enrichment. For more information, see the following documentation:
-  -  [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-wks_overview_full
-)
+  -  {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}
+     -  [Creating a rule-based model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-rule-annotator)
+     -  [Creating a machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-ml_annotator)
+  -  {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.cloud_notm}}
+     -  [Creating a rule-based model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-rule-annotator)
+     -  [Creating a machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-ml_annotator)
   -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_11.0.2/com.ibm.discovery.es.ta.doc/iiystacastudio.html){: external}
 
 The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page. 
@@ -311,7 +324,11 @@ In the JSON output:
 ## Advanced rule models enrichment
 {: #advanced-rules}
 
-This enrichment uses a text extraction model created and exported from the Advanced Rule editor of {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}} (file format: `.zip`). 
+This enrichment uses a text extraction model created and exported from the Advanced Rule editor of {{site.data.keyword.knowledgestudiofull}} (file format: `.zip`).
+
+Your model must be created in the appropriate version of {{site.data.keyword.knowledgestudiofull}}:
+  - {{site.data.keyword.cloud_notm}} — your {{site.data.keyword.knowledgestudiofull}} advanced rule model must be created using {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.cloud_notm}}.
+  - {{site.data.keyword.icp4dfull}} — your {{site.data.keyword.knowledgestudiofull}} advanced rule model can be created using either {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.cloud_notm}} or {{site.data.keyword.icp4dfull}}.
 
 The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page. 
 
@@ -321,7 +338,11 @@ Enrichment-specific fields:
 -  **Collection language** - Select the language of your `.zip` file.
 -  **Select a .zip file** - Select the file and upload it.
 
-For more information, see the documentation for [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-create-advanced-rules-model).
+Create your advanced rules model before adding this enrichment. For more information, see the following documentation:
+
+- [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-create-advanced-rules-model).
+
+- [{{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.cloud_notm}}](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-create-advanced-rules-model).
 
 ## Classifier enrichments
 {: #classifier-enrichment}

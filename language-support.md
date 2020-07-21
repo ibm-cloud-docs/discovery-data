@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-07-20"
 
 subcollection: discovery-data
 
@@ -43,6 +43,7 @@ subcollection: discovery-data
 | Czech (`cs`) | **X** | | | | **X** | **X** | **X** | | | **X** |
 | Danish (`da`) | **X** | | | | | **X** | **X** | | | **X** |
 | Dutch (`nl`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
+| English (`en`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
 | Finnish (`fi`) | **X** | | | | | **X** | **X** | | | **X** |
 | French (`fr`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
 | German (`de`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
