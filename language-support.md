@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-20"
+lastupdated: "2020-07-21"
 
 subcollection: discovery-data
 
@@ -35,31 +35,31 @@ subcollection: discovery-data
 
 **X** = Supported in Watson Discovery
 
-| Language | Parts of speech | Keywords | Entities | Document sentiment | Phrase sentiment | Dictionary | Regular expressions | Machine Learning | Advanced rule models | Smart Document Understanding |
-|------|------|------|------|------|------|------|------|------|------|------|
-| Arabic (`ar`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
-| Chinese, simplified (`zh-CN`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
-| Chinese, traditional (`zh-TW`) | **X** | | | | **X** | **X** | **X** | **X** | **X** | **X** |
-| Czech (`cs`) | **X** | | | | **X** | **X** | **X** | | | **X** |
-| Danish (`da`) | **X** | | | | | **X** | **X** | | | **X** |
-| Dutch (`nl`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
-| English (`en`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
-| Finnish (`fi`) | **X** | | | | | **X** | **X** | | | **X** |
-| French (`fr`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
-| German (`de`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
-| Hebrew (`he`) | **X** | | | | | **X** | **X** | | | **X** |
-| Italian (`it`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
-| Japanese (`ja`) | **X**| **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
-| Korean (`ko`) | **X**| **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
-| Norwegian (Bokma&#778;l) (`nb`) | **X** | | | | | **X** | **X** | | | **X** |
-| Norwegian (Nynorsk) (`nn`) | **X** | | | | | **X** | **X** | | | **X** |
-| Polish (`pl`) | **X** | | | | | **X** | **X** | | | **X** |
-| Portuguese, Brazilian (`pt-br`) | **X** | **X** | **X** | **X** | | **X** | **X** | **X** | **X** | **X** |
-| Romanian (`ro`) | **X** | | | | **X** | **X**| **X** | | | **X** |
-| Russian (`ru`) | **X** | | | | **X** | **X** | **X** | | | **X** |
-| Slovak (`sk`) | **X** | | | | | **X**| **X** | | | **X** |
-| Spanish (`es`) | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |
-| Swedish (`sv`) | **X** | | | | | **X** | **X** | | | **X** |
+| Language | Supported features|
+|:---|:---|
+| Arabic (`ar`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Chinese, simplified (`zh-CN`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Chinese, traditional</br> (`zh-TW`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Czech (`cs`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding  |
+| Danish (`da`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| Dutch (`nl`) |Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| English (`en`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Finnish (`fi`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| French (`fr`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| German (`de`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Hebrew (`he`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| Italian (`it`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Japanese (`ja`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Korean (`ko`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Norwegian (Bokma&#778;l) (`nb`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| Norwegian (Nynorsk) (`nn`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| Polish (`pl`) |  Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| Portuguese, Brazilian (`pt-br`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
+| Romanian (`ro`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding  |
+| Russian (`ru`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding |
+| Slovak (`sk`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| Spanish (`es`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding  |
+| Swedish (`sv`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
 
 
 You can select the collection language when you create your collection. See [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 

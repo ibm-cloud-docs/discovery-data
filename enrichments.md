@@ -201,7 +201,7 @@ Create your `.pear` or `.zip` file before adding this enrichment. For more infor
   -  {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.cloud_notm}}
      -  [Creating a rule-based model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-rule-annotator)
      -  [Creating a machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-ml_annotator)
-  -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_11.0.2/com.ibm.discovery.es.ta.doc/iiystacastudio.html){: external}
+  -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ta.doc/iiystacastudio.html){: external}
 
 The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page. 
 
