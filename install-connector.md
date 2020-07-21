@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Installing a custom Cloud Pak for Data connector
 {: #install-connector}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> After you have compiled and packaged your custom connector, you need to install it to your {{site.data.keyword.discoveryshort}} instance.
+![Cloud Pak for Data only](images/cpdonly.png) After you have compiled and packaged your custom connector, you need to install it to your {{site.data.keyword.discoveryshort}} instance.
 {: shortdesc}
 
 {{site.data.keyword.discoveryshort}} provides a script named `manage_custom_crawler.sh` for installing and uninstalling custom connectors. The script is located in the `scripts` directory of the expanded `custom-crawler-docs.zip` file as described in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file).

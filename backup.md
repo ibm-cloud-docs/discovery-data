@@ -32,6 +32,7 @@ subcollection: discovery-data
 # Backing up and restoring data in Cloud Pak for Data
 {: #backup-restore}
 
+![Cloud Pak for Data only](images/cpdonly.png)</br>
 Use the following procedures to back up and restore user data in your {{site.data.keyword.discovery-data_long}} instance.
 {: shortdesc}
 

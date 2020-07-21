@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-30"
+lastupdated: "2020-07-15"
 
 subcollection: discovery-data
 
@@ -57,20 +57,6 @@ You can configure the following data sources:
 -  [Upload your own data](/docs/discovery-data?topic=discovery-data-collection-types#upload-data)
 -  [Reuse data from an existing collection](/docs/discovery-data?topic=discovery-data-collection-types#reuse)
 -  [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
-
-
-## Crawl schedule options
-{: #crawlschedule}
-
-When you create a collection, the initial crawl starts immediately. The frequency you choose for the crawl schedule determines when the next crawl starts in relation to the first. You can schedule crawls to update at the following intervals:
-    
--  Hourly: runs every hour
--  Daily: runs every day at the same time as the initial crawl
--  Weekly: runs every week on the same day and time as the initial crawl
--  Monthly: runs every 30 days at the same time as the initial crawl
-
-If you modify crawl settings on the **Processing settings** page and then click **Save collection**, the crawl restarts immediately. To view the collection status, see the **Activity** tab. 
-{: note}
 
 ## Processing settings
 {: #processing-options}
@@ -606,13 +592,13 @@ Use this option to crawl local file systems. Only documents supported by {{site.
 {: shortdesc}
 
 
-#### Copying local file system folders to the ingestion or gateway pod
+#### Copying local file system folders to the crawler pod
 {: #copy-local-folders}
 
-Before you crawl local file systems, make sure that the local file system folders that you want to crawl have access to the ingestion or gateway pod so that the crawler can crawl the local file systems. Before you create a Local File System collection, you must also have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+Before you crawl local file systems, make sure that the local file system folders that you want to crawl have access to the crawler pod so that the crawler can crawl the local file systems. Before you create a Local File System collection, you must also have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 {: shortdesc}
 
-Before you create a Local File System collection, complete the following steps to copy your local file system folders to the ingestion or gateway pod, replacing the `<>` and the content inside with your credentials:
+Before you create a Local File System collection, complete the following steps to copy your local file system folders to the crawler pod, replacing the `<>` and the content inside with the required input:
 
 1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
 
@@ -627,31 +613,41 @@ Before you create a Local File System collection, complete the following steps t
    ```
    {: pre}
 
-1. Enter `oc get pods|grep ingestion` to find the ingestion pod.
-1. Enter the following command to copy the local file system folders that you want to crawl to the `/mnt` directory on the ingestion or gateway pod: 
+1. Enter `oc get pods|grep crawler` to find the crawler pod. If you are using a version earlier than 2.1.3, enter `oc get pods|grep ingestion` to find the ingestion pod.
+1. Enter the following command to copy the local file system folders that you want to crawl to the `/mnt` directory on the crawler pod:
 
    ```bash
+   oc rsync <path to local file system folder> <crawler pod>:/mnt
+   ```
+   {: pre}
+
+   If you are using a version of {{site.data.keyword.discoveryshort}} that is older than 2.1.3, enter the following command:
+
+   ```
    oc rsync <path to local file system folder> <ingestion pod>:/mnt
    ```
    {: pre}
 
-   The folders that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
+   In versions earlier than 2.1.3, the folders that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
 
    If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
    {: important}
 
-If you want to mount a persistent volume on the ingestion pod, see [Mounting a persistent volume on the ingestion pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+If you want to mount a persistent volume on the crawler pod, see [Mounting a persistent volume on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
 
 
-#### Mounting a persistent volume on the ingestion pod
+#### Mounting a persistent volume on the crawler pod
 {: #mount-persistent-volume}
 
-If you do not want to copy your local file system files or folders to the ingestion or gateway pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the ingestion pod. After establishing this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
+If you do not want to copy your local file system files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After establishing this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
 {: shortdesc}
 
-To mount a persistent volume on the ingestion pod, complete the following steps:
+You must configure the persistent volume before you install {{site.data.keyword.discoveryshort}}.
+{: important}
 
-1. Establish a link to your NFS, or the persistent volume. See the following example. Replace the `<>` and the content inside with the required information:
+To mount a persistent volume on the crawler pod, complete the following steps:
+
+1. Create a file called `crawler-pv.yaml`. The content of the file looks like the following. Replace the `<>` and the content inside with the required information:
 
    ```bash
    apiVersion: v1
@@ -672,7 +668,29 @@ To mount a persistent volume on the ingestion pod, complete the following steps:
    ```
    {: codeblock}
 
-1. Create a file called `override.yaml` in `ibm-watson-discovery-ppa/deploy/`. This file overrides any default settings that you choose. In the `label` and `value` fields, you indicate the remote NFS folder that you want to serve as the persistent volume. See the following example of the content in the `override.yaml` file that you must enter. Replace the `<>` and the content inside with the required information:
+1. Enter the following command to set `crawler-pv.yaml` as the persistent volume:
+
+   ```
+   create -f crawler-pv.yaml
+   ```
+   {: pre}
+
+1. If you are using version 2.1.3, edit `override.yaml` to include the following input. This file overrides any default settings that you choose. In the `label` and `value` fields, you must use the same string that you specified when you created the `crawler-pv.yaml` in step 1. Replace the `<>` and the content inside with the required information:
+
+   ```bash
+   core:
+     ingestion:
+       mount:
+         useDynamicProvisioning: false
+         storageClassName: ""
+         accessModes: "ReadWriteMany"
+         selector:
+           label: "<label-name>"
+           value: "<label-value>"
+   ```
+   {: codeblock}
+
+   If you are using a version earlier than 2.1.3, create a file called `override.yaml` in `ibm-watson-discovery-ppa/deploy/`. You might see the following content in `override.yaml`:
 
    ```bash
    core:
@@ -686,7 +704,9 @@ To mount a persistent volume on the ingestion pod, complete the following steps:
    ```
    {: codeblock}
 
-1. From the `deploy` subdirectory, run the `deploy.sh` script by entering the `-d` flag, the file path to the files that you want to make accessible to `ibm-watson-discovery`, the `-O` flag, and your `override.yaml` file. You can also enter the `-e` flag with your `release-name-prefix`. If you do, your `release-name-prefix` must be 13 characters or fewer, or the installation will fail. If you do not enter the `-e` flag, the default `release-name-prefix` is `disco`. See the following example. Replace the `<>` and the content inside with the required information:
+1. Install {{site.data.keyword.discoveryshort}} along with `override.yaml`. For information about installing {{site.data.keyword.discoveryshort}}, see [Installing the Watson Discovery service](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}. For information about overriding values in `override.yaml` when you install {{site.data.keyword.discoveryshort}}, see [Override values for Watson Discovery installation](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-override.html){: external}.
+
+   If you are using a version earlier than 2.1.3, from the `deploy` subdirectory, run the `deploy.sh` script by entering the `-d` flag, the file path to the files that you want to make accessible to `ibm-watson-discovery`, the `-O` flag, and your `override.yaml` file. You can also enter the `-e` flag with your `release-name-prefix`. If you do, your `release-name-prefix` must be 13 characters or fewer, or the installation will fail. If you do not enter the `-e` flag, the default `release-name-prefix` is `disco`. See the following example. Replace the `<>` and the content inside with the required information:
 
    ```bash
    ./deploy.sh -d </local root directory/subdirectory/>ibm-watson-discovery -O ./override.yaml -e <release-name-prefix>
@@ -696,7 +716,7 @@ To mount a persistent volume on the ingestion pod, complete the following steps:
    For a list of flags and their descriptions or for help, run `./deploy.sh -h`.
    {: tip}
 
-If you want to copy your local file system folders to the ingestion or gateway pod, see [Copying local file system folders to the ingestion or gateway pod](/docs/discovery-data?topic=discovery-data-collection-types#copy-local-folders).
+If you want to copy your local file system folders to the crawler pod, see [Copying local file system folders to the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#copy-local-folders).
 
 
 #### Configuring a Local File System collection
@@ -784,7 +804,13 @@ For more information about projects, see [Creating projects](/docs/discovery-dat
 
  All of your collections are listed here. You can delete unused collections and view statistics.
 
- To keep track of collection sharing across projects, select the **Projects** icon on the navigation panel and choose **Collection usage and sharing**. For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
+ To keep track of collection sharing across projects, open the **Projects** page, then:
+ 
+  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Collection usage and sharing**. 
+  -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
+
+ 
+For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
 
 
 ## Collection activity
@@ -797,12 +823,13 @@ For more information about projects, see [Creating projects](/docs/discovery-dat
 
 Collection details include the following:
 
--  Number of documents 
+-  Number of documents
 -  Collection status
-    -  A collection is finished processing when the status is `Syncing complete` or `Processing finished. Updated documents are ready for you.`. If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button that you see varies, depending on the type of collection.
-    -  If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl stops, and a new full crawl begins. It is recommended that you wait until the status is `Syncing complete` before starting a recrawl.
+    -  A collection is finished processing when the status is `Syncing complete` or `Processing finished. Updated documents are ready for you.`.
+    -  ![Cloud Pak for Data only](images/cpdonly.png) If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button that you see varies, depending on the type of collection.
+    -  ![Cloud Pak for Data only](images/cpdonly.png) If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl stops, and a new full crawl begins. It is recommended that you wait until the status is `Syncing complete` before starting a recrawl.
 -  Date of creation and last update
--  An abbreviated list of **Warnings and errors**. To see the full list, select **View all**. The **Warnings and errors** page contains more detailed information, including the`Type`, `Message`, and `Date` for each message.
+-  An abbreviated list of **Warnings and errors**. To see the full list, select **View all**. The **Warnings and errors** page (![Cloud Pak for Data only](images/cpdonly.png)) contains more detailed information, including the`Type`, `Message`, and `Date` for each message.
 
 
 ## About document level security

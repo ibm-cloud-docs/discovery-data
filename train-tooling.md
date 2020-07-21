@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-06-29"
 
 subcollection: discovery-data
 
@@ -47,7 +47,7 @@ In order to train Watson, you'll need to:
   -   Identify natural language queries that are representative of the queries your users would request.
   -   Rate the results of each query as `relevant` or `not relevant`.
 
-Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your collection. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results at the top. As you add more and more training data, {{site.data.keyword.discoveryshort}} should become more accurate in the ordering of query results.
+Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your project. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results at the top. As you add more and more training data, {{site.data.keyword.discoveryshort}} should become more accurate in the ordering of query results.
 
 Natural language query results will return a `confidence` score. For more information, see [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
@@ -64,13 +64,13 @@ Training consists of three parts:
 -   The results of that query
 -   The rating you apply to each result
 
-To train a collection:
+To train a project:
 
 1.  On the **Train** page, enter a natural language query in the **Enter a question to train** field. Do not include a question mark in your query. Click the **Add+** button.
 1.  Click the **Rate results** button next to the query.
-1.  After the results appear, select the **Relevant** or **Not relevant** button under each one. In order to train the collection efficiently, you should select an option for each result. 
+1.  After the results appear, select the **Relevant** or **Not relevant** button under each one. In order to train the project efficiently, you should select an option for each result. 
 
-    In the {{site.data.keyword.discoveryshort}} tooling, **Relevant** has a score of `10` and **Not relevant** has a score of `0`. You can use a different scoring scale if rating results using the API, but you can't mix scoring scales within the same collection. 
+    In the {{site.data.keyword.discoveryshort}} tooling, **Relevant** has a score of `10` and **Not relevant** has a score of `0`. You can use a different scoring scale if rating results using the API, but you can't mix scoring scales within the same project. 
 1.  When you are finished, click the **Back to queries** button.
 1.  Continue adding queries and rating them. As you reach relevant training thresholds, the **Watson will learn which are the best results for your queries after you've rated enough** section will indicate your status by striking out the requirements as you meet them:
     - Add more queries

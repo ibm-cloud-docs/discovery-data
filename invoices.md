@@ -27,7 +27,7 @@ subcollection: discovery-data
 # Understanding the Invoices enrichment
 {: #invoices}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) --> The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
+![Cloud Pak for Data only](images/cpdonly.png) The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
 {: note}
 
 You can analyze invoice documents by using the `Invoices` enrichment.

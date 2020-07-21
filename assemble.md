@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Assembling and compiling a custom Cloud Pak for Data connector
 {: #assemble}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->
+![Cloud Pak for Data only](images/cpdonly.png)
 
 You package a number of component files together to create a custom connector.
 {: shortdesc}

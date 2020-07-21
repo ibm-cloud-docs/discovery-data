@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-19"
+lastupdated: "2020-06-24"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Analyze API
 {: #analyzeapi}
 
-<!-- ![Cloud Pak for Data only](images/cpdonly.png) -->
+![Cloud Pak for Data only](images/cpdonly.png)
 
 The Analyze endpoint allows you to process text documents through {{site.data.keyword.discoveryshort}}'s conversion and enrichment pipeline without requiring the document to be stored. This is ideal for business automation purposes, for example if you want to classify emails - you can use Analyze to synchronously call {{site.data.keyword.discoveryshort}}, get a classification of the email, and use the output of that classification in your business logic. For details, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#analyze-a-document){: external}.
 
