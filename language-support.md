@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-07-22"
 
 subcollection: discovery-data
 
@@ -33,33 +33,31 @@ subcollection: discovery-data
 # Language support
 {: #language-support}
 
-**X** = Supported in Watson Discovery
-
 | Language | Supported features|
 |:---|:---|
-| Arabic (`ar`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Chinese, simplified (`zh-CN`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Chinese, traditional</br> (`zh-TW`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Czech (`cs`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding  |
-| Danish (`da`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
-| Dutch (`nl`) |Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| English (`en`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Finnish (`fi`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
-| French (`fr`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| German (`de`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Hebrew (`he`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
-| Italian (`it`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Japanese (`ja`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Korean (`ko`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Norwegian (Bokma&#778;l) (`nb`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
-| Norwegian (Nynorsk) (`nn`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
-| Polish (`pl`) |  Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
-| Portuguese, Brazilian (`pt-br`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding |
-| Romanian (`ro`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding  |
-| Russian (`ru`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding |
-| Slovak (`sk`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
-| Spanish (`es`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding  |
-| Swedish (`sv`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding |
+| Arabic (`ar`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Chinese, simplified (`zh-CN`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Chinese, traditional</br> (`zh-TW`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Czech (`cs`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding  |
+| Danish (`da`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Dutch (`nl`) |Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| English (`en`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Finnish (`fi`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| French (`fr`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| German (`de`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Hebrew (`he`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Italian (`it`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Japanese (`ja`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Korean (`ko`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Norwegian (Bokma&#778;l) (`nb`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Norwegian (Nynorsk) (`nn`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Polish (`pl`) |  Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Portuguese, Brazilian (`pt-br`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Romanian (`ro`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding  |
+| Russian (`ru`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Slovak (`sk`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Spanish (`es`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding  |
+| Swedish (`sv`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
 
 
 You can select the collection language when you create your collection. See [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 
@@ -73,4 +71,4 @@ You can select the collection language when you create your collection. See [Cre
 
 The following feature is currently supported in English only:
 
--  [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema)
+-  ![Cloud Pak for Data only](images/cpdonly.png) [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence and choose the **Project type** of **Document retrieval**.
