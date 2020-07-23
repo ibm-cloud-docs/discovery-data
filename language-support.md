@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-23"
 
 subcollection: discovery-data
 
@@ -71,4 +71,4 @@ You can select the collection language when you create your collection. See [Cre
 
 The following feature is currently supported in English only:
 
--  ![Cloud Pak for Data only](images/cpdonly.png) [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence and choose the **Project type** of **Document retrieval**.
+-  ![Cloud Pak for Data only](images/cpdonly.png) [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence.
