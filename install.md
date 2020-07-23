@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-22"
+lastupdated: "2020-07-23"
 
 subcollection: discovery-data
 
@@ -39,11 +39,16 @@ subcollection: discovery-data
 
 You should install {{site.data.keyword.icp4dfull}} before installing the {{site.data.keyword.discovery-data_short}} service.
 
+| Service version | {{site.data.keyword.icp4dfull}} version |
+| ---- | ----|
+| {{site.data.keyword.discoveryshort}} 2.1.3 | {{site.data.keyword.icp4dfull}} 3.0.1 |
+| {{site.data.keyword.discoveryshort}} 2.1.2, 2.1.1, 2.1.0 | {{site.data.keyword.icp4dfull}} 2.5.0 |
+
 Full installation instructions: 
 
--  {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}} 3.0.1 [Installing {{site.data.keyword.discoveryshort}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}
+-  [Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}} 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}
 
--  {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}} 2.5.0.0 [Installing {{site.data.keyword.discoveryshort}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
+-  [Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}} 2.5.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
 
 
 Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 (or later) version. {{site.data.keyword.discoveryfull}} is FISMA High Ready.
@@ -57,15 +62,9 @@ For complete information about **Cloud Pak for Data administration**, see [Admin
 
 Review the security information in:
 
-[{{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}} 3.0.1 installation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}
+  -  [Security considerations in {{site.data.keyword.icp4dfull_notm}} 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/plan/security.html){: external} and [Installing the {{site.data.keyword.discoveryfull}} service](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}
 
-
-[{{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}} 2.5.0.0 installation](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
-
-
-[Security considerations in {{site.data.keyword.icp4dfull_notm}} 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/plan/security.html){: external}
-
-[Security considerations in {{site.data.keyword.icp4dfull_notm}} 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/security.html){: external}
+  -  [Security considerations in {{site.data.keyword.icp4dfull_notm}} 2.5.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/security.html){: external} and [Installing the {{site.data.keyword.discoveryfull}} service](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external}
 
 
 Encryption of data at rest must be handled by the storage provider.
@@ -84,7 +83,7 @@ Review the {{site.data.keyword.discoveryshort}} release notes and known issues:
 See the general software requirements listed here:
 
   -  [IBM® Cloud Pak for Data 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/plan/rhos-reqs.html#rhos-reqs__software){: external} 
-  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html#rhos-reqs__software){: external} 
+  -  [IBM® Cloud Pak for Data 2.5.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html#rhos-reqs__software){: external} 
   -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}
  
 
@@ -97,7 +96,7 @@ Portworx **must** be installed before you install {{site.data.keyword.discoverys
 See the system requirements listed here:
 
   -  [IBM® Cloud Pak for Data 3.0.1](https://www.ibm.com/support/knowledgecenter/SSQNUZ_3.0.1/cpd/plan/rhos-reqs.html){: external} 
-  -  [IBM® Cloud Pak for Data 2.5.0.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html){: external} 
+  -  [IBM® Cloud Pak for Data 2.5.0](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/plan/rhos-reqs.html){: external} 
   -  [IBM® Cloud Pak for Data 2.1.0.2](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/install/preinstall-overview.html){: external}
 
 
