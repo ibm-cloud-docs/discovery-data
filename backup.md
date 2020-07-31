@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-01"
+lastupdated: "2020-07-31"
 
 subcollection: discovery-data
 
@@ -211,7 +211,7 @@ To migrate your Box crawler, complete the following steps:
    {: screen}
 
 1. Open the file in a text editor, and complete the fields next to `clientId` and `keyId`. In `clientId_to_clientSecret`, enter the value of your `clientSecret` that corresponds to each `clientId`. In `keyId_to_passphrase`, enter the passphrase of the private key that corresponds to each `keyId`. If a passphrase is not set for a specific key, leave the field blank.
-1. Enter the following command to upload the JSON file that contains the Box configuration data and the .pem files:
+1. Enter the following command to upload the JSON file that contains both the Box configuration data and the .pem files:
    
    ```
    ./migrate-box-credential.sh migrate <json_file_name> <user_data_directory> <backup_file_name>
