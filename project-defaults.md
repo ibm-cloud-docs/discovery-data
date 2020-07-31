@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-07-30"
 
 subcollection: discovery-data
 
@@ -36,199 +36,57 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 
 **Basic project defaults**
 
-| Default | Document Retrieval | Document Retrieval (Discovery for Content Intelligence) | Conversational search | Content Mining | 
-| --- | --- | --- | --- | --- |
-| OCR |  off |  on | off | off |
-| Enrichments | Entities, Parts of speech  | Entities, Parts of speech, Table Understanding, and Contracts | None | Parts of speech |
-| Improvement tools | Facets (by Entity), Dynamic Facets, Passages | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval | Passages | None |
-| CSV settings | NA  | NA  | NA | No header, selected delimiters are comma and semicolon |
+| Default | Document Retrieval | Document Retrieval (Content Intelligence) | Conversational search | Content Mining | Custom |
+| --- | --- | --- | --- | --- | --- |
+| OCR |  off |  on | off | off | off |
+| Enrichments | Entities, Parts of speech  | Entities, Parts of speech, Table Understanding, and Contracts | None | Parts of speech | None  |
+| Improvement tools | Facets (by Entity), Dynamic Facets, Passages | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval | Passages | None | Passages |
+| CSV settings | NA  | NA  | NA | No header, selected delimiters are comma and semicolon | NA |
 
-## Default query parameters
+## Default query settings
 {: #query-defaults}
 
-| Query default | Document Retrieval | Document Retrieval (Discovery for Content Intelligence) | Conversational search | Content Mining | 
-| --- | --- | --- | --- | --- |
-| Passages [Enabled/Count] | true/10 | true/10  | true/10 | false/10 |
-| Fields | ["text", "title"] | ["text", "title"]  | ["text", "title"] | ["text", "title"] |
-| Characters  | 200  | 200  | 200  | 200 |
-| Per document | true  | true  | true | true |
-| Max per document | 2 | 2  | 2 | 2 |
-| - | - | - | - | - |
-| Table results [Enabled/Count] | false/10 | true/10  | false/10 | false/10 |
-| Per document | false  | false  | false | false |
-| - | - | - | - | - |
-| Aggregation | "term(enriched_text.entities.text,name:entities)"  | "[term(enriched_html.contract.elements.categories.label,count:25,name:categories)"  | "" | "" |
-| Suggested refinements [Enabled/Count] | true/10  | false/10 | false/10 | false/10 |
-| Spelling suggestions | true  | true  | false | true |
-| Highlight | false   | false  | false | false |
-| Count  | 10  | 10  | 10  | 10 |
-| Sort | ""  | ""   | ""  | "" |
-| Return | []  | []  | []  | [] |
+| Query default | Document Retrieval | Document Retrieval (Content Intelligence) | Conversational search | Content Mining | Custom |
+| --- | --- | --- | --- | --- | --- |
+| Passages</br>(`passages`) |  |   |  |  | |
+| Enabled</br>(`passages.enabled`) | true | true  | true | false | true |
+| Count</br>(`passages.count`)| 10 | 10  | 10 | 10 | 10 |
+| Fields</br>(`passages.fields`)  | ["text", "title"] | ["text", "title"]  | ["text", "title"] | ["text", "title"] | ["text", "title"] |
+| Characters</br>(`passages.characters`)  | 200  | 200  | 200  | 200 | 200 |
+| Per document</br>(`passages.per_document`) | true  | true  | true | true | true |
+| Max per document</br>(`passages.max_per_document`) | 1 | 1  | 1 | 1 | 1 |
+| | | | | | |
+| Table results</br>(`table_results`) | |   |  |  | |
+| Enabled</br>(`table_results.enabled`)| false | true  | false | false | false |
+| Count</br>(`table_results.count`)  | 10 | 10 | 10  | 10 | 10 | 10 |
+| Per document</br> (`table_results.per_document`) | 0  | 0  | 0 | 0 | 0 |
+| | | | | |
+| Aggregation</br>(`aggregation`) | "term(enriched_text.entities.text,</br>name:entities)"  | "[term(enriched_html.contract.elements.categories.label,</br>count:25,name:categories)"  | "" | "" | "" |
+| Suggested refinements</br>(`suggested_refinements`) |   |  |  |  | |
+| Enabled</br>(`suggested_refinements.enabled`) | true  | false | false | false | false | 
+| Count</br>(`suggested_refinements.count`) | 10 | 10  | 10 | 10 | 10 |
+| | | | | | |
+| Spelling suggestions</br>(`spelling_suggestions`) | true  | true  | false | true | true |
+| Highlight</br>(`highlight`) | false | false  | false | false | false |
+| Count</br>(`count`) | 10  | 10  | 10  | 10 |  10 |
+| Sort</br>(`sort`) | ""  | ""   | ""  | "" | "" |
+| Return</br>(`return`)| []  | []  | []  | [] | [] |
 
 ## Project component settings
 {: #component-defaults}
 
-See the [Configuration settings for components](https://{DomainName}/apidocs/discovery-data#configuration-settings-for-components){: external} method in the API reference for more information.
-
-**Document Retrieval** 
-
-```json
-{
-  "fields_shown": {
-    "body": {
-      "use_passage": true,
-      "field": ""
-    },
-    "title": {
-      "field": "title"
-    }
-  },
-  "autocomplete": true,
-  "structured_search": false,
-  "results_per_page": 5,
-  "aggregations": [{
-		"name": "entities",
-		"label": "Top Entities",
-		"multiple_selections_allowed": false
-  },{
-    "name": "_system_suggested_refinements",
-    "label": "Dynamic Facets",
-    "multiple_selections_allowed": true
-  },
-  {
-    "name": "_system_collections",
-    "label": "Collections",
-    "multiple_selections_allowed": true
-  }]
-}
-```
-{: codeblock}
+For more information, see the [Configuration settings for components](https://{DomainName}/apidocs/discovery-data#configuration-settings-for-components){: external} method in the API reference.
 
 
-**Document Retrieval (Discovery for Content Intelligence)** 
-
-```json
-{
-  "fields_shown": {
-    "body": {
-      "use_passage": true,
-      "field": ""
-    },
-    "title": {
-      "field": "title"
-    }
-  },
-  "autocomplete": true,
-  "structured_search": false,
-  "results_per_page": 5,
-  "aggregations": [{
-         "name": "categories",
-         "label": "Category",
-         "multiple_selections_allowed": true
-       },
-       {
-         "name": "natures",
-         "label": "Nature",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "contract_terms",
-         "label": "Contract Term",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "contract_payment_terms",
-         "label": "Contract Payment Term",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "contract_types",
-         "label": "Contract Type",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "contract_currencies",
-         "label": "Contract Currency",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "invoice_buyers",
-         "label": "Invoice Buyer",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "invoice_suppliers",
-         "label": "Invoice Supplier",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "invoice_currencies",
-         "label": "Invoice Currency",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "po_payment_terms",
-         "label": "Purchase Order Payment Term",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "po_buyers",
-         "label": "Purchase Order Buyer",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "po_suppliers",
-         "label": "Purchase Order Supplier",
-         "multiple_selections_allowed": false
-       },
-       {
-         "name": "po_currencies",
-         "label": "Purchase Order Currency",
-         "multiple_selections_allowed": false
-       }
-     ]
-}
-```
-{: codeblock}
-
-**Conversational search** 
-
-```json
-{
-  "fields_shown": {
-    "body": {
-      "use_passage": true,
-      "field": ""
-    },
-    "title": {
-      "field": "title"
-    }
-  },
-  "autocomplete": false,
-  "structured_search": false,
-  "results_per_page": 0,
-  "aggregations": []
-}
-```
-{: codeblock}
-
-**Content Mining**
-
-```json
-{
-  "fields_shown": {
-    "body": {
-      "use_passage": false,
-      "field": "text"
-    },
-    "title": {
-      "field": "document_id"
-    }
-  },
-  "autocomplete": true,
-  "structured_search": false,
-  "results_per_page": 0,
-  "aggregations": []
-}
-```
-{: codeblock}
+| Default | Document Retrieval | Document Retrieval (Content Intelligence) | Conversational search | Content Mining | 
+| --- | --- | --- | --- | --- | 
+| Fields shown</br>(`fields_shown`) |   |   |  |  | 
+| Title/field</br> (`fields_shown.title.field`) | `"title"`  | `"title"` | `"title"` | `"document_id"` | 
+| Body</br>(`fields_shown.body`) | |  |  |  | 
+| Use passage</br> (`fields_shown.body.use_passage`) | true  |  true | true  | false | 
+| Field</br> (`fields_shown.body.field`)| `""`  |  `""` | `""` | `text` | 
+| | | | | | |
+| Autocomplete</br>(`autocomplete`) | true  | true  | false | true | 
+| Structured search</br>(`structured_search`) | false  |  false | false  | false  | 
+| Results per page</br> (`results_per_page`) | 5  | 5  | 0 | 0 | 
+| Aggregations</br>(`aggregations.name`)</br>(`aggregations.label`)</br>(`aggregations.multiple_selections_allowed`) | "name": "entities"</br> "label": "Top Entities"</br> "multiple_selections_allowed": false </br> </br>"name": "_system_suggested_refinements"</br> "label": "Dynamic Facets"</br>"multiple_selections_allowed": true </br></br>"name": "_system_collections"</br>"label": "Collections"</br>"multiple_selections_allowed": true | "name": "categories"</br> "label": "Category"</br> "multiple_selections_allowed": true</br></br> "name": "natures"</br> "label": "Nature"</br>"multiple_selections_allowed": false</br></br>"name": "contract_terms"</br> "label": "Contract Term"</br> "multiple_selections_allowed": false</br></br>"name": "contract_payment_terms"</br>"label": "Contract Payment Term"</br>"multiple_selections_allowed": false</br> </br>"name": "contract_types"</br> "label": "Contract Type"</br> "multiple_selections_allowed": false</br></br> "name": "contract_currencies"</br> "label": "Contract Currency"</br>"multiple_selections_allowed": false</br></br>"name": "invoice_buyers"</br> "label": "Invoice Buyer"</br> "multiple_selections_allowed": false</br></br>"name": "invoice_suppliers"</br> "label": "Invoice Supplier"</br> "multiple_selections_allowed": false</br></br>"name": "invoice_currencies"</br> "label": "Invoice Currency"</br> "multiple_selections_allowed": false</br></br>"name": "po_payment_terms"</br> "label": "Purchase Order Payment Term"</br> "multiple_selections_allowed": false</br></br>"name": "po_buyers"</br> "label": "Purchase Order Buyer"</br> "multiple_selections_allowed": false</br></br>"name": "po_suppliers"</br> "label": "Purchase Order Supplier"</br> "multiple_selections_allowed": false</br></br> "name": "po_currencies"</br>"label": "Purchase Order Currency"</br>"multiple_selections_allowed": false | `[]` | `[]` | 
