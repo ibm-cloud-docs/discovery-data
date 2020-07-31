@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-07-31"
 
 subcollection: discovery-data
 
@@ -299,9 +299,9 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint OnPrem** 
     -  **Web Application Url** - The SharePoint web service URL. For example, `http://www.example.com/`.
     
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security** - By default, this switch is set to **Off** by default. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls):
+    - **Enable Document Level Security** - By default, this switch is set to **Off**. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls):
         - **LDAP server URL** - The LDAP server URL to connect to.
-        - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works. 
+        - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
         - **LDAP binding user password** - Password used to bind to the directory service.
         - **LDAP base DN** - Starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
         - **LDAP user filter** - User filter to search user entries in LDAP. If unspecified, the default value used is `(userPrincipalName={0})`.
