@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-08-04"
 
 subcollection: discovery-data
 
@@ -125,4 +125,4 @@ Optional: Click **More processing settings** to expand the menu, and then click 
 
 For additional information about supported data sources in {{site.data.keyword.discoveryshort}}, see the following links:
 - ![Cloud Pak for Data only](images/cpdonly.png) [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
-- ![IBM Cloud only](images/cloudonly.png) [Available data sources](/docs/discovery-data?topic=discovery-data-sources)
+- ![IBM Cloud only](images/cloudonly.png) [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources)
