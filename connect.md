@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-04"
 
 subcollection: discovery-data
 
@@ -43,7 +43,7 @@ In {{site.data.keyword.discovery-data_short}}, you can crawl documents you uploa
 
 Depending on your data source, the steps to configure a collection vary. See the section for your data source to learn what you must do to configure the authentication for a {{site.data.keyword.discovery-data_short}} collection.
 
-You can configure the following data sources:
+You can use {{site.data.keyword.discovery-data_short}} to crawl from the following data sources:
 
 -  [Box](/docs/discovery-data?topic=discovery-data-collection-types#connectbox)
 -  [Salesforce](/docs/discovery-data?topic=discovery-data-collection-types#connectsf)

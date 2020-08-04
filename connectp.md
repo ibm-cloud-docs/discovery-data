@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-08-04"
 
 subcollection: discovery-data
 
@@ -39,6 +39,22 @@ subcollection: discovery-data
 
 You can connect to a data source and pull documents on a schedule into {{site.data.keyword.discoveryshort}} by configuring a collection to associate with that source. You can configure each collection with one data source. {{site.data.keyword.discoveryshort}} pulls documents from the data source using a process called crawling. Crawling is the process of systematically browsing and retrieving documents from the specified start location. {{site.data.keyword.discoveryshort}} only crawls items that you explicitly specify. The first time that a crawler crawls a data source is a full crawl, and every time that the crawler runs after the full crawl, per the crawl schedule, is a refresh, also called a recrawl.
 
+You can use {{site.data.keyword.discoveryshort}} to crawl from the following data sources:
+
+-  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
+-  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
+-  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
+-  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
+-  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
+
+You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections to read next:
+
+1.  Read the [Data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements).
+2.  Read the requirements for your data source. For the available data sources, see the previous list.
+3.  Read the instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling. For instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling, see [Creating a collection](/docs/discovery-data?topic=discovery-data-collections#createcollection).
+
+You can use an IBM App Connect default connector to send data from a large set of popular data sources to {{site.data.keyword.discoveryshort}} by creating flows within the App Connect tooling. Note that creating a separate App Connect instance is required to use this App Connect default connector and that any costs that you incur when you use a paid App Connect instance are not included with the cost of using {{site.data.keyword.discoveryshort}}. Additionally, except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with App Connect that you perform on your own. For information about integrating App Connect with {{site.data.keyword.discoveryshort}} or for integration support or questions, see [Using IBM App Connect with {{site.data.keyword.discoveryfull}}](https://developer.ibm.com/integration/docs/app-connect/how-to-guides-for-apps/use-ibm-app-connect-watson-discovery/){: external}. For the available data sources that you can use with the App Connect default connector to send data to {{site.data.keyword.discoveryshort}}, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}.
+
 ## Data source requirements
 {: #public-requirements}
 
@@ -59,27 +75,6 @@ Microsoft SharePoint Online          | Yes                                      
 Web Crawl                            | No                                                | Websites, website subdirectories
 IBM Cloud Object Storage             | Yes                                               | Buckets, files
 {: caption="Table 1. Data sources that support crawling new and modified documents during refresh and objects that can be crawled" caption-side="top"}
-
-
-## Available data sources
-{: #available-sources}
-
-You can use {{site.data.keyword.discoveryshort}} to crawl from the following data sources:
-
--  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
--  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
--  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
--  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
--  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
-
-You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections of this document to read next:
-
-1.  Read the [Data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements).
-2.  Read the requirements for your data source. For the available data sources, see the list above.
-3.  Read the instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling. For instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling, see [Creating a collection](/docs/discovery-data?topic=discovery-data-collections).
-
-You can use an IBM App Connect default connector to send data from a large set of popular data sources to {{site.data.keyword.discoveryshort}} by creating flows within the App Connect tooling. Note that creating a separate App Connect instance is required to use this App Connect default connector and that any costs that you incur when you use a paid App Connect instance are not included with the cost for using {{site.data.keyword.discoveryshort}}. Additionally, except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with App Connect that you perform on your own. For information about integrating App Connect with {{site.data.keyword.discoveryshort}} or for integration support or questions, see [Using IBM App Connect with {{site.data.keyword.discoveryfull}}](https://developer.ibm.com/integration/docs/app-connect/how-to-guides-for-apps/use-ibm-app-connect-watson-discovery/){: external}. For the available data sources that you can use with the App Connect default connector to send data to {{site.data.keyword.discoveryshort}}, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}.
-
 
 ### Salesforce
 {: #connectsfpublic}
