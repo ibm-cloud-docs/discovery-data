@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-05"
 
 subcollection: discovery-data
 
@@ -61,7 +61,7 @@ Multi-word terms are supported only for bidirectional expansions.
 {: note}
 
 This file can be used as a starting point when building a query expansion list:
-<a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery/expansions.json" download>expansions.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. You can modify this file to create a custom query expansion list.
+<a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery/expansions.json" download>expansions.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. You can modify this file to create a custom query expansion list.
 
 Bidirectional example:
 ```JSON
@@ -134,22 +134,22 @@ Example custom stopword list:
 {"stopwords": ["a", "an," "the", "ibm", "what", "how", "when", "can", "should", ...]}
 ```
 
-This file contains all the default English stopwords <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_en.json" download>custom_stopwords_en.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. It can be used as a starting point when building a custom stopword file in English. Creating a custom stopword file that does not include very common terms like `a` and `the` can lead to reduced query performance, so it is recommended that you keep these words in your custom stopword file. 
+This file contains all the default English stopwords <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_en.json" download>custom_stopwords_en.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. It can be used as a starting point when building a custom stopword file in English. Creating a custom stopword file that does not include very common terms like `a` and `the` can lead to reduced query performance, so it is recommended that you keep these words in your custom stopword file. 
 
 Following are stopword files for several other supported languages. They all include the default stopwords for that language:
 
--  Arabic: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ar.json" download>custom_stopwords_ar.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
--  Czech: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_cs.json" download>custom_stopwords_cs.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  Dutch: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_nl.json" download>custom_stopwords_nl.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  French: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_fr.json" download>custom_stopwords_fr.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  German: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_de.json" download>custom_stopwords_de.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
--  Italian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_it.json" download>custom_stopwords_it.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  Japanese: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ja.json" download>custom_stopwords_ja.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  Polish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_pl.json" download>custom_stopwords_pl.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  Portuguese: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_pt.json" download>custom_stopwords_pt.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
--  Romanian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ro.json" download>custom_stopwords_ro.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  Russian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ru.json" download>custom_stopwords_ru.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
--  Spanish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_es.json" download>custom_stopwords_es.json <img src="../../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
+-  Arabic: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ar.json" download>custom_stopwords_ar.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
+-  Czech: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_cs.json" download>custom_stopwords_cs.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Dutch: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_nl.json" download>custom_stopwords_nl.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  French: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_fr.json" download>custom_stopwords_fr.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  German: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_de.json" download>custom_stopwords_de.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
+-  Italian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_it.json" download>custom_stopwords_it.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Japanese: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ja.json" download>custom_stopwords_ja.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Polish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_pl.json" download>custom_stopwords_pl.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Portuguese: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_pt.json" download>custom_stopwords_pt.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
+-  Romanian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ro.json" download>custom_stopwords_ro.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Russian: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_ru.json" download>custom_stopwords_ru.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>.
+-  Spanish: <a target="_blank" href="https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_es.json" download>custom_stopwords_es.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a>. 
 
 See [supported languages](/docs/discovery-data?topic=discovery-data-language-support) for the list of all languages supported by {{site.data.keyword.discoveryshort}}. Several supported languages do not have a default stopwords list.
 
