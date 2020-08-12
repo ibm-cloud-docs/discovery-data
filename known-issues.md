@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-11"
+lastupdated: "2020-08-12"
 
 keywords: known issues
 
@@ -120,7 +120,7 @@ Also see the issues identified in all previous releases.
   -  The Dynamic facets toggle should not appear in Content Mining projects.
   -  A minimum of 50-100 documents should be ingested to see valid dynamic facets generated.
   -  If you click **Stop** to stop a crawler and the converter processes slowly or has errors, you might see a status of the crawler running.
-  -  If you upload a document to your collection, the total size limit of all non-HTML fields in the document is 1MB, and the total size limit of all HTML fields is 5MB. If you exceed either limit, you receive an error message stating `The document has fields/HTML fields that exceed the 1 MB/5 MB limit.`, and the document is not ingested. For assistance on increasing either size limit, contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
+  -  The total size limit of all non-HTML fields in uploaded and crawled documents is 1MB, which is equivalent to 1,048,676 bytes, and the total size limit of all HTML fields in these documents is 5MB. If you exceed either limit, you receive an error message stating `The document has fields/HTML fields that exceed the 1 MB/5 MB limit.`, and the document is not ingested. For assistance on increasing either size limit, contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
 
 Also see the issues identified in all previous releases.
 
