@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-14"
 
 subcollection: discovery-data
 
@@ -732,8 +732,11 @@ In {{site.data.keyword.discoveryshort}}, after you select **Local File System** 
 ### FileNet P8
 {: #filenet-connect}
 
-You can use this option to crawl FileNet P8. {{site.data.keyword.discoveryshort}} only crawls the file types that it supports.
+You can use this option to crawl FileNet P8 version 5.5.0. {{site.data.keyword.discoveryshort}} only crawls the file types that it supports.
 {: shortdesc}
+
+{{site.data.keyword.discoveryshort}} does not support role-based security when you crawl FileNet P8.
+{: important}
 
 
 #### Configuring a FileNet P8 collection
