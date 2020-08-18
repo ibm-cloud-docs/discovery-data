@@ -36,7 +36,7 @@ subcollection: discovery-data
 
 <!-- 2.1.3 c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
 
-![Cloud Pak for Data only](images/cpdonly.png)
+![Cloud Pak for Data only](images/cpdonly.png)</br> 
 
 In {{site.data.keyword.discovery-data_short}}, you can crawl documents you upload or connect to from a remote data source. The following sections introduce supported data sources, pre-authentication information, instructions about how to configure a collection, and links to third-party documentation for more information. For information about IBM Cloud data sources, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources).
 {:shortdesc}
