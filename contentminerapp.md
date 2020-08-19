@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-06-19"
+lastupdated: "2020-08-19"
 
 subcollection: discovery-data
 
@@ -34,6 +34,10 @@ subcollection: discovery-data
 
 The {{site.data.keyword.discoveryfull}} content mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
 {: shortdesc}
+
+This video provides an overview of content mining:
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Discovery - Content Mining" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/i5418xJoeHg" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 This page describes using the content mining application. For information about creating a {{site.data.keyword.discoveryshort}} content mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 {: tip}
