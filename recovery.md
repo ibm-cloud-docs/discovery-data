@@ -77,7 +77,7 @@ If you also import documents by doing scheduled crawls of external data sources,
 
 Refer to this task to back up your training data queries and examples for a trained project. Training data is used for explicit training of your projects and is stored on a per project basis. To extract the training data, use the API to download the queries and the ratings from {{site.data.keyword.discoveryshort}}. To back up training data queries and examples, complete the following steps:
 
-1. Download your training data by using the [list training queries](https://{DomainName}/apidocs/discovery-data#list-training-queries){: external} API.
+1. Download your training data by using the [list training queries](https://{DomainName}/apidocs/discovery-data#listtrainingqueries){: external} API.
 1. Save your training queries and examples locally.
 
 The document IDs that you use in your training data point to the documents in your current project. Use the same IDs in your new projects to ensure that the correct documents are referenced. If the IDs do not match, your restored relevancy training will not work.
@@ -96,7 +96,7 @@ In the case of stopwords, back up the text file. For more information about sto
 ### Collection information
 {: #collectioninfo}
 
-This is not required, but it is a good best practice to [retrieve the status](https://{DomainName}/apidocs/discovery-data#get-collection){: external} for each collection on a regular basis and store the information locally. By retaining these statistics, you can later verify that your restoration processes were successful if needed.
+This is not required, but it is a good best practice to [retrieve the status](https://{DomainName}/apidocs/discovery-data#getcollection){: external} for each collection on a regular basis and store the information locally. By retaining these statistics, you can later verify that your restoration processes were successful if needed.
 {: tip} 
 
 
@@ -114,19 +114,19 @@ Consider using your backups to restore to a new {{site.data.keyword.discoverysho
 
 To begin restoration, first start by reviewing your list of collections and associated data sources, as well as your file backups.
 
--  Create your projects and collections. Use the {{site.data.keyword.discoveryshort}} tooling, or the API. See [Create a project](https://{DomainName}/apidocs/discovery-data#create-a-project){: external} and [Create a collection](https://{DomainName}/apidocs/discovery-data#create-a-collection){: external}.
+-  Create your projects and collections. Use the {{site.data.keyword.discoveryshort}} tooling, or the API. See [Create a project](https://{DomainName}/apidocs/discovery-data#createproject){: external} and [Create a collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external}.
 -  Add back stopwords into the collections. See [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).  
 -  If you use custom query expansion, add your query expansions. See [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
 -  If you use any custom entity models from {{site.data.keyword.knowledgestudiofull}} for enrichment, reimport that model into your {{site.data.keyword.discoveryshort}} instance. For details, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
 
 After you set up your projects and collections as they were before, begin ingesting your source documents. Depending upon how you ingested your documents previously, you can do so by using your own solution or one of the following methods:
--  The [API](https://{DomainName}/apidocs/discovery-data#add-a-document){: external}
+-  The [API](https://{DomainName}/apidocs/discovery-data#adddocument){: external}
 -  A [connector](/docs/discovery-data?topic=discovery-data-sources)
 
 ### Restoring training data
 {: #restoretraining}
 
-After you restore your projects, you can begin the process of recreating your relevancy training models. To restore your training data queries and examples, recreate your individual training queries and the examples by using the [create training query](https://{DomainName}/apidocs/discovery-data#create-training-query){: external} API, or you can restore your queries and examples on {{site.data.keyword.discoveryshort}}. For more information about restoring your training data by using {{site.data.keyword.discoveryshort}}, see the instructions for accessing the **Train** page in [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
+After you restore your projects, you can begin the process of recreating your relevancy training models. To restore your training data queries and examples, recreate your individual training queries and the examples by using the [create training query](https://{DomainName}/apidocs/discovery-data#createtrainingquery){: external} API, or you can restore your queries and examples on {{site.data.keyword.discoveryshort}}. For more information about restoring your training data by using {{site.data.keyword.discoveryshort}}, see the instructions for accessing the **Train** page in [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
 
 For the restore to work properly, note that the document IDs that you use in your training data point to the documents in your current project. Use the same IDs in your new projects to ensure that the correct documents are referenced. If the IDs do not match, your restored relevancy training will not work.
 {: important}
