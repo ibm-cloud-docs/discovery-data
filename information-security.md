@@ -190,7 +190,7 @@ You cannot delete labeled data using the {{site.data.keyword.discoveryshort}} to
 {: note}
 
 1. Use the `DELETE /v2/user_data` operation and provide the `customer_id` of the data you wish to delete. 
-   -  `DELETE /v2/user_data` deletes all data associated with a particular `customer_id` within that service instance, as specified in [Methods that support labeling data](/docs/discovery-data?topic=discovery-data-information-security#pi_methods). Also see **Delete labeled data** in the [API reference](https://{DomainName}/apidocs/discovery-data#delete-labeled-data){: external}
+   -  `DELETE /v2/user_data` deletes all data associated with a particular `customer_id` within that service instance, as specified in [Methods that support labeling data](/docs/discovery-data?topic=discovery-data-information-security#pi_methods). Also see **Delete labeled data** in the [API reference](https://{DomainName}/apidocs/discovery-data#deleteuserdata){: external}
 1. To ensure all labeled content is correctly removed, run `user_delete` after the `processing` and `pending` counts for all collections in your environment return `0`.
 
 Notes on deleting labeled data:

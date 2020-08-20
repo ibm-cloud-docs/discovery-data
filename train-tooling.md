@@ -58,7 +58,7 @@ Natural language query results will return a `confidence` score. For more inform
 Adding a custom stopwords list can also improve the relevance of results for natural language queries. For more information, see [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).
 {: tip}
 
-If you would prefer to use the {{site.data.keyword.discoveryshort}} API to train {{site.data.keyword.discoveryshort}}, see the [API reference](https://{DomainName}/apidocs/discovery-data#list-training-queries){: external}.
+If you would prefer to use the {{site.data.keyword.discoveryshort}} API to train {{site.data.keyword.discoveryshort}}, see the [API reference](https://{DomainName}/apidocs/discovery-data#listtrainingqueries){: external}.
 
 ## Adding queries and rating results
 {: #results}
@@ -90,7 +90,7 @@ Write your training queries the same way your users would ask them, for example:
 If two or more users attempt to train identical queries at the same time, one of the users will overwrite the others.
 {: note}
 
-You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training queries in your collection at one time, you must do so using the API. For more information, see [Delete training queries](https://{DomainName}/apidocs/discovery-data#delete-training-queries){: external}. 
+You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training queries in your collection at one time, you must do so using the API. For more information, see [Delete training queries](https://{DomainName}/apidocs/discovery-data#deletetrainingqueries){: external}. 
 
 ## Testing and iterating on the relevancy of results
 {: #testing-results}
@@ -144,7 +144,7 @@ The Curations feature is beta functionality.
 
 Curations can be used to specify the exact document returned in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query will always be `1.00000`.
 
-This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#create-curation){: external} in the API reference.
+This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#createcuration){: external} in the API reference.
 
 This example shows how a curation is added with the API. When querying with the same or similar `natural_language_query` the document with the `document_id` of `document_id1234` is returned.
 

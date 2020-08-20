@@ -69,7 +69,7 @@ If you want to access an existing collection, complete the following steps:
 1. Select the **Manage collections** icon on the navigation panel. Existing collections display the document count and last updated date.
 1. Select the collection you need. The **Activity** tab displays.
 
-For information about creating a collection by using the API, see [Create a collection](https://{DomainName}/apidocs/discovery-data#create-a-collection){: external}.
+For information about creating a collection by using the API, see [Create a collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external}.
 
 ## Supported file types and general requirements
 {: #supportedfiletypes}

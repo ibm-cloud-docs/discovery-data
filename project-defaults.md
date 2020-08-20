@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Default project settings
 {: #project-defaults}
 
-To learn more about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects) and the [Create a project](https://{DomainName}/apidocs/discovery-data#create-a-project){: external} method in the API reference.
+To learn more about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects) and the [Create a project](https://{DomainName}/apidocs/discovery-data#createproject){: external} method in the API reference.
 
 **Basic project defaults**
 
@@ -75,7 +75,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 ## Project component settings
 {: #component-defaults}
 
-For more information, see the [Configuration settings for components](https://{DomainName}/apidocs/discovery-data#configuration-settings-for-components){: external} method in the API reference.
+For more information, see the [Configuration settings for components](https://{DomainName}/apidocs/discovery-data#getcomponentsettings){: external} method in the API reference.
 
 
 | Default | Document Retrieval | Document Retrieval (Content Intelligence) | Conversational search | Content Mining | 

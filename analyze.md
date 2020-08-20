@@ -34,6 +34,6 @@ subcollection: discovery-data
 
 ![Cloud Pak for Data only](images/cpdonly.png)
 
-The Analyze endpoint allows you to process text documents through {{site.data.keyword.discoveryshort}}'s conversion and enrichment pipeline without requiring the document to be stored. This is ideal for business automation purposes, for example if you want to classify emails - you can use Analyze to synchronously call {{site.data.keyword.discoveryshort}}, get a classification of the email, and use the output of that classification in your business logic. For details, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#analyze-a-document){: external}.
+The Analyze endpoint allows you to process text documents through {{site.data.keyword.discoveryshort}}'s conversion and enrichment pipeline without requiring the document to be stored. This is ideal for business automation purposes, for example if you want to classify emails - you can use Analyze to synchronously call {{site.data.keyword.discoveryshort}}, get a classification of the email, and use the output of that classification in your business logic. For details, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#analyzedocument){: external}.
 
 Use of the Analyze API affects license usage, please reference the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery){: external}.

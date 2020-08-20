@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Query parameters
 {: #query-parameters}
 
-These parameters are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+These parameters are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
 Queries written in the {{site.data.keyword.discoveryshort}} Query Language can include both search and structure parameters.

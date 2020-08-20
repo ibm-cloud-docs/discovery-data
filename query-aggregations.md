@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Query aggregations
 {: #query-aggregations}
 
-These aggregations are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query-a-project){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+These aggregations are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
 Aggregations return a set of data values. For the complete list of available aggregations, see the [Query reference](/docs/discovery-data?topic=discovery-data-query-reference#aggregations).

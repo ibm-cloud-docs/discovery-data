@@ -73,7 +73,7 @@ The improvement tools available will vary depending on the **Project type** sele
    Create hierarchical categories within your data. You can also use facets generated from the results of your search (Dynamic facets). For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets)
 -  **Search bar**
    Options: 
-     -  **Autocomplete** - Suggested autocompletion of queries as they are typed. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#get-autocomplete-suggestions){: external}.
+     -  **Autocomplete** - Suggested autocompletion of queries as they are typed. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#getautocompletion){: external}.
      -  **Spelling suggestions** - Spelling suggestions will be offered for likely typos when searching.
 -  **Search results**
    Options:
