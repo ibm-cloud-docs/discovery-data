@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-19"
 
 subcollection: discovery-data
 
@@ -54,6 +54,10 @@ When you create a collection, {{site.data.keyword.discoveryshort}} pulls documen
    -  [IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources)
    -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 1. Select **Create collection**, which starts the crawling process. The **Activity** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.
+
+This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Discovery - Connect to the data source you want" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/MPCOwMgn1p4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 ![Cloud Pak for Data only](images/cpdonly.png) The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
 {: note}

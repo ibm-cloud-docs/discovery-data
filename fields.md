@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-11"
+lastupdated: "2020-08-19"
 
 subcollection: discovery-data
 
@@ -36,6 +36,10 @@ subcollection: discovery-data
 You can use Smart Document Understanding (SDU) to quickly train {{site.data.keyword.discoveryfull}} to extract fields in your documents, which will improve the answers that your application returns. The specified fields can also be enriched.
 
 With SDU, you can annotate fields within your documents to train custom conversion models. As you annotate, Watson is learning and will start predicting annotations. After an SDU model is created, it can be [exported](/docs/discovery-data?topic=discovery-data-configuring-fields#import) and used on other collections.
+
+This video provides a quick overview of Smart Document Understanding:
+
+<iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Discovery - Extract Answers From Large Document in 5 Minutes" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/Jpr3wVH3FVA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
 
 PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
