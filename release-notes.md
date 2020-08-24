@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-08-24"
 
 keywords: release notes, known issues
 
@@ -67,7 +67,7 @@ This release of IBM Cloud is available for Premium instances of {{site.data.keyw
 
 New features in this release:
 
-  -  New Project-based interface, which provides you with an out-of-the-box configuration optimized for three common use cases: Document Retrieval, Conversational Search, and Content Mining. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+  -  New Project-based interface, which includes configurations optimized for three common use cases: Document Retrieval, Conversational Search, and Content Mining. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
   -  Content Mining: This entirely new capability of Watson {{site.data.keyword.discoveryshort}} allows you to find insights in your data when you may not even know the question to ask. The powerful correlation tooling will help you unlock value from large unstructured data sets. For details, see [Mining content](/docs/discovery-data?topic=discovery-data-contentminerapp).
   -  Tables as Answers: Snippets of text aren't helpful if they are found in a table, so {{site.data.keyword.discoveryshort}} instead returns a formatted table as an answer if your question is best answered by a table. For more information, see [Table retrieval](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
   -  Dynamic Faceted Search: Underspecified queries are very common. Dynamic Faceted Search automatically categorizes your search results into intelligence facets without training by understanding how they are used in the sentences. See [Facets in Document retrieval projects](/docs/discovery-data?topic=discovery-data-facets#facetdr).
@@ -82,7 +82,7 @@ Features not available in this release:
 
   -  Deduplication is not available in this release.
   -  Anomaly Detection is not offered.
-  -  Watson Discovery News is no longer available out-of-the-box.
+  -  Watson Discovery News is no longer included.
   -  Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
   -  The SharePoint 2016 On-Premise and Box data sources are not available at this time.
 
