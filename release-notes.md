@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-31"
 
 keywords: release notes, known issues
 
@@ -58,6 +58,20 @@ The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+### 2.1.4 release, 31 August 2020 ![Cloud Pak for Data only](images/cpdonly.png)
+{: #31aug2020}
+
+**{{site.data.keyword.discovery-data_long}} version 2.1.4 is available.**
+
+Changes made in this release:
+
+-  **Notes connector** added - Crawl Notes version 9.0.1 systems. For more information, see [Notes connector](/docs/discovery-data?topic=discovery-data-collection-types#connectnotes).
+-   Multiple improvements to several connectors: 
+     -   Added the **Enable proxy settings** option to the [Box](/docs/discovery-data?topic=discovery-data-collection-types#connectbox), [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-collection-types#connectsp), and [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-collection-types#connectsp_op) connectors.
+     -   Added support for multiple tables and the Row filter option to the [Database connector](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect).
+     -   Added three new authentication types to the [Web crawler](/docs/discovery-data?topic=discovery-data-collection-types#connectwebcrawl): Basic authentication, NTLM authentication, and FORM authentication.
+-   You can now monitor the usage of the Analyze API using the tooling. For more information, see [API usage](/docs/discovery-data?topic=discovery-data-projects#api-usage).
+
 
 ### IBM Cloud Premium General Availability (GA) release, 16 July 2020 ![IBM Cloud only](images/cloudonly.png)
 {: #16jul2020}
@@ -96,7 +110,7 @@ Features not available in this release:
 Changes made in this release:
 
 -  Added basic support for Finnish and Hebrew. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
--  The Analyze endpoint, which supports stateless document ingestion workflows. For details, see the [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi). Use of the Analyze API affects license usage, please reference the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery){: external}.
+-  The Analyze endpoint, which supports stateless document ingestion workflows. For details, see the [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi). The Analyze API supports JSON documents only. Use of the Analyze API affects license usage, please reference the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery){: external}.
 -  The content mining application includes two new options: [Cyclic time scale](/docs/discovery-data?topic=discovery-data-contentminerapp#cmotsdb) on the Time series dashboard, and the [Contextual view](/docs/discovery-data?topic=discovery-data-contentminerapp#contextual-view) tab.
 -  For **Content Mining** projects only, the **Improve and customize** page includes a shortcut: the **Launch application** button. Previously, you were required to open the **Integrate and deploy** page, select the **Launch application** tab, and click the **Launch** button.
 -  The segment limit when splitting documents has been increased to 1,000. For details, see **Improve query results by splitting your documents** in [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings). 

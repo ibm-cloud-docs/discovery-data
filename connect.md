@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-31"
 
 subcollection: discovery-data
 
@@ -54,6 +54,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 -  [Windows File System](/docs/discovery-data?topic=discovery-data-collection-types#windowsfilesystemconnect)
 -  [Local File System](/docs/discovery-data?topic=discovery-data-collection-types#localfilesystemconnect)
 -  [FileNet P8](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect)
+-  [Notes](/docs/discovery-data?topic=discovery-data-collection-types#connectnotes)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 -  [Reuse data from an existing collection](/docs/discovery-data?topic=discovery-data-collection-types#reuse)
 -  [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
@@ -71,7 +72,7 @@ You can specify an additional option for this collection:
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
 -  The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file.
--  [Document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), and FileNet P8.
+-  [Document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
 -  When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
 -  Depending on the type of installation (default or high availability), the number of collections you can ingest simultaneously varies. A default installation includes 1 ingestion pod, which allows three collections to be processed simultaneously. A high availability installation includes 2 ingestion pods, which can process six collections simultaneously.
 
@@ -164,6 +165,13 @@ In {{site.data.keyword.discoveryshort}}, after you select **Box** as the collect
         - To crawl a specific folder, enter `box://app.box.com/user/USER_ID/folder/FOLDER_ID/FolderName`.
         - To crawl a specific user, enter `box://app.box.com/user/USER_ID/`.
 
+1. Optional: Set the following switch in **Proxy settings**:
+    -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
+        -  **Username** - Optional: The username that you use to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of the proxy server.
+        -  **Password** - Optional: The password that you use to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of the proxy server.
+        -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
+        -  **Proxy server port number** - The network port that you want to connect to on the proxy server.
+
 1. Optional: Set the following switch in **Security**:
     - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When this option is enabled, your users can crawl and query content that they have access to when logged in to Box. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 1. Click **Finish**.
@@ -235,8 +243,14 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint Online** 
     -  **Username** - The username of the SharePoint user with  access to all sites and lists that need to be crawled and indexed.
     -  **Password** - The password of the SharePoint user. This value is never returned and is used only when creating or modifying credentials.
 1. Complete the following fields in **Specify what you want to crawl**:
-    -  **Site Collection Url** - The SharePoint web service URL. For example, `http://www.example.com/`. 
+    -  **Site Collection Url** - The SharePoint web service URL, for example `http://www.example.com/`.
     -  **Site Collection Name** - The name you must obtain from site collection settings. The name the site collection uses.
+1. Optional Set the following switch in **Proxy settings**:
+    -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
+         -  **Username** - Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
+         -  **Password** - Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
+         -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
+         -  **Proxy server port number** -  The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
     -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When this option is enabled, your users can crawl and query content that they have access to. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
         - **Application ID** - The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](/docs/discovery-data?topic=discovery-data-collection-types#register-sp) for instructions.
@@ -294,17 +308,23 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint OnPrem** 
     -  **Enable SAML authentication** - By default, this switch is set to **Off**. When set to **On**, you can use SAML claims-based authentication. The default is NTLM authentication.
          - **Identity Provider endpoint** - The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
          - **Relying Party endpoint** - Optional: The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
-         - **Relying Party Trust identifier** - The URL of the Relying Party Trust identifier. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
+         - **Relying Party Trust identifier** - The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
 1. Complete the following field in **Specify what you want to crawl**:
     -  **Web Application Url** - The SharePoint web service URL. For example, `http://www.example.com/`.
     
+1. Optional: Set the following switch in **Proxy settings**:
+    -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
+         -  **Username** - Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
+         -  **Password** - Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
+         -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
+         -  **Proxy server port number** -  The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
     - **Enable Document Level Security** - By default, this switch is set to **Off**. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls):
-        - **LDAP server URL** - The LDAP server URL to connect to.
+        - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
         - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
-        - **LDAP binding user password** - Password used to bind to the directory service.
-        - **LDAP base DN** - Starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
-        - **LDAP user filter** - User filter to search user entries in LDAP. If unspecified, the default value used is `(userPrincipalName={0})`.
+        - **LDAP binding user password** - The password used to bind to the directory service.
+        - **LDAP base DN** - The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
+        - **LDAP user filter** - The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
 
           Before adding users so they can query using document level security, you need to authorize your app by connecting to the LDAP in your app and handling it. For more information about configuring a connection to your LDAP server in your app, see [Connecting to your LDAP server](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/admin/ldap.html).
           {: important}
@@ -327,13 +347,36 @@ Use this option to crawl public websites that do not require a password. The web
 In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the collection type, enter the following information:
 
 1. Complete the following field in **Specify where you want to crawl**:
-    -  **Start URLs** - The URLs where the crawler begins crawling. By default, the web crawl can crawl subtrees, and URLs can only be crawled from the path supplied in the seed. Use the full URL, for example `http://www.example.com/`. The start URL in the web crawl has two limitations as to what is crawled:
+    -  **Starting URLs** - The URLs where the crawler begins crawling. By default, the web crawl can crawl subtrees, and URLs can only be crawled from the path supplied in the seed. Use the full URL, for example `http://www.example.com/`. The start URL in the web crawl has two limitations as to what is crawled:
        - It crawls the same domain name as the start URL.
-       - It crawls all URL content up to and including the last slash (`/`) in **Start URLs**. If your start URL has a subtree, the web crawl does not crawl that subtree, unless you specify its URL in **Start URLs**.
+       - It crawls all URL content up to and including the last slash (`/`) in **Starting URLs**. If your start URL has a subtree, the web crawl does not crawl that subtree, unless you specify its URL in **Starting URLs**.
 
-1. Click the **Add** button to add one or more start URLs.
+1. Click the **Add** button to add one or more starting URLs. After you add one or more starting URLs, you can click **Authentication settings** and select one of three authentication types to apply to your chosen starting URL: **Basic authentication**, **NTLM authentication**, or **FORM authentication**. Complete the following fields for your chosen authentication type:
+   
+   **Basic authentication** - This setting is used for basic authentication.
+     -  **Username** - The username of the user for authentication.
+     -  **Password** - The password of the user for authentication.
+
+   **NTLM authentication** - This setting is used for NTLM authentication.
+     -  **Username** - The username of the user for authentication.
+     -  **Password** - The password of the user for authentication.
+     -  **NTLM domain name** - The NTLM domain name that belongs to the user who is authenticating.
+     -  **NTLM host name** - The host name of the NTLM server.
+
+   **FORM authentication** - This setting is used for forms-based authentication.
+     1. In **Form type**, select one of the following options:
+        -  **Direct** - Click this option if you do not want to fetch the login page.
+        -  **Indirect** - Click this option if you want to fetch the login page and you want to fill the parameters in the login form.
+     1. Complete the following fields:
+        -  **Form login url** - This field is required if you select the **Indirect** form type.
+        -  **Form action url** - The form action URL that is required to submit the form.
+        -  **Form name** - This field is required if you select the **Indirect** form type.
+     1. In **Form method**, select either **POST** or **GET**.
+     1. Complete the following fields:
+        -  **Form parameters** - The list of the key-value pairs of form parameters. Complete the **Key** and **Value** fields, and click **+** to add one or more form parameters.
+   
 1. Optional: Under **Proxy Settings**, set the following switch:
-    -  **Enable Proxy Settings** - Is set to **Off** by default. When you set **Enable Proxy Settings** to **On**, you activate proxy authentication for the start URLs that you want to crawl.
+    -  **Enable Proxy Settings** - Is set to **Off** by default. When you set **Enable Proxy Settings** to **On**, you activate proxy authentication for the starting URLs that you want to crawl.
        - **Username** - The username that you use to authenticate with a proxy server. You can obtain your username from the website administrator.
        - **Password** - The password that you use to authenticate with a proxy server. You can obtain your password from the website administrator.
        - **Proxy server domain(s)** - The domain(s) that the host resides in. You can specify a wildcard in this field, such as an asterisk (`*`) to crawl all domains or a leading asterisk (`*.server1.bar.com`) to crawl domains that match a pattern.
@@ -347,7 +390,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the c
        {: tip}
 
     -  **URL Path Depth** - The depth of a website to crawl, indicated by subtrees in a link. For example, `https://www.example.com/some/more/examples/index.html` has a path depth of 4, `/some/more/examples/index`. You can only enter a positive value. If unspecified, the default value is `5`. The maximum path depth is `20`.
-    -  **Maximum hops** - The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Start URLs** to crawl the web page.
+    -  **Maximum hops** - The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Starting URLs** to crawl the web page.
 
 1. Click **Finish**.
 
@@ -385,23 +428,37 @@ Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; al
 #### Configuring a Database collection
 {: #configuredatabase}
 
+Before you complete the fields in **Enter your credentials**, you might want to check that the user credentials are associated with a user who has restricted permissions to access the tables that you want to crawl.
+
+Before you complete the fields in **Specify what you want to crawl**, keep the following points in mind if you crawl multiple tables:
+
+- You can crawl multiple tables in a collection, and you can specify tables that have different schema, or sets of columns.
+- If you crawl multiple tables that have columns with the same name but different data types, the data in one of the tables is excluded from the index. For example, if you have two tables that have columns called `DATA` and the `DATA` column in one table is populated with dates and the column in the other table is populated with strings, the data in one of the tables is excluded from the index. In this case, to resolve a column name conflict, use a `VIEW`.
+
+Only in content mining projects, columns that have such a conflict are assigned fields that have a data type suffix, such as `DATA_string`. To see if data types are excluded from the index, click **Warnings and errors** in the **Activity** tab.
+{: note}
+
 In {{site.data.keyword.discoveryshort}}, after you select **Database** as the collection type, enter the following information:
 
 1. Complete the following fields in **Enter your credentials**:
-    -  **Database URL** - The main URL to the database you select. See the following list for examples of database URLs:
+    -  **Database URL** - The main URL to the database you select. The format of the database URL is `jdbc:<database_type>://<path>:<port>`. See the following list for examples of database URLs:
        - Db2 - `jdbc:db2://localhost:50000/sample`
        - Oracle - `jdbc:oracle:thin:@localhost:1521:sample`
        - SQL Server - `jdbc:sqlserver://localhost:1433;DatabaseName=sample`
        - Postgresql - `jdbc:postgresql://localhost/sample`
     -  **User** - Your username that you obtain from the database you selected. You use this username to crawl the source. Your username is different from database to database.
     -  **Password** - Your password that you obtain from the database you selected. Your password is associated with your username. Your password is different from database to database.
-1. Complete the following fields in **Specify what you want to crawl**:
+1. Complete the following fields in **Connection settings**:
     -  **JDBC driver type** - The default is **DB2**. Lists the four databases that {{site.data.keyword.discoveryshort}} supports: Db2, Microsoft SQL Server, Postgresql, and Oracle. If you want to crawl from another database that is not listed, select **OTHER**.
     -  **JDBC driver classname** - The JDBC driver class name you obtain from the database you select. Depending on the database you select in **JDBC Driver Type**, this field is autofilled, except if you select **OTHER**.
     -  **JDBC driver classpath** - Upload a JDBC driver file, which can have a .jar or .zip file extension. You can select or delete a .jar or .zip file that you previously uploaded.
+1. Complete the following fields in **Specify what you want to crawl**:
     -  **Schema Name** - The schema you want to crawl data from. You obtain the schema name from the database you are crawling.
     -  **Table Name** - The table within a schema you want to crawl data from. You obtain the table name from the database you are crawling.
-    -  **Primary key** - Optional: The primary key of the target database table. The JDBC database crawler appends this primary key value to the URL of each crawled row to keep its uniqueness. When the primary key is a composite key, concatenate the key names by using a comma, for example `key1,key2`. If unspecified, the project defaults to the primary key fields of the table.
+         
+         After you complete the **Schema name** and **Table name** fields and click **Add**, you can click the edit icon to access the **Table crawl settings** dialog box, where you can enter input in the following fields:
+         -  **Primary key** - The primary key of the target database table. If the primary key is not configured in the target database table, you must complete this field. The JDBC database crawler appends this primary key value to the URL of each crawled row to keep its uniqueness. When the primary key is a composite key, concatenate the key names by using a comma, for example `key1,key2`. If unspecified, the project defaults to the primary key fields of the table. If the primary key is configured in the target database table, this key is automatically detected.
+         -  **Row filter** - Optional: Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed. In this case, update the condition, and click **Apply changes and reprocess**.
 1. Click **Finish**.
 
 
@@ -419,7 +476,7 @@ Before configuring a Windows File System collection, you must install the agent 
 {: shortdesc}
 
 1. Log in to {{site.data.keyword.discoveryshort}} as an admin, and navigate to **Windows File System**.
-1. Under **Download & install Windows Agent**, click **Download Windows Installer**. Clicking this link downloads the .zip file to run the agent installer.
+1. Under **Download & install Windows Agent**, click **Download Windows Agent Installer**. Clicking this link downloads the .zip file to run the agent installer.
 1. Follow the prompts. While the installer runs, you receive the host name, username, password, agent authentication port number, and port number that you enter later in Windows File System on {{site.data.keyword.discoveryshort}}, so note them when you receive them. Also during installation, a check box appears that, when you check it, you can use to create a user account; when the check box is unchecked, you have administrative permissions.
 1. Extract all files in the `WindowsAgentServer.zip`.
 1. Double-click the `install.exe` file, or enter `install.exe` in a command window. You can choose one of the following methods to run the installation program:
@@ -570,11 +627,11 @@ In {{site.data.keyword.discoveryshort}}, after you select **Windows File System*
 1. Enter one or more paths, and click **Add**.
 1. Optional: Set the following switch in **Security**:
     -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
-         - **LDAP server URL** - The LDAP server URL to connect to.
+         - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
          - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a DN. The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
-         - **LDAP binding user password** - Password used to bind to the directory service.
-         - **LDAP base DN** - Starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`. 
-         - **LDAP user filter** - User filter to search user entries in LDAP. If empty, default value used is `(userPrincipalName={0})`.
+         - **LDAP binding user password** - The password used to bind to the directory service.
+         - **LDAP base DN** - The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`. 
+         - **LDAP user filter** - The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
 
 1. Click **Finish**.
 
@@ -675,7 +732,7 @@ To mount a persistent volume on the crawler pod, complete the following steps:
    ```
    {: pre}
 
-1. If you are using version 2.1.3, edit `override.yaml` to include the following input. This file overrides any default settings that you choose. In the `label` and `value` fields, you must use the same string that you specified when you created the `crawler-pv.yaml` in step 1. Replace the `<>` and the content inside with the required information:
+1. If you are using version 2.1.3 or later, edit `override.yaml` to include the following input. This file overrides any default settings that you choose. In the `label` and `value` fields, you must use the same string that you specified when you created the `crawler-pv.yaml` in step 1. Replace the `<>` and the content inside with the required information:
 
    ```bash
    core:
@@ -762,6 +819,78 @@ In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the 
 1. Click **Finish**.
 
 
+### Notes
+{: #connectnotes}
+
+Use this option to crawl Notes version 9.0.1. Only documents that {{site.data.keyword.discoveryshort}} supports are crawled; all others are ignored.
+{: shortdesc}
+
+The Notes data source only supports the Domino Internet Inter-ORB Protocol (DIIOP) protocol. To crawl documents, including ACLs, you must have server, database, and document access on the Domino server, but at minimum, you must have `Reader` access. For group extractions for the internal Domino LDAP, you must have `Reader` access of the `names.nsf` directory database, and for group extractions for the external LDAP, you must have the credential for the LDAP server. You can define Notes users both in the internal Domino directory and in the external LDAP. However, {{site.data.keyword.discoveryshort}} only supports users in the internal Domino directory as crawl users; it does not support users in the external LDAP as crawl users.
+
+#### Configuring DIIOP servers
+{: #config-servers}
+
+To crawl servers that use the DIIOP protocol, you must configure the server so that the Notes Domino crawler can use the protocol. The server that you want to crawl must be running the DIIOP and HTTP tasks.
+{: shortdesc}
+
+To configure a server that has the DIIOP protocol, complete the following steps:
+
+1. Configure the server document:
+   1. Open the `server` document on the Notes server that you want to crawl. This document is stored in the Domino directory.
+   1. On the Configuration page, expand the **server** section.
+   1. On the Security page in the Programmability Restrictions section, specify the appropriate security restrictions for your environment in the following three fields: **Run restricted Lotus Script/Java agents**, **Run restricted Java/Javascript/COM**, **Run unrestricted Java/Javascript/COM**
+
+      For example, you might specify an asterisk (`*`) to allow unrestricted access by Lotus Script/Java agents and specify usernames that are registered in the Domino directory for the Java/Javascript/COM restrictions.
+
+      To crawl a server that uses the DIIOP protocol, your configured crawler must be able to access the usernames that you specify in these fields.
+      {: important}
+
+   1. Open the Internet Protocol page, then the HTTP page, and set the **Allow HTTP clients to browse database** option to **Yes**.
+1. Configure the user document:
+   1. Open the `user` document on the server that you want to crawl. This document is stored in the Domino directory.
+   1. On the Basics page in the **Internet password** field, specify a password. When you use the administration console to configure options for crawling a server, specify this user ID and password on the page where you identify the server to crawl. When you enter these credentials, the crawler can then access the server.
+1. Restart the DIIOP task on the server.
+
+#### Configuring a Notes collection
+{: #configurenotes}
+
+In {{site.data.keyword.discoveryshort}}, after you select **Notes** as the collection type, enter the following information:
+
+1. Complete the following fields in **Enter your credentials**:
+    -  **Host name** - The host name of the Notes server.
+    -  **User name** - The username to crawl the Notes server.
+    -  **Password** - The password of the specified user.
+1. In **Crawl type**, click one of the following options:
+    -  **Database** - Crawls a specified Notes database.
+    -  **Directory** - The directory that you want to crawl.
+1. Complete the applicable field:
+    -  **Database file name** (when you click **Database** as the crawl type) - The file name of the database that you want to crawl.
+    -  **Directory name** (when you click **Directory** as the crawl type) - The directory name that you want to crawl. If you select this option, {{site.data.keyword.discoveryshort}} crawls all Notes databases under the specified directory.
+1. Optional: In **Security**, set the following switch:
+    - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When set to **On**, your users can crawl content that they have access to in a Notes database or directory. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+    - **Use remote LDAP directory** - By default, is set to **Off**. This option is only available when you set **Enable Document Level Security** to **On**.
+        - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
+        - **LDAP binding username** - The username used to bind to the directory service.
+        - **LDAP binding user password** - The password used to bind to the directory service.
+        - **LDAP base DN** - The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
+        - **LDAP user filter** - The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
+        - **LDAP group filter** - The group filter to search group entries in LDAP.
+
+        When you enable document level security, you can only crawl one LDAP server, which can either be a Domino server or an external server.
+        {: note}
+
+1. Optional: In **Advanced options**, set the following switches:
+    - **Crawl attachments** - By default, is set to **On**. When set to **On**, crawls attachments of Notes documents.
+    - **Automatic code page detection** - By default, is set to **On**. When this option is disabled, the encoding converter detects the code pages of crawled documents. Complete the following fields:
+        -  **Code page to use** - Displays only when **Automatic code page detection** is set to **Off**. The field used to enter the character encoding. If unspecified, the default value is `UTF-8`.
+        -  **Notes formula** - Specify a Notes formula to limit the data that you crawl, for example `SELECT @IsAvailable(Year) & Year > 2003`.
+1. Select an option in the following drop-down list:
+    -  **Document date field** - The document date that is used in a crawl.
+         -  **Document modification date** - By default, the modified dates of the crawled documents is stored as the original field `_ _$Date$_ _`.
+         -  **Document crawl date** - Assigns the crawled dates to the original field `_ _$Date$_ _`.
+         -  **Document creation date** - Assigns the creation dates of the crawled documents to the original field `_ _$Date$_ _`.
+
+
 ### Reuse data from an existing collection
 {: #reuse}
 
@@ -798,7 +927,7 @@ For more information about projects, see [Creating projects](/docs/discovery-dat
 
  To keep track of collection sharing across projects, open the **Projects** page, then:
  
-  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Collection usage and sharing**. 
+  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Data usage**, then **Collection usage and sharing**.
   -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
 
  
@@ -836,7 +965,8 @@ To enable document level security, you must configure these components:
   - For a description of the feature in SharePoint Online, see [Enable Document Level Security for SharePoint Online](/docs/discovery-data?topic=discovery-data-collection-types#configuresp).
   - For a description of the feature in Windows File System and the information required to configure a collection, consult [Enable Document Level Security for Windows File System](/docs/discovery-data?topic=discovery-data-collection-types#configurewindowsfilesystem).
   - For a description of the feature in FileNet P8, see [Enable Document Level Security for FileNet P8](/docs/discovery-data?topic=discovery-data-collection-types#configure-filenet).
-- Configure document level security parameters for your [SharePoint Online collection](/docs/discovery-data?topic=discovery-data-collection-types#configuresp), [SharePoint OnPrem collection](/docs/discovery-data?topic=discovery-data-collection-types#configuresp_op), [Windows File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurewindowsfilesystem), or [FileNet P8 collection](/docs/discovery-data?topic=discovery-data-collection-types#configure-filenet).
+  - For a description of the feature in Notes, see [Enable Document Level Security for Notes](/docs/discovery-data?topic=discovery-data-collection-types#configurenotes).
+- Configure document level security parameters for your [SharePoint Online collection](/docs/discovery-data?topic=discovery-data-collection-types#configuresp), [SharePoint OnPrem collection](/docs/discovery-data?topic=discovery-data-collection-types#configuresp_op), [Windows File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurewindowsfilesystem), [FileNet P8 collection](/docs/discovery-data?topic=discovery-data-collection-types#configure-filenet), or [Notes collection](/docs/discovery-data?topic=discovery-data-collection-types#configurenotes).
   Document level security configuration options are visible when document level security is enabled in your collection configuration.
 - Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system.
 - Associate users with your {{site.data.keyword.discoveryshort}} instance.

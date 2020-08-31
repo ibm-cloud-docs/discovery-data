@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-24"
+lastupdated: "2020-08-31"
 
 keywords: known issues
 
@@ -39,14 +39,25 @@ See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for
 
 Known issues are listed by the release in which they were identified.
 
+## Known issues identified in the Discovery for Cloud Pak for Data 2.1.4, 31 August 2020 release:
+{: #31aug2020ki}
+
+  - When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To workaround this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
+  - The [Guided Tours](/docs/discovery-data?topic=discovery-data-tours) do not run on Firefox. For the list of other supported browsers, see [Browser support](/docs/discovery-data?topic=discovery-data-about#about-browser).
+  - Ingesting documents into a collection that uses a custom [Advanced Rules model enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
+  - If you delete a large number of documents, then immediately ingest a large number of documents, it may take longer for all the documents to become available.
+  - The [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) does not work when FIPS (Federal Information Processing Standards) is enabled.
+
+ 
+Also see the issues identified in all previous releases. 
+
 ## Known issues identified in the IBM Cloud Premium General Availability (GA) release, 16 July 2020:
 {: #16jul2020ki}
   
-  - When connecting to an {{site.data.keyword.blockstoragefull}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in IBM Cloud.)
+  - ![IBM Cloud only](images/cloudonly.png) When connecting to an {{site.data.keyword.blockstoragefull}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in IBM Cloud.)
 
 
-All known issues in previous Discovery for Cloud Pak for Data releases also apply, unless otherwise marked.
-{:  note}
+Also see the issues identified in all previous releases.
 
 ## Known issues identified in the Discovery for Cloud Pak for Data 2.1.3, 19 June 2020 release:
 {: #19jun2020ki}
@@ -72,6 +83,7 @@ All known issues in previous Discovery for Cloud Pak for Data releases also appl
     1. Replace `https://mycluster.com/discovery/core` with the URL you copied previously, so the new URL should look like this: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/collections/new?redirect_uri=...`
     1. Press enter to open updated URL. You should now be on the Watson {{site.data.keyword.discoveryshort}} **Manage collections** page.
 
+Also see the issues identified in all previous releases. 
 
 ## Known issues identified in the Discovery for Cloud Pak for Data 2.1.2, 31 Mar 2020 release:
 {: #31mar2020ki}
@@ -86,8 +98,7 @@ All known issues in previous Discovery for Cloud Pak for Data releases also appl
      -  A change to the description of the `--cluster-pull-prefix PREFIX` argument.
      -  The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
   
-  
-  Also see the issues identified in all previous releases.
+Also see the issues identified in all previous releases.
 
 ## Known issues identified in the Discovery for Cloud Pak for Data 2.1.1, 24 Jan 2020 release:
 {: #24jan2020ki}

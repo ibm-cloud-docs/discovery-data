@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-31"
 
 subcollection: discovery-data
 
@@ -33,48 +33,57 @@ subcollection: discovery-data
 {: #backup-restore}
 
 ![Cloud Pak for Data only](images/cpdonly.png)</br>
-Use the following procedures to back up and restore user data in your {{site.data.keyword.discovery-data_long}} instance.
+Use the following procedures to back up and restore data in your {{site.data.keyword.discovery-data_long}} instance.
 {: shortdesc}
 
 These procedures are for advanced users who have experience administering {{site.data.keyword.discovery-data_short}} clusters. You do not need to back up and restore data as part of standard use or maintenance.
 {: important}
 
-In {{site.data.keyword.discovery-data_short}} version 2.1.3, you cannot automatically back up and restore curations when you back up and restore your {{site.data.keyword.discovery-data_short}} version 2.1.3 instance. In addition, you cannot automatically migrate the following data from version 2.1.2 to 2.1.3:
+You can migrate your data from and restore it to the following versions:
 
-  - User data
-    - [Box files](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-box) that contain your credentials for configuring your Box crawler
-    - Folders and documents that you can crawl by using the Local File System data source
-  - Curations (beta feature available only in the API)
-  - Dictionary suggestions models. These are created when you build a dictionary using the tooling. The dictionary will be included in the backup, but the suggestions model will not.
-  - Content Miner Document flags
+- 2.1.2 to 2.1.3
+- 2.1.2 to 2.1.4
+- 2.1.3 to 2.1.4
 
-To back up and restore this user data from version 2.1.3, see [Backing up user data](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data) and [Restoring user data](/docs/discovery-data?topic=discovery-data-backup-restore#restore-user-data). Otherwise, you can migrate data other than those previously listed from version 2.1.2 to 2.1.3 by using the version 2.1 backup scripts. To access these scripts, see [Backup scripts](/docs/discovery-data?topic=discovery-data-backup-restore#backup-scripts).
+You can also back up and restore the following versions:
 
-To configure your version 2.1.3 Salesforce, JDBC, or Local File System crawlers as they are in older versions, log in to your {{site.data.keyword.discovery-data_short}} version 2.1.3 instance, and update the configuration of your Salesforce, JDBC, or Local File System crawlers. To configure specific data sources, see [Configuring {{site.data.keyword.discovery-data_short}} data sources](/docs/discovery-data?topic=discovery-data-collection-types). You can also configure your version 2.1.3 Salesforce or JDBC crawlers as they are in older versions by using the backup and restore scripts. To migrate your Salesforce or JDBC crawlers, see [Migrating Salesforce or JDBC crawlers](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-salesforce-jdbc).
+- 2.1.2
+- 2.1.3
+- 2.1.4
 
-In {{site.data.keyword.discovery-data_short}} version 2.1.2 and earlier, the following data is not automatically backed up and restored when you back up and restore your {{site.data.keyword.discovery-data_short}} instance:
+## Backup and restore data restrictions
+{: #bnr-restrictions}
 
-  - User data
-    - [Box files](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-box) that contain your credentials for configuring your Box crawler
-    - Folders and documents that you can crawl by using the Local File System data source
-  - Curations (beta feature available only in the API)
-  - Dictionary suggestions models. These are created when you build a dictionary using the tooling. The dictionary will be included in the backup, but the suggestions model will not.
-  - Content Miner Document flags
+You can [back up](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backup) and [restore](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restore) some data by using the backup and restore scripts, but you must back up and restore other data manually. To manually back up and restore data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data) and [Restoring data manually](/docs/discovery-data?topic=discovery-data-backup-restore#restore-user-data). You cannot automatically migrate the following data from version 2.1.2 to 2.1.3 or later, nor can you automatically back up and restore the following data:
 
-To back up and restore this user data from version 2.1.2 or earlier, see [Backing up user data](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data) and [Restoring user data](/docs/discovery-data?topic=discovery-data-backup-restore#restore-user-data). You can back up and restore training data by using the backup scripts. To access these scripts, see [Backup scripts](/docs/discovery-data?topic=discovery-data-backup-restore#backup-scripts).
+- User data
+  - [Box files](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-box) that contain your credentials for configuring your Box crawler
+  - Folders and documents that you can crawl by using the Local File System data source
+- Dictionary suggestions models. These are created when you build a dictionary using the tooling. The dictionary will be included in the backup, but the suggestions model will not.
+- Content Miner Document flags
+
+You cannot back up and restore curations or migrate them from version 2.1.2 to 2.1.3 or later because curations are a beta feature.
+{: note}
+
+Otherwise, you can migrate data other than those previously listed, as well as training data, from version 2.1.2 to later versions by using the version 2.1 backup scripts.
+
+To configure your Box, Salesforce, or JDBC crawlers in version 2.1.3 or later as they are in older versions, log in to version 2.1.3 or later of your {{site.data.keyword.discovery-data_short}} instance, and update the configuration of your Box, Salesforce, or JDBC crawlers, or you can use the backup and restore scripts. For information about configuring specific crawlers or for information about migrating your Box, Salesforce, or JDBC crawlers, refer to the following links:
+- [Configuring {{site.data.keyword.discovery-data_short}} data sources](/docs/discovery-data?topic=discovery-data-collection-types)
+- [Migrating Box crawlers](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-box)
+- [Migrating Salesforce or JDBC crawlers](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-salesforce-jdbc)
 
 The following updates are made when your collections are restored:
 
-  - Any collection that contains documents that were added by upload (the `Upload data` option in the tooling) are automatically recrawled and reindexed when restored. These documents will have new document id numbers in the restored collections.
-  - All collections used in a **Content Miner** project are automatically recrawled and reindexed when restored. Only the documents added by upload (the `Upload data` option in the tooling) will have new document id numbers in the restored collections.
+  - Any collection that contains documents that were added by upload (the `Upload data` option in the tooling) are automatically recrawled and reindexed when restored. These documents will have new document ID numbers in the restored collections.
+  - All collections used in a **Content Miner** project are automatically recrawled and reindexed when restored. Only the documents added by upload (the `Upload data` option in the tooling) will have new document ID numbers in the restored collections.
 
-## Backing up user data
+## Backing up data manually
 {: #backup-user-data}
 
-Because certain user data is not automatically backed up when you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must complete a separate backup task.
+Because [certain data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr-restrictions) is not automatically backed up when you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must manually back up this data.
 {: shortdesc}
 
-To back up your user data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.3, complete the following steps:
+To manually back up your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
 
 1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
    
@@ -92,7 +101,8 @@ To back up your user data from an instance of {{site.data.keyword.discoveryshort
 
 1. Enter `oc get pods|grep crawler`.
 
-   If you are backing up user data for an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
+   If you are manually backing up data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
+   {: tip}
 
 1. Enter the following command:
 
@@ -108,20 +118,16 @@ To back up your user data from an instance of {{site.data.keyword.discoveryshort
    ```
    {: pre}
 
-   If you are backing up user data for an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter the following command:
+   If you are manually backing up data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `kubectl cp <ingestion-pod>:/mnt <path-to-backup-directory>`.
+   {: tip}
 
-   ```
-   kubectl cp <ingestion-pod>:/mnt <path-to-backup-directory>
-   ```
-   {: pre}
-
-## Restoring user data
+## Restoring data manually
 {: #restore-user-data}
 
-Because certain user data is not automatically restored after you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must complete a separate restore task.
+Because [certain data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr-restrictions) is not automatically restored after you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must manually restore this data.
 {: shortdesc}
 
-To restore your user data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.3, complete the following steps:
+To manually restore your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
 
 1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
    
@@ -139,7 +145,8 @@ To restore your user data from an instance of {{site.data.keyword.discoveryshort
 
 1. Enter `oc get pods|grep crawler`.
 
-   If you are restoring user data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
+   If you are manually restoring data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
+   {: tip}
 
 1. Enter the following command:
 
@@ -155,22 +162,21 @@ To restore your user data from an instance of {{site.data.keyword.discoveryshort
    ```
    {: pre}
 
-   If you are restoring user data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter the following command:
-
-   ```
-   kubectl cp <path-to-backup-directory> <ingestion pod>:/mnt
-   ```
-   {: pre}
+   If you are manually restoring data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `kubectl cp <path-to-backup-directory> <ingestion pod>:/mnt`.
+   {: tip}
 
 ## Migrating Box crawlers
 {: #migrate-box}
 
-In the Box data source in {{site.data.keyword.discoveryshort}} version 2.1.3, you can upload a JSON file that contains your Box credentials. This JSON file replaces the .pem file from previous versions. If you are upgrading from an older version, you can convert your .pem file to a JSON file and upload it to migrate your Box crawler to version 2.1.3.
+Complete this task if you are migrating a Box crawler from {{site.data.keyword.discoveryshort}} version 2.1.2 to 2.1.3 or from 2.1.2 to 2.1.4. In the Box data source in {{site.data.keyword.discoveryshort}} version 2.1.3 and 2.1.4, you can upload a JSON file that contains your Box credentials. This JSON file replaces the .pem file from previous versions. If you are upgrading from a version of the Box data source that is earlier than 2.1.3, you can convert your .pem file to a JSON file and upload it to migrate your Box crawler to version 2.1.3.
 {: shortdesc}
+
+If you manually back up your data from version 2.1.3 and restore it on 2.1.4, your Box crawler from version 2.1.3 is automatically migrated to 2.1.4. Therefore, you do not need to complete the following task if you want to migrate your Box crawler from version 2.1.3 to 2.1.4.
+{: note}
 
 To migrate your Box crawler, complete the following steps:
 
-1. Back up the user data of an older version of {{site.data.keyword.discoveryshort}} that you are migrating data from. For more information about backing up user data, see [Backing up user data](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
+1. Back up the user data of an older version of {{site.data.keyword.discoveryshort}} that you are migrating data from. For more information about manually backing up data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
 1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
 
    ```
@@ -223,12 +229,15 @@ To see the backup, restore, and migration restrictions for all versions of {{sit
 ## Migrating Salesforce or JDBC crawlers
 {: #migrate-salesforce-jdbc}
 
-You can configure your version 2.1.3 Salesforce or JDBC crawlers as they are in older versions by using the backup and restore scripts.
+Complete this task if you are migrating a Salesforce or JDBC crawler from {{site.data.keyword.discoveryshort}} version 2.1.2 to 2.1.3 or from 2.1.2 to 2.1.4. You can configure your version 2.1.3 Salesforce or JDBC crawlers as they are in older versions by using the backup and restore scripts.
 {: shortdesc}
+
+If you back up your user data from version 2.1.3 and restore it on 2.1.4, your Salesforce or JDBC crawlers from version 2.1.3 are automatically migrated to 2.1.4. Therefore, you do not need to complete the following task if you want to migrate your Salesforce or JDBC crawlers from version 2.1.3 to 2.1.4.
+{: note}
 
 To migrate your Salesforce or JDBC crawlers, complete the following steps:
 
-1. Back up the user data of the older version of {{site.data.keyword.discoveryshort}} that you are migrating the data from. For more information about backing up user data, see [Backing up user data](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
+1. Back up the user data of the older version of {{site.data.keyword.discoveryshort}} that you are migrating the data from. For more information about manually backing up data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
 1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
 
    ```
@@ -252,7 +261,13 @@ To migrate your Salesforce or JDBC crawlers, complete the following steps:
 
 To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore).
 
-## Required tools, permissions, and system requirements
+## Prerequisites, overview, and scripts for backup and restore using the scripts
+{: #bnr-prereq}
+
+Review the following requirements, process overview, and the list of scripts for guidance on how to successfully back up and restore your instance of {{site.data.keyword.discoveryshort}}.
+{: shortdesc}
+
+### Required tools, permissions, and system requirements
 {: #toolsperms}
 
 Before backing up or restoring data, ensure that you have the following tool installed on your machine:
@@ -266,37 +281,35 @@ You must have the following permissions:
 
 You must also have the following system requirement: Red Hat Enterprise Linux version 7.5 or later.
 
-## Process overview
+### Process overview
 {: #overview}
 
 Summary of the backup process:
 
-  1. Back up IBM Cloud Pak for Data, if required. For more information, see [Backup and restore](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_2.1.0/com.ibm.icpdata.doc/zen/admin/backup_restore.html){: external}.
-  1. Ensure that the {{site.data.keyword.discoveryshort}} instance being backed up meets the prerequisites listed in [Backing up {{site.data.keyword.discoveryfull}}](/docs/services/discovery-data?topic=discovery-data-backup-restore#wddata-backup).
+  1. Back up IBM Cloud Pak for Data, if required. For more information, see [Backing up and restoring your project](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/backup_restore.html){: external}.
+  1. Ensure that the {{site.data.keyword.discoveryshort}} instance being backed up meets the prerequisites listed in [Backing up {{site.data.keyword.discoveryfull}} by using the backup scripts](/docs/services/discovery-data?topic=discovery-data-backup-restore#wddata-backup).
   1. Copy the data from the data service to the matching service on the new pod.
   1. Clean or groom the data, as necessary.
 
 Summary of the restore process:
 
-  1. Use the generated backup to restore a {{site.data.keyword.discoveryshort}} application to an existing and/or new {{site.data.keyword.discoveryshort}} installation.
+  1. Use the generated backup to restore a {{site.data.keyword.discoveryshort}} application to an existing or new {{site.data.keyword.discoveryshort}} installation.
   1. Copy the data from the new pod to the data service.
   1. Enable requests on the new {{site.data.keyword.discoveryshort}} instance.
 
-## Example syntax
+### Example syntax
 {: #example-syntax}
 
-In the following procedures, angle brackets (`< >`) are used to indicate variables that need to be substituted with values for your local installation, and curly brackets (`{ }`) are used literally in `bash` scripts and commands. This use of curly brackets differs from the standard Watson documentation convention of using curly brackets to indicate substitutions. 
+In the following procedures, angle brackets (`< >`) are used to indicate variables that need to be substituted with values for your local installation, and curly brackets (`{ }`) are used literally in `bash` scripts and commands. This use of curly brackets differs from the standard Watson documentation convention of using curly brackets to indicate substitutions.
 {: important}
 
-## Backup scripts
+### Backup scripts
 {: #backup-scripts}
 
-There are two versions of the `all-backup-restore.sh` backup and restore scripts. One set is for {{site.data.keyword.discoveryshort}} versions 2.0.0 and 2.0.1; the other is for versions 2.1.0 and later. **If you are backing up a 2.0 version of {{site.data.keyword.discoveryshort}}, and then restoring to version 2.1.0 or later -- backup with the 2.0 scripts and restore with the 2.1 scripts.** 
-{: important}
+Use the `all-backup-restore.sh` backup and restore script to back up and restore to {{site.data.keyword.discoveryshort}} version 2.1.0 or later.
 
- -  Backup/restore scripts for version 2.1.3 and later. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
+ -  Backup/restore scripts for version 2.1.3 and 2.1.4. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
  -  Backup/restore scripts for versions 2.1.0 through 2.1.2. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
- -  Backup/restore scripts for 2.0.0 and 2.0.1: [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.0){: external}.
 
 You will need all files stored in the applicable GitHub repository to perform a backup and restore. Follow the instructions in GitHub Help to clone or download a zip file of the repository.
 {: important}
@@ -309,22 +322,22 @@ To make a script executable, run the following command:
 
 Where `<script-name>` is the name of the script.
 
-## Backing up Watson Discovery
+## Backing up Watson Discovery by using the backup scripts
 {: #wddata-backup}
 
-Back up prerequisites:
+Backup prerequisites:
 
-Since changes to the data stored in {{site.data.keyword.discoveryfull}} during a backup can cause the backup to become corrupt and unusable, no in-flight requests are permitted during the backup period. 
+Since changes to the data stored in {{site.data.keyword.discoveryfull}} during a backup can cause the backup to become corrupt and unusable, no in-flight requests are permitted during the backup period.
 
 A request is a current action being performed by {{site.data.keyword.discoveryfull}}. Actions performed by {{site.data.keyword.discoveryshort}} include:
   -  Performing a source crawl (scheduled or unscheduled)
   -  Ingesting documents
-  -  Training a trained query model 
+  -  Training a trained query model
 
 Queries are read-only operations, so they are permitted during the backup period.
 {: tip}
 
-Perform the following steps to back up {{site.data.keyword.discoveryfull}}:
+Perform the following steps to back up {{site.data.keyword.discoveryfull}} by using the backup scripts:
 
   1. Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
     -  `Postgresql`
@@ -364,10 +377,10 @@ Perform the following steps to back up {{site.data.keyword.discoveryfull}}:
 If you want to install multiple {{site.data.keyword.discoveryshort}} add-ons to different clusters, see [Copying {{site.data.keyword.discoveryshort}} data across {{site.data.keyword.discoveryshort}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
 {: note}
 
-## Restoring Watson Discovery
+## Restoring Watson Discovery by using the restore scripts
 {: #wddata-restore}
 
-Perform the following steps to restore data in {{site.data.keyword.discoveryfull}}:
+Perform the following steps to restore data in {{site.data.keyword.discoveryfull}} by using the restore scripts:
 
   1. Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
     -  `Postgresql`

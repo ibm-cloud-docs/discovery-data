@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-17"
+lastupdated: "2020-08-24"
 
 subcollection: discovery-data
 
@@ -42,7 +42,7 @@ subcollection: discovery-data
 This documentation covers both {{site.data.keyword.discovery-data_short}} and {{site.data.keyword.discoveryshort}} **Premium** on the IBM Public Cloud. In cases where information applies exclusively to one service, you will see the appropriate icon: ![Cloud Pak for Data only](images/cpdonly.png) or ![IBM Cloud only](images/cloudonly.png).
 {: important} 
 
-On the top right of any tooling page, click the **Help** ![Help icon](images/help_icon.png) icon to open the documentation.
+On the top right of any tooling page, click the **Help** ![Help icon](images/help_icon.png) icon to open the {{site.data.keyword.discoveryshort}} documentation.
 {: tip}
 
 ## Browser support

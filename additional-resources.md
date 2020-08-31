@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-24"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Blogs and Webinars
 {: #resources}
 
-Learn more about {{site.data.keyword.discoveryfull}} from these blog posts, webinars, and other resources.
+Learn more about {{site.data.keyword.discoveryshort}} from these blog posts and recorded webinars.
 {: shortdesc}
 
 ## Blog Posts
