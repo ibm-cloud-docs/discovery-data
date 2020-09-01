@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-01"
 
 keywords: known issues
 
@@ -39,8 +39,8 @@ See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for
 
 Known issues are listed by the release in which they were identified.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.1.4, 31 August 2020 release:
-{: #31aug2020ki}
+## Known issues identified in the Discovery for Cloud Pak for Data 2.1.4, 1 September 2020 release:
+{: #1sept2020ki}
 
   - When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To workaround this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
   - The [Guided Tours](/docs/discovery-data?topic=discovery-data-tours) do not run on Firefox. For the list of other supported browsers, see [Browser support](/docs/discovery-data?topic=discovery-data-about#about-browser).
