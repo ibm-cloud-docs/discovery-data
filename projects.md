@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-15"
+lastupdated: "2020-08-31"
 
 subcollection: discovery-data
 
@@ -161,7 +161,7 @@ Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
 To access the **Collection usage and sharing** page, open the **Projects** page, then:
 
-  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Collection usage and sharing**. 
+  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Data usage**, then **Collection usage and sharing**. 
   -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
 
 Collections can be:
@@ -186,11 +186,27 @@ If you make any of the following changes to a shared collection, *those changes 
 The enrichments and other improvement tools are not included when a collection is shared, because they are set at the project level.
 {: important}
 
+### API usage
+{: #api-usage}
+
+![Cloud Pak for Data only](images/cpdonly.png)
+
+To access the **API usage** page: open the **Projects** page, select **Data usage**, then **API usage**.
+
+This page is used to monitor the usage of the Analyze API, which supports stateless document ingestion workflows. For more information, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
+
+-  **Start date**: The start date of the API call monitoring period.
+-  **End date**: The end date of the API call monitoring period.
+-  **30-day call total**: This number indicates the number of calls to the Analyze API in the 30-day time interval indicated by the **Start date** and **End date**. The 30-day time interval displayed is determined by calculating the consecutive time period with the highest number of API calls. The 30-day window will update as the time interval with the highest number of API calls changes. 
+
+The **API usage** will not be displayed until some time after API usage monitoring begins. There might be a delay in displaying the final total number of the **30-day call total**, even if the 30-day period listed includes the current date.
+{: note}
+
 ### GDPR data label
 {: #project-gdpr}
 
 ![IBM Cloud only](images/cloudonly.png) 
 
-To access the **GDPR data label** page, open the **Projects** page, then select ***Data usage and GDPR**, then **GDPR data label**.
+To access the **GDPR data label** page: open the **Projects** page, select ***Data usage and GDPR**, then **GDPR data label**.
 
 For more information about GDPR and labeling data in the {{site.data.keyword.discoveryshort}} tooling, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).

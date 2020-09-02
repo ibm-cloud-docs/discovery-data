@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-12"
+lastupdated: "2020-08-24"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Sample Apps
 {: #sample-apps}
 
-Learn more about {{site.data.keyword.discoveryfull}} from these sample applications and labs.
+Explore our sample applications to learn more about what you can develop with {{site.data.keyword.discoveryshort}}.
 {: shortdesc}
 
 [Learning path: Getting started with {{site.data.keyword.discoveryshort}}](https://developer.ibm.com/series/learning-path-watson-discovery/){: external}

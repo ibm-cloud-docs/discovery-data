@@ -13,6 +13,7 @@ Discovery
         sample-apps.md
         [Videos](https://ibm.biz/wds_videos)
         additional-resources.md
+        guided-tours.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
