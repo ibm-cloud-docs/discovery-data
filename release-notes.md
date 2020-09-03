@@ -59,7 +59,7 @@ The following new features and changes to the service are available.
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
 ### 2.1.4 release, 2 September 2020 ![Cloud Pak for Data only](images/cpdonly.png)
-{: #1sept2020}
+{: #2sept2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.4 is available.**
 
