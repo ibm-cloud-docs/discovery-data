@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-09-09"
 
 subcollection: discovery-data
 
@@ -41,8 +41,11 @@ You should install {{site.data.keyword.icp4dfull}} before installing the {{site.
 
 | Service version | {{site.data.keyword.icp4dfull}} version |
 | ---- | ----|
-| {{site.data.keyword.discoveryshort}} 2.1.3 | {{site.data.keyword.icp4dfull}} 3.0.1 |
+| {{site.data.keyword.discoveryshort}} 2.1.4, 2.1.3 | {{site.data.keyword.icp4dfull}} 3.0.1 |
 | {{site.data.keyword.discoveryshort}} 2.1.2, 2.1.1, 2.1.0 | {{site.data.keyword.icp4dfull}} 2.5.0 |
+
+IBM Cloud Pak for Data 3.0.1 is deprecating support for Red Hat OpenShift 4.3 on 1 September 2020. Red Hat OpenShift 4.3 is going out of service on 22 October 2020. IBM Cloud Pak for Data is introducing support for Red Hat OpenShift 4.5. IBM Cloud Pak for Data is recommending that clients upgrade to Red Hat OpenShift 4.5 before 22 October 2020. IBM Support will work with any customers who already installed IBM Cloud Pak for Data 3.0.1 on Red Hat OpenShift 4.3. New customers who want to install on Red Hat OpenShift 4.x are instructed to install Red Hat OpenShift 4.5.
+{: important}
 
 Full installation instructions: 
 
