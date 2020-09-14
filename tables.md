@@ -2,7 +2,7 @@
 
 copyright:
 years: 2018, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-09-14"
 
 keywords: table,tables,classify tables,classifying tables,table understanding,row,rows,column,columns,cell,cells,body cell,body cells,header,headers,key,value,key value pair,context,row header,row headers,column header,column headers,context,contexts
 
@@ -32,10 +32,13 @@ The `Table Understanding` enrichment parses tables in a detailed format.
 The `Table Understanding` enrichment produces detailed output regarding tables and table-related data within documents. This enrichment can be enabled for a collection in any of the following ways:
 
 - If your collection consists of files whose formats are supported by [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields), and you annotate one or more tables by using the `table` label, the `Table Understanding` enrichment is automatically applied to the `html` field of the collection.
-- If you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence, the `Table Understanding` enrichment is automatically applied to the `html` field of the collection. 
+- ![Cloud Pak for Data only](images/cpdonly.png) If you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence, the `Table Understanding` enrichment is automatically applied to the `html` field of the collection. 
 - If your collection includes files whose formats allow for fields other than `html`, such as CSV or JSON, visit the **Enrichments** page of the collection to update the `Table Understanding` enrichment to be applied to the required field of the collection. For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
 
 For information on querying tables, see [Query parameters](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
+
+![IBM Cloud only](images/cloudonly.png) If you are using Smart Document Understanding and have chosen the **Pre-trained-models** option, you do not need to annotate tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields). {{site.data.keyword.discoveryshort}} for Content Intelligence is not available on IBM Cloud Premium.
+{: note}
 
 ## Output schema
 {: #table-output-schema}

@@ -74,6 +74,9 @@ Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/disco
 
 <!-- c/s help for the **Identify fields** tab. Do not delete.  -->
 
+![IBM Cloud only](images/cloudonly.png) In IBM Cloud Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text-extraction only (the default)**. If you choose **User-trained-models**, you can follow the steps to build a custom model by annotating your documents. Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables. If you do not want to add any customization, the **Text extraction only** is automatically applied and you can continue applying other [Improvement tools](/docs/discovery-data?topic=discovery-data-improve#improvement-tools).  
+{: important}
+
 See [Best practices for annotating documents](/docs/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
 
 1. A default set of fields is displayed next to your document. The available fields are `answer`, `author`, `footer`, `header`, `question`, `subtitle`, `table_of_contents`, `text`, `title`, `table`, and `image`. If you would like to create one or more new custom field labels, click **Create new** and follow the steps. Custom field labels should be lowercase, and contain no spaces.

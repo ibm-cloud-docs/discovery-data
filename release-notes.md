@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-14"
 
 keywords: release notes, known issues
 
@@ -58,8 +58,16 @@ The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+### IBM Cloud Premium release, 14 September 2020 ![IBM Cloud only](images/cloudonly.png)
+{: #14sept2020}
+
+New feature in this release:
+
+- A new pre-trained model is available in Smart Document Understanding for Document Retrieval projects. This model is ideal if you need to extract data from documents that include a large number of tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
+
+
 ### 2.1.4 release, 2 September 2020 ![Cloud Pak for Data only](images/cpdonly.png)
-{: #2sept2020}
+{: #1sept2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.4 is available.**
 
