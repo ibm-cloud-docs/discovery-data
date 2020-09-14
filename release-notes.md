@@ -67,7 +67,7 @@ New feature in this release:
 
 
 ### 2.1.4 release, 2 September 2020 ![Cloud Pak for Data only](images/cpdonly.png)
-{: #1sept2020}
+{: #2sept2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.4 is available.**
 
