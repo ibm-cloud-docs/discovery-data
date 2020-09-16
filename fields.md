@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-09-16"
 
 subcollection: discovery-data
 
@@ -28,7 +28,7 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
-
+{:video: .video}
 
 # Configuring your collection with Smart Document Understanding
 {: #configuring-fields}
@@ -39,7 +39,7 @@ With SDU, you can annotate fields within your documents to train custom conversi
 
 This video provides a quick overview of Smart Document Understanding:
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Discovery - Extract Answers From Large Document in 5 Minutes" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/Jpr3wVH3FVA" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Watson Discovery Demo: Extract Answers From Large Documents in 5 Minutes](https://www.youtube.com/embed/Jpr3wVH3FVA){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 

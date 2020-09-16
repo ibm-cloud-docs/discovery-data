@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-08-19"
+lastupdated: "2020-09-16"
 
 subcollection: discovery-data
 
@@ -28,6 +28,7 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
+{:video: .video}
 
 # Mining content
 {: #contentminerapp}
@@ -37,7 +38,7 @@ The {{site.data.keyword.discoveryfull}} content mining application is an analyti
 
 This video provides an overview of content mining:
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Discovery - Content Mining" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/i5418xJoeHg" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Watson Discovery: Content Mining](https://www.youtube.com/embed/i5418xJoeHg){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 This page describes using the content mining application. For information about creating a {{site.data.keyword.discoveryshort}} content mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 {: tip}

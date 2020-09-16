@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-09-16"
 
 subcollection: discovery-data
 
@@ -29,6 +29,7 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
+{:video: .video}
 
 # Improving result relevance with training
 {: #train}
@@ -42,7 +43,7 @@ Relevancy training is optional; if the results of your queries meet your needs, 
 
 This video demonstrates relevancy training and several other features. For more information on those features, see [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion), [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords), and [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields):
 
-<iframe class="embed-responsive-item" id="youtubeplayer" title="Watson Discovery - Improving Result Relevancy" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/wi_V9s8XF3c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 To access the **Train** page, open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Improve relevance**, then **Relevancy training**.
 
