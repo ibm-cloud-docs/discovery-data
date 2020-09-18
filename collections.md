@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-17"
 
 subcollection: discovery-data
 
@@ -120,7 +120,7 @@ If you modify crawl settings on the **Processing settings** page and then click 
 ## Uploading data
 {: #upload-data}
 
-Use this option to upload data you stored locally. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
+Use this option to upload data you stored locally. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. The file size limit for uploading data is 32MB.
 {: shortdesc}
 
 For a list of file types that you can upload to {{site.data.keyword.discoveryshort}}, see [Supported file types and general requirements](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection. Your collection is finished processing when the status indicates `Processing finished. Updated documents are ready for you.`.

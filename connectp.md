@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-09-17"
 
 subcollection: discovery-data
 
@@ -62,7 +62,7 @@ You can use an IBM App Connect default connector to send data from a large set o
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}}:
 
--  The individual document file size limit for Salesforce, SharePoint Online, IBM Cloud Object Storage, and Web Crawl is 50MB.
+-  The individual document file size limit for Salesforce, SharePoint Online, IBM Cloud Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
 -  If you crawl Salesforce, a list of available resources is presented when you configure a source, using the {{site.data.keyword.discoveryshort}} tooling.
 -  You can configure a collection with a single data source.
 -  You must obtain an appropriate level of service license, for example Enterprise, for the data source. For information about the appropriate service level license that you need, contact the source system administrator.
