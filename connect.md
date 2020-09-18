@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-31"
+lastupdated: "2020-09-18"
 
 subcollection: discovery-data
 
@@ -71,7 +71,7 @@ You can specify an additional option for this collection:
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
--  The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file.
+-  The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
 -  [Document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
 -  When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
 -  Depending on the type of installation (default or high availability), the number of collections you can ingest simultaneously varies. A default installation includes 1 ingestion pod, which allows three collections to be processed simultaneously. A high availability installation includes 2 ingestion pods, which can process six collections simultaneously.
