@@ -46,7 +46,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
 -  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
 -  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
--  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
+-  [{{site.data.keyword.cloud_notm}} Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 
 You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections to read next:
@@ -62,7 +62,7 @@ You can use an IBM App Connect default connector to send data from a large set o
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}}:
 
--  The individual document file size limit for Salesforce, SharePoint Online, IBM Cloud Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
+-  The individual document file size limit for Salesforce, SharePoint Online, {{site.data.keyword.cloud_notm}} Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
 -  If you crawl Salesforce, a list of available resources is presented when you configure a source, using the {{site.data.keyword.discoveryshort}} tooling.
 -  You can configure a collection with a single data source.
 -  You must obtain an appropriate level of service license, for example Enterprise, for the data source. For information about the appropriate service level license that you need, contact the source system administrator.
@@ -75,7 +75,7 @@ Data source                          | Crawls new and modified documents during 
 Salesforce                           | Yes                                               | Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments
 Microsoft SharePoint Online          | Yes                                               | SiteCollections, websites, lists, list items, document libraries
 Web Crawl                            | No                                                | Websites, website subdirectories
-IBM Cloud Object Storage             | Yes                                               | Buckets, files
+{{site.data.keyword.cloud_notm}} Object Storage             | Yes                                               | Buckets, files
 {: caption="Table 1. Data sources that support crawling new and modified documents during refresh and objects that can be crawled" caption-side="top"}
 
 ### Salesforce
@@ -158,7 +158,7 @@ After this information is entered, you can choose how often you want to sync you
 Other items to note when you crawl {{site.data.keyword.blockstoragefull}}:
 
 -  This connector does not support crawling private endpoints.
--  For more information about IBM Cloud Object Storage endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
+-  For more information about {{site.data.keyword.cloud_notm}} Object Storage endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
 -  There is a slight performance issue if all buckets are selected. In this case, a delay is possible, before the documents complete indexing.
 
 ## Managing collections
