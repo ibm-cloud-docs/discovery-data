@@ -51,7 +51,7 @@ When you create a collection, {{site.data.keyword.discoveryshort}} pulls documen
 1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1. Configure the data source.
    -  [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
-   -  [IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources)
+   -  [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
    -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 1. Select **Create collection**, which starts the crawling process. The **Activity** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.
 
@@ -129,4 +129,4 @@ Optional: Click **More processing settings** to expand the menu, and then click 
 
 For additional information about supported data sources in {{site.data.keyword.discoveryshort}}, see the following links:
 - ![Cloud Pak for Data only](images/cpdonly.png) [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
-- ![IBM Cloud only](images/cloudonly.png) [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources)
+- ![IBM Cloud only](images/cloudonly.png) [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)

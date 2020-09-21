@@ -445,7 +445,7 @@ You must also have the following system requirement: Red Hat Enterprise Linux ve
 
 Summary of the backup process:
 
-  1. Back up IBM Cloud Pak for Data, if required. For more information, see [Backing up and restoring your project](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/backup_restore.html){: external}.
+  1. Back up {{site.data.keyword.icp4dfull_notm}}, if required. For more information, see [Backing up and restoring your project](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/backup_restore.html){: external}.
   1. Ensure that the {{site.data.keyword.discoveryshort}} instance being backed up meets the prerequisites listed in [Backing up {{site.data.keyword.discoveryfull}} by using the backup scripts](/docs/services/discovery-data?topic=discovery-data-backup-restore#wddata-backup).
   1. Copy the data from the data service to the matching service on the new pod.
   1. Clean or groom the data, as necessary.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-16"
+lastupdated: "2020-09-18"
 
 subcollection: discovery-data
 
@@ -32,10 +32,12 @@ subcollection: discovery-data
 # Getting started with the Watson Discovery Sample Project
 {: #getting-started}
 
-In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. 
+In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features. At any time, you can click **Restore project defaults** to start over.
 {: shortdesc}
 
-The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features. At any time, you can click **Restore project defaults** to start over.
+This release is available for Premium instances of {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} created 
+after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
+{: important}
 
 ## Before you begin
 {: #before-you-begin-tool}
@@ -44,13 +46,6 @@ The Sample Project is a great way to tour and try out {{site.data.keyword.discov
 ![Cloud Pak for Data only](images/cpdonly.png) Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
 
 ![IBM Cloud only](images/cloudonly.png) Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. Go to the [{{site.data.keyword.discoveryshort}}](https://{DomainName}/catalog/services/discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a service instance. 
-
-This release of IBM Cloud is available for Premium instances of {{site.data.keyword.discoveryshort}} on IBM Cloud created 
-after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
-{: important}
-
-IBM Cloud docs are available [here](https://cloud.ibm.com/docs){: external}.
-{: note}
 
 ## Step 1: Open Watson Discovery
 {: #getting-started-launch-tool}
@@ -122,7 +117,7 @@ That's the tour, stay on the **Improve and Customize** page for the next step.
 {: #customize-project-tool}
 
 Now, let's customize a bit. Starting on the **Improve and Customize** page ...
-1.  Enter the natural language query `How do I install IBM Cloud Pak for Data` in the query box.
+1.  Enter the natural language query `How do I install {{site.data.keyword.icp4dfull_notm}}` in the query box.
 1.  Review the query results displayed. View the source document for each result by clicking on **View passage in document**.
 1.  On the **Improvement tools** panel, choose **Customize display**, and select **Facets**. Select **New facet**, then click the **From existing fields in a collection** button. Choose `enriched_text.entities.type` from the dropdown and click **Apply**. The new facets will display. You can change the name of the facet label, and the filtering behavior.
 

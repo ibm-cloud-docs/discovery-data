@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-18"
 
 keywords: known issues
 
@@ -54,7 +54,7 @@ Also see the issues identified in all previous releases.
 ## Known issues identified in the IBM Cloud Premium General Availability (GA) release, 16 July 2020:
 {: #16jul2020ki}
   
-  - ![IBM Cloud only](images/cloudonly.png) When connecting to an {{site.data.keyword.blockstoragefull}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in IBM Cloud.)
+  - ![IBM Cloud only](images/cloudonly.png) When connecting to an {{site.data.keyword.blockstoragefull}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in {{site.data.keyword.cloud_notm}}.)
 
 
 Also see the issues identified in all previous releases.
@@ -75,7 +75,7 @@ Also see the issues identified in all previous releases.
   - By default, Optical Character Recognition (OCR) is set to `off` when you create any **Project type** with the tooling. However, if you create a Project using the API, OCR is set to `on`. To work around this issue, open the Tooling and change the **Project setting** to `off`.
   - When Optical Character Recognition (OCR) is set to `on` for a Collection AND no trained Smart Document Understanding (SDU) model is applied, PNG, TIFF, and JPG files will not be processed for text recognition. Images embedded in PDF, Word, PowerPoint, and Excel documents will not be processed - only the non-image portion of these documents will be processed for text recognition. To work around this issue, import or train an SDU model and reprocess the collection. This will allow text to be extracted from the images.
   - After you create a Search Skill in Watson Assistant and are directed to the Watson {{site.data.keyword.discoveryshort}} tooling, the screen is blank. This happens because the URL is missing the {{site.data.keyword.discoveryshort}} instance ID. To work around this issue:
-    1. From the IBM Cloud Pak for Data web client menu, choose **My Instances**. For example: `https://mycluster.com/zen/#/myInstances`.
+    1. From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**. For example: `https://mycluster.com/zen/#/myInstances`.
     1. Select the Discovery instance you are using and click **Launch Tool**.
     1. Once the tooling is loaded, the URL should have the following structure: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/projects`
     1. Copy the entire path, excluding `/projects`. For example: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876`

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-14"
+lastupdated: "2020-09-18"
 
 subcollection: discovery-data
 
@@ -70,7 +70,7 @@ Some data you cannot back up and must be recreated.
 
 Your uploaded documents are converted, enriched, and stored in the search index. In the event of a disaster, the search index is not recoverable. Store a backup of all your source documents in a safe place.
 
-If you also import documents by doing scheduled crawls of external data sources, you might want to retain your data source credentials externally so that you can re-establish your data sources quickly. For the list of available sources and the credentials needed for each one, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources).
+If you also import documents by doing scheduled crawls of external data sources, you might want to retain your data source credentials externally so that you can re-establish your data sources quickly. For the list of available sources and the credentials needed for each one, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
 
 ### Training data
 {: #backuptraining}
@@ -134,11 +134,11 @@ For the restore to work properly, note that the document IDs that you use in you
 ### Restoring connections to external data sources
 {: #restoreconnections}
 
-In case of an unanticipated loss of data, you might lose your scheduled crawls of external data sources. See [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources) for the list of available sources.
+In case of an unanticipated loss of data, you might lose your scheduled crawls of external data sources. See [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources) for the list of available sources.
 
 To restore your external data, re-establish your connections to these data sources, and then re-crawl them.
 
-To find the data source credentials that you stored, follow the instructions for your chosen data source in [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources). These instructions explain how you can reconnect to your data sources and get the data imported into {{site.data.keyword.discoveryshort}}.
+To find the data source credentials that you stored, follow the instructions for your chosen data source in [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources). These instructions explain how you can reconnect to your data sources and get the data imported into {{site.data.keyword.discoveryshort}}.
 
 
 ### Restoring Smart Document Understanding models
