@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-09-30"
 
 subcollection: discovery-data
 
@@ -41,7 +41,7 @@ To access the **Improve and Customize** page, select the **Improve and customize
 
 **To improve and customize your Document Retrieval project**:
 1.  Enter a natural language query in the query box.
-1.  Review the query results displayed. You can view the source document for each result by clicking on **View passage in document** or **View document**.
+1.  Review the query results displayed. You can view the source document for each result by clicking on **View passage in document** or **View document**. For more information about how passages are identified in natural language queries, see [Passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
 1.  Configure the desired improvement tools. 
 1.  For some of the tools, after you apply the improvement, a **Recrawl** or **Reprocess** of the collections in your project will start automatically. To do so manually, open the **Activity** page of each collection.
 1.  Retry the query.

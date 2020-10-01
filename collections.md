@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-01"
 
 subcollection: discovery-data
 
@@ -34,7 +34,7 @@ subcollection: discovery-data
 # Creating and managing collections
 {: #collections}
 
-<!-- c/s help for the *Managing collections* page. Do not delete. -->
+<!-- c/s help for the *Manage collections* page. Do not delete. -->
 
 A collection is a set of documents you upload or crawl. You can also enrich, train, and query collections.
 {: shortdesc}
@@ -71,7 +71,7 @@ If you want to access an existing collection, complete the following steps:
 
 For information about creating a collection by using the API, see [Create a collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external}.
 
-## Supported file types and general requirements
+### Supported file types and general requirements
 {: #supportedfiletypes}
 
 {{site.data.keyword.discoveryshort}} can ingest the following file types; it ignores all other document types:
@@ -104,7 +104,7 @@ A connector is a component that provides data connectivity and extraction capabi
 -  You need the credentials and file locations, or URLs, for each data source, which a developer or system administrator of the data source typically provides.
 -  You need to manually provide the resources to crawl. Auto discovery is not supported.
 
-## Crawl schedule options
+### Crawl schedule options
 {: #crawlschedule}
 
 When you create a collection, the initial crawl starts immediately. The frequency you choose for the crawl schedule determines when the next crawl starts in relation to the first. You can schedule crawls to update at the following intervals:
@@ -130,3 +130,44 @@ Optional: Click **More processing settings** to expand the menu, and then click 
 For additional information about supported data sources in {{site.data.keyword.discoveryshort}}, see the following links:
 - ![Cloud Pak for Data only](images/cpdonly.png) [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
 - ![IBM Cloud only](images/cloudonly.png) [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
+
+## Managing collections
+{: #manage-collections-public}
+
+<!-- c/s help for the *Manage collections* page tabs: Activity, Processing settings, CSV settings. Do not delete. -->
+
+Click on any collection on the **Manage collections** page to see the options for managing your collection. These tabs are available after collection processing finishes. The tabs contain data that is associated with your collection and options for managing it.
+{: shortdesc}
+
+**Activity** tab:
+
+- The number of available documents and the number of documents that are processing
+- The collection status. While syncing is in progress, the collection status states, `Sync in progress`. To recrawl your collection, edit the fields that are associated with the data source that you are connnecting to in {{site.data.keyword.discoveryshort}}. When collection processing completes, you receive a status message that states, `Your documents have finished processing! You can now work with your full data set.`.
+- The last update date of the collection
+- A list of warnings and errors that might appear while your collection processes, such as the affected file name and its associated document ID
+
+**Identify fields** tab:
+
+You can view any fields that the crawler identified from your data. You can annotate the fields in your documents. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
+
+**Manage fields** tab:
+
+The **Manage fields** tab contains the following options: **Fields to index**, **Improve query results by splitting your documents**, and **Date format settings**. For more nformation, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings)
+
+**Enrichments** tab:
+
+You can enrich fields in your collection with cognitive metadata. Many enrichments are available in {{site.data.keyword.discoveryshort}}. You must create some of the enrichments before you apply them. 
+
+You can apply an enrichment to a field by selecting an enrichment, selecting the fields that you want to enrich in the drop-down menu of the chosen enrichment, and clicking **Apply changes and reprocess**.
+
+For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
+
+**Processing settings** tab:
+
+You can change the crawler schedule and your data source configuration settings. If you are uploading your own data, you can set the **Apply optical character recognition (OCR)** option to **On** or **Off**. If you select **Web crawl** and you already entered a start URL, you can access the **Crawl settings** dialog box by clicking the icon next to the delete icon. Both icons are located next to the start URL. In this dialog box, you can specify the **Maximum number of links to follow** or exclude URLs that include specific subdirectories in **Exclude URLs where the path includes**.
+
+**CSV settings** tab:
+
+If you upload CSV files, you can specify how these files are parsed by selecting a delimiter in **Column delimiter**. You can also specify an escape character in **Escape character**.
+
+For information about creating a collection, see [Creating a collection](/docs/discovery-data?topic=discovery-data-collections).
