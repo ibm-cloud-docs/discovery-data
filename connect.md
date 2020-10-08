@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-10-08"
 
 subcollection: discovery-data
 
@@ -978,14 +978,14 @@ To enable document level security, you must configure these components:
 ### Creating users for document level security
 {: #createusersdls}
 
-You must create users that match the users available on the source system that {{site.data.keyword.discoveryshort}} is connecting to so that they can query with document level security turned on.
+You must create users that match the users available on the source system that {{site.data.keyword.discoveryshort}} is connecting to so that they can query with document level security enabled.
 {: shortdesc}
 
-1. As an administrator, log in to {{site.data.keyword.discoveryshort}}.
-1. Create users who match the users available on your source or who are connected to the LDAP server used on your source system.
+1. Log in to {{site.data.keyword.discoveryshort}} as an administrator.
+1. Create users who match the users available on your source or who are connected to the LDAP server that your source system uses. If you create users for document level security, keep the following points in mind:
 
-   - To create users individually, see [Managing users](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/admin/users.html). For each user who you want to access query results, you need to add users, following the instructions in this link. The username must match the username that the source uses.
-   - To connect to an LDAP server that the source is using, see [Connecting to your LDAP server](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/admin/ldap.html).
+   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/users.html){: external}.
+   - To connect to an LDAP server that the source is using, see [Connecting to your LDAP server](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/ldap.html){: external}.
 
 
 ### Associating users with an instance
