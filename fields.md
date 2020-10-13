@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-10-13"
 
 subcollection: discovery-data
 
@@ -74,8 +74,9 @@ Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/disco
 
 <!-- c/s help for the **Identify fields** tab. Do not delete.  -->
 
-![IBM Cloud only](images/cloudonly.png) In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**. If you choose **User-trained-models**, you can follow the steps to build a custom model by annotating your documents. Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables. If you do not want to add any customization, the **Text extraction only** option is automatically applied and you can continue applying other [Improvement tools](/docs/discovery-data?topic=discovery-data-improve#improvement-tools).  
-{: important}
+|   |   |
+| ------ | ------ | 
+| ![IBM Cloud only](images/cloudonly.png) |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.</br></br>&#8226; If you choose **User-trained-models**, you can follow the steps below to build a custom model by annotating your documents.</br></br>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.</br></br>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. | 
 
 See [Best practices for annotating documents](/docs/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
 
