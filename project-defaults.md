@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-10-30"
 
 subcollection: discovery-data
 
@@ -63,7 +63,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 | | | | | |
 | Aggregation</br>(`aggregation`) | "term(enriched_text.entities.text,</br>name:entities)"  | "[term</br>(enriched_html.contract.elements.categories.label,</br>count:25,name:categories)"  | "" | "" | "" |
 | Suggested refinements</br>(`suggested_refinements`) |   |  |  |  | |
-| Enabled</br>(`suggested_refinements.enabled`) | true  | false | false | false | false | 
+| Enabled</br>(`suggested_refinements.enabled`) | false | false | false | false | false | 
 | Count</br>(`suggested_refinements.count`) | 10 | 10  | 10 | 10 | 10 |
 | | | | | | |
 | Spelling suggestions</br>(`spelling_suggestions`) | true  | true  | false | true | true |

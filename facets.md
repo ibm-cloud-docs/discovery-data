@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-18"
+  years: 2019, 2020
+lastupdated: "2020-10-30"
 
 subcollection: discovery-data
 
@@ -13,6 +13,7 @@ subcollection: discovery-data
 {:tip: .tip}
 {:note: .note}
 {:pre: .pre}
+{:beta: .beta}
 {:important: .important}
 {:deprecated: .deprecated}
 {:codeblock: .codeblock}
@@ -62,7 +63,7 @@ For content mining projects, the **Dynamic facets** toggle at the bottom right s
 ### Adding facets to a content mining project
 {: #facetcma}
 
-1. On the "Improve and customize" page, click "Customize display" and then click **Facets**.
+1. Open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display** and then click **Facets**.
 1. Click **New facet** > **From existing fields in a collection**, and select a field from your documents that you want to use to filter results.
 
     As you make your selections, a preview is shown.
@@ -85,7 +86,7 @@ For document retrieval projects, notice the **Dynamic facets** toggle at the bot
 ### Adding facets to a document retrieval project
 {: #facetdra}
 
-1. On the "Improve and customize" page, click "Customize display" and then click **Facets**.
+1. Open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display** and then click **Facets**.
 1. Click **New facet** > **From existing fields in a collection**, and select a field from your documents that you want to use to filter results.
 
     As you make your selections, a preview is shown.
@@ -100,10 +101,37 @@ For document retrieval projects, notice the **Dynamic facets** toggle at the bot
 
 For either project type, if you want to add a facet that doesn't exist as a field, you can create a dictionary.
 
-1. On the "Improve and customize" page, click **Customize display** and then click **Facets**.
+1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
 1. Click **New facet** > **By creating a dictionary**.
 1. Enter a name for the facet, and then create a dictionary as described in the dictionary enrichments section of [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
 
     After you save the dictionary, the name that you used for the facet label is shown in the list of facets.
 
 1. As you test the facet, you can add more terms to the dictionary you created by selecting **Teach domain concepts** > **Dictionaries**. The dictionary you created is shown in the list on the "Dictionaries" page.
+
+
+## Creating a facet by identifying a pattern ![IBM Cloud only](images/cloudonly.png)
+{: #facetpattern}
+
+The Patterns feature is beta functionality and supports English language documents only.
+{: beta}
+
+Pattern induction generates facets from a set of examples you specify. After you specify a few examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
+
+This facet is only available in **Document Retrieval** and **Conversation Search** projects.
+{: note}
+
+1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
+1. Click **New facet** > **By identifying a pattern**.
+1. On the **Create facet from a new pattern** page, select the way you want to choose documents. You can choose the option to have 10 random documents selected for you, or you can select the documents yourself (up to 20 may be chosen). Each document is limited to a maximum size of 5000 characters. Any document that exceeds this limit will be truncated to 5000 characters. Click **Next**.
+1. Start selecting example words or phrases that fit the pattern you want to create. For example, if you have a collection of articles that discuss ISO standards, you could start highlighting the numbers of the standards in each document. If you make a mistake, hover over the selection and click the `x` to delete it. 
+1. Continue selecting examples. After you have identified enough, {{site.data.keyword.discoveryshort}} will display a list of suggested examples that you can validate by choosing **Yes** or **No** for each one. Click the **Preview document** icon if you want to confirm the example in context. 
+1. Continue highlighting examples and validating suggestions until the `You’ve identified enough examples! Review results that were extracted based on your examples.` message displays.
+1. Click the **Review examples** tab to review the lists of examples identified by you and {{site.data.keyword.discoveryshort}}.
+1. If the examples are correct, click **Save pattern**.
+
+If the system cannot determine a valid pattern the **Save pattern** button will not enable. This can happen if you select contradictory examples. Click the **Reset** button to start over. This will return the documents to their original state and you will lose all examples already identified.
+{: note}
+
+After you save the pattern, the name that you specified for the facet label is shown in the list of facets.
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-07-23"
+lastupdated: "2020-10-30"
 
 subcollection: discovery-data
 
@@ -36,8 +36,10 @@ subcollection: discovery-data
 | Language | Supported features|
 |:---|:---|
 | Arabic (`ar`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Bosnian (`bs`)\* | Parts of speech, Dictionary, Regular expressions |
 | Chinese, simplified (`zh-CN`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
 | Chinese, traditional</br> (`zh-TW`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
+| Croation (`hr`)\* | Parts of speech, Dictionary, Regular expressions|
 | Czech (`cs`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Danish (`da`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
 | Dutch (`nl`) |Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
@@ -46,6 +48,7 @@ subcollection: discovery-data
 | French (`fr`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
 | German (`de`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
 | Hebrew (`he`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Hindi (`hi`)\* | Parts of speech, Dictionary, Regular expressions |
 | Italian (`it`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
 | Japanese (`ja`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
 | Korean (`ko`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
@@ -55,10 +58,13 @@ subcollection: discovery-data
 | Portuguese, Brazilian (`pt-br`) | Parts of speech, Keywords, Entities, Document sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
 | Romanian (`ro`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Russian (`ru`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
+| Serbian (`sr`)\* | Parts of speech, Dictionary, Regular expressions|
 | Slovak (`sk`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
 | Spanish (`es`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding  |
 | Swedish (`sv`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
 
+
+\* Available in ![IBM Cloud only](images/cloudonly.png). **Optical character recognition (OCR)** is not available for Bosnian, Croation, Hindi, and Serbian. Serbian supports Latin script only.
 
 You can select the collection language when you create your collection. See [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 
 {: tip}
@@ -69,6 +75,7 @@ You can select the collection language when you create your collection. See [Cre
 ## English-only support
 {: #feature-support}
 
-The following feature is currently supported in English only:
+The following features are currently supported in English only:
 
 -  ![Cloud Pak for Data only](images/cpdonly.png) [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you purchase and install Discovery for Content Intelligence.
+-  ![IBM Cloud only](images/cloudonly.png) [Patterns enrichment (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)

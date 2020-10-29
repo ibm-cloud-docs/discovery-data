@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-08-27"
+lastupdated: "2020-10-30"
 
 subcollection: discovery-data
 
@@ -13,6 +13,7 @@ subcollection: discovery-data
 {:tip: .tip}
 {:note: .note}
 {:pre: .pre}
+{:beta: .beta}
 {:important: .important}
 {:deprecated: .deprecated}
 {:codeblock: .codeblock}
@@ -33,7 +34,7 @@ subcollection: discovery-data
 # Creating enrichments
 {: #create-enrichments}
 
-You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**.
+You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data (**Patterns**), or use an **Advanced rule model**.
 {: shortdesc}
 
 The enrichments available will vary based on the **Project type**.
@@ -48,6 +49,7 @@ To create a new enrichment:
     - [**Machine Learning and Watson Explorer Content Analytics Studio models**](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment) 
     - [**Classifier**](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment)
     - [**Advanced rule models**](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
+    - ![IBM Cloud only](images/cloudonly.png) [**Patterns** (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
 
 Other available enrichments: [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) and [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-create-enrichments#content-intelligence).
 
@@ -65,6 +67,7 @@ You can create a new dictionary using the tooling, or you can upload a dictionar
 
 To create a new dictionary:
 
+1. Select the Dictionary enrichment. See [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).
 1. Select the **New** button.
 1. Name your dictionary and choose the language.
 1. Enter a term and select the **+** button. Continue adding terms. When enough terms have been added, addtional terms will be suggested.
@@ -320,6 +323,43 @@ In the JSON output:
            . . .              
 ] 
 ```	
+
+## Pattern enrichments ![IBM Cloud only](images/cloudonly.png)
+{: #patterns-enrichment}
+
+The Patterns feature is beta functionality and supports English language documents only.
+{: beta}
+
+The Patterns enrichment uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
+
+You can create a new pattern using the tooling. The enrichment will be applied only to the collection(s) and field(s) you specify after you create your pattern, or you can apply the pattern later. For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
+
+Patterns cannot be used in a Content Mining application.  
+{: note}
+
+To create a new pattern:
+
+1. Select the Patterns enrichment. See [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).
+1. Select the **New** button.
+1. Name your pattern and choose the language (English-only for the beta).
+1. On the **Create pattern** page, select the way you want to choose documents. You can choose the option to have 10 random documents selected for you, or you can select the documents yourself (up to 20 may be chosen). Each document is limited to a maximum size of 5000 characters. Any document that exceeds this limit will be truncated to 5000 characters. Click **Next**.
+1. Start selecting example words or phrases that fit the pattern you want to create. For example, if you have a collection of articles that discuss ISO standards, you could start highlighting the numbers of the standards in each document. If you make a mistake, hover over the selection and click the `x` to delete it. 
+1. Continue selecting examples. After you have identified enough, {{site.data.keyword.discoveryshort}} will display a list of suggested examples that you can validate by choosing **Yes** or **No** for each one. Click the **Preview document** icon if you want to confirm the example in context. 
+1. Continue highlighting examples and validating suggestions until the `You’ve identified enough examples! Review results that were extracted based on your examples.` message displays.
+1. Click the **Review examples** tab to review the lists of examples identified by you and {{site.data.keyword.discoveryshort}}.
+1. If the examples are correct, click **Save pattern**.
+1. To apply the pattern immediately, select the collections(s) and fields(s) and click **Apply**.
+
+If the system cannot determine a valid pattern the **Save pattern** button will not enable. This can happen if you select contradictory examples. To start over, click the **Reset** button. This will return the documents to their original state and you will lose all examples already identified.
+{: note}
+
+To download a pattern:
+
+1. In the **Patterns view**, select the download icon.
+2. A pattern model is downloaded as a .zip file.
+
+You can import the downloaded .zip file as an advanced rules model. See [Advanced rule models enrichment](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) below.
+
 
 ## Advanced rule models enrichment
 {: #advanced-rules}

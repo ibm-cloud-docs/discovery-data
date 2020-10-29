@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-10-30"
 
 keywords: release notes, known issues
 
@@ -57,6 +57,19 @@ IBM releases services, features, and language support for your evaluation that a
 The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+### IBM Cloud Premium release, 30 October 2020 ![IBM Cloud only](images/cloudonly.png)
+{: #30oct2020}
+
+New features in this release:
+
+-  Added basic support for Bosnian, Croation, Hindi, and Serbian. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+-  Released the beta feature Patterns enrichment, which uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. You can use pattern induction as an enrichment or to create a facet. For more information see [Patterns enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment) and [Creating a facet by identifying a pattern](/docs/discovery-data?topic=discovery-data-facets#facetpattern). For a statement explaining beta features, see [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features).
+
+Changes made in this release:
+
+-  In new **Document Retrieval** projects, the `suggested refinements` query setting is now set to `false` by default. It was previously set to `true`.
+
 
 ### IBM Cloud Premium release, 14 September 2020 ![IBM Cloud only](images/cloudonly.png)
 {: #14sept2020}

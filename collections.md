@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-10-30"
 
 subcollection: discovery-data
 
@@ -95,7 +95,7 @@ For information about creating a collection by using the API, see [Create a coll
 
 \*\* Individual image files (PNG, TIFF, JPG) are scanned, and any text is extracted. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also scanned, and any text is extracted.
 
-\*\*\*Files within compressed archive files (ZIP, GZIP, TAR) are extracted. {{site.data.keyword.discoveryshort}} ingests the supported file types within them; it ignores all other file types.
+\*\*\*Files within compressed archive files (ZIP, GZIP, TAR) are extracted. {{site.data.keyword.discoveryshort}} ingests the supported file types within them; it ignores all other file types. {{site.data.keyword.discoveryshort}} only supports .zip files from MacOS that are generated using a command such as: `zip -r my-folder.zip my-folder -x "*.DS_Store"`. Zip files created by right-clicking on a folder name and selecting `compress` are not supported. 
 
 A connector is a component that provides data connectivity and extraction capabilities for external data sources. In {{site.data.keyword.discoveryshort}}, you establish a connector during the process of creating a collection for a data source. The following general requirements apply to all connectors:
 
