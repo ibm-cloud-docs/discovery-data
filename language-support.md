@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-10-31"
 
 subcollection: discovery-data
 
@@ -39,7 +39,7 @@ subcollection: discovery-data
 | Bosnian (`bs`)\* | Parts of speech, Dictionary, Regular expressions |
 | Chinese, simplified (`zh-CN`) | Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
 | Chinese, traditional</br> (`zh-TW`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
-| Croation (`hr`)\* | Parts of speech, Dictionary, Regular expressions|
+| Croatian (`hr`)\* | Parts of speech, Dictionary, Regular expressions|
 | Czech (`cs`) | Parts of speech, Phrase sentiment, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Danish (`da`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
 | Dutch (`nl`) |Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Dictionary, Regular expressions, Machine Learning, Advanced rule models, Smart Document Understanding, Table Understanding |
@@ -64,7 +64,7 @@ subcollection: discovery-data
 | Swedish (`sv`) | Parts of speech, Dictionary, Regular expressions, Smart Document Understanding, Table Understanding |
 
 
-\* Available in ![IBM Cloud only](images/cloudonly.png). **Optical character recognition (OCR)** is not available for Bosnian, Croation, Hindi, and Serbian. Serbian supports Latin script only.
+\* Available in ![IBM Cloud only](images/cloudonly.png). **Optical character recognition (OCR)** is not available for Bosnian, Croatian, Hindi, and Serbian. Serbian supports Latin script only.
 
 You can select the collection language when you create your collection. See [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 
 {: tip}

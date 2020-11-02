@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-02"
 
 subcollection: discovery-data
 
@@ -34,10 +34,16 @@ subcollection: discovery-data
 # Creating enrichments
 {: #create-enrichments}
 
-You can create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data (**Patterns**), or use an **Advanced rule model**.
+The **Dictionary**, **Regular expressions**, **Machine Learning and Watson Explorer Content Analytics Studio models**, **Classifier**, and **Patterns** enrichments are available in {{site.data.keyword.discoveryshort}}. The enrichments available will vary based on the **Project type**.
 {: shortdesc}
 
-The enrichments available will vary based on the **Project type**.
+You can create enrichments that will:
+  -  Add related terms (**Dictionary**)
+  -  Identify and extract values (**Regular expressions**)
+  -  Extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**)
+  -  Classify your documents into categories (**Classifier**)
+teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data (**Patterns**)
+  -  Use an **Advanced rule model**
 
 To create a new enrichment: 
 
@@ -332,6 +338,16 @@ The Patterns feature is beta functionality and supports English language documen
 
 The Patterns enrichment uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
 
+Pattern recognition works best on text with consistent structure in casing, length, text, or numeric values. Examples of patterns you can teach {{site.data.keyword.discoveryshort}} to identify in your documents:
+  -  All `ISO` standard numbers, for example `ISO 45001`, `ISO 22000`
+  -  All currency amounts, for example `$50.5 million`, `$29 million`
+  -  All dates, for example `8 September 2019`, `12 June 2020`
+
+If you need to identify specific terms or text, for example:
+  -  All products in the same family, `Cloud Pak for Data`, `Cloud Pak for Automation`, `Cloud Pak for Security`
+  -  All terms in the same category, `carburetor`, `piston`, `valves`
+The [**Dictionary** enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment) would be a better option.
+
 You can create a new pattern using the tooling. The enrichment will be applied only to the collection(s) and field(s) you specify after you create your pattern, or you can apply the pattern later. For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
 
 Patterns cannot be used in a Content Mining application.  
@@ -343,7 +359,7 @@ To create a new pattern:
 1. Select the **New** button.
 1. Name your pattern and choose the language (English-only for the beta).
 1. On the **Create pattern** page, select the way you want to choose documents. You can choose the option to have 10 random documents selected for you, or you can select the documents yourself (up to 20 may be chosen). Each document is limited to a maximum size of 5000 characters. Any document that exceeds this limit will be truncated to 5000 characters. Click **Next**.
-1. Start selecting example words or phrases that fit the pattern you want to create. For example, if you have a collection of articles that discuss ISO standards, you could start highlighting the numbers of the standards in each document. If you make a mistake, hover over the selection and click the `x` to delete it. 
+1. Start selecting example words or phrases that fit the pattern you want to create. For example, if you have a collection of articles that discuss `ISO` standards, you could start highlighting the numbers of the standards in each document. If you make a mistake, hover over the selection and click the `x` to delete it. 
 1. Continue selecting examples. After you have identified enough, {{site.data.keyword.discoveryshort}} will display a list of suggested examples that you can validate by choosing **Yes** or **No** for each one. Click the **Preview document** icon if you want to confirm the example in context. 
 1. Continue highlighting examples and validating suggestions until the `You’ve identified enough examples! Review results that were extracted based on your examples.` message displays.
 1. Click the **Review examples** tab to review the lists of examples identified by you and {{site.data.keyword.discoveryshort}}.
