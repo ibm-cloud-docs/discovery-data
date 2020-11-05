@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-09-16"
+lastupdated: "2020-11-05"
 
 subcollection: discovery-data
 
@@ -30,7 +30,7 @@ subcollection: discovery-data
 {:go: .ph data-hd-programlang='go'}
 {:video: .video}
 
-# Mining content
+# Using the Content Mining application
 {: #contentminerapp}
 
 The {{site.data.keyword.discoveryfull}} content mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
@@ -40,13 +40,13 @@ This video provides an overview of content mining:
 
 ![Watson Discovery: Content Mining](https://www.youtube.com/embed/i5418xJoeHg){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-This page describes using the content mining application. For information about creating a {{site.data.keyword.discoveryshort}} content mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+This page describes using the content mining application. For information about creating a {{site.data.keyword.discoveryshort}} Content Mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 {: tip}
 
 ## Application launch view
 {: #cmolaunch}
 
-When you launch the application from a {{site.data.keyword.discoveryshort}} content mining project, you see something similar to the window in Figure 1. The window shows sample text on the **Facets** tab, which shows the extracted facets that were configured in the {{site.data.keyword.discoveryshort}} content mining project.
+When you launch the application from a {{site.data.keyword.discoveryshort}} Content Mining project, you see something similar to the window in Figure 1. The window shows sample text on the **Facets** tab, which shows the extracted facets that were configured in the {{site.data.keyword.discoveryshort}} Content Mining project.
 
 The link for the content mining app is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`.
 {: note}
@@ -58,12 +58,12 @@ The link for the content mining app is similar to the format, `https://{installa
 
 On this first page, you can enter terms that you want to search for. Or, you can select values from the bar charts of each facet. You can select multiple items.
 
-For more information about configuring facets in a content mining project, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
+For more information about configuring facets in a Content Mining project, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
 {: tip}
 
 You can select the type of facet to display from the **Facet type** menu:
 
-- **Metadata Facets**: If configured in the content mining project, these facets come from the fields that are indexed in the document collection.
+- **Metadata Facets**: If configured in the Content Mining project, these facets come from the fields that are indexed in the document collection.
 - **Facets**: By default, these facets are parts of speech whose values are extracted from the text field of your documents. Other facets might also be configured.
 - **Custom**: This view allows you to customize facets for analysis.
 
@@ -371,7 +371,7 @@ This toolbar controls the content of the individual time series.
 
 The pairs analysis dashboard is displayed when you choose a **Pairs** analysis in **Facet analysis**.
 
-By default, a two-dimensional map table is shown. Click each item to analyze further.. Click the toggle arrow button of each cell header to sort a row or column in relevancy order. Click a column or row name to sort by label.
+By default, a two-dimensional map table is shown. Click each item to analyze further. Click the toggle arrow button of each cell header to sort a row or column in relevancy order. Click a column or row name to sort by label.
 
 ##### Facet toolbar
 {: #cmopadbtb}
@@ -388,7 +388,7 @@ The facet toolbar is displayed when you click **Show Toolbar**.
 
 ![Create a collection page](images/cmcreatecoll.png "Create a collection page"){: caption="Figure 10. The Create a Collection page in the content mining app" caption-side="bottom"}
 
-In the content mining app, you see the collection that was configured for the project, but you can also add collections of documents that can be used to configure other content mining projects.
+In the content mining app, you see the collection that was configured for the project, but you can also add collections of documents that can be used to configure other Content Mining projects.
 
 1. Click the **Collections** breadcrumb link from the top of the page.
 1. Click **Create Collection**.
@@ -399,13 +399,62 @@ In the content mining app, you see the collection that was configured for the pr
 This feature is specific to the content mining app. Each **Content Mining** [project](/docs/discovery-data?topic=discovery-data-projects#project-type) can contain only one collection.
 {: note}
 
+## Creating and applying a document classifier
+{: #create-doc-classifier}
+
+If you want to apply a document classifier to your Content Mining or {{site.data.keyword.discoveryshort}} collection, you must create the document classifier in the content mining app and then deploy the classifier as an enrichment. After you deploy the document classifier as an enrichment, you can add your document classifier to your Content Mining or {{site.data.keyword.discoveryshort}} collection.
+{: shortdesc}
+
+If you want to apply your document classifier to a {{site.data.keyword.discoveryshort}} collection, you must have a .csv training file and a .csv target file. The purpose of the .csv training file is to train the classifier. The data in the .csv training file must have the same column names and value types as the .csv target file, such as string, number, and so on. The .csv target file contains the actual data that you want to apply your classifier to after you create it in your content mining app. For sample .csv training and .csv target data, see Table 1.
+{: important}
+
+You can apply your document classifier to a collection in your content mining app, a {{site.data.keyword.discoveryshort}} collection, or both. To create and apply a document classifier to your Content Mining or {{site.data.keyword.discoveryshort}} collection, complete the following steps:
+
+1. In {{site.data.keyword.discoveryshort}}, create a Content Mining project, and click **Upload data**.
+1. Name your collection, and click **Next**.
+1. Click **Select documents**, and select the .csv file that contains your training data.
+1. After collection processing is complete, click **Launch application** to navigate to the content mining app.
+1. On the **Create a collection** page in the content mining user app, create a classifier by selecting **classifier** in the drop-down list and then **Create classifier**. You can see a progress bar that has the following steps for configuring your classifier: **Create**, **Training data**, **Fields**, **Classifier**, and **Enrichment**.
+1. In **Create**, name your classifier. You can also add a description and choose a language for your data.
+1. In **Training data**, select the training data that is associated with a collection in the drop-down list, or upload the .csv file that contains your training data.
+1. In **Fields**, select or clear the column names from your .csv training file that you want to include in or exclude from your classifier.
+1. In **Classifier**, specify the fields for machine learning training and prediction. You can specify the following fields:
+   - **Answer field** - Select a field in your .csv training file that contains the answer label. If you want to specify multiple answer labels in a cell in your .csv file, separate the answer labels by using a semicolon (`;`). For example, if you want to specify the answer labels `orange` and `apple`, enter `orange;apple` in the cell.
+   - **Predicted field** - Specify a field name that contains the label that the classifier predicts.
+   - **Test dataset** - The training data set that is used by default. You can also explicitly specify a specific data set.
+   - **Train federated model** - Train your data by a specified field value and create multiple models for each answer label.
+1. In **Enrichment**, select the fields for annotation in **Target fields** and any annotators that enrich the selected text content field in **Annotators**.
+1. In **Confirm**, verify your classifier configuration settings, and click **Save**.
+1. In the **Overview** tab, click **New model** to create and train your machine learning model. You can name your model and add a description. It might take several minutes for model training to complete.
+1. After model training is completed, deploy the model as an enrichment by either clicking the expandable menu icon in the **Actions** column and then **Deploy model** or by clicking **Deploy** in the pane where your model is displayed.
+1. If you want to apply your document classifier to your Content Mining collection, click **Classifiers** to verify that your classifier is available on the **Create a classifier** page in your content mining user app, and after you verify that your classifier is available, select **collection** in the drop-down menu, click the expandable menu icon on your collection, and click **Edit collection**. If you do not want to apply your document classifier to a Content Mining collection but rather to a {{site.data.keyword.discoveryshort}} collection, skip to step 17.
+1. Click the **Enrichment** tab, and scroll to the end of the page to view your classifier.
+1. Select the checkbox for your classifier, and click **Save**. It might take several minutes for collection reindexing to complete.
+1. If you want to apply your document classifier to a {{site.data.keyword.discoveryshort}} collection, in {{site.data.keyword.discoveryshort}}, create a project and a collection, or select an existing project and collection that has your uploaded target data. If you choose an existing project and collection, skip to step 21. You can find your classifier in the **Available enrichments** list in the **Enrichments** tab in your collection. Your classifier is available for any collection.
+1. If you create a new project and collection, click **Upload data**, and in **Collection name**, enter the name of your collection.
+1. Click **Select documents** to upload your .csv target file that contains the actual data that you want to apply your classifier to. For sample .csv training and target data, see Table 1. Your classifier now processes your documents.
+1. Optional: In your collection, click the **CSV settings** tab, and verify that **Use header** is selected. You can manually configure the .csv file settings in this tab.
+1. Click the **Manage fields** tab, include all of the fields that you want to index, and click **Apply changes and reprocess**.
+1. In the **Enrichments** tab, locate your classifier in the **Name** column, select the fields that you want to enrich in the **Fields to enrich** drop-down menu, and click **Apply changes and reprocess**.
+
+Your classifier processes your document based on your structured and textual data. If you upload multiple documents, some documents might not be assigned any classes. To verify that your classifier works, ensure that both your .csv training and .csv target files contain the same column names and the same value types. To see sample column names and their corresponding valid value types in both the .csv training and .csv target files, review Table 1:
+
+| File          | Column names                                                                                     | Value types                              |
+| ------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------- |
+| .csv training | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_sex`, `client_age`, `body`, `label` | `0`, `2016/1/1`, `Tea`, `lemon tea`, `Not Member`, `Manhattan`, `Male`, `20`, `The straw was peeled off from the juice pack.`, `package_container` |
+| .csv target   | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_sex`, `client_age`, `body`, `label` | `1`, `2016/1/2`, `Ice cream`, `vanilla ice cream`, `Silver Card Member`, `Queens`, `Female`, `20`, `I got some ice cream for my children, but there was something like a piece of thread inside the cup.`, `contamination_tampering` |
+{: caption="Table 1. Sample data for .csv training and .csv target files" caption-side="top"}
+   
+If you cannot find any documents that were classified, search for your document by using the name that you assigned to your machine learning model in step 12.
+{: tip}
+
 ## Contextual view
 {: #contextual-view}
 
 You can use the **Contextual view** tab to simultaneously analyze multiple text fields in your documents.
 {: shortdesc}
 
-By default, a content mining collection is configured to analyze the content of one text field, but if you have data that includes two or more fields that you want to analyze, such as **question** and **answer** data, contextual view is a useful tool. You can access the **Contextual view** tab by clicking **Edit collection**.
+By default, a Content Mining collection is configured to analyze the content of one text field, but if you have data that includes two or more fields that you want to analyze, such as **question** and **answer** data, contextual view is a useful tool. You can access the **Contextual view** tab by clicking **Edit collection**.
 
 ### Enabling multiple text fields
 {: #enable-multiple-fields}
