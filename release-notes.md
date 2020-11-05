@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-31"
+lastupdated: "2020-11-05"
 
 keywords: release notes, known issues
 
@@ -103,7 +103,7 @@ This release is available for Premium instances of {{site.data.keyword.discovery
 New features in this release:
 
   -  New Project-based interface, which includes configurations optimized for three common use cases: Document Retrieval, Conversational Search, and Content Mining. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
-  -  Content Mining: This entirely new capability of Watson {{site.data.keyword.discoveryshort}} allows you to find insights in your data when you may not even know the question to ask. The powerful correlation tooling will help you unlock value from large unstructured data sets. For details, see [Mining content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+  -  Content Mining: This entirely new capability of Watson {{site.data.keyword.discoveryshort}} allows you to find insights in your data when you may not even know the question to ask. The powerful correlation tooling will help you unlock value from large unstructured data sets. For details, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
   -  Tables as Answers: Snippets of text aren't helpful if they are found in a table, so {{site.data.keyword.discoveryshort}} instead returns a formatted table as an answer if your question is best answered by a table. For more information, see [Table retrieval](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
   -  Dynamic Faceted Search: Underspecified queries are very common. Dynamic Faceted Search automatically categorizes your search results into intelligence facets without training by understanding how they are used in the sentences. See [Facets in Document retrieval projects](/docs/discovery-data?topic=discovery-data-facets#facetdr).
   -  Reusable Components: You no longer have to build a {{site.data.keyword.discoveryshort}} application from scratch. We now ship out of the box with reusable, open source, React components. As you configure your Discovery application, you are actually using the real components themselves. From there it is as simple as deploying to get a custom Discovery application. See [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
@@ -187,7 +187,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.1 release:
 Changes made in this release:
 
   -  New **Project** based interface - Test your application like an end-user would with the **Document retrieval**, **Conversational Search**, and **Content Mining** project types. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
-  -  **Content Mining** - Build an end user interface for extracting insights proactively from your entire corpus. For more information, see [Mining Content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+  -  **Content Mining** - Build an end user interface for extracting insights proactively from your entire corpus. For more information, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
   -  **Content Intelligence** - Optional add-on to enrich your documents with pre-built domain knowledge for Contracts, Invoices, and Purchase Orders. For more information, see [Understanding Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
   -  **Reusable components** to quickly build your application using Discovery. We ship an autocomplete, rich preview, results and facets component. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
   -  **Additional Language support** - Basic support for Czech, Slovak, Russian, Polish and Romanian. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).

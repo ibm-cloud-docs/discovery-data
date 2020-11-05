@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-30"
+lastupdated: "2020-11-05"
 
 subcollection: discovery-data
 
@@ -60,7 +60,7 @@ To access the **Improve and Customize** page, select the **Improve and customize
 1.  For some of the tools, after you apply the improvement, a **Recrawl** or **Reprocess** of the collections in your project will start automatically. To do so manually, open the **Activity** page of each collection.
 1.  Review the facets.
 
-You can open your application by choosing **Launch application**. For more information about the application, see [Mining content](/docs/discovery-data?topic=discovery-data-contentminerapp).
+You can open your application by choosing **Launch application**. For more information about the application, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 
 ## Improvement tools
