@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-11-10"
 
 subcollection: discovery-data
 
@@ -43,9 +43,11 @@ You can connect to a data source and pull documents on a schedule into {{site.da
 
 You can use {{site.data.keyword.discoveryshort}} to crawl from the following data sources:
 
+-  [Box](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic)
 -  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
 -  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
 -  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
+-  [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
 -  [{{site.data.keyword.cloud_notm}} Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 
@@ -55,28 +57,135 @@ You can connect to a data source using the {{site.data.keyword.discoveryshort}} 
 2.  Read the requirements for your data source. For the available data sources, see the previous list.
 3.  Read the instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling. For instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling, see [Creating a collection](/docs/discovery-data?topic=discovery-data-collections#createcollection).
 
-You can use an IBM App Connect default connector to send data from a large set of popular data sources to {{site.data.keyword.discoveryshort}} by creating flows within the App Connect tooling. Note that creating a separate App Connect instance is required to use this App Connect default connector and that any costs that you incur when you use a paid App Connect instance are not included with the cost of using {{site.data.keyword.discoveryshort}}. Additionally, except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with App Connect that you perform on your own. For information about integrating App Connect with {{site.data.keyword.discoveryshort}} or for integration support or questions, see [How to use IBM App Connect with {{site.data.keyword.discoveryfull}}](https://www.ibm.com/support/knowledgecenter/SS6KM6/com.ibm.appconnect.dev.doc/how-to-guides-for-apps/watson-discovery.html){: external}. For the available data sources that you can use with the App Connect default connector to send data to {{site.data.keyword.discoveryshort}}, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}.
+You can use an IBM App Connect default connector to send data from a large set of popular data sources to {{site.data.keyword.discoveryshort}} by creating flows within the App Connect tooling. Note that creating a separate App Connect instance is required to use this App Connect default connector and that any costs that you incur when you use a paid App Connect instance are not included with the cost of using {{site.data.keyword.discoveryshort}}. Additionally, except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with App Connect that you perform on your own. For information about integrating App Connect with {{site.data.keyword.discoveryshort}} or for integration support or questions, see [Using IBM App Connect with {{site.data.keyword.discoveryfull}}](https://developer.ibm.com/integration/docs/app-connect/how-to-guides-for-apps/use-ibm-app-connect-watson-discovery/){: external}. For the available data sources that you can use with the App Connect default connector to send data to {{site.data.keyword.discoveryshort}}, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}.
 
 ## Data source requirements
 {: #public-requirements}
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}}:
 
--  The individual document file size limit for Salesforce, SharePoint Online, {{site.data.keyword.cloud_notm}} Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
--  If you crawl Salesforce, a list of available resources is presented when you configure a source, using the {{site.data.keyword.discoveryshort}} tooling.
+-  The individual document file size limit for Box, Salesforce, SharePoint Online, SharePoint 2016 On-Premise, {{site.data.keyword.cloud_notm}} Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
+-  If you crawl Box or Salesforce, a list of available resources is presented when you configure a source, using the {{site.data.keyword.discoveryshort}} tooling.
 -  You can configure a collection with a single data source.
 -  You must obtain an appropriate level of service license, for example Enterprise, for the data source. For information about the appropriate service level license that you need, contact the source system administrator.
 -  {{site.data.keyword.discoveryshort}} source crawls do not delete documents that are stored in a collection. When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents remain as the version last stored.
 
 View the following table to see the objects that a data source can crawl and which data sources support crawling new and modified documents during a refresh:
 
-Data source                          | Crawls new and modified documents during refresh? | Compatible objects that can be crawled
------------------------------------- | ------------------------------------------------- | --------------------------------------
-Salesforce                           | Yes                                               | Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments
-Microsoft SharePoint Online          | Yes                                               | SiteCollections, websites, lists, list items, document libraries
-Web Crawl                            | No                                                | Websites, website subdirectories
-{{site.data.keyword.cloud_notm}} Object Storage             | Yes                                               | Buckets, files
+Data source                                     | Crawls new and modified documents during refresh? | Compatible objects that can be crawled
+----------------------------------------------- | ------------------------------------------------- | --------------------------------------
+Box (**Application level** access)              | No                                                | Files, folders
+Box (**Enterprise level** access)               | Yes                                               | Files, folders
+Salesforce                                      | Yes                                               | Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments
+Microsoft SharePoint Online                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries
+Microsoft SharePoint 2016 On-Premise            | Yes                                               | SiteCollections, websites, lists, list items, document libraries
+Web Crawl                                       | No                                                | Websites, website subdirectories
+{{site.data.keyword.cloud_notm}} Object Storage | Yes                                               | Buckets, files
 {: caption="Table 1. Data sources that support crawling new and modified documents during refresh and objects that can be crawled" caption-side="top"}
+
+### Box
+{: #connectboxpublic}
+
+You must create a new Box custom application to connect to {{site.data.keyword.discoveryshort}}. The Box application that you create requires either Enterprise level or Application level access.
+
+-  If you are not the Box administrator for your organization, [**Application level** access](/docs/discovery-data?topic=discovery-data-sources#applevelboxpublic) is recommended. You must have an administrator approve your application.
+-  If you are the Box administrator for your organization, [**Enterprise level** access](/docs/discovery-data?topic=discovery-data-sources#entlevelboxpublic) is recommended.
+
+If you have **Application level** access, new and modified documents are not crawled during a refresh. This functionality is only supported if you have **Enterprise level** access. If you have **Application level** access, you must first have an administrator approve your application.
+{: important}
+
+If there is a Box update, the steps to set up Box access might change. For more information, see the [Box developer documentation](https://developer.box.com/){: external}.
+{: note}
+
+Complete the following fields to configure a Box collection:
+-  `Client ID` - The private key that you specify when you configure your Box app.
+-  `Client Secret` - The client secret that you specify when you configure your Box app.
+-  `Enterprise ID` - The enterprise ID of the Box account.
+-  `Public Key ID` - The public key ID that Box generates.
+-  `Private Key` - A part of the key pair that is generated to interact with the Box website.
+-  `Passphrase` - The passphrase that is required to decrypt the private key if the private key is an encrypted file.
+
+#### Setting up Application level access
+{: #applevelboxpublic}
+
+1.   Navigate to `https://app.box.com/developers/console`. Be sure to use the Box URL of your organization.
+1.   Click **Create New App**.
+1.   From the **Create a New App** page, select **Enterprise Integration**, and click **Next**.
+1.   On the **Authentication Method** page, select **OAuth 2.0 with JWT (Server Authentication)**, and click **Next**.
+1.   Name your app, and click **Create App**.
+1.   After you create your Box app, click **View Your App**.
+1.   While you view your app, select **Application access** as **Application**. You can use your existing managed users as you continue; you are not required to create new ones.
+1.   Scroll to the **Application Scopes** section of the page, and select the following checkboxes:
+     - **Read and write all folders stored in Box**
+     - **Manage User**
+1.   Scroll to the **Advanced Features** section, and enable the following options:
+     - **Perform Actions as Users**
+     - **Generate User Access Tokens**
+1.  Click **Save Changes**.
+
+The next few steps require assistance from the administrator of the Box account for your organization. If you are not the administrator, you can identify the administrator by opening the Box developer console and looking under **Account settings** > **Account details** > **Settings**.
+
+1.  Administrator step: Authorize your application client ID at `https://app.box.com/master/settings/openbox` by clicking **Authorize New App**.
+1.  Administrator step: Type the **client ID** from `https://app.box.com/developers/console` into the **API key** field, and then click **Authorize**.
+1.  Administrator step: Retrieve a developer token for the application by navigating to `https://app.box.com/developers/console`, scrolling to the **Developer Token** section, and generating your token.
+1.  Now that the administrator authorized the application, navigate to `https://developer.box.com/reference#page-create-an-enterprise-user`, and create an app user by using the API reference page.
+
+   The following is a `curl` example to create an app user:
+
+   ```bash
+    curl https://api.box.com/2.0/users -H "Authorization: Bearer ACCESS_TOKEN" -d '{"name": "NedStark", "is_platform_access_only": true}' -X POST
+   ```
+   {: pre}
+
+1.  Copy the newly generated **id** field contents, and provide them to the non-administrator who is connecting the Box application to {{site.data.keyword.discoveryshort}}.
+1.  After the app user is created, you must share the folders that you want to crawl with the app user, and you must give the app user `Viewer` permissions for those folders, which requires the app user login name from the previous `curl` command response. Example:`"login":"AppUser_737729_jmUo@boxdevedition.com"`.
+1.  Return to the Box developer console `https://app.box.com/developers/console`, and scroll to the **Add and Manage Public Keys** section.
+1.  Click **Generate the public/private keypair**, download your key pair file, and open the file.
+1.  In the key pair file, cut and paste the following fields into the {{site.data.keyword.discoveryshort}} tooling:
+    -  `client_id`
+    -  `enterprise_id`
+    -  `client_secret`
+    -  `public_key_id`
+    -  `private_key`
+    -  `passphrase`
+
+#### Setting up Enterprise level access
+{: #entlevelboxpublic}
+
+1.  Navigate to `https://app.box.com/developers/console`. Be sure to use the Box URL of your organization.
+1.  Click **Create New App**.
+1.  From the **Create a New App** page, select **Enterprise Integration**, and click **Next**.
+1.  On the **Authentication Method** page, select **OAuth 2.0 with JWT (Server Authentication)**, and click **Next**.
+1.  Name your app, and click **Create App**.
+1.  After you create your Box app, click **View Your App**.
+1.  While you view your app, select **Application access** as **Enterprise**. You can use your existing managed users as you continue; you are not required to create new ones.
+1.  Scroll to the **Application Scopes** section of the page, and select the following checkboxes:
+    - **Read and write all folders stored in Box**
+    - **Manage Users**
+    - **Manage Enterprise Properties**
+1.  Scroll to the **Advanced Features** section, and enable the following options:
+    - **Perform Actions as Users**
+    - **Generate User Access Tokens**
+1.  Click **Save Changes**.
+
+If you change your Box app settings, `Reauthorize` your app so that the changes take effect.
+{: tip}
+
+The next few steps require assistance from the administrator of the Box account for your organization. If you are not the administrator, you can identify the administrator by opening the Box developer console and looking under **Account settings** > **Account details** > **Settings**.
+
+1.  Administrator step: Authorize your application client ID by navigating to **Admin console** > **Enterprise settings** > **Apps** and scrolling to **Custom applications**. Example URL:`https://app.box.com/main/settings/openbox`.
+1.  Administrator step: Type the **client ID** from `https://app.box.com/developers/console` into the **API key** field, and then click **Authorize**.
+1.  Return to the Box developer console `https://app.box.com/developers/console`, and scroll to the **Add and Manage Public Keys** section. Click **Generate the public/private keypair**, download your key pair file, and open the file.
+1.  From the key pair file, cut and paste the following fields into the {{site.data.keyword.discoveryshort}} tooling:
+    -  `client_id`
+    -  `enterprise_id`
+    -  `client_secret`
+    -  `public_key_id`
+    -  `private_key`
+    -  `passphrase`
+
+Box notes are stored in JSON format, so {{site.data.keyword.discoveryshort}} ingests any Box notes in the specified folders.
+{: note}
 
 ### Salesforce
 {: #connectsfpublic}
@@ -92,10 +201,8 @@ When identifying the credentials, it might be useful to consult the [Salesforce 
 
 When you crawl Salesforce, note that Knowledge Articles are only crawled if their **version** is `published` and their languages is `en-us`.
 
-
 ### SharePoint Online
 {: #connectsppublic}
-
 
 When connecting to a Microsoft SharePoint Online source, ensure that the instance that you plan to connect to is an Enterprise (E1) plan or higher.
 
@@ -119,10 +226,8 @@ To successfully crawl Microsoft SharePoint Online, you must enable legacy authen
 If you created a SharePoint Online account after January 2020, two-factor authentication is enabled for your account, by default. To crawl your SharePoint Online collection, you must disable two-factor authentication. To view and change your multifactor authentication status, see [View the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#view-the-status-for-a-user){: external} or [Change the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#change-the-status-for-a-user){: external}.
 {: important}
 
-
 ### Web Crawl
 {: #connectwebcrawlpublic}
-
 
 You can use the web crawler to crawl public websites that don’t require a password. You can select how often you'd like {{site.data.keyword.discoveryshort}} to sync with the websites, the language, and the number of hops.
 
@@ -135,16 +240,30 @@ The web crawler does not crawl dynamic websites that use JavaScript to render co
 The number of web pages crawled is limited to 250,000, so the web crawler might not crawl all the specified websites and might reach the maximum number of hops.
 {: note}
 
-The crawler has a limit of 10,000 child URLs per URL that is crawled. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
-{: note}
-
 If you require different **Crawl settings** for other URLs, click **Add URL group** and create a new group. You can create as many URL groups as you need.
 {: tip}
 
+### SharePoint 2016 On-Premise
+{: #connectsp_oppublic}
+
+<!-- Learn more topic WDS -->
+Also known as SharePoint Server 2016, Microsoft SharePoint 2016 is an on-premises data source. To connect to it, you must first install and configure {{site.data.keyword.SecureGatewayfull}}. For more information about installing {{site.data.keyword.SecureGatewayfull}}, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
+{: note}
+
+The following fields are required to connect to a SharePoint 2016 data source. If you do not know what to enter in these fields, contact your SharePoint administrator, or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
+
+-  `Username` - The username to connect to the SharePoint 2016 web application that you want to crawl. This user must have access to all sites and lists that they want to crawl and index.
+-  `Password` - The password to connect to the SharePoint 2016 web application that you want to crawl. This value is never returned and is only used when creating or modifying credentials.
+-  `Web Application URL` - The SharePoint 2016 web application URL, for example `https://sharepointwebapp.com:8443`. If you do not enter a port number, the default is port `80` for HTTP and port `443` for HTTPS.
+-  `Domain` - The domain of the SharePoint 2016 account.
+
+Note the following items when you crawl Microsoft SharePoint 2016:
+
+-  To crawl SharePoint 2016, the `Username` account must have `SiteCollection Administrator` permissions.
+-  To crawl SharePoint 2016, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
 
 ### IBM Cloud Object Storage
 {: #connectcos}
-
 
 When you connect to an {{site.data.keyword.blockstoragefull}} source, the following credentials are required. You can obtain them from your {{site.data.keyword.blockstoragefull}} administrator:
 
@@ -163,6 +282,25 @@ Other items to note when you crawl {{site.data.keyword.blockstoragefull}}:
 -  This connector does not support crawling private endpoints.
 -  For more information about {{site.data.keyword.cloud_notm}} Object Storage endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
 -  There is a slight performance issue if all buckets are selected. In this case, a delay is possible, before the documents complete indexing.
+
+## Installing IBM Secure Gateway for on-premises data 
+{: #gatewaypublic}
+
+<!-- Learn more topic WDS -->
+To connect to an on-premises data source, you first need to download, install, and configure {{site.data.keyword.SecureGatewayfull}}. After you install {{site.data.keyword.SecureGatewayfull}} for your first on-premises data source, you do not need to repeat this process.
+
+You must first download, install, and configure {{site.data.keyword.SecureGatewayfull}} before you can create a [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic) collection.
+{: note}
+
+1.  From the **Manage data** page of the {{site.data.keyword.discoveryshort}} tooling, select **Connect a data source**.
+1.  Select the data source that you want to connect to. When you select an on-premises data source, go to the **Connect to your on-premise network** section, and click the **Make connection** button.
+1.  On the **Download and install the Secure Gateway Client** page, download the appropriate version of {{site.data.keyword.SecureGatewayfull}}.
+1.  After you complete the download, click **Download Secure Gateway and Continue**. When prompted, enter the **Gateway ID** and **Token** that are displayed. For more information about installation, see [Installing the client](/docs/SecureGateway?topic=SecureGateway-client-install).
+1.  On the machine running the Secure Gateway Client, open the Secure Gateway dashboard at `http://localhost:9003`.
+1.  Click **add ACL** on the dashboard, and add the endpoint URL of each SharePoint collection to the **Allow access** list. For example, Hostname: `mycompany.sharepoint.com` and port: `80`.
+1.  Return to the {{site.data.keyword.discoveryshort}} tooling, and click **Continue**. If the connection is successful, a `Connection successful` message is displayed. If the connection is unsuccessful, open the {{site.data.keyword.SecureGatewayfull}} dashboard, and verify that the endpoints on the **Allow access** list are correct.
+
+After the connection is successful, you can begin entering the credentials for your on-premises data source.
 
 ## Data source connection and data isolation
 {: #source_isolation}

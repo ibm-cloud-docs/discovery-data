@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-11-10"
 
 keywords: release notes, known issues
 
@@ -57,6 +57,15 @@ IBM releases services, features, and language support for your evaluation that a
 The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+### IBM Cloud Premium release, 10 November 2020 ![IBM Cloud only](images/cloudonly.png)
+{: #10nov2020}
+
+New features in this release:
+
+-  **Box connector** added - Crawl Box systems. For more information, see [Box](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic).
+-  **SharePoint 2016 On-Premise connector** added - Crawl SharePoint 2016 On-Premise systems. For more information, see [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic).
+
 
 ### IBM Cloud Premium release, 30 October 2020 ![IBM Cloud only](images/cloudonly.png)
 {: #30oct2020}

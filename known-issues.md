@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-11-10"
 
 keywords: known issues
 
@@ -38,6 +38,11 @@ See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for
 {: shortdesc}
 
 Known issues are listed by the release in which they were identified.
+
+## Known issues identified in the IBM Cloud Premium release, 10 November 2020
+{: #10nov2020ki}
+
+- ![IBM Cloud only](images/cloudonly.png) The [Box connector](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic) does not run on Safari.
 
 ## Known issues identified in the Discovery for Cloud Pak for Data 2.1.4, 2 September 2020 release:
 {: #2sept2020ki}
