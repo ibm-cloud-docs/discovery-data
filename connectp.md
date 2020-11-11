@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-11-11"
 
 subcollection: discovery-data
 
@@ -57,7 +57,7 @@ You can connect to a data source using the {{site.data.keyword.discoveryshort}} 
 2.  Read the requirements for your data source. For the available data sources, see the previous list.
 3.  Read the instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling. For instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling, see [Creating a collection](/docs/discovery-data?topic=discovery-data-collections#createcollection).
 
-You can use an IBM App Connect default connector to send data from a large set of popular data sources to {{site.data.keyword.discoveryshort}} by creating flows within the App Connect tooling. Note that creating a separate App Connect instance is required to use this App Connect default connector and that any costs that you incur when you use a paid App Connect instance are not included with the cost of using {{site.data.keyword.discoveryshort}}. Additionally, except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with App Connect that you perform on your own. For information about integrating App Connect with {{site.data.keyword.discoveryshort}} or for integration support or questions, see [Using IBM App Connect with {{site.data.keyword.discoveryfull}}](https://developer.ibm.com/integration/docs/app-connect/how-to-guides-for-apps/use-ibm-app-connect-watson-discovery/){: external}. For the available data sources that you can use with the App Connect default connector to send data to {{site.data.keyword.discoveryshort}}, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}.
+You can use an IBM App Connect default connector to send data from a large set of popular data sources to {{site.data.keyword.discoveryshort}} by creating flows within the App Connect tooling. Note that creating a separate App Connect instance is required to use this App Connect default connector and that any costs that you incur when you use a paid App Connect instance are not included with the cost of using {{site.data.keyword.discoveryshort}}. Additionally, except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with App Connect that you perform on your own. For information about integrating App Connect with {{site.data.keyword.discoveryshort}} or for integration support or questions, see [How to use IBM App Connect with {{site.data.keyword.discoveryfull}}](https://www.ibm.com/support/knowledgecenter/SS6KM6/com.ibm.appconnect.dev.doc/how-to-guides-for-apps/watson-discovery.html){: external}. For the available data sources that you can use with the App Connect default connector to send data to {{site.data.keyword.discoveryshort}}, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}.
 
 ## Data source requirements
 {: #public-requirements}
@@ -240,6 +240,9 @@ The web crawler does not crawl dynamic websites that use JavaScript to render co
 The number of web pages crawled is limited to 250,000, so the web crawler might not crawl all the specified websites and might reach the maximum number of hops.
 {: note}
 
+The crawler has a limit of 10,000 child URLs per URL that is crawled. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
+{: note}
+
 If you require different **Crawl settings** for other URLs, click **Add URL group** and create a new group. You can create as many URL groups as you need.
 {: tip}
 
@@ -288,17 +291,20 @@ Other items to note when you crawl {{site.data.keyword.blockstoragefull}}:
 
 <!-- Learn more topic WDS -->
 To connect to an on-premises data source, you first need to download, install, and configure {{site.data.keyword.SecureGatewayfull}}. After you install {{site.data.keyword.SecureGatewayfull}} for your first on-premises data source, you do not need to repeat this process.
+{: shortdesc}
 
 You must first download, install, and configure {{site.data.keyword.SecureGatewayfull}} before you can create a [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic) collection.
 {: note}
 
-1.  From the **Manage data** page of the {{site.data.keyword.discoveryshort}} tooling, select **Connect a data source**.
-1.  Select the data source that you want to connect to. When you select an on-premises data source, go to the **Connect to your on-premise network** section, and click the **Make connection** button.
-1.  On the **Download and install the Secure Gateway Client** page, download the appropriate version of {{site.data.keyword.SecureGatewayfull}}.
+To install {{site.data.keyword.SecureGatewayfull}}, complete the following steps:
+
+1.  From the **My projects** page in {{site.data.keyword.discoveryshort}}, click **New project**, and select a project type.
+1.  Select the data source that you want to connect to. When you select an on-premises data source, click **Manage connection**.
+1.  On the **Download and install Secure Gateway client** page, download the appropriate version of {{site.data.keyword.SecureGatewayfull}}.
 1.  After you complete the download, click **Download Secure Gateway and Continue**. When prompted, enter the **Gateway ID** and **Token** that are displayed. For more information about installation, see [Installing the client](/docs/SecureGateway?topic=SecureGateway-client-install).
 1.  On the machine running the Secure Gateway Client, open the Secure Gateway dashboard at `http://localhost:9003`.
 1.  Click **add ACL** on the dashboard, and add the endpoint URL of each SharePoint collection to the **Allow access** list. For example, Hostname: `mycompany.sharepoint.com` and port: `80`.
-1.  Return to the {{site.data.keyword.discoveryshort}} tooling, and click **Continue**. If the connection is successful, a `Connection successful` message is displayed. If the connection is unsuccessful, open the {{site.data.keyword.SecureGatewayfull}} dashboard, and verify that the endpoints on the **Allow access** list are correct.
+1.  Return to {{site.data.keyword.discoveryshort}}, and click **Continue**. If the connection is successful, a `Connection successful` message is displayed. If the connection is unsuccessful, open the {{site.data.keyword.SecureGatewayfull}} dashboard, and verify that the endpoints on the **Allow access** list are correct.
 
 After the connection is successful, you can begin entering the credentials for your on-premises data source.
 
