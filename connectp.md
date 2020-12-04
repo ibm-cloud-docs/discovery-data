@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-11-11"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -229,11 +229,22 @@ If you created a SharePoint Online account after January 2020, two-factor authen
 ### Web Crawl
 {: #connectwebcrawlpublic}
 
-You can use the web crawler to crawl public websites that don’t require a password. You can select how often you'd like {{site.data.keyword.discoveryshort}} to sync with the websites, the language, and the number of hops.
+You can use the web crawler to crawl public websites that do not require a username and password, as well as websites that require authentication. If you want to crawl a group of URLs that is comprised of websites that require authentication and websites that do not, consider creating a different collection for each authentication type. You can select how often you would like {{site.data.keyword.discoveryshort}} to sync with the websites, and you can select the language and the number of links to follow.
 
--  `Start URLs` - Enter your URL and click the **Add** button to add it to the URL group. To specify the **Crawl settings** for this URL group, click the ![Cog](images/icon_settings.png) icon. You can set the **Maximum hops**, which is the number of consecutive links to follow from the starting URL (the starting URL is `0`). The default number of hops is `2` and the maximum is `20`. You can specify URL paths to exclude from the crawl in the **Exclude URLs where the path includes** field. Separate the paths, using commas, for example, if you specified the URL `http://domain.com`, you could exclude `http://domain.com/licenses` and `http://domain.com/pricing` by entering `/licenses/, /pricing/`.
+**Authentication Settings**
 
-When you specify a URL to crawl, the final `/` determines the subtree to crawl. For example, if you enter the URL `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, and the input of `https://www.example.com/banking` crawls all URLs that begin with `https://www.example.com/`. If you would like to restrict the crawl to a specific URL, such as `https://www.example.com/banking/faqs.html`, enter that URL in the `URL group to sync` field, and then set the **Maximum hops** to `0`.
+-  `Basic authentication` - Optional: By default, this option is set to **Off**. When set to **On**, crawls websites that require a username and password. You can specify only one username and password per collection.
+   - `Starting URL` - The URL that you want to crawl that requires a username and password. After you add a URL, this URL is applied to `Starting URLs` in **Specify where you want to crawl**.
+   - `Username` - The username for authenticating to the starting URL that you specify in `Basic authentication`.
+   - `Password` - The password for authenticating to the starting URL that you specify in `Basic authentication`.
+
+**Specify where you want to crawl**
+
+-  `Starting URLs` - Crawls public websites that do not require a username and password, and then click **Add** to add the URL to the URL group. However, you can also enter URLs that require basic authentication in this field. Be sure that the URL contains the same domain of the URL that you entered in `Basic authentication`. For example, if you enter `https://domainname.com` in `Basic authentication`, you can enter other paths from that URL in this field, such as `https://domainname.com/myfolder1/` and `https://domainname.com/myfolder2/`.
+
+You can click the edit icon to specify the **Crawl settings**. You can set the **Maximum number of links to follow**, which is the number of consecutive links to follow from the starting URL. The default number of hops is `2`, and the maximum is `20`. You can specify URL paths to exclude from the crawl in the **Exclude URLs where the path includes** field. Separate the paths by using commas. For example, if you specified the URL `https://domainname.com`, you can exclude `https://domainname.com/licenses` and `https://domainname.com/pricing` by entering `/licenses/, /pricing/`.
+
+When you specify a URL to crawl, the final `/` determines the subtree to crawl. For example, if you enter the URL `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, and the input of `https://www.example.com/banking` crawls all URLs that begin with `https://www.example.com/`. If you would like to restrict the crawl to a specific URL, such as `https://www.example.com/banking/faqs.html`, enter that URL in `Starting URLs`, click the edit icon, and then set the **Maximum number of links to follow** to `0`.
 
 The web crawler does not crawl dynamic websites that use JavaScript to render content. You can confirm the use of JavaScript by viewing the source code of the website in your browser.
 
@@ -242,9 +253,6 @@ The number of web pages crawled is limited to 250,000, so the web crawler might 
 
 The crawler has a limit of 10,000 child URLs per URL that is crawled. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
 {: note}
-
-If you require different **Crawl settings** for other URLs, click **Add URL group** and create a new group. You can create as many URL groups as you need.
-{: tip}
 
 ### SharePoint 2016 On-Premise
 {: #connectsp_oppublic}
@@ -264,6 +272,7 @@ Note the following items when you crawl Microsoft SharePoint 2016:
 
 -  To crawl SharePoint 2016, the `Username` account must have `SiteCollection Administrator` permissions.
 -  To crawl SharePoint 2016, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
+-  The number of gateways that you can create is limited to 50. If you exceed this limit, you will be unable to create any more gateways, and you will see an error message that states, `Failed to update or create the network resource.`.
 
 ### IBM Cloud Object Storage
 {: #connectcos}
