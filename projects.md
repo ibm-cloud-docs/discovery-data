@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -79,7 +79,7 @@ There are four available **Project types**: `Document Retrieval`, `Conversationa
 
 Use this project type to search and find the most relevant answers from your data.
 
-![Cloud Pak for Data only](images/cpdonly.png) If you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence, you should use this **Project type**. For more information, see [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). 
+You should use this **Project type** for [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema) projects. 
 
 #### Document retrieval defaults
 {: #doc-retrieval-defaults}
@@ -90,7 +90,7 @@ Use this project type to search and find the most relevant answers from your dat
 
 Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
-Document retrieval defaults for {{site.data.keyword.discoveryshort}} for Content Intelligence:
+Document retrieval defaults for [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema):
 
 - **Settings**: Optical Character Reader Advanced `on`
 - **Enrichments applied**: Entities, Parts of speech, Table Understanding, and Contracts
@@ -102,10 +102,6 @@ For additional default settings, see [Default project settings](/docs/discovery-
 {: #conversational}
 
 Use this project type to supply answers to a virtual agent built with {{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}}. For more information about building a {{site.data.keyword.conversationfull}} search skill, see [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
-
-At this time, the {{site.data.keyword.conversationfull}} for {{site.data.keyword.icp4dfull}} search skill only supports one collection.
-{: note}
-
 
 #### Conversational Search defaults
 {: #conversational-defaults}

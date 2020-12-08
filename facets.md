@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-30"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -36,70 +36,49 @@ subcollection: discovery-data
 To help you analyze the results of linguistic processing and text analysis, {{site.data.keyword.discoveryshort}} organizes and classifies documents that share similar patterns or content.
 {: shortdesc}
 
+There are up to three options for creating facets, depending on the **Project type** and version of {{site.data.keyword.discoveryshort}}:
+
+  -  From existing fields in a collection
+  -  By creating a dictionary
+  -  By identifying a pattern ![IBM Cloud only](images/cloudonly.png)
+
 ## Overview
 {: #facetov}
 
-Facets represent the different aspects or dimensions of the documents in your collection. In {{site.data.keyword.discoveryshort}}, you add facets on the "Improve and customize" page in your project. Facets are available in the "Customize display" section, as shown in Figure 1.
+Facets represent the different aspects or dimensions of the documents in your collection. In {{site.data.keyword.discoveryshort}}, you add facets on the **Improve and customize** page in your project. Facets are available in the **Customize display** section, as shown in Figure 1.
 
-Facets provide a mechanism for navigating and analyzing your content and the exact functionality varies depending on the project type:
+!["Customize display" section](images/disccustdisp.png "The customize display section that's available on the **Improve and customize** page in your project"){: caption="Figure 1. The Customize Display section showing the Facets option" caption-side="bottom"}
 
-- In a content mining project, you select facets to explore content. In real time, you can search across all facets to explore analysis results, relationships, and how different facets of your content change over time.
-- In a document retrieval project, you can select facets to filter the search results to find particular documents of interest.
-- In a conversational search project, facets aren't applicable, so you don't see the facets option.
-
-!["Customize display" section](images/disccustdisp.png "The customize display section that's available on the "Improve and customize" page in your project"){: caption="Figure 1. The Customize Display section showing the Facets option" caption-side="bottom"}
-
-## Facets in content mining projects
+## Facets in Content Mining projects
 {: #facetcm}
 
-For content mining projects, by default, facets are extracted from your collection for the parts of speech enrichment, as shown in Figure 2. You can add facets for fields from your documents. For default project details, see the content mining section of [Creating projects](/docs/discovery-data?topic=discovery-data-projects#mining).
-
-For content mining projects, the **Dynamic facets** toggle at the bottom right side of the page is off by default because it does not apply to content mining projects.
-{: note}
-
-![Default facets in content mining projects](images/cmdeffacetsnhtsa.png "The "Improve and customize" page showing parts of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a content mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
+For Content Mining projects, by default, facets are extracted from your collection for the parts of speech enrichment, as shown in Figure 2. You can add facets for fields from your documents. For default project details, see the Content Mining section of [Creating projects](/docs/discovery-data?topic=discovery-data-projects#mining).
 
 
-### Adding facets to a content mining project
-{: #facetcma}
+![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page showing parts of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a Content Mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
 
-1. Open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display** and then click **Facets**.
-1. Click **New facet** > **From existing fields in a collection**, and select a field from your documents that you want to use to filter results.
 
-    As you make your selections, a preview is shown.
-
-1. Optional. Change the default label, filtering options, and number of facet values.
-1. To save the facet, click **Apply**.
-
-    The new facet is shown in the list.
-
-## Facets in document retrieval projects
+## Facets in Document Retrieval projects
 {: #facetdr}
 
-For document retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see the document retrieval section of [Creating projects](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval).
+For Document Retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval).
 
-For document retrieval projects, notice the **Dynamic facets** toggle at the bottom right side of the page, which is on by default. When you have over 100 documents in your collection and the **Parts of Speech** enrichment is enabled (as it is by default) this feature creates facets as you test and refine searches. When dynamic facets are generated, you see a facet called **Dynamic Facets** along with **Top Entities** or any other facets you configure.
-{: tip}
+![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Figure 3. The Improve and Customize page of a Document Retrieval project showing the default Top Entities facet" caption-side="bottom"}
 
-![Watson Discovery "Customize display" section](images/drdeffacets.png "The "Improve and customize" page showing the default Top Entities facet"){: caption="Figure 3. The Improve and Customize page of a document retrieval project showing the default Top Entities facet" caption-side="bottom"}
+## Creating a facet from existing fields in a collection
+{: #facetexist}
 
-### Adding facets to a document retrieval project
-{: #facetdra}
+To add a facet using existing fields.
 
-1. Open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display** and then click **Facets**.
-1. Click **New facet** > **From existing fields in a collection**, and select a field from your documents that you want to use to filter results.
-
-    As you make your selections, a preview is shown.
-
-1. Optional. Change the default label, filtering options, and number of facet values.
-1. To save the facet, click **Apply**.
-
-    The new facet is shown in the list.
+1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
+1. Click **New facet** > **From existing fields in a collection**.
+1. Choose the field you'd like your facet to use, such as `enriched_text.entities.type`, as well as the facet label, filtering options, and maximum number of facets to display.
+1. As you test the facet, you can adjust the options.
 
 ## Creating a facet by creating a dictionary
 {: #facetdict}
 
-For either project type, if you want to add a facet that doesn't exist as a field, you can create a dictionary.
+If you want to add a facet that includes terms that do not exist as fields, you can create a dictionary.
 
 1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
 1. Click **New facet** > **By creating a dictionary**.
@@ -107,7 +86,7 @@ For either project type, if you want to add a facet that doesn't exist as a fiel
 
     After you save the dictionary, the name that you used for the facet label is shown in the list of facets.
 
-1. As you test the facet, you can add more terms to the dictionary you created by selecting **Teach domain concepts** > **Dictionaries**. The dictionary you created is shown in the list on the "Dictionaries" page.
+1. As you test the facet, you can add more terms to the dictionary you created by selecting **Teach domain concepts** > **Dictionaries**. The dictionary you created is shown in the list on the **Dictionaries** page.
 
 
 ## Creating a facet by identifying a pattern ![IBM Cloud only](images/cloudonly.png)
@@ -116,10 +95,21 @@ For either project type, if you want to add a facet that doesn't exist as a fiel
 The Patterns feature is beta functionality and supports English language documents only.
 {: beta}
 
-Pattern induction generates facets from a set of examples you specify. After you specify a few examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
-
-This facet is only available in **Document Retrieval** and **Conversation Search** projects.
+This facet is only available in **Document Retrieval** and **Conversational Search** projects.
 {: note}
+
+The Patterns feature uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
+
+Pattern recognition works best on text with consistent structure in casing, length, text, or numeric values. Examples of patterns you can teach {{site.data.keyword.discoveryshort}} to identify in your documents:
+  -  All `ISO` standard numbers, for example `ISO 45001`, `ISO 22000`
+  -  All currency amounts, for example `$50.5 million`, `$29 million`
+  -  All dates, for example `8 September 2019`, `12 June 2020`
+
+If you need to identify specific terms or text, for example:
+  -  All products in the same family, `Cloud Pak for Data`, `Cloud Pak for Automation`, `Cloud Pak for Security`
+  -  All terms in the same category, `carburetor`, `piston`, `valves`
+</br>
+[Creating a facet by creating a dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict) would be a better option.
 
 1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
 1. Click **New facet** > **By identifying a pattern**.

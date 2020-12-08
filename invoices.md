@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-02-10"
+lastupdated: "2020-12-04"
 
 keywords: invoice,invoices,invoice parsing,parsing,invoice understanding
 
@@ -27,11 +27,12 @@ subcollection: discovery-data
 # Understanding the Invoices enrichment
 {: #invoices}
 
-![Cloud Pak for Data only](images/cpdonly.png) The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
-{: note}
+![Cloud Pak for Data only](images/cpdonly.png)</br>
+
+The `Invoices` enrichment is included with {{site.data.keyword.discoveryshort}} for Content Intelligence for Cloud Pak for Data. For more information, see [Understanding {{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
+{: shortdesc}
 
 You can analyze invoice documents by using the `Invoices` enrichment.
-{: shortdesc}
 
 The `Invoices` enrichment returns the following schema.
 
@@ -173,7 +174,10 @@ The `Invoices` enrichment returns the following schema.
 }
 ```
 
-The schema is arranged as follows.
+## Schema arrangement
+{: #invoices-schema-arrangement}
+
+The `Invoices` schema is arranged as follows.
 
   - `buyers`: An array of buyers listed in the invoice. A buyer is defined as a party responsible paying for the goods, services, or both.
     - `location`: An object that identifies the location of the element. The object contains two index numbers, `begin` and `end`. The index numbers indicate the beginning and ending positions, respectively, of the element as character numbers in the HTML document that the service created from your input document.

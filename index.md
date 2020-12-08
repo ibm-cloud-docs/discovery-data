@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ On the top right of any tooling page, click the **Help** ![Help icon](images/hel
 
 ![IBM Cloud only](images/cloudonly.png) For the list of {{site.data.keyword.cloud}} prerequisites and supported browsers, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
 
-![Cloud Pak for Data only](images/cpdonly.png) The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For details, see [Supported web browsers](https://www.ibm.com/support/knowledgecenter/SSQNUZ_current/cpd/plan/rhos-reqs.html#rhos-reqs__web){: external}
+![Cloud Pak for Data only](images/cpdonly.png) The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For details, see [Supported web browsers](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/cpd/plan/rhos-reqs.html#rhos-reqs__web){: external}
 
 ## Language support
 {: #about-language}

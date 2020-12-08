@@ -2,8 +2,7 @@
 
 copyright:
   years: 2018, 2020
-
-lastupdated: "2020-02-17"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -33,13 +32,10 @@ subcollection: discovery-data
 # Understanding the Contracts enrichment
 {: #contracts-schema}
 
-![Cloud Pak for Data only](images/cpdonly.png) You can analyze contracts by using the `Contracts` enrichment. Unless you specify the `Invoices` or `Purchase orders` enrichment, Discovery for Content Intelligence processes all collections with the `Contracts` enrichment.
+The `Contracts` enrichment is included with {{site.data.keyword.discoveryshort}} for Content Intelligence. For more information, see [Understanding {{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 {: shortdesc}
 
-The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
-{: note}
-
-After a document is processed by the `Contracts` enrichments, the service provides JSON output in the following schema.
+After a document is processed by the `Contracts` enrichments, the service provides JSON output in the following schema. For definitions of each element, see [Understanding contract parsing](/docs/discovery-data?topic=discovery-data-contract_parsing).
 
 ```json
 {
@@ -380,7 +376,7 @@ After a document is processed by the `Contracts` enrichments, the service provid
 }
 ```
 
-## `Contracts` schema arrangement
+## Schema arrangement
 {: #schema-arrangement}
 
 The `contracts` schema is arranged as follows.
