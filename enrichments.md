@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -56,8 +56,9 @@ To create a new enrichment:
     - [**Classifier**](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment)
     - [**Advanced rule models**](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
     - ![IBM Cloud only](images/cloudonly.png) [**Patterns** (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
-
-Other available enrichments: [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) and [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-create-enrichments#content-intelligence).
+</br>
+</br>
+Other available enrichments: [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) (Parts of speech, Entities, Keywords, and Sentiment of documents) and [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 
 
 The enrichment will be applied only to the collection(s) and field(s) you specify, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page. The enrichment **Status** should be **Ready** before you apply it.
@@ -611,12 +612,3 @@ In the JSON output:
  }
  ```
 {: codeblock}
-
-
-## Discovery for Content Intelligence
-{: #content-intelligence}
-
-The `Contracts`, `Invoices`, and `Purchase orders` enrichments are available if you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence and chosen the **Project type** of **Document retrieval**.
-{: note}
-
-For more information, see [Understanding Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).

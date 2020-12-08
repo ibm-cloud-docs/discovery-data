@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-31"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -107,21 +107,52 @@ A connector is a component that provides data connectivity and extraction capabi
 ### Crawl schedule options
 {: #crawlschedule}
 
-When you create a collection, the initial crawl starts immediately. The frequency you choose for the crawl schedule determines when the next crawl starts in relation to the first. You can schedule crawls to update at the following intervals:
-    
--  Hourly: runs every hour
--  Daily: runs every day at the same time as the initial crawl
--  Weekly: runs every week on the same day and time as the initial crawl
--  Monthly: runs every 30 days at the same time as the initial crawl
+When you create a collection, the initial crawl starts immediately. The frequency you choose for the crawl schedule determines when the next crawl starts in relation to the first. In the **How often would you like to crawl?** drop-down menu in **Crawl schedule**, you can schedule crawls to update at the following intervals:
 
-If you modify crawl settings on the **Processing settings** page and then click **Save collection**, the crawl restarts immediately. To view the collection status, see the **Activity** tab. 
+-  **Hourly** - Runs every hour
+-  **Daily** - Runs every day at the same time as the initial craw
+-  **Weekly** - Runs every week on the same day and time as the initial crawl.
+-  **Monthly** - Runs every 30 days at the same time as the initial crawl.
+-  **Custom intervals** - Runs on a fixed schedule, for example every 12 hours or every 10 days. You can schedule the crawler to run on a custom number of **Minutes**, **Hours**, or **Days**.
+
+   If you select **Custom intervals** and set the **Minutes** to `0`, the **Hours** to `0`, and the **Days** to `1`, this configuration is the same setting as the **Daily** crawl schedule, so if you click **Processing settings** in your collection during or after collection processing, you can see that the crawler schedule is set to **Daily**. Similarly, if you enter `0` for **Minutes**, `0` for **Hours**, and `30` for **Days**, this configuration is equivalent to setting a **Monthly** crawl schedule.
+
+If you modify crawl settings on the **Processing settings** page and then click **Apply changes and reprocess**, the crawl restarts immediately. If you want to view the collection status, see the **Activity** tab.
 {: note}
+
+However, you might want your crawler to run on specific dates and times. For information about flexible crawl schedule settings, see [Flexible crawl schedule settings](/docs/discovery-data?topic=discovery-data-collections#flexible-crawl).
+
+#### Flexible crawl schedule settings
+{: #flexible-crawl}
+
+![Cloud Pak for Data only](images/cpdonly.png)</br>
+
+In your **Crawl schedule** settings and in **More scheduling settings**, you can set a flexible crawl schedule so that you have more control over when and how frequently your crawler runs by scheduling your crawler to run at specific times and dates.
+{: shortdesc}
+
+For example, if you want to avoid heavy load on a target system during business hours, you might want to use the flexible crawl schedule settings to run your crawler outside of business hours, for example at 10:00 PM on Fridays. If you select **Weekly** or **Monthly** in **How often would you like to crawl?**, you see the following option:
+
+- **Specify days and time in week** (Available option when you select the **Weekly** crawl schedule) - You can schedule the crawler to run at the same time each week. When you enable this option, you can select a day or days and a time, in `HH:MM`, that the crawler runs each week, for example every Monday at 01:00 AM.
+- **Specify dates and time in month** (Available option when you select the **Monthly** crawl schedule) - You can schedule the crawler to run on a certain date or dates and time of each month. When you enable this option, specify the date or dates that you want the crawler to run each month in **Dates**, and specify the time, in `HH:MM`, that the crawler runs on the specified dates in **Time**, for example every 5th of the month at 01:00 AM.
+
+In **More scheduling settings**, you can choose from three options in **Schedule type** and specify the date and time for your custom crawler schedule. In **Schedule type**, you can select one of the following three options:
+
+- **Crawling updates (look for new, modified, and deleted contents)**
+- **Crawling new and modified contents**
+- **Full crawling**
+
+After you select your schedule type, specify the **Date and time for enabling this schedule**. If you open a collection in a time zone other than the one in which the collection was created, the UTC offset information is displayed in the **Processing settings** tab. If you want to edit your flexible crawl schedule settings, click the **Processing settings** tab, edit the settings, and click **Apply changes and reprocess**.
+
+For regular crawl schedule settings, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 
 ## Uploading data
 {: #upload-data}
 
 Use this option to upload data you stored locally. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. The file size limit for uploading data is 32MB.
 {: shortdesc}
+
+If you upload more than 200 files at one time, {{site.data.keyword.discoveryshort}} might be unable to process all of your files. Therefore, for optimal processing, consider uploading no more than 200 files. Otherwise, upload multiple smaller document sets, or use a data source crawler to process document sets that are larger than 200 files.
+{: tip}
 
 For a list of file types that you can upload to {{site.data.keyword.discoveryshort}}, see [Supported file types and general requirements](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection. Your collection is finished processing when the status indicates `Processing finished. Updated documents are ready for you.`.
 
@@ -152,7 +183,7 @@ You can view any fields that the crawler identified from your data. You can anno
 
 **Manage fields** tab:
 
-The **Manage fields** tab contains the following options: **Fields to index**, **Improve query results by splitting your documents**, and **Date format settings**. For more nformation, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings)
+The **Manage fields** tab contains the following options: **Fields to index**, **Improve query results by splitting your documents**, and **Date format settings**. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings)
 
 **Enrichments** tab:
 

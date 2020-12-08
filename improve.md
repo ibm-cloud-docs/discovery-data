@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-05"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -41,7 +41,11 @@ To access the **Improve and Customize** page, select the **Improve and customize
 
 **To improve and customize your Document Retrieval project**:
 1.  Enter a natural language query in the query box.
-1.  Review the query results displayed. You can view the source document for each result by clicking on **View passage in document** or **View document**. For more information about how passages are identified in natural language queries, see [Passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
+1.  Review the query results displayed. Depending on the settings, you can view the source document and additional information for each result by selecting **View passage in document**, **View document**, or **View table in document**. Passages are enabled by default for all project types, with the exception of **Content Mining**. For more information about default project settings, see [Default query settings](/docs/discovery-data?topic=discovery-data-project-defaults#query-defaults). For information about how passages are identified in natural language queries, see [Passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
+    Tabs available when you view the source document (tabs displayed will depend on the project settings)
+    -  **Document**: Preview of the source document, with passages highlighted if enabled.
+    -  **JSON**: The JSON output of the query that includes the `document id`, `metadata`, `enriched_text`, and more.
+    -  **Contract data** ([{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema) only): Displays the contract elements. You can filter them by entity, or click on any one of the highlighted elements to view the details about that element.
 1.  Configure the desired improvement tools. 
 1.  For some of the tools, after you apply the improvement, a **Recrawl** or **Reprocess** of the collections in your project will start automatically. To do so manually, open the **Activity** page of each collection.
 1.  Retry the query.
@@ -70,7 +74,7 @@ The improvement tools available will vary depending on the **Project type** sele
 
 **Customize display**
 -  **Facets**
-   Create hierarchical categories within your data. You can also use facets generated from the results of your search (Dynamic facets). For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets)
+   Create hierarchical categories within your data. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets)
 -  **Search bar**
    Options: 
      -  **Autocomplete** - Suggested autocompletion of queries as they are typed. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#getautocompletion){: external}.
@@ -87,12 +91,9 @@ For more information about each of the following enrichments, see [Extracting me
 -  **Keywords**
 -  **Sentiment of documents**
 
-The **Contracts**, **Invoices**, and **Purchase orders** enrichments are only available if you have purchased and installed {{site.data.keyword.discoveryshort}} for Content Intelligence and chosen the **Project type** of **Document retrieval**. For more information, see [Understanding {{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema). You can select only one of these enrichments.
+![Cloud Pak for Data only](images/cpdonly.png) The {{site.data.keyword.discoveryshort}} for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you install {{site.data.keyword.discoveryshort}} for Content Intelligence and choose the **Project type** of **Document retrieval**.
 
--  **Contracts**
--  **Invoices**
--  **Purchase orders**
-
+![IBM Cloud only](images/cloudonly.png) On {{site.data.keyword.cloud_notm}} Premium plans, the {{site.data.keyword.discoveryshort}} for Content Intelligence `Contracts` enrichment is available if you choose the **Project type** of **Document retrieval**, then select the **Apply contracts enrichment** checkbox.
 
 **Teach domain concepts**
 -  **Dictionaries** - Dictionaries allows you to enrich document fields in your collection. The enrichment terms can be synonyms (car, automotive, auto), or words in the same category (carburetor, piston, valves). For more information, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).

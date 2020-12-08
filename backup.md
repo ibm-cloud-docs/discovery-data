@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-10"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -46,25 +46,26 @@ You can migrate your data from and restore it to the following versions:
 - 2.1.2 to 2.1.3
 - 2.1.2 to 2.1.4
 - 2.1.3 to 2.1.4
+- 2.1.4 to 2.2.0
 
 Backup and restore is supported on all versions of {{site.data.keyword.discoveryshort}}.
 
 ## Backup and restore overview
 {: #bnr-restrictions}
 
-You can [back up](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backup) and [restore](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restore) some data by using the backup and restore scripts, but you must back up and restore other data manually. To manually back up and restore data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data) and [Restoring data manually](/docs/discovery-data?topic=discovery-data-backup-restore#restore-user-data). You cannot automatically migrate the following data from version 2.1.2 to 2.1.3 or later, nor can you automatically back up and restore the following data on version 2.1.2 or earlier:
+You can [back up](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-backup) and [restore](/docs/discovery-data?topic=discovery-data-backup-restore#wddata-restore) some data by using the backup and restore scripts, but you must back up and restore other data manually. To manually back up and restore data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data) and [Restoring data manually](/docs/discovery-data?topic=discovery-data-backup-restore#restore-user-data). You cannot automatically migrate the following data from version 2.1.2 to later versions, nor can you automatically back up and restore the following data on version 2.1.2 and earlier:
 
 - User data
   - [Box files](/docs/discovery-data?topic=discovery-data-backup-restore#migrate-box) that contain your credentials for configuring your Box crawler
-  - Local file system folders and documents that you can crawl by using the Local File System data source. Unlike the other listed data, you cannot back up and restore local file system folders and documents on version 2.1.3 or later, and you cannot migrate them from version 2.1.3 to later versions.
+  - Local file system folders and documents that you can crawl by using the Local File System data source. Unlike the other listed data, you cannot back up and restore local file system folders and documents on version 2.1.3 and later, and you cannot migrate them from version 2.1.3 to later versions.
   - Driver files of JDBC or Salesforce crawlers
 - Dictionary suggestions models. These are created when you build a dictionary using the tooling. The dictionary will be included in the backup, but the suggestions model will not.
 - Content Miner Document flags
 
-You cannot back up and restore curations or migrate them from version 2.1.2 to 2.1.3 or later because curations are a beta feature.
+You cannot back up and restore curations or migrate them from version 2.1.2 to later versions because curations are a beta feature.
 {: note}
 
-However, other than local file system folders and documents, you can back up and restore the previous data on version 2.1.3 or later, and you can migrate the previous data from 2.1.3 to later versions. You can migrate data other than those previously listed, as well as training data, from version 2.1.2 to later versions by using the version 2.1 backup scripts.
+However, other than local file system folders and documents, you can back up and restore the previous data on version 2.1.3 and later, and you can migrate the previous data from 2.1.3 to later versions. You can migrate data other than those previously listed, as well as training data, from version 2.1.2 to later versions by using the version 2.1 backup scripts.
 
 To configure your Box, Salesforce, or JDBC crawlers in version 2.1.3 or later as they are in older versions, log in to version 2.1.3 or later of your {{site.data.keyword.discovery-data_short}} instance, and update the configuration of your Box, Salesforce, or JDBC crawlers, or you can use the backup and restore scripts. For information about configuring specific crawlers or for information about migrating your Box, Salesforce, or JDBC crawlers, refer to the following links:
 - [Configuring {{site.data.keyword.discovery-data_short}} data sources](/docs/discovery-data?topic=discovery-data-collection-types)
@@ -93,15 +94,12 @@ You can back up and restore your instance of {{site.data.keyword.discoveryshort}
 
 Backup prerequisites:
 
-Since changes to the data stored in {{site.data.keyword.discoveryfull}} during a backup can cause the backup to become corrupt and unusable, no in-flight requests are permitted during the backup period.
+Because changes to the data stored in {{site.data.keyword.discoveryfull}} during a backup can cause the backup to become corrupt and unusable, no in-flight requests are permitted during the backup period.
 
 A request is a current action being performed by {{site.data.keyword.discoveryfull}}. Actions performed by {{site.data.keyword.discoveryshort}} include:
   -  Performing a source crawl (scheduled or unscheduled)
   -  Ingesting documents
   -  Training a trained query model
-
-Queries are read-only operations, so they are permitted during the backup period.
-{: tip}
 
 Perform the following steps to back up {{site.data.keyword.discoveryfull}} by using the backup scripts:
 
@@ -126,12 +124,15 @@ Perform the following steps to back up {{site.data.keyword.discoveryfull}} by us
      ```
      {: pre}
 
-  1. Run the `all-backup-restore.sh` script, and specify the release name you are backing up. The `<-f backupFileName>` part of the following command is optional. You can also specify the namespace in which the gateway pods are deployed, if necessary:
+  1. Run the `all-backup-restore.sh` script. The `<-f backupFileName>` part of the following command is optional. You can also specify the namespace in which the gateway pods are deployed:
 
       ```bash
-      ./all-backup-restore.sh backup <release_name> <-f backupFileName>
+      ./all-backup-restore.sh backup <-f backupFileName>
       ```
       {: pre}
+      
+      If you are backing up version 2.1.4 and earlier, enter `./all-backup-restore.sh backup <release_name> <-f backupFileName>` to specify the release name that you are backing up. Like the command for version 2.2.0, the `<-f backupFileName>` part of the command is optional, and you can specify the namespace in which the gateway pods are deployed.
+      {: tip}
 
       The scripts generate an archive file, including the backup files of the above services. The file is named `watson_discovery_<timestamp>.backup` or the file specified by the `-f` option in the current directory. These scripts create a `tmp` directory in the current directory, while backing up and restoring. You can unpack the archive file by running following command:
 
@@ -171,11 +172,15 @@ Perform the following steps to restore data in {{site.data.keyword.discoveryfull
      ```
      {: pre}
   
-  1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discoveryshort}} deployment by running the following command. Then, specify the `<release_name>` (you can use `core` as the `<release_name>` when restoring to version 2.1.2) you are restoring to and the file name of backup. You can also specify the namespace in which the {{site.data.keyword.discoveryshort}} service is deployed, if necessary:
+  1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discoveryshort}} deployment by running the following command:
+      
       ```
-      ./all-backup-restore.sh restore <release_name> -f <backupFileName>
+      ./all-backup-restore.sh restore -f <backupFileName>
       ```
       {: pre}
+      
+      If you are restoring version 2.1.4 and earlier, enter `./all-backup-restore.sh restore <release_name> -f <backupFileName>` to specify the `<release_name>` that you are restoring to and the file name that you want to back up. You can use `core` as the `<release_name>` if you restore to version 2.1.2.
+      {: tip}
 
   The gateway, ingestion, orchestrator, hadoop worker, and master pods automatically restart.
   
@@ -445,7 +450,7 @@ You must also have the following system requirement: Red Hat Enterprise Linux ve
 
 Summary of the backup process:
 
-  1. Back up {{site.data.keyword.icp4dfull_notm}}, if required. For more information, see [Backing up and restoring your project](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/backup_restore.html){: external}.
+  1. Back up {{site.data.keyword.icp4dfull_notm}}, if required. For more information, see [Backing up and restoring your project](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/backup_restore.html){: external}.
   1. Ensure that the {{site.data.keyword.discoveryshort}} instance being backed up meets the prerequisites listed in [Backing up {{site.data.keyword.discoveryfull}} by using the backup scripts](/docs/services/discovery-data?topic=discovery-data-backup-restore#wddata-backup).
   1. Copy the data from the data service to the matching service on the new pod.
   1. Clean or groom the data, as necessary.
@@ -467,6 +472,7 @@ In the following procedures, angle brackets (`< >`) are used to indicate variabl
 
 Use the `all-backup-restore.sh` backup and restore script to back up and restore to {{site.data.keyword.discoveryshort}} version 2.1.0 or later.
 
+ -  Backup/restore scripts for versions 2.2.0 and later. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.2.0){: external}.
  -  Backup/restore scripts for version 2.1.3 and 2.1.4. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
  -  Backup/restore scripts for versions 2.1.0 through 2.1.2. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
 

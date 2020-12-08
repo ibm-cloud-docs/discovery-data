@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-12-08"
 
 keywords: release notes, known issues
 
@@ -57,6 +57,29 @@ IBM releases services, features, and language support for your evaluation that a
 The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+## 2.2.0 release, 8 December 2020 ![Cloud Pak for Data only](images/cpdonly.png)
+ {: #8dec2020}
+
+IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2 is available.
+
+**Discovery for Cloud Pak for Data now works with IBM® Cloud Pak for Data 3.5.**
+
+Changes made in this release:
+
+- Added support for attachments in the Notes data source. For more information, see [Notes](/docs/discovery-data?topic=discovery-data-collection-types#connectnotes)
+- You can specify the exact time that you would like your crawls to run for any data source, giving you the flexibility to run them at the times you prefer. For more information, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+- You can now create Facet groups in a Content Miner application. For more information, see [Facet analysis pane](/docs/discovery-data?topic=discovery-data-contentminerapp#cmofap).
+- Added the option to create your own custom crawler plug-in. For more information, see [Building a Cloud Pak for Data crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build) **Note:** Any custom code used with Watson Discovery is the responsibility of the developer and is not covered by IBM support.
+- Dynamic Facets are no longer enabled by default in Document Retrieval projects.
+
+
+### IBM Cloud Premium release, 3 December 2020 ![IBM Cloud only](images/cloudonly.png)
+{: #3dec2020}
+
+New feature in this release:
+
+- **Content Intelligence** added - You can now apply the **Contracts** enrichment to a **Document Retrieval** project when you create it. The Contracts enrichment can be used to classify contract terms, parties, effective dates and more within your documents. For more information, [Understanding {{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 
 ### IBM Cloud Premium release, 10 November 2020 ![IBM Cloud only](images/cloudonly.png)
 {: #10nov2020}

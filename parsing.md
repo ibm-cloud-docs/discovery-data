@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-26"
+  years: 2018, 2020
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -32,14 +32,10 @@ subcollection: discovery-data
 # Understanding contract parsing
 {: #contract_parsing}
 
-
-![Cloud Pak for Data only](images/cpdonly.png) The Discovery for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you have purchased and installed Discovery for Content Intelligence and chosen the **Project type** of **Document retrieval**.
-{: note}
-
-When you analyze a document with the `Contracts` enrichment, the service returns the contract with an analysis of each identified element.
+The `Contracts` enrichment is included with {{site.data.keyword.discoveryshort}} for Content Intelligence. For more information, see [Understanding {{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 {: shortdesc}
 
-The following sections describe how the returned JSON provides the analysis.
+When you analyze a document with the `Contracts` enrichment, the service returns the contract with an analysis of each identified element. The following sections describe how the returned JSON provides the analysis. For more information about the JSON output, see [Understanding the Contracts enrichment](/docs/discovery-data?topic=discovery-data-contracts-schema).
 
 ## Types
 {: #cp_types}

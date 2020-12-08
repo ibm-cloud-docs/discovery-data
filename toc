@@ -37,6 +37,14 @@ Discovery
             assemble.md
             install-connector.md
             ccs-tooling.md
+        
+        {:topicgroup}
+        Configuring a Cloud Pak for Data custom crawler plug-in
+            crawler-plugin-build.md
+            crawler-plugin-dev.md
+            crawler-plugin-assemble.md
+            manage-plugin.md
+            crawler-plugin-tooling.md
 
     {: topicgroup}
     Improving and customizing
@@ -75,7 +83,7 @@ Discovery
         components.md
 
     {: topicgroup}
-    Discovery for Content Intelligence for Cloud Pak for Data
+    Discovery for Content Intelligence
         schema.md
         contracts.md
         parsing.md

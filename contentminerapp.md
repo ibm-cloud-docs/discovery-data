@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-11-06"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -189,7 +189,7 @@ When you save a dashboard analysis, you can access it quickly from the **Dashboa
 ### Facet analysis pane
 {: #cmofap}
 
-![Facet analysis pane](images/cmfap.png "Default view of the facet analysis pane showing the Relevancy analysis type"){: caption="Figure 6. The Facet Analysis pane showing the default facets" caption-side="bottom"}
+![Facet analysis pane](images/cmfap1.png "Default view of the facet analysis pane showing the Relevancy analysis type"){: caption="Figure 6. The Facet Analysis pane showing the default facets" caption-side="bottom"}
 
 The **Facet analysis** pane is the default view when you enter the analysis view. To begin facet analysis, select the analysis type and options, and then select a facet from the analysis tree. The options in this pane are described in the following list:
 
@@ -205,6 +205,8 @@ The **Facet analysis** pane is the default view when you enter the analysis view
 - **Show subfacet**: If selected, the category tree for subfacets is displayed.
 - **Append mode**: If selected, a newly submitted analysis is added to the list of analysis types. The analysis dashboard shows multiple analysis results simultaneously.
 - **Analyze**: Click to begin an analysis.
+
+If you would like to organize your facets into folders so they are easier to find in the analysis tree, click the Edit icon to open the **Facet groupings** dialog. From there you can organize your existing facets in the groups and nested sub-groups you create. By default, a facet that is added to a group will not display in the tree. If you would like it to display in both the group and the tree, clear the **Hide facets in original tree** checkbox. These groups are not used to analyze data, they are for organization only.
 
 ### Repository pane
 {: #cmorp}

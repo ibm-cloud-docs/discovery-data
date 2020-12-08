@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-11-10"
+lastupdated: "2020-12-08"
 
 keywords: known issues
 
@@ -39,19 +39,114 @@ See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for
 
 Known issues are listed by the release in which they were identified.
 
+## Known issues identified in the Discovery for Cloud Pak for Data 2.2, 8 December 2020 release:
+{: #8dec2020ki}
+
+- When a small csv file (generally a csv with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
+- If you have set up your collections using a custom crawler built with the [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector), and then remove the custom crawler deployment, the Processing Settings page will not display the crawler configuration. This is because the underlying crawler is not available. To work around this issue, confirm that the custom crawler is deployed when there are collections using it.
+- When using a [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for Cloud Pak for Data 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fail. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
+- When you create a custom enrichment in the tooling, you must choose a field the enrichment should be applied to and click **Apply**. If no field is selected, then the **Apply and reprocess** button will be disabled for enrichments changes until the new enrichment has a field.
+- If you apply the [Contracts enrichment](/docs/discovery-data?topic=discovery-data-output_schema) to a collection, you may receive the following error message when ingesting documents to that collection: `The number of nested documents has exceeded the allowed limit of [X].` Contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to adjust the limit.
+- When text is enriched with a custom dictionary, the output of `entities.type` should be the full facet path for the Dictionary enrichment. However, in this release, the full facet path will not be displayed. To work around this, reprocess the collection. For example, if the facet path is `sample1.sample2`, it will look like this before reprocessing:
+
+  ```
+  {
+    "result" : {
+      "enriched_text" : [ {
+        "entities" : [ {
+          "text" : "capital",
+          "type" : "sample2",
+          ...
+       "model_name" : "Dictionary:.sample1.sample2"}
+          ...
+  ```
+  {: codeblock}
+
+  And this after:
+
+  ```
+  {
+    "result" : {
+      "enriched_text" : [ {
+        "entities" : [ {
+          "text" : "capital",
+          "type" : "sample1.sample2",
+          ...
+        "model_name" : "Dictionary:.sample1.sample2"}
+          ...
+  ```
+  {: codeblock}
+- When a csv file is uploaded with the converter settings set to `auto_detection=true`, the **CSV settings** tab in the tooling will display the incorrect settings. If you update the settings on the **CSV settings** tab, `auto_detection` will no longer be set to `true`.
+- In Office documents ('.doc', '.docx', '.odf', '.xls', '.xlsx', '.ods', '.ppt', '.pptx', '.odp') converted using a Smart Document Understanding (SDU) custom model, the `publicationdate` may not display in `extracted_metadata` field in the JSON response. It will instead appear in the `html` field of the JSON response. The `publicationdate` in the `html` field will be the date the document was ingested and not the document's original publication date.
+- The Analyze API uses an in-memory cache to hold the enrichment models associated with the collection used to run the documents. If the collection contains many large enrichments or multiple of these collections are used at the same time, the cache may run out of memory. When this happens, the Analyze API returns null results (see example) and the stateless api rest proxy will display this message in its log: `RESOURCE_EXHAUSTED: stateless.Analysis/analyze: RESOURCE_EXHAUSTED`.
+
+  ```json
+  {
+    "result": null,
+    "notices": null
+  } 
+  ```
+  {: codeblock}
+
+  To workaround this issue:
+  1. Review the enrichments used in the collection and remove those that are not necessary for your application. In particular, remove the `Parts of Speech` enrichment.
+  1. Reduce the number of collections used concurrently with the Analyze API. 
+  3. Increase the cache memory:
+     * Increase the memory limit of `container model-runtime` in `deployment core-discovery-stateless-api-model-runtime` to `10` GB or more
+     * Edit the environment variable `CAPACITY_MB` in `deployment core-discovery-stateless-api-model-runtime`, set it to 1`0240` or more
+
+Also see the issues identified in all previous releases.
+
 ## Known issues identified in the IBM Cloud Premium release, 10 November 2020
 {: #10nov2020ki}
 
 - ![IBM Cloud only](images/cloudonly.png) The [Box connector](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic) does not run on Safari.
+- ![IBM Cloud only](images/cloudonly.png) If the `metadata` property is converted to an array in the index, the document cannot be deleted using the **Delete labeled data** method in the [API reference](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}
+
+Also see the issues identified in all previous releases.
 
 ## Known issues identified in the Discovery for Cloud Pak for Data 2.1.4, 2 September 2020 release:
 {: #2sept2020ki}
 
-  - When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To workaround this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
-  - The [Guided Tours](/docs/discovery-data?topic=discovery-data-tours) do not run on Firefox. For the list of other supported browsers, see [Browser support](/docs/discovery-data?topic=discovery-data-about#about-browser).
-  - Ingesting documents into a collection that uses a custom [Advanced Rules model enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
-  - If you delete a large number of documents, then immediately ingest a large number of documents, it may take longer for all the documents to become available.
-  - The [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) does not work when FIPS (Federal Information Processing Standards) is enabled.
+- When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To workaround this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
+- The [Guided Tours](/docs/discovery-data?topic=discovery-data-tours) do not run on Firefox. For the list of other supported browsers, see [Browser support](/docs/discovery-data?topic=discovery-data-about#about-browser).
+- Ingesting documents into a collection that uses a custom [Advanced Rules model enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
+- If you delete a large number of documents, then immediately ingest a large number of documents, it may take longer for all the documents to become available.
+- The [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) does not work when FIPS (Federal Information Processing Standards) is enabled.
+- [Update: fixed in version 2.2] A conversion error may occur when the **Include in index** field on the **Manage fields** tab in the tooling is changed. The document will not be indexed if this error occurs. To work around the issue:
+  1. `oc edit sts core-discovery-converter`
+  1. Edit between `containers` and `- name: INGESTION_POD_NAME` as follows:
+
+     ```
+          containers:
+          - command:
+            - bash
+            - -c
+            - |
+              FILE=/opt/ibm/wex/zing/bin/converter.sh &&
+              sed -i "/choreo_2.11-9.1.1.jar/d" $FILE &&
+              sed -i "/disco-doc-conversion-commons_2.11-1.0.4.jar/d" $FILE &&
+              sed -i "/jackson-module-scala_2.11-2.10.4.jar/d" $FILE &&
+              sed -i "/macro-compat_2.11-1.1.1.jar/d" $FILE &&
+              sed -i "/pureconfig-core_2.11-0.12.2.jar/d" $FILE &&
+              sed -i "/pureconfig-generic-base_2.11-0.12.2.jar/d" $FILE &&
+              sed -i "/pureconfig-generic_2.11-0.12.2.jar/d" $FILE &&
+              sed -i "/pureconfig-macros_2.11-0.12.2.jar/d" $FILE &&
+              sed -i "/pureconfig_2.11-0.12.2.jar/d" $FILE &&
+              sed -i "/scala-guice_2.11-4.1.1.jar/d" $FILE &&
+              sed -i "/scala-logging_2.11-3.7.2.jar/d" $FILE &&
+              sed -i "/scalactic_2.11-3.0.5.jar/d" $FILE &&
+              sed -i "/scalaj-http_2.11-2.3.0.jar/d" $FILE &&
+              sed -i "/service-commons_2.11-22.1.0.jar/d" $FILE &&
+              sed -i "/shapeless_2.11-2.3.3.jar/d" $FILE &&
+              /opt/ibm/wex/zing/bin/entrypoint.sh /opt/ibm/wex/zing/bin/controller.sh
+            env:
+            - name: INGESTION_POD_NAME
+      ```
+      {: codeblock}
+
+  Added lines from `- command:` to `/opt/ibm/wex/zing/bin/entrypoint.sh` `/opt/ibm/wex/zing/bin/controller.sh` and removed `-` before `env:`
+  1. Save the changes. It will restart the converter pod.
 
  
 Also see the issues identified in all previous releases. 
@@ -168,5 +263,6 @@ Also see the issues identified in the previous release.
   -  Not all query limitations are enforced in this release. See [query limitations](/docs/discovery-data?topic=discovery-data-query-reference#query-limitations) for the complete list of banned fields.
   -  In JSON source documents, you should not duplicate the following system-generated fields: `document_id`, `parent_document_id`, `filename`, and `title`. This will cause the duplicate fields to nest within arrays and break certain features, such as ranker training.
   -  Do not include a top-level `metadata` property in your JSON documents. If you upload a JSON document that already contains a top-level `metadata` property, then the `metadata` property of the indexed document will be converted to an array in the index.
+  -  Do not use metadata for column names in your csv files. If you upload a csv file that uses metadata for the column names in the header, then the `metadata` property of the indexed document will be converted to an array in the index.
   -  CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).
   -  Currently, unique collection names are not enforced. Using duplicate collection names is not recommended and should be avoided.

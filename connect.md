@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-12-04"
 
 subcollection: discovery-data
 
@@ -58,6 +58,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 -  [Reuse data from an existing collection](/docs/discovery-data?topic=discovery-data-collection-types#reuse)
 -  [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
+-  [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build)
 
 ## Processing settings
 {: #processing-options}
@@ -240,10 +241,10 @@ Before you begin, be sure to obtain site collection administrator permission. No
 In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint Online** as the collection type, enter the following information:
 
 1. Complete the following fields in **Enter your credentials**:
-    -  **Username** - The username of the SharePoint user with  access to all sites and lists that need to be crawled and indexed.
+    -  **Username** - The username of the SharePoint user with  access to all sites and lists that need to be crawled and indexed, for example `<crawl_username>@<company_name>.onmicrosoft.com`.
     -  **Password** - The password of the SharePoint user. This value is never returned and is used only when creating or modifying credentials.
 1. Complete the following fields in **Specify what you want to crawl**:
-    -  **Site Collection Url** - The SharePoint web service URL, for example `http://www.example.com/`.
+    -  **Site Collection Url** - The SharePoint web service URL, for example `https://<organization_name>.com`.
     -  **Site Collection Name** - The name you must obtain from site collection settings. The name the site collection uses.
 1. Optional Set the following switch in **Proxy settings**:
     -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
@@ -310,7 +311,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint OnPrem** 
          - **Relying Party endpoint** - Optional: The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
          - **Relying Party Trust identifier** - The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
 1. Complete the following field in **Specify what you want to crawl**:
-    -  **Web Application Url** - The SharePoint web service URL. For example, `http://www.example.com/`.
+    -  **Web Application Url** - The SharePoint web service URL, for example `https://<host>:<port>`.
     
 1. Optional: Set the following switch in **Proxy settings**:
     -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
@@ -353,17 +354,17 @@ In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the c
 
 1. Click the **Add** button to add one or more starting URLs. After you add one or more starting URLs, you can click **Authentication settings** and select one of three authentication types to apply to your chosen starting URL: **Basic authentication**, **NTLM authentication**, or **FORM authentication**. Complete the following fields for your chosen authentication type:
    
-   **Basic authentication** - This setting is used for basic authentication.
+   **Basic authentication**
      -  **Username** - The username of the user for authentication.
      -  **Password** - The password of the user for authentication.
 
-   **NTLM authentication** - This setting is used for NTLM authentication.
+   **NTLM authentication**
      -  **Username** - The username of the user for authentication.
      -  **Password** - The password of the user for authentication.
      -  **NTLM domain name** - The NTLM domain name that belongs to the user who is authenticating.
      -  **NTLM host name** - The host name of the NTLM server.
 
-   **FORM authentication** - This setting is used for forms-based authentication.
+   **FORM authentication**
      1. In **Form type**, select one of the following options:
         -  **Direct** - Click this option if you do not want to fetch the login page.
         -  **Indirect** - Click this option if you want to fetch the login page and you want to fill the parameters in the login form.
@@ -391,7 +392,8 @@ In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the c
 
     -  **URL Path Depth** - The depth of a website to crawl, indicated by subtrees in a link. For example, `https://www.example.com/some/more/examples/index.html` has a path depth of 4, `/some/more/examples/index`. You can only enter a positive value. If unspecified, the default value is `5`. The maximum path depth is `20`.
     -  **Maximum hops** - The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Starting URLs** to crawl the web page.
-
+1. Optional: Set the following switch:
+    -  **Ignore certificate** - If you enable this option, ignores any SSL certificates that are present on websites. This option only applies to HTTPS websites.
 1. Click **Finish**.
 
 After the crawl begins, the **Activity** tab opens and updates as documents are added to the collection.
@@ -617,7 +619,7 @@ The output of the `getStatus` command is an XML file in the following output:
 In {{site.data.keyword.discoveryshort}}, after you select **Windows File System** as the collection type, enter the following information:
  
 1. Complete the following fields in **Enter your credentials**:
-    -  **Host** - The host name that Windows agent is installed on. You obtain the host name when you install the agent server.
+    -  **Host** - The host name of the remote Microsoft Windows server, for example `<hostname>.mydomain.com`. You obtain the host name when you install the agent server.
     -  **Username** - The username to connect the agent server, which you obtain when you install the agent server. You use your username to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
     -  **Password** - The password of the specified user, which you obtain when you install the agent server. You use your password to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
     -  **Agent Authentication Port** - The default port value is `8397`. The port for authenticating, which you obtain when you install the agent server.
@@ -648,61 +650,252 @@ The remote agent server and the file servers to be crawled must belong to the sa
 Use this option to crawl local file systems. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
 {: shortdesc}
 
+#### Creating and mounting a persistent volume claim on the crawler pod
+{: #mount-persistent-volume}
 
-#### Copying local file system folders to the crawler pod
-{: #copy-local-folders}
-
-Before you crawl local file systems, make sure that the local file system folders that you want to crawl have access to the crawler pod so that the crawler can crawl the local file systems. Before you create a Local File System collection, you must also have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+Before you can configure a Local File System collection on {{site.data.keyword.discoveryshort}} version 2.2.0 and later, you must first create a persistent volume claim and mount it on the crawler pod. After you mount the persistent volume claim on the crawler pod, {{site.data.keyword.discoveryshort}} crawls your files, and you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
 {: shortdesc}
 
-Before you create a Local File System collection, complete the following steps to copy your local file system folders to the crawler pod, replacing the `<>` and the content inside with the required input:
+In {{site.data.keyword.discoveryshort}} version 2.2.0 and later, you can configure the persistent volume claim _after_ you install {{site.data.keyword.discoveryshort}}. In versions 2.2.0 and later, you can choose one of the following three ways to create the persistent volume claim and mount it on the crawler pod:
 
-1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
+- [Using the external NFS server](/docs/discovery-data?topic=discovery-data-collection-types#use-external-nfs)
+- [Using dynamic provisioning with an NFS storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-nfs)
+- [Using dynamic provisioning with a Portworx storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-portworx)
+
+If you are using {{site.data.keyword.discoveryshort}} version 2.1.4 and earlier, you can make the files that you want to crawl accessible to the crawler pod by choosing from two ways, [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](/docs/discovery-data?topic=discovery-data-collection-types#mount-pv-orig) or by [Copying local file system files to the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#copy-local-folders).
+
+##### Using the external NFS server
+{: #use-external-nfs}
+
+If the local file system files or folders that you want to crawl are stored in an external Network File System (NFS), you can use the external NFS server to create the persistent volume claim. After you create the persistent volume claim on the NFS server and mount it on the crawler pod, the [Local File System](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem) crawler can directly crawl these files or folders from the server.
+{: shortdesc}
+
+1. Create a file called `crawler-pv-nfs.yaml`, and save the following configuration, replacing the `<>` and the content inside with the name of your persistent volume, for example `jdoe-nfs-pv`, and with the other required information:
 
    ```bash
-   oc login https://<OpenShift administrative console URL> -u <cluster-administrator> -p <password>
+   apiVersion: v1
+   kind: PersistentVolume
+   metadata:
+     name: <persistent-volume-name>
+     labels:
+       pv-name: <persistent-volume-name>
+   spec:
+     capacity:
+       storage: 10Gi
+     accessModes:
+       - ReadWriteMany
+     persistentVolumeReclaimPolicy: Retain
+     nfs:
+       server: <NFS server hostname or IP address>
+       path: <Path of NFS exported folder>
+   ```
+   {: codeblock}
+
+1. Enter the following command to create a persistent volume by using the `crawler-pv-nfs.yaml` file that you created:
+
+   ```bash
+   oc create -f crawler-pv-nfs.yaml
    ```
    {: pre}
 
-1. Enter the following command to switch to the proper namespace:
+   You might see output similar to the following:
+
    ```bash
-   oc project <discovery-install namespace>
+   persistentvolume/jdoe-nfs-pv created
+   ```
+   {: codeblock}
+
+1. Create a file called `crawler-pvc-nfs.yaml`, and save the following configuration, replacing the `<>` and the content inside with the name of your persistent volume claim, for example `jdoe-nfs-pvc`, and with the name of your persistent volume, for example `jdoe-nfs-pv`:
+
+   ```bash
+   kind: PersistentVolumeClaim
+   apiVersion: v1
+   metadata:
+     name: <persistent-volume-claim-name>
+   spec:
+     accessModes:
+       - ReadWriteMany
+     resources:
+       requests:
+         storage: 10Gi
+     selector:
+       matchLabels:
+         pv-name: <persistent-volume-name>
+   ```
+   {: codeblock}
+
+1. Enter the following command to create a persistent volume claim by using the `crawler-pvs-nfs.yaml` file that you created:
+
+   ```bash
+   oc create -f crawler-pvc-nfs.yaml
    ```
    {: pre}
 
-1. Enter `oc get pods|grep crawler` to find the crawler pod. If you are using a version earlier than 2.1.3, enter `oc get pods|grep ingestion` to find the ingestion pod.
-1. Enter the following command to copy the local file system folders that you want to crawl to the `/mnt` directory on the crawler pod:
+   You might see output similar to the following:
+
+   ```bash
+   persistentvolumeclaim/jdoe-nfs-pvc created
+   ```
+   {: codeblock}
+
+1. Enter the following command to mount the persistent volume claim to the crawler pod. This command also mounts the persistent volume claim to all ingestion-api pods. Replace the `<>` and the content inside with the name of your persistent volume claim, for example `jdoe-nfs-pvc`:
+
+   ```bash
+   oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<persistent-volume-claim-name>" } } } } }'
+   ```
+   {: pre}
+
+For information about the other ways to create a persistent volume claim, see [Using dynamic provisioning with an NFS storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-nfs) or [Using dynamic provisioning with a Portworx storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+
+##### Using dynamic provisioning with an NFS storage class
+{: #dyn-prov-nfs}
+
+If you want to crawl your local file system files or folders but you do not want to prepare an additional NFS server to store those files or folders, you can configure dynamic storage by using an NFS storage class. For information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/plan/storage_considerations.html){: external}. Before you complete this task, be sure to copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. Also, if you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the `crawler-pvc-dynamic.yaml` file that you will create in this task and the files that you want to crawl to each cluster.
+{: shortdesc}
+
+Complete the following steps to create and mount a persistent volume claim to the crawler pod by using an NFS storage class and to copy the files that you want to crawl to the persistent volume claim:
+
+1. Enter the following command to check the `storageclass` name of the NFS provisioner:
+
+   ```bash
+   oc get storageclass
+   ```
+   {: pre}
+
+   You might output similar to the following:
+
+   ```bash
+   NAME         PROVISIONER                                      RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+   nfs-client   cluster.local/innocence-nfs-client-provisioner   Delete          Immediate           true                   177m
+   ```
+   {: codeblock}
+
+1. Create a file called `crawler-pvc-dynamic.yaml`, and save the following configuration, replacing the `<>` and the content inside with the name of your dynamic NFS persistent volume claim, for example `jdoe-dynamic-pvc`:
+
+   ```bash
+   kind: PersistentVolumeClaim
+   apiVersion: v1
+   metadata:
+     name: <name-of-dynamic-pvc>
+   spec:
+     accessModes:
+       - ReadWriteMany
+     resources:
+       requests:
+         storage: 10Gi
+   storageClassName: nfs-client
+   ```
+   {: codeblock}
+
+1. Enter the following command to create a persistent volume claim by using the `crawler-pvc-dynamic.yaml` file that you created:
+
+   ```bash
+   oc create -f crawler-pvc-dynamic.yaml
+   ```
+   {: pre}
+
+   You might see output similar to the following:
+
+   ```bash
+   persistentvolumeclaim/jdoe-dynamic-pvc created
+   ```
+   {: codeblock}
+
+1. Enter the following command to mount the persistent volume claim to the crawler pod. This command also mounts the persistent volume claim to all ingestion-api pods. Replace the `<>` and the content inside with the name of your dynamic NFS persistent volume claim in the previous step, for example `jdoe-dynamic-pvc`:
+   ```bash
+   oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<name-of-dynamic-pvc>" } } } } }'
+   ```
+   {: pre}
+
+1. Enter the following command to copy the files that you want to crawl to your dynamic NFS persistent volume claim. You only need to run this command once against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the `<>` and the content inside with the required information:
 
    ```bash
    oc rsync <path to local file system folder> <crawler pod>:/mnt
    ```
    {: pre}
 
-   If you are using a version of {{site.data.keyword.discoveryshort}} that is older than 2.1.3, enter the following command:
+Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem). For information about the other ways to create a persistent volume claim, see [Using the external NFS server](/docs/discovery-data?topic=discovery-data-collection-types#use-external-nfs) or [Using dynamic provisioning with a Portworx storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
 
-   ```
-   oc rsync <path to local file system folder> <ingestion pod>:/mnt
+##### Using dynamic provisioning with a Portworx storage class
+{: #dyn-prov-portworx}
+
+If you want to crawl your local file system files or folders but you do not want to prepare an additional NFS server to store those files or folders, you can configure dynamic storage by using a Portworx storage class. For information about Portworx storage classes that {{site.data.keyword.discoveryshort}} supports, storage requirements, and how to automatically or manually create Portworx storage classes, see [Creating Portworx storage classes](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/install/portworx-storage-classes.html){: external}. Before you complete this task, be sure to copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. Also, if you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the `crawler-pvc-portworx.yaml` file that you will create in this task and the files that you want to crawl to each cluster.
+{: shortdesc}
+
+Complete the following steps to create and mount a persistent volume claim to the crawler pod by using a Portworx storage class and to copy the files that you want to crawl to the persistent volume claim:
+
+1. Enter the following command to check the `storageclass` name of the Portworx provisioner:
+
+   ```bash
+   oc get storageclass | grep portworx-gp3-sc
    ```
    {: pre}
 
-   In versions earlier than 2.1.3, the folders that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
+   You might see output similar to the following:
 
-   If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
-   {: important}
+   ```bash
+   NAME                             PROVISIONER                     RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+   portworx-gp3-sc                  kubernetes.io/portworx-volume   Retain          Immediate           true                   51d
+   ```
+   {: codeblock}
 
-If you want to mount a persistent volume on the crawler pod, see [Mounting a persistent volume on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+1. Create a file called `crawler-pvc-portworx.yaml`, and save the following configuration, replacing the `<>` and the content inside with the name of your dynamic Portworx persistent volume claim, for example `jdoe-pvc-portworx`:
 
+   ```bash
+   kind: PersistentVolumeClaim
+   apiVersion: v1
+   metadata:
+     name: <name-of-portworx-pvc>
+   spec:
+     accessModes:
+       - ReadWriteMany
+     resources:
+       requests:
+         storage: 10Gi
+     storageClassName: portworx-gp3-sc
+    ```
+   {: codeblock}
 
-#### Mounting a persistent volume on the crawler pod
-{: #mount-persistent-volume}
+1. Enter the following command to create the persistent volume claim by using the `crawler-pvc-portworx.yaml` file that you created:
 
-If you do not want to copy your local file system files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After establishing this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
+   ```bash
+   oc create -f crawler-pvc-portworx.yaml
+   ```
+   {: pre}
+
+   You might see output similar to the following:
+
+   ```bash
+   persistentvolumeclaim/jdoe-pvc-portworx created
+   ```
+   {: codeblock}
+
+1. Enter the following command to mount the persistent volume claim to the crawler pod. Replace the `<>` and the content inside with the name of your dynamic Portworx persistent volume claim, for example `jdoe-pvc-portworx`:
+
+   ```bash
+   oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<name-of-portworx-pvc>" } } } } }'
+   ```
+   {: pre}
+
+1. Enter the following command to copy the files that you want to crawl to your dynamic Portworx persistent volume claim. You only need to run this command once against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the `<>` and the content inside with the required information:
+
+   ```bash
+   oc rsync <path to local file system folder> <crawler pod>:/mnt
+   ```
+   {: pre}
+
+Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem). For information about the other ways to create a persistent volume claim, see [Using the external NFS server](/docs/discovery-data?topic=discovery-data-collection-types#use-external-nfs) or [Using dynamic provisioning with an NFS storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-nfs). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+
+#### Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier
+{: #mount-pv-orig}
+
+If you do not want to copy your [Local File System](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem) files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After establishing this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
 {: shortdesc}
 
-You must configure the persistent volume before you install {{site.data.keyword.discoveryshort}}.
+If you plan to install {{site.data.keyword.discoveryshort}} version 2.1.4 and earlier, you must create and configure the persistent volume _before_ you install {{site.data.keyword.discoveryshort}}.
 {: important}
 
-To mount a persistent volume on the crawler pod, complete the following steps:
+Complete the following steps to create and mount a persistent volume on the crawler pod on your {{site.data.keyword.discoveryshort}} instance version 2.1.4 and earlier:
 
 1. Create a file called `crawler-pv.yaml`. The content of the file looks like the following. Replace the `<>` and the content inside with the required information:
 
@@ -732,7 +925,7 @@ To mount a persistent volume on the crawler pod, complete the following steps:
    ```
    {: pre}
 
-1. If you are using version 2.1.3 or later, edit `override.yaml` to include the following input. This file overrides any default settings that you choose. In the `label` and `value` fields, you must use the same string that you specified when you created the `crawler-pv.yaml` in step 1. Replace the `<>` and the content inside with the required information:
+1. If you are using version 2.1.3 or 2.1.4, mount the persistent volume to the crawler pod by editing `override.yaml` to include the following input. This file overrides any default settings that you choose. In the `label` and `value` fields, you must use the same string that you specified when you created the `crawler-pv.yaml` file in step 1. Replace the `<>` and the content inside with the required information:
 
    ```bash
    core:
@@ -747,7 +940,7 @@ To mount a persistent volume on the crawler pod, complete the following steps:
    ```
    {: codeblock}
 
-   If you are using a version earlier than 2.1.3, create a file called `override.yaml` in `ibm-watson-discovery-ppa/deploy/`. You might see the following content in `override.yaml`:
+   If you are using a version earlier than 2.1.3, mount the persistent volume to the crawler pod by creating a file called `override.yaml` in `ibm-watson-discovery-ppa/deploy/`. You might see the following content in `override.yaml`:
 
    ```bash
    core:
@@ -773,8 +966,50 @@ To mount a persistent volume on the crawler pod, complete the following steps:
    For a list of flags and their descriptions or for help, run `./deploy.sh -h`.
    {: tip}
 
-If you want to copy your local file system folders to the crawler pod, see [Copying local file system folders to the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#copy-local-folders).
+For information about copying your local files that you want to crawl to the crawler pod, see [Copying local file system files to the crawler pod on versions 2.1.4 and earlier](/docs/discovery-data?topic=discovery-data-collection-types#copy-local-folders). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
 
+#### Copying local file system files to the crawler pod on versions 2.1.4 and earlier
+{: #copy-local-folders}
+
+You can also copy your local files that you want to crawl to the crawler pod. Before you create a [Local File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem), you must have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+{: shortdesc}
+
+Complete the following steps to copy your local file system files to the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, replacing the `<>` and the content inside with the required information:
+
+1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
+
+   ```bash
+   oc login https://<OpenShift administrative console URL> -u <cluster-administrator> -p <password>
+   ```
+   {: pre}
+
+1. Enter the following command to switch to the proper namespace:
+   ```bash
+   oc project <discovery-install namespace>
+   ```
+   {: pre}
+
+1. Enter `oc get pods|grep crawler` to find the crawler pod. If you are using a version earlier than 2.1.3, enter `oc get pods|grep ingestion` to find the ingestion pod.
+1. Enter the following command to copy the local file system folders that you want to crawl to the `/mnt` directory on the crawler pod:
+
+   ```bash
+   oc rsync <path to local file system folder> <crawler pod>:/mnt
+   ```
+   {: pre}
+
+   If you are using a version of {{site.data.keyword.discoveryshort}} that is older than 2.1.3, enter the following command:
+
+   ```
+   oc rsync <path to local file system folder> <ingestion pod>:/mnt
+   ```
+   {: pre}
+
+   In versions earlier than 2.1.3, the files that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
+
+   If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
+   {: important}
+
+For information about creating and mounting a persistent volume on the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, see [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](/docs/discovery-data?topic=discovery-data-collection-types#mount-pv-orig). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
 
 #### Configuring a Local File System collection
 {: #configurelocalfilesystem}
@@ -883,7 +1118,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Notes** as the colle
     - **Crawl attachments** - By default, is set to **On**. When set to **On**, crawls attachments of Notes documents.
     - **Automatic code page detection** - By default, is set to **On**. When this option is disabled, the encoding converter detects the code pages of crawled documents. Complete the following fields:
         -  **Code page to use** - Displays only when **Automatic code page detection** is set to **Off**. The field used to enter the character encoding. If unspecified, the default value is `UTF-8`.
-        -  **Notes formula** - Specify a Notes formula to limit the data that you crawl, for example `SELECT @IsAvailable(Year) & Year > 2003`.
+        -  **Notes formula** - Specify the limits to the data that you crawl, for example `SELECT @IsAvailable(Year) & Year > 2003`.
 1. Select an option in the following drop-down list:
     -  **Document date field** - The document date that is used in a crawl.
          -  **Document modification date** - By default, the modified dates of the crawled documents is stored as the original field `_ _$Date$_ _`.
@@ -917,6 +1152,18 @@ The enrichments and other improvement tools are not included when a collection i
 
 For more information about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects#projects).
 
+## Crawler plug-in settings
+{: #plugin-settings}
+
+When you deploy one or more crawler plug-ins, you can configure your collection to use one of the plug-ins.
+
+These settings are only available when crawler plug-ins are deployed. For more information about building a plug-in, see [Building a Cloud Pak for Data crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build), and for more information about deploying a crawler plug-in, see [Commands and options for managing your crawler plug-ins](/docs/discovery-data?topic=discovery-data-manage-plugin#mng-plugin-cmd-opt).
+{: note}
+
+When you are ready to configure a collection to use a crawler plug-in, you can see a **Plug-in settings** section. Review the following plug-in settings that you can use to process documents. You only see these options if you deploy a plug-in package by using the `scripts/manage_crawler_plugin.sh` script:
+
+-  **Enable plug-in** - By default, this switch is set to **Off**. Enable this option if you want to use a crawler plug-in to process documents.
+    -  **Plug-in** - Lists available crawler plug-in names. Select a plug-in to use.
 
 ## Managing collections
 {: #manage-collections}
@@ -984,8 +1231,8 @@ You must create users that match the users available on the source system that {
 1. Log in to {{site.data.keyword.discoveryshort}} as an administrator.
 1. Create users who match the users available on your source or who are connected to the LDAP server that your source system uses. If you create users for document level security, keep the following points in mind:
 
-   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/users.html){: external}.
-   - To connect to an LDAP server that the source is using, see [Connecting to your LDAP server](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/admin/ldap.html){: external}.
+   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/users.html){: external}.
+   - To connect to an LDAP server that the source is using, see [Connecting to your LDAP server](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/ldap.html){: external}.
 
 
 ### Associating users with an instance
