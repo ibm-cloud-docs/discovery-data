@@ -44,7 +44,7 @@ Known issues are listed by the release in which they were identified.
 
 - When a small csv file (generally a csv with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
 - If you have set up your collections using a custom crawler built with the [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector), and then remove the custom crawler deployment, the Processing Settings page will not display the crawler configuration. This is because the underlying crawler is not available. To work around this issue, confirm that the custom crawler is deployed when there are collections using it.
-- When using a [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for Cloud Pak for Data 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fail. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
+- When using a [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for Cloud Pak for Data 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fails. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
 - When you create a custom enrichment in the tooling, you must choose a field the enrichment should be applied to and click **Apply**. If no field is selected, then the **Apply and reprocess** button will be disabled for enrichments changes until the new enrichment has a field.
 - If you apply the [Contracts enrichment](/docs/discovery-data?topic=discovery-data-output_schema) to a collection, you may receive the following error message when ingesting documents to that collection: `The number of nested documents has exceeded the allowed limit of [X].` Contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to adjust the limit.
 - When text is enriched with a custom dictionary, the output of `entities.type` should be the full facet path for the Dictionary enrichment. However, in this release, the full facet path will not be displayed. To work around this, reprocess the collection. For example, if the facet path is `sample1.sample2`, it will look like this before reprocessing:
@@ -144,8 +144,7 @@ Also see the issues identified in all previous releases.
             - name: INGESTION_POD_NAME
       ```
       {: codeblock}
-
-  Added lines from `- command:` to `/opt/ibm/wex/zing/bin/entrypoint.sh` `/opt/ibm/wex/zing/bin/controller.sh` and removed `-` before `env:`
+      Added lines from `- command:` to `/opt/ibm/wex/zing/bin/entrypoint.sh` `/opt/ibm/wex/zing/bin/controller.sh` and removed `-` before `env:`
   1. Save the changes. It will restart the converter pod.
 
  
