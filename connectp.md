@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-10"
 
 subcollection: discovery-data
 
@@ -47,7 +47,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
 -  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
 -  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
--  [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
+-  [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
 -  [{{site.data.keyword.cloud_notm}} Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 
@@ -64,7 +64,7 @@ You can use an IBM App Connect default connector to send data from a large set o
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}}:
 
--  The individual document file size limit for Box, Salesforce, SharePoint Online, SharePoint 2016 On-Premise, {{site.data.keyword.cloud_notm}} Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
+-  The individual document file size limit for Box, Salesforce, SharePoint Online, SharePoint OnPrem, {{site.data.keyword.cloud_notm}} Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
 -  If you crawl Box or Salesforce, a list of available resources is presented when you configure a source, using the {{site.data.keyword.discoveryshort}} tooling.
 -  You can configure a collection with a single data source.
 -  You must obtain an appropriate level of service license, for example Enterprise, for the data source. For information about the appropriate service level license that you need, contact the source system administrator.
@@ -77,8 +77,8 @@ Data source                                     | Crawls new and modified docume
 Box (**Application level** access)              | No                                                | Files, folders
 Box (**Enterprise level** access)               | Yes                                               | Files, folders
 Salesforce                                      | Yes                                               | Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments
-Microsoft SharePoint Online                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries
-Microsoft SharePoint 2016 On-Premise            | Yes                                               | SiteCollections, websites, lists, list items, document libraries
+Microsoft SharePoint Online                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments
+Microsoft SharePoint OnPrem                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments
 Web Crawl                                       | No                                                | Websites, website subdirectories
 {{site.data.keyword.cloud_notm}} Object Storage | Yes                                               | Buckets, files
 {: caption="Table 1. Data sources that support crawling new and modified documents during refresh and objects that can be crawled" caption-side="top"}
@@ -254,24 +254,24 @@ The number of web pages crawled is limited to 250,000, so the web crawler might 
 The crawler has a limit of 10,000 child URLs per URL that is crawled. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
 {: note}
 
-### SharePoint 2016 On-Premise
+### SharePoint OnPrem
 {: #connectsp_oppublic}
 
 <!-- Learn more topic WDS -->
-Also known as SharePoint Server 2016, Microsoft SharePoint 2016 is an on-premises data source. To connect to it, you must first install and configure {{site.data.keyword.SecureGatewayfull}}. For more information about installing {{site.data.keyword.SecureGatewayfull}}, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
+To connect to SharePoint OnPrem, you must first install and configure {{site.data.keyword.SecureGatewayfull}}. For more information about installing {{site.data.keyword.SecureGatewayfull}}, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
 {: note}
 
-The following fields are required to connect to a SharePoint 2016 data source. If you do not know what to enter in these fields, contact your SharePoint administrator, or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
+You can use this connector to crawl a SharePoint 2013, 2016, or 2019 on-premises data source. Complete the following fields to connect to the data source. If you do not know what to enter in these fields, contact your SharePoint administrator, or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
 
--  `Username` - The username to connect to the SharePoint 2016 web application that you want to crawl. This user must have access to all sites and lists that they want to crawl and index.
--  `Password` - The password to connect to the SharePoint 2016 web application that you want to crawl. This value is never returned and is only used when creating or modifying credentials.
--  `Web Application URL` - The SharePoint 2016 web application URL, for example `https://sharepointwebapp.com:8443`. If you do not enter a port number, the default is port `80` for HTTP and port `443` for HTTPS.
--  `Domain` - The domain of the SharePoint 2016 account.
+-  `Username` - The username to connect to the SharePoint OnPrem web application that you want to crawl. This user must have access to all sites and lists that they want to crawl and index.
+-  `Password` - The password to connect to the SharePoint OnPrem web application that you want to crawl. This value is never returned and is only used when creating or modifying credentials.
+-  `Web Application URL` - The SharePoint OnPrem web application URL, for example `https://sharepointwebapp.com:8443`. If you do not enter a port number, the default is port `80` for HTTP and port `443` for HTTPS.
+-  `Domain` - The domain of the SharePoint OnPrem account.
 
-Note the following items when you crawl Microsoft SharePoint 2016:
+Note the following items when you crawl Microsoft SharePoint OnPrem:
 
--  To crawl SharePoint 2016, the `Username` account must have `SiteCollection Administrator` permissions.
--  To crawl SharePoint 2016, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
+-  To crawl SharePoint OnPrem, the `Username` account must have `SiteCollection Administrator` permissions.
+-  To crawl SharePoint OnPrem, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
 -  The number of gateways that you can create is limited to 50. If you exceed this limit, you will be unable to create any more gateways, and you will see an error message that states, `Failed to update or create the network resource.`.
 
 ### IBM Cloud Object Storage
@@ -302,7 +302,7 @@ Other items to note when you crawl {{site.data.keyword.blockstoragefull}}:
 To connect to an on-premises data source, you first need to download, install, and configure {{site.data.keyword.SecureGatewayfull}}. After you install {{site.data.keyword.SecureGatewayfull}} for your first on-premises data source, you do not need to repeat this process.
 {: shortdesc}
 
-You must first download, install, and configure {{site.data.keyword.SecureGatewayfull}} before you can create a [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic) collection.
+You must first download, install, and configure {{site.data.keyword.SecureGatewayfull}} before you can create a [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic) collection.
 {: note}
 
 To install {{site.data.keyword.SecureGatewayfull}}, complete the following steps:
