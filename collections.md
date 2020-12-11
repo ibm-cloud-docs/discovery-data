@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-10"
 
 subcollection: discovery-data
 
@@ -58,6 +58,8 @@ When you create a collection, {{site.data.keyword.discoveryshort}} pulls documen
 This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
 
 ![Watson Discovery Demo: Connect to the data source you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+</br>
+To view the transcript, open the video on YouTube.
 
 ![Cloud Pak for Data only](images/cpdonly.png) The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-10"
 
 subcollection: discovery-data
 
@@ -39,6 +39,8 @@ The {{site.data.keyword.discoveryfull}} Content Mining application is an analyti
 This video provides an overview of content mining:
 
 ![Watson Discovery: Content Mining](https://www.youtube.com/embed/i5418xJoeHg){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+</br>
+To view the transcript, open the video on YouTube.
 
 This page describes using the Content Mining application. For information about creating a {{site.data.keyword.discoveryshort}} Content Mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 {: tip}

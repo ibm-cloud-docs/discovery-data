@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-12-10"
 
 subcollection: discovery-data
 
@@ -44,6 +44,8 @@ Relevancy training is optional; if the results of your queries meet your needs, 
 This video demonstrates relevancy training and several other features. For more information on those features, see [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion), [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords), and [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields):
 
 ![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+</br>
+To view the transcript, open the video on YouTube.
 
 To access the **Train** page, open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Improve relevance**, then **Relevancy training**.
 
