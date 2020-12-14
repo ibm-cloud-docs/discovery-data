@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-10"
+lastupdated: "2020-12-14"
 
 subcollection: discovery-data
 
@@ -219,6 +219,7 @@ Note the following items when you crawl Microsoft SharePoint Online:
 -  When you crawl SharePoint, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
 -  You might want to use the default Azure AD authentication.
 -  Because the SharePoint API does not return a unique ID for ListItems, ListItem documents in {{site.data.keyword.discoveryshort}} are overriden when the IDs of different ListItems are the same. To ensure that your ListItems are not overriden and that each has a unique ID, recrawl your collection, or change the configuration settings for your data source so that your ListItems are assigned a unique ID.
+-  SharePoint Online cannot crawl `Personal SiteCollections`.
 
 To successfully crawl Microsoft SharePoint Online, you must enable legacy authentication and Contribute level permissions. To enable legacy authentication, visit the [Azure portal](https://portal.azure.com/){: external}, or contact your SharePoint administrator. For assistance with enabling Contribute level permissions, you can also contact your SharePoint administrator.
 {: important}
@@ -273,6 +274,7 @@ Note the following items when you crawl Microsoft SharePoint OnPrem:
 -  To crawl SharePoint OnPrem, the `Username` account must have `SiteCollection Administrator` permissions.
 -  To crawl SharePoint OnPrem, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
 -  The number of gateways that you can create is limited to 50. If you exceed this limit, you will be unable to create any more gateways, and you will see an error message that states, `Failed to update or create the network resource.`.
+-  SharePoint OnPrem cannot crawl `Personal SiteCollections`.
 
 ### IBM Cloud Object Storage
 {: #connectcos}
