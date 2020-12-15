@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-15"
 
 subcollection: discovery-data
 
@@ -50,11 +50,11 @@ You should install {{site.data.keyword.icp4dfull}} before installing the {{site.
 
 Full installation instructions: 
 
--  [Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/svc-discovery/discovery-install-overview.html){: external}
+-  [Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/svc-discovery/discovery-install.html){: external}
 
 Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 (or later) version. {{site.data.keyword.discoveryfull}} is FISMA High Ready.
 
-For complete information about **Cloud Pak for Data administration**, see [Administering the cluster for Cloud Pak for Data](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/admin-cluster.html){: external} and [Administering the Cloud Pak for Data web client](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/admin-web-client.html){: external}.
+For complete information about **Cloud Pak for Data administration**, see [Administering the cluster for Cloud Pak for Data](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/admin-cluster.html){: external} and [Administering the Cloud Pak for Data platform](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/admin-web-client.html){: external}.
 {: important}
 
 
@@ -63,7 +63,7 @@ For complete information about **Cloud Pak for Data administration**, see [Admin
 
 Review the security information in:
 
-  -  [Security on {{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/cpd/plan/security.html){: external} and [Installing the {{site.data.keyword.discoveryfull}} service](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/svc-discovery/discovery-install-overview.html){: external}
+  -  [Security on {{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/plan/security.html){: external} and [Installing the {{site.data.keyword.discoveryfull}} service](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/svc-discovery/discovery-install.html){: external}
   
   
 Encryption of data at rest must be handled by the storage provider.
@@ -97,6 +97,103 @@ See the system requirements listed here:
 
 Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discoveryfull}}.
 {: note}
+
+## Custom scaling in Watson Discovery
+{: #scaling-discovery}
+
+You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2.2.0. For more information, see [Scaling services](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/scaling-svcs.html){: external} 
+
+1. To update the replicas, create a yaml file that specifies the number of replicas for the target pods. For example, to increase the number of replicas of the `API gateway` pod, create the following yaml file:
+   
+   ```
+   spec:
+     api:
+       replicas: 2
+   ```
+   {: codeblock}
+
+1. Apply the file by using the `oc patch` command:
+   
+   ```bash
+   oc patch wd wd --patch "$(cat $file_name)" --type='merge'
+   ```
+   {: codeblock}
+
+**Parameters list for each pod:**
+
+**UI pods**
+   
+   ```
+   spec:
+     tooling:
+       minerapp:
+         replicas:
+       tooling:
+         replicas:
+   ```
+   {: codeblock}
+
+**API gateway pod**
+   
+   ```
+   spec:
+     api:
+       replicas:
+   ```
+   {: codeblock}
+
+**Elastic search pods**
+   
+   ```
+   spec:
+     elasticsearch:
+       clientNode:
+         replicas:
+       dataNode:
+         replicas:
+       masterNode:
+         replicas:
+   ```
+   {: codeblock}
+
+**Hadoop worker pod**
+   
+   ```
+   spec:
+     hdp:
+       worker:
+         replicas:
+   ```
+   {: codeblock}
+
+**Crawler pod**
+   
+   ```
+   spec:
+     ingestion:
+       crawler:
+         replicas:
+   ```
+   {: codeblock}
+
+**Analyze API pod**
+   
+   ```
+   spec:
+     statelessapi:
+       runtime:
+         replicas:
+   ```
+   {: codeblock}
+
+**Watson Knowledge Studio model enrichment pod**
+   
+   ```
+   spec:
+     wksml:
+       replicas:
+   ```
+   {: codeblock}
 
 ## Upgrading Discovery for Cloud Pak for Data
 {: #upgrade-discovery}
