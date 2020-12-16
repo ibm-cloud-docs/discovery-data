@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-14"
 
 subcollection: discovery-data
 
@@ -612,3 +612,6 @@ In the JSON output:
  }
  ```
 {: codeblock}
+
+The **Sentiment** enrichment is available when you create a **Content Mining** project in {{site.data.keyword.discoveryshort}}. For more information, see [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
+{: note}
