@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-15"
 
 subcollection: discovery-data
 
@@ -783,7 +783,7 @@ Complete the following steps to create and mount a persistent volume claim to th
      resources:
        requests:
          storage: 10Gi
-   storageClassName: nfs-client
+     storageClassName: nfs-client
    ```
    {: codeblock}
 
@@ -1024,8 +1024,11 @@ In {{site.data.keyword.discoveryshort}}, after you select **Local File System** 
 ### FileNet P8
 {: #filenet-connect}
 
-You can use this option to crawl FileNet P8 version 5.5.0. {{site.data.keyword.discoveryshort}} only crawls the file types that it supports.
+You can use this option to crawl FileNet P8 version 5.5.0. The FileNetP8 connector can also access the Content Engine Web Services (CEWS) of a FileNet server that is installed on {{site.data.keyword.cp4-automation_notm}}. FileNet P8 5.5.0 and FileNet on {{site.data.keyword.cp4-automation_short}} support the HTTP and HTTPS protocols. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
 {: shortdesc}
+
+If you are using FileNet P8 5.5.0 or FileNet on {{site.data.keyword.cp4-automation_short}}, the connector only supports the HTTPS protocol when a verified SSL server certificate is installed on the FileNet server.
+{: note}
 
 {{site.data.keyword.discoveryshort}} does not support role-based security when you crawl FileNet P8.
 {: important}
@@ -1037,7 +1040,7 @@ You can use this option to crawl FileNet P8 version 5.5.0. {{site.data.keyword.d
 In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the collection type, enter the following information, replacing the `<>` and the content inside with the requested information:
 
 1. Complete the following fields in **Enter your credentials**:
-    - **Content Engine Web Service URL** - The Content Engine web service URL of the IBM FileNet P8 server. When you enter the URL, use the following format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `server` is the host name of the server where the Content Platform Engine is deployed, and the `port` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
+    - **Content Engine Web Service URL** - The Content Engine web service URL of the IBM FileNet P8 server. When you enter the URL, use the following format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `<server>` is the host name of the server where the Content Platform Engine is deployed, and the `<port>` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
     - **User** - The username of the user who wants to crawl a FileNet P8 server. You can obtain your username from your FileNet administrator.
     - **Password** - The password of the user who wants to crawl a FileNet P8 server. You can obtain your password from your FileNet administrator.
 1. Complete the following field in **Specify what you want to crawl**:
