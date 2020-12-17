@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2020
-lastupdated: "2020-12-14"
+lastupdated: "2020-12-17"
 
 subcollection: discovery-data
 
@@ -12,6 +12,7 @@ subcollection: discovery-data
 {:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
+{:beta: .beta}
 {:pre: .pre}
 {:important: .important}
 {:deprecated: .deprecated}
@@ -58,6 +59,21 @@ You can connect to a data source using the {{site.data.keyword.discoveryshort}} 
 3.  Read the instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling. For instructions to connect to {{site.data.keyword.discoveryshort}} by using the tooling, see [Creating a collection](/docs/discovery-data?topic=discovery-data-collections#createcollection).
 
 You can use an IBM App Connect default connector to send data from a large set of popular data sources to {{site.data.keyword.discoveryshort}} by creating flows within the App Connect tooling. Note that creating a separate App Connect instance is required to use this App Connect default connector and that any costs that you incur when you use a paid App Connect instance are not included with the cost of using {{site.data.keyword.discoveryshort}}. Additionally, except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with App Connect that you perform on your own. For information about integrating App Connect with {{site.data.keyword.discoveryshort}} or for integration support or questions, see [How to use IBM App Connect with {{site.data.keyword.discoveryfull}}](https://www.ibm.com/support/knowledgecenter/SS6KM6/com.ibm.appconnect.dev.doc/how-to-guides-for-apps/watson-discovery.html){: external}. For the available data sources that you can use with the App Connect default connector to send data to {{site.data.keyword.discoveryshort}}, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}.
+
+### FAQ extraction
+{: #faq-extraction}
+
+The FAQ extraction feature is beta functionality.
+{: beta}
+
+When configuring any data source for any project type, you have the option to **Apply FAQ extraction**. This beta feature will detect FAQ(frequently asked questions) documents in your collection and automatically extract pairs of questions and answers. Your application can use the extracted pairs to provide more precise query results. To turn on FAQ extraction for your data source, go to the **Syncing FAQ Content?** section and select the **Apply FAQ extraction** checkbox.
+
+Each question/answer pair in an FAQ document will be split into a separate document. A document with 100 question/answer pairs will be split into 100 documents. If no question/answer pairs are detected in a document, the document is processed normally. There is a limit of 10,000 Q/A pairs for each document. After the limit is reached, the remaining pairs will be stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections#manage-collections-public). 
+
+You can turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. Reprocess the collection by clicking the **Apply changes and reprocess** button.
+
+Do not use FAQ extraction in your collection if you have annotated fields using [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). 
+{: note}
 
 ## Data source requirements
 {: #public-requirements}
