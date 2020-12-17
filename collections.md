@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-10"
+lastupdated: "2020-12-17"
 
 subcollection: discovery-data
 
@@ -176,7 +176,8 @@ Click on any collection on the **Manage collections** page to see the options fo
 
 - The number of available documents and the number of documents that are processing
 - The collection status. While syncing is in progress, the collection status states, `Sync in progress`. To recrawl your collection, edit the fields that are associated with the data source that you are connnecting to in {{site.data.keyword.discoveryshort}}. When collection processing completes, you receive a status message that states, `Your documents have finished processing! You can now work with your full data set.`.
-- The last update date of the collection
+- The **Collection last updated** date and time.
+- ![IBM Cloud only](images/cloudonly.png) The **Next sync scheduled for** date and time. Your current crawl schedule settings determine the **Next sync scheduled for**, which updates if you change your crawl schedule in the **Processing settings** tab. Also, when your next scheduled crawl begins, the **Next sync scheduled for** automatically updates.
 - A list of warnings and errors that might appear while your collection processes, such as the affected file name and its associated document ID
 
 **Identify fields** tab:

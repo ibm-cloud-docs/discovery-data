@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-12-08"
+lastupdated: "2020-12-17"
 
 keywords: release notes, known issues
 
@@ -57,6 +57,14 @@ IBM releases services, features, and language support for your evaluation that a
 The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+### IBM Cloud Premium release, 17 December 2020 ![IBM Cloud only](images/cloudonly.png)
+{: #17dec2020}
+
+New features in this release:
+
+- Each collection now displays the **Next sync scheduled for** date and time on the **Activity** tab of the **Manage collections** page. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections#manage-collections-public).
+- Released the beta feature FAQ extraction. FAQ extraction automatically extracts question-and-answer pairs from FAQ (frequently asked questions) documents and web pages so that your application returns more precise answers. For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction). For a statement explaining beta features, see [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features).
 
 ## 2.2.0 release, 8 December 2020 ![Cloud Pak for Data only](images/cpdonly.png)
  {: #8dec2020}
