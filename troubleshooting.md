@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-06-19"
+  years: 2019, 2021
+lastupdated: "2021-01-13"
 
 subcollection: discovery-data
 
@@ -35,6 +35,62 @@ subcollection: discovery-data
 If you cannot find a solution to the issue you are having, try the resources available from the **Developer community** section of the table of contents.
 
 You can also get help by creating a case here: [{{site.data.keyword.cloud_notm}} Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
+
+## Setting the shard limit in Discovery for Cloud Pak for Data
+{: #shard-limit}
+
+![Cloud Pak for Data only](images/cpdonly.png) In {{site.data.keyword.discoveryshort}} version 2.2.0, there is a limit to the number of shards that can stay open on a cluster. In development instances, the limit is 1,000 open shards, and in production instances, the limit is two data nodes, which is equal to 2,000 open shards, or 1,000 open shards per data node. After you reach either limit, you cannot create any more projects and collections on your cluster, and if you try to create a new project and collection, you receive an error message.
+
+This limit is due to the fact that, when you install {{site.data.keyword.discoveryshort}} version 2.2.0, Elasticsearch version 7.8.0 automatically runs on your clusters. Because this version of Elasticsearch runs on your clusters, a new cluster stability configuration becomes available that limits the number of open shards to 1,000 for each Elasticsearch data node.
+
+If you are unable to create new projects and collections and you receive errors, first check the status of your Elasticsearch cluster and the number of shards on that cluster. Consider increasing the number of data nodes on your cluster to support more shards. This method is optimal for maximizing performance. However, an increased number of nodes uses more memory. If the number of shards reaches the limit, you can also increase the limit in a data node. For more information about increasing the shard limit in a node, see [Increasing the shard limit](/docs/discovery-data?topic=discovery-data-troubleshoot#increase-shards).
+
+This limit of 1,000 shards does not apply to versions of {{site.data.keyword.discoveryshort}} that are earlier than 2.2.0.
+{: note}
+
+### Increasing the shard limit
+{: #increase-shards}
+
+1. Log in to your {{site.data.keyword.discoveryshort}} cluster.
+1. Access your data node.
+1. Enter the following command:
+
+   ```
+   oc exec -it $(oc get pod -l app=elastic,ibm-es-data=True -o jsonpath='{.items[0].metadata.name}') -- bash
+   ```
+   {: pre}
+
+1. Enter the following command, replacing the `<>` and the content inside with your port number:
+
+   ```
+   curl -X POST http://localhost:<port_number>/_cluster/health?pretty
+   ```
+   {: pre}
+
+   If you do not know what your port number is, enter the following command to find it:
+   
+   ```
+   oc get pod -l app=elastic,ibm-es-data=True -o json | jq .items[].spec.containers[].ports[0].containerPort | head -n 1`
+   ```
+   {: pre}
+
+   The curl `POST` command returns a value for `active_primary_shards`. If you have one data node that has a value larger than 1,000 or if you have two data nodes that have a value larger than 2,000, you must increase the shard limit to create new projects and collections in your cluster.
+   
+   If you increase this limit, the cluster becomes less stable because it contains an increased number of shards.
+   {: important}
+
+1. Enter the following command to increase the number of shards, replacing `<port_number>` with your port number and `<total_shards_per_node>` and `<max_shards_per_node>` with the new shard limit that you want to assign to a node:
+
+   ```
+   curl -X POST http://localhost:<port_number>/_cluster/settings -d '{
+     "persistent": {
+       "cluster.routing.allocation.total_shards_per_node":<total_shards_per_node>, "cluster.max_shards_per_node":<max_shards_per_node>
+     }
+   }' -XPUT -H 'Content-Type:application/json'
+   ```
+   {: pre}
+
+   After you increase the shard limit, you can create more projects and collections on your cluster.
 
 ## Clearing a lock state
 {: #troubleshoot-ls}
