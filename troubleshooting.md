@@ -2,9 +2,11 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-21"
 
 subcollection: discovery-data
+
+content-type: troubleshoot
 
 ---
 
@@ -17,17 +19,10 @@ subcollection: discovery-data
 {:deprecated: .deprecated}
 {:codeblock: .codeblock}
 {:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{:tsSymptoms: .tsSymptoms}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
 
 # Getting help
 {: #troubleshoot}
@@ -38,6 +33,7 @@ You can also get help by creating a case here: [{{site.data.keyword.cloud_notm}}
 
 ## Setting the shard limit in Discovery for Cloud Pak for Data
 {: #shard-limit}
+{: troubleshoot}
 
 ![Cloud Pak for Data only](images/cpdonly.png) In {{site.data.keyword.discoveryshort}} version 2.2.0, there is a limit to the number of shards that can stay open on a cluster. In development instances, the limit is 1,000 open shards, and in production instances, the limit is two data nodes, which is equal to 2,000 open shards, or 1,000 open shards per data node. After you reach either limit, you cannot create any more projects and collections on your cluster, and if you try to create a new project and collection, you receive an error message.
 
@@ -55,33 +51,33 @@ This limit of 1,000 shards does not apply to versions of {{site.data.keyword.dis
 1. Access your data node.
 1. Enter the following command:
 
-   ```
+   ```sh
    oc exec -it $(oc get pod -l app=elastic,ibm-es-data=True -o jsonpath='{.items[0].metadata.name}') -- bash
    ```
    {: pre}
 
 1. Enter the following command, replacing the `<>` and the content inside with your port number:
 
-   ```
+   ```sh
    curl -X POST http://localhost:<port_number>/_cluster/health?pretty
    ```
    {: pre}
 
    If you do not know what your port number is, enter the following command to find it:
-   
-   ```
+
+   ```sh
    oc get pod -l app=elastic,ibm-es-data=True -o json | jq .items[].spec.containers[].ports[0].containerPort | head -n 1`
    ```
    {: pre}
 
    The curl `POST` command returns a value for `active_primary_shards`. If you have one data node that has a value larger than 1,000 or if you have two data nodes that have a value larger than 2,000, you must increase the shard limit to create new projects and collections in your cluster.
-   
+
    If you increase this limit, the cluster becomes less stable because it contains an increased number of shards.
    {: important}
 
 1. Enter the following command to increase the number of shards, replacing `<port_number>` with your port number and `<total_shards_per_node>` and `<max_shards_per_node>` with the new shard limit that you want to assign to a node:
 
-   ```
+   ```sh
    curl -X POST http://localhost:<port_number>/_cluster/settings -d '{
      "persistent": {
        "cluster.routing.allocation.total_shards_per_node":<total_shards_per_node>, "cluster.max_shards_per_node":<max_shards_per_node>
@@ -94,6 +90,7 @@ This limit of 1,000 shards does not apply to versions of {{site.data.keyword.dis
 
 ## Clearing a lock state
 {: #troubleshoot-ls}
+{: troubleshoot}
 
 ![Cloud Pak for Data only](images/cpdonly.png) When the `gateway` pod restarts it runs a database validation plugin that checks for changes and applies the latest changesets to the shared database. If the pod is restarted while this check is in process, the plugin may remain in a lock state preventing the service from starting. Manual database intervention may be needed to clear the lock.
 
@@ -114,18 +111,25 @@ The logs would indicate if liquidbase is failing and unable to run. If the syste
 
 It is possible to manually unlock the plugin by executing the following command on the postgres database the `gateway-0` pod is looking at:
 
-`psql dadmin`
-`UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null where ID=1;`
+```
+psql dadmin
+UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null where ID=1;
+```
+{: pre}
 
 If you can then restart the gateway pod everything should resume normally.
 
 ## Environment variable settings for Smart Document Understanding
 {: #troubleshoot-sdu}
+{: troubleshoot}
 
 ![Cloud Pak for Data only](images/cpdonly.png) There are two environment variables that need to be adjusted for Smart Document Understanding in {{site.data.keyword.discoveryfull}} version 2.1.0. This was resolved in version 2.1.1, see [2.1.1 release, 24 Jan 2020](/docs/discovery-data?topic=discovery-data-release-notes#24jan2020).
 
-`SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS`
-`SDU_YOLO_TIMEOUT_SEC`
+```
+SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS
+SDU_YOLO_TIMEOUT_SEC
+```
+{: pre}
 
 Both of these should be set to their respective `hour` value. These values must be set in the `<release-name>-watson-discovery-hdp` ConfigMap.
 
