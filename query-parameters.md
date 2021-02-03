@@ -12,6 +12,7 @@ subcollection: discovery-data
 {:external: target="_blank" .external}
 {:tip: .tip}
 {:note: .note}
+{:beta: .beta}
 {:pre: .pre}
 {:important: .important}
 {:deprecated: .deprecated}
@@ -28,6 +29,7 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
+{:beta: .beta}
 
 # Query parameters
 {: #query-parameters}
