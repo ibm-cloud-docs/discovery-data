@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-10-30"
+  years: 2020, 2021
+lastupdated: "2021-02-03"
 
 subcollection: discovery-data
 
@@ -60,6 +60,9 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 | Enabled</br>(`table_results.enabled`)| false | true  | false | false | false |
 | Count</br>(`table_results.count`)  | 10 | 10 | 10  | 10 | 10 |
 | Per document</br> (`table_results.per_document`) | 0  | 0  | 0 | 0 | 0 |
+| Find answers</br>(`find_answers`) |  |   |  |  | |
+| Enabled</br>(`find_answers.enabled`) | false | false  | false | false | false |
+| Max answers per passage</br>(`max_answers_per_passage`) | 1 | 1  | 1 | 1 | 1 |
 | | | | | |
 | Aggregation</br>(`aggregation`) | "term(enriched_text.entities.text,</br>name:entities)"  | "[term</br>(enriched_html.contract.elements.categories.label,</br>count:25,name:categories)"  | "" | "" | "" |
 | Suggested refinements</br>(`suggested_refinements`) |   |  |  |  | |

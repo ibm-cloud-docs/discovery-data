@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-04"
+  years: 2020, 2021
+lastupdated: "2021-02-02"
 
 subcollection: discovery-data
 
@@ -109,6 +109,7 @@ Use this project type to supply answers to a virtual agent built with {{site.dat
 -  **Settings**: Optical Character Recognition (OCR) `off`
 -  **Enrichments applied**: None
 -  **Improvement tools enabled**: Passages
+-  **API enabled**: [Answer finding (beta)](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding) ![IBM Cloud only](images/cloudonly.png)
 
 Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 

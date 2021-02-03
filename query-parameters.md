@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-02-03"
 
 subcollection: discovery-data
 
@@ -45,6 +45,87 @@ The **results set** is the group of documents identified by the combined searche
 
 Documents you do not have permissions for will not be returned in query results.
 {: important}
+
+## Answer finding ![IBM Cloud only](images/cloudonly.png)
+{: #answer-finding}
+
+The Answer finding feature is beta functionality and should not be used in production environments.
+{: beta}
+
+By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When Answer finding is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, as well as a confidence score that the "short answer" answers the question that is explicit or implicit in the user query. Applications that use Answer finding can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.
+
+Notes about Answer finding:
+  -  It finds answers, it doesn’t create answers. The answer must be part of the text; it can't be inferred.
+     -  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what was IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it will not add them up and give you a total
+  -  If the answer is available, it can handle synonyms and lexical variations.
+     -  Example question: “When did IBM purchase Red Hat?” – Passage ("short answer" is in **bold**.): “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
+  -  It can combine information across multiple sentences as long as they are close together (within approximately 2,000 characters)
+     -  Example question: “When did IBM purchase Red Hat?” – Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
+  -  It handles implicit questions similar to the way it would handle the equivalent explicit question.
+     - Example questions: “company that developed the AS/400”, ”What company developed the AS/400?”
+  - Works well with questions with longer phrase/clause answers.
+     -  Example question: “How do I flip a pancake?” - Passage: “The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**”
+  - Many how or why questions are only fully answered by much longer spans of text. Answer finding will not tell you that a whole document is the answer (and it will not summarize a document length answer).
+  - Handles yes/no questions that are factual and have a concise answer in the text.
+     -  Example question: ”Is there a library in Timbuktu” - Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house containing more than 20,000 manuscripts covering centuries of Mali's history. 
+  - Handles questions with very short answers, such as names and dates, especially when the type of answer required is explicit in the text.
+  - Handles opinion questions, but only for finding a statement of that opinion, not for assessing the validity of the opinion.
+     - Example question: ”Should I try blue eyeshadow?” - Passage: “We think **blue eye shadow is trending** this year.”
+
+The Answer finding API beta adds two new parameters within the `passage` block of the query API. for more informatation on these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
+
+-  `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), Answer finding will be enabled.
+-  `max_answers_per_passage` is optional and defaults to `1`. In this case, Answer finding will find the number of answers specified at most from any one passage.
+
+A block is also added to the `return` value within each `passage` object.  That block is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage`in length. Each answer object contains the following fields:
+
+-  `answer_text`is the text of the concise answer to the query.
+-  `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Note that some answers have very low confidence and are very unlikely to be correct, so you should be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
+-  `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from.  It is guaranteed to be greater than or equal to the start offset of the passage (since the answer must be within the passage).
+-  `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from.  It is guaranteed to be less than or equal to the end offset of the passage.
+
+To find answers across your whole collection:
+Set `passages/enabled` to `true`
+Set `passages/find_answers` to `true`
+
+To find answers within a single known document (for example, a document review application with long, complex documents):
+Set `passages/enabled` to `true`
+Set `passages/find_answers` to `true`
+Set `filter` to select the `document_id` for the document 
+
+Here is an example of a query using this API:
+
+```bash
+POST /v2/projects/{project_id}/query{"natural_language_query": "Why did Nixon resign?",
+  "passages": {"enabled": true, "find_answers":true} }
+```
+{: codeblock}
+
+Example response
+
+```json
+{
+  "matching_results": 74, "retrieval_details": { "document_retrieval_strategy": "untrained"},
+  "results": [
+     {"document_id": "63919442-7d5b-4cae-ab7e-56f58b1390fe",
+     "result_metadata":{"collection_id": "collection_id1234","document_retrieval_source":"search","confidence": 0.78214},
+     "metadata": {"parent_document_id": "63919442-7d5b-4cae-ab7e-56f58b1390fg"},
+     "title": "Watergate scandal",
+     "document_passages": [
+      {"passage_text": "With his complicity in the cover-up made public and his political support completely eroded, Nixon resigned from office on August 9, 1974. It is believed that, had he not done so, he would have been impeached by the House and removed from office by a trial in the Senate.",
+         "field": "text",
+         "start_offset": 281,
+         "end_offset": 553,
+         "answers": [
+            {"answer_text": "his complicity in the cover-up made public and his political support completely eroded",
+            "start_offset": 286, "end_offset": 373, "confidence": 0.78214}
+            ]
+  ... 
+}     
+```
+{: codeblock}
+
+Because Answer finding is enabled on only the documents and passages requested, you may want to consider requesting more documents and/or more passages per document than actually needed so the Answer finding model can be combined with more candidate documents and passages. For example, if you want to show `10` documents and `1` passage from each document, consider asking for `20` documents and up to `3` passages from each document with Answer finding. Answer finding will then search for answers in up to `20*3` = `60` passages and if confident that an answer was found in one of those passages, that confidence will be combined with the document and passage scores to produce a final ranking which can promote a document or passage that might otherwise have been missed.
 
 ## natural_language_query
 {: #nlq}
