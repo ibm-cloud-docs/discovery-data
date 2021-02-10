@@ -89,17 +89,17 @@ Discovery
         parsing.md
         invoices.md
         pos.md
-
-    {: topicgroup}
-    Backup and restore
-        backup.md
-        recovery.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
     [API reference](https://cloud.ibm.com/apidocs/discovery-data)
     /watson/watson-using-sdks
     [Watson GitHub repos](https://github.com/watson-developer-cloud/)
+
+    {: topicgroup}
+    Backup and restore
+        backup.md
+        recovery.md
 
     query-reference.md
     language-support.md

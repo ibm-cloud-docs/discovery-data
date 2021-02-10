@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-09-18"
+  years: 2019, 2021
+lastupdated: "2021-02-09"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# IBM Cloud High availability and disaster recovery
+# High availability and disaster recovery
 {: #recovery}
 
 ![IBM Cloud only](images/cloudonly.png)</br>
