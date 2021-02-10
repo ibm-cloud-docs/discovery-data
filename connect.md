@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-15"
+  years: 2019, 2021
+lastupdated: "2021-02-09"
 
 subcollection: discovery-data
 
@@ -291,10 +291,66 @@ Use this option to crawl SharePoint OnPrem 2013, 2016, or 2019. Only documents s
 {: shortdesc}
 
 
-#### Prerequisites
+#### Obtaining the web services package from your Discovery cluster
 {: #sp_opprerequisites}
 
-Before you begin, you need to have full read access for the web application.
+Before you create a SharePoint OnPrem collection, you must have full read access for the web application.
+
+In addition, before you create a SharePoint OnPrem collection, you must obtain a web services package from your {{site.data.keyword.discoveryshort}} cluster. This web services package is a custom module that the crawler uses to obtain the necessary information to crawl successfully. Complete the following steps to obtain the web services package from your {{site.data.keyword.discoveryshort}} cluster:
+
+1. Log in to your {{site.data.keyword.discoveryshort}} cluster.
+1. Enter the following command to obtain your crawler pod name:
+
+   ```
+   oc get pods | grep crawler
+   ```
+   {: pre}
+
+   You might see output that is similar to the following:
+
+   ```
+   wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
+   ```
+
+1. Enter the following command to obtain the `ESSPSolution.wsp` file, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in step 2:
+
+   ```
+   oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep ESSPSolution
+   ```
+   {: pre}
+
+   You might see output that is similar to the following:
+
+   ```
+   -rw-r--r--. 1 dadmin dadmin  8600 Feb  3 08:23 ESSPSolution-${build-version}.wsp
+   ```
+
+1. Enter the following command to copy the `ESSPSolution.wsp` file to the host server, replacing `{build-version}` with the build version number from the previous step and `{crawler-pod-name}` with the crawler pod name from step 2:
+
+   ```
+   oc cp {crawler-pod-name}:/opt/ibm/wex/zing/resources/ESSPSolution-${build-version}.wsp ESSPSolution.wsp
+   ```
+   {: pre}
+
+After you obtain the web services package from your {{site.data.keyword.discoveryshort}} cluster, you must deploy the web services on the SharePoint server. For information about deploying the web services package on the SharePoint server, see [Deploying the web services on the SharePoint server](/docs/discovery-data?topic=discovery-data-collection-types#deploy-web-services).
+
+#### Deploying the web services on the SharePoint server
+{: #deploy-web-services}
+
+To support farm-aware crawling, you must next deploy the web services package that is bundled in your {{site.data.keyword.discoveryshort}} crawler pod on the SharePoint server. You can either manually deploy the web services on the SharePoint server or run a script that automatically deploys them. Refer to the following task to run the script that automatically deploys the web services:
+
+1. Run the `ESSPSolution.wsp` script on the SharePoint server by entering the following Windows PowerShell cmdlet: `Add-SPSolution -LiteralPath C:\files\ESSPSolution.wsp`
+1. In SharePoint, open SharePoint Central Administration and then system settings.
+1. Deploy tbe package by using farm solutions.
+1. Select the `esspsolution.wsp` solution, and deploy the solution. After the deployment is complete, the farm solution is listed in the SharePoint administration console. An administrator can enable or disable the solution and can schedule triggers.
+1. Optional: Regardless of the approach that you used to deploy the web services, to complete the deployment in some environments, you might need to apply the following configurations to the IIS server that hosts the SharePoint server and the web services:
+   
+   - Allow .NET impersonation on IIS
+   - Change the ASP.NET trust level to WSS_Medium
+
+   You can apply these configurarations in the Internet Information Services Manager.
+
+For information about obtaining the web services package from your {{site.data.keyword.discoveryshort}} cluster, see [Obtaining the web services package from your Discovery cluster](/docs/discovery-data?topic=discovery-data-collection-types#sp_opprerequisites).
 
 
 #### Configuring a SharePoint OnPrem collection
