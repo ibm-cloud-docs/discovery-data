@@ -2,7 +2,8 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-11"
+
 subcollection: discovery-data
 
 ---
@@ -226,15 +227,16 @@ Except for `site_collection_path`, the following fields are required to connect 
 -  `Username` - The `username` to connect to the SharePoint Online SiteCollection that you want to crawl. This user must have access to all sites and lists that the user wants to crawl and index. Your `username` input must be a default Azure Active Directory (Azure AD) account, which is formatted as follows: `<username>@<domain>.onmicrosoft.com`. If you do not have an Azure AD username, contact your SharePoint site administrator.
 -  `Password` - The `password` to connect to the SharePoint Online SiteCollection that you want to crawl. This value is never returned and is only used when creating or modifying credentials.
 -  `Organization URL` - The `organization_url` of the source that you want to crawl. When you enter this input, only enter the domain name of the URL, for example `https://<company>.<domain>.com/`. If you enter a URL that extends beyond the domain name, or `.com/`, the input is invalid. Replace `<company>` and `<domain>` with the corresponding parts of the organization URL that you want to crawl.
--  `Site collection path` Optional: - The `site_collection_path` to the source that you want to crawl. For example, if your organization URL is `https://<company>.<domain>.com/sites/test`, the `/sites/test` segment is the input to enter in this field. You cannot enter the full organization URL in this field, and you cannot specify any input that has the extension `.aspx`, such as URLs to document libaries, lists, and subsites. For example, the following URL to a list is invalid input: `https://..com/Lists//AllItems.aspx`. If you leave this field blank, the default is `/`, and the root site collection is crawled.
+-  `Site collection path` Optional: - The `site_collection_path` to the source that you want to crawl. For example, if your organization URL is `https://<company>.<domain>.com/sites/test`, the `/sites/test` segment is the input to enter in this field. You cannot enter the full organization URL in this field, and you cannot specify any input that has the extension `.aspx`, such as URLs to document libaries, lists, and subsites. For example, the following URL to a list is invalid input: `https://..com/Lists//AllItems.aspx`. In addition, there is a limit of one site collection path per collection. If you leave this field blank, the default is `/`, and the root site collection is crawled.
 
 Note the following items when you crawl Microsoft SharePoint Online:
 
 -  To crawl SharePoint, the `username` account does not need `SiteCollection Administrator` permissions.
 -  When you crawl SharePoint, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
 -  You might want to use the default Azure AD authentication.
--  Because the SharePoint API does not return a unique ID for ListItems, ListItem documents in {{site.data.keyword.discoveryshort}} are overriden when the IDs of different ListItems are the same. To ensure that your ListItems are not overriden and that each has a unique ID, recrawl your collection, or change the configuration settings for your data source so that your ListItems are assigned a unique ID.
+-  Because the SharePoint API does not return a unique ID for ListItems, ListItem documents in {{site.data.keyword.discoveryshort}} are overridden when the IDs of different ListItems are the same. To ensure that your ListItems are not overridden and that each has a unique ID, recrawl your collection, or change the configuration settings for your data source so that your ListItems are assigned a unique ID.
 -  SharePoint Online cannot crawl `Personal SiteCollections`.
+-  If you created a collection that had multiple site collection paths prior to the limit, you cannot see all of your crawl paths. The site collection path that is used is the one that you entered before you clicked **Next** to create your collection.
 
 To successfully crawl Microsoft SharePoint Online, you must enable legacy authentication and Contribute level permissions. To enable legacy authentication, visit the [Azure portal](https://portal.azure.com/){: external}, or contact your SharePoint administrator. For assistance with enabling Contribute level permissions, you can also contact your SharePoint administrator.
 {: important}
