@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-12"
 
 subcollection: discovery-data
 
@@ -99,12 +99,44 @@ In the case of stopwords, back up the text file. For more information about sto
 This is not required, but it is a good best practice to [retrieve the status](https://{DomainName}/apidocs/discovery-data#getcollection){: external} for each collection on a regular basis and store the information locally. By retaining these statistics, you can later verify that your restoration processes were successful if needed.
 {: tip} 
 
-
 ### Smart Document Understanding models
 {: #backupsdu}
 
 If you use Smart Document Understanding (SDU), you have models associated with your configuration. To avoid loss of this information, [export your models](/docs/discovery-data?topic=discovery-data-configuring-fields#import), back them up, and store them locally. SDU models have the file extension of `.sdumodel`.
 
+### Dictionary enrichments
+{: #backupdictionary}
+
+1. Open your project, and click **Improve and customize**.
+1. On the **Improvement tools** panel, click **Teach domain concepts** and then **Dictionaries**.
+1. Click the download icon next to your dictionary. Your dictionary then downloads as a .csv file.
+
+### Regular expressions enrichments
+{: #backupregexpenrich}
+
+Regular expressions enrichments are not recoverable. Note the regular expressions that you specified to create your enrichments so that you can recreate the enrichments from them. For more information about regular expressions enrichments, see [Regular expressions enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
+
+### Machine learning enrichments
+{: #mlenrich}
+
+Back up your machine learning model .zip or .pear files, and store them locally. For more information, see [Machine learning enrichments and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment).
+
+### Pattern enrichments
+{: #patternenrich}
+
+1. Open your project, and click **Improve and customize**.
+1. On the **Improvement tools** panel, click **Teach domain concepts** and then **Patterns (Beta)**.
+1. Click the download icon next to your pattern. Your pattern model then downloads as a .zip file.
+
+### Advanced rule models enrichment
+{: #advrmenrich}
+
+Back up your model files as .zip files, and store them locally. For more information, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
+
+### Classifier enrichments
+{: #classifierenrich}
+
+Back up your classifier .csv files, and store them locally. For more information, see [Classifier enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
 
 ## Restoring your data to a new Watson Discovery instance
 {: #restoredata}
@@ -140,10 +172,37 @@ To restore your external data, re-establish your connections to these data sourc
 
 To find the data source credentials that you stored, follow the instructions for your chosen data source in [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources). These instructions explain how you can reconnect to your data sources and get the data imported into {{site.data.keyword.discoveryshort}}.
 
-
 ### Restoring Smart Document Understanding models
 {: #restoresdu}
 
 To import a previously exported Smart Document Understanding (SDU) model, see [Importing and exporting models](/docs/discovery-data?topic=discovery-data-configuring-fields#import). SDU models have the file extension of `.sdumodel`.
 
 When importing an SDU existing model into a new collection, it is a good best practice to create the new collection and add one document, then import the model and upload the remainder of your documents.
+
+### Restoring dictionary enrichments
+{: #restoredictionary}
+
+1. Open your project, and click **Improve and customize**.
+1. On the **Improvement tools** panel, click **Teach domain concepts**, **Dictionaries**, and then **Upload**.
+1. In the **Apply dictionary** dialog box, enter a name for your .csv file, select a language, specify the facet path, click **Upload**, and select your dictionary .csv file.
+1. Click **Create**.
+
+After you upload dictionary .csv files for recovery, you cannot use the dictionary editor to further edit the terms. If you want to use the dictionary editor, create a dictionary, and manually add the dictionary terms.
+{: note}
+
+For information about uploading a dictionary enrichment .csv file, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
+
+### Restoring pattern enrichments
+{: #restorepatternenrich}
+
+You can restore pattern enrichment .zip files as advanced rules models .zip files by completing the following steps:
+
+1. Open your project, and click **Improve and customize**.
+1. On the **Improvement tools** panel, click **Teach domain concepts**, **Advanced rules models**, and then **Upload**.
+1. In the **Apply advanced rules model** dialog box, enter a name for your .zip file, select a language, specify a result field, click **Upload**, and select your advanced rules models .zip file.
+1. Click **Create**.
+
+After you upload pattern model .zip files for recovery, you cannot use the pattern editor to further edit the .zip files.
+{: note}
+
+For more information about uploading an advanced rules models .zip file, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
