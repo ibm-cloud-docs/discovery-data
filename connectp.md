@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-18"
 
 subcollection: discovery-data
 
@@ -49,7 +49,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
 -  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
 -  [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
--  [{{site.data.keyword.cloud_notm}} Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
+-  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 
 You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections to read next:
@@ -80,7 +80,7 @@ Do not use FAQ extraction in your collection if you have annotated fields using 
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}}:
 
--  The individual document file size limit for Box, Salesforce, SharePoint Online, SharePoint OnPrem, {{site.data.keyword.cloud_notm}} Object Storage, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
+-  The individual document file size limit for Box, Salesforce, SharePoint Online, SharePoint OnPrem, {{site.data.keyword.cos_full}}, and Web Crawl is 10MB, and the file size limit for uploading data is 32MB.
 -  If you crawl Box or Salesforce, a list of available resources is presented when you configure a source, using the {{site.data.keyword.discoveryshort}} tooling.
 -  You can configure a collection with a single data source.
 -  You must obtain an appropriate level of service license, for example Enterprise, for the data source. For information about the appropriate service level license that you need, contact the source system administrator.
@@ -96,7 +96,7 @@ Salesforce                                      | Yes                           
 Microsoft SharePoint Online                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments
 Microsoft SharePoint OnPrem                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments
 Web Crawl                                       | No                                                | Websites, website subdirectories
-{{site.data.keyword.cloud_notm}} Object Storage | Yes                                               | Buckets, files
+{{site.data.keyword.cos_full_notm}}             | Yes                                               | Buckets, files
 {: caption="Table 1. Data sources that support crawling new and modified documents during refresh and objects that can be crawled" caption-side="top"}
 
 ### Box
