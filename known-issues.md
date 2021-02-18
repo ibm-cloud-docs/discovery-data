@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-08"
+  years: 2020, 2021
+lastupdated: "2021-02-17"
 
 keywords: known issues
 
@@ -153,7 +153,7 @@ Also see the issues identified in all previous releases.
 ## Known issues identified in the IBM Cloud Premium General Availability (GA) release, 16 July 2020:
 {: #16jul2020ki}
   
-  - ![IBM Cloud only](images/cloudonly.png) When connecting to an {{site.data.keyword.blockstoragefull}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in {{site.data.keyword.cloud_notm}}.)
+  - ![IBM Cloud only](images/cloudonly.png) When connecting to an {{site.data.keyword.cos_full}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in {{site.data.keyword.cloud_notm}}.)
 
 
 Also see the issues identified in all previous releases.
