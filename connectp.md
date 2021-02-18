@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-17"
 
 subcollection: discovery-data
 
@@ -296,22 +296,22 @@ Note the following items when you crawl Microsoft SharePoint OnPrem:
 ### IBM Cloud Object Storage
 {: #connectcos}
 
-When you connect to an {{site.data.keyword.blockstoragefull}} source, the following credentials are required. You can obtain them from your {{site.data.keyword.blockstoragefull}} administrator:
+When you connect to an {{site.data.keyword.cos_full}} source, the following credentials are required. You can obtain them from your {{site.data.keyword.cos_full_notm}} administrator:
 
--  `Endpoint` - The `endpoint` name used to interact with {{site.data.keyword.blockstoragefull}} data.
-   Do not enter `http://` or `https://`, as part of the {{site.data.keyword.blockstoragefull}} `endpoint` credential. Otherwise, you might receive an error message indicating that you have invalid or expired credentials. For the proper formatting of endpoints, see the column named Endpoint in the table in [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region).
--  `Access key id` - `access_key_id` obtained when the {{site.data.keyword.blockstoragefull}} instance was created.
--  `Secret access key` - `secret_access_key` to sign requests obtained when the {{site.data.keyword.blockstoragefull}} instance was created.
+-  `Endpoint` - The `endpoint` name used to interact with {{site.data.keyword.cos_full_notm}} data.
+   Do not enter `http://` or `https://`, as part of the {{site.data.keyword.cos_full_notm}} `endpoint` credential. Otherwise, you might receive an error message indicating that you have invalid or expired credentials. For the proper formatting of endpoints, see the column named Endpoint in the table in [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region).
+-  `Access key id` - `access_key_id` obtained when the {{site.data.keyword.cos_full_notm}} instance was created.
+-  `Secret access key` - `secret_access_key` to sign requests obtained when the {{site.data.keyword.cos_full_notm}} instance was created.
 
 IAM authentication is not currently supported for this connector. You need to set up HMAC authentication before you configure this connector. See [Service Credentials](/docs/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) for instructions.
 {: important}
 
 After this information is entered, you can choose how often you want to sync your data and select the buckets you want to sync to.
 
-Other items to note when you crawl {{site.data.keyword.blockstoragefull}}:
+Other items to note when you crawl {{site.data.keyword.cos_full_notm}}:
 
 -  This connector does not support crawling private endpoints.
--  For more information about {{site.data.keyword.cloud_notm}} Object Storage endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
+-  For more information about {{site.data.keyword.cos_full_notm}} endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
 -  There is a slight performance issue if all buckets are selected. In this case, a delay is possible, before the documents complete indexing.
 
 ## Installing IBM Secure Gateway for on-premises data 
