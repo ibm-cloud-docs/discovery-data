@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-05-13"
+  years: 2019, 2021
+lastupdated: "2021-02-26"
 
 subcollection: discovery-data
 
@@ -40,7 +40,7 @@ You package a number of component files together to create a custom connector.
 ## Custom connector components
 {: #ccs-components}
 
-A custom connector package is a ZIP file that contains the following components:
+A custom connector package is a .zip file that contains the following components:
 
 | Path              | Description |
 |-------------------|------------|
@@ -278,7 +278,7 @@ For an example of a properties file, see the example `messages.properties` file 
 ## JAR files
 {: #ccs-jar-files}
 
-The JAR files for any interfaces used by your custom connector code, including the `onewex-custom-crawler-{version_numbers}.jar` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file). The `onewex-custom-crawler-{version_numbers}.jar` file includes the `com.ibm.es.ama.custom.crawler` Java package that is described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
+The JAR files for any interfaces used by your custom connector code, including the `ama-zing-custom-crawler-{version_numbers}.jar` file whose location is listed in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file). The `ama-zing-custom-crawler-{version_numbers}.jar` file includes the `com.ibm.es.ama.custom.crawler` Java package that is described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
 
 ## Compiling and packaging the custom connector
 {: #compile-package-connector}
@@ -312,7 +312,7 @@ To compile a custom connector, you need to have the following items on your loca
      ```
      {: pre}
 
-  1. Use Gradle to compile your Java source code and to create a ZIP file that includes all of the required components for the custom connector:
+  1. Use Gradle to compile your Java source code and to create a .zip file that includes all of the required components for the custom connector:
     ```sh
     gradle build packageCustomCrawler
     ```

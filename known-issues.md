@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-26"
 
 keywords: known issues
 
@@ -38,6 +38,43 @@ See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for
 {: shortdesc}
 
 Known issues are listed by the release in which they were identified.
+
+## Known issues identified in the Discovery for Cloud Pak for Data 2.2.1, 26 February 2021 release:
+{: #26feb2021ki}
+
+- If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
+- If you are upgrading your {{site.data.keyword.discovery-data_short}} instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli upgrade` command completes before rolling updates complete. For information about verifying that your upgrade completed successfully, see [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade).
+- In {{site.data.keyword.discoveryfull}}, the `Content Mining` project only supports one collection per project. If you create more than one `Content Mining` collection, you might experience errors. If you experience errors, delete additional `Content Mining` collections so that each `Content Mining` project has only one associated collection.
+- If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
+
+  ```
+  [WKSML_MODEL_NAME]: Document analysis timed out
+  ```
+  
+  For additional timeout details, you can check your {{site.data.keyword.knowledgestudioshort}} machine learning logs, which might look similar to the following:
+
+  ```json
+  {
+    "message": "Analysis failed due to: 
+  org.apache.uima.analysis_engine.AnalysisEngineProcessException
+	        at c.i.n.b.SIREAnnotator.process(_:454)
+	        ... ",
+    "level": "SEVERE",
+  }
+  ```
+
+  Documents that time out during processing are indexed without {{site.data.keyword.knowledgestudioshort}} enrichment results.
+
+- Model-train images are not updated after upgrading from Discovery 2.2.0 to 2.2.1. To work around this issue, delete the deployments that the model-train operator creates, and wait for the operator to recreate the deployments. Enter the following command to delete the deployments:
+
+  ```
+  oc delete deploy -l 'app.kubernetes.io/managed-by=ibm-modeltrain'
+  ```
+  {: pre}
+
+  After you run this command, the model-train operator creates new deployments.
+
+Also, see the issues in all previous releases.
 
 ## Known issues identified in the Discovery for Cloud Pak for Data 2.2, 8 December 2020 release:
 {: #8dec2020ki}
@@ -238,7 +275,7 @@ Also see the issues identified in all previous releases.
   -  The Dynamic facets toggle should not appear in Content Mining projects.
   -  A minimum of 50-100 documents should be ingested to see valid dynamic facets generated.
   -  If you click **Stop** to stop a crawler and the converter processes slowly or has errors, you might see a status of the crawler running.
-  -  The total size limit of all non-HTML fields in uploaded and crawled documents is 1MB, which is equivalent to 1,048,676 bytes, and the total size limit of all HTML fields in these documents is 5MB. If you exceed either limit, you receive an error message stating `The document has fields/HTML fields that exceed the 1 MB/5 MB limit.`, and the document is not ingested. For assistance on increasing either size limit, contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
+  -  The total size limit of all non-HTML fields in uploaded and crawled documents is 1MB, which is equivalent to 1,048,576 bytes, and the total size limit of all HTML fields in these documents is 5MB. If you exceed either limit, you receive an error message stating `The document has fields/HTML fields that exceed the 1 MB/5 MB limit.`, and the document is not ingested. For assistance on increasing either size limit, contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
 
 Also see the issues identified in all previous releases.
 

@@ -87,8 +87,6 @@ Discovery
         schema.md
         contracts.md
         parsing.md
-        invoices.md
-        pos.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}

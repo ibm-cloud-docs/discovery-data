@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-01-21"
+lastupdated: "2021-02-26"
 
 subcollection: discovery-data
 
@@ -140,3 +140,35 @@ The values should be:
 `SDU_YOLO_TIMEOUT_SEC` should be set to `3600`
 
 These values should be set when the software is installed or reinstalled.
+
+## Troubleshooting error messages
+{: #troubleshoot-errors}
+
+If you receive error messages that are related to timeouts and insufficient memory for your enrichments, you can enter the following commands to change timeout and memory settings to potentially resolve these error messages:
+
+- Notice message: `<enrichment_name>: Document enrichment timed out`
+  
+  Suggested action: Increase the document processing timeout. Enter the following command to increase the default timeout from 10 to 20 minutes:
+  
+  ```
+  oc patch wd wd --type=merge --patch='{"spec": {"orchestrator": {"docproc": {"defaultTimeoutSeconds": 1200 } } } }'
+  ```
+  {: pre}
+
+- Notice message: `<enrichment_name>: Document enrichment failed due to lack of memory`
+  
+  Suggested action: Increase the orchestrator container memory limit. Enter the following command to increase the memory limit from 4 Gi to 6 Gi:
+  
+  ```
+  oc patch wd wd --type=merge --patch='{"spec": {"orchestrator": {"resources": {"limits": {"memory": "6Gi"} } } } }'
+  ```
+  {: pre}
+
+- Notice messsage: `Indexing request timed out`
+  
+  Suggested action: Increase the timeout for pushing documents to Elasticsearch. Enter the following command to increase the default timeout from 10 to 20 minutes:
+
+  ```
+  oc patch wd wd --type=merge --patch='{"spec": {"shared": {"elastic": {"publishTimeoutSeconds": 1200 } } } }'
+  ```
+  {: pre}

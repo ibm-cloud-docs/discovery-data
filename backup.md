@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-04"
+  years: 2020, 2021
+lastupdated: "2021-02-26"
 
 subcollection: discovery-data
 
@@ -41,6 +41,9 @@ These procedures are for advanced users who have experience administering {{site
 
 You can migrate your data from and restore it to the following versions:
 
+- 2.2.0 to 2.2.1
+- 2.1.4 to 2.2.1
+- 2.1.3 to 2.2.1
 - 2.1.0 to 2.1.2
 - 2.1.1 to 2.1.2
 - 2.1.2 to 2.1.3
