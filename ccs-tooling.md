@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-12-17"
+  years: 2019, 2021
+lastupdated: "2021-02-26"
 
 subcollection: discovery-data
 
@@ -41,8 +41,8 @@ You create and manage a collection as described in [Creating and managing collec
 
   1. After you create a new project, including a name and project type, look on the **Select data source** page for your custom connector. Select the custom connector and click **Next**. The **Configure collection** page opens.
 
-  The following steps apply specifically to the example custom connector that is shipped with the `custom_crawler_docs.zip` file.
-  {: note}
+     The following steps apply specifically to the example custom connector that is shipped with the `custom-crawler-docs.zip` file.
+     {: note}
 
   1. Enter values for the following fields on the **Configure collection** page. If a field is already populated with a value, verify and change the value if needed. A prepopulated value indicates that a value was specified in the custom connector's `template.xml` or `message.properties` file.
     - **General**

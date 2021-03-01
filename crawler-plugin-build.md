@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-04"
+  years: 2020, 2021
+lastupdated: "2021-02-26"
 
 subcollection: discovery-data
 
@@ -77,14 +77,14 @@ Ensure that you have the following items installed on the development server to 
    You might see output similar to the following:
 
    ```curl
-   core-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
+   wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
    ```
    {: codeblock}
 
 1. Enter the following command to obtain the SDK package name, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in step 2:
 
    ```curl
-   oc exec -it {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep wd-crawler-plugin-sdk
+   oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep wd-crawler-plugin-sdk
    ```
    {: pre}
 
