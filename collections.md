@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-17"
+  years: 2019, 2021
+lastupdated: "2021-03-01"
 
 subcollection: discovery-data
 
@@ -112,7 +112,7 @@ A connector is a component that provides data connectivity and extraction capabi
 When you create a collection, the initial crawl starts immediately. The frequency you choose for the crawl schedule determines when the next crawl starts in relation to the first. In the **How often would you like to crawl?** drop-down menu in **Crawl schedule**, you can schedule crawls to update at the following intervals:
 
 -  **Hourly** - Runs every hour
--  **Daily** - Runs every day at the same time as the initial craw
+-  **Daily** - Runs every day at the same time as the initial crawl.
 -  **Weekly** - Runs every week on the same day and time as the initial crawl.
 -  **Monthly** - Runs every 30 days at the same time as the initial crawl.
 -  **Custom intervals** - Runs on a fixed schedule, for example every 12 hours or every 10 days. You can schedule the crawler to run on a custom number of **Minutes**, **Hours**, or **Days**.
