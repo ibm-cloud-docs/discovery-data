@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-02"
 
 subcollection: discovery-data
 
@@ -92,11 +92,11 @@ This limit of 1,000 shards does not apply to versions of {{site.data.keyword.dis
 {: #troubleshoot-ls}
 {: troubleshoot}
 
-![Cloud Pak for Data only](images/cpdonly.png) When the `gateway` pod restarts it runs a database validation plugin that checks for changes and applies the latest changesets to the shared database. If the pod is restarted while this check is in process, the plugin may remain in a lock state preventing the service from starting. Manual database intervention may be needed to clear the lock.
+![Cloud Pak for Data only](images/cpdonly.png) When the `gateway` pod restarts, it runs a database validation plug-in that checks for changes and applies the latest change sets to the shared database. If the pod is restarted while this check is in process, the plug-in might remain in a lock state, preventing the service from starting. Manual database intervention might be needed to clear the lock.
 
-If the Discovery API doesn't come online, or if the `gateway-0` pod looks like it is in a constant crash loop, you can try checking the Liberty server logs for the API service located here: `/opt/ibm/wlp/output/wdapi/logs/messages.log`
+If the Discovery API does not come online or if the `gateway-0` pod looks like it is in a constant crash loop, you can try checking the Liberty server logs for the API service located here: `/opt/ibm/wlp/output/wdapi/logs/messages.log`
 
-The logs would indicate if liquidbase is failing and unable to run. If the system is locked you may see something like this:
+The logs would indicate if Liquibase is failing and unable to run. If the system is locked, you might see something similar to the following:
 
 ```
 [11/7/19 5:07:51:491 UTC] 0000002f liquibase.executor.jvm.JdbcExecutor I SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
@@ -109,7 +109,7 @@ The logs would indicate if liquidbase is failing and unable to run. If the syste
 [11/7/19 5:08:22:613 UTC] 0000002f com.ibm.ws.logging.internal.impl.IncidentImpl I FFDC1015I: An FFDC Incident has been created: "org.jboss.weld.exceptions.DeploymentException: WELD-000049: Unable to invoke public void liquibase.integration.cdi.CDILiquibase.onStartup() on liquibase.integration.cdi.CDILiquibase@7f02a07 com.ibm.ws.container.service.state.internal.ApplicationStateManager 31" at ffdc\_19.11.07\_05.08.22.0.log
 ```
 
-It is possible to manually unlock the plugin by executing the following command on the postgres database the `gateway-0` pod is looking at:
+It is possible to manually unlock the plug-in. If you have {{site.data.keyword.discoveryshort}} 2.1.4 or earlier, enter the following command on the postgres database that the `gateway-0` pod is looking at:
 
 ```
 psql dadmin
@@ -117,7 +117,15 @@ UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null w
 ```
 {: pre}
 
-If you can then restart the gateway pod everything should resume normally.
+If you have {{site.data.keyword.discoveryshort}} 2.2.0 or later, enter the following command on the postgres database that the `gateway-0` pod is looking at:
+
+```
+oc exec -it wd-discovery-postgres-0 -- bash -c 'env PGPASSWORD="$PG_PASSWORD" psql "postgresql://$PG_USER@$STKEEPER_CLUSTER_NAME-proxy-service:$STKEEPER_PG_PORT/dadmin" -c "UPDATE DATABASECHANGELOGLOCK SET LOCKE
+D=FALSE, LOCKGRANTED=null, LOCKEDBY=null where ID=1"'
+```
+{: pre}
+
+If you can then restart the gateway pod, everything should resume normally.
 
 ## Environment variable settings for Smart Document Understanding
 {: #troubleshoot-sdu}
