@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-04"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ subcollection: discovery-data
 ## Interfaces and JavaDoc
 {: #ccs-interfaces-jdoc}
 
-The interfaces listed in this document are available in the JAR package file that ships with the custom connector .zip file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the top level of the expanded .zip file. JavaDoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
+The interfaces listed in this document are available in the JAR package file that ships with the custom connector .zip file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip-old), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the top level of the expanded .zip file. JavaDoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
 
 ## Initialization interface
 {: #ccs-init-interface}
@@ -137,13 +137,13 @@ The example connector includes three components:
 The Java source code for the example connector has the following dependencies:
 
   - JDK 1.8 or higher.
-  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
+  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip-old).
   - The [JSch](http://www.jcraft.com/jsch/){: external} Java package, as described [Downloaded JSch](#download-jsch). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}.
 
-#### Downloading the `custom-crawler-docs.zip` file
+#### Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later
 {: #download-ccs-zip}
 
-Perform the following steps to download the `custom-crawler-docs.zip` file to your local machine. You need root access to an installed {{site.data.keyword.discoveryshort}} instance:
+In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the following steps to download the `custom-crawler-docs.zip` file to your local machine. You need root access to an installed {{site.data.keyword.discoveryshort}} instance:
 
   1. Log in to your {{site.data.keyword.discoveryshort}} cluster.
 
@@ -195,6 +195,67 @@ Perform the following steps to download the `custom-crawler-docs.zip` file to yo
 
      If you are using a version of {{site.data.keyword.discoveryshort}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
      {: tip}
+
+For information about downloading the `custom-crawler-docs.zip` file to {{site.data.keyword.discoveryshort}} 2.2.0 and earlier, see [Downloading the custom-crawler-docs.zip file to Discovery 2.2.0 and earlier](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip-old).
+
+##### Downloading the `custom-crawler-docs.zip` file to Discovery 2.2.0 and earlier
+{: #download-ccs-zip-old}
+
+In {{site.data.keyword.discoveryshort}} version 2.2.0 and earlier, perform the following steps to download the `custom-crawler-docs.zip` file to your local machine. You need root access to an installed {{site.data.keyword.discoveryshort}} instance:
+
+1. Obtain the entitlement key by navigating to your [container software library](https://myibm.ibm.com/products-services/containerlibrary){: external}.
+
+1. Enter the following command to log in to the Docker registry where your {{site.data.keyword.discoveryshort}} images are available. Include your entitlement key in the following command:
+
+   ```
+   docker login cp.icr.io -u cp -p {entitlement_key}
+   ```
+   {: pre}
+
+1. Enter the following command to pull the `custom-crawler-sdk` image:
+
+   ```
+   docker pull cp.icr.io/cp/watson-discovery/custom-crawler-sdk:2.1.3
+   ```
+   {: pre}
+
+1. Enter the following command to run the `custom-crawler-sdk` image:
+
+   ```
+   docker run cp.icr.io/cp/watson-discovery/custom-crawler-sdk:2.1.3
+   ```
+   {: pre}
+
+1. Enter the following command to copy `custom-crawler-docs.zip` from the container where the image is running:
+
+   ```
+   docker cp {container_name}:/crawler/custom-crawler-docs.zip .
+   ```
+   {: pre}
+
+   To find the image, enter `docker ps -a | grep custom-crawler-sdk`.
+
+1. Expand the `custom-crawler-docs.zip` file:
+
+   ```sh
+   cd {local_directory}
+   ```
+   {: pre}
+
+    where `{local_directory}` is the directory on your local machine to which you downloaded the `custom-crawler-docs.zip` file.
+
+    ```sh
+    unzip custom-crawler-docs.zip
+    ```
+    {: pre}
+
+    If your local machine does not have the `unzip` utility, try using the `gunzip` command instead, or see the documentation of the operating system of your local machine for other alternatives to expand .zip files.
+    {: note}
+
+    If you are using a version of {{site.data.keyword.discoveryshort}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
+    {: tip}
+
+For information about downloading the `custom-crawler-docs.zip` file on {{site.data.keyword.discoveryshort}} version 2.2.1 and later, see [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
 
 #### Understanding the `custom-crawler-docs.zip` file
 {: #ccs-grok-crawler-zip-file}
