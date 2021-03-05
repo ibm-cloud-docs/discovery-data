@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-03-04"
 
 subcollection: discovery-data
 
@@ -340,3 +340,11 @@ After the connection is successful, you can begin entering the credentials for y
 {: #source_isolation}
 
 [Connecting to external data sources](/docs/discovery-data?topic=discovery-data-sources) reduces the data isolation of your service instance because data in transit between the source and the service cannot be isolated. All other isolation (at-rest, administration, query) remains in full. All in-flight communication between and within services and data sources is encrypted using TLS v1.2. The private keys for the TLS certificates are encrypted at rest using AES-256-GCM, the service certificates expire every three years, and the certificate revocation lists are updated monthly. All credentials are sent over an encrypted connection using TLS v1.2 and encrypted at rest using AES-256. Connections to those data sources use whatever secure protocols are supported by those data sources.
+
+## Viewing collections connected to a gateway
+{: #gateway-connection}
+
+You can view a list of collections that are connected to a particular gateway. Complete the following steps to view collections that share a particular gateway:
+
+1. From the **My projects** page, click **Data usage and GDPR**.
+1. Click **On-premise connections**. If there are any collections that share a common gateway, those collections appear in **Connected collections**. If no collections share a gateway, you see an indicator stating that `No collections use this connection.`.
