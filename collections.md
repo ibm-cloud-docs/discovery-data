@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-04"
 
 subcollection: discovery-data
 
@@ -159,6 +159,12 @@ If you upload more than 200 files at one time, {{site.data.keyword.discoveryshor
 For a list of file types that you can upload to {{site.data.keyword.discoveryshort}}, see [Supported file types and general requirements](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes). After the upload begins, the **Activity** tab opens and updates as documents are added to the collection. Your collection is finished processing when the status indicates `Processing finished. Updated documents are ready for you.`.
 
 Optional: Click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, using Optical Character Recognition (OCR).
+
+![IBM Cloud only](images/cloudonly.png) You can drag and drop documents to your uploaded collection. Note the following statuses during and after document upload:
+
+- `Currently uploading...` - Your documents are currently uploading. As documents are uploading, you can add more documents to your collection.
+- `Upload complete!` - Document upload is complete. You can add more documents or proceed to working on your project.
+- `File upload error` - One or more of your documents exceeds the file size limit. You can either reupload the file or proceed to your project.
 
 For additional information about supported data sources in {{site.data.keyword.discoveryshort}}, see the following links:
 - ![Cloud Pak for Data only](images/cpdonly.png) [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
