@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-08"
 
 keywords: known issues
 
@@ -73,6 +73,103 @@ Known issues are listed by the release in which they were identified.
   {: pre}
 
   After you run this command, the model-train operator creates new deployments.
+
+- If you upgrade {{site.data.keyword.discovery-data_short}} from 2.2.0 to 2.2.1, you might receive the following error message:
+
+  ```
+  [ERROR] [2021-03-04 05:12:44-0657] Exiting due to error (Storage class is immutable. Module ibm-watson-gateway-operator x86_64 from Assembly portworx-shared-gp3 was installed with ibm-watson-gateway-operator x86_64, but new install/upgrade command is requesting portworx-db-gp3-sc. If you installed the assembly with a different storage class, please upgrade it individually.). Please check /ibm/cpd-cli-workspace/logs/CPD-2021-03-04T05-12-04.log for details
+  [ERROR] 2021-03-04T05:12:44.659615Z Execution error:  exit status 1
+  ```
+
+  This error message is generated because the storage class that was used for installation is different than the one that was used during the upgrade. This discrepancy results from a different add-on installing the dependency operators because the storage class dependency operators of the different add-on were recorded as the ones that were used for installation. To work around this issue, you must upgrade the following subassemblies individually:
+
+  - Upgrade the Watson gateway operator:
+
+    ```
+    ./cpd-cli upgrade \
+    --repo ./repo.yaml \
+    --assembly ibm-watson-gateway-operator \
+    --arch Cluster_architecture \
+    --namespace <Project> \
+    --transfer-image-to <Registry_location> \
+    --cluster-pull-prefix <Registry_from_cluster> \
+    --ask-pull-registry-credentials \
+    --ask-push-registry-credentials
+    ```
+    {: pre}
+  
+  - Upgrade Minio operator:
+
+    ```
+    ./cpd-cli upgrade \
+    --repo ./repo.yaml \
+    --assembly ibm-minio-operator \
+    --namespace <Project> \
+    --transfer-image-to <Registry_location> \
+    --cluster-pull-prefix <Registry_from_cluster> \
+    --ask-pull-registry-credentials \
+    --ask-push-registry-credentials
+    ```
+    {: pre}
+  
+  - Upgrade RabbitMQ operator:
+
+    ```
+    ./cpd-cli upgrade \
+    --repo ./repo.yaml \
+    --assembly ibm-rabbitmq-operator \
+    --namespace <Project> \
+    --transfer-image-to <Registry_location> \
+    --cluster-pull-prefix <Registry_from_cluster> \
+    --ask-pull-registry-credentials \
+    --ask-push-registry-credentials
+    ```
+    {: pre}
+  
+  - Upgrade etcd operator:
+
+    ```
+    ./cpd-cli upgrade \
+    --repo ./repo.yaml \
+    --assembly ibm-etcd-operator \
+    --namespace <Project> \
+    --transfer-image-to <Registry_location> \
+    --cluster-pull-prefix <Registry_from_cluster> \
+    --ask-pull-registry-credentials \
+    --ask-push-registry-credentials
+    ```
+    {: pre}
+  
+  - Upgrade model train classic operator:
+
+    ```
+    ./cpd-cli upgrade \
+    --repo ./repo.yaml \
+    --assembly modeltrain-classic \
+    --arch Cluster_architecture \
+    --namespace <Project> \
+    --transfer-image-to <Registry_location> \
+    --cluster-pull-prefix <Registry_from_cluster> \
+    --ask-pull-registry-credentials \
+    --ask-push-registry-credentials
+    ```
+    {: pre}
+  
+  - Upgrade Elasticsearch operator:
+
+    ```
+    ./cpd-cli upgrade \
+    --repo ./repo.yaml \
+    --assembly ibm-cloudpakopen-elasticsearch-operator \
+    --namespace <Project> \
+    --transfer-image-to <Registry_location> \
+    --cluster-pull-prefix <Registry_from_cluster> \
+    --ask-pull-registry-credentials \
+    --ask-push-registry-credentials
+    ```
+    {: pre}
+
+    where `<Project>` is the namespace where your {{site.data.keyword.discovery-data_short}} 2.2.0 instance is installed, where `<Registry_location>` is the location of the images that you pushed to the registry server, and where `<Registry_from_cluster>` is the location from which pods on the cluster can pull images.
 
 Also, see the issues in all previous releases.
 
