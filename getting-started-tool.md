@@ -35,7 +35,7 @@ subcollection: discovery-data
 In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features. At any time, you can click **Restore project defaults** to start over.
 {: shortdesc}
 
-This information applies to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} and Premium plan service instances created on IBM Cloud after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
+This information applies to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} and Premium plan service instances created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
 {: important}
 
 ## Before you begin
