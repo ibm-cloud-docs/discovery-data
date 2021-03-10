@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-09-18"
+  years: 2019, 2021
+lastupdated: "2021-03-09"
 
 subcollection: discovery-data
 
@@ -35,8 +35,7 @@ subcollection: discovery-data
 In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features. At any time, you can click **Restore project defaults** to start over.
 {: shortdesc}
 
-This release is available for Premium instances of {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} created 
-after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
+This information applies to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} and Premium plan service instances created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
 {: important}
 
 ## Before you begin
@@ -45,7 +44,7 @@ after 16 July 2020. For Premium instances created before that date and for all L
 
 ![Cloud Pak for Data only](images/cpdonly.png) Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
 
-![IBM Cloud only](images/cloudonly.png) Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. Go to the [{{site.data.keyword.discoveryshort}}](https://{DomainName}/catalog/services/discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a service instance. 
+![IBM Cloud only](images/cloudonly.png) Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. Go to the [{{site.data.keyword.discoveryshort}}](https://{DomainName}/catalog/services/discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Premium plan service instance. 
 
 ## Step 1: Open Watson Discovery
 {: #getting-started-launch-tool}
