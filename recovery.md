@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-03-11"
 
 subcollection: discovery-data
 
@@ -63,7 +63,24 @@ There are several methods for backing up the data stored in {{site.data.keyword.
 -  Data that you might want a copy of, such as source documents
 -  Data that {{site.data.keyword.discoveryshort}} stores and that you want to extract and back up
   
-Some data you cannot back up and must be recreated.
+You cannot back up certain data types and must manually recreate them. There are several Content Mining custom user resources that the application does not automatically back up. In the event of data loss, you must either manually recreate the following custom user resources in the Content Mining application or upload a locally saved file that contains the resource:
+
+- **/** Saved analysis
+- **/** Report
+- **/** Dashboard
+- **Custom map:** You can restore a custom map if you stored the custom map locally as a .json file and then upload it in the application. You can upload your .json file by clicking the ![Cog](images/icon_settings.png) icon on the header of the **Create a custom annotator** page, **Manage customization resources**, and **Add resource**. In **Resource type**, select **Map**, click **Next**, and upload your .json file.
+- **Searched document export:** You can export a searched document in the **Documents** view in the Content Mining application, but you cannot reupload it in the application. If you want to export a searched document, navigate to the **Documents** view in the Content Mining application by clicking **Show documents** on the mining graph in **Guided mode**, then the **Export** icon next to the **Edit** icon, and **Export** in the **Searched document export options** dialog box. You can then download the exported file from the **Repository** pane.
+- **Facet analysis result export:** You can download the results of your facet analysis by clicking the **Export** icon, then **Export results**, and **Export** in the **Analysis export options** dialog box.
+- **Collection:** You can restore a Content Mining collection if you stored the collection locally as a .csv file and then upload it in the application. Otherwise, you must manually recreate the collection. If you want to upload a collection .csv file, you can navigate to the **Create a collection** page in the application, click **Create collection**, and in **Import your files** in the **Dataset** tab, you can select your file.
+- **Document classifier:** You can restore a document classifier if you stored the document classifier locally as a .csv file and then upload it in the application. Otherwise, you must manually recreate the document classifier. If you want to upload a document classifier .csv file, you can navigate to the **Create a classifier** page in the application, click **Create classifier**, and in **Import your files** in the **Training data** tab, you can select your file.
+- Custom annotators
+  - **Dictionary:** You can restore a dictionary in the application if you stored the dictionary locally as a .csv file and upload it in the application. You can upload your dictionary .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Dictionary** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the dictionary, and you can download the .csv file by cliking the download icon in the **Dictionary** list. If you do not have a locally saved .csv file, you must manually recreate the dictionary.
+  - **Regular expressions:** You can restore a regular expression in the application if you stored the regular expression locally as a .csv file and upload it in the application. You can upload your regular expressions .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Regular expressions** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the regular expressions .csv file, and you can download the .csv file by clicking **Export**. If you do not have a locally saved .csv file, you must manually recreate the regular expression.
+  - **Machine learning models:** You can restore a machine learning model if you stored the model locally as a .zip file and then upload it in the application. You can upload your .zip file by navigating to the **Creating a custom annotator** page, clicking **Create custom annotator**, selecting **Machine learning**, and clicking **Next** and then **Select file**, and selecting your .zip file. If you do not have a locally saved .zip file, you must manually recreate the machine learning model.
+  - **PEAR File:** You can upload a .pear file if you stored the file locally and then upload it in the application. You can upload your .pear file by navigating to the **Creating a custom annotator** page, clicking **Create custom annotator**, selecting **PEAR File** in **Annotator type**, clicking **Next** and then **Select file**, and selecting your .pear file.
+
+  The **/** denotes a custom user resource that you cannot back up locally and must recreate manually in the Content Mining application.
+  {: note}
 
 ### Ingested documents
 {: #backupdocs}
@@ -114,7 +131,7 @@ If you use Smart Document Understanding (SDU), you have models associated with y
 ### Regular expressions enrichments
 {: #backupregexpenrich}
 
-Regular expressions enrichments are not recoverable. Note the regular expressions that you specified to create your enrichments so that you can recreate the enrichments from them. For more information about regular expressions enrichments, see [Regular expressions enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
+Back up your regular expressions as a .csv file, and store them locally. Note the regular expressions that you specified to create your enrichments so that you can recreate the enrichments from them. For more information about regular expressions enrichments, see [Regular expressions enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
 
 ### Machine learning enrichments
 {: #mlenrich}
