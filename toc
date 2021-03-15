@@ -29,22 +29,6 @@ Discovery
     Configuring data sources   
         sources.md
         collection-types.md
-        
-        {: topicgroup}
-        Configuring a Cloud Pak for Data custom connector
-            build-connector.md
-            connector-dev.md
-            assemble.md
-            install-connector.md
-            ccs-tooling.md
-        
-        {:topicgroup}
-        Configuring a Cloud Pak for Data custom crawler plug-in
-            crawler-plugin-build.md
-            crawler-plugin-dev.md
-            crawler-plugin-assemble.md
-            manage-plugin.md
-            crawler-plugin-tooling.md
 
     {: topicgroup}
     Improving and customizing
@@ -60,14 +44,33 @@ Discovery
         understanding_tables.md
         enrichmig.md
 
-    analyzeapi.md
-
     {: topicgroup}
-    Querying
-        query-concepts.md
-        query-parameters.md
-        query-operators.md
-        query-aggregations.md
+    Advanced development
+        develop.md
+        analyzeapi.md
+
+        {: topicgroup}
+        Querying
+            query-concepts.md
+            query-parameters.md
+            query-operators.md
+            query-aggregations.md
+
+        {: topicgroup}
+        Configuring a Cloud Pak for Data custom connector
+            connectors.md
+            connector-dev.md
+            assemble.md
+            install-connector.md
+            ccs-tooling.md
+        
+        {:topicgroup}
+        Configuring a Cloud Pak for Data custom crawler plug-in
+            crawler-plugin-build.md
+            crawler-plugin-dev.md
+            crawler-plugin-assemble.md
+            manage-plugin.md
+            crawler-plugin-tooling.md
 
     {: topicgroup}
     Improving relevance of results
@@ -85,7 +88,7 @@ Discovery
     {: topicgroup}
     Discovery for Content Intelligence
         output_schema.md
-        contracts-schema.md
+        contracts.md
         contract_parsing.md
     {: .navgroup-end}
 
@@ -105,7 +108,7 @@ Discovery
     {: topicgroup}
     IBM Cloud security
         information-security.md
-        at_events.md
+        at-events.md
         /watson/watson-keyservice
         /watson/watson-public-private-endpoints
     {: .navgroup-end}
@@ -118,6 +121,6 @@ Discovery
     {: .topicgroup}
     Developer community
         [IBM Watson Apps community](https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f)
-        [Stack Overflow](http://stackoverflow.com/questions/tagged/watson-discovery)
+        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-discovery)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
     {: .navgroup-end}

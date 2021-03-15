@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-15"
 
 subcollection: discovery-data
 
@@ -47,7 +47,7 @@ To create a project:
 1.  Click **Next**.
 1.  Choose and configure a data source (see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections)), or you can reuse an existing collection by selecting **Reuse data from an existing collection**. 
 
-To keep track of collection sharing and clean up unused collections:
+To keep track of collection sharing and clean up unused collections, complete the appropriate step for your deployment:
  
   - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Select **Collection usage and sharing**. 
   - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select ***Data usage and GDPR**, then **Collection usage and sharing**.

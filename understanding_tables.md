@@ -1,8 +1,8 @@
 ---
 
 copyright:
-years: 2018, 2020
-lastupdated: "2020-12-04"
+years: 2018, 2021
+lastupdated: "2021-03-15"
 
 keywords: table,tables,classify tables,classifying tables,table understanding,row,rows,column,columns,cell,cells,body cell,body cells,header,headers,key,value,key value pair,context,row header,row headers,column header,column headers,context,contexts
 
@@ -37,7 +37,7 @@ The `Table Understanding` enrichment produces detailed output regarding tables a
 
 For information on querying tables, see [Query parameters](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
 
-![IBM Cloud only](images/cloudonly.png) If you are using Smart Document Understanding and have chosen the **Pre-trained-models** option, you do not need to annotate tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
+![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: If you are using Smart Document Understanding and have chosen the **Pre-trained-models** option, you do not need to annotate tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 {: note}
 
 ## Output schema

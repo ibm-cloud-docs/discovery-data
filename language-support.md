@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-15"
 
 subcollection: discovery-data
 
@@ -78,4 +78,4 @@ You can select the collection language when you create your collection. See [Cre
 The following features are currently supported in English only:
 
 -  [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
--  ![IBM Cloud only](images/cloudonly.png) [Patterns enrichment (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
+-  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: [Patterns enrichment (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
