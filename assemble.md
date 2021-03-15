@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,10 +32,13 @@ subcollection: discovery-data
 # Assembling and compiling a custom Cloud Pak for Data connector
 {: #assemble}
 
-![Cloud Pak for Data only](images/cpdonly.png)
-
 You package a number of component files together to create a custom connector.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 ## Custom connector components
 {: #ccs-components}
@@ -47,6 +50,7 @@ A custom connector package is a .zip file that contains the following components
 | `config/template.xml` | A [configuration template](#ccs-config-template)|
 | `config/messages.properties` | A [properties file](#ccs-properties-file) for UI messages|
 | `lib/*.jar` | [JAR files](#ccs-jar-files) required by the custom connector, not including the connector code that you write|
+{: caption=" Connector components" caption-side="top"}
 
 ## Configuration template
 {: #ccs-config-template}
@@ -66,6 +70,7 @@ Declared settings are represented by the `<declare />` element. The element has 
 | `enum-value`    | A list of `enum` values separated by vertical bars (<tt>&#124;</tt>)|
 | `required`      | Indicates that the setting is required|
 | `hidden`        | Indicates whether to hide the setting from the UI. Specify a value of `true` to hide the setting.|
+{: caption="Declare element attributes" caption-side="top"}
 
   In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discoveryshort}} tooling.
   {: note}
@@ -104,6 +109,7 @@ Conditional settings are represented by the `<condition />` element. A condition
 | `name`          | The name of the setting|
 | `enable`        | Enable the setting if the value of the `name` attribute equals the value of the `enable` attribute|
 | `in`            | Enable the setting if the value of the `name` attribute is included in a specified list of values|
+{: caption="Condition element attributes" caption-side="top"}
 
   In the current release, conditional settings are not applied in the {{site.data.keyword.discoveryshort}} tooling.
   {: note}
@@ -143,6 +149,7 @@ Each section includes one `<declare />` element for each of its settings.
 |----------------------------------------|---------------------|
 |`/function/@name` | The name (type) of the crawler. Not a display name for the UI. Cannot contain spaces.|
 |`/function/prototype/proto-section` |A section of the configuration.|
+{: caption="Template sections" caption-side="top"}
 
 ### Section: `general_settings`
 {: #section-general-settings}
@@ -170,6 +177,7 @@ The custom crawler is initialized with the following settings in the `general_se
 |`document_level_security_supported`| Specifies whether document-level security is enabled (`true`) or disabled (`false`)|
 |`document_level_security_sso_enabled`| Reserved; must be `false`|
 |`document_level_security_scope` | A template of the credentials a user must provide to pass filtering. Values that are declared in the `datasource_settings` section can be used as variables.|
+{: caption="General settings section defaults" caption-side="top"}
 
   Document-level security settings are not supported in the current release.
   {: note}

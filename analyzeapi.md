@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-04"
+  years: 2019, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,14 +32,20 @@ subcollection: discovery-data
 # Analyze API
 {: #analyzeapi}
 
-![Cloud Pak for Data only](images/cpdonly.png)
+Use the Analyze endpoint to process text documents through {{site.data.keyword.discoveryshort}}'s enrichment pipeline without storing the source documents.
+{: shortdesc}
 
-The Analyze endpoint allows you to process text documents through {{site.data.keyword.discoveryshort}}'s enrichment pipeline without requiring the document to be stored. This is ideal for business automation purposes, for example if you want to classify emails - you can use Analyze to synchronously call {{site.data.keyword.discoveryshort}}, get a classification of the email, and use the output of that classification in your business logic. For details, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#analyzedocument){: external}.
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
+
+This approach is ideal for business automation purposes. For example, if you want to classify emails, you can use the Analyze API to synchronously call {{site.data.keyword.discoveryshort}} to get a classification of the email. Then, you can use the output of that classification in your business logic. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#analyzedocument){: external}.
 
 The Analyze API supports JSON documents only.
 {: important}
 
-Documents processed using the Analyze API are not added to the specified collection.
+Documents that are processed by using the Analyze API are not added to the specified collection.
 {: note}
 
 The following enrichments are supported in the Analyze API:
@@ -55,6 +61,6 @@ The following enrichments are supported in the Analyze API:
 
 For the complete list of the enrichments supported in each language, see [Language support](/docs/discovery-data?topic=discovery-data-language-support). 
 
-You can monitor the usage of the Analyze API using the {{site.data.keyword.discoveryshort}} tooling. For more information, see [API usage](/docs/discovery-data?topic=discovery-data-projects#api-usage).
+You can monitor the usage of the Analyze API by using the {{site.data.keyword.discoveryshort}} tools. For more information, see [API usage](/docs/discovery-data?topic=discovery-data-projects#api-usage).
 
-Use of the Analyze API affects license usage, please reference the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery){: external}.
+Use of the Analyze API affects license usage. For more information, see the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery){: external}.

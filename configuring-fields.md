@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-10"
+  years: 2019, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -40,7 +40,7 @@ With SDU, you can annotate fields within your documents to train custom conversi
 This video provides a quick overview of Smart Document Understanding:
 
 ![Watson Discovery Demo: Extract Answers From Large Documents in 5 Minutes](https://www.youtube.com/embed/Jpr3wVH3FVA){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-</br>
+
 To view the transcript, open the video on YouTube.
 
 PDF, Microsoft Word, Microsoft PowerPoint, Microsoft Excel, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
@@ -65,6 +65,7 @@ To navigate the Smart Document Understanding editor, view the following informat
 1. Open the **Identify fields** tab. A subset of documents will be available for annotation purposes. Between 20 - 50 documents will appear in the dropdown list. The number will depend on several factors, including the number of documents in your collection in the supported file formats. 
 
 Use the SDU toolbar to perform the following tasks:
+
 - Choose a document to annotate
 - Navigate the document displayed
 - Adjust the page view (`single page view`, `zoom in`, `zoom out`), `clear changes`, and `export/import models`. Click on `single page view` to toggle the display. You can view your annotations and document separately or together.
@@ -78,7 +79,7 @@ Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/disco
 
 |   |   |
 | ------ | ------ | 
-| ![IBM Cloud only](images/cloudonly.png) |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.</br></br>&#8226; If you choose **User-trained-models**, you can follow the steps below to build a custom model by annotating your documents.</br></br>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.</br></br>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. | 
+| ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.</br></br>&#8226; If you choose **User-trained-models**, you can follow the steps below to build a custom model by annotating your documents.</br></br>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.</br></br>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. |
 
 See [Best practices for annotating documents](/docs/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
 
@@ -107,6 +108,7 @@ Field | Definition
 `title` | The main title of the document being annotated.
 `table` | Use this tag to annotate tables in your document. 
 `image` | Use this tag to annotate images and diagrams in your document.
+{: caption="Field information" caption-side="top"}
 
 When you annotate one or more tables using the `table` field, you will automatically enable the **Table Understanding** enrichment for the entire collection. The **Table Understanding** enrichment is applied to the `html` field of your collection. For more information, see [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables).
 {: #important}

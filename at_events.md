@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-07-29"
+  years: 2021
+lastupdated: "2021-03-12"
 
 keywords: IBM, activity tracker, LogDNA, event, security
 
@@ -22,9 +22,13 @@ subcollection: discovery-data
 # Activity Tracker events
 {: #at_events}
 
-![IBM Cloud only](images/cloudonly.png)</br> 
 As a security officer, auditor, or manager, you can use the Activity Tracker service to track how users and applications interact with the {{site.data.keyword.discoveryshort}} service in {{site.data.keyword.cloud}}.
 {: shortdesc}
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+
+This information applies only to managed deployments.
+{: note}
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [getting started tutorial for {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started){: external}.
 
@@ -111,7 +115,6 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.expansions.create` | Add synonyms to a collection |
 | `discovery.expansions.read`   | Get synonyms for a collection |
 | `discovery.expansions.delete` | Delete synonyms from a collection |
-
 {: caption="Table 1. Actions that generate events" caption-side="top"}
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-04"
+  years: 2019, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -40,7 +40,7 @@ There are up to three options for creating facets, depending on the **Project ty
 
   -  From existing fields in a collection
   -  By creating a dictionary
-  -  By identifying a pattern ![IBM Cloud only](images/cloudonly.png)
+  -  By identifying a pattern ![IBM Cloud only](images/ibm-cloud.png)
 
 ## Overview
 {: #facetov}
@@ -89,13 +89,15 @@ If you want to add a facet that includes terms that do not exist as fields, you 
 1. As you test the facet, you can add more terms to the dictionary you created by selecting **Teach domain concepts** > **Dictionaries**. The dictionary you created is shown in the list on the **Dictionaries** page.
 
 
-## Creating a facet by identifying a pattern ![IBM Cloud only](images/cloudonly.png)
+## Creating a facet by identifying a pattern
 {: #facetpattern}
 
 The Patterns feature is beta functionality and supports English language documents only.
 {: beta}
 
-This facet is only available in **Document Retrieval** and **Conversational Search** projects.
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+
+This facet is available only to managed deployments and in **Document Retrieval** and **Conversational Search** projects.
 {: note}
 
 The Patterns feature uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
@@ -108,7 +110,8 @@ Pattern recognition works best on text with consistent structure in casing, leng
 If you need to identify specific terms or text, for example:
   -  All products in the same family, `Cloud Pak for Data`, `Cloud Pak for Automation`, `Cloud Pak for Security`
   -  All terms in the same category, `carburetor`, `piston`, `valves`
-</br>
+
+
 [Creating a facet by creating a dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict) would be a better option.
 
 1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-14"
 
 subcollection: discovery-data
 
@@ -32,24 +32,25 @@ subcollection: discovery-data
 # Getting started with the Watson Discovery Sample Project
 {: #getting-started}
 
-In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features. At any time, you can click **Restore project defaults** to start over.
+In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features.
 {: shortdesc}
 
-This information applies to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.icp4dfull}} and Premium plan service instances created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
+This information applies to {{site.data.keyword.discovery-data_short}} and Premium instances that were created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances that were created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started){: external}.
 {: important}
 
 ## Before you begin
 {: #before-you-begin-tool}
 {: hide-dashboard}
 
-![Cloud Pak for Data only](images/cpdonly.png) Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+Choose the appropriate step to complete for your deployment:
 
-![IBM Cloud only](images/cloudonly.png) Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. Go to the [{{site.data.keyword.discoveryshort}}](https://{DomainName}/catalog/services/discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Premium plan service instance. 
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. Go to the [{{site.data.keyword.discoveryshort}}](https://{DomainName}/catalog/services/discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a service instance. 
 
 ## Step 1: Open Watson Discovery
 {: #getting-started-launch-tool}
 
-![Cloud Pak for Data only](images/cpdonly.png)
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**
 
 {{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 3.0.1 or later:
 
@@ -64,7 +65,8 @@ This information applies to {{site.data.keyword.discoveryshort}} on {{site.data.
 1.  On the **Provisioned instances** tab, find your {{site.data.keyword.discoveryshort}} instance, and then hover over the last column to display the ellipsis icon ![Ellipsis icon](images/cp4d-sideways-kebab.png) and choose **View details**.
 1.  Click **Open Watson Discovery**.
 
-</br>![IBM Cloud only](images/cloudonly.png)
+<br/>
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
 
 1.  {: hide-dashboard} Click the {{site.data.keyword.discoveryshort}} instance you created to go to the service dashboard.
 1.  {: hide-dashboard} On the **Manage** page, click **Launch Watson Discovery**. If you're prompted to log in to the tooling, provide your {{site.data.keyword.cloud_notm}} credentials.

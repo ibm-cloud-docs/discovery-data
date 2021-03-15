@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,10 +32,13 @@ subcollection: discovery-data
 # High availability and disaster recovery
 {: #recovery}
 
-![IBM Cloud only](images/cloudonly.png)</br>
-
 {{site.data.keyword.discoveryfull}} is highly available in all {{site.data.keyword.cloud}} regions where {{site.data.keyword.discoveryshort}} is offered. However, recovering from potential disasters that affect an entire region requires planning and preparation.
 {: shortdesc}
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+
+This information applies only to managed deployments.
+{: note}
 
 You are responsible for understanding your customization and usage of the service. You are also responsible for being ready to re-create an instance of the service in a new region and to restore your data in any region. See [How do I ensure zero downtime?](/docs/overview?topic=overview-zero-downtime#zero-downtime){: external} for more information.
 

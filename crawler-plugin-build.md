@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,8 +32,13 @@ subcollection: discovery-data
 # Building a Cloud Pak for Data custom crawler plug-in
 {: #crawler-plugin-build}
 
-![Cloud Pak for Data only](images/cpdonly.png) {{site.data.keyword.discoveryshort}} features the option to build your own crawler plug-in with a Java SDK. By using crawler plug-ins, you can now quickly develop relevant solutions for your use cases. You can download the SDK from your installed {{site.data.keyword.discoveryshort}} cluster. For more information, see [Obtaining the crawler plug-in SDK package](/docs/discovery-data?topic=discovery-data-crawler-plugin-build#obtain-sdk).
+{{site.data.keyword.discoveryshort}} features the option to build your own crawler plug-in with a Java SDK. By using crawler plug-ins, you can now quickly develop relevant solutions for your use cases. You can download the SDK from your installed {{site.data.keyword.discoveryshort}} cluster. For more information, see [Obtaining the crawler plug-in SDK package](/docs/discovery-data?topic=discovery-data-crawler-plugin-build#obtain-sdk).
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 Any custom code that you use with {{site.data.keyword.discoveryfull}} is the responsibility of the developer; IBM Support does not cover any custom code that the developer creates.
 {: note}

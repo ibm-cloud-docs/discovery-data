@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-08"
+lastupdated: "2021-03-12"
 
 keywords: known issues
 
@@ -39,7 +39,7 @@ See [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for
 
 Known issues are listed by the release in which they were identified.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.2.1, 26 February 2021 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.2.1, 26 February 2021 release:
 {: #26feb2021ki}
 
 - If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
@@ -173,7 +173,7 @@ Known issues are listed by the release in which they were identified.
 
 Also, see the issues in all previous releases.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.2, 8 December 2020 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.2, 8 December 2020 release:
 {: #8dec2020ki}
 
 - When a small csv file (generally a csv with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
@@ -231,7 +231,7 @@ Also, see the issues in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-## Known issues identified in the IBM Cloud Premium release, 10 November 2020
+## ![IBM Cloud only](images/ibm-cloud.png) Known issues identified in the IBM Cloud Premium release, 10 November 2020
 {: #10nov2020ki}
 
 - ![IBM Cloud only](images/cloudonly.png) The [Box connector](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic) does not run on Safari.
@@ -239,7 +239,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.1.4, 2 September 2020 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.1.4, 2 September 2020 release:
 {: #2sept2020ki}
 
 - When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To workaround this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
@@ -284,7 +284,7 @@ Also see the issues identified in all previous releases.
  
 Also see the issues identified in all previous releases. 
 
-## Known issues identified in the IBM Cloud Premium General Availability (GA) release, 16 July 2020:
+## ![IBM Cloud only](images/ibm-cloud.png) Known issues identified in the IBM Cloud Premium General Availability (GA) release, 16 July 2020:
 {: #16jul2020ki}
   
   - ![IBM Cloud only](images/cloudonly.png) When connecting to an {{site.data.keyword.cos_full}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in {{site.data.keyword.cloud_notm}}.)
@@ -292,7 +292,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.1.3, 19 June 2020 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.1.3, 19 June 2020 release:
 {: #19jun2020ki}
 
   - `Entity Subtypes` in {{site.data.keyword.knowledgestudiofull}} Machine Learning models are not supported in {{site.data.keyword.discovery-data_short}} 2.1.3 or later. For instructions on converting existing models, contact the [Support center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
@@ -318,7 +318,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases. 
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.1.2, 31 Mar 2020 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.1.2, 31 Mar 2020 release:
 {: #31mar2020ki}
 
   -  When using passage retrieval with Korean, Polish, Japanese, Slovak or Chinese you may encounter much slower response times in this version. To resolve this, either disable passage retrieval, or upload a custom stopword list with words that are common in your documents (for example, prepositions and pronouns).  See [Defining stopwords](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-search-settings#stopwords) for example stopword lists in several languages. Also see [Stopwords ISO](https://github.com/stopwords-iso/){: external}) on GitHub.
@@ -333,7 +333,7 @@ Also see the issues identified in all previous releases.
   
 Also see the issues identified in all previous releases.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.1.1, 24 Jan 2020 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.1.1, 24 Jan 2020 release:
 {: #24jan2020ki}
 
   -  When creating a [dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict), suggested dictionary terms are normalized to lower case by default (for example, Watson Assistant will be normalized to watson assistant). To ensure matching on upper case terms, they should be explicitly included as part of the `Other terms` list or as the `Base term`.
@@ -354,7 +354,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.1.0, 27 Nov 2019 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.1.0, 27 Nov 2019 release:
 {: #29nov2019ki}
 
   -  When you apply an enrichment to a collection, the enrichment language must match the collection language, or it will fail. The tooling displays all the collections, regardless of language.
@@ -376,7 +376,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-## Known issues identified in the Discovery for Cloud Pak for Data 2.0.1, 30 August 2019 release:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.0.1, 30 August 2019 release:
 {: #30aug2019ki}
 
   -  After you create a Machine Learning enrichment using a {{site.data.keyword.knowledgestudiofull}} model, two identically named enrichments may display on the **Enrich fields** page. This will not affect the enrichments, but it is best to use only one of them to select and apply the enrichment to one or more fields.
@@ -387,7 +387,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in the previous release.
 
-## Known issues identified in the Discovery for Cloud Pak for Data General Availability (GA) release, 28 June 2019:
+## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data General Availability (GA) release, 28 June 2019:
 {: #known-issues-ga}
 
   -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.

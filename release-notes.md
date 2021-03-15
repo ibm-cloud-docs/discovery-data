@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-12"
 
-keywords: release notes, known issues
+keywords: release notes
 
 subcollection: discovery-data
 
@@ -58,7 +58,7 @@ The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
-### IBM Cloud Premium release, 4 March 2021 ![IBM Cloud only](images/cloudonly.png)
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 4 March 2021
 {: #4mar2021}
 
 New features in this release:
@@ -66,7 +66,7 @@ New features in this release:
 - Upload collections now support dragging and dropping documents before and during document upload. For more information, see [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data).
 - You can view a list of collections that are connected to a particular gateway. For more information, see [Viewing collections connected to a gateway](/docs/discovery-data?topic=discovery-data-sources#gateway-connection).
 
-## 2.2.1 release, 26 February 2021 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.2.1 release, 26 February 2021
 {: #26feb2021}
 
 IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2.1 is available.
@@ -78,7 +78,7 @@ Changes made in this release:
 - `Invoices` and `Purchase orders` models can no longer be enabled in the tooling. If you need these models, please contact [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to obtain instructions for enabling these models.
 - In a `Document Retrieval` project that has the `Contracts` enrichment applied, tables are not included inside the `contracts` field, as they were previously in projects that had the `Contracts` enrichment enabled. Tables will continue to be included in a separate `tables` field when the `Table Understanding` enrichment is applied.
 
-### IBM Cloud Premium release, 17 December 2020 ![IBM Cloud only](images/cloudonly.png)
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 17 December 2020
 {: #17dec2020}
 
 New features in this release:
@@ -86,7 +86,7 @@ New features in this release:
 - Each collection now displays the **Next sync scheduled for** date and time on the **Activity** tab of the **Manage collections** page. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections#manage-collections-public).
 - Released the beta feature FAQ extraction. FAQ extraction automatically extracts question-and-answer pairs from FAQ (frequently asked questions) documents and web pages so that your application returns more precise answers. For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction). For a statement explaining beta features, see [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features).
 
-## 2.2.0 release, 8 December 2020 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.2.0 release, 8 December 2020
  {: #8dec2020}
 
 IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2 is available.
@@ -102,14 +102,14 @@ Changes made in this release:
 - Dynamic Facets are no longer enabled by default in Document Retrieval projects.
 
 
-### IBM Cloud Premium release, 3 December 2020 ![IBM Cloud only](images/cloudonly.png)
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 3 December 2020
 {: #3dec2020}
 
 New feature in this release:
 
 - **Content Intelligence** added - You can now apply the **Contracts** enrichment to a **Document Retrieval** project when you create it. The Contracts enrichment can be used to classify contract terms, parties, effective dates and more within your documents. For more information, [Understanding {{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 
-### IBM Cloud Premium release, 10 November 2020 ![IBM Cloud only](images/cloudonly.png)
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 10 November 2020
 {: #10nov2020}
 
 New features in this release:
@@ -118,7 +118,7 @@ New features in this release:
 -  **SharePoint 2016 On-Premise connector** added - Crawl SharePoint 2016 On-Premise systems. For more information, see [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic).
 
 
-### IBM Cloud Premium release, 30 October 2020 ![IBM Cloud only](images/cloudonly.png)
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 30 October 2020
 {: #30oct2020}
 
 New features in this release:
@@ -131,7 +131,7 @@ Changes made in this release:
 -  In new **Document Retrieval** projects, the `suggested refinements` query setting is now set to `false` by default. It was previously set to `true`.
 
 
-### IBM Cloud Premium release, 14 September 2020 ![IBM Cloud only](images/cloudonly.png)
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 14 September 2020
 {: #14sept2020}
 
 New feature in this release:
@@ -139,7 +139,7 @@ New feature in this release:
 - A new pre-trained model is available in Smart Document Understanding for Document Retrieval projects. This model is ideal if you need to extract data from documents that include a large number of tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 
 
-### 2.1.4 release, 2 September 2020 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.4 release, 2 September 2020
 {: #2sept2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.4 is available.**
@@ -154,7 +154,7 @@ Changes made in this release:
 -   You can now monitor the usage of the Analyze API using the tooling. For more information, see [API usage](/docs/discovery-data?topic=discovery-data-projects#api-usage).
 
 
-### IBM Cloud Premium General Availability (GA) release, 16 July 2020 ![IBM Cloud only](images/cloudonly.png)
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium General Availability (GA) release, 16 July 2020
 {: #16jul2020}
 
 This release is available for Premium instances of {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} created after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
@@ -181,7 +181,7 @@ Features not available in this release:
   -  Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
   -  The SharePoint 2016 On-Premise and Box data sources are not available at this time.
 
-### 2.1.3 release, 19 June 2020 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.3 release, 19 June 2020
 {: #19jun2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.3 is available.**
@@ -202,7 +202,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.3 release:
 
 -  In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
 
-### 2.1.2 release, 31 Mar 2020 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.2 release, 31 Mar 2020
 {: #31mar2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.2 is available.**
@@ -224,7 +224,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.2 release:
   -  Running a query with an empty `aggregations` parameter returns an empty aggregations array.
   -  Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
   
-### 2.1.1 release, 24 Jan 2020 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.1 release, 24 Jan 2020
 {: #24jan2020}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.1 is available.**
@@ -237,7 +237,7 @@ Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.1 release:
   -  Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a top-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
 
 
-### 2.1.0 release, 27 Nov 2019 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.0 release, 27 Nov 2019
 {: #27nov2019}
 
 **{{site.data.keyword.discovery-data_long}} version 2.1.0 is available.** 
@@ -263,7 +263,7 @@ Changes made in this release:
   -  **Curations** (beta) - Specify a particular result for a given query. For more information, see the [API reference](https://{DomainName}/apidocs/discovery/discovery-data#createcuration){: external}.
 
 
-### 2.0.1 release, 30 August 2019 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.0.1 release, 30 August 2019
 {: #30aug2019}
 
 **{{site.data.keyword.discovery-data_long}} version 2.0.1 is available.** 
@@ -289,7 +289,7 @@ Issues resolved in {{site.data.keyword.discovery-data_short}} offerings purchase
 -  If you delete an installation of the {{site.data.keyword.discovery-data_short}} add-on, the instance will not uninstall completely and your re-installation will fail. See the {{site.data.keyword.discovery-data_short}} Readme for post-cleanup steps.
 -  If a JSON document that contains nested JSON objects is ingested, the nested JSON will be indexed as a JSON string.    
 
-### 2.0.0, General Availability (GA) release, 28 June 2019 ![Cloud Pak for Data only](images/cpdonly.png)
+### ![Cloud Pak for Data only](images/desktop.png) 2.0.0, General Availability (GA) release, 28 June 2019
 {: #28jun2019}
 
 The {{site.data.keyword.discovery-data_long}} service brings the cognitive capabilities of {{site.data.keyword.discoveryfull}} to the {{site.data.keyword.icp4dfull}} platform.

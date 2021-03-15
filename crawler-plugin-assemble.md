@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-04"
+  years: 2020, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,8 +32,13 @@ subcollection: discovery-data
 # Assembling and compiling a custom crawler plug-in
 {: #crawler-plugin-assemble}
 
-![Cloud Pak for Data only](images/cpdonly.png) After you write the source code for your crawler plug-in, you must assemble and compile it.
+After you write the source code for your crawler plug-in, you must assemble and compile it.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 ## Prerequisites
 {: #plugin-composition-prereqs}
