@@ -88,7 +88,7 @@ Discovery
     {: topicgroup}
     Discovery for Content Intelligence
         output_schema.md
-        contracts.md
+        contracts-schema.md
         contract_parsing.md
     {: .navgroup-end}
 
@@ -108,7 +108,7 @@ Discovery
     {: topicgroup}
     IBM Cloud security
         information-security.md
-        at-events.md
+        at_events.md
         /watson/watson-keyservice
         /watson/watson-public-private-endpoints
     {: .navgroup-end}
@@ -121,6 +121,6 @@ Discovery
     {: .topicgroup}
     Developer community
         [IBM Watson Apps community](https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f)
-        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-discovery)
+        [Stack Overflow](http://stackoverflow.com/questions/tagged/watson-discovery)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
     {: .navgroup-end}
