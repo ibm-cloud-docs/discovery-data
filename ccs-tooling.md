@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -31,11 +31,16 @@ subcollection: discovery-data
 {:xml: .ph data-hd-programlang='xml'}
 {:properties: .ph data-hd-programlang='properties'}
 
-# Using a custom Cloud Pak for Data connector with the Discovery tooling 
+# Using a custom Cloud Pak for Data connector with Discovery tools
 {: #ccs-tooling}
 
-![Cloud Pak for Data only](images/cpdonly.png) After you have built and deployed a custom connector, you can configure and run it in the {{site.data.keyword.discoveryshort}} tooling to create a collection.
+After you build and deploy a custom connector, you can configure and run it in the {{site.data.keyword.discoveryshort}} tool to create a collection.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. These instructions enable you to use a custom connector instead of one of the pre-built connectors listed in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
@@ -45,6 +50,7 @@ You create and manage a collection as described in [Creating and managing collec
      {: note}
 
   1. Enter values for the following fields on the **Configure collection** page. If a field is already populated with a value, verify and change the value if needed. A prepopulated value indicates that a value was specified in the custom connector's `template.xml` or `message.properties` file.
+
     - **General**
       - **Collection name**
       - **Collection language**

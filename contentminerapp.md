@@ -39,7 +39,8 @@ The {{site.data.keyword.discoveryfull}} Content Mining application is an analyti
 This video provides an overview of content mining:
 
 ![Watson Discovery: Content Mining](https://www.youtube.com/embed/i5418xJoeHg){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-</br>
+
+
 To view the transcript, open the video on YouTube.
 
 This page describes using the Content Mining application. For information about creating a {{site.data.keyword.discoveryshort}} Content Mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
@@ -615,8 +616,8 @@ You can apply your document classifier to a collection in your Content Mining ap
 
 Your classifier processes your document based on your structured and textual data. If you upload multiple documents, some documents might not be assigned any classes. To verify that your classifier works, ensure that both your .csv training and .csv target files contain the same column names and the same value types. To see sample column names and their corresponding valid value types in both the .csv training and .csv target files, review Table 1:
 
-| File          | Column names                                                                                     | Value types                              |
-| ------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------- |
+| File          | Column names | Value types                              |
+| ------------- | ------------ | ---------------------------------------- |
 | .csv training | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_sex`, `client_age`, `body`, `label` | `0`, `2016/1/1`, `Tea`, `lemon tea`, `Not Member`, `Manhattan`, `Male`, `20`, `The straw was peeled off from the juice pack.`, `package_container` |
 | .csv target   | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_sex`, `client_age`, `body`, `label` | `1`, `2016/1/2`, `Ice cream`, `vanilla ice cream`, `Silver Card Member`, `Queens`, `Female`, `20`, `I got some ice cream for my children, but there was something like a piece of thread inside the cup.`, `contamination_tampering` |
 {: caption="Table 1. Sample data for .csv training and .csv target files" caption-side="top"}

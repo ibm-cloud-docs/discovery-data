@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-11-11"
+  years: 2019, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -29,11 +29,16 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Building a Cloud Pak for Data custom connector 
+# Building a Cloud Pak for Data custom connector
 {: #build-connector}
 
-![Cloud Pak for Data only](images/cpdonly.png) {{site.data.keyword.discoveryshort}} provides connectors to many popular data sources, as described in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types). If you need to connect to a different data source, you can write and deploy a _custom connector_. 
+{{site.data.keyword.discoveryshort}} provides connectors to many popular data sources, as described in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types). If you need to connect to a different data source, you can write and deploy a _custom connector_. 
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 Any custom code used with {{site.data.keyword.discoveryfull}} is the responsibility of the developer and is not covered by IBM support.
 {: note}

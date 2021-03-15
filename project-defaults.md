@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -42,6 +42,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 | Enrichments | Entities, Parts of speech  | Entities, Parts of speech, Table Understanding, and Contracts | None | Parts of speech | None  |
 | Improvement tools | Facets (by Entity), Dynamic Facets, Passages | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval | Passages | None | Passages |
 | CSV settings | NA  | NA  | NA | No header, selected delimiters are comma and semicolon | NA |
+{: caption="Basic project defaults" caption-side="top"}
 
 ## Default query settings
 {: #query-defaults}
@@ -74,6 +75,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 | Count</br>(`count`) | 10  | 10  | 10  | 10 |  10 |
 | Sort</br>(`sort`) | ""  | ""   | ""  | "" | "" |
 | Return</br>(`return`)| []  | []  | []  | [] | [] |
+{: caption="Default query settings" caption-side="top"}
 
 ## Project component settings
 {: #component-defaults}
@@ -93,3 +95,4 @@ For more information, see the [Configuration settings for components](https://{D
 | Structured search</br>(`structured_search`) | false  |  false | false  | false  | 
 | Results per page</br> (`results_per_page`) | 5  | 5  | 0 | 0 | 
 | Aggregations</br>(`aggregations.name`)</br>(`aggregations.label`)</br>(`aggregations.multiple_selections_allowed`) | "name": "entities"</br> "label": "Top Entities"</br> "multiple_selections_allowed": false </br> </br>"name": "_system_suggested_refinements"</br> "label": "Dynamic Facets"</br>"multiple_selections_allowed": true </br></br>"name": "_system_collections"</br>"label": "Collections"</br>"multiple_selections_allowed": true | "name": "categories"</br> "label": "Category"</br> "multiple_selections_allowed": true</br></br> "name": "natures"</br> "label": "Nature"</br>"multiple_selections_allowed": false</br></br>"name": "contract_terms"</br> "label": "Contract Term"</br> "multiple_selections_allowed": false</br></br>"name": "contract_payment_terms"</br>"label": "Contract Payment Term"</br>"multiple_selections_allowed": false</br> </br>"name": "contract_types"</br> "label": "Contract Type"</br> "multiple_selections_allowed": false</br></br> "name": "contract_currencies"</br> "label": "Contract Currency"</br>"multiple_selections_allowed": false</br></br>"name": "invoice_buyers"</br> "label": "Invoice Buyer"</br> "multiple_selections_allowed": false</br></br>"name": "invoice_suppliers"</br> "label": "Invoice Supplier"</br> "multiple_selections_allowed": false</br></br>"name": "invoice_currencies"</br> "label": "Invoice Currency"</br> "multiple_selections_allowed": false</br></br>"name": "po_payment_terms"</br> "label": "Purchase Order Payment Term"</br> "multiple_selections_allowed": false</br></br>"name": "po_buyers"</br> "label": "Purchase Order Buyer"</br> "multiple_selections_allowed": false</br></br>"name": "po_suppliers"</br> "label": "Purchase Order Supplier"</br> "multiple_selections_allowed": false</br></br> "name": "po_currencies"</br>"label": "Purchase Order Currency"</br>"multiple_selections_allowed": false | [] | [] | 
+{: caption="Project component settings" caption-side="top"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -34,8 +34,13 @@ subcollection: discovery-data
 # Installing Discovery for Cloud Pak for Data
 {: #install}
 
-![Cloud Pak for Data only](images/cpdonly.png) Requirements and installation information for {{site.data.keyword.discovery-data_short}}.
+Requirements and installation information for {{site.data.keyword.discovery-data_short}}.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 You should install {{site.data.keyword.icp4dfull}} before installing the {{site.data.keyword.discovery-data_short}} service.
 

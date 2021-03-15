@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-12-04"
+  years: 2018, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -51,6 +51,7 @@ The following tables list the possible values of the `nature` and `party` keys.
 |`Exclusion`       |The `party` in the element will not fulfill the terms specified by the element.|
 |`Obligation`      |The `party` in the element is required to fulfill the terms specified by the element.|
 |`Right`           |The `party` in the element is guaranteed to receive the terms specified by the element.|
+{: caption="Supported keys" caption-side="top"}
 
 Each `nature` key is paired with a `party` key, which contains either the name or the role of the party or parties that apply to the nature (examples include, but are not limited to, `Buyer`, `IBM`, or `All Parties`). Note that for the `Definition` nature, the party is always `None`.
 
@@ -79,6 +80,7 @@ The values of `role` that can be returned for contracts include, but are not lim
 |`End User`        |The party who will interact with the provided goods or services, explicitly distinguished from the `Buyer`.|
 |`None`            |No party was identified for the element.|
 |`Supplier`        |The party responsible for providing the goods or services listed in the contract.|
+{: caption="Supported role values" caption-side="top"}
 
 ## Categories
 {: #contract_categories}
@@ -111,6 +113,7 @@ The `categories` array defines the the subject matter of the sentence. Currently
 |`Subcontracts`    |Elements referring to the hiring of third parties to perform certain duties under the contract, and the permissions, rights, restrictions, and consequences thereto and arising therefrom.|
 |`Term & Termination`|Elements referring to duration of the contract, the schedule and terms of contract termination, and any consequences of termination, including any obligations that apply at or after termination.|
 |`Warranties`      |Elements that refer to ongoing promises and obligations made in the contract that are currently true and will continue to be true in the future. Also elements discussing the consequences of such promises or obligations being broken, and the rights to remedy the situation (for example, but not limited to, seeking damages). This category does not apply to elements that are purely concerned with representation statements (statements of fact about the past or the present), or to elements that lay out assumptions regarding things that occurred in the past.|
+{: caption="Supported categories" caption-side="top"}
 
 ## Attributes
 {: #attributes}
@@ -128,6 +131,7 @@ The `attributes` array specifies any attributes that are identified in the sente
 |`Organization`    |An organization.                                           |
 |`Percentage`      |A percentage.                                              |
 |`Person`          |A person.                                                  |
+{: caption="Supported attributes" caption-side="top"}
 
 ## Effective dates
 {: #effective_dates}
@@ -141,6 +145,7 @@ The `effective_dates` array identifies the date or dates on which the document b
 |`text_normalized` |The normalized text of the `text` if available, listed as a string. |
 |`location`        |The location of the date as defined by its `begin` and `end` indexes.|
 |`provenance_ids`  |An array of hashed values that you can send to IBM to provide feedback or receive support. |
+{: caption="Effective date values" caption-side="top"}
 
 ## Contract amounts
 {: #contract_amounts}
@@ -158,6 +163,7 @@ The `contract_amounts` array identifies the monetary amounts specified in the do
 |`unit`            |A string listing the unit of the value that was found in the normalized text.|
 |`location`        |The location of the contract amount as defined by its `begin` and `end` indexes.|
 |`provenance_ids`  |An array of hashed values that you can send to IBM to provide feedback or receive support. |
+{: caption="Amount values" caption-side="top"}
 
 ## Termination dates
 {: #termination_dates}
@@ -171,6 +177,7 @@ The `termination_dates` array identifies the document's termination dates.
 |`text_normalized` |The normalized text of the `text` if available, listed as a string.|
 |`location`        |The location of the termination date as defined by its `begin` and `end` indexes.|
 |`provenance_ids`  |An array of hashed values that you can send to IBM to provide feedback or receive support. |
+{: caption="Termination datae values" caption-side="top"}
 
 ## Contract types
 {: #contract_types}
@@ -183,6 +190,7 @@ The `contract_types` array identifies the document's contract type or types as d
 |`text`            |The contract type, listed as a string.                  |
 |`location`        |The location of the contract type as defined by its `begin` and `end` indexes.|
 |`provenance_ids`  |An array of hashed values that you can send to IBM to provide feedback or receive support. |
+{: caption="Contract type values" caption-side="top"}
 
 ## Contract terms
 {: #contract-terms}
@@ -200,6 +208,7 @@ The `contract_terms` array identifies the duration or durations of the contract 
 |`unit`            |A string listing the unit of the value that was found in the normalized text.|
 |`location`        |The location of the contract term as defined by its `begin` and `end` indexes.|
 |`provenance_ids`  |An array of hashed values that you can send to IBM to provide feedback or receive support. |
+{: caption="Contract term values" caption-side="top"}
 
 ## Payment terms
 {: #payment-terms}
@@ -217,6 +226,7 @@ The `payment_terms` array identifies the payment duration or durations as declar
 |`unit`            |A string listing the unit of the value that was found in the normalized text.|
 |`location`        |The location of the payment term as defined by its `begin` and `end` indexes.|
 |`provenance_ids`  |An array of hashed values that you can send to IBM to provide feedback or receive support. |
+{: caption="Payment term values" caption-side="top"}
 
 ## Contract currencies
 {: #contract-currencies}
@@ -230,6 +240,7 @@ The `contract_currencies` array identifies the contract currency or currencies a
 |`text_normalized` |The normalized text of the `text` if applicable, listed as a string in [ISO-4217](https://www.iso.org/iso-4217-currency-codes.html){: external} format.|
 |`location`        |The location of the contract currency as defined by its `begin` and `end` indexes.|
 |`provenance_ids`  |An array of hashed values that you can send to IBM to provide feedback or receive support. |
+{: caption="Contract currency values" caption-side="top"}
 
 ## Provenance
 {: #provenance}

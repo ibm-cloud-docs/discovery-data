@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-02"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -31,11 +31,11 @@ If you cannot find a solution to the issue you are having, try the resources ava
 
 You can also get help by creating a case here: [{{site.data.keyword.cloud_notm}} Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
 
-## Setting the shard limit in Discovery for Cloud Pak for Data
+## Setting the shard limit in Discovery for Cloud Pak for Data ![Cloud Pak for Data only](images/desktop.png)
 {: #shard-limit}
 {: troubleshoot}
 
-![Cloud Pak for Data only](images/cpdonly.png) In {{site.data.keyword.discoveryshort}} version 2.2.0, there is a limit to the number of shards that can stay open on a cluster. In development instances, the limit is 1,000 open shards, and in production instances, the limit is two data nodes, which is equal to 2,000 open shards, or 1,000 open shards per data node. After you reach either limit, you cannot create any more projects and collections on your cluster, and if you try to create a new project and collection, you receive an error message.
+In {{site.data.keyword.discoveryshort}} version 2.2.0, there is a limit to the number of shards that can stay open on a cluster. In development instances, the limit is 1,000 open shards, and in production instances, the limit is two data nodes, which is equal to 2,000 open shards, or 1,000 open shards per data node. After you reach either limit, you cannot create any more projects and collections on your cluster, and if you try to create a new project and collection, you receive an error message.
 
 This limit is due to the fact that, when you install {{site.data.keyword.discoveryshort}} version 2.2.0, Elasticsearch version 7.8.0 automatically runs on your clusters. Because this version of Elasticsearch runs on your clusters, a new cluster stability configuration becomes available that limits the number of open shards to 1,000 for each Elasticsearch data node.
 
@@ -92,7 +92,7 @@ This limit of 1,000 shards does not apply to versions of {{site.data.keyword.dis
 {: #troubleshoot-ls}
 {: troubleshoot}
 
-![Cloud Pak for Data only](images/cpdonly.png) When the `gateway` pod restarts, it runs a database validation plug-in that checks for changes and applies the latest change sets to the shared database. If the pod is restarted while this check is in process, the plug-in might remain in a lock state, preventing the service from starting. Manual database intervention might be needed to clear the lock.
+![Cloud Pak for Data only](images/desktop.png) **Installed only**: When the `gateway` pod restarts, it runs a database validation plug-in that checks for changes and applies the latest change sets to the shared database. If the pod is restarted while this check is in process, the plug-in might remain in a lock state, preventing the service from starting. Manual database intervention might be needed to clear the lock.
 
 If the Discovery API does not come online or if the `gateway-0` pod looks like it is in a constant crash loop, you can try checking the Liberty server logs for the API service located here: `/opt/ibm/wlp/output/wdapi/logs/messages.log`
 
@@ -131,7 +131,7 @@ If you can then restart the gateway pod, everything should resume normally.
 {: #troubleshoot-sdu}
 {: troubleshoot}
 
-![Cloud Pak for Data only](images/cpdonly.png) There are two environment variables that need to be adjusted for Smart Document Understanding in {{site.data.keyword.discoveryfull}} version 2.1.0. This was resolved in version 2.1.1, see [2.1.1 release, 24 Jan 2020](/docs/discovery-data?topic=discovery-data-release-notes#24jan2020).
+![Cloud Pak for Data only](images/desktop.png) **Installed only**: There are two environment variables that need to be adjusted for Smart Document Understanding in {{site.data.keyword.discoveryfull}} version 2.1.0. This was resolved in version 2.1.1, see [2.1.1 release, 24 Jan 2020](/docs/discovery-data?topic=discovery-data-release-notes#24jan2020).
 
 ```
 SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS

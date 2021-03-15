@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-04"
+  years: 2020, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,7 +32,13 @@ subcollection: discovery-data
 # Developing and implementing a Cloud Pak for Data custom crawler plug-in
 {: #crawler-plugin-dev}
 
-![Cloud Pak for Data only](images/cpdonly.png) The crawler plug-in includes a file called `com.ibm.es.ama.plugin.CrawlerPlugin`. This file is the [Initialization interface](/docs/discovery-data?topic=discovery-data-crawler-plugin-dev#plugin-init-interface) that includes methods that you can use when you work with your crawler plug-in.
+The crawler plug-in includes a file called `com.ibm.es.ama.plugin.CrawlerPlugin`. This file is the [Initialization interface](/docs/discovery-data?topic=discovery-data-crawler-plugin-dev#plugin-init-interface) that includes methods that you can use when you work with your crawler plug-in.
+{: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 ## Interfaces and JavaDoc
 {: #plugin-interfaces-jdoc}
@@ -49,6 +55,7 @@ Use the `com.ibm.es.ama.plugin.CrawlerPlugin` interface to initialize or termina
 | `init`               | Initialize a crawler plug-in |
 | `term`               | Terminate a crawler plug-in  |
 | `updateDocument`     | Update crawled documents     |
+{: caption="Supported methods" caption-side="top"}
 
 ## Dependancy management
 {: #dep-mgmt}

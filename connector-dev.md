@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,8 +32,13 @@ subcollection: discovery-data
 # Developing custom Cloud Pak for Data connector code
 {: #connector-dev}
 
-![Cloud Pak for Data only](images/cpdonly.png) The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when writing your own custom connector.
+The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when writing your own custom connector.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 ## Interfaces and JavaDoc
 {: #ccs-interfaces-jdoc}
@@ -53,6 +58,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface to initialize or
 |`init`               |Initialize a custom crawler |
 |`term`               |Terminate a custom crawler |
 |`crawl`              |Crawl documents from a given path|
+{: caption="CustomCrawler methods" caption-side="top"}
 
 ## Configuration interfaces
 {: #ccs-config-interfaces}
@@ -67,6 +73,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration` interface to 
 |`validate`           |Validate configuration |
 |`getFieldsFor`       |List known fields and their types|
 |`discoverySubspaces` |Discover crawl spaces on the data source|
+{: caption="CustomCrawlerConfiguration methods" caption-side="top"}
 
 ### `ConfigProvider`
 {: #configprovider}
@@ -77,6 +84,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration.ConfigProvider
 |---------------------|-----------------------|
 |`get`                |Get a map of the settings in a section|
 |`getCrawlspaceSettings` |Get a list of crawl-space settings|
+{: caption="ConfigProvider methods" caption-side="top"}
 
 ### `SubspaceConsumer`
 {: #subspaceconsumer}
@@ -86,6 +94,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration.SubspaceConsum
 |Method               |Description
 |---------------------|-----------------------|
 |`add`                |Add a path to the crawl space|
+{: caption="SubspaceConsumer methods" caption-side="top"}
 
 ## Crawler interface
 {: #ccs-crawler-interface}
@@ -101,7 +110,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawler.RecordKeeper` interface to 
 |`check`              |Get metadata fields from the last crawled document|
 |`upsert`             |Publish a document for further processing |
 |`delete`             |Delete a document|
-
+{: caption="RecordKeeper methods" caption-side="top"}
 
 ## Security interface
 {: #ccs-security-interface}
@@ -116,6 +125,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface t
 |`term`               |Terminate a security handler |
 |`getUserAndGroups`   |Get the ACLs of a given user|
 |`getSecurityFilter`  |Return a customized security filter that the crawler can use to filter documents|
+{: caption="CustomCrawlerSecurityHandler methods" caption-side="top"}
 
   This interface is not supported in the current release.
   {: note}

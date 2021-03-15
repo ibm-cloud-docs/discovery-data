@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-12"
 
 
 subcollection: discovery-data
@@ -33,12 +33,12 @@ subcollection: discovery-data
 # Using Discovery for Content Intelligence
 {: #output_schema}
 
-![Cloud Pak for Data only](images/cpdonly.png) You must first install {{site.data.keyword.discoveryshort}} for Content Intelligence before you can access the `Contracts` enrichment.
-
-In {{site.data.keyword.cloud_notm}} Premium plans and in {{site.data.keyword.discoveryfull}}, the {{site.data.keyword.discoveryshort}} for Content Intelligence `Contracts` enrichment is available if you choose the **Project type** of **Document retrieval** and then select the **Apply contracts enrichment** checkbox.
-
 {{site.data.keyword.discoveryshort}} for Content Intelligence enables understanding of governing business documents with pre-trained models so enterprises can start analyzing complex documents in minutes. You can use the enrichments to automate complex business processes, such as contract review and negotiation and more. Such process automation results in increased productivity, minimization of costs, and reduced exposure.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: You must first install {{site.data.keyword.discoveryshort}} for Content Intelligence before you can access the `Contracts` enrichment.
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: In {{site.data.keyword.cloud_notm}} Premium plans and in {{site.data.keyword.discoveryfull}}, the {{site.data.keyword.discoveryshort}} for Content Intelligence `Contracts` enrichment is available if you choose the **Project type** of **Document retrieval** and then select the **Apply contracts enrichment** checkbox.
 
 {{site.data.keyword.discoveryshort}} for Content Intelligence includes pre-trained models that identify lists, sections, tables, headers, footers, and other structures in your documents. These models cannot be modified, so you cannot annotate fields with [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) to train custom conversion models when using {{site.data.keyword.discoveryshort}} for Content Intelligence. The [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment is automatically applied.
 

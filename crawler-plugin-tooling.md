@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-12-04"
+  years: 2020, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,7 +32,12 @@ subcollection: discovery-data
 # Using a Cloud Pak for Data custom crawler plug-in with the Discovery tooling
 {: #crawler-plugin-tooling}
 
-![Cloud Pak for Data only](images/cpdonly.png) After you build and deploy a crawler plug-in, you can configure your {{site.data.keyword.discoveryshort}} collection to use your plug-in to process documents.
+After you build and deploy a crawler plug-in, you can configure your {{site.data.keyword.discoveryshort}} collection to use your plug-in to process documents.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 You can create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can select a successfully deployed crawler plug-in when you create and manage a collection. For more information, see [Crawler plug-in settings](/docs/discovery-data?topic=discovery-data-collection-types#plugin-settings). You can also deploy a crawler plug-in package to a testing environment.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-04"
+  years: 2019, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,25 +32,27 @@ subcollection: discovery-data
 # About Watson Discovery
 {: #about}
 
-{{site.data.keyword.discoveryfull}} is an AI-powered search engine that allows you to extract answers from complex business documents.
+{{site.data.keyword.discoveryfull}} is an AI-powered search engine that helps you to extract answers from complex business documents.
 {: shortdesc}
 
-{{site.data.keyword.discoveryshort}} lets you visually train AI for deep understanding of your content, including tables and images, to help you find business-value hidden in your enterprise. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere using powerful API interfaces or included reusable UI components.
+Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understanding of your content, including tables and images, to help you find business value hidden in your enterprise data. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere.
 
 ![Discovery diagram](images/aboutdiscovery.png)
 
-This documentation covers both {{site.data.keyword.discovery-data_short}} and {{site.data.keyword.discoveryshort}} **Premium** on the IBM Public Cloud. In cases where information applies exclusively to one service, you will see the appropriate icon: ![Cloud Pak for Data only](images/cpdonly.png) or ![IBM Cloud only](images/cloudonly.png).
-{: important} 
+{{site.data.keyword.discoveryshort}} can be deployed as a managed cloud service or can be installed on premises. This documentation describes how to use the product regardless of how it is deployed. Information that applies exclusively to one deployment type is denoted by the appropriate icon:
 
-On the top right of any tooling page, click the **Help** ![Help icon](images/help_icon.png) icon to open the {{site.data.keyword.discoveryshort}} documentation.
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** for installed instances, such as {{site.data.keyword.discovery-data_short}}.
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** for managed instances, such as {{site.data.keyword.discoveryshort}} Premium plan instances hosted on {{site.data.keyword.cloud_notm}} or instances hosted by IBM Cloud Pak for Data as a Service.
+
+Click the Help ![Help icon](images/help_icon.png) icon from the header of any page to open the {{site.data.keyword.discoveryshort}} documentation.
 {: tip}
 
 ## Browser support
 {: #about-browser}
 
-![IBM Cloud only](images/cloudonly.png) For the list of {{site.data.keyword.cloud}} prerequisites and supported browsers, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/cpd/plan/rhos-reqs.html#rhos-reqs__web){: external}
 
-![Cloud Pak for Data only](images/cpdonly.png) The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For details, see [Supported web browsers](https://www.ibm.com/support/knowledgecenter/SSQNUZ_latest/cpd/plan/rhos-reqs.html#rhos-reqs__web){: external}
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The {{site.data.keyword.discoveryshort}} user interface supports the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
 
 ## Language support
 {: #about-language}

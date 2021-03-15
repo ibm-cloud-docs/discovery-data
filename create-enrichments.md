@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-14"
+  years: 2019, 2021
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -56,8 +56,8 @@ To create a new enrichment:
     - [**Classifier**](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment)
     - [**Advanced rule models**](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
     - ![IBM Cloud only](images/cloudonly.png) [**Patterns** (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
-</br>
-</br>
+
+
 Other available enrichments: [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) (Parts of speech, Entities, Keywords, and Sentiment of documents) and [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 
 
@@ -191,7 +191,7 @@ Result: The query `enriched_text.entities.type: cccardnumber` will return all re
 
 This enrichment uses models created in {{site.data.keyword.knowledgestudiofull}} or Watson Explorer Content Analytics Studio to enrich your collection. 
 
-![Cloud Pak for Data only](images/cpdonly.png) Watson Explorer Content Analytics Studio models are supported only on Cloud Pak for Data only.
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Watson Explorer Content Analytics Studio models are supported only on Cloud Pak for Data only.
 {: note}
 
 Your models must be created in the appropriate version of {{site.data.keyword.knowledgestudiofull}}:
@@ -202,7 +202,7 @@ There are three types of models:
 
 -  Rule-based models created in {{site.data.keyword.knowledgestudiofull}} that find entities in documents based on rules that you define. (File format: `.pear`)
 -  Machine learning models created in {{site.data.keyword.knowledgestudiofull}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
--  ![Cloud Pak for Data only](images/cpdonly.png) Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: `.pear`)
+-  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: `.pear`)
 
 Create your `.pear` or `.zip` file before adding this enrichment. For more information, see the following documentation:
   -  {{site.data.keyword.knowledgestudiofull}} for {{site.data.keyword.icp4dfull}}
@@ -406,7 +406,7 @@ Create your advanced rules model before adding this enrichment. For more informa
 
 The Classifier enrichment allows you to classify the documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples you have specified to predict the categories of the documents in your collection. 
 
-You must create and upload a classifier csv file to apply this enrichment. The enrichment will be applied only to the collection(s) and field(s) you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page. 
+You must create and upload a classifier csv file to apply this enrichment. The enrichment is applied only to the collections and fields you specify after you create the enrichment, or you can do so later on the [Enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields) page.
 
 Enrichment-specific fields:
 
@@ -482,7 +482,12 @@ Extracts parts of speech, such as nouns, verbs, adjectives, adverbs, conjunction
 ### Entities
 {: #entities}
 
-Identifies people, cities, organizations, and other entities in the content. It can be applied on fields with `text` or `html` content.
+Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system defined by the {{site.data.keyword.nlushort}} service.
+
+![Managed deployments only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: For English and Korean data collections, you can choose between the **Entities** and **Entities v2 trial** enrichments. You cannot apply them both to the same collection. For more information about each type system, see [Entites Version 1](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-1) and [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2). (For other languages, the Entities enrichment uses the version 2 type system by default.)
+{: note}
+
+This enrichment can be applied on fields with `text` or `html` content.
 
 For example:
 
@@ -536,7 +541,7 @@ In the JSON output:
 ### Keywords
 {: #keywords}
 
-Returns important keywords in the content. It can be applied on fields with `text` or `html` content. For example:
+Returns terms that are of significant importance to the data collection. This enrichment can be applied on fields with `text` or `html` content. For example:
 
 **Input**
 text: "Watson Discovery is an award-winning AI search technology."
@@ -592,7 +597,7 @@ In the JSON output:
 ### Sentiment of documents
 {: #sentiment}
 
-Analyzes the overall sentiment of the document and returns `positive`, `neutral`, or `negative` sentiment. It can be applied on fields with `text` or `html` content. For example:
+Analyzes the overall sentiment of the document and returns `positive`, `neutral`, or `negative` sentiment. This enrichment can be applied on fields with `text` or `html` content. For example:
 
 **Input**
 text: "It is powerful and easy to use and integrate with third party applications."

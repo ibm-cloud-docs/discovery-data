@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-03-15"
 
 subcollection: discovery-data
 
@@ -31,15 +31,18 @@ subcollection: discovery-data
 {:external: target="_blank" .external}
 
 
-# Configuring Cloud Pak for Data data sources
+# Configuring Cloud Pak for Data data sources 
 {: #collection-types}
 
 <!-- 2.1.3 c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
 
-![Cloud Pak for Data only](images/cpdonly.png)</br> 
-
 In {{site.data.keyword.discovery-data_short}}, you can crawl documents you upload or connect to from a remote data source. The following sections introduce supported data sources, pre-authentication information, instructions about how to configure a collection, and links to third-party documentation for more information. For information about {{site.data.keyword.cloud_notm}} data sources, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
 {:shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 Depending on your data source, the steps to configure a collection vary. See the section for your data source to learn what you must do to configure the authentication for a {{site.data.keyword.discovery-data_short}} collection.
 
@@ -75,17 +78,16 @@ The following requirements and limitations are specific to {{site.data.keyword.d
 -  The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
 -  [Document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
 -  When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
--  Depending on the type of installation (default or high availability), the number of collections you can ingest simultaneously varies. A default installation includes 1 ingestion pod, which allows three collections to be processed simultaneously. A high availability installation includes 2 ingestion pods, which can process six collections simultaneously.
+-  Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes 1 crawler pod, which allows three collections to be processed simultaneously. A production installation includes 2 crawler pods, which can process six collections simultaneously.
 
-     If you are running a default installation and you want to process more than three collections simultaneously, you must increase the number of ingestion pods by running the following commands:
+     If you are running a default installation and you want to process more than three collections simultaneously, you must increase the number of crawler pods by running the following commands:
 
      ```bash
-     kubectl edit statefulset <ingestion-statefulset>
-     kubectl scale statefulset release-name-watson-discovery-ingestion --replicas=<number-of-replicas>
+     oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"replicas": <number-of-replicas> } } } }'
      ```
      {: pre}
 
-     In a default installation, the maximum number of simultaneous collections performing crawls or uploads is three. If you start a fourth, that collection does not start to process until the prior three finish.
+     In a default installation, the maximum number of simultaneous collections performing crawls is 3. If you start a fourth, that collection does not start to process until the prior three finish.
      {: note}
 
      Each `number-of-replicas` allows 3 simultaneous crawls, so `number-of-replicas=2` increases the replicas to 6, and `number-of -replicas=3` increases them to 9.
@@ -1116,7 +1118,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the 
 ### Notes
 {: #connectnotes}
 
-Use this option to crawl Notes version 9.0.1. Only documents that {{site.data.keyword.discoveryshort}} supports are crawled; all others are ignored.
+Use this option to crawl an HCL Notes (formerly Lotus Notes) database version 9.0.1. Only documents that {{site.data.keyword.discoveryshort}} supports are crawled; all others are ignored.
 {: shortdesc}
 
 The Notes data source only supports the Domino Internet Inter-ORB Protocol (DIIOP) protocol. To crawl documents, including ACLs, you must have server, database, and document access on the Domino server, but at minimum, you must have `Reader` access. For group extractions for the internal Domino LDAP, you must have `Reader` access of the `names.nsf` directory database, and for group extractions for the external LDAP, you must have the credential for the LDAP server. You can define Notes users both in the internal Domino directory and in the external LDAP. However, {{site.data.keyword.discoveryshort}} only supports users in the internal Domino directory as crawl users; it does not support users in the external LDAP as crawl users.

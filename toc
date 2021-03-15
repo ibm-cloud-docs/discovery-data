@@ -5,15 +5,15 @@
 Discovery
 
     {: .navgroup id="learn"}
-    getting-started-tool.md
+    getting-started.md
     index.md
 
     {: topicgroup}
     Videos and more
         sample-apps.md
         [Videos](https://ibm.biz/wds_videos)
-        additional-resources.md
-        guided-tours.md
+        resources.md
+        tours.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -27,12 +27,12 @@ Discovery
     
     {: topicgroup}
     Configuring data sources   
-        connectp.md
-        connect.md
+        sources.md
+        collection-types.md
         
         {: topicgroup}
         Configuring a Cloud Pak for Data custom connector
-            connectors.md
+            build-connector.md
             connector-dev.md
             assemble.md
             install-connector.md
@@ -52,15 +52,15 @@ Discovery
         search-settings.md
         facets.md
 
-    fields.md   
+    configuring-fields.md   
 
     {: topicgroup}
     Adding enrichments
-        enrichments.md
-        tables.md
+        create-enrichments.md
+        understanding_tables.md
         enrichmig.md
 
-    analyze.md
+    analyzeapi.md
 
     {: topicgroup}
     Querying
@@ -71,7 +71,7 @@ Discovery
 
     {: topicgroup}
     Improving relevance of results
-        train-tooling.md
+        train.md
         train-tips.md
 
     {: topicgroup}
@@ -80,13 +80,13 @@ Discovery
     
     {: topicgroup}
     Integrating and deploying
-        components.md
+        deploy.md
 
     {: topicgroup}
     Discovery for Content Intelligence
-        schema.md
-        contracts.md
-        parsing.md
+        output_schema.md
+        contracts-schema.md
+        contract_parsing.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -96,7 +96,7 @@ Discovery
 
     {: topicgroup}
     Backup and restore
-        backup.md
+        backup-restore.md
         recovery.md
 
     query-reference.md
@@ -105,7 +105,7 @@ Discovery
     {: topicgroup}
     IBM Cloud security
         information-security.md
-        at-events.md
+        at_events.md
         /watson/watson-keyservice
         /watson/watson-public-private-endpoints
     {: .navgroup-end}
@@ -113,10 +113,11 @@ Discovery
     {: .navgroup id="help"}
     release-notes.md
     known-issues.md
-    troubleshooting.md
+    troubleshoot.md
     
     {: .topicgroup}
     Developer community
-        [StackOverflow](http://stackoverflow.com/questions/tagged/watson-discovery)
+        [IBM Watson Apps community](https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f)
+        [Stack Overflow](http://stackoverflow.com/questions/tagged/watson-discovery)
         [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
     {: .navgroup-end}

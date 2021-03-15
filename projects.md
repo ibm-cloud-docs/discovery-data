@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -49,8 +49,8 @@ To create a project:
 
 To keep track of collection sharing and clean up unused collections:
  
-  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Collection usage and sharing**. 
-  -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
+  - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Select **Collection usage and sharing**. 
+  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select ***Data usage and GDPR**, then **Collection usage and sharing**.
 
 
 To view all the collections in your project, or add a new collection, select the **Manage collections** icon on the navigation panel. For more information, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
@@ -158,8 +158,8 @@ Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 
 To access the **Collection usage and sharing** page, open the **Projects** page, then:
 
-  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Data usage**, then **Collection usage and sharing**. 
-  -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
+  - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Select **Data usage**, then **Collection usage and sharing**. 
+  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select ***Data usage and GDPR**, then **Collection usage and sharing**.
 
 Collections can be:
 
@@ -183,10 +183,11 @@ If you make any of the following changes to a shared collection, *those changes 
 The enrichments and other improvement tools are not included when a collection is shared, because they are set at the project level.
 {: important}
 
-### API usage
+### API usage ![Cloud Pak for Data only](images/desktop.png)
 {: #api-usage}
 
-![Cloud Pak for Data only](images/cpdonly.png)
+This information applies to {{site.data.keyword.discovery-data_short}} only.
+{: important}
 
 To access the **API usage** page: open the **Projects** page, select **Data usage**, then **API usage**.
 
@@ -199,10 +200,11 @@ This page is used to monitor the usage of the Analyze API, which supports statel
 The **API usage** will not be displayed until some time after API usage monitoring begins. There might be a delay in displaying the final total number of the **30-day call total**, even if the 30-day period listed includes the current date.
 {: note}
 
-### GDPR data label
+### GDPR data label ![IBM Cloud only](images/ibm-cloud.png)
 {: #project-gdpr}
 
-![IBM Cloud only](images/cloudonly.png) 
+This information applies to {{site.data.keyword.discoveryshort}} Premium instances that are hosted on {{site.data.keyword.cloud_notm}} only.
+{: important}
 
 To access the **GDPR data label** page: open the **Projects** page, select ***Data usage and GDPR**, then **GDPR data label**.
 

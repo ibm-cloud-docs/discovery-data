@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -50,6 +50,7 @@ When you create a collection, {{site.data.keyword.discoveryshort}} pulls documen
 1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1. Configure the data source.
+
    -  [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
    -  [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
    -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
@@ -58,10 +59,10 @@ When you create a collection, {{site.data.keyword.discoveryshort}} pulls documen
 This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
 
 ![Watson Discovery Demo: Connect to the data source you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-</br>
+
 To view the transcript, open the video on YouTube.
 
-![Cloud Pak for Data only](images/cpdonly.png) The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
 {: note}
 
 To stop a crawler that is in progress, click **Stop**. You can only stop a crawler that is in progress, and the crawler is only stopped for the interval between clicking **Stop** and the next scheduled crawl. For example, if you specified an hourly crawl and you click **Stop**, the crawler stops for an hour and resumes crawling hourly.
@@ -124,10 +125,11 @@ If you modify crawl settings on the **Processing settings** page and then click 
 
 However, you might want your crawler to run on specific dates and times. For information about flexible crawl schedule settings, see [Flexible crawl schedule settings](/docs/discovery-data?topic=discovery-data-collections#flexible-crawl).
 
-#### Flexible crawl schedule settings
+#### Flexible crawl schedule settings ![Cloud Pak for Data only](images/desktop.png)
 {: #flexible-crawl}
 
-![Cloud Pak for Data only](images/cpdonly.png)</br>
+This information applies to {{site.data.keyword.discovery-data_short}} only.
+{: important}
 
 In your **Crawl schedule** settings and in **More scheduling settings**, you can set a flexible crawl schedule so that you have more control over when and how frequently your crawler runs by scheduling your crawler to run at specific times and dates.
 {: shortdesc}
@@ -160,15 +162,16 @@ For a list of file types that you can upload to {{site.data.keyword.discoverysho
 
 Optional: Click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, using Optical Character Recognition (OCR).
 
-![IBM Cloud only](images/cloudonly.png) You can drag and drop documents to your uploaded collection. Note the following statuses during and after document upload:
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: You can drag and drop documents to your uploaded collection. Note the following statuses during and after document upload:
 
 - `Currently uploading...` - Your documents are currently uploading. As documents are uploading, you can add more documents to your collection.
 - `Upload complete!` - Document upload is complete. You can add more documents or proceed to working on your project.
 - `File upload error` - One or more of your documents exceeds the file size limit. You can either reupload the file or proceed to your project.
 
-For additional information about supported data sources in {{site.data.keyword.discoveryshort}}, see the following links:
-- ![Cloud Pak for Data only](images/cpdonly.png) [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
-- ![IBM Cloud only](images/cloudonly.png) [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
+For more information about supported data sources in {{site.data.keyword.discoveryshort}}, see the following links:
+
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
 ## Managing collections
 {: #manage-collections-public}
@@ -183,7 +186,7 @@ Click on any collection on the **Manage collections** page to see the options fo
 - The number of available documents and the number of documents that are processing
 - The collection status. While syncing is in progress, the collection status states, `Sync in progress`. To recrawl your collection, edit the fields that are associated with the data source that you are connnecting to in {{site.data.keyword.discoveryshort}}. When collection processing completes, you receive a status message that states, `Your documents have finished processing! You can now work with your full data set.`.
 - The **Collection last updated** date and time.
-- ![IBM Cloud only](images/cloudonly.png) The **Next sync scheduled for** date and time. Your current crawl schedule settings determine the **Next sync scheduled for**, which updates if you change your crawl schedule in the **Processing settings** tab. Also, when your next scheduled crawl begins, the **Next sync scheduled for** automatically updates.
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The **Next sync scheduled for** date and time. Your current crawl schedule settings determine the **Next sync scheduled for**, which updates if you change your crawl schedule in the **Processing settings** tab. Also, when your next scheduled crawl begins, the **Next sync scheduled for** automatically updates.
 - A list of warnings and errors that might appear while your collection processes, such as the affected file name and its associated document ID
 
 **Identify fields** tab:

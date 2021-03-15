@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-12"
 
 subcollection: discovery-data
 
@@ -32,9 +32,13 @@ subcollection: discovery-data
 # Backing up and restoring data in Cloud Pak for Data
 {: #backup-restore}
 
-![Cloud Pak for Data only](images/cpdonly.png)</br>
 Use the following procedures to back up and restore data in your {{site.data.keyword.discovery-data_long}} instance.
 {: shortdesc}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+This information applies only to installed deployments.
+{:note}
 
 These procedures are for advanced users who have experience administering {{site.data.keyword.discovery-data_short}} clusters. You do not need to back up and restore data as part of standard use or maintenance.
 {: important}
