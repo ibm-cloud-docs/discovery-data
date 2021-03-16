@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-16"
 
 subcollection: discovery-data
 
@@ -36,7 +36,7 @@ A developer can use APIs, SDKs, and other tools that are provided with {{site.da
 
 A developer can make the following enhancements:
 
-- Process documents without storing them by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi)
-- Use API to [define more complex queries](/docs/discovery-data?topic=discovery-data-query-concepts) with the Discovery Query Language syntax
-- [Connect to a data source](/docs/discovery-data?topic=discovery-data-build-connector) that isn't built-in by creating a custom crawler
-- [Build a crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build) with a Java SDK
+- Process documents without storing them in a collection by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi)
+- Use API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-concepts)
+- Connect to a data source that isn't available by default by [creating a custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
+- Apply special settings that control how documents are added to a collection by [building a crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build)

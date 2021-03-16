@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-16"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ subcollection: discovery-data
 A project is a convenient way to build and manage your {{site.data.keyword.discoveryfull}} application. You can assign a **Project type** (`Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`) and add data quickly by creating a collection, or reusing an existing one. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
 {: shortdesc}
 
-A sample project is available for you to explore and experiment with. For more information, see the [Getting started with {{site.data.keyword.discoveryshort}} tutorial](/docs/discovery-data?topic=discovery-data-getting-started).
+A sample project is available for you to explore and experiment with. For more information, see the [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip} 
 
 To create a project:
@@ -50,7 +50,7 @@ To create a project:
 To keep track of collection sharing and clean up unused collections, complete the appropriate step for your deployment:
  
   - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Select **Collection usage and sharing**. 
-  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select ***Data usage and GDPR**, then **Collection usage and sharing**.
+  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
 
 
 To view all the collections in your project, or add a new collection, select the **Manage collections** icon on the navigation panel. For more information, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
@@ -159,7 +159,7 @@ Setting Optical Character Recognition (OCR) to `off` increases processing speed.
 To access the **Collection usage and sharing** page, open the **Projects** page, then:
 
   - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Select **Data usage**, then **Collection usage and sharing**. 
-  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select ***Data usage and GDPR**, then **Collection usage and sharing**.
+  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
 
 Collections can be:
 
@@ -206,6 +206,6 @@ The **API usage** will not be displayed until some time after API usage monitori
 This information applies to {{site.data.keyword.discoveryshort}} Premium instances that are hosted on {{site.data.keyword.cloud_notm}} only.
 {: important}
 
-To access the **GDPR data label** page: open the **Projects** page, select ***Data usage and GDPR**, then **GDPR data label**.
+To access the **GDPR data label** page: open the **Projects** page, select **Data usage and GDPR**, then **GDPR data label**.
 
 For more information about GDPR and labeling data in the {{site.data.keyword.discoveryshort}} tooling, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).

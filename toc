@@ -45,6 +45,25 @@ Discovery
         enrichmig.md
 
     {: topicgroup}
+    Improving relevance of results
+        train.md
+        train-tips.md
+
+    {: topicgroup}
+    Content mining
+        contentminerapp.md
+    
+    {: topicgroup}
+    Integrating and deploying
+        deploy.md
+
+    {: topicgroup}
+    Discovery for Content Intelligence
+        output_schema.md
+        contracts-schema.md
+        contract_parsing.md
+
+    {: topicgroup}
     Advanced development
         develop.md
         analyzeapi.md
@@ -71,25 +90,6 @@ Discovery
             crawler-plugin-assemble.md
             manage-plugin.md
             crawler-plugin-tooling.md
-
-    {: topicgroup}
-    Improving relevance of results
-        train.md
-        train-tips.md
-
-    {: topicgroup}
-    Content mining
-        contentminerapp.md
-    
-    {: topicgroup}
-    Integrating and deploying
-        deploy.md
-
-    {: topicgroup}
-    Discovery for Content Intelligence
-        output_schema.md
-        contracts-schema.md
-        contract_parsing.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
