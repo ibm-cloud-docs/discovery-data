@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-16"
 
 subcollection: discovery-data
 
@@ -484,7 +484,7 @@ Extracts parts of speech, such as nouns, verbs, adjectives, adverbs, conjunction
 
 Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system defined by the {{site.data.keyword.nlushort}} service.
 
-![Managed deployments only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: For English and Korean data collections, you can choose between the **Entities** and **Entities v2 trial** enrichments. You cannot apply them both to the same collection. For more information about each type system, see [Entites Version 1](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-1) and [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2). (For other languages, the Entities enrichment uses the version 2 type system by default.)
+![Managed deployments only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: For English and Korean data collections, you can choose between the **Entities** and **Entities v2 trial** enrichments. You cannot apply them both to the same collection. For more information about each type system, see [Entites Version 1](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-1){: external} and [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}. (For other languages, the Entities enrichment uses the version 2 type system by default.)
 {: note}
 
 This enrichment can be applied on fields with `text` or `html` content.

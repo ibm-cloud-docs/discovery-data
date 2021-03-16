@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-16"
 
 subcollection: discovery-data
 
@@ -61,10 +61,9 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 -  [Reuse data from an existing collection](#reuse)
 
-If the data source that you want to use is not listed, you can work with a developer to create a custom connector. For more information, see one of the following topics:
+*Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
--  [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
--  [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build)
+If you have special requirements that you need to address when you add source documents to a collection, such as excluding certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 
 ## Processing settings
 {: #processing-options}
@@ -1239,7 +1238,7 @@ When you are ready to configure a collection to use a crawler plug-in, you can s
  To keep track of collection sharing across projects, open the **Projects** page, then complete the appropriate step for your deployment:
  
   -  ![Cloud Pak for Data only](images/desktop.png) **IBM Cloud Pak for Data**: Select **Data usage**, then **Collection usage and sharing**.
-  -  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud**: Select ***Data usage and GDPR**, then **Collection usage and sharing**.
+  -  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
 
  
 For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
