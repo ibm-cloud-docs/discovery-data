@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-15"
 
 subcollection: discovery-data
 
@@ -43,7 +43,7 @@ This information applies only to installed deployments.
 ## Interfaces and JavaDoc
 {: #ccs-interfaces-jdoc}
 
-The interfaces listed in this document are available in the JAR package file that ships with the custom connector .zip file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip-old), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the top level of the expanded .zip file. JavaDoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
+The interfaces listed in this document are available in the JAR package file that ships with the custom connector .zip file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the top level of the expanded .zip file. JavaDoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
 
 ## Initialization interface
 {: #ccs-init-interface}
@@ -147,7 +147,7 @@ The example connector includes three components:
 The Java source code for the example connector has the following dependencies:
 
   - JDK 1.8 or higher.
-  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip-old).
+  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old).
   - The [JSch](http://www.jcraft.com/jsch/){: external} Java package, as described [Downloaded JSch](#download-jsch). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}.
 
 #### Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later
@@ -206,7 +206,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
      If you are using a version of {{site.data.keyword.discoveryshort}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
      {: tip}
 
-For information about downloading the `custom-crawler-docs.zip` file to {{site.data.keyword.discoveryshort}} 2.2.0 and earlier, see [Downloading the custom-crawler-docs.zip file to Discovery 2.2.0 and earlier](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip-old).
+For information about downloading the `custom-crawler-docs.zip` file to {{site.data.keyword.discoveryshort}} 2.2.0 and earlier, see [Downloading the custom-crawler-docs.zip file to Discovery 2.2.0 and earlier](#download-ccs-zip-old).
 
 ##### Downloading the `custom-crawler-docs.zip` file to Discovery 2.2.0 and earlier
 {: #download-ccs-zip-old}
@@ -265,7 +265,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.0 and earlier, perform the f
     If you are using a version of {{site.data.keyword.discoveryshort}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
     {: tip}
 
-For information about downloading the `custom-crawler-docs.zip` file on {{site.data.keyword.discoveryshort}} version 2.2.1 and later, see [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
+For information about downloading the `custom-crawler-docs.zip` file on {{site.data.keyword.discoveryshort}} version 2.2.1 and later, see [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip).
 
 #### Understanding the `custom-crawler-docs.zip` file
 {: #ccs-grok-crawler-zip-file}
@@ -324,7 +324,7 @@ The example custom connector includes three files that get built together:
  - An XML definitions file named `template.xml`
  - A properties file named `message.properties`
 
-You can locate and examine these files by referencing the directory tree listing in [Understanding the `custom-crawler-docs.zip` file](/docs/discovery-data?topic=discovery-data-connector-dev#ccs-grok-crawler-zip-file).
+You can locate and examine these files by referencing the directory tree listing in [Understanding the `custom-crawler-docs.zip` file](#ccs-grok-crawler-zip-file).
 
 ## For more information
 {: #see-jdoc}

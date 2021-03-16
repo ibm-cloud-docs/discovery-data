@@ -48,18 +48,21 @@ Depending on your data source, the steps to configure a collection vary. See the
 
 You can use {{site.data.keyword.discovery-data_short}} to crawl from the following data sources:
 
--  [Box](/docs/discovery-data?topic=discovery-data-collection-types#connectbox)
--  [Salesforce](/docs/discovery-data?topic=discovery-data-collection-types#connectsf)
--  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-collection-types#connectsp)
--  [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-collection-types#connectsp_op)
--  [Web crawl](/docs/discovery-data?topic=discovery-data-collection-types#connectwebcrawl)
--  [Database](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect)
--  [Windows File System](/docs/discovery-data?topic=discovery-data-collection-types#windowsfilesystemconnect)
--  [Local File System](/docs/discovery-data?topic=discovery-data-collection-types#localfilesystemconnect)
--  [FileNet P8](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect)
--  [Notes](/docs/discovery-data?topic=discovery-data-collection-types#connectnotes)
+-  [Box](#connectbox)
+-  [Salesforce](#connectsf)
+-  [Microsoft SharePoint Online](#connectsp)
+-  [Microsoft SharePoint OnPrem](#connectsp_op)
+-  [Web crawl](#connectwebcrawl)
+-  [Database](#databaseconnect)
+-  [Windows File System](#windowsfilesystemconnect)
+-  [Local File System](#localfilesystemconnect)
+-  [FileNet P8](#filenet-connect)
+-  [Notes](#connectnotes)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
--  [Reuse data from an existing collection](/docs/discovery-data?topic=discovery-data-collection-types#reuse)
+-  [Reuse data from an existing collection](#reuse)
+
+If the data source that you want to use is not listed, you can work with a developer to create a custom connector. For more information, see one of the following topics:
+
 -  [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
 -  [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build)
 
@@ -76,7 +79,7 @@ You can specify an additional option for this collection:
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
 -  The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
--  [Document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
+-  [Document level security](#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
 -  When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
 -  Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes 1 crawler pod, which allows three collections to be processed simultaneously. A production installation includes 2 crawler pods, which can process six collections simultaneously.
 
@@ -176,7 +179,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Box** as the collect
         -  **Proxy server port number** - The network port that you want to connect to on the proxy server.
 
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When this option is enabled, your users can crawl and query content that they have access to when logged in to Box. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+    - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When this option is enabled, your users can crawl and query content that they have access to when logged in to Box. For more information, see [About document level security](#configuredls).
 1. Click **Finish**.
 
 
@@ -216,7 +219,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Salesforce** as the 
     - **Username** - The username to call the Salesforce API.
     - **Password** - The password of the specified user.
     - **Security Token** - The security token of the user to call Salesforce API.
-    - **Jar zip archive file** - Upload a .zip file that contains the .jar files that you downloaded in [Downloading JAR files](/docs/discovery-data?topic=discovery-data-collection-types#download-copy-files). You can also select or delete a .zip file that you previously uploaded.
+    - **Jar zip archive file** - Upload a .zip file that contains the .jar files that you downloaded in [Downloading JAR files](#download-copy-files). You can also select or delete a .zip file that you previously uploaded.
 1. Complete the following field in **Object Types**:
     - **Object Types to crawl** - Specifies the object types to crawl. The default behavior is to crawl all object types. For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, regarding MyCustomObject, specify `MyCustomObject__c`. Do not specify comment objects, such as FeedComment, CaseComment, IdeaComment without FeedItem, Case, Idea, respectively. If you specify a tag object, you must also specify its parent. For example, do not specify the AccountTag object without the Account object.
 1. Click **Finish**.
@@ -255,8 +258,8 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint Online** 
          -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
          -  **Proxy server port number** -  The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When this option is enabled, your users can crawl and query content that they have access to. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
-        - **Application ID** - The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](/docs/discovery-data?topic=discovery-data-collection-types#register-sp) for instructions.
+    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When this option is enabled, your users can crawl and query content that they have access to. For more information, see [About document level security](#configuredls).
+        - **Application ID** - The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](#register-sp) for instructions.
 1. Click **Finish**.
 
 
@@ -281,7 +284,7 @@ After you register your app, check to make sure you completed the following step
 - In the Azure Portal, the client type is set to be treated as a public client.
 - Your application ID is entered in the **Application ID** field in {{site.data.keyword.discoveryshort}} so that document level security is enabled.
 
-Using the application ID you generated in this procedure, you can finish creating your collection, as described in [Configuring a SharePoint Online collection](/docs/discovery-data?topic=discovery-data-collection-types#configuresp).
+Using the application ID you generated in this procedure, you can finish creating your collection, as described in [Configuring a SharePoint Online collection](#configuresp).
 
 For more information on how to register an app or how to grant permissions, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
 
@@ -334,7 +337,7 @@ In addition, before you create a SharePoint OnPrem collection, you must obtain a
    ```
    {: pre}
 
-After you obtain the web services package from your {{site.data.keyword.discoveryshort}} cluster, you must deploy the web services on the SharePoint server. For information about deploying the web services package on the SharePoint server, see [Deploying the web services on the SharePoint server](/docs/discovery-data?topic=discovery-data-collection-types#deploy-web-services).
+After you obtain the web services package from your {{site.data.keyword.discoveryshort}} cluster, you must deploy the web services on the SharePoint server. For information about deploying the web services package on the SharePoint server, see [Deploying the web services on the SharePoint server](#deploy-web-services).
 
 #### Deploying the web services on the SharePoint server
 {: #deploy-web-services}
@@ -352,7 +355,7 @@ To support farm-aware crawling, you must next deploy the web services package th
 
    You can apply these configurarations in the Internet Information Services Manager.
 
-For information about obtaining the web services package from your {{site.data.keyword.discoveryshort}} cluster, see [Obtaining the web services package from your Discovery cluster](/docs/discovery-data?topic=discovery-data-collection-types#sp_opprerequisites).
+For information about obtaining the web services package from your {{site.data.keyword.discoveryshort}} cluster, see [Obtaining the web services package from your Discovery cluster](#sp_opprerequisites).
 
 
 #### Configuring a SharePoint OnPrem collection
@@ -378,7 +381,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint OnPrem** 
          -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
          -  **Proxy server port number** -  The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security** - By default, this switch is set to **Off**. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls):
+    - **Enable Document Level Security** - By default, this switch is set to **Off**. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](#configuredls):
         - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
         - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
         - **LDAP binding user password** - The password used to bind to the directory service.
@@ -686,7 +689,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Windows File System*
     - **Path** - The file path that you need to enter to crawl documents from. You can enter multiple file paths.
 1. Enter one or more paths, and click **Add**.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](#configuredls).
          - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
          - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a DN. The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
          - **LDAP binding user password** - The password used to bind to the directory service.
@@ -716,16 +719,16 @@ Before you can configure a Local File System collection on {{site.data.keyword.d
 
 In {{site.data.keyword.discoveryshort}} version 2.2.0 and later, you can configure the persistent volume claim _after_ you install {{site.data.keyword.discoveryshort}}. In versions 2.2.0 and later, you can choose one of the following three ways to create the persistent volume claim and mount it on the crawler pod:
 
-- [Using the external NFS server](/docs/discovery-data?topic=discovery-data-collection-types#use-external-nfs)
-- [Using dynamic provisioning with an NFS storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-nfs)
-- [Using dynamic provisioning with a Portworx storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-portworx)
+- [Using the external NFS server](#use-external-nfs)
+- [Using dynamic provisioning with an NFS storage class](#dyn-prov-nfs)
+- [Using dynamic provisioning with a Portworx storage class](#dyn-prov-portworx)
 
-If you are using {{site.data.keyword.discoveryshort}} version 2.1.4 and earlier, you can make the files that you want to crawl accessible to the crawler pod by choosing from two ways, [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](/docs/discovery-data?topic=discovery-data-collection-types#mount-pv-orig) or by [Copying local file system files to the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#copy-local-folders).
+If you are using {{site.data.keyword.discoveryshort}} version 2.1.4 and earlier, you can make the files that you want to crawl accessible to the crawler pod by choosing from two ways, [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](#mount-pv-orig) or by [Copying local file system files to the crawler pod](#copy-local-folders).
 
 ##### Using the external NFS server
 {: #use-external-nfs}
 
-If the local file system files or folders that you want to crawl are stored in an external Network File System (NFS), you can use the external NFS server to create the persistent volume claim. After you create the persistent volume claim on the NFS server and mount it on the crawler pod, the [Local File System](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem) crawler can directly crawl these files or folders from the server.
+If the local file system files or folders that you want to crawl are stored in an external Network File System (NFS), you can use the external NFS server to create the persistent volume claim. After you create the persistent volume claim on the NFS server and mount it on the crawler pod, the [Local File System](#configurelocalfilesystem) crawler can directly crawl these files or folders from the server.
 {: shortdesc}
 
 1. Create a file called `crawler-pv-nfs.yaml`, and save the following configuration, replacing the `<>` and the content inside with the name of your persistent volume, for example `jdoe-nfs-pv`, and with the other required information:
@@ -803,7 +806,7 @@ If the local file system files or folders that you want to crawl are stored in a
    ```
    {: pre}
 
-For information about the other ways to create a persistent volume claim, see [Using dynamic provisioning with an NFS storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-nfs) or [Using dynamic provisioning with a Portworx storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+For information about the other ways to create a persistent volume claim, see [Using dynamic provisioning with an NFS storage class](#dyn-prov-nfs) or [Using dynamic provisioning with a Portworx storage class](#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 ##### Using dynamic provisioning with an NFS storage class
 {: #dyn-prov-nfs}
@@ -872,7 +875,7 @@ Complete the following steps to create and mount a persistent volume claim to th
    ```
    {: pre}
 
-Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem). For information about the other ways to create a persistent volume claim, see [Using the external NFS server](/docs/discovery-data?topic=discovery-data-collection-types#use-external-nfs) or [Using dynamic provisioning with a Portworx storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](#configurelocalfilesystem). For information about the other ways to create a persistent volume claim, see [Using the external NFS server](#use-external-nfs) or [Using dynamic provisioning with a Portworx storage class](#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 ##### Using dynamic provisioning with a Portworx storage class
 {: #dyn-prov-portworx}
@@ -942,12 +945,12 @@ Complete the following steps to create and mount a persistent volume claim to th
    ```
    {: pre}
 
-Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem). For information about the other ways to create a persistent volume claim, see [Using the external NFS server](/docs/discovery-data?topic=discovery-data-collection-types#use-external-nfs) or [Using dynamic provisioning with an NFS storage class](/docs/discovery-data?topic=discovery-data-collection-types#dyn-prov-nfs). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](#configurelocalfilesystem). For information about the other ways to create a persistent volume claim, see [Using the external NFS server](#use-external-nfs) or [Using dynamic provisioning with an NFS storage class](#dyn-prov-nfs). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 #### Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier
 {: #mount-pv-orig}
 
-If you do not want to copy your [Local File System](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem) files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After establishing this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
+If you do not want to copy your [Local File System](#configurelocalfilesystem) files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After establishing this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
 {: shortdesc}
 
 If you plan to install {{site.data.keyword.discoveryshort}} version 2.1.4 and earlier, you must create and configure the persistent volume _before_ you install {{site.data.keyword.discoveryshort}}.
@@ -1024,12 +1027,12 @@ Complete the following steps to create and mount a persistent volume on the craw
    For a list of flags and their descriptions or for help, run `./deploy.sh -h`.
    {: tip}
 
-For information about copying your local files that you want to crawl to the crawler pod, see [Copying local file system files to the crawler pod on versions 2.1.4 and earlier](/docs/discovery-data?topic=discovery-data-collection-types#copy-local-folders). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+For information about copying your local files that you want to crawl to the crawler pod, see [Copying local file system files to the crawler pod on versions 2.1.4 and earlier](#copy-local-folders). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 #### Copying local file system files to the crawler pod on versions 2.1.4 and earlier
 {: #copy-local-folders}
 
-You can also copy your local files that you want to crawl to the crawler pod. Before you create a [Local File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurelocalfilesystem), you must have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+You can also copy your local files that you want to crawl to the crawler pod. Before you create a [Local File System collection](#configurelocalfilesystem), you must have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 {: shortdesc}
 
 Complete the following steps to copy your local file system files to the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, replacing the `<>` and the content inside with the required information:
@@ -1067,7 +1070,7 @@ Complete the following steps to copy your local file system files to the crawler
    If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
    {: important}
 
-For information about creating and mounting a persistent volume on the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, see [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](/docs/discovery-data?topic=discovery-data-collection-types#mount-pv-orig). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](/docs/discovery-data?topic=discovery-data-collection-types#mount-persistent-volume).
+For information about creating and mounting a persistent volume on the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, see [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](#mount-pv-orig). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 #### Configuring a Local File System collection
 {: #configurelocalfilesystem}
@@ -1111,7 +1114,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the 
       - No support is available for specifying a class that is a subclass of a `Custom Object` and `Folder`.
 1. After you enter one or more paths, click **Add**.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](#configuredls).
 1. Click **Finish**.
 
 
@@ -1163,7 +1166,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Notes** as the colle
     -  **Database file name** (when you click **Database** as the crawl type) - The file name of the database that you want to crawl.
     -  **Directory name** (when you click **Directory** as the crawl type) - The directory name that you want to crawl. If you select this option, {{site.data.keyword.discoveryshort}} crawls all Notes databases under the specified directory.
 1. Optional: In **Security**, set the following switch:
-    - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When set to **On**, your users can crawl content that they have access to in a Notes database or directory. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+    - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When set to **On**, your users can crawl content that they have access to in a Notes database or directory. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](#configuredls).
     - **Use remote LDAP directory** - By default, is set to **Off**. This option is only available when you set **Enable Document Level Security** to **On**.
         - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
         - **LDAP binding username** - The username used to bind to the directory service.
@@ -1233,10 +1236,10 @@ When you are ready to configure a collection to use a crawler plug-in, you can s
 
  All of your collections are listed here. You can delete unused collections and view statistics.
 
- To keep track of collection sharing across projects, open the **Projects** page, then:
+ To keep track of collection sharing across projects, open the **Projects** page, then complete the appropriate step for your deployment:
  
-  -  ![Cloud Pak for Data only](images/cpdonly.png) select **Data usage**, then **Collection usage and sharing**.
-  -  ![IBM Cloud only](images/cloudonly.png), select ***Data usage and GDPR**, then **Collection usage and sharing**.
+  -  ![Cloud Pak for Data only](images/desktop.png) **IBM Cloud Pak for Data**: Select **Data usage**, then **Collection usage and sharing**.
+  -  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud**: Select ***Data usage and GDPR**, then **Collection usage and sharing**.
 
  
 For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
@@ -1269,12 +1272,14 @@ If you have document level security activated, you can leverage the security set
 To enable document level security, you must configure these components:
 
 - Enable document level security for your collection.
-  - For a description of the feature in the SharePoint OnPrem data source, see [Enable Document Level Security for SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-collection-types#configuresp_op).
-  - For a description of the feature in SharePoint Online, see [Enable Document Level Security for SharePoint Online](/docs/discovery-data?topic=discovery-data-collection-types#configuresp).
-  - For a description of the feature in Windows File System and the information required to configure a collection, consult [Enable Document Level Security for Windows File System](/docs/discovery-data?topic=discovery-data-collection-types#configurewindowsfilesystem).
-  - For a description of the feature in FileNet P8, see [Enable Document Level Security for FileNet P8](/docs/discovery-data?topic=discovery-data-collection-types#configure-filenet).
-  - For a description of the feature in Notes, see [Enable Document Level Security for Notes](/docs/discovery-data?topic=discovery-data-collection-types#configurenotes).
-- Configure document level security parameters for your [SharePoint Online collection](/docs/discovery-data?topic=discovery-data-collection-types#configuresp), [SharePoint OnPrem collection](/docs/discovery-data?topic=discovery-data-collection-types#configuresp_op), [Windows File System collection](/docs/discovery-data?topic=discovery-data-collection-types#configurewindowsfilesystem), [FileNet P8 collection](/docs/discovery-data?topic=discovery-data-collection-types#configure-filenet), or [Notes collection](/docs/discovery-data?topic=discovery-data-collection-types#configurenotes).
+
+  - For a description of the feature in the SharePoint OnPrem data source, see [Enable Document Level Security for SharePoint OnPrem](#configuresp_op).
+  - For a description of the feature in SharePoint Online, see [Enable Document Level Security for SharePoint Online](#configuresp).
+  - For a description of the feature in Windows File System and the information required to configure a collection, consult [Enable Document Level Security for Windows File System](#configurewindowsfilesystem).
+  - For a description of the feature in FileNet P8, see [Enable Document Level Security for FileNet P8](#configure-filenet).
+  - For a description of the feature in Notes, see [Enable Document Level Security for Notes](#configurenotes).
+
+- Configure document level security parameters for your [SharePoint Online collection](#configuresp), [SharePoint OnPrem collection](#configuresp_op), [Windows File System collection](#configurewindowsfilesystem), [FileNet P8 collection](#configure-filenet), or [Notes collection](#configurenotes).
   Document level security configuration options are visible when document level security is enabled in your collection configuration.
 - Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system.
 - Associate users with your {{site.data.keyword.discoveryshort}} instance.

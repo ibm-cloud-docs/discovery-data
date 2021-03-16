@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-15"
 
 subcollection: discovery-data
 
@@ -55,7 +55,7 @@ To create a new enrichment:
     - [**Machine Learning and Watson Explorer Content Analytics Studio models**](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment) 
     - [**Classifier**](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment)
     - [**Advanced rule models**](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules)
-    - ![IBM Cloud only](images/cloudonly.png) [**Patterns** (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
+    - ![IBM Cloud only](images/ibm-cloud.png) [**Patterns** (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
 
 
 Other available enrichments: [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning) (Parts of speech, Entities, Keywords, and Sentiment of documents) and [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
@@ -331,10 +331,10 @@ In the JSON output:
 ] 
 ```	
 
-## Pattern enrichments ![IBM Cloud only](images/cloudonly.png)
+## Pattern enrichments ![IBM Cloud only](images/ibm-cloud.png)
 {: #patterns-enrichment}
 
-The Patterns feature is beta functionality and supports English language documents only.
+The Patterns feature is beta functionality that is available in IBM Cloud deployments only. The feature is available for English-language documents only.
 {: beta}
 
 The Patterns enrichment uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
@@ -541,7 +541,7 @@ In the JSON output:
 ### Keywords
 {: #keywords}
 
-Returns terms that are of significant importance to the data collection. This enrichment can be applied on fields with `text` or `html` content. For example:
+Returns important keywords in the content. This enrichment can be applied on fields with `text` or `html` content. For example:
 
 **Input**
 text: "Watson Discovery is an award-winning AI search technology."
