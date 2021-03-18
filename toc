@@ -49,13 +49,9 @@ Discovery
         train.md
         train-tips.md
 
-    {: topicgroup}
-    Content mining
-        contentminerapp.md
-    
-    {: topicgroup}
-    Integrating and deploying
-        deploy.md
+    test.md
+    deploy.md
+    contentminerapp.md
 
     {: topicgroup}
     Discovery for Content Intelligence

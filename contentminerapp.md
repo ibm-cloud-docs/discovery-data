@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-01"
+lastupdated: "2021-02-18"
 
 subcollection: discovery-data
 
@@ -30,7 +30,7 @@ subcollection: discovery-data
 {:go: .ph data-hd-programlang='go'}
 {:video: .video}
 
-# Using the Content Mining application
+# Using the deployed Content Mining application
 {: #contentminerapp}
 
 The {{site.data.keyword.discoveryfull}} Content Mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
