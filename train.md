@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-12-10"
+  years: 2019, 2021
+lastupdated: "2021-03-19"
 
 subcollection: discovery-data
 
@@ -104,8 +104,6 @@ If you would like to further improve results after testing, you could:
 -   Add more documents to your collection.
 -   Add more training queries.
 -   Rate more results, making sure to use both the `Relevant` and `Not relevant` ratings.
-
-For additional training guidance, see [Relevancy training tips](/docs/discovery-data?topic=discovery-data-relevancy-tips).
 
 ## Confidence scores
 {: #confidence}
