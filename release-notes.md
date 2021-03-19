@@ -58,6 +58,13 @@ The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 19 March 2021
+{: #19mar2021}
+
+New feature in this release:
+
+- You can use the Web crawl collection type to connect to content that is stored on an internal company website. For more information, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources##connectwebcrawlpublic).
+
 ### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 4 March 2021
 {: #4mar2021}
 
