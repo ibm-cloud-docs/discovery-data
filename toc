@@ -73,7 +73,7 @@ Discovery
 
         {: topicgroup}
         Configuring a Cloud Pak for Data custom connector
-            connectors.md
+            build-connector.md
             connector-dev.md
             assemble.md
             install-connector.md
