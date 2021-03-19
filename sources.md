@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-04"
+lastupdated: "2021-03-18"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 
 <!-- V2 c/s help for the *Select a Collection type* page for IBM Cloud. Do not delete. -->
 
-You can use {{site.data.keyword.discoveryfull}} on the {{site.data.keyword.cloud}} to connect to and crawl documents from remote sources. For information about Cloud Pak for Data data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+You can use {{site.data.keyword.discoveryfull}} on the {{site.data.keyword.cloud}} to connect to and crawl documents from remote sources. For information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 {: shortdesc}
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
@@ -50,7 +50,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [Box](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic)
 -  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
 -  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
--  [Web Crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
+-  [Web crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
 -  [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
 -  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
@@ -247,33 +247,67 @@ To successfully crawl Microsoft SharePoint Online, you must enable legacy authen
 If you created a SharePoint Online account after January 2020, two-factor authentication is enabled for your account, by default. To crawl your SharePoint Online collection, you must disable two-factor authentication. To view and change your multifactor authentication status, see [View the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#view-the-status-for-a-user){: external} or [Change the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#change-the-status-for-a-user){: external}.
 {: important}
 
-### Web Crawl
+### Web crawl
 {: #connectwebcrawlpublic}
 
-You can use the web crawler to crawl public websites that do not require a username and password, as well as websites that require authentication. If you want to crawl a group of URLs that is comprised of websites that require authentication and websites that do not, consider creating a different collection for each authentication type. You can select how often you would like {{site.data.keyword.discoveryshort}} to sync with the websites, and you can select the language and the number of links to follow.
+Add a web crawl collection to crawl a website, analyze its page content, and store meaningful information. Specify one or more base web page URLs and configure how many linked pages for the web crawl to follow. You can configure how often to synchronize with the website, so you control how up to date the data in your collection is.
 
-**Authentication Settings**
+You can connect to the following types of web content:
 
--  `Basic authentication` - Optional: By default, this option is set to **Off**. When set to **On**, crawls websites that require a username and password. You can specify only one username and password per collection.
-   - `Starting URL` - The URL that you want to crawl that requires a username and password. After you add a URL, this URL is applied to `Starting URLs` in **Specify where you want to crawl**.
-   - `Username` - The username for authenticating to the starting URL that you specify in `Basic authentication`.
-   - `Password` - The password for authenticating to the starting URL that you specify in `Basic authentication`.
-
-**Specify where you want to crawl**
-
--  `Starting URLs` - Crawls public websites that do not require a username and password, and then click **Add** to add the URL to the URL group. However, you can also enter URLs that require basic authentication in this field. Be sure that the URL contains the same domain of the URL that you entered in `Basic authentication`. For example, if you enter `https://domainname.com` in `Basic authentication`, you can enter other paths from that URL in this field, such as `https://domainname.com/myfolder1/` and `https://domainname.com/myfolder2/`.
-
-   You can click the edit icon to specify the **Crawl settings**. You can set the **Maximum number of links to follow**, which is the number of consecutive links to follow from the starting URL. The default number of hops is `2`, and the maximum is `20`. You can specify URL paths to exclude from the crawl in the **Exclude URLs where the path includes** field. Separate the paths by using commas. For example, if you specified the URL `https://domainname.com`, you can exclude `https://domainname.com/licenses` and `https://domainname.com/pricing` by entering `/licenses/, /pricing/`.
-
-When you specify a URL to crawl, the final `/` determines the subtree to crawl. For example, if you enter the URL `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, and the input of `https://www.example.com/banking` crawls all URLs that begin with `https://www.example.com/`. If you would like to restrict the crawl to a specific URL, such as `https://www.example.com/banking/faqs.html`, enter that URL in `Starting URLs`, click the edit icon, and then set the **Maximum number of links to follow** to `0`.
+- Public websites
+- Private company websites or other sites that require authentication
+- Websites that are behind a corporate firewall
 
 The web crawler does not crawl dynamic websites that use JavaScript to render content. You can confirm the use of JavaScript by viewing the source code of the website in your browser.
-
-The number of web pages crawled is limited to 250,000, so the web crawler might not crawl all the specified websites and might reach the maximum number of hops.
 {: note}
 
-The crawler has a limit of 10,000 child URLs per URL that is crawled. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
-{: note}
+If you want to crawl a group of URLs that includes some websites that require authentication and some that don't, consider creating a different collection for each authentication type.
+
+To configure the web crawl collection, complete the following steps:
+
+1.  Specify the URL of the website that you want to crawl.
+
+    - If the site you want to crawl requires a login, set **Basic authentication** to `On`, add the URL of the page to the **Starting URL** field, and then click **Add**.
+
+      Add a username and password with access to the site, and then click **Save credentials**. You can specify only one set of credentials per collection.
+
+      For example, you can specify `https://cloud.ibm.com` as the starting URL and add your IBMid as the credentials.
+      
+      If you want to start the crawl from a specific section of the site, specify it in the **Starting URLs** field. The domain name of the subsection must match the domain in the URL you specified earlier.
+
+      For example, you might change the starting URL to `https://cloud.ibm.com/unifiedsupport/supportcenter`.
+    - For any public web pages that you want to crawl, add the URL for the root page of the website to the **Starting URLs** field, and then click **Add**.
+
+      You can add more than one starting page for public websites.
+
+      The final forward slash (`/`) in the URL determines the subtree to crawl. If you specify `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, for example. If you specify `https://www.example.com/banking` all URLs that begin with `https://www.example.com/` are crawled.
+
+      By default, the number of consecutive links that the crawl follows from the starting URL is `2`. To change the number of hops or to list website sections to exclude from the crawl, click the edit icon. 
+      
+      - The maximum number of hops allowed is `20`. 
+      - To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/licenses` and `https://example.com/pricing` by entering `/licenses/, /pricing/`. 
+      - If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
+
+      The number of web pages that are crawled is limited to 250,000, so the web crawler might not crawl all the specified websites.
+
+      The number of child URLs per URL that are crawled is limited to 10,000. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
+
+    - To connect to a website that is hosted behind a firewall, set up an {{site.data.keyword.SecureGatewayfull}} connection first.
+    
+      Valuable content is often stored on your company's internal website. Typically, such intranet websites are accessible only from a computer that is connected to your office network or through a VPN connection. You can establish a persistent and more secure connection between the web crawler and this type of internal site by using {{site.data.keyword.SecureGateway}}.
+    
+      Expand *More connection settings*, and then set **Connect to on-premise network** to `On`. For more information about how to set up the connection, see [Installing IBM Secure Gateway for on-premises data](#gatewaypublic).
+
+1.  If you want to look for and extract question and answer pairs, select **Apply FAQ extraction**.
+
+    For more information, see [FAQ extraction](#faq-extraction).
+
+1.  If you want the web crawl to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
+
+    The processing time increases when this feature is enabled.
+    {: note}
+
+1.  Click **Finish**.
 
 ### SharePoint OnPrem
 {: #connectsp_oppublic}
@@ -323,6 +357,8 @@ Other items to note when you crawl {{site.data.keyword.cos_full_notm}}:
 <!-- Learn more topic WDS -->
 To connect to an on-premises data source, you first need to download, install, and configure {{site.data.keyword.SecureGatewayfull}}. After you install {{site.data.keyword.SecureGatewayfull}} for your first on-premises data source, you do not need to repeat this process.
 {: shortdesc}
+
+For more information, see [About Secure Gateway](/docs/SecureGateway?topic=SecureGateway-about-sg){: external}.
 
 You must first download, install, and configure {{site.data.keyword.SecureGatewayfull}} before you can create a [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic) collection.
 {: note}
