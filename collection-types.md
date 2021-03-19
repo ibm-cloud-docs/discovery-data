@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-19"
 
 subcollection: discovery-data
 
@@ -61,7 +61,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 -  [Reuse data from an existing collection](#reuse)
 
-*Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
+*Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-connector-dev).
 
 If you have special requirements that you need to address when you add source documents to a collection, such as excluding certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 

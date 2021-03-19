@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-16"
+lastupdated: "2021-03-19"
 
 subcollection: discovery-data
 
@@ -38,5 +38,5 @@ A developer can make the following enhancements:
 
 - Process documents without storing them in a collection by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi)
 - Use API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-concepts)
-- Connect to a data source that isn't available by default by [creating a custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
+- Connect to a data source that isn't available by default by [creating a custom connector](/docs/discovery-data?topic=discovery-data-connector-dev)
 - Apply special settings that control how documents are added to a collection by [building a crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build)
