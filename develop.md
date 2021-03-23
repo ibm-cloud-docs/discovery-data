@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-23"
 
 subcollection: discovery-data
 
@@ -40,3 +40,20 @@ A developer can make the following enhancements:
 - Use API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-concepts)
 - Connect to a data source that isn't available by default by [creating a custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
 - Apply special settings that control how documents are added to a collection by [building a crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build)
+
+## API usage ![Cloud Pak for Data only](images/desktop.png)
+{: #api-usage}
+
+This information applies to {{site.data.keyword.discovery-data_short}} only.
+{: important}
+
+To access the **API usage** page: open the **Projects** page, select **Data usage**, then **API usage**.
+
+This page is used to monitor the usage of the Analyze API, which supports stateless document ingestion workflows. For more information, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
+
+-  **Start date**: The start date of the API call monitoring period.
+-  **End date**: The end date of the API call monitoring period.
+-  **30-day call total**: This number indicates the number of calls to the Analyze API in the 30-day time interval indicated by the **Start date** and **End date**. The 30-day time interval displayed is determined by calculating the consecutive time period with the highest number of API calls. The 30-day window will update as the time interval with the highest number of API calls changes. 
+
+The **API usage** will not be displayed until some time after API usage monitoring begins. There might be a delay in displaying the final total number of the **30-day call total**, even if the 30-day period listed includes the current date.
+{: note}

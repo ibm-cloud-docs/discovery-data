@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-03-22"
 
 subcollection: discovery-data
 
@@ -197,7 +197,7 @@ A comma-separated list of fields in the document to sort on. You can optionally 
 ## highlight
 {: #highlight}
 
-A boolean that specifies whether the returned output includes a `highlight` object in which the keys are field names and the values are arrays that contain segments of query-matching text highlighted by the HTML `*` tag.
+A boolean that specifies whether the returned output includes a `highlight` object in which the keys are field names and the values are arrays that contain segments of query-matching text highlighted by the HTML emphasis (`<em>`) tag.
 
 The output lists the `highlight` object after the `enriched_text` object, as shown in the following example.
 

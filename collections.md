@@ -31,7 +31,7 @@ subcollection: discovery-data
 {:external: target="_blank" .external}
 {:video: .video}
 
-# Creating and managing collections
+# Creating collections
 {: #collections}
 
 <!-- c/s help for the *Manage collections* page. Do not delete. -->
@@ -172,45 +172,3 @@ For more information about supported data sources in {{site.data.keyword.discove
 
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
-
-## Managing collections
-{: #manage-collections-public}
-
-<!-- c/s help for the *Manage collections* page tabs: Activity, Processing settings, CSV settings. Do not delete. -->
-
-Click on any collection on the **Manage collections** page to see the options for managing your collection. These tabs are available after collection processing finishes. The tabs contain data that is associated with your collection and options for managing it.
-{: shortdesc}
-
-**Activity** tab:
-
-- The number of available documents and the number of documents that are processing
-- The collection status. While syncing is in progress, the collection status states, `Sync in progress`. To recrawl your collection, edit the fields that are associated with the data source that you are connnecting to in {{site.data.keyword.discoveryshort}}. When collection processing completes, you receive a status message that states, `Your documents have finished processing! You can now work with your full data set.`.
-- The **Collection last updated** date and time.
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The **Next sync scheduled for** date and time. Your current crawl schedule settings determine the **Next sync scheduled for**, which updates if you change your crawl schedule in the **Processing settings** tab. Also, when your next scheduled crawl begins, the **Next sync scheduled for** automatically updates.
-- A list of warnings and errors that might appear while your collection processes, such as the affected file name and its associated document ID
-
-**Identify fields** tab:
-
-You can view any fields that the crawler identified from your data. You can annotate the fields in your documents. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
-
-**Manage fields** tab:
-
-The **Manage fields** tab contains the following options: **Fields to index**, **Improve query results by splitting your documents**, and **Date format settings**. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings)
-
-**Enrichments** tab:
-
-You can enrich fields in your collection with cognitive metadata. Many enrichments are available in {{site.data.keyword.discoveryshort}}. You must create some of the enrichments before you apply them. 
-
-You can apply an enrichment to a field by selecting an enrichment, selecting the fields that you want to enrich in the drop-down menu of the chosen enrichment, and clicking **Apply changes and reprocess**.
-
-For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
-
-**Processing settings** tab:
-
-You can change the crawler schedule and your data source configuration settings. If you are uploading your own data, you can set the **Apply optical character recognition (OCR)** option to **On** or **Off**. If you select **Web crawl** and you already entered a start URL, you can access the **Crawl settings** dialog box by clicking the icon next to the delete icon. Both icons are located next to the start URL. In this dialog box, you can specify the **Maximum number of links to follow** or exclude URLs that include specific subdirectories in **Exclude URLs where the path includes**.
-
-**CSV settings** tab:
-
-If you upload CSV files, you can specify how these files are parsed by selecting a delimiter in **Column delimiter**. You can also specify an escape character in **Escape character**.
-
-For information about creating a collection, see [Creating a collection](/docs/discovery-data?topic=discovery-data-collections).
