@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-23"
 
 subcollection: discovery-data
 
@@ -46,7 +46,7 @@ You should install {{site.data.keyword.icp4dfull}} before installing the {{site.
 
 | Service version | {{site.data.keyword.icp4dfull}} version 
 | ---- | ---- | ---- |
-| {{site.data.keyword.discoveryshort}} 2.2.1 | {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 4.5 or later |
+| {{site.data.keyword.discoveryshort}} 2.2.1 | {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 4.6 or later |
 | {{site.data.keyword.discoveryshort}} 2.2.0 | {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 4.5 or later | 
 | {{site.data.keyword.discoveryshort}} 2.1.4 | {{site.data.keyword.icp4dfull}} 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 2.5 on Red Hat OpenShift 3.11 |   
 | {{site.data.keyword.discoveryshort}} 2.1.3 | {{site.data.keyword.icp4dfull}} 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 2.5 on Red Hat OpenShift 3.11 |   
