@@ -20,15 +20,16 @@ Discovery
     install.md
 
     {: topicgroup}
-    Creating projects and collections
+    Creating a project
         projects.md
         project-defaults.md
-        collections.md
     
     {: topicgroup}
-    Configuring data sources   
+    Connecting to your data
+        collections.md 
         sources.md
         collection-types.md
+        manage-collections.md
 
     {: topicgroup}
     Improving and customizing
