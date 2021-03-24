@@ -63,6 +63,7 @@ Discovery
     {: topicgroup}
     Advanced development
         develop.md
+        api-use.md
         analyzeapi.md
 
         {: topicgroup}
