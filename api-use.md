@@ -45,6 +45,9 @@ To use many of the API methods, you need your project ID.
 ## Using the API from Cloud Pak for Data ![Cloud Pak for Data only](images/desktop.png)
 {: #api-use-cpd}
 
+This information applies to {{site.data.keyword.discovery-data_short}} only.
+{: important}
+
 To use the API, you must construct the URL to use in your requests.
 
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client, go to the details page for the provisioned instance.
@@ -61,20 +64,3 @@ To use the API, you must construct the URL to use in your requests.
     curl -H "Authorization: Bearer {token}" "{url}/v2/projects/{project_id}/collections?version=2019-11-29 -k"
     ```
     {: codeblock}
-
-## API usage ![Cloud Pak for Data only](images/desktop.png)
-{: #api-usage}
-
-This information applies to {{site.data.keyword.discovery-data_short}} only.
-{: important}
-
-To access the **API usage** page: open the **Projects** page, select **Data usage**, then **API usage**.
-
-This page is used to monitor the usage of the Analyze API, which supports stateless document ingestion workflows. For more information, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
-
--  **Start date**: The start date of the API call monitoring period.
--  **End date**: The end date of the API call monitoring period.
--  **30-day call total**: This number indicates the number of calls to the Analyze API in the 30-day time interval indicated by the **Start date** and **End date**. The 30-day time interval displayed is determined by calculating the consecutive time period with the highest number of API calls. The 30-day window will update as the time interval with the highest number of API calls changes. 
-
-The **API usage** will not be displayed until some time after API usage monitoring begins. There might be a delay in displaying the final total number of the **30-day call total**, even if the 30-day period listed includes the current date.
-{: note}

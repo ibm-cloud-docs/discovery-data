@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-24"
 
 keywords: known issues
 
@@ -171,6 +171,30 @@ Known issues are listed by the release in which they were identified.
 
     where `<Project>` is the namespace where your {{site.data.keyword.discovery-data_short}} 2.2.0 instance is installed, where `<Registry_location>` is the location of the images that you pushed to the registry server, and where `<Registry_from_cluster>` is the location from which pods on the cluster can pull images.
 
+- When you install on Cloud Pak for Data 3.5, you might encounter the following issue:
+
+  - **Error**: If you provision the Planning Analytics service on a cluster where Discovery is running, some of the Discovery pods show errors when the cluster is restarted. The logs show messages such as, `java.lang.NumberFormatException: For input string`.
+  - **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. Discovery does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
+  - **Solution**: Edit the `COUCHDB_PORT` environment variable and set it to a dummy value to prevent the error from occurring. To do so, complete the following steps:
+
+    - Stop the Discovery operator to prevent it from changing the configuration while you are in the process of making your edit.
+
+      Run the following command:
+
+      ```
+      oc scale deploy wd-discovery-operator --replicas=0
+      ```
+      {: codeblock}
+
+    - For the failed deployment, set the `COUCHDB_PORT` environment variable to a dummy value, such as `1`.
+
+      For example:
+
+      ```
+      oc set env deploy {deployment} COUCHDB_PORT=1
+      ```
+      {: codeblock}
+
 Also, see the issues in all previous releases.
 
 ## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.2, 8 December 2020 release:
@@ -228,6 +252,19 @@ Also, see the issues in all previous releases.
   3. Increase the cache memory:
      * Increase the memory limit of `container model-runtime` in `deployment core-discovery-stateless-api-model-runtime` to `10` GB or more
      * Edit the environment variable `CAPACITY_MB` in `deployment core-discovery-stateless-api-model-runtime`, set it to 1`0240` or more
+
+- If the model runtime container is restarted but the model mesh runtime container is not, the Analyze API can run into problems.
+
+  - **Error**: The Analzye API call returns 500 error on a specific collection and the log contains the following entry:
+
+    ```
+    "message": "error occurred in analyzer
+      java.lang.NullPointerException
+      at c.i.e.a.a.s.r.ModelManager$2.analyze(ModelManager.java:112)
+    ```
+    {: codeblock}
+  - **Cause**: The model runtime container and model mesh runtime container are out of sync.
+  - **Solution**: Delete the `wd-stateless-api-model-runtime` pods to restart both the model mesh and model runtime containers.
 
 Also see the issues identified in all previous releases.
 
