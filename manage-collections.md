@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-24"
 
 subcollection: discovery-data
 
@@ -83,4 +83,4 @@ The enrichments and other improvement tools are not included when a collection i
 For information about the other tabs, see the following topics:
 
 - **GDPR data label** ![IBM Cloud only](images/ibm-cloud.png): For more information about GDPR and labeling data in the {{site.data.keyword.discoveryshort}} tooling, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).
-- **API usage** ![Cloud Pak for Data only](images/desktop.png): For more information about API usage, see [API usage](/docs/discovery-data?topic=discovery-data-develop#api-usage).
+- **API usage** ![Cloud Pak for Data only](images/desktop.png): For more information about API usage, see [API usage](/docs/discovery-data?topic=discovery-data-api-use#api-usage).
