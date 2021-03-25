@@ -122,6 +122,9 @@ In addition to the enrichments that are applied to a typical document retrieval 
 
 For any collection that you add to the project, optical character recognition (OCR) is enabled so that text from scanned documents or other images are processed automatically.
 
+When you apply the contracts enrichment, you cannot use Smart Document Understanding to annotate documents.
+{: note}
+
 For more information about this type of project, see [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
 
 ### Conversational Search
@@ -131,7 +134,7 @@ The *Conversational Search* project makes information from a connected data coll
 
 Use {{site.data.keyword.conversationfull}} and {{site.data.keyword.discoveryshort}} together to give your virtual assistant access to technical content and other knowledge base resources without needing to relocate or copy your corporate data. The built-in synchronization capabilities mean that your assistant always has the most up-to-date information available. The assistant that uses this project can be deployed to various platforms, including your company website.
 
-The documents that you add to this type of project are not enriched automatically. However, consider enabling the *FAQ extraction* feature when you add a collection. The FAQ extraction feature runs additional processes to identify and tag clear question and answer pairs in your data source. This additional step makes it easier for a virtual assistant to return a concise and accurate answer in response to a question that is the same or similar to its pair.
+The documents that you add to this type of project are not enriched automatically. However, consider enabling the *FAQ extraction* feature when you add a collection. The FAQ extraction feature runs additional processes to identify and tag clear question-and-answer pairs in your data source. This additional step makes it easier for a virtual assistant to return a concise and accurate answer in response to a question that is the same or similar to its pair.
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Another feature to consider enabling is the *Emphasize the answer* beta feature. When enabled, the answers that are returned to customers who  interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
 
@@ -152,7 +155,7 @@ Documents that you add are automatically enriched in the following way:
 
 - Parts of speech are identified and tagged.
 
-A full-featured application is provided that you can use to use to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+A full-featured application is provided that you can use to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 ### Custom
 {: #custom}
