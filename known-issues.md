@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: known issues
 
@@ -42,8 +42,32 @@ Known issues are listed by the release in which they were identified.
 ## ![Cloud Pak for Data only](images/desktop.png) Known issues identified in the Discovery for Cloud Pak for Data 2.2.1, 26 February 2021 release:
 {: #26feb2021ki}
 
-- If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
-- If you are upgrading your {{site.data.keyword.discovery-data_short}} instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli upgrade` command completes before rolling updates complete. For information about verifying that your upgrade completed successfully, see [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade).
+- If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
+  - Error: Some Discovery pods might report an `ImagePullBackoff` error.
+  - Cause: The wrong image pull secret is being used.
+  - Solution: Complete the following steps during the installation:
+
+    1. Start installing Watson Discovery.
+    2. After watson-discovery-operator module completes, check if a WatsonDiscovery custom resource is created by running the following command:
+
+      ```
+      oc get WatsonDiscovery wd
+      ```
+    {: codeblock}
+
+    3. After the custom resource is created, run the following commands to point the correct image pull secret to pull images from the external registry:
+
+      ```
+      pull_secret=$(oc get secrets | grep 'docker-pull-.*-watson-discovery-registry-registry' | cut -d ' ' -f 1)
+      cat << EOS > discovery-patch.yaml
+      spec:
+        shared:
+          imagePullSecret: $pull_secret
+      EOS
+      oc patch wd wd --type=merge --patch $(cat discovery-patch.yaml)
+      ```
+      {: codeblock}
+
 - In {{site.data.keyword.discoveryfull}}, the `Content Mining` project only supports one collection per project. If you create more than one `Content Mining` collection, you might experience errors. If you experience errors, delete additional `Content Mining` collections so that each `Content Mining` project has only one associated collection.
 - If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
 
@@ -65,6 +89,8 @@ Known issues are listed by the release in which they were identified.
 
   Documents that time out during processing are indexed without {{site.data.keyword.knowledgestudioshort}} enrichment results.
 
+- If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
+- If you are upgrading your {{site.data.keyword.discovery-data_short}} instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli upgrade` command completes before rolling updates complete. For information about verifying that your upgrade completed successfully, see [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade).
 - Model-train images are not updated after upgrading from Discovery 2.2.0 to 2.2.1. To work around this issue, delete the deployments that the model-train operator creates, and wait for the operator to recreate the deployments. Enter the following command to delete the deployments:
 
   ```
@@ -173,27 +199,27 @@ Known issues are listed by the release in which they were identified.
 
 - When you install on Cloud Pak for Data 3.5, you might encounter the following issue:
 
-  - **Error**: If you provision the Planning Analytics service on a cluster where Discovery is running, some of the Discovery pods show errors when the cluster is restarted. The logs show messages such as, `java.lang.NumberFormatException: For input string`.
+  - **Error**: If you try to provision the Discovery service on a cluster where Planning Analytics is running, some of the Discovery pods don't start and installation fails. The logs for the pod show messages such as, `java.lang.NumberFormatException: For input string`.
   - **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. Discovery does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
   - **Solution**: Edit the `COUCHDB_PORT` environment variable and set it to a dummy value to prevent the error from occurring. To do so, complete the following steps:
 
-    - Stop the Discovery operator to prevent it from changing the configuration while you are in the process of making your edit.
+    1. Stop the Discovery operator to prevent it from changing the configuration while you are in the process of making your edit.
 
-      Run the following command:
+       Run the following command:
 
-      ```
-      oc scale deploy wd-discovery-operator --replicas=0
-      ```
-      {: codeblock}
+       ```
+       oc scale deploy wd-discovery-operator --replicas=0
+       ```
+       {: codeblock}
 
-    - For the failed deployment, set the `COUCHDB_PORT` environment variable to a dummy value, such as `1`.
+    2. For the failed deployment, set the `COUCHDB_PORT` environment variable to a dummy value, such as `1`.
 
-      For example:
+       For example:
 
-      ```
-      oc set env deploy {deployment} COUCHDB_PORT=1
-      ```
-      {: codeblock}
+       ```
+       oc set env deploy {deployment} COUCHDB_PORT=1
+       ```
+       {: codeblock}
 
 Also, see the issues in all previous releases.
 

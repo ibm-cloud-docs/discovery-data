@@ -66,8 +66,6 @@ To deploy your project, complete the following steps:
 ## Deploying a Conversational Search project
 {: #cs-deploy}
 
-Make information from a connected data collection available as the source for answers that a chatbot can provide to customers. Use {{site.data.keyword.conversationfull}} and {{site.data.keyword.discoveryshort}} together to give your virtual assistant access to technical content and other knowledge base resources without needing to relocate or copy your corporate data. The built-in synchronization capabilities mean that your assistant always has the most up-to-date information available. The assistant can be deployed to various platforms, including your company website.
-
 To deploy your project, connect this project to an assistant that is built with {{site.data.keyword.conversationshort}}. The general steps to follow include:
 
 1.  Create an assistant.

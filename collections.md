@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-25"
 
 subcollection: discovery-data
 
@@ -45,16 +45,29 @@ A collection is a set of documents you upload or crawl. You can also enrich, tra
 
 When you create a collection, {{site.data.keyword.discoveryshort}} pulls documents from a data source, using a process called crawling. Crawling is the process of systematically browsing and retrieving documents from a specified start location. {{site.data.keyword.discoveryshort}} only crawls items that you explicitly specify.
 
-1. To create a collection, first create a **Project** and choose a **Project type**. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Alternately, you can open your project, select the **Manage collections** icon on the navigation panel, and then click **New collection**. 
-1. Choose a data source, or select **Use an existing collection**.
-1. Name your collection, and choose the language of that collection. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1. Select the crawl schedule. For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1. Configure the data source.
+1.  To create a collection, first create a **Project**. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
-   -  [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
-   -  [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
-   -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
-1. Select **Create collection**, which starts the crawling process. The **Activity** tab opens and updates as documents are added to the collection. The crawl syncs the data initially and updates periodically at the specified frequency.
+    Alternately, you can open your project, open the **Manage collections** page, and then click **New collection**.
+
+    The Document Retrieval and Custom project types can contain up to 5 collections. A Conversational Search project can contain 5 collections but only 1 collection is used by the {{site.data.keyword.conversationshort}} search skill. A Content Mining project can contain only 1 collection.
+    {: note}
+1.  Choose a data source type or click **Use an existing collection**.
+1.  Name your collection, and then choose the language of the collection. 
+
+    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+1.  Select the crawl schedule. 
+
+    For available options and details, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+1.  Configure the data source.
+
+    For more information, see the appropriate topic for your deployment:
+
+    - [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
+    - [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
+    - [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
+1.  Click **Create collection** to start the crawl. 
+
+    The **Activity** tab opens and updates as documents are added to the collection. The crawl synchronizes the data initially and updates periodically at the specified frequency.
 
 This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
 

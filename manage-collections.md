@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 subcollection: discovery-data
 
@@ -48,15 +48,15 @@ From this tab, you can learn more about the following things:
 - **Processing settings**: Review the data collection configuration settings that were specified when the data source collection was created. You can make adjustments, such as changing the frequency of synchronizations. If you are uploading data, you can indicate whether you want to to extract text from images by changing the optical character recognition (OCR) setting.
 - **CSV settings**: Summarizes the configuration settings that are used when a comma-separated value (CSV) file is processed. You can change these settings, such as how the columns are delimited. You can also specify the character to use to escape quotation marks, by specifying either a quotation mark (`"`) or a backslash (`\`).
 
-## Collection usage and sharing
+## Finding where a collection is used
 {: #collection-usage}
 
 <!-- c/s help for the *Collection usage and sharing* page. Do not delete. -->
 
-To access the **Collection usage and sharing** page, open the **Projects** page, then:
-
-  - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Select **Data usage**, then **Collection usage and sharing**. 
-  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
+To keep track of collection sharing, open the **Projects** page, and then complete the appropriate step for your deployment:
+ 
+  - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Click **Collection usage and sharing**. 
+  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Click **Data usage and GDPR**, and then review the **Collection usage** page.
 
 Collections can be:
 
@@ -84,3 +84,19 @@ For information about the other tabs, see the following topics:
 
 - **GDPR data label** ![IBM Cloud only](images/ibm-cloud.png): For more information about GDPR and labeling data in the {{site.data.keyword.discoveryshort}} tooling, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).
 - **API usage** ![Cloud Pak for Data only](images/desktop.png): For more information about monitoring Analyze API usage, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
+
+## Deleting collections
+{: #collection-delete}
+
+Find out whether a collection is being used anywhere before you delete it from the *Collection usage* page. Unshared collections can be deleted directly from this page.
+
+- To delete a single collection from a project, open the *Manage collections* page from the navigation panel, find the collection tile, and then click the delete icon. 
+
+  Decide whether to keep the underlying data and configuration settings. If you choose to keep the data, you can find the collection in the unshared list on the *Collection usage* page. You might need to wait a few minutes before the collection is displayed.
+  
+  Click **Delete from project**.
+
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon, and then choose **Delete environment**.
+
+  *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
+  {: tip}
