@@ -42,8 +42,8 @@ A sample project is available for you to explore and experiment with. For more i
 
 To create a project:
 
-1.  Open the **Projects** page by selecting the **My Projects**.
-1.  Select **New project**. Name your project, and then choose a project type.
+1.  Open the *Projects* page by selecting **My Projects**.
+1.  Click **New project**. Name your project, and then choose a project type.
 
     The project type options are as follows:
 
