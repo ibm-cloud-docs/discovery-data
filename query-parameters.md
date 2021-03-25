@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-22"
+lastupdated: "2021-03-25"
 
 subcollection: discovery-data
 
@@ -48,10 +48,10 @@ The **results set** is the group of documents identified by the combined searche
 Documents you do not have permissions for will not be returned in query results.
 {: important}
 
-## Answer finding ![IBM Cloud only](images/cloudonly.png)
+## Answer finding ![IBM Cloud only](images/ibm-cloud.png)
 {: #answer-finding}
 
-The Answer finding feature is beta functionality and should not be used in production environments.
+This feature is beta functionality. Do not enable the feature in production environments. This feature is available in managed deployments only.
 {: beta}
 
 By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When Answer finding is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, as well as a confidence score that the "short answer" answers the question that is explicit or implicit in the user query. Applications that use Answer finding can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.

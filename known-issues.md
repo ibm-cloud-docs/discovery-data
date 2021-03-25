@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: known issues
 
@@ -173,7 +173,7 @@ Known issues are listed by the release in which they were identified.
 
 - When you install on Cloud Pak for Data 3.5, you might encounter the following issue:
 
-  - **Error**: If you provision the Planning Analytics service on a cluster where Discovery is running, some of the Discovery pods show errors when the cluster is restarted. The logs show messages such as, `java.lang.NumberFormatException: For input string`.
+  - **Error**: If you try to provision the Discovery service on a cluster where Planning Analytics is running, some of the Discovery pods don't start and installation fails. The logs for the pod show messages such as, `java.lang.NumberFormatException: For input string`.
   - **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. Discovery does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
   - **Solution**: Edit the `COUCHDB_PORT` environment variable and set it to a dummy value to prevent the error from occurring. To do so, complete the following steps:
 

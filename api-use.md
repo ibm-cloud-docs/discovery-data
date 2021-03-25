@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 subcollection: assistant-data
 
@@ -29,7 +29,9 @@ subcollection: assistant-data
 Use the {{site.data.keyword.discoveryshort}} API to build a custom application or component that searches your data.
 {: shortdesc}
 
-For API reference documentation, see [API reference](https://cloud.ibm.com/apidocs/discovery-data){: external}.
+- For {{site.data.keyword.discoveryshort}} API reference documentation, see [API reference](https://cloud.ibm.com/apidocs/discovery-data){: external}.
+- For more information about using the Analyze API to process documents without storing them, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
+- For more information about using the API to define more complex queries by using the Discovery Query Language, see [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 
 ## Getting your project ID ![IBM Cloud only](images/ibm-cloud.png)
 {: #api-use-cloud}
