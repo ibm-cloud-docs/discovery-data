@@ -47,7 +47,7 @@ Known issues are listed by the release in which they were identified.
   - Cause: The wrong image pull secret is being used.
   - Solution: Complete the following steps during the installation:
 
-    1. Start installing Watson Discover.
+    1. Start installing Watson Discovery.
     2. After watson-discovery-operator module completes, check if a WatsonDiscovery custom resource is created. To do so, run the following command:
 
       ```
