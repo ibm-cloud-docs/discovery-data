@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-26"
 
 subcollection: assistant-data
 
@@ -56,7 +56,7 @@ To use the API, you must construct the URL to use in your requests.
 1.  Copy the URL from the *Access information* section of the page. You will specify this value as the `{url}`.
 
     You might want to copy the bearer token also. You will need to pass the token when you make an API call.
-1.  From the launched application instance, go to the **Integrate and Deploy** > **View API information** page.
+1.  From the launched application instance, go to the **Integrate and Deploy** > **API Information** page.
 1.  Copy the project ID. You will specify this value as the `{project_id}`.
 1.  Construct a request URL by using the IDs you copied. 
 

@@ -60,7 +60,7 @@ For Document Retrieval and Custom (projects where you did not apply a specific p
 
 To deploy your project, complete the following steps:
 
-1.  To use the API, you need to know the project ID for your project. Go to the **Integrate and Deploy** > **View API information** page.
+1.  To use the API, you need to know the project ID for your project. Go to the **Integrate and Deploy** > **API Information** page.
 1.  From the **Integrate and Deploy** > **UI Components** page, find links to resources a developer can use to get started.
 
 ## Deploying a Conversational Search project
