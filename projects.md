@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-26"
 
 subcollection: discovery-data
 
@@ -34,45 +34,39 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Projects* page. Do not delete. -->
 
-A project is a convenient way to build and manage your {{site.data.keyword.discoveryfull}} application. You can assign a *Project type* and connect your data to the project by creating a collection. After you have configured your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
+A project is a convenient way to build and manage your {{site.data.keyword.discoveryfull}} application. You can assign a *Project type* and connect your data to the project by creating a collection. After you configure your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
 {: shortdesc}
 
-A sample project is available for you to explore and experiment with. For more information, see the [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).
-{: tip} 
-
-To create a project:
+To create a project, complete the following steps:
 
 1.  Open the *Projects* page by selecting **My Projects**.
 1.  Click **New project**. Name your project, and then choose a project type.
 
-    The project type options are as follows:
+    The following project types are available:
 
     - Document Retrieval
-
-      ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: If your data source contains contracts, choose this type, and then select **Apply contracts enrichment**.
-      {: important}
-
-      ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: If you installed the add-on, then the project will have contract enrichments applied to it automatically.
     - Conversational Search
     - Content Mining
     - Custom
 
     For more information about each type, see [Project types](#project-type).
 
+1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** only: If you choose a Document Retrieval project type, decide whether to enable the Content Intelligence feature. 
+
+    If your data source contains contracts, enable the feature by selecting **Apply contracts enrichment**. Scroll to see the checkbox, if necessary.
+
+    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** only: If you enabled the Content Intelligence feature when you installed the {{site.data.keyword.discoveryshort}} service, then the contract enrichment is applied to it automatically. No action is required.
+    {: note}
 1.  Click **Next**.
 1.  Choose and configure a data source or connect to an existing collection.
 
-    For more information about the types of data sources that are supported, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
+    For more information about supported data sources, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
-    The Document Retrieval and Custom project types can contain up to 5 collections. A Conversational Search project can contain 5 collections but only 1 collection is used by the {{site.data.keyword.conversationshort}} search skill. A Content Mining project can contain only 1 collection.
-    {: note}
+To view all the collections in your project, or add a collection, open the *Manage collections* page from the navigation panel. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections).
 
+Take advantage of the following resources that are available from the page header: 
 
-To view all the collections in your project, or add a new collection, open the **Manage collections** page from the navigation panel. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections).
-
-Take advantage of the following resources: 
-
-- To open the product documentation, select the **Help** ![Help icon](images/help_icon.png) icon from the page header.
+- To open the product documentation, select the **Help** ![Help icon](images/help_icon.png) icon.
 - To see all of your projects, click **My projects**.
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: To view the total number of documents and collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon.
 
@@ -84,9 +78,9 @@ Take advantage of the following resources:
 
 <!-- c/s help for the *Project types* page. Do not delete. -->
 
-Choose a project type to get the right set of enrichments applied to your documents automatically. The set of improvement tools that are available can differ by project type, and the available deployment methods are optimized for each use case.
+Choose a project type to get the right set of enrichments applied to your documents automatically. The improvement tools that are available differ by project type, as do the deployment methods, which are optimized for each use case.
 
-The available types include:
+The following project types are available:
 
 - [Document Retrieval](#doc-retrieval)
 - [Conversational Search](#conversational)
@@ -107,20 +101,23 @@ Documents that you add to a project of this type are automatically enriched in t
 
 This tagged information is used later when a natural language phrase is submitted as a search query to return a smarter response.
 
+A sample Document Retrieval project is available for you to explore. For more information, see [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).
+{: tip}
+
 #### Adding contract understanding
 {: #doc-retrieval-contracts}
 
-If you are working with legal documents or contracts in particular, enable the Content Intelligence feature.
+If you are working with legal documents, contracts in particular, enable the Content Intelligence feature.
 
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Create a Document Retrieval project, and then select **Apply contracts enrichment**.
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Install the add-on.
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Enable the Content Intelligence feature when you install the {{site.data.keyword.discoveryshort}} service
 
 In addition to the enrichments that are applied to a typical document retrieval project, the following enrichments are made automatically:
 
-- Content from tables in the source document is tagged so it can be found later.
-- Contract details, such as payment terms or parties involved in the contract, are identified and tagged.
+- Content from tables in the source document is tagged so that it can be found later.
+- Contract details, such as payment terms or parties that are involved in the contract, are identified and tagged.
 
-For any collection that you add to the project, optical character recognition (OCR) is enabled so that text from scanned documents or other images are processed automatically.
+For any collection that you add to the project, optical character recognition (OCR) is enabled automatically so that text from scanned documents or other images is processed.
 
 When you apply the contracts enrichment, you cannot use Smart Document Understanding to annotate documents.
 {: note}
@@ -130,13 +127,13 @@ For more information about this type of project, see [{{site.data.keyword.discov
 ### Conversational Search
 {: #conversational}
 
-The *Conversational Search* project makes information from a connected data collection available as the source for answers that a chatbot returns to customers.
+The *Conversational Search* project returns information from a connected data collection as answers to questions that customers ask a chatbot, which is also known as an *assistant*.
 
-Use {{site.data.keyword.conversationfull}} and {{site.data.keyword.discoveryshort}} together to give your virtual assistant access to technical content and other knowledge base resources without needing to relocate or copy your corporate data. The built-in synchronization capabilities mean that your assistant always has the most up-to-date information available. The assistant that uses this project can be deployed to various platforms, including your company website.
+Use {{site.data.keyword.conversationfull}} and {{site.data.keyword.discoveryshort}} together to give your assistant access to technical content and other knowledge base resources without having to relocate or copy your corporate data. The built-in synchronization capabilities mean that your assistant can share the most up-to-date information available. Use the integrations that are provided with {{site.data.keyword.conversationshort}} to deploy an assistant that connects to this project to various platforms, including your company website, in minutes.
 
-The documents that you add to this type of project are not enriched automatically. However, consider enabling the *FAQ extraction* feature when you add a collection. The FAQ extraction feature runs additional processes to identify and tag clear question-and-answer pairs in your data source. This additional step makes it easier for a virtual assistant to return a concise and accurate answer in response to a question that is the same or similar to its pair.
+The documents that you add to this type of project are not enriched automatically. However, consider enabling the *FAQ extraction* feature when you add a collection. The FAQ extraction feature runs extra processes to identify and tag clear question-and-answer pairs in your data source. This additional step makes it easier for a virtual assistant to return a concise and accurate answer in response to a question that is the same or similar to its pair.
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Another feature to consider enabling is the *Emphasize the answer* beta feature. When enabled, the answers that are returned to customers who  interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Another feature to consider enabling is the *Emphasize the answer* beta feature. When enabled, the answers that are returned to customers who interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
 
 For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
@@ -155,7 +152,7 @@ Documents that you add are automatically enriched in the following way:
 
 - Parts of speech are identified and tagged.
 
-A full-featured application is provided that you can use to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+A full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 ### Custom
 {: #custom}
