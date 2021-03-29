@@ -51,7 +51,7 @@ To create a project, complete the following steps:
 
     For more information about each type, see [Project types](#project-type).
 
-1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** only: If you choose a Document Retrieval project type, decide whether to enable the Content Intelligence feature. 
+1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** only: If you choose a Document Retrieval project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
 
     If your data source contains contracts, enable the feature by selecting **Apply contracts enrichment**. Scroll to see the checkbox, if necessary.
 
@@ -107,7 +107,7 @@ A sample Document Retrieval project is available for you to explore. For more in
 #### Adding contract understanding
 {: #doc-retrieval-contracts}
 
-If you are working with legal documents, contracts in particular, enable the Content Intelligence feature.
+If you are working with English-language legal documents, contracts in particular, enable the Content Intelligence feature to apply a contracts enrichment that can recognize and tag contract-related concepts in your data.
 
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Create a Document Retrieval project, and then select **Apply contracts enrichment**.
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Enable the Content Intelligence feature when you install the {{site.data.keyword.discoveryshort}} service
