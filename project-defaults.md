@@ -40,7 +40,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 | Default | Document Retrieval | Document Retrieval<br/>(Content Intelligence) |
 | --- | --- | --- |
 | CSV settings | NA  | NA  |
-| Enrichments | Entities, Parts of speech  | Entities, Parts of speech, Table Understanding, and Contracts | None | Parts of speech | None  |
+| Enrichments | Entities, Parts of speech  | Entities, Parts of speech, Table Understanding, and Contracts |
 | Improvement tools | Facets (by Entity), Dynamic Facets, Passages | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
 | Optical character recognition | off | on |
 {: caption="Basic project defaults" caption-side="top"}
@@ -61,7 +61,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 
 | Query default | Document Retrieval | Document Retrieval<br/>(Content Intelligence) |
 | --- | --- | --- |
-| Aggregation<br/>(`aggregation`) | "term(enriched_text.entities.text,<br/>name:entities)"  | "[term<br/>(enriched_html.contract.elements.categories.label,<br/>count:25,name:categories)" |
+| Aggregation<br/>(`aggregation`) | "term(enriched_text.entities.text,<br/>name:entities)"  | "[term<br/>(enriched_html.contract.<br/>elements.categories.label,<br/>count:25,name:categories)" |
 | Count<br/>(`count`) | 10  | 10  |
 | Find answers<br/>Enabled<br/>(`find_answers.enabled`) | false | false |
 | Find answers<br/>Max answers<br/> per passage<br/>(`max_answers_per_passage`) | 1 | 1 |
@@ -113,7 +113,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 
 | Default | Document Retrieval | Document Retrieval (Content Intelligence) |
 | --- | --- | --- |
-| Aggregations<br/>(`aggregations.name`)<br/>(`aggregations.label`)<br/>(`aggregations.multiple_selections_allowed`) | "name": "entities"<br/> "label": "Top Entities"<br/> "multiple_selections_allowed": false <br/> <br/>"name": "_system_suggested_refinements"<br/> "label": "Dynamic Facets"<br/>"multiple_selections_allowed": true <br/><br/>"name": "_system_collections"<br/>"label": "Collections"<br/>"multiple_selections_allowed": true | "name": "categories"<br/> "label": "Category"<br/> "multiple_selections_allowed": true<br/><br/> "name": "natures"<br/> "label": "Nature"<br/>"multiple_selections_allowed": false<br/><br/>"name": "contract_terms"<br/> "label": "Contract Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "contract_payment_terms"<br/>"label": "Contract Payment Term"<br/>"multiple_selections_allowed": false<br/> <br/>"name": "contract_types"<br/> "label": "Contract Type"<br/> "multiple_selections_allowed": false<br/><br/> "name": "contract_currencies"<br/> "label": "Contract Currency"<br/>"multiple_selections_allowed": false<br/><br/>"name": "invoice_buyers"<br/> "label": "Invoice Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_suppliers"<br/> "label": "Invoice Supplier"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_currencies"<br/> "label": "Invoice Currency"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_payment_terms"<br/> "label": "Purchase Order Payment Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_buyers"<br/> "label": "Purchase Order Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_suppliers"<br/> "label": "Purchase Order Supplier"<br/> "multiple_selections_allowed": false<br/><br/> "name": "po_currencies"<br/>"label": "Purchase Order Currency"<br/>"multiple_selections_allowed": false |
+| Aggregations<br/>(`aggregations.name`)<br/>(`aggregations.label`)<br/>(`aggregations.`<br/>`multiple_selections_allowed`) | "name": "entities"<br/> "label": "Top Entities"<br/> "multiple_selections_allowed": false <br/> <br/>"name": "_system_suggested_refinements"<br/> "label": "Dynamic Facets"<br/>"multiple_selections_allowed": true <br/><br/>"name": "_system_collections"<br/>"label": "Collections"<br/>"multiple_selections_allowed": true | "name": "categories"<br/> "label": "Category"<br/> "multiple_selections_allowed": true<br/><br/> "name": "natures"<br/> "label": "Nature"<br/>"multiple_selections_allowed": false<br/><br/>"name": "contract_terms"<br/> "label": "Contract Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "contract_payment_terms"<br/>"label": "Contract Payment Term"<br/>"multiple_selections_allowed": false<br/> <br/>"name": "contract_types"<br/> "label": "Contract Type"<br/> "multiple_selections_allowed": false<br/><br/> "name": "contract_currencies"<br/> "label": "Contract Currency"<br/>"multiple_selections_allowed": false<br/><br/>"name": "invoice_buyers"<br/> "label": "Invoice Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_suppliers"<br/> "label": "Invoice Supplier"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_currencies"<br/> "label": "Invoice Currency"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_payment_terms"<br/> "label": "Purchase Order Payment Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_buyers"<br/> "label": "Purchase Order Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_suppliers"<br/> "label": "Purchase Order Supplier"<br/> "multiple_selections_allowed": false<br/><br/> "name": "po_currencies"<br/>"label": "Purchase Order Currency"<br/>"multiple_selections_allowed": false |
 | Autocomplete<br/>(`autocomplete`) | true | true |
 | Fields shown<br/>Body field<br/> (`fields_shown.body.field`)| "" |  "" |
 | Fields shown<br/>Body Use passage<br/> (`fields_shown.body.use_passage`) | true  | true |
@@ -129,7 +129,7 @@ The Custom project type has no project component default settings.
 
 | Default | Conversational search | Content Mining |
 | --- | --- | --- |
-| Aggregations<br/>(`aggregations.name`)<br/>(`aggregations.label`)<br/>(`aggregations.multiple_selections_allowed`) | [] | [] |
+| Aggregations<br/>(`aggregations.name`)<br/>(`aggregations.label`)<br/>(`aggregations.`<br/>`multiple_selections_allowed`) | [] | [] |
 | Autocomplete<br/>(`autocomplete`) | false | true |
 | Fields shown<br/>Body field<br/> (`fields_shown.body.field`)| "" | text |
 | Fields shown<br/>Body Use passage<br/> (`fields_shown.body.use_passage`) | true  | false |
