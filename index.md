@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-30"
 
 subcollection: discovery-data
 
@@ -63,7 +63,4 @@ Language support by feature is detailed in the [Supported languages](/docs/disco
 ## Next steps
 {: #next-steps}
 
-To learn more, see:
-
--  [Getting started with {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-getting-started)
--  {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data){: external}
+Complete a tutorial to learn more about the product. For more information, see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-getting-started).
