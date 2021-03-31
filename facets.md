@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-31"
 
 subcollection: discovery-data
 
@@ -52,7 +52,7 @@ Facets represent the different aspects or dimensions of the documents in your co
 ## Facets in Content Mining projects
 {: #facetcm}
 
-For Content Mining projects, by default, facets are extracted from your collection for the parts of speech enrichment, as shown in Figure 2. You can add facets for fields from your documents. For default project details, see the Content Mining section of [Creating projects](/docs/discovery-data?topic=discovery-data-projects#mining).
+For Content Mining projects, by default, facets are extracted from your collection for the parts of speech enrichment, as shown in Figure 2. You can add facets for fields from your documents. For default project details, see the Content Mining section of [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 
 
 ![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page showing parts of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a Content Mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
@@ -61,7 +61,7 @@ For Content Mining projects, by default, facets are extracted from your collecti
 ## Facets in Document Retrieval projects
 {: #facetdr}
 
-For Document Retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval).
+For Document Retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 
 ![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Figure 3. The Improve and Customize page of a Document Retrieval project showing the default Top Entities facet" caption-side="bottom"}
 

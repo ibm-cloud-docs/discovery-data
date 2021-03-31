@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-31"
 
 subcollection: discovery-data
 
@@ -46,7 +46,7 @@ To preview and share your project, complete the following steps:
 1.  Click the copy icon for the **Copy Link** field to copy the URL of the preview application.
 
     ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: When you copy the link for the content mining project, ensure that the URL is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`. If it isn't, refresh the page before you copy the URL.
-1.  Past the URL into a web browser to test it yourself or send the URL to team members.
+1.  Paste the URL into a web browser to test it yourself or send the URL to team members.
 
     Don't forget to send any login credentials that are needed to access the project when you send the link to your colleagues.
  
