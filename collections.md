@@ -89,7 +89,7 @@ To view the transcript, open the video on YouTube.
 
 The following table shows the supported file types and supported features that vary by file type.
 
-| Supported file type | Smart Document Understanding | Extract text from images |
+| Supported file type | Smart Document Understanding | Extract text from images (when OCR is enabled) |
 |---------------|------------------------------|--------------------------|
 | Contract (source files of any supported type) | | |
 | CSV | | |
