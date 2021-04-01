@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-04-01"
 
 subcollection: discovery-data
 
@@ -236,7 +236,7 @@ Note the following items when you crawl Microsoft SharePoint Online:
 
 -  To crawl SharePoint, the `username` account does not need `SiteCollection Administrator` permissions.
 -  When you crawl SharePoint, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
--  You might want to use the default Azure AD authentication.
+-  You must use the default Azure Active Directory authentication.
 -  Because the SharePoint API does not return a unique ID for ListItems, ListItem documents in {{site.data.keyword.discoveryshort}} are overridden when the IDs of different ListItems are the same. To ensure that your ListItems are not overridden and that each has a unique ID, recrawl your collection, or change the configuration settings for your data source so that your ListItems are assigned a unique ID.
 -  SharePoint Online cannot crawl `Personal SiteCollections`.
 -  If you created a collection that had multiple site collection paths prior to the limit, you cannot see all of your crawl paths. The site collection path that is used is the one that you entered before you clicked **Next** to create your collection.
