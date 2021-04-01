@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-04-01"
 
 subcollection: discovery-data
 
@@ -42,16 +42,27 @@ Requirements and installation information for {{site.data.keyword.discovery-data
 This information applies only to installed deployments.
 {:note}
 
-You should install {{site.data.keyword.icp4dfull}} before installing the {{site.data.keyword.discovery-data_short}} service.
+You install {{site.data.keyword.icp4dfull}}, and then install the {{site.data.keyword.discovery-data_short}} service.
 
-| Service version | {{site.data.keyword.icp4dfull}} version 
-| ---- | ---- | ---- |
-| {{site.data.keyword.discoveryshort}} 2.2.1 | {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 3.11.188 or later</br> {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 4.5, 4.6 |
-| {{site.data.keyword.discoveryshort}} 2.2.0 | {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 3.5.0 or 3.0.1 on Red Hat OpenShift 4.5 | 
-| {{site.data.keyword.discoveryshort}} 2.1.4 | {{site.data.keyword.icp4dfull}} 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 2.5 on Red Hat OpenShift 3.11 |   
-| {{site.data.keyword.discoveryshort}} 2.1.3 | {{site.data.keyword.icp4dfull}} 3.0.1 on Red Hat OpenShift 3.11.188 or later </br> {{site.data.keyword.icp4dfull}} 2.5 on Red Hat OpenShift 3.11 |   
+| {{site.data.keyword.discoveryshort}} version | {{site.data.keyword.icp4dfull_notm}} version | Red Hat OpenShift version |
+| ----------------------------------|----------------|----------------|
+| 2.2.1 | 3.5.0 | 4.5, 4.6 |
+| 2.2.1 | 3.5.0 | 3.11.188 |
+| 2.2.1 | 3.0.1 | 4.5, 4.6 |
+| 2.2.1 | 3.0.1 | 3.11.188 |
+| 2.2.0 | 3.5.0 | 4.5 |
+| 2.2.0 | 3.5.0 | 3.11.188 |
+| 2.2.0 | 3.0.1 | 4.5 |
+| 2.2.0 | 3.0.1 | 3.11 |
+| 2.1.4 | 3.0.1 | 3.11.188 |
+| 2.1.4 | 2.5 | 3.11 |
+| 2.1.3 | 3.0.1 | 3.11.188 |
+| 2.1.3 | 2.5 | 3.11 |
+{: caption="Support matrix" caption-side="top"}
 
-{{site.data.keyword.icp4dfull_notm}} 3.0.1 deprecated support for Red Hat OpenShift 4.3 on 1 September 2020. {{site.data.keyword.icp4dfull_notm}} supports Red Hat OpenShift 4.5. The [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} will work with any customers who have already installed {{site.data.keyword.icp4dfull_notm}} 3.0.1 on Red Hat OpenShift 4.3. New customers who want to install on Red Hat OpenShift 4.x are instructed to install Red Hat OpenShift 4.5.
+The `3.11.188` version more precisely means 3.11.188 or a later 3.11 version.
+
+{{site.data.keyword.icp4dfull_notm}} 3.0.1 deprecated support for Red Hat OpenShift 4.3 on 1 September 2020. {{site.data.keyword.icp4dfull_notm}} supports Red Hat OpenShift 4.5 instead of 4.3.
 {: important}
 
 Full installation instructions: 
