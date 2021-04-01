@@ -117,8 +117,9 @@ Discovery
     troubleshoot.md
     
     {: .topicgroup}
-    Developer community
+    Community resources
         [IBM Watson Apps community](https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f)
+        [IBM Cloud Pak for Data Community](https://community.ibm.com/community/user/cloudpakfordata/communities/community-home?communitykey=c0c16ff2-10ef-4b50-ae4c-57d769937235)
+        [Watson Developer Community Slack channel](http://wdc-slack-inviter.mybluemix.net/)
         [Stack Overflow](http://stackoverflow.com/questions/tagged/watson-discovery)
-        [WDC Slack channel](http://wdc-slack-inviter.mybluemix.net/)
     {: .navgroup-end}
