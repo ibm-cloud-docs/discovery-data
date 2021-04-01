@@ -48,11 +48,11 @@ You can connect to a data source and pull documents on a schedule into {{site.da
 You can use {{site.data.keyword.discoveryshort}} to crawl from the following data sources:
 
 -  [Box](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic)
--  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
--  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
--  [Web crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
--  [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
 -  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-sources#connectcos)
+-  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-sources#connectsppublic)
+-  [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
+-  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
+-  [Web crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
 
 You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections to read next:
@@ -206,21 +206,28 @@ The next few steps require assistance from the administrator of the Box account 
 Box notes are stored in JSON format, so {{site.data.keyword.discoveryshort}} ingests any Box notes in the specified folders.
 {: note}
 
-### Salesforce
-{: #connectsfpublic}
+### IBM Cloud Object Storage
+{: #connectcos}
 
-When connecting to a Salesforce source, ensure that the instance you plan to connect to is an Enterprise plan or higher.
+When you connect to an {{site.data.keyword.cos_full}} source, the following credentials are required. You can obtain them from your {{site.data.keyword.cos_full_notm}} administrator:
 
-The following credentials are required to connect to a Salesforce source. If you do not know these credentials, consult your Salesforce administrator:
--  `Username` - The `username` of the source that these credentials connect to.
--  `Password plus service token` - The `password` consists of the Salesforce password and a valid Salesforce security token concatenated. This value is never returned and is only used when creating or modifying credentials.
--  `URL` - The `url` of the source that these credentials connect to.
+-  `Endpoint` - The `endpoint` name used to interact with {{site.data.keyword.cos_full_notm}} data.
+   Do not enter `http://` or `https://`, as part of the {{site.data.keyword.cos_full_notm}} `endpoint` credential. Otherwise, you might receive an error message indicating that you have invalid or expired credentials. For the proper formatting of endpoints, see the column named Endpoint in the table in [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region).
+-  `Access key id` - `access_key_id` obtained when the {{site.data.keyword.cos_full_notm}} instance was created.
+-  `Secret access key` - `secret_access_key` to sign requests obtained when the {{site.data.keyword.cos_full_notm}} instance was created.
 
-When identifying the credentials, it might be useful to consult the [Salesforce developer documentation](https://developer.salesforce.com/docs/){: external}.
+IAM authentication is not currently supported for this connector. You need to set up HMAC authentication before you configure this connector. See [Service Credentials](/docs/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) for instructions.
+{: important}
 
-When you crawl Salesforce, note that Knowledge Articles are only crawled if their **version** is `published` and their languages is `en-us`.
+After this information is entered, you can choose how often you want to sync your data and select the buckets you want to sync to.
 
-### SharePoint Online
+Other items to note when you crawl {{site.data.keyword.cos_full_notm}}:
+
+-  This connector does not support crawling private endpoints.
+-  For more information about {{site.data.keyword.cos_full_notm}} endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
+-  There is a slight performance issue if all buckets are selected. In this case, a delay is possible, before the documents complete indexing.
+
+### Microsoft SharePoint Online
 {: #connectsppublic}
 
 When connecting to a Microsoft SharePoint Online source, ensure that the instance that you plan to connect to is an Enterprise (E1) plan or higher.
@@ -246,6 +253,41 @@ To successfully crawl Microsoft SharePoint Online, you must enable legacy authen
 
 If you created a SharePoint Online account after January 2020, two-factor authentication is enabled for your account, by default. To crawl your SharePoint Online collection, you must disable two-factor authentication. To view and change your multifactor authentication status, see [View the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#view-the-status-for-a-user){: external} or [Change the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#change-the-status-for-a-user){: external}.
 {: important}
+
+### Microsoft SharePoint OnPrem
+{: #connectsp_oppublic}
+
+<!-- Learn more topic WDS -->
+To connect to SharePoint OnPrem, you must first install and configure {{site.data.keyword.SecureGatewayfull}}. For more information about installing {{site.data.keyword.SecureGatewayfull}}, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
+{: note}
+
+You can use this connector to crawl a SharePoint 2013, 2016, or 2019 on-premises data source. Complete the following fields to connect to the data source. If you do not know what to enter in these fields, contact your SharePoint administrator, or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
+
+-  `Username` - The username to connect to the SharePoint OnPrem web application that you want to crawl. This user must have access to all sites and lists that they want to crawl and index.
+-  `Password` - The password to connect to the SharePoint OnPrem web application that you want to crawl. This value is never returned and is only used when creating or modifying credentials.
+-  `Web Application URL` - The SharePoint OnPrem web application URL, for example `https://sharepointwebapp.com:8443`. If you do not enter a port number, the default is port `80` for HTTP and port `443` for HTTPS.
+-  `Domain` - The domain of the SharePoint OnPrem account.
+
+Note the following items when you crawl Microsoft SharePoint OnPrem:
+
+-  To crawl SharePoint OnPrem, the `Username` account must have `SiteCollection Administrator` permissions.
+-  To crawl SharePoint OnPrem, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
+-  The number of gateways that you can create is limited to 50. If you exceed this limit, you will be unable to create any more gateways, and you will see an error message that states, `Failed to update or create the network resource.`.
+-  SharePoint OnPrem cannot crawl `Personal SiteCollections`.
+
+### Salesforce
+{: #connectsfpublic}
+
+When connecting to a Salesforce source, ensure that the instance you plan to connect to is an Enterprise plan or higher.
+
+The following credentials are required to connect to a Salesforce source. If you do not know these credentials, consult your Salesforce administrator:
+-  `Username` - The `username` of the source that these credentials connect to.
+-  `Password plus service token` - The `password` consists of the Salesforce password and a valid Salesforce security token concatenated. This value is never returned and is only used when creating or modifying credentials.
+-  `URL` - The `url` of the source that these credentials connect to.
+
+When identifying the credentials, it might be useful to consult the [Salesforce developer documentation](https://developer.salesforce.com/docs/){: external}.
+
+When you crawl Salesforce, note that Knowledge Articles are only crawled if their **version** is `published` and their languages is `en-us`.
 
 ### Web crawl
 {: #connectwebcrawlpublic}
@@ -308,48 +350,6 @@ To configure the web crawl collection, complete the following steps:
     {: note}
 
 1.  Click **Finish**.
-
-### SharePoint OnPrem
-{: #connectsp_oppublic}
-
-<!-- Learn more topic WDS -->
-To connect to SharePoint OnPrem, you must first install and configure {{site.data.keyword.SecureGatewayfull}}. For more information about installing {{site.data.keyword.SecureGatewayfull}}, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
-{: note}
-
-You can use this connector to crawl a SharePoint 2013, 2016, or 2019 on-premises data source. Complete the following fields to connect to the data source. If you do not know what to enter in these fields, contact your SharePoint administrator, or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
-
--  `Username` - The username to connect to the SharePoint OnPrem web application that you want to crawl. This user must have access to all sites and lists that they want to crawl and index.
--  `Password` - The password to connect to the SharePoint OnPrem web application that you want to crawl. This value is never returned and is only used when creating or modifying credentials.
--  `Web Application URL` - The SharePoint OnPrem web application URL, for example `https://sharepointwebapp.com:8443`. If you do not enter a port number, the default is port `80` for HTTP and port `443` for HTTPS.
--  `Domain` - The domain of the SharePoint OnPrem account.
-
-Note the following items when you crawl Microsoft SharePoint OnPrem:
-
--  To crawl SharePoint OnPrem, the `Username` account must have `SiteCollection Administrator` permissions.
--  To crawl SharePoint OnPrem, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
--  The number of gateways that you can create is limited to 50. If you exceed this limit, you will be unable to create any more gateways, and you will see an error message that states, `Failed to update or create the network resource.`.
--  SharePoint OnPrem cannot crawl `Personal SiteCollections`.
-
-### IBM Cloud Object Storage
-{: #connectcos}
-
-When you connect to an {{site.data.keyword.cos_full}} source, the following credentials are required. You can obtain them from your {{site.data.keyword.cos_full_notm}} administrator:
-
--  `Endpoint` - The `endpoint` name used to interact with {{site.data.keyword.cos_full_notm}} data.
-   Do not enter `http://` or `https://`, as part of the {{site.data.keyword.cos_full_notm}} `endpoint` credential. Otherwise, you might receive an error message indicating that you have invalid or expired credentials. For the proper formatting of endpoints, see the column named Endpoint in the table in [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region).
--  `Access key id` - `access_key_id` obtained when the {{site.data.keyword.cos_full_notm}} instance was created.
--  `Secret access key` - `secret_access_key` to sign requests obtained when the {{site.data.keyword.cos_full_notm}} instance was created.
-
-IAM authentication is not currently supported for this connector. You need to set up HMAC authentication before you configure this connector. See [Service Credentials](/docs/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) for instructions.
-{: important}
-
-After this information is entered, you can choose how often you want to sync your data and select the buckets you want to sync to.
-
-Other items to note when you crawl {{site.data.keyword.cos_full_notm}}:
-
--  This connector does not support crawling private endpoints.
--  For more information about {{site.data.keyword.cos_full_notm}} endpoints, see [Endpoints and storage locations](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints).
--  There is a slight performance issue if all buckets are selected. In this case, a delay is possible, before the documents complete indexing.
 
 ## Installing IBM Secure Gateway for on-premises data 
 {: #gatewaypublic}
