@@ -33,8 +33,8 @@ Discovery
         manage-collections.md
 
     {: topicgroup}
-    Improving and customizing
-        improve.md
+    Previewing query results
+        query-results.md
         search-settings.md
         facets.md
 
