@@ -70,7 +70,7 @@ New feature in this release:
 
 New features in this release:
 
-- Upload collections now support dragging and dropping documents before and during document upload. For more information, see [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data).
+- Upload collections now support dragging and dropping documents before and during document upload. For more information, see [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data).
 - You can view a list of collections that are connected to a particular gateway. For more information, see [Viewing collections connected to a gateway](/docs/discovery-data?topic=discovery-data-sources#gateway-connection).
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2.1 release, 26 February 2021

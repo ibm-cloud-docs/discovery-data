@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-02"
 
 subcollection: discovery-data
 
@@ -58,7 +58,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 -  [Local File System](#localfilesystemconnect)
 -  [FileNet P8](#filenet-connect)
 -  [Notes](#connectnotes)
--  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
+-  [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
 -  [Reuse data from an existing collection](#reuse)
 
 *Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).

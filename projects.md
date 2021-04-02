@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 subcollection: discovery-data
 
@@ -34,7 +34,7 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Projects* page. Do not delete. -->
 
-A project is a convenient way to build and manage your {{site.data.keyword.discoveryfull}} application. You can assign a *Project type* and connect your data to the project by creating a collection. After you configure your project with enrichments and other improvement tools, you can choose which components you'd like to deploy.
+A project is a convenient way to collect and manage the resources in your {{site.data.keyword.discoveryfull}} application. You can assign a *Project type* and connect your data to the project by creating a collection.
 {: shortdesc}
 
 To create a project, complete the following steps:

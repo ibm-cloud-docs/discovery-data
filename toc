@@ -26,24 +26,25 @@ Discovery
     
     {: topicgroup}
     Connecting to your data
-        collections.md 
+        collections.md
+        upload-data.md
         sources.md
         collection-types.md
         manage-collections.md
 
     {: topicgroup}
-    Improving and customizing
-        improve.md
+    Previewing query results
+        query-results.md
         search-settings.md
-        facets.md
-
-    configuring-fields.md   
+        facets.md  
 
     {: topicgroup}
     Adding enrichments
         create-enrichments.md
         understanding_tables.md
         enrichmig.md
+
+    configuring-fields.md
 
     {: topicgroup}
     Improving relevance of results
