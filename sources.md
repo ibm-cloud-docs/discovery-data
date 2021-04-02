@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 subcollection: discovery-data
 
@@ -53,7 +53,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic)
 -  [Salesforce](/docs/discovery-data?topic=discovery-data-sources#connectsfpublic)
 -  [Web crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
--  [Uploading data](/docs/discovery-data?topic=discovery-data-collections#upload-data)
+-  [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
 
 You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections to read next:
 
@@ -272,7 +272,7 @@ Note the following items when you crawl Microsoft SharePoint OnPrem:
 
 -  To crawl SharePoint OnPrem, the `Username` account must have `SiteCollection Administrator` permissions.
 -  To crawl SharePoint OnPrem, you must have the list of SharePoint site collection paths that you want to crawl. {{site.data.keyword.discoveryshort}} does not support folder paths as input.
--  The number of gateways that you can create is limited to 50. If you exceed this limit, you will be unable to create any more gateways, and you will see an error message that states, `Failed to update or create the network resource.`.
+-  The number of gateways that you can create is limited to 50. If you exceed this limit, you will be unable to create any more gateways, and you will see an error message that states, `Failed to update or create the network resource.`
 -  SharePoint OnPrem cannot crawl `Personal SiteCollections`.
 
 ### Salesforce

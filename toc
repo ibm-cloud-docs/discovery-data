@@ -26,7 +26,8 @@ Discovery
     
     {: topicgroup}
     Connecting to your data
-        collections.md 
+        collections.md
+        upload-data.md
         sources.md
         collection-types.md
         manage-collections.md

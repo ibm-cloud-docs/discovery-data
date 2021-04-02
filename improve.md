@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-04-02"
 
 subcollection: discovery-data
 
@@ -91,7 +91,7 @@ For more information about each of the following enrichments, see [Extracting me
 -  **Keywords**
 -  **Sentiment of documents**
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The {{site.data.keyword.discoveryshort}} for Content Intelligence enrichments (`Contracts`, `Invoices`, and `Purchase orders`) are available only if you install {{site.data.keyword.discoveryshort}} for Content Intelligence and choose the **Project type** of **Document retrieval**.
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The {{site.data.keyword.discoveryshort}} for Content Intelligence enrichments (`Contracts`) are available only if you install {{site.data.keyword.discoveryshort}} for Content Intelligence and choose the **Project type** of **Document retrieval**.
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: On {{site.data.keyword.cloud_notm}} Premium plans, the {{site.data.keyword.discoveryshort}} for Content Intelligence `Contracts` enrichment is available if you choose the **Project type** of **Document retrieval**, then select the **Apply contracts enrichment** checkbox.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 subcollection: discovery-data
 
@@ -68,16 +68,10 @@ Before you can create a collection, you must create a project. For more informat
 
     - [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
     - [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
-    - [Uploading data](#upload-data)
+    - [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
 1.  Click **Create collection** to start the crawl.
 
-    The **Activity** tab opens and shows the progress of the collection creation. The crawl synchronizes the data initially and then updates the data periodically at the specified frequency.
-
-This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
-
-![Watson Discovery Demo: Connect to the data source you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To view the transcript, open the video on YouTube.
+    The **Activity** page opens and shows the progress of the collection creation. The crawl synchronizes the data initially and then updates the data periodically according to the crawl schedule that you specify.
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
 {: note}
@@ -102,6 +96,12 @@ The following table shows the supported data sources for each deployment type.
 {: caption="Supported data sources" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
 
+This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
+
+![Watson Discovery Demo: Connect to the data source you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To view the transcript, open the video on YouTube.
+
 ### Crawl schedule options
 {: #crawlschedule}
 
@@ -122,57 +122,3 @@ To create a crawl schedule, complete the following steps:
     - Full crawling
 
 If you want to edit your flexible crawl schedule settings, go to the *Processing settings* page, edit the settings, and click **Apply changes and reprocess**. If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
-
-## Uploading data
-{: #upload-data}
-
-You can perform a one-time document upload from your local file system at any time to add data to a project.
-
-You cannot upload more than 200 files at one time. To process document sets that are larger than 200 files, add them to an external data source and use a data source crawler to upload them.
-
-To upload data, complete the following steps:
-
-1.  Open your project, go to the **Manage collections** page, and then click **New collection**.
-1.  Choose **Upload data** as your data source.
-
-    The file size limit for uploading data is 32 MB.
-    {: note}
-
-1.  Optionally, click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. 
-
-    By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, by using optical character recognition.
-
-1.  Browse for the files you want to crawl.
-
-    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: You can drag documents that you want to add to your collection.
-
-Only supported file types are crawled; all others are ignored.
-
-### Supported file types
-{: #supportedfiletypes}
-
-{{site.data.keyword.discoveryshort}} can ingest specific file types; it ignores all other types of files.
-
-The following table shows the supported file types and information about feature support that varies by file type.
-
-| Supported file type | Use Smart Document Understanding to identify fields | Enable OCR to extract text from images |
-|---------------------|-----------------------------------------------------|----------------------------------------|
-| Contract (written in any supported file type) | A pretrained SDU model<br/>is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| CSV | | |
-| DOC, DOCX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| GIF | | |
-| HTML | | |
-| JPG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| JSON | | |
-| PDF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| PNG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| PPT, PPTX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| TIFF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| TXT | | |
-| XSL, XSLX | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Supported file types" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify supported file types. The column headers identify different product features. To understand which features are available for a file type, go to the row that describes the document type, and find the columns for the feature you are interested in."}
-    
-Files within compressed archive files (ZIP, GZIP, TAR) are extracted. Discovery ingests the supported file types within the archive; it ignores all other file types. Discovery supports MacOS ZIP files only if they are generated by using a command such as: `zip -r my-folder.zip my-folder -x "*.DS_Store"`. ZIP files that are created by right-clicking a folder and clicking *Compress* are not supported.
