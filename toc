@@ -36,15 +36,15 @@ Discovery
     Previewing query results
         query-results.md
         search-settings.md
-        facets.md
-
-    configuring-fields.md   
+        facets.md  
 
     {: topicgroup}
     Adding enrichments
         create-enrichments.md
         understanding_tables.md
         enrichmig.md
+
+    configuring-fields.md
 
     {: topicgroup}
     Improving relevance of results
