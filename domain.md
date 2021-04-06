@@ -280,7 +280,7 @@ In this example, the **Facet Path** is `regex.cccardnumber`, and the field that 
 ]
 ```	
 
-As a result, if someone [uses the API](/docs/discovery-data?topic=discovery-data-query-concepts) to submit a Discovery Query Language query to look for occurrences of the `enriched_text.entities.type: cccardnumber` enrichment, any passages that include a credit card number in the specified format are returned.
+As a result, a customer can filter their results by the credit card number facet that you defined to show passages that include credit card number references.
 
 ## Machine Learning models
 {: #machinelearning}
