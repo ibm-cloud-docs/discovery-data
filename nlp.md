@@ -61,7 +61,7 @@ To add an NLP enrichment, complete the following steps:
 
     You can apply the Entities, Keywords, and Sentiment enrichments to `text` and `html` fields only.
 
-    For the Parts of speech enrichment, do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. Fields with names like there are created during initial indexing or by other enrichment processes and are for internal use only. You cannot apply enrichments to them. To see the fields that you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
+    For the Parts of speech enrichment, do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
     {: note}
 
 ### Entities
