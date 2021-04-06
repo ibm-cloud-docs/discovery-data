@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-04-06"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 ## Basic project defaults
 {: #basic-defaults}
 
-| Default | Document Retrieval | Document Retrieval<br/>(Content Intelligence) |
+| Default | Document Retrieval | Document Retrieval<br/>for Contracts |
 | --- | --- | --- |
 | CSV settings | NA  | NA  |
 | Enrichments | Entities, Parts of speech  | Entities, Parts of speech, Table Understanding, and Contracts |
@@ -59,12 +59,12 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 ## Default query settings
 {: #query-defaults}
 
-| Query default | Document Retrieval | Document Retrieval<br/>(Content Intelligence) |
+| Query default | Document Retrieval | Document Retrieval<br/>for Contracts |
 | --- | --- | --- |
 | Aggregation<br/>(`aggregation`) | "term(enriched_text.entities.text,<br/>name:entities)"  | "[term<br/>(enriched_html.contract.<br/>elements.categories.label,<br/>count:25,name:categories)" |
 | Count<br/>(`count`) | 10  | 10  |
 | Find answers<br/>Enabled<br/>(`find_answers.enabled`) | false | false |
-| Find answers<br/>Max answers<br/> per passage<br/>(`max_answers_per_passage`) | 1 | 1 |
+| Find answers<br/>Max answers<br/> per passage<br/>(`find_answers.`<br/>`max_answers_per_passage`) | 1 | 1 |
 | Highlight<br/>(`highlight`) | false | false |
 | Passages<br/>Characters<br/>(`passages.characters`) | 200 | 200 |
 | Passages<br/>Count<br/>(`passages.count`)| 10 | 10 |
@@ -90,7 +90,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 | Aggregation<br/>(`aggregation`) | "" | "" | "" |
 | Count<br/>(`count`) | 10  | 10 |  10 |
 | Find answers<br/>Enabled<br/>(`find_answers.enabled`) | false | false | false |
-| Find answers<br/>Max answers<br/> per passage<br/>(`max_answers_per_passage`) | 1 | 1 | 1 |
+| Find answers<br/>Max answers<br/> per passage<br/>(`find_answers.`<br/>`max_answers_per_passage`) | 1 | 1 | 1 |
 | Highlight<br/>(`highlight`) | false | false | false |
 | Passages<br/>Characters<br/>(`passages.characters`)  | 200  | 200 | 200 |
 | Passages<br/>Count<br/>(`passages.count`) | 10 | 10 | 10 |
@@ -111,7 +111,7 @@ To learn more about projects, see [Creating projects](/docs/discovery-data?topic
 ## Project component settings
 {: #component-defaults}
 
-| Default | Document Retrieval | Document Retrieval (Content Intelligence) |
+| Default | Document Retrieval | Document Retrieval for Contracts |
 | --- | --- | --- |
 | Aggregations<br/>(`aggregations.name`)<br/>(`aggregations.label`)<br/>(`aggregations.`<br/>`multiple_selections_allowed`) | "name": "entities"<br/> "label": "Top Entities"<br/> "multiple_selections_allowed": false <br/> <br/>"name": "_system_suggested_refinements"<br/> "label": "Dynamic Facets"<br/>"multiple_selections_allowed": true <br/><br/>"name": "_system_collections"<br/>"label": "Collections"<br/>"multiple_selections_allowed": true | "name": "categories"<br/> "label": "Category"<br/> "multiple_selections_allowed": true<br/><br/> "name": "natures"<br/> "label": "Nature"<br/>"multiple_selections_allowed": false<br/><br/>"name": "contract_terms"<br/> "label": "Contract Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "contract_payment_terms"<br/>"label": "Contract Payment Term"<br/>"multiple_selections_allowed": false<br/> <br/>"name": "contract_types"<br/> "label": "Contract Type"<br/> "multiple_selections_allowed": false<br/><br/> "name": "contract_currencies"<br/> "label": "Contract Currency"<br/>"multiple_selections_allowed": false<br/><br/>"name": "invoice_buyers"<br/> "label": "Invoice Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_suppliers"<br/> "label": "Invoice Supplier"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_currencies"<br/> "label": "Invoice Currency"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_payment_terms"<br/> "label": "Purchase Order Payment Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_buyers"<br/> "label": "Purchase Order Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_suppliers"<br/> "label": "Purchase Order Supplier"<br/> "multiple_selections_allowed": false<br/><br/> "name": "po_currencies"<br/>"label": "Purchase Order Currency"<br/>"multiple_selections_allowed": false |
 | Autocomplete<br/>(`autocomplete`) | true | true |

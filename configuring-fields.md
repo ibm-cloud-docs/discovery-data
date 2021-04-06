@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-06"
 
 subcollection: discovery-data
 
@@ -162,7 +162,7 @@ To apply an enrichment to a field:
 1. Open the **Enrichments** page and select the enrichment.
 1. Choose the field or fields that you want to enrich.
 
-   Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. Fields with names like there are created during initial indexing or by other enrichment processes and are for internal use only. You cannot apply enrichments to them. To see the fields that you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
+   Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
    {: note}
 1. Click **Apply changes and reprocess** to apply the enrichment you selected to the collection.
 

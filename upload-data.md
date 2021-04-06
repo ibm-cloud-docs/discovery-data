@@ -4,6 +4,8 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-04-02"
 
+keywords: upload, one-time upload, supported file types, document types
+
 subcollection: discovery-data
 
 ---
