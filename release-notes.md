@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-06"
 
 keywords: release notes
 
@@ -57,6 +57,15 @@ IBM releases services, features, and language support for your evaluation that a
 The following new features and changes to the service are available.
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium
+{: #6apr2021}
+
+- **Service API endpoint change**: As part of work done to fully support IAM authentication, the endpoint that you use to access your {{site.data.keyword.discoveryshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
+
+  The pattern for the endpoint URL changed from `gateway-{location}.watsonplatform.net/discovery/api/` to `api.{location}.discovery.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
+
+  If your service instance API credentials use the old endpoint, create a new credential and start using it today. After you update your custom applications to use the new credential, you can delete the old one.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 19 March 2021
 {: #19mar2021}

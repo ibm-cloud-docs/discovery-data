@@ -39,10 +39,15 @@ Discovery
         facets.md  
 
     {: topicgroup}
-    Adding enrichments
-        create-enrichments.md
-        understanding_tables.md
+    Teaching Discovery about your domain
+        domain.md
         enrichmig.md
+
+    {: topicgroup}
+    Extracting meaning from your data
+        nlp.md
+        contracts-schema.md
+        understanding_tables.md
 
     configuring-fields.md
 
@@ -58,7 +63,6 @@ Discovery
     {: topicgroup}
     Discovery for Content Intelligence
         output_schema.md
-        contracts-schema.md
         contract_parsing.md
 
     {: topicgroup}

@@ -4,6 +4,8 @@ copyright:
   years: 2019, 2021
 lastupdated: "2021-04-02"
 
+keywords: data sources, supported data sources
+
 subcollection: discovery-data
 
 ---
