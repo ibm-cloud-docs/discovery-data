@@ -61,7 +61,7 @@ To add an NLP enrichment, complete the following steps:
 
     You can apply the Entities, Keywords, and Sentiment enrichments to `text` and `html` fields only.
 
-    For the Parts of speech enrichment, do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
+    For the Parts of Speech enrichment, do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
     {: note}
 
 ### Entities
@@ -210,5 +210,5 @@ In the JSON output:
  ```
 {: codeblock}
 
-You can apply the sentiment enrichment to content in a Content Mining project type from the deployed Content Mining application. For more information, see [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
+You can apply the Sentiment enrichment to content in a Content Mining project type from the deployed Content Mining application. For more information, see [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
 {: note}
