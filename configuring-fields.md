@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-07"
 
 subcollection: discovery-data
 
@@ -30,7 +30,7 @@ subcollection: discovery-data
 {:go: .ph data-hd-programlang='go'}
 {:video: .video}
 
-# Configuring your collection with Smart Document Understanding
+# Adding custom fields with Smart Document Understanding
 {: #configuring-fields}
 
 You can use Smart Document Understanding (SDU) to quickly train {{site.data.keyword.discoveryfull}} to extract fields in your documents, which will improve the answers that your application returns. The specified fields can also be enriched.

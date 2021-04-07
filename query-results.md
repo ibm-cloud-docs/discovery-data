@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-07"
 
 keywords: passages, query results
 
@@ -37,7 +37,7 @@ subcollection: discovery-data
 See the types of query results that are returned automatically and learn about how they are derived. Understanding how default results are created can help you decide next steps to improve your results.
 {: shortdesc}
 
-The bulk of content from documents that you add to a collection is stored in a single `text` field. When a customer searches a collection at run time, you don't want every word in a 10,000-word document to be returned as the query result. Instead, you want to return a subsection of the text from the original document that contains only information that is relevant to the query. {{site.data.keyword.discoveryshort}} achieves this goal by returning *passages* from the `text` field in all project types except Content Mining and Document Retrieval for Contracts. For more information about passages, see [How passages are derived](#query-results-passages).
+The bulk of content from a document in a collection is stored in a single `text` field. When a customer searches a collection at run time, you don't want every word in a 10,000-word document to be returned as the query result. Instead, you want to return a subsection of the text from the original document that contains only information that is relevant to the query. {{site.data.keyword.discoveryshort}} achieves this goal by returning *passages* from the `text` field in all project types except Content Mining and Document Retrieval for Contracts. For more information about passages, see [How passages are derived](#query-results-passages).
 
 Preview the default query results.
 
@@ -64,9 +64,9 @@ The following optional project configuration settings impact how the query resul
 
 Use the tools built in to {{site.data.keyword.discoveryshort}} to make the following types of improvements:
 
+- Prepare your documents a bit more before you enrich them. Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify additional sections of your document that contain valuable information. You can also split large documents into more easily consumable chunks.
 - Use Watson NLP to find and tag terms that are generally understood to have special meaning. For more information, see [Enrich your data with Watson NLP](/docs/discovery-data?topic=discovery-data-nlp).
 - Teach {{site.data.keyword.discoveryshort}} about terms and patterns that have special meaning to your use case. For more information, see [EAdding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
-- Help {{site.data.keyword.discoveryshort}} to interpret meaning based on the format of the source documents. For example, extract information that is displayed in tables or use Smart Document Understanding to illustrate that in a PDF, phrases in 36 pt font represent titles and in 28 pt font represent subtitles.
 - For a Content Mining project, you might want to add facets based on enrichments other than the Parts of Speech enrichment that is applied by default. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
 
 If the right type of information is being identified and tagged in your documents already, learn steps that you can take to tweak query results that are returned to improve their relevancy. For more information, see [Search settings](/docs/discovery-data?topic=discovery-data-search-settings).

@@ -39,6 +39,10 @@ Discovery
         facets.md  
 
     {: topicgroup}
+    Preparing your documents for enrichment
+        configuring-fields.md
+
+    {: topicgroup}
     Teaching Discovery about your domain
         domain.md
         enrichmig.md
@@ -48,8 +52,6 @@ Discovery
         nlp.md
         contracts-schema.md
         understanding_tables.md
-
-    configuring-fields.md
 
     {: topicgroup}
     Improving relevance of results
