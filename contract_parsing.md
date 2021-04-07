@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-04-07"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ The `types` array includes a number of objects, each of which contains `nature` 
 The following tables list the possible values of the `nature` and `party` keys.
 
 | `nature`         |Description                                                |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`Definition`      |This element adds clarity for a term, relationship, or similar. No action is required to fulfill the element, nor is any party affected.|
 |`Disclaimer`      |The `party` in the element is not obligated to fulfill the terms specified by the element but is not prohibited from doing so.|
 |`Exclusion`       |The `party` in the element will not fulfill the terms specified by the element.|
@@ -75,7 +75,7 @@ The `parties` array specifies the participants that are listed in the contract. 
 The values of `role` that can be returned for contracts include, but are not limited to:
 
 | `role`           |Description                                                |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`Buyer`           |The party responsible for paying for the goods or services listed in the contract.|
 |`End User`        |The party who will interact with the provided goods or services, explicitly distinguished from the `Buyer`.|
 |`None`            |No party was identified for the element.|
@@ -88,7 +88,7 @@ The values of `role` that can be returned for contracts include, but are not lim
 The `categories` array defines the the subject matter of the sentence. Currently supported categories include:
 
 | `categories`     |Description                                                |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`Amendments`      |Elements that specify changes to the contract after it has been signed, or alterations to a standard contract. Includes discussions of the conditions for changing the terms of a contract.|
 |`Asset Use`       |Elements that refer to how one party may or may not use the assets of another party. This specifically applies to one party having access to or using assets such as licenses, equipment, tools, or personnel of the other party while in the process of conducting their duties under the agreement, including permissions and restrictions thereon.  This does not extend to specifications of a party's obligations or rights regarding any purchased goods, services, licenses, etc., as those are the party's own assets, rather than assets of another party.|
 |`Assignments`     |Elements that describe the transfer of rights, obligations, or both to a third party.|
@@ -121,7 +121,7 @@ The `categories` array defines the the subject matter of the sentence. Currently
 The `attributes` array specifies any attributes that are identified in the sentence. Each object in the array includes three keys: `type` (the type of attribute from the following table), `text` (the applicable text), and `location` (the `begin` and `end` indexes of the attribute in the input document). Currently supported attributes include:
 
 | `attributes`     |Description                                                |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`Currency`        |Monetary value and units.                                  |
 |`DateTime`        |A date, time, date range, or time range.                   |
 |`DefinedTerm`     |A term that is defined in the input document.              |
@@ -139,7 +139,7 @@ The `attributes` array specifies any attributes that are identified in the sente
 The `effective_dates` array identifies the date or dates on which the document becomes effective.
 
 | `effective_dates`|Description                                                |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`confidence_level`|The confidence level of the identification of the effective date. Possible values include `High`, `Medium`, and `Low`.|
 |`text`            |An effective date, listed as a string.                     |
 |`text_normalized` |The normalized text of the `text` if available, listed as a string. |
@@ -153,7 +153,7 @@ The `effective_dates` array identifies the date or dates on which the document b
 The `contract_amounts` array identifies the monetary amounts specified in the document.
 
 | `contract_amounts`|Description                                               |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`confidence_level`|The confidence level of the identification of the contract amount. Possible values include `High`, `Medium`, and `Low`.|
 |`text`            |A contract amount, listed as a string.                  |
 |`normalized_text` |The normalized text, if applicable.                     |
@@ -171,7 +171,7 @@ The `contract_amounts` array identifies the monetary amounts specified in the do
 The `termination_dates` array identifies the document's termination dates.
 
 | `termination_dates`|Description                                              |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`confidence_level`|The confidence level of the identification of the termination date. Possible values include `High`, `Medium`, and `Low`.|
 |`text`            |The termination date, listed as a string.                  |
 |`text_normalized` |The normalized text of the `text` if available, listed as a string.|
@@ -185,7 +185,7 @@ The `termination_dates` array identifies the document's termination dates.
 The `contract_types` array identifies the document's contract type or types as declared in the document.
 
 | `contract_types`|Description                                               |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`confidence_level`|The confidence level of the identification of the contract type. Possible values include `High`, `Medium`, and `Low`.|
 |`text`            |The contract type, listed as a string.                  |
 |`location`        |The location of the contract type as defined by its `begin` and `end` indexes.|
@@ -198,7 +198,7 @@ The `contract_types` array identifies the document's contract type or types as d
 The `contract_terms` array identifies the duration or durations of the contract as declared in the document.
 
 | `contract_terms`|Description                                               |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`confidence_level`|The confidence level of the identification of the contract term. Possible values include `High`, `Medium`, and `Low`.|
 |`text`            |The contract term, listed as a string.                  |
 |`normalized_text` |The normalized text, if applicable.                     |
@@ -216,7 +216,7 @@ The `contract_terms` array identifies the duration or durations of the contract 
 The `payment_terms` array identifies the payment duration or durations as declared in the document.
 
 | `payment_terms`|Description                                               |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`confidence_level`|The confidence level of the identification of the payment term. Possible values include `High`, `Medium`, and `Low`.|
 |`text`            |The payment term, listed as a string.                  |
 |`normalized_text` |The normalized text, if applicable.                     |
@@ -234,7 +234,7 @@ The `payment_terms` array identifies the payment duration or durations as declar
 The `contract_currencies` array identifies the contract currency or currencies as declared in the document.
 
 | `contract_currencies`|Description                                              |
-|:----------------:|-----------------------------------------------------------|
+|:-----------------|-----------------------------------------------------------|
 |`confidence_level`|The confidence level of the identification of the contract currency. Possible values include `High`, `Medium`, and `Low`.|
 |`text`            |The contract currency, listed as a string.      |
 |`text_normalized` |The normalized text of the `text` if applicable, listed as a string in [ISO-4217](https://www.iso.org/iso-4217-currency-codes.html){: external} format.|

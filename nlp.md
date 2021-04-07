@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-07"
 
 subcollection: discovery-data
 
@@ -59,10 +59,7 @@ To add an NLP enrichment, complete the following steps:
 1.  Scroll to find the NLP enrichment that you want to apply to your documents. 
 1.  Choose one or more fields to apply the enrichment to.
 
-    You can apply the Entities, Keywords, and Sentiment enrichments to `text` and `html` fields only.
-
-    For the Parts of Speech enrichment, do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
-    {: note}
+    You can apply the enrichments to fields with a String data type, such as the `text` and `html` fields, or other fields that you add which contain text.
 
 ### Entities
 {: #entities}
