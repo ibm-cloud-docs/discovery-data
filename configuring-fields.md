@@ -33,9 +33,8 @@ subcollection: discovery-data
 # Adding custom fields with Smart Document Understanding
 {: #configuring-fields}
 
-You can use Smart Document Understanding (SDU) to quickly train {{site.data.keyword.discoveryfull}} to extract fields in your documents, which will improve the answers that your application returns. The specified fields can also be enriched.
-
-With SDU, you can annotate fields within your documents to train custom conversion models. As you annotate, Watson is learning and will start predicting annotations. After an SDU model is created, it can be [exported](/docs/discovery-data?topic=discovery-data-configuring-fields#import) and used on other collections.
+Use Smart Document Understanding (SDU) to teach {{site.data.keyword.discoveryfull}} about other fields in your documents that contain meaningful information. When you help {{site.data.keyword.discoveryshort}} index the right set of information in your documents, you improve the answers that your application can find and return.
+{: shortdesc}
 
 This video provides a quick overview of Smart Document Understanding:
 
@@ -43,7 +42,31 @@ This video provides a quick overview of Smart Document Understanding:
 
 To view the transcript, open the video on YouTube.
 
-PDF, Microsoft Word, Microsoft PowerPoint, and image files (PNG, TIFF, JPG) can be annotated in the SDU editor. For the complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+Documents come in all shapes and sizes. Your collection might have a mix of different document structures. Pick a subset of documents from your collection that are representative of the different document structures in use. You will use this representative set of documents to train Watson to recognize custom fields that contain meaningful information.
+
+As you annotate the representative documents, Watson learns and starts to predict annotations.
+
+## When to use Smart Document Understanding
+{: #sdu-when}
+
+The Smart Document Understanding (SDU) tool works better with some project types.
+
+- The tool is most beneficial when used with *Document Retrieval* projects. Use it to add custom fields to [the set of fields that are indexed by default](#sdu-default-fields).
+- *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. It basically does the work for you. Instead of making you annotate contract-related content in your documents, it uses a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
+- The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. 
+
+  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Use the SDU tool to identify question-and-answer pairs. 
+  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Enable the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you.
+- The SDU editor is not often used with *Content Mining* projects.
+
+The SDU editor can annotate the following file types only:
+
+- Image files (PNG, TIFF, JPG)
+- Microsoft PowerPoint
+- Microsoft Word
+- PDF
+
+For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
 To access the Smart Document Understanding editor:
 
@@ -94,6 +117,11 @@ See [Best practices for annotating documents](/docs/discovery-data?topic=discove
    {: note}
    
 1. When you have completed annotating, click the **Apply changes and reprocess** button.
+
+### Fields indexed by default
+{: #sdu-default-fields}
+
+The following fields make up the base set of fields that {{site.data.keyword.discoveryshort}} is designed to recognize and index by default.
 
 Field | Definition  
 ------ | ------ 
