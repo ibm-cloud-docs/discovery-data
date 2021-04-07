@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-07"
 
 subcollection: discovery-data
 
@@ -398,7 +398,7 @@ For more information about SharePoint OnPrem, see [Microsoft SharePoint develope
 ### Web crawl
 {: #connectwebcrawl}
 
-Use this option to crawl public websites that do not require a password. The web content is processed as HTML.
+Use this option to crawl websites. The web content is processed as HTML.
 {: shortdesc}
 
 

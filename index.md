@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-06"
 
 subcollection: discovery-data
 
@@ -63,4 +63,4 @@ Language support by feature is detailed in the [Supported languages](/docs/disco
 ## Next steps
 {: #next-steps}
 
-Complete a tutorial to learn more about the product. For more information, see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-getting-started).
+Complete a tutorial to learn more about the product. For more information, see [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).

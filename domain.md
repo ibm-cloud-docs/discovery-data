@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-07"
 
 subcollection: discovery-data
 
@@ -58,7 +58,7 @@ To add a resource, complete the following steps:
     After you create the resource, it becomes a new type of enrichment that you can apply to your data.
 1.  Specify the collection and field in which to apply the enrichment.
 
-    Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. Fields with names like there are created during initial indexing or by other enrichment processes and are for internal use only. You cannot apply enrichments to them. To see the fields that you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
+    Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
     {: note}
 
     For example, if you add a dictionary and choose to apply it to the `text` field of a collection, the documents in the collection are reprocessed. Any terms from the dictionary that occur in the text field of the documents are recognized and tagged. For example, if the term `vehicle` is specified as a synonym of the `car` dictionary entry, the occurrence is tagged as enriched text.
@@ -68,9 +68,9 @@ You can choose to apply resource-derived enrichments to your data later. Go to t
 ## Classifier
 {: #classifier}
 
-Add a classifier to assign content in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of content from documents in your collection.
+Add a classifier to assign documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of documents in your collection.
 
-1.  Create a CSV file that contains one sentence followed by its category label per line.
+1.  Create a CSV file that contains example text followed by its category label per line.
 
     The CSV file must be in UTF-8 encoding format and must meet the following requirements:
 
@@ -80,7 +80,7 @@ Add a classifier to assign content in your collection into categories. {{site.da
     -  The file must have at least two columns with no header.
     -  Add at least 10 entries for each category that you want to define. The minimum number of entries that are required per category is 3. The more examples that you provide for each category, the better the classifier can predict the categories of other content in your collection.
 
-    The following example is a CSV file that defines two categories, named `facility_temperature` and `catering`. The example sentences consist of feedback from conference attendees.
+    The following example is a CSV file that defines two categories, named `facility_temperature` and `catering`. The example text consists of feedback from conference attendees.
 
     ```
     The rooms were too cold.,facility_temperature
@@ -115,7 +115,7 @@ Add a classifier to assign content in your collection into categories. {{site.da
     A classifier enrichment is created based on the training data that you provided.
 1.  Choose the collection and field where you want to apply the enrichment, and then click **Apply**.
 
-In the output, the classifier enrichment applies the `facility_temperature` label to text from the text field of a document in the collection. The `label` is stored as `enriched_text` within the `classes` array.
+In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored as `enriched_text` within the `classes` array.
 
 ```JSON
 "enriched_text": [
