@@ -37,7 +37,7 @@ subcollection: discovery-data
 See the types of query results that are returned automatically and learn about how they are derived. Understanding how default results are created can help you decide next steps to improve your results.
 {: shortdesc}
 
-The bulk of content from a document in a collection is stored in a single `text` field. When a customer searches a collection at run time, you don't want every word in a 10,000-word document to be returned as the query result. Instead, you want to return a subsection of the text from the original document that contains only information that is relevant to the query. {{site.data.keyword.discoveryshort}} achieves this goal by returning *passages* from the `text` field in all project types except Content Mining. For more information about passages, see [How passages are derived](#query-results-passages).
+When a document is ingested, the text is extracted and indexed in the`text` field. When a customer searches a collection at run time, you don't want every word in a 10,000-word document to be returned as the query result. Instead, you want to return a subsection of the text from the original document that contains only information that is relevant to the query. {{site.data.keyword.discoveryshort}} achieves this goal by returning *passages* from the `text` field in all project types except Content Mining. For more information about passages, see [How passages are derived](#query-results-passages).
 
 Preview the default query results.
 
@@ -53,11 +53,9 @@ Preview the default query results.
 - For Content Mining projects, choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 - Even Custom project types show query results as passages by default.
 
-The following optional project configuration settings impact how the query results are formatted:
+![IBM Cloud only](images/ibm-cloud.png): The following optional project configuration setting impacts how the query results are formatted:
 
-- ![IBM Cloud only](images/ibm-cloud.png): If you enable FAQ extraction, any question-and-answer pairs that are found in the original document are added to a new, separate document. By separating the pairs into independent documents, the right answer can be returned quickly when a phrase that is the same or similar to the associated question is submitted as the query.
-
-- When you split documents, you break up text from the original single document into multiple smaller documents or *segments* of the original document. Each document segment contains a smaller chunk of the original text. The content <!--in the `text` field-->of each document segment is then broken up into passages.
+- If you enable FAQ extraction, each question-and-answer pair that is found in the original document is added to a new, separate document with the question in the `title` field and answer in the `text` field. By separating the pairs into independent documents, the right answer can be returned quickly when a phrase that is the same or similar to the associated question is submitted as the query.
 
 ## Improving your query results
 {: #query-results-improve}
