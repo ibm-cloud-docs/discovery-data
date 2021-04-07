@@ -49,7 +49,7 @@ As you annotate the representative documents, Watson learns and starts to predic
 ## When to use Smart Document Understanding
 {: #sdu-when}
 
-The Smart Document Understanding (SDU) tool works better with some project types:
+The Smart Document Understanding (SDU) tool works better with some project types.
 
 - The tool is most beneficial when used with *Document Retrieval* projects. Use it to add custom fields to [the set of fields that are indexed by default](#sdu-default-fields).
 - *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. It basically does the work for you. Instead of making you annotate contract-related content in your documents, it uses a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
