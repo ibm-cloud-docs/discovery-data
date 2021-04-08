@@ -35,6 +35,7 @@ Discovery
     {: topicgroup}
     Previewing query results
         query-results.md
+        query-defaults.md
         search-settings.md
         facets.md  
 
@@ -49,7 +50,7 @@ Discovery
 
     {: topicgroup}
     Extracting meaning from your data
-        nlp.md
+        nlu.md
         contracts-schema.md
         understanding_tables.md
 

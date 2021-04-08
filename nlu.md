@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 subcollection: discovery-data
 
@@ -30,20 +30,20 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Enrich your data with Watson NLP
-{: #nlp}
+# Applying prebuilt enrichments
+{: #nlu}
 
-Take advantage of award-winning Watson Natural Language Processing (NLP) capabilities by adding prebuilt enrichments to your documents.
+Take advantage of award-winning Watson Natural Language Understanding (NLU) capabilities by adding prebuilt enrichments to your documents.
 {: shortdesc}
 
-With Watson NLP, you can identify and tag meaningful information in your collections so you can understand what it all means and make more informed decisions. The following enrichments are available:
+With Watson NLU, you can identify and tag meaningful information in your collections so you can understand what it all means and make more informed decisions. The following enrichments are available:
 
 - [Entities](#entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
 - [Keywords](#keywords): Recognizes significant terms in your content.
 - [Parts of Speech](#pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
 - [Sentiment](#sentiment): Understands the overall sentiment of the content.
 
-Some of the NLP enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
+Some of the NLU enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
 
 | Enrichment that is applied automatically | Project type |
 |------------------------------------------|--------------|
@@ -51,12 +51,12 @@ Some of the NLP enrichments are applied to projects automatically. You don't nee
 | Parts of Speech                          | Content Mining, Document Retrieval, Document Retrieval with Content Intelligence |
 {: caption="Default enrichments for project types" caption-side="top"}
 
-To add an NLP enrichment, complete the following steps: 
+To add an NLU enrichment, complete the following steps: 
 
 1.  Open your project and go to the *Manage collections* page.
 1.  Click to open the collection that you want to enrich.
 1.  Open the **Enrichments** tab.
-1.  Scroll to find the NLP enrichment that you want to apply to your documents. 
+1.  Scroll to find the NLU enrichment that you want to apply to your documents. 
 1.  Choose one or more fields to apply the enrichment to.
 
     You can apply the enrichments to fields with a String data type, such as the `text` and `html` fields, or other fields that you add which contain text.
