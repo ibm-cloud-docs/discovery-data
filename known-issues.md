@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-08"
 
 keywords: known issues
 
@@ -43,19 +43,19 @@ Known issues are listed by the release in which they were identified.
 {: #26feb2021ki}
 
 - If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
-  - Error: Some Discovery pods might report an `ImagePullBackoff` error.
-  - Cause: The wrong image pull secret is being used.
-  - Solution: Complete the following steps during the installation:
+  - **Error**: Some Discovery pods might report an `ImagePullBackoff` error.
+  - **Cause**: The wrong image pull secret is being used.
+  - **Solution**: Complete the following steps during the installation:
 
-    1. Start installing Watson Discovery.
-    2. After watson-discovery-operator module completes, check if a WatsonDiscovery custom resource is created by running the following command:
+    - Start installing Watson Discovery.
+    - After watson-discovery-operator module completes, check if a WatsonDiscovery custom resource is created by running the following command:
 
       ```
       oc get WatsonDiscovery wd
       ```
-    {: codeblock}
+      {: codeblock}
 
-    3. After the custom resource is created, run the following commands to point the correct image pull secret to pull images from the external registry:
+    - After the custom resource is created, run the following commands to point the correct image pull secret to pull images from the external registry:
 
       ```
       pull_secret=$(oc get secrets | grep 'docker-pull-.*-watson-discovery-registry-registry' | cut -d ' ' -f 1)
@@ -291,6 +291,242 @@ Also, see the issues in all previous releases.
     {: codeblock}
   - **Cause**: The model runtime container and model mesh runtime container are out of sync.
   - **Solution**: Delete the `wd-stateless-api-model-runtime` pods to restart both the model mesh and model runtime containers.
+
+- You might encounter the following error:
+
+  - **Error**: `java.lang.OutOfMemoryError: Java heap space`
+  - **Cause**: When indexing a large set of documents that have multiple enrichments applied to them, the worker node can run out of space.
+  - **Solution**: Determine which pod is out of memory by completing the following steps:
+
+    - If the document status cannot be promoted to `Processing`, check the status of the inlet, outlet, and converter pods by running the following command:
+
+      ```
+      $ oc get pod -l 'tenant=wd,run in (inlet,outlet,converter)'
+      ```
+      {: pre}
+
+      If any of the pods are not showing a `Running` status, restart the failing pod by using the following command:
+
+      ```
+      oc delete pod <pod_name>
+      ```
+      {: pre}
+
+      Otherwise, open the *Manage collections*>*{collection name}*>*Activity* page. Check the *Warnings and errors at a glance* section for the message, `OutOfMemory happened during conversion. Please reconsider size of documents.` If shown, use the following command to raise the memory size for the converter:
+      
+      ```
+      oc patch wd wd --type=merge --patch='{"spec":{"ingestion":{"converter":{
+      "maxHeapMemory":"10240m","resources":{"limits":{"memory":"10Gi"}}}}}}'
+      ```
+      {: pre}
+      
+      Adjust the value of `maxHeapMemory` and the container memory according to your cluster resources.
+      {: note}
+
+      After the converter pod restarts successfully, click **Reprocess** from the Activity tab.
+
+    - If documents are stuck in `Processing` status and cannot be promoted to the `Available` status for a collection, complete the following steps:
+    
+      Check the status of Hadoop by using the following command:
+
+      ```
+      oc get pod -l 'tenant=wd,run in (hdp-rm,hdp-worker)'
+      ```
+      {: pre}
+
+      where `l` is a lowercase L for list.
+
+      If any of the pods are not showing a `Running` status, restart the failing pod by using the following command:
+
+      ```
+      oc delete pod <pod_name>
+      ```
+      {: pre}
+
+      Check whether any of the Hadoop worker nodes has insufficient memory by using the following command to look for the `OOM when allocating` message:
+
+      ```
+      oc logs -l tenant=wd,run=hdp-worker -c logger --tail=-1 | grep "OOM when allocating"
+      ```
+      {: pre}
+
+      If a match is found, use the following command to patch the resource:
+
+      ```
+      oc patch wd wd --type=merge --patch='{"spec":{"orchestrator":{
+      "docproc":{"pythonAnalyzerMaxMemory":"8g"}}}}'
+      ```
+      {: pre}
+
+      The maximum allowed value for `pythonAnalyzerMaxMemory` is `12g`. The default value is `6g`. Increase the value gradually, such as in increments of 2g at a time according to your cluster resources.
+      {: note}
+
+      Check whether any of the Hadoop worker nodes has insufficient memory by using the following command to look for the `OutOfMemoryError` message:
+
+      ```
+      oc logs -l tenant=wd,run=hdp-worker -c logger --tail=-1 | grep "OutOfMemoryError"
+      ```
+      {: pre}
+
+      If a match is found, check the current environment variable values and the Hadoop worker node memory resources by using following commands:
+
+      - To check the `"DOCPROC_MAX_MEMORY"` variable in the orchestrator container:
+
+        ```
+        oc exec `oc get po -l run=orchestrator -o 'jsonpath={.items[0].metadata.name}'` 
+        env | grep DOCPROC_MAX_MEMORY
+        ```
+        {: pre}
+      
+      - To check the `"YARN_NODEMANAGER_RESOURCE_MEMORY_MB"` variable in the Hadoop worker node container:
+
+        ```
+        oc exec `oc get po -lrun=hdp-worker -o 'jsonpath={.items[0].metadata.name}'` 
+        -c hdp-worker -- env | grep YARN_NODEMANAGER_RESOURCE_MEMORY_MB
+        ```
+        {: pre}
+
+      - To check the memory resource of the hdp-worker container:
+
+        ```
+        oc get po -l run=hdp-worker -o 'jsonpath=requests are {.items[*].spec.containers[
+        ?(.name=="hdp-worker")].resources.requests.memory}, limits are 
+        {.items[*].spec.containers[?(.name=="hdp-worker")].resources.limits.memory}'
+        ```
+        {: pre}
+
+      Patch the environment variable resources gradually by using the following command:
+
+      ```
+      oc patch wd `oc get wd -o 'jsonpath={.items[0].metadata.name}'` --type=merge 
+      --patch='{"spec":{"orchestrator":{"docproc":{"maxMemory":"4g"}}, 
+      "hdp":{"worker":{"nm":{"memoryMB":12000}, "resources":{"limits":{"memory":"20Gi"},
+      "requests":{"memory":"20Gi"}}}}}}'
+      ```
+      {: pre}
+
+      The default values for the resources are as follows:
+
+      - docproc.maxMemory: 2g (Increase in increments of 2g at a time)
+      - nm.memoryMB: 10,240 (Start from 12,000 and increase in increments of 2,000 at a time)
+      - memory requests/limits: 13Gi/18Gi (Increase in increments of 2Gi at a time)
+
+      Check whether the Hadoop pods restart successfully by using the following command:
+
+      ```
+      oc get pods -l 'tenant=wd,run in (orchestrator,hdp-worker)'`
+      ```
+      {: pre}
+
+      Confirm that the new configurations were applied after you patched the cluster. 
+      
+      If the pod is not restarted, check whether the resource got updated by using the following command:
+      
+      ```
+      oc get wd wd -o yaml`
+      ```
+      {: pre}
+
+    Check the status of Elasticsearch 
+    
+      On the client node, run the following command to check whether an out-of-memory exception occurred:
+
+      ```
+      oc logs -l tenant=wd,ibm-es-data=False,ibm-es-master=False 
+      -c elasticsearch --tail=-1 | grep "OutOfMemoryError"
+      ```
+      {: pre}
+
+      If an error message is found, excluding INFO messages, increase the memory resource by using the following command:
+
+      ```
+      oc patch wd wd --type=merge --patch='{"spec":{"elasticsearch":
+      {"clientNode":{"maxHeap":"896m","resources":{"limits":{"memory":"1792Mi"}}}}}}'
+      ```
+      {: pre}
+
+      After you run this command, the Elasticsearch client pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
+
+      ```
+      oc get pod -l tenant=wd,ibm-es-data=False,ibm-es-master=False
+      ```
+      {: pre}
+
+      After the pod is restarted successfully, check the new value of `ES_JAVA_OPTS` and the container memory limit by using the following command:
+
+      ```
+      oc describe $(oc get po -l tenant=wd,ibm-es-data=False,ibm-es-master=False -o name)`
+      ```
+      {: pre}
+
+      On the data node, run the following command to check wheather an out of memory exception occurred:
+
+      ```
+      oc logs -l tenant=wd,ibm-es-data=True,ibm-es-master=False 
+      -c elasticsearch --tail=-1 | grep "OutOfMemoryError"
+      ```
+      {: pre}
+
+      If an error message is found, excluding INFO messages, increase the memory resource by using the following command:
+
+      ```
+      oc patch wd wd --type=merge --patch='{"spec":{"elasticsearch":{"dataNode":
+      {"maxHeap":"6g","resources":{"limits":{"memory":"10Gi"},"requests":{"memory":"8Gi"}}}}}}'
+      ```
+      {: pre}
+
+      After you run this command, the Elasticsearch client pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
+
+      ```
+      oc get pod -l tenant=wd,ibm-es-data=True,ibm-es-master=False
+      ```
+      {: pre}
+
+      After the pod is restarted successfully, check the new value of `ES_JAVA_OPTS` and the container memory requests/limit by using the following command:
+
+      ```
+      oc describe $(oc get po -l tenant=wd,ibm-es-data=True,ibm-es-master=False -o name)`
+      ```
+      {: pre}
+
+      For both nodes (client and data), set the `resources.limits.memory` equal to `2 * maxHeap`.
+      {: note}
+
+      If the pod cannot be restarted after 30 mins by applying the `oc patch` command, collect logs to share with IBM Support by using the following command:
+
+      ```
+      oc logs -l control-plane=ibm-es-controller-manager --tail=-1
+      ```
+      {: pre}
+
+    - For both issues, where document status cannot be promoted to `Processing` and where documents are stuck in `Processing` status, if you are using Portworx storage, you can check whether the Elasticsearch disk is full by running the following command:
+
+      ```
+      oc logs -l tenant=wd,run=elastic,ibm-es-master=True 
+      -c elasticsearch --tail=100000|grep 'disk watermark'
+      ```
+      {: pre}
+
+      If the log shows a message such as `watermark exceeded on x-data-1`, it means the disk on the node that is specified is full and you need to increase the disk size by using the following command:
+
+      ```
+      oc patch pvc $(oc get pvc -l tenant=wd,run=elastic,ibm-es-data=True,ibm-es-master=False 
+      -o jsonpath='{.items[N].metadata.name}') -p '{"spec": {"resources": {"requests": 
+      {"storage": "60Gi"}}}}'
+      ```
+      {: pre}
+
+      where `N` denotes the data node number that was reported from the log.
+
+      For example, if the log mentions `data-1` in the node name, then the command to use is:
+
+      ```
+      oc patch pvc $(oc get pvc -l tenant=wd,run=elastic,ibm-es-data=True,ibm-es-master=False 
+      -o jsonpath='{.items[1].metadata.name}') -p '{"spec": {"resources": {"requests": 
+      {"storage": "60Gi"}}}}'
+      ```
+      {: pre}
+
 
 Also see the issues identified in all previous releases.
 

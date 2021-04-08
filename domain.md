@@ -50,20 +50,20 @@ The following table shows you the right resources to add to address common needs
 
 Dictionaries and classifiers that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
 
-To add a resource, complete the following steps: 
+To add a resource, complete the following steps:
 
 1.  Open your project and go to the *Improve and customize* page. 
 1.  On the **Improvement tools** panel, expand **Teach domain concepts**, and then choose the resource that you want to add.
 
     After you create the resource, it becomes a new type of enrichment that you can apply to your data.
-1.  Specify the collection and field in which to apply the enrichment.
+1.  Specify the collection and field in which to apply the enrichment. 
 
-    Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
-    {: note}
+    If you're not sure which field to choose, pick `text`. Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To see a list of eligible fields, go to *Manage collections*>*{collection name}*>*Manage fields*.
+    {: tip}
 
-    For example, if you add a dictionary and choose to apply it to the `text` field of a collection, the documents in the collection are reprocessed. Any terms from the dictionary that occur in the text field of the documents are recognized and tagged. For example, if the term `vehicle` is specified as a synonym of the `car` dictionary entry, the occurrence is tagged as enriched text.
+    For example, if you add a dictionary and choose to apply it to the `text` field of a collection, the documents in the collection are reprocessed. If the term `vehicle` is specified as a synonym of the `car` dictionary entry and occurs in the document text, `vehicle` is tagged as a mention of the `car` dictionary entry type. If a customer later searches for `car`, the passage that contains the `vehicle` mention is included in the search results.
 
-You can choose to apply resource-derived enrichments to your data later. Go to the *Manage collections* page, choose the collection where you want to apply the enrichment, and then open the **Enrichments** tab. Make sure the status of the enrichment shows that it is *Ready*, and then apply the enrichment to a field in a collection.
+You can choose to apply resource-derived enrichments to your data later. Go to the *Manage collections* page, choose the collection where you want to apply the enrichment, and then open the **Enrichments** tab. Make sure the status of the enrichment shows that it is *Ready*, and then apply the enrichment to a field in the collection.
 
 ## Classifier
 {: #classifier}
@@ -133,6 +133,7 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
   "I think more attendees would stay awake in the sessions if the rooms were colder."
 ]  
 ```
+{: screen}
 
 ## Dictionary
 {: #dictionary}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 subcollection: discovery-data
 
@@ -55,11 +55,11 @@ The Smart Document Understanding (SDU) tool works better with some project types
 - *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. It basically does the work for you. Instead of making you annotate contract-related content in your documents, it uses a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
 - The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. 
 
-  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Use the SDU tool to identify question-and-answer pairs. 
-  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Enable the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you.
-- The SDU editor is not often used with *Content Mining* projects.
+  - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Use the SDU tool to identify question-and-answer pairs. 
+  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Enable the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you.
+- The SDU tool is not often used with *Content Mining* projects.
 
-The SDU editor can annotate the following file types only:
+The SDU tool can annotate the following file types only:
 
 - Image files (PNG, TIFF, JPG)
 - Microsoft PowerPoint
@@ -67,6 +67,11 @@ The SDU editor can annotate the following file types only:
 - PDF
 
 For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+The tool cannot read documents with the following characteristics; remove them from your collection before you begin:
+
+- Documents that appear to have text overlaying other text are considered “double overlaid” and cannot be annotated.
+- Documents that contain multiple columns of text on a single page cannot be annotated.
 
 To access the Smart Document Understanding editor:
 
@@ -81,7 +86,7 @@ To navigate the Smart Document Understanding editor, view the following informat
 
 1. On the **Manage collection** page, there are three tabs that are needed to use Smart Document Understanding: **Identify fields**, **Manage fields**, and **Enrichments**.
 
-   - **Identify fields** - the SDU editor
+   - **Identify fields** - the SDU tool
    - **Manage fields** - see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings)
    - **Enrichments** - see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
 
@@ -108,8 +113,8 @@ See [Best practices for annotating documents](/docs/discovery-data?topic=discove
 
 1. A default set of fields is displayed next to your document. The available fields are `answer`, `author`, `footer`, `header`, `question`, `subtitle`, `table_of_contents`, `text`, `title`, `table`, and `image`. If you would like to create one or more new custom field labels, click **Create new** and follow the steps. Custom field labels should be lowercase, and contain no spaces.
 1. To begin annotating, click on a field label to activate it.
-1. Click on the content representing that field in the SDU editor. It will highlight. 
-   - Alternately, you can select a field label and drag it to the content in the SDU editor. 
+1. Click on the content representing that field in the SDU tool. It will highlight. 
+   - Alternately, you can select a field label and drag it to the content in the SDU tool. 
    - To clear a change, click the **Clear changes** button on the toolbar.
 1. Click the **Submit page** button.
    
@@ -153,8 +158,6 @@ If you want to save time reprocessing all the files in a large collection, start
 - When labeling a document, work from the first page to the last.
 - If you incorrectly label an item, choose another label for the item to overwrite the first.
 - Pages can be submitted at any time. Ensure that all appropriate labeling is complete before submitting.
-- Documents that appear to have text overlaying other text are considered “double overlaid” and cannot be annotated. Report these documents to your administrator.
-- Documents that contain multiple columns of text on a single page cannot be annotated. Report these documents to your administrator.
 - When annotating a table, make sure to select the entire table before applying the `table` label.
 
 If `Run OCR` is enabled when you create your collection, text is extracted from images using Optical Character Recognition (OCR). If you do not want to apply this option for specific images or diagrams, apply the `image` label to those images.
@@ -163,7 +166,7 @@ If `Run OCR` is enabled when you create your collection, text is extracted from 
 ### Importing and exporting SDU models
 {: #import}
 
-After you define a model with the SDU editor, you can save it and reuse it on other collections.
+After you define a model with the SDU tool, you can save it and reuse it on other collections.
 
 You can import or export your completed SDU model using the toolbar at the top of the editor. Click the last icon and choose `Import model` or `Export model`.
 

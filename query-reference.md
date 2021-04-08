@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2019-05-13"
+  years: 2019, 2021
+lastupdated: "2021-04-07"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ Query parameters enable you to search your collection, identify a result set, an
 
 
 | Parameter | Description | Example |
-|:-------------------:|------------------------------------------------------------|--------------------------------|
+|:-------------------|------------------------------------------------------------|--------------------------------|
 | **Search parameters** |  |  |
 | [query](/docs/discovery-data?topic=discovery-data-query-parameters#query) | A ranked query language search for matching documents. | `query=bees` |
 | [filter](/docs/discovery-data?topic=discovery-data-query-parameters#filter) | An unranked query language search for matching documents. | `filter=bees` |
@@ -73,7 +73,7 @@ You cannot query on field names that contain the following:
 Operators are the separators between different parts of a query. Available operators:
 
 | Operator | Description | Example |
-|:-------------------:|------------------------------------------------------------|--------------------------------|
+|:-------------------|------------------------------------------------------------|--------------------------------|
 | [.](/docs/discovery-data?topic=discovery-data-query-operators#delimiter) | JSON delimiter | `enriched_text.concepts.text` |
 | [:](/docs/discovery-data?topic=discovery-data-query-operators#includes) | Includes | `text:computer` |
 | [::](/docs/discovery-data?topic=discovery-data-query-operators#match) | Exact match | `title::"Query building"` |
@@ -97,7 +97,7 @@ Operators are the separators between different parts of a query. Available opera
 Aggregations return a set of data values. Available aggregations:
 
 | Aggregation | Description | Example |
-|:-------------------:|------------------------------------------------------------|--------------------------------|
+|:-------------------|------------------------------------------------------------|--------------------------------|
 | [term](/docs/discovery-data?topic=discovery-data-query-aggregations#term) | Count of identical values | `term(enriched_text.concepts.text,count:10)` |
 | [filter](/docs/discovery-data?topic=discovery-data-query-aggregations#aggfilter) | Filter results set to defined pattern | `filter(enriched_text.concepts.text:cloud computing)`
 | [nested](/docs/discovery-data?topic=discovery-data-query-aggregations#nested) | Restrict aggregation | `nested(enriched_text.entities)` |

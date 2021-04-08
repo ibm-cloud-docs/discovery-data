@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-08"
 
 keywords: upload, one-time upload, supported file types, document types
 
@@ -59,7 +59,7 @@ To upload data, complete the following steps:
 
 Only supported file types are crawled; all others are ignored.
 
-### Supported file types
+## Supported file types
 {: #supportedfiletypes}
 
 {{site.data.keyword.discoveryshort}} can ingest specific file types; it ignores all other types of files.
@@ -68,7 +68,7 @@ The following table shows the supported file types and information about feature
 
 | Supported file type | Use Smart Document Understanding to identify fields | Enable OCR to extract text from images |
 |---------------------|-----------------------------------------------------|----------------------------------------|
-| Contract (written in any supported file type) | A pretrained SDU model<br/>is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Contract (written in any supported file type) | A pretrained SDU model<br/>is applied automatically | Enabled by default |
 | CSV | | |
 | DOC, DOCX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | GIF | | |
