@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-08"
 
 subcollection: discovery-data
 
@@ -67,58 +67,36 @@ The `3.11.188` version more precisely means 3.11.188 or a later 3.11 version.
 
 Full installation instructions: 
 
--  [Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/svc-discovery/discovery-install.html){: external}
+-  [Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}}](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=discovery-installing-watson){: external}
 
 Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 (or later) version. {{site.data.keyword.discoveryfull}} is FISMA High Ready.
-
-For complete information about **Cloud Pak for Data administration**, see [Administering the cluster for Cloud Pak for Data](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/admin-cluster.html){: external} and [Administering the Cloud Pak for Data platform](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/admin-web-client.html){: external}.
-{: important}
 
 
 ## Before you begin
 {: #beforebegin}
 
-Review the security information in:
-
-  -  [Security on {{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/plan/security.html){: external} and [Installing the {{site.data.keyword.discoveryfull}} service](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/svc-discovery/discovery-install.html){: external}
-  
+For more information about security in {{site.data.keyword.icp4dfull_notm}}, see [Security considerations](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=planning-security-considerations){: external}.
   
 Encryption of data at rest must be handled by the storage provider.
 {: important}
 
 Review the {{site.data.keyword.discoveryshort}} release notes and known issues:
 
-  -  [Release notes](/docs/discovery-data?topic=discovery-data-release-notes)
-  -  [Known issues](/docs/discovery-data?topic=discovery-data-known-issues)
-
-## Software requirements
-{: #prereqs}
-
-{{site.data.keyword.icp4dfull_notm}} 2.1.0.2 or 2.5.0.0 or later, including the {{site.data.keyword.icp4dfull_notm}} CLI.
-
-See the general software requirements listed here:
-
-  -  [Software requirements](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/plan/rhos-reqs.html#rhos-reqs__software){: external} 
-  
-
-Portworx **must** be installed before you install {{site.data.keyword.discoveryshort}}. A Portworx license is included with {{site.data.keyword.icp4dfull}} 2.5.0.0 or later.
-{: important}
+-  [Release notes](/docs/discovery-data?topic=discovery-data-release-notes)
+-  [Known issues](/docs/discovery-data?topic=discovery-data-known-issues)
 
 ## System requirements
 {: #system-requirements}
 
-See the system requirements listed here:
-
-  -  [System requirements for IBM Cloud Pak for Data](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/plan/rhos-reqs.html){: external} 
+For more information about the system requirements for {{site.data.keyword.icp4dfull_notm}}, see [System requirements for services](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=requirements-system-services){: external} 
   
-
 Gluster File System (GlusterFS) is not a supported storage option for {{site.data.keyword.discoveryfull}}.
 {: note}
 
 ## Custom scaling in Watson Discovery
 {: #scaling-discovery}
 
-You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2.2.0. For more information, see [Scaling services](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/cpd/admin/scaling-svcs.html){: external} 
+You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2.2.0.
 
 1. To update the replicas, create a yaml file that specifies the number of replicas for the target pods. For example, to increase the number of replicas of the `API gateway` pod, create the following yaml file:
    
@@ -217,11 +195,13 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
 
 To upgrade versions of {{site.data.keyword.discoveryfull}} that are earlier than 2.2.0, you must uninstall the current version and then install the newer version.
 
-For uninstall instructions, see:
+For more information about how to uninstall the service, see [Uninstalling {{site.data.keyword.discovery-data_short}}](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=discovery-uninstalling-watson){: external}
 
-  -  [Uninstalling {{site.data.keyword.discovery-data_short}}](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_latest/svc-discovery/discovery-uninstall.html){: external}
+{{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 only, so you do not need to uninstall version 2.2.0 and install version 2.2.1. For more information, see the following sections:
 
-{{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 only, so you do not need to uninstall version 2.2.0 and install version 2.2.1. For information about preparing your {{site.data.keyword.discovery-data_short}} clusters for the upgrade, upgrading your {{site.data.keyword.discovery-data_short}} instance, and verifying that the upgrade was successful, see [Preparing to upgrade your Watson Discovery clusters](/docs/discovery-data?topic=discovery-data-install#prepare-clusters), [Upgrading your Watson Discovery instance](/docs/discovery-data?topic=discovery-data-install#upgrade-instance), and [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade), respectively.
+- [Preparing to upgrade your Watson Discovery clusters](#prepare-clusters)
+- [Upgrading your Watson Discovery instance](#upgrade-instance)
+- [Verifying that your upgrade completed successfully](#verify-upgrade).
   
 For the procedures to back up and restore user data in {{site.data.keyword.discovery-data_short}}, see [Backing up and restoring data](/docs/discovery-data?topic=discovery-data-backup-restore).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-08"
 
 subcollection: discovery-data
 
@@ -42,16 +42,35 @@ To create a project, complete the following steps:
 1.  Open the *Projects* page by selecting **My Projects**.
 1.  Click **New project**. Name your project, and then choose a project type.
 
-    The following project types are available:
+    Choose the project type that best fits your needs. Otherwise, choose **None of the above** and a *Custom* project type is created for you.
 
-    - Document Retrieval
-    - Conversational Search
-    - Content Mining
-    - Custom
+    <table>
+    <caption>Project type use cases</caption>
+    <tr>
+      <th>Goal</th>
+      <th>Project type</th>
+    </tr>
+    <tr>
+      <td>Find meaningful information in sources that contain a mix of structured and unstructured data.</td>
+      <td><i>Document Retrieval</i></td>
+    </tr>
+    <tr>
+      <td>Quickly extract critical information from contracts.</td>
+      <td><i>Document Retrieval for Contracts</i></td>
+    </tr>
+    <tr>
+      <td>My virtual assistant must be able to quickly access technical information that is stored in various external data sources and document formats to answer customer questions</td>
+      <td><i>Conversational Search</i></td>
+    </tr>
+    <tr>
+      <td>Gain insights from pattern analysis or perform root cause analysis</td>
+      <td><i>Content Mining</i></td>
+    </tr>
+    </table>
 
-    For more information about each type, see [Project types](#project-type).
+    For more information about each type, see [Project types](#project-type). 
 
-1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** only: If you choose a Document Retrieval project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
+1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** only: If you choose a *Document Retrieval* project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
 
     If your data source contains contracts, enable the feature by selecting **Apply contracts enrichment**. Scroll to see the checkbox, if necessary.
 
