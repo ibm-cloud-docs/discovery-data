@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: known issues
 
@@ -295,17 +295,17 @@ Also, see the issues in all previous releases.
 - You might encounter the following error:
 
   - **Error**: `java.lang.OutOfMemoryError: Java heap space`
-  - **Cause**: When indexing a large set of documents that have a multiple enrichments applied to them, the worker node can run out of space.
+  - **Cause**: When indexing a large set of documents that have multiple enrichments applied to them, the worker node can run out of space.
   - **Solution**: Determine which pod is out of memory by completing the following steps:
 
-    - If the document status cannot be promoted to `processing`, check the status of the inlet, outlet, and converter pods by running the following command:
+    - If the document status cannot be promoted to `Processing`, check the status of the inlet, outlet, and converter pods by running the following command:
 
       ```
       $ oc get pod -l 'tenant=wd,run in (inlet,outlet,converter)'
       ```
       {: pre}
 
-      If any of the pods are not showing the `Running` status, restart the failing pod by using the following command:
+      If any of the pods are not showing a `Running` status, restart the failing pod by using the following command:
 
       ```
       oc delete pod <pod_name>
@@ -325,7 +325,7 @@ Also, see the issues in all previous releases.
 
       After the converter pod restarts successfully, click **Reprocess** from the Activity tab.
 
-    - If documents are stuck in `processing` status and cannot be promoted to the `available` status for a collection, complete the following steps:
+    - If documents are stuck in `Processing` status and cannot be promoted to the `Available` status for a collection, complete the following steps:
     
       Check the status of Hadoop by using the following command:
 
@@ -336,7 +336,7 @@ Also, see the issues in all previous releases.
 
       where `l` is a lowercase L for list.
 
-      If any of the pods are not showing the `Running` status, restart the failing pod by using the following command:
+      If any of the pods are not showing a `Running` status, restart the failing pod by using the following command:
 
       ```
       oc delete pod <pod_name>
@@ -429,7 +429,7 @@ Also, see the issues in all previous releases.
 
     Check the status of Elasticsearch 
     
-      On the client node, run the following command to check wheather an out of memory exception occurred:
+      On the client node, run the following command to check whether an out-of-memory exception occurred:
 
       ```
       oc logs -l tenant=wd,ibm-es-data=False,ibm-es-master=False 
@@ -499,7 +499,7 @@ Also, see the issues in all previous releases.
       ```
       {: pre}
 
-    - For both issues (document status cannot be promoted to `processing` and documents are stuck in `processing` status), if you are using Portworx storage, you can check whether the Elasticsearch disk is full by running the following command:
+    - For both issues, where document status cannot be promoted to `Processing` and where documents are stuck in `Processing` status, if you are using Portworx storage, you can check whether the Elasticsearch disk is full by running the following command:
 
       ```
       oc logs -l tenant=wd,run=elastic,ibm-es-master=True 
@@ -507,7 +507,7 @@ Also, see the issues in all previous releases.
       ```
       {: pre}
 
-      If the log shows a message such as `watermark exceeded on x-data-1`, it means the disk on the specified is full and you need to increase the disk size by using the following command:
+      If the log shows a message such as `watermark exceeded on x-data-1`, it means the disk on the node that is specified is full and you need to increase the disk size by using the following command:
 
       ```
       oc patch pvc $(oc get pvc -l tenant=wd,run=elastic,ibm-es-data=True,ibm-es-master=False 
@@ -516,7 +516,7 @@ Also, see the issues in all previous releases.
       ```
       {: pre}
 
-      where `N` denotes the data node number that you confirmed from the log.
+      where `N` denotes the data node number that was reported from the log.
 
       For example, if the log mentions `data-1` in the node name, then the command to use is:
 
