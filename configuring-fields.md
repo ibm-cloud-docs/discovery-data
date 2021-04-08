@@ -53,10 +53,9 @@ The Smart Document Understanding (SDU) tool works better with some project types
 
 - The tool is most beneficial when used with *Document Retrieval* projects. Use it to add custom fields to [the set of fields that are indexed by default](#sdu-default-fields).
 - *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. It basically does the work for you. Instead of making you annotate contract-related content in your documents, it uses a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
-- The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. 
-
-  - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Use the SDU tool to identify question-and-answer pairs. 
-  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Enable the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you.
+- The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. You can use the SDU tool to find and annotate them. 
+  
+  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use.
 - The SDU tool is not often used with *Content Mining* projects.
 
 The SDU tool can annotate the following file types only:
@@ -70,7 +69,7 @@ For a complete list of file types that {{site.data.keyword.discoveryshort}} supp
 
 The tool cannot read documents with the following characteristics; remove them from your collection before you begin:
 
-- Documents that appear to have text overlaying other text are considered “double overlaid” and cannot be annotated.
+- Documents that appear to have text that overlays other text are considered “double overlaid” and cannot be annotated.
 - Documents that contain multiple columns of text on a single page cannot be annotated.
 
 To access the Smart Document Understanding editor:
