@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: passages, query results
 
@@ -53,7 +53,7 @@ Preview the default query results.
 - For Content Mining projects, choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 - Even Custom project types show query results as passages by default.
 
-![IBM Cloud only](images/ibm-cloud.png): The following optional project configuration setting impacts how the query results are formatted:
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
 
 - If you enable FAQ extraction, each question-and-answer pair that is found in the original document is added to a new, separate document with the question in the `title` field and answer in the `text` field. By separating the pairs into independent documents, the right answer can be returned quickly when a phrase that is the same or similar to the associated question is submitted as the query.
 
