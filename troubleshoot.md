@@ -207,7 +207,7 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
     ```
     {: pre}
 
-1.  On the data node, run the following command to check wheather an out of memory exception occurred:
+1.  On the data node, run the following command to check whether an out-of-memory exception occurred:
 
     ```
     oc logs -l tenant=wd,ibm-es-data=True,ibm-es-master=False 
