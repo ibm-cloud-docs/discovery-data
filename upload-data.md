@@ -68,7 +68,7 @@ The following table shows the supported file types and information about feature
 
 | Supported file type | Use Smart Document Understanding to identify fields | Enable OCR to extract text from images |
 |---------------------|-----------------------------------------------------|----------------------------------------|
-| Contract (written in any supported file type) | A pretrained SDU model<br/>is applied automatically | Enabled by default |
+| Contract (written in any supported file type) | A pretrained SDU model is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) (Enabled by default) |
 | CSV | | |
 | DOC, DOCX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | GIF | | |

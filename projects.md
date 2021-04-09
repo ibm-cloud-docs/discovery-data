@@ -40,9 +40,7 @@ A project is a convenient way to collect and manage the resources in your {{site
 To create a project, complete the following steps:
 
 1.  Open the *Projects* page by selecting **My Projects**.
-1.  Click **New project**. Name your project, and then choose a project type.
-
-    Choose the project type that best fits your needs. Otherwise, choose **None of the above** and a *Custom* project type is created for you.
+1.  Click **New project**. Name your project, and then choose the project type that best fits your needs.
 
     <table>
     <caption>Project type use cases</caption>
@@ -68,7 +66,9 @@ To create a project, complete the following steps:
     </tr>
     </table>
 
-    For more information about each type, see [Project types](#project-type). 
+    For more information about each type, see [Project types](#project-type).
+
+    Otherwise, choose **None of the above** and a *Custom* project type is created for you.
 
 1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** only: If you choose a *Document Retrieval* project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
 

@@ -123,6 +123,7 @@ Discovery
     release-notes.md
     known-issues.md
     troubleshoot.md
+    get-help.md
     
     {: .topicgroup}
     Community resources
