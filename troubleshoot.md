@@ -27,7 +27,7 @@ content-type: troubleshoot
 # Troubleshooting
 {: #troubleshoot}
 
-Learn about ways to troubleshoot and address issues that you might encounter while using the product.
+Learn ways to troubleshoot and address issues that you might encounter while using the product.
 {: shortdesc}
 
 The information in this topic suggests steps you can take to investigate issues that might occur. For information about known issues and their workarounds per version, see [Known issues](/docs/discovery-data?topic=discovery-data-known-issues).
