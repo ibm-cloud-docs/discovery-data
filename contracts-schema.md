@@ -32,10 +32,10 @@ subcollection: discovery-data
 # Understanding the Contracts enrichment
 {: #contracts-schema}
 
-The `Contracts` enrichment is included with {{site.data.keyword.discoveryshort}} for Content Intelligence. For more information, see [Understanding {{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
+The `Contracts` enrichment is available with Document Retrieval for Contract project types.
 {: shortdesc}
 
-After a document is processed by the `Contracts` enrichments, the service provides JSON output in the following schema. For definitions of each element, see [Understanding contract parsing](/docs/discovery-data?topic=discovery-data-contract_parsing).
+After a document is processed by the `Contracts` enrichments, the service provides JSON output in the following schema. For definitions of each element, see [Understanding contract analysis](/docs/discovery-data?topic=discovery-data-contract_parsing).
 
 ```json
 {
@@ -255,7 +255,7 @@ The `contracts` schema is arranged as follows.
         - `party`: A string that identifies the party to whom the sentence applies.
       - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
     - `categories`: An array that lists the functional categories into which the element falls; in other words, the subject matter of the element.
-      - `label`: A string that lists the identified category. You can find a list of [categories](/docs/discovery-data?topic=discovery-data-contract_parsing#contract_categories) in [Understanding contract parsing](/docs/discovery-data?topic=discovery-data-contract_parsing).
+      - `label`: A string that lists the identified category. You can find a list of [categories](/docs/discovery-data?topic=discovery-data-contract_parsing#contract_categories) in [Understanding contract anaysis](/docs/discovery-data?topic=discovery-data-contract_parsing).
       - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
     - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
       - `type`: The type of attribute. Possible values are `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person` as described at [Attributes](/docs/discovery-data?topic=discovery-data-contract_parsing#attributes).
