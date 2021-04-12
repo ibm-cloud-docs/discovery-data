@@ -61,13 +61,9 @@ Discovery
 
     test.md
     deploy.md
+    contract_parsing.md
     contentminerapp.md
-
-    {: topicgroup}
-    Discovery for Content Intelligence
-        output_schema.md
-        contract_parsing.md
-
+    
     {: topicgroup}
     Advanced development
         develop.md

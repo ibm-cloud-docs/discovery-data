@@ -29,10 +29,10 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Understanding contract parsing
+# Understanding contract analysis
 {: #contract_parsing}
 
-The `Contracts` enrichment is included with {{site.data.keyword.discoveryshort}} for Content Intelligence. For more information, see [Understanding {{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
+The `Contracts` enrichment is available with the Document Retrieval for Contracts project type.
 {: shortdesc}
 
 When you analyze a document with the `Contracts` enrichment, the service returns the contract with an analysis of each identified element. The following sections describe how the returned JSON provides the analysis. For more information about the JSON output, see [Understanding the Contracts enrichment](/docs/discovery-data?topic=discovery-data-contracts-schema).

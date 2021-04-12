@@ -29,7 +29,7 @@ content-type: faq
 # FAQ
 {: #faqs}
 
-Find answers to frequently-asked questions.
+Find answers to frequently asked questions.
 {: shortdesc}
 
 ## What's a...

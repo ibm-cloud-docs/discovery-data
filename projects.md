@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-12"
 
 subcollection: discovery-data
 
@@ -102,6 +102,7 @@ Choose a project type to get the right set of enrichments applied to your docume
 The following project types are available:
 
 - [Document Retrieval](#doc-retrieval)
+- [Document Retrieval for Contracts](#doc-retrieval-contracts)
 - [Conversational Search](#conversational)
 - [Content Mining](#mining)
 - [Custom](#custom)
@@ -123,13 +124,10 @@ This tagged information is used later when a natural language phrase is submitte
 A sample Document Retrieval project is available for you to explore. For more information, see [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip}
 
-#### Adding contract understanding
+### Document Retrieval for Contracts
 {: #doc-retrieval-contracts}
 
-If you are working with English-language legal documents, contracts in particular, enable the Content Intelligence feature to apply a contracts enrichment that can recognize and tag contract-related concepts in your data.
-
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Create a Document Retrieval project, and then select **Apply contracts enrichment**.
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Enable the Content Intelligence feature when you install the {{site.data.keyword.discoveryshort}} service
+If you are working with English-language legal contracts, enable the Content Intelligence feature to apply a contracts enrichment that can recognize and tag contract-related concepts in your data. Use this project type to automate complex business processes, such as contract review and negotiation. This project type can help to increase productivity, minimize costs, and reduce your legal exposure.
 
 In addition to the enrichments that are applied to a typical document retrieval project, the following enrichments are made automatically:
 
@@ -138,10 +136,16 @@ In addition to the enrichments that are applied to a typical document retrieval 
 
 For any collection that you add to the project, optical character recognition (OCR) is enabled automatically so that text from scanned documents or other images is processed.
 
-When you apply the contracts enrichment, you cannot use Smart Document Understanding to annotate documents.
+When you apply the contracts enrichment, you cannot use Smart Document Understanding to annotate documents. A pretrained SDU model that can recognize contract-related information is applied automatically. The Table understanding enrichment is automatically applied.
 {: note}
 
-For more information about this type of project, see [{{site.data.keyword.discoveryshort}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Create a Document Retrieval project, and then select **Apply contracts enrichment**.
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Enable the Content Intelligence feature when you install the {{site.data.keyword.discoveryshort}} service
+
+For more information, see the following topics:
+
+- [Understaning the Contract enrichment](/docs/discovery-data?topic=discovery-data-contracts-schema) 
+- [Understanding contract analysis](/docs/discovery-data?topic=discovery-data-contract_parsing)
 
 ### Conversational Search
 {: #conversational}
