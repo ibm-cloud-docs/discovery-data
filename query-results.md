@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-12"
 
 keywords: passages, query results
 
@@ -62,9 +62,9 @@ Preview the default query results.
 
 Use the tools built in to {{site.data.keyword.discoveryshort}} to make the following types of improvements:
 
-- Prepare your documents a bit more before you enrich them. Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify additional sections of your document that contain valuable information. You can also split large documents into more easily consumable chunks.
-- Use Watson NLP to find and tag terms that are generally understood to have special meaning. For more information, see [Enrich your data with Watson NLP](/docs/discovery-data?topic=discovery-data-nlp).
-- Teach {{site.data.keyword.discoveryshort}} about terms and patterns that have special meaning to your use case. For more information, see [EAdding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
+- Prepare your documents a bit more before you enrich them. Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify additional sections of your document that contain valuable information. You can also split large documents into more easily consumable chunks. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+- Use Watson Natural Language Understanding to find and tag terms that are generally understood to have special meaning. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
+- Teach {{site.data.keyword.discoveryshort}} about terms and patterns that have special meaning to your use case. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 - For a Content Mining project, you might want to add facets based on enrichments other than the Parts of Speech enrichment that is applied by default. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
 
 If the right type of information is being identified and tagged in your documents already, learn steps that you can take to tweak query results that are returned to improve their relevancy. For more information, see [Search settings](/docs/discovery-data?topic=discovery-data-search-settings).
