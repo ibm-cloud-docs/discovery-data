@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-12"
 
 subcollection: discovery-data
 
@@ -31,8 +31,7 @@ Get help to solve issues that you encounter while using the product.
 
 Use these resources to get answers to your questions:
 
-<!-- For answers to frequently asked questions, see the [FAQ](/docs/discovery-data?topic=discovery-data-faqs).
--->
+- For answers to frequently-asked questions, see the [FAQ](/docs/discovery-data?topic=discovery-data-faqs).
 - Find answers to common questions or ask questions where experts and other community members can answer by visiting the [Watson Discovery Community forum](https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f){: external}.
 
 If your service plan covers it, you can get help by opening a case from IBM Support. 

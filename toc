@@ -120,6 +120,7 @@ Discovery
     {: .navgroup-end}
 
     {: .navgroup id="help"}
+    faqs.md
     release-notes.md
     known-issues.md
     troubleshoot.md

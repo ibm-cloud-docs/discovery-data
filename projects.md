@@ -49,7 +49,7 @@ To create a project, complete the following steps:
       <th>Project type</th>
     </tr>
     <tr>
-      <td>Find meaningful information in sources that contain a mix of structured and unstructured data.</td>
+      <td>Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a standalone enterprise search application or in the search field of a business application.</td>
       <td><i>Document Retrieval</i></td>
     </tr>
     <tr>
@@ -57,11 +57,11 @@ To create a project, complete the following steps:
       <td><i>Document Retrieval for Contracts</i></td>
     </tr>
     <tr>
-      <td>My virtual assistant must be able to quickly access technical information that is stored in various external data sources and document formats to answer customer questions</td>
+      <td>My virtual assistant must be able to quickly access technical information that is stored in various external data sources and document formats to answer customer questions.</td>
       <td><i>Conversational Search</i></td>
     </tr>
     <tr>
-      <td>Gain insights from pattern analysis or perform root cause analysis</td>
+      <td>Gain insights from pattern analysis or perform root cause analysis.</td>
       <td><i>Content Mining</i></td>
     </tr>
     </table>
