@@ -469,7 +469,7 @@ Use this option to crawl documents from IBM Db2, Microsoft SQL Server, Postgresq
 
 - IBM Db2: 10.5, 11.1, 11.5
 - Microsoft SQL Server: 2012, 2014, 2016, 2017
-- Oracle Databasse: 12c, 18c, 19c
+- Oracle Database: 12c, 18c, 19c
 - Postgres: 9.6, 10, 11
 
 Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
