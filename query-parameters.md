@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -244,7 +244,7 @@ The JSON that is returned will be of the following format:
 ## suggested_refinements
 {: #suggested_refinements}
 
-The `suggested_refinements` parameter enables dynamic facets for a natural language query. Dynamic facets use unsupervised machine learning models to automatically select terms that are semantically similar to the terms in the query and terms in the resulting documents. For example, you can select dynamic facets to enhance an existing query by filtering on a unique term to improve your results. Dynamic facets are trained as documents are added to a collection. It might take several minutes until dynamic facets appear, after you add documents to a collection. To enable dynamic facets, you must first enable the **Parts of Speech** enrichment in your collection. For more information about the **Parts of Speech** enrichment, see [Parts of speech](/docs/discovery-data?topic=discovery-data-create-enrichments#pos).
+The `suggested_refinements` parameter enables dynamic facets for a natural language query. Dynamic facets use unsupervised machine learning models to automatically select terms that are semantically similar to the terms in the query and terms in the resulting documents. For example, you can select dynamic facets to enhance an existing query by filtering on a unique term to improve your results. Dynamic facets are trained as documents are added to a collection. It might take several minutes until dynamic facets appear, after you add documents to a collection. To enable dynamic facets, you must first enable the **Parts of Speech** enrichment in your collection. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu#pos).
 
 The JSON that is returned is of the following format:
 
@@ -303,7 +303,7 @@ A boolean that specifies whether the service returns a set of the most relevant 
 
 Since sentence boundary adjustments expand passage size, you will see a substantial increase in average passage length. If your application has limited screen space, you may want to set a smaller value for `passages.characters` and/or truncate the passages that are returned by {{site.data.keyword.discoveryshort}}. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
-Passages are returned `per_document` by default. This means they will appear as a section within each document result ordered by passage relevance. Including passage retrieval in queries can increase response times as it includes additional scoring of the passages. Search results display in a preview of your document for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. 
+Passages are returned `per_document` by default. This means they will appear as a section within each document result ordered by passage relevance. Including passage retrieval in queries can increase response times as it includes additional scoring of the passages. Search results display in a preview of your document for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-upload-data#supportedfiletypes) for the list of image files. 
 
 You can adjust the fields in the documents over which passage retrieval searches with the [`passages.fields`](/docs/discovery-data?topic=discovery-data-query-parameters#passages_fields) parameter.
 

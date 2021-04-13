@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -66,7 +66,7 @@ subcollection: discovery-data
 
 \* **Optical character recognition (OCR)** is not available for Bosnian, Croatian, Hindi, and Serbian. Serbian supports Latin script only.
 
-You can select the collection language when you create your collection. See [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 
+You can select the collection language when you create your collection. See [Creating collections](/docs/discovery-data?topic=discovery-data-collections). 
 {: tip}
 
  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: For version 2.1.2 non-English language support, you must install the optional language pack `ibm-watson-discovery-pack1-prod`. Installation instructions for `ibm-watson-discovery-pack1-prod` are available in the [Installing the optional language pack](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/watson/discovery-install.html){: external} section of the {{site.data.keyword.discovery-data_long}} installation instructions. The language pack does not need to be installed separately in {{site.data.keyword.discovery-data_long}} version 2.1.3 or later.
@@ -77,5 +77,5 @@ You can select the collection language when you create your collection. See [Cre
 
 The following features are currently supported in English only:
 
--  [Discovery for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
--  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: [Patterns enrichment (beta)](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment)
+-  [Document Retrieval for Contract project type](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts)
+-  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: [Patterns (beta)](/docs/discovery-data?topic=discovery-data-domain#patterns)

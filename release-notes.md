@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-13"
 
 keywords: release notes
 
@@ -72,7 +72,7 @@ See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for t
 
 New feature in this release:
 
-- You can use the Web crawl collection type to connect to content that is stored on an internal company website. For more information, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources##connectwebcrawlpublic).
+- You can use the Web crawl collection type to connect to content that is stored on an internal company website. For more information, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 4 March 2021
 {: #4mar2021}
@@ -93,13 +93,17 @@ Changes made in this release:
 - You can now download the custom connector SDK package from your {{site.data.keyword.discovery-data_short}} cluster, instead of retrieving the images and the SDK package from the Docker registry. For more information, see [Downloading the custom-crawler-docs.zip file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
 - `Invoices` and `Purchase orders` models can no longer be enabled in the tooling. If you need these models, please contact [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to obtain instructions for enabling these models.
 - In a `Document Retrieval` project that has the `Contracts` enrichment applied, tables are not included inside the `contracts` field, as they were previously in projects that had the `Contracts` enrichment enabled. Tables will continue to be included in a separate `tables` field when the `Table Understanding` enrichment is applied.
+- Support for connecting to the following database data source versions was removed because version support was ended by the vendors:
+
+  - Oracle Database 11g: Vendor support ended on 31 December 2020
+  - Postgres 9.5: Vendor support ended on 11 February 2021
 
 ### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 17 December 2020
 {: #17dec2020}
 
 New features in this release:
 
-- Each collection now displays the **Next sync scheduled for** date and time on the **Activity** tab of the **Manage collections** page. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections#manage-collections-public).
+- Each collection now displays the **Next sync scheduled for** date and time on the **Activity** tab of the **Manage collections** page.
 - Released the beta feature FAQ extraction. FAQ extraction automatically extracts question-and-answer pairs from FAQ (frequently asked questions) documents and web pages so that your application returns more precise answers. For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction). For a statement explaining beta features, see [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features).
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2.0 release, 8 December 2020
@@ -123,7 +127,7 @@ Changes made in this release:
 
 New feature in this release:
 
-- **Content Intelligence** added - You can now apply the **Contracts** enrichment to a **Document Retrieval** project when you create it. The Contracts enrichment can be used to classify contract terms, parties, effective dates and more within your documents. For more information, [Understanding {{site.data.keyword.discovery-data_short}} for Content Intelligence](/docs/discovery-data?topic=discovery-data-output_schema).
+- **Content Intelligence** added - You can now apply the **Contracts** enrichment to a **Document Retrieval** project when you create it. The Contracts enrichment can be used to classify contract terms, parties, effective dates and more within your documents. For more information, see [Document Retrieval for Contracts](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium release, 10 November 2020
 {: #10nov2020}
@@ -140,7 +144,7 @@ New features in this release:
 New features in this release:
 
 -  Added basic support for Bosnian, Croatian, Hindi, and Serbian. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
--  Released the beta feature Patterns enrichment, which uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. You can use pattern induction as an enrichment or to create a facet. For more information see [Patterns enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#patterns-enrichment) and [Creating a facet by identifying a pattern](/docs/discovery-data?topic=discovery-data-facets#facetpattern). For a statement explaining beta features, see [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features).
+-  Released the beta feature Patterns enrichment, which uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. You can use pattern induction as an enrichment or to create a facet. For more information, see [Patterns](/docs/discovery-data?topic=discovery-data-domain#patterns) and [Creating a facet by identifying a pattern](/docs/discovery-data?topic=discovery-data-facets#facetpattern). For a statement explaining beta features, see [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features).
 
 Changes made in this release:
 
@@ -167,7 +171,7 @@ Changes made in this release:
      -   Added the **Enable proxy settings** option to the [Box](/docs/discovery-data?topic=discovery-data-collection-types#connectbox), [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-collection-types#connectsp), and [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-collection-types#connectsp_op) connectors.
      -   Added support for multiple tables and the Row filter option to the [Database connector](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect).
      -   Added three new authentication types to the [Web crawler](/docs/discovery-data?topic=discovery-data-collection-types#connectwebcrawl): Basic authentication, NTLM authentication, and FORM authentication.
--   You can now monitor the usage of the Analyze API using the tooling. For more information, see [API usage](/docs/discovery-data?topic=discovery-data-projects#api-usage).
+-   You can now monitor the usage of the Analyze API using the tooling. For more information, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
 
 
 ### ![IBM Cloud only](images/ibm-cloud.png) IBM Cloud Premium General Availability (GA) release, 16 July 2020
@@ -185,8 +189,8 @@ New features in this release:
   -  Reusable Components: You no longer have to build a {{site.data.keyword.discoveryshort}} application from scratch. We now ship out of the box with reusable, open source, React components. As you configure your Discovery application, you are actually using the real components themselves. From there it is as simple as deploying to get a custom Discovery application. See [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
   -  Domain Vocabulary: You can build a facet for your users without a Dictionary. You can use Domain Vocabulary to build a powerful facet with our understanding of how the data is used in as little as 5 minutes.  See [Facets](/docs/discovery-data?topic=discovery-data-facets).
   -  Relevancy Training: You can train at a project level. {{site.data.keyword.discoveryshort}} ranks the best answer regardless of the data source/collection. See [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
-  -  Spelling correction: {{site.data.keyword.discoveryshort}} has spelling suggestions built-in. See [Parameters descriptions](/docs/discovery-data?topic=discovery-data-query-reference#parameter-descriptions) and [Improvement tools](/docs/discovery-data?topic=discovery-data-improve#improvement-tools).
-  -  Autocomplete: {{site.data.keyword.discoveryshort}} includes autocomplete (type-ahead) for searches, as well as a reusable component for providing this feature to your end users. See [Improvement tools](/docs/discovery-data?topic=discovery-data-improve#improvement-tools).
+  -  Spelling correction: {{site.data.keyword.discoveryshort}} has spelling suggestions built-in. See [Parameters descriptions](/docs/discovery-data?topic=discovery-data-query-reference#parameter-descriptions).
+  -  Autocomplete: {{site.data.keyword.discoveryshort}} includes autocomplete (type-ahead) for searches, as well as a reusable component for providing this feature to your end users.
   -  Language support: {{site.data.keyword.discoveryshort}} supports 12 additional languages. For the complete list, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
 Features not available in this release:
@@ -227,11 +231,14 @@ Changes made in this release:
 
   -  **IBM FileNet connector** added - Crawl IBM FileNet systems. For more information, see [FileNet connector](/docs/services/discovery-data?topic=discovery-data-collection-types#filenet-connect). 
   -  Added basic support for Swedish, Norwegian (Bokma&#778;l and Nynorsk), and Danish. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-  - The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) is now GA.
+  - The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-domain#advanced-rules) is now GA.
   - Several **enhancements to the tooling**; including improvements to the navigation, messages, and status updates.
-  - You can now view your search results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document — making the context clearer.
+  - You can now view your search results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-upload-data#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document — making the context clearer.
   -  The [Web Crawl connector](/docs/services/discovery-data?topic=discovery-data-collection-types#connectwebcrawl) has proxy support. 
   -  Running a query with an empty `aggregations` parameter returns zero aggregations in the response.
+  - Support for connecting to the following database data source version was removed because version support was ended by the vendor:
+
+    - Postgres 9.4: Vendor support ended on 13 February 2020
   
 Issues resolved in the {{site.data.keyword.discovery-data_short}} 2.1.2 release:
 
@@ -271,11 +278,11 @@ Changes made in this release:
   -  **Connector SDK** - Build custom connectors your Discovery users can use to build their own applications. For more information, see [Building and implementing a custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
   -  **Sample Project** - The sample project is preloaded with data so you can learn about Discovery. For more information, see [Getting started with Watson Discovery for {{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-getting-started).
   -  **Passage retrieval** - Will return the most relevant passages from your documents, plus you can specify the number of passages returned per document. See [passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
-  -  **Project level querying and relevancy training** - Query multiple collections at once including relevance training. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve)
+  -  **Project level querying and relevancy training** - Query multiple collections at once including relevance training.
   -  Improvements and additional options to the **Web crawl connector** - For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-collection-types#connectwebcrawl).
   -  **Local File System connector** added - Crawl Linux or other file systems. For more information, see [Local file system](/docs/discovery-data?topic=discovery-data-collection-types#localfilesystemconnect)
   -  **Dynamic Facets** - Automatically generate facets based on the understanding of your data. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
-  -  **Dictionary suggestions** - Dictionary terms will be suggested to you based on your content. For more information, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
+  -  **Dictionary suggestions** - Dictionary terms will be suggested to you based on your content. For more information, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary).
   -  **Curations** (beta) - Specify a particular result for a given query. For more information, see the [API reference](https://{DomainName}/apidocs/discovery/discovery-data#createcuration){: external}.
 
 
@@ -291,7 +298,7 @@ Changes made in this release:
   -  Added the Windows File System and Database connectors.  For more information, see [Database connector](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collection-types#windowsfilesystemconnect).
   -  Added support for Traditional Chinese. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
   -  Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
-  -  Released the Classifier enrichment. For more information, see [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
+  -  Released the Classifier enrichment. For more information, see [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier).
   -  Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift.
 
 Issues resolved in {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019:

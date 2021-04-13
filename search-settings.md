@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-08-05"
+  years: 2019, 2021
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -35,14 +35,14 @@ subcollection: discovery-data
 
 <!-- c/s help for *Search settings* page. Do not delete. -->
 
-You can improve the quality of search results by uploading a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve).
+You can improve the quality of search results by uploading a **Synonyms** file (to enable query expansions) as well as a **Stopwords** file.
 {: shortdesc}
  
 Upload or delete a synonyms or stopwords file by clicking the appropriate **Upload** button or **Delete** icon.
 
 If you update your synonyms or stopwords files, you should go to the **Activity** page and click the **Recrawl collection** or **Reprocess collection** button so that your documents are indexed with the updated lists. The button displayed will vary depending on the type of collection.
 
-Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](/docs/discovery-data?topic=discovery-data-search-settings#stopwords) in your stopwords file is also included within your synonyms ([query expansion](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discoveryshort}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
+Stopwords and synonyms files cannot contain overlapping terms. If a [stopword](#stopwords) in your stopwords file is also included within your synonyms ([query expansion](#query-expansion)) file, the query expansion will not work. For example, if `on` is included in your stopwords file, and you specify in your synonyms file that `rotfl` should expand to `rolling on the floor laughing`, that expansion will not return the expected results. A stopwords file is enabled by default in each collection (file name: `custom_stopwords_[language].json`) in {{site.data.keyword.discoveryshort}}, so you should compare the words in that file to your synonyms (query expansion) file and adjust accordingly. 
 {: important}
 
 ## Implementing synonyms

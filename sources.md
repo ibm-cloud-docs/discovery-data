@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -71,7 +71,7 @@ The FAQ extraction feature is beta functionality and should not be used in produ
 
 When configuring any data source for any project type, you have the option to **Apply FAQ extraction**. This beta feature will detect FAQ(frequently asked questions) documents in your collection and automatically extract pairs of questions and answers. Your application can use the extracted pairs to provide more precise query results. To turn on FAQ extraction for your data source, go to the **Syncing FAQ Content?** section and select the **Apply FAQ extraction** checkbox.
 
-Each question/answer pair in an FAQ document will be split into a separate document. A document with 100 question/answer pairs will be split into 100 documents. If no question/answer pairs are detected in a document, the document is processed normally. There is a limit of 10,000 Q/A pairs for each document. After the limit is reached, the remaining pairs will be stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections#manage-collections-public). 
+Each question/answer pair in an FAQ document will be split into a separate document. A document with 100 question/answer pairs will be split into 100 documents. If no question/answer pairs are detected in a document, the document is processed normally. There is a limit of 10,000 Q/A pairs for each document. After the limit is reached, the remaining pairs will be stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page.
 
 You can turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. Reprocess the collection by clicking the **Apply changes and reprocess** button.
 

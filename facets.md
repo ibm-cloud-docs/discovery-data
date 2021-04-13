@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -82,7 +82,7 @@ If you want to add a facet that includes terms that do not exist as fields, you 
 
 1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
 1. Click **New facet** > **By creating a dictionary**.
-1. Enter a name for the facet, and then create a dictionary as described in the dictionary enrichments section of [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
+1. Enter a name for the facet, and then create a dictionary. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#dictionary).
 
     After you save the dictionary, the name that you used for the facet label is shown in the list of facets.
 

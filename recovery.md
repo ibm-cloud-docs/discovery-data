@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -134,12 +134,12 @@ If you use Smart Document Understanding (SDU), you have models associated with y
 ### Regular expressions enrichments
 {: #backupregexpenrich}
 
-Back up your regular expressions as a .csv file, and store them locally. Note the regular expressions that you specified to create your enrichments so that you can recreate the enrichments from them. For more information about regular expressions enrichments, see [Regular expressions enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment).
+Back up your regular expressions as a .csv file, and store them locally. Note the regular expressions that you specified to create your enrichments so that you can recreate the enrichments from them. For more information, see [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex).
 
 ### Machine learning enrichments
 {: #mlenrich}
 
-Back up your machine learning model .zip or .pear files, and store them locally. For more information, see [Machine learning enrichments and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-create-enrichments#machinelearning-enrichment).
+Back up your machine learning model .zip or .pear files, and store them locally. For more information, see [Machine learning enrichments and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain#machinelearning).
 
 ### Pattern enrichments
 {: #patternenrich}
@@ -151,12 +151,12 @@ Back up your machine learning model .zip or .pear files, and store them locally.
 ### Advanced rule models enrichment
 {: #advrmenrich}
 
-Back up your model files as .zip files, and store them locally. For more information, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
+Back up your model files as .zip files, and store them locally. For more information, see [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain#advanced-rules).
 
 ### Classifier enrichments
 {: #classifierenrich}
 
-Back up your classifier .csv files, and store them locally. For more information, see [Classifier enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment).
+Back up your classifier .csv files, and store them locally. For more information, see [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier).
 
 ## Restoring your data to a new Watson Discovery instance
 {: #restoredata}
@@ -210,7 +210,7 @@ When importing an SDU existing model into a new collection, it is a good best pr
 After you upload dictionary .csv files for recovery, you cannot use the dictionary editor to further edit the terms. If you want to use the dictionary editor, create a dictionary, and manually add the dictionary terms.
 {: note}
 
-For information about uploading a dictionary enrichment .csv file, see [Dictionary enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments#dictionary-enrichment).
+For information about uploading a dictionary enrichment .csv file, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary).
 
 ### Restoring pattern enrichments
 {: #restorepatternenrich}
@@ -225,4 +225,4 @@ You can restore pattern enrichment .zip files as advanced rules models .zip file
 After you upload pattern model .zip files for recovery, you cannot use the pattern editor to further edit the .zip files.
 {: note}
 
-For more information about uploading an advanced rules models .zip file, see [Advanced rule models enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules).
+For more information about uploading an advanced rules models .zip file, see [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain#advanced-rules).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -469,12 +469,11 @@ Use this option to crawl documents from IBM Db2, Microsoft SQL Server, Postgresq
 
 - IBM Db2: 10.5, 11.1, 11.5
 - Microsoft SQL Server: 2012, 2014, 2016, 2017
-- Oracle Database: 11g, 12c, 18c, 19c
-- Postgres: 9.4, 9.5, 9.6, 10, 11
+- Oracle Databasse: 12c, 18c, 19c
+- Postgres: 9.6, 10, 11
 
 Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
 {: shortdesc}
-
 
 #### Copying Database JAR files
 {: #copydatabasefiles}
@@ -1241,7 +1240,7 @@ When you are ready to configure a collection to use a crawler plug-in, you can s
   -  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
 
  
-For more information see [Collection usage and sharing](/docs/discovery-data?topic=discovery-data-projects#collection-usage).
+For more information see [Managing data collections](/docs/discovery-data?topic=discovery-data-manage-collections).
 
 
 ## Collection activity

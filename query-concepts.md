@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-05-13"
+  years: 2019, 2021
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 {{site.data.keyword.discoveryfull}} offers powerful content search capabilities through queries. After your content is uploaded and customized by {{site.data.keyword.discoveryshort}}, you can build queries, integrate {{site.data.keyword.discoveryshort}} into your own projects, or create a custom applications. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
 {: shortdesc}
 
-In the {{site.data.keyword.discoveryshort}} tooling, you can write and test [natural language queries](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) on the [Improve and customize](/docs/discovery-data?topic=discovery-data-improve) page.
+In the {{site.data.keyword.discoveryshort}} tooling, you can write and test [natural language queries](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) on the *Improve and customize* page.
 {: tip}
 
 When querying using the API, the entire {{site.data.keyword.discoveryshort}} Query Language is supported. For more information, see the {{site.data.keyword.discoveryshort}} [API](https://{DomainName}/apidocs/discovery-data#query){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -61,7 +61,7 @@ To add an NLU enrichment, complete the following steps:
 
     You can apply the enrichments to fields with a String data type, such as the `text` and `html` fields, or other fields that you add which contain text.
 
-### Entities
+## Entities
 {: #entities}
 
 Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system that is defined by the {{site.data.keyword.nlushort}} service.
@@ -118,7 +118,7 @@ In the JSON output:
  {: codeblock}
 
 
-### Keywords
+## Keywords
 {: #keywords}
 
 Returns important keywords in the content.
@@ -176,12 +176,12 @@ In the JSON output:
 ```
 {: codeblock}
 
-### Parts of speech
+## Parts of speech
 {: #pos}
 
 Recognizes and tags parts of speech, including nouns, verbs, adjectives, adverbs, conjunctions, interjections, and numerals.
 
-### Sentiment
+## Sentiment
 {: #sentiment}
 
 Analyzes the overall sentiment of the document and returns `positive`, `neutral`, or `negative` sentiment.
