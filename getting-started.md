@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -94,20 +94,20 @@ Now that we've opened the Sample Project and learned more about **Document Retri
 
 1.  Select the **Manage collections** icon on the navigation panel. Choose the **Sample Collection**. Several tabs display but we'll concentrate on a few.
 
-    - The **Activity** tab displays collection details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**). For more information, see [Collection activity](/docs/discovery-data?topic=discovery-data-collection-types#collection-overview).
+    - The **Activity** tab displays collection details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**).
     - The **Identify fields** tab is where you can annotate your document using [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). You can use the **Field labels** that are available or create your own.
     - The **Manage fields** tab gives you the option to choose the fields you want to index, turn on document splitting, and set date formats. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings).
-    - The **Enrichments** tab displays the available enrichments (you can create more). By default, the enrichments already applied to this collection include **Entities** and **Parts of speech**. Click on **Fields to enrich** and you will notice that these enrichments are applied to the `text` field. To learn more about these enrichments, see [Extracting meaning](/docs/discovery-data?topic=discovery-data-create-enrichments#extract-meaning). You can also create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**. See [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).   
+    - The **Enrichments** tab displays the available enrichments (you can create more). By default, the enrichments already applied to this collection include **Entities** and **Parts of speech**. Click on **Fields to enrich** and you will notice that these enrichments are applied to the `text` field. To learn more about these enrichments, see [Apply prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu). You can also create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**. See [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).   
 1.  Select the **Integrate and Deploy** icon on the navigation panel. From here, you can share your project with colleagues and deploy. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
 
     - The **Share preview** link tab makes it easy to share your project with others. Follow the instructions to add a user, then send those login credentials and the provided link to your colleague.
     - The **Explore UI components** tab includes several componets: **Search bar**, **Search results**, **Facets**, and **Document preview**. The code for the {{site.data.keyword.discoveryshort}} components can be found on [GitHub](https://github.com/watson-developer-cloud/discovery-components){: external}. You can learn more about the components and preview them in [Storybook](https://watson-developer-cloud.github.io/discovery-components){: external}.
-1.  Select the **Improve and customize** icon on the navigation panel. The **Improve and Customize** page is where you can to try out queries, then add and test customizations to improve the query results for your project. For more information, see [Customizing and improving your project](/docs/discovery-data?topic=discovery-data-improve).
+1.  Select the **Improve and customize** icon on the navigation panel. The **Improve and Customize** page is where you can to try out queries, then add and test customizations to improve the query results for your project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
 
     - There are several example queries in the **Try an example to get started** section. For `Watson`, click the **Run search** button.
     - Two of the default **Improvement tools** for this project (Facets (by Entity) and Dynamic Facets) have identified facets (IBM, Watson, Kubernetes) you can filter on. Select a few and try them out. 
     - Query results display in the center pane. Another **Improvement tool**, passages, makes it possible to see the passages identified in the documents returned. Click **View passages in document** for the document preview. For more information about how passages are identified in natural language queries, see [Passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
-    -  On the **Improvement tools** panel, select the dropdowns to see what is available to further customize your project. There are five categories of tools: **Customize display**, **Search results**, **Teach domain concepts**, **Define structure**, and **Improve relevance**. For the full list of tools, see [Improvement tools](/docs/discovery-data?topic=discovery-data-improve#improvement-tools).
+    -  On the **Improvement tools** panel, select the dropdowns to see what is available to further customize your project. There are five categories of tools: **Customize display**, **Search results**, **Teach domain concepts**, **Define structure**, and **Improve relevance**.
     
 That's the tour, stay on the **Improve and Customize** page for the next step.
     

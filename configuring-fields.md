@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-13"
 
 subcollection: discovery-data
 
@@ -65,7 +65,7 @@ The SDU tool can annotate the following file types only:
 - Microsoft Word
 - PDF
 
-For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-upload-data#supportedfiletypes).
 
 The tool cannot read documents with the following characteristics; remove them from your collection before you begin:
 
@@ -183,7 +183,7 @@ If you plan to develop a model and import it into a new collection, it is a soun
 
 You can enrich fields (including custom fields identified with Smart Document Understanding) in your collection with cognitive metadata.
 
-There are a number of enrichments available in {{site.data.keyword.discoveryshort}}. You must create some of the enrichments before you can apply them. For more information, see [Creating enrichments](/docs/discovery-data?topic=discovery-data-create-enrichments).
+There are a number of enrichments available in {{site.data.keyword.discoveryshort}}. You must create some of the enrichments before you can apply them. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 
 To access the **Enrichments** page, select the **Manage collections** icon on the navigation pane and open a collection. Click the **Enrichments** tab. For more information on collections, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
 

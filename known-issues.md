@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-13"
 
 keywords: known issues
 
@@ -292,9 +292,9 @@ Also see the issues identified in all previous releases.
 
 - When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To workaround this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
 - The [Guided Tours](/docs/discovery-data?topic=discovery-data-tours) do not run on Firefox. For the list of other supported browsers, see [Browser support](/docs/discovery-data?topic=discovery-data-about#about-browser).
-- Ingesting documents into a collection that uses a custom [Advanced Rules model enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
+- Ingesting documents into a collection that uses a custom [Advanced Rules model](/docs/discovery-data?topic=discovery-data-domain#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
 - If you delete a large number of documents, then immediately ingest a large number of documents, it may take longer for all the documents to become available.
-- The [Classifier enrichment](/docs/discovery-data?topic=discovery-data-create-enrichments#classifier-enrichment) does not work when FIPS (Federal Information Processing Standards) is enabled.
+- The [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier) enrichment doesn't work when FIPS (Federal Information Processing Standards) is enabled.
 - [Update: fixed in version 2.2] A conversion error may occur when the **Include in index** field on the **Manage fields** tab in the tooling is changed. The document will not be indexed if this error occurs. To work around the issue:
   1. `oc edit sts core-discovery-converter`
   1. Edit between `containers` and `- name: INGESTION_POD_NAME` as follows:
@@ -374,7 +374,7 @@ Also see the issues identified in all previous releases.
   -  Smart Document Understanding does not support `.doc`, `.docx`, `.odf`, `.xls`, `.xlsx`, `.ods`, `.ppt`, `.pptx`, and `.odp` conversion when FIPS (Federal Information Processing Standards) is enabled.
   -  In a Content Mining application, any document flags set will disappear if the index is rebuilt for that collection.
   -  Beginning with the 2.1.2 release, uploading and managing relevancy training data using the v1 APIs will not train a relevancy training model. The v1 APIs have been superseded by the [Projects relevancy training v2 APIs](https://{DomainName}/apidocs/discovery/discovery-data#createtrainingquery){: external}. If your training data needs to be preserved, it can be listed using the v1 API, then added to a project with the v2 API.
-  -  Multiple [Regular expressions enrichments](/docs/services/discovery-data?topic=discovery-data-create-enrichments#characterpattern-enrichment) cannot be applied to a collection at the same time.
+  -  Multiple [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex) cannot be applied to a collection at the same time.
   -  ![Cloud Pak for Data only](images/desktop.png) There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
      -  A change to the description of the `--cluster-pull-prefix PREFIX` argument.
      -  The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
