@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-14"
 
 keywords: passages, query results
 
@@ -48,7 +48,7 @@ Preview the default query results.
 
   You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-- For Document Retrieval with Content Intelligence projects, contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
+- For Document Retrieval for Contracts projects, contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
 - For Conversational Search projects, a single search field is displayed that mimics the user interface of an assistant.
 - For Content Mining projects, choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 - Even Custom project types show query results as passages by default.
