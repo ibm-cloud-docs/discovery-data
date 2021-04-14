@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 subcollection: discovery-data
 
@@ -47,8 +47,8 @@ Some of the NLU enrichments are applied to projects automatically. You don't nee
 
 | Enrichment that is applied automatically | Project type |
 |------------------------------------------|--------------|
-| Entities                                 | Document Retrieval, Document Retrieval with Content Intelligence |
-| Parts of Speech                          | Content Mining, Document Retrieval, Document Retrieval with Content Intelligence |
+| Entities                                 | Document Retrieval, Document Retrieval for Contracts |
+| Parts of Speech                          | Content Mining, Document Retrieval, Document Retrieval for Contracts |
 {: caption="Default enrichments for project types" caption-side="top"}
 
 To add an NLU enrichment, complete the following steps: 

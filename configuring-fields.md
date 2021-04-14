@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-14"
 
 subcollection: discovery-data
 
@@ -110,14 +110,20 @@ Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/disco
 
 See [Best practices for annotating documents](/docs/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
 
-1. A default set of fields is displayed next to your document. The available fields are `answer`, `author`, `footer`, `header`, `question`, `subtitle`, `table_of_contents`, `text`, `title`, `table`, and `image`. If you would like to create one or more new custom field labels, click **Create new** and follow the steps. Custom field labels should be lowercase, and contain no spaces.
-1. To begin annotating, click on a field label to activate it.
-1. Click on the content representing that field in the SDU tool. It will highlight. 
-   - Alternately, you can select a field label and drag it to the content in the SDU tool. 
-   - To clear a change, click the **Clear changes** button on the toolbar.
+1.  Review the field labels that you can use to annotate the document. They are displayed in the *Field labels* panel.
+
+    See the *Default field labels* table for a list of the fields and their descriptions.
+1.  To create a custom field label, click **Create new**. 
+
+    Specify a field label with lowercase letters and no spaces. For example, `my_field` is a valid field label.
+    {: note}
+1. To begin annotating the document, click a field label to activate it.
+1. Click the content representing that field in the SDU tool. Alternately, you can select a field label and drag it to the content in the SDU tool.
+
+   The content is highlighted. To undo an annotation, click the **Clear changes** button on the toolbar.
 1. Click the **Submit page** button.
    
-   As you annotate, Watson is learning and will start predicting annotations. Continue annotating until Watson correctly and consistently identifies fields.
+   As you annotate, Watson is learning and starts to predict annotations. Continue annotating until Watson correctly and consistently identifies fields.
    {: note}
    
 1. When you have completed annotating, click the **Apply changes and reprocess** button.
@@ -127,20 +133,20 @@ See [Best practices for annotating documents](/docs/discovery-data?topic=discove
 
 The following fields make up the base set of fields that {{site.data.keyword.discoveryshort}} is designed to recognize and index by default.
 
-Field | Definition  
------- | ------ 
-`answer` | In a Q/A pair (often in an FAQ), the answer to the question.
-`author` | Name of author (or authors).
-`footer` | Use this tag to denote meta-information about the document (such as the page number or references), that appear at the bottom of the page.
-`header` | Use this tag to denote meta-information about the document that appears at the top of the page.
-`question` | In a Q/A pair (often in an FAQ), the question.
-`subtitle` | The secondary title of the document being annotated. 
-`table_of_contents` | Use this tag on listings in the document table of contents.
-`text` | Use this tag for standard copy text, including paragraphs, definitions, or any set of words that is not a title, answer, author, subtitle, header, or a footer. 
-`title` | The main title of the document being annotated.
-`table` | Use this tag to annotate tables in your document. 
-`image` | Use this tag to annotate images and diagrams in your document.
-{: caption="Field information" caption-side="top"}
+| Field | Definition |
+|-------|------------|
+| answer | In a Q/A pair (often in an FAQ), the answer to the question. |
+| author | Name of author (or authors). |
+| footer | Use this tag to denote meta-information about the document (such as the page number or references), that appear at the bottom of the |page. |
+| header | Use this tag to denote meta-information about the document that appears at the top of the page. |
+| question | In a Q/A pair (often in an FAQ), the question. |
+| subtitle | The secondary title of the document being annotated. |
+| table_of_contents | Use this tag on listings in the document table of contents. |
+| text | Use this tag for standard copy text, including paragraphs, definitions, or any set of words that is not a title, part of a table, answer, author, subtitle, header, or a footer. |
+| title | The main title of the document being annotated. |
+| table |	Use this tag to annotate tables in your document. |
+| image |	Use this tag to annotate images and diagrams in your document. |
+{: caption="Default field labels" caption-side="top"}
 
 When you annotate one or more tables using the `table` field, you will automatically enable the **Table Understanding** enrichment for the entire collection. The **Table Understanding** enrichment is applied to the `html` field of your collection. For more information, see [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables).
 {: #important}
