@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-15"
 
 subcollection: discovery-data
 
@@ -58,12 +58,14 @@ To add a resource, complete the following steps:
     After you create the resource, it becomes a new type of enrichment that you can apply to your data.
 1.  Specify the collection and field in which to apply the enrichment. 
 
-    If you're not sure which field to choose, pick `text`. Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To see a list of eligible fields, go to *Manage collections*>*{collection name}*>*Manage fields*.
+    You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. You cannot apply enrichments to fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
     {: tip}
 
     For example, if you add a dictionary and choose to apply it to the `text` field of a collection, the documents in the collection are reprocessed. If the term `vehicle` is specified as a synonym of the `car` dictionary entry and occurs in the document text, `vehicle` is tagged as a mention of the `car` dictionary entry type. If a customer later searches for `car`, the passage that contains the `vehicle` mention is included in the search results.
 
 You can choose to apply resource-derived enrichments to your data later. Go to the *Manage collections* page, choose the collection where you want to apply the enrichment, and then open the **Enrichments** tab. Make sure the status of the enrichment shows that it is *Ready*, and then apply the enrichment to a field in the collection.
+
+From the deployed Content Mining application, you can create a classifier or a custom annotator from a dictionary, regular expression, Machine Learning, or PEAR file and use it as an enrichment in collections that are stored in other project types.
 
 ## Classifier
 {: #classifier}
@@ -117,7 +119,7 @@ Add a classifier to assign documents in your collection into categories. {{site.
 
 In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored as `enriched_text` within the `classes` array.
 
-```JSON
+```
 "enriched_text": [
   {
     "classes": [
@@ -134,6 +136,8 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
 ]  
 ```
 {: screen}
+
+The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Parts of Speech information only. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Parts of Speech information and metadata that is added by other enrichments that are applied to the collection. If you want to apply a document classifier to a collection in a project type other than a Content Mining project, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
 
 ## Dictionary
 {: #dictionary}
@@ -208,7 +212,7 @@ To add dictionary from a CSV file, complete the following steps:
 
 In the following example, the **Facet Path** is `automobiles.motorsports`, and the field that is selected for enrichment is `text`. The dictionary enrichment is stored as `enriched_text` within the `entities` array.
 
-```JSON
+```
 "enriched_text": [
   {
     "entities": [
@@ -223,10 +227,11 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
 . . .
 "text": [
   "I prefer a carburetor to fuel-injection."
-]  
+] 
 ```
+{: screen}
 
-As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_text.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically.
+As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_text.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically. 
 
 ## Regular expressions
 {: #regex}
@@ -263,7 +268,7 @@ In the output, the information that is extracted by the regular expression enric
 
 In this example, the **Facet Path** is `regex.cccardnumber`, and the field that is selected for enrichment is `text`.
 
-```JSON
+```
 "enriched_text": [
   {
     "entities": [
@@ -279,7 +284,8 @@ In this example, the **Facet Path** is `regex.cccardnumber`, and the field that 
 "text": [
   "He has 2 phones, 090-1234-5678 and 080-1234-5678. His credit card number is 4000000000000000."
 ]
-```	
+```
+{: screen}
 
 As a result, a customer can filter their results by the credit card number facet that you defined to show passages that include credit card number references.
 
@@ -367,7 +373,8 @@ In the output, the information that is extracted by the Machine Learning enrichm
 "text": [
   "George Washington (February 22, 1732‚ December 14, 1799) was an American politician and soldier who served as the first President of the United States from 1789 to 1797 and was one of the Founding Fathers of the United States."
 ]
-```	
+```
+{: codeblock}
 
 As a result, if someone [uses the API](/docs/discovery-data?topic=discovery-data-query-concepts) to submit a Discovery Query Language query to look for occurrences of the `enriched_text.entities.type:jobtitle` enrichment, any passages that discuss a person's job title are returned.
 
@@ -410,7 +417,8 @@ In the output, the information that is extracted by the Machine Learning enrichm
     ]
   }
 ]
-```	
+```
+{: codeblock}
 
 ## Advanced rules models
 {: #advanced-rules}

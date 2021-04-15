@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 subcollection: discovery-data
 
@@ -59,7 +59,7 @@ To add an NLU enrichment, complete the following steps:
 1.  Scroll to find the NLU enrichment that you want to apply to your documents. 
 1.  Choose one or more fields to apply the enrichment to.
 
-    You can apply the enrichments to fields with a String data type, such as the `text` and `html` fields, or other fields that you add which contain text.
+    You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. You cannot apply enrichments to fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
 
 ## Entities
 {: #entities}

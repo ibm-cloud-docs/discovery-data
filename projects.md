@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-12"
+lastupdated: "2021-04-15"
 
 subcollection: discovery-data
 
@@ -171,14 +171,16 @@ For more information about building a {{site.data.keyword.conversationshort}} se
 
 Use this project type to discover hidden insights, trends, and relationships in your data.
 
-You can add only one collection to a project of this type.
-{: note}
+This project type is especially useful for analyzing structured data, such as data that you add by uploading a CSV file or by connecting to a database data source. You can add only one collection to a project of this type from the {{site.data.keyword.discoveryshort}} user interface.
 
-Documents that you add are automatically enriched in the following way:
+Documents that you add as part of the initial collection are automatically enriched in the following way:
 
 - Parts of speech are identified and tagged.
 
-A full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+After you add a collection and optionally apply more enrichments to the data, a full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp). 
+
+You can create a collection (CSV file only) from the deployed Content Mining application. The collection you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection.
+{: note}
 
 ### Custom
 {: #custom}
