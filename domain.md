@@ -119,7 +119,7 @@ Add a classifier to assign documents in your collection into categories. {{site.
 
 In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored as `enriched_text` within the `classes` array.
 
-```JSON
+```
 "enriched_text": [
   {
     "classes": [
@@ -137,7 +137,7 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
 ```
 {: screen}
 
-The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Part of Speech information only. Another classifier type is a *document classifier*. A document classifier can classify documents based on Part of Speech information and metadata that is added by other enrichments that are applied to the collection. You can create a document classifier from the deployed Content Mining application only. If you want to apply a document classifier to a collection in a project type other than a Content Mining project, you must create the classifier in the deployed Content Mining application and export the classifier. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
+The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Parts of Speech information only. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Parts of Speech information and metadata that is added by other enrichments that are applied to the collection. If you want to apply a document classifier to a collection in a project type other than a Content Mining project, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
 
 ## Dictionary
 {: #dictionary}
@@ -212,7 +212,7 @@ To add dictionary from a CSV file, complete the following steps:
 
 In the following example, the **Facet Path** is `automobiles.motorsports`, and the field that is selected for enrichment is `text`. The dictionary enrichment is stored as `enriched_text` within the `entities` array.
 
-```JSON
+```
 "enriched_text": [
   {
     "entities": [
@@ -227,7 +227,7 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
 . . .
 "text": [
   "I prefer a carburetor to fuel-injection."
-]  
+] 
 ```
 {: screen}
 
@@ -268,7 +268,7 @@ In the output, the information that is extracted by the regular expression enric
 
 In this example, the **Facet Path** is `regex.cccardnumber`, and the field that is selected for enrichment is `text`.
 
-```JSON
+```
 "enriched_text": [
   {
     "entities": [
