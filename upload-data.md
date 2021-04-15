@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-15"
 
 keywords: upload, one-time upload, supported file types, document types
 
@@ -40,6 +40,9 @@ You can perform a one-time document upload from your local file system at any ti
 {: shortdesc}
 
 You cannot upload more than 200 files at one time. To process document sets that are larger than 200 files, add them to an external data source and use a data source crawler to upload them.
+
+Before you upload a CSV file to a Content Mining project, decide whether you want to apply enrichments to the content. If so, consider adding headers to the source file so that any fields that are generated have meaningful names. Without headers, fields are given generic names, such as `column_0`, `column_1`, and so on.
+{: tip}
 
 To upload data, complete the following steps:
 
