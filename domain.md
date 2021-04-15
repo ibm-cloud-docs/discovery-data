@@ -58,7 +58,7 @@ To add a resource, complete the following steps:
     After you create the resource, it becomes a new type of enrichment that you can apply to your data.
 1.  Specify the collection and field in which to apply the enrichment. 
 
-    You cannot apply enrichments to all fields. Choose `text`, `html`, custom fields from uploaded JSON or CSV files, or custom fields that were added from the Smart Document Understanding (SDU) tool. Applying enrichments is not supported on fields such as `image`, `document_id`, and fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
+    You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. You cannot apply enrichments to fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
     {: tip}
 
     For example, if you add a dictionary and choose to apply it to the `text` field of a collection, the documents in the collection are reprocessed. If the term `vehicle` is specified as a synonym of the `car` dictionary entry and occurs in the document text, `vehicle` is tagged as a mention of the `car` dictionary entry type. If a customer later searches for `car`, the passage that contains the `vehicle` mention is included in the search results.
