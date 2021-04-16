@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-16"
 
 subcollection: discovery-data
 
@@ -40,15 +40,13 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 ## Basic project defaults
 {: #basic-defaults}
 
-| Project type | Default enrichments | Default query result settings | Default CSV settings |
-|--------------|---------------------|-------------------------------|----------------------|
-| Document Retrieval | Entities, Parts of Speech | Facets (by Entity), Dynamic Facets, Passages | NA |
-| Document Retrieval for Contracts | Entities, Parts of speech, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval | NA |
-| Conversational Search | None | Passages | NA |
-| Content Mining | Parts of Speech | None | No header, selected delimiters are comma and semicolon |
-| Custom | None | Passages | NA |
+| Project type | Default enrichments | Default query result settings |
+|--------------|---------------------|-------------------------------|
+| Document Retrieval | Entities, Parts of Speech | Facets (by Entity), Dynamic Facets, Passages |
+| Document Retrieval for Contracts | Entities, Parts of speech, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
+| Conversational Search | None | Passages |
+| Content Mining | Parts of Speech | None |
+| Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
-
-NA indicates that a setting is not applicable to the project type.
 
 For more information about default query result settings, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).

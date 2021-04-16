@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-16"
 
 subcollection: discovery-data
 
@@ -36,15 +36,18 @@ subcollection: discovery-data
 
 <!-- 2.1.3 c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
 
-In {{site.data.keyword.discovery-data_short}}, you can crawl documents you upload or connect to from a remote data source. The following sections introduce supported data sources, pre-authentication information, instructions about how to configure a collection, and links to third-party documentation for more information. For information about {{site.data.keyword.cloud_notm}} data sources, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
+In {{site.data.keyword.discovery-data_short}}, you can crawl documents from a local source that you upload or from a remote data source that you connect to. Learn more about the supported data sources and how to configure them.
 {:shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
-This information applies only to installed deployments.
+This information applies only to installed deployments. For information about {{site.data.keyword.cloud_notm}} data sources, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
 {:note}
 
-Depending on your data source, the steps to configure a collection vary. See the section for your data source to learn what you must do to configure the authentication for a {{site.data.keyword.discovery-data_short}} collection.
+All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
+{: important}
+
+Depending on your data source, the steps to configure a collection vary. See the section for your data source to learn more.
 
 You can use {{site.data.keyword.discovery-data_short}} to crawl from the following data sources:
 

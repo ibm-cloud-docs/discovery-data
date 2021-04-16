@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-16"
 
 subcollection: discovery-data
 
@@ -184,7 +184,11 @@ Recognizes and tags parts of speech, including nouns, verbs, adjectives, adverbs
 ## Sentiment
 {: #sentiment}
 
-Analyzes the overall sentiment of the document and returns `positive`, `neutral`, or `negative` sentiment.
+Analyzes the sentiment that is expressed in text and returns `positive`, `neutral`, or `negative` sentiment.
+
+To understand the sentiment of an entire document, apply this enrichment to a field that contains as much of the text from the document as possible, such as the `text` field. 
+
+To analyze sentiment in text from multiple fields at once and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
 
 For example:
 
@@ -206,6 +210,3 @@ In the JSON output:
  }
  ```
 {: codeblock}
-
-You can apply the Sentiment enrichment to content in a Content Mining project type from the deployed Content Mining application. For more information, see [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
-{: note}
