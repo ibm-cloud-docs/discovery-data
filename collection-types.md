@@ -36,7 +36,7 @@ subcollection: discovery-data
 
 <!-- 2.1.3 c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
 
-In {{site.data.keyword.discovery-data_short}}, you can crawl documents you upload or connect to from a remote data source. Learn more about the supported data sources and how to configure them.
+In {{site.data.keyword.discovery-data_short}}, you can crawl documents from a local source that you upload or from a remote data source that you connect to. Learn more about the supported data sources and how to configure them.
 {:shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
