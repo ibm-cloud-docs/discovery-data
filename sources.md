@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-16"
 
 subcollection: discovery-data
 
@@ -35,15 +35,18 @@ subcollection: discovery-data
 
 <!-- V2 c/s help for the *Select a Collection type* page for IBM Cloud. Do not delete. -->
 
-You can use {{site.data.keyword.discoveryfull}} on the {{site.data.keyword.cloud}} to connect to and crawl documents from remote sources. For information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+You can use {{site.data.keyword.discoveryfull}} on the {{site.data.keyword.cloud}} to connect to and crawl documents from remote sources.
 {: shortdesc}
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments.
+This information applies only to managed deployments. For information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 {: note}
 
 You can connect to a data source and pull documents on a schedule into {{site.data.keyword.discoveryshort}} by configuring a collection to associate with that source. You can configure each collection with one data source. {{site.data.keyword.discoveryshort}} pulls documents from the data source using a process called crawling. Crawling is the process of systematically browsing and retrieving documents from the specified start location. {{site.data.keyword.discoveryshort}} only crawls items that you explicitly specify. The first time that a crawler crawls a data source is a full crawl, and every time that the crawler runs after the full crawl, per the crawl schedule, is a refresh, also called a recrawl.
+
+All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
+{: important}
 
 You can use {{site.data.keyword.discoveryshort}} to crawl from the following data sources:
 
