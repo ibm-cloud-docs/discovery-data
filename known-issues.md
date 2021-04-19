@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-04-19"
 
 keywords: known issues
 
@@ -56,7 +56,7 @@ Known issues are regularly addressed with periodic software patches. For more in
       ```
       oc get WatsonDiscovery wd
       ```
-      {: codeblock}
+      {: pre}
 
     - After the custom resource is created, run the following commands to point the correct image pull secret to pull images from the external registry:
 
@@ -67,9 +67,16 @@ Known issues are regularly addressed with periodic software patches. For more in
         shared:
           imagePullSecret: $pull_secret
       EOS
-      oc patch wd wd --type=merge --patch $(cat discovery-patch.yaml)
+      oc patch wd wd --type=merge --patch "$(cat discovery-patch.yaml)"
       ```
       {: codeblock}
+
+    - If the RabbitMQ pods are still in ImagePullBackoff state, remove the RabbitMQ CR to enable the rabbitmq-operator to re-create the RabbitMQ clusters. You can use the following command:
+
+      ```
+      oc delete IbmRabbitmq wd-rabbitmq
+      ```
+      {: pre}
 
 - In {{site.data.keyword.discoveryfull}}, the `Content Mining` project only supports one collection per project. If you create more than one `Content Mining` collection, you might experience errors. If you experience errors, delete additional `Content Mining` collections so that each `Content Mining` project has only one associated collection.
 - If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
