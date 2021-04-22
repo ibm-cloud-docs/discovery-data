@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-22"
 
 keywords: upload, one-time upload, supported file types, document types
 
@@ -60,7 +60,7 @@ To upload data, complete the following steps:
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: You can drag documents that you want to add to your collection.
 
-Only supported file types are crawled; all others are ignored.
+The file upload is completed quickly. It takes more time for the data to be processed as it is added to the collection. After the files are uploaded and processed, the Activity page shows the upload results.
 
 ## Supported file types
 {: #supportedfiletypes}

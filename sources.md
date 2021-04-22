@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-04-22"
 
 subcollection: discovery-data
 
@@ -58,6 +58,9 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [Web crawl](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
 
+You cannot crawl the supported data sources from a {{site.data.keyword.discoveryshort}} service instance that is hosted in the Seoul data center.
+{: note}
+
 You can connect to a data source using the {{site.data.keyword.discoveryshort}} tooling. The {{site.data.keyword.discoveryshort}} tooling provides a simplified method of connection that requires less understanding of the source systems. Consult the following process overview to see which sections to read next:
 
 1.  Read the [Data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements).
@@ -72,13 +75,17 @@ You can use an IBM App Connect default connector to send data from a large set o
 The FAQ extraction feature is beta functionality and should not be used in production environments.
 {: beta}
 
-When configuring any data source for any project type, you have the option to **Apply FAQ extraction**. This beta feature will detect FAQ(frequently asked questions) documents in your collection and automatically extract pairs of questions and answers. Your application can use the extracted pairs to provide more precise query results. To turn on FAQ extraction for your data source, go to the **Syncing FAQ Content?** section and select the **Apply FAQ extraction** checkbox.
+When you configure a data source for any project type, you have the option to **Apply FAQ extraction**. This beta feature detects question-and-answer pairs in your documents and automatically extracts the pairs. Your application can use the extracted pairs to provide more precise query results. 
 
-Each question/answer pair in an FAQ document will be split into a separate document. A document with 100 question/answer pairs will be split into 100 documents. If no question/answer pairs are detected in a document, the document is processed normally. There is a limit of 10,000 Q/A pairs for each document. After the limit is reached, the remaining pairs will be stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page.
+Only apply FAQ extraction to a data source with documents that contain frequently asked questions that follow a consistent style. For example, ensure that the questions in the FAQ end with a question mark. The answer must be grouped together clearly with the question that it answers.
+
+To turn on FAQ extraction for your data source, expand the **Syncing FAQ Content?** section and select **Apply FAQ extraction**.
+
+Each question-and-answer pair in an FAQ document is split into a separate document. The question is stored in a title field and the answer is stored as a text field. A document with 100 question-and-answer pairs will be split into 100 documents. If no question-and-answer pairs are detected in a document, the document is processed normally. There is a limit of 10,000 pairs for each document. After the limit is reached, the remaining pairs are stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page.
 
 You can turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. Reprocess the collection by clicking the **Apply changes and reprocess** button.
 
-Do not use FAQ extraction in your collection if you have annotated fields using [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). 
+If you apply FAQ extraction to a collection, you cannot use the [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) tool later to annotate fields.
 {: note}
 
 ## Data source requirements
@@ -101,9 +108,9 @@ Box (**Enterprise level** access)               | Yes                           
 Salesforce                                      | Yes                                               | Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments
 Microsoft SharePoint Online                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments
 Microsoft SharePoint OnPrem                     | Yes                                               | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments
-Web Crawl                                       | No                                                | Websites, website subdirectories
+Web crawl                                       | No                                                | Websites, website subdirectories
 {{site.data.keyword.cos_full_notm}}             | Yes                                               | Buckets, files
-{: caption="Table 1. Data sources that support crawling new and modified documents during refresh and objects that can be crawled" caption-side="top"}
+{: caption="Table 1. Data sources crawling support" caption-side="top"}
 
 ### Box
 {: #connectboxpublic}
@@ -390,3 +397,16 @@ You can view a list of collections that are connected to a particular gateway. C
 
 1. From the **My projects** page, click **Data usage and GDPR**.
 1. Click **On-premise connections**. If there are any collections that share a common gateway, those collections appear in **Connected collections**. If no collections share a gateway, you see an indicator stating that `No collections use this connection.`.
+
+<!--## Connecting to data sources with IP restrictions
+{: #sources-ip-restrictions}
+
+If the data source that you want to crawl is configured to allow crawlers from only a limited number of IP addresses or domains to process the data, you can add IBM-owned IP addresses to the allowlist for the site.
+
+- The following IP addresses can be specified for services instances that are hosted in a US-based data center and were created on or after 1 May 2020:
+
+  150.238.21.0/28
+  169.48.255.224/28
+  174.36.69.128/28
+
+- For a list of IP addresses that can be specified for services instances that were created before 1 May 2020 (US) and before 21 February 2021 (non-US), see the [network addresses](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-network-address) that are listed for Cloud Foundry. For instances that are hosted in the US, use the list of IP addresses that are specified for the **Dallas** data center. For non-US instances, use the IP addresses that are specified for the **London** data center.-->

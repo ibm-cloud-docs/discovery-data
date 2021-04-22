@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2020
-lastupdated: "2020-09-02"
+  years: 2018, 2021
+lastupdated: "2021-04-22"
 
 subcollection: discovery-data
 
@@ -53,11 +53,11 @@ Use the Watson Node.js SDK to import and enrich your data using the Watson Disco
   - [Get the Code](https://github.com/IBM/watson-discovery-analyze-data-breaches?cm_sp=IBMCode-_-import-enrich-and-gain-insight-from-data-_-Get-the-Code){: external}
   - [View the Demo](https://www.youtube.com/watch?v=zAu9tHefdDc&cm_sp=IBMCode-_-import-enrich-and-gain-insight-from-data-_-View-the-Demo){: external}
  
-[Cognitive Retail Chatbot](https://developer.ibm.com/patterns/create-cognitive-retail-chatbot/?cm_sp=Developer-_-code-_-retail_chatbot){: external}
+<!--[Cognitive Retail Chatbot](https://developer.ibm.com/patterns/create-cognitive-retail-chatbot/?cm_sp=Developer-_-code-_-retail_chatbot){: external}
 Create a chatbot dialog using Watson Assistant, a Cloudant NoSQL database, Watson Discovery, and a Slack group.
   - [Get the Code](https://github.com/IBM/watson-online-store/?cm_sp=IBMCode-_-create-cognitive-retail-chatbot-_-Get-the-Code){: external}
   - [View the Demo](https://www.youtube.com/watch?v=b-94B3O1czU&cm_sp=IBMCode-_-create-cognitive-retail-chatbot-_-View-the-Demo){: external}
-    
+  -->  
 [Cognitive News Search App](https://developer.ibm.com/patterns/create-a-cognitive-news-search-app/?cm_sp=Developer-_-code-_-trending_news){: external}
 Build your own news mining web application using JavaScript, Node.js, and the Watson Discovery service. Use the Watson Node.js SDK to build your news app to search the latest news, find trends, and even integrate it with other applications, such as Slack.
   - [Get the Code](https://github.com/IBM/watson-discovery-news/?cm_sp=IBMCode-_-create-a-cognitive-news-search-app-_-Get-the-Code){: external}
