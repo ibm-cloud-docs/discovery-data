@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-04-23"
 
 subcollection: discovery-data
 
@@ -77,13 +77,13 @@ The FAQ extraction feature is beta functionality and should not be used in produ
 
 When you configure a data source for any project type, you have the option to **Apply FAQ extraction**. This beta feature detects question-and-answer pairs in your documents and automatically extracts the pairs. Your application can use the extracted pairs to provide more precise query results. 
 
-Only apply FAQ extraction to a data source with documents that contain frequently asked questions that follow a consistent style. For example, ensure that the questions in the FAQ end with a question mark. The answer must be grouped together clearly with the question that it answers.
+Only apply FAQ extraction to a data source with documents that contain frequently asked questions that follow a consistent style. For example, ensure that the questions in the FAQ end with a question mark. The answer must be grouped with the question that it answers.
 
 To turn on FAQ extraction for your data source, expand the **Syncing FAQ Content?** section and select **Apply FAQ extraction**.
 
-Each question-and-answer pair in an FAQ document is split into a separate document. The question is stored in a title field and the answer is stored as a text field. A document with 100 question-and-answer pairs will be split into 100 documents. If no question-and-answer pairs are detected in a document, the document is processed normally. There is a limit of 10,000 pairs for each document. After the limit is reached, the remaining pairs are stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page.
+Each question-and-answer pair in an FAQ document is split into a separate document. The question is stored in a `title` field and the answer is stored as a `text` field. A document with 100 question-and-answer pairs is split into 100 documents. If no question-and-answer pairs are detected in a document, only one document is added to the collection. There is a limit of 10,000 pairs per document. After the limit is reached, any remaining pairs that are found are stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page.
 
-You can turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. Reprocess the collection by clicking the **Apply changes and reprocess** button.
+To turn off FAQ extraction, go to the **Processings settings** tab of the **Manage collections** page. After disabling FAQ extraction, reprocess the collection by clicking the **Apply changes and reprocess** button.
 
 If you apply FAQ extraction to a collection, you cannot use the [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) tool later to annotate fields.
 {: note}
