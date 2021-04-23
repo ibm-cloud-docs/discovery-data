@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-23"
 
 keywords: data sources, supported data sources
 
@@ -73,10 +73,12 @@ Before you can create a collection, you must create a project. For more informat
     - [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
 1.  Click **Create collection** to start the crawl.
 
-    The **Activity** page opens and shows the progress of the collection creation. The crawl synchronizes the data initially and then updates the data periodically according to the crawl schedule that you specify.
+    The **Activity** page opens and shows the progress of the collection creation. Only [supported file types](/docs/discovery-data?topic=discovery-data-upload-data#supportedfiletypes) are crawled; all others are ignored.
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
 {: note}
+
+Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents that have a similar visual structure so that you can use the collection to define custom fields with the Smart Document Understanding tool. Or maybe you want to create a collection of documents that contain frequently asked questions that are formatted in a consistent manner so you can apply the FAQ extraction feature to the collection.
 
 The following table shows the supported data sources for each deployment type.
 
