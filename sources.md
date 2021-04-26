@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-04-26"
 
 subcollection: discovery-data
 
@@ -398,15 +398,33 @@ You can view a list of collections that are connected to a particular gateway. C
 1. From the **My projects** page, click **Data usage and GDPR**.
 1. Click **On-premise connections**. If there are any collections that share a common gateway, those collections appear in **Connected collections**. If no collections share a gateway, you see an indicator stating that `No collections use this connection.`.
 
-<!--## Connecting to data sources with IP restrictions
+## Connecting to data sources with IP restrictions
 {: #sources-ip-restrictions}
 
-If the data source that you want to crawl is configured to allow crawlers from only a limited number of IP addresses or domains to process the data, you can add IBM-owned IP addresses to the allowlist for the site.
+Some data sources allow crawlers from only a limited number of trusted network addresses or domains to access and process their data. If one of the data sources that you want to connect to limits access in this way, you can add IBM-managed IP addresses to the allowlist of the data source.
 
-- The following IP addresses can be specified for services instances that are hosted in a US-based data center and were created on or after 1 May 2020:
+Network addresses are subject to change from time to time. You can monitor for updates to these addresses by subscribing to the repo notifications for this page. Click **Edit Topic** and then select **Watching** in the Notifications dialog of the repo.
+{: tip}
 
+- For service instances that are hosted in a US-based data center and that were created on or after 1 May 2020, add the following IP addresses:
+
+  ```
   150.238.21.0/28
   169.48.255.224/28
   174.36.69.128/28
+  ```
+  {: screen}
 
-- For a list of IP addresses that can be specified for services instances that were created before 1 May 2020 (US) and before 21 February 2021 (non-US), see the [network addresses](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-network-address) that are listed for Cloud Foundry. For instances that are hosted in the US, use the list of IP addresses that are specified for the **Dallas** data center. For non-US instances, use the IP addresses that are specified for the **London** data center.-->
+- For service instances that are hosted in non-US data centers and that were created on or after 21 February 2021, add the following IP addresses:
+
+  ```
+  159.122.203.64/28
+  158.175.114.128/28
+  158.176.107.48/28
+  ```
+  {: screen}
+
+- For a list of IP addresses that you can add to an allowlist for services instances that were created before 1 May 2020 (US) and before 21 February 2021 (non-US), see the [network addresses](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-network-address) that are listed for Cloud Foundry. 
+
+  - Refer to the **Dallas** data center IP addresses for all US-hosted service instances. 
+  - Refer to the **London** data center IP addresses for all service instances that are hosted outside the US.

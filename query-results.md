@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-04-26"
 
 keywords: passages, query results
 
@@ -48,7 +48,7 @@ Preview the default query results.
 
   You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-- For Document Retrieval for Contracts projects, contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
+- For Document Retrieval for Contracts projects, contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default). To filter the results by contract-related categories that were recognized when the collection was processed, click a query result, and then open the **Contract Data** tab.
 - For Conversational Search projects, a single search field is displayed that mimics the user interface of an assistant.
 - For Content Mining projects, choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 - Even Custom project types show query results as passages by default.
@@ -72,6 +72,8 @@ Use the tools built in to {{site.data.keyword.discoveryshort}} to make the follo
 
 If the right type of information is being identified and tagged in your documents already, learn steps that you can take to tweak query results that are returned to improve their relevancy. For more information, see [Search settings](/docs/discovery-data?topic=discovery-data-search-settings).
 
+When you deploy your project, you can use the APIs to define more complex queries that can take advantage of the enrichments in a collection. For more information, see [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+
 ### How passages are derived
 {: #query-results-passages}
 
@@ -79,6 +81,4 @@ If the right type of information is being identified and tagged in your document
 
 {{site.data.keyword.discoveryshort}} uses sentence boundary detection to pick a passage that includes a full sentence. It searches for passages that have an approximate length of 200 characters, then looks at chunks of content that are twice that length to find passages that contain full sentences. If the sentences in your documents are extra long, the query might not be able to capture a full sentence. As a result, some passages that are returned might not include an entire sentence or might omit the beginning or ending of a sentence. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
-You can change the default character length and make other customizations by using the API. For example, if your application has limited screen space, you might want to search for passages that are shorter than 200 characters.
-
-When you deploy your project, you can use the APIs to define more complex queries that can take advantage of the enrichments in a collection. For more information, see [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+You can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
