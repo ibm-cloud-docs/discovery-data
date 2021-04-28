@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-04-28"
 
 subcollection: discovery-data
 
@@ -51,18 +51,18 @@ Depending on your data source, the steps to configure a collection vary. See the
 
 You can use {{site.data.keyword.discovery-data_short}} to crawl from the following data sources:
 
--  [Box](#connectbox)
--  [Salesforce](#connectsf)
--  [Microsoft SharePoint Online](#connectsp)
--  [Microsoft SharePoint OnPrem](#connectsp_op)
--  [Web crawl](#connectwebcrawl)
--  [Database](#databaseconnect)
--  [Windows File System](#windowsfilesystemconnect)
--  [Local File System](#localfilesystemconnect)
--  [FileNet P8](#filenet-connect)
--  [Notes](#connectnotes)
--  [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
--  [Reuse data from an existing collection](#reuse)
+- [Box](#connectbox)
+- [Salesforce](#connectsf)
+- [Microsoft SharePoint Online](#connectsp)
+- [Microsoft SharePoint OnPrem](#connectsp_op)
+- [Web crawl](#connectwebcrawl)
+- [Database](#databaseconnect)
+- [Windows File System](#windowsfilesystemconnect)
+- [Local File System](#localfilesystemconnect)
+- [FileNet P8](#filenet-connect)
+- [Notes](#connectnotes)
+- [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
+- [Reuse data from an existing collection](#reuse)
 
 *Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
@@ -73,17 +73,17 @@ If you have special requirements that you need to address when you add source do
 
 You can specify an additional option for this collection:
  
--  **Run OCR (Optical Character Recognition)** - Extracts text from images, using Optical Character Recognition (OCR).
+- **Run OCR (Optical Character Recognition)**: Extracts text from images, using Optical Character Recognition (OCR).
 
 ## Data source requirements
 {: #requirements}
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
--  The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
--  [Document level security](#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
--  When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
--  Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes 1 crawler pod, which allows three collections to be processed simultaneously. A production installation includes 2 crawler pods, which can process six collections simultaneously.
+- The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
+- [Document level security](#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
+- When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
+- Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes 1 crawler pod, which allows three collections to be processed simultaneously. A production installation includes 2 crawler pods, which can process six collections simultaneously.
 
      If you are running a default installation and you want to process more than three collections simultaneously, you must increase the number of crawler pods by running the following commands:
 
@@ -165,23 +165,23 @@ The field names and functions in Box might change. Consult the [Box developer do
 In {{site.data.keyword.discoveryshort}}, after you select **Box** as the collection type, enter the following information:
 
 1. Click the following button in the **Box JSON configuration** section in **Enter your credentials**:
-    - **Select file** - Upload the `config.json` file that contains your client ID, client secret, private key path, private key passphrase, key ID, and enterprise ID. You can download this JSON file from the configuration page on [Box Developers](https://developer.box.com/){: external}.
+    - **Select file**: Upload the `config.json` file that contains your client ID, client secret, private key path, private key passphrase, key ID, and enterprise ID. You can download this JSON file from the configuration page on [Box Developers](https://developer.box.com/){: external}.
 1. Complete the following field in **Specify what you want to crawl**:
-    - **Box Folder or User URL to crawl** - Optional: Crawls a specific user content or folder content. If unspecified, it crawls all content. You can crawl different types of URLs. See the following examples of URLs that you can specify to crawl user or folder content:
+    - **Box Folder or User URL to crawl**: Optional: Crawls a specific user content or folder content. If unspecified, it crawls all content. You can crawl different types of URLs. See the following examples of URLs that you can specify to crawl user or folder content:
 
         - To crawl an entire enterprise, enter `box://app.box.com/`.
         - To crawl a specific folder, enter `box://app.box.com/user/USER_ID/folder/FOLDER_ID/FolderName`.
         - To crawl a specific user, enter `box://app.box.com/user/USER_ID/`.
 
 1. Optional: Set the following switch in **Proxy settings**:
-    -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
-        -  **Username** - Optional: The username that you use to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of the proxy server.
-        -  **Password** - Optional: The password that you use to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of the proxy server.
-        -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
-        -  **Proxy server port number** - The network port that you want to connect to on the proxy server.
+    - **Enable proxy settings**: By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
+        - **Username**: Optional: The username that you use to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of the proxy server.
+        - **Password**: Optional: The password that you use to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of the proxy server.
+        - **Proxy server host name or IP address**: The host name or the IP address of the proxy server.
+        - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When this option is enabled, your users can crawl and query content that they have access to when logged in to Box. For more information, see [About document level security](#configuredls).
+    - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security. When this option is enabled, your users can crawl and query content that they have access to when logged in to Box. For more information, see [About document level security](#configuredls).
 1. Click **Finish**.
 
 
@@ -218,12 +218,12 @@ For information about downloading the .jar files, see the following links:
 In {{site.data.keyword.discoveryshort}}, after you select **Salesforce** as the collection type, enter the following information:
 
 1. Complete the following fields in **Specify what you want to crawl**:
-    - **Username** - The username to call the Salesforce API.
-    - **Password** - The password of the specified user.
-    - **Security Token** - The security token of the user to call Salesforce API.
-    - **Jar zip archive file** - Upload a .zip file that contains the .jar files that you downloaded in [Downloading JAR files](#download-copy-files). You can also select or delete a .zip file that you previously uploaded.
+    - **Username**: The username to call the Salesforce API.
+    - **Password**: The password of the specified user.
+    - **Security Token**: The security token of the user to call Salesforce API.
+    - **Jar zip archive file**: Upload a .zip file that contains the .jar files that you downloaded in [Downloading JAR files](#download-copy-files). You can also select or delete a .zip file that you previously uploaded.
 1. Complete the following field in **Object Types**:
-    - **Object Types to crawl** - Specifies the object types to crawl. The default behavior is to crawl all object types. For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, regarding MyCustomObject, specify `MyCustomObject__c`. Do not specify comment objects, such as FeedComment, CaseComment, IdeaComment without FeedItem, Case, Idea, respectively. If you specify a tag object, you must also specify its parent. For example, do not specify the AccountTag object without the Account object.
+    - **Object Types to crawl**: Specifies the object types to crawl. The default behavior is to crawl all object types. For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, regarding MyCustomObject, specify `MyCustomObject__c`. Do not specify comment objects, such as FeedComment, CaseComment, IdeaComment without FeedItem, Case, Idea, respectively. If you specify a tag object, you must also specify its parent. For example, do not specify the AccountTag object without the Account object.
 1. Click **Finish**.
 
 For more information about Salesforce, see [Salesforce developer documentation](https://developer.salesforce.com/docs/){: external}.
@@ -248,20 +248,20 @@ Before you begin, be sure to obtain site collection administrator permission. No
 In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint Online** as the collection type, enter the following information:
 
 1. Complete the following fields in **Enter your credentials**:
-    -  **Username** - The username of the SharePoint user with  access to all sites and lists that need to be crawled and indexed, for example `<crawl_username>@<company_name>.onmicrosoft.com`.
-    -  **Password** - The password of the SharePoint user. This value is never returned and is used only when creating or modifying credentials.
+    - **Username**: The username of the SharePoint user with  access to all sites and lists that need to be crawled and indexed, for example `<crawl_username>@<company_name>.onmicrosoft.com`.
+    - **Password**: The password of the SharePoint user. This value is never returned and is used only when creating or modifying credentials.
 1. Complete the following fields in **Specify what you want to crawl**:
-    -  **Site Collection Url** - The SharePoint web service URL, for example `https://<organization_name>.com`.
-    -  **Site Collection Name** - The name you must obtain from site collection settings. The name the site collection uses.
+    - **Site Collection Url**: The SharePoint web service URL, for example `https://<organization_name>.com`.
+    - **Site Collection Name**: The name you must obtain from site collection settings. The name the site collection uses.
 1. Optional Set the following switch in **Proxy settings**:
-    -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
-         -  **Username** - Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
-         -  **Password** - Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
-         -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
-         -  **Proxy server port number** -  The network port that you want to connect to on the proxy server.
+    - **Enable proxy settings**: By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
+         - **Username**: Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
+         - **Password**: Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
+         - **Proxy server host name or IP address**: The host name or the IP address of the proxy server.
+         - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When this option is enabled, your users can crawl and query content that they have access to. For more information, see [About document level security](#configuredls).
-        - **Application ID** - The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](#register-sp) for instructions.
+    - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When this option is enabled, your users can crawl and query content that they have access to. For more information, see [About document level security](#configuredls).
+        - **Application ID**: The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](#register-sp) for instructions.
 1. Click **Finish**.
 
 
@@ -366,29 +366,29 @@ For information about obtaining the web services package from your {{site.data.k
 In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint OnPrem** as the collection type, enter the following information:
 
 1. Complete the following fields in **Enter your credentials**:
-    -  **Username** - The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed.
-    -  **Password** - The password of the SharePoint user. This value is never returned and is only used when creating or modifying credentials.
+    - **Username**: The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed.
+    - **Password**: The password of the SharePoint user. This value is never returned and is only used when creating or modifying credentials.
 1. Optional: Set the following switch:
-    -  **Enable SAML authentication** - By default, this switch is set to **Off**. When set to **On**, you can use SAML claims-based authentication. The default is NTLM authentication.
-         - **Identity Provider endpoint** - The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
-         - **Relying Party endpoint** - Optional: The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
-         - **Relying Party Trust identifier** - The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
+    - **Enable SAML authentication**: By default, this switch is set to **Off**. When set to **On**, you can use SAML claims-based authentication. The default is NTLM authentication.
+         - **Identity Provider endpoint**: The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
+         - **Relying Party endpoint**: Optional: The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
+         - **Relying Party Trust identifier**: The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
 1. Complete the following field in **Specify what you want to crawl**:
-    -  **Web Application Url** - The SharePoint web service URL, for example `https://<host>:<port>`.
+    - **Web Application Url**: The SharePoint web service URL, for example `https://<host>:<port>`.
     
 1. Optional: Set the following switch in **Proxy settings**:
-    -  **Enable proxy settings** - By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
-         -  **Username** - Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
-         -  **Password** - Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
-         -  **Proxy server host name or IP address** - The host name or the IP address of the proxy server.
-         -  **Proxy server port number** -  The network port that you want to connect to on the proxy server.
+    - **Enable proxy settings**: By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
+         - **Username**: Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
+         - **Password**: Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
+         - **Proxy server host name or IP address**: The host name or the IP address of the proxy server.
+         - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security** - By default, this switch is set to **Off**. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](#configuredls):
-        - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-        - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
-        - **LDAP binding user password** - The password used to bind to the directory service.
-        - **LDAP base DN** - The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
-        - **LDAP user filter** - The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
+    - **Enable Document Level Security**: By default, this switch is set to **Off**. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](#configuredls):
+        - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
+        - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
+        - **LDAP binding user password**: The password used to bind to the directory service.
+        - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
+        - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
 
           Before adding users so they can query using document level security, you need to authorize your app by connecting to the LDAP in your app and handling it. For more information about configuring a connection to your LDAP server in your app, see [Connecting to your LDAP server](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/admin/ldap.html).
           {: important}
@@ -411,52 +411,52 @@ Use this option to crawl websites. The web content is processed as HTML.
 In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the collection type, enter the following information:
 
 1. Complete the following field in **Specify where you want to crawl**:
-    -  **Starting URLs** - The URLs where the crawler begins crawling. By default, the web crawl can crawl subtrees, and URLs can only be crawled from the path supplied in the seed. Use the full URL, for example `http://www.example.com/`. The start URL in the web crawl has two limitations as to what is crawled:
+    - **Starting URLs**: The URLs where the crawler begins crawling. By default, the web crawl can crawl subtrees, and URLs can only be crawled from the path supplied in the seed. Use the full URL, for example `http://www.example.com/`. The start URL in the web crawl has two limitations as to what is crawled:
        - It crawls the same domain name as the start URL.
        - It crawls all URL content up to and including the last slash (`/`) in **Starting URLs**. If your start URL has a subtree, the web crawl does not crawl that subtree, unless you specify its URL in **Starting URLs**.
 
 1. Click the **Add** button to add one or more starting URLs. After you add one or more starting URLs, you can click **Authentication settings** and select one of three authentication types to apply to your chosen starting URL: **Basic authentication**, **NTLM authentication**, or **FORM authentication**. Complete the following fields for your chosen authentication type:
    
    **Basic authentication**
-     -  **Username** - The username of the user for authentication.
-     -  **Password** - The password of the user for authentication.
+     - **Username**: The username of the user for authentication.
+     - **Password**: The password of the user for authentication.
 
    **NTLM authentication**
-     -  **Username** - The username of the user for authentication.
-     -  **Password** - The password of the user for authentication.
-     -  **NTLM domain name** - The NTLM domain name that belongs to the user who is authenticating.
-     -  **NTLM host name** - The host name of the NTLM server.
+     - **Username**: The username of the user for authentication.
+     - **Password**: The password of the user for authentication.
+     - **NTLM domain name**: The NTLM domain name that belongs to the user who is authenticating.
+     - **NTLM host name**: The host name of the NTLM server.
 
    **FORM authentication**
      1. In **Form type**, select one of the following options:
-        -  **Direct** - Click this option if you do not want to fetch the login page.
-        -  **Indirect** - Click this option if you want to fetch the login page and you want to fill the parameters in the login form.
+        - **Direct**: Click this option if you do not want to fetch the login page.
+        - **Indirect**: Click this option if you want to fetch the login page and you want to fill the parameters in the login form.
      1. Complete the following fields:
-        -  **Form login url** - This field is required if you select the **Indirect** form type.
-        -  **Form action url** - The form action URL that is required to submit the form.
-        -  **Form name** - This field is required if you select the **Indirect** form type.
+        - **Form login url**: This field is required if you select the **Indirect** form type.
+        - **Form action url**: The form action URL that is required to submit the form.
+        - **Form name**: This field is required if you select the **Indirect** form type.
      1. In **Form method**, select either **POST** or **GET**.
      1. Complete the following fields:
-        -  **Form parameters** - The list of the key-value pairs of form parameters. Complete the **Key** and **Value** fields, and click **+** to add one or more form parameters.
+        - **Form parameters**: The list of the key-value pairs of form parameters. Complete the **Key** and **Value** fields, and click **+** to add one or more form parameters.
    
 1. Optional: Under **Proxy Settings**, set the following switch:
-    -  **Enable Proxy Settings** - Is set to **Off** by default. When you set **Enable Proxy Settings** to **On**, you activate proxy authentication for the starting URLs that you want to crawl.
-       - **Username** - The username that you use to authenticate with a proxy server. You can obtain your username from the website administrator.
-       - **Password** - The password that you use to authenticate with a proxy server. You can obtain your password from the website administrator.
-       - **Proxy server domain(s)** - The domain(s) that the host resides in. You can specify a wildcard in this field, such as an asterisk (`*`) to crawl all domains or a leading asterisk (`*.server1.bar.com`) to crawl domains that match a pattern.
-       - **Proxy server host name or IP address** - The host name, if you want to access the server by using a LAN, or the IP address of the server that you want to use as the proxy server.
-       - **Proxy server port number** - The network port that you want to connect to on the proxy server.
+    - **Enable Proxy Settings**: Is set to **Off** by default. When you set **Enable Proxy Settings** to **On**, you activate proxy authentication for the starting URLs that you want to crawl.
+       - **Username**: The username that you use to authenticate with a proxy server. You can obtain your username from the website administrator.
+       - **Password**: The password that you use to authenticate with a proxy server. You can obtain your password from the website administrator.
+       - **Proxy server domain(s)**: The domain(s) that the host resides in. You can specify a wildcard in this field, such as an asterisk (`*`) to crawl all domains or a leading asterisk (`*.server1.bar.com`) to crawl domains that match a pattern.
+       - **Proxy server host name or IP address**: The host name, if you want to access the server by using a LAN, or the IP address of the server that you want to use as the proxy server.
+       - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 
 1. Optional: Complete the following fields in **Advanced Configuration**:
-    -  **Code page to use** - The field used to enter the character encoding. If unspecified, the default value used is `UTF-8`.
+    - **Code page to use**: The field used to enter the character encoding. If unspecified, the default value used is `UTF-8`.
 
        If you are crawling Chinese websites, enter `UTF-8` as the character set in **Code page to use**.
        {: tip}
 
-    -  **URL Path Depth** - The depth of a website to crawl, indicated by subtrees in a link. For example, `https://www.example.com/some/more/examples/index.html` has a path depth of 4, `/some/more/examples/index`. You can only enter a positive value. If unspecified, the default value is `5`. The maximum path depth is `20`.
-    -  **Maximum hops** - The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Starting URLs** to crawl the web page.
+    - **URL Path Depth**: The depth of a website to crawl, indicated by subtrees in a link. For example, `https://www.example.com/some/more/examples/index.html` has a path depth of 4, `/some/more/examples/index`. You can only enter a positive value. If unspecified, the default value is `5`. The maximum path depth is `20`.
+    - **Maximum hops**: The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Starting URLs** to crawl the web page.
 1. Optional: Set the following switch:
-    -  **Ignore certificate** - If you enable this option, ignores any SSL certificates that are present on websites. This option only applies to HTTPS websites.
+    - **Ignore certificate**: If you enable this option, ignores any SSL certificates that are present on websites. This option only applies to HTTPS websites.
 1. Click **Finish**.
 
 After the crawl begins, the **Activity** tab opens and updates as documents are added to the collection.
@@ -476,18 +476,23 @@ Use this option to crawl documents from IBM Db2, Microsoft SQL Server, Postgresq
 - Postgres: 9.6, 10, 11
 
 Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
-{: shortdesc}
 
 #### Copying Database JAR files
 {: #copydatabasefiles}
 
-1. Copy the Oracle DB, Postgres, MSSQL, Db2, or JDBC .jar files that are associated with the database that you want to crawl. See the following list for the .jar files that are associated with each database:
-   - Db2 - `db2jcc4.jar`
-   - Oracle - `ojdbc8.jar`
-   - SQL Server - `mssql-jdbc-7.2.2.jre8.jar`
-   - Postgresql - `postgresql-42.2.6.jar`
-1. Compress the .jar files into a .zip file. If you have a JDBC driver that has one .jar file, you do not need to compress the .jar file into a .zip file; simply upload the .jar file in {{site.data.keyword.discoveryshort}}.
+1. Download the JAR files for the JDBC driver library from the database server or vendor's website.
 
+    The following files are associated with each database:
+
+    - Db2: `db2jcc4.jar`
+    - Oracle: `ojdbc8.jar`
+    - SQL Server: `mssql-jdbc-7.2.2.jre8.jar`
+    - Postgresql: `postgresql-42.2.6.jar`
+1.  Compress the JAR files into a single ZIP file. 
+
+    If you have a JDBC driver that has only one JAR file, skip this step.
+
+When you set up the database data source, you are asked to specify the JDBC driver classpath. Specify the directory where you store this JAR or ZIP file so that {{site.data.keyword.discoveryshort}} can upload it.
 
 #### Configuring a Database collection
 {: #configuredatabase}
@@ -499,30 +504,65 @@ Before you complete the fields in **Specify what you want to crawl**, keep the f
 - You can crawl multiple tables in a collection, and you can specify tables that have different schema, or sets of columns.
 - If you crawl multiple tables that have columns with the same name but different data types, the data in one of the tables is excluded from the index. For example, if you have two tables that have columns called `DATA` and the `DATA` column in one table is populated with dates and the column in the other table is populated with strings, the data in one of the tables is excluded from the index. In this case, to resolve a column name conflict, use a `VIEW`.
 
-Only in content mining projects, columns that have such a conflict are assigned fields that have a data type suffix, such as `DATA_string`. To see if data types are excluded from the index, click **Warnings and errors** in the **Activity** tab.
+Only in content mining projects, columns that have such a conflict are assigned fields that have a data type suffix, such as `DATA_string`. To see whether data types are excluded from the index, click **Warnings and errors** in the **Activity** tab.
 {: note}
 
 In {{site.data.keyword.discoveryshort}}, after you select **Database** as the collection type, enter the following information:
 
-1. Complete the following fields in **Enter your credentials**:
-    -  **Database URL** - The main URL to the database you select. The format of the database URL is `jdbc:<database_type>://<path>:<port>`. See the following list for examples of database URLs:
-       - Db2 - `jdbc:db2://localhost:50000/sample`
-       - Oracle - `jdbc:oracle:thin:@localhost:1521:sample`
-       - SQL Server - `jdbc:sqlserver://localhost:1433;DatabaseName=sample`
-       - Postgresql - `jdbc:postgresql://localhost/sample`
-    -  **User** - Your username that you obtain from the database you selected. You use this username to crawl the source. Your username is different from database to database.
-    -  **Password** - Your password that you obtain from the database you selected. Your password is associated with your username. Your password is different from database to database.
-1. Complete the following fields in **Connection settings**:
-    -  **JDBC driver type** - The default is **DB2**. Lists the four databases that {{site.data.keyword.discoveryshort}} supports: Db2, Microsoft SQL Server, Postgresql, and Oracle. If you want to crawl from another database that is not listed, select **OTHER**.
-    -  **JDBC driver classname** - The JDBC driver class name you obtain from the database you select. Depending on the database you select in **JDBC Driver Type**, this field is autofilled, except if you select **OTHER**.
-    -  **JDBC driver classpath** - Upload a JDBC driver file, which can have a .jar or .zip file extension. You can select or delete a .jar or .zip file that you previously uploaded.
+1. Complete the following fields in the *Enter your credentials* section:
+
+    - **Database URL**: The URL of the database server.
+    
+      The following table shows example database URLs:
+
+      <table>
+      <caption>Example database URLs</caption>
+      <tr>
+        <th>Database</th>
+        <th>Syntax</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>DB2</td>
+        <td>`jdbc:db2://<server>:<port>/<database_name>`</td>
+        <td>`jdbc:db2://localhost:50000/sample`</td>
+      </tr>
+      <tr>
+        <td>Oracle</td>
+        <td>`jdbc:oracle:thin:@//<host>:<TCPport>/<service_name>`</td>
+        <td>`jdbc:oracle:thin:@localhost:1521:sample`</td>
+      </tr>
+      <tr>
+        <td>SQL Server</td>
+        <td>`jdbc:sqlserver://<serverName>[\<instanceName>]:<port>[;property=value]`</td>
+        <td>`jdbc:sqlserver://localhost:1433;DatabaseName=sample`</td>
+      </tr>
+      <tr>
+        <td>Postgresql</td>
+        <td>`jdbc:postgresql://<host>:<port>/<database>`</td>
+        <td>`jdbc:postgresql://localhost/sample`</td>
+      </tr>
+      </table>
+
+    - **User**: The username that you obtain from the database you selected. You use this username to crawl the source. Your username is different from database to database.
+    - **Password**: The password that is associated with your username. Your password is different from database to database.
+1. Complete the following fields in the *Connection settings* section:
+
+    - **JDBC driver type**: Choose the database. 
+    
+      **DB2** is selected by default. If you want to crawl from a database type that is not listed, select **OTHER**.
+    - **JDBC driver classname**: The JDBC driver class name that is associated with the database you selected. This field is autofilled, unless you select **OTHER**.
+    - **JDBC driver classpath**: Upload a JDBC driver file, which can have a .jar or .zip file extension. 
+    
+      You can select or delete a .jar or .zip file that you previously uploaded.
 1. Complete the following fields in **Specify what you want to crawl**:
-    -  **Schema Name** - The schema you want to crawl data from. You obtain the schema name from the database you are crawling.
-    -  **Table Name** - The table within a schema you want to crawl data from. You obtain the table name from the database you are crawling.
+    - **Schema Name**: The schema you want to crawl data from. You obtain the schema name from the database you are crawling.
+    - **Table Name**: The table within a schema you want to crawl data from. You obtain the table name from the database you are crawling.
          
          After you complete the **Schema name** and **Table name** fields and click **Add**, you can click the edit icon to access the **Table crawl settings** dialog box, where you can enter input in the following fields:
-         -  **Primary key** - The primary key of the target database table. If the primary key is not configured in the target database table, you must complete this field. The JDBC database crawler appends this primary key value to the URL of each crawled row to keep its uniqueness. When the primary key is a composite key, concatenate the key names by using a comma, for example `key1,key2`. If unspecified, the project defaults to the primary key fields of the table. If the primary key is configured in the target database table, this key is automatically detected.
-         -  **Row filter** - Optional: Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed. In this case, update the condition, and click **Apply changes and reprocess**.
+
+         - **Primary key**: The primary key of the target database table. If the primary key is not configured in the target database table, you must complete this field. The JDBC database crawler appends this primary key value to the URL of each crawled row to keep its uniqueness. When the primary key is a composite key, concatenate the key names by using a comma, for example `key1,key2`. If unspecified, the project defaults to the primary key fields of the table. If the primary key is configured in the target database table, this key is automatically detected.
+         - **Row filter**: Optional: Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed. In this case, update the condition, and click **Apply changes and reprocess**.
 1. Click **Finish**.
 
 
@@ -681,21 +721,21 @@ The output of the `getStatus` command is an XML file in the following output:
 In {{site.data.keyword.discoveryshort}}, after you select **Windows File System** as the collection type, enter the following information:
  
 1. Complete the following fields in **Enter your credentials**:
-    -  **Host** - The host name of the remote Microsoft Windows server, for example `<hostname>.mydomain.com`. You obtain the host name when you install the agent server.
-    -  **Username** - The username to connect the agent server, which you obtain when you install the agent server. You use your username to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
-    -  **Password** - The password of the specified user, which you obtain when you install the agent server. You use your password to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
-    -  **Agent Authentication Port** - The default port value is `8397`. The port for authenticating, which you obtain when you install the agent server.
-    -  **Port** - The default port value is `8398`. The port for transferring data, which you obtain when you install the agent server.
+    - **Host**: The host name of the remote Microsoft Windows server, for example `<hostname>.mydomain.com`. You obtain the host name when you install the agent server.
+    - **Username**: The username to connect the agent server, which you obtain when you install the agent server. You use your username to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
+    - **Password**: The password of the specified user, which you obtain when you install the agent server. You use your password to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
+    - **Agent Authentication Port**: The default port value is `8397`. The port for authenticating, which you obtain when you install the agent server.
+    - **Port**: The default port value is `8398`. The port for transferring data, which you obtain when you install the agent server.
 1. Complete the following field in **Specify what you want to crawl**:
-    - **Path** - The file path that you need to enter to crawl documents from. You can enter multiple file paths.
+    - **Path**: The file path that you need to enter to crawl documents from. You can enter multiple file paths.
 1. Enter one or more paths, and click **Add**.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](#configuredls).
-         - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-         - **LDAP binding username** - The username used to bind to the directory service. In most cases, this username is a DN. The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
-         - **LDAP binding user password** - The password used to bind to the directory service.
-         - **LDAP base DN** - The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`. 
-         - **LDAP user filter** - The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
+    - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](#configuredls).
+         - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
+         - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a DN. The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
+         - **LDAP binding user password**: The password used to bind to the directory service.
+         - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`. 
+         - **LDAP user filter**: The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
 
 1. Click **Finish**.
 
@@ -1079,7 +1119,7 @@ For information about creating and mounting a persistent volume on the crawler p
 In {{site.data.keyword.discoveryshort}}, after you select **Local File System** as the collection type, enter the following information:
 
 1. Under **Specify what you want to crawl**, complete the following field:
-    - **Path** - The file path that you need to enter to crawl folders and documents from. You can enter multiple file paths.
+    - **Path**: The file path that you need to enter to crawl folders and documents from. You can enter multiple file paths.
 1. After you enter one or more paths, click **Add** and then **Finish**
 
 
@@ -1102,20 +1142,20 @@ If you are using FileNet P8 5.5.0 or FileNet on {{site.data.keyword.cp4-automati
 In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the collection type, enter the following information, replacing the `<>` and the content inside with the requested information:
 
 1. Complete the following fields in **Enter your credentials**:
-    - **Content Engine Web Service URL** - The Content Engine web service URL of the IBM FileNet P8 server. When you enter the URL, use the following format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `<server>` is the host name of the server where the Content Platform Engine is deployed, and the `<port>` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
-    - **User** - The username of the user who wants to crawl a FileNet P8 server. You can obtain your username from your FileNet administrator.
-    - **Password** - The password of the user who wants to crawl a FileNet P8 server. You can obtain your password from your FileNet administrator.
+    - **Content Engine Web Service URL**: The Content Engine web service URL of the IBM FileNet P8 server. When you enter the URL, use the following format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `<server>` is the host name of the server where the Content Platform Engine is deployed, and the `<port>` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
+    - **User**: The username of the user who wants to crawl a FileNet P8 server. You can obtain your username from your FileNet administrator.
+    - **Password**: The password of the user who wants to crawl a FileNet P8 server. You can obtain your password from your FileNet administrator.
 1. Complete the following field in **Specify what you want to crawl**:
-    - **ObjectStore Name** - The name of the object store that you can use to create, search, retrieve, and store documents.
+    - **ObjectStore Name**: The name of the object store that you can use to create, search, retrieve, and store documents.
 1. In **Crawler Space Type**, select either **Folder** or **Class**.
 1. Complete the following field:
-    - **Folder subpath or Subclass name** - The subfolder path that you can specify under RootFolder that crawls all documents belonging to the specified folder or the custom subclass of the `Document` class that crawls all documents belonging to the specified class. Before you specify anything in this field, keep in mind the following items:
+    - **Folder subpath or Subclass name**: The subfolder path that you can specify under RootFolder that crawls all documents belonging to the specified folder or the custom subclass of the `Document` class that crawls all documents belonging to the specified class. Before you specify anything in this field, keep in mind the following items:
       - You can specify multiple crawler spaces by using both the `Class` and `Folder` types and crawl the documents belonging to the folder name and class name.
       - You cannot specify a class outside the object store that you defined.
       - No support is available for specifying a class that is a subclass of a `Custom Object` and `Folder`.
 1. After you enter one or more paths, click **Add**.
 1. Optional: Set the following switch in **Security**:
-    -  **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](#configuredls).
+    - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](#configuredls).
 1. Click **Finish**.
 
 
@@ -1157,38 +1197,38 @@ To configure a server that has the DIIOP protocol, complete the following steps:
 In {{site.data.keyword.discoveryshort}}, after you select **Notes** as the collection type, enter the following information:
 
 1. Complete the following fields in **Enter your credentials**:
-    -  **Host name** - The host name of the Notes server.
-    -  **User name** - The username to crawl the Notes server.
-    -  **Password** - The password of the specified user.
+    - **Host name**: The host name of the Notes server.
+    - **User name**: The username to crawl the Notes server.
+    - **Password**: The password of the specified user.
 1. In **Crawl type**, click one of the following options:
-    -  **Database** - Crawls a specified Notes database.
-    -  **Directory** - The directory that you want to crawl.
+    - **Database**: Crawls a specified Notes database.
+    - **Directory**: The directory that you want to crawl.
 1. Complete the applicable field:
-    -  **Database file name** (when you click **Database** as the crawl type) - The file name of the database that you want to crawl.
-    -  **Directory name** (when you click **Directory** as the crawl type) - The directory name that you want to crawl. If you select this option, {{site.data.keyword.discoveryshort}} crawls all Notes databases under the specified directory.
+    - **Database file name** (when you click **Database** as the crawl type) - The file name of the database that you want to crawl.
+    - **Directory name** (when you click **Directory** as the crawl type) - The directory name that you want to crawl. If you select this option, {{site.data.keyword.discoveryshort}} crawls all Notes databases under the specified directory.
 1. Optional: In **Security**, set the following switch:
-    - **Enable Document Level Security** - By default, this switch is set to **Off**. You must enable this option to activate document level security. When set to **On**, your users can crawl content that they have access to in a Notes database or directory. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](#configuredls).
-    - **Use remote LDAP directory** - By default, is set to **Off**. This option is only available when you set **Enable Document Level Security** to **On**.
-        - **LDAP server URL** - The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-        - **LDAP binding username** - The username used to bind to the directory service.
-        - **LDAP binding user password** - The password used to bind to the directory service.
-        - **LDAP base DN** - The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
-        - **LDAP user filter** - The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
-        - **LDAP group filter** - The group filter to search group entries in LDAP.
+    - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security. When set to **On**, your users can crawl content that they have access to in a Notes database or directory. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](#configuredls).
+    - **Use remote LDAP directory**: By default, is set to **Off**. This option is only available when you set **Enable Document Level Security** to **On**.
+        - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
+        - **LDAP binding username**: The username used to bind to the directory service.
+        - **LDAP binding user password**: The password used to bind to the directory service.
+        - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
+        - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
+        - **LDAP group filter**: The group filter to search group entries in LDAP.
 
         When you enable document level security, you can only crawl one LDAP server, which can either be a Domino server or an external server.
         {: note}
 
 1. Optional: In **Advanced options**, set the following switches:
-    - **Crawl attachments** - By default, is set to **On**. When set to **On**, crawls attachments of Notes documents.
-    - **Automatic code page detection** - By default, is set to **On**. When this option is disabled, the encoding converter detects the code pages of crawled documents. Complete the following fields:
-        -  **Code page to use** - Displays only when **Automatic code page detection** is set to **Off**. The field used to enter the character encoding. If unspecified, the default value is `UTF-8`.
-        -  **Notes formula** - Specify the limits to the data that you crawl, for example `SELECT @IsAvailable(Year) & Year > 2003`.
+    - **Crawl attachments**: By default, is set to **On**. When set to **On**, crawls attachments of Notes documents.
+    - **Automatic code page detection**: By default, is set to **On**. When this option is disabled, the encoding converter detects the code pages of crawled documents. Complete the following fields:
+        - **Code page to use**: Displays only when **Automatic code page detection** is set to **Off**. The field used to enter the character encoding. If unspecified, the default value is `UTF-8`.
+        - **Notes formula**: Specify the limits to the data that you crawl, for example `SELECT @IsAvailable(Year) & Year > 2003`.
 1. Select an option in the following drop-down list:
-    -  **Document date field** - The document date that is used in a crawl.
-         -  **Document modification date** - By default, the modified dates of the crawled documents is stored as the original field `_ _$Date$_ _`.
-         -  **Document crawl date** - Assigns the crawled dates to the original field `_ _$Date$_ _`.
-         -  **Document creation date** - Assigns the creation dates of the crawled documents to the original field `_ _$Date$_ _`.
+    - **Document date field**: The document date that is used in a crawl.
+         - **Document modification date**: By default, the modified dates of the crawled documents is stored as the original field `_ _$Date$_ _`.
+         - **Document crawl date**: Assigns the crawled dates to the original field `_ _$Date$_ _`.
+         - **Document creation date**: Assigns the creation dates of the crawled documents to the original field `_ _$Date$_ _`.
 
 
 ### Reuse data from an existing collection
@@ -1227,8 +1267,8 @@ These settings are only available when crawler plug-ins are deployed. For more i
 
 When you are ready to configure a collection to use a crawler plug-in, you can see a **Plug-in settings** section. Review the following plug-in settings that you can use to process documents. You only see these options if you deploy a plug-in package by using the `scripts/manage_crawler_plugin.sh` script:
 
--  **Enable plug-in** - By default, this switch is set to **Off**. Enable this option if you want to use a crawler plug-in to process documents.
-    -  **Plug-in** - Lists available crawler plug-in names. Select a plug-in to use.
+- **Enable plug-in**: By default, this switch is set to **Off**. Enable this option if you want to use a crawler plug-in to process documents.
+    - **Plug-in**: Lists available crawler plug-in names. Select a plug-in to use.
 
 ## Managing collections
 {: #manage-collections}
@@ -1239,8 +1279,8 @@ When you are ready to configure a collection to use a crawler plug-in, you can s
 
  To keep track of collection sharing across projects, open the **Projects** page, then complete the appropriate step for your deployment:
  
-  -  ![Cloud Pak for Data only](images/desktop.png) **IBM Cloud Pak for Data**: Select **Data usage**, then **Collection usage and sharing**.
-  -  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
+  - ![Cloud Pak for Data only](images/desktop.png) **IBM Cloud Pak for Data**: Select **Data usage**, then **Collection usage and sharing**.
+  - ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
 
  
 For more information see [Managing data collections](/docs/discovery-data?topic=discovery-data-manage-collections).
@@ -1256,13 +1296,13 @@ For more information see [Managing data collections](/docs/discovery-data?topic=
 
 Collection details include the following:
 
--  Number of documents
--  Collection status
-    -  A collection is finished processing when the status is `Syncing complete` or `Processing finished. Updated documents are ready for you.`.
-    -  ![Cloud Pak for Data only](images/cpdonly.png) If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button that you see varies, depending on the type of collection.
-    -  ![Cloud Pak for Data only](images/cpdonly.png) If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl stops, and a new full crawl begins. It is recommended that you wait until the status is `Syncing complete` before starting a recrawl.
--  Date of creation and last update
--  An abbreviated list of **Warnings and errors**. To see the full list, select **View all**. The **Warnings and errors** page (![Cloud Pak for Data only](images/cpdonly.png)) contains more detailed information, including the`Type`, `Message`, and `Date` for each message.
+- Number of documents
+- Collection status
+    - A collection is finished processing when the status is `Syncing complete` or `Processing finished. Updated documents are ready for you.`.
+    - ![Cloud Pak for Data only](images/cpdonly.png) If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button that you see varies, depending on the type of collection.
+    - ![Cloud Pak for Data only](images/cpdonly.png) If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl stops, and a new full crawl begins. It is recommended that you wait until the status is `Syncing complete` before starting a recrawl.
+- Date of creation and last update
+- An abbreviated list of **Warnings and errors**. To see the full list, select **View all**. The **Warnings and errors** page (![Cloud Pak for Data only](images/cpdonly.png)) contains more detailed information, including the`Type`, `Message`, and `Date` for each message.
 
 
 ## About document level security
