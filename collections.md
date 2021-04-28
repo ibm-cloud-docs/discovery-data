@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-04-27"
 
 keywords: data sources, supported data sources
 
@@ -41,6 +41,7 @@ subcollection: discovery-data
 A collection is a set of documents that you upload or crawl from where it resides on a connected data source.
 {: shortdesc}
 
+Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents that have a similar visual structure so that you can use the collection to define custom fields with the Smart Document Understanding tool. Or maybe you want to create a collection of documents that contain frequently asked questions that are formatted in a consistent manner so you can apply the FAQ extraction feature to the collection.
 
 ## Creating a collection
 {: #createcollection}
@@ -51,8 +52,9 @@ Before you can create a collection, you must create a project. For more informat
 
 1.  To create a collection, open a project, go to the **Manage collections** page, and then click **New collection**.
 
-    The Document Retrieval and Custom project types can contain up to 5 collections. A Conversational Search project can contain 5 collections but only 1 collection is used by the {{site.data.keyword.conversationshort}} search skill. A Content Mining project can contain only 1 collection.
-    {: note}
+    - The Document Retrieval and Custom project types can contain up to 5 collections. 
+    - A Conversational Search project can contain 5 collections but only 1 collection is used by the {{site.data.keyword.conversationshort}} search skill. 
+    - A Content Mining project can contain only 1 collection.
 1.  Choose a data source type. A collection can support only one data source.
 
     You can connect to an external data source or perform a one-time document upload from your local file system.
@@ -77,8 +79,6 @@ Before you can create a collection, you must create a project. For more informat
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
 {: note}
-
-Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents that have a similar visual structure so that you can use the collection to define custom fields with the Smart Document Understanding tool. Or maybe you want to create a collection of documents that contain frequently asked questions that are formatted in a consistent manner so you can apply the FAQ extraction feature to the collection.
 
 The following table shows the supported data sources for each deployment type.
 
@@ -113,13 +113,13 @@ When you create a collection, the initial crawl starts immediately. The frequenc
 
 To create a crawl schedule, complete the following steps:
 
-1.  In the in *Crawl schedule* section, choose a frequency.
+1.  In the in *Crawl schedule* section, choose a frequency. 
 
     - If you want to crawl every 12 hours or every 10 days, choose **Custom intervals**. You can schedule the crawler to run on a custom number of days, hours, or minutes.
+    - By default, the crawl is scheduled to start during off-peak hours.
+    - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
 
-    - ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}}: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
-
-1.  ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}}: In **More scheduling settings**, you can choose the type of update to make from the following options:
+1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: In **More scheduling settings**, you can choose the type of update to make from the following options:
 
     - Crawling updates (look for new, modified, and deleted contents)
     - Crawling new and modified contents

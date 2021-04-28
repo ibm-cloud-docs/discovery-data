@@ -57,7 +57,7 @@ Discovery
     {: topicgroup}
     Improving relevance of results
         train.md
-        train-tips.md
+        relevancy-tips.md
 
     test.md
     deploy.md

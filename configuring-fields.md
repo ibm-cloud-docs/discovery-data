@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-28"
 
 subcollection: discovery-data
 
@@ -115,8 +115,12 @@ See [Best practices for annotating documents](/docs/discovery-data?topic=discove
     See the *Default field labels* table for a list of the fields and their descriptions.
 1.  To create a custom field label, click **Create new**. 
 
-    Specify a field label with lowercase letters and no spaces. For example, `my_field` is a valid field label.
-    {: note}
+    - Specify a field label with lowercase letters and no spaces. For example, `my_field` is a valid field label.
+    - If you want to change the color that will be used to represent the field, repeatedly click the color block ![Square block of color with two arrows that point in a circle](images/sdu-label-color.png) until it is displayed in the color that you want to use.
+    
+      You cannot change the field label color later.
+      {: important}
+    - Click **Create**.
 1. To begin annotating the document, click a field label to activate it.
 1. Click the content representing that field in the SDU tool. Alternately, you can select a field label and drag it to the content in the SDU tool.
 
