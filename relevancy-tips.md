@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-28"
 
 subcollection: discovery-data
 
@@ -82,17 +82,17 @@ This warning indicates that you might have one or more failed queries. It is not
 ### Error: `Training data quality standards not met: You will need additional training queries with labeled examples. (To be considered for training, each example must appear in the top 100 search results for its query.)`
 {: #error-labels}
 
-- This means that you need to add more training data in order to train successfully. You need at least 49 unique training queries at a minimum, and each one needs at least one rated document. Minimum does not equate to optimal; the size of the collection and other factors can increase the number of training examples needed to meet the minimum.  
+- This means that you need to add more training data to train successfully. You need at least 49 unique training queries at a minimum, and each one needs at least one rated document. Minimum does not mean optimal; the size of the collection and other factors can increase the number of training examples needed to meet the minimum.  
 
 ### Error: `Training data quality standards not met: Insufficient number of unique training queries. Expected at least n, but found m.`
 {: #error-notunique}
 
-- In order to meet the minimum training requirements; you need at least 50 unique training queries at a minimum, and each one needs at least one rated document. If you have more than that and are still receiving this error message, you should check your notices for additional errors.  
+- To meet the minimum training requirements, you need at least 50 unique training queries, and each one must have at least one rated document. If you have more than that and are still receiving this error message, you should check your notices for additional errors.  
 
 ### Error: `Training data quality standards not met: No documents found with non-zero relevance labels.`
 {: #error-relevance}
 
-- Training data needs enough labeled data that specifies what documents are high value. This means that you need to rate some documents with non-zero values. You need to rate some documents as `Relevant` and some as `Not relevant`. At least one document must be rated `Relevant`.
+- Training data needs a sufficient amount of labeled data that specifies what documents are high value. This means that you need to rate some documents with non-zero values. You need to rate some documents as `Relevant` and some as `Not relevant`. At least one document must be rated `Relevant`.
 
 ### Error: `Training data quality standards not met: Training examples have no relevance label variety for X queries.`
 {: #error-variety}
