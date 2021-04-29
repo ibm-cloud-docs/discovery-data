@@ -42,6 +42,7 @@ Discovery
     {: topicgroup}
     Preparing your documents for enrichment
         configuring-fields.md
+        split-documents.md
 
     {: topicgroup}
     Teaching Discovery about your domain

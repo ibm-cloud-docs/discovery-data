@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-04-29"
 
 subcollection: discovery-data
 
@@ -212,18 +212,14 @@ To apply an enrichment to a field:
 <!-- c/s help for **Manage fields** page. Do not delete. -->
 
 The **Manage fields** tab contains several options:
+
 -  **Identify fields to index**
--  **Improve query results by splitting your documents**
+-  **Improve query results by splitting your documents**: For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents)
 -  **Date format settings**
 
-To access the **Manage fields** page, click the **Manage collections** icon on the navigation pane and open a collection. Click the **Manage fields** tab. For more information on collections, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
+To access the **Manage fields** page, click the **Manage collections** icon on the navigation pane and open a collection. Click the **Manage fields** tab. For more information on collections, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
 **Identify fields to index** - Use this option to choose which fields should be included in the index for this collection. You can switch off any fields that you do not want to index. For example, your PDFs may contain a running header or footer that does not contain useful information, so you can exclude those fields from the index.
-
-**Improve query results by splitting your documents**. Use this option to split your documents into segments based on a field name. After your documents are split, each segment is a separate document that will be enriched, indexed, and returned as a separate query result. Documents are split based on a single field name, for example `title`, `author`, `question`. 
-  - The number of segments per document is limited to `1,000`. Any document content remaining after `999` segments are stored within segment `1,000`.
-  - PDF and Word metadata, as well as any custom metadata, is extracted and included in the index with each segment. Every segment of a document includes identical metadata.
-  - If a split document is updated and needs to be re-uploaded, you should replace the document using the **Update document** method in the [API reference](https://{DomainName}/apidocs/discovery-data#updatedocument){: external}. Upload the document, using the POST method of the `/environments/{environment_id}/collections/{collection_id}/documents/{document_id}` API, specifying the contents of the `parent_id` field of one of the current segments as the {document_id} path variable. All segments will be overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments remain in the index and can be individually deleted using the API. For more information, see the [API Reference](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}.
 
 **Date format settings** - The following options are useful if you want to use time series visualization in the **Content Mining** project type or if you want to correctly parse dates from text in different languages. Use this option to add or delete date formats that are used to convert date strings to date-type data set fields. Only strings that are compatible with the Java `SimpleDateFormat` class are supported. You cannot add any documents that include alternative date formats to the index.
   - **Date formats** - Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. This field supports the Java `SimpleDateFormat` class, so the date formats string can be in any format that the `SimpleDateFormat` class supports. If you know that your data does not match any of the predefined date formats, you can add a format that the Java `SimpleDateFormat` class supports, or you can delete any of the predefined formats. {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the top of the list. You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.

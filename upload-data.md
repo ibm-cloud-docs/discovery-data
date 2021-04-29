@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-22"
+lastupdated: "2021-04-29"
 
 keywords: upload, one-time upload, supported file types, document types
 
@@ -54,7 +54,7 @@ To upload data, complete the following steps:
 
 1.  Optionally, click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. 
 
-    By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, by using optical character recognition.
+    By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, by using optical character recognition. When OCR is enabled, processing takes longer.
 
 1.  Browse for the files you want to crawl.
 
