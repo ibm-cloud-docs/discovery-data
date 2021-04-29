@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-04-29"
 
 subcollection: discovery-data
 
@@ -497,7 +497,7 @@ When you set up the database data source, you are asked to specify the JDBC driv
 #### Configuring a Database collection
 {: #configuredatabase}
 
-Before you complete the fields in **Enter your credentials**, you might want to check that the user credentials are associated with a user who has restricted permissions to access the tables that you want to crawl.
+Before you complete the fields in **Enter your credentials**, you might want to check that the user credentials are associated with a user who has permission to access the tables that you want to crawl.
 
 Before you complete the fields in **Specify what you want to crawl**, keep the following points in mind if you crawl multiple tables:
 
