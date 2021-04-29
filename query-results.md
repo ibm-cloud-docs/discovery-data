@@ -59,6 +59,20 @@ Preview the default query results.
 
   If your source document contains 10 question-and-answer pairs, then 10 documents are generated during processing. If you want to see all of the documents that were generated, submit an empty search string.
 
+## Reviewing indexed documents in JSON
+{: #query-results-json}
+
+For all project types except Conversational Search, you can see the fields that are associated with an indexed document by looking at the JSON view of a document that is returned by a query. Checking the JSON structure of a document can be useful if you want to check whether certain types of information are being captured.
+
+1.  From the *Improve and customize* page, do one of the following things:
+
+    - *Content Mining* project: Choose or add a facet to apply to the documents, and then click **View filtered documents**.
+    - Other project types: Enter a test query to submit or leave the field empty and press Enter to submit an empty query.
+1.  From the query result list, click the link to view the document.
+1.  Click **JSON** to view the indexed document in JSON format.
+
+Keep this approach in mind for later. After you enrich your collection, you can use the JSON view of the document to check whether your enrichments are being applied and retrieved properly. For example, you can check the JSON to confirm that a synonym that you defined in a dictionary is being tagged as an occurrence of the appropriate dictionary term.
+
 ## Improving your query results
 {: #query-results-improve}
 

@@ -30,6 +30,7 @@ Discovery
         upload-data.md
         sources.md
         collection-types.md
+        index-overview.md
         manage-collections.md
 
     {: topicgroup}
@@ -60,6 +61,7 @@ Discovery
         train.md
         relevancy-tips.md
 
+    hide-data.md
     test.md
     deploy.md
     contract_parsing.md

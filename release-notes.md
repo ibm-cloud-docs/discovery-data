@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-28"
+lastupdated: "2021-04-29"
 
 keywords: release notes
 
@@ -68,10 +68,10 @@ The following new features and changes are available for managed Premium plan de
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
 
-### ![IBM Cloud only](images/ibm-cloud.png)
+### ![IBM Cloud only](images/ibm-cloud.png) Endpoint deprecation reminder
 {: #6apr2021}
 
-- **Service API endpoint change**: As part of work done to fully support IAM authentication, the endpoint that you use to access your {{site.data.keyword.discoveryshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
+- **Service API endpoint change**: As part of work done to fully support Identity and Access Management (IAM) authentication, the endpoint that you use to access your {{site.data.keyword.discoveryshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
 
   The pattern for the endpoint URL changed from `gateway-{location}.watsonplatform.net/discovery/api/` to `api.{location}.discovery.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
 
@@ -111,7 +111,7 @@ For more information about software releases for installed deployments, see [{{s
 - Added basic support for Bosnian, Croatian, Hindi, and Serbian. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 - Released the beta feature Patterns enrichment, which uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. You can use pattern induction as an enrichment or to create a facet. For more information, see [Patterns](/docs/discovery-data?topic=discovery-data-domain#patterns) and [Creating a facet by identifying a pattern](/docs/discovery-data?topic=discovery-data-facets#facetpattern). For a statement explaining beta features, see [Beta features](/docs/discovery-data?topic=discovery-data-release-notes#beta-features).
 
-Changes made in this release:
+  Changes made in this release:
 
 - In new **Document Retrieval** projects, the `suggested refinements` query setting is now set to `false` by default. It was previously set to `true`.
 
@@ -137,7 +137,7 @@ This release is available for Premium instances of {{site.data.keyword.discovery
 - Autocomplete: {{site.data.keyword.discoveryshort}} includes autocomplete (type-ahead) for searches, as well as a reusable component for providing this feature to your end users.
 - Language support: {{site.data.keyword.discoveryshort}} supports 12 additional languages. For the complete list, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
-The following features are not available in this release:
+  The following features are not available in this release:
 
 - Deduplication is not available in this release.
 - Anomaly Detection is not offered.
