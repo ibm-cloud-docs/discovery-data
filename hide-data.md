@@ -32,20 +32,15 @@ subcollection: discovery-data
 # Preventing content from being returned in results
 {: #hide-data}
 
-Improve the query results that are returned by preventing content that you know you do not want in your results to be displayed.
+Prevent content that you don't want customers to see from being included in query results.
 {: shortdesc}
 
 You can prevent content from being included in query results in the following ways:
 
-- Delete an entire collection. For more information, see [Deleting collections](/docs/discovery-data?topic=discovery-data-manage-collections#collection-delete).
-- Delete a single document by completing the following steps:
+- Delete an entire collection. 
 
-  1.  Get the document ID, which is shown in the JSON view of a query response.
-
-      To list all documents, you can submit an empty query from the page.
-      {: tip}
-  1.  Use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API.
-- Remove a field that captures data that you do not want to share with customers from the index.
+  For more information, see [Deleting collections](/docs/discovery-data?topic=discovery-data-manage-collections#collection-delete).
+- Remove a field with data that you don't want to share with customers from the index.
 
   You can control which fields are indexed. If you want to prevent a field from being indexed, you can set it to be excluded. For example, if your PDF files contain a running header or footer that does not contain useful information, you can exclude the `header` and `footer` fields from the index.
 
@@ -57,4 +52,10 @@ You can prevent content from being included in query results in the following wa
       A list of the identified fields is displayed. You can see which fields are included in the index and which are not.
   1.  To remove a field from the index, set the **Include** switch to off.
 
-  <!--For example, you might have employee information in your data source and you want to prevent social security numbers from ever being returned. You can capture social security information in a custom field and then remove the field from the index.-->
+- Delete a single document by completing the following steps:
+
+  1.  Get the document ID, which is shown in the JSON view of a query response.
+
+      To list all documents, you can submit an empty query from the page.
+      {: tip}
+  1.  Use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API.
