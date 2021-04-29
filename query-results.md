@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-29"
 
 keywords: passages, query results
 
@@ -64,11 +64,14 @@ Preview the default query results.
 
 Use the tools built in to {{site.data.keyword.discoveryshort}} to make the following types of improvements:
 
-- Prepare your documents a bit more before you enrich them. Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify additional sections of your document that contain valuable information. You can also split large documents into more easily consumable chunks. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
-- If you applied FAQ extraction to your source documents, but {{site.data.keyword.discoveryshort}} did not generate a new document for every pair, determine which pairs were not recognized. Check whether there are easy formatting changes that you can make to help {{site.data.keyword.discoveryshort}} recognize them. For example, is the question missing a closing question mark? If there are no easy fixes, consider using the Smart Document Understanding tool to annotate the question-and-answer pairs instead. First, you must remove the FAQ extractions from the collection. Turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. After disabling FAQ extraction, reprocess the collection by clicking **Apply changes and reprocess**. Now you can use the Smart Document Understanding tool to annotate the question-and-answer pairs in your document.
+- Prepare your documents a bit more before you enrich them. 
+
+  - Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify additional sections of your document that contain valuable information. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). 
+  - Split large documents into more easily consumable chunks. For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 - Use Watson Natural Language Understanding to find and tag terms that are generally understood to have special meaning. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
 - Teach {{site.data.keyword.discoveryshort}} about terms and patterns that have special meaning to your use case. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 - For a Content Mining project, you might want to add facets based on enrichments other than the Parts of Speech enrichment that is applied by default. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: If you applied FAQ extraction to your source documents, but {{site.data.keyword.discoveryshort}} did not generate a new document for every pair, determine which pairs were not recognized. Check whether there are easy formatting changes that you can make to help {{site.data.keyword.discoveryshort}} recognize them. For example, is the question missing a closing question mark? If there are no easy fixes, consider using the Smart Document Understanding tool to annotate the question-and-answer pairs instead. First, you must remove the FAQ extractions from the collection. Turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. After disabling FAQ extraction, reprocess the collection by clicking **Apply changes and reprocess**. Now you can use the Smart Document Understanding tool to annotate the question-and-answer pairs in your document.
 
 If the right type of information is being identified and tagged in your documents already, learn steps that you can take to tweak query results that are returned to improve their relevancy. For more information, see [Search settings](/docs/discovery-data?topic=discovery-data-search-settings).
 
