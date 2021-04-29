@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-28"
 
 subcollection: discovery-data
 
@@ -75,7 +75,7 @@ You can use an IBM App Connect default connector to send data from a large set o
 The FAQ extraction feature is beta functionality and should not be used in production environments.
 {: beta}
 
-When you configure a data source for any project type, you have the option to **Apply FAQ extraction**. This beta feature detects question-and-answer pairs in your documents and automatically extracts the pairs. Your application can use the extracted pairs to provide more precise query results. 
+When you configure a data source for any project type, you have the option to **Apply FAQ extraction**. This beta feature detects question-and-answer pairs in your documents and automatically extracts the pairs. Your application can use the extracted pairs to provide more precise query results.
 
 Only apply FAQ extraction to a data source with documents that contain frequently asked questions that follow a consistent style. For example, ensure that the questions in the FAQ end with a question mark. The answer must be grouped with the question that it answers.
 
@@ -87,6 +87,8 @@ To turn off FAQ extraction, go to the **Processings settings** tab of the **Mana
 
 If you apply FAQ extraction to a collection, you cannot use the [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) tool later to annotate fields.
 {: note}
+
+To learn more, see the [Turn your FAQ pages into conversational AI](https://medium.com/ibm-data-ai/turn-your-faq-pages-into-conversational-ai-8ac7ae7ec793) blog post on Medium.
 
 ## Data source requirements
 {: #public-requirements}
