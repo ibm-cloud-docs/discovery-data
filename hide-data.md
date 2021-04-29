@@ -1,0 +1,60 @@
+---
+
+copyright:
+  years: 2020, 2021
+lastupdated: "2021-04-29"
+
+subcollection: discovery-data
+
+---
+
+{:shortdesc: .shortdesc}
+{:external: target="_blank" .external}
+{:tip: .tip}
+{:note: .note}
+{:pre: .pre}
+{:important: .important}
+{:deprecated: .deprecated}
+{:codeblock: .codeblock}
+{:screen: .screen}
+{:download: .download}
+{:hide-dashboard: .hide-dashboard}
+{:apikey: data-credential-placeholder='apikey'} 
+{:url: data-credential-placeholder='url'}
+{:curl: .ph data-hd-programlang='curl'}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:java: .ph data-hd-programlang='java'}
+{:python: .ph data-hd-programlang='python'}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:swift: .ph data-hd-programlang='swift'}
+{:go: .ph data-hd-programlang='go'}
+
+# Preventing content from being returned in results
+{: #hide-data}
+
+Improve the query results that are returned by preventing content that you know you do not want in your results to be displayed.
+{: shortdesc}
+
+You can prevent content from being included in query results in the following ways:
+
+- Delete an entire collection. For more information, see [Deleting collections](/docs/discovery-data?topic=discovery-data-manage-collections#collection-delete).
+- Delete a single document by completing the following steps:
+
+  1.  Get the document ID, which is shown in the JSON view of a query response.
+
+      To list all documents, you can submit an empty query from the page.
+      {: tip}
+  1.  Use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API.
+- Remove a field that captures data that you do not want to share with customers from the index.
+
+  You can control which fields are indexed. If you want to prevent a field from being indexed, you can set it to be excluded. For example, if your PDF files contain a running header or footer that does not contain useful information, you can exclude the `header` and `footer` fields from the index.
+
+  To manage the fields to index, complete the following steps:
+
+  1.  Click **Manage collections** from the navigation pane, and then click a collection to open it.
+  1.  Open the **Manage fields** page.
+
+      A list of the identified fields is displayed. You can see which fields are included in the index and which are not.
+  1.  To remove a field from the index, set the **Include** switch to off.
+
+  <!--For example, you might have employee information in your data source and you want to prevent social security numbers from ever being returned. You can capture social security information in a custom field and then remove the field from the index.-->

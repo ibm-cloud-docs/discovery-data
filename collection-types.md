@@ -565,6 +565,34 @@ In {{site.data.keyword.discoveryshort}}, after you select **Database** as the co
          - **Row filter**: Optional: Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed. In this case, update the condition, and click **Apply changes and reprocess**.
 1. Click **Finish**.
 
+### Applying enrichments to content from a database
+{: #collection-types-enrich-db}
+
+If you use a database as your data source and want to apply enrichments to the nested fields that are indexed from the database, you must use a Content Mining project type.
+
+If your goal is to create a search application by using a Document Retrieval project type, create a Content Mining project type first. From the Content Mining project, you can connect to the database and enrich the data. Then you can reuse the enriched collection from a Document Retrieval project.
+
+To enrich database content for use in a Document Retrieval project, complete the following steps:
+
+1.  Create a Content Mining project.
+
+    For more information, see [Creating a project](/docs/discovery-data?topic=discovery-data-projects).
+1.  Connect to a database data source.
+
+    For more information, see [Configuring a data source: Database](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect).
+1.  Apply enrichments.
+
+    For more information, see the following topics:
+    
+    - [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain)
+    - [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
+1.  Create a Document Retrieval project.
+
+    For more information, see [Creating a project](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-projects).
+
+    When you are prompted to choose a collection, choose **Reuse data from an existing collection**. If necessary, scroll to see this option.
+    {: note}
+1.  Select the collection that you created and enriched by using the Content Mining project, and then click **Finish**.
 
 ### Windows File System
 {: #windowsfilesystemconnect}
