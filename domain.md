@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-30"
 
 subcollection: discovery-data
 
@@ -154,13 +154,16 @@ To add dictionary terms one by one, complete the following steps:
 1.  Optional: Expand Advanced options, and specify a facet path to categorize any text that matches the dictionary entry. The text can be filtered by this facet later. 
 
     If you use a hierarchy of categories, add a period between category names in the facet path to represent the hierarchy. For example, `automobiles.motorsports`.
-1.  Enter a term, and then select the **+** button to add it. 
+1.  Enter a term, and then select the **+** button to add it.
+
+1.  To add synonyms for the term, click the *Edit* icon, and then enter synonyms in the **Other terms** field. Separate multiple synonyms with a comma. Click **Save term**.
+
+1.  Continue adding terms.
 
     Similar terms from your collection are suggested as new entries.
 
     Term suggestions are not displayed if the **Parts of Speech** enrichment is not enabled.
     {: note}
-1.  Continue adding terms.
 1.  Click **Save dictionary**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
 

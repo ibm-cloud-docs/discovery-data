@@ -565,7 +565,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Database** as the co
          - **Row filter**: Optional: Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed. In this case, update the condition, and click **Apply changes and reprocess**.
 1. Click **Finish**.
 
-### Applying enrichments to content from a database
+#### Applying enrichments to content from a database
 {: #collection-types-enrich-db}
 
 If you use a database as your data source and want to apply enrichments to the nested fields that are indexed from the database, you must use a Content Mining project type.
