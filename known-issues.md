@@ -52,7 +52,7 @@ The following known issues apply to installed deployments.
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.2.1, 26 February 2021:
+### ![Cloud Pak for Data only](images/desktop.png) 2.2.1, 26 February 2021
 {: #26feb2021ki}
 
 - If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
@@ -225,7 +225,7 @@ Known issues are regularly addressed with periodic software patches. For more in
 
 Also, see the issues in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.2, 8 December 2020:
+### ![Cloud Pak for Data only](images/desktop.png) 2.2, 8 December 2020
 {: #8dec2020ki}
 
 - When a small CSV file (generally a CSV with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
@@ -304,6 +304,7 @@ Also see the issues identified in all previous releases.
 - Ingesting documents into a collection that uses a custom [Advanced Rules model](/docs/discovery-data?topic=discovery-data-domain#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
 - If you delete a large number of documents, then immediately ingest a large number of documents, it may take longer for all the documents to become available.
 - The [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier) enrichment doesn't work when FIPS (Federal Information Processing Standards) is enabled.
+- [Update: fixed in version 2.2] In the deployed Content Mining application, if you include the tilde (~) symbol in a search query to enable fuzzy matching or include an asterisk (*) symbol to represent a wildcard, the search customizations function properly, but the matching string is not highlighted in the query result.
 - [Update: fixed in version 2.2] A conversion error may occur when the **Include in index** field on the **Manage fields** tab in the tooling is changed. The document will not be indexed if this error occurs. To work around the issue:
   1. `oc edit sts core-discovery-converter`
   1. Edit between `containers` and `- name: INGESTION_POD_NAME` as follows:
@@ -366,7 +367,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases. 
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.2, 31 March 2020:
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.2, 31 March 2020
 {: #31mar2020ki}
 
   -  When using passage retrieval with Korean, Polish, Japanese, Slovak or Chinese you may encounter much slower response times in this version. To resolve this, either disable passage retrieval, or upload a custom stopword list with words that are common in your documents (for example, prepositions and pronouns).  See [Defining stopwords](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-search-settings#stopwords) for example stopword lists in several languages. Also see [Stopwords ISO](https://github.com/stopwords-iso/){: external}) on GitHub.
@@ -381,7 +382,7 @@ Also see the issues identified in all previous releases.
   
 Also see the issues identified in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.1, 24 January 2020:
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.1, 24 January 2020
 {: #24jan2020ki}
 
   -  When creating a [dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict), suggested dictionary terms are normalized to lower case by default (for example, Watson Assistant will be normalized to watson assistant). To ensure matching on upper case terms, they should be explicitly included as part of the `Other terms` list or as the `Base term`.
@@ -402,7 +403,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.0, 27 November 2019:
+### ![Cloud Pak for Data only](images/desktop.png) 2.1.0, 27 November 2019
 {: #29nov2019ki}
 
   -  When you apply an enrichment to a collection, the enrichment language must match the collection language, or it will fail. The tooling displays all the collections, regardless of language.
@@ -424,7 +425,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.0.1, 30 August 2019:
+### ![Cloud Pak for Data only](images/desktop.png) 2.0.1, 30 August 2019
 {: #30aug2019ki}
 
   -  After you create a Machine Learning enrichment using a {{site.data.keyword.knowledgestudiofull}} model, two identically named enrichments may display on the **Enrich fields** page. This will not affect the enrichments, but it is best to use only one of them to select and apply the enrichment to one or more fields.
@@ -435,7 +436,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in the previous release.
 
-### ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} General Availability (GA) release, 28 June 2019:
+### ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} General Availability (GA) release, 28 June 2019
 {: #known-issues-ga}
 
   -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.
@@ -453,7 +454,7 @@ Also see the issues identified in the previous release.
 
 The following known issues apply to managed Premium plan deployments.
 
-### ![IBM Cloud only](images/ibm-cloud.png) Known issues identified in the IBM Cloud Premium release, 10 November 2020
+### ![IBM Cloud only](images/ibm-cloud.png) 10 November 2020
 {: #10nov2020ki}
 
 - ![IBM Cloud only](images/ibm-cloud.png) The [Box connector](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic) does not run on Safari.
@@ -461,7 +462,7 @@ The following known issues apply to managed Premium plan deployments.
 
 Also see the issues identified in all previous releases.
 
-### ![IBM Cloud only](images/ibm-cloud.png) Known issues identified in the IBM Cloud Premium General Availability (GA) release, 16 July 2020:
+### ![IBM Cloud only](images/ibm-cloud.png) 16 July 2020
 {: #16jul2020ki}
   
   - ![IBM Cloud only](images/ibm-cloud.png) When connecting to an {{site.data.keyword.cos_full}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in {{site.data.keyword.cloud_notm}}.)
