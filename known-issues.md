@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-04"
 
 keywords: known issues
 
@@ -304,8 +304,14 @@ Also see the issues identified in all previous releases.
 - Ingesting documents into a collection that uses a custom [Advanced Rules model](/docs/discovery-data?topic=discovery-data-domain#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
 - If you delete a large number of documents, then immediately ingest a large number of documents, it may take longer for all the documents to become available.
 - The [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier) enrichment doesn't work when FIPS (Federal Information Processing Standards) is enabled.
-- [Update: fixed in version 2.2] In the deployed Content Mining application, if you include the tilde (~) symbol in a search query to enable fuzzy matching or include an asterisk (*) symbol to represent a wildcard, the search customizations function properly, but the matching string is not highlighted in the query result.
-- [Update: fixed in version 2.2] A conversion error may occur when the **Include in index** field on the **Manage fields** tab in the tooling is changed. The document will not be indexed if this error occurs. To work around the issue:
+
+Also see the issues identified in all previous releases.
+
+#### 2.1.4 issues that were fixed in subsequent releases
+{: #2sept2020ki-fixed}
+
+- [Fixed in version 2.2] In the deployed Content Mining application, if you include the tilde (~) symbol in a search query to enable fuzzy matching or include an asterisk (*) symbol to represent a wildcard, the search customizations function properly, but the matching string is not highlighted in the query result.
+- [Fixed in version 2.2] A conversion error may occur when the **Include in index** field on the **Manage fields** tab in the tooling is changed. The document will not be indexed if this error occurs. To work around the issue:
   1. `oc edit sts core-discovery-converter`
   1. Edit between `containers` and `- name: INGESTION_POD_NAME` as follows:
 
@@ -338,8 +344,6 @@ Also see the issues identified in all previous releases.
       {: codeblock}
       Added lines from `- command:` to `/opt/ibm/wex/zing/bin/entrypoint.sh` `/opt/ibm/wex/zing/bin/controller.sh` and removed `-` before `env:`
   1. Save the changes. It will restart the converter pod.
-
-Also see the issues identified in all previous releases.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.3, 19 June 2020:
 {: #19jun2020ki}
@@ -388,8 +392,14 @@ Also see the issues identified in all previous releases.
   -  When creating a [dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict), suggested dictionary terms are normalized to lower case by default (for example, Watson Assistant will be normalized to watson assistant). To ensure matching on upper case terms, they should be explicitly included as part of the `Other terms` list or as the `Base term`.
   -  When backing up and restoring data, training data does not restore successfully. If the documents in your collection were added by crawl using a connector or web crawl, your training data can be separately retrieved for backup from an existing project and uploaded to a new restored project. For more information, see [List training queries](https://{DomainName}/apidocs/discovery/discovery-data#isttrainingqueries){: external} and [Create training queries](https://{DomainName}/apidocs/discovery/discovery-data#createtrainingquery){: external}) in the API reference.
   -  When crawling SharePoint Online or SharePoint OnPrem documents, JSON documents may not be indexed correctly and the `title` returned may be `errored`. This is because SharePoint web services use the `ows_FileRef` property to retrieve JSON files, which will return an error page. To fix this issue, contact your SharePoint Administrator and Microsoft Support.
-  -  ![Cloud Pak for Data only](images/desktop.png) If you migrate a collection created in version 2.0.1 to either version 2.1.0 or 2.1.1, that collection will not have a **Project type** assigned and the collection will not be available to be queried. To assign a **Project type**, open the **Projects** page by selecting **My Projects**. Name your project and choose one of the Project types: `Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`.
-  - [Update: fixed in version 2.1.2] When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`. To fix the issue:
+  -  If you migrate a collection created in version 2.0.1 to either version 2.1.0 or 2.1.1, that collection will not have a **Project type** assigned and the collection will not be available to be queried. To assign a **Project type**, open the **Projects** page by selecting **My Projects**. Name your project and choose one of the Project types: `Document Retrieval`, `Conversational Search`, `Content Mining`, or `Custom`.
+
+Also see the issues identified in all previous releases.
+
+#### 2.1.1 issues that were fixed in subsequent releases
+{: ##24jan2020ki-fixed}
+
+- [Fixed in version 2.1.2] When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`. To fix the issue:
 
      1. Open the `ranker-rest` editor with this command: `kubectl edit deployment {release-name}-{watson-discovery}-ranker-rest`
      2. In the editor, search for the `ranker-rest image` (for example: `{docker-registry}/{namespace}/discovery-ranker-rest-service:20200113-150050-2-d1527c2`) 
@@ -400,8 +410,6 @@ Also see the issues identified in all previous releases.
         args: ["-s", "-v", "--", "java", "-Dkaryon.ssl=true", "-Dkaryon.port=9081", "-Dkaryon.ssl.port=9090", "-Dkaryon.ssl.certificate=/opt/bluegoat/karyon/ssl/karyon-cert.pem", "-Dkaryon.ssl.privatekey=/opt/bluegoat/karyon/ssl/karyon-private-key.pem", "-Djavax.net.ssl.trustStore=/opt/bluegoat/karyon/ssl/keystore.jks", "-Djavax.net.ssl.keyStore=/opt/bluegoat/karyon/ssl/keystore.jks", "-Dlog4j.debug=false", "-Dlitelinks.threadcontexts=log4j_mdc", "-Dwatson.ssl.truststore.path=/opt/bluegoat/karyon/ssl/litelinks-truststore.jks", "-Dwatson.ssl.truststore.password=watson15qa", "-Dlitelinks.delay_client_close=false", "-Drxnetty.http.maxcontentlength=314572800", "-cp", "lib/logback-classic-1.2.3.jar:*:lib/*", "com.ibm.watson.raas.rest.Runner"]
         ```
         {: pre}
-
-Also see the issues identified in all previous releases.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.0, 27 November 2019
 {: #29nov2019ki}
@@ -429,14 +437,18 @@ Also see the issues identified in all previous releases.
 {: #30aug2019ki}
 
   -  After you create a Machine Learning enrichment using a {{site.data.keyword.knowledgestudiofull}} model, two identically named enrichments may display on the **Enrich fields** page. This will not affect the enrichments, but it is best to use only one of them to select and apply the enrichment to one or more fields.
-  -  [Update: fixed in version 2.1.2] When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Activity** page, but no further processing status displays until the number of documents increases.
   -  If a web crawl appears to be stuck processing at a fixed number of documents, and the message displayed on the **Logs** page is `The ingestion job <jobid> is terminated incorrectly`, contact IBM support for assistance restarting the crawl.
   -  If one or more of your collections is trained, the training data from one of those collection may display on the **Train** page of an untrained collection. Refresh the page to clear that training data.
   -  The following types of documents will not be processed if they do not have the proper file extension: .docx, .pptx, .xlsx.
 
 Also see the issues identified in the previous release.
 
-### ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} General Availability (GA) release, 28 June 2019
+#### 2.0.1 issues that were fixed in subsequent releases
+{: #30aug2019ki-fixed}
+
+-  [Fixed in version 2.1.2] When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Activity** page, but no further processing status displays until the number of documents increases.
+
+### ![Cloud Pak for Data only](images/desktop.png) General Availability (GA) release, 28 June 2019
 {: #known-issues-ga}
 
   -  If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.

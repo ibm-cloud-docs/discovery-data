@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-03"
 
 keywords: passages, query results
 
@@ -41,37 +41,26 @@ When a document is ingested, the text is extracted and indexed in the`text` fiel
 
 Preview the default query results.
 
-- For a Document Retrieval project:
+1.  From the navigation pane, open the **Improve and customize** page.
+1.  Take the appropriate action for your project type:
 
-  - Click **Run search** for one of the keywords that {{site.data.keyword.discoveryshort}} calculated to have special meaning in your collection.
-  - Submit your own phrase or keyword from the search bar.
+    - Document Retrieval project:
 
-  You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
+      - Click **Run search** for one of the keywords that {{site.data.keyword.discoveryshort}} calculated to have special meaning in your collection.
+      - Submit your own phrase or keyword from the search bar.
 
-- For Document Retrieval for Contracts projects, contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default). To filter the results by contract-related categories that were recognized when the collection was processed, click a query result, and then open the **Contract Data** tab.
-- For Conversational Search projects, a single search field is displayed that mimics the user interface of an assistant.
-- For Content Mining projects, choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
-- Even Custom project types show query results as passages by default.
+        You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
+    - Conversational Search project: A single search field is displayed that mimics the user interface of an assistant. Submit a phrase or keyword.
+    - Custom project: Shows query results as passages.
+    - Document Retrieval for Contracts project: Contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default). To filter the results by contract-related categories that were recognized when the collection was processed, click a query result, and then open the **Contract Data** tab.
+    - Content Mining project: Choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 
-- If you enable FAQ extraction, each question-and-answer pair that is found in the original document is added to a new, separate document with the question in the `title` field and answer in the `text` field. By separating the pairs into independent documents, the correct answer can be returned quickly when a phrase that is the same or similar to the associated question is submitted as the query. 
+    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
 
-  If your source document contains 10 question-and-answer pairs, then 10 documents are generated during processing. If you want to see all of the documents that were generated, submit an empty search string.
+    - If you enable FAQ extraction, each question-and-answer pair that is found in the original document is added to a new, separate document with the question in the `title` field and answer in the `text` field. By separating the pairs into independent documents, the correct answer can be returned quickly when a phrase that is the same or similar to the associated question is submitted as the query. 
 
-## Reviewing indexed documents in JSON
-{: #query-results-json}
-
-For all project types except Conversational Search, you can see the fields that are associated with an indexed document by looking at the JSON view of a document that is returned by a query. Checking the JSON structure of a document can be useful if you want to check whether certain types of information are being captured.
-
-1.  From the *Improve and customize* page, do one of the following things:
-
-    - *Content Mining* project: Choose or add a facet to apply to the documents, and then click **View filtered documents**.
-    - Other project types: Enter a test query to submit or leave the field empty and press Enter to submit an empty query.
-1.  From the query result list, click the link to view the document.
-1.  Click **JSON** to view the indexed document in JSON format.
-
-Keep this approach in mind for later. After you enrich your collection, you can use the JSON view of the document to check whether your enrichments are being applied and retrieved properly. For example, you can check the JSON to confirm that a synonym that you defined in a dictionary is being tagged as an occurrence of the appropriate dictionary term.
+      If your source document contains 10 question-and-answer pairs, then 10 documents are generated during processing. If you want to see all of the documents that were generated, submit an empty search string.
 
 ## Improving your query results
 {: #query-results-improve}

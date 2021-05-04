@@ -56,13 +56,15 @@ Discovery
         contracts-schema.md
         understanding_tables.md
 
+    test.md
+
     {: topicgroup}
     Improving relevance of results
         train.md
         relevancy-tips.md
 
     hide-data.md
-    test.md
+    preview.md
     deploy.md
     contract_parsing.md
     contentminerapp.md

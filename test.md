@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-05-03"
 
 keywords: preview link, share link
 
@@ -34,21 +34,19 @@ subcollection: discovery-data
 # Testing your project
 {: #test}
 
-Preview your project and share it with others.
+As you improve your project, periodically test how enrichments and search setting changes impact the query results.
 {: shortdesc}
 
-Try out your project and share it with others on your team for testing purposes. A test implementation of your project is created and hosted by IBM. Use this application preview to test your search results. 
+For all project types except Conversational Search, you can see the fields that are associated with an indexed document by looking at the JSON view of a document that is returned by a query. Checking the JSON structure of a document can be useful if you want to check whether certain types of information are being captured.
 
-To preview and share your project, complete the following steps:
+After you enrich your collection, you can use the JSON view of a query result to check whether your enrichments are being applied and retrieved properly. For example, you can check the JSON to confirm that a synonym that you defined in a dictionary is being tagged as an occurrence of the corresponding dictionary term.
 
-1.  From the **Integrate and Deploy** > **Preview Link** page, follow the instructions to give your team members access to your project.
+To test your project, complete the following steps:
 
-    In Content Mining projects, the page is named **Share Link**.
-    {: note}
-1.  Click the copy icon for the **Copy Link** field to copy the URL of the preview application.
+1.  From the navigation pane, open the **Improve and customize** page.
+1.  Retrieve query results by doing one of the following things:
 
-    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: When you copy the link for the content mining project, ensure that the URL is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`. If it isn't, refresh the page before you copy the URL.
-1.  Paste the URL into a web browser to test it yourself or send the URL to team members.
-
-    Don't forget to send any login credentials that are needed to access the project when you send the link to your colleagues.
- 
+    - *Content Mining* project: Choose or add a facet to apply to the documents, and then click **View filtered documents**.
+    - Other project types: Enter a test query to submit or leave the field empty and press Enter to submit an empty query.
+1.  From the query result list, click the link to view the document.
+1.  Click **JSON** to view the query result in JSON format.
