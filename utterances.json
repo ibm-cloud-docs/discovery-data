@@ -1,0 +1,38 @@
+{
+    "ts-oom": [
+        "OutOfMemoryError Java heap space in Discovery log",
+        "Watson Discovery out of memory error",
+        "How to troubleshoot out of memory for Watson Discovery",
+        "getting memory error when indexing large set of documents for Discovery",
+        "pod is out of memory for Watson Discovery"
+    ],
+    "shard-limit": [
+        "receiving an error when I try to create a new Discovery project and collection",
+        "troubleshoot when unable to create new projects and collections for Watson Discovery",
+        "limit to the number of shards for Watson Discovery",
+        "Setting the shard limit in Discovery",
+        "increase the shard limit for creating more Watson Discovery projects"
+    ],
+    "troubleshoot-ls": [
+        "clearing a lock state for Discovery",
+        "Discovery API offline because system is locked",
+        "Watson Discovery pod in a constant loop due to lock",
+        "Waiting for changelog lock message in Discovery logs",
+        "How to clear lock state for Watson Discovery"
+    ],
+    "troubleshoot-errors": [
+        "resolving a timeout error message for Watson Discovery",
+        "time out message during enrichment for Watson Discovery",
+        "Document enrichment timed out for Discovery service",
+        "Watson Discovery shows indexing request timed out message",
+        "Document enrichment failed due to lack of memory in Discovery"
+    ],
+    "faq-synonyms": [
+        "adding synonyms for Watson Discovery",
+        "methods to define synonym for Watson Discovery",
+        "ways of defining synonyms in Discovery",
+        "How do I add synonyms for Discovery service",
+        "way to add synonym for Watson Discovery",
+        "What are the ways of adding synonyms in Discovery"
+    ]
+}

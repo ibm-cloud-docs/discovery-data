@@ -38,7 +38,8 @@ Discovery
         query-results.md
         query-defaults.md
         search-settings.md
-        facets.md  
+        facets.md
+        search-bar.md
 
     {: topicgroup}
     Preparing your documents for enrichment
@@ -48,6 +49,7 @@ Discovery
     {: topicgroup}
     Teaching Discovery about your domain
         domain.md
+        stopwords.md
         enrichmig.md
 
     {: topicgroup}

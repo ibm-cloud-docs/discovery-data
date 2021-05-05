@@ -51,9 +51,9 @@ Preview the default query results.
 
         You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-    - Conversational Search project: A single search field is displayed that mimics the user interface of an assistant. Submit a phrase or keyword.
-    - Custom project: Shows query results as passages.
-    - Document Retrieval for Contracts project: Contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default). To filter the results by contract-related categories that were recognized when the collection was processed, click a query result, and then open the **Contract Data** tab.
+    - Conversational Search project: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. Click **Cutomize display > Search results** to switch to field-level results and to choose the field to return.
+    - Custom project: Submit your own phrase or keyword from the search bar. The query results that are returned consist of passages.
+    - Document Retrieval for Contracts project: Contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
     - Content Mining project: Choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
