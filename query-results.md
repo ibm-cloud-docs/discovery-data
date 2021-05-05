@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-05-05"
 
 keywords: passages, query results
 
@@ -51,7 +51,7 @@ Preview the default query results.
 
         You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-    - Conversational Search project: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. Click **Cutomize display > Search results** to switch to field-level results and to choose the field to return.
+    - Conversational Search project: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. Click **Customize display > Search results** to switch to field-level results and to choose the field to return.
     - Custom project: Submit your own phrase or keyword from the search bar. The query results that are returned consist of passages.
     - Document Retrieval for Contracts project: Contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
     - Content Mining project: Choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
