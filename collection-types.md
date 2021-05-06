@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-06"
 
 subcollection: discovery-data
 
@@ -530,7 +530,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Database** as the co
       <tr>
         <td>Oracle</td>
         <td>`jdbc:oracle:thin:@//<host>:<TCPport>/<service_name>`</td>
-        <td>`jdbc:oracle:thin:@localhost:1521:sample`</td>
+        <td>`jdbc:oracle:thin:@localhost:1521/sample`</td>
       </tr>
       <tr>
         <td>SQL Server</td>
