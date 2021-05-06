@@ -62,10 +62,10 @@ Discovery
     {: topicgroup}
     Improving query results
         stopwords.md
+        hide-data.md
         train.md
         relevancy-tips.md
 
-    hide-data.md
     preview.md
     deploy.md
     contract_parsing.md

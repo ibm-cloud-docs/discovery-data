@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-05-06"
 
 subcollection: discovery-data
 
@@ -247,7 +247,7 @@ Complete the following steps to enable sentiment analysis in your Content Mining
 
 1. Make sure that your Content Mining application is open by clicking **Launch application** in your {{site.data.keyword.discoveryshort}} collection.
 1. Click the **Collections** breadcrumb link on the header of the page.
-1. Select the expandable menu icon on an existing collection, and click **Edit collection**. Or you might want to create a collection and then enable sentiment analysis. For the steps on how to create a collection in the Content Mining application, see [Creating a collection in the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp#cmccoll). If you create a new collection and you want to enable sentiment analysis, on the **Enrichment** tab, make sure that you the select **Sentiment of phrases** annotator and click **Save**.
+1. Select the expandable menu icon on an existing collection, and click **Edit collection**. Or you might want to create a collection and then enable sentiment analysis. For the steps on how to create a collection in the Content Mining application, see [Creating a collection in the Content Mining application](#cmccoll). If you create a new collection and you want to enable sentiment analysis, on the **Enrichment** tab, make sure that you the select **Sentiment of phrases** annotator and click **Save**.
 1. Click the **Enrichment** tab, select the **Sentiment of phrases** annotator, and click **Save**. The collection reindexes.
 1. After reindexing is complete, click **Close** to return to the **Create a collection** page, and click your collection tile.
 1. Select a facet or multiple facets to analyze, or enter a term to search for in your document in **What do you want to analyze?**, and click **Search**. You can now see the mining graph and the **Facet analysis** pane, where you can select the **Sentiment** analysis. By default, **Relevancy** analysis is selected.
@@ -293,7 +293,7 @@ The toolbar contains the following commands:
 
   You can specify a URL. When you click the title, this link is opened in a new window instead of showing the preview. Only valid URLs work as links.
 
-- **Snapshot** Saves an image of the dashboard to the Report pane, from which you can create a report. For more information, see [Report pane](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorepv).
+- **Snapshot** Saves an image of the dashboard to the Report pane, from which you can create a report. For more information, see [Report pane](#cmorepv).
 - **Show all fields** and **Hide all fields**: You can toggle between these two buttons to show all fields or just the title and date fields.
 
 #### Documents pane
@@ -470,12 +470,12 @@ You can edit a collection in the Content Mining application by clicking the expa
 
 When you edit a collection, the following tabs are available:
 
-- [Edit tab](/docs/discovery-data?topic=discovery-data-contentminerapp#cm-edit)
-- [Fields tab](/docs/discovery-data?topic=discovery-data-contentminerapp#cm-fields)
-- [Enrichment tab](/docs/discovery-data?topic=discovery-data-contentminerapp#cm-enrich)
-- [Facet tab](/docs/discovery-data?topic=discovery-data-contentminerapp#cm-facet)
-- [Document flags tab](/docs/discovery-data?topic=discovery-data-contentminerapp#doc-flags)
-- [Contextual view tab](/docs/discovery-data?topic=discovery-data-contentminerapp#contextual-view)
+- [Edit tab](#cm-edit)
+- [Fields tab](#cm-fields)
+- [Enrichment tab](#cm-enrich)
+- [Facet tab](#cm-facet)
+- [Document flags tab](#doc-flags)
+- [Contextual view tab](#contextual-view)
 
 ### Edit tab
 {: #cm-edit}
@@ -505,7 +505,7 @@ In **Display fields**, you can set the following display fields that typical app
 ### Enrichment tab
 {: #cm-enrich}
 
-You can select existing annotators to enrich your collection, such as **Part of speech**, **Sentiment of phrases**, and **Entities**. You can even apply a classifier if you want to enrich your collection based on document information or metadata. For information about creating and applying a document classifier to a Content Mining or {{site.data.keyword.discoveryshort}} collection, see [Creating and applying a document classifier](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
+You can select existing annotators to enrich your collection, such as **Part of speech**, **Sentiment of phrases**, and **Entities**. You can even apply a classifier if you want to enrich your collection based on document information or metadata. For information about creating and applying a document classifier to a Content Mining or {{site.data.keyword.discoveryshort}} collection, see [Creating and applying a document classifier](#create-doc-classifier).
 
 ### Facet tab
 {: #cm-facet}
@@ -525,7 +525,7 @@ Note the following points when you use document flags:
 - A flagged document set dynamically changes before and after incremental ingestion. Flagged document sets are stored as queries in the index. Each flag has a query that represents the document set that it is associated with. For example, after you create the document flag and you search for the term `ice cream` and apply a red flag to all of the documents that have this word, `ice cream` is stored as the query that represents the flag. Then, if you search for the term `coffee` and apply the red flag to all of the documents that have that word, the internal flag query is `(ice cream) OR coffee`. Therefore, if new documents that contain the word `coffee` are ingested, those documents have the red flag displayed.
 - Requests to update a document flag fail if a nested query that represents a document flag exceeds a certain depth.
 
-After you create a query and apply a document flag to a query result, you can click the **Document flags** facet in the **Facet analysis** pane to create a **Document flags** query. Next, you can select a document flag on the **Document flags** dashboard and click **Analyze more** and then **Show documents** to analyze the documents that have a specific document flag applied to them. However, when you reach this point, you cannot remove a document flag from a **Document flags** query by clearing the checkbox for a document flag in the **Manage flags** dialog box. If you clear the checkbox and click **Apply**, you receive an error message. To work around this issue, see [Removing document flags from a Document Flags query](/docs/discovery-data?topic=discovery-data-contentminerapp#remove-doc-flags).
+After you create a query and apply a document flag to a query result, you can click the **Document flags** facet in the **Facet analysis** pane to create a **Document flags** query. Next, you can select a document flag on the **Document flags** dashboard and click **Analyze more** and then **Show documents** to analyze the documents that have a specific document flag applied to them. However, when you reach this point, you cannot remove a document flag from a **Document flags** query by clearing the checkbox for a document flag in the **Manage flags** dialog box. If you clear the checkbox and click **Apply**, you receive an error message. To work around this issue, see [Removing document flags from a Document Flags query](#remove-doc-flags).
 
 If you want to remove a document flag from a document and you do not want to complete the workaround, do not create a **Document flags** query.
 {: important}
@@ -537,7 +537,7 @@ If you want to remove a document flag from a document and you do not want to com
 1. If you are in **Guided mode**, click **Show documents**. If you are in **Expert mode**, your documents display automatically.
 1. Click the **Document flags** icon on the toolbar, clear the checkbox of the document flag, and click **Apply**. The document flags are removed from your documents.
    
-For more information about document flags, see [Document flags](/docs/discovery-data?topic=discovery-data-contentminerapp#doc-flags).
+For more information about document flags, see [Document flags](#doc-flags).
 
 If you want to apply or remove document flags to or from certain documents, select the documents one by one, click the **Document flag** icon, and select or clear the document flag checkbox.
 {: tip}
@@ -548,7 +548,7 @@ If you want to apply or remove document flags to or from certain documents, sele
 By clicking **Edit collection**, you can use the **Contextual view** tab to simultaneously analyze multiple text fields in your documents.
 {: shortdesc}
 
-By default, a Content Mining collection is configured to analyze the content of one text field, but if you have data that includes two or more fields that you want to analyze, such as **question** and **answer** data, contextual view is a useful tool. For information about enabling multiple fields for analysis and for grouping the fields, see [Enabling multiple text fields](/docs/discovery-data?topic=discovery-data-contentminerapp#enable-multiple-fields) and [Grouping multiple text fields](/docs/discovery-data?topic=discovery-data-contentminerapp#group-multiple-fields).
+By default, a Content Mining collection is configured to analyze the content of one text field, but if you have data that includes two or more fields that you want to analyze, such as **question** and **answer** data, contextual view is a useful tool. For information about enabling multiple fields for analysis and for grouping the fields, see [Enabling multiple text fields](#enable-multiple-fields) and [Grouping multiple text fields](#group-multiple-fields).
 
 #### Enabling multiple text fields
 {: #enable-multiple-fields}
