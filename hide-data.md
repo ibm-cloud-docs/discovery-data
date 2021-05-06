@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-06"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Preventing content from being returned in results
+# Preventing content from being returned
 {: #hide-data}
 
 Prevent content that you don't want customers to see from being included in query results.
