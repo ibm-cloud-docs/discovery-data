@@ -49,7 +49,6 @@ Discovery
     {: topicgroup}
     Teaching Discovery about your domain
         domain.md
-        stopwords.md
         enrichmig.md
 
     {: topicgroup}
@@ -61,7 +60,8 @@ Discovery
     test.md
 
     {: topicgroup}
-    Improving relevance of results
+    Improving query results
+        stopwords.md
         train.md
         relevancy-tips.md
 
