@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-07"
 
 subcollection: discovery-data
 
@@ -55,6 +55,7 @@ The following enrichments are supported in the Analyze API:
   -  [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex)
   -  [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain#machinelearning)
   -  [Document classifier](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier)
+  -  [Text classifier](/docs/discovery-data?topic=discovery-data-domain#classifier)
   -  [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain#advanced-rules)
   -  [Entities](/docs/discovery-data?topic=discovery-data-nlu#entities)
   -  [Keywords](/docs/discovery-data?topic=discovery-data-nlu#keywords)

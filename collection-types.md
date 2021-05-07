@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-07"
 
 subcollection: discovery-data
 
@@ -546,6 +546,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Database** as the co
 
     - **User**: The username that you obtain from the database you selected. You use this username to crawl the source. Your username is different from database to database.
     - **Password**: The password that is associated with your username. Your password is different from database to database.
+
 1. Complete the following fields in the *Connection settings* section:
 
     - **JDBC driver type**: Choose the database. 
@@ -564,6 +565,12 @@ In {{site.data.keyword.discoveryshort}}, after you select **Database** as the co
          - **Primary key**: The primary key of the target database table. If the primary key is not configured in the target database table, you must complete this field. The JDBC database crawler appends this primary key value to the URL of each crawled row to keep its uniqueness. When the primary key is a composite key, concatenate the key names by using a comma, for example `key1,key2`. If unspecified, the project defaults to the primary key fields of the table. If the primary key is configured in the target database table, this key is automatically detected.
          - **Row filter**: Optional: Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed. In this case, update the condition, and click **Apply changes and reprocess**.
 1. Click **Finish**.
+
+The JDBC driver from Microsoft does not support Windows Authentication on Linux. If you want to use Microsoft Windows authentication to access your SQL Server on Linux, you can use a third-party JDBC driver called jTDS from [Sourceforge](http://jtds.sourceforge.net/){: external}. Specify the following values during the configuration:
+
+- Database URL: `jdbc:jtds:sqlserver://<host>:<port>;databaseName=<database>;domain=<domain>;useNTLMv2=true;`
+- JDBC driver type: `OTHER`
+- JDBC driver classname: `net.sourceforge.jtds.jdbc.Driver`
 
 #### Applying enrichments to content from a database
 {: #collection-types-enrich-db}
