@@ -36,10 +36,9 @@ Discovery
     {: topicgroup}
     Previewing query results
         query-results.md
-        query-defaults.md
-        search-settings.md
         facets.md
         search-bar.md
+        query-defaults.md
 
     {: topicgroup}
     Preparing your documents for enrichment
@@ -61,6 +60,7 @@ Discovery
 
     {: topicgroup}
     Improving query results
+        search-settings.md
         stopwords.md
         hide-data.md
         train.md

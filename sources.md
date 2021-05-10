@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-10"
 
 subcollection: discovery-data
 
@@ -79,7 +79,7 @@ View the following table to see the objects that a data source can crawl and whi
 | Data source | Supports scheduled document refreshes? | Objects that are crawled |
 |-------------|----------------------------------------|--------------------------|
 | Box (**App access**) | No | Files, folders |
-| Box (**Enterprise access**)  | Yes (New and modified documents only) | Yes | Files, folders |
+| Box (**Enterprise access**)  | Yes (New and modified documents only) | Files, folders |
 | Salesforce | Yes (New and modified documents only) | Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments |
 | Microsoft SharePoint Online | Yes (New and modified documents only) | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments
 | Microsoft SharePoint OnPrem | Yes (New and modified documents only) | SiteCollections, websites, lists, list items, document libraries, custom metadata, list item attachments |
