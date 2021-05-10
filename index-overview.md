@@ -98,7 +98,7 @@ The following list describes some of the indexed fields that are generated:
   {: note}
 - `segment_metadata`: Generated when you split a document. The metadata field includes the parent document ID, the segment number, and the total number of segments that were created from the parent document. Each resulting segment of the original document can contain different information. For example, if you split the document based on the subtitle field, the first segment might contain only a title field. The next segment might contain a subtitle and a text field. The third might contain a subtitle field, a text field, and a footer field.
 
-Field names that contain a period (.) represent nested fields. For example, the `enriched_text.entities` nested field is stored in the JSON structure as follows:
+Fields with names that contain a period (.) represent nested fields. For example, the `enriched_text.entities` nested field is stored in the JSON structure as follows:
 
 ```json
 "enriched_text": [
@@ -109,6 +109,13 @@ Field names that contain a period (.) represent nested fields. For example, the 
       }
 ]
 ```
+{: codeblock}
 
-If you use the Smart Document Understanding tool to add custom fields, the custom fields are represented in the index as root-level fields.
+If you use the Smart Document Understanding tool to add custom fields, the custom fields are represented in the index as root-level fields. For example, if you add a field named `procedure`, it is represented in the JSON file as follows:
+
+```json
+"procedure": [
+]
+```
+{: codeblock}
 
