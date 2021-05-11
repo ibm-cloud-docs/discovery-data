@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-05"
+lastupdated: "2021-05-10"
 
 keywords: passages, query results
 
@@ -51,7 +51,9 @@ Preview the default query results.
 
         You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-    - Conversational Search project: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. Click **Customize display > Search results** to switch to field-level results and to choose the field to return.
+        You can change the results to consist of information from a different field instead of a passage from the `text` field. See *Changing the result content*.
+
+    - Conversational Search project: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. See *Changing the result content*.
     - Custom project: Submit your own phrase or keyword from the search bar. The query results that are returned consist of passages.
     - Document Retrieval for Contracts project: Contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
     - Content Mining project: Choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
@@ -87,4 +89,18 @@ When you deploy your project, you can use the APIs to define more complex querie
 
 {{site.data.keyword.discoveryshort}} uses sentence boundary detection to pick a passage that includes a full sentence. It searches for passages that have an approximate length of 200 characters, then looks at chunks of content that are twice that length to find passages that contain full sentences. If the sentences in your documents are extra long, the query might not be able to capture a full sentence. As a result, some passages that are returned might not include an entire sentence or might omit the beginning or ending of a sentence. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
-You can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
+For all project types except Conversational Search, you can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
+
+### Changing the result content
+{: #query-results-content}
+
+For all project types, you can can control where the data comes from that is returned in query results. By default, results consist of passages from the `text` field. The passages that {{site.data.keyword.discoveryshort}} calculates to contain the most relevant information are returned. However, you can change the result content to return content from a field other than the `text` field.
+
+To change the content of the query results, complete the following steps:
+
+1.  From the *Improvement tools* pane, expand **Customize display**, and then click **Search results**.
+1.  **Optional**: Change the field that is shown as the title of the query result.
+
+    The title is displayed after the text excerpt.
+1,  Choose **Field** to switch to showing excerpts from a specific field, and then select the field that you want to use as the source of the query result text.
+1.  Click **Apply**.
