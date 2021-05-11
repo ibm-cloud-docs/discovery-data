@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-04"
+lastupdated: "2021-05-10"
 
 keywords: upload, one-time upload, supported file types, document types
 
@@ -67,7 +67,7 @@ The file upload is completed quickly. It takes more time for the data to be proc
 ## Supported file types
 {: #supportedfiletypes}
 
-{{site.data.keyword.discoveryshort}} can ingest specific file types; it ignores all other types of files.
+{{site.data.keyword.discoveryshort}} can ingest specific file types. For all other types of files, a warning message is displayed and the file is not ingested. 
 
 The following table shows the supported file types and information about feature support that varies by file type.
 

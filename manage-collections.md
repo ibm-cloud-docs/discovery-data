@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-05-10"
 
 subcollection: discovery-data
 
@@ -42,11 +42,13 @@ After the processing of a new data collection is finished, you can see a summary
 From this tab, you can learn about the processing settings that are applied to the collection:
 
 - **Activity**: Shows the status of a synchronization and the number of documents that were added to the collection. It also shows whether any documents from the data source were skipped or generated errors as the collection was created and why. ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Shows the time of the next scheduled synchronization.
-- **Identify fields**: Shows the fields that the crawler identified in your data as the data collection was synchronized. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields). If you want {{site.data.keyword.discoveryshort}} to recognize fields based on the style of the source document (H1 equals title, for example), you can start a Smart Document Understanding training session. For more information, see [Configuring your collection with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
-- **Manage fields**: Review the fields from the source documents that are being indexed and make any necessary changes. You can also break large documents into multiple smaller documents. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings).
+- **Identify fields**: To teach {{site.data.keyword.discoveryshort}} to recognize fields based on the structure of the source document (H1 equals title, for example), apply a Smart Document Understanding model or use the Smart Document Understanding tool to train a model by annotating documents. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+- **Manage fields**: Review the fields from the source documents that are being indexed and make any necessary changes. For more information, see [preventing content from being returned](/docs/discovery-data?topic=discovery-data-hide-data). You can also break large documents into multiple smaller documents. For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 - **Enrichments**: Review the enrichments that are being applied to the documents to determine whether you want to add or remove any enrichments. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu) and [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#classifier).
 - **Processing settings**: Review the data collection configuration settings that were specified when the data source collection was created. You can make adjustments, such as changing the frequency of synchronizations. If you are uploading data, you can indicate whether you want to extract text from images by changing the optical character recognition (OCR) setting.
 - **CSV settings**: Summarizes the configuration settings that are used when a comma-separated value (CSV) file is processed. You can change these settings, such as how the columns are delimited. You can also specify the character to use to escape quotation marks, by specifying either a quotation mark (`"`) or a backslash (`\`).
+
+For more information about how to create a collection, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
 ## Finding where a collection is used
 {: #collection-usage}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-10"
 
 subcollection: discovery-data
 
@@ -505,7 +505,7 @@ In **Display fields**, you can set the following display fields that typical app
 ### Enrichment tab
 {: #cm-enrich}
 
-You can select existing annotators to enrich your collection, such as **Part of speech**, **Sentiment of phrases**, and **Entities**. You can even apply a classifier if you want to enrich your collection based on document information or metadata. For information about creating and applying a document classifier to a Content Mining or {{site.data.keyword.discoveryshort}} collection, see [Creating and applying a document classifier](#create-doc-classifier).
+You can select existing annotators to enrich your collection, such as **Part of speech**, **Sentiment of phrases**, and **Entities**. You can even apply a classifier if you want to enrich your collection based on document information or metadata. For information about creating and applying a document classifier to a Content Mining or {{site.data.keyword.discoveryshort}} collection, see *Creating and applying a document classifier*.
 
 ### Facet tab
 {: #cm-facet}
