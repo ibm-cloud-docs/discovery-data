@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -75,7 +75,7 @@ You can select the type of facet to display from the **Facet type** menu:
 
 In the guided analysis view, you can iteratively analyze your collection, digging deeper into the data based on suggested analyses.
 
-In the analysis views, you can select **Guided Mode** or **Expert Mode** from the top right side of the page. In guided mode, when you select a facet value and click **Analyze More**, analysis results are hidden and mining graph actions are suggested. In expert mode, the mining graph and suggested actions are hidden by default. But in expert mode, when you click **Analyze More**, the current view is still displayed and the content is refreshed based on the new analysis context.
+In the analysis views, you can select **Guided Mode** or **Expert Mode**. In guided mode, when you select a facet value and click **Analyze More**, analysis results are hidden and mining graph actions are suggested. In expert mode, the mining graph and suggested actions are hidden by default. But in expert mode, when you click **Analyze More**, the current view is still displayed and the content is refreshed based on the new analysis context.
 
 From the application launch page, if you enter a term that you want to search for and analyze, you see something similar to the window in Figure 2, which shows the _mining graph_, _toolbar_, _Dashboard_, and _Facet analysis_ pane. Figure 2 shows that the search term is `chocolate`, which is a value from the `General Noun` facet.
 
@@ -84,7 +84,7 @@ From the application launch page, if you enter a term that you want to search fo
 The guided analysis view contains four main parts, which are described in more detail in the following sections.
 
 - **Mining graph**: Displays a guided visualization of your analysis.
-- **Toolbar**: The toolbar at the top of the window, which contains buttons that execute global commands.
+- **Toolbar**: The toolbar in the window header, which contains buttons that execute global commands.
 - **Dashboard**: Used to select and save different layouts.
 - **Facet analysis pane**: Used to customize your analysis.
 
@@ -95,7 +95,7 @@ The mining graph provides a visualization of the progress of your analysis. As t
 
 ![Watson Discovery content mining graph](images/mininggraphzoom.png "Discovery content mining showing a close up of the mining graph"){: caption="Figure 3. Guided mode text analysis using the mining graph" caption-side="bottom"}
 
-The nodes represent the steps in the analysis. The left-most node displays the starting point with all documents and the right-most node shows the current point of the analysis. Those two nodes also show the number of documents, which was reduced considerably through analysis. To the right of the final node are suggested actions for further analysis.
+The nodes represent the steps in the analysis. The first node displays the starting point with all documents and the last node shows the current point of the analysis. Those two nodes also show the number of documents, which was reduced considerably through analysis. After the final node, suggested actions for further analysis are displayed.
 
 #### Suggested actions
 {: #cmomgsu}
@@ -165,7 +165,7 @@ When you save the dashboard analysis, the following parts of the dashboard are s
 
 - Layout
   - Rearrange the layout by dragging the black border header area of each pane
-  - Resize each analysis pane by dragging the resize handle at the bottom right corner of each pane
+  - Resize each analysis pane by dragging the resize handle
   - When a layout is not saved, when you add the new analysis results in the current layout or remove existing results, the system automatically resizes the layout of the dashboard
 - Each analysis result
   - You can customize the analysis from the toolbar or result visualization
@@ -281,15 +281,15 @@ The **Repository** pane contains exported documents. You can download exported d
 
 ![Documents view](images/cmdocsview.png "Documents view"){: caption="Figure 8. The Documents view showing sample documents" caption-side="bottom"}
 
-The **Documents** view is displayed when you show documents in the guided analysis view. The **Documents** view lists the documents in the current node of the mining graph and contains a toolbar at the top of the view.
+The **Documents** view is displayed when you show documents in the guided analysis view. The **Documents** view lists the documents in the current node of the mining graph.
 
 #### Toolbar for the Documents view
 {: dtool}
 
-The toolbar contains the following commands:
+The toolbar that is available from the Documents view contains the following commands:
 
 - **Export**: You can download and export searched documents in a specified file format. You cannot export secured collections. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
-- **Customize**: You can customize how documents are displayed. You can choose header fields to always show above documents. You can also specify a field that contains a link to a thumbnail image to display next to the document summary.
+- **Customize**: You can customize how documents are displayed. You can choose header fields to always show with the documents. You can also specify a field that contains a link to a thumbnail image to display next to the document summary.
 
   You can specify a URL. When you click the title, this link is opened in a new window instead of showing the preview. Only valid URLs work as links.
 
@@ -347,7 +347,7 @@ Created reports are listed on the **Report** tab on the application launch page.
 ### Dashboard toolbar
 {: #cmodashtb}
 
-The dashboard toolbar is shown at the top of the dashboard. It's the same for all the dashboard views.
+The dashboard toolbar is shown at the start of the dashboard. It's the same for all the dashboard views.
 
 - **Show Documents**: Show the documents view for this node.
 - **Analyze More**: This button is enabled once you have selected data in the chart. The analysis is performed on the data you have selected.
@@ -369,7 +369,7 @@ A dashboard is displayed when you choose analyses in the guided analysis view. T
 
 The characteristic words dashboard is displayed when you choose **Analyze cause or characteristics** in the guided analysis view.
 
-The dashboard displays characteristic words suggested by the analysis along with one or more facets that can be analyzed further. You can resize facets by dragging the resize handler at the bottom right corner of each facet. You can also move facets around by dragging the top border.
+The dashboard displays characteristic words suggested by the analysis along with one or more facets that can be analyzed further. You can resize facets by dragging the resize handler of each facet. You can also move facets around by dragging them by their border.
 
 ##### Facet toolbar
 {: #cmoftb}
@@ -442,7 +442,7 @@ By default, a two-dimensional map table is shown. Click each item to analyze fur
 The facet toolbar is displayed when you click **Show Toolbar**.
 
 - **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
-- **Visualization**: You can change the visualization to a **Pair Table** visualization. You can change back to a two-dimensional map by choosing **2D Map**. A pair table is shown below. Click each item to analyze further. To clear the selection, click that item again.
+- **Visualization**: You can change the visualization to a **Pair Table** visualization. You can change back to a two-dimensional map by choosing **2D Map**. A pair table is shown. Click each item to analyze further. To clear the selection, click that item again.
 - **Close**: Close this facet.
 - **Hide Toolbar**: Hide the toolbar.
 
@@ -453,7 +453,7 @@ The facet toolbar is displayed when you click **Show Toolbar**.
 
 In the Content Mining application, you see the collection that was configured for the project, but you can also add collections of documents that can be used to configure other Content Mining projects.
 
-1. Click the **Collections** breadcrumb link from the top of the page.
+1. Click the **Collections** breadcrumb link from the start of the page.
 1. Click **Create Collection**.
 1. Enter names, select files, and review the default information, changing any of the selections, if necessary.
 1. Click Save.

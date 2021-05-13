@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-01-21"
+  years: 2020,2021
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -53,7 +53,7 @@ The default file location and name for dictionaries that are saved in Watson Exp
 
 1. Download your user dictionaries from Watson Explorer Analytical Components.
 1. Log in to the content mining application. The link for the content mining app is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`.
-1. If the app opens within a collection, click the **Collections** link from the top of the page, which takes you to the main page of the content mining app.
+1. If the app opens within a collection, click the **Collections** link from the start of the page, which takes you to the main page of the content mining app.
 1. From the main page of the content mining app, select **custom annotator** from the menu, and then select the **Create Custom Annotator** button.
   ![Watson Discovery content mining main page](images/cmcustomanno.png "Content mining app main page showing an arrow pointing at the custom annotator menu item"){: caption="Figure 1. The content mining app main page showing the items in the creation menu" caption-side="bottom"}
 1. Enter a name and description for the enrichment.
@@ -75,7 +75,7 @@ If you have [dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW
    1. Open the **Resource** tab.
    1. Select dictionary enrichments, open the dictionary tab, and click the download icon. The dictionary is downloaded as a CSV file.
 1. Log in to {{site.data.keyword.discoveryshort}} and open the project that contains the collection you want to enrich with this dictionary.
-1. From right side navigation, click **Teach domain concepts** > **Dictionaries**.
+1. From the navigation pane, click **Teach domain concepts** > **Dictionaries**.
 1. Click **Upload** and enter the required information.
 1. Click **Upload** and select the CSV file of the dictionary that was downloaded from oneWEX.
 1. Click **Create**, and then select the collection and fields you want to apply the dictionary enrichment to.
@@ -87,7 +87,7 @@ If you have [dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW
 If you have [character patterns](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_char_ann.html){: external} from IBM Watson Explorer oneWEX, you can import them by using the {{site.data.keyword.discoveryshort}} [content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 1. Log in to the content mining application and open the project that contains the collection you want to enrich with this character pattern. The link for the content mining app is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`.
-1. If the app opens within a collection, click the **Collections** link from the top of the page, which takes you to the main page of the content mining app.
+1. If the app opens within a collection, click the **Collections** link from the start of the page, which takes you to the main page of the content mining app.
 1. From the main page of the content mining app, select **custom annotator** from the menu, and then select the **Create Custom Annotator** button.
   ![Watson Discovery content mining main page](images/cmcustomanno.png "Content mining app main page showing an arrow pointing at the custom annotator menu item"){: caption="Figure 2. The content mining app main page showing the items in the creation menu" caption-side="bottom"}
 1. Enter a name and description for the enrichment.

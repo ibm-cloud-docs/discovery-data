@@ -114,9 +114,10 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
    ```
    {: codeblock}
 
-**Parameters list for each pod:**
+The following sections describe the parameters list for each pod.
 
-**UI pods**
+### UI pods
+{: #scaling-ui}
    
    ```
    spec:
@@ -128,7 +129,8 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
    ```
    {: codeblock}
 
-**API gateway pod**
+### API gateway pod
+{: #scaling-api-gateway}
    
    ```
    spec:
@@ -137,7 +139,8 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
    ```
    {: codeblock}
 
-**Elastic search pods**
+### Elastic search pods
+{: #scaling-elastic}
    
    ```
    spec:
@@ -151,7 +154,8 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
    ```
    {: codeblock}
 
-**Hadoop worker pod**
+### Hadoop worker pod
+{: #scaling-hadoop}
    
    ```
    spec:
@@ -161,7 +165,8 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
    ```
    {: codeblock}
 
-**Crawler pod**
+### Crawler pod
+{: #scaling-crawler}
    
    ```
    spec:
@@ -171,7 +176,8 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
    ```
    {: codeblock}
 
-**Analyze API pod**
+### Analyze API pod
+{: #scaling-analyze-api}
    
    ```
    spec:
@@ -181,7 +187,8 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
    ```
    {: codeblock}
 
-**Watson Knowledge Studio model enrichment pod**
+### Watson Knowledge Studio model enrichment pod
+{: #scaling-wks}
    
    ```
    spec:

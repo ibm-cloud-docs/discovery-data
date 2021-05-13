@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-05"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -103,7 +103,7 @@ To enable query expansion, complete the following steps:
 
     - Specify the `input_terms` and `expanded_terms` in lowercase. Lowercase terms expand to uppercase.
     - Multiword terms are supported only in bidirectional expansions.
-    - The synonyms files cannot contain terms that are specified as stop words. For example, if `on` is included in your stop words file, and you specify in your synonyms file that `rotfl` expands to `rolling on the floor laughing`, the expansion won't return the expected results. Check the words in the stop words file that is used by your collection by default to make sure that you don't use any of the same words. For more information, see [Identifying words to ignore](docs/discovery-data?topic=discovery-data-stopwords).
+    - The synonyms files cannot contain terms that are specified as stop words. For example, if `on` is included in your stop words file, and you specify in your synonyms file that `rotfl` expands to `rolling on the floor laughing`, the expansion won't return the expected results. Check the words in the stop words file that is used by your collection by default to make sure that you don't use any of the same words. For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords).
 
     You can use the <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery/expansions.json" download>expansions.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a> file as a starting point when you build a query expansion list.
 

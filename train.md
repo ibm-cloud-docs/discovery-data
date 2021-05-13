@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -43,18 +43,18 @@ Relevancy training is optional; if the results of your queries meet your needs, 
 
 This video demonstrates relevancy training and several other features. For more information on those features, see [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion), [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords), and [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields):
 
-![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-</br>
+![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" data-script="none"  id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+<br/>
 To view the transcript, open the video on YouTube.
 
 To access the **Train** page, open your project and select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Improve relevance**, then **Relevancy training**.
 
 In order to train Watson, you'll need to:
 
-  -   Identify natural language queries that are representative of the queries your users would request.
-  -   Rate the results of each query as `relevant` or `not relevant`.
+  - Identify natural language queries that are representative of the queries your users would request.
+  - Rate the results of each query as `relevant` or `not relevant`.
 
-Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your project. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results at the top. As you add more and more training data, {{site.data.keyword.discoveryshort}} should become more accurate in the ordering of query results.
+Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your project. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results first. As you add more and more training data, {{site.data.keyword.discoveryshort}} should become more accurate in the ordering of query results.
 
 Natural language query results will return a `confidence` score. For more information, see [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
@@ -67,9 +67,10 @@ If you would prefer to use the {{site.data.keyword.discoveryshort}} API to train
 {: #results}
 
 Training consists of three parts:
--   A natural language query
--   The results of that query
--   The rating you apply to each result
+
+- A natural language query
+- The results of that query
+- The rating you apply to each result
 
 To train a project:
 
@@ -80,6 +81,7 @@ To train a project:
     In the {{site.data.keyword.discoveryshort}} tooling, **Relevant** has a score of `10` and **Not relevant** has a score of `0`. You can use a different scoring scale if rating results using the API, but you can't mix scoring scales within the same project. 
 1.  When you are finished, click the **Back to queries** button.
 1.  Continue adding queries and rating them. As you reach relevant training thresholds, the **Watson will learn which are the best results for your queries after you've rated enough** section will indicate your status by striking out the requirements as you meet them:
+
     - Add more queries
     - Rate more results
     - Add more variety to your ratings
@@ -87,7 +89,7 @@ To train a project:
     A minimum of 50 unique queries must be trained, though more may be required to meet the training threshold. 
 1.  You can continue adding queries and rating results after you have reached the threshold. You should enter all queries you think your users will ask.
 
-Write your training queries the same way your users would ask them, for example: "IBM Watson in healthcare". Training queries should be written with some term overlap between the query and the desired answer; this will improve initial results when the natural language query is run.
+Write your training queries the same way your users would ask them, for example: `IBM Watson in healthcare`. Training queries should be written with some term overlap between the query and the desired answer; this will improve initial results when the natural language query is run.
 {: tip}
 
 If two or more users attempt to train identical queries at the same time, one of the users will overwrite the others.
@@ -100,10 +102,11 @@ You can delete individual training queries by clicking the **Delete** icon. If y
 
 After you have completed rating results, and Watson has applied the training, you should test to see if your query results have improved. To do so, run test natural language queries that are related (but not identical to) your training queries. Check to see if the results of your test queries have improved.
 
-If you would like to further improve results after testing, you could:
--   Add more documents to your collection.
--   Add more training queries.
--   Rate more results, making sure to use both the `Relevant` and `Not relevant` ratings.
+If you would like to further improve results after testing, you can:
+
+- Add more documents to your collection.
+- Add more training queries.
+- Rate more results, making sure to use both the `Relevant` and `Not relevant` ratings.
 
 ## Confidence scores
 {: #confidence}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -69,12 +69,18 @@ Identifies entities. *Entities* are terms that typically represent proper nouns 
 ![Managed deployments only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: For English and Korean data collections, you can choose to use the **Entities v2 trial** enrichment, which applies a newer model with updated entity types. You cannot select both **Entities** and **Entities v2 trial** for a single collection. For more information about each type system, see [Entities Version 1](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-1){: external} and [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}. (For other languages, the Entities enrichment uses the version 2 type system by default.)
 {: note}
 
-For example:
+### Example
+{: #entities-example}
 
-**Input**
-text: "IBM is an American multinational technology company headquartered in Armonk."
+#### Input
+{: #entities-example-input}
 
-**Response**
+```
+"IBM is an American multinational technology company headquartered in Armonk."
+```
+
+#### Response
+{: #entities-example-response}
 
 In the JSON output:
 
@@ -123,12 +129,18 @@ In the JSON output:
 
 Returns important keywords in the content.
 
-For example:
+### Example
+{: #keywords-example}
 
-**Input**
-text: "Watson Discovery is an award-winning AI search technology."
+#### Input
+{: #keywords-example-input}
 
-**Response**
+```
+"Watson Discovery is an award-winning AI search technology."
+```
+
+#### Response
+{: #keywords-example-response}
 
 In the JSON output:
   - `text` = The keyword text
@@ -190,12 +202,18 @@ To understand the sentiment of an entire document, apply this enrichment to a fi
 
 To analyze sentiment in text from multiple fields at once and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Enabling multiple text fields](/docs/discovery-data?topic=discovery-data-contentminerapp#enable-multiple-fields) and [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
 
-For example:
+### Example
+{: #sentiment-example}
 
-**Input**
-text: "It is powerful and easy to use and integrate with third party applications."
+#### Input
+{: #sentiment-example-input}
 
-**Response**
+```
+"It is powerful and easy to use and integrate with third party applications."
+```
+
+#### Response
+{: #sentiment-example-response}
 
 In the JSON output:
   -  `score` = Sentiment score from `-1` (negative) to `1` (positive)

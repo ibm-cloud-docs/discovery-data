@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-05-13"
 
 keywords: passages, query results
 
@@ -51,7 +51,7 @@ Preview the default query results.
 
         You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-        You can change the results to consist of information from a different field instead of a passage from the `text` field. See *Changing the result content*.
+        If the result text shows `Excerpt unavailable`, the search results might be configured to show a field that doesn't exist in your collection. You can change the results to consist of information from a different field or to switch between showing passages or field content. For more information, see *Changing the result content*.
 
     - Conversational Search project: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. See *Changing the result content*.
     - Custom project: Submit your own phrase or keyword from the search bar. The query results that are returned consist of passages.
@@ -73,6 +73,7 @@ Use the tools built in to {{site.data.keyword.discoveryshort}} to make the follo
 
   - Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify additional sections of your document that contain valuable information. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). 
   - Split large documents into more easily consumable chunks. For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
+- If the query result shows an excerpt that is hard to read, it might be content that is coming from a table. If meaningful information is typically stored in tables in your documents, apply the table understanding enrichment to your collection to make the information easier to find and understand in the results. For more information, see [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables).
 - Use Watson Natural Language Understanding to find and tag terms that are generally understood to have special meaning. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
 - Teach {{site.data.keyword.discoveryshort}} about terms and patterns that have special meaning to your use case. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 - For a Content Mining project, you might want to add facets based on enrichments other than the Parts of Speech enrichment that is applied by default. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).

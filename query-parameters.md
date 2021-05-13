@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -39,13 +39,14 @@ These parameters are used when writing queries with the {{site.data.keyword.disc
 
 Queries written in the {{site.data.keyword.discoveryshort}} Query Language can include both search and structure parameters.
 
-**Search parameters**
+## Search parameters
+{: #query-parameters-search}
 
 Search parameters enable you to search your collection, identify a result set, and perform analysis on the result set.
 
 The **results set** is the group of documents identified by the combined searches of the search parameters. The results set may be significantly larger than the returned results. If an empty query is performed, the results set is equal to all the documents in the collection.
 
-Documents you do not have permissions for will not be returned in query results.
+Documents you do not have permissions to access are not returned in query results.
 {: important}
 
 ## Answer finding ![IBM Cloud only](images/ibm-cloud.png)
@@ -132,7 +133,7 @@ Because Answer finding is enabled on only the documents and passages requested, 
 ## natural_language_query
 {: #nlq}
 
-A natural language query enables you to perform queries expressed in natural language, as might be received from an end user in a conversational or free-text interface - for example: "IBM Watson in healthcare". The parameter uses the entire input as the query text. It does **not** recognize operators. The `natural_language_query` parameter enables capabilities such as relevancy training. Query results will include a `confidence` score. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence). The maximum query string length for a natural language query is `2048`.
+A natural language query enables you to perform queries expressed in natural language, as might be received from an end user in a conversational or free-text interface - for example: `IBM Watson in healthcare`. The parameter uses the entire input as the query text. It does **not** recognize operators. The `natural_language_query` parameter enables capabilities such as relevancy training. Query results will include a `confidence` score. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence). The maximum query string length for a natural language query is `2048`.
 
 ## query
 {: #query}
@@ -165,7 +166,8 @@ When you write a query that includes both a `filter`, and an `aggregation`, `que
 With a simple query, especially on a small data set, `filter` and `query` often return the exact same (or similar) results. If a `filter` and `query` call return similar results, and getting a response in order of relevance does not matter, it is better to use filter because filter calls are faster and are cached. Caching means that the next time you make that call, you get a much quicker response, particularly in a big data set.
 
 
-**Structure parameters**
+## Structure parameters
+{: #query-parameters-structure}
 
 Structure parameters define the content and organization of the documents in the returned JSON. This includes the number of results retuned, where in the results set to start returning documents, how the result set is sorted, which fields to return for each documents, if duplicate documents should be removed, and if relevant passages should be extracted from the results set. Structure parameters don't affect which documents are part of the entire results set.
 
@@ -343,7 +345,7 @@ The JSON that is returned from the query will be of the following format:
 ### passages.fields
 {: #passages_fields}
 
-A comma-separated list of fields in the index that passages will be drawn from. If this parameter not specified then all top level field are included.
+A comma-separated list of fields in the index that passages will be drawn from. If this parameter is not specified then all root level fields are included.
 
 ### passages.count
 {: #passages_count}

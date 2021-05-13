@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -43,7 +43,7 @@ This information applies only to installed deployments.
 ## Interfaces and JavaDoc
 {: #ccs-interfaces-jdoc}
 
-The interfaces listed in this document are available in the JAR package file that ships with the custom connector .zip file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the top level of the expanded .zip file. JavaDoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
+The interfaces listed in this document are available in the JAR package file that ships with the custom connector .zip file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the root level of the expanded .zip file. JavaDoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
 
 ## Initialization interface
 {: #ccs-init-interface}
