@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -111,6 +111,7 @@ A request is a current action being performed by {{site.data.keyword.discoveryfu
 Perform the following steps to back up {{site.data.keyword.discoveryfull}} by using the backup scripts:
 
   1. Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
+
     -  `Postgresql`
     -  `Etcd`
     -  `ElasticSearch`
@@ -141,7 +142,7 @@ Perform the following steps to back up {{site.data.keyword.discoveryfull}} by us
       If you are backing up version 2.1.4 and earlier, enter `./all-backup-restore.sh backup <release_name> <-f backupFileName>` to specify the release name that you are backing up. Like the command for version 2.2.0, the `<-f backupFileName>` part of the command is optional, and you can specify the namespace in which the gateway pods are deployed.
       {: tip}
 
-      The scripts generate an archive file, including the backup files of the above services. The file is named `watson_discovery_<timestamp>.backup` or the file specified by the `-f` option in the current directory. These scripts create a `tmp` directory in the current directory, while backing up and restoring. You can unpack the archive file by running following command:
+      The scripts generate an archive file, including the backup files of the services that are listed in Step 1. The file is named `watson_discovery_<timestamp>.backup` or the file specified by the `-f` option in the current directory. These scripts create a `tmp` directory in the current directory, while backing up and restoring. You can unpack the archive file by running following command:
 
       ```bash
       tar xvf <backup_file_name>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -41,10 +41,10 @@ In {{site.data.keyword.discovery-data_short}}, you can crawl documents from a lo
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
-This information applies only to installed deployments. For information about {{site.data.keyword.cloud_notm}} data sources, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
+This information applies only to installed deployments. For more information about {{site.data.keyword.cloud_notm}} data sources, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
 {:note}
 
-All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
+All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 {: important}
 
 Depending on your data source, the steps to configure a collection vary. See the section for your data source to learn more.
@@ -66,24 +66,24 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 
 *Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
-If you have special requirements that you need to address when you add source documents to a collection, such as excluding certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
+If you have special requirements when adding source documents, such as a need to exclude certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 
 ## Processing settings
 {: #processing-options}
 
-You can specify an additional option for this collection:
+You can specify an extra option for this collection:
  
-- **Run OCR (Optical Character Recognition)**: Extracts text from images, using Optical Character Recognition (OCR).
+- **Run OCR (Optical Character Recognition)**: Extracts text from images, by using Optical Character Recognition (OCR).
 
 ## Data source requirements
 {: #requirements}
 
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
-- The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When uncompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
+- The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When decompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
 - [Document level security](#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
-- When a source is re-crawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
-- Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes 1 crawler pod, which allows three collections to be processed simultaneously. A production installation includes 2 crawler pods, which can process six collections simultaneously.
+- When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
+- Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes one crawler pod, which allows three collections to be processed simultaneously. A production installation includes two crawler pods, which can process six collections simultaneously.
 
      If you are running a default installation and you want to process more than three collections simultaneously, you must increase the number of crawler pods by running the following commands:
 
@@ -92,7 +92,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
      ```
      {: pre}
 
-     In a default installation, the maximum number of simultaneous collections performing crawls is 3. If you start a fourth, that collection does not start to process until the prior three finish.
+     In a default installation, the maximum number of simultaneous collections that can perform a crawl is 3. If you start a fourth, that collection does not start to process until the prior three crawls finish.
      {: note}
 
      Each `number-of-replicas` allows 3 simultaneous crawls, so `number-of-replicas=2` increases the replicas to 6, and `number-of -replicas=3` increases them to 9.
@@ -101,7 +101,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
 ### Box
 {: #connectbox}
 
-You can use this option to crawl Box. Only documents supported by {{site.data.keyword.discoveryshort}} in your Box folders are crawled; all others are ignored.
+You can use this option to crawl Box. Only documents that are supported by {{site.data.keyword.discoveryshort}} in your Box folders are crawled; all others are ignored.
 {: shortdesc}
 
 
@@ -126,7 +126,7 @@ You can use this option to crawl Box. Only documents supported by {{site.data.ke
 
    1. Make a copy of `public-box.pem`. 
    
-      If you create an RSA key pair with a passphrase, you must install unlimited strength JCE Policy files, or .jar files (`local_policy.jar` and `US_export_policy.jar`). You can download these unlimited strength JCE Policy files from Unrestricted SDK JCE policy files. Copy these files to the persistent volume in the folder `config/certs/jvm/`, for example `config/certs/jvm/local_policy.jar` and `config/certs/jvm/US_export_policy.jar`. The certificates are imported into the JVM trust store when the container starts.
+      If you create an RSA key pair with a passphrase, you must install unlimited strength JCE Policy files, or .jar files (`local_policy.jar` and `US_export_policy.jar`). You can download these unlimited strength JCE Policy files from Unrestricted SDK JCE policy files. Copy these files to the persistent volume in the folder `config/certs/jvm/`, for example `config/certs/jvm/local_policy.jar` and `config/certs/jvm/US_export_policy.jar`. The certificates are imported into the JVM truststore when the container starts.
       {: note}
 
 1. Next, create an app on the Box developer site. Log in to your [Box Developers account](https://developer.box.com/){: external}, and create a new enterprise integration app. After you log in to your Box account, make sure you complete the following tasks:
@@ -135,7 +135,7 @@ You can use this option to crawl Box. Only documents supported by {{site.data.ke
    - Copy the client ID and client secret.
    - In **User Access**, select **All Users** for the application to request authorization for access.
    - In **Application Access**, click **Enterprise**.
-   - In **Application Scopes**, select all the check boxes. Selecting the **Read and write all files and folders stored in Box** check box ensures that users must authenticate to have read permissions in the files contained in your application.
+   - In **Application Scopes**, select all the check boxes. Selecting the **Read and write all files and folders that are stored in Box** checkbox ensures that users must authenticate to have read permissions in the files contained in your application.
    - In **Advanced Features**, set **Perform Actions as Users** and **Generate User Access Tokens** to on. Setting these switches to on ensures that the **Managing users** and **App users** options are checked for **Scopes - Enterprise**.
    - When you add a public key, enter the content of `public-box.pem` that you generated when you created the RSA key pair.
    - Copy the public key 1 ID.
@@ -177,7 +177,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Box** as the collect
     - **Enable proxy settings**: By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
         - **Username**: Optional: The username that you use to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of the proxy server.
         - **Password**: Optional: The password that you use to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of the proxy server.
-        - **Proxy server host name or IP address**: The host name or the IP address of the proxy server.
+        - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
         - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 
 1. Optional: Set the following switch in **Security**:
@@ -188,7 +188,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Box** as the collect
 ### Salesforce
 {: #connectsf}
 
-Use this option to crawl Salesforce. Only documents supported by {{site.data.keyword.discoveryshort}} in your Salesforce folders are crawled; all others are ignored.
+Use this option to crawl Salesforce. Only documents that are supported by {{site.data.keyword.discoveryshort}} in your Salesforce folders are crawled; all others are ignored.
 {: shortdesc}
 
 
@@ -209,7 +209,7 @@ For information about downloading the .jar files, see the following links:
    - `force-wsc.jar` (from Force.com Web Service Connector (WSC))
    - `commons-beanutils.jar` (from Apache Commons BeanUtils)
 
-1. Compress the .jar files into a .zip file, which you must upload to {{site.data.keyword.discoveryshort}}.
+1. Compress the .jar files into a compressed file, which you must upload to {{site.data.keyword.discoveryshort}}.
 
 
 #### Configuring a Salesforce collection
@@ -221,7 +221,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Salesforce** as the 
     - **Username**: The username to call the Salesforce API.
     - **Password**: The password of the specified user.
     - **Security Token**: The security token of the user to call Salesforce API.
-    - **Jar zip archive file**: Upload a .zip file that contains the .jar files that you downloaded in [Downloading JAR files](#download-copy-files). You can also select or delete a .zip file that you previously uploaded.
+    - **Jar zip archive file**: Upload a compressed file that contains the .jar files that you downloaded in [Downloading JAR files](#download-copy-files). You can also select or delete a compressed file that you previously uploaded.
 1. Complete the following field in **Object Types**:
     - **Object Types to crawl**: Specifies the object types to crawl. The default behavior is to crawl all object types. For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, regarding MyCustomObject, specify `MyCustomObject__c`. Do not specify comment objects, such as FeedComment, CaseComment, IdeaComment without FeedItem, Case, Idea, respectively. If you specify a tag object, you must also specify its parent. For example, do not specify the AccountTag object without the Account object.
 1. Click **Finish**.
@@ -232,14 +232,14 @@ For more information about Salesforce, see [Salesforce developer documentation](
 ### SharePoint Online
 {: #connectsp}
 
-Use this option to crawl SharePoint Online. Only documents supported by {{site.data.keyword.discoveryshort}} in your SharePoint folders are crawled; all others are ignored.
+Use this option to crawl SharePoint Online. Only documents that are supported by {{site.data.keyword.discoveryshort}} in your SharePoint folders are crawled; all others are ignored.
 {: shortdesc}
 
 
 #### Prerequisites
 {: #spprerequisites}
 
-Before you begin, be sure to obtain site collection administrator permission. Non-root site collection crawling is not supported. You can only crawl root site collections.
+Before you begin, be sure to obtain site collection administrator permission. Crawling non-root site collections is not supported. You can crawl root site collections only.
 
 
 #### Configuring a SharePoint Online collection
@@ -248,19 +248,19 @@ Before you begin, be sure to obtain site collection administrator permission. No
 In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint Online** as the collection type, enter the following information:
 
 1. Complete the following fields in **Enter your credentials**:
-    - **Username**: The username of the SharePoint user with  access to all sites and lists that need to be crawled and indexed, for example `<crawl_username>@<company_name>.onmicrosoft.com`.
-    - **Password**: The password of the SharePoint user. This value is never returned and is used only when creating or modifying credentials.
+    - **Username**: The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed, for example `<crawl_username>@<company_name>.onmicrosoft.com`.
+    - **Password**: The password of the SharePoint user. This value is never returned and is used only when you create or modify credentials.
 1. Complete the following fields in **Specify what you want to crawl**:
     - **Site Collection Url**: The SharePoint web service URL, for example `https://<organization_name>.com`.
-    - **Site Collection Name**: The name you must obtain from site collection settings. The name the site collection uses.
+    - **Site Collection Name**: The name that you must obtain from site collection settings. The name the site collection uses.
 1. Optional Set the following switch in **Proxy settings**:
     - **Enable proxy settings**: By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
          - **Username**: Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
          - **Password**: Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
-         - **Proxy server host name or IP address**: The host name or the IP address of the proxy server.
+         - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
          - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
-    - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security, and after enabling it, you must supply the application ID. When this option is enabled, your users can crawl and query content that they have access to. For more information, see [About document level security](#configuredls).
+    - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security. After you enable it, you must supply the application ID. When this option is enabled, your users can crawl and query content that they have access to. For more information, see [About document level security](#configuredls).
         - **Application ID**: The Azure ID assigned to the application, upon registration. Obtain the Application ID from the SharePoint administrator. If you are configuring document level security in SharePoint Online, see [App registration with SharePoint Online](#register-sp) for instructions.
 1. Click **Finish**.
 
@@ -268,12 +268,12 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint Online** 
 #### App registration with SharePoint Online
 {: #register-sp}
 
-When you enable document level security, you must register your app with SharePoint Online. You can register your app by logging in to the Microsoft Azure Portal, using your administrator account associated with your SharePoint Online collection in {{site.data.keyword.discoveryshort}}. The username is in the form of `<admin_user>@<domain>.onmicrosoft.com`. For additional steps regarding registering your app on the Azure Portal, see [Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/graph/auth-register-app-v2){: external}. 
+When you enable document level security, you must register your app with SharePoint Online. You can register your app by logging in to the Microsoft Azure Portal, by using your administrator account associated with your SharePoint Online collection in {{site.data.keyword.discoveryshort}}. The username is in the form of `<admin_user>@<domain>.onmicrosoft.com`. For more information about registering your app on the Azure Portal, see [Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/graph/auth-register-app-v2){: external}. 
 
-While registering your app, you receive an Azure application (client) ID, which you need to create and query a collection with document level security enabled. Make sure you note the application ID after you obtain it.
+When you register your app, you receive an Azure application (client) ID, which you need to create and query a collection with document level security enabled. Make sure you note the application ID after you obtain it.
 {: important}
 
-Before you enter your application ID, check to make sure you add the required APIs and the permissions associated with each API. For information about configuring the list of statically requested permissions for an application, see [Using the admin consent endpoint](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#using-the-admin-consent-endpoint){: external}. Also, check the following table to make sure you add and apply one of the permissions in each row:
+Before you enter your application ID, check to make sure you add the required APIs and the permissions that are associated with each API. For more information about configuring the list of statically requested permissions for an application, see [Using the admin consent endpoint](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#using-the-admin-consent-endpoint){: external}. Also, check the following table to make sure you add and apply one of the permissions in each row:
 
 | API  | Permissions | Type   |                           
 | --------------- | ------------------------------- | ------------- |
@@ -294,7 +294,7 @@ For more information on how to register an app or how to grant permissions, see 
 ### SharePoint OnPrem
 {: #connectsp_op}
 
-Use this option to crawl SharePoint OnPrem 2013, 2016, or 2019. Only documents supported by {{site.data.keyword.discoveryshort}} in your SharePoint folders are crawled; all others are ignored.
+Use this option to crawl SharePoint OnPrem 2013, 2016, or 2019. Only documents that are supported by {{site.data.keyword.discoveryshort}} in your SharePoint folders are crawled; all others are ignored.
 {: shortdesc}
 
 
@@ -313,7 +313,7 @@ In addition, before you create a SharePoint OnPrem collection, you must obtain a
    ```
    {: pre}
 
-   You might see output that is similar to the following:
+   You might see output that is similar to the following message:
 
    ```
    wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
@@ -326,7 +326,7 @@ In addition, before you create a SharePoint OnPrem collection, you must obtain a
    ```
    {: pre}
 
-   You might see output that is similar to the following:
+   You might see output that is similar to the following message:
 
    ```
    -rw-r--r--. 1 dadmin dadmin  8600 Feb  3 08:23 ESSPSolution-${build-version}.wsp
@@ -348,16 +348,16 @@ To support farm-aware crawling, you must next deploy the web services package th
 
 1. Run the `ESSPSolution.wsp` script on the SharePoint server by entering the following Windows PowerShell cmdlet: `Add-SPSolution -LiteralPath C:\files\ESSPSolution.wsp`
 1. In SharePoint, open SharePoint Central Administration and then system settings.
-1. Deploy tbe package by using farm solutions.
+1. Deploy the package by using farm solutions.
 1. Select the `esspsolution.wsp` solution, and deploy the solution. After the deployment is complete, the farm solution is listed in the SharePoint administration console. An administrator can enable or disable the solution and can schedule triggers.
 1. Optional: Regardless of the approach that you used to deploy the web services, to complete the deployment in some environments, you might need to apply the following configurations to the IIS server that hosts the SharePoint server and the web services:
    
    - Allow .NET impersonation on IIS
    - Change the ASP.NET trust level to WSS_Medium
 
-   You can apply these configurarations in the Internet Information Services Manager.
+   You can apply these configurations in the Internet Information Services Manager.
 
-For information about obtaining the web services package from your {{site.data.keyword.discoveryshort}} cluster, see [Obtaining the web services package from your Discovery cluster](#sp_opprerequisites).
+For more information about obtaining the web services package from your {{site.data.keyword.discoveryshort}} cluster, see [Obtaining the web services package from your Discovery cluster](#sp_opprerequisites).
 
 
 #### Configuring a SharePoint OnPrem collection
@@ -367,7 +367,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint OnPrem** 
 
 1. Complete the following fields in **Enter your credentials**:
     - **Username**: The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed.
-    - **Password**: The password of the SharePoint user. This value is never returned and is only used when creating or modifying credentials.
+    - **Password**: The password of the SharePoint user. This value is never returned and is only used when you create or modify credentials.
 1. Optional: Set the following switch:
     - **Enable SAML authentication**: By default, this switch is set to **Off**. When set to **On**, you can use SAML claims-based authentication. The default is NTLM authentication.
          - **Identity Provider endpoint**: The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
@@ -380,17 +380,17 @@ In {{site.data.keyword.discoveryshort}}, after you select **Sharepoint OnPrem** 
     - **Enable proxy settings**: By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
          - **Username**: Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
          - **Password**: Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
-         - **Proxy server host name or IP address**: The host name or the IP address of the proxy server.
+         - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
          - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 1. Optional: Set the following switch in **Security**:
     - **Enable Document Level Security**: By default, this switch is set to **Off**. When set to **On**, search time and document level security is activated. When you enable this option, you need to obtain the following information from the LDAP administrator. For more information, see [About document level security](#configuredls):
         - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-        - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
+        - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. The distinguished name always works.
         - **LDAP binding user password**: The password used to bind to the directory service.
         - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
         - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
 
-          Before adding users so they can query using document level security, you need to authorize your app by connecting to the LDAP in your app and handling it. For more information about configuring a connection to your LDAP server in your app, see [Connecting to your LDAP server](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/admin/ldap.html).
+          Before you add users so they can query by using document-level security, you must authorize your app by connecting to the LDAP in your app and handling it. For more information about configuring a connection to your LDAP server in your app, see [Connecting to your LDAP server](https://www.ibm.com/support/knowledgecenter/SSQNUZ_2.5.0/cpd/admin/ldap.html).
           {: important}
 
 1. Click **Finish**.
@@ -411,23 +411,26 @@ Use this option to crawl websites. The web content is processed as HTML.
 In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the collection type, enter the following information:
 
 1. Complete the following field in **Specify where you want to crawl**:
-    - **Starting URLs**: The URLs where the crawler begins crawling. By default, the web crawl can crawl subtrees, and URLs can only be crawled from the path supplied in the seed. Use the full URL, for example `http://www.example.com/`. The start URL in the web crawl has two limitations as to what is crawled:
+    - **Starting URLs**: The URLs where the crawler begins crawling. By default, the web crawl can crawl subtrees, and URLs can be crawled from the path that is supplied in the seed only. Use the full URL, for example `http://www.example.com/`. The start URL in the web crawl has two limitations as to what is crawled:
        - It crawls the same domain name as the start URL.
        - It crawls all URL content up to and including the last slash (`/`) in **Starting URLs**. If your start URL has a subtree, the web crawl does not crawl that subtree, unless you specify its URL in **Starting URLs**.
 
-1. Click the **Add** button to add one or more starting URLs. After you add one or more starting URLs, you can click **Authentication settings** and select one of three authentication types to apply to your chosen starting URL: **Basic authentication**, **NTLM authentication**, or **FORM authentication**. Complete the following fields for your chosen authentication type:
+1. Click **Add** to add one or more starting URLs. After you add one or more starting URLs, you can click **Authentication settings** and select the authentication type to apply to your chosen starting URL:
    
-   **Basic authentication**
+   - **Basic authentication**
+
      - **Username**: The username of the user for authentication.
      - **Password**: The password of the user for authentication.
 
-   **NTLM authentication**
+   - **NTLM authentication**
+
      - **Username**: The username of the user for authentication.
      - **Password**: The password of the user for authentication.
      - **NTLM domain name**: The NTLM domain name that belongs to the user who is authenticating.
-     - **NTLM host name**: The host name of the NTLM server.
+     - **NTLM host name**: The hostname of the NTLM server.
 
-   **FORM authentication**
+   - **FORM authentication**
+
      1. In **Form type**, select one of the following options:
         - **Direct**: Click this option if you do not want to fetch the login page.
         - **Indirect**: Click this option if you want to fetch the login page and you want to fill the parameters in the login form.
@@ -443,20 +446,20 @@ In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the c
     - **Enable Proxy Settings**: Is set to **Off** by default. When you set **Enable Proxy Settings** to **On**, you activate proxy authentication for the starting URLs that you want to crawl.
        - **Username**: The username that you use to authenticate with a proxy server. You can obtain your username from the website administrator.
        - **Password**: The password that you use to authenticate with a proxy server. You can obtain your password from the website administrator.
-       - **Proxy server domain(s)**: The domain(s) that the host resides in. You can specify a wildcard in this field, such as an asterisk (`*`) to crawl all domains or a leading asterisk (`*.server1.bar.com`) to crawl domains that match a pattern.
-       - **Proxy server host name or IP address**: The host name, if you want to access the server by using a LAN, or the IP address of the server that you want to use as the proxy server.
+       - **Proxy server domain(s)**: The domain or domains that the hosts reside in. You can specify a wildcard in this field, such as an asterisk (`*`) to crawl all domains or a leading asterisk (`*.server1.bar.com`) to crawl domains that match a pattern.
+       - **Proxy server host name or IP address**: The hostname, if you want to access the server by using a LAN, or the IP address of the server that you want to use as the proxy server.
        - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 
 1. Optional: Complete the following fields in **Advanced Configuration**:
-    - **Code page to use**: The field used to enter the character encoding. If unspecified, the default value used is `UTF-8`.
+    - **Code page to use**: The field used to enter the character encoding. If unspecified, the default value that is used is `UTF-8`.
 
        If you are crawling Chinese websites, enter `UTF-8` as the character set in **Code page to use**.
        {: tip}
 
-    - **URL Path Depth**: The depth of a website to crawl, indicated by subtrees in a link. For example, `https://www.example.com/some/more/examples/index.html` has a path depth of 4, `/some/more/examples/index`. You can only enter a positive value. If unspecified, the default value is `5`. The maximum path depth is `20`.
-    - **Maximum hops**: The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can only crawl links that are within the hop. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Starting URLs** to crawl the web page.
+    - **URL Path Depth**: The depth of a website to crawl, indicated by subtrees in a link. For example, `https://www.example.com/some/more/examples/index.html` has a path depth of 4, `/some/more/examples/index`. You can enter a positive value only. If unspecified, the default value is `5`. The maximum path depth is `20`.
+    - **Maximum hops**: The number of consecutive links to follow from the start URL. If unspecified, the default value is `5`. The maximum number of links that you can follow is `20`. If you want to disable this field, enter `-1`, but if you want to enable it, enter a positive value. You can crawl links that are within the hop only. If there is a link that you want to crawl that is out of reach of the hop, you must enter that link in **Starting URLs** to crawl the web page.
 1. Optional: Set the following switch:
-    - **Ignore certificate**: If you enable this option, ignores any SSL certificates that are present on websites. This option only applies to HTTPS websites.
+    - **Ignore certificate**: If you enable this option, ignores any SSL certificates that are present on websites. This option applies to HTTPS websites only.
 1. Click **Finish**.
 
 After the crawl begins, the **Activity** tab opens and updates as documents are added to the collection.
@@ -468,14 +471,14 @@ If the web pages are updated after your initial crawl, the sync frequency is adj
 ### Database
 {: #databaseconnect}
 
-Use this option to crawl documents from IBM Db2, Microsoft SQL Server, Postgresql, Oracle, and other databases that support JDBC. {{site.data.keyword.discoveryshort}} supports the following data source versions:
+Use this option to crawl documents from IBM Db2, Microsoft SQL Server, PostgreSQL, Oracle, and other databases that support JDBC. {{site.data.keyword.discoveryshort}} supports the following data source versions:
 
 - IBM Db2: 10.5, 11.1, 11.5
 - Microsoft SQL Server: 2012, 2014, 2016, 2017
 - Oracle Database: 12c, 18c, 19c
-- Postgres: 9.6, 10, 11
+- PostgreSQL: 9.6, 10, 11
 
-Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
+Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
 
 #### Copying Database JAR files
 {: #copydatabasefiles}
@@ -487,22 +490,22 @@ Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; al
     - Db2: `db2jcc4.jar`
     - Oracle: `ojdbc8.jar`
     - SQL Server: `mssql-jdbc-7.2.2.jre8.jar`
-    - Postgresql: `postgresql-42.2.6.jar`
-1.  Compress the JAR files into a single ZIP file. 
+    - PostgreSQL: `postgresql-42.2.6.jar`
+1.  Compress the JAR files into a single compressed file. 
 
     If you have a JDBC driver that has only one JAR file, skip this step.
 
-When you set up the database data source, you are asked to specify the JDBC driver classpath. Specify the directory where you store this JAR or ZIP file so that {{site.data.keyword.discoveryshort}} can upload it.
+When you set up the database data source, you are asked to specify the JDBC driver class path. Specify the directory where you store this JAR or compressed file so that {{site.data.keyword.discoveryshort}} can upload it.
 
 #### Configuring a Database collection
 {: #configuredatabase}
 
-Before you complete the fields in **Enter your credentials**, you might want to check that the user credentials are associated with a user who has permission to access the tables that you want to crawl.
+Before you add credential information, make sure that the user credentials that you plan to use are associated with a user who has permission to access the tables that you want to crawl.
 
 Before you complete the fields in **Specify what you want to crawl**, keep the following points in mind if you crawl multiple tables:
 
 - You can crawl multiple tables in a collection, and you can specify tables that have different schema, or sets of columns.
-- If you crawl multiple tables that have columns with the same name but different data types, the data in one of the tables is excluded from the index. For example, if you have two tables that have columns called `DATA` and the `DATA` column in one table is populated with dates and the column in the other table is populated with strings, the data in one of the tables is excluded from the index. In this case, to resolve a column name conflict, use a `VIEW`.
+- If you crawl multiple tables that have columns with the same name but different data types, the data in one of the tables is excluded from the index. For example, if you have two tables that have columns that are called `DATA` and the `DATA` column in one table is populated with dates and the column in the other table is populated with strings, the data in one of the tables is excluded from the index. In this case, to resolve a column name conflict, use a `VIEW`.
 
 Only in content mining projects, columns that have such a conflict are assigned fields that have a data type suffix, such as `DATA_string`. To see whether data types are excluded from the index, click **Warnings and errors** in the **Activity** tab.
 {: note}
@@ -523,7 +526,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Database** as the co
         <th>Example</th>
       </tr>
       <tr>
-        <td>DB2</td>
+        <td>Db2</td>
         <td>`jdbc:db2://<server>:<port>/<database_name>`</td>
         <td>`jdbc:db2://localhost:50000/sample`</td>
       </tr>
@@ -551,13 +554,13 @@ In {{site.data.keyword.discoveryshort}}, after you select **Database** as the co
 
     - **JDBC driver type**: Choose the database. 
     
-      **DB2** is selected by default. If you want to crawl from a database type that is not listed, select **OTHER**.
+      **Db2** is selected by default. If you want to crawl from a database type that is not listed, select **OTHER**.
     - **JDBC driver classname**: The JDBC driver class name that is associated with the database you selected. This field is autofilled, unless you select **OTHER**.
     - **JDBC driver classpath**: Upload a JDBC driver file, which can have a .jar or .zip file extension. 
     
       You can select or delete a .jar or .zip file that you previously uploaded.
 1. Complete the following fields in **Specify what you want to crawl**:
-    - **Schema Name**: The schema you want to crawl data from. You obtain the schema name from the database you are crawling.
+    - **Schema Name**: The schema that you want to crawl data from. You obtain the schema name from the database you are crawling.
     - **Table Name**: The table within a schema you want to crawl data from. You obtain the table name from the database you are crawling.
          
          After you complete the **Schema name** and **Table name** fields and click **Add**, you can click the edit icon to access the **Table crawl settings** dialog box, where you can enter input in the following fields:
@@ -570,14 +573,14 @@ The JDBC driver from Microsoft does not support Windows Authentication on Linux.
 
 - Database URL: `jdbc:jtds:sqlserver://<host>:<port>;databaseName=<database>;domain=<domain>;useNTLMv2=true;`
 - JDBC driver type: `OTHER`
-- JDBC driver classname: `net.sourceforge.jtds.jdbc.Driver`
+- JDBC driver class name: `net.sourceforge.jtds.jdbc.Driver`
 
 #### Applying enrichments to content from a database
 {: #collection-types-enrich-db}
 
 If you use a database as your data source and want to apply enrichments to the nested fields that are indexed from the database, you must use a Content Mining project type.
 
-If your goal is to create a search application by using a Document Retrieval project type, create a Content Mining project type first. From the Content Mining project, you can connect to the database and enrich the data. Then you can reuse the enriched collection from a Document Retrieval project.
+If your goal is to create a search application by using a Document Retrieval project type, create a Content Mining project type first. From the Content Mining project, you can connect to the database and enrich the data. Then, you can reuse the enriched collection from a Document Retrieval project.
 
 To enrich database content for use in a Document Retrieval project, complete the following steps:
 
@@ -604,19 +607,19 @@ To enrich database content for use in a Document Retrieval project, complete the
 ### Windows File System
 {: #windowsfilesystemconnect}
 
-Use this option to crawl Windows file systems from the {{site.data.keyword.discoveryshort}} server. The Windows File System connector supports the Windows Server 2012 R2, 2016, and 2019 versions. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
+Use this option to crawl Windows file systems from the {{site.data.keyword.discoveryshort}} server. The Windows File System connector supports the Windows Server 2012 R2, 2016, and 2019 versions. Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
 {: shortdesc}
 
 
 #### Installing the agent server
 {: #agentinstall}
 
-Before configuring a Windows File System collection, you must install the agent server on a remote Windows file server or on a remote Windows server. If you install the agent server on a remote Windows server, the remote Windows server must be able to mount one or more file servers so that the agent can crawl remote Windows file systems. The agent server is a Windows service that retrieves data from data source servers and sends data to {{site.data.keyword.discoveryshort}}. The Windows agent can crawl remote Windows file systems, the agent local drives, and shared network folders.
+Before you configure a Windows File System collection, you must install the agent server on a remote Windows file server or on a remote Windows server. If you install the agent server on a remote Windows server, the remote Windows server must be able to mount one or more file servers so that the agent can crawl remote Windows file systems. The agent server is a Windows service that retrieves data from data source servers and sends data to {{site.data.keyword.discoveryshort}}. The Windows agent can crawl remote Windows file systems, the agent local drives, and shared network folders.
 {: shortdesc}
 
 1. Log in to {{site.data.keyword.discoveryshort}} as an admin, and navigate to **Windows File System**.
 1. Under **Download & install Windows Agent**, click **Download Windows Agent Installer**. Clicking this link downloads the .zip file to run the agent installer.
-1. Follow the prompts. While the installer runs, you receive the host name, username, password, agent authentication port number, and port number that you enter later in Windows File System on {{site.data.keyword.discoveryshort}}, so note them when you receive them. Also during installation, a check box appears that, when you check it, you can use to create a user account; when the check box is unchecked, you have administrative permissions.
+1. Follow the prompts. While the installer runs, you receive the hostname, username, password, agent authentication port number, and port number that you enter later in Windows File System on {{site.data.keyword.discoveryshort}}, so note them when you receive them. Also, during installation, a checkbox appears that, when you check it, you can use to create a user account; when the checkbox is cleared, you have administrative permissions.
 1. Extract all files in the `WindowsAgentServer.zip`.
 1. Double-click the `install.exe` file, or enter `install.exe` in a command window. You can choose one of the following methods to run the installation program:
 
@@ -630,7 +633,7 @@ Before configuring a Windows File System collection, you must install the agent 
 
         The screens are rendered in text and prompt you for the same information as the graphical installation.
 
-        After you enter the command, a process runs in the background for several seconds before the console installation program displays.
+        After you enter the command, a process runs in the background for several seconds before the console installation program is displayed.
         {: note}
 
    - Silent installation - To install the product silently, complete the following steps:
@@ -647,12 +650,12 @@ Before configuring a Windows File System collection, you must install the agent 
       ```
       {: pre}
 
-1. Specify installation options by entering or verifying the fully qualified host name of the computer you are installing the agent server on.
+1. Specify installation options by entering or verifying the fully qualified hostname of the computer you are installing the agent server on.
 
-   You cannot specify an IPv6 address as the host name of the server.
+   You cannot specify an IPv6 address as the hostname of the server.
    {: important}
 
-1. Enter a username and password of an account that can be used to authorize access to the agent server. When you configure the agent for Windows File System in the administration console, you must specify this username and password. If the username does not exist, you can select the check box to create the account. 
+1. Enter a username and password of an account that can be used to authorize access to the agent server. When you configure the agent for Windows File System in the administration console, you must specify this username and password. If the username does not exist, you can select the checkbox to create the account. 
 
    To crawl a domain in a secure collection, the username must be an existing domain user that has permission to access the files to be crawled. To specify a domain user, use the format `<username>@<domain name>`. The agent installation program does not create the domain user.
    {: important}
@@ -686,7 +689,7 @@ After the software is installed, you must set up shared network directories that
    ```
    {: pre}
 
-   Where `\\files.example.com\data` represents the host name or IP address of the remote server or the path to the remote directory. 
+   Where `\\files.example.com\data` represents the hostname or IP address of the remote server or the path to the remote directory. 
 1. List shares that are defined on the server where the agent is installed:
    ```bash
    esagent --lsshare
@@ -756,7 +759,7 @@ The output of the `getStatus` command is an XML file in the following output:
 In {{site.data.keyword.discoveryshort}}, after you select **Windows File System** as the collection type, enter the following information:
  
 1. Complete the following fields in **Enter your credentials**:
-    - **Host**: The host name of the remote Microsoft Windows server, for example `<hostname>.mydomain.com`. You obtain the host name when you install the agent server.
+    - **Host**: The hostname of the remote Microsoft Windows server, for example `<hostname>.mydomain.com`. You obtain the hostname when you install the agent server.
     - **Username**: The username to connect the agent server, which you obtain when you install the agent server. You use your username to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
     - **Password**: The password of the specified user, which you obtain when you install the agent server. You use your password to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
     - **Agent Authentication Port**: The default port value is `8397`. The port for authenticating, which you obtain when you install the agent server.
@@ -767,7 +770,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **Windows File System*
 1. Optional: Set the following switch in **Security**:
     - **Enable Document Level Security**: By default, this switch is set to **Off**. You must enable this option to activate document level security. When you enable this option, your users can crawl and query content that they have access to. For more information about Document Level Security, see [About document level security](#configuredls).
          - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-         - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a DN. The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. It is recommended to use the DN, which always works.
+         - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a DN. The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. The distinguished name always works.
          - **LDAP binding user password**: The password used to bind to the directory service.
          - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`. 
          - **LDAP user filter**: The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
@@ -784,7 +787,7 @@ The remote agent server and the file servers to be crawled must belong to the sa
 ### Local File System
 {: #localfilesystemconnect}
 
-Use this option to crawl local file systems. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
+Use this option to crawl local file systems. Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
 {: shortdesc}
 
 #### Creating and mounting a persistent volume claim on the crawler pod
@@ -835,7 +838,7 @@ If the local file system files or folders that you want to crawl are stored in a
    ```
    {: pre}
 
-   You might see output similar to the following:
+   You might see output similar to the following message:
 
    ```bash
    persistentvolume/jdoe-nfs-pv created
@@ -868,7 +871,7 @@ If the local file system files or folders that you want to crawl are stored in a
    ```
    {: pre}
 
-   You might see output similar to the following:
+   You might see output similar to the following message:
 
    ```bash
    persistentvolumeclaim/jdoe-nfs-pvc created
@@ -882,12 +885,12 @@ If the local file system files or folders that you want to crawl are stored in a
    ```
    {: pre}
 
-For information about the other ways to create a persistent volume claim, see [Using dynamic provisioning with an NFS storage class](#dyn-prov-nfs) or [Using dynamic provisioning with a Portworx storage class](#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
+For more information about the other ways to create a persistent volume claim, see [Using dynamic provisioning with an NFS storage class](#dyn-prov-nfs) or [Using dynamic provisioning with a Portworx storage class](#dyn-prov-portworx). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 ##### Using dynamic provisioning with an NFS storage class
 {: #dyn-prov-nfs}
 
-If you want to crawl your local file system files or folders but you do not want to prepare an additional NFS server to store those files or folders, you can configure dynamic storage by using an NFS storage class. For information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/plan/storage_considerations.html){: external}. Before you complete this task, be sure to copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. Also, if you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the `crawler-pvc-dynamic.yaml` file that you will create in this task and the files that you want to crawl to each cluster.
+If you want to crawl your local file system files or folders but you do not want to prepare an extra NFS server to store those files or folders, you can configure dynamic storage by using an NFS storage class. For more information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/plan/storage_considerations.html){: external}. Before you complete this task, be sure to copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. Also, if you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the `crawler-pvc-dynamic.yaml` file that you create in this task and the files that you want to crawl to each cluster.
 {: shortdesc}
 
 Complete the following steps to create and mount a persistent volume claim to the crawler pod by using an NFS storage class and to copy the files that you want to crawl to the persistent volume claim:
@@ -899,7 +902,7 @@ Complete the following steps to create and mount a persistent volume claim to th
    ```
    {: pre}
 
-   You might output similar to the following:
+   You might output similar to the following message:
 
    ```bash
    NAME         PROVISIONER                                      RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
@@ -944,7 +947,7 @@ Complete the following steps to create and mount a persistent volume claim to th
    ```
    {: pre}
 
-1. Enter the following command to copy the files that you want to crawl to your dynamic NFS persistent volume claim. You only need to run this command once against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the `<>` and the content inside with the required information:
+1. Enter the following command to copy the files that you want to crawl to your dynamic NFS persistent volume claim. You must run this command only one time against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the `<>` and the content inside with the required information:
 
    ```bash
    oc rsync <path to local file system folder> <crawler pod>:/mnt
@@ -1021,12 +1024,12 @@ Complete the following steps to create and mount a persistent volume claim to th
    ```
    {: pre}
 
-Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](#configurelocalfilesystem). For information about the other ways to create a persistent volume claim, see [Using the external NFS server](#use-external-nfs) or [Using dynamic provisioning with an NFS storage class](#dyn-prov-nfs). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
+Now that you mounted the persistent volume claim and copied all of the files that you want to crawl to it, you can [Configure your Local File System collection](#configurelocalfilesystem). For more information about the other ways to create a persistent volume claim, see [Using the external NFS server](#use-external-nfs) or [Using dynamic provisioning with an NFS storage class](#dyn-prov-nfs). If you are using a version of {{site.data.keyword.discoveryshort}} 2.1.4 and earlier and you want to create and mount a persistent volume to the crawler pod and copy your local files to that pod, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 #### Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier
 {: #mount-pv-orig}
 
-If you do not want to copy your [Local File System](#configurelocalfilesystem) files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After establishing this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
+If you do not want to copy your [Local File System](#configurelocalfilesystem) files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After you establish this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
 {: shortdesc}
 
 If you plan to install {{site.data.keyword.discoveryshort}} version 2.1.4 and earlier, you must create and configure the persistent volume _before_ you install {{site.data.keyword.discoveryshort}}.
@@ -1091,7 +1094,7 @@ Complete the following steps to create and mount a persistent volume on the craw
    ```
    {: codeblock}
 
-1. Install {{site.data.keyword.discoveryshort}} along with `override.yaml`. For information about installing {{site.data.keyword.discoveryshort}}, see [Installing the Watson Discovery service](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}. For information about overriding values in `override.yaml` when you install {{site.data.keyword.discoveryshort}}, see [Override values for Watson Discovery installation](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-override.html){: external}.
+1. Install {{site.data.keyword.discoveryshort}} along with `override.yaml`. For more information about installing {{site.data.keyword.discoveryshort}}, see [Installing the Watson Discovery service](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}. For more information about overriding values in `override.yaml` when you install {{site.data.keyword.discoveryshort}}, see [Override values for Watson Discovery installation](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-override.html){: external}.
 
    If you are using a version earlier than 2.1.3, from the `deploy` subdirectory, run the `deploy.sh` script by entering the `-d` flag, the file path to the files that you want to make accessible to `ibm-watson-discovery`, the `-O` flag, and your `override.yaml` file. You can also enter the `-e` flag with your `release-name-prefix`. If you do, your `release-name-prefix` must be 13 characters or fewer, or the installation will fail. If you do not enter the `-e` flag, the default `release-name-prefix` is `disco`. See the following example. Replace the `<>` and the content inside with the required information:
 
@@ -1103,7 +1106,7 @@ Complete the following steps to create and mount a persistent volume on the craw
    For a list of flags and their descriptions or for help, run `./deploy.sh -h`.
    {: tip}
 
-For information about copying your local files that you want to crawl to the crawler pod, see [Copying local file system files to the crawler pod on versions 2.1.4 and earlier](#copy-local-folders). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
+For more information about copying your local files that you want to crawl to the crawler pod, see [Copying local file system files to the crawler pod on versions 2.1.4 and earlier](#copy-local-folders). For more information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 #### Copying local file system files to the crawler pod on versions 2.1.4 and earlier
 {: #copy-local-folders}
@@ -1146,7 +1149,7 @@ Complete the following steps to copy your local file system files to the crawler
    If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
    {: important}
 
-For information about creating and mounting a persistent volume on the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, see [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](#mount-pv-orig). For information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
+For more information about creating and mounting a persistent volume on the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, see [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](#mount-pv-orig). For more information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
 
 #### Configuring a Local File System collection
 {: #configurelocalfilesystem}
@@ -1161,10 +1164,10 @@ In {{site.data.keyword.discoveryshort}}, after you select **Local File System** 
 ### FileNet P8
 {: #filenet-connect}
 
-You can use this option to crawl FileNet P8 version 5.5.0. The FileNetP8 connector can also access the Content Engine Web Services (CEWS) of a FileNet server that is installed on {{site.data.keyword.cp4-automation_notm}}. FileNet P8 5.5.0 and FileNet on {{site.data.keyword.cp4-automation_short}} support the HTTP and HTTPS protocols. Only documents supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
+You can use this option to crawl FileNet P8 version 5.5.0. The FileNetP8 connector can also access the Content Engine Web Services (CEWS) of a FileNet server that is installed on {{site.data.keyword.cp4-automation_notm}}. FileNet P8 5.5.0 and FileNet on {{site.data.keyword.cp4-automation_short}} support the HTTP and HTTPS protocols. Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored.
 {: shortdesc}
 
-If you are using FileNet P8 5.5.0 or FileNet on {{site.data.keyword.cp4-automation_short}}, the connector only supports the HTTPS protocol when a verified SSL server certificate is installed on the FileNet server.
+If you are using FileNet P8 5.5.0 or FileNet on {{site.data.keyword.cp4-automation_short}}, the connector supports the HTTPS protocol only when a verified SSL server certificate is installed on the FileNet server.
 {: note}
 
 {{site.data.keyword.discoveryshort}} does not support role-based security when you crawl FileNet P8.
@@ -1177,14 +1180,14 @@ If you are using FileNet P8 5.5.0 or FileNet on {{site.data.keyword.cp4-automati
 In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the collection type, enter the following information, replacing the `<>` and the content inside with the requested information:
 
 1. Complete the following fields in **Enter your credentials**:
-    - **Content Engine Web Service URL**: The Content Engine web service URL of the IBM FileNet P8 server. When you enter the URL, use the following format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `<server>` is the host name of the server where the Content Platform Engine is deployed, and the `<port>` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
+    - **Content Engine Web Service URL**: The Content Engine web service URL of the IBM FileNet P8 server. When you enter the URL, use the following format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `<server>` is the hostname of the server where the Content Platform Engine is deployed, and the `<port>` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
     - **User**: The username of the user who wants to crawl a FileNet P8 server. You can obtain your username from your FileNet administrator.
     - **Password**: The password of the user who wants to crawl a FileNet P8 server. You can obtain your password from your FileNet administrator.
 1. Complete the following field in **Specify what you want to crawl**:
     - **ObjectStore Name**: The name of the object store that you can use to create, search, retrieve, and store documents.
 1. In **Crawler Space Type**, select either **Folder** or **Class**.
 1. Complete the following field:
-    - **Folder subpath or Subclass name**: The subfolder path that you can specify under RootFolder that crawls all documents belonging to the specified folder or the custom subclass of the `Document` class that crawls all documents belonging to the specified class. Before you specify anything in this field, keep in mind the following items:
+    - **Folder subpath or Subclass name**: The subfolder path that you can specify under RootFolder that crawls all documents that belong to the specified folder or the custom subclass of the `Document` class that crawls all documents that belong to the specified class. Before you specify anything in this field, keep in mind the following items:
       - You can specify multiple crawler spaces by using both the `Class` and `Folder` types and crawl the documents belonging to the folder name and class name.
       - You cannot specify a class outside the object store that you defined.
       - No support is available for specifying a class that is a subclass of a `Custom Object` and `Folder`.
@@ -1200,7 +1203,7 @@ In {{site.data.keyword.discoveryshort}}, after you select **FileNet P8** as the 
 Use this option to crawl an HCL Notes (formerly Lotus Notes) database version 9.0.1. Only documents that {{site.data.keyword.discoveryshort}} supports are crawled; all others are ignored.
 {: shortdesc}
 
-The Notes data source only supports the Domino Internet Inter-ORB Protocol (DIIOP) protocol. To crawl documents, including ACLs, you must have server, database, and document access on the Domino server, but at minimum, you must have `Reader` access. For group extractions for the internal Domino LDAP, you must have `Reader` access of the `names.nsf` directory database, and for group extractions for the external LDAP, you must have the credential for the LDAP server. You can define Notes users both in the internal Domino directory and in the external LDAP. However, {{site.data.keyword.discoveryshort}} only supports users in the internal Domino directory as crawl users; it does not support users in the external LDAP as crawl users.
+The Notes data source supports the Domino Internet Inter-ORB Protocol (DIIOP) protocol only. To crawl documents, including ACLs, you must have server, database, and document access on the Domino server, but at minimum, you must have `Reader` access. For group extractions for the internal Domino LDAP, you must have `Reader` access of the `names.nsf` directory database, and for group extractions for the external LDAP, you must have the credential for the LDAP server. You can define Notes users both in the internal Domino directory and in the external LDAP. However, {{site.data.keyword.discoveryshort}} supports users in the internal Domino directory as crawl users; it does not support users in the external LDAP as crawl users.
 
 #### Configuring DIIOP servers
 {: #config-servers}
@@ -1232,7 +1235,7 @@ To configure a server that has the DIIOP protocol, complete the following steps:
 In {{site.data.keyword.discoveryshort}}, after you select **Notes** as the collection type, enter the following information:
 
 1. Complete the following fields in **Enter your credentials**:
-    - **Host name**: The host name of the Notes server.
+    - **Host name**: The hostname of the Notes server.
     - **User name**: The username to crawl the Notes server.
     - **Password**: The password of the specified user.
 1. In **Crawl type**, click one of the following options:
@@ -1251,15 +1254,15 @@ In {{site.data.keyword.discoveryshort}}, after you select **Notes** as the colle
         - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
         - **LDAP group filter**: The group filter to search group entries in LDAP.
 
-        When you enable document level security, you can only crawl one LDAP server, which can either be a Domino server or an external server.
+        When you enable document level security, you can crawl only one LDAP server, which can either be a Domino server or an external server.
         {: note}
 
 1. Optional: In **Advanced options**, set the following switches:
     - **Crawl attachments**: By default, is set to **On**. When set to **On**, crawls attachments of Notes documents.
-    - **Automatic code page detection**: By default, is set to **On**. When this option is disabled, the encoding converter detects the code pages of crawled documents. Complete the following fields:
+    - **Automatic code page detection**: By default, is set to **On**. When this option is unavailable, the encoding converter detects the code pages of crawled documents. Complete the following fields:
         - **Code page to use**: Displays only when **Automatic code page detection** is set to **Off**. The field used to enter the character encoding. If unspecified, the default value is `UTF-8`.
         - **Notes formula**: Specify the limits to the data that you crawl, for example `SELECT @IsAvailable(Year) & Year > 2003`.
-1. Select an option in the following drop-down list:
+1. Select an option:
     - **Document date field**: The document date that is used in a crawl.
          - **Document modification date**: By default, the modified dates of the crawled documents is stored as the original field `_ _$Date$_ _`.
          - **Document crawl date**: Assigns the crawled dates to the original field `_ _$Date$_ _`.
@@ -1279,10 +1282,10 @@ You can share collections across projects. However, only the following subsets o
 - The processed data
 - Configured connector
 
-If you make any of the following changes to a shared collection, those changes apply to the shared collection in every project. These changes include the following:
+If you make any of the following changes to a shared collection, those changes apply to the shared collection in every project. These changes include the following actions:
 
 - Changing the **Run OCR (Optical Character Recognition)** setting
-- Annotating fields or adding fields, using Smart Document Understanding
+- Annotating fields or adding fields, by using Smart Document Understanding
 - Enabling or disabling fields
 - Changing the setting for document splitting
 - Changing any of the connector settings
@@ -1300,7 +1303,7 @@ When you deploy one or more crawler plug-ins, you can configure your collection 
 These settings are only available when crawler plug-ins are deployed. For more information about building a plug-in, see [Building a Cloud Pak for Data crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build), and for more information about deploying a crawler plug-in, see [Commands and options for managing your crawler plug-ins](/docs/discovery-data?topic=discovery-data-manage-plugin#mng-plugin-cmd-opt).
 {: note}
 
-When you are ready to configure a collection to use a crawler plug-in, you can see a **Plug-in settings** section. Review the following plug-in settings that you can use to process documents. You only see these options if you deploy a plug-in package by using the `scripts/manage_crawler_plugin.sh` script:
+When you are ready to configure a collection to use a crawler plug-in, you can see a **Plug-in settings** section. Review the following plug-in settings that you can use to process documents. You see these options only if you deploy a plug-in package by using the `scripts/manage_crawler_plugin.sh` script:
 
 - **Enable plug-in**: By default, this switch is set to **Off**. Enable this option if you want to use a crawler plug-in to process documents.
     - **Plug-in**: Lists available crawler plug-in names. Select a plug-in to use.
@@ -1312,13 +1315,13 @@ When you are ready to configure a collection to use a crawler plug-in, you can s
 
  All of your collections are listed here. You can delete unused collections and view statistics.
 
- To keep track of collection sharing across projects, open the **Projects** page, then complete the appropriate step for your deployment:
+ To track collection sharing across projects, open the **Projects** page, then complete the appropriate step for your deployment:
  
   - ![Cloud Pak for Data only](images/desktop.png) **IBM Cloud Pak for Data**: Select **Data usage**, then **Collection usage and sharing**.
   - ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud**: Select **Data usage and GDPR**, then **Collection usage and sharing**.
 
  
-For more information see [Managing data collections](/docs/discovery-data?topic=discovery-data-manage-collections).
+For more information, see [Managing data collections](/docs/discovery-data?topic=discovery-data-manage-collections).
 
 
 ## Collection activity
@@ -1329,13 +1332,13 @@ For more information see [Managing data collections](/docs/discovery-data?topic=
 {{site.data.keyword.discoveryshort}} provides collection details in the **Activity** tab.
 {: shortdesc}
 
-Collection details include the following:
+Collection details include the following information:
 
 - Number of documents
 - Collection status
     - A collection is finished processing when the status is `Syncing complete` or `Processing finished. Updated documents are ready for you.`.
-    - ![Cloud Pak for Data only](images/cpdonly.png) If processing fails, click either the **Recrawl collection** or **Reprocess collection** button. The button that you see varies, depending on the type of collection.
-    - ![Cloud Pak for Data only](images/cpdonly.png) If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl stops, and a new full crawl begins. It is recommended that you wait until the status is `Syncing complete` before starting a recrawl.
+    - ![Cloud Pak for Data only](images/cpdonly.png): If processing fails, click either **Recrawl collection** or **Reprocess collection**. The button that you see varies, depending on the type of collection.
+    - ![Cloud Pak for Data only](images/cpdonly.png): If the collection status is `Syncing ...`, and you click the **Recrawl collection** button, the current crawl stops, and a new full crawl begins. Wait until the status is `Syncing complete` before you start a recrawl.
 - Date of creation and last update
 - An abbreviated list of **Warnings and errors**. To see the full list, select **View all**. The **Warnings and errors** page (![Cloud Pak for Data only](images/cpdonly.png)) contains more detailed information, including the`Type`, `Message`, and `Date` for each message.
 
@@ -1343,7 +1346,7 @@ Collection details include the following:
 ## About document level security
 {: #configuredls}
 
-If you have document level security activated, you can leverage the security settings from your source documents to control the search results returned to different users, and it is supported in the Box, SharePoint OnPrem, SharePoint Online, Windows File System, and FileNet P8 data sources.
+If document level security is activated, you can use the security settings from your source documents to control the search results returned to different users, and it is supported in the Box, SharePoint OnPrem, SharePoint Online, Windows File System, and FileNet P8 data sources.
 
 To enable document level security, you must configure these components:
 
@@ -1351,7 +1354,7 @@ To enable document level security, you must configure these components:
 
   - For a description of the feature in the SharePoint OnPrem data source, see [Enable Document Level Security for SharePoint OnPrem](#configuresp_op).
   - For a description of the feature in SharePoint Online, see [Enable Document Level Security for SharePoint Online](#configuresp).
-  - For a description of the feature in Windows File System and the information required to configure a collection, consult [Enable Document Level Security for Windows File System](#configurewindowsfilesystem).
+  - For a description of the feature in Windows File System and the information that is required to configure a collection, consult [Enable Document Level Security for Windows File System](#configurewindowsfilesystem).
   - For a description of the feature in FileNet P8, see [Enable Document Level Security for FileNet P8](#configure-filenet).
   - For a description of the feature in Notes, see [Enable Document Level Security for Notes](#configurenotes).
 
@@ -1360,7 +1363,7 @@ To enable document level security, you must configure these components:
 - Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system.
 - Associate users with your {{site.data.keyword.discoveryshort}} instance.
 
-{{site.data.keyword.discoveryshort}} only supports pre-filtering. Pre-filtering involves replicating the document's source ACL at crawl time into the index and relying on the search engine to compare user credentials to the replicated document ACLs. {{site.data.keyword.discoveryshort}} performs the best when documents are pre-filtered and when you control which documents you add to the index. However, it is difficult to model all of the security policies of the various back-end sources in the index and implement comparison logic uniformly. Also, pre-filtering is not as responsive to any changes that might occur in the source ACLs after the most recent crawl.
+{{site.data.keyword.discoveryshort}} supports prefiltering only. Prefiltering involves replicating the document's source ACL at crawl time into the index and relying on the search engine to compare user credentials to the replicated document ACLs. {{site.data.keyword.discoveryshort}} performs the best when documents are pre-filtered and when you control which documents you add to the index. However, it is difficult to model all of the security policies of the various back-end sources in the index and implement comparison logic uniformly. Also, pre-filtering is not as responsive to any changes that might occur in the source ACLs after the most recent crawl.
 {: note}
 
 
@@ -1380,13 +1383,13 @@ You must create users that match the users available on the source system that {
 ### Associating users with an instance
 {: #associateusersdls}
 
-1. Click the main-menu icon in the upper-left corner, and click **My instances** > **Provisioned instances**.
-1. Hover over the instance you want to add users to. When you hover over your chosen instance, an expandable menu icon appears on the right side of the instance.
+1. Click the main menu icon, and then click **My instances** > **Provisioned instances**.
+1. Hover over the instance you want to add users to. When you hover over your chosen instance, an expandable menu icon is displayed.
 1. Click the expandable menu icon, and select **Manage Access**.
 1. Click **Add user**.
-1. Add the users you want from the list by clicking **Add user**, select the desired user from the list, assign their role as **User**, and click **Add**.
+1. Add the users that you want from the list by clicking **Add user**, select the user from the list, assign their role as **User**, and click **Add**.
 
-When you query collections that have document level security enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
+When you query collections where document level security is enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
 {: important}
 
 Because {{site.data.keyword.discoveryshort}} does not sync any changes to the users from the LDAP server, {{site.data.keyword.discoveryshort}} administrators must ensure that the users list is current and remove any non-current users.

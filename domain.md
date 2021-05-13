@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -36,12 +36,12 @@ subcollection: discovery-data
 Add resources that can teach {{site.data.keyword.discoveryshort}} about terms or patterns that have special meaning to your application.
 {: shortdesc}
 
-The following table shows you the right resources to add to address common needs.
+The following table shows you the correct resources to add to address common needs.
 
 | Goal | Resource | Notes |
 |------|----------|-------|
 | Define categories by which your documents can be classified. | [Classifier](#classifier) | N/A |
-| Recognize terms and synonyms for terms that are significant to you, such as the names of products that you sell. | [Dictionary](#dictionary-enrichment) | Term suggestions are displayed if the *Parts of Speech* enrichment is applied to the collection. |
+| Recognize terms and synonyms for terms that are significant to you, such as the names of products that you sell. | [Dictionary](#dictionary) | Term suggestions are displayed if the *Parts of Speech* enrichment is applied to the collection. |
 | Define regular expressions that capture patterns of significance, such as that `AB10045` is the syntax that is used for your order numbers. | [Regular expressions](#regex) | N/A |
 | Recognize and tag entities and relationships that are defined in a custom Machine Learning model. | [Machine Learning models](#machinelearning) | Requires a model that is built and exported from another IBM tool. |
 | Apply rules to fields that are based on rules you defined by creating an advanced rule model in {{site.data.keyword.knowledgestudiofull}}. | [Advanced rule models](#advanced-rules) |  Requires an advanced rule model that is built and exported from {{site.data.keyword.knowledgestudiofull}} or that uses an exported Patterns resource. |

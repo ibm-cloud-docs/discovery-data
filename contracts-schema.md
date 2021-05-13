@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -308,7 +308,7 @@ The `contracts` schema is arranged as follows.
     - `section_titles`: An array that contains one object per section or subsection that is detected in the input document. Sections and subsections are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element and the `level` value of the section.
       - `text`: A string that lists the section title, if detected.
       - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
-      - `level`: An integer that indicates the level at which the section is located in the input document. For example,  represents a top-level section,  represents a subsection within the level  section.
+      - `level`: An integer that indicates the level at which the section is located in the input document. For example, represents a root-level section,  represents a subsection within the level  section.
       - `element_locations`: An array that specifies the `begin` and `end` values of the sentences in the section.
     - `leading_sentences`: An array that contains one object per leading sentence of a list or subsection, in parallel with the `section_titles` and `paragraph` arrays. The object details the leading sentences in the matching section or subsection. As in the `section_titles` array, the objects are not nested; instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element or any level markers in the input document.
       - `text`: A string that lists the leading sentence, if detected.
@@ -361,7 +361,7 @@ The output of the `Contracts` enrichment includes a `document_structure` object 
 ### Document structure output
 {: #struct_output}
 
-Document structure information is represented in the output as follows. The object is located immediately after the top-level `tables` array.
+Document structure information is represented in the output as follows. The object is located immediately after the root-level `tables` array.
 
 ```json
   "document_structure": {
@@ -421,7 +421,7 @@ The elements of the `document_structure` object contain the following informatio
     - `section_titles`: An array containing one object per section or subsection detected in the input document. Sections and subsections are not nested; instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element and the `level` value of the section.
       - `text`: A string listing the section title, if detected.
       - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
-      - `level`: An integer indicating the level at which the section is located in the input document. For example, `1` represents a top-level section, `2` represents a subsection within the level `1` section, and so forth.
+      - `level`: An integer indicating the level at which the section is located in the input document. For example, `1` represents a root-level section, `2` represents a subsection within the level `1` section, and so forth.
       - `element_locations`: An array containing objects that specify the `begin` and `end` values of the sentences in the section.
     - `leading_sentences`: An array that contains one object per leading sentence of a list or subsection, in parallel with the `section_titles` and `paragraph` arrays. The object details the leading sentences in the matching section or subsection. As in the `section_titles` array, the objects are not nested; instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element or any level markers in the input document.
       - `text`: A string listing the leading sentence, if detected.

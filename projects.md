@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -97,7 +97,7 @@ Take advantage of the following resources that are available from the page heade
 
 <!-- c/s help for the *Project types* page. Do not delete. -->
 
-Choose a project type to get the right set of enrichments applied to your documents automatically. The improvement tools that are available differ by project type, as do the deployment methods, which are optimized for each use case.
+Choose a project type to get the correct set of enrichments applied to your documents automatically. The improvement tools that are available differ by project type, as do the deployment methods, which are optimized for each use case.
 
 The following project types are available:
 

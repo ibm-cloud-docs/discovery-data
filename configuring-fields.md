@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-05-13"
 
 subcollection: discovery-data
 
@@ -33,12 +33,12 @@ subcollection: discovery-data
 # Adding custom fields with Smart Document Understanding
 {: #configuring-fields}
 
-Use Smart Document Understanding (SDU) to teach {{site.data.keyword.discoveryfull}} about other fields in your documents that contain meaningful information. When you help {{site.data.keyword.discoveryshort}} index the right set of information in your documents, you improve the answers that your application can find and return.
+Use Smart Document Understanding (SDU) to teach {{site.data.keyword.discoveryfull}} about other fields in your documents that contain meaningful information. When you help {{site.data.keyword.discoveryshort}} index the correct set of information in your documents, you improve the answers that your application can find and return.
 {: shortdesc}
 
 This video provides a quick overview of Smart Document Understanding:
 
-![Watson Discovery Demo: Extract Answers From Large Documents in 5 Minutes](https://www.youtube.com/embed/Jpr3wVH3FVA){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Watson Discovery Demo: Extract Answers From Large Documents in 5 Minutes](https://www.youtube.com/embed/Jpr3wVH3FVA){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 To view the transcript, open the video on YouTube.
 
@@ -106,7 +106,7 @@ Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/disco
 
 |   |   |
 | ------ | ------ | 
-| ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.<br/><br/>&#8226; If you choose **User-trained-models**, you can follow the steps below to build a custom model by annotating your documents.<br/><br/>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.<br/><br/>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. |
+| ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.<br/><br/>&#8226; If you choose **User-trained-models**, you can take the steps in the following procedure to build a custom model by annotating your documents.<br/><br/>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.<br/><br/>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. |
 
 See [Best practices for annotating documents](/docs/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
 
@@ -141,8 +141,8 @@ The following fields make up the base set of fields that {{site.data.keyword.dis
 |-------|------------|
 | answer | In a Q/A pair (often in an FAQ), the answer to the question. |
 | author | Name of author (or authors). |
-| footer | Use this tag to denote meta-information about the document (such as the page number or references), that appear at the bottom of the |page. |
-| header | Use this tag to denote meta-information about the document that appears at the top of the page. |
+| footer | Use this tag to denote meta-information about the document (such as the page number or references), that appear at the end of the |page. |
+| header | Use this tag to denote meta-information about the document that appears at the start of the page. |
 | question | In a Q/A pair (often in an FAQ), the question. |
 | subtitle | The secondary title of the document being annotated. |
 | table_of_contents | Use this tag on listings in the document table of contents. |
@@ -177,7 +177,7 @@ If `Run OCR` is enabled when you create your collection, text is extracted from 
 
 After you define a model with the SDU tool, you can save it and reuse it on other collections.
 
-You can import or export your completed SDU model using the toolbar at the top of the editor. Click the last icon and choose `Import model` or `Export model`.
+You can import or export your completed SDU model using the toolbar in the header of the editor. Click the last icon and choose `Import model` or `Export model`.
 
 Exported models have the file extension of `.sdumodel`.
 
@@ -220,6 +220,6 @@ The **Manage fields** tab contains several options:
 To access the **Manage fields** page, click the **Manage collections** icon on the navigation pane and open a collection. Click the **Manage fields** tab. For more information on collections, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
 **Date format settings** - The following options are useful if you want to use time series visualization in the **Content Mining** project type or if you want to correctly parse dates from text in different languages. Use this option to add or delete date formats that are used to convert date strings to date-type data set fields. Only strings that are compatible with the Java `SimpleDateFormat` class are supported. You cannot add any documents that include alternative date formats to the index.
-  - **Date formats** - Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. This field supports the Java `SimpleDateFormat` class, so the date formats string can be in any format that the `SimpleDateFormat` class supports. If you know that your data does not match any of the predefined date formats, you can add a format that the Java `SimpleDateFormat` class supports, or you can delete any of the predefined formats. {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the top of the list. You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
+  - **Date formats** - Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. This field supports the Java `SimpleDateFormat` class, so the date formats string can be in any format that the `SimpleDateFormat` class supports. If you know that your data does not match any of the predefined date formats, you can add a format that the Java `SimpleDateFormat` class supports, or you can delete any of the predefined formats. {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the beginning of the list. You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
   - **Select a time zone** - You can use this option to designate a time zone for a document that has a generated time but no time-zone information. You can use this option to store a document creation time into a date-type data set field. For example, if a document is generated on `1 January 2020 1:00 AM Eastern Standard Time (EST)`, the document metadata only stores `2020-01-01 01:00 a.m.`. In this case, {{site.data.keyword.discoveryshort}} cannot parse `2020-01-01 01:00 a.m.` because, without time-zone information that is associated with the document, `2020-01-01 01:00 a.m.` is not specific. Because `1 January 2020 1:00 AM Eastern Standard Time (EST)` and `1 January 2020 1:00 AM Pacific Standard Time (PST)` are different times, you must select **(GMT-05:00) Eastern Standard Time** as the time zone ID so that {{site.data.keyword.discoveryshort}} parses `1 January 2020 1:00 AM` with the EST time zone, as intended.
   - **Select a language** - Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. You can also use this option to manage any cultural- or language-specific patterns of the dates in your documents. For example, using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
