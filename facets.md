@@ -82,11 +82,11 @@ For example, an owner of a retail clothing store collects customer reviews and w
 
 | Dictionary entry | Synonyms | Dictionary name |
 |------------------|----------|-------------------------|
-| shirt | top,button-down,tunic,blouse,t-shirt,long-sleeve,short-sleeve,tank | women's clothes |
-| pants | slacks,jeans,leggings,sweats,capris,culottes,trousers,chinos | women's clothes |
+| shirt | top,button-down,tunic,blouse,t-shirt,long-sleeve,short-sleeve,tank | clothing |
+| pants | slacks,jeans,leggings,sweats,capris,culottes,trousers,chinos | clothing |
 {: caption="Example dictionary entries" caption-side="top"}
 
-A review that says, `This long-sleeve is so badly proportioned. Who has arms that long!` is returned when you filter the documents by the `women's clothes` facet.
+A review that says, `This long-sleeve is so badly proportioned. Who has arms that long!` is returned when you filter the documents by the `clothing` facet.
 
 To create a facet by creating a dictionary, complete the following steps:
 
@@ -130,14 +130,15 @@ To add a facet by identifying a pattern, complete the following steps:
 
 1.  On the **Improve and customize** page, click **Customize display**, and then click **Facets**.
 1.  Click **New facet** > **By identifying a pattern**.
-1.  On the **Create facet from a new pattern** page, choose how you want to select documents. You can allow {{site.data.keyword.discoveryshort}} to select 10 random documents for you or you can select the documents yourself.
+1.  On the **Create facet from a new pattern** page, choose how you want to select documents. You can allow {{site.data.keyword.discoveryshort}} to select 10 random documents for you or you can select up to 20 documents yourself.
 
-    If you select them yourself, the documents must meet these requirements:
+    If you select the documents yourself, follow these guidelines:
 
-    - You can select up to 20 documents.
     - Choose documents that contain mentions of the pattern in every different format that you want the model to be able to recognize later.
-    - If you want the model to understand ways that a term is used that don't fit the pattern that you want to capture, include a document that uses the term in the wrong way so you can intentionally omit its selection.
-    - Each document can contain a maximum of 5,000 characters. Any document that exceeds the limit is truncated to 5,000 characters.
+    - If you want the model to understand ways that a term is used that don't fit the pattern, include a document that uses the term in the wrong way so you can intentionally omit its selection. 
+    
+      For example, the pattern you want to add might capture mentions of clothing. In documents that mention a `top` to refer to a shirt, you would select `top` as a clothing mention. But, you might also want to include a document that mentions `the top 3 fashion trends` and purposely not select `top` when the term is used in this context. The omission teaches the model that top doesn't fit the pattern when the term is used to mean *the best*.
+    - Include documents that have a maximum of 5,000 characters. Any document that exceeds the limit is truncated to 5,000 characters.
 1.  Click **Next**.
 1.  Select example words or phrases that fit the pattern that you want to define. 
 
