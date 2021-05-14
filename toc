@@ -135,4 +135,6 @@ Discovery
         [IBM Cloud Pak for Data Community](https://community.ibm.com/community/user/cloudpakfordata/communities/community-home?communitykey=c0c16ff2-10ef-4b50-ae4c-57d769937235)
         [Watson Developer Community Slack channel](http://wdc-slack-inviter.mybluemix.net/)
         [Stack Overflow](http://stackoverflow.com/questions/tagged/watson-discovery)
+
+    accessibility.md
     {: .navgroup-end}

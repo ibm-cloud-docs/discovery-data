@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-05-14"
 
 subcollection: discovery-data
 
@@ -36,63 +36,74 @@ subcollection: discovery-data
 To help you analyze the results of linguistic processing and text analysis, {{site.data.keyword.discoveryshort}} organizes and classifies documents that share similar patterns or content.
 {: shortdesc}
 
-There are up to three options for creating facets, depending on the **Project type** and version of {{site.data.keyword.discoveryshort}}:
+Facets help you to filter documents so that you can perform deep analysis faster. Whether you are trying to find the proverbial needle in the haystack or to discover unexpected trends, starting with facets can speed up the research process.
+
+- For *Content Mining* projects, facets are extracted from your collection based on parts of speech information (that is captured by the *Parts of Speech* enrichment that is applied to projects of this type by default).
+
+  ![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page that shows parts of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a Content Mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
+
+- For *Document Retrieval* projects, facets are extracted from your collection based on recognized entities (that are captured by the *Entities* enrichment that is applied to projects of this type by default).
+
+  ![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Figure 3. The Improve and Customize page of a Document Retrieval project showing the default Top Entities facet" caption-side="bottom"}
+
+For more information about the *Entities* and *Parts of Speech* enrichments, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu). For more information about the enrichments that are applied to projects by default, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
+
+## Creating facets
+{: #facets-create}
+
+You can create facets in the following ways:
 
   -  From existing fields in a collection
-  -  By creating a dictionary
-  -  By identifying a pattern ![IBM Cloud only](images/ibm-cloud.png)
+  -  By adding a dictionary entry
+  -  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: By identifying a pattern
 
-## Overview
-{: #facetov}
-
-Facets represent the different aspects or dimensions of the documents in your collection. In {{site.data.keyword.discoveryshort}}, you add facets on the **Improve and customize** page in your project. Facets are available in the **Customize display** section, as shown in Figure 1.
-
-!["Customize display" section](images/disccustdisp.png "The customize display section that's available on the **Improve and customize** page in your project"){: caption="Figure 1. The Customize Display section showing the Facets option" caption-side="bottom"}
-
-## Facets in Content Mining projects
-{: #facetcm}
-
-For Content Mining projects, by default, facets are extracted from your collection for the parts of speech enrichment, as shown in Figure 2. You can add facets for fields from your documents. For default project details, see the Content Mining section of [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
-
-
-![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page showing parts of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a Content Mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
-
-
-## Facets in Document Retrieval projects
-{: #facetdr}
-
-For Document Retrieval projects, by default, a facet is created for you titled, `Top Entities`, as shown in Figure 3. That facet comes from the `enriched_text.entities.text` field of the entities enrichment. For default project details, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
-
-![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Figure 3. The Improve and Customize page of a Document Retrieval project showing the default Top Entities facet" caption-side="bottom"}
-
-## Creating a facet from existing fields in a collection
+### Creating a facet from existing fields in a collection
 {: #facetexist}
 
-To add a facet using existing fields.
+As you apply enrichments to a collection, new fields are added to the index. Information that is recognized by the enrichment is stored in these new fields. You can use the enrichment fields as the source for facets.
 
-1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
+For example, if you apply the *Keywords* prebuilt enrichment, you can create a facet based on the keywords that are found in your collection. As it processes your document, the Keywords enrichment recognizes any keyword mentions that occur and stores information about them in a set of fields that begin with the prefix `enriched_text.keywords`. To create a keyword facet, add a facet that takes its categories from the field where keyword mentions are stored, the `enriched_text.keywords.mentions.text` field. For more information about the Keywords enrichment, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu#keywords).
+
+Similarly, you can use the fields that are generated by domain-specific enrichments as the source of the facet. In fact, as you create a *Regular expression* enrichment, you can define a facet by which to categorize any recognized expression mentions. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#regex).
+
+To add a facet from existing fields, complete the following steps:
+
+1. On the **Improve and customize** page, click **Customize display**, and then click **Facets**.
 1. Click **New facet** > **From existing fields in a collection**.
-1. Choose the field you'd like your facet to use, such as `enriched_text.entities.type`, as well as the facet label, filtering options, and maximum number of facets to display.
+1. Choose the field you'd like your facet to use, such as `enriched_text.entities.type`. Add the facet label, filtering options, and the maximum number of facets to show in the query results.
 1. As you test the facet, you can adjust the options.
 
-## Creating a facet by creating a dictionary
+### Creating a facet by creating a dictionary
 {: #facetdict}
 
-If you want to add a facet that includes terms that do not exist as fields, you can create a dictionary.
+Add a facet to group a set of terms that have special meaning to your use case by creating a dictionary.
 
-1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
-1. Click **New facet** > **By creating a dictionary**.
-1. Enter a name for the facet, and then create a dictionary. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#dictionary).
+For example, an owner of a retail clothing store collects customer reviews and wants to be able to find any recurring complaints to identify retail items to discontinue. The owner can create a dictionary to help recognize and tag mentions of specific articles of clothing in the review text. To support the goal of filtering customer feedback by clothing article type, the owner might add entries similar to the entries listed in the following table.
+
+| Dictionary entry | Synonyms | Dictionary name |
+|------------------|----------|-------------------------|
+| shirt | top,button-down,tunic,blouse,t-shirt,long-sleeve,short-sleeve,tank | clothing |
+| pants | slacks,jeans,leggings,sweats,capris,culottes,trousers,chinos | clothing |
+{: caption="Example dictionary entries" caption-side="top"}
+
+A review that says, `This long-sleeve is so badly proportioned. Who has arms that long!` is returned when you filter the documents by the `clothing` facet.
+
+To create a facet by creating a dictionary, complete the following steps:
+
+1.  On the **Improve and customize** page, click **Customize display**, and then click **Facets**.
+1.  Click **New facet** > **By creating a dictionary**.
+1.  Enter a name for the facet, and then create a dictionary of the terms that you want to categorize.
 
     After you save the dictionary, the name that you used for the facet label is shown in the list of facets.
 
-1. As you test the facet, you can add more terms to the dictionary you created by selecting **Teach domain concepts** > **Dictionaries**. The dictionary you created is shown in the list on the **Dictionaries** page.
+1.  As you test the facet, you can add more terms to the dictionary you created by selecting **Teach domain concepts** > **Dictionaries**. 
 
+    The dictionary that you created is shown in the list on the **Dictionaries** page. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#dictionary).
 
-## Creating a facet by identifying a pattern
+### Creating a facet by identifying a pattern
 {: #facetpattern}
 
-The Patterns feature is beta functionality and supports English language documents only.
+Patterns is a beta feature and supports English language documents only.
 {: beta}
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
@@ -100,31 +111,57 @@ The Patterns feature is beta functionality and supports English language documen
 This facet is available only to managed deployments and in **Document Retrieval** and **Conversational Search** projects.
 {: note}
 
-The Patterns feature uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from the examples you specify. After you specify a small number of examples, {{site.data.keyword.discoveryshort}} will suggest additional rules that you verify to complete the pattern. 
+The Patterns feature uses pattern induction to help you teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. Pattern induction generates extraction patterns from examples that you provide. After you specify a few examples, {{site.data.keyword.discoveryshort}} suggests more rules that you must verify to complete the pattern.
 
 Pattern recognition works best on text with consistent structure in casing, length, text, or numeric values. Examples of patterns you can teach {{site.data.keyword.discoveryshort}} to identify in your documents:
-  -  All `ISO` standard numbers, for example `ISO 45001`, `ISO 22000`
-  -  All currency amounts, for example `$50.5 million`, `$29 million`
-  -  All dates, for example `8 September 2019`, `12 June 2020`
 
-If you need to identify specific terms or text, for example:
+  -  All `ISO` standard numbers, for example `ISO 45001`, `ISO 22000`
+  -  All currency amounts, for example `$50.5 million`, `29 dollars`, `$29.00`
+  -  All dates, for example `8 September 2019`, `June 12, 2020`
+
+If you need to identify specific terms or text, create a facet as part of a dictionary entry instead. For example, use a dictionary facet for grouping the following types of information:
+
   -  All products in the same family, `Cloud Pak for Data`, `Cloud Pak for Automation`, `Cloud Pak for Security`
   -  All terms in the same category, `carburetor`, `piston`, `valves`
 
+For more information, see [Creating a facet by creating a dictionary](#facetdict).
 
-[Creating a facet by creating a dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict) would be a better option.
+To add a facet by identifying a pattern, complete the following steps:
 
-1. On the **Improve and customize** page, click **Customize display** and then click **Facets**.
-1. Click **New facet** > **By identifying a pattern**.
-1. On the **Create facet from a new pattern** page, select the way you want to choose documents. You can choose the option to have 10 random documents selected for you, or you can select the documents yourself (up to 20 may be chosen). Each document is limited to a maximum size of 5000 characters. Any document that exceeds this limit will be truncated to 5000 characters. Click **Next**.
-1. Start selecting example words or phrases that fit the pattern you want to create. For example, if you have a collection of articles that discuss ISO standards, you could start highlighting the numbers of the standards in each document. If you make a mistake, hover over the selection and click the `x` to delete it. 
-1. Continue selecting examples. After you have identified enough, {{site.data.keyword.discoveryshort}} will display a list of suggested examples that you can validate by choosing **Yes** or **No** for each one. Click the **Preview document** icon if you want to confirm the example in context. 
-1. Continue highlighting examples and validating suggestions until the `You’ve identified enough examples! Review results that were extracted based on your examples.` message displays.
-1. Click the **Review examples** tab to review the lists of examples identified by you and {{site.data.keyword.discoveryshort}}.
-1. If the examples are correct, click **Save pattern**.
+1.  On the **Improve and customize** page, click **Customize display**, and then click **Facets**.
+1.  Click **New facet** > **By identifying a pattern**.
+1.  On the **Create facet from a new pattern** page, choose how you want to select documents. You can allow {{site.data.keyword.discoveryshort}} to select 10 random documents for you or you can select up to 20 documents yourself.
 
-If the system cannot determine a valid pattern the **Save pattern** button will not enable. This can happen if you select contradictory examples. Click the **Reset** button to start over. This will return the documents to their original state and you will lose all examples already identified.
+    If you select the documents yourself, follow these guidelines:
+
+    - Choose documents that contain mentions of the pattern in every different format that you want the model to be able to recognize later.
+    - If you want the model to understand ways that a term is used that don't fit the pattern, include a document that uses the term in the wrong way so you can intentionally omit its selection. 
+    
+      For example, the pattern you want to add might capture mentions of clothing. In documents that mention a `top` to refer to a shirt, you would select `top` as a clothing mention. But, you might also want to include a document that mentions `the top 3 fashion trends` and purposely not select `top` when the term is used in this context. The omission teaches the model that top doesn't fit the pattern when the term is used to mean *the best*.
+    - Include documents that have a maximum of 5,000 characters. Any document that exceeds the limit is truncated to 5,000 characters.
+1.  Click **Next**.
+1.  Select example words or phrases that fit the pattern that you want to define. 
+
+    For example, if you want to define a date pattern, start highlighting date mentions in each document. If you make a mistake, hover over the selection and click the `x` to delete it.
+
+    Be sure to select every mention of the pattern. The model learns from what you omit as much as what you select.
+1.  Continue selecting examples. After you identify enough examples, {{site.data.keyword.discoveryshort}} shows a list of suggested examples for you to validate. Choose **Yes** or **No** for each one.
+
+    Click the **Preview document** icon if you want to confirm the example in context.
+    {: tip}
+1.  Continue highlighting examples and validating suggestions until a message is displayed to indicate that you provided enough examples.
+1.  Click the **Review examples** tab to review the lists of examples.
+1.  If the examples are correct, click **Save pattern**.
+
+If the system cannot determine a valid pattern, the **Save pattern** button is never enabled. The system cannot determine a valid pattern if you choose contradictory examples to illustrate the pattern. If you cannot save your work, click the **Reset** button to start over. The documents are returned to their original state and any examples that were identified previously are no longer selected.
 {: note}
 
 After you save the pattern, the name that you specified for the facet label is shown in the list of facets.
 
+#### When to use a pattern facet instead of a regular expression field
+{: #facetpattern-or-regex}
+
+Creating a pattern-based facet is similar to creating a Regular Expression enrichment, and then adding a facet that uses the derived field as its source. 
+
+- If the information you want to capture follows strict formatting rules, you can use the Regular Expression enrichment to find it. 
+- In cases where the information you want to capture can occur in different formatting styles, the pattern facet is better. For example, dates or currencies can be formatted in various ways. No single regex rule can capture all of the variations. With the pattern facet, you can provide multiple real-world examples that show the different of ways in which the information can be specified.
