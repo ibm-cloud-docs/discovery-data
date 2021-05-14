@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-14"
 
 subcollection: discovery-data
 
@@ -133,6 +133,7 @@ The guided analysis view toolbar contains the following commands:
 - **Reset**: Revert back to the all documents node.
 - **Undo**: Undo the most recent action.
 - **Add Query Text**: Add a query for this node. There are two options.
+
   - **New query**: The new query replaces the existing query.
   - **Add to current query**: The new query is added to the existing query.
 - **Show Documents**: Open documents view for the current node.
@@ -151,6 +152,7 @@ To save your analysis work for quick access later, you can save the analysis das
 - When you analyze documents, a default layout, `New Layout File` is automatically created. The content of the file is changed when you do another analysis.
 - If **Append mode** is enabled in the **Facet analysis** pane, the results are added to the New Layout File.
 - To save a layout or edit the metadata of a saved layout, select the layout and click the Save icon. The Dashboard Layout window is shown and you can set the following properties:
+
   - **Name**: Name of layout file.
   - **Add to Facet Analysis** option. A new analysis type is added to **Facet analysis** pane.
   - You can select **Save** or **Save As**.
@@ -168,16 +170,17 @@ When you save the dashboard analysis, the following parts of the dashboard are s
   - Resize each analysis pane by dragging the resize handle
   - When a layout is not saved, when you add the new analysis results in the current layout or remove existing results, the system automatically resizes the layout of the dashboard
 - Each analysis result
+
   - You can customize the analysis from the toolbar or result visualization
   - You can rename facets to save in your analysis dashboard
   - The Toolbar is expanded when a single analysis result is in the dashboard. If you have multiple result panes, the toolbar is collapsed by default. The toolbar contains the following items:
+
     - **Search**: You can filter current values by text (not saved)
     - **Number of Results**: You can change the number of results of current analysis from here (saved)
     - **Selection Mode**: By default, you can select multiple values in each analysis result. But if you specify "single" mode, you can select only one value at a time. (saved)
     - **Filter Others**: If you enable this option, when you select some values in this analysis result, its query is applied to the other analysis results in the same layout to filter. For example, if you have a `Manufacturer` facet result and a `Products` facet result in the same layout, and if you enable Filter Others on the `Manufacturer` facet and select a value from it, then only the `Products` facet of the selected `Manufacturer` facet is displayed. This is a powerful enhancement for analysis. (saved)
 
       When you enable a filter, and select items from the filter enabled pane, then other panes are updated. The data of each pane is updated but its item selections remain. This behavior may be confusing because each pane shows the top `N` items in the pane (default is 50), but because a selected item is not included in the top `N` items, it might not always be shown in the pane.
-
     - **Boolean Operator**: Select AND or OR operator to create query from multiple values (not saved)
     - **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls). (not saved)
     - **Visualization**: You can select visualization type (saved)
@@ -203,6 +206,7 @@ The **Facet analysis** pane is the default view when you enter the analysis view
 - **Time scale**: Select the time scale to analyze. This options is enabled only for **Trends** and **Topics** analysis types.
 - **Time period**: Select the time period to analyze. This options is enabled only for **Trends** and **Topics** analysis types.
 - **Target facets**: Select a facet from this tree. For a **Pairs** analysis, select row and column facets. For a **Connections** analysis, select between two and five facets, and then click **Analyze**.
+
   - **Filter**: Click the magnifying glass icon that's in the **Target facets** heading and enter a label filter for the category tree and the subfacet category tree.
 - **Show always**: If selected, the facet analysis pane is always visible.
 - **Show subfacet**: If selected, the category tree for subfacets is displayed.
@@ -216,6 +220,7 @@ When you select **Relevancy**, **Pairs**, or **Connections** analysis, the **Par
 Available target facets:
 
 - **Part of Speech**
+
   - **Noun**
   - **Verb**
   - **Adjective**
@@ -225,15 +230,19 @@ Available target facets:
   - **Numeral**
 
 - **Phrase Constituent**: A word or a group of words that function as a single unit in a sentence.
+
   - **Noun Phrase**: A word or a group of words in a sentence that functions as a subject or object, for example `a query`, `the results`, and `IBM Watson`.
+
     - **Noun Sequence**: A noun comprised of two or more nouns, or `noun + noun`. For example, some noun sequence examples include `web server`, `disk drive`, and `data set`.
     - **Modified Noun**: Nouns that have preceding words that describe the noun, such as adjectives, quantities, or locations. A noun can also have a determiner that modifies the noun, such as `a`, `an`, or `the`. For example, some modified noun examples include `the white horse`, `three enrichments`, and `the closest town`.
     - **Prep Noun**: A noun that is part of a prepositional phrase that expresses spatial or temporal relations or to mark various semantic roles. Some examples include `after processing`, `during a crawl`, and `under the bridge`.
   - **Predicate Phrase**: The part of the sentence that has the predicate, or verb, as its head. For example, in the sentence `Content Mining helps you uncover hidden insights.`, the `helps you uncover hidden insights.` segment is the predicate phrase.
+
     - **Predicate with Adverb**: A predicate phrase that includes one or more adverbs, for example `Content Mining helps you analytically uncover hidden insights.`.
     - **Noun - Predicate**: A phrase that adds more information about the subject. A predicate noun functions as a link between the subject and verb. For example, the segment `our solar system's largest planet` is the predicate noun in the sentence `Jupiter, our solar system's largest planet, is primarily composed of gases.`.
     - **Verb - Noun**: A phrase that has a `verb + noun` sequence. A couple of examples include `lose power` and `extend the warranty`.
   -  **Conjunction Phrase**: A phrase that connects two independent clauses. Some conjunction phrase examples include `for`, `and`, `nor`, `but`, `or`, `yet`, and `so`. For example, the word `so` in the following sentence is the conjunction phrase: `There weren't enough beds, so I had to sleep on the floor.`.
+
      - **Resultative Conjunction**: A conjunction that demonstrates cause and effect. Some example resultative conjunctions include `so`, `therefore`, and `thus`. For example, the word `therefore` in the following sentence is the resultative conjunction: `We had a surplus of fabric; therefore, we sewed extra clothes.`.
      - **Contradictory Conjunction**: A conjunction that connects independent clauses that oppose one another, such as `however`, `but`, and `although`. For example, the word `however` in the following sentence is the contradictory conjunction: `The Freemont track team is the fastest in the county in short sprint races; however, they are not as successful in endurance races.`.
 
@@ -254,12 +263,16 @@ Complete the following steps to enable sentiment analysis in your Content Mining
 1. In the first drop-down menu in the **Facet analysis** pane, select **Sentiment**, or in the mining graph, click **Analyze sentiment and reputation**, if available. In **Target facets** in the **Facet analysis** pane, if you expand the **Sentiment Analysis** option, the following facets are available to analyze your documents:
 
    - **Sentiment Phrase**
+
      - **Positive Phrase**
      - **Negative Phrase**
    - **Sentiment Expression**
+
      - **Positive Expression**
      - **Negative Expression**
+  
    - **Sentiment Target** - This facet is only available in English and Japanese.
+
      - **Positive Target**
      - **Negative Target**
 
@@ -380,6 +393,7 @@ The facet toolbar is displayed when you click **Show Toolbar**.
 - **Boolean Operators**: If you select two values for analysis, you can specify whether the values are joined by Boolean AND or OR.
 - **Export**: Export your collection to a database. Specify the file name, format (.csv or .json), encoding, date and time format, and number of results. If you choose to export to .csv, you can import those insights into a Business Intelligence (BI) tool. You cannot export secured collections. For more information, see [Document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - **Visualization**: The default visualization is specified on the facet option page of the collection wizard. This list contains the visualization options:
+
     - **Facet Table**: Shows facet value, relevancy and count. Click each item to analyze more. To clear selection, click that item again. You can sort by name, count, and relevancy by clicking on each column header.
     - **Word Cloud**: Color and size represents level of relevancy. Click each item to analyze more. To clear selection, click white space.
 - **Close**: Close this facet.
@@ -596,6 +610,7 @@ You can apply your document classifier to a collection in your Content Mining ap
 1. In **Training data**, select the training data that is associated with a collection in the drop-down list, or upload the .csv file that contains your training data.
 1. In **Fields**, select or clear the column names from your .csv training file that you want to include in or exclude from your classifier.
 1. In **Classifier**, specify the fields for machine learning training and prediction. You can specify the following fields:
+
    - **Answer field** - Select a field in your .csv training file that contains the answer label. If you want to specify multiple answer labels in a cell in your .csv file, separate the answer labels by using a semicolon (`;`). For example, if you want to specify the answer labels `orange` and `apple`, enter `orange;apple` in the cell.
    - **Predicted field** - Specify a field name that contains the label that the classifier predicts.
    - **Test dataset** - The training data set that is used by default. You can also explicitly specify a specific data set.

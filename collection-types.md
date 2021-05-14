@@ -417,19 +417,19 @@ In {{site.data.keyword.discoveryshort}}, after you select **Web crawl** as the c
 
 1. Click **Add** to add one or more starting URLs. After you add one or more starting URLs, you can click **Authentication settings** and select the authentication type to apply to your chosen starting URL:
    
-   - **Basic authentication**
+   - For **Basic authentication**, provide the following details:
 
      - **Username**: The username of the user for authentication.
      - **Password**: The password of the user for authentication.
 
-   - **NTLM authentication**
+   - For **NTLM authentication**, provide the following details:
 
      - **Username**: The username of the user for authentication.
      - **Password**: The password of the user for authentication.
      - **NTLM domain name**: The NTLM domain name that belongs to the user who is authenticating.
      - **NTLM host name**: The hostname of the NTLM server.
 
-   - **FORM authentication**
+   - For **FORM authentication**, provide the following details:
 
      1. In **Form type**, select one of the following options:
         - **Direct**: Click this option if you do not want to fetch the login page.
