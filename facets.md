@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-18"
 
 subcollection: discovery-data
 
@@ -164,4 +164,4 @@ After you save the pattern, the name that you specified for the facet label is s
 Creating a pattern-based facet is similar to creating a pattern from a field that is derived by applying the *Regular expression* enrichment to a collection. 
 
 - If the information you want to capture follows strict formatting rules, you can use the *Regular expression* enrichment to find it. Apply the enrichment, and then you can use the resulting field as the source for the facet.
-- If the information you want to capture can occur in different formatting styles, the pattern facet is a better choice. For example, dates or currencies can be formatted in various ways. No single regex rule can capture all of the variations. With the pattern facet, you can provide multiple real-world examples that show the different of ways in which the information can be specified.
+- If the information you want to capture can occur in different formatting styles, the pattern facet is a better choice. For example, dates or currencies can be formatted in various ways. No single regex rule can capture all of the variations. With the pattern facet, you can provide multiple real-world examples that show the different ways in which the information can be specified.
