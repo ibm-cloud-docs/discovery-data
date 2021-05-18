@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-18"
 
 subcollection: discovery-data
 
@@ -240,6 +240,7 @@ After a document is processed by the `Contracts` enrichments, the service provid
   ]
 }
 ```
+{: codeblock}
 
 ## Schema arrangement
 {: #schema-arrangement}
@@ -411,6 +412,7 @@ Document structure information is represented in the output as follows. The obje
     ]
   }
 ```
+{: codeblock}
 
 ### Document structure elements
 {: #struct_elements}

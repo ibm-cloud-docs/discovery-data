@@ -2,7 +2,7 @@
 
 copyright:
 years: 2018, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-05-18"
 
 keywords: table,tables,classify tables,classifying tables,table understanding,row,rows,column,columns,cell,cells,body cell,body cells,header,headers,key,value,key value pair,context,row header,row headers,column header,column headers,context,contexts
 
@@ -184,6 +184,7 @@ The output schema from the `Table Understanding` enrichment is as follows.
   ]
 }
 ```
+{: codeblock}
 
 ## Schema arrangement
 {: #table-schema-arrangement}
@@ -497,6 +498,7 @@ The output from service represents the example's first body cell (that is, the f
   "contexts": [ ]
 }
 ```
+{: codeblock}
 
 ## Understanding key-value pairs
 {: #key-value-pairs}
