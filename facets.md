@@ -40,11 +40,11 @@ Facets help you to filter documents so that you can perform deep analysis faster
 
 - For *Content Mining* projects, facets are extracted from your collection based on parts of speech information (that is captured by the *Parts of Speech* enrichment that is applied to projects of this type by default).
 
-  ![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page that shows parts of speech facets that are extracted by default"){: caption="Figure 2. The Improve and Customize page of a Content Mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
+  ![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page that shows parts of speech facets that are extracted by default"){: caption="Figure 1. The Improve and Customize page of a Content Mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
 
 - For *Document Retrieval* projects, facets are extracted from your collection based on recognized entities (that are captured by the *Entities* enrichment that is applied to projects of this type by default).
 
-  ![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Figure 3. The Improve and Customize page of a Document Retrieval project showing the default Top Entities facet" caption-side="bottom"}
+  ![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Figure 2. The Improve and Customize page of a Document Retrieval project showing the default Top Entities facet" caption-side="bottom"}
 
 For more information about the *Entities* and *Parts of Speech* enrichments, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu). For more information about the enrichments that are applied to projects by default, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 
@@ -53,9 +53,9 @@ For more information about the *Entities* and *Parts of Speech* enrichments, see
 
 You can create facets in the following ways:
 
-  -  From existing fields in a collection
-  -  By adding a dictionary entry
-  -  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: By identifying a pattern
+  -  [From existing fields in a collection](#facetexist)
+  -  [By adding a dictionary entry](#facetdict)
+  -  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: [By identifying a pattern](#facetpattern)
 
 ### Creating a facet from existing fields in a collection
 {: #facetexist}
@@ -161,7 +161,7 @@ After you save the pattern, the name that you specified for the facet label is s
 #### When to use a pattern facet instead of a regular expression field
 {: #facetpattern-or-regex}
 
-Creating a pattern-based facet is similar to creating a Regular Expression enrichment, and then adding a facet that uses the derived field as its source. 
+Creating a pattern-based facet is similar to creating a pattern from a field that is derived by applying the *Regular expression* enrichment to a collection. 
 
-- If the information you want to capture follows strict formatting rules, you can use the Regular Expression enrichment to find it. 
-- In cases where the information you want to capture can occur in different formatting styles, the pattern facet is better. For example, dates or currencies can be formatted in various ways. No single regex rule can capture all of the variations. With the pattern facet, you can provide multiple real-world examples that show the different of ways in which the information can be specified.
+- If the information you want to capture follows strict formatting rules, you can use the *Regular expression* enrichment to find it. Apply the enrichment, and then you can use the resulting field as the source for the facet.
+- If the information you want to capture can occur in different formatting styles, the pattern facet is a better choice. For example, dates or currencies can be formatted in various ways. No single regex rule can capture all of the variations. With the pattern facet, you can provide multiple real-world examples that show the different of ways in which the information can be specified.

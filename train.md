@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-14"
 
 subcollection: discovery-data
 
@@ -39,9 +39,9 @@ subcollection: discovery-data
 The relevance of natural language query results can be improved in {{site.data.keyword.discoveryfull}} with training. 
 {: shortdesc}
 
-Relevancy training is optional; if the results of your queries meet your needs, no further training is necessary. For information about use cases for relevancy training, see [Improve your natural language query results from Watson Discovery](https://developer.ibm.com/blogs/improving-your-natural-language-query-results-from-watson-discovery/){: external}.
+Relevancy training is optional; if the results of your queries meet your needs, no further training is necessary. For more information about when to use relevancy training, read the [Relevancy training for time-sensitive users](https://medium.com/ibm-data-ai/ibm-watson-discovery-relevancy-training-time-sensitive-18a190b0874a){: external} blog post on Medium.
 
-This video demonstrates relevancy training and several other features. For more information on those features, see [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion), [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords), and [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields):
+This video demonstrates relevancy training and several other features. For more information on those features, see [Expanding the meaning of queries](/docs/discovery-data?topic=discovery-data-search-settings), [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords), and [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields):
 
 ![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" data-script="none"  id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 <br/>
@@ -58,7 +58,7 @@ Once Watson has enough training input, the information you have provided about w
 
 Natural language query results will return a `confidence` score. For more information, see [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
-Adding a custom stopwords list can also improve the relevance of results for natural language queries. For more information, see [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).
+Adding a custom stopwords list can also improve the relevance of results for natural language queries. For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords).
 {: tip}
 
 If you would prefer to use the {{site.data.keyword.discoveryshort}} API to train {{site.data.keyword.discoveryshort}}, see the [API reference](https://{DomainName}/apidocs/discovery-data#listtrainingqueries){: external}.
