@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-05-19"
 
 subcollection: discovery-data
 
@@ -82,4 +82,4 @@ You can use the Smart Document Understanding tool to teach {{site.data.keyword.d
 You can use two different methods to define synonyms.
 
 - To define synonyms that are recognized and tagged when a document is ingested and that can be retrieved by search, create a dictionary and add synonyms for the dictionary term entry. For more information, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary).
-- To define synonyms that are applied to the query text that is submitted by users to expand its meaning, add synonyms by using the Synonyms tool on the *Improve relevance* section of the *Improve and customize* page. For more information, see [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
+- To define synonyms that are applied to the query text that is submitted by users to expand its meaning, add synonyms by using the Synonyms tool on the *Improve relevance* section of the *Improve and customize* page. For more information, see [Expanding the meaning of queries](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).

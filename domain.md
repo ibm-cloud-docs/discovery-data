@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-19"
 
 subcollection: discovery-data
 
@@ -258,7 +258,7 @@ To add a regular expression, complete the following steps:
 
     - Use a Java&trade; regular expression. 
 
-      For more information, see the [Java documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html){: external}. Another useful resource is [Regex 101](https://regex101.com/){: external}.
+      For more information, see the [Java documentation](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html){: external}. Another useful resource is [Regex 101](https://regex101.com/){: external}.
     - Keep the regular expression as short and understandable as possible.
     - The best regular expressions resolve to a match or non-match quickly.
     - Use common patterns. For example, use `a(b|c|d)` instead of `(ab|ac|ad)`.

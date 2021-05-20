@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-19"
 
 subcollection: discovery-data
 
@@ -37,34 +37,20 @@ subcollection: discovery-data
 A project is a convenient way to collect and manage the resources in your {{site.data.keyword.discoveryfull}} application. You can assign a *Project type* and connect your data to the project by creating a collection.
 {: shortdesc}
 
+Before you create a project, decide which project type best fits your needs.
+
+| Need | Goal | Project type |
+|--------------------|------|--------------|
+| *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a standalone enterprise search application or in the search field of a business application. | **Document Retrieval** |
+| *Where is the part of the contract that I need for my task?* | Quickly extract critical information from contracts. | **Document Retrieval for Contracts** |
+| *I want the chatbot I'm building to use knowledge that I own* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |
+| *I want to uncover insights I didn't know to ask about.* | Gain insights from pattern analysis or perform root cause analysis. | **Content Mining** |
+{: caption="Project type use cases" caption-side="top"}
+
 To create a project, complete the following steps:
 
 1.  Open the *Projects* page by selecting **My Projects**.
-1.  Click **New project**. Name your project, and then choose the project type that best fits your needs.
-
-    <table>
-    <caption>Project type use cases</caption>
-    <tr>
-      <th>Goal</th>
-      <th>Project type</th>
-    </tr>
-    <tr>
-      <td>Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a standalone enterprise search application or in the search field of a business application.</td>
-      <td><i>Document Retrieval</i></td>
-    </tr>
-    <tr>
-      <td>Quickly extract critical information from contracts.</td>
-      <td><i>Document Retrieval for Contracts</i></td>
-    </tr>
-    <tr>
-      <td>My virtual assistant must be able to quickly access technical information that is stored in various external data sources and document formats to answer customer questions.</td>
-      <td><i>Conversational Search</i></td>
-    </tr>
-    <tr>
-      <td>Gain insights from pattern analysis or perform root cause analysis.</td>
-      <td><i>Content Mining</i></td>
-    </tr>
-    </table>
+1.  Click **New project**. Name your project, and then choose the project type.
 
     For more information about each type, see [Project types](#project-type).
 
@@ -81,16 +67,10 @@ To create a project, complete the following steps:
 
     For more information about supported data sources, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
-To view all the collections in your project, or add a collection, open the *Manage collections* page from the navigation panel. For more information, see [Managing collections](/docs/discovery-data?topic=discovery-data-collections).
-
 Take advantage of the following resources that are available from the page header: 
 
 - To open the product documentation, select the **Help** ![Help icon](images/help_icon.png) icon.
 - To see all of your projects, click **My projects**.
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: To view the total number of documents and collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon.
-
-  *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
-  {: tip}
 
 ## Project types
 {: #project-type}
