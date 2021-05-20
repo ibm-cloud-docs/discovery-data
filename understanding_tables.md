@@ -517,23 +517,44 @@ The output from service represents the example's first body cell (that is, the f
 ## Understanding key-and-value pairs
 {: #key-value-pairs}
 
-Tables can contain key-and-value pairs that span multiple table cells. **Table Understanding** can detect the following types of tabular pairs.
+Tables sometimes contain key-and-value pairs that span multiple table cells. **Table Understanding** can detect the following types of tabular pairs.
 
-  - Simple key-value pairs in adjacent cells, as in the following example table.
-  
-| Key | Value                                     |
-|----------------|--------------------------------|
-|**Item number**|123456789|
-|**Date**          |1/1/2019|
-|**Amount**        |$1000|
+  - Simple key-and-value pairs in adjacent cells, as in the following example table:
 
-  - Key-value pairs in the same cell, as in the following example table.
+    <table>
+    <caption>Basic table</caption>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Item number</td>
+        <td>`123456789`</td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td>`1/1/2019`</td>
+      </tr>
+      <tr>
+        <td>Amount</td>
+        <td>`$1,000`</td>
+      </tr>
+    </table>
 
-| | |
-|-|-|
-|**Item number**: 123456789|**Address**: 123 Anywhere Dr|
-|**Date**: 1/1/2019 | |
-|**Amount**: $1000 | &nbsp; |
+  - Key-and-value pairs in the same cell, as in the following example table:
 
-
-
+    <table>
+    <caption>Complex table</caption>
+      <tr>
+        <td>Item number: `123456789`</td>
+        <td>Address: `123 Anywhere Dr`</td>
+      </tr>
+      <tr>
+        <td>Date: `1/1/2019`</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Amount: $1000</td>
+        <td></td>
+      </tr>
+    </table>
