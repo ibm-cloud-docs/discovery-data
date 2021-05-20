@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-20"
 
 subcollection: discovery-data
 
@@ -86,8 +86,8 @@ To navigate the Smart Document Understanding editor, view the following informat
 1. On the **Manage collection** page, there are three tabs that are needed to use Smart Document Understanding: **Identify fields**, **Manage fields**, and **Enrichments**.
 
    - **Identify fields** - the SDU tool
-   - **Manage fields** - see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings)
-   - **Enrichments** - see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
+   - **Manage fields** - see [Managing fields](#field-settings)
+   - **Enrichments** - see [Managing enrichments](/docs/discovery-data?topic=discovery-data-managing-enrichments)
 
 1. Open the **Identify fields** tab. A subset of documents will be available for annotation purposes. Between 20 - 50 documents will appear in the dropdown list. The number will depend on several factors, including the number of documents in your collection in the supported file formats. 
 
@@ -106,7 +106,7 @@ Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/disco
 
 |   |   |
 | ------ | ------ | 
-| ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.<br/><br/>&#8226; If you choose **User-trained-models**, you can take the steps in the following procedure to build a custom model by annotating your documents.<br/><br/>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.<br/><br/>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. |
+| ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.<br/><br/>&#8226; If you choose **User-trained-models**, you can take the steps in the following procedure to build a custom model by annotating your documents.<br/><br/>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.<br/><br/>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. |
 
 See [Best practices for annotating documents](/docs/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
 
@@ -152,7 +152,7 @@ The following fields make up the base set of fields that {{site.data.keyword.dis
 | image |	Use this tag to annotate images and diagrams in your document. |
 {: caption="Default field labels" caption-side="top"}
 
-When you annotate one or more tables using the `table` field, you will automatically enable the **Table Understanding** enrichment for the entire collection. The **Table Understanding** enrichment is applied to the `html` field of your collection. For more information, see [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables).
+When you annotate one or more tables using the `table` field, you will automatically enable the **Table Understanding** enrichment for the entire collection. The **Table Understanding** enrichment is applied to the `html` field of your collection. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
 {: #important}
 
 ### Best practices for annotating documents
@@ -185,26 +185,6 @@ An imported model is intended to be used without any further annotations. The mo
 
 If you plan to develop a model and import it into a new collection, it is a sound best practice to create a new collection that contains only 1 document, import the model, then upload the remainder of your documents.
 {: tip}
-
-## Managing enrichments
-{: #enrich-fields}
-
-<!-- c/s help for the **Managing enrichments** tab. Do not delete. -->
-
-You can enrich fields (including custom fields identified with Smart Document Understanding) in your collection with cognitive metadata.
-
-There are a number of enrichments available in {{site.data.keyword.discoveryshort}}. You must create some of the enrichments before you can apply them. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
-
-To access the **Enrichments** page, select the **Manage collections** icon on the navigation pane and open a collection. Click the **Enrichments** tab. For more information on collections, see [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections).
-
-To apply an enrichment to a field:
-
-1. Open the **Enrichments** page and select the enrichment.
-1. Choose the field or fields that you want to enrich.
-
-   Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
-   {: note}
-1. Click **Apply changes and reprocess** to apply the enrichment you selected to the collection.
 
 ## Managing fields
 {: #field-settings}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-05-20"
 
 subcollection: discovery-data
 
@@ -169,7 +169,7 @@ To begin restoration, first start by reviewing your list of collections and asso
 -  Create your projects and collections. Use the {{site.data.keyword.discoveryshort}} tooling, or the API. See [Create a project](https://{DomainName}/apidocs/discovery-data#createproject){: external} and [Create a collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external}.
 -  Add back stopwords into the collections. See [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords).  
 -  If you use custom query expansion, add your query expansions. See [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
--  If you use any custom entity models from {{site.data.keyword.knowledgestudiofull}} for enrichment, reimport that model into your {{site.data.keyword.discoveryshort}} instance. For details, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
+-  If you use any custom entity models from {{site.data.keyword.knowledgestudiofull}} for enrichment, reimport that model into your {{site.data.keyword.discoveryshort}} instance. For details, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-managing-enrichments).
 
 After you set up your projects and collections as they were before, begin ingesting your source documents. Depending upon how you ingested your documents previously, you can do so by using your own solution or one of the following methods:
 -  The [API](https://{DomainName}/apidocs/discovery-data#adddocument){: external}

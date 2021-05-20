@@ -2,7 +2,7 @@
 
 copyright:
 years: 2018, 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-05-20"
 
 keywords: table,tables,classify tables,classifying tables,table understanding,row,rows,column,columns,cell,cells,body cell,body cells,header,headers,key,value,key value pair,context,row header,row headers,column header,column headers,context,contexts
 
@@ -23,22 +23,34 @@ subcollection: discovery-data
 {:python: .ph data-hd-programlang='python'}
 {:swift: .ph data-hd-programlang='swift'}
 
-# Table Understanding
+# Understanding tables
 {: #understanding_tables}
 
-The `Table Understanding` enrichment parses tables in a detailed format.
+Apply the `Table Understanding` enrichment to get detailed information about tables and table-related data within documents.
 {: shortdesc}
 
-The `Table Understanding` enrichment produces detailed output regarding tables and table-related data within documents. This enrichment can be enabled for a collection in any of the following ways:
+The enrichment must be applied to a field that contains an HTML representation of the table. That's the only way that the enrichment can read the parts of the table, such as header rows and columns, and interpret the information in the table properly.
 
-- If your collection consists of files whose formats are supported by [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields), and you annotate one or more tables by using the `table` label, the `Table Understanding` enrichment is automatically applied to the `html` field of the collection.
-- If you are using a Document Retrieval for Contracts project type, the `Table Understanding` enrichment is automatically applied to the `html` field of the collection. 
-- If your collection includes files whose formats allow for fields other than `html`, such as CSV or JSON, visit the **Enrichments** page of the collection to update the `Table Understanding` enrichment to be applied to the required field of the collection. For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-configuring-fields#enrich-fields).
+The enrichment is applied automatically to your collection in the following situations:
 
-For information on querying tables, see [Query parameters](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
+- If you are using a *Document Retrieval for Contracts* project type, the `Table Understanding` enrichment is automatically applied to the `html` field that is generated for the collection.
+- If you use the Smart Document Understanding tool to apply the `table` field label to one or more tables in the documents from a collection, then the `Table Understanding` enrichment is applied to the `html` field of the collection automatically.
 
-![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: If you are using Smart Document Understanding and have chosen the **Pre-trained-models** option, you do not need to annotate tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
-{: note}
+  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: If you use the Smart Document Understanding tool and choose the **Pre-trained-models** option, you do not need to annotate tables.
+  {: note}
+
+  For more information, see [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
+
+To apply the enrichment, complete the following steps:
+
+1.  Follow the steps in the [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments) procedure to find the **Table Understanding** enrichment.
+1.  Select the `html` field from the field list.
+
+    If your collection has a field other than the `html` field that contains HTML information, which can exist in CSV or JSON files, for example, select it from the list.
+
+After the enrichment is applied, you can get valid results when you submit queries that require {{site.data.keyword.discoveryshort}} to find information that is stored in tables.
+
+A developer can query tables by using the API. For more information, see [Query parameters](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
 
 ## Output schema
 {: #table-output-schema}
@@ -191,13 +203,13 @@ The output schema from the `Table Understanding` enrichment is as follows.
 
 The schema is arranged as follows.
 
-  - `tables`: An array that defines the tables identified in the input document.
+  - `tables`: An array that defines the tables that are identified in the input document.
     - `location`: The location of the current table as defined by its `begin` and `end` indexes in the input document.
     - `text`: The textual contents of the current table from the input document without associated markup content.
     - `section_title`: If identified, the location of a section title contained in the current table. Empty if no section title is identified.
       - `text`: The text of the identified section title.
       - `location`: The location of the section title in the input document as defined by its `begin` and `end` indexes.
-    - `title`: If identified, the title or caption of the current table of the form `Table x.: ...`. Empty when no title is identified. When exposed, the `title` is also excluded from the `contexts` array of the same table.
+    - `title`: If identified, the title or caption of the current table of the form `Table x.: ...`. Empty when no title is identified. When present, the `title` is excluded from the `contexts` array of the same table.
       - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
       - `text`: The text of the identified table title or caption.
     - `table_headers`: An array of table-level cells applicable as headers to all the other cells of the current table. Each table header is defined as a collection of the following elements:
@@ -267,19 +279,21 @@ The schema is arranged as follows.
 ## Examples
 {: #table-examples}
 
-The following is an example table from an input document.
- ![Example table](images/example-table.png)
+The following table is an example table from an input document.
+
+![Example table](images/example-table.png)
 
 The table is composed as follows:
- ![Table composition](images/table-comp.png)
+
+![Table composition](images/table-comp.png)
  
-where:
+The following syntax is used in the table:
 
-  - **Bold text** indicates a column header
-  - _Italic text_ indicates a row header
-  - Unstyled text indicates a body cell
+- **Bold text** indicates a column header
+- _Italic text_ indicates a row header
+- Unstyled text indicates a body cell
 
-The output from service represents the example's first body cell (that is, the first cell in row 3 with a value of `35.0%`) as follows.
+The output from service represents the example's first body cell (that is, the first cell in row 3 with a value of `35.0%`) as follows:
 
 ```json
 {
@@ -500,10 +514,10 @@ The output from service represents the example's first body cell (that is, the f
 ```
 {: codeblock}
 
-## Understanding key-value pairs
+## Understanding key-and-value pairs
 {: #key-value-pairs}
 
-Tables can contain key-value pairs that span multiple table cells. **Table Understanding** can detect the following types of tabular key-value pairs.
+Tables can contain key-and-value pairs that span multiple table cells. **Table Understanding** can detect the following types of tabular pairs.
 
   - Simple key-value pairs in adjacent cells, as in the following example table.
   

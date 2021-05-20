@@ -62,6 +62,7 @@ Discovery
     Improving query results
         search-settings.md
         stopwords.md
+        manage-enrichments.md
         hide-data.md
         train.md
         relevancy-tips.md
