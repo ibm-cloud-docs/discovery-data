@@ -1,0 +1,50 @@
+{
+    "title": "Watson Discovery docs",
+    "lastupdated": "2021-05-20",
+    "introduction": "This documentation helps you find critical answers and insights from your business data.",
+    "section_recommended": [
+      {
+        "title": "Creating projects",
+        "description": "Figure out which project type best fits your use case.",
+        "href": "/docs/discovery-data?topic=discovery-data-projects"
+      },
+      {
+        "title": "Creating collections",
+        "description": "Connect to your structured and unstructured data where it is.",
+        "href": "/docs/discovery-data?topic=discovery-data-collections"
+      },
+      {
+        "title": "Adding custom fields with Smart Document Understanding",
+        "description": "Teach Watson about information in your documents that is significant.",
+        "href": "/docs/discovery-data?topic=discovery-data-configuring-fields"
+      },
+      {
+        "title": "Adding domain-specific resources",
+        "description": "Teach Watson about the information that matters to your use case.",
+        "href": "/docs/discovery-data?topic=discovery-data-domain"
+      }
+    ],
+    "section_videos": [
+      {
+        "title": "Watson Discovery Data Connector Demo",
+        "href": "/docs/discovery-data?topic=discovery-data-collections", 
+        "thumbnail": "/images/thumb-create-collections.png" 
+      },
+      {
+        "title": "Watson Discovery Demo: Extract Answers",
+        "href": "/docs/discovery-data?topic=discovery-data-configuring-fields",
+        "thumbnail": "/images/thumb-sdu.png"
+      },
+      {
+        "title": "Watson Discovery Improving Result Relevancy",
+        "href": "/docs/discovery-data?topic=discovery-data-train",
+        "thumbnail": "/images/thumb-train.png"
+      }
+    ],
+    "section_learn": {
+      "developer": "https://developer.ibm.com/components/watson-discovery/",
+      "architecture": "https://www.ibm.com/cloud/architecture/architectures/cognitiveDiscoveryDomain",
+      "training": "https://www.ibm.com/training/watsonacademy",
+      "community": "https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f"
+    }
+  }
