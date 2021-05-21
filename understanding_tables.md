@@ -26,7 +26,7 @@ subcollection: discovery-data
 # Understanding tables
 {: #understanding_tables}
 
-Apply the `Table Understanding` enrichment to get detailed information about tables and table-related data within documents.
+Apply the *Table Understanding* enrichment to get detailed information about tables and table-related data within documents.
 {: shortdesc}
 
 The enrichment must be applied to a field that contains an HTML representation of the table. That's the only way that the enrichment can read the parts of the table, such as header rows and columns, and interpret the information in the table properly.

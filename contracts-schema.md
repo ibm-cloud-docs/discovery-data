@@ -29,10 +29,10 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Understanding the Contracts enrichment
+# Understanding contracts
 {: #contracts-schema}
 
-The Contracts enrichment is applied to collections in Document Retrieval for Contract project types automatically.
+The *Contracts* enrichment is applied to collections in *Document Retrieval for Contract* project types automatically.
 {: shortdesc}
 
 After a document is processed by the Contracts enrichment, the service generates JSON output in the following schema:
