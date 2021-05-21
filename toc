@@ -69,7 +69,6 @@ Discovery
 
     preview.md
     deploy.md
-    contract_parsing.md
     contentminerapp.md
     
     {: topicgroup}

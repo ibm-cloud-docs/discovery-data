@@ -35,7 +35,7 @@ subcollection: discovery-data
 {{site.data.keyword.discoveryfull}} is an AI-powered search engine that helps you to extract answers from complex business documents.
 {: shortdesc}
 
-Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understanding of your content, including tables and images, to help you find business value hidden in your enterprise data. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere.
+Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understanding of your content, including tables and images, to help you find business value that is hidden in your enterprise data. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere.
 
 ![Discovery diagram](images/aboutdiscovery.png)
 

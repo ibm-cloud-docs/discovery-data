@@ -1,7 +1,7 @@
 {
     "title": "Watson Discovery docs",
     "lastupdated": "2021-05-20",
-    "introduction": "This documentation helps you find critical answers and insights from your business data.",
+    "introduction": "This documentation helps you use Watson Discovery to find critical answers and insights from your business data.",
     "section_recommended": [
       {
         "title": "Creating projects",
@@ -15,7 +15,7 @@
       },
       {
         "title": "Adding custom fields with Smart Document Understanding",
-        "description": "Teach Watson about information in your documents that is significant.",
+        "description": "Categorize meaningful information based on the structure of your documents.",
         "href": "/docs/discovery-data?topic=discovery-data-configuring-fields"
       },
       {

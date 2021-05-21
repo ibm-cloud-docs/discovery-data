@@ -110,7 +110,7 @@ This example adds the `customer_id` to both the `X-Watson-Metadata` header and t
 
 ```bash
 curl -k -u "apikey:$API_KEY" \
-        -H "x-watson-userinfo:bluemix-instance-id=asdf" \
+        -H "x-watson-userinfo:instance-id=asdf" \
         -H "x-watson-metadata:customer_id=customer_header_123" \
         -H "x-watson-discovery-next:true" \
         -F "file=@$FILENAME" \

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-20"
 
 subcollection: discovery-data
 
@@ -1309,7 +1309,7 @@ When you are ready to configure a collection to use a crawler plug-in, you can s
     - **Plug-in**: Lists available crawler plug-in names. Select a plug-in to use.
 
 ## Managing collections
-{: #manage-collections}
+{: #collection-types-manage}
 
 <!-- c/s help for the *Manage collections* page. Do not delete. -->
 
