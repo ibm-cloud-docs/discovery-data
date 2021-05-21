@@ -2,7 +2,7 @@
 
 copyright:
 years: 2018, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 keywords: table,tables,classify tables,classifying tables,table understanding,row,rows,column,columns,cell,cells,body cell,body cells,header,headers,key,value,key value pair,context,row header,row headers,column header,column headers,context,contexts
 
@@ -26,7 +26,7 @@ subcollection: discovery-data
 # Understanding tables
 {: #understanding_tables}
 
-Apply the `Table Understanding` enrichment to get detailed information about tables and table-related data within documents.
+Apply the *Table Understanding* enrichment to get detailed information about tables and table-related data within documents.
 {: shortdesc}
 
 The enrichment must be applied to a field that contains an HTML representation of the table. That's the only way that the enrichment can read the parts of the table, such as header rows and columns, and interpret the information in the table properly.
@@ -36,17 +36,19 @@ The enrichment is applied automatically to your collection in the following situ
 - If you are using a *Document Retrieval for Contracts* project type, the `Table Understanding` enrichment is automatically applied to the `html` field that is generated for the collection.
 - If you use the Smart Document Understanding tool to apply the `table` field label to one or more tables in the documents from a collection, then the `Table Understanding` enrichment is applied to the `html` field of the collection automatically.
 
-  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: If you use the Smart Document Understanding tool and choose the **Pre-trained-models** option, you do not need to annotate tables.
+  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: If you use the Smart Document Understanding tool and choose the **Pre-trained-models** option, tables are annotated for you automatically.
   {: note}
 
   For more information, see [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 
 To apply the enrichment, complete the following steps:
 
-1.  Follow the steps in the [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments) procedure to find the **Table Understanding** enrichment.
+1.  From the navigation pane, open the **Manage collections** page, and then click a collection to open it. 
+1.  Click the **Enrichments** tab.
+1.  Find the **Table Understanding** enrichment.
 1.  Select the `html` field from the field list.
 
-    If your collection has a field other than the `html` field that contains HTML information, which can exist in CSV or JSON files, for example, select it from the list.
+    If your collection has a field other than the `html` field that contains table information in HTML format, which can exist in CSV or JSON files, for example, select it from the list.
 
 After the enrichment is applied, you can get valid results when you submit queries that require {{site.data.keyword.discoveryshort}} to find information that is stored in tables.
 

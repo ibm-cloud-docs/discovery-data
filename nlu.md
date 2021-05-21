@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-21"
 
 subcollection: discovery-data
 
@@ -51,6 +51,11 @@ Some of the NLU enrichments are applied to projects automatically. You don't nee
 | Parts of Speech                          | Content Mining, Document Retrieval, Document Retrieval for Contracts |
 {: caption="Default enrichments for project types" caption-side="top"}
 
+The following prebuilt enrichments are applied to some collections automatically also:
+
+- [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema)
+- [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)
+
 To add an NLU enrichment, complete the following steps: 
 
 1.  Open your project and go to the *Manage collections* page.
@@ -60,6 +65,9 @@ To add an NLU enrichment, complete the following steps:
 1.  Choose one or more fields to apply the enrichment to.
 
     You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. You cannot apply enrichments to fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
+1.  Click **Apply changes and reprocess**.
+
+For more information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
 
 ## Entities
 {: #entities}
