@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-21"
 
 subcollection: discovery-data
 
@@ -49,6 +49,11 @@ The following table shows you the correct resources to add to address common nee
 {: caption="Domain tools overview" caption-side="top"}
 
 Dictionaries and classifiers that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
+
+For more information about how to apply built-in enrichments to your collection, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
+
+## Add a resource
+{: #domain-task}
 
 To add a resource, complete the following steps:
 

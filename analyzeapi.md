@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-24"
 
 subcollection: discovery-data
 
@@ -57,9 +57,9 @@ The following enrichments are supported in the Analyze API:
   -  [Document classifier](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier)
   -  [Text classifier](/docs/discovery-data?topic=discovery-data-domain#classifier)
   -  [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain#advanced-rules)
-  -  [Entities](/docs/discovery-data?topic=discovery-data-nlu#entities)
-  -  [Keywords](/docs/discovery-data?topic=discovery-data-nlu#keywords)
-  -  [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#sentiment)
+  -  [Entities](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities)
+  -  [Keywords](/docs/discovery-data?topic=discovery-data-nlu#nlu-keywords)
+  -  [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)
 
 For the complete list of the enrichments supported in each language, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
