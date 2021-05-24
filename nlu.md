@@ -38,10 +38,10 @@ Take advantage of award-winning Watson Natural Language Understanding (NLU) capa
 
 With Watson NLU, you can identify and tag meaningful information in your collections so you can understand what it all means and make more informed decisions. The following enrichments are available:
 
-- [Entities](#entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
-- [Keywords](#keywords): Recognizes significant terms in your content.
-- [Parts of Speech](#pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
-- [Sentiment](#sentiment): Understands the overall sentiment of the content.
+- [Entities](#nlu-entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
+- [Keywords](#nlu-keywords): Recognizes significant terms in your content.
+- [Parts of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
+- [Sentiment](#nlu-sentiment): Understands the overall sentiment of the content.
 
 Some of the NLU enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
 
@@ -55,6 +55,11 @@ The following prebuilt enrichments are applied to some collections automatically
 
 - [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema)
 - [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)
+
+For more information about how to create custom enrichments, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
+
+## Add enrichments
+{: #nlu-task}
 
 To add an NLU enrichment, complete the following steps: 
 
@@ -70,7 +75,7 @@ To add an NLU enrichment, complete the following steps:
 For more information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
 
 ## Entities
-{: #entities}
+{: #nlu-entities}
 
 Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system that is defined by the {{site.data.keyword.nlushort}} service.
 
@@ -78,17 +83,17 @@ Identifies entities. *Entities* are terms that typically represent proper nouns 
 {: note}
 
 ### Example
-{: #entities-example}
+{: #nlu-entities-example}
 
 #### Input
-{: #entities-example-input}
+{: #nlu-entities-example-input}
 
 ```
 "IBM is an American multinational technology company headquartered in Armonk."
 ```
 
 #### Response
-{: #entities-example-response}
+{: #nlu-entities-example-response}
 
 In the JSON output:
 
@@ -133,22 +138,22 @@ In the JSON output:
 
 
 ## Keywords
-{: #keywords}
+{: #nlu-keywords}
 
 Returns important keywords in the content.
 
 ### Example
-{: #keywords-example}
+{: #nlu-keywords-example}
 
 #### Input
-{: #keywords-example-input}
+{: #nlu-keywords-example-input}
 
 ```
 "Watson Discovery is an award-winning AI search technology."
 ```
 
 #### Response
-{: #keywords-example-response}
+{: #nlu-keywords-example-response}
 
 In the JSON output:
   - `text` = The keyword text
@@ -197,12 +202,12 @@ In the JSON output:
 {: codeblock}
 
 ## Parts of speech
-{: #pos}
+{: #nlu-pos}
 
 Recognizes and tags parts of speech, including nouns, verbs, adjectives, adverbs, conjunctions, interjections, and numerals.
 
 ## Sentiment
-{: #sentiment}
+{: #nlu-sentiment}
 
 Analyzes the sentiment that is expressed in text and returns `positive`, `neutral`, or `negative` sentiment.
 
@@ -211,17 +216,17 @@ To understand the sentiment of an entire document, apply this enrichment to a fi
 To analyze sentiment in text from multiple fields at once and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Enabling multiple text fields](/docs/discovery-data?topic=discovery-data-contentminerapp#enable-multiple-fields) and [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
 
 ### Example
-{: #sentiment-example}
+{: #nlu-sentiment-example}
 
 #### Input
-{: #sentiment-example-input}
+{: #nlu-sentiment-example-input}
 
 ```
 "It is powerful and easy to use and integrate with third party applications."
 ```
 
 #### Response
-{: #sentiment-example-response}
+{: #nlu-sentiment-example-response}
 
 In the JSON output:
   -  `score` = Sentiment score from `-1` (negative) to `1` (positive)

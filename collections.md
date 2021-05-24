@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-24"
 
 keywords: data sources, supported data sources
 
@@ -46,7 +46,7 @@ Creating a collection is a good way to group documents that you want to enrich i
 ## Creating a collection
 {: #createcollection}
 
-When you create a collection, {{site.data.keyword.discoveryshort}} pulls documents from a data source, by using a process called crawling. Crawling is the process of systematically browsing and retrieving documents from a specified start location.
+When you create a collection, {{site.data.keyword.discoveryshort}} pulls documents from a data source, by *crawling* the data source. Crawling is the process of systematically browsing and retrieving documents from a specified start location.
 
 Before you can create a collection, you must create a project. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
