@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-27"
 
 keywords: passages, query results
 
@@ -103,5 +103,5 @@ To change the content of the query results, complete the following steps:
 1.  **Optional**: Change the field that is shown as the title of the query result.
 
     The title is displayed after the text excerpt.
-1,  Choose **Field** to switch to showing excerpts from a specific field, and then select the field that you want to use as the source of the query result text.
+1.  Choose **Field** to switch to showing excerpts from a specific field, and then select the field that you want to use as the source of the query result text.
 1.  Click **Apply**.
