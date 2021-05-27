@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-05-27"
 
 subcollection: discovery-data
 
@@ -124,10 +124,7 @@ You can use this option to crawl Box. Only documents that are supported by {{sit
      ```
      {: pre}
 
-   1. Make a copy of `public-box.pem`. 
-   
-      If you create an RSA key pair with a passphrase, you must install unlimited strength JCE Policy files, or .jar files (`local_policy.jar` and `US_export_policy.jar`). You can download these unlimited strength JCE Policy files from Unrestricted SDK JCE policy files. Copy these files to the persistent volume in the folder `config/certs/jvm/`, for example `config/certs/jvm/local_policy.jar` and `config/certs/jvm/US_export_policy.jar`. The certificates are imported into the JVM truststore when the container starts.
-      {: note}
+   1. Make a copy of `public-box.pem`.
 
 1. Next, create an app on the Box developer site. Log in to your [Box Developers account](https://developer.box.com/){: external}, and create a new enterprise integration app. After you log in to your Box account, make sure you complete the following tasks:
 

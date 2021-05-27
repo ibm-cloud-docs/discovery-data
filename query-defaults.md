@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-05-26"
 
 subcollection: discovery-data
 
@@ -44,13 +44,13 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | --- | --- | --- |
 | Aggregation<br/>(`aggregation`) | "term(enriched_text.entities.text,<br/>name:entities)"  | "[term<br/>(enriched_html.contract.<br/>elements.categories.label,<br/>count:25,name:categories)" |
 | Count<br/>(`count`) | 10  | 10  |
-| Find answers<br/>Enabled<br/>(`find_answers.enabled`) | false | false |
-| Find answers<br/>Max answers<br/> per passage<br/>(`find_answers.`<br/>`max_answers_per_passage`) | 1 | 1 |
 | Highlight<br/>(`highlight`) | false | false |
 | Passages<br/>Characters<br/>(`passages.characters`) | 200 | 200 |
 | Passages<br/>Count<br/>(`passages.count`)| 10 | 10 |
 | Passages<br/>Enabled<br/>(`passages.enabled`) | true | true |
 | Passages<br/>Fields<br/>(`passages.fields`) | ["text", "title"] | ["text", "title"] |
+| Passages<br/>Find answers<br/>(`passages.find_answers`) | false | false |
+| Passages<br/>Max answers<br/> per passage<br/>(`passages.`<br/>`max_answers_per_passage`) | 1 | 1 |
 | Passages<br/>Max per<br/> document<br/>(`passages.max_per_document`) | 1 | 1 |
 | Passages<br/>Per document<br/>(`passages.per_document`) | true | true |
 | Return<br/>(`return`)| [] | [] |
@@ -70,13 +70,13 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | --- | --- | --- | --- |
 | Aggregation<br/>(`aggregation`) | "" | "" | "" |
 | Count<br/>(`count`) | 10  | 10 |  10 |
-| Find answers<br/>Enabled<br/>(`find_answers.enabled`) | false | false | false |
-| Find answers<br/>Max answers<br/> per passage<br/>(`find_answers.`<br/>`max_answers_per_passage`) | 1 | 1 | 1 |
 | Highlight<br/>(`highlight`) | false | false | false |
 | Passages<br/>Characters<br/>(`passages.characters`)  | 200  | 200 | 200 |
 | Passages<br/>Count<br/>(`passages.count`) | 10 | 10 | 10 |
 | Passages<br/>Enabled<br/>(`passages.enabled`) | true | false | true |
 | Passages<br/>Fields<br/>(`passages.fields`) | ["text", "title"] | ["text", "title"] | ["text", "title"] |
+| Passages<br/>Find answers<br/>(`passages.find_answers`) | false | false | false |
+| Passages<br/>Max answers<br/> per passage<br/>(`passages.`<br/>`max_answers_per_passage`) | 1 | 1 | 1 |
 | Passages<br/>Max per<br/> document<br/>(`passages.max_per_document`) | 1 | 1 | 1 |
 | Passages<br/>Per document<br/>(`passages.per_document`) | true | true | true |
 | Return<br/>(`return`)| [] | [] | [] |

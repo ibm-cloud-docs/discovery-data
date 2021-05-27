@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-05-25"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ subcollection: discovery-data
 IBM strives to provide products with usable access for everyone, regardless of age or ability.
 {: shortdesc}
 
-{{site.data.keyword.discoveryfull}} uses standard Windows navigation keys.
+{{site.data.keyword.discoveryfull}} enables you to interact with all functionality of the content using only the keyboard.
 
 ## Accessibility features in the product documentation
 {: #accessibility-in-doc}
