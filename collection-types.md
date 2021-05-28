@@ -167,8 +167,10 @@ In {{site.data.keyword.discoveryshort}}, after you select **Box** as the collect
     - **Box Folder or User URL to crawl**: Optional: Crawls a specific user content or folder content. If unspecified, it crawls all content. You can crawl different types of URLs. See the following examples of URLs that you can specify to crawl user or folder content:
 
         - To crawl an entire enterprise, enter `box://app.box.com/`.
-        - To crawl a specific folder, enter `box://app.box.com/user/USER_ID/folder/FOLDER_ID/FolderName`.
-        - To crawl a specific user, enter `box://app.box.com/user/USER_ID/`.
+        - To crawl a specific folder, enter `box://app.box.com/user/USER'S_ACCOUNT_ID/folder/FOLDER_ID/FolderName`.
+
+          For example: `box://example.app.box.com/user/460250779/folder/158001591642/My Folder`
+        - To crawl a specific user, enter `box://app.box.com/user/USER'S_ACCOUNT_ID/`.
 
 1. Optional: Set the following switch in **Proxy settings**:
     - **Enable proxy settings**: By default, is set to **Off**. Enable this option when you are using the proxy server to access the data source server.
@@ -401,6 +403,8 @@ For more information about SharePoint OnPrem, see [Microsoft SharePoint develope
 Use this option to crawl websites. The web content is processed as HTML.
 {: shortdesc}
 
+The web crawler does not crawl dynamic websites that use JavaScript to render content. You can confirm the use of JavaScript by viewing the source code of the website in your browser.
+{: note}
 
 #### Configuring a web crawl collection
 {: #configurewebcrawl}
