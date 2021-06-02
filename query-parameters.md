@@ -305,7 +305,7 @@ A boolean that specifies whether the service returns a set of the most relevant 
 
 Since sentence boundary adjustments expand passage size, you will see a substantial increase in average passage length. If your application has limited screen space, you may want to set a smaller value for `passages.characters` and/or truncate the passages that are returned by {{site.data.keyword.discoveryshort}}. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
-Passages are returned `per_document` by default. This means they will appear as a section within each document result ordered by passage relevance. Including passage retrieval in queries can increase response times as it includes additional scoring of the passages. Search results display in a preview of your document for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. 
+Passages are returned `per_document` by default. Passages are grouped with each document result and are ordered by passage relevance. Including passage retrieval in queries increases the response time because it takes to score the passages. Search results are displayed in a preview of your document for the following document types: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of supported image files.
 
 You can adjust the fields in the documents over which passage retrieval searches with the [`passages.fields`](/docs/discovery-data?topic=discovery-data-query-parameters#passages_fields) parameter.
 
