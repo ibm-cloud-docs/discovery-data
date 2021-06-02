@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-06-02"
 
 subcollection: discovery-data
 
@@ -65,7 +65,7 @@ The SDU tool can annotate the following file types only:
 - Microsoft Word
 - PDF
 
-For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-upload-data#supportedfiletypes).
+For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
 The tool cannot read documents with the following characteristics; remove them from your collection before you begin:
 
