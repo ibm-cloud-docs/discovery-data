@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-02"
 
 subcollection: discovery-data
 
@@ -67,7 +67,7 @@ Yes, you can upload documents directly to a collection in your project. An uploa
 {: #faq-doctype}
 {: faq}
 
-{{site.data.keyword.discoveryshort}} can ingest most standard business file types. For a complete list, see [Supported file types](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-upload-data#supportedfiletypes).
+{{site.data.keyword.discoveryshort}} can ingest most standard business file types. For a complete list, see [Supported file types](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
 ## How does the Smart Document Understanding tool work?
 {: #faq-sdu}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-06-02"
 
 subcollection: discovery-data
 
@@ -148,7 +148,7 @@ You can use this option to crawl Box. Only documents that are supported by {{sit
    - Under **Public Key Management**, paste your public key into the provided text box, and click **Verify**.
    - After the key is verified, click **Save** to finish setting up your public key.
 
-1. After you receive your client ID, client secret, private key path, private key passphrase, key ID, and enterprise ID on the configuration page on [Box Developers](https://developer.box.com/){: external}, download the app settings as a JSON file, or `config.json`.
+1. After you receive your client ID, client secret, encoded private key, private key passphrase, key ID, and enterprise ID on the configuration page on [Box Developers](https://developer.box.com/){: external}, download the app settings as a JSON file, or `config.json`.
 
 For more information about setting up your application, see [JWT Application Setup](https://developer.box.com/docs/setting-up-a-jwt-app){: external}.
 
