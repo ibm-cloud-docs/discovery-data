@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-06-03"
 
 subcollection: discovery-data
 
@@ -122,7 +122,7 @@ Add a classifier to assign documents in your collection into categories. {{site.
     A classifier enrichment is created based on the training data that you provided.
 1.  Choose the collection and field where you want to apply the enrichment, and then click **Apply**.
 
-In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored as `enriched_text` within the `classes` array.
+In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored in the `enriched_{field_name}` array, within the `classes` array.
 
 ```
 "enriched_text": [
@@ -218,7 +218,7 @@ To add dictionary from a CSV file, complete the following steps:
 1.  Click **Create**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
 
-In the following example, the **Facet Path** is `automobiles.motorsports`, and the field that is selected for enrichment is `text`. The dictionary enrichment is stored as `enriched_text` within the `entities` array.
+In the following example, the **Facet Path** is `automobiles.motorsports`, and the field that is selected for enrichment is `text`. The dictionary enrichment in the `enriched_{field_name}` array, within the `entities` array.
 
 ```
 "enriched_text": [
@@ -239,7 +239,7 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
 ```
 {: screen}
 
-As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_text.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically. 
+As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_{field_name}.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically. 
 
 ## Regular expressions
 {: #regex}
@@ -272,7 +272,7 @@ To add a regular expression, complete the following steps:
 1.  Choose the collection and field to search for occurrences of text that matches this regular expression pattern.
 
 
-In the output, the information that is extracted by the regular expression enrichment can be found under `enriched_text`, within the `entities` array.
+In the output, the information that is extracted by the regular expression enrichment can be found under `enriched_{field_name}`, within the `entities` array.
 
 In this example, the **Facet Path** is `regex.cccardnumber`, and the field that is selected for enrichment is `text`.
 
@@ -341,7 +341,7 @@ To add a Machine Learning model, complete the following steps:
 
 For example, when a machine learning model is applied as an enrichment to a field, it extracts all entity types in that field that were specified in a {{site.data.keyword.knowledgestudioshort}} rule-based model. If the model recognizes entity types such as `person`, `surname`, and `job title` they are recognized in your documents and tagged.
 
-In the output, the information that is extracted by the Machine Learning enrichment is stored as `enriched_text` within the `entities` array. In this example, the field that is selected for enrichment is `text`.
+In the output, the information that is extracted by the Machine Learning enrichment in the `enriched_{field_name}` array, within the `entities` array. In this example, the field that is selected for enrichment is `text`.
 
 ```JSON
 "enriched_text": [
@@ -384,14 +384,14 @@ In the output, the information that is extracted by the Machine Learning enrichm
 ```
 {: codeblock}
 
-As a result, if someone [uses the API](/docs/discovery-data?topic=discovery-data-query-concepts) to submit a Discovery Query Language query to look for occurrences of the `enriched_text.entities.type:jobtitle` enrichment, any passages that discuss a person's job title are returned.
+As a result, if someone [uses the API](/docs/discovery-data?topic=discovery-data-query-concepts) to submit a Discovery Query Language query to look for occurrences of the `enriched_{field_name}.entities.type:jobtitle` enrichment, any passages that discuss a person's job title are returned.
 
 ### Machine learning model example
 {: #machinelearning-ml}
 
 In this example, a Machine learning model extracts entity types such as `person`, `oranization`, and `date`, and information about relationships between the entities. When this ML model is applied as an enrichment to a field, it uses machine learning to understand the linguistic nuances, meaning, and relationships that are mentioned in the document.
 
-In the output, the information that is extracted by the Machine Learning enrichment is stored as `enriched_text` within the `entities` and the `relations` arrays. In this example, the field that is selected for enrichment is `text`.
+In the output, the information that is extracted by the Machine Learning enrichment in the `enriched_{field_name}` array, within the `entities` and the `relations` arrays. In this example, the field that is selected for enrichment is `text`.
 
 ```JSON
 "enriched_text": [
