@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-03"
 
 subcollection: discovery-data
 
@@ -110,9 +110,9 @@ You can use this option to crawl Box. Only documents that are supported by {{sit
 
 1. Make sure you have a [Box account](https://www.box.com/){: external}. During this process, you obtain the public key 1 ID and the enterprise ID.
 
-1. Establish an RSA key pair.
+1. Establish an RSA key pair. You can create one yourself or let Box.com generate the key pair for you.
 
-   1. Run the following shell commands:
+   1. To create the key pair yourself, run the following shell commands:
 
      ```bash
      openssl genrsa 2048 > private-box.pem

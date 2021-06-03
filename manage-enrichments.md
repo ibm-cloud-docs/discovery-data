@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-06-03"
 
 subcollection: discovery-data
 
@@ -52,7 +52,7 @@ To manage enrichments, complete the following steps:
 
     - To apply an enrichment to documents, select the field or fields that you want to enrich.
 
-      Do not choose a field that starts with `extracted_metadata`,`enriched_text`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
+      Do not choose a field that starts with `extracted_metadata`,`enriched_{field_name}`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
       {: note}
     - To remove an enrichment, clear the checkboxes for fields that you want to remove the enrichment from.
 1. Click **Apply changes and reprocess** to apply your changes to the collection.
