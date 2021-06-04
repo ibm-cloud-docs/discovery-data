@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-06-04"
 
 keywords: known issues
 
@@ -470,7 +470,7 @@ The following known issues apply to managed Premium plan deployments.
 ### ![IBM Cloud only](images/ibm-cloud.png) 10 November 2020
 {: #10nov2020ki}
 
-- ![IBM Cloud only](images/ibm-cloud.png) The [Box connector](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic) does not run on Safari.
+- ![IBM Cloud only](images/ibm-cloud.png) The [Box connector](/docs/discovery-data?topic=discovery-data-connector-box-cloud) does not run on Safari.
 - ![IBM Cloud only](images/ibm-cloud.png) If the `metadata` property is converted to an array in the index, the document cannot be deleted using the **Delete labeled data** method in the [API reference](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}
 
 Also see the issues identified in all previous releases.

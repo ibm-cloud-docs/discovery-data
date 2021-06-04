@@ -28,7 +28,17 @@ Discovery
     Connecting to your data
         collections.md
         upload-data.md
-        sources.md
+
+        {: topicgroup}
+        Configuring IBM Cloud data sources
+            sources.md
+            connector-box-cloud.md
+            connector-cos-cloud.md
+            connector-sharepoint-online-cloud.md
+            connector-sharepoint-onprem-cloud.md
+            connector-salesforce-cloud.md
+            connector-web-cloud.md
+
         collection-types.md
         index-overview.md
         manage-collections.md

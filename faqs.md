@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-04"
 
 subcollection: discovery-data
 
@@ -83,3 +83,15 @@ You can use two different methods to define synonyms.
 
 - To define synonyms that are recognized and tagged when a document is ingested and that can be retrieved by search, create a dictionary and add synonyms for the dictionary term entry. For more information, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary).
 - To define synonyms that are applied to the query text that is submitted by users to expand its meaning, add synonyms by using the Synonyms tool on the *Improve relevance* section of the *Improve and customize* page. For more information, see [Expanding the meaning of queries](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
+
+## Seeing errors that mention watsonplatform.net
+{: #faq-watsonplatform}
+{: faq}
+
+Old API endpoint URLs that include `watsonplatform.net` are deprecated and were retired on 26 May 2021. If you see errors that mention `watsonplatform.net`, make sure your {{site.data.keyword.discoveryshort}} service instance is using updated credentials. And, if you have any old credentials with the old endpoing URL listed in your service page, delete them. For more information about the deprecation, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change).
+
+## Getting a 401 error when using my Lite plan
+{: #faq-lite-plan-deletion}
+{: faq}
+
+If you are seeing `401 invalid credentials` messages for a Lite plan that hasn't been used in a while, don't spend time creating new credentials. The error message is misleading. Any Lite plans with no activity for 120 days are deleted automatically. Unfortunately, the service instance deletion is not being reflected in IBM Cloud Resources list. Delete the old instance, and then create a new Lite plan instance.
