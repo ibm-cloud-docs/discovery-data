@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-04"
 
 keywords: release notes
 
@@ -80,7 +80,7 @@ For more information about software releases for installed deployments, see [{{s
 ### ![IBM Cloud only](images/ibm-cloud.png) 19 March 2021
 {: #19mar2021}
 
-- You can use the Web crawl collection type to connect to content that is stored on an internal company website. For more information, see [Configuring IBM Cloud data sources](/docs/discovery-data?topic=discovery-data-sources#connectwebcrawlpublic).
+- You can use the Web crawl collection type to connect to content that is stored on an internal company website. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 4 March 2021
 {: #4mar2021}
@@ -103,7 +103,7 @@ For more information about software releases for installed deployments, see [{{s
 {: #10nov2020}
 
 - **Box connector** added - Crawl Box systems. For more information, see [Box](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic).
-- **SharePoint 2016 On-Premise connector** added - Crawl SharePoint 2016 On-Premise systems. For more information, see [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-sources#connectsp_oppublic).
+- **SharePoint 2016 On-Premise connector** added - Crawl SharePoint 2016 On-Premise systems. For more information, see [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 30 October 2020
 {: #30oct2020}
