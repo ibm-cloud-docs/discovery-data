@@ -55,30 +55,19 @@ Before you can create a collection, you must create a project. For more informat
     - The Document Retrieval and Custom project types can contain up to 5 collections. 
     - A Conversational Search project can contain 5 collections but only 1 collection is used by the {{site.data.keyword.conversationshort}} search skill. 
     - A Content Mining project can contain only 1 collection.
-1.  Choose a data source type. A collection can support only one data source.
+    - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
+1.  Choose a data source type, reuse data from an existing data collection, or perform a one-time document upload from your local file system.
 
-    You can connect to an external data source or perform a one-time document upload from your local file system.
+    A collection can support only one data source.
+    {: note}
 
     For external data sources, be prepared to provide details such as file locations or URLs, and any necessary credentials.
-1.  Name your collection, and then choose the language of the collection. 
-
-    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Select the crawl schedule. 
-
-    For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1.  Configure the data source.
 
     For more information, see the appropriate topic for your deployment:
 
     - [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
     - [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
     - [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
-1.  Click **Create collection** to start the crawl.
-
-    The **Activity** page opens and shows the progress of the collection creation. Only [supported file types](#supportedfiletypes) are crawled; all others are ignored.
-
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
-{: note}
 
 ### Data source overview video
 {: #collections-video}
