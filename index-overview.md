@@ -90,12 +90,10 @@ The following list describes some of the indexed fields that are generated:
 - `enriched_{field_name}`: Generated when prebuilt enrichments are applied to a collection. The `{field_name}` is the index field that the enrichment is applied to. For example, if the enrichment is applied to the `text` field, the output is `enriched_text`.
 - `html`: The HTML field is generated under the following conditions:
 
-  - If you crawl a website, this field is generated along with the `text` field.
-  - If you use the Smart Document Understanding tool to annotate a collection, the document representation is indexed in the `html` field.
+  - If you crawl a website or upload an HTML file, this field is generated along with the `text` field.
   - If you use the Smart Document Understanding tool to apply a pretrained model to a collection, the document representation is indexed both in the `html` field and `text` field.
+  - If you use the Smart Document Understanding tool to annotate a collection, the document representation is indexed in the `html` field.
 
-  When you upload an HTML file, the content is indexed in the `text` field. No `html` field is created.
-  {: note}
 - `segment_metadata`: Generated when you split a document. The metadata field includes the parent document ID, the segment number, and the total number of segments that were created from the parent document. Each resulting segment of the original document can contain different information. For example, if you split the document based on the subtitle field, the first segment might contain only a title field. The next segment might contain a subtitle and a text field. The third might contain a subtitle field, a text field, and a footer field.
 
 Fields with names that contain a period (.) represent nested fields. For example, the `enriched_text.entities` nested field is stored in the JSON structure as follows:

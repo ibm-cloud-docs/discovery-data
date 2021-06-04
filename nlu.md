@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-06-04"
 
 subcollection: discovery-data
 
@@ -77,9 +77,11 @@ For more information about how to remove an enrichment, see [Managing enrichment
 ## Entities
 {: #nlu-entities}
 
-Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system that is defined by the {{site.data.keyword.nlushort}} service.
+Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system that is defined by the {{site.data.keyword.nlushort}} service. For more information, see [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
 
-![Managed deployments only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: For English and Korean data collections, you can choose to use the **Entities v2 trial** enrichment, which applies a newer model with updated entity types. You cannot select both **Entities** and **Entities v2 trial** for a single collection. For more information about each type system, see [Entities Version 1](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-1){: external} and [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}. (For other languages, the Entities enrichment uses the version 2 type system by default.)
+If you have English or Korean data collections in a Premium plan that was created before 2 June 2021, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment by default.
+
+![Managed deployments only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: For English and Korean data collections, you can choose to use the **Entities v2 trial** enrichment, which applies a newer model with updated entity types. You cannot select both **Entities** and **Entities v2 trial** for a single collection. For more information about each type system, see [Entities Version 1](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-1){: external} and [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
 {: note}
 
 ### Example
