@@ -115,7 +115,7 @@ Follow these guidelines when you create the app:
     -  `private_key`
     -  `passphrase`
 
-### Connecting to the Box data source
+## Connecting to the Box data source
 {: ##connector-box-cloud-task}
 
 From your {{site.data.keyword.discoveryshort}} project, complete the following steps:

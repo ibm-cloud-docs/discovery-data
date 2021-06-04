@@ -54,7 +54,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud)
 -  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud)
 -  [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud)
--  [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salaesforce-cloud)
+-  [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cloud)
 -  [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud)
 -  [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
 
