@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-04"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -141,7 +141,7 @@ The following table shows the supported data sources for each deployment type.
 {: caption="Supported data sources" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
 
-### Crawl schedule options
+## Crawl schedule options
 {: #crawlschedule}
 
 When you create a collection, the initial crawl starts immediately. The frequency that you choose for the crawl schedule determines when the next crawl will start. 
