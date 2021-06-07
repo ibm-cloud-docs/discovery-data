@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-05-21"
+lastupdated: "2021-06-07"
 
 subcollection: discovery-data
 
@@ -256,10 +256,10 @@ The `contracts` schema is arranged as follows.
         - `party`: A string that identifies the party to whom the sentence applies.
       - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
     - `categories`: An array that lists the functional categories into which the element falls; in other words, the subject matter of the element.
-      - `label`: A string that lists the identified category. You can find a list of [categories](/docs/discovery-data?topic=discovery-data-contract_parsing#contract_categories) in [Understanding contract analysis](/docs/discovery-data?topic=discovery-data-contract_parsing).
+      - `label`: A string that lists the identified category. For a list of categories, see [Categories](#contracts-categories).
       - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
     - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
-      - `type`: The type of attribute. Possible values are `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person` as described at [Attributes](/docs/discovery-data?topic=discovery-data-contract_parsing#attributes).
+      - `type`: The type of attribute. Possible values are `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person` as described at [Attributes](#contracts-attributes).
       - `text`: The text that is associated with the attribute.
       - `location`: The location of the attribute as defined by its `begin` and `end` indexes.
   - `effective_dates`: An array that identifies the date or dates on which the document becomes effective.
@@ -477,7 +477,7 @@ The values of `role` that can be returned for contracts include, but are not lim
 {: caption="Supported role values" caption-side="top"}
 
 ### Categories
-{: #contract_categories}
+{: #contracts-categories}
 
 The `categories` array defines the subject matter of the sentence. Currently, supported categories include:
 

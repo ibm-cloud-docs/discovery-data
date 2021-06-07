@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-07"
 
 subcollection: discovery-data
 
@@ -74,6 +74,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
 - A collection can connect to only one data source.
 - A single {{site.data.keyword.discoveryshort}} service instance can have up to 100 collections that connect to external data sources.
 - The individual document file size limit is 10 MB.
+- When optical character recognition (OCR) is enabled, images must meet the minimum image quality requirement of 75 DPI (dots per inch) to be processed successfully.
 
 ## FAQ extraction ![IBM Cloud only](images/ibm-cloud.png)
 {: #faq-extraction}
