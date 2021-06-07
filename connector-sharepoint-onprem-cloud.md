@@ -102,10 +102,12 @@ To configure the Microsoft SharePoint OnPrem data source, complete the following
     Click **Next**.
 1.  Name the collection.
 1.  If the language of the documents on the site is not English, select the appropriate language.
+
+    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1.  If you want to look for and extract question and answer pairs, select **Apply FAQ extraction**.
+1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 
@@ -115,3 +117,5 @@ To configure the Microsoft SharePoint OnPrem data source, complete the following
     {: note}
 
 1.  Click **Finish**.
+
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. The Activity page shows the results after the data source is crawled and the data is processed.

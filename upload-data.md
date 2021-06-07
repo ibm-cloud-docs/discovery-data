@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-04"
 
 keywords: upload, one-time upload
 
@@ -49,15 +49,24 @@ Before you upload a CSV file to a Content Mining project, decide whether you wan
 To upload data, complete the following steps:
 
 1.  Open your project, go to the **Manage collections** page, and then click **New collection**.
-1.  Choose **Upload data** as your data source.
+1.  Choose **Upload data** as your data source, and then click **Next**.
+1.  Name the collection.
+1.  If the language of the documents in storage is not English, select the appropriate language.
+
+    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
+
+    For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 1.  Optionally, click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. 
 
     By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, by using optical character recognition. When OCR is enabled and your documents contain images, processing takes longer.
 
+1.  Click **Next**.
 1.  Browse for the files you want to crawl.
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: You can drag documents that you want to add to your collection.
 
     For more information about supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+1.  Click **Finish**.
 
 The file upload is completed quickly. It takes more time for the data to be processed as it is added to the collection. After the files are uploaded and processed, the Activity page shows the upload results.

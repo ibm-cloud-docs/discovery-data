@@ -97,6 +97,8 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     Click **Next**.
 1.  Name the collection.
 1.  If the language of the documents in storage is not English, select the appropriate language.
+
+    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 1.  **Optional**: Change the synchronization schedule. 
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
@@ -104,7 +106,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
     The more buckets that you select, the longer the processing of the documents takes.
 
-1.  If you want to look for and extract question and answer pairs, select **Apply FAQ extraction**.
+1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 
@@ -114,3 +116,5 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     {: note}
 
 1.  Click **Finish**.
+
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. The Activity page shows the results after the data source is crawled and the data is processed.
