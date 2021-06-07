@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-07"
 
 subcollection: discovery-data
 
@@ -41,7 +41,7 @@ Before you create a project, decide which project type best fits your needs.
 
 | Need | Goal | Project type |
 |--------------------|------|--------------|
-| *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a standalone enterprise search application or in the search field of a business application. | **Document Retrieval** |
+| *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a stand-alone enterprise search application or in the search field of a business application. | **Document Retrieval** |
 | *Where is the part of the contract that I need for my task?* | Quickly extract critical information from contracts. | **Document Retrieval for Contracts** |
 | *I want the chatbot I'm building to use knowledge that I own* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |
 | *I want to uncover insights I didn't know to ask about.* | Gain insights from pattern analysis or perform root cause analysis. | **Content Mining** |
@@ -122,10 +122,7 @@ When you apply the contracts enrichment, you cannot use Smart Document Understan
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Create a Document Retrieval project, and then select **Apply contracts enrichment**.
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Enable the Content Intelligence feature when you install the {{site.data.keyword.discoveryshort}} service
 
-For more information, see the following topics:
-
-- [Understaning the Contract enrichment](/docs/discovery-data?topic=discovery-data-contracts-schema) 
-- [Understanding contract analysis](/docs/discovery-data?topic=discovery-data-contract_parsing)
+For more information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
 
 ### Conversational Search
 {: #conversational}
@@ -159,7 +156,7 @@ Documents that you add as part of the initial collection are automatically enric
 
 After you add a collection and optionally apply more enrichments to the data, a full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp). 
 
-You can create a collection (CSV file only) from the deployed Content Mining application. The collection you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection.
+You can create a collection (CSV file only) from the deployed Content Mining application. The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection.
 {: note}
 
 ### Custom

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-07"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -61,13 +61,15 @@ Before you can create a collection, you must create a project. For more informat
     A collection can support only one data source.
     {: note}
 
-    For external data sources, be prepared to provide details such as file locations or URLs, and any necessary credentials.
+    For more information, see the following topics:
 
-    For more information, see the appropriate topic for your deployment:
-
-    - [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
-    - [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
     - [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
+    - [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse)
+
+    For external data sources, be prepared to provide details such as file locations or URLs, and any necessary credentials. For more information, see the appropriate topic for your deployment:
+
+    - ![Cloud Pak for Data only](images/desktop.png) [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
+    - ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
 ### Data source overview video
 {: #collections-video}
@@ -142,11 +144,19 @@ To create a crawl schedule, complete the following steps:
     - If you want to crawl every 12 hours or every 10 days, choose **Custom intervals**. You can schedule the crawler to run on a custom number of days, hours, or minutes.
     - By default, the crawl is scheduled to start during off-peak hours.
     - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
+    - If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
 
-1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: In **More scheduling settings**, you can choose the type of update to make from the following options:
+1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: In **More scheduling settings**, you can choose the type of schedule to use to crawl the collection from the following options:
 
-    - Crawling updates (look for new, modified, and deleted contents)
-    - Crawling new and modified contents
-    - Full crawling
+    - To control the frequency of the crawls yourself, choose this option:
 
-If you want to edit your flexible crawl schedule settings, go to the *Processing settings* page, edit the settings, and click **Apply changes and reprocess**. If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
+      - **Full crawling**:  When you choose a full crawl schedule type, the crawl occurs with the frequency that you specify in the *Crawl schedule* section of the page.
+
+    - To allow the system to manage the frequency of the crawls for you, choose one of the following options:
+
+      - **Crawling updates (look for new, modified, and deleted contents)**
+      - **Crawling new and modified contents**
+
+      When you choose a schedule type that crawls for updates or for new and modified contents, the frequency with which each document is crawled is variable and is managed by the service. The frequency changes depending on how often changes are found in a document. For example, if 5 of the 10 documents in a collection have changed by the end of the first crawl interval, then the frequency is automatically increased for those 5 documents. Currently, the most frequent interval available for these self-managed refreshes is daily. You cannot interrupt the automated management of frequency and you cannot trigger a one-off crawl when these types of scheduled crawls are configured.
+
+If you want to change the flexible crawl schedule settings later, you can go to the *Processing settings* page, edit the settings, and then click **Apply changes and reprocess**.

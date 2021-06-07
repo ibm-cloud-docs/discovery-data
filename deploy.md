@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-07"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -58,7 +58,7 @@ For Document Retrieval and Custom (projects where you did not apply a specific p
 - **Document preview**: Displays your results in a document preview. This view helps you to see search results by highlighting passages within the text of the original document, which makes the context clearer.
 
   The preview is available for the following types of source documents: Excel, PDF, PowerPoint, Word, and all image files. (For more information about the supported image files, see [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).)
-- **Contract anaysis preview**: For a Document Retrieval for Contracts project type, the original documents are displayed in a browser, regardless of the source format. In addition, key elements of the documents are recognized and you can navigate to them quickly. For example, if you are searching for the `payment terms` clauses in a contract, the preview detects those clauses and highlights the passages. For more information, see [Understanding contract analysis](/docs/discovery-data?topic=discovery-data-contract_parsing).
+- **Contract anaysis preview**: For a Document Retrieval for Contracts project type, the original documents are displayed in a browser, regardless of the source format. In addition, key elements of the documents are recognized and you can navigate to them quickly. For example, if you are searching for the `payment terms` clauses in a contract, the preview detects those clauses and highlights the passages. For more information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
 
 To deploy your project, complete the following steps:
 

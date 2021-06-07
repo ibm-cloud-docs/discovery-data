@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-06-07"
 
 subcollection: discovery-data
 
@@ -61,6 +61,9 @@ To find out whether a collection is being shared, open the *My Projects* page, a
   - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Click **Data usage and GDPR**, and then review the **Collection usage** page.
 
 Collections can be associated with a single project, shared by two or more projects, or not associated with any project.
+
+## Reusing data from a collection
+{: #manage-collections-reuse}
 
 When you share collections across multiple projects, the following resources are shared:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-07"
 
 subcollection: discovery-data
 
@@ -81,6 +81,7 @@ You can specify an extra option for this collection:
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
 - The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When decompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
+- When optical character recognition (OCR) is enabled, images must meet the minimum image quality requirement of 75 DPI (dots per inch) to be processed successfully.
 - [Document level security](#configuredls) is supported for the following connectors: Box, SharePoint Online, SharePoint OnPrem (2013, 2016, and 2019), Windows File System (Windows Server 2012 R2, 2016, and 2019), FileNet P8, and Notes.
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the index during refresh.
 - Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes one crawler pod, which allows three collections to be processed simultaneously. A production installation includes two crawler pods, which can process six collections simultaneously.

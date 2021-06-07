@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-07"
 
 keywords: upload, one-time upload
 
@@ -59,7 +59,9 @@ To upload data, complete the following steps:
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 1.  Optionally, click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**. 
 
-    By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images, by using optical character recognition. When OCR is enabled and your documents contain images, processing takes longer.
+    By default, this option is set to **Off**. If you set it to **On**, {{site.data.keyword.discoveryshort}} extracts text from images by using optical character recognition. The image quality must meet the minimum requirement of 75 DPI (dots per inch).
+    
+    When OCR is enabled and your documents contain images, processing takes longer.
 
 1.  Click **Next**.
 1.  Browse for the files you want to crawl.
