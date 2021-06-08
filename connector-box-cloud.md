@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-07"
 
 subcollection: discovery-data
 
@@ -59,7 +59,7 @@ Documents that are deleted from Box are not deleted from the collection.
 All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
 ## Data source requirements
-{: #public-requirements}
+{: #connector-box-cloud-reqs}
 
 You must obtain any required service licenses for the data source that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 

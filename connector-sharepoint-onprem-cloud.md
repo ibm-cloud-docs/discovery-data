@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-07"
 
 subcollection: discovery-data
 
@@ -82,7 +82,7 @@ You must have the following information ready. If you don't know it, ask your Sh
 
 Before you can connect to a SharePoint OnPrem data source, you must install and configure {{site.data.keyword.SecureGatewayfull}}. 
 
-For more information, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources##gatewaypublic).
+For more information, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
 
 ## Connecting to the data source
 {: #connector-sharepoint-onprem-cloud-task}
