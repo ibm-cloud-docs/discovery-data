@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-08"
 
 subcollection: discovery-data
 
@@ -57,7 +57,7 @@ If you want to crawl a group of URLs that includes some websites that require au
 
 During the initial crawl of the content, all website pages that match your search settings are crawled and added to the document index of your collection.
 
-During subsequent scheduled recrawls, a full recrawl is performed and any changes are reflected in your collection. Documents that were added to your collection from website pages that are later deleted from the site are not deleted from the collection. IS THIS TRUE?
+During subsequent scheduled recrawls, a full recrawl is performed and any changes are reflected in your collection. Documents that were added to your collection from website pages that are later deleted from the site are not deleted from the collection.
 
 All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 

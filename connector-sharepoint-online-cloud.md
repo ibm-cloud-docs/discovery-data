@@ -49,7 +49,6 @@ During the initial crawl of the content, documents from all of the objects that 
 During subsequent scheduled recrawls, only new and modified documents are crawled and any changes are reflected in your collection. Documents that are deleted from the external data source are not deleted from the collection.
 
 All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
-{: important}
 
 The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
 
