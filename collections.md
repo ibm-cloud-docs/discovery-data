@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-09"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -143,6 +143,8 @@ To create a crawl schedule, complete the following steps:
 
     - If you want to crawl every 12 hours or every 10 days, choose **Custom intervals**. You can schedule the crawler to run on a custom number of days, hours, or minutes.
     - By default, the crawl is scheduled to start during off-peak hours.
+    - Do not set the interval to a frequency that is shorter than the time it takes for the crawl to finish.
+    - Do not configure multiple crawlers to run at short intervals.
     - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
     - If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
 
