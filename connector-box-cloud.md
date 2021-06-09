@@ -151,4 +151,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1.  Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. The Activity page shows the results after the data source is crawled and the data is processed.
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+
+If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

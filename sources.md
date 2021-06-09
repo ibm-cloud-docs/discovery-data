@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-08"
 
 subcollection: discovery-data
 
@@ -50,13 +50,12 @@ All {{site.data.keyword.discoveryshort}} data source connectors are read-only. R
 
 You can use {{site.data.keyword.discoveryshort}} to crawl from the following data sources:
 
--  [Box](/docs/discovery-data?topic=discovery-data-connector-box-cloud)
--  [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud)
--  [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud)
--  [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud)
--  [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cloud)
--  [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud)
--  [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
+- [Box](/docs/discovery-data?topic=discovery-data-connector-box-cloud)
+- [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud)
+- [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud)
+- [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud)
+- [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cloud)
+- [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud)
 
 You cannot crawl the supported data sources from a {{site.data.keyword.discoveryshort}} service instance that is hosted in the Seoul data center.
 {: note}
