@@ -93,7 +93,7 @@ To configure the Notes server to use DIIOP, complete the following steps:
         - **Run restricted Java/Javascript/COM**
         - **Run unrestricted Java/Javascript/COM**
 
-        For example, you might specify an asterisk (`*`) to allow unrestricted access by LotusScript/Java agents and specify usernames that are registered in the Domino directory for the Java/Javascript/COM restrictions.
+        For example, you might specify an asterisk (`*`) to allow unrestricted access by LotusScript/Java agents and specify usernames that are registered in the Domino directory for the Java/JavaScript/COM restrictions.
 
         To crawl a server that uses the DIIOP protocol, your configured crawler must be able to access the usernames that you specify in these fields.
         {: important}
