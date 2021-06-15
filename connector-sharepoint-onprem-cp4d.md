@@ -39,7 +39,7 @@ Crawl documents that are stored in an on-premises Microsoft SharePoint data sour
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
-This information applies only to installed deployments. For more information about connecting to an on-premises Sharepoint site from a managed deployment, see [Sharepoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
+This information applies only to installed deployments. For more information about connecting to an on-premises SharePoint site from a managed deployment, see [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
 {:note}
 
 ## What documents are crawled
@@ -70,7 +70,7 @@ Before you create a SharePoint OnPrem collection, you must do the following thin
   You must collect the following information from the LDAP administrator:
 
     - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-    - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. The distinguished name always works.
+    - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
     - **LDAP binding user password**: The password used to bind to the directory service.
     - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
     - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
@@ -177,7 +177,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     When you enable this option, you must provide values for the following fields:
 
     - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-    - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case-sensitive. The distinguished name always works.
+    - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
     - **LDAP binding user password**: The password used to bind to the directory service.
     - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
     - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.

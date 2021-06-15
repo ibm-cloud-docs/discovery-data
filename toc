@@ -17,8 +17,6 @@ Discovery
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    install.md
-
     {: topicgroup}
     Creating a project
         projects.md
@@ -93,6 +91,7 @@ Discovery
     preview.md
     deploy.md
     contentminerapp.md
+    install.md
     
     {: topicgroup}
     Advanced development

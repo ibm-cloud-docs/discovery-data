@@ -39,7 +39,7 @@ Crawl documents that are stored in an online Microsoft SharePoint data source.
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
-This information applies only to installed deployments. For more information about connecting to an online Sharepoint site from a managed deployment, see [Sharepoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
+This information applies only to installed deployments. For more information about connecting to an online SharePoint site from a managed deployment, see [SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
 {:note}
 
 ## What documents are crawled
@@ -98,7 +98,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **Sharepoint Online**, and then click **Next**.
+1.  Click **SharePoint Online**, and then click **Next**.
 1.  Name the collection.
 1.  If the language of the documents in SharePoint is not English, select the appropriate language.
 

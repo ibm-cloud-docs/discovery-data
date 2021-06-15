@@ -68,7 +68,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
   - **LDAP server URL**: The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
   - **LDAP binding username**: The username to use to bind to the directory service. 
   
-    In most cases, this username is a distinguished name (DN). An Active Directory username might work, but, unlike the general Windows logon, it is case-sensitive.
+    In most cases, this username is a distinguished name (DN). An Active Directory username might work, but, unlike the general Windows logon, it is case sensitive.
     - **LDAP binding user password**: The password that is associated with the binding username.
     - **LDAP base DN**: The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`. 
     - **LDAP user filter**: The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
@@ -266,7 +266,7 @@ If you completed the prerequisite steps, return to the Windows File System data 
     - **Port**:  The port to use for transferring data. The default port value is `8398`.
 1.  In the *Specify what you want to crawl* section, enter the file path that you want to crawl in the **Path** field, and then click **Add**. 
 
-    The file path is case-sensitive.
+    The file path is case sensitive.
 1.  Optionally, add more file paths.
 1.  **Optional**: If you want to enable document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
