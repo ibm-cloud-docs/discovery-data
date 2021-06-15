@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-15"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ Crawl documents that are stored in a Microsoft SharePoint data source that is ho
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+This information applies only to managed deployments. For more information about connecting to an on-premises SharePoint data source from an installed deployment, see [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d).
 {: note}
 
 ## What documents are crawled
@@ -59,6 +59,8 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 
 ## Data source requirements
 {: #connector-sharepoint-onprem-cloud-reqs}
+
+In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements) for all managed deployments, your SharePoint OnPrem data source must meet the following requirements:
 
 - You can connect to a SharePoint 2013, 2016, or 2019 on-premises data source.
 - The user ID must have `SiteCollection Administrator` permission and be able to access all of the sites and lists that they want to crawl.
