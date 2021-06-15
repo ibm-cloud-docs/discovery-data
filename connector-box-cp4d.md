@@ -100,7 +100,6 @@ To create a custom application, complete the following steps:
       - *Manage Users*
       - *Manage Enterprise Properties*
 
-      Selecting the *Read and write all files and folders that are stored in Box* scopes ensures that users must authenticate to have read permissions in the files contained in your application.
     - Enable the following advanced features:
 
        - *Make API calls using the as-user header*
