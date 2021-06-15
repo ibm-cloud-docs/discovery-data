@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-15"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ Crawl documents that are stored in a Microsoft SharePoint Online data source.
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+This information applies only to managed deployments. For more information about connecting to SharePoint Online from an installed deployment, see [SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cp4d).
 {: note}
 
 ## What documents are crawled
@@ -59,6 +59,8 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 
 ## Data source requirements
 {: #connector-sharepoint-online-cloud-reqs}
+
+In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements) for all managed deployments, your SharePoint Online data source must meet the following requirements:
 
 - The Site Collection that you connect to must be part of an Enterprise (E1) plan or higher.
 - You must have an Azure Active Directory user ID with the format `<username>@<domain>.onmicrosoft.com` that has permission to access all of the objects that you want to crawl. The user ID does not need `SiteCollection Administrator` permission.

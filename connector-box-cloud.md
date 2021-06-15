@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-15"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ Crawl documents that are stored in a Box data source.
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+This information applies only to managed deployments. For more information about connecting to Box from an installed deployment, see [Box](/docs/discovery-data?topic=discovery-data-connector-box-cp4d).
 {: note}
 
 ## What documents are crawled
@@ -60,6 +60,8 @@ All {{site.data.keyword.discoveryshort}} data source connectors are read-only. R
 
 ## Data source requirements
 {: #connector-box-cloud-reqs}
+
+In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements) for all managed deployments, your Box data source must meet the following requirement:
 
 You must obtain any required service licenses for the data source that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 

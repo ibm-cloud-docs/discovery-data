@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-15"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ Add a web crawl collection to crawl a website, analyze its page content, and sto
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+This information applies only to managed deployments. For more information about connecting to a website from an installed deployment, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d).
 {: note}
 
 ## What documents are crawled
@@ -67,11 +67,6 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 |-------------|--------------------------|
 | Web crawl | Websites, website subdirectories |
 {: caption="Table 1. Data sources crawling support" caption-side="top"}
-
-## What you need before you begin
-{: #connector-web-cloud-prereqs}
-
-Obtain any required service licenses for the content on the website that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 
 ## Prerequisite step
 {: #connector-web-cloud-prereq-task}

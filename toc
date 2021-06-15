@@ -17,8 +17,6 @@ Discovery
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
-    install.md
-
     {: topicgroup}
     Creating a project
         projects.md
@@ -39,7 +37,20 @@ Discovery
             connector-salesforce-cloud.md
             connector-web-cloud.md
 
-        collection-types.md
+        {: topicgroup}
+        Configuring IBM Cloud Pak for Data data sources
+            collection-types.md
+            connector-box-cp4d.md
+            connector-database-cp4d.md
+            connector-filenet-cp4d.md
+            connector-lfs-cp4d.md
+            connector-notes-cp4d.md
+            connector-salesforce-cp4d.md
+            connector-sharepoint-online-cp4d.md
+            connector-sharepoint-onprem-cp4d.md
+            connector-web-cp4d.md
+            connector-wfs.md
+
         index-overview.md
         manage-collections.md
 
@@ -80,6 +91,7 @@ Discovery
     preview.md
     deploy.md
     contentminerapp.md
+    install.md
     
     {: topicgroup}
     Advanced development
