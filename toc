@@ -86,7 +86,6 @@ Discovery
         manage-enrichments.md
         hide-data.md
         train.md
-        relevancy-tips.md
 
     preview.md
     deploy.md
@@ -98,6 +97,7 @@ Discovery
         develop.md
         api-use.md
         analyzeapi.md
+        curations.md
 
         {: topicgroup}
         Querying
