@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-16"
 
 subcollection: discovery-data
 
@@ -62,13 +62,13 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 
 Obtain any required service licenses for the content on the website that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 
-You must have the following information ready. If you don't know it, ask your SharePoint administrator to provide the information or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
+You must have the following information ready:
 
 - **Endpoint**: The `endpoint` name to use to interact with {{site.data.keyword.cos_full_notm}} data. For example, `s3.us-south.cloud-object-storage.appdomain.cloud`.
 
   Do not include `http://` or `https://` in the endpoint value. For more information, see [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region){: external}.
 - **Access key id**: The `access_key_id` that was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `apr75g55a35547e6a80d80344b9h55a0`.
-- **Secret access key**: The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, ``.
+- **Secret access key**: The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `806a16c5d35266db8570a074512972341j82999a5160b3rf`.
 
 ## Prerequisite step
 {: #connector-cos-cloud-prereq-task}

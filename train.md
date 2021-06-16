@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-16"
 
 subcollection: discovery-data
 
@@ -54,14 +54,16 @@ In order to train Watson, you'll need to:
   - Identify natural language queries that are representative of the queries your users would request.
   - Rate the results of each query as `relevant` or `not relevant`.
 
-Once Watson has enough training input, the information you have provided about which results are relevant or not relevant for each query will be used to learn about your project. Watson does not memorize, it learns from the specific information about individual queries and applies the patterns it has detected to all new queries. It does this with machine learning Watson techniques that find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results first. As you add more and more training data, {{site.data.keyword.discoveryshort}} should become more accurate in the ordering of query results.
+After Watson has enough training input, the information that you provided about result relevance for each query is used to learn about your project. Watson does not memorize; it learns from the specific information about individual queries and applies the patterns it has detected to new queries. It uses machine learning Watson techniques to find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results first. As you add more and more training data, {{site.data.keyword.discoveryshort}} learns how best to order your query results.
 
-Natural language query results will return a `confidence` score. For more information, see [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
+Natural language query results return a `confidence` score. For more information, see [Confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
 Adding a custom stopwords list can also improve the relevance of results for natural language queries. For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords).
 {: tip}
 
 If you would prefer to use the {{site.data.keyword.discoveryshort}} API to train {{site.data.keyword.discoveryshort}}, see the [API reference](https://{DomainName}/apidocs/discovery-data#listtrainingqueries){: external}.
+
+You also can use the API to add curations. Curations is a beta feature that you can use to teach {{site.data.keyword.discoveryshort}} to return a specific document every time a certain query is submitted. For more information, see [Curations](/docs/discovery-data?topic=discovery-data-curations).
 
 ## Adding queries and rating results
 {: #results}
@@ -74,33 +76,38 @@ Training consists of three parts:
 
 To train a project:
 
-1.  On the **Train** page, enter a natural language query in the **Enter a question to train** field. Do not include a question mark in your query. Click the **Add+** button.
-1.  Click the **Rate results** button next to the query.
-1.  After the results appear, select the **Relevant** or **Not relevant** button under each one. In order to train the project efficiently, you should select an option for each result. 
+1.  On the *Train* page, enter a natural language query in the **Enter a question to train** field. Do not include a question mark in your query. Click the **Add+** button.
+1.  Click **Rate results**.
+1.  After the results are displayed, select **Relevant** or **Not relevant**.  
 
-    In the {{site.data.keyword.discoveryshort}} tooling, **Relevant** has a score of `10` and **Not relevant** has a score of `0`. You can use a different scoring scale if rating results using the API, but you can't mix scoring scales within the same project. 
-1.  When you are finished, click the **Back to queries** button.
-1.  Continue adding queries and rating them. As you reach relevant training thresholds, the **Watson will learn which are the best results for your queries after you've rated enough** section will indicate your status by striking out the requirements as you meet them:
+    Select an option for each result. 
+
+    When you select **Relevant**, you apply a score of `10` to the result. **Not relevant** applies a score of `0`. You can use a different scoring scale if you use the API to rate results, but you can't mix scoring scales within the same project. 
+1.  When you are finished, click **Back to queries**.
+1.  Continue adding queries and rating them. 
+
+    As you rate results, your progress is shown. Check your progress to see when you have done enough work to meet the training threshold needs. Your progress is broken into the following tasks:
 
     - Add more queries
     - Rate more results
     - Add more variety to your ratings
     
-    A minimum of 50 unique queries must be trained, though more may be required to meet the training threshold. 
+    You must evaluate at least 50 unique queries, maybe more depending on the complexity of your data. 
 1.  You can continue adding queries and rating results after you have reached the threshold. You should enter all queries you think your users will ask.
+1.  To delete a trainig query, click the **Delete** icon. 
 
-Write your training queries the same way your users would ask them, for example: `IBM Watson in healthcare`. Training queries should be written with some term overlap between the query and the desired answer; this will improve initial results when the natural language query is run.
+    To delete all of the training queries in your collection at one time, use the API. For more information, see [Delete training queries](https://{DomainName}/apidocs/discovery-data#deletetrainingqueries){: external}. 
+
+Write your training queries with the same wording that your users would ask them, for example: `IBM Watson in healthcare`. Training queries should be written with some term overlap between the query and the desired answer; this will improve initial results when the natural language query is evaluated.
 {: tip}
 
 If two or more users attempt to train identical queries at the same time, one of the users will overwrite the others.
 {: note}
 
-You can delete individual training queries by clicking the **Delete** icon. If you would like to delete all of the training queries in your collection at one time, you must do so using the API. For more information, see [Delete training queries](https://{DomainName}/apidocs/discovery-data#deletetrainingqueries){: external}. 
-
 ## Testing and iterating on the relevancy of results
 {: #testing-results}
 
-After you have completed rating results, and Watson has applied the training, you should test to see if your query results have improved. To do so, run test natural language queries that are related (but not identical to) your training queries. Check to see if the results of your test queries have improved.
+When you are done rating results, and Watson has applied the training, test to see if your query results have improved. To do so, run test natural language queries that are related (but not identical) to your training queries. Check to see if the results of your test queries have improved.
 
 If you would like to further improve results after testing, you can:
 
@@ -139,28 +146,66 @@ The `document_retrieval_strategy` can be found under the `retrieval_details`. If
 
 For more information on querying, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 
+## Understanding relevancy training
+{: #understanding-training}
 
-## Curations
-{: #curations}
+Answers to common questions about training a collection.
 
-The Curations feature is beta functionality.
-{: beta}
+### How do I know if my system is trained?
+{: #understanding-system}
 
-Curations can be used to specify the exact document returned in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query will always be `1.00000`.
+Run a natural language query and check the `document_retrieval_strategy`. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
-This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#createcuration){: external} in the API reference.
+If you are using the API, see [List training queries](https://{DomainName}/apidocs/discovery-data#listtrainingqueries){: external}.
 
-This example shows how a curation is added with the API. When querying with the same or similar `natural_language_query` the document with the `document_id` of `document_id1234` is returned.
+### How do I check errors and warnings?
+{: #understanding-errors}
 
-```JSON
-{
-  "natural_language_query": "curations in watson discovery",
-  "curated_results": [
-     {
-       "document_id": "document_id1234",
-      "collection_id": "collection_id1234"
-     }
-   ]
- }
-```
-{: codeblock}
+Open your project, then select the **Manage collections** icon on the navigation panel. Choose your collection, then open the **Activity** tab.
+
+### How do I interpret the `confidence` score that appears in natural language query results after training?
+{: #interpret-confidence}
+
+See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence). 
+
+## Interpreting relevancy training errors and warnings
+{: #interpreting-errors}
+
+Explanations of common error and warning messages.
+
+### Warning: `Invalid training data found: The document was not returned in the top 100 search results for the given query, and will not be used for training`
+{: #warning-docnotreturned}
+
+This warning is caused by the `document_ids` in your training data not matching the `document_ids` in a search performed against the collection. Check your queries to make sure that the `document_id` of the document you are rating is returned in the top 100 results for that query. If it is not, then you might want to check two things:  
+
+- If the document is not returned in the top 100, it might not be an example of a high-quality result. Reevaluate whether to use the document.  
+
+- If the document is not returned at all, then review why it is not returned and see if there is any text in the document that matches portions of the query.  
+
+This warning indicates that you might have one or more failed queries. It is not an indication that training will not happen.
+{: note}  
+
+### Error: `Invalid training data found: Syntax error when parsing query`
+{: #error-syntax}
+
+- A syntax error means there is an issue with the query syntax, which can happen when you add a filter to your natural language query.
+
+### Error: `Training data quality standards not met: You will need additional training queries with labeled examples. (To be considered for training, each example must appear in the top 100 search results for its query.)`
+{: #error-labels}
+
+- You need to add more training data to train successfully. You need at least 49 unique training queries at a minimum, and each one needs at least one rated document. Minimum does not mean optimal; the size of the collection and other factors can increase the number of training examples needed to meet the minimum.  
+
+### Error: `Training data quality standards not met: Insufficient number of unique training queries. Expected at least n, but found m.`
+{: #error-notunique}
+
+- To meet the minimum training requirements, you need at least 50 unique training queries, and each one must have at least one rated document. If you have more than that and are still receiving this error message, you should check your notices for additional errors.  
+
+### Error: `Training data quality standards not met: No documents found with non-zero relevance labels.`
+{: #error-relevance}
+
+- Training data needs a sufficient amount of labeled data that specifies what documents are high value. This means that you need to rate some documents with non-zero values. You need to rate some documents as `Relevant` and some as `Not relevant`. At least one document must be rated `Relevant`.
+
+### Error: `Training data quality standards not met: Training examples have no relevance label variety for X queries.`
+{: #error-variety}
+
+- One of the requirements for training is to have sufficient label diversity. This means at least 25% of the training queries must include both `Relevant` and `Not relevant` labels (if using the API, at least 25% of the queries should include two different numeric labels.)
