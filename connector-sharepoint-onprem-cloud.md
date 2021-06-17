@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-17"
 
 subcollection: discovery-data
 
@@ -64,6 +64,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 - You can connect to a SharePoint 2013, 2016, or 2019 on-premises data source.
 - The user ID must have `SiteCollection Administrator` permission and be able to access all of the sites and lists that they want to crawl.
+- The crawler supports Windows New Technology LAN Manager (NTLM) v1 authentication only. It does not support NTLM v2 or Security Assertion Markup Language (SAML) authentication.
 
 ## What you need before you begin
 {: #connector-sharepoint-onprem-cloud-prereqs}
