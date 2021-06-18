@@ -49,7 +49,7 @@ Discovery
             connector-sharepoint-online-cp4d.md
             connector-sharepoint-onprem-cp4d.md
             connector-web-cp4d.md
-            connector-wfs.md
+            connector-wfs-cp4d.md
 
         index-overview.md
         manage-collections.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-17"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -48,9 +48,9 @@ The method that you use to deploy your project differs by project type.
 ## Deploying a Document Retrieval project
 {: #dr-deploy}
 
-Work with a developer to build a custom search application or use the pre-built UI components that are provided for you by IBM. 
+Work with a developer to build a custom search application or use the pre-built UI components that are provided by IBM. 
 
-For Document Retrieval and Custom (projects where you did not apply a specific project type) projects, the following user interface components are available:
+For Document Retrieval, Document Retrieval for Contracts, and Custom (the type assigned to projects when you do not apply a specific project type) projects, the following user interface components are available:
 
 - **Search bar**: A search box that uses a natural language understanding query to fetch the most relevant results.
 - **Search results**: A set of results that rank the most relevant passages and tables to a query. 

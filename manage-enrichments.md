@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-18"
 
 subcollection: discovery-data
 
@@ -56,3 +56,46 @@ To manage enrichments, complete the following steps:
       {: note}
     - To remove an enrichment, clear the checkboxes for fields that you want to remove the enrichment from.
 1. Click **Apply changes and reprocess** to apply your changes to the collection.
+
+## Applying enrichments by using the API
+{: #enrichments-api}
+
+To apply an enrichment by using the API, you must know the unique ID of the enrichment. If you have another project that uses the enrichment already, you can use the API to [get a list of the enrichments](https://cloud.ibm.com/apidocs/discovery-data#listenrichments){: external}. The list that is returned includes enrichment ID information.
+
+To apply an enrichment by using the API, complete the following steps:
+
+1.  Determine the base URL for the endpoint and the token or API key for your deployment. 
+
+    For more information, see [Building custom applications with the API](/docs/discovery-data?topic=discovery-data-api-use).
+
+1.  Get the project ID for your project.
+
+    From the product user interface, go to the **Integrate and Deploy** > **View API information** page, and then copy the project ID.
+
+1.  If you don't know the ID of the collection that you want to apply the enrichment to, get a list of your collections to find it.
+
+    For example: `GET $authentication $url/v2/projects/$project_id/collections?version=2019-11-22`
+
+    The `collection_id` is returned.
+
+1.  Send a GET request to return the configuration of the collection which lists the applied enrichments. 
+
+    For example: `GET $authentication $url/v2/projects/$project_id/collections/$collection_id?version=2021-06-17`
+
+1.  Add the enrichment that you want to apply.
+
+    You can also replace an enrichment. For example, if you want to use the Entities v1 legacy enrichment instead of the Entities v2 enrichment, you can find the Entities v2 enrichment definition (it has the ID `701db916-fc83-57ab-0000-00000000001e`), and then replace it with the Entities v1 legacy enrichment ID (with the ID `701db916-fc83-57ab-0000-000000000017`).
+
+    For example, to apply the Entities v1 legacy enrichment:
+
+    ```json
+    {
+        "enrichment_id" : "701db916-fc83-57ab-0000-000000000017",
+        "fields" : [ "text" ]
+      }
+    }
+    ```
+
+1.  Submit the updated JSON request body with the [update collection](https://cloud.ibm.com/apidocs/discovery-data#updatecollection){: external} method to apply the enrichment to your collection.
+
+    For example: `POST $authentication -d '$requestBody' $url/v2/projects/$project_id/collections/$collection_id?version=2021-06-17`
