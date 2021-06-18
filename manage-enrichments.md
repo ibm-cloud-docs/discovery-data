@@ -74,13 +74,23 @@ To apply an enrichment by using the API, complete the following steps:
 
 1.  If you don't know the ID of the collection that you want to apply the enrichment to, get a list of your collections to find it.
 
-    For example: `GET $authentication $url/v2/projects/$project_id/collections?version=2019-11-22`
+    For example: 
+    
+    ```curl
+    GET $authentication $url/v2/projects/$project_id/collections?version=2019-11-22
+    ```
+    {: codeblock}
 
     The `collection_id` is returned.
 
 1.  Send a GET request to return the configuration of the collection which lists the applied enrichments. 
 
-    For example: `GET $authentication $url/v2/projects/$project_id/collections/$collection_id?version=2021-06-17`
+    For example: 
+    
+    ```curl
+    GET $authentication $url/v2/projects/$project_id/collections/$collection_id?version=2019-11-22
+    ```
+    {: codeblock}
 
 1.  Add the enrichment that you want to apply.
 
@@ -98,4 +108,9 @@ To apply an enrichment by using the API, complete the following steps:
 
 1.  Submit the updated JSON request body with the [update collection](https://cloud.ibm.com/apidocs/discovery-data#updatecollection){: external} method to apply the enrichment to your collection.
 
-    For example: `POST $authentication -d '$requestBody' $url/v2/projects/$project_id/collections/$collection_id?version=2021-06-17`
+    For example: 
+    
+    ```curl
+    POST $authentication -d '$requestBody' $url/v2/projects/$project_id/collections/$collection_id?version=2019-11-22
+    ```
+    {: codeblock}
