@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-21"
 
 subcollection: discovery-data
 
@@ -104,40 +104,41 @@ In the JSON output:
   - `mentions` = array. The entity mentions and locations
   - `model_name` = string. For custom models, this field contains the user-provided model name. Otherwise, this field contains the default name of the model: `watson_knowledge_studio`, `dictionary`, `character_pattern`, or `natural_language_understanding`
 
-```Json
- "entities": [
-  {
-   "model_name": "natural_language_understanding",
-   "mentions": [
+```json
+{
+  "entities": [
     {
-     "location": {
-      "end": 3,
-      "begin": 0
-     },
-     "text": "IBM"
-    }
-   ],
-   "text": "IBM",
-   "type": "Company"
-  },
-  {
-   "model_name": "natural_language_understanding",
-   "mentions": [
+      "model_name": "natural_language_understanding",
+      "mentions": [
+        {
+          "location": {
+            "end": 3,
+            "begin": 0
+          },
+          "text": "IBM"
+        }
+      ],
+      "text": "IBM",
+      "type": "Company"
+    },
     {
-     "location": {
-      "end": 75,
-      "begin": 69
-     },
-     "text": "Armonk"
+      "model_name": "natural_language_understanding",
+      "mentions": [
+        {
+          "location": {
+            "end": 75,
+            "begin": 69
+          },
+        "text": "Armonk"
+        }
+      ],
+      "text": "Armonk",
+      "type": "Location"
     }
-   ],
-   "text": "Armonk",
-   "type": "Location"
-  }
- ]
- ```
- {: codeblock}
-
+  ]
+}
+```
+{: codeblock}
 
 ## Keywords
 {: #nlu-keywords}
@@ -161,45 +162,47 @@ In the JSON output:
   - `text` = The keyword text
   - `mentions` = The entity mentions and locations
 
-```Json
- "keywords": [
-  {
-   "mentions": [
+```json
+{
+  "keywords": [
     {
-     "location": {
-      "end": 157,
-      "begin": 141
-     },
-     "text": "Watson Discovery"
-    }
-   ],
-   "text": "Watson Discovery"
-  },
-  {
-   "mentions": [
+      "mentions": [
+        {
+          "location": {
+            "end": 157,
+            "begin": 141
+          },
+          "text": "Watson Discovery"
+        }
+      ],
+      "text": "Watson Discovery"
+    },
     {
-     "location": {
-      "end": 177,
-      "begin": 164
-     },
-     "text": "award-winning"
-    }
-   ],
-   "text": "award-winning"
-  },
-  {
-   "mentions": [
+      "mentions": [
+        {
+          "location": {
+           "end": 177,
+            "begin": 164
+          },
+          "text": "award-winning"
+        }
+      ],
+      "text": "award-winning"
+    },
     {
-     "location": {
-      "end": 198,
-      "begin": 181
-     },
-     "text": "search technology"
+      "mentions": [
+        {
+          "location": {
+            "end": 198,
+            "begin": 181
+          },
+          "text": "search technology"
+        }
+      ],
+      "text": "search technology"
     }
-   ],
-   "text": "search technology"
-  }
- ]
+  ]
+}
 ```
 {: codeblock}
 
@@ -235,11 +238,13 @@ In the JSON output:
   -  `label` = `positive`, `negative`, or `neutral`
   -  `mixed` = Indicates whether the document has a mix of emotions or not
 
-```Json
- "sentiment": {
-   "score": 0.9255063900060722,
-   "mixed": false,
-   "label": "positive"
- }
+```json
+{
+  "sentiment": {
+    "score": 0.9255063900060722,
+    "mixed": false,
+    "label": "positive"
+  }
+}
  ```
 {: codeblock}
