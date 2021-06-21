@@ -157,7 +157,7 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
       ]
     }
     ```
-		{: codeblock}
+{: codeblock}
 
   - Sentiment of Document enrichment output: The following snippet shows the sentiment analysis result for the sentence in the `column_1` field.
 
