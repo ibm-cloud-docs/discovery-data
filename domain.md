@@ -129,11 +129,11 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
   "enriched_text": [
     {
       "classes": [
-	      {
+        {
           "confidence": 0.999692440032959,
           "label": "facility_temperature"
-	      }
-	    ]
+        }
+      ]
     }
   ],
   "text": [
