@@ -74,13 +74,13 @@ Fields with names that contain a period (.) represent nested fields. For example
 
 ```json
 {
-	"enriched_text": [
-		{
-			"entities": [
-				{}
-			]
-		}
-	]
+  "enriched_text": [
+    {
+	    "entities": [
+	      {}
+	    ]
+  	}
+  ]
 }
 ```
 {: codeblock}
@@ -90,8 +90,8 @@ If you use the Smart Document Understanding tool to add custom fields, the custo
 ```json
 {
   "procedure": [ 
-		{}
-	]
+    {}
+  ]
 }
 ```
 {: codeblock}
@@ -104,26 +104,26 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
   - Entities enrichment output: The following snippet shows a mention of the recognized entity `IBM`
 
     ```json
-		{
-			"enriched_text": [
-				{
-					"entities": [
-						{
-							"model_name": "natural_language_understanding",
-							"mentions": [
-								{
-									"location": {
-										"end": 183,
-										"begin": 180
-										},
-									"text": "IBM"
-								}
-							]
-						}
-					]
-				}
-		  ]
-		}
+  	{
+      "enriched_text": [
+    	  {
+	        "entities": [
+		        {
+    			    "model_name": "natural_language_understanding",
+		    	    "mentions": [
+				        {
+				          "location": {
+    					      "end": 183,
+		    			      "begin": 180
+				    	    },  
+                  "text": "IBM"
+                }
+              ]
+    				}
+		    	]
+    		}
+    	]
+    }
     ```
     {: codeblock}
 
