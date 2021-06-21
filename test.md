@@ -74,13 +74,13 @@ Fields with names that contain a period (.) represent nested fields. For example
 
 ```json
 {
-"enriched_text": [
-	{
-		"entities": [
-      {}
-    ]
-  }
-]
+  "enriched_text": [
+	  {
+		  "entities": [
+        {}
+      ]
+    }
+  ]
 }
 ```
 {: codeblock}
@@ -89,8 +89,9 @@ If you use the Smart Document Understanding tool to add custom fields, the custo
 
 ```json
 {
-"procedure": [
-]
+  "procedure": [ 
+		{}
+	]
 }
 ```
 {: codeblock}
@@ -104,24 +105,24 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
 
     ```json
 		{
-    "enriched_text": [
-		  {
-			  "entities": [
-				  {
-					  "model_name": "natural_language_understanding",
-						 "mentions": [
-							{
-								"location": {
-									"end": 183,
-									"begin": 180
-								},
-								"text": "IBM"
-							}
-            ]
-          }
-        ]
-      }
-    ]
+      "enriched_text": [
+		    {
+			    "entities": [
+				    {
+					    "model_name": "natural_language_understanding",
+						   "mentions": [
+							  {
+							  	"location": {
+							  		"end": 183,
+							  		"begin": 180
+							  	},
+							  	"text": "IBM"
+				  			}
+              ]
+            }
+          ]
+        }
+      ]
 		}
     ```
     {: codeblock}
@@ -130,29 +131,31 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
 
     ```json
 		{
-    "enriched_text": [
-			{
-				"keywords": [
-					{
-						"mentions": [
-							{
-								"location": {
-									"end": 984,
-									"begin": 978
-								},
-								"text": "brands"
-							},
-							{
-								"location": {
-									"end": 1582,
-									"begin": 1576
-								},
-								"text": "brands"
-              }
-            ]
-          }
-        ]
-			}
+      "enriched_text": [
+		  	{
+			  	"keywords": [
+			  		{
+			  			"mentions": [
+				  			{
+				  				"location": {
+				  					"end": 984,
+				  					"begin": 978
+					  			},
+						  		"text": "brands"
+  	 						},
+			  				{
+				  				"location": {
+					  				"end": 1582,
+						  			"begin": 1576
+							  	},
+		  						"text": "brands"
+                }
+              ]
+            }
+          ]
+			  }
+			]
+		}
     ```
 		{: codeblock}
 
@@ -160,19 +163,19 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
 
     ```json
 		{
-    "enriched_column_1": [
-			{
-				"sentiment": {
-					"score": -0.770756,
-					"mixed": false,
-					"label": "negative"
-				}
-			}
-		],
-		"column_1": [
-			"In a dozen-pack of chocolate, I could only find 9 pieces."
-		]
-		}
+      "enriched_column_1": [
+	  		{
+	  			"sentiment": {
+	  				"score": -0.770756,
+	  				"mixed": false,
+	  				"label": "negative"
+	  			}
+  			}
+  		],
+  		"column_1": [
+  			"In a dozen-pack of chocolate, I could only find 9 pieces."
+  		]
+  	}
     ```
     {: codeblock}
 
