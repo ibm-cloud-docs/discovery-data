@@ -83,7 +83,7 @@ To apply an enrichment by using the API, complete the following steps:
 
     The `collection_id` is returned.
 
-1.  Send a GET request to return the configuration of the collection which lists the applied enrichments. 
+1.  Send a GET request to return the configuration of the collection that lists the applied enrichments. 
 
     For example: 
     
