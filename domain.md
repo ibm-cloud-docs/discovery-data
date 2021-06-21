@@ -130,8 +130,8 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
     {
       "classes": [
 	      {
-	        "confidence": 0.999692440032959,
-		      "label": "facility_temperature"
+          "confidence": 0.999692440032959,
+          "label": "facility_temperature"
 	      }
 	    ]
     }
@@ -227,9 +227,9 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
     {
       "entities": [
 	      {
-	        "path": ".automobiles.motorsports",
+          "path": ".automobiles.motorsports",
           "type": "motorsports",
-		      "text": "engine"
+          "text": "engine"
 	      }
 	    ]
     }
