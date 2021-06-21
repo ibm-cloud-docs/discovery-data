@@ -230,8 +230,8 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
           "path": ".automobiles.motorsports",
           "type": "motorsports",
           "text": "engine"
-	      }
-	    ]
+        }
+      ]
     }
   ],
   "text": [
@@ -288,7 +288,7 @@ In this example, the **Facet Path** is `regex.cccardnumber`, and the field that 
           "type": "cccardnumber",
           "text": "4000000000000000"
         }
-	    ]
+      ]
     }
   ],
   "text": [
@@ -427,8 +427,8 @@ In the output, the information that is extracted by the Machine Learning enrichm
         }
       ],
       "relations": [
-			  {
-			    "sentence": "Andrew Jackson (March 15, 1767‚ June 8, 1845) was an American soldier and statesman who served as the seventh President of the United States from 1829 to 1837 and was the founder of the Democratic Party.",         
+        {
+          "sentence": "Andrew Jackson (March 15, 1767‚ June 8, 1845) was an American soldier and statesman who served as the seventh President of the United States from 1829 to 1837 and was the founder of the Democratic Party."
         }
       ]
     }
