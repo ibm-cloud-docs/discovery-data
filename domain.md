@@ -124,23 +124,24 @@ Add a classifier to assign documents in your collection into categories. {{site.
 
 In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored in the `enriched_{field_name}` array, within the `classes` array.
 
+```json
+{
+  "enriched_text": [
+    {
+      "classes": [
+        {
+          "confidence": 0.999692440032959,
+          "label": "facility_temperature"
+        }
+      ]
+    }
+  ],
+  "text": [
+    "I think more attendees would stay awake in the sessions if the rooms were colder."
+  ]
+}
 ```
-"enriched_text": [
-  {
-    "classes": [
-	  {
-	    "confidence": 0.999692440032959,
-		  "label": "facility_temperature"
-	  }
-	]
-  }
-],
-. . .
-"text": [
-  "I think more attendees would stay awake in the sessions if the rooms were colder."
-]  
-```
-{: screen}
+{: codeblock}
 
 The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Parts of Speech information only. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Parts of Speech information and metadata that is added by other enrichments that are applied to the collection. If you want to apply a document classifier to a collection in a project type other than a Content Mining project, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
 
@@ -220,24 +221,25 @@ To add dictionary from a CSV file, complete the following steps:
 
 In the following example, the **Facet Path** is `automobiles.motorsports`, and the field that is selected for enrichment is `text`. The dictionary enrichment in the `enriched_{field_name}` array, within the `entities` array.
 
+```json
+{
+  "enriched_text": [
+    {
+      "entities": [
+        {
+          "path": ".automobiles.motorsports",
+          "type": "motorsports",
+          "text": "engine"
+        }
+      ]
+    }
+  ],
+  "text": [
+    "I prefer a carburetor to fuel-injection."
+  ]
+}
 ```
-"enriched_text": [
-  {
-    "entities": [
-	    {
-	      "path": ".automobiles.motorsports",
-        "type": "motorsports",
-		    "text": "engine"
-	    }
-	  ]
-  }
-],
-. . .
-"text": [
-  "I prefer a carburetor to fuel-injection."
-] 
-```
-{: screen}
+{: codeblock}
 
 As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_{field_name}.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically. 
 
@@ -276,24 +278,25 @@ In the output, the information that is extracted by the regular expression enric
 
 In this example, the **Facet Path** is `regex.cccardnumber`, and the field that is selected for enrichment is `text`.
 
+```json
+{
+  "enriched_text": [
+    {
+      "entities": [
+        {
+          "path": ".regex.cccardnumber",
+          "type": "cccardnumber",
+          "text": "4000000000000000"
+        }
+      ]
+    }
+  ],
+  "text": [
+    "He has 2 phones, 090-1234-5678 and 080-1234-5678. His credit card number is 4000000000000000."
+  ]
+}
 ```
-"enriched_text": [
-  {
-    "entities": [
-      {
-        "path": ".regex.cccardnumber",
-        "type": "cccardnumber",
-        "text": "4000000000000000"
-      }
-	  ]
-  }
-],
-. . .
-"text": [
-  "He has 2 phones, 090-1234-5678 and 080-1234-5678. His credit card number is 4000000000000000."
-]
-```
-{: screen}
+{: codeblock}
 
 As a result, a customer can filter their results by the credit card number facet that you defined to show passages that include credit card number references.
 
@@ -343,44 +346,48 @@ For example, when a machine learning model is applied as an enrichment to a fiel
 
 In the output, the information that is extracted by the Machine Learning enrichment in the `enriched_{field_name}` array, within the `entities` array. In this example, the field that is selected for enrichment is `text`.
 
-```JSON
-"enriched_text": [
-  {
-    "entities": [
-      {
-        "path": ".wksrule.entities.PERSON",
-        "text": "George Washington",
-        "type": "PERSON"
-      },
-      {
-         "path": ".wksrule.entities.GIVENNAME",
-         "text": "George",
-         "type": "GIVENNAME"
-      },
-      {
-         "path": ".wksrule.entities.SURNAME",
-         "text": "Washington",
-         "type": "SURNAME"
-      },                    
-      {
-         "path": ".wksrule.entities.POSITION",
-         "text": "politician",
-         "type": "POSITION"
-      },
-      {
-         "path": ".wksrule.entities.POSITION",
-         "text": "soldier",
-         "type": "POSITION"
-      },
-      {
-        "path": ".wksrule.entities.JOBTITLE",
-        "text": "President of the United States",
-        "type": "JOBTITLE"
-      }
-],
-"text": [
-  "George Washington (February 22, 1732‚ December 14, 1799) was an American politician and soldier who served as the first President of the United States from 1789 to 1797 and was one of the Founding Fathers of the United States."
-]
+```json
+{
+  "enriched_text": [
+    {
+      "entities": [
+        {
+          "path": ".wksrule.entities.PERSON",
+          "text": "George Washington",
+          "type": "PERSON"
+        },
+        {
+          "path": ".wksrule.entities.GIVENNAME",
+          "text": "George",
+          "type": "GIVENNAME"
+        },
+        {
+          "path": ".wksrule.entities.SURNAME",
+          "text": "Washington",
+          "type": "SURNAME"
+        },                    
+        {
+          "path": ".wksrule.entities.POSITION",
+          "text": "politician",
+          "type": "POSITION"
+        },
+        {
+          "path": ".wksrule.entities.POSITION",
+          "text": "soldier",
+          "type": "POSITION"
+        },
+        {
+          "path": ".wksrule.entities.JOBTITLE",
+          "text": "President of the United States",
+          "type": "JOBTITLE"
+        }
+      ],
+      "text": [
+        "George Washington (February 22, 1732‚ December 14, 1799) was an American politician and soldier who served as the first President of the United States from 1789 to 1797 and was one of the Founding Fathers of the United States."
+      ]
+    }
+  ]
+}
 ```
 {: codeblock}
 
@@ -393,38 +400,40 @@ In this example, a Machine learning model extracts entity types such as `person`
 
 In the output, the information that is extracted by the Machine Learning enrichment in the `enriched_{field_name}` array, within the `entities` and the `relations` arrays. In this example, the field that is selected for enrichment is `text`.
 
-```JSON
-"enriched_text": [
-  {
-    "entities": [
-      {
-        "count": 1,
-        "text": "Democratic Party",
-        "type": "ORGANIZATION"
-      },
-      {
-        "count": 1,
-        "text": "March 15, 1767",
-        "type": "DATE"
-      },
-      {
-        "count": 1,
-        "text": "President",
-        "type": "POSITION"
-      },
-      {
-        "count": 1,
-        "text": "Andrew Jackson",
-        "type": "PERSON"
-       }
-    ],
-    "relations": [
-			{
-			  "sentence": "Andrew Jackson (March 15, 1767‚ June 8, 1845) was an American soldier and statesman who served as the seventh President of the United States from 1829 to 1837 and was the founder of the Democratic Party.",         
-      }
-    ]
-  }
-]
+```json
+{
+  "enriched_text": [
+    {
+      "entities": [
+        {
+          "count": 1,
+          "text": "Democratic Party",
+          "type": "ORGANIZATION"
+        },
+        {
+          "count": 1,
+          "text": "March 15, 1767",
+          "type": "DATE"
+        },
+        {
+          "count": 1,
+          "text": "President",
+          "type": "POSITION"
+        },
+        {
+          "count": 1,
+          "text": "Andrew Jackson",
+          "type": "PERSON"
+        }
+      ],
+      "relations": [
+        {
+          "sentence": "Andrew Jackson (March 15, 1767‚ June 8, 1845) was an American soldier and statesman who served as the seventh President of the United States from 1829 to 1837 and was the founder of the Democratic Party."
+        }
+      ]
+    }
+  ]
+}
 ```
 {: codeblock}
 
