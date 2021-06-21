@@ -76,10 +76,10 @@ Fields with names that contain a period (.) represent nested fields. For example
 {
   "enriched_text": [
     {
-	    "entities": [
-	      {}
-	    ]
-  	}
+      "entities": [
+        {}
+      ]
+    }
   ]
 }
 ```
@@ -104,25 +104,25 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
   - Entities enrichment output: The following snippet shows a mention of the recognized entity `IBM`
 
     ```json
-  	{
+    {
       "enriched_text": [
-    	  {
-	        "entities": [
-		        {
-    			    "model_name": "natural_language_understanding",
-		    	    "mentions": [
-				        {
-				          "location": {
-    					      "end": 183,
-		    			      "begin": 180
-				    	    },  
+        {
+          "entities": [
+            {
+              "model_name": "natural_language_understanding",
+              "mentions": [
+                {
+                  "location": {
+                    "end": 183,
+                    "begin": 180
+                  },
                   "text": "IBM"
                 }
               ]
-    				}
-		    	]
-    		}
-    	]
+            }
+          ]
+        }
+      ]
     }
     ```
     {: codeblock}
@@ -130,52 +130,52 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
   - Keywords enrichment output: The following snippet shows two mentions of the keyword `brands` that were recognized in the `text` field.
 
     ```json
-		{
-			"enriched_text": [
-				{
-					"keywords": [
-						{
-							"mentions": [
-								{
-									"location": {
-										"end": 984,
-										"begin": 978
-									},
-									"text": "brands"
-								},
-								{
-									"location": {
-										"end": 1582,
-										"begin": 1576
-									},
-									"text": "brands"
-								}
-							]
-						}
-					]
-				}
-			]
-		}
+    {
+      "enriched_text": [
+        {
+          "keywords": [
+            {
+              "mentions": [
+                {
+                  "location": {
+                    "end": 984,
+                    "begin": 978
+                  },
+                  "text": "brands"
+                },
+                {
+                  "location": {
+                    "end": 1582,
+                    "begin": 1576
+                  },
+                  "text": "brands"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
     ```
 		{: codeblock}
 
   - Sentiment of Document enrichment output: The following snippet shows the sentiment analysis result for the sentence in the `column_1` field.
 
     ```json
-		{
-			"enriched_column_1": [
-				{
-					"sentiment": {
-						"score": -0.770756,
-						"mixed": false,
-						"label": "negative"
-					}
-				}
-			],
-			"column_1": [
-				"In a dozen-pack of chocolate, I could only find 9 pieces."
-			]
-		}
+    {
+      "enriched_column_1": [
+        {
+          "sentiment": {
+            "score": -0.770756,
+            "mixed": false,
+            "label": "negative"
+          }
+        }
+      ],
+      "column_1": [
+        "In a dozen-pack of chocolate, I could only find 9 pieces."
+      ]
+    }
     ```
     {: codeblock}
 
