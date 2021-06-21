@@ -226,7 +226,7 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
   "enriched_text": [
     {
       "entities": [
-	      {
+        {
           "path": ".automobiles.motorsports",
           "type": "motorsports",
           "text": "engine"
