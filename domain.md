@@ -124,7 +124,7 @@ Add a classifier to assign documents in your collection into categories. {{site.
 
 In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored in the `enriched_{field_name}` array, within the `classes` array.
 
-```
+```json
 {
   "enriched_text": [
     {
@@ -221,7 +221,7 @@ To add dictionary from a CSV file, complete the following steps:
 
 In the following example, the **Facet Path** is `automobiles.motorsports`, and the field that is selected for enrichment is `text`. The dictionary enrichment in the `enriched_{field_name}` array, within the `entities` array.
 
-```
+```json
 {
   "enriched_text": [
     {
@@ -278,7 +278,7 @@ In the output, the information that is extracted by the regular expression enric
 
 In this example, the **Facet Path** is `regex.cccardnumber`, and the field that is selected for enrichment is `text`.
 
-```
+```json
 {
   "enriched_text": [
     {
@@ -346,7 +346,7 @@ For example, when a machine learning model is applied as an enrichment to a fiel
 
 In the output, the information that is extracted by the Machine Learning enrichment in the `enriched_{field_name}` array, within the `entities` array. In this example, the field that is selected for enrichment is `text`.
 
-```JSON
+```json
 {
   "enriched_text": [
     {
