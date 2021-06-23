@@ -7,6 +7,7 @@ Discovery
     {: .navgroup id="learn"}
     getting-started.md
     index.md
+    version-choose.md
 
     {: topicgroup}
     Videos and more
@@ -91,6 +92,7 @@ Discovery
     deploy.md
     contentminerapp.md
     install.md
+    upgrade.md
     
     {: topicgroup}
     Advanced development
@@ -150,6 +152,7 @@ Discovery
     known-issues.md
     troubleshoot.md
     get-help.md
+    pricing-plans.md
     
     {: .topicgroup}
     Community resources

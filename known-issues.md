@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-21"
 
 keywords: known issues
 
@@ -462,22 +462,20 @@ Also see the issues identified in the previous release.
   - CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).
   - Currently, unique collection names are not enforced. Using duplicate collection names is not recommended and should be avoided
 
-## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} Premium releases
+## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} releases
 {: #known-issues-cloud}
 
-The following known issues apply to managed Premium plan deployments.
+The following known issues apply to Plus and Premium plan service instances that are managed by {{site.data.keyword.cloud_notm}}.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 10 November 2020
 {: #10nov2020ki}
 
 - ![IBM Cloud only](images/ibm-cloud.png) The [Box connector](/docs/discovery-data?topic=discovery-data-connector-box-cloud) does not run on Safari.
-- ![IBM Cloud only](images/ibm-cloud.png) If the `metadata` property is converted to an array in the index, the document cannot be deleted using the **Delete labeled data** method in the [API reference](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}
+- ![IBM Cloud only](images/ibm-cloud.png) If the `metadata` property is converted to an array in the index, the document cannot be deleted by using the **Delete labeled data** method in the [API reference](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}
 
 Also see the issues identified in all previous releases.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 16 July 2020
 {: #16jul2020ki}
   
-  - ![IBM Cloud only](images/ibm-cloud.png) When connecting to an {{site.data.keyword.cos_full}} source with the {{site.data.keyword.discovery-data_short}} tooling, you will only see the first 75 COS buckets for a given credential. (This data source is only available in {{site.data.keyword.cloud_notm}}.)
-
-Also see the issues identified in all previous releases.
+  - ![IBM Cloud only](images/ibm-cloud.png) When connecting to an {{site.data.keyword.cos_full}} data source, only the first 75 buckets for a given credential are displayed.

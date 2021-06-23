@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-22"
 
 subcollection: discovery-data
 
@@ -56,8 +56,8 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | Return<br/>(`return`)| [] | [] |
 | Spelling<br/>suggestions<br/>(`spelling_suggestions`) | true | true |
 | Sort<br/>(`sort`) | "" | "" |
-| Suggested<br/>refinements<br/>Count<br/>(`suggested_refinements.count`) | 10 | 10 |
-| Suggested<br/>refinements<br/>Enabled<br/>(`suggested_refinements.enabled`) | false | false |
+| *Premium plans only*:<br/>Suggested<br/>refinements<br/>Count<br/>(`suggested_refinements.count`) | 10 | 10 |
+| *Premium plans only*:<br/>Suggested<br/>refinements<br/>Enabled<br/>(`suggested_refinements.enabled`) | false | false |
 | Table results<br/>Count<br/>(`table_results.count`)  | 10 | 10 |
 | Table results<br/>Enabled<br/>(`table_results.enabled`) | false | true |
 | Table results<br/>Per document<br/> (`table_results.per_document`) | 0 | 0 |
@@ -82,8 +82,8 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | Return<br/>(`return`)| [] | [] | [] |
 | Spelling<br/>suggestions<br/>(`spelling_suggestions`) | false | true | true |
 | Sort<br/>(`sort`) | "" | "" | "" |
-| Suggested<br/>refinements<br/>Count<br/>(`suggested_refinements.count`) | 10 | 10 | 10 |
-| Suggested<br/>refinements<br/>Enabled<br/>(`suggested_refinements.enabled`) | false | false | false |
+| *Premium plans only*:<br/>Suggested<br/>refinements<br/>Count<br/>(`suggested_refinements.count`) | 10 | 10 | 10 |
+| *Premium plans only*:<br/>Suggested<br/>refinements<br/>Enabled<br/>(`suggested_refinements.enabled`) | false | false | false |
 | Table results<br/>Count<br/>(`table_results.count`) | 10 | 10 | 10 |
 | Table results<br/>Enabled<br/>(`table_results.enabled`)| false | false | false |
 | Table results<br/>Per document<br/> (`table_results.per_document`) | 0 | 0 | 0 |
@@ -94,7 +94,7 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 
 | Default | Document Retrieval | Document Retrieval for Contracts |
 | --- | --- | --- |
-| Aggregations<br/>(`aggregations.name`)<br/>(`aggregations.label`)<br/>(`aggregations.`<br/>`multiple_selections_allowed`) | "name": "entities"<br/> "label": "Top Entities"<br/> "multiple_selections_allowed": false <br/> <br/>"name": "_system_suggested_refinements"<br/> "label": "Dynamic Facets"<br/>"multiple_selections_allowed": true <br/><br/>"name": "_system_collections"<br/>"label": "Collections"<br/>"multiple_selections_allowed": true | "name": "categories"<br/> "label": "Category"<br/> "multiple_selections_allowed": true<br/><br/> "name": "natures"<br/> "label": "Nature"<br/>"multiple_selections_allowed": false<br/><br/>"name": "contract_terms"<br/> "label": "Contract Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "contract_payment_terms"<br/>"label": "Contract Payment Term"<br/>"multiple_selections_allowed": false<br/> <br/>"name": "contract_types"<br/> "label": "Contract Type"<br/> "multiple_selections_allowed": false<br/><br/> "name": "contract_currencies"<br/> "label": "Contract Currency"<br/>"multiple_selections_allowed": false<br/><br/>"name": "invoice_buyers"<br/> "label": "Invoice Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_suppliers"<br/> "label": "Invoice Supplier"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_currencies"<br/> "label": "Invoice Currency"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_payment_terms"<br/> "label": "Purchase Order Payment Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_buyers"<br/> "label": "Purchase Order Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_suppliers"<br/> "label": "Purchase Order Supplier"<br/> "multiple_selections_allowed": false<br/><br/> "name": "po_currencies"<br/>"label": "Purchase Order Currency"<br/>"multiple_selections_allowed": false |
+| Aggregations<br/>(`aggregations.name`)<br/>(`aggregations.label`)<br/>(`aggregations.`<br/>`multiple_selections_allowed`) | "name": "entities"<br/> "label": "Top Entities"<br/> "multiple_selections_allowed": false <br/> <br/>*Premium plans only*: "name": "_system_suggested_refinements"<br/> "label": "Dynamic Facets"<br/>"multiple_selections_allowed": true <br/><br/>"name": "_system_collections"<br/>"label": "Collections"<br/>"multiple_selections_allowed": true | "name": "categories"<br/> "label": "Category"<br/> "multiple_selections_allowed": true<br/><br/> "name": "natures"<br/> "label": "Nature"<br/>"multiple_selections_allowed": false<br/><br/>"name": "contract_terms"<br/> "label": "Contract Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "contract_payment_terms"<br/>"label": "Contract Payment Term"<br/>"multiple_selections_allowed": false<br/> <br/>"name": "contract_types"<br/> "label": "Contract Type"<br/> "multiple_selections_allowed": false<br/><br/> "name": "contract_currencies"<br/> "label": "Contract Currency"<br/>"multiple_selections_allowed": false<br/><br/>"name": "invoice_buyers"<br/> "label": "Invoice Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_suppliers"<br/> "label": "Invoice Supplier"<br/> "multiple_selections_allowed": false<br/><br/>"name": "invoice_currencies"<br/> "label": "Invoice Currency"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_payment_terms"<br/> "label": "Purchase Order Payment Term"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_buyers"<br/> "label": "Purchase Order Buyer"<br/> "multiple_selections_allowed": false<br/><br/>"name": "po_suppliers"<br/> "label": "Purchase Order Supplier"<br/> "multiple_selections_allowed": false<br/><br/> "name": "po_currencies"<br/>"label": "Purchase Order Currency"<br/>"multiple_selections_allowed": false |
 | Autocomplete<br/>(`autocomplete`) | true | true |
 | Fields shown<br/>Body field<br/> (`fields_shown.body.field`)| "" |  "" |
 | Fields shown<br/>Body Use passage<br/> (`fields_shown.body.use_passage`) | true  | true |

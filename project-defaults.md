@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-16"
+lastupdated: "2021-06-22"
 
 subcollection: discovery-data
 
@@ -42,7 +42,7 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 
 | Project type | Default enrichments | Default query result settings |
 |--------------|---------------------|-------------------------------|
-| Document Retrieval | Entities, Parts of Speech | Facets (by Entity), Dynamic Facets, Passages |
+| Document Retrieval | Entities, Parts of Speech | Facets (by Entity), Passages, Dynamic Facets (Premium plans only) |
 | Document Retrieval for Contracts | Entities, Parts of speech, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
 | Conversational Search | None | Passages |
 | Content Mining | Parts of Speech | None |

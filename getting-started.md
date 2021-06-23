@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-06-21"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features.
 {: shortdesc}
 
-This information applies to {{site.data.keyword.discovery-data_short}} and Premium instances that were created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances that were created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started){: external}.
+This information applies to {{site.data.keyword.discovery-data_short}}, Plus plan instances, and Premium plan instances that were created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances that were created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started){: external}.
 {: important}
 
 ## Before you begin

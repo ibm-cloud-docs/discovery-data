@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-14"
+lastupdated: "2021-06-21"
 
 subcollection: discovery-data
 
@@ -30,10 +30,10 @@ subcollection: discovery-data
 {:go: .ph data-hd-programlang='go'}
 {:video: .video}
 
-# Using the deployed Content Mining application
+# Using the Content Mining application ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #contentminerapp}
 
-The {{site.data.keyword.discoveryfull}} Content Mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
+The {{site.data.keyword.discoveryfull}} Content Mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents. 
 {: shortdesc}
 
 <!--This video provides an overview of content mining:
@@ -43,8 +43,8 @@ The {{site.data.keyword.discoveryfull}} Content Mining application is an analyti
 
 To view the transcript, open the video on YouTube.-->
 
-This page describes using the Content Mining application. For information about creating a {{site.data.keyword.discoveryshort}} Content Mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
-{: tip}
+This page describes using the Content Mining application. For information about creating a {{site.data.keyword.discoveryshort}} Content Mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+{: note}
 
 ## Application launch view
 {: #cmolaunch}
@@ -526,6 +526,18 @@ You can select existing annotators to enrich your collection, such as **Part of 
 
 Apply detailed labels to your facet IDs to improve your analysis. You can choose from the following visualization options for your facet labels: **Auto**, **Facet table**, **Word cloud**, and **Map**. You can use the **Value Filter** to specify a list of regular expressions to make values invisible during analysis.
 
+#### Regular expression pattern limits
+{: #regex-limits}
+
+The number of regular expression patterns that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan | Regular expression patterns per service instance |
+|--------------|--------------------------------:|
+| Cloud Pak for Data |                 Unlimited |
+| Premium      |                              50 |
+| Plus (includes Trial) |                     20 |
+{: caption="Regular expression pattern plan details" caption-side="top"}
+
 ### Document flags tab
 {: #doc-flags}
 
@@ -639,3 +651,17 @@ Your classifier processes your document based on your structured and textual dat
    
 If you cannot find any documents that were classified, search for your document by using the name that you assigned to your machine learning model in step 12.
 {: tip}
+
+### Document classifier limits
+{: #doc-classifier-limits}
+
+The number of document classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Limit   | Premium | Cloud Pak for Data |
+|---------|-------------------:|--------:|
+| Number of document classifiers per service instance | 20 | Unlimited |
+| Number of labeled data rows | 20,000 | 20,000 |
+| Size of labeled data file | Unlimited | Unlimited |
+| Number of labels | 1,000 | 1,000 |
+| Number of target fields | 50 | 50 |
+{: caption="Document classifier plan limits" caption-side="top"}
