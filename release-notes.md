@@ -71,7 +71,7 @@ For more information about software releases for installed deployments, see [{{s
 ### ![IBM Cloud only](images/ibm-cloud.png) 23 June 2021
 {: #23june2021}
 
-- **Introducing the Plus plan!**: Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. Currently, the Plus plan is available from the Dallas and Washington DC locations. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
+- **Introducing the Plus plan!**: Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. Currently, the Plus plan is available from the Dallas location. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
 - **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types. Any existing Lite or Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) Endpoint deprecation reminder
