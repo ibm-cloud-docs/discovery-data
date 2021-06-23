@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-06-22"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -48,12 +48,14 @@ The method that you use to deploy your project differs by project type.
 ## Deploying a Document Retrieval project
 {: #dr-deploy}
 
-Work with a developer to build a custom search application or use the pre-built UI components that are provided by IBM. 
+Work with a developer to build a custom search application or use the pre-built UI components that are provided by IBM.
 
-For Document Retrieval, Document Retrieval for Contracts, and Custom (the type assigned to projects when you do not apply a specific project type) projects, the following user interface components are available:
+For more information about building your own, see the [Building custom applications with the API](/docs/discovery-data?topic=discovery-data-api-use).
+
+For Document Retrieval, Document Retrieval for Contracts, and Custom (the type assigned to projects when you do not apply a specific project type) projects, the following user interface components are available for you use:
 
 - **Search bar**: A search box that uses a natural language understanding query to fetch the most relevant results.
-- **Search results**: A set of results that rank the most relevant passages and tables to a query. 
+- **Search results**: A set of results that rank the most relevant passages and tables to a query.
 - **Facets**: Refine your results with facets that help users filter the search results by specific categories and domains.
 - **Document preview**: Displays your results in a document preview. This view helps you to see search results by highlighting passages within the text of the original document, which makes the context clearer.
 
@@ -63,7 +65,7 @@ For Document Retrieval, Document Retrieval for Contracts, and Custom (the type a
 To deploy your project, complete the following steps:
 
 1.  To use the API, you need to know the project ID for your project. Go to the **Integrate and Deploy** > **API Information** page.
-1.  From the **Integrate and Deploy** > **UI Components** page, find links to resources a developer can use to get started.
+1.  From the **Integrate and Deploy** > **UI Components** page, find links to resources that a developer can use to get started.
 
 ## Deploying a Conversational Search project
 {: #cs-deploy}
@@ -71,6 +73,8 @@ To deploy your project, complete the following steps:
 To deploy your project, connect this project to an assistant that is built with {{site.data.keyword.conversationshort}}. The general steps to follow include:
 
 1.  Create an assistant.
+
+    You can use a {{site.data.keyword.conversationshort}} Trial plan for testing purposes.
 1.  Add a search skill to your assistant, and then connect it to this project.
 1.  Deploy your assistant.
 
@@ -89,5 +93,5 @@ To deploy your project, complete the following steps:
 1.  Go to the **Integrate and Deploy** > **Launch application** page.
 1.  Click **Launch**.
 
-For more information about how to use the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+For more information about how to use the application, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
