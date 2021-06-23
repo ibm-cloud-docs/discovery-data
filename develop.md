@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-06-21"
 
 subcollection: discovery-data
 
@@ -36,10 +36,10 @@ A developer can use APIs, SDKs, and other tools that are provided with {{site.da
 
 A developer can make the following enhancements:
 
-- Process documents without storing them in a collection by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi)
-- Specify the exact document to return in response to a specific query with [curations](/docs/discovery-data?topic=discovery-data-curations)
-- Use API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-concepts)
-- Connect to a data source that isn't available by default by [creating a custom connector](/docs/discovery-data?topic=discovery-data-build-connector)
-- Apply special settings that control how documents are added to a collection by [building a crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build)
+- Process documents without storing them in a collection by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
+- Specify the exact document to return in response to a specific query with [curations](/docs/discovery-data?topic=discovery-data-curations).
+- Use API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-concepts).
+- Connect to a data source that isn't available by default by [creating a custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
+- Apply special settings that control how documents are added to a collection by [building a crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 
 To use the {{site.data.keyword.discoveryshort}} API, you first need to [get your project ID](/docs/discovery-data?topic=discovery-data-api-use).
