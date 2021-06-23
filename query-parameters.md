@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-23"
 
 subcollection: discovery-data
 
@@ -243,10 +243,13 @@ The JSON that is returned will be of the following format:
 ```
 {: codeblock}
 
-## suggested_refinements
+## suggested_refinements ![Premium plan](images/Premium.png)
 {: #suggested_refinements}
 
 The `suggested_refinements` parameter enables dynamic facets for a natural language query. Dynamic facets use unsupervised machine learning models to automatically select terms that are semantically similar to the terms in the query and terms in the resulting documents. For example, you can select dynamic facets to enhance an existing query by filtering on a unique term to improve your results. Dynamic facets are trained as documents are added to a collection. It might take several minutes until dynamic facets appear, after you add documents to a collection. To enable dynamic facets, you must first enable the **Parts of Speech** enrichment in your collection. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu#pos).
+
+Only users of Premium plan managed deployments and installed Cloud Pak for Data 2.x deployments can use this parameter.
+{: note}
 
 The JSON that is returned is of the following format:
 

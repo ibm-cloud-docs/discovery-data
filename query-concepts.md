@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-13"
+lastupdated: "2021-06-22"
 
 subcollection: discovery-data
 
@@ -166,4 +166,28 @@ For information on writing queries using the {{site.data.keyword.discoveryshort}
 
 Each user's query results will be restricted to their document permissions.
 
+## Query limits
+{: #query-limits}
 
+The number of search queries that you can submit per month per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan | Queries per month per service instance |
+|--------------|--------------------------------:|
+| Cloud Pak for Data |                 Unlimited |
+| Premium      |                       Unlimited |
+| Plus (includes Trial)         |        500,000 |
+{: caption="Number of queries per month" caption-side="top"}
+
+The number of queries that can be processed per second per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan | Concurrent queries per service instance |
+|--------------|--------------------------------:|
+| Cloud Pak for Data |                 Unlimited |
+| Premium      |                              50 |
+| Plus (includes Trial) |                      5 |
+{: caption="Number of concurrent queries" caption-side="top"}
+
+Queries that you submit from the search bar on the *Improve and customize* page count toward the query total.
+{: note}
+
+For more information about the supported number of queries for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.

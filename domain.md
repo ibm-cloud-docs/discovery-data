@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-06-22"
 
 subcollection: discovery-data
 
@@ -145,6 +145,19 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
 
 The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Parts of Speech information only. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Parts of Speech information and metadata that is added by other enrichments that are applied to the collection. If you want to apply a document classifier to a collection in a project type other than a Content Mining project, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
 
+### Classifier limits
+{: #classifier-limits}
+
+The number of text classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Limit   | Plus | Premium | Cloud Pak for Data |
+|---------|-------------------:|--------:|--------:|
+| Number of text classifiers per service instance | 5 | 20 | Unlimited |
+| Number of labeled data rows | 2,000 | 20,000 | 20,000 |
+| Size of labeled data file (in MB) | 16 | 1,024 | 1,024 |
+| Number of labels | 100 | 1,000 | 1,000 |
+{: caption="Text classifier plan limits" caption-side="top"}
+
 ## Dictionary
 {: #dictionary}
 
@@ -243,6 +256,18 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
 
 As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_{field_name}.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically. 
 
+### Dictionary limits
+{: #dictionary-limits}
+
+The number of dictionaries and term entries you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan      | Number of dictionaries per service instance | Number of term entries per dictionary | Number of terms for which suggestions can be generated |
+|-----------|-------------------:|------------------------:|--------------------------:|
+| Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
+| Premium | 100 | 10,000 | 1,000 |
+| Plus (includes Trial) | 20 | 1,000 | 50 |
+{: caption="Dictionary plan limits" caption-side="top"}
+
 ## Regular expressions
 {: #regex}
 
@@ -299,6 +324,18 @@ In this example, the **Facet Path** is `regex.cccardnumber`, and the field that 
 {: codeblock}
 
 As a result, a customer can filter their results by the credit card number facet that you defined to show passages that include credit card number references.
+
+### Regular expression limits
+{: #regex-limits}
+
+The number of regular expressions that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan | Regular expressions per service instance |
+|--------------|--------------------------------:|
+| Cloud Pak for Data |                 Unlimited |
+| Premium      |                             100 |
+| Plus (includes Trial) |                     20 |
+{: caption="Regular expression plan details" caption-side="top"}
 
 ## Machine Learning models
 {: #machinelearning}
@@ -437,6 +474,18 @@ In the output, the information that is extracted by the Machine Learning enrichm
 ```
 {: codeblock}
 
+### Machine learning model limits
+{: #machinelearning-limits}
+
+The number of Machine Learning (ML) models you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan      | ML models per service instance |
+|-----------|-------------------:|
+| Cloud Pak for Data | Unlimited |
+| Premium | 10 |
+| Plus (includes Trial) | 3 |
+{: caption="ML model plan limits" caption-side="top"}
+
 ## Advanced rules models
 {: #advanced-rules}
 
@@ -463,6 +512,18 @@ To add an advanced rule model, complete the following steps:
 1.  Click **Upload** to browse for the ZIP file that you exported earlier.
 1.  Click **Create**.
 1.  Choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
+
+### Advanced rules model limits
+{: #advanced-rules-limits}
+
+The number of advanced rules models that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan | Advanced rules models per service instance |
+|--------------|--------------------------------:|
+| Cloud Pak for Data  |                Unlimited |
+| Premium  |                      3 |
+| Plus (includes Trial) |                     1 |
+{: caption="Pattern plan limits" caption-side="top"}
 
 ## Patterns ![IBM Cloud only](images/ibm-cloud.png)
 {: #patterns}
@@ -518,3 +579,14 @@ To download a pattern, complete the following step:
     A pattern model is downloaded as a ZIP file.
 
 You can import the downloaded ZIP file as the source for an advanced rules model resource. For more information, see [Advanced rules models](#advanced-rules).
+
+### Pattern limits
+{: #patterns-limits}
+
+The number of patterns that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan | Patterns per service instance |
+|--------------|--------------------------------:|
+| Premium      |                             100 |
+| Plus (includes Trial)  |                    20 |
+{: caption="Pattern plan limits" caption-side="top"}

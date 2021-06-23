@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-21"
 
 subcollection: discovery-data
 
@@ -82,9 +82,9 @@ Choose a project type to get the correct set of enrichments applied to your docu
 The following project types are available:
 
 - [Document Retrieval](#doc-retrieval)
-- [Document Retrieval for Contracts](#doc-retrieval-contracts)
+- [Document Retrieval for Contracts](#doc-retrieval-contracts) ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
 - [Conversational Search](#conversational)
-- [Content Mining](#mining)
+- [Content Mining](#mining) ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
 - [Custom](#custom)
 
 For more information about the different settings that are applied to each project type, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
@@ -104,10 +104,13 @@ This tagged information is used later when a natural language phrase is submitte
 A sample Document Retrieval project is available for you to explore. For more information, see [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip}
 
-### Document Retrieval for Contracts
+### Document Retrieval for Contracts ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #doc-retrieval-contracts}
 
 If you are working with English-language legal contracts, enable the Content Intelligence feature to apply a contracts enrichment that can recognize and tag contract-related concepts in your data. Use this project type to automate complex business processes, such as contract review and negotiation. This project type can help to increase productivity, minimize costs, and reduce your legal exposure.
+
+Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+{: note}
 
 In addition to the enrichments that are applied to a typical document retrieval project, the following enrichments are made automatically:
 
@@ -143,10 +146,13 @@ For more information about building a {{site.data.keyword.conversationshort}} se
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add)
 
-### Content Mining
+### Content Mining ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #mining}
 
 Use this project type to discover hidden insights, trends, and relationships in your data.
+
+Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+{: note}
 
 This project type is especially useful for analyzing structured data, such as data that you add by uploading a CSV file or by connecting to a database data source. You can add only one collection to a project of this type from the {{site.data.keyword.discoveryshort}} user interface.
 
@@ -163,3 +169,17 @@ You can create a collection (CSV file only) from the deployed Content Mining app
 {: #custom}
 
 Choose this type if you prefer not to use one of the other project types. No enrichments are applied automatically, so you can add only those enrichments that are necessary for your use case.
+
+## Project limits
+{: #projects-limits}
+
+The number of projects you can create depends on your {{site.data.keyword.discoveryshort}} plan type.
+
+| Plan | Projects per service instance |
+|--------------|--------------------------------:|
+| Cloud Pak for Data |                       300 |
+| Premium      |                             100 |
+| Plus (includes Trial) |                     20 |
+{: caption="Plan details" caption-side="top"}
+
+The Sample project is excluded from the total number of projects.

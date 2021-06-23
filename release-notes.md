@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-06-23"
 
 keywords: release notes
 
@@ -61,12 +61,18 @@ Find software release information for your deployment type:
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
-## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} Premium releases
+## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} releases
 {: #rn-cloud}
 
-The following new features and changes are available for managed Premium plan deployments. 
+The following new features and changes are available for managed deployments. 
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
+
+### ![IBM Cloud only](images/ibm-cloud.png) 23 June 2021
+{: #23june2021}
+
+- **Introducing the Plus plan!**: Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. Currently, the Plus plan is available from the Dallas and Washington DC locations. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
+- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types. Any existing Lite or Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) Endpoint deprecation reminder
 {: #6apr2021}
