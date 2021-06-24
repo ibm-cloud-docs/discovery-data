@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-23"
 
 subcollection: discovery-data
 
@@ -142,7 +142,7 @@ To install the agent server, complete the following steps:
     
       If the username does not exist, select the checkbox to create the account.
 
-      To crawl a domain in a secure collection, the username must be an existing domain user that has permission to access the files to be crawled. To specify a domain user, use the format `<username>@<domain name>`. The agent installation program does not create the domain user.
+      To crawl a domain in a secure collection, the username must be an existing domain user with administration privileges for the Windows system to be crawled.
       {: important}
     - `password`: Provide the password that is associated with the username.
 
