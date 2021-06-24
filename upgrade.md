@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-24"
 
 subcollection: discovery-data
 
@@ -45,11 +45,15 @@ The page header shows the plan you are using today.
 
 You cannot upgrade from a Lite (v1) plan to a Plus (v2) plan. And you cannot upgrade from an Advanced (v1) plan to a Premium (v2) plan. To start using v2, create a new Plus or Premium plan. For more information about the Lite and Advanced plans, see the [v1 pricing plans documentation](/docs/discovery?topic=discovery-discovery-pricing-plans){: external}.
 
+Even though you can use the Plus plan for the first 30 days at no charge, you must have a paid account to create a Plus plan. For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}.
+
 1.  How you upgrade depends on your plan.
 
     - If you decide you want to keep the Plus plan after using the 30-day free trial, no action is required.
 
-      The Plus Trial is converted to a Plus plan automatically and you are charged monthly. If you decide you do not want to continue using the Plus plan, delete the Plus plan service instance before the 30-day trial period ends. You can delete the service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
+      After 30 days of using the Plus plan at no cost, you are charged for it.
+      
+    - If you decide you do *not* want to continue using the Plus plan, delete the Plus plan service instance before the 30-day trial period ends. You can delete the service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
 
       The number of days that are left in your trial is displayed in the page header.
 

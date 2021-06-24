@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-18"
+lastupdated: "2021-06-24"
 
 subcollection: discovery-data
 
@@ -102,9 +102,9 @@ To apply an enrichment by using the API, complete the following steps:
     {
         "enrichment_id" : "701db916-fc83-57ab-0000-000000000017",
         "fields" : [ "text" ]
-      }
     }
     ```
+    {: codeblock}
 
 1.  Submit the updated JSON request body with the [update collection](https://cloud.ibm.com/apidocs/discovery-data#updatecollection){: external} method to apply the enrichment to your collection.
 
