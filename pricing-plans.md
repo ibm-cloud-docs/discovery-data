@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-24"
 
 subcollection: discovery-data
 
@@ -43,13 +43,15 @@ Learn more about the {{site.data.keyword.discoveryfull}} service plans, so you c
 Find targeted answers and insights across many document types. 
 
 The first Plus plan created includes a 30-day free trial.
-Each additional Plus plan (and use of the first plan after 30 days) costs $500 per month.
+You must pay for each additional Plus plan (and for use of the first plan after the 30-day trial ends). 
 
-If you continue to use a Plus Trial service instance after the 30-day trial ends, the plan is converted to a Plus plan and you are charged a monthly fee. To avoid being charged after 30 days, delete the Plus plan service instance.
+If you continue to use a Plus plan service instance after the 30-day trial ends, you are charged for it. To avoid being charged after 30 days, delete the Plus plan service instance.
 {: important}
 
 ### What's included
 {: plusplan-features}
+
+For subscription accounts, the monthly fee per instance is $500.
 
 - 10,000 documents per month ($50 for every additional 1,000 documents per month)
 - 10,000 queries per month ($20 for every additional 1,000 queries per month)

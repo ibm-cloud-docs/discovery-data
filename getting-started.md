@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-24"
 
 subcollection: discovery-data
 
@@ -45,7 +45,11 @@ This information applies to {{site.data.keyword.discovery-data_short}}, Plus pla
 Choose the appropriate step to complete for your deployment:
 
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Sign up for a free {{site.data.keyword.cloud_notm}} account or log in. Go to the [{{site.data.keyword.discoveryshort}}](https://{DomainName}/catalog/services/discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a service instance. 
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Complete the following steps:
+
+  - Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
+  - You can use a Plus plan for 30 days at no cost. However, to create a Plus plan instance of the service, you must have a paid account. For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}. And, if you decide not to continue using the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
+  - Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
 
 ## Step 1: Open Watson Discovery
 {: #getting-started-launch-tool}
