@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-24"
 
 subcollection: discovery-data
 
@@ -174,7 +174,7 @@ Structure parameters define the content and organization of the documents in the
 ## return
 {: #return}
 
-A comma-separated list of the portion of the document hierarchy to return. Any of the document hierarchy are valid values.
+A comma-separated list of the portion of the document hierarchy to return. Any of the document hierarchy are valid values. If this parameter is an empty list, then all fields are returned.
 
 ## count
 {: #count}
@@ -348,7 +348,9 @@ The JSON that is returned from the query will be of the following format:
 ### passages.fields
 {: #passages_fields}
 
-A comma-separated list of fields in the index that passages will be drawn from. If this parameter is not specified then all root level fields are included.
+A comma-separated list of fields in the index that passages will be drawn from. If this parameter is not specified then passages from all root-level fields are included.
+
+You specify fields in both the `return` and `passages.fields` parameters. When you specify both parameters, each with different values, they are treated separately. For example, the request might include the parameters `"return": ["docno"]` and `"passages":{"fields": ["body"]`. The `body` field is specified in `passages.fields`, but not in `return`. In the result, passages from the document body are returned, but the contents of the body field itself is not returned.
 
 ### passages.count
 {: #passages_count}
