@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-29"
 
 subcollection: discovery-data
 
@@ -377,7 +377,7 @@ To add a Machine Learning model, complete the following steps:
 1.  Choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
 
 ### Rule-based model example
-{}: #machinelearning-rules}
+{: #machinelearning-rules}
 
 For example, when a machine learning model is applied as an enrichment to a field, it extracts all entity types in that field that were specified in a {{site.data.keyword.knowledgestudioshort}} rule-based model. If the model recognizes entity types such as `person`, `surname`, and `job title` they are recognized in your documents and tagged.
 
