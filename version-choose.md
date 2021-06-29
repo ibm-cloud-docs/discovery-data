@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-06-29"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ The latest version offers the following features and enhancements:
 - Connectors to popular data sources that can quickly access valuable data where it resides.
 - Smart Document Understanding that learns from the structure of human-readable documents, such as PDFs.
 - Natural language query support across all document types, optimized with machine learning to find targeted answers.
--	Advanced search capabilities, such as reading comprehension, curations, and table retrieval.
+-	Advanced search capabilities, such as answer finding, curations, and table retrieval.
 - An out-of-the-box contract understanding function that helps you search and interpret legal contracts.
 - A full-featured Content Mining application that you can use to conduct in-depth analysis of unstructured text.
 - Customizable user interface components that help you to deploy custom applications.
@@ -65,11 +65,13 @@ The latest version has new features that were previously unavailable. The follow
 | Leverage intuitive user interface tools to add domain-specific artifacts, such as dictionaries and custom machine learning models | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Perform real-time NLP with the Analyze API (*{{site.data.keyword.icp4dfull_notm}} only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Apply a pre-trained Smart Document Understanding model to your collection for similar benefits with less effort ( *{{site.data.keyword.cloud_notm}} only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Extract meaning from tables | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Extract meaning from tables | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Retrieve tables | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Advanced question-answering capabilities, such as extracting FAQs and highlighting the exact answer (beta features) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | You can enable optical character recognition (OCR) to process text from scanned documents or other images | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}} and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}} and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Use the Entity Extraction, Sentiment Analysis, and Keyword Extraction enrichments | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Discovery Query Language (DQL) API support | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Use the Smart Document Understanding (SDU) to annotate your documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
