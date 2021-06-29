@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-06-29"
 
 subcollection: discovery-data
 
@@ -82,9 +82,9 @@ Choose a project type to get the correct set of enrichments applied to your docu
 The following project types are available:
 
 - [Document Retrieval](#doc-retrieval)
-- [Document Retrieval for Contracts](#doc-retrieval-contracts) ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
+- [Document Retrieval for Contracts](#doc-retrieval-contracts) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 - [Conversational Search](#conversational)
-- [Content Mining](#mining) ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
+- [Content Mining](#mining) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 - [Custom](#custom)
 
 For more information about the different settings that are applied to each project type, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
@@ -104,7 +104,7 @@ This tagged information is used later when a natural language phrase is submitte
 A sample Document Retrieval project is available for you to explore. For more information, see [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip}
 
-### Document Retrieval for Contracts ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
+### Document Retrieval for Contracts ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #doc-retrieval-contracts}
 
 If you are working with English-language legal contracts, enable the Content Intelligence feature to apply a contracts enrichment that can recognize and tag contract-related concepts in your data. Use this project type to automate complex business processes, such as contract review and negotiation. This project type can help to increase productivity, minimize costs, and reduce your legal exposure.
@@ -146,7 +146,7 @@ For more information about building a {{site.data.keyword.conversationshort}} se
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add)
 
-### Content Mining ![Premium plan](images/Premium.png) ![Cloud Pak for Data](images/cp4d.png)
+### Content Mining ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #mining}
 
 Use this project type to discover hidden insights, trends, and relationships in your data.
