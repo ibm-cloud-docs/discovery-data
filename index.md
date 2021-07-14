@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-14"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
 ## Browser support
 {: #about-browser}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=planning-system-requirements#rhos-reqs__web){: external}
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/cloud-paks/cp-data/3.5.0?topic=planning-system-requirements#rhos-reqs__web){: external}
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The {{site.data.keyword.discoveryshort}} user interface supports the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
 

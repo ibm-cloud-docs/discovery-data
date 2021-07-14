@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-03-26"
+lastupdated: "2021-07-14"
 
 subcollection: assistant-data
 
@@ -52,10 +52,11 @@ This information applies to {{site.data.keyword.discovery-data_short}} only.
 
 To use the API, you must construct the URL to use in your requests.
 
-1.  From the {{site.data.keyword.icp4dfull_notm}} web client, go to the details page for the provisioned instance.
-1.  Copy the URL from the *Access information* section of the page. You will specify this value as the `{url}`.
+1.  From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand **Services**, and then click **Instances**.
+1.  Find your instance, and then click it to open its summary page.
+1.  Scroll to the *Access information* section of the page, and then copy the URL. You will specify this value as the `{url}`.
 
-    You might want to copy the bearer token also. You will need to pass the token when you make an API call.
+1.  Copy the bearer token also. You will need to pass the token when you make an API call.
 1.  From the launched application instance, go to the **Integrate and Deploy** > **API Information** page.
 1.  Copy the project ID. You will specify this value as the `{project_id}`.
 1.  Construct a request URL by using the IDs you copied. 

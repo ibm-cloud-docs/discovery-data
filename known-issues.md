@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-01"
 
 keywords: known issues
 
@@ -52,10 +52,43 @@ The following known issues apply to installed deployments.
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
+### ![Cloud Pak for Data only](images/desktop.png) 4.0.0, 27 July 2021
+{: #27july2021ki}
+
+- Machine learning model enrichments that you apply by using the Analyze API can fail.
+
+  - **Error**: `[WKSML_MODEL_NAME]: Enrichment of a document failed`
+  - **Cause**: There is a known issue in Watson Knowledge Studio that can cause a timeout in enrichment processing.
+  - **Solution**: When you use the Analyze API to apply a Watson Knowledge Studio model enrichment to a collection, keep the size of the input document under 50 KB.
+
+#### 2.2.1 issues that were fixed in subsequent releases
+{: #26feb2021ki-fixed}
+
+- [Fixed in version 4] If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
+
+  ```
+  [WKSML_MODEL_NAME]: Document analysis timed out
+  ```
+  
+  For additional timeout details, you can check your {{site.data.keyword.knowledgestudioshort}} machine learning logs, which might look similar to the following:
+
+  ```json
+  {
+    "message": "Analysis failed due to: 
+  org.apache.uima.analysis_engine.AnalysisEngineProcessException
+	        at c.i.n.b.SIREAnnotator.process(_:454)
+	        ... ",
+    "level": "SEVERE",
+  }
+  ```
+
+  Documents that time out during processing are indexed without {{site.data.keyword.knowledgestudioshort}} enrichment results.
+
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2.1, 26 February 2021
 {: #26feb2021ki}
 
 - If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
+
   - **Error**: Some Discovery pods might report an `ImagePullBackoff` error.
   - **Cause**: The wrong image pull secret is being used.
   - **Solution**: Complete the following steps during the installation:
@@ -89,25 +122,6 @@ Known issues are regularly addressed with periodic software patches. For more in
       {: pre}
 
 - In {{site.data.keyword.discoveryfull}}, the `Content Mining` project only supports one collection per project. If you create more than one `Content Mining` collection, you might experience errors. If you experience errors, delete additional `Content Mining` collections so that each `Content Mining` project has only one associated collection.
-- If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
-
-  ```
-  [WKSML_MODEL_NAME]: Document analysis timed out
-  ```
-  
-  For additional timeout details, you can check your {{site.data.keyword.knowledgestudioshort}} machine learning logs, which might look similar to the following:
-
-  ```json
-  {
-    "message": "Analysis failed due to: 
-  org.apache.uima.analysis_engine.AnalysisEngineProcessException
-	        at c.i.n.b.SIREAnnotator.process(_:454)
-	        ... ",
-    "level": "SEVERE",
-  }
-  ```
-
-  Documents that time out during processing are indexed without {{site.data.keyword.knowledgestudioshort}} enrichment results.
 
 - If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
 - If you are upgrading your {{site.data.keyword.discovery-data_short}} instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli upgrade` command completes before rolling updates complete. For information about verifying that your upgrade completed successfully, see [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade).

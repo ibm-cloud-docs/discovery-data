@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-25"
+lastupdated: "2021-07-14"
 
 keywords: release notes
 
@@ -157,6 +157,31 @@ This release is available for Premium instances of {{site.data.keyword.discovery
 The following new features and changes are available for installed deployments. 
 
 For more information about software releases for managed deployments, see [{{site.data.keyword.cloud_notm}} releases](#rn-cloud).
+
+### ![Cloud Pak for Data only](images/desktop.png) 4 release, 13 July 2021
+{: #13july2021}
+
+{{site.data.keyword.discovery-data_short}} 4 is available.
+
+This release is supported on {{site.data.keyword.icp4dfull}} 4.0.0.
+
+- **Service name change**: The new name is {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}.
+- **New Smart Document Understanding (SDU) predefined model**: When you identify fields, instead of annotating documents with the SDU tool, you can choose to use a pretrained model. The pretrained model applies a non-customizable model that automatically extracts text and identifies tables, lists, and sections.
+- **Enabling contract analysis is easier**: To enable the Contracts enrichment that recognizes and tags contract-related concepts in your data, you can choose to create a Document Retrieval project type, and then select **Apply contracts enrichment**. You no longer need to use an installation override YAML file to enable it. This change also means that you can choose which Document Retrieval projects use the Contracts enrichment; it is not applied to all Document Retrieval projects automatically.
+- Many data source improvements were made:
+
+  - **New LDAP directory data source**: Connect to data that is stored in an external directory that supports the Lightweight Directory Access Protocol (LDAP), such as a corporate email directory. As the directory data is added to your collection, {{site.data.keyword.discoveryshort}} interprets and stores key attributes of each record, such as department and location information. Later, you can find relevant records by filtering on these attribute categories. For more information, see [LDAP directory](/docs/discovery-data?topic=discovery-data-connector-ldap-cp4d).
+  - **Simplified SharePoint OnPrem connection process**: The steps you follow to connect to a SharePoint instance that is hosted on-premises were simplified. You no longer need to deploy a web services package on the SharePoint server before you can connect to the SharePoint OnPrem data source. For more information, see [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d).
+  - **Salesforce proxy support**: You can now connect to a Salesforce data source when using a proxy server. For more information, see [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d).
+
+- **Custom connector improvements**: Support was added for the following features:
+
+  - Optical character recognition (OCR)
+  - Document-level security
+
+  For more information about the custom connector, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
+
+- Support for *Dynamic Faceted Search* and its associated `suggested_refinements` API query parameter was removed.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2.1 release, 26 February 2021
 {: #26feb2021}
