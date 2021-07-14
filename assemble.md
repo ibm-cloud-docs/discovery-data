@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-07-14"
 
 subcollection: discovery-data
 
@@ -275,7 +275,7 @@ To compile a custom connector, you need to have the following items on your loca
     - XML definition file (`template.xml`)
     - Properties file (`messages.properties`)
 
-  Do not change the names or paths of the example custom connector files. Doing so can result in problems including build failures.
+  Do not change the names or paths of the example custom connector files. Doing so can result in problems, including build failures.
   {: important}
 
 ### Compiling and packaging the source code
