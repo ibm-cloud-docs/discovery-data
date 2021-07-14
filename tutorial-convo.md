@@ -12,6 +12,7 @@ completion-time: 2h
 ---
 
 {:shortdesc: .shortdesc}
+{:external: target="_blank" .external}
 {:new_window: target="_blank"}
 {:deprecated: .deprecated}
 {:important: .important}
@@ -131,7 +132,7 @@ While the website is being crawled and the data indexed, you can create your {{s
 {: #tutorial-convo-assistant}
 {: step}
 
-Both Lite or Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. You will create a Trial plan because a Plus or higher plan is required to add a Search skill to an assistant. The Trial plan gives you access to features that are available with the Plus plan and the Lite plan doesn't.
+Both Lite or Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. You will create a Trial plan because a Plus or higher plan is required to add a Search skill to an assistant. The Trial plan gives you access to features that are available with the Plus plan. The Lite plan doesn't.
 
 1.  Open a new web browser page.
 
