@@ -37,7 +37,7 @@ In this tutorial, you will use the {{site.data.keyword.discoveryshort}} and {{si
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-Follow this tutorial only is you are using a managed deployment.
+Follow this tutorial only if you are using a managed deployment.
 {:note}
 
 ## Learning objectives
