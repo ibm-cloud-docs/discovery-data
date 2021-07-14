@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-07-14"
 
 subcollection: discovery-data
 
@@ -81,7 +81,7 @@ Declared settings are represented by the `<declare />` element. The element has 
 To declare an `enum` type, use code similar to the following:
 
 ```xml
-<declare type="enum" name="start_mode" enum-values="NORMAL|QUICK|FULL" initial-value="NORMAL" />
+<declare type="enum" name="type" enum-values="PROXY|BASIC|NTLM" initial-value="BASIC"/>
 ```
 {: codeblock}
 
@@ -132,7 +132,7 @@ To enable a section by using an `enum` condition, use code similar to the follow
 
 ```xml
 <declare type="enum" name="type" enum-values="PROXY|BASIC|NTLM" initial-value="BASIC"/>
-<!-- Enable setting for BAIC, NTLM or PROXY -->
+<!-- Enable setting for BASIC, NTLM or PROXY -->
 <condition name="type" in="BASIC|NTLM|PROXY">
 </condition>
 <!-- Enable setting for PROXY -->
@@ -163,7 +163,6 @@ The XPath expression for this section is `/function/prototype/proto-section[@sec
 <declare type="long" name="number_of_max_threads" initial-value="10" />
 <declare type="long" name="number_of_max_documents" initial-value="2000000000" />
 <declare type="long" name="max_page_length" initial-value="32768" />
-<declare type="enum" name="start_mode" enum-values="NORMAL|QUICK|FULL" initial-value="NORMAL" />
 ```
 {: codeblock}
 
@@ -175,12 +174,7 @@ The custom crawler is initialized with the following settings in the `general_se
 |`custom_crawler_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface|
 |`custom_security_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface|
 |`document_level_security_supported`| Specifies whether document-level security is enabled (`true`) or disabled (`false`)|
-|`document_level_security_sso_enabled`| Reserved; must be `false`|
-|`document_level_security_scope` | A template of the credentials a user must provide to pass filtering. Values that are declared in the `datasource_settings` section can be used as variables.|
 {: caption="General settings section defaults" caption-side="top"}
-
-  Document-level security settings are not supported in the current release.
-  {: note}
 
 To specify the interfaces, use code similar to the following:
 
@@ -193,12 +187,21 @@ To specify the interfaces, use code similar to the following:
             <declare type="string" name="custom_security_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
             <!-- Document level security is enabled or not -->
             <declare type="boolean" name="document_level_security_supported" initial-value="true" hidden="true"/>
-            <!-- Must be false. -->
-            <declare type="boolean" name="document_level_security_sso_enabled" initial-value="false" hidden="true"/>
-            <!-- Construct scope from variables in datasource setting. -->
-            <declare type="string" name="document_level_security_scope" initial-value="{host}:{port}" hidden="true"/>
 ```
 {: codeblock}
+
+If you built a custom connector with an SDK package that was bundled with version 2.2.1 or earlier, `document_level_security_supported` must be disabled (set to `false`). Document-level security is not supported in 2.2.1 and earlier releases. However, the **Enable Document Level Security** option is displayed in {{site.data.keyword.discoveryshort}} even when document-level security is not supported. Do not select this option when you create a new collection.
+{: note}
+
+To hide the **Enable Document Level Security** option from {{site.data.keyword.discoveryshort}} if the custom connector was built with an SDK package that was bundled with version 2.2.1 or earlier, complete the following steps:
+
+1.  Change the `document_level_security_supported` parameter in the `config/template.xml` file to read as follows:
+
+    ```xml
+    <declare type="boolean" name="document_level_security_supported" hidden="true" initial-value="false"/>
+    ```
+    {: codeblock}
+1.  Rebuild the connector package, and then upload it again.
 
 ### Section: `datasource_settings`
 {: #section-datasource-settings}
@@ -228,20 +231,6 @@ The XPath expression for this section is `/function/prototype/proto-section[@sec
 ```
 {: codeblock}
 
-### Section: `space_filters`
-{: #section-space-filters}
-
-The XPath expression for this section is `/function/prototype/proto-section[@section="space_filters"]`. The settings in this section are used to filter the crawl space and need to be hidden, as in the following example from `template.xml`:
-
-```xml
-		<!-- Sample: Filter crawl space by root path and level to be recursively check -->    
-        <proto-section section="space_filters" hidden="true">
-            <declare type="string" name="root_filter" required="required"  initial-value="/" />
-            <declare type="long" name="level" required="required" initial-value="1" />
-        </proto-section>
-```
-{: codeblock}
-
 ### Section: `crawlspace_settings`
 {: #section-crawlspace-settings}
 
@@ -254,29 +243,6 @@ The XPath expression for this section is `/function/prototype/proto-section[@sec
         </proto-section>
 ```
 {: codeblock}
-
-### Section: `plugin_settings`
-{: #section-plugin-settings}
-
-The XPath expression for this section is `/function/prototype/proto-section[@section="plugin_settings"]`.
-
-```xml
-		<!-- Crawler Plugin is not supported.
-        <proto-section section="plugin_settings">
-            <declare type="boolean" name="enabled" initial-value="false" />
-            <condition name="enabled" enabled="true">
-                <declare type="boolean" name="fenced" initial-value="false" hidden="true" />
-                <declare type="boolean" name="enabling_for_excluded_contents" initial-value="true" hidden="true" />
-                <declare type="string" name="classname" />
-                <declare type="string" name="classpath" />
-            </condition>
-        </proto-section>
-        -->
-```
-{: codeblock}
-
-  This section is not currently supported by the custom connector SDK and its settings are ignored at runtime.
-  {: note}
 
 ## Properties file
 {: #ccs-properties-file}
@@ -304,33 +270,37 @@ To compile a custom connector, you need to have the following items on your loca
   - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance
   - The JSch package
   - The following files for the example custom connector:
-    - Java source code (`SftpCrawler.java`)
+  
+    - Java source code (`SftpCrawler.java` and `SftpSecurityHandler.java`)
     - XML definition file (`template.xml`)
     - Properties file (`messages.properties`)
 
-  Do not change the names or paths of the `SftpCrawler.java`, `template.xml`, and `messages.properties` files. Doing so can result in problems including build failures.
+  Do not change the names or paths of the example custom connector files. Doing so can result in problems, including build failures.
   {: important}
 
 ### Compiling and packaging the source code
 {: #compile-connector}
 
-  1. Ensure you are in the custom connector development directory on your local machine:
-     ```sh
-     cd {local_directory}
-     ```
-     {: pre}
+1.  Ensure you are in the custom connector development directory on your local machine:
 
-  1. Use Gradle to compile your Java source code and to create a .zip file that includes all of the required components for the custom connector:
+    ```sh
+    cd {local_directory}
+    ```
+    {: pre}
+
+1.  Use Gradle to compile your Java source code and to create a .zip file that includes all of the required components for the custom connector:
+
     ```sh
     gradle build packageCustomCrawler
     ```
     {: pre}
 
-  Gradle creates a file in `{local_directory}/build/distributions/{built_connector_zip_file}`, where the name of the `{built_connector_zip_file}` is based on the value of `initial-value` in line 7 of the `template.xml` definitions file. For example, if the line reads as follows, Gradle outputs a file named `{local_directory}/build/distributions/my-sftp-connector.zip`.
+Gradle creates a file in `{local_directory}/build/distributions/{built_connector_zip_file}`, where the name of the `{built_connector_zip_file}` is based on the `rootProject.name` value of `settings.gradle`. For example, if the line reads as follows, Gradle generates a file named `{local_directory}/build/distributions/my-sftp-connector.zip`.
 
-  ```xml
- <declare type="string" name="crawler_name" initial-value="my-sftp-connector"/>
-  ```
+```
+rootProject.name = 'my-sftp-connector'
+```
+{: codeblock}
 
 ### Next step
 {: #compile-next-step}

@@ -2,7 +2,7 @@
 
 copyright:
 years: 2018, 2021
-lastupdated: "2021-06-10"
+lastupdated: "2021-07-14"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -35,9 +35,7 @@ You can complete one of these tasks to generate an HTML field with table informa
 
 - If you are using a *Document Retrieval for Contracts* project type, the `Table Understanding` enrichment is automatically applied to the `html` field that is generated for the collection.
 - If you use the Smart Document Understanding tool to apply the `table` field label to one or more tables in the documents from a collection, then the `Table Understanding` enrichment is applied to the `html` field of the collection automatically.
-
-  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: If you use the Smart Document Understanding tool and choose the **Pre-trained-models** option, tables are annotated for you automatically.
-  {: note}
+- If you use the Smart Document Understanding tool and choose the **Pre-trained-models** option, tables are annotated for you automatically.
 
   For more information, see [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 

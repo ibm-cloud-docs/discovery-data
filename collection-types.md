@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-14"
+lastupdated: "2021-07-14"
 
 subcollection: discovery-data
 
@@ -52,6 +52,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 - [Box](/docs/discovery-data?topic=discovery-data-connector-box-cp4d)
 - [Database](/docs/discovery-data?topic=discovery-data-connector-database-cp4d)
 - [FileNet P8](/docs/discovery-data?topic=discovery-data-connector-filenet-cp4d)
+- [LDAP directory](/docs/discovery-data?topic=discovery-data-connector-ldap-cp4d)
 - [Local File System](/docs/discovery-data?topic=discovery-data-connector-lfs-cp4d)
 - [Notes](/docs/discovery-data?topic=discovery-data-connector-notes-cp4d)
 - [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-14"
 
 subcollection: discovery-data
 
@@ -55,13 +55,9 @@ To create a project, complete the following steps:
     For more information about each type, see [Project types](#project-type).
 
     Otherwise, choose **None of the above** and a *Custom* project type is created for you.
-
-1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** only: If you choose a *Document Retrieval* project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
+1.  If you choose a *Document Retrieval* project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
 
     If your data source contains contracts, enable the feature by selecting **Apply contracts enrichment**. Scroll to see the checkbox, if necessary.
-
-    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** only: If you enabled the Content Intelligence feature when you installed the {{site.data.keyword.discoveryshort}} service, then the contract enrichment is applied to it automatically. No action is required.
-    {: note}
 1.  Click **Next**.
 1.  Choose and configure a data source or connect to an existing collection.
 

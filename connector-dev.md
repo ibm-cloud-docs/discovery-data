@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-05-17"
 
 subcollection: discovery-data
 
@@ -124,11 +124,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface t
 |---------------------|-----------------------|
 |`term`               |Terminate a security handler |
 |`getUserAndGroups`   |Get the ACLs of a given user|
-|`getSecurityFilter`  |Return a customized security filter that the crawler can use to filter documents|
 {: caption="CustomCrawlerSecurityHandler methods" caption-side="top"}
-
-  This interface is not supported in the current release.
-  {: note}
 
 ## Custom connector example
 {: #example-connector}
@@ -295,6 +291,7 @@ custom-crawler-docs-master/
 │                                   └── sample
 │                                       └── sftp
 │                                           └── SftpCrawler.java
+|                                           └── SftpSecurityHandler.java
 └── wexlib
     ├── META-INF
     │   └── MANIFEST.MF
@@ -320,7 +317,7 @@ Download JSch to your development directory (`{local_directory}`). You can downl
 
 The example custom connector includes three files that get built together:
 
- - A Java source file named `SftpCrawler.java`
+ - Java source files named `SftpCrawler.java` and `SftpSecurityHandler.java`
  - An XML definitions file named `template.xml`
  - A properties file named `message.properties`
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-14"
 
 subcollection: discovery-data
 
@@ -104,11 +104,22 @@ Also see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/disco
 
 <!-- c/s help for the **Identify fields** tab. Do not delete.  -->
 
-|   |   |
-| ------ | ------ | 
-| ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** |  In {{site.data.keyword.cloud_notm}} Premium, you can choose from three different options on this tab for your Document Retrieval projects: **User-trained models**, **Pre-trained-models**, and **Text extraction only (default)**.<br/><br/>&#8226; If you choose **User-trained-models**, you can take the steps in the following procedure to build a custom model by annotating your documents.<br/><br/>&#8226; Choosing **Pre-trained models** will let you skip the annotation step, and apply a non-customizable model that will automatically extract text and identify tables, lists, and sections. This model will convert the table information to `html`, so that you can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to that field. This pre-trained model is ideal if you need to extract data from documents that include a large number of tables.<br/><br/>&#8226; If you do not want to add any customization, the **Text extraction only** option is automatically applied. |
+1.  Open the **Improve and customize** page from the navigation panel. On the *Improvement tools* panel, expand *Define structure*, and then choose **New fields**.
+1.  If your project has more than one collection, select the collection with documents that you want to annotate.
+1.  Choose the type of model you want to use:
+
+    - **Text extraction only**: Any text that is recognized in the source document is indexed in the `text` field. This option is selected by default because it is applied to all collections unless you choose to use a model.
+    - **User-trained models**: Opens the Smart Document Understanding tool that you can use pick certain types of text to store in fields other than the `text` field.
+    - **Pre-trained-models**: Applies a non-customizable model that extracts text and identifies tables, lists, and sections. This model converts table information to HTML format, so you can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to the `html` field.
+1.  Click **Submit**, and then click 
+1.  Click **Apply changes and reprocess**.
+
+If you selected **User-trained models**, a subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types. Continue to the [Annotating documents](#sdu-task) procedure.
 
 See [Best practices for annotating documents](/docs/discovery-data?topic=discovery-data-configuring-fields#bestpractices) before you begin annotating.
+
+### Annotating documents
+{: #sdu-task}
 
 1.  Review the field labels that you can use to annotate the document. They are displayed in the *Field labels* panel.
 

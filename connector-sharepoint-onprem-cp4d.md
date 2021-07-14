@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-17"
 
 subcollection: discovery-data
 
@@ -75,6 +75,69 @@ Before you create a SharePoint OnPrem collection, you must do the following thin
     - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
     - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
 - Set up full read access for the web application.
+
+If you are using version 2.2.1 or earlier, then you must complete some extra prerequisite tasks before you can connect to the data source. For more information, see [SharePoint OnPrem prerequisite steps for prior releases](#prior-prereqs).
+
+## Connecting to a SharePoint OnPrem data source
+{: #connector-sharepoint-onprem-cp4d-task}
+
+From your {{site.data.keyword.discoveryshort}} project, complete the following steps:
+
+1.  From the navigation pane, choose **Manage collections**.
+1.  Click **New collection**.
+1.  Click **SharePoint OnPrem**, and then click **Next**.
+1.  Name the collection.
+1.  If the language of the documents in SharePoint is not English, select the appropriate language.
+
+    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+1.  **Optional**: Change the synchronization schedule. 
+
+    For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+1.  In the *Enter your credentials* section, complete the following fields:
+
+    - **Username**: The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed.
+    - **Password**: The password of the SharePoint user. 
+    
+      This value is never returned and is only used when you create or modify credentials.
+1.  **Optional**: If you want to use Security Assertion Mark-up Language (SAML) claims-based authentication, set the **Enable SAML authentication** switch to `On`. Otherwise, Windows NT LAN Manager (NTLM) authentication is used. Add values to the following fields:
+
+      - **Identity Provider endpoint**: The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
+      - **Relying Party endpoint**: Optional: The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
+      - **Relying Party Trust identifier**: The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
+1.  In the *Specify what you want to crawl* section, add the SharePoint web service URL to the **Web Application Url** field. For example, `https://<host>:<port>`.
+1.  **Optional**: If you are using a proxy server to access the data source server, then in the *Proxy settings* section, set the **Enable proxy settings** switch to `On`. Add values to the following fields:
+
+    - **Username**: Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
+    - **Password**: Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
+    - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
+    - **Proxy server port number**: The network port that you want to connect to on the proxy server.
+1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`. 
+
+    When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. Complete the [prerequisite steps](#connector-sharepoint-onprem-cp4d-prereq) to add support.
+    
+    When you enable this option, you must provide values for the following fields:
+
+    - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
+    - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
+    - **LDAP binding user password**: The password used to bind to the directory service.
+    - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
+    - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
+
+1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
+
+    The processing time increases when this feature is enabled.
+    {: note}
+1. Click **Finish**.
+
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+
+If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
+
+### Prerequisite steps for prior releases
+{: #prior-prereqs}
+
+If you are using version 2.2.1 or earlier, then you must complete these extra steps before you can connect to the data source:
+
 - Obtain a web services package from your {{site.data.keyword.discoveryshort}} cluster. This web services package is a custom module that the crawler uses to obtain the necessary information to crawl successfully. For more information, see [Get the web services package](#connector-sharepoint-onprem-cp4d-prereq1).
 - Deploy the web service package on the SharePoint server. For more information, see [Deploy the web services on the SharePoint server](#connector-sharepoint-onprem-cp4d-prereq2).
 
@@ -136,58 +199,3 @@ To run the script that automatically deploys the web services:
     - Change the ASP.NET trust level to WSS_Medium
 
     You can apply these configurations in the Internet Information Services Manager.
-
-## Connecting to a SharePoint OnPrem data source
-{: #connector-sharepoint-onprem-cp4d-task}
-
-From your {{site.data.keyword.discoveryshort}} project, complete the following steps:
-
-1.  From the navigation pane, choose **Manage collections**.
-1.  Click **New collection**.
-1.  Click **SharePoint OnPrem**, and then click **Next**.
-1.  Name the collection.
-1.  If the language of the documents in SharePoint is not English, select the appropriate language.
-
-    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
-
-    For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1.  In the *Enter your credentials* section, complete the following fields:
-
-    - **Username**: The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed.
-    - **Password**: The password of the SharePoint user. 
-    
-      This value is never returned and is only used when you create or modify credentials.
-1.  **Optional**: If you want to use Security Assertion Mark-up Language (SAML) claims-based authentication, set the **Enable SAML authentication** switch to `On`. Otherwise, Windows NT LAN Manager (NTLM) authentication is used. Add values to the following fields:
-
-      - **Identity Provider endpoint**: The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
-      - **Relying Party endpoint**: Optional: The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
-      - **Relying Party Trust identifier**: The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
-1.  In the *Specify what you want to crawl* section, add the SharePoint web service URL to the **Web Application Url** field. For example, `https://<host>:<port>`.
-1.  **Optional**: If you are using a proxy server to access the data source server, then in the *Proxy settings* section, set the **Enable proxy settings** switch to `On`. Add values to the following fields:
-
-    - **Username**: Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
-    - **Password**: Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
-    - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
-    - **Proxy server port number**: The network port that you want to connect to on the proxy server.
-1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`. 
-
-    When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. Complete the [prerequisite steps](#connector-sharepoint-onprem-cp4d-prereq) to add support.
-    
-    When you enable this option, you must provide values for the following fields:
-
-    - **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-    - **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
-    - **LDAP binding user password**: The password used to bind to the directory service.
-    - **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
-    - **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
-
-1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
-
-    The processing time increases when this feature is enabled.
-    {: note}
-1. Click **Finish**.
-
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
-
-If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

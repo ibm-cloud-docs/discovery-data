@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-05-17"
 
 subcollection: discovery-data
 
@@ -44,16 +44,20 @@ This information applies only to installed deployments.
 
 You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. These instructions enable you to use a custom connector instead of one of the pre-built connectors listed in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
-  1. After you create a new project, including a name and project type, look on the **Select data source** page for your custom connector. Select the custom connector and click **Next**. The **Configure collection** page opens.
+1.  After you create a project, look for your custom connector to connect to a data source. 
+1.  Select the custom connector and then click **Next**. 
 
-     The following steps apply specifically to the example custom connector that is shipped with the `custom-crawler-docs.zip` file.
-     {: note}
+    The **Configure collection** page opens.
 
-  1. Enter values for the following fields on the **Configure collection** page. If a field is already populated with a value, verify and change the value if needed. A prepopulated value indicates that a value was specified in the custom connector's `template.xml` or `message.properties` file.
+    The following steps apply specifically to the example custom connector that is shipped with the `custom-crawler-docs.zip` file.
+    {: note}
+
+1.  Enter values for the following fields on the **Configure collection** page. If a field is already populated with a value, verify and change the value if needed. A prepopulated value indicates that a value was specified in the custom connector's `template.xml` or `message.properties` file.
 
     - **General**
       - **Collection name**
       - **Collection language**
+      - **Crawl schedule**
     - **Crawler properties**
       - **Crawler name**
       - **Crawler description**
@@ -61,17 +65,6 @@ You create and manage a collection as described in [Creating and managing collec
       - **Maximum number of active crawler threads** (default `10`)
       - **Maximum number of documents to crawl** (default `2000000000`)
       - **Maximum document size (KB)** (default `32768`)
-      - **When the crawler session is started**
-        Selections include:
-        - **Start crawling updates (look for new, modified, and deleted content)**
-        - **Start crawling new and modified content**
-        - **Start a full crawl**
-      - **`{connector_name}`_GENERAL_SETTINGS_CUSTOM_CONFIG_CLASS_LABEL** (default `com.ibm.es.ama.custom.crawler.sample.sftp.SftpCrawler`)
-      - **`{connector_name}`_GENERAL_SETTINGS_CUSTOM_CRAWLER_CLASS_LABEL** (default `com.ibm.es.ama.custom.crawler.sample.sftp.SftpCrawler`)
-      - **`{connector_name}`_GENERAL_SETTINGS_CUSTOM_SECURITY_CLASS_LABEL** (default `com.ibm.es.ama.custom.crawler.sample.sftp.SftpCrawler`)
-      - **`{connector_name}`_GENERAL_SETTINGS_DOCUMENT_LEVEL_SECURITY_SUPPORTED_LABEL** (default `On`)
-      - **`{connector_name}`_GENERAL_SETTINGS_DOCUMENT_LEVEL_SECURITY_SSO_ENABLED_LABEL** (default `Off`)
-      - **`{connector_name}`_GENERAL_SETTINGS_DOCUMENT_LEVEL_SECURITY_SCOPE_LABEL** (default `{host}:{:port}`)
     - **Data Source Properties**
       - **Host name** (default `localhost`)
       - **Port** (default `22`)
@@ -80,9 +73,8 @@ You create and manage a collection as described in [Creating and managing collec
       - **Key file location**
       - **passphrase**
       - **Password**
-    - **Space filter**
-      - **Path filter** (default `/`)
-      - **Level** (default `1`)
     - **Crawl space Properties**
-  1. Click **Finish** to create the collection with the custom connector and the values specified for it.
-  1. Continue with the instructions in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections) and its subsequent topics.
+
+    If the custom crawler supports document-level security and the `document_level_security_supported` value in the `template.xml` is set to `true`, then an **Enable Document Level Security** switch is displayed in a *Security* section of the data source connection setup page. To enable document-level security, set the **Enable Document Level Security** switch to **On**. If the switch is set to Off, then the collection that is created will not support document-level security even if the custom crawler can support document-level security.
+
+1.  Click **Finish** to create the collection.

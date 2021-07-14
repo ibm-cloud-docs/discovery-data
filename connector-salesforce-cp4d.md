@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-06-17"
 
 subcollection: discovery-data
 
@@ -105,6 +105,14 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     - **Password**: The password of the specified user.
     - **Security Token**: The security token of the user to call Salesforce API.
     - **Jar zip archive file**: Upload a compressed file that contains the JAR files that you downloaded earlier. Or select a compressed file that you uploaded previously to reuse it.
+1.  **Optional**: Expand the *Proxy settings* section to add information that is required if you are using a proxy server to access the data source server.
+
+    - **Enable proxy settings**: Set the switch to **On**, and then add the following information:
+
+      - **Username**: The proxy server username to use to authenticate, if the proxy server requires authentication. If you do not know your username, you can get it from the administrator of your proxy server.
+      - **Password**: The proxy server password to use to authenticate, if the proxy server requires authentication. If you do not know your password, you can get it from the administrator of your proxy server.
+      - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
+      - **Proxy server port number**: The network port that you want to connect to on the proxy server.
 1.  In the *Object Types** section, specify the object types to crawl. 
 
     The default behavior is to crawl all object types. 
