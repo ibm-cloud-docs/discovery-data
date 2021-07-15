@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-07-15"
 
 subcollection: discovery-data
 
@@ -56,12 +56,17 @@ Choose the appropriate step to complete for your deployment:
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**
 
+{{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 4:
+
+1.  From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand **Services**, and then click **Instances**.
+1.  Find your instance, and then click it to open its summary page.
+1.  Click **Launch tool**.
+
 {{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 3.0.1 or later:
 
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
 1.  Select your {{site.data.keyword.discoveryshort}} instance.
 1.  Click **Launch tool**.
-
 
 {{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 2.5.0.0:
 
@@ -108,10 +113,10 @@ Now that we've opened the Sample Project and learned more about **Document Retri
     - The **Explore UI components** tab includes several componets: **Search bar**, **Search results**, **Facets**, and **Document preview**. The code for the {{site.data.keyword.discoveryshort}} components can be found on [GitHub](https://github.com/watson-developer-cloud/discovery-components){: external}. You can learn more about the components and preview them in [Storybook](https://watson-developer-cloud.github.io/discovery-components){: external}.
 1.  Select the **Improve and customize** icon on the navigation panel. The **Improve and Customize** page is where you can to try out queries, then add and test customizations to improve the query results for your project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
 
-    - There are several example queries in the **Try an example to get started** section. For `Watson`, click the **Run search** button.
-    - Two of the default **Improvement tools** for this project (Facets (by Entity) and Dynamic Facets) have identified facets (IBM, Watson, Kubernetes) you can filter on. Select a few and try them out. 
-    - Query results display in the center pane. Another **Improvement tool**, passages, makes it possible to see the passages identified in the documents returned. Click **View passages in document** for the document preview. For more information about how passages are identified in natural language queries, see [Passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
-    -  On the **Improvement tools** panel, select the dropdowns to see what is available to further customize your project. There are five categories of tools: **Customize display**, **Search results**, **Teach domain concepts**, **Define structure**, and **Improve relevance**.
+    - There are several example queries in the **Try an example to get started** section. Click the **Run search** button for`IBM`.
+    - Query results are displayed.
+    - From one of the query results, click **View passages in document**. A preview of the document where the result was found is shown.
+    -  On the **Improvement tools** panel, select the dropdowns to learn about the different way you can customize your project. There are five categories of tools: **Customize display**, **Search results**, **Teach domain concepts**, **Define structure**, and **Improve relevance**.
     
 That's the tour, stay on the **Improve and Customize** page for the next step.
     
@@ -120,8 +125,8 @@ That's the tour, stay on the **Improve and Customize** page for the next step.
 
 Now, let's customize a bit. Starting on the **Improve and Customize** page, complete the following steps:
 
-1.  Enter the natural language query `How do I install {{site.data.keyword.icp4dfull_notm}}` in the query box.
-1.  Review the query results displayed. View the source document for each result by clicking on **View passage in document**.
+1.  Enter the natural language query `How do I install {{site.data.keyword.icp4dfull_notm}}` in the query field.
+1.  Review the query results that are displayed. View the source document for each result by clicking on **View passage in document**.
 1.  On the **Improvement tools** panel, choose **Customize display**, and select **Facets**. Select **New facet**, then click the **From existing fields in a collection** button. Choose `enriched_text.entities.type` from the dropdown and click **Apply**. The new facets will display. You can change the name of the facet label, and the filtering behavior.
 
 ## Step 5: Keep exploring and experimenting
@@ -132,10 +137,6 @@ Continue experimenting with the Sample Project. A few other things you might wan
   - Select the **Manage collections** icon on the navigation panel. Click the **New collection** button. Choose **Upload data** and create a new collection with a few of your own documents.
   - Select the **Integrate and Deploy** icon on the navigation panel. On the **Share preview link** tab, copy the link and paste it in your browser to preview your application. On the **Explore UI components** tab, click the **Try it on Storybook** link for any of the components.
   - Select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display**, then choose **Search results**. In the **Select field to display as titles**, choose `document_id` from the dropdown and click **Apply**. The document identifier in each search result will switch from the document name to the document id number.
-
-When you are ready to start over, click **Restore project defaults** on the **Improve and Customize** page to restore the project defaults.
-{: tip}
-
 
 ## Bonus: Get help from anywhere
 {: #handy-tools}

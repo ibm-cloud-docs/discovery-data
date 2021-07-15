@@ -143,9 +143,9 @@ Both Lite or Trial plan {{site.data.keyword.conversationshort}} service instance
 
     Create the instance in the same location as the {{site.data.keyword.discoveryshort}} service instance is hosted.
 1.  From the {{site.data.keyword.conversationshort}} Plus plan service page in {{site.data.keyword.cloud_notm}}, click **Launch {{site.data.keyword.conversationshort}}**.
-1.  An assistant and skill might be created for you automatically. Exit the assistant and go to the main Assistants page.
+1.  An assistant and skill might be created for you automatically. If so, exit the assistant and go to the main Assistants page.
 
-    You can click the Assistants icon from the navigation pane.
+    You can click the Assistants icon from the navigation pane to get to the main Assistants page.
 
     ![Shows the Assistants icon in navigation pane](images/tut-ass0.png)
 
@@ -163,8 +163,8 @@ Let's go back to {{site.data.keyword.discoveryshort}} and check if the web crawl
 1.  Return to the web browser tab that is open to {{site.data.keyword.discoveryshort}}.
 1.  After the website has been crawled and the data processed, the *Improve and customize* page is displayed. The page mimics a chatbot interface with a field where you can enter a question.
 
-    If the crawl is not completed and you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the COVID FAQ collection. The collection should contain over 80 documents.
-1.  From the *Improvement tools* panel, expand **Customize display**, and then click **Search results**.
+    If the crawl is not completed and you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the COVID FAQ collection. The collection should contain over 80 documents. After the crawl is completed, go to the *Improve and customize* page.
+1.  On the *Improve and customize* page, from the *Improvement tools* panel, expand **Customize display**, and then click **Search results**.
 1.  Select **Field** instead of Passages as the source of result content, and then select `text` as the field to retrieve. Click **Apply**.
 
     For most searches, returning passages is the best choice. But remember, when you enable FAQ extraction, the answers from any question-and-answer pairs that are found are added to the `text`field in each resulting document. You want only the answer from the `text` field to be returned.
@@ -269,7 +269,7 @@ There are other ways to deploy your assistant. We are using the web chat integra
 1.  Click the chat icon to open the web chat window.
 
     ![Shows the web chat integration in a web page](images/tut-test-html.png)
-1.  Enter the test question in the Type something field: `How does the virus spread?`
+1.  Enter the test question in the *Type something* field: `How does the virus spread?`
 
     The correct answers are returned.
 
