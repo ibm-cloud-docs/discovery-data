@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-15"
 
 subcollection: discovery-data
 
@@ -141,6 +141,8 @@ For more information about building a {{site.data.keyword.conversationshort}} se
 
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add)
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Follow steps to use this project type to enhance your virtual assistant by completing the [Getting answers from existing help content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
 ### Content Mining ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #mining}
