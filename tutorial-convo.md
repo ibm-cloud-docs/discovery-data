@@ -207,7 +207,7 @@ To connect your assistant to your {{site.data.keyword.discoveryshort}} project, 
 
     You could limit the number of results that are displayed to just 1 because you know each question has a paired answer. But, to do so would limit insightful information that might get returned by the assistant otherwise. The assistant evaluates the confidence of each possible response. It might find an answer that is better than the paired answer or that has a slightly different meaning that will better address the user's question.
 
-    In the *Adjust result quantity* section, change the number to `2`. With this value, you can see what other suggestions are made by the assistant and two responses are easier to read than three.
+    In the *Adjust result quantity* section, change the number to `2`. With this value, you can see what other suggestions are made by the assistant and the results are easier to read when there are two instead of three.
 1.  In the *Preview* window, ask the same question that you asked to test the project in {{site.data.keyword.discoveryshort}}: `How does the virus spread?`
 
     Two responses are displayed. The exact answer is shown highlighted before the full passage is displayed.
@@ -235,7 +235,7 @@ For more information about search skills, see [Adding skills to your assistant](
 
 You will deploy your virtual assistant as a web chat integration. You can create the integration and then embed it on your own web page. 
 
-There are other ways to deploy your assistant. We are using the web chat integration because it is quick and easy to set up. For more information about other deployment options, see . 
+There are other ways to deploy your assistant. We are using the web chat integration because it is quick and easy to set up. For more information about other deployment options, see [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external}. 
 
 1.  From the Preview page, click **New integration** to create a web chat integration.
 1.  Click **Create**.
@@ -276,4 +276,4 @@ There are other ways to deploy your assistant. We are using the web chat integra
 ### Next steps
 {: #tutorial-convo-next}
 
-If, during testing, you decide that you want a specific answer to be returned every time a specific question is asked, you can hard code the answer. Work with a developer to use the Curation API. For more information, see [Curations](/docs/discovery-data?topic=discovery-data-curations).
+You can follow similar steps to create a Conversational Search project that you can use in production. Note that the *FAQ extraction* and *Emphasize the answer* features are beta features currently. Be sure to test your project thoroughly before you deploy it. If, during testing, you decide that you want a specific answer to be returned every time a specific question is asked, you can hard code the answer. Work with a developer to use the Curation API. For more information, see [Curations](/docs/discovery-data?topic=discovery-data-curations).

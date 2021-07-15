@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-15"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -55,7 +55,7 @@ Before you can create a collection, you must create a project. For more informat
     - The Document Retrieval and Custom project types can contain up to 5 collections. 
     - A Conversational Search project can contain 5 collections but only 1 collection is used by the {{site.data.keyword.conversationshort}} search skill. 
     - A Content Mining project can contain only 1 collection.
-    - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 256 collections per instance and installation, but that number depends on many factors, including memory.
+    - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
 1.  Choose a data source type, reuse data from an existing data collection, or perform a one-time document upload from your local file system.
 
     A collection can support only one data source.

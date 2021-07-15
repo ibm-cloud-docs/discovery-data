@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-07-13"
 
 keywords: passages, query results
 
@@ -88,10 +88,11 @@ When you deploy your project, you can use the APIs to define more complex querie
 
 {{site.data.keyword.discoveryshort}} uses sophisticated algorithms to determine the best passages of text from all of the documents that are returned by a query. Passages are returned per document by default. They are displayed as a section within each document query result and are ordered by passage relevance.
 
-{{site.data.keyword.discoveryshort}} uses sentence boundary detection to pick a passage that includes a full sentence. It searches for passages that have an approximate length of 200 characters, then looks at chunks of content that are twice that length to find passages that contain full sentences. If the sentences in your documents are extra long, the query might not be able to capture a full sentence. As a result, some passages that are returned might not include an entire sentence or might omit the beginning or ending of a sentence. Sentence boundary detection works for all supported languages and uses language-specific logic.
+{{site.data.keyword.discoveryshort}} uses sentence boundary detection to pick a passage that includes a full sentence. It searches for passages that have an approximate length of 200 characters, then looks at chunks of content that are twice that length to find passages that contain full sentences. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
 For all project types except Conversational Search, you can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
 
+<!--If the documents in your collection are long, consider setting the number of passages to 3 and the maximum character size to 325. For shorter documents, -->
 ### Changing the result content
 {: #query-results-content}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-07-15"
 
 subcollection: discovery-data
 
@@ -71,9 +71,11 @@ To use an {{site.data.keyword.appconnect_notm}} connector, you must create a sep
 The following requirements and limitations are specific to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}}:
 
 - A collection can connect to only one data source.
-- A single {{site.data.keyword.discoveryshort}} service instance can have up to 100 collections that connect to external data sources.
-- The individual document file size limit is 10 MB.
 - When optical character recognition (OCR) is enabled, images must meet the minimum image quality requirement of 75 DPI (dots per inch) to be processed successfully.
+- For more information about size limits, which can differ per plan, see the following topics:
+
+  - [Collection limits](/docs/discovery-data?topic=discovery-data-collections#collections-limits)
+  - [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits)
 
 ## FAQ extraction ![IBM Cloud only](images/ibm-cloud.png)
 {: #faq-extraction}
