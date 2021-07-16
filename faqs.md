@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-04"
+lastupdated: "2021-07-16"
 
 subcollection: discovery-data
 
@@ -55,7 +55,13 @@ Find answers to frequently asked questions.
 {: #faq-integrate}
 {: faq}
 
-You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} to make information that is stored in external data sources available to a virtual assistant. Create a *Conversational Search* project in {{site.data.keyword.discoveryshort}}, and then add the data sources that you want to make available to it. Next, create a *search skill* in {{site.data.keyword.conversationshort}}, and connect it to your {{site.data.keyword.discoveryshort}} project and collection. For more information, see [Conversational Search](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-projects#conversational).
+You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} to make information that is stored in external data sources available to a virtual assistant. Create a *Conversational Search* project in {{site.data.keyword.discoveryshort}}, and then add the data sources that you want to make available to it. Next, create a *search skill* in {{site.data.keyword.conversationshort}}, and connect it to your {{site.data.keyword.discoveryshort}} project and collection. For more information, see the [Getting answers from existing help content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+
+## How does Watson Discovery access my data?
+{: #faq-connectors}
+{: faq}
+
+{{site.data.keyword.discoveryshort}} has built-in connectors that can crawl various data sources, including websites, IBM Cloud Object Storage, Box, Microsoft SharePoint, and Salesforce sites. It even has support for you to build custom connectors. You can schedule crawls so that as the source data changes, Discovery picks up the latest version automatically. For more information, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections)
 
 ## Can I upload documents?
 {: #faq-uploaddocs}
@@ -63,11 +69,23 @@ You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.c
 
 Yes, you can upload documents directly to a collection in your project. An upload is a one-time operation that you can use to get started. An alternative approach is to connect to a data source and crawl the source for information. When you crawl data sources, the data can stay where it is and you can set up a schedule by which to crawl the external source to find new and changed information. When you crawl the data, you know that the information in your collection is always up to date. For more information, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
+## Must all my documents be English?
+{: #faq-languages}
+{: faq}
+
+No. {{site.data.keyword.discoveryshort}} support multiple languages. For more information about language support per feature, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
 ## What types of files can Discovery ingest?
 {: #faq-doctype}
 {: faq}
 
-{{site.data.keyword.discoveryshort}} can ingest most standard business file types. For a complete list, see [Supported file types](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+{{site.data.keyword.discoveryshort}} can ingest most standard business file types, including PDF, Microsoft Word documents, spreadsheets, and presentations. For a complete list, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+## Can I customize Discovery to understand my data
+{: #faq-customize}
+{: faq}
+
+Yes. Use the intuitive tools provided with the product to teach {{site.data.keyword.discoveryshort}} about the unique terminology of your domain. For example, you can teach it to recognize patterns, such as BOM or part numbers that you use, or add dictionaries that recognize your product names and other industry-specific word meanings. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 
 ## How does the Smart Document Understanding tool work?
 {: #faq-sdu}
