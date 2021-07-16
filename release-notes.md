@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-16"
 
 keywords: release notes
 
@@ -67,6 +67,11 @@ See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for t
 The following new features and changes are available for managed deployments. 
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
+
+### ![IBM Cloud only](images/ibm-cloud.png) 16 July 2021
+{: #16july2021}
+
+- **Web crawl supports crawling dynamic websites**: The web crawler now can crawl dynamic websites that use JavaScript to render content. If you enable this beta feature, the time it takes to crawl the site increases. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 23 June 2021
 {: #23june2021}

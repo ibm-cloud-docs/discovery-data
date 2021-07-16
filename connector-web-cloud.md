@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-07-14"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ You can connect to the following types of web content:
 - Private company websites or other sites that require authentication
 - Websites that are behind a corporate firewall
 
-The web crawler does not crawl dynamic websites that use JavaScript to render content. You can confirm the use of JavaScript by viewing the source code of the website in your browser.
+The web crawler can crawl dynamic websites that use JavaScript to render content, but cannot crawl sites that use dynamic URLs. If you can't see any content when you view the source code of a web page in your browser, then the service cannot crawl it.
 {: note}
 
 If you want to crawl a group of URLs that includes some websites that require authentication and some that don't, consider creating a different collection for each authentication type.
@@ -118,6 +118,13 @@ To configure the web crawl collection, complete the following steps:
       The number of web pages that are crawled is limited to 250,000, so the web crawler might not crawl all the specified websites.
 
       The number of child URLs per URL that are crawled is limited to 10,000. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
+
+    - If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step. 
+    
+      After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/web-crawl-edit-url.png). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
+
+      Executing JavaScript is a beta feature. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically. When you enable this setting, the time it takes to crawl the page increases.
+      {: beta}
 
     - To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
     
