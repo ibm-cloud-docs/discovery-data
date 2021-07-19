@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-16"
 
 subcollection: discovery-data
 
@@ -527,7 +527,7 @@ You can select existing annotators to enrich your collection, such as **Part of 
 Apply detailed labels to your facet IDs to improve your analysis. You can choose from the following visualization options for your facet labels: **Auto**, **Facet table**, **Word cloud**, and **Map**. You can use the **Value Filter** to specify a list of regular expressions to make values invisible during analysis.
 
 #### Regular expression pattern limits
-{: #regex-limits}
+{: #regex-pattern-limits}
 
 The number of regular expression patterns that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 

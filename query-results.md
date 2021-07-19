@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-13"
+lastupdated: "2021-07-19"
 
 keywords: passages, query results
 
@@ -71,13 +71,13 @@ Use the tools built in to {{site.data.keyword.discoveryshort}} to make the follo
 
 - Prepare your documents a bit more before you enrich them. 
 
-  - Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify additional sections of your document that contain valuable information. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). 
+  - Add to the set of fields that are indexed in your documents by default. You can use Smart Document Understanding to identify more sections of your document that contain valuable information. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). 
   - Split large documents into more easily consumable chunks. For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 - If the query result shows an excerpt that is hard to read, it might be content that is coming from a table. If meaningful information is typically stored in tables in your documents, apply the table understanding enrichment to your collection to make the information easier to find and understand in the results. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
 - Use Watson Natural Language Understanding to find and tag terms that are generally understood to have special meaning. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
 - Teach {{site.data.keyword.discoveryshort}} about terms and patterns that have special meaning to your use case. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 - For a Content Mining project, you might want to add facets based on enrichments other than the Parts of Speech enrichment that is applied by default. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: If you applied FAQ extraction to your source documents, but {{site.data.keyword.discoveryshort}} did not generate a new document for every pair, determine which pairs were not recognized. Check whether there are easy formatting changes that you can make to help {{site.data.keyword.discoveryshort}} recognize them. For example, is the question missing a closing question mark? If there are no easy fixes, consider using the Smart Document Understanding tool to annotate the question-and-answer pairs instead. First, you must remove the FAQ extractions from the collection. Turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. After disabling FAQ extraction, reprocess the collection by clicking **Apply changes and reprocess**. Now you can use the Smart Document Understanding tool to annotate the question-and-answer pairs in your document.
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: If you applied FAQ extraction to your source documents, but {{site.data.keyword.discoveryshort}} did not generate a new document for every pair, determine which pairs were not recognized. Check whether there are easy formatting changes that you can make to help {{site.data.keyword.discoveryshort}} recognize them. For example, is a closing question mark missing from the question? If there are no easy fixes, consider using the Smart Document Understanding tool to annotate the question-and-answer pairs instead. First, you must remove the FAQ extractions from the collection. Turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. After you disable FAQ extraction, reprocess the collection by clicking **Apply changes and reprocess**. Now you can use the Smart Document Understanding tool to annotate the question-and-answer pairs in your document.
 
 If the right type of information is being identified and tagged in your documents already, learn steps that you can take to tweak query results that are returned to improve their relevancy. For more information, see [Search settings](/docs/discovery-data?topic=discovery-data-search-settings).
 
@@ -96,7 +96,7 @@ For all project types except Conversational Search, you can change how the passa
 ### Changing the result content
 {: #query-results-content}
 
-For all project types, you can can control where the data comes from that is returned in query results. By default, results consist of passages from the `text` field. The passages that {{site.data.keyword.discoveryshort}} calculates to contain the most relevant information are returned. However, you can change the result content to return content from a field other than the `text` field.
+For all project types, you can control where the data comes from that is returned in query results. By default, results consist of passages from the `text` field. The passages that {{site.data.keyword.discoveryshort}} calculates to contain the most relevant information are returned. However, you can change the result content to return content from a field other than the `text` field.
 
 To change the content of the query results, complete the following steps:
 

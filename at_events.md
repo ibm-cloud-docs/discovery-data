@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-07-19"
 
 keywords: IBM, activity tracker, event, security, IBM Cloud Activity Tracker
 
@@ -42,7 +42,7 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 |:---------------------------------|:-----------------------------------|
 | `discovery.document.create`        | Create a document                |
 | `discovery.document.add`           | Add one document                  |
-| `discovery.document.update`        | Update one document by ingesting new or modified content for a document, given a document ID, or by changing the label for a given document ID     |
+| `discovery.document.update`        | Update one document by ingesting new or modified content for a document given a document ID, or by changing the label for a specified document ID     |
 | `discovery.document.read`          | Download a PDF version of a document |
 | `discovery.document.delete`        | Delete document by ID              |
 | `discovery.query.read`             | Search a collection for relevant documents |
@@ -66,7 +66,7 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.credential.create`      | Create a credential           |
 | `discovery.credential.update`      | Update a credential           |
 | `discovery.credential.delete`      | Delete a credential           |
-| `discovery.credential.read`        | Get a credential, Salesforce obects, or a list of Cloud Object Storage buckets |
+| `discovery.credential.read`        | Get a credential, Salesforce objects, or a list of Cloud Object Storage buckets |
 | `discovery.dataset.create`         | Create a data set             |
 | `discovery.dataset.update`         | Update a data set             |
 | `discovery.curations.create`       | Create a curated query        |
@@ -102,7 +102,7 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.content-miner-csv.create`             | Import a CSV file from Content Miner|
 | `discovery.content-miner-csv.read`               | Get a CSV file from Content Miner|
 | `discovery.content-miner-csv.delete`             | Delete a CSV file from Content Miner|
-| `discovery.document-results.read`  | Search collection(s) for relevant documents |
+| `discovery.document-results.read`  | Search collections for relevant documents |
 | `discovery.autocompletion.read`    | Suggest complete queries based on documents |
 | `discovery.collection-notices.read` | Get notices for a collection |
 | `discovery.project-notices.read` | Get notices for a project |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-07-19"
 
 subcollection: discovery-data
 
@@ -48,8 +48,8 @@ The crawler plug-ins support the following functions:
 - Update the metadata list of a crawled document
 - Update the content of a crawled document
 - Exclude a crawled document
-- Refer crawler configurations, masking password values
-- Show notice messages on the {{site.data.keyword.discoveryshort}} tooling
+- Reference crawler configurations, masking password values
+- Show notice messages in the {{site.data.keyword.discoveryshort}} user interface
 - Output log messages to the crawler pod console
 
 However, the crawler plug-ins cannot support the following functions:
@@ -61,12 +61,12 @@ However, the crawler plug-ins cannot support the following functions:
 ## Crawler plug-in requirements
 {: #plugin-reqs}
 
-Ensure that you have the following items installed on the development server to develop a crawler plug-in by using this SDK:
+Make sure that the following items are installed on the development server that you will use to develop a crawler plug-in by using this SDK:
 
-- JDK 1.8 or higher
+- Java SE Development Kit (JDK) 1.8 or higher
 - [Gradle](https://gradle.org/install/){: external}
-- curl
-- sed
+- cURL
+- sed (stream editor)
 
 ## Obtaining the crawler plug-in SDK package
 {: #obtain-sdk}
@@ -112,6 +112,6 @@ Ensure that you have the following items installed on the development server to 
 ## Building a crawler plug-in package
 {: #build-plugin-pkg}
 
-1. Unzip the latest SDK .zip file.
-1. Implement the plug-in logic in `src/`. Ensure that the dependancy is written in `build.gradle`.
+1. Extract the SDK compressed file.
+1. Implement the plug-in logic in `src/`. Ensure that the dependency is written in `build.gradle`.
 1. Enter `gradle packageCrawlerPlugin` to create the plug-in package. The package is generated as `build/distributed/wd-crawler-plugin-sample.zip`.

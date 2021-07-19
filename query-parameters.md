@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-07-19"
 
 subcollection: discovery-data
 
@@ -34,58 +34,65 @@ subcollection: discovery-data
 # Query parameters
 {: #query-parameters}
 
-These parameters are used when writing queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+You can use these parameters when you write queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
-Queries written in the {{site.data.keyword.discoveryshort}} Query Language can include both search and structure parameters.
+Queries that are written in the {{site.data.keyword.discoveryshort}} Query Language can include both search and structure parameters.
 
 ## Search parameters
 {: #query-parameters-search}
 
-Search parameters enable you to search your collection, identify a result set, and perform analysis on the result set.
+Use search parameters to search your collection, identify a result set, and analyze the result set.
 
-The **results set** is the group of documents identified by the combined searches of the search parameters. The results set may be significantly larger than the returned results. If an empty query is performed, the results set is equal to all the documents in the collection.
+The **results set** is the group of documents that are identified by the combined searches of the search parameters. The results set might be significantly larger than the returned results. If an empty query is submitted, the results set is equal to all the documents in the collection.
 
-Documents you do not have permissions to access are not returned in query results.
+Documents that you do not have permissions to access are not returned in query results.
 {: important}
 
 ## Answer finding ![IBM Cloud only](images/ibm-cloud.png)
 {: #answer-finding}
 
-This feature is beta functionality. Do not enable the feature in production environments. This feature is available in managed deployments only.
+Answer finding is a beta feature. Do not enable the feature in production environments. This feature is available in managed deployments only.
 {: beta}
 
-By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When Answer finding is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, as well as a confidence score that the "short answer" answers the question that is explicit or implicit in the user query. Applications that use Answer finding can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.
+By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When Answer finding is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use Answer finding can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.
 
 Notes about Answer finding:
-  -  It finds answers, it doesn’t create answers. The answer must be part of the text; it can't be inferred.
-     -  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what was IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it will not add them up and give you a total
+
+  -  It finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
+     -  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what was IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
   -  If the answer is available, it can handle synonyms and lexical variations.
      -  Example question: “When did IBM purchase Red Hat?” – Passage ("short answer" is in **bold**.): “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
-  -  It can combine information across multiple sentences as long as they are close together (within approximately 2,000 characters)
+  -  It can combine information across multiple sentences if they are close together (within approximately 2,000 characters)
      -  Example question: “When did IBM purchase Red Hat?” – Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
   -  It handles implicit questions similar to the way it would handle the equivalent explicit question.
-     - Example questions: “company that developed the AS/400”, ”What company developed the AS/400?”
-  - Works well with questions with longer phrase/clause answers.
-     -  Example question: “How do I flip a pancake?” - Passage: “The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**”
-  - Many how or why questions are only fully answered by much longer spans of text. Answer finding will not tell you that a whole document is the answer (and it will not summarize a document length answer).
-  - Handles yes/no questions that are factual and have a concise answer in the text.
-     -  Example question: ”Is there a library in Timbuktu” - Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house containing more than 20,000 manuscripts covering centuries of Mali's history. 
-  - Handles questions with very short answers, such as names and dates, especially when the type of answer required is explicit in the text.
+     - Example questions: 
+
+        - `company that developed the AS/400`
+        - `What company developed the AS/400?`
+  - Works well with questions with longer phrase or clause answers.
+    - Example question: How do I flip a pancake?
+    - Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
+  - Many how or why questions are only fully answered by much longer spans of text. Answer finding does not return a whole document as the answer (and it doesn't summarize a document length answer).
+  - Handles yes or no questions that are factual and have a concise answer in the text.
+     - Example question: Is there a library in Timbuktu
+     - Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house that contains more than 20,000 manuscripts that cover centuries of Mali's history. 
+  - Handles questions with very short answers, such as names and dates, especially when the type of answer that is required is explicit in the text.
   - Handles opinion questions, but only for finding a statement of that opinion, not for assessing the validity of the opinion.
-     - Example question: ”Should I try blue eyeshadow?” - Passage: “We think **blue eye shadow is trending** this year.”
+     - Example question: Should I try blue eyeshadow?
+     - Passage: We think **blue eye shadow is trending** this year.
 
-The Answer finding API beta adds two new parameters within the `passage` block of the query API. for more informatation on these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
+The Answer finding API beta adds two new parameters within the `passage` block of the query API. for more information about these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
 
--  `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), Answer finding will be enabled.
--  `max_answers_per_passage` is optional and defaults to `1`. In this case, Answer finding will find the number of answers specified at most from any one passage.
+-  `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), Answer finding is enabled.
+-  `max_answers_per_passage` is optional and defaults to `1`. In this case, Answer finding finds the number of answers that are specified at most from any one passage.
 
-A block is also added to the `return` value within each `passage` object.  That block is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage`in length. Each answer object contains the following fields:
+A block is also added to the `return` value within each `passage` object. That block is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage`in length. Each answer object contains the following fields:
 
 -  `answer_text`is the text of the concise answer to the query.
--  `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Note that some answers have very low confidence and are very unlikely to be correct, so you should be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
--  `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from.  It is guaranteed to be greater than or equal to the start offset of the passage (since the answer must be within the passage).
--  `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from.  It is guaranteed to be less than or equal to the end offset of the passage.
+-  `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Some answers have low confidence and are unlikely to be correct. Be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
+-  `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from. It is greater than or equal to the start offset of the passage (since the answer must be within the passage).
+-  `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from. It is less than or equal to the end offset of the passage.
 
 To find answers across your whole collection:
 Set `passages/enabled` to `true`
@@ -96,7 +103,7 @@ Set `passages/enabled` to `true`
 Set `passages/find_answers` to `true`
 Set `filter` to select the `document_id` for the document 
 
-Here is an example of a query using this API:
+The following example shows a query that uses this API:
 
 ```bash
 POST /v2/projects/{project_id}/query{"natural_language_query": "Why did Nixon resign?",
@@ -128,25 +135,25 @@ Example response
 ```
 {: codeblock}
 
-Because Answer finding is enabled on only the documents and passages requested, you may want to consider requesting more documents and/or more passages per document than actually needed so the Answer finding model can be combined with more candidate documents and passages. For example, if you want to show `10` documents and `1` passage from each document, consider asking for `20` documents and up to `3` passages from each document with Answer finding. Answer finding will then search for answers in up to `20*3` = `60` passages and if confident that an answer was found in one of those passages, that confidence will be combined with the document and passage scores to produce a final ranking which can promote a document or passage that might otherwise have been missed.
+Because Answer finding is enabled on only the documents and passages that are requested, consider requesting more documents and more passages per document than are needed. By doing so, the Answer finding model can be combined with more candidate documents and passages. For example, if you want to show `10` documents and `1` passage from each document, consider asking for `20` documents and up to `3` passages from each document with Answer finding. Answer finding searches for answers in up to `20*3` = `60` passages. If it's confident that an answer was found in one of the passages, the confidence score is combined with the document and passage scores to produce a final ranking, which can promote a document or passage that might otherwise be missed.
 
-## natural_language_query
+## `natural_language_query`
 {: #nlq}
 
-A natural language query enables you to perform queries expressed in natural language, as might be received from an end user in a conversational or free-text interface - for example: `IBM Watson in healthcare`. The parameter uses the entire input as the query text. It does **not** recognize operators. The `natural_language_query` parameter enables capabilities such as relevancy training. Query results will include a `confidence` score. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence). The maximum query string length for a natural language query is `2048`.
+Use a natural language query to enter queries that are expressed in natural language, as might be received from a user in a conversational or free-text interface, such as IBM Watson Assistant. The parameter uses the entire input as the query text. It does **not** recognize operators. The `natural_language_query` parameter enables capabilities such as relevancy training. Query results include a `confidence` score. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence). The maximum query string length for a natural language query is `2048`.
 
-## query
+## `query`
 {: #query}
 
 A query search returns all documents in your data set with full enrichments and full text in order of relevance. A query also excludes any documents that don't mention the query content.
 
-## aggregation
+## `aggregation`
 {: #aggregation}
 
-Aggregation queries return a count of documents matching a set of data values. For the full list of aggregation options, see the [Aggregations table](/docs/discovery-data?topic=discovery-data-query-aggregations). 
+Aggregation queries return a count of documents that match a set of data values. For the full list of aggregation options, see the [Aggregations table](/docs/discovery-data?topic=discovery-data-query-aggregations). 
 
 
-## filter
+## `filter`
 {: #filter}
 
 A cacheable query that excludes any documents that don't mention the query content. Filter search results are **not** returned in order of relevance. 
@@ -154,52 +161,61 @@ A cacheable query that excludes any documents that don't mention the query conte
 ### Differences between the filter and query parameters
 {: #filtervquery}
 
-If you test the same search term on a small data set, you might find that the `filter` and `query` parameters return very similar (if not identical) results. However, there is a difference between the two parameters.
+If you test the same search term on a small data set, you might find that the `filter` and `query` parameters return very similar (if not identical) results. However, the two parameters differ.
 
-- Using a filter parameter alone will return search results in no specific order.
-- Using a query parameter alone will return search results in order of relevance.
+- Using a filter parameter alone returns search results in no specific order.
+- Using a query parameter alone returns search results in order of relevance.
 
-In large data sets, if you need results returned in order of relevance, you should combine the `filter` and `query` parameters, because using them together will improve performance. This is because the `filter` parameter will run first and cache results, then the `query` parameter will rank them. For an example of using filters and queries together, see [Building combined queries](/docs/discovery-data?topic=discovery-data-query-concepts#building-combined-queries). Filters can also be used in aggregations.
+In large data sets, if you need results to be returned in order of relevance, combine the `filter` and `query` parameters. Using the parameters together improves performance. The `filter` parameter is applied first. It filters the documents, and then caches the results. Then, the `query` parameter ranks the cached results. For an example of using filters and queries together, see [Building combined queries](/docs/discovery-data?topic=discovery-data-query-concepts#building-combined-queries). You can use filters in aggregations also.
 
-When you write a query that includes both a `filter`, and an `aggregation`, `query`, or `natural_language_query` parameter; the `filter` parameters run first, after which any `aggregation`, `query`, or `natural_language_query` parameters run in parallel.
+When you write a query that includes both a `filter`, and an `aggregation`, `query`, or `natural_language_query` parameter, the `filter` parameter runs first, and then any `aggregation`, `query`, or `natural_language_query` parameters run in parallel.
 
-With a simple query, especially on a small data set, `filter` and `query` often return the exact same (or similar) results. If a `filter` and `query` call return similar results, and getting a response in order of relevance does not matter, it is better to use filter because filter calls are faster and are cached. Caching means that the next time you make that call, you get a much quicker response, particularly in a big data set.
+With a simple query, especially on a small data set, the `filter` and `query` parameters often return the exact same (or similar) results. If the `filter` and `query` calls return similar results, and you don't need the responses to be returned in order of relevance, use the `filter` parameter. Filter calls are faster and are cached. Caching means that the next time you make the same call, you get a much quicker response, particularly in a big data set.
 
 
 ## Structure parameters
 {: #query-parameters-structure}
 
-Structure parameters define the content and organization of the documents in the returned JSON. This includes the number of results retuned, where in the results set to start returning documents, how the result set is sorted, which fields to return for each documents, if duplicate documents should be removed, and if relevant passages should be extracted from the results set. Structure parameters don't affect which documents are part of the entire results set.
+Structure parameters define the content and organization of the documents in the returned JSON. They determine the following things:
 
-## return
+- the number of results to return
+- where in the results set to start returning documents
+- how the result set is sorted
+- which fields to return for each document
+- whether to remove duplicate documents
+- whether to remove extracted relevant passages from the results set. 
+
+Structure parameters don't affect which documents are part of the entire results set.
+
+## `return`
 {: #return}
 
-A comma-separated list of the portion of the document hierarchy to return. Any of the document hierarchy are valid values. If this parameter is an empty list, then all fields are returned.
+A comma-separated list of the portion of the document hierarchy to return. Any of the document hierarchies are valid values. If this parameter is an empty list, then all fields are returned.
 
-## count
+## `count`
 {: #count}
 
-The number of documents that you want returned in the response. The default is `10`. The maximum for the `count` and `offset` values together in any one query is `10000`.
+The number of documents that you want to return in the response. The default is `10`. The maximum for the `count` and `offset` values together in any one query is `10000`.
 
-## offset
+## `offset`
 {: #offset}
 
-For example, if the total number of results that are returned is 10, and the offset is 8, it returns the last two results. The default is `0`. The maximum for the `count` and `offset` values together in any one query is `10000`.
+Index value of the position of the search result where the set of results to return begins. For example, if the total number of results that are returned is 10, and the offset is 8, it returns the last two results. The default is `0`. The maximum allowed value for the `count` and `offset` together in any one query is `10000`.
 
-## spell correction
+## `spell correction`
 {: #spell}
 
-In natural language queries, you can spell check the `natural_language_query` parameter. The most likely correction is returned in the `suggested_query` field of the response (if one exists).
+In natural language queries, you can check and correct the spelling of terms in the `natural_language_query` parameter. The most likely correction is returned in the `suggested_query` field of the response (if one exists).
 
-## sort
+## `sort`
 {: #sort}
 
-A comma-separated list of fields in the document to sort on. You can optionally specify a sort direction by prefixing the field with `-` for descending order or `+` for ascending order. Ascending order is the default sort direction.
+A comma-separated list of fields in the document to sort by. You can optionally specify a sort direction by prefixing the field with `-` for descending order or `+` for ascending order. Ascending order is the default sort direction.
 
-## highlight
+## `highlight`
 {: #highlight}
 
-A boolean that specifies whether the returned output includes a `highlight` object in which the keys are field names and the values are arrays that contain segments of query-matching text highlighted by the HTML emphasis (`<em>`) tag.
+A Boolean that specifies whether to include a `highlight` object in the returned output. When included, the highlight returns keys that are field names and values that are arrays. The arrays contain segments of query-matching text that is highlighted by using the HTML emphasis (`<em>`) tag.
 
 The output lists the `highlight` object after the `enriched_text` object, as shown in the following example.
 
@@ -208,7 +224,7 @@ curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/p
 ```
 {: pre}
 
-The JSON that is returned will be of the following format:
+The JSON that is returned has the following format:
 
 ```json
 {
@@ -243,7 +259,7 @@ The JSON that is returned will be of the following format:
 ```
 {: codeblock}
 
-## suggested_refinements ![Premium plan](images/premium.png)
+## `suggested_refinements` ![Premium plan](images/premium.png)
 {: #suggested_refinements}
 
 The `suggested_refinements` parameter enables dynamic facets for a natural language query. Dynamic facets use unsupervised machine learning models to automatically select terms that are semantically similar to the terms in the query and terms in the resulting documents. For example, you can select dynamic facets to enhance an existing query by filtering on a unique term to improve your results. Dynamic facets are trained as documents are added to a collection. It might take several minutes until dynamic facets appear, after you add documents to a collection. To enable dynamic facets, you must first enable the **Parts of Speech** enrichment in your collection. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu#pos).
@@ -294,32 +310,32 @@ The JSON that is returned is of the following format:
 ```
 {: codeblock}
 
-### suggested_refinements.count
+### `suggested_refinements.count`
 {: #suggested_refinements_count}
 
-The maximum number of suggested refinements returned. The default is `10`. The minimum is `1`. The maximum is `100`.
+The maximum number of suggested refinements to return. The default is `10`. The minimum is `1`. The maximum is `100`.
 
-## passages
+## `passages`
 {: #passages}
 
-A boolean that specifies whether the service returns a set of the most relevant passages from the documents returned by a query that uses the `natural_language_query` parameter. The passages are generated by sophisticated Watson algorithms to determine the best passages of text from all of the documents returned by the query. The default is `false`.
+A Boolean that specifies whether the service returns a set of the most relevant passages from the documents that are returned by a query that uses the `natural_language_query` parameter. The passages are generated by sophisticated Watson algorithms that determine the best passages of text from all of the documents returned by the query. The default is `false`.
 
-{{site.data.keyword.discoveryshort}} attempts to return passages that start at the beginning of a sentence and stop at the end using sentence boundary detection. To do so, it first searches for passages approximately the length specified in the [`passages.characters` parameter](/docs/discovery-data?topic=discovery-data-query-parameters#passages_characters) (default `400`). It then expands each passage to the limit of twice the specified length in order to return full sentences. If your `passages.characters` parameter is short and/or the sentences in your documents are very long there may be no sentence boundaries close enough to return the full sentence without going over twice the requested length. In that case, {{site.data.keyword.discoveryshort}} stays within the limit of twice the `passages.characters` parameter, so the passage returned will not include the entire sentence and omit the beginning, end, or both.
+{{site.data.keyword.discoveryshort}} attempts to return passages that start at the beginning of a sentence and stop at the end by using sentence boundary detection. To do so, it first searches for passages approximately the length specified in the [`passages.characters` parameter](/docs/discovery-data?topic=discovery-data-query-parameters#passages_characters) (default `400`). It then expands each passage to the limit of twice the specified length so as to return full sentences. If your `passages.characters` parameter is short or the sentences in your documents are long there might be no sentence boundaries close enough to return the full sentence without going over twice the requested length. In that case, {{site.data.keyword.discoveryshort}} stays within the limit of twice the `passages.characters` parameter, so the passages that are returned might not include the entire sentence and can omit the beginning, end, or both.
 
-Since sentence boundary adjustments expand passage size, you will see a substantial increase in average passage length. If your application has limited screen space, you may want to set a smaller value for `passages.characters` and/or truncate the passages that are returned by {{site.data.keyword.discoveryshort}}. Sentence boundary detection works for all supported languages and uses language-specific logic.
+Since sentence boundary adjustments expand passage size, the average passage length can increase. If your application has limited screen space, you might want to set a smaller value for `passages.characters` or truncate the passages that are returned by {{site.data.keyword.discoveryshort}}. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
 Passages are returned `per_document` by default. Passages are grouped with each document result and are ordered by passage relevance. Including passage retrieval in queries increases the response time because it takes to score the passages. Search results are displayed in a preview of your document for the following document types: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of supported image files.
 
-You can adjust the fields in the documents over which passage retrieval searches with the [`passages.fields`](/docs/discovery-data?topic=discovery-data-query-parameters#passages_fields) parameter.
+You can adjust the fields in the documents for passage retrieval to search with the [`passages.fields`](/docs/discovery-data?topic=discovery-data-query-parameters#passages_fields) parameter.
 
-The `passages` parameter returns matching passages (`passage_text`), as well as the `score`, `document_id`, the name of the field the passage was extracted from (`field`), and the starting and ending characters of the passage text within the field (`start_offset` and `end_offset`), as shown in the following example.
+The `passages` parameter returns matching passages (`passage_text`), and the `score`, `document_id`, the name of the field that the passage was extracted from (`field`), and the starting and ending characters of the passage text within the field (`start_offset` and `end_offset`), as shown in the following example.
 
 ```bash
  curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=Hybrid%20cloud%20companies&passages=true&passages.per_document=false'
 ```
 {: pre}
 
-The JSON that is returned from the query will be of the following format:
+The JSON that is returned from the query has the following format:
 
 ```json
  {
@@ -345,27 +361,29 @@ The JSON that is returned from the query will be of the following format:
 ```
 {: codeblock}                        
 
-### passages.fields
+### `passages.fields`
 {: #passages_fields}
 
-A comma-separated list of fields in the index that passages will be drawn from. If this parameter is not specified then passages from all root-level fields are included.
+A comma-separated list of fields in the index that passages are drawn from. If this parameter is not specified, then passages from all root-level fields are included.
 
-You specify fields in both the `return` and `passages.fields` parameters. When you specify both parameters, each with different values, they are treated separately. For example, the request might include the parameters `"return": ["docno"]` and `"passages":{"fields": ["body"]`. The `body` field is specified in `passages.fields`, but not in `return`. In the result, passages from the document body are returned, but the contents of the body field itself is not returned.
+You can specify fields in both the `return` and `passages.fields` parameters. When you specify both parameters, each with different values, they are treated separately. 
 
-### passages.count
+For example, the request might include the parameters `"return": ["docno"]` and `"passages":{"fields": ["body"]`. The `body` field is specified in `passages.fields`, but not in `return`. In the result, passages from the document body are returned, but the contents of the body field itself is not returned.
+
+### `passages.count`
 {: #passages_count}
 
-The maximum number of passages to return. The search will return fewer passages if that is the total number found. The default is `10`. The maximum is `100`.
+The maximum number of passages to return. The search returns fewer passages if the specified count is the total number found. The default is `10`. The maximum is `100`.
 
-### passages.characters
+### `passages.characters`
 {: #passages_characters}
 
-The approximate number of characters that any one passage should have. The default is `400`. The minimum is `50`. The maximum is `2000`. Passages returned may be up to twice the requested length (if necessary) to get them to begin and end at sentence boundaries.
+The approximate number of characters that any one passage can have. The default is `400`. The minimum is `50`. The maximum is `2,000`. Passages that are returned can contain up to twice the requested length (if necessary) to get them to begin and end at sentence boundaries.
 
-## table retrieval
+## `table retrieval`
 {: #table_retrieval}
 
-If [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) is enabled in your collection, a `natural_language_query` will find tables whose content or context match a search query.
+If [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables) is enabled in your collection, a `natural_language_query` finds tables with content or context that match a search query.
 
 Example query:
 
@@ -374,7 +392,7 @@ Example query:
 ```
 {: pre}
 
-The JSON that is returned from the query will be of the following format:
+The JSON that is returned from the query has the following format:
 
 ```json
 {
@@ -384,8 +402,8 @@ The JSON that is returned from the query will be of the following format:
     {
      ...
     }
-  ],
-{
+  ]
+  {
   "table_results": [
     {
       "table_id": "e883d3df1d45251121cd3d5aef86e4edc9658b21",
@@ -473,13 +491,13 @@ The JSON that is returned from the query will be of the following format:
 ```
 {: codeblock}
 
-### table_results.enabled
+### `table_results.enabled`
 {: #table_results}
 
-When `true`, a `table_results` array will appear in the response with a list of table objects that match the given `natural_language_query` in order of scored relevance. The default is `false`.
+When `true`, a `table_results` array is included in the response with a list of table objects that match the `natural_language_query` value in order of scored relevance. The default is `false`.
 
-### table_results.count
+### `table_results.count`
 {: #table_count}
 
-This parameter specifies the maximum number of tables that can appear in the `table_results` array. Only returned if `table_results.enabled`=`true`. The default is `10`.
+This parameter specifies the maximum number of tables that can be included in the `table_results` array. Only returned if `table_results.enabled`=`true`. The default is `10`.
 

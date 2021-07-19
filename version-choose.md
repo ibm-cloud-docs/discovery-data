@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-07-16"
 
 subcollection: discovery-data
 
@@ -109,4 +109,4 @@ For more information about artifact limits per plan, see the feature documentati
 The following limits apply only to Content Mining project types:
 
 - [Document classifier limits](/docs/discovery-data?topic=discovery-data-contentminerapp#doc-classifier-limits)
-- [Regular expression pattern limits](/docs/discovery-data?topic=discovery-data-contentminerapp#regex-limits)
+- [Regular expression pattern limits](/docs/discovery-data?topic=discovery-data-contentminerapp#regex-pattern-limits)
