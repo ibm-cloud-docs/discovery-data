@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-18"
+lastupdated: "2021-07-19"
 
 subcollection: discovery-data
 
@@ -49,16 +49,16 @@ Related topics:
   - [Developing custom Cloud Pak for Data connector code](/docs/discovery-data?topic=discovery-data-connector-dev)
   - [Assembling, compiling, and packaging a custom Cloud Pak for Data connector](/docs/discovery-data?topic=discovery-data-assemble)
   - [Installing and uninstalling a custom Cloud Pak for Data connector](/docs/discovery-data?topic=discovery-data-install-connector)
-  - [Using a custom Cloud Pak for Data connector with the Discovery tooling](/docs/discovery-data?topic=discovery-data-ccs-tooling)
+  - [Using a custom Cloud Pak for Data connector from the Discovery user interface](/docs/discovery-data?topic=discovery-data-ccs-tooling)
 
 ## Custom connector requirements
 {: #about-ccs}
 
-A custom connector is a component that uses the SDK and crawler framework documented here to connect to and crawl a specific data source. Custom connectors have the same general requirements as provided connectors. For more information, see [Data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements).
+A custom connector is a component that uses the SDK and crawler framework that is documented here to connect to and crawl a specific data source. Custom connectors have the same general requirements as provided connectors. For more information, see [Data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements).
 
-When preparing to implement a custom connector, you need to know the following information about the data source:
+Before you implement a custom connector, you need to know the following information about the data source:
 
-  - The data source's network location (server name or address including port, or URL including port)
+  - The data source's network location (server name or address, including port, or URL, including port)
   - The data source's authentication method and security credentials
   - The path or paths on the data source that the connector needs to crawl
   - The connection method or protocol that the data source supports
@@ -76,12 +76,12 @@ A custom connector needs the following capabilities:
     - Adding Access Control List (ACL) information to each document.
   - Retrieving ACL information for the username that authenticates to the data source.
 
-These capabilities can be implemented by using the interfaces and methods described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
+These capabilities can be implemented by using the interfaces and methods that are described in [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
 
 ## Custom connector limitations
 {: #connector-notes}
 
-Observe the following notes and warnings when implementing a custom connector.
+Observe the following notes and warnings when you implement a custom connector.
 {:shortdesc}
 
   - Custom connectors do *not* support the following features:
@@ -94,4 +94,4 @@ Observe the following notes and warnings when implementing a custom connector.
   - The `list` parameter type is not supported.
   - If a custom connector fails to connect to its source for any reason, it issues a generic error message such as `Failed to create connector` or `Timed out`, or a `500` HTTP error. Specific failure information is not currently provided.
 
-  See the [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for possible additional issues.
+  See the [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for more possible issues.

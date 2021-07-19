@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-07-19"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ subcollection: discovery-data
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
 
-# Using a Cloud Pak for Data custom crawler plug-in with the Discovery tooling
+# Using a Cloud Pak for Data custom crawler plug-in from the Discovery user interface
 {: #crawler-plugin-tooling}
 
 After you build and deploy a crawler plug-in, you can configure your {{site.data.keyword.discoveryshort}} collection to use your plug-in to process documents.

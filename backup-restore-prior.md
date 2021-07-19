@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-19"
 
 subcollection: discovery-data
 
@@ -98,7 +98,7 @@ For more information about configuring specific crawlers or for information abou
 The following updates are made when your collections are restored:
 
   - Any collection that contains documents that were added by uploading data are automatically recrawled and reindexed when restored. These documents are assigned new document ID numbers in the restored collections.
-  - All collections that are used in a **Content Miner** project are automatically recrawled and reindexed when restored. Only the documents added by uploading data are assigned new document ID numbers in the restored collections.
+  - All collections that are used in a **Content Miner** project are automatically recrawled and reindexed when restored. Only the documents that are added by uploading data are assigned new document ID numbers in the restored collections.
 
 ## Back up and restore methods
 {: #backup-restore-methods-prior}
@@ -158,7 +158,7 @@ Perform the following steps to back up {{site.data.keyword.discoveryfull}} by us
       If you are backing up version 2.1.4 and earlier, enter `./all-backup-restore.sh backup <release_name> <-f backupFileName>` to specify the release name that you are backing up. Like the command for version 2.2.0, the `<-f backupFileName>` part of the command is optional, and you can specify the namespace in which the gateway pods are deployed.
       {: tip}
 
-      The scripts generate an archive file, including the backup files of the services that are listed in Step 1. The file is named `watson_discovery_<timestamp>.backup` or the file that is specified by the `-f` option in the current directory. These scripts create a `tmp` directory in the current directory, while backing up and restoring. You can unpack the archive file by running following command:
+      The scripts generate an archive file, including the backup files of the services that are listed in Step 1. The file is named `watson_discovery_<timestamp>.backup` or the file that is specified by the `-f` option in the current directory. These scripts create a `tmp` directory in the current directory when they back up and restore documents. You can unpack the archive file by running following command:
 
       ```bash
       tar xvf <backup_file_name>
@@ -206,7 +206,7 @@ Perform the following steps to restore data in {{site.data.keyword.discoveryfull
       If you are restoring version 2.1.4 and earlier, enter `./all-backup-restore.sh restore <release_name> -f <backupFileName>` to specify the `<release_name>` that you are restoring to and the file name that you want to back up. You can use `core` as the `<release_name>` if you restore to version 2.1.2.
       {: tip}
 
-  The gateway, ingestion, orchestrator, hadoop worker, and controller pods automatically restart.
+  The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
   
 If you want to install multiple {{site.data.keyword.discoveryshort}} add-ons to different clusters, see [Copying {{site.data.keyword.discoveryshort}} data across {{site.data.keyword.discoveryshort}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
 {: tip}
@@ -221,50 +221,53 @@ During the restore process, the restore script attempts to install a .pip packag
 
 To install the `requests` package manually, complete the following steps:
 
-1. Enter the following command to download the `requests` package on another environment that can install the package using pip3:
+1.  Enter the following command to download the `requests` package on another environment that can install the package by using pip3:
 
-   ```
-   pip3 download -d <src_directory> --no-binary :all: requests
-   ```
-   {: pre}
+    ```
+    pip3 download -d <src_directory> --no-binary :all: requests
+    ```
+    {: pre}
 
-1. You must copy and install the `requests` package to the first gateway pod that is listed. To list the available gateway pods, enter the following command:
+1.  You must copy and install the `requests` package to the first gateway pod that is listed. To list the available gateway pods, enter the following command:
 
-   ```
-   kubectl get pod -l "release=core,run=gateway"
-   ```
-   {: pre}
+    ```
+    kubectl get pod -l "release=core,run=gateway"
+    ```
+    {: pre}
 
-   In a list of multiple gateway pods, note the first one listed. If only one gateway pod is listed, copy the `requests` package to that pod.
+    In a list of multiple gateway pods, note the first one listed. If only one gateway pod is listed, copy the `requests` package to that pod.
 
-1. Enter the following command to copy the `requests` package to the first listed gateway pod:
+1.  Enter the following command to copy the `requests` package to the first listed gateway pod:
    
-   ```
-   kubectl cp -c nginx <src_directory> <first-listed-gateway-pod>:/tmp/requests_src
-   ```
-   {: pre}
+    ```
+    kubectl cp -c nginx <src_directory> <first-listed-gateway-pod>:/tmp/requests_src
+    ```
+    {: pre}
 
-1. Enter the following command to install the `requests` package on the gateway pod:
+1.  Enter the following command to install the `requests` package on the gateway pod:
 
-   ```
-   kubectl exec -c nginx <first-listed-gateway-pod> -- pip3 install --user -q --no-cache-dir /tmp/requests_src/requests-<version>.tar.gz
-   ```
-   {: pre}
+    ```
+    kubectl exec -c nginx <first-listed-gateway-pod> -- pip3 install --user -q --no-cache-dir /tmp/requests_src/requests-<version>.tar.gz
+    ```
+    {: pre}
 
-1. Enter the following command to run the post-restore scripts. Note that entering `-n` is optional. If you do not enter `-n`, the scripts run in the current namespace:
+1.  Enter the following command to run the post-restore scripts. 
 
-   ```
-   ./post-restore.sh core [-n <namespace>]
-   ```
-   {: pre}  
+    Entering `-n` is optional. If you do not enter `-n`, the scripts run in the current namespace.
+    {: note}
 
-  The `requests` package is removed upon restarting the gateway pod, and the `all-backup-restore.sh` script restarts the gateway pod before running the `post-restore.sh` script.
-  {: note}
+    ```
+    ./post-restore.sh core [-n <namespace>]
+    ```
+    {: pre}  
+
+    The `requests` package is removed upon restarting the gateway pod, and the `all-backup-restore.sh` script restarts the gateway pod before it runs the `post-restore.sh` script.
+    {: note}
 
 ### Backing up data manually
 {: #backup-user-data-prior}
 
-Because [certain data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr-restrictions) is not automatically backed up when you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must manually back up this data.
+Because [some data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr-restrictions) is not automatically backed up when you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must manually back up this data.
 {: shortdesc}
 
 To manually back up your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
@@ -305,12 +308,12 @@ To manually back up your data from an instance of {{site.data.keyword.discoverys
    If you are manually backing up data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `kubectl cp <ingestion-pod>:/mnt <path-to-backup-directory>`.
    {: tip}
 
-For information about the backup and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
+For more information about the backup and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
 
 ### Restoring data manually
 {: #restore-user-data-prior}
 
-Because [certain data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr-restrictions) is not automatically restored after you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must manually restore this data.
+Because [some data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr-restrictions) is not automatically restored after you back up an instance of {{site.data.keyword.discoveryshort}}, such as Box files that contain your configuration credentials and Local File System folders and documents, you must manually restore this data.
 {: shortdesc}
 
 To manually restore your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
@@ -412,7 +415,7 @@ To migrate your Box crawler, complete the following steps:
    ```
    {:pre}
 
-To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore). For more information about the back up and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
+To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore). For more information about the backup and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
 
 ### Migrating Salesforce or JDBC crawlers
 {: #migrate-salesforce-jdbc}
@@ -464,7 +467,7 @@ Before backing up or restoring data, ensure that you have the following tool tha
 
 You must have the following permissions:
 
-  - Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (the data must be backed up) and administrative access to the new instance that the data are being restored to.
+  - Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (the data must be backed up) and administrative access to the new instance that the data is being restored to.
   - Permissions to use cluster-wide CLI tools, such as `kubectl`.
 
 You must also have the following system requirement: Red Hat Enterprise Linux 7.5 or later.
@@ -481,10 +484,10 @@ In the following procedures, angle brackets (`< >`) are used to indicate variabl
 Use the `all-backup-restore.sh` backup and restore script to back up and restore to {{site.data.keyword.discoveryshort}} version 2.1.0 or later.
 
  -  Back up and restore scripts for versions 2.2.0 and later. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.2.0){: external}.
- -  Backup/restore scripts for version 2.1.3 and 2.1.4. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
+ -  Backup and restore scripts for version 2.1.3 and 2.1.4. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
  -  Back up and restore scripts for versions 2.1.0 through 2.1.2. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
 
-You need all files that are stored in the applicable GitHub repository to perform a backup and restore. Follow the instructions in GitHub Help to clone or download a zip file of the repository.
+You need all files that are stored in the applicable GitHub repository to perform a backup and restore. Follow the instructions in GitHub Help to clone or download a compressed file of the repository.
 {: important}
 
 To make a script executable, run the following command:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-17"
+lastupdated: "2021-07-19"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ subcollection: discovery-data
 # Developing custom Cloud Pak for Data connector code
 {: #connector-dev}
 
-The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when writing your own custom connector.
+The custom connector example includes a Java package named `com.ibm.es.ama.custom.crawler`. The package includes the following Java interfaces that you can use when you write your own custom connector.
 {: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
@@ -40,10 +40,10 @@ The custom connector example includes a Java package named `com.ibm.es.ama.custo
 This information applies only to installed deployments.
 {:note}
 
-## Interfaces and JavaDoc
+## Interfaces and Javadoc
 {: #ccs-interfaces-jdoc}
 
-The interfaces listed in this document are available in the JAR package file that ships with the custom connector .zip file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the root level of the expanded .zip file. JavaDoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
+The interfaces that are listed in this document are available in the JAR package file that is included with the custom connector compressed file. After you download and expand the `custom-crawler-docs.zip` file as described in [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old), the interface JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}.jar` from the root level of the expanded compressed file. Javadoc for the JAR file is available as `wexlib/ama-zing-custom-crawler-{version_numbers}-javadoc.jar` at the same level.
 
 ## Initialization interface
 {: #ccs-init-interface}
@@ -51,13 +51,13 @@ The interfaces listed in this document are available in the JAR package file tha
 ### `CustomCrawler`
 {: #customcrawler}
 
-Use the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface to initialize or terminate a custom crawler or to crawl documents from a path. The interface has the following methods.
+Use the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface to start or stop a custom crawler or to crawl documents from a path. The interface has the following methods.
 
 |Method               |Description
 |---------------------|-----------------------|
-|`init`               |Initialize a custom crawler |
-|`term`               |Terminate a custom crawler |
-|`crawl`              |Crawl documents from a given path|
+|`init`               | Start a custom crawler |
+|`term`               | Stop a custom crawler |
+|`crawl`              | Crawl documents from a specified path|
 {: caption="CustomCrawler methods" caption-side="top"}
 
 ## Configuration interfaces
@@ -118,7 +118,7 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawler.RecordKeeper` interface to 
 ### `CustomCrawlerSecurityHandler`
 {: #customcrawlersecurityhandler}
 
-Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface to implement security for your custom crawler. Note that this interface is not used in the example connector code. The interface has the following methods:
+Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface to implement security for your custom crawler. This interface is not used in the example connector code. The interface has the following methods:
 
 |Method               |Description
 |---------------------|-----------------------|
@@ -129,12 +129,12 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface t
 ## Custom connector example
 {: #example-connector}
 
-The example connector is a Secure File Transfer Protocol (SFTP) connector that crawls files located on an SFTP server.
+The example connector is a Secure File Transfer Protocol (SFTP) connector that crawls files that are located on an SFTP server.
 {: shortdesc}
 
 The example connector includes three components:
   - Java source code for the connector
-  - An XML definition file that defines the parameters the connector uses to connect to and crawl the data source
+  - An XML definition file that defines the parameters that the connector uses to connect to and crawl the data source
   - A properties file that defines optional behaviors for the connector
 
 ### Requirements
@@ -142,7 +142,7 @@ The example connector includes three components:
 
 The Java source code for the example connector has the following dependencies:
 
-  - JDK 1.8 or higher.
+  - Java SE Development Kit (JDK) 1.8 or higher.
   - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old).
   - The [JSch](http://www.jcraft.com/jsch/){: external} Java package, as described [Downloaded JSch](#download-jsch). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}.
 
@@ -160,7 +160,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
      ```
      {: pre}
 
-     You might see output that is similar to the following:
+     You might see output that looks like this:
 
      ```
      wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
@@ -196,7 +196,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
      If necessary, copy the `custom-crawler-docs.zip` file to the development server.
      {: note}
 
-     If your local machine does not have the `unzip` utility, try using the `gunzip` command instead, or see the documentation of the operating system of your local machine for other alternatives to expand .zip files.
+     If your local machine does not have the `unzip` utility, try using the `gunzip` command instead, or see the documentation of the operating system of your local machine for other alternatives to expand compressed files.
      {: note}
 
      If you are using a version of {{site.data.keyword.discoveryshort}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
@@ -255,7 +255,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.0 and earlier, perform the f
     ```
     {: pre}
 
-    If your local machine does not have the `unzip` utility, try using the `gunzip` command instead, or see the documentation of the operating system of your local machine for other alternatives to expand .zip files.
+    If your local machine does not have the `unzip` utility, try using the `gunzip` command instead, or see the documentation of the operating system of your local machine for other alternatives to expand compressed files.
     {: note}
 
     If you are using a version of {{site.data.keyword.discoveryshort}} that is earlier than 2.1.2 and you want to access the `custom-crawler-docs.zip` file, enter the following command: `scp root@{instance_name}:/root/bob/sdk/custom-crawler-docs.zip {local_directory}`.
@@ -308,16 +308,16 @@ custom-crawler-docs-master/
 
 JSch is a Java implementation of the Secure Shell protocol version 2 (SSH2) protocol and, by extension, `sftp`. It is derived from the [Java Cryptography Extension (JCE)](https://www.ibm.com/support/knowledgecenter/en/SSYKE2_7.0.0/com.ibm.java.security.component.70.doc/security-component/JceDocs/jce.html){: external}. You can find specifications for SSH2 at [www.openssh.com/specs.html](https://www.openssh.com/specs.html){: external}.
 
-The current version of JSch is 0.1.55. This is the version supported by the example connector.
+The current version of JSch is 0.1.55 and is supported by the example connector.
 
-Download JSch to your development directory (`{local_directory}`). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}. If you download the package in .zip format, unzip it as described in the previous section.
+Download JSch to your development directory (`{local_directory}`). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}. If you download the package in .zip format, extract it as described in the previous section.
 
 ### Files for the example connector
 {: #example-files}
 
 The example custom connector includes three files that get built together:
 
- - Java source files named `SftpCrawler.java` and `SftpSecurityHandler.java`
+ - Java source files that are named `SftpCrawler.java` and `SftpSecurityHandler.java`
  - An XML definitions file named `template.xml`
  - A properties file named `message.properties`
 
@@ -326,4 +326,4 @@ You can locate and examine these files by referencing the directory tree listing
 ## For more information
 {: #see-jdoc}
 
-For detailed documentation of all of the interfaces and methods that are available in the `com.ibm.es.ama.custom.crawler` package, see the JavaDoc, which is available as indicated in [Interfaces and JavaDoc](#ccs-interfaces-jdoc).
+For detailed documentation of all of the interfaces and methods that are available in the `com.ibm.es.ama.custom.crawler` package, see the Javadoc, which is available as indicated in [Interfaces and Javadoc](#ccs-interfaces-jdoc).
