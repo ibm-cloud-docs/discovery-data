@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-07-19"
 
 subcollection: discovery-data
 
@@ -111,7 +111,7 @@ You can aggregate results with {{site.data.keyword.discoveryshort}} in many ways
 #### Filter aggregations
 {: #filter-aggregations}
 
-This example aggregation returns the number of articles that are found in collection of articles about Pittsburgh and how many of those results have a `positive`, `negative`, or `neutral` sentiment.
+This example aggregation returns the number of articles that are found in a collection of articles about Pittsburgh and how many of those results have a `positive`, `negative`, or `neutral` sentiment.
 
 - `filter(enriched_text.entities.text:"Pittsburgh").term(enriched_text.sentiment.document.label,count:3)`
 
