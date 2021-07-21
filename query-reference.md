@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-20"
 
 subcollection: discovery-data
 
@@ -48,19 +48,19 @@ Use query parameters to search your collection, identify a result set, and analy
 
 | Parameter | Description | Example |
 |:----------|-------------|---------|
-| [`query`](/docs/discovery-data?topic=discovery-data-query-parameters#query) | A ranked query language search for matching documents. | `query=bees` |
+| [`aggregation`](#aggregations) | A statistical query of the results set | `aggregation=term(enriched_text.entities.type)` |
 | [`filter`](/docs/discovery-data?topic=discovery-data-query-parameters#filter) | An unranked query language search for matching documents. | `filter=bees` |
 | [`natural_language_query`](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) | A ranked natural language search for matching documents | `natural_language_query="How do bees fly"` |
-| [`aggregation`](/docs/discovery-data?topic=discovery-data-query-parameters#aggregation) | A statistical query of the results set | `aggregation=term(enriched_text.entities.type)` |
+| [`query`](/docs/discovery-data?topic=discovery-data-query-parameters#query) | A ranked query language search for matching documents. | `query=bees` |
 {: caption="Search parameters" caption-side="top"}
 
 | Parameter | Description | Example |
 |:----------|-------------|---------|
 | [`count`](/docs/discovery-data?topic=discovery-data-query-parameters#count) | The number of `result` documents to return. | `count=15` |
+| [`highlight`](/docs/discovery-data?topic=discovery-data-query-parameters#highlight) | Highlight query matches | `highlight=true` |
 | [`offset`](/docs/discovery-data?topic=discovery-data-query-parameters#offset) | The number of results to ignore before returning `result` documents from the results set | `offset=100` |
 | [`return`](/docs/discovery-data?topic=discovery-data-query-parameters#return) | List of fields to return | `return=title,url` |
 | [`sort`](/docs/discovery-data?topic=discovery-data-query-parameters#sort) | Field to sort results set by | `sort=enriched_text.sentiment.document.score` |
-| [`highlight`](/docs/discovery-data?topic=discovery-data-query-parameters#highlight) | Highlight query matches | `highlight=true` |
 | [`spelling suggestions`](/docs/discovery-data?topic=discovery-data-query-parameters#spell) | Spelling suggestions returned for natural language queries | `spelling_suggestions=true` |
 {: caption="Structure parameters" caption-side="top"}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-07-21"
 
 subcollection: discovery-data
 
@@ -35,17 +35,19 @@ subcollection: discovery-data
 You can use aggregations when you write queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
-Aggregations return a set of data values. For the complete list of available aggregations, see the [Query reference](/docs/discovery-data?topic=discovery-data-query-reference#aggregations).
+Aggregations return a set of data values. A maximum of 50,000 values can be returned for a single query. If more than 50,000 values are returned, then an error is displayed.
 
-## `term`
-{: #term}
+For the complete list of available aggregations, see the [Query reference](/docs/discovery-data?topic=discovery-data-query-reference#aggregations).
 
-Returns the top values (by score and by frequency) for the selected enrichments. All enrichments are valid values. You can optionally use `count` to specify the number of terms to return. This example returns the full text and enrichments of the top values with the concept enrichment, and specifies to return 10 terms.
+## `average`
+{: #average}
+
+Returns the mean of values of the specified field across all matching documents.
 
 For example:
 
 ```json
-term(enriched_text.concepts.text,count:10)
+average(product.price)
 ```
 {: codeblock}
 
@@ -61,18 +63,6 @@ filter(enriched_text.concepts.text:"cloud computing")
 ```
 {: codeblock}
 
-## `nested`
-{: #nested}
-
-Applying `nested` before an aggregation query restricts the aggregation to the area of the results that are specified. For example, `nested(enriched_text.entities)` means that only the `enriched_text.entities` components of any result are used to aggregate against.
-
-For example:
-
-```json
-nested(enriched_text.entities)
-```
-{: codeblock}
-
 ## `histogram`
 {: #histogram}
 
@@ -84,41 +74,6 @@ For example:
 
 ```json
 histogram(product.price,interval:1)
-```
-{: codeblock}
-
-## `timeslice`
-{: #timeslice}
-
-A specialized histogram that uses dates to create interval segments. Valid date interval values are `second/seconds` `minute/minutes`, `hour/hours`, `day/days`, `week/weeks`, `month/months`, and `year/years`. The syntax is `timeslice(<field>,<interval>,<time_zone>)`. To use `timeslice`, the time fields in your documents must be of the `date` data type and in [UNIX time](https://en.wikipedia.org/wiki/Unix_time){: external} format. Unless both of these requirements are met, the `timeslice` parameter does not work correctly. You can create a timeslice if your documents contain `date` fields with values such as `1496228512`. The value must be in a numeric format (for example, `float` or `double`) and not enclosed in quotation marks. The service treats dates in text and dates in ISO 8601 format as data type `string`, not as data type `date`. 
-
-
-## `top_hits`
-{: #top_hits}
-
-Returns the documents ranked by the score of the query or enrichment. Can be used with any query parameter or aggregation. This example returns the 10 top hits for a term aggregation.
-
-For example:
-
-```json
-term(enriched_text.concepts.text).top_hits(10)
-```
-{: codeblock}
-
-## `unique_count`
-{: #unique_count}
-
-Returns a count of the unique instances of the specified field in the collection.
-
-Examples:
-
-```json
-unique_count(enriched_text.keyword.text)
-```
-{: codeblock}
-
-```json
-nested(enriched_text.entities).term(enriched_text.entities.text,count:3).unique_count(enriched_text.entities.type)
 ```
 {: codeblock}
 
@@ -146,15 +101,15 @@ min(product.price)
 ```
 {: codeblock}
 
-## `average`
-{: #average}
+## `nested`
+{: #nested}
 
-Returns the mean of values of the specified field across all matching documents.
+Applying `nested` before an aggregation query restricts the aggregation to the area of the results that are specified. For example, `nested(enriched_text.entities)` means that only the `enriched_text.entities` components of any result are used to aggregate against.
 
 For example:
 
 ```json
-average(product.price)
+nested(enriched_text.entities)
 ```
 {: codeblock}
 
@@ -167,5 +122,51 @@ For example:
 
 ```json
 sum(product.price)
+```
+{: codeblock}
+
+## `term`
+{: #term}
+
+Returns the top values (by score and by frequency) for the selected enrichments. All enrichments are valid values. You can optionally use `count` to specify the number of terms to return. This example returns the full text and enrichments of the top values with the concept enrichment, and specifies to return 10 terms.
+
+For example:
+
+```json
+term(enriched_text.concepts.text,count:10)
+```
+{: codeblock}
+
+## `timeslice`
+{: #timeslice}
+
+A specialized histogram that uses dates to create interval segments. Valid date interval values are `second/seconds` `minute/minutes`, `hour/hours`, `day/days`, `week/weeks`, `month/months`, and `year/years`. The syntax is `timeslice(<field>,<interval>,<time_zone>)`. To use `timeslice`, the time fields in your documents must be of the `date` data type and in [UNIX time](https://en.wikipedia.org/wiki/Unix_time){: external} format. Unless both of these requirements are met, the `timeslice` parameter does not work correctly. You can create a timeslice if your documents contain `date` fields with values such as `1496228512`. The value must be in a numeric format (for example, `float` or `double`) and not enclosed in quotation marks. The service treats dates in text and dates in ISO 8601 format as data type `string`, not as data type `date`. 
+
+## `top_hits`
+{: #top_hits}
+
+Returns the documents ranked by the score of the query or enrichment. Can be used with any query parameter or aggregation. This example returns the 10 top hits for a term aggregation.
+
+For example:
+
+```json
+term(enriched_text.concepts.text).top_hits(10)
+```
+{: codeblock}
+
+## `unique_count`
+{: #unique_count}
+
+Returns a count of the unique instances of the specified field in the collection.
+
+Examples:
+
+```json
+unique_count(enriched_text.keyword.text)
+```
+{: codeblock}
+
+```json
+nested(enriched_text.entities).term(enriched_text.entities.text,count:3).unique_count(enriched_text.entities.type)
 ```
 {: codeblock}
