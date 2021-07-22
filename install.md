@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-21"
 
 subcollection: discovery-data
 
@@ -66,6 +66,6 @@ For more information about the system requirements for {{site.data.keyword.icp4d
 
 <!--[Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}}](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}-->
 
-The installation instructions will be published in the {{site.data.keyword.icp4dfull_notm}} [IBM Documentation site](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=services-ai){: external} by the end of July. In the meantime, work with an IBM representative to install the service.
+The installation instructions will be published in the {{site.data.keyword.icp4dfull_notm}} [IBM Documentation site](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=services-ai){: external} in August. In the meantime, work with an IBM representative to install the service.
 
 Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019. {{site.data.keyword.discoveryfull}} is FISMA High Ready.
