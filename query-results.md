@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-21"
 
 keywords: passages, query results
 
@@ -44,7 +44,7 @@ Preview the default query results.
 1.  From the navigation pane, open the **Improve and customize** page.
 1.  Take the appropriate action for your project type:
 
-    - Document Retrieval project:
+    - **Document Retrieval project**:
 
       - Click **Run search** for one of the keywords that {{site.data.keyword.discoveryshort}} calculated to have special meaning in your collection.
       - Submit your own phrase or keyword from the search bar.
@@ -53,16 +53,18 @@ Preview the default query results.
 
         If the result text shows `Excerpt unavailable`, the search results might be configured to show a field that doesn't exist in your collection. You can change the results to consist of information from a different field or to switch between showing passages or field content. For more information, see *Changing the result content*.
 
-    - Conversational Search project: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. See *Changing the result content*.
-    - Custom project: Submit your own phrase or keyword from the search bar. The query results that are returned consist of passages.
-    - Document Retrieval for Contracts project: Contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
-    - Content Mining project: Choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
+    - **Conversational Search project**: A single search field is displayed that mimics the user interface of a virtual assistant. Submit a phrase or keyword. The query results are returned as passages by default. You can configure the search to return a field instead. See *Changing the result content*.
+    - **Custom project**: Submit your own phrase or keyword from the search bar. The query results that are returned consist of passages.
+    - **Document Retrieval for Contracts project**: Contract-related elements that are recognized in your collection are displayed. You can filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
+    - **Content Mining project**: Choose a facet by which to filter the documents. Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
 
     - If you enable FAQ extraction, each question-and-answer pair that is found in the original document is added to a new, separate document with the question in the `title` field and answer in the `text` field. By separating the pairs into independent documents, the correct answer can be returned quickly when a phrase that is the same or similar to the associated question is submitted as the query. 
 
       If your source document contains 10 question-and-answer pairs, then 10 documents are generated during processing. If you want to see all of the documents that were generated, submit an empty search string.
+
+If you want to learn more about what information is indexed per document, see [Interpreting the results](/docs/discovery-data?topic=discovery-data-test#test-json).
 
 ## Improving your query results
 {: #query-results-improve}
@@ -92,7 +94,6 @@ When you deploy your project, you can use the APIs to define more complex querie
 
 For all project types except Conversational Search, you can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
 
-<!--If the documents in your collection are long, consider setting the number of passages to 3 and the maximum character size to 325. For shorter documents, -->
 ### Changing the result content
 {: #query-results-content}
 

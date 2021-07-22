@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-21"
 
 keywords: JSON, JSON representation, result JSON
 
@@ -50,6 +50,8 @@ To test your project, complete the following steps:
     - Other project types: Enter a test query to submit or leave the field empty and press Enter to submit an empty query.
 1.  From the query result list, click the link to view the document.
 1.  Click **JSON** to view the query result in JSON format.
+
+    For a *Document Retrieval for Contracts* project, click the **Contract Data** tab. For more information about the filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
 
 ## Interpreting the results
 {: #test-json}
