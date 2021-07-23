@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-23"
 
 subcollection: discovery-data
 
@@ -150,7 +150,7 @@ A query search returns all documents in your data set with full enrichments and 
 ## `aggregation`
 {: #aggregation}
 
-Aggregation queries return a count of documents that match a set of data values. For the full list of aggregation options, see the [Aggregations table](/docs/discovery-data?topic=discovery-data-query-aggregations). 
+Aggregation queries return a count of documents that match a set of data values. For the full list of aggregation options, see [Query aggregations](/docs/discovery-data?topic=discovery-data-query-aggregations). 
 
 
 ## `filter`
