@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-23"
 
 subcollection: discovery-data
 
@@ -42,7 +42,7 @@ This information applies only to installed deployments.
 
 This approach is ideal for business automation purposes. For example, if you want to classify emails, you can use the Analyze API to synchronously call {{site.data.keyword.discoveryshort}} to get a classification of the email. Then, you can use the output of that classification in your business logic.
 
-Use of the Analyze API affects license usage. For more information, see the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery)){: external}.
+Use of the Analyze API affects license usage. For more information, see the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery%29){: external}.
 
 The Analyze API supports JSON documents only.
 {: important}
