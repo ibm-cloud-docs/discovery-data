@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-14"
+lastupdated: "2021-07-26"
 
 subcollection: discovery-data
 
@@ -211,6 +211,44 @@ If the local file system files or folders that you want to crawl are stored in a
 
     ```bash
     persistentvolume/jdoe-nfs-pv created
+    ```
+    {: codeblock}
+
+1.  Create a file called `crawler-pvc-nfs.yaml` with the following content:
+
+    ```yaml
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: <persistent-volume-claim-name>
+    spec:
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi
+      selector:
+        matchLabels:
+          pv-name: <persistent-volume-name>
+    ```
+    {: codeblock}
+
+    Replace the following variables:
+    
+    - `<persistent-volume-claim-name>` with the name of your persistent volume claim. For example, `jdoe-nfs-pvc`.
+    - `<persistent-volume-name>` with the name of your persistent volume. For example, `jdoe-nfs-pv`.
+
+1.  Enter the following command to create the persistent volume claim:
+
+    ```bash
+    oc create -f crawler-pvc-nfs.yaml
+    ```
+    {: pre}
+
+    The following message is displayed:
+
+    ```bash
+    persistentvolumeclaim/jdoe-nfs-pvc created
     ```
     {: codeblock}
 

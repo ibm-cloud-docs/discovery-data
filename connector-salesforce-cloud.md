@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-07-26"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ Crawl documents that are stored in a Salesforce data source.
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about connecting to Salesforce from an installed deployment, see [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d).
+This information applies only to managed deployments. For more information about connecting to Salesforce from an installed deployment, see [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d). If you are using a Discovery service instance that was created with a Lite or an Advanced plan, or that was created with a Premium plan before 16 July 2020, see [Salesforce](/docs/discovery?topic=discovery-sources#connectsf){: external}.
 {: note}
 
 ## What documents are crawled
