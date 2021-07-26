@@ -38,7 +38,7 @@ Crawl documents that are stored in a Microsoft SharePoint data source that is ho
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about connecting to an on-premises SharePoint data source from an installed deployment, see [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d). If you are using a Discovery service instances that was created with a Lite or an Advanced plan, or that was created with a Premium plan before 16 July 2020, see [SharePoint OnPrem](/docs/discovery?topic=discovery-sources#connectsp_op){: external}.
+This information applies only to managed deployments. For more information about connecting to an on-premises SharePoint data source from an installed deployment, see [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d). If you are using a Discovery service instance that was created with a Lite or an Advanced plan, or that was created with a Premium plan before 16 July 2020, see [SharePoint OnPrem](/docs/discovery?topic=discovery-sources#connectsp_op){: external}.
 {: note}
 
 ## What documents are crawled

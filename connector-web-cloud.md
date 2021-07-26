@@ -38,7 +38,7 @@ Add a web crawl collection to crawl a website, analyze its page content, and sto
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about connecting to a website from an installed deployment, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d). If you are using a Discovery service instances that was created with a Lite or an Advanced plan, or that was created with a Premium plan before 16 July 2020, see [Web Crawl](/docs/discovery?topic=discovery-sources#connectwebcrawl){: external}.
+This information applies only to managed deployments. For more information about connecting to a website from an installed deployment, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d). If you are using a Discovery service instance that was created with a Lite or an Advanced plan, or that was created with a Premium plan before 16 July 2020, see [Web Crawl](/docs/discovery?topic=discovery-sources#connectwebcrawl){: external}.
 {: note}
 
 ## What documents are crawled
