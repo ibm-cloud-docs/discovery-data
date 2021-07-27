@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-23"
+lastupdated: "2021-07-27"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -159,6 +159,28 @@ The size of each document that you can upload depends on your {{site.data.keywor
 
 For more information about the supported number of documents for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
 
+## Field limits
+{: #collections-field-limits}
+
+When a document is added to a collection, content from the document is evaluated and added to the appropriate fields in an internal index. For example, when you crawl a website or upload an HTML file, the HTML content is added to the collection and indexed in an `html` field.
+
+The following table shows the maximum size limit for fields per document.
+
+| Field type | Maximum allowed size per document | 
+|-------|------|--------------------------------:|
+| `html` field | 5 MB |
+| Sum of all other fields | 1 MB |
+{: caption="Maximum field sizes" caption-side="top"}
+
+How a document is treated during collection creation if the maximum size of the fields in the document exceeds the allowed limit differs depending on how {{site.data.keyword.discoveryshort}} is deployed.
+
+The following table shows how the fields are processed depending on the deployment type.
+
+| Deployment type | Document with an oversized `html` field | Document with oversized non-HTML fields |
+|--------------|--------------------------------|-----------------|
+| Cloud Pak for Data | The document is not indexed | The document is not indexed |
+| IBM Cloud | All of the fields in the document are indexed except the `html` field | The document is not indexed |
+{: caption="Exceeded field size behavior" caption-side="top"}
 
 ## Supported data sources
 {: #collections-data-sources-table}

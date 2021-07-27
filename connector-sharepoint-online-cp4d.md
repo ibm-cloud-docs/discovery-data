@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-07-26"
 
 subcollection: discovery-data
 
@@ -45,19 +45,34 @@ This information applies only to installed deployments. For more information abo
 ## What documents are crawled
 {: #connector-sharepoint-online-cp4d-docs}
 
-- Crawling non-root site collections is not supported. You can crawl root site collections only.
+- During the initial crawl of the content, documents from all of the objects that can be accessed from the site collection path that you specify are crawled and added to your collection. Custom metadata that is associated with the SharePoint content is crawled also. 
+- You can crawl one site collection path per collection.
 - Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 - Document level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
+
+The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
+
+| Data source | Objects that are crawled |
+|-------------|----------------------------------------|--------------------------|
+| Microsoft SharePoint Online | SiteCollections, Sites, SubSites, Lists, List Items, Document Libraries, List Item Attachments |
+{: caption="Table 1. Data sources crawling support" caption-side="top"}
 
 ## Data source requirements
 {: #connector-sharepoint-online-cp4d-reqs}
 
 In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your SharePoint Online data source must meet the following requirements:
 
-- You must have site collection administrator permission.
-- You must obtain any required service licenses for the data source that you want to connect to. For more information about licenses, contact the system administrator of the data source.
+- You must have an Azure Active Directory user ID with permission to access all of the objects that you want to crawl. For example, `<admin_user>@.onmicrosoft.com`. The user ID must have `SiteCollection Administrator` permission.
+- The connector supports the `Password hash synchronization (PHS)` method for enabling hybrid identity only. Use any other type (such as Pass-through authentication or Federation) at your own risk.
+- Unless you created your SharePoint Online account before January 2020, two-factor authentication is enabled for the account by default. You must disable two-factor authentication.
+
+    To view and change your multifactor authentication status, see [View the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#view-the-status-for-a-user){: external} or [Change the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#change-the-status-for-a-user){: external}.
+- The crawl user account must have legacy authentication enabled.
+
+  To enable legacy authentication, go to the [Azure portal](https://portal.azure.com/){: external} or contact your Azure Active Directory administrator.
+- The Site Collection that you connect to must be one that was created with an Enterprise plan. It cannot be a collection that was created with a frontline worker plan.
 
 For more information about SharePoint Online, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
 

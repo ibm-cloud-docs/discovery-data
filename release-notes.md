@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-23"
+lastupdated: "2021-07-27"
 
 keywords: release notes
 
@@ -68,11 +68,15 @@ The following new features and changes are available for managed deployments.
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
 
+### ![IBM Cloud only](images/ibm-cloud.png) 27 July 2021
+{: #27july2021}
+
+- **Document size limit increase**: For Premium plan collections, you can now upload files that are up to 50 MB in size instead of 32 MB. For more information, see [Document limits](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
+
 ### ![IBM Cloud only](images/ibm-cloud.png) 23 July 2021
 {: #23july2021}
 
 - **SharePoint Online data source update**: The connector now accepts any valid Azure Active Directory user ID syntax; the format of the user ID doesn't have to match the `<admin_user>@.onmicrosoft.com` syntax. For more information, see [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
-- **Document size limit increase**: For Premium plan collections, you can now upload files that are up to 50 MB in size instead of 32 MB. For more information, see [Document limits](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 16 July 2021
 {: #16july2021}
