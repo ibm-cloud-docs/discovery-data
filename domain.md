@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-23"
+lastupdated: "2021-07-26"
 
 subcollection: discovery-data
 
@@ -181,7 +181,7 @@ To add dictionary terms one by one, complete the following steps:
 
     Similar terms from your collection are suggested as new entries.
 
-    Term suggestions are not displayed if the **Parts of Speech** enrichment is not enabled.
+    Suggested terms are taken from the field to which the **Parts of Speech** enrichment is applied. Suggestions are not displayed if the **Parts of Speech** enrichment is not enabled.
     {: note}
 1.  Click **Save dictionary**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
@@ -565,11 +565,15 @@ To define a pattern, complete the following steps:
     If you annotate something, and then change your mind, hover over the selection, and then click `x` to delete it.
 1.  Continue selecting examples. 
 
-    After you identify enough examples, {{site.data.keyword.discoveryshort}} shows a list of suggested examples that you can review and confirm are valid examples. Choose **Yes** or **No** for each suggestion. Click the **Preview document** icon if you want to confirm the example in context. 
-1. Continue highlighting examples and validating suggestions until a message is displayed to inform you that you identified enough examples.
-1. Click the **Review examples** tab to review the lists of examples that were identified by you and {{site.data.keyword.discoveryshort}}.
-1. If the examples are correct, click **Save pattern**.
-1. To apply the pattern immediately, choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
+    After you identify enough examples, {{site.data.keyword.discoveryshort}} shows a list of suggested examples for you to review and determine to be valid or not valid examples. Suggested examples are taken from the field that is configured to be used in search results. If the source of result content is configured to be passages, the `text` field is used. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content). 
+    
+1.  Choose **Yes** or **No** for each suggestion. 
+
+    Click the **Preview document** icon if you want to see the example in context before you make a choice.
+1.  Continue highlighting examples and validating suggestions until a message is displayed to inform you that you identified enough examples.
+1.  Click the **Review examples** tab to review the lists of examples that were identified by you and {{site.data.keyword.discoveryshort}}.
+1.  If the examples are correct, click **Save pattern**.
+1.  To apply the pattern immediately, choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
 
 If {{site.data.keyword.discoveryshort}} cannot discern a consistent and valid pattern based on the information you provided, the **Save pattern** button is never enabled. A pattern might not be created if you provide contradictory examples, for example. To start over, click the **Reset** button. The documents are returned to their original state and any examples that you identified previously are removed.
 {: note}
