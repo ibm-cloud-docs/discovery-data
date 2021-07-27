@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-07-27"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -162,7 +162,7 @@ For more information about the supported number of documents for Lite and Advanc
 ## Field limits
 {: #collections-field-limits}
 
-When a document is added to a collection, as the document is ingested, content from the document is evaluated and added to the appropriate fields in an internal index. For example, when you crawl a website or upload an HTML file, the HTML content is added to the collection and indexed in an `html` field.
+When a document is added to a collection, content from the document is evaluated and added to the appropriate fields in an internal index. For example, when you crawl a website or upload an HTML file, the HTML content is added to the collection and indexed in an `html` field.
 
 The following table shows the maximum size limit for fields per document.
 
@@ -172,7 +172,7 @@ The following table shows the maximum size limit for fields per document.
 | Sum of all other fields | 1 MB |
 {: caption="Maximum field sizes" caption-side="top"}
 
-How a document is treated during collection creation if the maximum size of the fields in the document exceed the allowed limit differs depending on how {{site.data.keyword.discoveryshort}} is deployed.
+How a document is treated during collection creation if the maximum size of the fields in the document exceeds the allowed limit differs depending on how {{site.data.keyword.discoveryshort}} is deployed.
 
 The following table shows how the fields are processed depending on the deployment type.
 
