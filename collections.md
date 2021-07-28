@@ -41,7 +41,20 @@ subcollection: discovery-data
 A collection is a set of documents that you upload or crawl from where it resides on a connected data source.
 {: shortdesc}
 
-Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents that have a similar visual structure so that you can use the collection to define custom fields with the Smart Document Understanding tool. Or maybe you want to create a collection of documents that contain frequently asked questions that are formatted in a consistent manner so you can apply the FAQ extraction feature to the collection.
+## How do I decide what to add to a collection?
+{: #createcollection-why}
+
+There a few things to consider as you decide how to break up your source content into collections.
+
+- Getting content from different data sources
+
+  If you store similar content in more than one type of data source (a website and Salesforce, for example), you can create one project with two separate collections. Each collection adds documents from a single data source. When they are built together into a single project, a user can search across both sources at once.
+- Creating separate Smart Document Understanding (SDU) models
+
+  You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department and therefore use one template and 20 PDF files that were created by your Research department that use a different template, you might want to group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
+- Applying enrichments
+
+  Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents with frequently asked questions that are formatted in a consistent manner so you can apply the FAQ extraction feature to the collection. Or maybe a subset of your documents contains lots of industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
 
 ## Creating a collection
 {: #createcollection}
