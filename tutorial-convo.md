@@ -139,7 +139,7 @@ Both Lite or Trial plan {{site.data.keyword.conversationshort}} service instance
     Keep the {{site.data.keyword.discoveryshort}} project open in a separate tab so you can switch between the two applications.
 1.  Create a Trial plan {{site.data.keyword.conversationshort}} service instance in the same location where the {{site.data.keyword.discoveryshort}} service instance is hosted.
 
-    If you already have a Trial plan service instance in the right location and you haven't reached the plan limits for creating assistants and skills, you can skip this step. Use your existing Trial service instance instead.
+    If you already have a Trial plan service instance in the correct location and you haven't reached the plan limits for creating assistants and skills, you can skip this step. Use your existing Trial service instance instead.
     {: note}
 
     Go to the [{{site.data.keyword.conversationshort}} resource](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Trial plan service instance.
