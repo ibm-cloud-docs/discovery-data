@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-29"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -132,18 +132,20 @@ While the website is being crawled and the data indexed, you can create your {{s
 {: #tutorial-convo-assistant}
 {: step}
 
-Both Lite or Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. You will create a Trial plan because a Plus or higher plan is required to add a Search skill to an assistant. The Trial plan gives you access to features that are available with the Plus plan. The Lite plan doesn't.
+Both Lite or Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. For this tutorial, you will create a Trial plan because a Plus or higher plan is required to add a Search skill to an assistant and the Trial plan includes Plus plan features. The Lite plan doesn't.
 
 1.  Open a new web browser page.
 
     Keep the {{site.data.keyword.discoveryshort}} project open in a separate tab so you can switch between the two applications.
-1.  Create a Trial plan {{site.data.keyword.conversationshort}} service instance.
+1.  Create a Trial plan {{site.data.keyword.conversationshort}} service instance in the same location where the {{site.data.keyword.discoveryshort}} service instance is hosted.
+
+    If you already have a Trial plan service instance in the correct location and you haven't reached the plan limits for creating assistants and skills, you can skip this step. Use your existing Trial service instance instead.
+    {: note}
 
     Go to the [{{site.data.keyword.conversationshort}} resource](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Trial plan service instance.
 
-    Create the instance in the same location as the {{site.data.keyword.discoveryshort}} service instance is hosted.
-1.  From the {{site.data.keyword.conversationshort}} Plus plan service page in {{site.data.keyword.cloud_notm}}, click **Launch {{site.data.keyword.conversationshort}}**.
-1.  An assistant and skill might be created for you automatically. If so, exit the assistant and go to the main Assistants page.
+1.  From the {{site.data.keyword.conversationshort}} plan service page in {{site.data.keyword.cloud_notm}}, click **Launch {{site.data.keyword.conversationshort}}**.
+1.  If you created a new service instance, an assistant and skill might be created for you automatically. If so, exit the assistant and go to the main Assistants page.
 
     You can click the Assistants icon from the navigation pane to get to the main Assistants page.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-07-29"
 
 subcollection: discovery-data
 
@@ -94,7 +94,10 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  If the language of the website is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
+1.  **Optional**: Change the synchronization schedule.
+
+    The Web crawl data source is designed to be used with websites that change only once or twice a week. To ensure that your collection captures all website updates, schedule the crawl to occur weekly.
+    {: tip}
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  In the *Specify where you want to crawl* section, add the website URL to the **Starting URLs** field, and then click **Add**. Continue adding starting URLs.
