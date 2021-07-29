@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-28"
 
 subcollection: discovery-data
 
@@ -137,9 +137,9 @@ To annotate documents, complete the following steps:
     - Work from the first page of a multipage document to the last.
     - To remove a single annotation, choose another label (such as `text`) and apply it to the item to overwrite the previous annotation.
     - To remove annotations that you added to an entire page, click the **Clear changes** icon in the toolbar.
-    - When you annotate a table, select the entire table before you apply the `table` label.
+    - To annotate a table, click the text at the start of the table and then drag to select the text in the entire table.
     - When you label one or more tables, the *Table Understanding* enrichment is enabled for the entire collection automatically. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
-    - If `Run OCR` is enabled for your collection, text is extracted from images by using Optical Character Recognition (OCR). If you do not want to apply this option to specific images or diagrams, apply the `image` label to the images.
+    - Images from the source documents are not rendered in the preview. If Optical Character Recognition (OCR) is enabled, any text from the image or diagram is extracted and rendered in the preview. Only apply the `image` label to the image text if you *don't* want to store the extracted text in the `text` field.
 
 1. When everything that you want to label is labeled, submit the page. Click **Submit page**.
 

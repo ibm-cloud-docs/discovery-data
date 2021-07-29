@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-27"
+lastupdated: "2021-07-29"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -71,18 +71,15 @@ Before you can create a collection, you must create a project. For more informat
     - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
 1.  Choose a data source type, reuse data from an existing data collection, or perform a one-time document upload from your local file system.
 
-    A collection can support only one data source.
-    {: note}
-
-    For more information, see the following topics:
-
     - [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
     - [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse)
+    - For external data sources, see the appropriate topic for your deployment:
 
-    For external data sources, be prepared to provide details such as file locations or URLs, and any necessary credentials. For more information, see the appropriate topic for your deployment:
+      - ![Cloud Pak for Data only](images/desktop.png) [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
+      - ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
-    - ![Cloud Pak for Data only](images/desktop.png) [Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types)
-    - ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
+      A collection can support only one data source.
+      {: note}
 
 ## Collection limits
 {: #collections-limits}
