@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-02"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -132,14 +132,15 @@ While the website is being crawled and the data indexed, you can create your {{s
 {: #tutorial-convo-assistant}
 {: step}
 
-Both Lite or Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. For this tutorial, you will create a Trial plan because a Plus or higher plan is required to add a Search skill to an assistant and the Trial plan includes Plus plan features. The Lite plan doesn't.
+In this tutorial, you will create an assistant with a single search skill. Both Lite and Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. You will create a Trial plan because a Plus or higher plan is required to add a search skill to an assistant and the Trial plan includes all Plus plan features. The Lite plan does not.
 
 1.  Open a new web browser page.
 
     Keep the {{site.data.keyword.discoveryshort}} project open in a separate tab so you can switch between the two applications.
+    {: tip}
 1.  Create a Trial plan {{site.data.keyword.conversationshort}} service instance in the same location where the {{site.data.keyword.discoveryshort}} service instance is hosted.
 
-    If you already have a Trial plan service instance in the correct location and you haven't reached the plan limits for creating assistants and skills, you can skip this step. Use your existing Trial service instance instead.
+    If you already have a Trial plan service instance in the correct location, you can skip this step. Use your existing Trial service instance instead. (You might need to delete a skill to stay under the allowed limit.)
     {: note}
 
     Go to the [{{site.data.keyword.conversationshort}} resource](https://cloud.ibm.com/catalog/services/watson-assistant){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Trial plan service instance.
