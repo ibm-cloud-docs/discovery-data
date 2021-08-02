@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-08-02"
 
 subcollection: discovery-data
 
@@ -89,7 +89,9 @@ For more information, or to purchase a Premium plan, contact [Sales](https://ibm
 
 Features and limitations are similar between instances that you deploy on installed deployments in {{site.data.keyword.icp4dfull_notm}} and Premium plan instances that are managed by {{site.data.keyword.cloud_notm}}.
 
-For more information about Lite and Advanced plans, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans) in the {{site.data.keyword.discoveryfull}} v1 product documentation.
+For more information about Lite and Advanced plans, see [{{site.data.keyword.discoveryshort}} pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans) in the {{site.data.keyword.discoveryfull}} v1 product documentation.
+
+For more information about the differences between v2 and v1, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
 
 ## Additional information
 {: #pricingadd}
