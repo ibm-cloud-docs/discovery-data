@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-23"
+lastupdated: "2021-08-03"
 
 subcollection: discovery-data
 
@@ -288,7 +288,10 @@ With the 4.0.0 release, the way to enable contract understanding changed. Now, y
 
 As a result of this usability improvement, when you migrate a project with the content intelligence feature to the latest version of the product, you must take an extra step to reset the project type for the project. The old project is recognized as a `document_retrieval` project type. In 4.0.0, a project must have a `content_intelligence` project type to support the Contracts enrichment.
 
-To change the project type that is assigned to a project that requires the Contracts enrichment, complete the following steps:
+To change the project type that is assigned to a project that requires the Contracts enrichment, complete the following steps.
+
+Changing a project type with the API is only supported in this specific upgrade scenario. Do not change a project type under any other circumstances or your project might become unusable.
+{: important}
 
 1.  Get the appropriate URL and project ID information for the project that you want to reset. 
 
@@ -298,12 +301,11 @@ To change the project type that is assigned to a project that requires the Contr
     For example, the following POST request changes the project type of the project with ID `ef5b7eb5-15d4-4a97-b325-a4cb2436966e`:
 
     ```curl
-    curl --location --request \
-    POST 'https://mycloud.ibm.com/discovery/wd/instances/1621739945813501/api/v2/projects/ef5b7eb5-15d4-4a97-b325-a4cb2436966e?version=2020-08-30' \
-    --header 'Content-Type: application/json' \
-    --header 'Authorization: Bearer token' \
-    --data-raw '{
-	    "type": "content_intelligence"
-    }'
+    curl -X POST -H "Authorization: Bearer {token}" \
+    -H "Content-Type: application/json" \
+    -d "{ \
+	    "type": "content_intelligence" \
+    }" \
+    "https://mycluster/discovery/wd/instances/1621739945813501/api/v2/projects/ef5b7eb5-15d4-4a97-b325-a4cb2436966e?version=2020-08-30" \
     ```
     {: codeblock}
