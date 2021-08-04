@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-02"
+lastupdated: "2021-08-03"
 
 subcollection: discovery-data
 
@@ -96,7 +96,12 @@ For more information about the differences between v2 and v1, see [Getting the m
 ## Additional information
 {: #pricingadd}
 
-- For more information about {{site.data.keyword.cloud_notm}} security, see [IBM terms](https://www.ibm.com/support/customer/csol/terms/){: external}.
+- For more information about how documents are counted, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
+- For more information about how queries are counted, see [Query limits](/docs/discovery-data?topic=discovery-data-query-concepts#query-limits).
 - For more information about pricing or to create a service instance, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/watson-discovery){: external}.
+
+{{site.data.keyword.cloud_notm}} resources:
+
 - [{{site.data.keyword.cloud_notm}} Cost estimator](https://cloud.ibm.com/estimator/review){: external}
 - [{{site.data.keyword.cloud_notm}} Services terms](https://www-03.ibm.com/software/sla/sladb.nsf/sla/saas?OpenDocument){: external}
+- For more information about {{site.data.keyword.cloud_notm}} security, see [IBM terms](https://www.ibm.com/support/customer/csol/terms/){: external}.

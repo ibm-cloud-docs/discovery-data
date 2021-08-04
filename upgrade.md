@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-08-03"
 
 subcollection: discovery-data
 
@@ -43,7 +43,7 @@ The page header shows the plan you are using today.
 
 ![Shows that the Trial plan is displayed in the page header](images/plan-in-header.png)
 
-You cannot upgrade from a Lite (v1) plan to a Plus (v2) plan. And you cannot upgrade from an Advanced (v1) plan to a Premium (v2) plan. To start using v2, create a new Plus or Premium plan. For more information about the Lite and Advanced plans, see the [v1 pricing plans documentation](/docs/discovery?topic=discovery-discovery-pricing-plans){: external}.
+You cannot upgrade from any v1 plan to any v2 plan. For example, you cannot upgrade a Lite or Advanced plan to a Plus plan. And you cannot upgrade an Advanced plan to a Premium (v2) plan. To start using v2, create a new Plus or Premium plan. For more information about the Lite and Advanced plans, see the [v1 pricing plans documentation](/docs/discovery?topic=discovery-discovery-pricing-plans){: external}.
 
 Even though you can use the Plus plan for the first 30 days at no charge, you must have a paid account to create a Plus plan. For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}.
 
