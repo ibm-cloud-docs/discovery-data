@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-04"
 
 subcollection: discovery-data
 
@@ -106,7 +106,7 @@ You can use two different methods to define synonyms.
 {: #faq-watsonplatform}
 {: faq}
 
-Old API endpoint URLs that include `watsonplatform.net` are deprecated and were retired on 26 May 2021. If you see errors that mention `watsonplatform.net`, make sure your {{site.data.keyword.discoveryshort}} service instance is using updated credentials. And, if you have any old credentials with the old endpoing URL listed in your service page, delete them. For more information about the deprecation, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change).
+Old API endpoint URLs that include `watsonplatform.net` are deprecated and were retired on 26 May 2021. If you see errors that mention `watsonplatform.net`, make sure your {{site.data.keyword.discoveryshort}} service instance is using updated credentials. And, if you have any old credentials with the old endpoint URL listed in your service page, delete them. For more information about the deprecation, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change).
 
 ## Getting a 401 error when using my Lite plan
 {: #faq-lite-plan-deletion}

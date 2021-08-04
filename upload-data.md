@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-03"
+lastupdated: "2021-08-04"
 
 keywords: upload, one-time upload
 
@@ -75,4 +75,4 @@ To upload data, complete the following steps:
 
 The file upload is completed quickly. It takes more time for the data to be processed as it is added to the collection. After the files are uploaded and processed, the Activity page shows the upload results.
 
-Unlike with other data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file after the file is initially added, you must delete the earlier version of the file. Rename the later version of the file before you upload it.
+Unlike other data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file after the file is initially added, you must delete the earlier version of the file. Rename the later version of the file before you upload it.
