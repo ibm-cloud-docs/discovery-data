@@ -35,7 +35,9 @@ subcollection: discovery-data
 Learn about how the search query is configured for each project type by default.
 {: shortdesc}
 
-To learn more about project types, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+When you submit a search from the product user interface, your text is passed as a natural language query value to the Query API. Other parameters that you can define when you use the API are assigned default values for queries made from the user interface. The following tables explain which values are specified by default for each project type. For more information about the Query API, see [Query reference](/docs/discovery-data?topic=discovery-data-query-reference).
+
+You can override some of the default values by using improvement tools in the user interface. For example, you can use the *Search results* tool to change parameters such as `passages.enabled` or `passages.fields`. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content).
 
 ## Default query settings
 {: #query-defaults-table1}
@@ -50,7 +52,7 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | `passages.enabled` | true | true |
 | `passages.fields` | ["text", "title"] | ["text", "title"] |
 | `passages.find_answers` | false | false |
-| `passages.` `max_answers_per_passage` | 1 | 1 |
+| `passages.max_answers_per_passage` | 1 | 1 |
 | `passages.max_per_document` | 1 | 1 |
 | `passages.per_document` | true | true |
 | `return` | [] | [] |
@@ -76,7 +78,7 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | `passages.enabled` | true | false | true |
 | `passages.fields` | ["text", "title"] | ["text", "title"] | ["text", "title"] |
 | `passages.find_answers` | false | false | false |
-| `passages.` `max_answers_per_passage` | 1 | 1 | 1 |
+| `passages.max_answers_per_passage` | 1 | 1 | 1 |
 | `passages.max_per_document` | 1 | 1 | 1 |
 | `passages.per_document` | true | true | true |
 | `return` | [] | [] | [] |
@@ -149,10 +151,3 @@ The Custom project type has no project component default settings.
 | "name": "po_suppliers" | "label": "Purchase Order Supplier" | "multiple_selections_allowed": false |
 | "name": "po_currencies" | "label": "Purchase Order Currency" | "multiple_selections_allowed": false |
 {: caption="Document Retrieval for Contracts project aggregations" caption-side="top"}
-
-## API reference
-{: #project-defaults-api}
-
-For API reference information, see the following documentation:
-
-- [Get configuration settings for components method](https://{DomainName}/apidocs/discovery-data#getcomponentsettings){: external}
