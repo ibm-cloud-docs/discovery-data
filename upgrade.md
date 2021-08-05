@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-03"
+lastupdated: "2021-08-04"
 
 subcollection: discovery-data
 
@@ -61,4 +61,4 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
 
       A Premium plan instance must be provisioned for you. To start the process, [create a new resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} and choose the Premium plan option.
 
-For answers to common questions about subscriptions, see the [How you're charged](/docs/billing-usage?topic=billing-usage-charges){: external}.
+For more information about plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
