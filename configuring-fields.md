@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-05"
 
 subcollection: discovery-data
 
@@ -104,6 +104,8 @@ Documents come in all shapes and sizes. Your collection might have a mix of diff
 
 ### Annotating documents
 {: #sdu-task}
+
+![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
 
 To annotate documents, complete the following steps:
 
