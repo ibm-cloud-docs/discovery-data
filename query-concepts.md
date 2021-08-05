@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-05"
 
 subcollection: discovery-data
 
@@ -170,6 +170,8 @@ Each user's query results are restricted to their document permissions.
 ## Query limits
 {: #query-limits}
 
+A query is any operation that submits a POST request to the `/query` endpoint of the API. Such operations include queries that are submitted from the search bar on the *Improve and customize* page and by using the API. A query is counted only if the request is successful, meaning it returns a response (with message code 200).
+
 The number of search queries that you can submit per month per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Queries per month per service instance |
@@ -188,7 +190,13 @@ The number of queries that can be processed per second per service instance depe
 | Plus (includes Trial) |                      5 |
 {: caption="Number of concurrent queries" caption-side="top"}
 
-Queries that you submit from the search bar on the *Improve and customize* page count toward the query total.
-{: note}
-
 For more information about the supported number of queries for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
+
+## Estimating query usage
+{: #query-estimate}
+
+How to estimate the number of queries your application will use per month depends on your project type. 
+
+- For a Document Retrieval or Content Mining project, the focus is more on data enrichment and analysis. Fewer users submit queries to analyze the documents in a collection. You can estimate query numbers based on the total number of documents. Each document is likely to be queried at least once.
+- For a Conversational Search project, you can estimate by calculating the number of searches per user times the number of expected users. For example, 50% of the questions that are submitted by users to a virtual assistant are likely to be answered by Discovery. With 100,000 users per month and an average of 3 questions per user, you can expect 15,000 queries per month. (10,000 users/mo * 3 queries/user * 50% to Discovery = 15,000)
+
