@@ -133,6 +133,8 @@ To annotate documents, complete the following steps:
 
     Follow these guidelines:
 
+    - If there's nothing special about a section, leave it labeled as `text`, which is applied by default.
+    - A label cannot span multiple pages.
     - Do not label white space.
     - Do not treat **bold**, _italic_, or underlined text differently. Label based on the context, not the style.
     - Use consistent labeling on all documents.
