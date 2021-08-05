@@ -195,8 +195,8 @@ For more information about the supported number of queries for Lite and Advanced
 ## Estimating query usage
 {: #query-estimate}
 
-How to estimate the number of queries your application will use per month depends on your project type. 
+How to estimate the number of queries your application will use per month depends on your use case. 
 
-- For a Document Retrieval or Content Mining project, the focus is more on data enrichment and analysis. Fewer users submit queries to analyze the documents in a collection. You can estimate query numbers based on the total number of documents. Each document is likely to be queried at least once.
-- For a Conversational Search project, you can estimate by calculating the number of searches per user times the number of expected users. For example, 50% of the questions that are submitted by users to a virtual assistant are likely to be answered by Discovery. With 100,000 users per month and an average of 3 questions per user, you can expect 15,000 queries per month. (10,000 users/mo * 3 queries/user * 50% to Discovery = 15,000)
+- For use cases that focus more on data enrichment and analysis or where the output from the document processing is not heavily searched, you can estimate query numbers based on the total number of documents.
+- For use cases where many users interact with the application that leverages Discovery, you can estimate by calculating the number of searches per user times the number of expected users. For example, 50% of the questions that are submitted by users to a virtual assistant are likely to be answered by Discovery. With 100,000 users per month and an average of 3 questions per user, you can expect 15,000 queries per month. (10,000 users/mo * 3 queries/user * 50% to Discovery = 15,000)
 
