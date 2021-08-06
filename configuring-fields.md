@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-06"
 
 subcollection: discovery-data
 
@@ -105,6 +105,8 @@ Documents come in all shapes and sizes. Your collection might have a mix of diff
 ### Annotating documents
 {: #sdu-task}
 
+The following video shows you how to select a label, and then apply it to representation of your document to identify the type of information in the section.
+
 ![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
 
 To annotate documents, complete the following steps:
@@ -113,7 +115,11 @@ To annotate documents, complete the following steps:
 
     A view of the original document is displayed along with a representation of the document, where the text is replaced by blocks. Think of this representation of the document as a document template.
     
-    The blocks are all the color of the `text` field label because all of the current text is considered to be standard text and will be indexed in the `text` field. To annotate the document, you label blocks that represent specific types of information, such as titles, with other field labels. For example, when you apply the title field label to a document title that would otherwise be indexed as text, you are defining a more precise representation of the document content.
+    The blocks are all the color of the `text` field label because all of the current text is considered to be standard text and will be indexed in the `text` field.
+    
+    To annotate the document, you label blocks that represent specific types of information, such as titles or page footers, with other field labels. 
+    
+    For example, when you apply the title field label to a document title that would otherwise be indexed as text, you are defining a more precise representation of the document content.
 1.  Review the field labels that you can use to annotate the document. They are displayed in the *Field labels* panel.
 
     See the *Default field labels* table for a list of the fields and their descriptions.
@@ -153,10 +159,10 @@ To annotate documents, complete the following steps:
 
 Custom fields that you define by using the SDU tool are indexed as root-level fields.
 
-### Fields indexed by default
+### Available fields
 {: #sdu-default-fields}
 
-The following fields make up the base set of fields that {{site.data.keyword.discoveryshort}} is designed to recognize and index by default.
+The following fields make up the base set of fields that you can apply to documents by using the Smart Document Understanding tool.
 
 | Field | Definition |
 |-------|------------|
@@ -170,7 +176,7 @@ The following fields make up the base set of fields that {{site.data.keyword.dis
 | text | Use this tag for standard copy text, including paragraphs, definitions, or any set of words that is not a title, part of a table, answer, author, subtitle, header, or a footer. |
 | title | The main title of the document. |
 | table |	Use this tag to annotate tables in your document. |
-| image |	Use this tag to annotate images and diagrams in your document. |
+| image |	Use this tag to prevent text from being extracted from images and diagrams in your document. |
 {: caption="Default field labels" caption-side="top"}
 
 ### Reusing SDU models
