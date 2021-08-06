@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-08-05"
 
 subcollection: discovery-data
 
@@ -74,7 +74,7 @@ Choose the appropriate step to complete for your deployment:
 1.  On the **Provisioned instances** tab, find your {{site.data.keyword.discoveryshort}} instance, and then hover over the last column to display the ellipsis icon ![Ellipsis icon](images/cp4d-sideways-kebab.png) and choose **View details**.
 1.  Click **Open Watson Discovery**.
 
-<br/>
+
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
 
 1.  {: hide-dashboard} Click the {{site.data.keyword.discoveryshort}} instance you created to go to the service dashboard.

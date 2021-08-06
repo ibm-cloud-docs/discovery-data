@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-05"
 
 subcollection: discovery-data
 
@@ -105,6 +105,8 @@ Documents come in all shapes and sizes. Your collection might have a mix of diff
 ### Annotating documents
 {: #sdu-task}
 
+![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
+
 To annotate documents, complete the following steps:
 
 1.  Review the document preview.
@@ -131,6 +133,8 @@ To annotate documents, complete the following steps:
 
     Follow these guidelines:
 
+    - If there's nothing special about a section, leave it labeled as `text`, which is applied by default.
+    - A label cannot span multiple pages.
     - Do not label white space.
     - Do not treat **bold**, _italic_, or underlined text differently. Label based on the context, not the style.
     - Use consistent labeling on all documents.
