@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-15"
+lastupdated: "2021-08-06"
 
 subcollection: discovery-data
 
@@ -91,14 +91,24 @@ To turn on FAQ extraction for your data source, expand the *Syncing FAQ Content?
 
 Each question-and-answer pair in an FAQ document is split into a separate document. The question is stored in a `title` field and the answer is stored as a `text` field. A document with 100 question-and-answer pairs is split into 100 documents. If no question-and-answer pairs are detected in a document, only one document is added to the collection. A maximum of 10,000 pairs per document are allowed. After the limit is reached, any remaining pairs that are found are stored in a single document. You can monitor the document count on the **Activity** tab of the **Manage collections** page.
 
-To turn off FAQ extraction, go to the **Processings settings** tab of the **Manage collections** page. Disable FAQ extraction, and then reprocess the collection by clicking **Apply changes and reprocess**.
-
 Remember these notes:
 
 - If you apply FAQ extraction to a collection, you cannot use the [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) tool later to annotate fields.
 - If you delete a question-and-answer pair from a webpage that you crawled previously, the question-and-answer pair that was already indexed in your collection remains in the index.
 
 To learn more about FAQ extraction, see the [Turn your FAQ pages into conversational AI](https://medium.com/ibm-data-ai/turn-your-faq-pages-into-conversational-ai-8ac7ae7ec793) blog post on Medium.
+
+### Disabling FAQ extraction
+{: #faq-extraction-diable}
+
+Currently, you cannot disable FAQ extraction on collections that contain HTML (meaning web crawl collection documents) or TXT files. Disabling FAQ extraction does not restore the original documents and does not remove the generated question-and-answer pair documents.
+{: important}
+
+To turn off FAQ extraction, complete the following steps:
+
+1.  Go to the **Processings settings** tab of the **Manage collections** page. 
+1.  Set the **FAQ extraction** switcher to Off.
+1.  Reprocess the collection by clicking **Apply changes and reprocess**.
 
 ## Installing IBM Secure Gateway for on-premises data 
 {: #gatewaypublic}
