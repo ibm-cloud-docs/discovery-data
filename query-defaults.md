@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-06"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ Learn about how the search query is configured for each project type by default.
 
 When you submit a search from the product user interface, your text is passed as a natural language query value to the Query API. Other parameters that you can define when you use the API are assigned default values for queries made from the user interface. The following tables explain which values are specified by default for each project type. For more information about the Query API, see [Query reference](/docs/discovery-data?topic=discovery-data-query-reference).
 
-You can override some of the default values by using improvement tools in the user interface. For example, you can use the *Search results* tool to change parameters such as `passages.enabled` or `passages.fields`. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content).
+You can override some of the default values by using improvement tools in the user interface. For example, you can use the *Search results* tool to change parameters such as `passages.enabled`. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content).
 
 ## Default query settings
 {: #query-defaults-table1}
