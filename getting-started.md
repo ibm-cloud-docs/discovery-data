@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-09"
 
 subcollection: discovery-data
 
@@ -134,9 +134,9 @@ Now, let's customize a bit. Starting on the **Improve and Customize** page, comp
 
 Continue experimenting with the Sample Project. A few other things you might want to try:
 
-  - Select the **Manage collections** icon on the navigation panel. Click the **New collection** button. Choose **Upload data** and create a new collection with a few of your own documents.
-  - Select the **Integrate and Deploy** icon on the navigation panel. On the **Share preview link** tab, copy the link and paste it in your browser to preview your application. On the **Explore UI components** tab, click the **Try it on Storybook** link for any of the components.
-  - Select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display**, then choose **Search results**. In the **Select field to display as titles**, choose `document_id` from the dropdown and click **Apply**. The document identifier in each search result will switch from the document name to the document id number.
+- Select the **Manage collections** icon on the navigation panel. Click the **New collection** button. Choose **Upload data** and create a new collection with a few of your own documents.
+- Select the **Integrate and Deploy** icon on the navigation panel. On the **Share preview link** tab, copy the link and paste it in your browser to preview your application. On the **Explore UI components** tab, click the **Try it on Storybook** link for any of the components.
+- Select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display**, then choose **Search results**. In the **Select field to display as titles**, choose `document_id` from the dropdown and click **Apply**. The document identifier in each search result will switch from the document name to the document id number.
 
 ## Bonus: Get help from anywhere
 {: #handy-tools}

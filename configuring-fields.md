@@ -105,7 +105,7 @@ Documents come in all shapes and sizes. Your collection might have a mix of diff
 ### Annotating documents
 {: #sdu-task}
 
-The following video shows you how to select a label, and then apply it to representation of your document to identify the type of information in the section.
+The following video shows you how to select a label, and then apply it to a representation of the text in your document.
 
 ![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
 
@@ -122,7 +122,7 @@ To annotate documents, complete the following steps:
     For example, when you apply the title field label to a document title that would otherwise be indexed as text, you are defining a more precise representation of the document content.
 1.  Review the field labels that you can use to annotate the document. They are displayed in the *Field labels* panel.
 
-    See the *Default field labels* table for a list of the fields and their descriptions.
+    See the [Default field labels table](#sdu-default-fields) for a list of the fields and their descriptions.
 1.  To create a custom field label, click **Create new**. 
 
     - Specify a field label with lowercase letters and no spaces. For example, `complex_task` is a valid field label.
@@ -141,7 +141,6 @@ To annotate documents, complete the following steps:
 
     - If there's nothing special about a section, leave it labeled as `text`, which is applied by default.
     - A label cannot span multiple pages.
-    - Do not label white space.
     - Do not treat **bold**, _italic_, or underlined text differently. Label based on the context, not the style.
     - Use consistent labeling on all documents.
     - Work from the first page of a multipage document to the last.
