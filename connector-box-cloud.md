@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-09"
 
 subcollection: discovery-data
 
@@ -72,7 +72,7 @@ You must create a custom application in Box before you can connect to Box from {
 
 1.  In Box, create a custom app that uses *Server Authentication with JWT* as its authentication method. 
 
-    For detailed steps, see [Setup with JWT](https://developer.box.com/guides/applications/custom-apps/jwt-setup/){: external} in the Box Developer Documentation.
+    For detailed steps, see [Setup with JWT](https://developer.box.com/guides/authentication/jwt/jwt-setup/){: external} in the Box Developer Documentation.
 
 Follow these guidelines when you create the app:
 

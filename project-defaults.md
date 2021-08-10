@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-08-09"
 
 subcollection: discovery-data
 
@@ -48,5 +48,3 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | Content Mining | Parts of Speech | None |
 | Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
-
-For more information about default query result settings, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
