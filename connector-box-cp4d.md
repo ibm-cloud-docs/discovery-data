@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-08-09"
 
 subcollection: discovery-data
 
@@ -87,7 +87,7 @@ To create a custom application, complete the following steps:
 
 1.  Next, create a custom app that uses *Server Authentication with JWT* as its authentication method. 
 
-    For detailed steps, see [Setup with JWT](https://developer.box.com/guides/applications/custom-apps/jwt-setup/){: external} in the Box Developer Documentation.
+    For detailed steps, see [Setup with JWT](https://developer.box.com/guides/authentication/jwt/jwt-setup/){: external} in the Box Developer Documentation.
 
     Follow these guidelines when you create the app:
 

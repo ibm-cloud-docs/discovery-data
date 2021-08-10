@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-08-09"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -177,7 +177,7 @@ When a document is added to a collection, content from the document is evaluated
 The following table shows the maximum size limit for fields per document.
 
 | Field type | Maximum allowed size per document | 
-|-------|------|--------------------------------:|
+|------------|----------------------------------:|
 | `html` field | 5 MB |
 | Sum of all other fields | 1 MB |
 {: caption="Maximum field sizes" caption-side="top"}

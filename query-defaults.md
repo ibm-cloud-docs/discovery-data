@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-09"
 
 subcollection: discovery-data
 
@@ -44,7 +44,7 @@ You can override some of the default values by using improvement tools in the us
 
 | Query default | Document Retrieval | Document Retrieval for Contracts |
 | --- | --- | --- |
-| `aggregation` | "term(enriched_text.entities.text, name:entities)"  | "[term (enriched_html.contract. elements.categories.label, count:25,name:categories)" |
+| `aggregation` | "term(enriched_text.entities.text, name:entities)"  | "term (enriched_html.contract. elements.categories.label, count:25,name:categories)" |
 | `count` | 10  | 10  |
 | `highlight` | false | false |
 | `passages.characters` | 200 | 200 |
@@ -125,7 +125,7 @@ The Custom project type has no project component default settings.
 ## Document Retrieval project aggregations
 {: #aggregations-dr}
 
-| `aggregations.name` | `aggregations.label` | `aggregations.multiple_selections_allowed` |
+| aggregations.name | aggregations.label | aggregations.multiple_selections_allowed |
 |---|---|---|
 | "name": "entities" | "label": "Top Entities"  | "multiple_selections_allowed": false |
 | *Premium plans only*: "name": "_system_suggested_refinements" | "label": "Dynamic Facets" | "multiple_selections_allowed": true |
@@ -135,7 +135,7 @@ The Custom project type has no project component default settings.
 ## Document Retrieval for Contracts project aggregations
 {: #aggregations-dr-contracts}
 
-| `aggregations.name` | `aggregations.label` | `aggregations.multiple_selections_allowed` |
+| aggregations.name | aggregations.label | aggregations.multiple_selections_allowed |
 |---|---|---|
 | "name": "categories" | "label": "Category" | "multiple_selections_allowed": true |
 | "name": "natures" | "label": "Nature" | "multiple_selections_allowed": false |
