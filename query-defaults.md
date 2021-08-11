@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-10"
 
 subcollection: discovery-data
 
@@ -44,7 +44,7 @@ You can override some of the default values by using improvement tools in the us
 
 | Query default | Document Retrieval | Document Retrieval for Contracts |
 | --- | --- | --- |
-| `aggregation` | "term(enriched_text.entities.text, name:entities)"  | "term (enriched_html.contract. elements.categories.label, count:25,name:categories)" |
+| `aggregation` | [term(enriched_text.entities.text,name:entities)]  | [term(enriched_html.contract. elements.categories.label,count:25,name:categories)] |
 | `count` | 10  | 10  |
 | `highlight` | false | false |
 | `passages.characters` | 200 | 200 |
@@ -70,7 +70,7 @@ You can override some of the default values by using improvement tools in the us
 
 | Query default | Conversational Search | Content Mining | Custom |
 | --- | --- | --- | --- |
-| `aggregation` | "" | "" | "" |
+| `aggregation` | [ ] | [ ] | [ ] |
 | `count` | 10  | 10 |  10 |
 | `highlight` | false | false | false |
 | `passages.characters` | 200  | 200 | 200 |

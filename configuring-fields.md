@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-06"
+lastupdated: "2021-08-10"
 
 subcollection: discovery-data
 
@@ -33,48 +33,15 @@ subcollection: discovery-data
 # Adding custom fields with Smart Document Understanding
 {: #configuring-fields}
 
-Use Smart Document Understanding (SDU) to teach {{site.data.keyword.discoveryfull}} about sections in your documents that contain meaningful information. When you help {{site.data.keyword.discoveryshort}} index the correct set of information in your documents, you improve the answers that your application can find and return.
+Use Smart Document Understanding (SDU) to break your documents into smaller, more consumable chunks of information. When you help {{site.data.keyword.discoveryshort}} index the correct set of information in your documents, you improve the answers that your application can find and return.
 {: shortdesc}
-
-This video provides a quick overview of Smart Document Understanding:
-
-![Watson Discovery Demo: Extract Answers From Large Documents in 5 Minutes](https://www.youtube.com/embed/Jpr3wVH3FVA){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To view the transcript, open the video on YouTube.
-
-## When to use Smart Document Understanding
-{: #sdu-when}
-
-The Smart Document Understanding (SDU) tool works better with some project types.
-
-- The tool is most beneficial when used with *Document Retrieval* projects. Use it to add custom fields to [the set of fields that you can identify by default](#sdu-default-fields).
-- *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. Instead of you annotating contract-related content in your documents, the project applies a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
-- The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. You can use the SDU tool to find and annotate them. 
-  
-  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use.
-- The SDU tool is rarely used with *Content Mining* projects.
-
-You can use the SDU tool to annotate the following file types only:
-
-- Image files (PNG, TIFF, JPG)
-- Microsoft PowerPoint
-- Microsoft Word
-- PDF
-
-For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
-
-The tool cannot read documents with the following characteristics; remove them from your collection before you begin:
-
-- Documents that appear to have text that overlays other text are considered *double overlaid* and cannot be annotated.
-- Documents that contain multiple columns of text on a single page cannot be annotated.
-
-When you build a custom Smart Document Understanding model, the conversion time for your collection can increase due to the resources that are required to apply the AI model to your documents. The resource requirements cause a significant decrease in throughput speed.
-{: note}
 
 ## Identifying fields
 {: #identify-fields}
 
 <!-- c/s help for the **Identify fields** tab. Do not delete.  -->
+
+To identify fields, complete the following steps:
 
 1.  Open the **Improve and customize** page from the navigation panel. On the *Improvement tools* panel, expand *Define structure*, and then choose **New fields**.
 1.  If your project has more than one collection, select the collection with documents that you want to annotate.
@@ -86,28 +53,16 @@ When you build a custom Smart Document Understanding model, the conversion time 
 1.  Click **Submit**
 1.  Click **Apply changes and reprocess**.
 
-If you selected **User-trained models**, a subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types. Continue to the [Annotating documents](#sdu-task) procedure.
+If you selected **User-trained models**, a subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types. Continue to the [Creating a user-trained model](#sdu-task) procedure.
 
-## Using the Smart Document Understanding tool
-{: #sdu-super}
-
-Use the Smart Document Understanding tool to teach {{site.data.keyword.discoveryshort}} about sections in your document where meaningful information is stored. Specify how you want {{site.data.keyword.discoveryshort}} to index the information so it can be found later.
-
-### Before you begin
-{: #sdu-prereq}
-
-Documents come in all shapes and sizes. Your collection might have a mix of different document structures. To create the best model for your collection, take this prerequisite step:
-
-1.  Pick a subset of documents from your collection that are representative of the different document structures in use. Create a collection that contains only this subset of documents. A good target size is 40 documents.
-1.  Use the SDU tool to annotate this representative set of documents and train Watson to recognize custom content in your data.
-1.  Apply the custom SDU model to the full collection. For more information, see [Reusing SDU models](#import).
-
-### Annotating documents
+## Creating a user-trained model
 {: #sdu-task}
 
 The following video shows you how to select a label, and then apply it to a representation of the text in your document.
 
 ![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
+
+To plan before you begin, see [When to use Smart Document Understanding](#sdu-when).
 
 To annotate documents, complete the following steps:
 
@@ -141,7 +96,7 @@ To annotate documents, complete the following steps:
 
     - If there's nothing special about a section, leave it labeled as `text`, which is applied by default.
     - A label cannot span multiple pages.
-    - Do not treat **bold**, _italic_, or underlined text differently. Label based on the context, not the style.
+    - Do not treat **bold**, _italic_, orunderlined text differently. Label based on the context, not the style.
     - Use consistent labeling on all documents.
     - Work from the first page of a multipage document to the last.
     - To remove a single annotation, choose another label (such as `text`) and apply it to the item to overwrite the previous annotation.
@@ -157,6 +112,57 @@ To annotate documents, complete the following steps:
 1. After you teach Watson to identify fields, click **Apply changes and reprocess**.
 
 Custom fields that you define by using the SDU tool are indexed as root-level fields.
+
+### What to do next
+{: #sdu-postreq}
+
+When you build a user-trained model, you change where information is stored in your documents. Next, change how the search results are configured. By default, search results are retrieved from passages or the text field. You might have a better field to use as the source of the result body. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content).
+
+If your project is being used by a virtual assistant, update the search skill configuration to pull the answer body from a different field. For more information, see [Configure the search](/docs/assistant?topic=assistant-skill-search-add#skill-search-add-configure){: external}.
+
+## When to use Smart Document Understanding
+{: #sdu-when}
+
+The following video provides a quick overview of Smart Document Understanding.
+
+![Watson Discovery Demo: Extract Answers From Large Documents in 5 Minutes](https://www.youtube.com/embed/Jpr3wVH3FVA){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To view the transcript, open the video on YouTube.
+
+The Smart Document Understanding (SDU) tool works better with some project types.
+
+- The tool is most beneficial when used with *Document Retrieval* projects. Use it to add custom fields to [the set of fields that you can identify by default](#sdu-default-fields).
+- *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. Instead of you annotating contract-related content in your documents, the project applies a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
+- The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. You can use the SDU tool to find and annotate them. 
+  
+  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use.
+- The SDU tool is rarely used with *Content Mining* projects.
+
+You can use the SDU tool to annotate the following file types only:
+
+- Image files (PNG, TIFF, JPG)
+- Microsoft PowerPoint
+- Microsoft Word
+- PDF
+
+For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+The tool cannot read documents with the following characteristics; remove them from your collection before you begin:
+
+- Documents that appear to have text that overlays other text are considered *double overlaid* and cannot be annotated.
+- Documents that contain multiple columns of text on a single page cannot be annotated.
+
+When you build a custom Smart Document Understanding model, the conversion time for your collection can increase due to the resources that are required to apply the AI model to your documents.
+{: note}
+
+### Start with representative documents
+{: #sdu-prereq}
+
+Documents come in all shapes and sizes. Your collection might have a mix of different document structures. To create the best model for your collection, take this prerequisite step:
+
+1.  Pick a subset of documents from your collection that are representative of the different document structures in use. Create a collection that contains only this subset of documents. A good target size is 40 documents.
+1.  Use the SDU tool to annotate this representative set of documents and train Watson to recognize custom content in your data.
+1.  Apply the custom SDU model to the full collection. For more information, see [Reusing SDU models](#import).
 
 ### Available fields
 {: #sdu-default-fields}
