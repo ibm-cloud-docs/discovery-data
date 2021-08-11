@@ -96,7 +96,7 @@ To annotate documents, complete the following steps:
 
     - If there's nothing special about a section, leave it labeled as `text`, which is applied by default.
     - A label cannot span multiple pages.
-    - Do not treat **bold**, _italic_, orunderlined text differently. Label based on the context, not the style.
+    - Do not treat **bold**, *italic*, or underlined text differently. Label based on the context, not the style.
     - Use consistent labeling on all documents.
     - Work from the first page of a multipage document to the last.
     - To remove a single annotation, choose another label (such as `text`) and apply it to the item to overwrite the previous annotation.
