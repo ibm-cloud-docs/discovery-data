@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -52,9 +52,9 @@ All {{site.data.keyword.discoveryshort}} data source connectors are read-only. R
 
 The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
 
-| Data source | Objects that are crawled |
-|-------------|--------------------------|
-| Salesforce | Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments |
+| Objects that are crawled |
+|--------------------------|
+| Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments |
 {: caption="Table 1. Data sources crawling support" caption-side="top"}
 
 ## Data source requirements

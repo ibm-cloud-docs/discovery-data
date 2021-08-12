@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -121,22 +121,22 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
       </tr>
       <tr>
         <td>Db2</td>
-        <td>`jdbc:db2://<server>:<port>/<database_name>`</td>
+        <td>`jdbc:db2://{server}:{port}/{database_name}`</td>
         <td>`jdbc:db2://localhost:50000/sample`</td>
       </tr>
       <tr>
         <td>Oracle</td>
-        <td>`jdbc:oracle:thin:@//<host>:<TCPport>/<service_name>`</td>
+        <td>`jdbc:oracle:thin:@//{host}:{TCPport}/{service_name}`</td>
         <td>`jdbc:oracle:thin:@localhost:1521/sample`</td>
       </tr>
       <tr>
         <td>SQL Server</td>
-        <td>`jdbc:sqlserver://<serverName>[\<instanceName>]:<port>[;property=value]`</td>
+        <td>`jdbc:sqlserver://{serverName}[\{instanceName}]:{port}[;property=value]`</td>
         <td>`jdbc:sqlserver://localhost:1433;DatabaseName=sample`</td>
       </tr>
       <tr>
         <td>Postgresql</td>
-        <td>`jdbc:postgresql://<host>:<port>/<database>`</td>
+        <td>`jdbc:postgresql://{host}:{port}/{database}`</td>
         <td>`jdbc:postgresql://localhost/sample`</td>
       </tr>
       </table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-03"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -53,9 +53,9 @@ For more information about the *Entities* and *Parts of Speech* enrichments, see
 
 You can create facets in the following ways:
 
-  -  [From existing fields in a collection](#facetexist)
-  -  [By adding a dictionary entry](#facetdict)
-  -  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: [By identifying a pattern](#facetpattern)
+- [From existing fields in a collection](#facetexist)
+- [By adding a dictionary entry](#facetdict)
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: [By identifying a pattern](#facetpattern)
 
 ### Creating a facet from existing fields in a collection
 {: #facetexist}
@@ -115,14 +115,14 @@ The Patterns feature uses pattern induction to help you teach {{site.data.keywor
 
 Pattern recognition works best on text with consistent structure in casing, length, text, or numeric values. Examples of patterns you can teach {{site.data.keyword.discoveryshort}} to identify in your documents:
 
-  -  All `ISO` standard numbers, for example `ISO 45001`, `ISO 22000`
-  -  All currency amounts, for example `$50.5 million`, `29 dollars`, `$29.00`
-  -  All dates, for example `8 September 2019`, `June 12, 2020`
+- All `ISO` standard numbers, for example `ISO 45001`, `ISO 22000`
+- All currency amounts, for example `$50.5 million`, `29 dollars`, `$29.00`
+- All dates, for example `8 September 2019`, `June 12, 2020`
 
 If you need to identify specific terms or text, create a facet as part of a dictionary entry instead. For example, use a dictionary facet for grouping the following types of information:
 
-  -  All products in the same family, `Cloud Pak for Data`, `Cloud Pak for Automation`, `Cloud Pak for Security`
-  -  All terms in the same category, `carburetor`, `piston`, `valves`
+- All products in the same family, `Cloud Pak for Data`, `Cloud Pak for Automation`, `Cloud Pak for Security`
+- All terms in the same category, `carburetor`, `piston`, `valves`
 
 For more information, see [Creating a facet by creating a dictionary](#facetdict).
 

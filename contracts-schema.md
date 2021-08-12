@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-06-29"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -247,91 +247,112 @@ After a document is processed by the Contracts enrichment, the service generates
 
 The `contracts` schema is arranged as follows.
 
-  - `elements`: An array of the document elements detected by the service.
-    - `location`: An object that identifies the location of the element. The object contains two index numbers, `begin` and `end`. The index numbers indicate the beginning and ending positions of the characters that constitute the element in HTML.
-    - `text`: The text of the element.
-    - `types`: An array that describes what the element is and whom it affects.
-      - `label`: An object that defines the type by using a pair of the following elements:
-        - `nature`: The type of action the sentence requires. Current values are `Definition`, `Disclaimer`, `Exclusion`, `Obligation`, and `Right`.
-        - `party`: A string that identifies the party to whom the sentence applies.
-      - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
-    - `categories`: An array that lists the functional categories into which the element falls; in other words, the subject matter of the element.
-      - `label`: A string that lists the identified category. For a list of categories, see [Categories](#contracts-categories).
-      - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
-    - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
-      - `type`: The type of attribute. Possible values are `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person` as described at [Attributes](#contracts-attributes).
-      - `text`: The text that is associated with the attribute.
-      - `location`: The location of the attribute as defined by its `begin` and `end` indexes.
-  - `effective_dates`: An array that identifies the date or dates on which the document becomes effective.
-    - `confidence_level`: The confidence level of the identification of the effective date. Possible values include `High`, `Medium`, and `Low`.
-    - `text`: An effective date, which is listed as a string.
-    - `text_normalized`: The normalized form of the effective date, which is listed as a string. This element is optional; that is, the service output lists it only if normalized text exists.
-    - `location`: The location of the date as defined by its `begin` and `end` indexes.
-    - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
-  - `contract_amounts`: An array that monetary amounts that identify the total amount of the contract that needs to be paid from one party to another.
-    - `confidence_level`: The confidence level of the identification of the contract amount. Possible values include `High`, `Medium`, and `Low`.    
-    - `text`: A contract amount, which is listed as a string.
-    - `location`: The location of the amount or amounts as defined by its `begin` and `end` indexes.
-    - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
-  - `termination_dates`: An array that identifies the date or dates on which the document is to be terminated.
-    - `confidence_level`: The confidence level of the identification of the termination date. Possible values include `High`, `Medium`, and `Low`.    
-    - `text`: A termination date, which is listed as a string.
-    - `text_normalized`: The normalized form of the termination date, which is listed as a string. This element is optional; that is, the service output lists it only if normalized text exists.
-    - `location`: The location of the date as defined by its `begin` and `end` indexes.
-    - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
-  - `contract_types`: An array that identifies the document's contract type or types.
-    - `confidence_level`: The confidence level of the identification of the contract type. Possible values include `High`, `Medium`, and `Low`.
-    - `text`: A contract type, which is listed as a string.
-    - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
-    - `location`: The location of the contract type as defined by its `begin` and `end` indexes.
-  - `contract_terms`: An array that identifies the duration or durations of the contract.
-    - `confidence_level`: The confidence level of the identification of the contract terms. Possible values include `High`, `Medium`, and `Low`.
-    -  `text`: A contract term, which is listed as a string.
-    - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
-    - `location`: The location of the contract term as defined by its `begin` and `end` indexes.
-  - `payment_terms`: An array that identifies the document's payment duration or durations.
-    - `confidence_level`: The confidence level of the identification of the payment term. Possible values include `High`, `Medium`, and `Low`.
-    - `text`: A payment term, which is listed as a string.
-    - `text_normalized`: The normalized text, if applicable.
-    - `interpretation`: The details of the normalized text, if applicable.
-      - `value`: A string that lists the value that was found in the normalized text.
-      - `numeric_value`: An integer or double that expresses the numeric value of the `value` key.
-      - `unit`: A string that lists the unit of the value that was found in the normalized text.
+- `elements`: An array of the document elements detected by the service.
 
-        The value of `unit` is the [ISO-4217 currency code](https://www.iso.org/iso-4217-currency-codes.html){: external} that is identified for the currency amount (for example, `USD` or `EUR`). If the service cannot disambiguate a currency symbol (for example, `$` or `£`), the ambiguous symbol itself is stored as the `unit` value.
-    - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
-    - `location`: The location of the contract term as defined by its `begin` and `end` indexes.
-  - `contract_currencies`: An array that identifies the document's contract currency or currencies.
-    - `confidence_level`: The confidence level of the identification of the contract currency. Possible values include `High`, `Medium`, and `Low`.
-    - `text`: A contract currency, which is listed as a string.
-    - `text_normalized`: The normalized text, if applicable. It is listed as a string in [ISO-4217](https://www.iso.org/iso-4217-currency-codes.html){: external} format
-    - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
-    - `location`: The location of the contract currency as defined by its `begin` and `end` indexes.
-  - `document_structure`: An object that describes the structure of the input document.
-    - `section_titles`: An array that contains one object per section or subsection that is detected in the input document. Sections and subsections are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element and the `level` value of the section.
-      - `text`: A string that lists the section title, if detected.
-      - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
-      - `level`: An integer that indicates the level at which the section is located in the input document. For example, represents a root-level section, represents a subsection within the level section.
-      - `element_locations`: An array that specifies the `begin` and `end` values of the sentences in the section.
-    - `leading_sentences`: An array that contains one object per leading sentence of a list or subsection, in parallel with the `section_titles` and `paragraph` arrays. The object details the leading sentences in the matching section or subsection. As in the `section_titles` array, the objects are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element or any level markers in the input document.
-      - `text`: A string that lists the leading sentence, if detected.
-      - `location`: The location of the leading sentence in the input document as defined by its `begin` and `end` indexes.
-      - `element_locations`: An array that specifies the `begin` and `end` values of the leading sentences in the section.
-    - `paragraphs`: An array that contains one object per paragraph, in parallel with the `section_titles` and `leading_sentences` arrays. Each object lists the span (beginning and end location) of the corresponding paragraph.
-      - `location`: The location of the paragraph in the input document as defined by its `begin` and `end` indexes.
-  - `parties`: An array that defines the parties that are identified by the service.
-    - `party`: A string that provides the normalized form of the party's name.
-    - `role`: A string that identifies the role of the party.
-    - `importance`: A string that identifies the importance of the party. Possible values include `Primary` for a primary party and `Unknown` for a non-primary party.
-    - `addresses`: An array of objects that identify addresses.
-      - `text`: A string that contains the address.
-      - `location`: The location of the address as defined by its `begin` and `end` indexes.
-    - `contacts`: An array that defines the name and role of contacts that are identified in the input document.
-      - `name`: A string that lists the name of an identified contact.
-      - `role`: A string that lists the role of the identified contact.
-    - `mentions`: An array of objects that identify mentions of the party.
-      - `text`: A string that lists the name of the party.
-      - `location`: The location of the mention as defined by its `begin` and `end` indexes.
+  - `location`: An object that identifies the location of the element. The object contains two index numbers, `begin` and `end`. The index numbers indicate the beginning and ending positions of the characters that constitute the element in HTML.
+  - `text`: The text of the element.
+  - `types`: An array that describes what the element is and whom it affects.
+
+    - `label`: An object that defines the type by using a pair of the following elements:
+
+      - `nature`: The type of action the sentence requires. Current values are `Definition`, `Disclaimer`, `Exclusion`, `Obligation`, and `Right`.
+      - `party`: A string that identifies the party to whom the sentence applies.
+    - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
+  - `categories`: An array that lists the functional categories into which the element falls; in other words, the subject matter of the element.
+
+    - `label`: A string that lists the identified category. For a list of categories, see [Categories](#contracts-categories).
+    - `provenance_ids`: An array of one or more hashed values that you can send to IBM to provide feedback or receive support.
+  - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
+
+    - `type`: The type of attribute. Possible values are `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person` as described at [Attributes](#contracts-attributes).
+    - `text`: The text that is associated with the attribute.
+    - `location`: The location of the attribute as defined by its `begin` and `end` indexes.
+- `effective_dates`: An array that identifies the date or dates on which the document becomes effective.
+
+  - `confidence_level`: The confidence level of the identification of the effective date. Possible values include `High`, `Medium`, and `Low`.
+  - `text`: An effective date, which is listed as a string.
+  - `text_normalized`: The normalized form of the effective date, which is listed as a string. This element is optional; that is, the service output lists it only if normalized text exists.
+  - `location`: The location of the date as defined by its `begin` and `end` indexes.
+  - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
+- `contract_amounts`: An array that monetary amounts that identify the total amount of the contract that needs to be paid from one party to another.
+
+  - `confidence_level`: The confidence level of the identification of the contract amount. Possible values include `High`, `Medium`, and `Low`.    
+  - `text`: A contract amount, which is listed as a string.
+  - `location`: The location of the amount or amounts as defined by its `begin` and `end` indexes.
+  - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
+- `termination_dates`: An array that identifies the date or dates on which the document is to be terminated.
+
+  - `confidence_level`: The confidence level of the identification of the termination date. Possible values include `High`, `Medium`, and `Low`.    
+  - `text`: A termination date, which is listed as a string.
+  - `text_normalized`: The normalized form of the termination date, which is listed as a string. This element is optional; that is, the service output lists it only if normalized text exists.
+  - `location`: The location of the date as defined by its `begin` and `end` indexes.
+  - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
+- `contract_types`: An array that identifies the document's contract type or types.
+
+  - `confidence_level`: The confidence level of the identification of the contract type. Possible values include `High`, `Medium`, and `Low`.
+  - `text`: A contract type, which is listed as a string.
+  - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
+  - `location`: The location of the contract type as defined by its `begin` and `end` indexes.
+- `contract_terms`: An array that identifies the duration or durations of the contract.
+
+  - `confidence_level`: The confidence level of the identification of the contract terms. Possible values include `High`, `Medium`, and `Low`.
+  -  `text`: A contract term, which is listed as a string.
+  - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
+  - `location`: The location of the contract term as defined by its `begin` and `end` indexes.
+- `payment_terms`: An array that identifies the document's payment duration or durations.
+
+  - `confidence_level`: The confidence level of the identification of the payment term. Possible values include `High`, `Medium`, and `Low`.
+  - `text`: A payment term, which is listed as a string.
+  - `text_normalized`: The normalized text, if applicable.
+  - `interpretation`: The details of the normalized text, if applicable.
+
+    - `value`: A string that lists the value that was found in the normalized text.
+    - `numeric_value`: An integer or double that expresses the numeric value of the `value` key.
+    - `unit`: A string that lists the unit of the value that was found in the normalized text.
+
+      The value of `unit` is the [ISO-4217 currency code](https://www.iso.org/iso-4217-currency-codes.html){: external} that is identified for the currency amount (for example, `USD` or `EUR`). If the service cannot disambiguate a currency symbol (for example, `$` or `£`), the ambiguous symbol itself is stored as the `unit` value.
+  - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
+  - `location`: The location of the contract term as defined by its `begin` and `end` indexes.
+- `contract_currencies`: An array that identifies the document's contract currency or currencies.
+
+  - `confidence_level`: The confidence level of the identification of the contract currency. Possible values include `High`, `Medium`, and `Low`.
+  - `text`: A contract currency, which is listed as a string.
+  - `text_normalized`: The normalized text, if applicable. It is listed as a string in [ISO-4217](https://www.iso.org/iso-4217-currency-codes.html){: external} format
+  - `provenance_ids`: An array that contains zero or more keys. Each key is a hashed value that you can send to IBM to provide feedback or receive support.
+  - `location`: The location of the contract currency as defined by its `begin` and `end` indexes.
+- `document_structure`: An object that describes the structure of the input document.
+
+  - `section_titles`: An array that contains one object per section or subsection that is detected in the input document. Sections and subsections are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element and the `level` value of the section.
+
+    - `text`: A string that lists the section title, if detected.
+    - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
+    - `level`: An integer that indicates the level at which the section is located in the input document. For example, represents a root-level section, represents a subsection within the level section.
+    - `element_locations`: An array that specifies the `begin` and `end` values of the sentences in the section.
+  - `leading_sentences`: An array that contains one object per leading sentence of a list or subsection, in parallel with the `section_titles` and `paragraph` arrays. The object details the leading sentences in the matching section or subsection. As in the `section_titles` array, the objects are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element or any level markers in the input document.
+
+    - `text`: A string that lists the leading sentence, if detected.
+    - `location`: The location of the leading sentence in the input document as defined by its `begin` and `end` indexes.
+    - `element_locations`: An array that specifies the `begin` and `end` values of the leading sentences in the section.
+  - `paragraphs`: An array that contains one object per paragraph, in parallel with the `section_titles` and `leading_sentences` arrays. Each object lists the span (beginning and end location) of the corresponding paragraph.
+
+    - `location`: The location of the paragraph in the input document as defined by its `begin` and `end` indexes.
+- `parties`: An array that defines the parties that are identified by the service.
+
+  - `party`: A string that provides the normalized form of the party's name.
+  - `role`: A string that identifies the role of the party.
+  - `importance`: A string that identifies the importance of the party. Possible values include `Primary` for a primary party and `Unknown` for a non-primary party.
+  - `addresses`: An array of objects that identify addresses.
+
+    - `text`: A string that contains the address.
+    - `location`: The location of the address as defined by its `begin` and `end` indexes.
+  - `contacts`: An array that defines the name and role of contacts that are identified in the input document.
+
+    - `name`: A string that lists the name of an identified contact.
+    - `role`: A string that lists the role of the identified contact.
+  - `mentions`: An array of objects that identify mentions of the party.
+
+    - `text`: A string that lists the name of the party.
+    - `location`: The location of the mention as defined by its `begin` and `end` indexes.
   
 ### `location` object
 {: #contracts-location-note}
@@ -413,18 +434,22 @@ The output of the `Contracts` enrichment includes a `document_structure` object 
 
 The elements of the `document_structure` object contain the following information:
 
-  - `document_structure`: An object that describes the structure of the input document.
-    - `section_titles`: An array that contains one object per section or subsection that is detected in the input document. Sections and subsections are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element and the `level` value of the section.
-      - `text`: A string that lists the section title, if detected.
-      - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
-      - `level`: An integer that indicates the level at which the section is located in the input document. For example, `1` represents a root-level section, `2` represents a subsection within the level `1` section, and so on.
-      - `element_locations`: An array that contains objects that specify the `begin` and `end` values of the sentences in the section.
-    - `leading_sentences`: An array that contains one object per leading sentence of a list or subsection, in parallel with the `section_titles` and `paragraph` arrays. The object details the leading sentences in the matching section or subsection. As in the `section_titles` array, the objects are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element or any level markers in the input document.
-      - `text`: A string that lists the leading sentence, if detected.
-      - `location`: The location of the leading sentence in the input document as defined by its `begin` and `end` indexes.
-      - `element_locations`: An array that contains objects that specify the `begin` and `end` values of the leading sentences in the section.
-    - `paragraphs`: An array that contains one object per paragraph, in parallel with the `section_titles` and `leading_sentences` arrays. Each object lists the span (beginning and end location) of the corresponding paragraph.
-      - `location`: The location of the paragraph in the input document as defined by its `begin` and `end` indexes.
+- `document_structure`: An object that describes the structure of the input document.
+
+  - `section_titles`: An array that contains one object per section or subsection that is detected in the input document. Sections and subsections are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element and the `level` value of the section.
+
+    - `text`: A string that lists the section title, if detected.
+    - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
+    - `level`: An integer that indicates the level at which the section is located in the input document. For example, `1` represents a root-level section, `2` represents a subsection within the level `1` section, and so on.
+    - `element_locations`: An array that contains objects that specify the `begin` and `end` values of the sentences in the section.
+  - `leading_sentences`: An array that contains one object per leading sentence of a list or subsection, in parallel with the `section_titles` and `paragraph` arrays. The object details the leading sentences in the matching section or subsection. As in the `section_titles` array, the objects are not nested. Instead, they are flattened out and can be placed back in order by using the `begin` and `end` values of the element or any level markers in the input document.
+
+    - `text`: A string that lists the leading sentence, if detected.
+    - `location`: The location of the leading sentence in the input document as defined by its `begin` and `end` indexes.
+    - `element_locations`: An array that contains objects that specify the `begin` and `end` values of the leading sentences in the section.
+  - `paragraphs`: An array that contains one object per paragraph, in parallel with the `section_titles` and `leading_sentences` arrays. Each object lists the span (beginning and end location) of the corresponding paragraph.
+
+    - `location`: The location of the paragraph in the input document as defined by its `begin` and `end` indexes.
 
 ## Elements
 {: #contracts-elements}
@@ -454,17 +479,20 @@ Each `nature` key is paired with a `party` key, which contains either the name o
 
 The `parties` array specifies the participants that are listed in the contract. Each `party` object is associated with other objects that provide details about the party, including:
 
-  - `role`: The party's role. Values are listed in the table that follows this list.
-  - `importance`: The importance of the party. Possible values are `Primary` for a primary party and `Unknown` for a non-primary party.
-  - `addresses`: An array that identifies addresses.
-    - `text`: An address.
-    - `location`: The location of the address as defined by its `begin` and `end` indexes.
-  - `contacts`: An array that defines the names and roles of contacts that are identified in the input document.
-    - `name`: The name of a contact.
-    - `role`: The role of the contact.
-  - `mentions`: n array of objects that identify mentions of the party.
-    - `text`: A string that lists the name of the party.
-    - `location`: The location of the mention as defined by its `begin` and `end` indexes.
+- `role`: The party's role. Values are listed in the table that follows this list.
+- `importance`: The importance of the party. Possible values are `Primary` for a primary party and `Unknown` for a non-primary party.
+- `addresses`: An array that identifies addresses.
+
+  - `text`: An address.
+  - `location`: The location of the address as defined by its `begin` and `end` indexes.
+- `contacts`: An array that defines the names and roles of contacts that are identified in the input document.
+
+  - `name`: The name of a contact.
+  - `role`: The role of the contact.
+- `mentions`: n array of objects that identify mentions of the party.
+
+  - `text`: A string that lists the name of the party.
+  - `location`: The location of the mention as defined by its `begin` and `end` indexes.
      
 The values of `role` that can be returned for contracts include, but are not limited to:
 

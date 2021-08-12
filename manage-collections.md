@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -57,8 +57,8 @@ For more information about how to create a collection, see [Creating collections
 
 To find out whether a collection is being shared, open the *My Projects* page, and then complete the appropriate step for your deployment:
  
-  - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Click **Collection usage and sharing**. 
-  - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Click **Data usage and GDPR**, and then review the **Collection usage** page.
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Click **Collection usage and sharing**. 
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Click **Data usage and GDPR**, and then review the **Collection usage** page.
 
 Collections can be associated with a single project, shared by two or more projects, or not associated with any project.
 
@@ -72,11 +72,11 @@ When you share collections across multiple projects, the following resources are
 
 If you make any of the following changes to a shared collection, the changes are applied to the collection in every project where it is shared:
 
--  Changing the Optical Character Recognition (OCR) setting
--  Annotating fields or adding fields by using Smart Document Understanding
--  Enabling or disabling fields
--  Changing the setting for document splitting
--  Changing any of the connector settings
+- Changing the Optical Character Recognition (OCR) setting
+- Annotating fields or adding fields by using Smart Document Understanding
+- Enabling or disabling fields
+- Changing the setting for document splitting
+- Changing any of the connector settings
 
 Enrichments and improvement tool settings are not included when a collection is shared because they are set at the project level.
 {: important}
