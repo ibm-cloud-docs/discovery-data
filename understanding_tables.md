@@ -2,7 +2,7 @@
 
 copyright:
 years: 2018, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-08-12"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -203,78 +203,90 @@ The output schema from the `Table Understanding` enrichment is as follows.
 
 The schema is arranged as follows.
 
-  - `tables`: An array that defines the tables that are identified in the input document.
-    - `location`: The location of the current table as defined by its `begin` and `end` indexes in the input document.
-    - `text`: The textual contents of the current table from the input document without associated markup content.
-    - `section_title`: If identified, the location of a section title contained in the current table. Empty if no section title is identified.
-      - `text`: The text of the identified section title.
-      - `location`: The location of the section title in the input document as defined by its `begin` and `end` indexes.
-    - `title`: If identified, the title or caption of the current table of the form `Table x.: ...`. Empty when no title is identified. When present, the `title` is excluded from the `contexts` array of the same table.
-      - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
-      - `text`: The text of the identified table title or caption.
-    - `table_headers`: An array of table-level cells applicable as headers to all the other cells of the current table. Each table header is defined as a collection of the following elements:
-      - `cell_id`: The unique ID of the cell in the current table.
-      - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
-      - `text`: The textual contents of the cell from the input document without associated markup content.
-      - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
-      - `row_index_end`: The `end` index of the cell's `row` location in the current table.
-      - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
-      - `column_index_end`: The `end` index of the cell's `column` location in the current table.
-    - `column_headers`: An array of column-level cells, each applicable as a header to other cells in the same column as itself, of the current table. Each column header is defined as a collection of the following items:
-      - `cell_id`: The unique ID of the cell in the current table.
-      - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
-      - `text`: The textual contents of the cell from the input document without associated markup content.
-      - `text_normalized`: If you provide customization input, the normalized version of the cell text according to the customization; otherwise, the same value as `text`. 
-      - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
-      - `row_index_end`: The `end` index of the cell's `row` location in the current table.
-      - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
-      - `column_index_end`: The `end` index of the cell's `column` location in the current table.
-    - `row_headers`: An array of row-level cells, each applicable as a header to other cells in the same row as itself, of the current table. Each row header is defined as a collection of the following items:
-      - `cell_id`: The unique ID of the cell in the current table.
-      - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
-      - `text`: The textual contents of the cell from the input document without associated markup content.
-      - `text_normalized`: If you provide customization input, the normalized version of the cell text according to the customization; otherwise, the same value as `text`. 
-      - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
-      - `row_index_end`: The `end` index of the cell's `row` location in the current table.
-      - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
-      - `column_index_end`: The `end` index of the cell's `column` location in the current table.
-    - `body_cells`: An array of cells that are not table header or column header or row header cells, of the current table with corresponding row and column header associations. Each body cell is defined as a collection of the following items:
-      - `cell_id`: The unique ID of the cell in the current table.
-      - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
-      - `text`: The textual contents of the cell from the input document without associated markup content.
-      - `row_index_begin`: The `begin` index of this cell's `row` location in the current table.
-      - `row_index_end`: The `end` index of this cell's `row` location in the current table.
-      - `column_index_begin`: The `begin` index of this cell's `column` location in the current table.
-      - `column_index_end`: The `end` index of this cell's `column` location in the current table.
-      - `row_header_ids`: An array of values, each being the `cell_id` value of a row header that is applicable to this body cell.
-      - `row_header_texts`: An array of values, each being the `text` value of a row header that is applicable to this body cell.
-      - `row_header_texts_normalized`: If you provide customization input, the normalized version of the row header texts according to the customization; otherwise, the same value as `row_header_texts`. 
-      - `column_header_ids`: An array of values, each being the `cell_id` value of a column header that is applicable to this body cell.
-      - `column_header_texts`: An array of values, each being the `text` value of a column header that is applicable to this body cell.
-      - `column_header_texts_normalized`: If you provide customization input, the normalized version of the column header texts according to the customization; otherwise, the same value as `column_header_texts`.
-      - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
-        - `type`: The type of attribute. Possible values are `Address`, `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person`.
-        - `text`: The text that is associated with the attribute.
-        - `location`: The location of the attribute as defined by its `begin` and `end` indexes.
-    - `key_value_pairs`: An array that specifies any key-value pairs in tables in the input document. For more information, see [Understanding key-value pairs](#key-value-pairs).
-      - `key`: An object that specifies a key for a key-value pair.
-        - `cell_id`: The unique ID of the key in the table.
-        - `location`: The location of the key cell in the input document as defined by its `begin` and `end` indexes.
-        - `text`: The text content of the table cell without HTML markup.
-      - `value`: An array that specifies the value or values for a key-value pair.
-        - `cell_id`: The unique ID of the value in the table.
-        - `location`: The location of the value cell in the input document as defined by its `begin` and `end` indexes.  
-        - `text`: The text content of the table cell without HTML markup.
-    - `contexts`: A list of related material that precedes and follows åthe table, excluding its section title, which is provided in the `section_title` field. Related material includes related sentences; footnotes; and sentences from other parts of the document that refer to the table. The list is represented as an array. Each object in the array consists of the following elements:
-      - `text`: The text contents of a related material from the input document, without HTML markup.
-      - `location`: The location of the related material in the input document as defined by its `begin` and `end` indexes.
+- `tables`: An array that defines the tables that are identified in the input document.
+
+  - `location`: The location of the current table as defined by its `begin` and `end` indexes in the input document.
+  - `text`: The textual contents of the current table from the input document without associated markup content.
+  - `section_title`: If identified, the location of a section title contained in the current table. Empty if no section title is identified.
+
+    - `text`: The text of the identified section title.
+    - `location`: The location of the section title in the input document as defined by its `begin` and `end` indexes.
+  - `title`: If identified, the title or caption of the current table of the form `Table x.: ...`. Empty when no title is identified. When present, the `title` is excluded from the `contexts` array of the same table.
+
+    - `location`: The location of the title in the input document as defined by its `begin` and `end` indexes.
+    - `text`: The text of the identified table title or caption.
+  - `table_headers`: An array of table-level cells applicable as headers to all the other cells of the current table. Each table header is defined as a collection of the following elements:
+
+    - `cell_id`: The unique ID of the cell in the current table.
+    - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
+    - `text`: The textual contents of the cell from the input document without associated markup content.
+    - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
+    - `row_index_end`: The `end` index of the cell's `row` location in the current table.
+    - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
+    - `column_index_end`: The `end` index of the cell's `column` location in the current table.
+  - `column_headers`: An array of column-level cells, each applicable as a header to other cells in the same column as itself, of the current table. Each column header is defined as a collection of the following items:
+
+    - `cell_id`: The unique ID of the cell in the current table.
+    - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
+    - `text`: The textual contents of the cell from the input document without associated markup content.
+    - `text_normalized`: If you provide customization input, the normalized version of the cell text according to the customization; otherwise, the same value as `text`. 
+    - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
+    - `row_index_end`: The `end` index of the cell's `row` location in the current table.
+    - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
+    - `column_index_end`: The `end` index of the cell's `column` location in the current table.
+  - `row_headers`: An array of row-level cells, each applicable as a header to other cells in the same row as itself, of the current table. Each row header is defined as a collection of the following items:
+
+    - `cell_id`: The unique ID of the cell in the current table.
+    - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
+    - `text`: The textual contents of the cell from the input document without associated markup content.
+    - `text_normalized`: If you provide customization input, the normalized version of the cell text according to the customization; otherwise, the same value as `text`. 
+    - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
+    - `row_index_end`: The `end` index of the cell's `row` location in the current table.
+    - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
+    - `column_index_end`: The `end` index of the cell's `column` location in the current table.
+  - `body_cells`: An array of cells that are not table header or column header or row header cells, of the current table with corresponding row and column header associations. Each body cell is defined as a collection of the following items:
+
+    - `cell_id`: The unique ID of the cell in the current table.
+    - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
+    - `text`: The textual contents of the cell from the input document without associated markup content.
+    - `row_index_begin`: The `begin` index of this cell's `row` location in the current table.
+    - `row_index_end`: The `end` index of this cell's `row` location in the current table.
+    - `column_index_begin`: The `begin` index of this cell's `column` location in the current table.
+    - `column_index_end`: The `end` index of this cell's `column` location in the current table.
+    - `row_header_ids`: An array of values, each being the `cell_id` value of a row header that is applicable to this body cell.
+    - `row_header_texts`: An array of values, each being the `text` value of a row header that is applicable to this body cell.
+    - `row_header_texts_normalized`: If you provide customization input, the normalized version of the row header texts according to the customization; otherwise, the same value as `row_header_texts`. 
+    - `column_header_ids`: An array of values, each being the `cell_id` value of a column header that is applicable to this body cell.
+    - `column_header_texts`: An array of values, each being the `text` value of a column header that is applicable to this body cell.
+    - `column_header_texts_normalized`: If you provide customization input, the normalized version of the column header texts according to the customization; otherwise, the same value as `column_header_texts`.
+    - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
+
+      - `type`: The type of attribute. Possible values are `Address`, `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person`.
+      - `text`: The text that is associated with the attribute.
+      - `location`: The location of the attribute as defined by its `begin` and `end` indexes.
+  - `key_value_pairs`: An array that specifies any key-value pairs in tables in the input document. For more information, see [Understanding key-value pairs](#key-value-pairs).
+
+    - `key`: An object that specifies a key for a key-value pair.
+
+      - `cell_id`: The unique ID of the key in the table.
+      - `location`: The location of the key cell in the input document as defined by its `begin` and `end` indexes.
+      - `text`: The text content of the table cell without HTML markup.
+    - `value`: An array that specifies the value or values for a key-value pair.
+
+      - `cell_id`: The unique ID of the value in the table.
+      - `location`: The location of the value cell in the input document as defined by its `begin` and `end` indexes.  
+      - `text`: The text content of the table cell without HTML markup.
+  - `contexts`: A list of related material that precedes and follows åthe table, excluding its section title, which is provided in the `section_title` field. Related material includes related sentences; footnotes; and sentences from other parts of the document that refer to the table. The list is represented as an array. Each object in the array consists of the following elements:
+
+    - `text`: The text contents of a related material from the input document, without HTML markup.
+    - `location`: The location of the related material in the input document as defined by its `begin` and `end` indexes.
       
 ### Notes on the table output schema
 {: #notes-on-table-schema}
 
-  - Row and column index values per cell are zero-based and so begin with `0`.
-  - Multiple values in arrays of `row_header_ids` and `row_header_texts` elements indicate a possible hierarchy of row headers.
-  - Multiple values in arrays of `column_header_ids` and `column_header_texts` elements indicate a possible hierarchy of column headers.
+- Row and column index values per cell are zero-based and so begin with `0`.
+- Multiple values in arrays of `row_header_ids` and `row_header_texts` elements indicate a possible hierarchy of row headers.
+- Multiple values in arrays of `column_header_ids` and `column_header_texts` elements indicate a possible hierarchy of column headers.
 
 ## Examples
 {: #table-examples}
@@ -519,7 +531,7 @@ The output from service represents the example's first body cell (that is, the f
 
 Tables sometimes contain key-and-value pairs that span multiple table cells. **Table Understanding** can detect the following types of tabular pairs.
 
-  - Simple key-and-value pairs in adjacent cells, as in the following example table:
+- Simple key-and-value pairs in adjacent cells, as in the following example table:
 
     <table>
     <caption>Basic table</caption>
@@ -541,7 +553,7 @@ Tables sometimes contain key-and-value pairs that span multiple table cells. **T
       </tr>
     </table>
 
-  - Key-and-value pairs in the same cell, as in the following example table:
+- Key-and-value pairs in the same cell, as in the following example table:
 
     <table>
     <caption>Complex table</caption>

@@ -63,9 +63,9 @@ All {{site.data.keyword.discoveryshort}} data source connectors are read-only. R
 
 The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
 
-| Data source | Objects that are crawled |
-|-------------|--------------------------|
-| Web crawl | Websites, website subdirectories |
+| Objects that are crawled |
+|--------------------------|
+| Websites, website subdirectories |
 {: caption="Table 1. Data sources crawling support" caption-side="top"}
 
 ## Prerequisite step

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -361,14 +361,15 @@ To add a Machine Learning model, complete the following steps:
 
     For more information, see the following documentation:
 
-    -  {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.icp4dfull}}
+    - {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.icp4dfull}}
 
-      -  [Creating a rule-based model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-rule-annotator)
-      -  [Creating a machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-ml_annotator)
-    -  {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.cloud_notm}}
-      -  [Creating a rule-based model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-rule-annotator)
-      -  [Creating a machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-ml_annotator)
-    -  [Watson Explorer Content Analytics Studio](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=analytics-content-studio-advanced-text){: external} 
+      - [Creating a rule-based model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-rule-annotator)
+      - [Creating a machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-ml_annotator)
+    - {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.cloud_notm}}
+
+      - [Creating a rule-based model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-rule-annotator)
+      - [Creating a machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-ml_annotator)
+    - [Watson Explorer Content Analytics Studio](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=analytics-content-studio-advanced-text){: external} 
     
         You must export the model from Watson Explorer Content Analytics Studio as a UIMA PEAR file. For more information, see: [Creating Custom PEAR Files for use with Lexical Analysis Streams](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=las-creating-custom-pear-files-use-lexical-analysis-streams){: external}.
 
@@ -537,9 +538,9 @@ Add a Patterns resource to teach {{site.data.keyword.discoveryshort}} to recogni
 
 Pattern recognition works best on text with consistent structure in casing, length, text, or numeric values. Examples of patterns you can teach {{site.data.keyword.discoveryshort}} to identify in your documents:
 
--  Standards numbers, such as `ISO 45001`, `ISO 22000`.
--  Currency references, such as `$50.5 million`, `$29 million`.
--  Date references, such as `8 September 2019`, `12 June 2020`.
+- Standards numbers, such as `ISO 45001`, `ISO 22000`.
+- Currency references, such as `$50.5 million`, `$29 million`.
+- Date references, such as `8 September 2019`, `12 June 2020`.
 
 If you need to identify specific terms or text, such as product names, add a [dictionary](#dictionary).
 

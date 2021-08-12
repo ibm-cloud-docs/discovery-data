@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -54,9 +54,9 @@ This information applies only to installed deployments. For more information abo
 
 The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
 
-| Data source | Objects that are crawled |
-|-------------|----------------------------------------|--------------------------|
-| Microsoft SharePoint Online | SiteCollections, Sites, SubSites, Lists, List Items, Document Libraries, List Item Attachments |
+| Objects that are crawled |
+|--------------------------|
+| SiteCollections, Sites, SubSites, Lists, List Items, Document Libraries, List Item Attachments |
 {: caption="Table 1. Data sources crawling support" caption-side="top"}
 
 ## Data source requirements

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -49,6 +49,13 @@ This information applies only to installed deployments. For more information abo
 - Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index during refresh.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
+
+The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
+
+| Objects that are crawled |
+|--------------------------|
+| Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments |
+{: caption="Table 1. Data sources crawling support" caption-side="top"}
 
 ## Data source requirements
 {: #connector-salesforce-cp4d-reqs}

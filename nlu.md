@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -99,10 +99,10 @@ If you want to use the Entities v1 legacy enrichment instead of Entities v2, you
 
 In the JSON output:
 
-  - `text` = string. The entity text
-  - `type` = string. The entity type, including but not limited to `Organization`, `Company`, `EmailAddress`, `JobTitle`, `Location`, `Person`, `Quantity`.
-  - `mentions` = array. The entity mentions and locations
-  - `model_name` = string. For custom models, this field contains the user-provided model name. Otherwise, this field contains the default name of the model: `watson_knowledge_studio`, `dictionary`, `character_pattern`, or `natural_language_understanding`
+- `text` = string. The entity text
+- `type` = string. The entity type, including but not limited to `Organization`, `Company`, `EmailAddress`, `JobTitle`, `Location`, `Person`, `Quantity`.
+- `mentions` = array. The entity mentions and locations
+- `model_name` = string. For custom models, this field contains the user-provided model name. Otherwise, this field contains the default name of the model: `watson_knowledge_studio`, `dictionary`, `character_pattern`, or `natural_language_understanding`
 
 ```json
 {
@@ -159,8 +159,9 @@ Returns important keywords in the content.
 {: #nlu-keywords-example-response}
 
 In the JSON output:
-  - `text` = The keyword text
-  - `mentions` = The entity mentions and locations
+
+- `text` = The keyword text
+- `mentions` = The entity mentions and locations
 
 ```json
 {
@@ -234,9 +235,10 @@ To analyze sentiment in text from multiple fields at once and capture the overal
 {: #nlu-sentiment-example-response}
 
 In the JSON output:
-  -  `score` = Sentiment score from `-1` (negative) to `1` (positive)
-  -  `label` = `positive`, `negative`, or `neutral`
-  -  `mixed` = Indicates whether the document has a mix of emotions or not
+
+- `score` = Sentiment score from `-1` (negative) to `1` (positive)
+- `label` = `positive`, `negative`, or `neutral`
+- `mixed` = Indicates whether the document has a mix of emotions or not
 
 ```json
 {
