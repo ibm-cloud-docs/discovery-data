@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-12"
 
 subcollection: discovery-data
 
@@ -75,7 +75,7 @@ If you want to connect to a website that is hosted behind a firewall, set up an 
     
 Valuable content is often stored on your company's internal website. Typically, such intranet websites are accessible only from a computer that is connected to your office network or through a VPN connection. You can establish a persistent and more secure connection between the web crawler and this type of internal site by using {{site.data.keyword.SecureGateway}}.
     
-For more information about how to set up the connection, see [Installing IBM Secure Gateway for on-premises data](#gatewaypublic). 
+For more information about how to set up the connection, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic). 
 
 ## Connecting to the data source
 {: #connector-web-cloud-task}

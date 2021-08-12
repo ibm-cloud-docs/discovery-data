@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-11"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -247,3 +247,7 @@ To create a crawl schedule, complete the following steps:
       You cannot interrupt the automated management of frequency and you cannot trigger a one-off crawl when these types of scheduled crawls are configured.
 
 If you want to change the flexible crawl schedule settings later, you can go to the *Processing settings* page, edit the settings, and then click **Apply changes and reprocess**.
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: The next scheduled crawl is displayed on the Activity page.
+
+If you change the schedule frequency, the next scheduled crawl time might not be what you expect. The crawls are set up to occur on a regular schedule at a specific time or day by default. For example, if you change the crawl schedule from weekly to monthly on 11 August, the next crawl might be scheduled for 31 August. It is not scheduled for exactly a month from the day you made the change, but it is scheduled to run on the day that is designated as the default day for a monthly crawl to run.
