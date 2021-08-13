@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -56,6 +56,6 @@ You can prevent content from being included in query results in the following wa
 
   1.  Get the document ID, which is shown in the JSON view of a query response.
 
-      To list all documents, you can submit an empty query from the page.
+      To list all documents, you can submit an empty query from the *Improve and customize* page.
       {: tip}
   1.  A developer can use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API. The document ID is a required parameter.

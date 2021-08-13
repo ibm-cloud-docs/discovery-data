@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-23"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -59,46 +59,64 @@ By default, {{site.data.keyword.discoveryshort}} provides answers by returning t
 
 Notes about Answer finding:
 
-  -  It finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
-     -  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what was IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
-  -  If the answer is available, it can handle synonyms and lexical variations.
-     -  Example question: “When did IBM purchase Red Hat?” – Passage ("short answer" is in **bold**.): “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
-  -  It can combine information across multiple sentences if they are close together (within approximately 2,000 characters)
-     -  Example question: “When did IBM purchase Red Hat?” – Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
-  -  It handles implicit questions similar to the way it would handle the equivalent explicit question.
-     - Example questions: 
+- It finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
 
-        - `company that developed the AS/400`
-        - `What company developed the AS/400?`
-  - Works well with questions with longer phrase or clause answers.
-    - Example question: How do I flip a pancake?
-    - Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
-  - Many how or why questions are only fully answered by much longer spans of text. Answer finding does not return a whole document as the answer (and it doesn't summarize a document length answer).
-  - Handles yes or no questions that are factual and have a concise answer in the text.
-     - Example question: Is there a library in Timbuktu
-     - Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house that contains more than 20,000 manuscripts that cover centuries of Mali's history. 
-  - Handles questions with very short answers, such as names and dates, especially when the type of answer that is required is explicit in the text.
-  - Handles opinion questions, but only for finding a statement of that opinion, not for assessing the validity of the opinion.
-     - Example question: Should I try blue eyeshadow?
-     - Passage: We think **blue eye shadow is trending** this year.
+  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what was IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
+
+- If the answer is available, it can handle synonyms and lexical variations.
+
+  Example question: “When did IBM purchase Red Hat?”
+  Passage ("short answer" is in **bold**.): “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
+
+- It can combine information across multiple sentences if they are close together (within approximately 2,000 characters)
+
+  Example question: “When did IBM purchase Red Hat?”
+  Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
+
+- It handles implicit questions similar to the way it would handle the equivalent explicit question.
+
+  Example questions: 
+
+  - `company that developed the AS/400`
+  - `What company developed the AS/400?`
+
+- Works well with questions with longer phrase or clause answers.
+
+  Example question: How do I flip a pancake?
+  Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
+
+- Many how or why questions are only fully answered by much longer spans of text. Answer finding does not return a whole document as the answer (and it doesn't summarize a document length answer).
+
+- Handles yes or no questions that are factual and have a concise answer in the text.
+
+  Example question: Is there a library in Timbuktu
+  Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house that contains more than 20,000 manuscripts that cover centuries of Mali's history.
+
+- Handles questions with very short answers, such as names and dates, especially when the type of answer that is required is explicit in the text.
+- Handles opinion questions, but only by finding a statement of that opinion; it does not assess the validity of the opinion.
+
+  Example question: Should I try blue eyeshadow?
+  Passage: We think **blue eye shadow is trending** this year.
 
 The Answer finding API beta adds two new parameters within the `passage` block of the query API. for more information about these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
 
--  `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), Answer finding is enabled.
--  `max_answers_per_passage` is optional and defaults to `1`. In this case, Answer finding finds the number of answers that are specified at most from any one passage.
+- `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), Answer finding is enabled.
+- `max_answers_per_passage` is optional and defaults to `1`. In this case, Answer finding finds the number of answers that are specified at most from any one passage.
 
 A block is also added to the `return` value within each `passage` object. That block is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage`in length. Each answer object contains the following fields:
 
--  `answer_text`is the text of the concise answer to the query.
--  `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Some answers have low confidence and are unlikely to be correct. Be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
--  `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from. It is greater than or equal to the start offset of the passage (since the answer must be within the passage).
--  `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from. It is less than or equal to the end offset of the passage.
+- `answer_text`is the text of the concise answer to the query.
+- `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Some answers have low confidence and are unlikely to be correct. Be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
+- `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from. It is greater than or equal to the start offset of the passage (since the answer must be within the passage).
+- `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from. It is less than or equal to the end offset of the passage.
 
 To find answers across your whole collection:
+
 Set `passages/enabled` to `true`
 Set `passages/find_answers` to `true`
 
 To find answers within a single known document (for example, a document review application with long, complex documents):
+
 Set `passages/enabled` to `true`
 Set `passages/find_answers` to `true`
 Set `filter` to select the `document_id` for the document 
@@ -111,7 +129,7 @@ POST /v2/projects/{project_id}/query{"natural_language_query": "Why did Nixon re
 ```
 {: codeblock}
 
-Example response
+Example response:
 
 ```json
 {
@@ -158,20 +176,9 @@ Aggregation queries return a count of documents that match a set of data values.
 
 A cacheable query that excludes any documents that don't mention the query content. Filter search results are **not** returned in order of relevance. 
 
-### Differences between the filter and query parameters
-{: #filtervquery}
-
-If you test the same search term on a small data set, you might find that the `filter` and `query` parameters return very similar (if not identical) results. However, the two parameters differ.
-
-- Using a filter parameter alone returns search results in no specific order.
-- Using a query parameter alone returns search results in order of relevance.
-
-In large data sets, if you need results to be returned in order of relevance, combine the `filter` and `query` parameters. Using the parameters together improves performance. The `filter` parameter is applied first. It filters the documents, and then caches the results. Then, the `query` parameter ranks the cached results. For an example of using filters and queries together, see [Building combined queries](/docs/discovery-data?topic=discovery-data-query-concepts#building-combined-queries). You can use filters in aggregations also.
-
 When you write a query that includes both a `filter`, and an `aggregation`, `query`, or `natural_language_query` parameter, the `filter` parameter runs first, and then any `aggregation`, `query`, or `natural_language_query` parameters run in parallel.
 
 With a simple query, especially on a small data set, the `filter` and `query` parameters often return the exact same (or similar) results. If the `filter` and `query` calls return similar results, and you don't need the responses to be returned in order of relevance, use the `filter` parameter. Filter calls are faster and are cached. Caching means that the next time you make the same call, you get a much quicker response, particularly in a big data set.
-
 
 ## Structure parameters
 {: #query-parameters-structure}

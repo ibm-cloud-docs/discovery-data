@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-05-13"
+  years: 2019, 2021
+lastupdated: "2021-08-02"
 
 subcollection: discovery-data
 
@@ -170,10 +170,15 @@ enriched_text.entities.text:Google,IBM
 
 Creates numerical comparisons of `less than` or `equal to`, `greater than` or `equal to`, `greater than`, and `less than`.
 
+Only use numerical comparison operators when the value is a `number` or `date`.
+
+Any value that is surrounded by quotations is a String. Therefore, `score>=0.5` is a valid query and `score>="0.5"` is not.
+{: tip}
+
 For example:
 
 ```bash
-enriched_text.sentiment.document.score>0.679
+invoice.total>100.50
 ```
 {: codeblock}
 

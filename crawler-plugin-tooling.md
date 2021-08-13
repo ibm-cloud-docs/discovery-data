@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -40,4 +40,8 @@ After you build and deploy a crawler plug-in, you can configure your {{site.data
 This information applies only to installed deployments.
 {:note}
 
-You can create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can select a successfully deployed crawler plug-in when you create and manage a collection. For more information, see [Crawler plug-in settings](/docs/discovery-data?topic=discovery-data-collection-types#plugin-settings). You can also deploy a crawler plug-in package to a testing environment.
+- You can create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 
+- You can select a successfully deployed crawler plug-in when you create and manage a collection.
+
+  For more information, see [Crawler plug-in settings](/docs/discovery-data?topic=discovery-data-collection-types#plugin-settings). 
+- You can also deploy a crawler plug-in package to a testing environment.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-16"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -51,8 +51,8 @@ To access the **Train** page, open your project and select the **Improve and cus
 
 In order to train Watson, you'll need to:
 
-  - Identify natural language queries that are representative of the queries your users would request.
-  - Rate the results of each query as `relevant` or `not relevant`.
+- Identify natural language queries that are representative of the queries your users would request.
+- Rate the results of each query as `relevant` or `not relevant`.
 
 After Watson has enough training input, the information that you provided about result relevance for each query is used to learn about your project. Watson does not memorize; it learns from the specific information about individual queries and applies the patterns it has detected to new queries. It uses machine learning Watson techniques to find signals in your content and questions. After training is applied, {{site.data.keyword.discoveryshort}} then reorders the query results to display the most relevant results first. As you add more and more training data, {{site.data.keyword.discoveryshort}} learns how best to order your query results.
 

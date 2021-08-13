@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -47,16 +47,22 @@ This information applies only to installed deployments.
 
 You can install your custom connector to your {{site.data.keyword.discoveryshort}} instance by performing the following steps.
 
-  1. Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
+1.  Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
     
-  1. Run the following command from the directory on your local machine where you created and compiled your custom connector:
+1.  Run the following command from the directory on your local machine where you created and compiled your custom connector:
+
      ```sh
      bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file}
      ```
      {: pre}
+    
     where `{built_connector_zip_file}` is the name of the file you packaged in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
 
-    **Important**: If your {{site.data.keyword.discoveryshort}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
+    If your {{site.data.keyword.discoveryshort}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script.
+    {: important}
+
+    For example:
+
       ```sh
       bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file} -o true
       ```
@@ -81,9 +87,12 @@ To uninstall a custom connector from a {{site.data.keyword.discoveryshort}} inst
 bash scripts/manage_custom_crawler.sh undeploy -n {built_connector_name}
 ```
 {: pre}
+
 where `{build_connector_name}` is the name, not the zip file, of the installed connector.
 
-**Important**: If your {{site.data.keyword.discoveryfull}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script:
+If your {{site.data.keyword.discoveryfull}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script.
+{: important}
+
 ```sh
 bash scripts/manage_custom_crawler.sh undeploy -n {built_connector_name} -o true
 ```

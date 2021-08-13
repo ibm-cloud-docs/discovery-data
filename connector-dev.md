@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -133,27 +133,28 @@ The example connector is a Secure File Transfer Protocol (SFTP) connector that c
 {: shortdesc}
 
 The example connector includes three components:
-  - Java source code for the connector
-  - An XML definition file that defines the parameters that the connector uses to connect to and crawl the data source
-  - A properties file that defines optional behaviors for the connector
+
+- Java source code for the connector
+- An XML definition file that defines the parameters that the connector uses to connect to and crawl the data source
+- A properties file that defines optional behaviors for the connector
 
 ### Requirements
 {: #example-connection-requirements}
 
 The Java source code for the example connector has the following dependencies:
 
-  - Java SE Development Kit (JDK) 1.8 or higher.
-  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old).
-  - The [JSch](http://www.jcraft.com/jsch/){: external} Java package, as described [Downloaded JSch](#download-jsch). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}.
+- Java SE Development Kit (JDK) 1.8 or higher.
+- The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance as described at [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later](#download-ccs-zip) and [Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.0 and earlier](#download-ccs-zip-old).
+- The [JSch](http://www.jcraft.com/jsch/){: external} Java package, as described [Downloaded JSch](#download-jsch). You can download the package in [ZIP format](https://sourceforge.net/projects/jsch/files/jsch/0.1.55/jsch-0.1.55.zip/download){: external} or [JAR format](https://sourceforge.net/projects/jsch/files/jsch.jar/0.1.55/jsch-0.1.55.jar/download){: external}.
 
 #### Downloading the `custom-crawler-docs.zip` file in Discovery 2.2.1 and later
 {: #download-ccs-zip}
 
 In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the following steps to download the `custom-crawler-docs.zip` file to your local machine. You need root access to an installed {{site.data.keyword.discoveryshort}} instance:
 
-  1. Log in to your {{site.data.keyword.discoveryshort}} cluster.
+1.  Log in to your {{site.data.keyword.discoveryshort}} cluster.
 
-  1. Enter the following command to obtain your crawler pod name:
+1.  Enter the following command to obtain your crawler pod name:
      
      ```
      oc get pods | grep crawler
@@ -166,7 +167,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
      wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
      ```
   
-  1. Enter the following command to obtain the `custom-crawler-docs.zip` file, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in step 2:
+1.  Enter the following command to obtain the `custom-crawler-docs.zip` file, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in step 2:
      
      ```
      oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep custom-crawler-docs
@@ -179,14 +180,14 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
      -rw-r--r--. 1 dadmin dadmin 59451 Jan 19 03:50 custom-crawler-docs-${build-version}.zip
      ```
   
-  1. Enter the following command to copy the `custom-crawler-docs.zip` file to the host server, replacing `{build-version}` with the build version number in step 3:
+1.  Enter the following command to copy the `custom-crawler-docs.zip` file to the host server, replacing `{build-version}` with the build version number in step 3:
      
      ```
      oc cp {crawler-pod-name}:/opt/ibm/wex/zing/resources/custom-crawler-docs-${build-version}.zip custom-crawler-docs.zip
      ```
      {: pre}
 
-  1. Enter the following command to expand the `custom-crawler-docs.zip` file:
+1.  Enter the following command to expand the `custom-crawler-docs.zip` file:
   
      ```
      unzip custom-crawler-docs.zip -d custom-crawler-docs-master
@@ -317,9 +318,9 @@ Download JSch to your development directory (`{local_directory}`). You can downl
 
 The example custom connector includes three files that get built together:
 
- - Java source files that are named `SftpCrawler.java` and `SftpSecurityHandler.java`
- - An XML definitions file named `template.xml`
- - A properties file named `message.properties`
+- Java source files that are named `SftpCrawler.java` and `SftpSecurityHandler.java`
+- An XML definitions file named `template.xml`
+- A properties file named `message.properties`
 
 You can locate and examine these files by referencing the directory tree listing in [Understanding the `custom-crawler-docs.zip` file](#ccs-grok-crawler-zip-file).
 
