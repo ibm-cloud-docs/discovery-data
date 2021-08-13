@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-02"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -247,6 +247,9 @@ There are other ways to deploy your assistant. We are using the web chat integra
     - What is COVID-19?
     - Who is at increased risk?
     - When should I seek emergency care?
+
+    You can skip this step. If you skip it, set the home screen switch to off.
+    {: tip}
 1.  Click **Save and exit**.
 1.  Reopen the web chat by clicking the **Web chat** tile in the *Integrations* section.
 
