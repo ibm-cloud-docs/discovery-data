@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -62,7 +62,7 @@ The following video shows you how to select a label, and then apply it to a repr
 
 ![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
 
-To plan before you begin, see [When to use Smart Document Understanding](#sdu-when).
+Before you begin, get a feel for the structure of the document you plan to annotate. Are there subtitled sections that you want Discovery to return per answer? If so, identify all subtitles. Later you can split the document into discrete subdocuments, each starting with a subtitle. For more information, see [When to use Smart Document Understanding](#sdu-when).
 
 To annotate documents, complete the following steps:
 
@@ -104,6 +104,7 @@ To annotate documents, complete the following steps:
     - To annotate a table, click the text at the start of the table and then drag to select the text in the entire table.
     - When you label one or more tables, the *Table Understanding* enrichment is enabled for the entire collection automatically. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
     - Images from the source documents are not rendered in the preview. If Optical Character Recognition (OCR) is enabled, any text from the image or diagram is extracted and rendered in the preview. Only apply the `image` label to the image text if you *don't* want to store the extracted text in the `text` field.
+    - Do not label whitespace.
 
 1. When everything that you want to label is labeled, submit the page. Click **Submit page**.
 
@@ -178,7 +179,7 @@ The following fields make up the base set of fields that you can apply to docume
 | question | In a question-and-answer pair (often in an FAQ), the question. |
 | subtitle | The secondary title of the document. |
 | table_of_contents | Use this tag on lists in the document table of contents. |
-| text | Use this tag for standard copy text, including paragraphs, definitions, or any set of words that is not a title, part of a table, answer, author, subtitle, header, or a footer. |
+| text | By default, every block of text in the document is labeled as text. Only apply different labels to blocks of text with special meaning. |
 | title | The main title of the document. |
 | table |	Use this tag to annotate tables in your document. |
 | image |	Use this tag to prevent text from being extracted from images and diagrams in your document. |
