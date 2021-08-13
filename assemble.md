@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-08-13"
 
 subcollection: discovery-data
 
@@ -72,8 +72,8 @@ Declared settings are represented by the `<declare />` element. The element has 
 | `hidden`        | Indicates whether to hide the setting from the UI. Specify a value of `true` to hide the setting.|
 {: caption="Declare element attributes" caption-side="top"}
 
-  In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discoveryshort}} tooling.
-  {: note}
+In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discoveryshort}} tooling.
+{: note}
 
 ### Declaration setting examples
 {: #declare-examples}
@@ -111,8 +111,8 @@ Conditional settings are represented by the `<condition />` element. A condition
 | `in`            | Enable the setting if the value of the `name` attribute is included in a specified list of values|
 {: caption="Condition element attributes" caption-side="top"}
 
-  In the current release, conditional settings are not applied in the {{site.data.keyword.discoveryshort}} tooling.
-  {: note}
+In the current release, conditional settings are not applied in the {{site.data.keyword.discoveryshort}} tooling.
+{: note}
 
 ### Conditional setting examples
 {: #conditional-examples}
@@ -265,15 +265,15 @@ After you write the source code and configuration files for your custom connecto
 
 To compile a custom connector, you need to have the following items on your local machine. See [Custom connector example](/docs/discovery-data?topic=discovery-data-connector-dev#example-connection-requirements) for details.
 
-  - JDK 1.8 or higher
-  - [Gradle](https://gradle.org/install/){: external}
-  - The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance
-  - The JSch package
-  - The following files for the example custom connector:
+- JDK 1.8 or higher
+- [Gradle](https://gradle.org/install/){: external}
+- The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance
+- The JSch package
+- The following files for the example custom connector:
   
-    - Java source code (`SftpCrawler.java` and `SftpSecurityHandler.java`)
-    - XML definition file (`template.xml`)
-    - Properties file (`messages.properties`)
+  - Java source code (`SftpCrawler.java` and `SftpSecurityHandler.java`)
+  - XML definition file (`template.xml`)
+  - Properties file (`messages.properties`)
 
   Do not change the names or paths of the example custom connector files. Doing so can result in problems, including build failures.
   {: important}
