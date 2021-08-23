@@ -260,7 +260,7 @@ Use the `term()` aggregation to count how many times certain values appear in th
 ```
 {: codeblock}
 
-The query first selects the documents that have at least one entity of type `Location` and whose text is `Gilroy`. This action returns 3 documents. Amongst the returned documents, the aggregation then counts the number of documents in which each entity type appears.
+The query first selects the documents that have at least one entity of type `Location` and whose text is `Gilroy`. This action returns 3 documents. From the returned documents, the aggregation then counts the number of documents in which each entity type appears.
 
 ```json
 {
