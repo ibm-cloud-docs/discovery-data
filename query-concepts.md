@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-23"
 
 subcollection: discovery-data
 
@@ -250,7 +250,7 @@ For more information about the available aggregation types, see [Query aggregati
 ### Example: Term aggregation
 {: #term-aggregation}
 
-To continue with the sample documents that were used in the earlier examples, you might want to know how many times each entity type is recognized in the filtered documents. To find out, you can use the `term` aggregation type.
+Use the `term()` aggregation to count how many times certain values appear in the resulting data. For example, to find how many times each entity type is recognized in the filtered documents, you can submit the following query parameters:
 
 ```json
 {
@@ -260,7 +260,7 @@ To continue with the sample documents that were used in the earlier examples, yo
 ```
 {: codeblock}
 
-The response shows that there were 3 matching results, which means that only 3 documents are returned. The `aggregations` object summarizes the entity types that were found in those 3 documents.
+The query first selects the documents that have at least one entity of type `Location` and whose text is `Gilroy`. This action returns 3 documents. From the returned documents, the aggregation then counts the number of documents in which each entity type appears.
 
 ```json
 {
@@ -312,7 +312,7 @@ The response shows that there were 3 matching results, which means that only 3 d
 ```
 {: codeblock}
 
-The `Location` and `Person` entity types each occur 3 times. That result shows that at least one location and one person entity mention were detected in each document.
+The 3 matching documents all have a `Location` and a `Person` entity type (`"matching_results": 3`). However, only 2 of the matching documents have a `Company` entity type.
 
 By default, the top 10 matches are returned, sorted by relevance. You can change the number of results by adding the `count` parameter to the aggregation.
 
@@ -327,7 +327,7 @@ By default, the top 10 matches are returned, sorted by relevance. You can change
 ### Examples: Filter aggregation
 {: #filter-aggregation}
 
-You can filter documents as part of the aggregation itself rather than specifying it as a separate name and value pair in the JSON block.
+Use the `filter()` in the aggregation clause to filter results. For example, you can specify the same filter that was submitted separately in the previous example directly in the `aggregation` clause.
 
 ```json
 {
@@ -336,21 +336,23 @@ You can filter documents as part of the aggregation itself rather than specifyin
 ```
 {: codeblock}
 
+In this case, the `filter().term()` aggregation finds the same result as the example before with the separate  `filter` and `aggregation` clauses. However, results are ranked differently when the  `filter` clause is used. You can leverage this difference by using the `filter()` clause within the  `aggregation` clause to filter results from a sequence of expressions, as shown in the next example.
+
 ### Example: Nested aggregation
 {: #nested-aggregation}
 
-To find out how many mentions of each entity type occur in the filtered documents, use the `nested` aggregation type. 
+In the previous examples, the `"matching_counts"` value represents the number of documents that match the filter and aggregation. You might want to count how many *nested* objects are present in the query response. The `nested()` aggregation allows you to change the set of documents that is used as input to other aggregation terms.
 
-For example, look at the differences between the following queries:
+For example, in the following query the `nested()` segment selects all `enriched_text.entities` nested objects as the input used by the `filter()` and `term()` segments.
 
-- `filter(enriched_text.entities.type::Organization)`: Counts the number of *results* that contain one or more entities with the type `Organization`. The matching results are typically equal to or less than the number of documents.
-- `nested(enriched_text.entities).filter(enriched_text.entities.type::Organization)`: Counts every occurrence of an entity with the type `Organization` in the results. The matching results are typically much higher than when you use filter alone.
+```json
+{ 
+    "aggregation": "nested(enriched_text.entities).filter(enriched_text.entities.type::Organization).term(enriched_text.entities.text,count:3)"
+}
+```
+{: codeblock}
 
-Subsequent operations restrict the result set that you can aggregate. For example:
-
-- `nested(enriched_text.entities).filter(enriched_text.entities.type::Organization).term(enriched_text.entities.text,count:3)`: Aggregates the top three entities of type `Organization`. 
-
-A resulting `aggregations` object might look like this:
+The query results in an `aggregations` object that looks as follows:
 
 ```json
 {
@@ -392,6 +394,8 @@ A resulting `aggregations` object might look like this:
 }
 ```
 {: codeblock}
+
+The `nested()` segment of the query found 1993 `enriched_text.entities` nested objects. The filter was applied to those objects and found 645 `enriched_text.entities` of type `Organization`.
 
 ## Query limits
 {: #query-limits}
