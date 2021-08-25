@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-20"
+lastupdated: "2021-08-25"
 
 subcollection: discovery-data
 
@@ -61,12 +61,12 @@ Your disaster recovery plan includes knowing, preserving, and being prepared to 
 ## Backing up your data in Watson Discovery
 {: #backupdata}
 
-There are several methods for backing up the data stored in {{site.data.keyword.discoveryfull}}. Consider including these methods in your disaster recovery plan. Also consider backing up the following data types:
+There are several methods for backing up the data that is stored in {{site.data.keyword.discoveryfull}}. Consider including these methods in your disaster recovery plan. Also, consider backing up the following data types:
 
 -  Data that you might want a copy of, such as source documents
 -  Data that {{site.data.keyword.discoveryshort}} stores and that you want to extract and back up
   
-You cannot back up certain data types and must manually recreate them. There are several Content Mining custom user resources that the application does not automatically back up. In the event of data loss, you must either manually recreate the following custom user resources in the Content Mining application or upload a locally saved file that contains the resource:
+You cannot back up certain data types and must manually re-create them. There are several Content Mining custom user resources that the application does not automatically back up. If data loss occurs, you must either manually re-create the following custom user resources in the Content Mining application or upload a locally saved file that contains the resource:
 
 - **/** Saved analysis
 - **/** Report
@@ -74,12 +74,12 @@ You cannot back up certain data types and must manually recreate them. There are
 - **Custom map:** You can restore a custom map if you stored the custom map locally as a .json file and then upload it in the application. You can upload your .json file by clicking the ![Cog](images/icon_settings.png) icon on the header of the **Create a custom annotator** page, **Manage customization resources**, and **Add resource**. In **Resource type**, select **Map**, click **Next**, and upload your .json file.
 - **Searched document export:** You can export a searched document in the **Documents** view in the Content Mining application, but you cannot reupload it in the application. If you want to export a searched document, navigate to the **Documents** view in the Content Mining application by clicking **Show documents** on the mining graph in **Guided mode**, then the **Export** icon next to the **Edit** icon, and **Export** in the **Searched document export options** dialog box. You can then download the exported file from the **Repository** pane.
 - **Facet analysis result export:** You can download the results of your facet analysis by clicking the **Export** icon, then **Export results**, and **Export** in the **Analysis export options** dialog box.
-- **Collection:** You can restore a Content Mining collection if you stored the collection locally as a .csv file and then upload it in the application. Otherwise, you must manually recreate the collection. If you want to upload a collection .csv file, you can navigate to the **Create a collection** page in the application, click **Create collection**, and in **Import your files** in the **Dataset** tab, you can select your file.
-- **Document classifier:** You can restore a document classifier if you stored the document classifier locally as a .csv file and then upload it in the application. Otherwise, you must manually recreate the document classifier. If you want to upload a document classifier .csv file, you can navigate to the **Create a classifier** page in the application, click **Create classifier**, and in **Import your files** in the **Training data** tab, you can select your file.
+- **Collection:** You can restore a Content Mining collection if you stored the collection locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the collection. If you want to upload a collection .csv file, you can navigate to the **Create a collection** page in the application, click **Create collection**, and in **Import your files** in the **Dataset** tab, you can select your file.
+- **Document classifier:** You can restore a document classifier if you stored the document classifier locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the document classifier. If you want to upload a document classifier .csv file, you can navigate to the **Create a classifier** page in the application, click **Create classifier**, and in **Import your files** in the **Training data** tab, you can select your file.
 - Custom annotators
-  - **Dictionary:** You can restore a dictionary in the application if you stored the dictionary locally as a .csv file and upload it in the application. You can upload your dictionary .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Dictionary** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the dictionary, and you can download the .csv file by cliking the download icon in the **Dictionary** list. If you do not have a locally saved .csv file, you must manually recreate the dictionary.
-  - **Regular expressions:** You can restore a regular expression in the application if you stored the regular expression locally as a .csv file and upload it in the application. You can upload your regular expressions .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Regular expressions** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the regular expressions .csv file, and you can download the .csv file by clicking **Export**. If you do not have a locally saved .csv file, you must manually recreate the regular expression.
-  - **Machine learning models:** You can restore a machine learning model if you stored the model locally as a .zip file and then upload it in the application. You can upload your .zip file by navigating to the **Creating a custom annotator** page, clicking **Create custom annotator**, selecting **Machine learning**, and clicking **Next** and then **Select file**, and selecting your .zip file. If you do not have a locally saved .zip file, you must manually recreate the machine learning model.
+  - **Dictionary:** You can restore a dictionary in the application if you stored the dictionary locally as a .csv file and upload it in the application. You can upload your dictionary .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Dictionary** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the dictionary, and you can download the .csv file by clicking the download icon in the **Dictionary** list. If you do not have a locally saved .csv file, you must manually re-create the dictionary.
+  - **Regular expressions:** You can restore a regular expression in the application if you stored the regular expression locally as a .csv file and upload it in the application. You can upload your regular expressions .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Regular expressions** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the regular expressions .csv file, and you can download the .csv file by clicking **Export**. If you do not have a locally saved .csv file, you must manually re-create the regular expression.
+  - **Machine learning models:** You can restore a machine learning model if you stored the model locally as a .zip file and then upload it in the application. You can upload your .zip file by navigating to the **Creating a custom annotator** page, clicking **Create custom annotator**, selecting **Machine learning**, and clicking **Next** and then **Select file**, and selecting your .zip file. If you do not have a locally saved .zip file, you must manually re-create the machine learning model.
   - **PEAR File:** You can upload a .pear file if you stored the file locally and then upload it in the application. You can upload your .pear file by navigating to the **Creating a custom annotator** page, clicking **Create custom annotator**, selecting **PEAR File** in **Annotator type**, clicking **Next** and then **Select file**, and selecting your .pear file.
 
   The **/** denotes a custom user resource that you cannot back up locally and must recreate manually in the Content Mining application.
@@ -88,9 +88,9 @@ You cannot back up certain data types and must manually recreate them. There are
 ### Ingested documents
 {: #backupdocs}
 
-Your uploaded documents are converted, enriched, and stored in the search index. In the event of a disaster, the search index is not recoverable. Store a backup of all your source documents in a safe place.
+Your uploaded documents are converted, enriched, and stored in the search index. If a disaster occurs, the search index is not recoverable. Store a backup of all your source documents in a safe place.
 
-If you also import documents by doing scheduled crawls of external data sources, you might want to retain your data source credentials externally so that you can re-establish your data sources quickly. For the list of available sources and the credentials needed for each one, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
+If you also import documents by doing scheduled crawls of external data sources, you might want to retain your data source credentials externally so that you can reestablish your data sources quickly. For the list of available sources and the credentials that are needed for each one, see [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
 
 ### Training data
 {: #backuptraining}
@@ -116,13 +116,13 @@ In the case of stopwords, back up the text file. For more information about sto
 ### Collection information
 {: #collectioninfo}
 
-This is not required, but it is a good best practice to [retrieve the status](https://{DomainName}/apidocs/discovery-data#getcollection){: external} for each collection on a regular basis and store the information locally. By retaining these statistics, you can later verify that your restoration processes were successful if needed.
+This is not required, but it is a best practice to [retrieve the status](https://{DomainName}/apidocs/discovery-data#getcollection){: external} for each collection regularly and store the information locally. By retaining these statistics, you can later verify that your restoration processes were successful if needed.
 {: tip} 
 
 ### Smart Document Understanding models
 {: #backupsdu}
 
-If you use Smart Document Understanding (SDU), you have models associated with your configuration. To avoid loss of this information, [export your models](/docs/discovery-data?topic=discovery-data-configuring-fields#import), back them up, and store them locally. SDU models have the file extension of `.sdumodel`.
+If you use Smart Document Understanding (SDU), you have models that are associated with your configuration. To avoid loss of this information, [export your models](/docs/discovery-data?topic=discovery-data-configuring-fields#import), back them up, and store them locally. SDU models have the file extension of `.sdumodel`.
 
 ### Dictionary enrichments
 {: #backupdictionary}
@@ -134,7 +134,7 @@ If you use Smart Document Understanding (SDU), you have models associated with y
 ### Regular expressions enrichments
 {: #backupregexpenrich}
 
-Back up your regular expressions as a .csv file, and store them locally. Note the regular expressions that you specified to create your enrichments so that you can recreate the enrichments from them. For more information, see [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex).
+Back up your regular expressions as a .csv file, and store them locally. Note the regular expressions that you specified to create your enrichments so that you can re-create the enrichments from them. For more information, see [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex).
 
 ### Machine learning enrichments
 {: #mlenrich}
@@ -178,7 +178,7 @@ After you set up your projects and collections as they were before, begin ingest
 ### Restoring training data
 {: #restoretraining}
 
-After you restore your projects, you can begin the process of recreating your relevancy training models. To restore your training data queries and examples, recreate your individual training queries and the examples by using the [create training query](https://{DomainName}/apidocs/discovery-data#createtrainingquery){: external} API, or you can restore your queries and examples on {{site.data.keyword.discoveryshort}}. For more information about restoring your training data by using {{site.data.keyword.discoveryshort}}, see the instructions for accessing the **Train** page in [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
+After you restore your projects, you can begin the process of re-creating your relevancy training models. To restore your training data queries and examples, re-create your individual training queries and the examples by using the [create training query](https://{DomainName}/apidocs/discovery-data#createtrainingquery){: external} API, or you can restore your queries and examples on {{site.data.keyword.discoveryshort}}. For more information about restoring your training data by using {{site.data.keyword.discoveryshort}}, see the instructions for accessing the **Train** page in [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train).
 
 For the restore to work properly, note that the document IDs that you use in your training data point to the documents in your current project. Use the same IDs in your new projects to ensure that the correct documents are referenced. If the IDs do not match, your restored relevancy training will not work.
 {: important}
@@ -188,7 +188,7 @@ For the restore to work properly, note that the document IDs that you use in you
 
 In case of an unanticipated loss of data, you might lose your scheduled crawls of external data sources. See [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources) for the list of available sources.
 
-To restore your external data, re-establish your connections to these data sources, and then re-crawl them.
+To restore your external data, reestablish your connections to these data sources, and then recrawl them.
 
 To find the data source credentials that you stored, follow the instructions for your chosen data source in [Configuring {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources). These instructions explain how you can reconnect to your data sources and get the data imported into {{site.data.keyword.discoveryshort}}.
 
@@ -197,7 +197,7 @@ To find the data source credentials that you stored, follow the instructions for
 
 To import a previously exported Smart Document Understanding (SDU) model, see [Importing and exporting models](/docs/discovery-data?topic=discovery-data-configuring-fields#import). SDU models have the file extension of `.sdumodel`.
 
-When importing an SDU existing model into a new collection, it is a good best practice to create the new collection and add one document, then import the model and upload the remainder of your documents.
+When importing an SDU existing model into a new collection, it is a best practice to create the new collection and add one document, then import the model and upload the remainder of your documents.
 
 ### Restoring dictionary enrichments
 {: #restoredictionary}

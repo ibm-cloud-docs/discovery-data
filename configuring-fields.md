@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-24"
 
 subcollection: discovery-data
 
@@ -47,9 +47,9 @@ To identify fields, complete the following steps:
 1.  If your project has more than one collection, select the collection with documents that you want to annotate.
 1.  Choose the type of model you want to use:
 
-    - **Text extraction only**: Any text that is recognized in the source document is indexed in the `text` field. This option is selected by default because it is applied to all collections unless you choose to use a model.
-    - **User-trained models**: Opens the Smart Document Understanding tool that you can use pick certain types of text to store in fields other than the `text` field.
-    - **Pre-trained-models**: Applies a non-customizable model that extracts text and identifies tables, lists, and sections. This model converts table information to HTML format, so you can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to the `html` field.
+    - **Text extraction only**: Any text that is recognized in the source document is indexed in the `text` field. This option is selected by default.
+    - **User-trained models**: Opens the Smart Document Understanding tool that you can use to pick certain types of text to store in fields other than the `text` field.
+    - **Pre-trained-models**: Applies a non-customizable model that extracts text and identifies tables, lists, and sections. This model converts table information to HTML format and stores it in the `html` field. You can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to the field later.
 1.  Click **Submit**
 1.  Click **Apply changes and reprocess**.
 
@@ -68,11 +68,11 @@ To annotate documents, complete the following steps:
 
 1.  Review the document preview.
 
-    A view of the original document is displayed along with a representation of the document, where the text is replaced by blocks. Think of this representation of the document as a document template.
+    A view of the original document is displayed along with a representation of the document, where the text is replaced by blocks.
     
     The blocks are all the color of the `text` field label because all of the current text is considered to be standard text and will be indexed in the `text` field.
     
-    To annotate the document, you label blocks that represent specific types of information, such as titles or page footers, with other field labels. 
+    To annotate the document, label blocks that represent specific types of information, such as titles or page footers, with other field labels. 
     
     For example, when you apply the title field label to a document title that would otherwise be indexed as text, you are defining a more precise representation of the document content.
 1.  Review the field labels that you can use to annotate the document. They are displayed in the *Field labels* panel.
@@ -87,10 +87,12 @@ To annotate documents, complete the following steps:
       {: important}
     - Click **Create**.
 1.  First, click a field label to activate it.
-1.  Next, click the block in the document template that represents the content that you want to label as a specific field type.
+1.  Next, click the block that represents the content that you want to label as the field type.
 
     The block changes to the color of the field label. You successfully labeled the field!
-1.  Repeat this process to annotate more fields in the document.
+1.  Repeat this process to annotate more fields in the document. 
+
+    Don't worry. You don't need to label every page. As you apply labels and submit pages, Watson learns from what you annotate and starts to predict annotations.
 
     Follow these guidelines:
 
@@ -106,11 +108,11 @@ To annotate documents, complete the following steps:
     - Images from the source documents are not rendered in the preview. If Optical Character Recognition (OCR) is enabled, any text from the image or diagram is extracted and rendered in the preview. Only apply the `image` label to the image text if you *don't* want to store the extracted text in the `text` field.
     - Do not label whitespace.
 
-1. When everything that you want to label is labeled, submit the page. Click **Submit page**.
+1.  When everything that you want to label is labeled, submit the page. Click **Submit page**.
 
-   As you annotate, Watson learns from what you annotate and starts to predict annotations. Continue annotating documents until Watson can correctly and consistently map different types of content to the appropriate fields for you.
-   {: note}
-1. After you teach Watson to identify fields, click **Apply changes and reprocess**.
+    Continue annotating documents until Watson can correctly and consistently map different types of content to the appropriate fields for you.
+    {: note}
+1.  After you teach Watson to identify fields, click **Apply changes and reprocess**.
 
 Custom fields that you define by using the SDU tool are indexed as root-level fields.
 
