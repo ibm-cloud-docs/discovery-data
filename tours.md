@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-08-25"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ subcollection: discovery-data
 You can explore the {{site.data.keyword.discoveryshort}} interface with our interactive tours. Click **Guided tours** from the header of the *My Projects* page to select a tour.
 {: shortdesc}
 
-Available tours include:
+The following tours are available:
 
 - Learn the essentials of Watson {{site.data.keyword.discoveryshort}}
 - Extract meaning from text

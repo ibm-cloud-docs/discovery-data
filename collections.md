@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-25"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -191,6 +191,8 @@ The following table shows how the fields are processed depending on the deployme
 | Cloud Pak for Data | The document is not indexed | The document is not indexed |
 | IBM Cloud | All of the fields in the document are indexed except the `html` field | The document is not indexed |
 {: caption="Exceeded field size behavior" caption-side="top"}
+
+For more information about how fields in uploaded files are handled, see [How fields are handled](/docs/discovery-data?topic=discovery-data-upload-data#field-name-limits).
 
 ## Supported data sources
 {: #collections-data-sources-table}
