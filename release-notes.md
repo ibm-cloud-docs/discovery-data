@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-16"
+lastupdated: "2021-08-26"
 
 keywords: release notes
 
@@ -44,7 +44,7 @@ API requests require a version parameter that takes a date in the format `versio
 
 Send the version parameter with every API request. The service uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
-The current version is `2019-11-29`.
+The current version is `2020-08-30`.
 
 ## Beta features
 {: #beta-features}
@@ -67,6 +67,13 @@ See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for t
 The following new features and changes are available for managed deployments. 
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
+
+### ![IBM Cloud only](images/ibm-cloud.png) 26 August 2021
+{: #26august2021}
+
+- **Plus plan is available in another location**: The Plus plan is now available from the London location! Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
+- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the London, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
+- **Answer finding is now generally available for managed deployments!**: Use answer finding when you want to return a concise answer to a question. For more information, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 16 August 2021
 {: #16august2021}
@@ -163,14 +170,15 @@ This release is available for Premium instances of {{site.data.keyword.discovery
 - Spelling correction: {{site.data.keyword.discoveryshort}} has spelling suggestions built-in. See [Parameters descriptions](/docs/discovery-data?topic=discovery-data-query-reference#parameter-descriptions).
 - Autocomplete: {{site.data.keyword.discoveryshort}} includes autocomplete (type-ahead) for searches, as well as a reusable component for providing this feature to your end users.
 - Language support: {{site.data.keyword.discoveryshort}} supports 12 additional languages. For the complete list, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+- The API version (v2) is `2019-11-29`.
 
   The following features are not available in this release:
 
-- Deduplication is not available in this release.
-- Anomaly Detection is not offered.
-- Watson Discovery News is no longer included.
-- Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
-- The SharePoint 2016 On-Premise and Box data sources are not available at this time.
+  - Deduplication is not available in this release.
+  - Anomaly Detection is not offered.
+  - Watson Discovery News is no longer included.
+  - Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
+  - The SharePoint 2016 On-Premise and Box data sources are not available at this time.
 
 ## ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} releases
 {: #rn-cpd}

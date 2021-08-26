@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-26"
 
 subcollection: discovery-data
 
@@ -49,15 +49,14 @@ The **results set** is the group of documents that are identified by the combine
 Documents that you do not have permissions to access are not returned in query results.
 {: important}
 
-## Answer finding ![IBM Cloud only](images/ibm-cloud.png)
+## Answer finding
 {: #answer-finding}
 
-Answer finding is a beta feature. Do not enable the feature in production environments. This feature is available in managed deployments only.
-{: beta}
+![IBM Cloud only](images/ibm-cloud.png) The answer-finding parameter is available in managed deployments only.
 
-By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When Answer finding is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use Answer finding can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.
+By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When the answer-finding feature is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use the answer-finding feature can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.
 
-Notes about Answer finding:
+Notes about the answer-finding feature:
 
 - It finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
 
@@ -85,7 +84,7 @@ Notes about Answer finding:
   Example question: How do I flip a pancake?
   Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
 
-- Many how or why questions are only fully answered by much longer spans of text. Answer finding does not return a whole document as the answer (and it doesn't summarize a document length answer).
+- Many how or why questions are only fully answered by much longer spans of text. the answer-finding feature does not return a whole document as the answer (and it doesn't summarize a document length answer).
 
 - Handles yes or no questions that are factual and have a concise answer in the text.
 
@@ -98,10 +97,10 @@ Notes about Answer finding:
   Example question: Should I try blue eyeshadow?
   Passage: We think **blue eye shadow is trending** this year.
 
-The Answer finding API beta adds two new parameters within the `passage` block of the query API. for more information about these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
+The answer-finding API adds two new parameters within the `passage` block of the query API. for more information about these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
 
-- `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), Answer finding is enabled.
-- `max_answers_per_passage` is optional and defaults to `1`. In this case, Answer finding finds the number of answers that are specified at most from any one passage.
+- `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), the answer-finding feature is enabled.
+- `max_answers_per_passage` is optional and defaults to `1`. In this case, the answer-finding feature finds the number of answers that are specified at most from any one passage.
 
 A block is also added to the `return` value within each `passage` object. That block is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage`in length. Each answer object contains the following fields:
 
@@ -112,14 +111,14 @@ A block is also added to the `return` value within each `passage` object. That b
 
 To find answers across your whole collection:
 
-Set `passages/enabled` to `true`
-Set `passages/find_answers` to `true`
+- Set `passages/enabled` to `true`
+- Set `passages/find_answers` to `true`
 
 To find answers within a single known document (for example, a document review application with long, complex documents):
 
-Set `passages/enabled` to `true`
-Set `passages/find_answers` to `true`
-Set `filter` to select the `document_id` for the document 
+- Set `passages/enabled` to `true`
+- Set `passages/find_answers` to `true`
+- Set `filter` to select the `document_id` for the document 
 
 The following example shows a query that uses this API:
 
@@ -148,12 +147,12 @@ Example response:
             {"answer_text": "his complicity in the cover-up made public and his political support completely eroded",
             "start_offset": 286, "end_offset": 373, "confidence": 0.78214}
             ]
-  ... 
+...
 }     
 ```
 {: codeblock}
 
-Because Answer finding is enabled on only the documents and passages that are requested, consider requesting more documents and more passages per document than are needed. By doing so, the Answer finding model can be combined with more candidate documents and passages. For example, if you want to show `10` documents and `1` passage from each document, consider asking for `20` documents and up to `3` passages from each document with Answer finding. Answer finding searches for answers in up to `20*3` = `60` passages. If it's confident that an answer was found in one of the passages, the confidence score is combined with the document and passage scores to produce a final ranking, which can promote a document or passage that might otherwise be missed.
+Because the answer-finding feature is enabled on only the documents and passages that are requested, consider requesting more documents and more passages per document than are needed. By doing so, the answer-finding model can be combined with more candidate documents and passages. For example, if you want to show `10` documents and `1` passage from each document, consider asking for `20` documents and up to `3` passages from each document with the answer-finding feature. The answer-finding feature searches for answers in up to `20*3` = `60` passages. If it's confident that an answer was found in one of the passages, the confidence score is combined with the document and passage scores to produce a final ranking, which can promote a document or passage that might otherwise be missed.
 
 ## `natural_language_query`
 {: #nlq}

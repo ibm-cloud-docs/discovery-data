@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-08-26"
 
-keywords: upload, one-time upload
+keywords: upload, one-time upload, field names
 
 subcollection: discovery-data
 
@@ -77,7 +77,7 @@ The file upload is completed quickly. It takes more time for the data to be proc
 
 Unlike other data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file, you must delete the earlier version and rename the file before you upload it.
 
-### How fields are handled
+## How fields are handled
 {: #field-name-limits}
 
 When you upload a document, data in the file is indexed. For most unstructured file types, the bulk of the content from the file is added to a field named `text`. For files types that have an inherent data structure, such as CSV files or JSON files, names from the source file are used to name the fields in which the content is stored. When you upload files of this type, be aware of some naming limitations that exist for fields.
