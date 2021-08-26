@@ -111,14 +111,14 @@ A block is also added to the `return` value within each `passage` object. That b
 
 To find answers across your whole collection:
 
-Set `passages/enabled` to `true`
-Set `passages/find_answers` to `true`
+- Set `passages/enabled` to `true`
+- Set `passages/find_answers` to `true`
 
 To find answers within a single known document (for example, a document review application with long, complex documents):
 
-Set `passages/enabled` to `true`
-Set `passages/find_answers` to `true`
-Set `filter` to select the `document_id` for the document 
+- Set `passages/enabled` to `true`
+- Set `passages/find_answers` to `true`
+- Set `filter` to select the `document_id` for the document 
 
 The following example shows a query that uses this API:
 
@@ -147,6 +147,7 @@ Example response:
             {"answer_text": "his complicity in the cover-up made public and his political support completely eroded",
             "start_offset": 286, "end_offset": 373, "confidence": 0.78214}
             ]
+...
 }     
 ```
 {: codeblock}
