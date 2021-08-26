@@ -51,10 +51,10 @@ There a few things to consider as you decide how to break up your source content
   If you store similar content in more than one type of data source (a website and Salesforce, for example), you can create one project with two separate collections. Each collection adds documents from a single data source. When they are built together into a single project, a user can search across both sources at once.
 - Creating separate Smart Document Understanding (SDU) models
 
-  You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department and therefore use one template and 20 PDF files that were created by your Research department that use a different template, you might want to group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
+  You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department that use one template and 20 PDF files that were created by your Research department that use a different template, group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
 - Applying enrichments
 
-  Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents with frequently asked questions that are formatted in a consistent manner so you can apply the FAQ extraction feature to the collection. Or maybe a subset of your documents contains lots of industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
+  Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents with frequently asked questions that are formatted in a consistent manner. After grouping the documents, you can apply the FAQ extraction feature to the collection. Or maybe a subset of your documents contains industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
 
 ## Creating a collection
 {: #createcollection}
@@ -140,7 +140,7 @@ Files within compressed archive files (ZIP, GZIP, TAR) are extracted. Discovery 
 
 The number of documents that are allowed per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
-The document limit applies to the number of documents in the index. Upload fewer documents at the start if the enrichments you plan to apply will increase the number of documents later. For example, the following configurations generate more documents:
+The document limit applies to the number of documents in the index. Upload fewer documents at the start if the enrichments you plan to apply might increase the number of documents later. For example, the following configurations generate more documents:
 
 - Splitting documents segments one document into multiple documents
 - Applying FAQ extractions produces one document for each question-and-answer pair that is found
@@ -203,15 +203,15 @@ The following table shows the supported data sources for each deployment type.
 |-------------|-----------|------------------------|
 | Box | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Database (IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Filenet P8 | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| FileNet P8 | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | HCL Notes | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | IBM Cloud Object Storage | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Local file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Salesforce | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Microsoft SharePoint Online | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Microsoft SharePoint On-Premises | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Web site | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Windows file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Website | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Microsoft Windows file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Supported data sources" caption-side="top"}
@@ -244,7 +244,7 @@ To create a crawl schedule, complete the following steps:
       - **Crawling updates (look for new, modified, and deleted contents)**
       - **Crawling new and modified contents**
 
-      When you choose a schedule type that crawls for updates or for new and modified contents, the frequency that you specify for the crawl schedule is ignored. The frequency with which each document is crawled is variable and is managed entirely by the service. And the frequency changes depending on how often changes are found in a document. For example, if 5 of the 10 documents in a collection have changed by the end of the first crawl interval, then the frequency is automatically increased for those 5 documents. Currently, the highest frequency at which these self-managed refreshes can run is daily.
+      When you choose a schedule type that crawls for updates or for new and modified contents, the frequency that you specify for the crawl schedule is ignored. The frequency with which each document is crawled is variable and is managed entirely by the service. And the frequency changes depending on how often changes are found in a document. For example, if 5 of the 10 documents in a collection changed by the end of the first crawl interval, then the frequency is automatically increased for those 5 documents. Currently, the highest frequency at which these self-managed refreshes can run is daily.
       
       You cannot interrupt the automated management of frequency and you cannot trigger a one-off crawl when these types of scheduled crawls are configured.
 
@@ -252,4 +252,4 @@ If you want to change the flexible crawl schedule settings later, you can go to 
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: The next scheduled crawl is displayed on the Activity page.
 
-If you change the schedule frequency, the next scheduled crawl time might not be what you expect. The crawls are set up to occur on a regular schedule at a specific time or day by default. For example, if you change the crawl schedule from weekly to monthly on 11 August, the next crawl might be scheduled for 31 August. It is not scheduled for exactly a month from the day you made the change, but it is scheduled to run on the day that is designated as the default day for a monthly crawl to run.
+If you change the schedule frequency, the next scheduled crawl time might not be what you expect. The crawls are set up to occur on a regular schedule at a specific time or day by default. For example, if you change the crawl schedule from weekly to monthly on 11 August, the next crawl might be scheduled for 31 August instead of 11 September. It is not scheduled for exactly a month from the day you made the change. Instead, it is scheduled to run on the day that is designated as the default run day for the selected crawl frequency.
