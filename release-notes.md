@@ -71,8 +71,8 @@ For more information about software releases for installed deployments, see [{{s
 ### ![IBM Cloud only](images/ibm-cloud.png) 26 August 2021
 {: #26august2021}
 
-- **Plus plan is available in another location**: The Plus plan is now available from the London location! Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
-- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the London, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
+- **Plus plan is available in more locations**: The Plus plan is now available from the London and Washington DC locations. Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
+- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the London, Washington DC, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
 - **Answer finding is now generally available for managed deployments!**: Use answer finding when you want to return a concise answer to a question. For more information, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 16 August 2021
