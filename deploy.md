@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-22"
+lastupdated: "2021-08-27"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -52,20 +52,28 @@ Work with a developer to build a custom search application or use the pre-built 
 
 For more information about building your own, see the [Building custom applications with the API](/docs/discovery-data?topic=discovery-data-api-use).
 
-For Document Retrieval, Document Retrieval for Contracts, and Custom (the type assigned to projects when you do not apply a specific project type) projects, the following user interface components are available for you use:
+For Document Retrieval and Custom (the type assigned to projects when you do not apply a specific project type) projects, a set of user interface components are available for your use. The following table describes them.
 
-- **Search bar**: A search box that uses a natural language understanding query to fetch the most relevant results.
-- **Search results**: A set of results that rank the most relevant passages and tables to a query.
-- **Facets**: Refine your results with facets that help users filter the search results by specific categories and domains.
-- **Document preview**: Displays your results in a document preview. This view helps you to see search results by highlighting passages within the text of the original document, which makes the context clearer.
-
-  The preview is available for the following types of source documents: Excel, PDF, PowerPoint, Word, and all image files. (For more information about the supported image files, see [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).)
-- **Contract anaysis preview**: For a Document Retrieval for Contracts project type, the original documents are displayed in a browser, regardless of the source format. In addition, key elements of the documents are recognized and you can navigate to them quickly. For example, if you are searching for the `payment terms` clauses in a contract, the preview detects those clauses and highlights the passages. For more information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
+| UI component | Illustration | Description | Storybook link |
+|--------------|--------------|-------------|----------------|
+| Search bar | ![Search bar type ahead](images/search-bar-example.png) | A search box that uses a natural language understanding query to fetch the most relevant results. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external} |
+| Search results | ![Search results list](images/search-results-example.png) | A set of results that rank the most relevant passages and tables to a query. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} |
+| Facets | ![Facets](images/search-facets-example.png) | Refine your results with facets that help users filter the search results by specific categories and domains. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external} |
+| Document preview | ![Document preview](images/search-doc-preview-example.png) | Displays your results in a document preview. This view helps you to see search results by highlighting passages within the text of the original document, which makes the context clearer. The preview is available for the following types of source documents: Excel, PDF, PowerPoint, Word, and all image files. (For more information about the supported image files, see [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default) |
+{: caption="Available UI components" caption-side="top"}
 
 To deploy your project, complete the following steps:
 
 1.  To use the API, you need to know the project ID for your project. Go to the **Integrate and Deploy** > **API Information** page.
 1.  From the **Integrate and Deploy** > **UI Components** page, find links to resources that a developer can use to get started.
+
+    - [GitHub](https://github.com/watson-developer-cloud/discovery-components#using-discovery-components){: external}
+    - [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook/){: external}
+
+## Deploying a Document Retrieval for Contracts project
+{: #dr-contracts-deploy}
+
+The original documents are displayed in a browser, regardless of the source format. In addition, key elements of the documents are recognized and you can navigate to them quickly. For example, if you are searching for the `payment terms` clauses in a contract, the preview detects those clauses and highlights the passages. For more information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
 
 ## Deploying a Conversational Search project
 {: #cs-deploy}
