@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-26"
+lastupdated: "2021-08-27"
 
 subcollection: discovery-data
 
@@ -52,7 +52,7 @@ Documents that you do not have permissions to access are not returned in query r
 ## Answer finding
 {: #answer-finding}
 
-![IBM Cloud only](images/ibm-cloud.png) The answer-finding parameter is available in managed deployments only.
+![IBM Cloud only](images/ibm-cloud.png) The find-answers parameter is supported in managed deployments only.
 
 By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When the answer-finding feature is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use the answer-finding feature can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.
 
