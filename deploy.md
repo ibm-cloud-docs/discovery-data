@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-09-01"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -59,7 +59,7 @@ For Document Retrieval and Custom (the type assigned to projects when you do not
 | Search bar | ![Search bar type ahead](images/search-bar-example.png) | A search box that uses a natural language understanding query to fetch the most relevant results. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external} |
 | Search results | ![Search results list](images/search-results-example.png) | A set of results that rank the most relevant passages and tables to a query. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} |
 | Facets | ![Facets](images/search-facets-example.png) | Refine your results with facets that help users filter the search results by specific categories and domains. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external} |
-| Document preview | ![Document preview](images/search-doc-preview-example.png) | Displays your results in a document preview. This view helps you to see search results by highlighting passages within the text of the original document, which makes the context clearer. The preview is available for the following types of source documents: Excel, PDF, PowerPoint, Word, and all image files. (For more information about the supported image files, see [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default) |
+| Document preview | ![Document preview](images/search-doc-preview-example.png) | Displays your results in a document preview. This view helps you to see search results by highlighting passages within the text of the original document, which makes the context clearer. The preview is available for the following types of source documents: Excel, PDF, PowerPoint, Word, and all image files. (For more information about the supported image files, see [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default){: external} |
 {: caption="Available UI components" caption-side="top"}
 
 To deploy your project, complete the following steps:
