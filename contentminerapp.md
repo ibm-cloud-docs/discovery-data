@@ -83,10 +83,10 @@ From the application launch page, if you enter a term that you want to search fo
 
 The guided analysis view contains four main parts, which are described in more detail in the following sections.
 
-- **Mining graph**: Displays a guided visualization of your analysis.
-- **Toolbar**: The toolbar in the window header, which contains buttons that execute global commands.
-- **Dashboard**: Used to select and save different layouts.
-- **Facet analysis pane**: Used to customize your analysis.
+- **Mining graph**: Displays a guided visualization of your analysis
+- **Toolbar**: The toolbar in the window header, which contains buttons that execute global commands
+- **Dashboard**: Used to select and save different layouts
+- **Facet analysis pane**: Used to customize your analysis
 
 ### Mining graph
 {: #cmomg}
