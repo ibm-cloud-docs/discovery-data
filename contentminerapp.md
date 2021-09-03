@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-09-03"
 
 subcollection: discovery-data
 
@@ -506,9 +506,10 @@ In **Field indexing option**, you can select how the available fields are indexe
 
 - **String**
 - **Analyzable text content**
+- **Date**
 - **None**
 
-If you select **String**, you can enable the options for making the field **Free text searchable** or a **Metadata facet**. These options are unavailable for the **Analyzable text content** and **None** index types.
+If you select **String**, you can enable the options for making the field **Free text searchable** or a **Metadata facet**. These options are unavailable for the **Analyzable text content** and **None** index types. The **Metadata facet** is available, but not **Free text searchable**, for the **Date** type.
 
 In **Display fields**, you can set the following display fields that typical applications use:
 
