@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-02"
+lastupdated: "2021-09-08"
 
 subcollection: discovery-data
 
@@ -66,7 +66,10 @@ To add an NLU enrichment, complete the following steps:
 1.  Open your project and go to the *Manage collections* page.
 1.  Click to open the collection that you want to enrich.
 1.  Open the **Enrichments** tab.
-1.  Scroll to find the NLU enrichment that you want to apply to your documents. 
+1.  Scroll to find the NLU enrichment that you want to apply to your documents.
+
+    Both built-in enrichments and custom enrichments are listed. Built-in enrichments have a type value of `System`.
+    {: note}
 1.  Choose one or more fields to apply the enrichment to.
 
     You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. You cannot apply enrichments to fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
@@ -79,7 +82,7 @@ For more information about how to remove an enrichment, see [Managing enrichment
 
 Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system that is defined by the {{site.data.keyword.nlushort}} service. For more information, see [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
 
-For Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments and Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. For example, any English or Korean collections that were added to Document Retrieval projects had Entities v1 applied to them automatically. These collections continue to use the Entities v1 legacy enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the legacy enrichment is disabled automatically.
+For Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. For example, any English or Korean collections that were added to Document Retrieval projects had Entities v1 applied to them automatically. These collections continue to use the Entities v1 legacy enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the legacy enrichment is disabled automatically.
 {: note}
 
 If you want to use the Entities v1 legacy enrichment instead of Entities v2, you can use the API to swap the enrichment that is applied to your collection. For more information, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).

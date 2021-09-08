@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-03"
+lastupdated: "2021-09-08"
 
 keywords: preview link, share link
 
@@ -41,13 +41,14 @@ Try out your project and share it with others on your team for testing purposes.
 
 To preview and share your project, complete the following steps:
 
-1.  From the **Integrate and Deploy** > **Preview Link** page, follow the instructions to give your team members access to your project.
+1.  From the **Integrate and Deploy** > **Preview Link** page, follow the instructions to give your team members access to your project. (In Content Mining projects, the page is named **Share Link**.)
 
-    In Content Mining projects, the page is named **Share Link**.
+    ![IBM Cloud only](images/ibm-cloud.png) **Managed deployments only**: The people you invite must have *Writer* or *Administrator* level access. For more information about access in site.data.keyword.cloud_notm, see [Setting up access groups](https://cloud.ibm.com/docs/account?topic=account-groups&interface=ui){: external}.
     {: note}
+
 1.  Click the copy icon for the **Copy Link** field to copy the URL of the preview application.
 
-    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: When you copy the link for the content mining project, ensure that the URL is similar to the format, `https://{installation domain}/discovery/{ID}/cm/miner`. If it isn't, refresh the page before you copy the URL.
+    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: When you copy the link for the content mining project, ensure that the URL is similar to the format, `https://{installation-domain}/discovery/{ID}/cm/miner`. If it isn't, refresh the page before you copy the URL.
 1.  Paste the URL into a web browser to test it yourself or send the URL to team members.
 
     Don't forget to send any login credentials that are needed to access the project when you send the link to your colleagues.
