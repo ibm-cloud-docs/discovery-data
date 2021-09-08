@@ -12,7 +12,6 @@ Discovery
     {: topicgroup}
     Videos and more
         sample-apps.md
-        [Videos](https://ibm.biz/wds_videos)
         resources.md
         tours.md
     {: .navgroup-end}
