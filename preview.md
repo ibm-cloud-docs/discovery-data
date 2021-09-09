@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-09"
 
 keywords: preview link, share link
 
@@ -43,7 +43,7 @@ To preview and share your project, complete the following steps:
 
 1.  From the **Integrate and Deploy** > **Preview Link** page, follow the instructions to give your team members access to your project. (In Content Mining projects, the page is named **Share Link**.)
 
-    ![IBM Cloud only](images/ibm-cloud.png) **Managed deployments only**: The people you invite must have *Writer* or *Administrator* level access. For more information about access in site.data.keyword.cloud_notm, see [Setting up access groups](https://cloud.ibm.com/docs/account?topic=account-groups&interface=ui){: external}.
+    ![IBM Cloud only](images/ibm-cloud.png) **Managed deployments only**: If you want people you invite to be able to invite others, give them *Editor* or *Administrator* platform roles. For more information about access in {{site.data.keyword.cloud_notm}}, see [Setting up access groups](https://cloud.ibm.com/docs/account?topic=account-groups&interface=ui){: external}.
     {: note}
 
 1.  Click the copy icon for the **Copy Link** field to copy the URL of the preview application.

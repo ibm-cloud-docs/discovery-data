@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-26"
+lastupdated: "2021-09-09"
 
 keywords: release notes
 
@@ -67,6 +67,12 @@ See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for t
 The following new features and changes are available for managed deployments. 
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
+
+### ![IBM Cloud only](images/ibm-cloud.png) 9 September 2021
+{: #9september2021}
+
+- **Plus plan is available in more locations**: The Plus plan is now available from the Sydney locations. Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
+- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the Sydney, London, Washington DC, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 26 August 2021
 {: #26august2021}
