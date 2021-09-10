@@ -34,7 +34,7 @@ subcollection: discovery-data
 # Managing IAM access for Discovery
 {: #admin}
 
-Share a preview of your search application or build a team to work on a project. You can give teammembers access to your Discovery service instance through {{site.data.keyword.cloud_notm}}.
+Share a preview of your search application or build a team to work on a project. You can give team members access to your Discovery service instance through {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
