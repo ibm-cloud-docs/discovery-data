@@ -150,6 +150,7 @@ Discovery
     {: topicgroup}
     IBM Cloud security
         information-security.md
+        admin.md
         at_events.md
         /watson/watson-keyservice
         /watson/watson-public-private-endpoints
