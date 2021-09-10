@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-10"
 
 subcollection: discovery-data
 
@@ -36,15 +36,434 @@ subcollection: discovery-data
 The {{site.data.keyword.discoveryfull}} Content Mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents. 
 {: shortdesc}
 
-<!--This video provides an overview of content mining:
-
-![Watson Discovery: Content Mining](https://www.youtube.com/embed/i5418xJoeHg){: video output="iframe" id="youtubeplayer" frameborder="0" width="560" height="315" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-
-To view the transcript, open the video on YouTube.-->
-
 This page describes using the Content Mining application. For information about creating a {{site.data.keyword.discoveryshort}} Content Mining project, which is how the application is configured and launched, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects). Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
 {: note}
+
+## Overview video
+{: #cmvideo}
+
+![IBM Watson Discovery Content Mining](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_7m4thupw){: video output="iframe" data-script="#video-transcript-ui" id="mediacenterplayer" frameborder="0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen}
+
+#### Video transcript
+{: #video-transcript-ui}
+{: notoc}
+1
+00:00:04,910 --> 00:00:08,580
+The purpose of this
+video is to familiarize
+​
+2
+00:00:08,580 --> 00:00:10,995
+you with the content
+mining project
+​
+3
+00:00:10,995 --> 00:00:12,630
+in Watson discovery.
+​
+4
+00:00:12,630 --> 00:00:14,370
+Content mining is one of
+​
+5
+00:00:14,370 --> 00:00:15,810
+the primary use cases for
+​
+6
+00:00:15,810 --> 00:00:17,730
+Watson discovery
+and is used for
+​
+7
+00:00:17,730 --> 00:00:20,430
+Analyze and exploring
+by it's structured and
+​
+8
+00:00:20,430 --> 00:00:22,140
+unstructured data to find
+​
+9
+00:00:22,140 --> 00:00:24,630
+insights and extract
+hidden meaning.
+​
+10
+00:00:24,630 --> 00:00:27,450
+It is used by both
+the citizen analyst
+​
+11
+00:00:27,450 --> 00:00:29,610
+and the data scientist.
+​
+12
+00:00:29,610 --> 00:00:32,130
+The content mining
+project can be
+​
+13
+00:00:32,130 --> 00:00:34,244
+used for all
+types of analysis
+​
+14
+00:00:34,244 --> 00:00:36,990
+because the user
+interface is not specific
+​
+15
+00:00:36,990 --> 00:00:40,600
+to a particular industry.
+We'll set of data.
+​
+16
+00:00:41,200 --> 00:00:43,640
+In this scenario, you are
+​
+17
+00:00:43,640 --> 00:00:44,990
+an analyst for
+a fictitious
+​
+18
+00:00:44,990 --> 00:00:47,100
+automobile company.
+​
+19
+00:00:47,290 --> 00:00:50,765
+Operational reports have
+alerted the company
+​
+20
+00:00:50,765 --> 00:00:52,460
+to an unusual
+accident rate
+​
+21
+00:00:52,460 --> 00:00:54,110
+for one of their cars.
+​
+22
+00:00:54,110 --> 00:00:57,840
+Your job is to
+find out why.
+​
+23
+00:00:57,910 --> 00:01:01,055
+Using the content
+mining project,
+​
+24
+00:01:01,055 --> 00:01:03,170
+you begin your
+analysis by looking at
+​
+25
+00:01:03,170 --> 00:01:04,850
+the unstructured data from
+​
+26
+00:01:04,850 --> 00:01:07,625
+the National motor
+vehicle incident reports.
+​
+27
+00:01:07,625 --> 00:01:09,200
+You are presented with an
+​
+28
+00:01:09,200 --> 00:01:10,550
+interface that
+allows you to
+​
+29
+00:01:10,550 --> 00:01:13,805
+select the car model and
+begin your analysis.
+​
+30
+00:01:13,805 --> 00:01:15,500
+In this case, you are
+​
+31
+00:01:15,500 --> 00:01:17,645
+interested in The
+Hill woke up.
+​
+32
+00:01:17,645 --> 00:01:19,910
+You could type that
+information into
+​
+33
+00:01:19,910 --> 00:01:22,205
+the search section at
+the top of the page.
+​
+34
+00:01:22,205 --> 00:01:24,995
+But it's easier just
+to click on the item.
+​
+35
+00:01:24,995 --> 00:01:27,410
+You can add as
+many search terms
+​
+36
+00:01:27,410 --> 00:01:29,015
+and conditions
+as you like.
+​
+37
+00:01:29,015 --> 00:01:31,100
+But in reality,
+you want to let
+​
+38
+00:01:31,100 --> 00:01:34,175
+the application
+guide your analysis.
+​
+39
+00:01:34,175 --> 00:01:37,355
+What you see now is
+the navigation view.
+​
+40
+00:01:37,355 --> 00:01:39,410
+It keeps track of
+your analysis and
+​
+41
+00:01:39,410 --> 00:01:41,810
+provides options
+for next steps.
+​
+42
+00:01:41,810 --> 00:01:43,610
+It'll say provides a count
+​
+43
+00:01:43,610 --> 00:01:45,020
+of the number of
+documents that
+​
+44
+00:01:45,020 --> 00:01:48,680
+match your current
+state of analysis.
+​
+45
+00:01:48,680 --> 00:01:50,900
+In this small collection,
+​
+46
+00:01:50,900 --> 00:01:52,670
+the number of
+documents relating to
+​
+47
+00:01:52,670 --> 00:01:55,534
+the hill walker
+is only 51.
+​
+48
+00:01:55,534 --> 00:01:57,710
+In a production dataset,
+​
+49
+00:01:57,710 --> 00:02:00,605
+the number would
+usually be much larger.
+​
+50
+00:02:00,605 --> 00:02:03,410
+Analyzing trends
+and anomalies
+​
+51
+00:02:03,410 --> 00:02:04,670
+is often a good way to
+​
+52
+00:02:04,670 --> 00:02:06,260
+start as it allows you to
+​
+53
+00:02:06,260 --> 00:02:09,395
+see if anything seems
+out of the ordinary.
+​
+54
+00:02:09,395 --> 00:02:12,440
+Immediately, you notice
+that the Yule-Walker
+​
+55
+00:02:12,440 --> 00:02:15,005
+has problems in
+December and January.
+​
+56
+00:02:15,005 --> 00:02:16,580
+You decide to investigate
+​
+57
+00:02:16,580 --> 00:02:18,095
+further by narrowing
+​
+58
+00:02:18,095 --> 00:02:20,060
+this initial
+exploration to
+​
+59
+00:02:20,060 --> 00:02:22,830
+just the month
+of December.
+​
+60
+00:02:23,800 --> 00:02:26,420
+Notice how the
+navigation view
+​
+61
+00:02:26,420 --> 00:02:27,680
+at the top always
+​
+62
+00:02:27,680 --> 00:02:29,180
+keep you informed
+of where you
+​
+63
+00:02:29,180 --> 00:02:31,580
+are in your analysis.
+​
+64
+00:02:31,580 --> 00:02:33,680
+Next, you select,
+​
+65
+00:02:33,680 --> 00:02:36,005
+Analyze cause and
+characteristics.
+​
+66
+00:02:36,005 --> 00:02:37,535
+Because you are
+interested.
+​
+67
+00:02:37,535 --> 00:02:40,020
+Why things are happening.
+​
+68
+00:02:41,650 --> 00:02:44,764
+You notice that
+words like snow
+​
+69
+00:02:44,764 --> 00:02:47,645
+and bright
+highlighted together.
+​
+70
+00:02:47,645 --> 00:02:51,210
+So you add these
+to your analysis.
+​
+71
+00:02:52,240 --> 00:02:55,550
+The content Miner
+project has narrowed
+​
+72
+00:02:55,550 --> 00:02:57,980
+your investigation
+to a small number
+​
+73
+00:02:57,980 --> 00:03:00,545
+of complaints that
+can be easily read.
+​
+74
+00:03:00,545 --> 00:03:02,630
+The common theme here is
+​
+75
+00:03:02,630 --> 00:03:04,370
+that there is an
+unexpected problem
+​
+76
+00:03:04,370 --> 00:03:06,065
+with the way the
+brakes are working
+​
+77
+00:03:06,065 --> 00:03:08,345
+in snowy conditions.
+​
+78
+00:03:08,345 --> 00:03:10,370
+You now have the
+information you
+​
+79
+00:03:10,370 --> 00:03:12,770
+need to ask the
+engineering department to
+​
+80
+00:03:12,770 --> 00:03:14,450
+perform a detailed
+inspection of
+​
+81
+00:03:14,450 --> 00:03:16,370
+the braking system and
+​
+82
+00:03:16,370 --> 00:03:18,620
+determine why it
+is not working
+​
+83
+00:03:18,620 --> 00:03:22,319
+as expected in
+snowy conditions.
+​
+84
+00:03:22,810 --> 00:03:25,340
+In this demonstration, you
+​
+85
+00:03:25,340 --> 00:03:27,065
+saw how a citizen analysed
+​
+86
+00:03:27,065 --> 00:03:30,665
+using Watson discovery
+and content mining can
+​
+87
+00:03:30,665 --> 00:03:32,090
+easily discover
+​
+88
+00:03:32,090 --> 00:03:35,430
+hidden meaning in
+unstructured text.
+​
+89
+00:03:37,870 --> 00:03:42,120
+What will you do with
+Watson discovery?
+
 
 ## Application launch view
 {: #cmolaunch}
