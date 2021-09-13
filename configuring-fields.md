@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-24"
+lastupdated: "2021-09-13"
 
 subcollection: discovery-data
 
@@ -105,7 +105,7 @@ To annotate documents, complete the following steps:
     - To remove annotations that you added to an entire page, click the **Clear changes** icon in the toolbar.
     - To annotate a table, click the text at the start of the table and then drag to select the text in the entire table.
     - When you label one or more tables, the *Table Understanding* enrichment is enabled for the entire collection automatically. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
-    - Images from the source documents are not rendered in the preview. If Optical Character Recognition (OCR) is enabled, any text from the image or diagram is extracted and rendered in the preview. Only apply the `image` label to the image text if you *don't* want to store the extracted text in the `text` field.
+    - Images from the source documents are not rendered in the preview. If Optical Character Recognition (OCR) is enabled, any text from the image or diagram is extracted and rendered in the preview.
     - Do not label whitespace.
 
 1.  When everything that you want to label is labeled, submit the page. Click **Submit page**.
@@ -134,11 +134,16 @@ To view the transcript, open the video on YouTube.
 
 The Smart Document Understanding (SDU) tool works better with some project types.
 
-- The tool is most beneficial when used with *Document Retrieval* projects. Use it to add custom fields to [the set of fields that you can identify by default](#sdu-default-fields).
-- *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. Instead of you annotating contract-related content in your documents, the project applies a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
+- The tool is most beneficial when used with *Document Retrieval* projects. Use it to add custom fields to your collection so you can target enrichments or split the document based on a field. 
+
+  For example, your documents might contain tips that are shown in sections with an H4 heading. If you want to extract the information from these tips separately, you can add a field named `tips`, and teach the model to recognize it. After applying the model to your collection, you can apply an enrichment to the `tips` field only. Later, you can limit the search to return content from only the `tips` field.
+  
+  Or maybe you have extra large documents that contain subsections. You can teach the SDU model to recognize these subsections, and then split the large document into multiple, smaller, and easier-to-manage documents that begin with one of these subsections.
+
 - The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. You can use the SDU tool to find and annotate them. 
   
   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use.
+- *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. Instead of you annotating contract-related content in your documents, the project applies a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
 - The SDU tool is rarely used with *Content Mining* projects.
 
 You can use the SDU tool to annotate the following file types only:
@@ -170,7 +175,9 @@ Documents come in all shapes and sizes. Your collection might have a mix of diff
 ### Available fields
 {: #sdu-default-fields}
 
-The following fields make up the base set of fields that you can apply to documents by using the Smart Document Understanding tool.
+The following fields are available for you to apply to documents by using the Smart Document Understanding tool. 
+
+The fields are arbitrary. You can apply the `image` field to every title in the document if you want. Although, it might be difficult to know which field to search later for information you need if the field names don't match theh content. The default set are representative field types that are meant to help you get started. Only the `text` and `table` fields have special significance; do not use them to identify anything other than text and tables respectively.
 
 | Field | Definition |
 |-------|------------|
@@ -184,7 +191,7 @@ The following fields make up the base set of fields that you can apply to docume
 | text | By default, every block of text in the document is labeled as text. Only apply different labels to blocks of text with special meaning. |
 | title | The main title of the document. |
 | table |	Use this tag to annotate tables in your document. |
-| image |	Use this tag to prevent text from being extracted from images and diagrams in your document. |
+| image |	Images are not shown in the document preview. If you enable OCR, text from an image or diagram is displayed in the preview instead. If you want to prevent text from some images from being included in search results, you can tag the image text as an image, and then exclude the image field from the index later. |
 {: caption="Default field labels" caption-side="top"}
 
 ### Reusing SDU models

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: IAM, add users, share
 
@@ -46,4 +46,4 @@ Access to {{site.data.keyword.cloud_notm}} service instances is controlled by {{
 
 Some services also limit the actions that people are allowed to do by using IAM service roles. With Discovery, anyone who can access a Discovery instance can perform all actions.
 
-Only an administrator of the service account can add users. For more information, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+Only an administrator of the service account can add users. For more information, see [Managing access to resources](/docs/account?topic=account-assign-access-resources). For more information about how roles function in Discovery, see [IAM roles and actions](https://cloud.ibm.com/docs/account?topic=account-iam-service-roles-actions#watson-discovery){: external}.
