@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-09-13"
 
 subcollection: discovery-data
 
@@ -103,9 +103,7 @@ To configure the web crawl collection, complete the following steps:
       If you want to start the crawl from a specific section of the site, specify it in the **Starting URLs** field. The domain name of the subsection must match the domain in the URL you specified earlier.
 
       For example, you might change the starting URL to `https://cloud.ibm.com/unifiedsupport/supportcenter`.
-    - For any public web pages that you want to crawl, add the URL for the root page of the website to the **Starting URLs** field, and then click **Add**.
-
-      You can add more than one starting page for public websites.
+    - For any public web pages that you want to crawl, add the URL for the root page of the website to the **Starting URLs** field, and then click **Add**. You can add more than one starting page.
 
       The final forward slash (`/`) in the URL determines the subtree to crawl. If you specify `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, for example. If you specify `https://www.example.com/banking` all URLs that begin with `https://www.example.com/` are crawled.
 
@@ -114,10 +112,6 @@ To configure the web crawl collection, complete the following steps:
       - The maximum number of hops allowed is `20`. 
       - To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/licenses` and `https://example.com/pricing` by entering `/licenses/, /pricing/`. 
       - If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
-
-      The number of web pages that are crawled is limited to 250,000, so the web crawler might not crawl all the specified websites.
-
-      The number of child URLs per URL that are crawled is limited to 10,000. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
 
     - If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step. 
     
@@ -129,6 +123,15 @@ To configure the web crawl collection, complete the following steps:
     - To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
     
       Expand *More connection settings*, and then set **Connect to on-premise network** to `On`. Provide details about your {{site.data.keyword.SecureGateway}} connection.
+
+1.  Optional: Add another web address to the **Starting URLs** field.
+
+    Do not add more than 100 starting URLs.
+    {: important}
+
+    The number of web pages that are crawled is limited to 250,000, so the web crawler might not crawl all the specified websites.
+
+    The number of child URLs per URL that are crawled is limited to 10,000. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
 
 1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
