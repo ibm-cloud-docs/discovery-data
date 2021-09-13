@@ -52,27 +52,30 @@ Documents that you do not have permissions to access are not returned in query r
 ## Answer finding
 {: #answer-finding}
 
-![IBM Cloud only](images/ibm-cloud.png) The find-answers parameter is supported in managed deployments only.
+![IBM Cloud only](images/ibm-cloud.png) The `find_answers` parameter is supported in managed deployments only.
 
-By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When the answer-finding feature is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use the answer-finding feature can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, the option that displays the short answer emphasized within the full passage might be preferable, because answers generally make more sense in context.
+By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When the answer-finding feature is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use the answer-finding feature can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, displaying the short answer emphasized within the full passage is preferable, because answers generally make more sense in context.
 
-Notes about the answer-finding feature:
+The answer finding feature behaves in the following ways:
 
-- It finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
+In the passage examples that follow, the short answers are shown in bold font.
+{: note}
 
-  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what was IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
+- Finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
 
-- If the answer is available, it can handle synonyms and lexical variations.
+  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
 
-  Example question: “When did IBM purchase Red Hat?”
-  Passage ("short answer" is in **bold**.): “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
+- Handles synonyms and lexical variations if the answer is available.
 
-- It can combine information across multiple sentences if they are close together (within approximately 2,000 characters)
+  - Example question: “When did IBM purchase Red Hat?”
+  - Passage: “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
 
-  Example question: “When did IBM purchase Red Hat?”
-  Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
+- Combines information across multiple sentences if they are close together (within approximately 2,000 characters).
 
-- It handles implicit questions similar to the way it would handle the equivalent explicit question.
+  - Example question: “When did IBM purchase Red Hat?”
+  - Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
+
+- Handles implicit questions similar to the way it would handle the equivalent explicit question.
 
   Example questions: 
 
@@ -81,35 +84,37 @@ Notes about the answer-finding feature:
 
 - Works well with questions with longer phrase or clause answers.
 
-  Example question: How do I flip a pancake?
-  Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
+  - Example question: How do I flip a pancake?
+  - Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
 
-- Many how or why questions are only fully answered by much longer spans of text. the answer-finding feature does not return a whole document as the answer (and it doesn't summarize a document length answer).
+- Many how or why questions are only fully answered by much longer spans of text. The answer-finding feature does not return a whole document as the answer (and it doesn't summarize a document length answer).
 
-- Handles yes or no questions that are factual and have a concise answer in the text.
+- Handles yes or no questions that are factual and have a concise answer in the text
 
-  Example question: Is there a library in Timbuktu
-  Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house that contains more than 20,000 manuscripts that cover centuries of Mali's history.
+  - Example question: Is there a library in Timbuktu
+  - Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house that contains more than 20,000 manuscripts that cover centuries of Mali's history.
 
 - Handles questions with very short answers, such as names and dates, especially when the type of answer that is required is explicit in the text.
 - Handles opinion questions, but only by finding a statement of that opinion; it does not assess the validity of the opinion.
 
-  Example question: Should I try blue eyeshadow?
-  Passage: We think **blue eye shadow is trending** this year.
+  - Example question: Should I try blue eyeshadow?
+  - Passage: We think **blue eye shadow is trending** this year.
 
-The answer-finding API adds two new parameters within the `passage` block of the query API. for more information about these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
+The answer-finding API adds the following parameters to the `passage` section of the query API:
 
 - `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), the answer-finding feature is enabled.
 - `max_answers_per_passage` is optional and defaults to `1`. In this case, the answer-finding feature finds the number of answers that are specified at most from any one passage.
 
-A block is also added to the `return` value within each `passage` object. That block is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage`in length. Each answer object contains the following fields:
+For more information about these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
 
-- `answer_text`is the text of the concise answer to the query.
+A section is also added to the `return` value within each `passage` object. That section is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage` in length. Each answer object contains the following fields:
+
+- `answer_text` is the text of the concise answer to the query.
 - `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Some answers have low confidence and are unlikely to be correct. Be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
 - `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from. It is greater than or equal to the start offset of the passage (since the answer must be within the passage).
 - `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from. It is less than or equal to the end offset of the passage.
 
-To find answers across your whole collection:
+To find answers across the entire project:
 
 - Set `passages/enabled` to `true`
 - Set `passages/find_answers` to `true`
@@ -123,8 +128,12 @@ To find answers within a single known document (for example, a document review a
 The following example shows a query that uses this API:
 
 ```bash
-POST /v2/projects/{project_id}/query{"natural_language_query": "Why did Nixon resign?",
-  "passages": {"enabled": true, "find_answers":true} }
+POST /v2/projects/{project_id}/query{
+  "natural_language_query": "Why did Nixon resign?",
+  "passages": {
+    "enabled": true, "find_answers":true
+    } 
+  }
 ```
 {: codeblock}
 
