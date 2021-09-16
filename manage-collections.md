@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-09-16"
 
 subcollection: discovery-data
 
@@ -34,12 +34,10 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Manage collections* page tabs: Activity, Processing settings, CSV settings. Do not delete. -->
 
-Click any collection on the **Manage collections** page to see the options for managing your collection. These tabs are available after collection processing finishes. The tabs contain data that is associated with your collection and options for managing it.
+After the processing of a new data collection is finished, you can see a summary of the settings that are applied to your collection from the *Manage collections* page.
 {: shortdesc}
 
-After the processing of a new data collection is finished, you can see a summary of the settings that are applied to your collection from the *Manage collections* tab.
-
-From this tab, you can learn about the processing settings that are applied to the collection:
+From this page, you can access the following tabs:
 
 - **Activity**: Shows the status of a synchronization and the number of documents that were added to the collection. It also shows whether any documents from the data source were skipped or generated errors as the collection was created and why. ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Shows the time of the next scheduled synchronization.
 - **Identify fields**: To teach {{site.data.keyword.discoveryshort}} to recognize fields based on the structure of the source document (H1 equals title, for example), apply a Smart Document Understanding model or use the Smart Document Understanding tool to train a model by annotating documents. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
@@ -49,6 +47,21 @@ From this tab, you can learn about the processing settings that are applied to t
 - **CSV settings**: Summarizes the configuration settings that are used when a comma-separated value (CSV) file is processed. You can change these settings, such as how the columns are delimited. You can also specify the character to use to escape quotation marks, by specifying either a quotation mark (`"`) or a backslash (`\`).
 
 For more information about how to create a collection, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
+
+## Changing how a data source is processed
+{: #collection-change-processing}
+
+You can change settings that were applied to a collection when it was created. You might want to change the schedule at which an external data source is crawled, for example. Or you might want to apply or remove a process, such as optical character recognition (OCR), after using the collection for a while.
+
+To change how a data source is processed, complete the following steps:
+
+1.  Open the *Manage collections* page.
+1.  Click to open the collection that you want to change.
+1.  Click the **Processing settings** tab.
+1.  Make any changes that you want to make to the processing settings.
+
+    The setting options differ by data source type.
+1.  Click **Apply changes and reprocess**.
 
 ## Finding where a collection is used
 {: #collection-usage}
