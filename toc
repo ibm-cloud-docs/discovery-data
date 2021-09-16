@@ -14,6 +14,7 @@ Discovery
         sample-apps.md
         resources.md
         tours.md
+    release-notes.md
     {: .navgroup-end}
 
     {: .navgroup id="tutorial"}
@@ -69,20 +70,23 @@ Discovery
         query-defaults.md
 
     {: topicgroup}
-    Preparing your documents for enrichment
-        configuring-fields.md
-        split-documents.md
+    Enriching your data
 
-    {: topicgroup}
-    Teaching Discovery about your domain
-        domain.md
-        enrichmig.md
+        {: topicgroup}
+        Preparing your documents for enrichment
+            configuring-fields.md
+            split-documents.md
 
-    {: topicgroup}
-    Extracting meaning from your data
-        nlu.md
-        contracts-schema.md
-        understanding_tables.md
+        {: topicgroup}
+        Teaching Discovery about your domain
+            domain.md
+            enrichmig.md
+
+        {: topicgroup}
+        Extracting meaning from your data
+            nlu.md
+            contracts-schema.md
+            understanding_tables.md
 
     test.md
 
@@ -161,7 +165,6 @@ Discovery
 
     {: .navgroup id="help"}
     faqs.md
-    release-notes.md
     known-issues.md
     troubleshoot.md
     get-help.md

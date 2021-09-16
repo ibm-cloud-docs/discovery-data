@@ -52,8 +52,8 @@ The following known issues apply to installed deployments.
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
-### ![Cloud Pak for Data only](images/desktop.png) 4.0.0, 27 July 2021
-{: #27july2021ki}
+### ![Cloud Pak for Data only](images/desktop.png) 4.0.0, 13 July 2021
+{: #13july2021ki}
 
 - Machine learning model enrichments that you apply by using the Analyze API can fail.
 
