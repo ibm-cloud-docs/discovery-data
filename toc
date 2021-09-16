@@ -21,6 +21,8 @@ Discovery
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
+    product-overview.md
+
     {: topicgroup}
     Creating a project
         projects.md
@@ -85,7 +87,8 @@ Discovery
     test.md
 
     {: topicgroup}
-    Improving query results
+    Improving your project
+        improvements.md
         search-settings.md
         stopwords.md
         manage-enrichments.md
