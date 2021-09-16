@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-16"
 
 subcollection: discovery-data
 
@@ -47,7 +47,7 @@ Before you create a project, decide which project type best fits your needs.
 | *I want to uncover insights I didn't know to ask about.* | Gain insights from pattern analysis or perform root cause analysis. | **Content Mining** |
 {: caption="Project type use cases" caption-side="top"}
 
-If you created the {{site.data.keyword.discoveryshort}} service as part of a {{site.data.keyword.icp4dfull_notm}} as a service deployment, the {{site.data.keyword.discoveryshort}} project is separate and distinct from the deployment project that is displayed in {{site.data.keyword.cloud_notm}}.
+If you created the {{site.data.keyword.discoveryshort}} service as part of a {{site.data.keyword.icp4dfull_notm}} as a Service deployment, the {{site.data.keyword.discoveryshort}} project is separate and distinct from the deployment project that is displayed in {{site.data.keyword.cloud_notm}}.
 {: note}
 
 To create a project, complete the following steps:

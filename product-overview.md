@@ -76,7 +76,7 @@ If extracting meaning is your goal, complete the steps that are listed in the fo
 | ![checkbox](images/checkbox.png) | Create any project type. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add collections that connect to external data sources or contain uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Enhance your data by applying built-in NLU enrichments. | [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu) |
-| ![checkbox](images/checkbox.png) | Identify and promote terms and patters from your data with special significance to your use case. | [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain) |
+| ![checkbox](images/checkbox.png) | Identify and promote terms and patterns from your data with special significance to your use case. | [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain) |
 | ![checkbox](images/checkbox.png) | Submit test queries to assess the results. | [Testing your project](/docs/discovery-data?topic=discovery-data-test) |
 | ![checkbox](images/checkbox.png) | Create a facet that surfaces the enriched data from your documents. | [Facets](/docs/discovery-data?topic=discovery-data-facets) |
 | ![checkbox](images/checkbox.png) | Take actions to improve your results. | [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements) |
