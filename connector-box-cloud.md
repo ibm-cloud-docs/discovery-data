@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-09-16"
 
 subcollection: discovery-data
 
@@ -105,7 +105,7 @@ Follow these guidelines when you create the app:
 
 - Get the custom app authorized by an administrator.
 
-  For more information, see [App approval](https://developer.box.com/guides/applications/custom-apps/app-approval/){: external} in the Box Developer Documentation.
+  For more information, see [App approval](https://developer.box.com/guides/authorization/custom-app-approval/){: external} in the Box Developer Documentation.
 - After the app is created, authorized, and authentication is configured, download the app settings as a JSON file from the dev console.
 
   You provide the following information from this file when it is requested later:
