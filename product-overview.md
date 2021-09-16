@@ -47,7 +47,7 @@ Find checklists of the high-level steps to follow to achieve the following goals
 ## Pinpoint answers
 {: #product-overview-answers}
 
-Help customers find answers faster. Analyze content from a variety of connected data sources, pinpoint the most relevant passage or phrase, and return the right information when someone asks for it.
+Help customers find answers faster. Analyze content from various connected data sources, pinpoint the most relevant passage or phrase, and return the right information when someone asks for it.
 
 If pinpointing answers is your goal, complete the steps that are listed in the following table.
 
@@ -63,7 +63,7 @@ If pinpointing answers is your goal, complete the steps that are listed in the f
 ## Extract meaning
 {: #product-overview-enrich}
 
-Leverage award-winning natural language processing technology to enrich your data and ensure that the right information is found when someone searches for answers.
+Use award-winning natural language processing technology to enrich your data and ensure that the right information is found when someone searches for answers.
 
 If extracting meaning is your goal, complete the steps that are listed in the following table.
 
@@ -91,11 +91,11 @@ If enhancing your chatbot is your goal, complete the steps that are listed in th
 | ![checkbox](images/checkbox.png) | Add a collection that connects to an external data source or contains uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections)  \nIf appropriate, enable FAQ extraction to make it easier for the chatbot to find answers to questions. |
 | ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |
 | ![checkbox](images/checkbox.png) | Take actions to improve your results. | [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements) |
-| ![checkbox](images/checkbox.png) | Connect your project to a virtual assistant that is built with Watson Assistant. | [Deploying your project](/docs/discovery-data?topic=discovery-data-deploy)  \nEnable the *Emphasize the answer* feature to leverage answer finding. |
+| ![checkbox](images/checkbox.png) | Connect your project to a virtual assistant that is built with Watson Assistant. | [Deploying your project](/docs/discovery-data?topic=discovery-data-deploy)  \nEnable the *Emphasize the answer* feature to use answer finding. |
 | ![checkbox](images/checkbox.png) | From the Watson Assistant user interface, deploy the assistant. | [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external} |
 {: caption="Checklist for enhancing your chatbot" caption-side="top"}
 
-For help walking through the steps, complete the [Getting answers from existing help content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+For help with walking through the steps, complete the [Getting answers from existing help content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
 ## Find trends  ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #product-overview-mining}

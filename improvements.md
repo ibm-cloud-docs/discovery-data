@@ -37,7 +37,7 @@ subcollection: discovery-data
 Learn about actions you can take to improve the quality of your query results.
 {: shortdesc}
 
-You can use the tools built in to {{site.data.keyword.discoveryshort}} to make improvements.
+You can use the tools that are built in to {{site.data.keyword.discoveryshort}} to make improvements.
 
 ## Excerpt unavailable
 {: #improve-search-result}
@@ -103,7 +103,7 @@ Text from diagrams and other images is not captured unless you enable the optica
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: If you applied FAQ extraction to your source documents, but {{site.data.keyword.discoveryshort}} did not generate a new document for every pair, determine which pairs were not recognized. 
 
-First check whether there are easy formatting changes that you can make to help {{site.data.keyword.discoveryshort}} recognize them. For example, is a closing question mark missing from the question?
+First check whether you can make easy formatting changes to help {{site.data.keyword.discoveryshort}} recognize them. For example, is a closing question mark missing from the question?
 
 If there are no easy fixes, consider using the Smart Document Understanding tool to annotate the question-and-answer pairs instead. First, you must remove the FAQ extractions from the collection. Turn off FAQ extraction on the **Processings settings** tab of the **Manage collections** page. After you disable FAQ extraction, reprocess the collection by clicking **Apply changes and reprocess**. Now you can use the Smart Document Understanding tool to annotate the question-and-answer pairs in your document. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields)
 
@@ -119,12 +119,12 @@ Teach {{site.data.keyword.discoveryshort}} about terms and patterns that have sp
 ## Default facets aren't useful
 {: #improve-facets}
 
-You can add facets that categorize documents based on data from enrichments that you apply to a collection. For example, you might want to show facets based on keywords or dictionary catagories. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
+You can add facets that categorize documents based on data from enrichments that you apply to a collection. For example, you might want to show facets based on keywords or dictionary categories. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
 
 ## Explore other search features
 {: #improve-other-searches}
 
-When you test your project from the {{site.data.keyword.discoveryshort}} user interface, you submit a natural language query. There are search features that you can enable to influence how the natural language query search is done. And Discovery Query Language search is another type of search that you can leverage by using the API. If the initial results don't meet your needs, experiment with another search method.
+When you test your project from the {{site.data.keyword.discoveryshort}} user interface, you submit a natural language query. Search features are available that you can enable to influence how the natural language query search is done. And Discovery Query Language search is another type of search that you can leverage by using the API. If the initial results don't meet your needs, experiment with another search method.
 
 - Discovery Query Language (DQL) search: A search mechanism that accepts more complex queries. You must use the query API to submit DQL queries.
 
