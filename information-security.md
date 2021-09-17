@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-09-17"
 
 subcollection: discovery-data
 
@@ -96,11 +96,15 @@ Data is labeled by adding the `customer_id` of your choice to the optional `X-Wa
 
 There are several options to label data with the API:
 
-  - When ingesting documents using the `POST /v2/projects/{project_id}/collections/{collection_id}/documents` or `POST /v2/projects/{project_id}/collections/{collection_id}/documents/ID` operations, send an optional header `X-Watson-Metadata`. This header must include:
-    -  Semicolon separated `field=value` pairs (for example: `customer_id=123`) 
-       OR
-    -  Add the `customer_id` field to the `X-Watson-Metadata` header. By adding the `customer_id` in `X-Watson-Metadata` header, the request indicates that it contains data that belongs to this `customer_id`.
-  - Optionally, you can include the `customer_id` field with the `metadata` multi-part form part instead of using the `X-Watson-Metadata` header.
+- When ingesting documents using the `POST /v2/projects/{project_id}/collections/{collection_id}/documents` or `POST /v2/projects/{project_id}/collections/{collection_id}/documents/ID` operations, send an optional header `X-Watson-Metadata`. This header must include:
+
+  -  Semicolon separated `field=value` pairs (for example: `customer_id=123`) 
+
+  or
+
+  -  Add the `customer_id` field to the `X-Watson-Metadata` header. By adding the `customer_id` in `X-Watson-Metadata` header, the request indicates that it contains data that belongs to this `customer_id`.
+
+Optionally, you can include the `customer_id` field with the `metadata` multi-part form part instead of using the `X-Watson-Metadata` header.
 
 If you specify a `customer_id` in the `metadata` multi-part form part and the `X-Watson-Metadata` header for the same document, then the `customer_id` in the `X-Watson-Metadata` header is used.
 {: note}
