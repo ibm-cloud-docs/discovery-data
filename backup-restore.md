@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-03"
+lastupdated: "2021-09-17"
 
 subcollection: discovery-data
 
@@ -75,9 +75,9 @@ You can back up and restore some data by using the backup and restore scripts, b
 
 The following updates are made when your collections are restored:
 
-  - Any collection that contains documents that were created by uploading data are automatically recrawled and reindexed when restored. These documents are assigned new document ID numbers in the restored collections.
-  - Collections that were used in *Content Mining* projects are automatically recrawled and reindexed when restored. Only documents that are added by uploading data are assigned new document ID numbers in the restored collections.
-  - If you enabled the **Content intelligence** feature for *Document Retrieval* projects with a 2.2.1 or a later 2.2.x deployment and want to continue to use the projects in 4.0.0, you must take an extra step after you restore the data. For more information, see [Resetting the project type](#contracts).
+- Any collection that contains documents that were created by uploading data are automatically recrawled and reindexed when restored. These documents are assigned new document ID numbers in the restored collections.
+- Collections that were used in *Content Mining* projects are automatically recrawled and reindexed when restored. Only documents that are added by uploading data are assigned new document ID numbers in the restored collections.
+- If you enabled the **Content intelligence** feature for *Document Retrieval* projects with a 2.2.1 or a later 2.2.x deployment and want to continue to use the projects in 4.0.0, you must take an extra step after you restore the data. For more information, see [Resetting the project type](#contracts).
 
 ## Back up and restore methods
 {: #backup-restore-methods}
@@ -100,20 +100,20 @@ Because changes to the data stored in {{site.data.keyword.discoveryfull}} during
 
 A request is a current action that is being performed by {{site.data.keyword.discoveryfull}}, including the following actions:
 
-  -  Source crawl (scheduled or unscheduled)
-  -  Ingesting documents
-  -  Training a trained query model
+- Source crawl (scheduled or unscheduled)
+- Ingesting documents
+- Training a trained query model
 
 Complete the following steps to back up {{site.data.keyword.discoveryfull}} data by using the backup scripts:
 
 1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
 
-    -  `Postgresql`
-    -  `Etcd`
-    -  `ElasticSearch`
-    -  `Hadoop`
-    -  `Minio`
-    -  `<release_name>-watson-discovery-gateway-0`
+    - `Postgresql`
+    - `Etcd`
+    - `ElasticSearch`
+    - `Hadoop`
+    - `Minio`
+    - `<release_name>-watson-discovery-gateway-0`
 1.  Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
 
     ```bash
@@ -155,12 +155,12 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
 
     The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#pvc).
 
-    The scripts generate an archive file, including the backup files of the services that are listed in Step 1. You can unpack the archive file by running the following command:
+The scripts generate an archive file, including the backup files of the services that are listed in Step 1. You can unpack the archive file by running the following command:
 
-    ```bash
-    tar xvf <backup_file_name>
-    ```
-    {: pre}
+```bash
+tar xvf <backup_file_name>
+```
+{: pre}
 
 #### Configuring jobs to use PVC
 {: #pvc}

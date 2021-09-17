@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-09-17"
 
 subcollection: discovery-data
 
@@ -97,8 +97,8 @@ For more information about configuring specific crawlers or for information abou
 
 The following updates are made when your collections are restored:
 
-  - Any collection that contains documents that were added by uploading data are automatically recrawled and reindexed when restored. These documents are assigned new document ID numbers in the restored collections.
-  - All collections that are used in a **Content Miner** project are automatically recrawled and reindexed when restored. Only the documents that are added by uploading data are assigned new document ID numbers in the restored collections.
+- Any collection that contains documents that were added by uploading data are automatically recrawled and reindexed when restored. These documents are assigned new document ID numbers in the restored collections.
+- All collections that are used in a **Content Miner** project are automatically recrawled and reindexed when restored. Only the documents that are added by uploading data are assigned new document ID numbers in the restored collections.
 
 ## Back up and restore methods
 {: #backup-restore-methods-prior}
@@ -120,50 +120,52 @@ Backup prerequisites:
 Because changes to the data stored in {{site.data.keyword.discoveryfull}} during a backup can cause the backup to become corrupted and unusable, no in-flight requests are allowed during the backup period.
 
 A request is a current action that is being performed by {{site.data.keyword.discoveryfull}}. Actions that are performed by {{site.data.keyword.discoveryshort}} include:
-  -  Source crawl (scheduled or unscheduled)
-  -  Ingesting documents
-  -  Training a trained query model
+
+-  Source crawl (scheduled or unscheduled)
+-  Ingesting documents
+-  Training a trained query model
 
 Perform the following steps to back up {{site.data.keyword.discoveryfull}} by using the backup scripts:
 
-  1. Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
+1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
 
-    -  `Postgresql`
-    -  `Etcd`
-    -  `ElasticSearch`
-    -  `Hadoop`
-    -  `Minio`
-    -  `<release_name>-watson-discovery-gateway-0`
-  1. Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
+    - `Postgresql`
+    - `Etcd`
+    - `ElasticSearch`
+    - `Hadoop`
+    - `Minio`
+    - `<release_name>-watson-discovery-gateway-0`
 
-     ```
-     kubectl config set-context $(kubectl config current-context) --namespace=<namespace>
-     ```
-     {: pre}
+1.  Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
 
-     You can also set the current namespace by using this `oc` command:
+    ```
+    kubectl config set-context $(kubectl config current-context) --namespace=<namespace>
+    ```
+    {: pre}
 
-     ```
-     oc project <namespace>
-     ```
-     {: pre}
+    You can also set the current namespace by using this `oc` command:
 
-  1. Run the `all-backup-restore.sh` script. The `<-f backupFileName>` part of the following command is optional. You can also specify the namespace in which the gateway pods are deployed:
+    ```
+    oc project <namespace>
+    ```
+    {: pre}
 
-      ```bash
-      ./all-backup-restore.sh backup <-f backupFileName>
-      ```
-      {: pre}
+1.  Run the `all-backup-restore.sh` script. The `<-f backupFileName>` part of the following command is optional. You can also specify the namespace in which the gateway pods are deployed:
+
+    ```bash
+    ./all-backup-restore.sh backup <-f backupFileName>
+    ```
+    {: pre}
       
-      If you are backing up version 2.1.4 and earlier, enter `./all-backup-restore.sh backup <release_name> <-f backupFileName>` to specify the release name that you are backing up. Like the command for version 2.2.0, the `<-f backupFileName>` part of the command is optional, and you can specify the namespace in which the gateway pods are deployed.
-      {: tip}
+    If you are backing up version 2.1.4 and earlier, enter `./all-backup-restore.sh backup <release_name> <-f backupFileName>` to specify the release name that you are backing up. Like the command for version 2.2.0, the `<-f backupFileName>` part of the command is optional, and you can specify the namespace in which the gateway pods are deployed.
+    {: tip}
 
-      The scripts generate an archive file, including the backup files of the services that are listed in Step 1. The file is named `watson_discovery_<timestamp>.backup` or the file that is specified by the `-f` option in the current directory. These scripts create a `tmp` directory in the current directory when they back up and restore documents. You can unpack the archive file by running following command:
+The scripts generate an archive file, including the backup files of the services that are listed in Step 1. The file is named `watson_discovery_<timestamp>.backup` or the file that is specified by the `-f` option in the current directory. These scripts create a `tmp` directory in the current directory when they back up and restore documents. You can unpack the archive file by running following command:
 
-      ```bash
-      tar xvf <backup_file_name>
-      ```
-      {: pre}
+```bash
+tar xvf <backup_file_name>
+```
+{: pre}
 
 If you want to install multiple {{site.data.keyword.discoveryshort}} add-ons to different clusters, see [Copying {{site.data.keyword.discoveryshort}} data across {{site.data.keyword.discoveryshort}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
 {: note}
@@ -175,38 +177,40 @@ For more information about the backup and restore methods, see [Back up and rest
 
 Perform the following steps to restore data in {{site.data.keyword.discoveryfull}} by using the restore scripts:
 
-  1. Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
-    -  `Postgresql`
-    -  `Etcd`
-    -  `ElasticSearch`
-    -  `Hadoop`
-    -  `Minio`
-    -  `<release_name>-watson-discovery-gateway-0`
-  1. Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
+1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
+
+    - `Postgresql`
+    - `Etcd`
+    - `ElasticSearch`
+    - `Hadoop`
+    - `Minio`
+    - `<release_name>-watson-discovery-gateway-0`
+
+1.  Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
      
-     ```
-     kubectl config set-context $(kubectl config current-context) --namespace=<namespace>
-     ```
-     {: pre}
+    ```
+    kubectl config set-context $(kubectl config current-context) --namespace=<namespace>
+    ```
+    {: pre}
 
-     You can also set the current namespace by using this `oc` command:
+    You can also set the current namespace by using this `oc` command:
 
-     ```
-     oc project <namespace>
-     ```
-     {: pre}
-  
-  1. Restore the data from the backup file on your local machine to the new {{site.data.keyword.discoveryshort}} deployment by running the following command:
+    ```
+    oc project <namespace>
+    ```
+    {: pre}
+
+1.  Restore the data from the backup file on your local machine to the new {{site.data.keyword.discoveryshort}} deployment by running the following command:
       
-      ```
-      ./all-backup-restore.sh restore -f <backupFileName>
-      ```
-      {: pre}
+    ```
+    ./all-backup-restore.sh restore -f <backupFileName>
+    ```
+    {: pre}
       
-      If you are restoring version 2.1.4 and earlier, enter `./all-backup-restore.sh restore <release_name> -f <backupFileName>` to specify the `<release_name>` that you are restoring to and the file name that you want to back up. You can use `core` as the `<release_name>` if you restore to version 2.1.2.
-      {: tip}
+    If you are restoring version 2.1.4 and earlier, enter `./all-backup-restore.sh restore <release_name> -f <backupFileName>` to specify the `<release_name>` that you are restoring to and the file name that you want to back up. You can use `core` as the `<release_name>` if you restore to version 2.1.2.
+    {: tip}
 
-  The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
+The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
   
 If you want to install multiple {{site.data.keyword.discoveryshort}} add-ons to different clusters, see [Copying {{site.data.keyword.discoveryshort}} data across {{site.data.keyword.discoveryshort}} clusters](/docs/discovery-data?topic=discovery-data-backup-restore#copy-data-new-clusters).
 {: tip}
@@ -272,41 +276,41 @@ Because [some data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr
 
 To manually back up your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
 
-1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
+1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
    
-   ```
-   oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
-   ```
-   {: pre}
+    ```
+    oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
+    ```
+    {: pre}
 
-1. Enter the following command to switch to the proper namespace:
+1.  Enter the following command to switch to the proper namespace:
 
-   ```
-   oc project <discovery-install namespace>
-   ```
-   {: pre}
+    ```
+    oc project <discovery-install namespace>
+    ```
+    {: pre}
 
-1. Enter `oc get pods|grep crawler`.
+1.  Enter `oc get pods|grep crawler`.
 
-   If you are manually backing up data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
-   {: tip}
+    If you are manually backing up data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
+    {: tip}
 
-1. Enter the following command:
+1.  Enter the following command:
 
-   ```
-   kubectl cp <crawler pod>:/mnt <path-to-backup-directory>
-   ```
-   {: pre}
+    ```
+    kubectl cp <crawler pod>:/mnt <path-to-backup-directory>
+    ```
+    {: pre}
 
-   Or you can back up your data by using the following `oc` command:
+    Or you can back up your data by using the following `oc` command:
 
-   ```
-   oc rsync <crawler pod>:/mnt <path-to-backup-directory>
-   ```
-   {: pre}
+    ```
+    oc rsync <crawler pod>:/mnt <path-to-backup-directory>
+    ```
+    {: pre}
 
-   If you are manually backing up data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `kubectl cp <ingestion-pod>:/mnt <path-to-backup-directory>`.
-   {: tip}
+    If you are manually backing up data from an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `kubectl cp <ingestion-pod>:/mnt <path-to-backup-directory>`.
+    {: tip}
 
 For more information about the backup and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
 
@@ -318,41 +322,41 @@ Because [some data](/docs/discovery-data?topic=discovery-data-backup-restore#bnr
 
 To manually restore your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
 
-1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
+1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
    
-   ```
-   oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
-   ```
-   {: pre}
+    ```
+    oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
+    ```
+    {: pre}
 
-1. Enter the following command to switch to the proper namespace:
+1.  Enter the following command to switch to the proper namespace:
 
-   ```
-   oc project <discovery-install namespace>
-   ```
-   {: pre}
+    ```
+    oc project <discovery-install namespace>
+    ```
+    {: pre}
 
-1. Enter `oc get pods|grep crawler`.
+1.  Enter `oc get pods|grep crawler`.
 
-   If you are manually restoring data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
-   {: tip}
+    If you are manually restoring data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `oc get pods|grep ingestion` to find the ingestion pod.
+    {: tip}
 
-1. Enter the following command:
+1.  Enter the following command:
 
-   ```
-   kubectl cp <crawler pod>:/mnt <path-to-backup-directory>
-   ```
-   {: pre}
+    ```
+    kubectl cp <crawler pod>:/mnt <path-to-backup-directory>
+    ```
+    {: pre}
 
-   Or you can restore your data by using the following `oc` command:
+    Or you can restore your data by using the following `oc` command:
 
-   ```
-   oc rsync <path-to-backup-directory> <crawler pod>:/mnt
-   ```
-   {: pre}
+    ```
+    oc rsync <path-to-backup-directory> <crawler pod>:/mnt
+    ```
+    {: pre}
 
-   If you are manually restoring data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `kubectl cp <path-to-backup-directory> <ingestion pod>:/mnt`.
-   {: tip}
+    If you are manually restoring data to an instance of {{site.data.keyword.discoveryshort}} version 2.1.2 or earlier, enter `kubectl cp <path-to-backup-directory> <ingestion pod>:/mnt`.
+    {: tip}
 
 For information about the backup and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
 
@@ -367,53 +371,51 @@ If you manually back up your data from version 2.1.3 and restore it on 2.1.4, yo
 
 To migrate your Box crawler, complete the following steps:
 
-1. Back up the user data of an older version of {{site.data.keyword.discoveryshort}} that you are migrating data from. For more information about manually backing up data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
-1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
+1.  Back up the user data of an older version of {{site.data.keyword.discoveryshort}} that you are migrating data from. For more information about manually backing up data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
+1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
 
-   ```
-   oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
-   ```
-   {: pre}
+    ```
+    oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
+    ```
+    {: pre}
 
-1. Enter the following command:
+1.  Enter the following command:
 
-   ```
-   oc project <namespace>
-   ```
-   {: pre}
+    ```
+    oc project <namespace>
+    ```
+    {: pre}
 
-1. Enter the following command:
+1.  Enter the following command:
 
-   ```
-   ./migrate-box-credential.sh make-json <json_file_name>
-   ```
-   {: pre}
+    ```
+    ./migrate-box-credential.sh make-json <json_file_name>
+    ```
+    {: pre}
    
-   A JSON file is generated that has output that looks like the following example:
+    A JSON file is generated that has output that looks like the following example:
 
-   ```json
-   {
-     "clientId_to_clientSecret": {
-       "clientId_1": "",
-       "clientId_2": "",
-       ...
-     },
-     "keyId_to_passphrase": {
-       "keyId_1": "",
-       "keyId_2": "",
-       ...
-     }
-   }
-   ```
-   {: screen}
+    ```json
+    {
+      "clientId_to_clientSecret": {
+        "clientId_1": "",
+        "clientId_2": "",
+      },
+      "keyId_to_passphrase": {
+        "keyId_1": "",
+        "keyId_2": "",
+      }
+    }
+    ```
+    {: screen}
 
-1. Open the file in a text editor, and complete the fields next to `clientId` and `keyId`. In `clientId_to_clientSecret`, enter the value of your `clientSecret` that corresponds to each `clientId`. In `keyId_to_passphrase`, enter the passphrase of the private key that corresponds to each `keyId`. If a passphrase is not set for a specific key, leave the field blank.
-1. Enter the following command to upload the JSON file that contains both the Box configuration data and the .pem files:
+1.  Open the file in a text editor, and complete the fields next to `clientId` and `keyId`. In `clientId_to_clientSecret`, enter the value of your `clientSecret` that corresponds to each `clientId`. In `keyId_to_passphrase`, enter the passphrase of the private key that corresponds to each `keyId`. If a passphrase is not set for a specific key, leave the field blank.
+1.  Enter the following command to upload the JSON file that contains both the Box configuration data and the .pem files:
    
-   ```
-   ./migrate-box-credential.sh migrate <json_file_name> <user_data_directory> <backup_file_name>
-   ```
-   {:pre}
+    ```
+    ./migrate-box-credential.sh migrate <json_file_name> <user_data_directory> <backup_file_name>
+    ```
+    {:pre}
 
 To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore). For more information about the backup and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
 
@@ -428,27 +430,27 @@ If you back up your user data from version 2.1.3 and restore it on 2.1.4, your S
 
 To migrate your Salesforce or JDBC crawlers, complete the following steps:
 
-1. Back up the user data of the older version of {{site.data.keyword.discoveryshort}} that you are migrating the data from. For more information about manually backing up data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
-1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
+1.  Back up the user data of the older version of {{site.data.keyword.discoveryshort}} that you are migrating the data from. For more information about manually backing up data, see [Backing up data manually](/docs/discovery-data?topic=discovery-data-backup-restore#backup-user-data).
+1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster, replacing the `<>` and the content within with your OpenShift administrative console URL and login credentials:
 
-   ```
-   oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
-   ```
-   {: pre}
+    ```
+    oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
+    ```
+    {: pre}
 
-1. Enter the following command:
+1.  Enter the following command:
 
-   ```
-   oc project <namespace>
-   ```
-   {: pre}
+    ```
+    oc project <namespace>
+    ```
+    {: pre}
 
-1. Enter the following command:
+1.  Enter the following command:
 
-   ```
-   ./migrate-crawler-jar.sh <user_data_directory> <backup_file_name>
-   ```
-   {: pre}
+    ```
+    ./migrate-crawler-jar.sh <user_data_directory> <backup_file_name>
+    ```
+    {: pre}
 
 To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore). For information about the backup and restore methods, see [Backup and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
 
@@ -463,12 +465,12 @@ Review the following requirements, process overview, and the list of scripts for
 
 Before backing up or restoring data, ensure that you have the following tool that is installed on your machine:
 
-  - `kubectl` 1.11 or later, which is available at [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}.
+- `kubectl` 1.11 or later, which is available at [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external}.
 
 You must have the following permissions:
 
-  - Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (the data must be backed up) and administrative access to the new instance that the data is being restored to.
-  - Permissions to use cluster-wide CLI tools, such as `kubectl`.
+- Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (the data must be backed up) and administrative access to the new instance that the data is being restored to.
+- Permissions to use cluster-wide CLI tools, such as `kubectl`.
 
 You must also have the following system requirement: Red Hat Enterprise Linux 7.5 or later.
 
@@ -483,9 +485,9 @@ In the following procedures, angle brackets (`< >`) are used to indicate variabl
 
 Use the `all-backup-restore.sh` backup and restore script to back up and restore to {{site.data.keyword.discoveryshort}} version 2.1.0 or later.
 
- -  Back up and restore scripts for versions 2.2.0 and later. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.2.0){: external}.
- -  Backup and restore scripts for version 2.1.3 and 2.1.4. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
- -  Back up and restore scripts for versions 2.1.0 through 2.1.2. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
+-  Back up and restore scripts for versions 2.2.0 and later. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.2.0){: external}.
+-  Backup and restore scripts for version 2.1.3 and 2.1.4. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1.3){: external}.
+-  Back up and restore scripts for versions 2.1.0 through 2.1.2. [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.1){: external}.
 
 You need all files that are stored in the applicable GitHub repository to perform a backup and restore. Follow the instructions in GitHub Help to clone or download a compressed file of the repository.
 {: important}
@@ -493,7 +495,7 @@ You need all files that are stored in the applicable GitHub repository to perfor
 To make a script executable, run the following command:
 
 ```bash
-  chmod +x <script-name>
+chmod +x <script-name>
 ```
 
 Where `<script-name>` is the name of the script.
