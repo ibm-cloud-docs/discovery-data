@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-09-17"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ This information applies only to installed deployments.
 
 You must have the following items to compile a crawler plug-in:
 
-- Java SE Development Kit (JDK) 1.8 or higher
+- Java SE Development Kit 1.8 or higher
 - [Gradle](https://gradle.org/install/){: external}
 - cURL
 - sed (stream editor)
