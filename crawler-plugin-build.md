@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-09-17"
 
 subcollection: discovery-data
 
@@ -61,7 +61,7 @@ However, the crawler plug-ins cannot support the following functions:
 ## Crawler plug-in requirements
 {: #plugin-reqs}
 
-Make sure that the following items are installed on the development server that you will use to develop a crawler plug-in by using this SDK:
+Make sure that the following items are installed on the development server that you plan to use to develop a crawler plug-in by using this SDK:
 
 - Java SE Development Kit (JDK) 1.8 or higher
 - [Gradle](https://gradle.org/install/){: external}
@@ -79,7 +79,7 @@ Make sure that the following items are installed on the development server that 
    ```
    {: pre}
 
-   You might see output similar to the following:
+   The following example shows sample output.
 
    ```curl
    wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
@@ -93,7 +93,7 @@ Make sure that the following items are installed on the development server that 
    ```
    {: pre}
 
-   You might see output similar to the following:
+   The following example shows sample output.
 
    ```curl
    -rw-r--r--. 1 dadmin dadmin 35575 Oct  1 16:51 wd-crawler-plugin-sdk-${build-version}.zip

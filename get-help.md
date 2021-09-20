@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-09-20"
 
 subcollection: discovery-data
 
@@ -37,5 +37,5 @@ Use these resources to get answers to your questions:
 
 If your service plan covers it, you can get help by opening a case from IBM Support. 
 
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [IBM Support](https://www.ibm.com/mysupport/s/topic/0TO50000000IYkUGAW/cloud-pak-for-data){: external}
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}
+- ![Cloud Pak for Data only](images/desktop.png) Installed {{site.data.keyword.icp4dfull_notm}} deployments: [IBM Support](https://www.ibm.com/mysupport/s/topic/0TO50000000IYkUGAW/cloud-pak-for-data){: external}
+- ![IBM Cloud only](images/ibm-cloud.png) Service instances that are managed by {{site.data.keyword.cloud_notm}}, including {{site.data.keyword.icp4dfull_notm}} as a Service deployments: [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}
