@@ -58,7 +58,7 @@ Choose the appropriate step to complete for your deployment:
   
      For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}. 
   
-     If you decide not to continue using the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
+     If you decide not to continue to use the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
      {: important}
   
   1. Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
@@ -71,11 +71,11 @@ Choose the appropriate step to complete for your deployment:
 
 These instructions apply to all managed deployments, including {{site.data.keyword.icp4dfull_notm}} as a Service instances.
 
-1.  Click the {{site.data.keyword.discoveryshort}} instance you created to go to the service dashboard.
+1.  Click the {{site.data.keyword.discoveryshort}} instance that you created to go to the service dashboard.
 
 1.  On the **Manage** page, click **Launch Watson Discovery**.
 
-    If you're prompted to log in to the tooling, provide your {{site.data.keyword.cloud_notm}} credentials.
+    If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**
 
@@ -95,11 +95,11 @@ These instructions apply to {{site.data.keyword.discoveryshort}} deployments tha
 {: #open-project-tool}
 {: step}
 
-After you launch {{site.data.keyword.discoveryshort}}, a new browser tab or window opens and the *My Projects* page is displayed. 
+A new browser tab or window opens and the *My Projects* page is displayed. 
 
 ![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
 
-In this tutorial, you will explore the sample project. 
+In this tutorial, you explore the sample project. 
 
 The sample project is a built-in project that is provided as a resource for you to initially explore the product. The sample project is a *Document Retrieval* project type. Document Retrieval projects are used to search and find the most relevant answers from your data.
 
@@ -116,7 +116,7 @@ The sample project is a built-in project that is provided as a resource for you 
 {: #tour-project-tool}
 {: step}
 
-Learn about ways you can manage and enhance a collection by exploring the sample collection that is available with the sample project. The sample collection is comprised of a set of uploaded IBM Support PDF documents.
+Learn about ways you can manage and enhance a collection by exploring the sample collection that is available with the sample project. The sample collection consists of a set of uploaded IBM Support PDF documents.
 
 1.  Click the **Manage collections** icon on the navigation panel.
 
@@ -138,7 +138,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
     
     ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments.png)
 
-    The sample collection has the following enrichments applied to it:
+    The following enrichments are applied to the sample collection:
 
     - **Entities**: Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
     - **Parts of Speech**: Identifies the parts of speech (nouns and verbs, for example) in the content.
@@ -153,7 +153,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
 1.  For the *Parts of Speech* enrichment, click **1x Selected fields**.
 
-    Again, you'll see that the enrichment is applied to the `text` field.
+    Again, you can see that the enrichment is applied to the `text` field.
 
     From this page, you can apply new enrichments to your collection or change the fields where an enrichment is applied. 
     
@@ -182,7 +182,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     ![Shows the SDU model options.](images/gs-sample-id-fields.png)
     
-    To create a custom SDU model, you select the *User-trained model* option, and then annotate fields in your document. (We will not annotate documents as part of this tutorial.)
+    To create a custom SDU model, you select the *User-trained model* option, and then annotate fields in your document. (You will not annotate documents as part of this tutorial.)
 
     ![Shows that Smart Document Understanding tool.](images/gs-sample-sdu.png)
 
@@ -204,7 +204,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
 1.  Click the **Improve and customize** icon from the navigation panel. 
 
-    The *Improve and customize* page is where you can to try out queries, then add and test customizations to improve the query results for your project. A list of sample queries is displayed to help you get started with submitting test queries.
+    The *Improve and customize* page is where you can try out queries, then add and test customizations to improve the query results for your project. A list of sample queries is displayed to help you get started with submitting test queries.
 
 1.  Click the **Run search** button for`IBM`.
 
@@ -230,7 +230,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
     ![Shows the query results for a natural language query with the Top Entities facet expanded.](images/gs-sample-entities-facet.png)
 
-    Notice that a *Top Entities* section is displayed. You can expand the entities and click one of them to filter the query results to show only those results in which the entity is mentioned. The *Top Entities* section is a built-in facet. It uses information added to the documents by the Entities enrichment.
+    Notice that a *Top Entities* section is displayed. You can expand the entities and click one of them to filter the query results to show only those results in which the entity is mentioned. The *Top Entities* section is a built-in facet. It uses information that was added to the documents by the Entities enrichment.
 
     You will add your own facet that uses the Keywords enrichment that you applied to the collection in a previous step.
 
@@ -250,7 +250,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
     ![Shows the keyword facet looks.](images/gs-keyword-facet-added.png)
 
-You successfully added a built-in NLU enrichment that recognizes keywords in the sample collection documents. Then you added a facet that uses the keywords enrichment to let you filter the documents by keyword.
+You successfully added a built-in NLU enrichment that recognizes keywords in the sample collection documents. Then, you added a facet that uses the keywords enrichment to let you filter the documents by keyword.
 
 ## Share the sample project
 {: #gs-deploy}
@@ -268,13 +268,13 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 
     - Click **API Information**. From this page, you can get the project ID for your project. You need the project ID to use the Discovery API. You also need the service instance URL and API key. The credential details are available from the Manage page of your service instance in IBM Cloud.
     
-    - Click **UI Components** to find links to ready-to-use code that you can leverage to create a full-featured search application faster.
+    - Click **UI Components** to find links to ready-to-use code that you can use to create a full-featured search application faster.
 
 ## Add your own content
 {: #gs-start-here}
 {: step}
 
-Now that you've explored the sample project, you're ready to create a project and add your data.
+Now that you know more about some of the features of the product, you're ready to create a project and add your data.
 
 1.  Click **My Projects** to return to the main projects page.
 
@@ -298,4 +298,4 @@ Now that you've explored the sample project, you're ready to create a project an
 ## Bonus: Get help from anywhere
 {: #handy-tools}
 
-To open the product documentation, select the **Help** ![Help icon](images/help_icon.png) icon from the page header. The help content is customized to provide information that is related to what you're doing in the product.
+To open the product documentation, select the **Help** icon ![Help icon](images/help_icon.png) from the page header. The help content is customized to provide information that is related to what you're doing in the product.
