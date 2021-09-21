@@ -2,9 +2,12 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-09-21"
 
 subcollection: discovery-data
+content-type: tutorial
+account-plan: paid
+completion-time: 20m
 
 ---
 
@@ -28,11 +31,14 @@ subcollection: discovery-data
 {:ruby: .ph data-hd-programlang='ruby'}
 {:swift: .ph data-hd-programlang='swift'}
 {:go: .ph data-hd-programlang='go'}
+{:step: data-tutorial-type='step'}
 
-# Getting started with the Watson Discovery Sample Project
+# Getting started with Watson Discovery
 {: #getting-started}
+{: toc-content-type="tutorial"}
+{: toc-completion-time="20m"}
 
-In this short tutorial, we introduce the {{site.data.keyword.discoveryshort}} Sample Project. The Sample Project is a great way to tour and try out {{site.data.keyword.discoveryshort}} features.
+In this tutorial, we introduce {{site.data.keyword.discoveryfull}} and walk you through the {{site.data.keyword.discoveryshort}} sample project. Exploring the sample project is a great way to tour and try out some of the product's features.
 {: shortdesc}
 
 This information applies to {{site.data.keyword.discovery-data_short}}, Plus plan instances, and Premium plan instances that were created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances that were created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started){: external}.
@@ -47,98 +53,249 @@ Choose the appropriate step to complete for your deployment:
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Complete the following steps:
 
-  - Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
-  - You can use a Plus plan for 30 days at no cost. However, to create a Plus plan instance of the service, you must have a paid account. For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}. And, if you decide not to continue using the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
-  - Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
+  1. Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
+  1. You can use a Plus plan for 30 days at no cost. However, to create a Plus plan instance of the service, you must have a paid account. 
+  
+     For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}. 
+  
+     If you decide not to continue to use the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
+     {: important}
+  
+  1. Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
 
-## Step 1: Open Watson Discovery
+## Open Watson Discovery
 {: #getting-started-launch-tool}
+{: step}
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** 
+
+These instructions apply to all managed deployments, including {{site.data.keyword.icp4dfull_notm}} as a Service instances.
+
+1.  Click the {{site.data.keyword.discoveryshort}} instance that you created to go to the service dashboard.
+
+1.  On the **Manage** page, click **Launch Watson Discovery**.
+
+    If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**
 
-{{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 4:
+These instructions apply to {{site.data.keyword.discoveryshort}} deployments that are installed on {{site.data.keyword.icp4dfull}} 4.x:
 
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand **Services**, and then click **Instances**.
 1.  Find your instance, and then click it to open its summary page.
 1.  Click **Launch tool**.
 
-{{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 3.0.1 or later:
+These instructions apply to {{site.data.keyword.discoveryshort}} deployments that are installed on {{site.data.keyword.icp4dfull}} 3.x:
 
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
 1.  Select your {{site.data.keyword.discoveryshort}} instance.
 1.  Click **Launch tool**.
 
-{{site.data.keyword.discoveryshort}} installed on {{site.data.keyword.icp4dfull}} 2.5.0.0:
-
-1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**.
-1.  On the **Provisioned instances** tab, find your {{site.data.keyword.discoveryshort}} instance, and then hover over the last column to display the ellipsis icon ![Ellipsis icon](images/cp4d-sideways-kebab.png) and choose **View details**.
-1.  Click **Open Watson Discovery**.
-
-
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
-
-1.  {: hide-dashboard} Click the {{site.data.keyword.discoveryshort}} instance you created to go to the service dashboard.
-1.  {: hide-dashboard} On the **Manage** page, click **Launch Watson Discovery**. If you're prompted to log in to the tooling, provide your {{site.data.keyword.cloud_notm}} credentials.
-
-
-## Step 2: Open the Sample Project
+## Open the sample project
 {: #open-project-tool}
+{: step}
 
-1.  Open the **Projects** page by selecting **My Projects**. 
+A new browser tab or window opens and the *My Projects* page is displayed. 
 
-    For more information about projects, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
-1.  Select **Sample Project**. 
+![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
 
-    The **Improve and Customize** page opens.
+In this tutorial, you explore the sample project. 
 
-If you just installed {{site.data.keyword.discoveryshort}}, the Sample Project will need time to finish processing documents. Wait until processing is complete to start experimenting. You can confirm that all 40 documents have finished processing by selecting the **Manage collections** icon on the navigation panel and checking the **Sample Collection**.
-{: note}
+The sample project is a built-in project that is provided as a resource for you to initially explore the product. The sample project is a *Document Retrieval* project type. Document Retrieval projects are used to search and find the most relevant answers from your data.
 
-The Sample Project is a *Document Retrieval* project. Document Retrieval projects are used to search and find the most relevant answers from your data. It includes one collection that contains 40 documents.
+1.  Click **Sample Project**.
 
-## Step 3: Tour the Sample Project
+    The **Improve and customize** page is displayed.
+
+    If you just installed {{site.data.keyword.discoveryshort}}, the Sample Project needs time to finish processing documents. Wait for processing to finish before you start experimenting. You can check the status of data processing from the *Activity* page, which is described in the next step.
+    {: note}
+
+    ![Shows the Improve and customize page for the Sample Project.](images/gs-sample-project-improve.png)
+
+## Learn about the sample collection
 {: #tour-project-tool}
+{: step}
 
-Now that we've opened the Sample Project and learned more about **Document Retrieval** projects, let's explore.
+Learn about ways you can manage and enhance a collection by exploring the sample collection that is available with the sample project. The sample collection consists of a set of uploaded IBM Support PDF documents.
 
-1.  Select the **Manage collections** icon on the navigation panel. Choose the **Sample Collection**. Several tabs display but we'll concentrate on a few.
+1.  Click the **Manage collections** icon on the navigation panel.
 
-    - The **Activity** tab displays collection details: Number of documents, Collection status, Date of last update, an abbreviated list of **Warnings and errors** (to see the full list, select **View all**).
-    - The **Identify fields** tab is where you can annotate your document using [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields). You can use the **Field labels** that are available or create your own.
-    - The **Manage fields** tab gives you the option to choose the fields you want to index, turn on document splitting, and set date formats. For more information, see [Managing fields](/docs/discovery-data?topic=discovery-data-configuring-fields#field-settings).
-    - The **Enrichments** tab displays the available enrichments (you can create more). By default, the enrichments already applied to this collection include **Entities** and **Parts of speech**. Click on **Fields to enrich** and you will notice that these enrichments are applied to the `text` field. To learn more about these enrichments, see [Apply prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu). You can also create enrichments that will add related terms (**Dictionary**), identify and extract values (**Regular expressions**), extract entities and relationships/apply rules to fields in your collection (**Machine Learning and Watson Explorer Content Analytics Studio models**), classify your documents into categories (**Classifier**), or use an **Advanced rule model**. See [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).   
-1.  Select the **Integrate and Deploy** icon on the navigation panel. From here, you can share your project with colleagues and deploy. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
+    Any collections in your project are displayed here. This project has only one collection.
 
-    - The **Share preview** link tab makes it easy to share your project with others. Follow the instructions to add a user, then send those login credentials and the provided link to your colleague.
-    - The **Explore UI components** tab includes several componets: **Search bar**, **Search results**, **Facets**, and **Document preview**. The code for the {{site.data.keyword.discoveryshort}} components can be found on [GitHub](https://github.com/watson-developer-cloud/discovery-components){: external}. You can learn more about the components and preview them in [Storybook](https://watson-developer-cloud.github.io/discovery-components){: external}.
-1.  Select the **Improve and customize** icon on the navigation panel. The **Improve and Customize** page is where you can to try out queries, then add and test customizations to improve the query results for your project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
+   ![Shows the collections page with the Sample Collection only.](images/gs-manage-collection.png)
 
-    - There are several example queries in the **Try an example to get started** section. Click the **Run search** button for`IBM`.
-    - Query results are displayed.
-    - From one of the query results, click **View passages in document**. A preview of the document where the result was found is shown.
-    -  On the **Improvement tools** panel, select the dropdowns to learn about the different way you can customize your project. There are five categories of tools: **Customize display**, **Search results**, **Teach domain concepts**, **Define structure**, and **Improve relevance**.
+1.  Click **Sample Collection**.
+
+    The *Activity* page is displayed. This page shows the status of the collection. For example, it shows the total number of documents and when it was last updated. If Discovery encounters a problem when a document is uploaded or a data source is crawled, any associated messages are displayed here.
+
+    ![Shows the Activity page for the Sample Collection.](images/gs-sample-activity-tab.png)
+
+    After you create a collection, you can come to this page to find information about the processing status of the data in the collection.
+
+1.  Click the **Enrichments** tab.
+
+    The *Enrichments* page shows you a list of available enrichments. Enrichments make meaningful information easier to find and return in searches. You can apply built-in enrichments to your collection to leverage powerful Natural Language Understanding models that tag terms, such as commonly known keywords.
     
-That's the tour, stay on the **Improve and Customize** page for the next step.
+    ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments.png)
+
+    The following enrichments are applied to the sample collection:
+
+    - **Entities**: Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
+    - **Parts of Speech**: Identifies the parts of speech (nouns and verbs, for example) in the content.
+
+    These enrichments are applied automatically to collections that are added to projects of the *Document Retrieval* type.
+
+1.  For the *Entities v2* enrichment, click **1x Selected fields**.
+
+    A list of available fields is displayed, and the `text` field is selected. This selection means that the *Entities* enrichment was applied to content that was indexed and added to a field named `text` when documents from the collection were processed.
+
+    ![Shows that the Entities enrichment is applied to the text field.](images/gs-entities-on-text.png)
+
+1.  For the *Parts of Speech* enrichment, click **1x Selected fields**.
+
+    Again, you can see that the enrichment is applied to the `text` field.
+
+    From this page, you can apply new enrichments to your collection or change the fields where an enrichment is applied. 
     
-## Step 4: Customize the Sample Project
+    A powerful feature of Discovery is that you can add your own custom enrichments, such as dictionaries, patterns, and machine learning models. When you create custom enrichments, they are listed on this page also. You can manage where they are used from here. 
+    
+    For more information about custom enrichments, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
+    {: tip}
+
+1.  You are going to apply another enrichment to the collection. Find the *Keywords* enrichment in the list, and then click **Select fields**.
+
+    The Keywords enrichment recognizes significant commonly-known terms in your content.
+
+1.  Scroll through the list of fields until you find the `text` field, and select it.
+
+    ![Shows the fields where you can apply the Keyword enrichment .](images/gs-keyword-find.png)
+
+1.  Click **Apply changes and reprocess**.
+
+    While your documents are being reprocessed to look for and tag keywords, you can continue to explore the tools available for managing a collection.
+
+1.  Click **Identify fields**.
+
+    Most content from a document is indexed in the `text` field automatically. You might want to index certain types of content in different fields or split up large documents so that the `text` field contains fewer passages per document. To do so, you can teach Discovery to recognize important fields in your documents by applying a *Smart Document Understanding* model to your collection.
+
+    Smart Document Understanding (SDU) is a technology that learns about a document's structure. You can apply a prebuilt SDU model or create a custom SDU model.
+
+    ![Shows the SDU model options.](images/gs-sample-id-fields.png)
+    
+    To create a custom SDU model, you select the *User-trained model* option, and then annotate fields in your document. (You will not annotate documents as part of this tutorial.)
+
+    ![Shows that Smart Document Understanding tool.](images/gs-sample-sdu.png)
+
+    For more information about SDU, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+    {: tip}
+
+1.  Click **Manage fields**. 
+
+    The *Manage fields* page lists the indexed fields. From here, you can include or remove fields from the index. You can also split large documents into many smaller documents.
+
+    ![Shows the fields in the index.](images/gs-sample-field-index.png)
+
+    For more information about splitting documents, see [Splitting documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
+    {: tip}
+
+## Search the sample project
+{: #sample-project-try}
+{: step}
+
+1.  Click the **Improve and customize** icon from the navigation panel. 
+
+    The *Improve and customize* page is where you can try out queries, then add and test customizations to improve the query results for your project. A list of sample queries is displayed to help you get started with submitting test queries.
+
+1.  Click the **Run search** button for`IBM`.
+
+    Query results are displayed.
+
+1.  From one of the query results, click **View passages in document**. 
+
+    A preview of the document where the result was found is shown.
+
+## Customize the sample project
 {: #customize-project-tool}
+{: step}
 
-Now, let's customize a bit. Starting on the **Improve and Customize** page, complete the following steps:
+Now, let's customize the search result view a bit by adding a facet. A facet is a way to organize and classify documents that share similar patterns or content.
 
-1.  Enter the natural language query `How do I install {{site.data.keyword.icp4dfull_notm}}` in the query field.
-1.  Review the query results that are displayed. View the source document for each result by clicking on **View passage in document**.
-1.  On the **Improvement tools** panel, choose **Customize display**, and select **Facets**. Select **New facet**, then click the **From existing fields in a collection** button. Choose `enriched_text.entities.type` from the dropdown and click **Apply**. The new facets will display. You can change the name of the facet label, and the filtering behavior.
+1.  From the *Improve and customize* page, submit the following natural language query:
 
-## Step 5: Keep exploring and experimenting
-{: #next-steps-tool}
+    ```
+    How do I install Discovery?
+    ```
 
-Continue experimenting with the Sample Project. A few other things you might want to try:
+1.  Review the query results that are displayed.
 
-- Select the **Manage collections** icon on the navigation panel. Click the **New collection** button. Choose **Upload data** and create a new collection with a few of your own documents.
-- Select the **Integrate and Deploy** icon on the navigation panel. On the **Share preview link** tab, copy the link and paste it in your browser to preview your application. On the **Explore UI components** tab, click the **Try it on Storybook** link for any of the components.
-- Select the **Improve and customize** icon on the navigation panel. On the **Improvement tools** panel, select **Customize display**, then choose **Search results**. In the **Select field to display as titles**, choose `document_id` from the dropdown and click **Apply**. The document identifier in each search result will switch from the document name to the document id number.
+    ![Shows the query results for a natural language query with the Top Entities facet expanded.](images/gs-sample-entities-facet.png)
+
+    Notice that a *Top Entities* section is displayed. You can expand the entities and click one of them to filter the query results to show only those results in which the entity is mentioned. The *Top Entities* section is a built-in facet. It uses information that was added to the documents by the Entities enrichment.
+
+    You will add your own facet that uses the Keywords enrichment that you applied to the collection in a previous step.
+
+1.  On the **Improvement tools** panel, expand **Customize display**, and then click **Facets**.
+
+    ![Shows the expanded Customize display section in the Improvement tools pane.](images/gs-facet-sidebar.png)
+
+1.  Click **New facet**, and then click the **From existing fields in a collection** button.
+
+    ![Shows the options for the types of facets you can add.](images/gs-facet-add-options.png)
+
+1.  Choose `enriched_text.keywords.mentions.text`, change the label to `Keywords`, and then click **Apply**. 
+
+    ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png)
+    
+    The new facet is displayed.
+
+    ![Shows the keyword facet looks.](images/gs-keyword-facet-added.png)
+
+You successfully added a built-in NLU enrichment that recognizes keywords in the sample collection documents. Then, you added a facet that uses the keywords enrichment to let you filter the documents by keyword.
+
+## Share the sample project
+{: #gs-deploy}
+{: step}
+
+1.  Click **Integrate and deploy** from the navigation panel. 
+
+    From here, you can share your project with colleagues and deploy it.
+
+1.  Follow the on-screen instructions to add a user, and then send login credentials and the provided link to your colleague.
+
+    ![Shows the Integrate and deploy page.](images/gs-deploy.png)
+
+    After you build your own search application and are ready to deploy it, you can use prebuilt user interface components or build a custom application.
+
+    - Click **API Information**. From this page, you can get the project ID for your project. You need the project ID to use the Discovery API. You also need the service instance URL and API key. The credential details are available from the Manage page of your service instance in IBM Cloud.
+    
+    - Click **UI Components** to find links to ready-to-use code that you can use to create a full-featured search application faster.
+
+## Add your own content
+{: #gs-start-here}
+{: step}
+
+Now that you know more about some of the features of the product, you're ready to create a project and add your data.
+
+1.  Click **My Projects** to return to the main projects page.
+
+    A **Guided tours** link is available from the header of this page. The tours are a great way to learn about using the project.
+    {: tip}
+
+    ![Shows the Guided tours menu item in the page header.](images/gs-guided-tours.png)
+
+1.  Click **New project**, and choose the right type of project for your use case.
+
+    See the [Project descriptions](/docs/discovery-data?topic=discovery-data-getting-started#project-descriptions) for help.
+    
+1. Add data to the project.
+
+    See the [Supported data sources](/docs/discovery-data?topic=discovery-data-getting-started#supported-data-sources) table to learn about your options.
+
+{{site.data.content.projects-reuse}}
+
+{{site.data.content.data-sources-reuse}}
 
 ## Bonus: Get help from anywhere
 {: #handy-tools}
 
-To open the product documentation, select the **Help** ![Help icon](images/help_icon.png) icon from the page header. The help content is customized to provide information that is related to what you're doing in the product.
+To open the product documentation, select the **Help** icon ![Help icon](images/help_icon.png) from the page header. The help content is customized to provide information that is related to what you're doing in the product.

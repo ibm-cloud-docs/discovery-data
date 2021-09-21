@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-09-21"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -199,23 +199,7 @@ For more information about how fields in uploaded files are handled, see [How fi
 
 The following table shows the supported data sources for each deployment type.
 
-| Data source | IBM Cloud | IBM Cloud Pak for Data |
-|-------------|-----------|------------------------|
-| Box | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Database (IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| FileNet P8 | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| HCL Notes | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| IBM Cloud Object Storage | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Local file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Salesforce | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft SharePoint Online | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft SharePoint On-Premises | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Website | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft Windows file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Supported data sources" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
+{{site.data.content.data-sources-reuse}}
 
 ## Crawl schedule options
 {: #crawlschedule}
