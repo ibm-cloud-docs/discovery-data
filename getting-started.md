@@ -264,7 +264,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
     "enriched_{field_name}": [
       "keywords" : [
         "mentions : [
-          "text": "Watson Discovery"
+          "text": "Cloud Pak"
         ]
       ]
     ]
@@ -310,15 +310,43 @@ Now that you know more about some product features, you're ready to create a pro
 
 1.  Click **New project**, and choose the right type of project for your use case.
 
-    See the [Project descriptions](/docs/discovery-data?topic=discovery-data-getting-started#project-descriptions) for help.
+    See the [Project descriptions](#gs-projects) for help.
     
 1. Add data to the project.
 
-    See the [Supported data sources](/docs/discovery-data?topic=discovery-data-getting-started#supported-data-sources) table to learn about your options.
+    See the [Supported data sources](#gs-data-sources) table to learn about your options.
 
-{{site.data.content.projects-reuse}}
+### Project descriptions
+{: #gs-projects}
 
-{{site.data.content.data-sources-reuse}}
+| Need | Goal | Project type |
+|--------------------|------|--------------|
+| *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a stand-alone enterprise search application or in the search field of a business application. | **Document Retrieval** |
+| *Where is the part of the contract that I need for my task?* | Quickly extract critical information from contracts. | **Document Retrieval for Contracts** |
+| *I want the chatbot I'm building to use knowledge that I own* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |
+| *I want to uncover insights I didn't know to ask about.* | Gain insights from pattern analysis or perform root cause analysis. | **Content Mining** |
+{: caption="Project type use cases" caption-side="top"}
+
+### Supported data sources
+{: #gs-data-sources}
+
+| Data source | IBM Cloud | IBM Cloud Pak for Data |
+|-------------|-----------|------------------------|
+| Box | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Database (IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| FileNet P8 | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| HCL Notes | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| IBM Cloud Object Storage | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Local file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Salesforce | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Microsoft SharePoint Online | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Microsoft SharePoint On-Premises | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Website | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Microsoft Windows file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Supported data sources" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
 
 ## Bonus: Get help from anywhere
 {: #handy-tools}
