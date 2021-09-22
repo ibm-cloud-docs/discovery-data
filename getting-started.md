@@ -58,7 +58,7 @@ Choose the appropriate step to complete for your deployment:
   
      For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}. 
   
-     If you decide to discontinue use the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
+     If you decide to discontinue use of the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
      {: important}
   
   1. Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
