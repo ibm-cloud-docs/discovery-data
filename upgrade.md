@@ -59,6 +59,16 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
 
     - You cannot do an in-place upgrade from a Plus plan to a Premium plan.
 
-      A Premium plan instance must be provisioned for you. To start the process, [create a new resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} and choose the Premium plan option.
+      A Premium plan instance must be provisioned for you. To start the process, contact [Sales](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson&disableCookie=Yes){: external}. You will be asked to provide the following details:
+
+      - Customer name
+      - Customer email
+      - Planned deployment date
+      - Data center location, such as Dallas or Frankfurt
+      - Account ID
+      - Resource group name
+      - Resourc group ID
+
+        The resource group is created by the account holder.
 
 For more information about plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
