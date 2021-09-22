@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-21"
 
 keywords: release notes
 
@@ -329,7 +329,7 @@ Changes made in this release:
 - **Additional Language support** - Basic support for Czech, Slovak, Russian, Polish and Romanian. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 - **Built-in table understanding** - Extract tables from your documents without training, and optionally return tables as answers to natural language queries. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables). 
 - **Connector SDK** - Build custom connectors your Discovery users can use to build their own applications. For more information, see [Building and implementing a custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
-- **Sample Project** - The sample project is preloaded with data so you can learn about Discovery. For more information, see [Getting started with Watson Discovery for {{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-getting-started).
+- **Sample Project** - The sample project is preloaded with data so you can learn about Discovery. For more information, see [Getting started with Watson Discovery](/docs/discovery-data?topic=discovery-data-getting-started).
 - **Passage retrieval** - Will return the most relevant passages from your documents, plus you can specify the number of passages returned per document. See [passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
 - **Project level querying and relevancy training** - Query multiple collections at once including relevance training.
 - Improvements and additional options to the **Web crawl connector** - For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-collection-types#connectwebcrawl).

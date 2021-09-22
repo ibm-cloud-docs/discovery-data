@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-22"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -58,7 +58,7 @@ Choose the appropriate step to complete for your deployment:
   
      For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}. 
   
-     If you decide not to continue to use the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
+     If you decide to discontinue use of the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
      {: important}
   
   1. Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
@@ -214,6 +214,16 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     A preview of the document where the result was found is shown.
 
+1.  Click **JSON**.
+
+    A JSON representation of the document is displayed. 
+    
+    ![Shows the JSON representation of the document.](images/gs-json-tab.png)
+    
+    You can explore the JSON representation to see information that Discovery captured from the document. For example, if you expand the `enriched_text` section, and then expand the `entities` section, you can see mentions of entities that were recognized and tagged by the Entities enrichment.
+
+    ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png)
+
 ## Customize the sample project
 {: #customize-project-tool}
 {: step}
@@ -245,8 +255,23 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 1.  Choose `enriched_text.keywords.mentions.text`, change the label to `Keywords`, and then click **Apply**. 
 
     ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png)
+
+    Remember the JSON representation of the document that you looked at earlier? Now that the Keywords enrichment is applied to the `text` field, and the documents are reprocessed, any keyword mentions found in the `text` field are included in the JSON representation of the document. 
     
-    The new facet is displayed.
+    The field you picked to use for the facet (`enriched_text.keywords.mentions.text`) reflects where the keyword text is stored in JSON.
+
+    ```
+    "enriched_{field_name}": [
+      "keywords" : [
+        "mentions : [
+          "text": "Watson Discovery"
+        ]
+      ]
+    ]
+    ```
+    {: codeblock}
+    
+1.  The new facet is displayed. You can click a keyword to filter the documents to include only those results that mention the keyword.
 
     ![Shows the keyword facet looks.](images/gs-keyword-facet-added.png)
 
@@ -274,7 +299,7 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 {: #gs-start-here}
 {: step}
 
-Now that you know more about some of the features of the product, you're ready to create a project and add your data.
+Now that you know more about some product features, you're ready to create a project and add your data.
 
 1.  Click **My Projects** to return to the main projects page.
 
