@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-21"
 
 subcollection: discovery-data
 
@@ -94,7 +94,7 @@ Documents that you add to a project of this type are automatically enriched in t
 
 This tagged information is used later when a natural language phrase is submitted as a search query to return a smarter response.
 
-A sample Document Retrieval project is available for you to explore. For more information, see [Getting started with the Watson Discovery Sample Project](/docs/discovery-data?topic=discovery-data-getting-started).
+A sample Document Retrieval project is available for you to explore. For more information, see [Getting started with Watson Discovery](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip}
 
 ### Document Retrieval for Contracts ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
