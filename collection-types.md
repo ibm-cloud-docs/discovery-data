@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-09-22"
 
 subcollection: discovery-data
 
@@ -119,7 +119,7 @@ Document Level Security is supported by the following data source types:
 
 To enable document level security, you must complete the following steps:
 
-1.  [Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system](#createuserdls).
+1.  [Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system](#createusersdls).
 1.  [Associate users with your {{site.data.keyword.discoveryshort}} instance](#associateusersdls).
 1.  Enable document level security for the data source when you connect to it.
 
