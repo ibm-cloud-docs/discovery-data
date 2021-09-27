@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-09-27"
 
 keywords: release notes
 
@@ -60,6 +60,14 @@ Find software release information for your deployment type:
 - [![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} releases](#rn-cpd)
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+## Both managed and installed deployments
+{: #rn-both}
+
+### 21 September 2021
+{: #21september2021}
+
+- **Microsoft SharePoint Online connector is not crawling data**: Due to a change that was introduced in the Microsoft API that is used by the {{site.data.keyword.discoveryshort}} connector to crawl the external data source, the crawler is unable to access data. The {{site.data.keyword.discoveryshort}} is working with the vendor to address the API issue. For more information, see the discussion about the regression on the [Microsoft Q&A site](https://docs.microsoft.com/en-us/answers/questions/559971/sitedataasmx-does-not-return-any-resources-on-shar.html){: external}.
 
 ## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} releases
 {: #rn-cloud}

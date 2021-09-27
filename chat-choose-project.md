@@ -32,10 +32,10 @@ subcollection: discovery-data
 # Choosing the right project type for a chatbot
 {: #chat-choose-project}
 
-For a straight-forward solution to deliver answers from a virtual assistant that is built with {{site.data.keyword.conversationshort}}, choose the *Conversational Search* project type. For more complex use cases, consider using the *Document Retrieval* project type.
+For a straightforward solution to deliver answers from a virtual assistant that is built with {{site.data.keyword.conversationshort}}, choose the *Conversational Search* project type. For more complex use cases, consider using the *Document Retrieval* project type.
 {: shortdesc}
 
-When you create a project to support a chatbot, you must choose the type of project to use to store your data collections. To help you make the decision, review the differences in the {{site.data.keyword.discoveryshort}} project types that are described in the following table.
+When you create a project to support a chatbot, you must choose the type of project to store your data collections. To help you make the decision, review the differences in the {{site.data.keyword.discoveryshort}} project types that are described in the following table.
 
 | Function | Conversational Search | Document Retrieval |
 |----------|-----------------------|--------------------|
