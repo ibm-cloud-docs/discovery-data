@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-24"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -147,7 +147,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
 1.  For the *Entities v2* enrichment, click **1x Selected fields**.
 
-    A list of available fields is displayed, and the `text` field is selected. This selection means that the *Entities* enrichment was applied to content that was indexed and added to a field named `text` when documents from the collection were processed.
+    A list of available fields is displayed and the `text` field is selected. This selection means that the *Entities* enrichment was applied to content that was indexed and added to a field named `text` when documents from the collection were processed.
 
     ![Shows that the Entities enrichment is applied to the text field.](images/gs-entities-on-text.png)
 
@@ -178,7 +178,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     Most content from a document is indexed in the `text` field automatically. You might want to index certain types of content in different fields or split up large documents so that the `text` field contains fewer passages per document. To do so, you can teach Discovery to recognize important fields in your documents by applying a *Smart Document Understanding* model to your collection.
 
-    Smart Document Understanding (SDU) is a technology that learns about a document's structure. You can apply a prebuilt SDU model or create a custom SDU model.
+    Smart Document Understanding (SDU) is a technology that learns about the content of a document based on the document's structure. You can apply a prebuilt SDU model or create a custom SDU model.
 
     ![Shows the SDU model options.](images/gs-sample-id-fields.png)
     

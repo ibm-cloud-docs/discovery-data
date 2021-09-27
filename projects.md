@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-27"
 
 subcollection: discovery-data
 
@@ -136,6 +136,8 @@ The *Conversational Search* project returns information from a connected data co
 Use {{site.data.keyword.conversationfull}} and {{site.data.keyword.discoveryshort}} together to give your assistant access to technical content and other knowledge base resources without having to relocate or copy your corporate data. The built-in synchronization capabilities mean that your assistant can share the most up-to-date information available. Use the integrations that are provided with {{site.data.keyword.conversationshort}} to deploy an assistant that connects to this project to various platforms, including your company website, in minutes.
 
 The documents that you add to this type of project are not enriched automatically.
+
+If you need to perform more complex searches from your virtual assistant, you might want to create a *Document Retrieval* project instead of *Conversational Search* project. For more information, see [Choosing the right project type for a chatbot](/docs/discovery-data?topic=discovery-data-chatbot-choose-project).
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
 

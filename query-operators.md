@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-02"
+lastupdated: "2021-09-24"
 
 subcollection: discovery-data
 
@@ -221,7 +221,7 @@ enriched_text.concepts.text:Watson~3
 ## `:*` (Exists)
 {: #exists}
 
-Used to return all results where the specified `field` exists.
+Used to return all results where the specified field exists.
 
 For example:
 
@@ -233,7 +233,7 @@ title:*
 ## `:!*` (Does not exist)
 {: #dnexist}
 
-Used to return all results that do not include the specified `field`.
+Used to return all results that do not include the specified field.
 
 For example:
 
