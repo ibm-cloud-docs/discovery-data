@@ -61,8 +61,10 @@ Find software release information for your deployment type:
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
-## Both managed and installed deployments
+## All releases
 {: #rn-both}
+
+The following features or issues apply to both managed and installed deployments.
 
 ### 21 September 2021
 {: #21september2021}
@@ -200,6 +202,17 @@ This release is available for Premium instances of {{site.data.keyword.discovery
 The following new features and changes are available for installed deployments. 
 
 For more information about software releases for managed deployments, see [{{site.data.keyword.cloud_notm}} releases](#rn-cloud).
+
+<!--### IBM Cloud Private End Of Support
+{: #30september2021}
+
+Effective 30 September 2021, IBM withdrew support for the following programs:
+
+- IBM Watson Assistant Discovery Extension for IBM Cloud Private
+- IBM Watson Discovery for ICP for Data
+- IBM Watson Discovery for ICP for Data Add-on
+
+For more information, see announcements [ENUS921-005.PDF](https://www.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&infotype=an&appname=iSource&supplier=897&letternum=ENUS921-005){: external} and [ENUSLP21-0099.PDF](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/9/899/ENUSLP21-0099/index.html&request_locale=en).-->
 
 ### ![Cloud Pak for Data only](images/desktop.png) 4 release, 13 July 2021
 {: #13july2021}
