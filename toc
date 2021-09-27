@@ -27,7 +27,7 @@ Discovery
     {: topicgroup}
     Creating a project
         projects.md
-        chatbot-choose-project.md
+        chat-choose-project.md
         project-defaults.md
     
     {: topicgroup}
