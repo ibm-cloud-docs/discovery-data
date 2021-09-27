@@ -54,6 +54,3 @@ For more information about configuring search support from {{site.data.keyword.c
 - From an actions skill, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search){: external}.
 - From a dialog skill, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill){: external}.
 <!-- From the new Beta user interface, see [Search trigger](/docs/watson-assistant?topic=watson-assistant-search-add#search-add-trigger){: external}.-->
-
-If you choose to use a *Document Retrieval* project type with your virtual assistant, filter the query results to show matches from a single collection at a time. Although you can add up to 5 collections to both project types in {{site.data.keyword.discoveryshort}}, you can choose only one collection to connect to from {{site.data.keyword.conversationshort}}. To ensure that your tests reflect how the search will function in reality, limit the search to one collection. You can test more than one collection to find the one that returns the best answers, and then connect to that collection from your assistant.
-{: tip}
