@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-27"
 
 subcollection: discovery-data
 
@@ -103,9 +103,9 @@ If you want to use the Entities v1 legacy enrichment instead of Entities v2, you
 In the JSON output:
 
 - `text` = string. The entity text
-- `type` = string. The entity type, including but not limited to `Organization`, `Company`, `EmailAddress`, `JobTitle`, `Location`, `Person`, `Quantity`.
+- `type` = string. The entity type, such as `Organization`, `Location`, `Person`, `Number`.
 - `mentions` = array. The entity mentions and locations
-- `model_name` = string. For custom models, this field contains the user-provided model name. Otherwise, this field contains the default name of the model: `watson_knowledge_studio`, `dictionary`, `character_pattern`, or `natural_language_understanding`
+- `model_name` = string. For custom models, this field contains the user-provided model name. Otherwise, this field contains the default name of the model, such as `watson_knowledge_studio`, `dictionary`, `character_pattern`, or `natural_language_understanding`
 
 ```json
 {
@@ -114,6 +114,7 @@ In the JSON output:
       "model_name": "natural_language_understanding",
       "mentions": [
         {
+          "confidence": 0.8317045,
           "location": {
             "end": 3,
             "begin": 0
@@ -122,12 +123,13 @@ In the JSON output:
         }
       ],
       "text": "IBM",
-      "type": "Company"
+      "type": "Organization"
     },
     {
       "model_name": "natural_language_understanding",
       "mentions": [
         {
+          "confidence": 0.6114863,
           "location": {
             "end": 75,
             "begin": 69
@@ -179,7 +181,8 @@ In the JSON output:
           "text": "Watson Discovery"
         }
       ],
-      "text": "Watson Discovery"
+      "text": "Watson Discovery",
+      "relevance": 0.503613
     },
     {
       "mentions": [
@@ -191,7 +194,8 @@ In the JSON output:
           "text": "award-winning"
         }
       ],
-      "text": "award-winning"
+      "text": "award-winning",
+      "relevance": 0.728722
     },
     {
       "mentions": [
@@ -203,7 +207,8 @@ In the JSON output:
           "text": "search technology"
         }
       ],
-      "text": "search technology"
+      "text": "search technology",
+      "relevance": 0.779356
     }
   ]
 }
