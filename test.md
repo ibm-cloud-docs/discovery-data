@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-27"
 
 keywords: JSON, JSON representation, result JSON
 
@@ -114,13 +114,16 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
             "model_name": "natural_language_understanding",
             "mentions": [
               {
+                "confidence": 0.8317045,
                 "location": {
                   "end": 183,
                   "begin": 180
                 },
                 "text": "IBM"
               }
-            ]
+            ],
+            "text": "IBM",
+						"type": "Organization"
           }
         ]
       }
@@ -152,8 +155,10 @@ The NLU enrichments are displayed in a JSON object named `enriched_{field_name}`
                  },
                 "text": "brands"
               }
-            ]
-          }
+            ],
+						"text": "brands",
+						"relevance": 0.728722
+					}
         ]
       }
     ]

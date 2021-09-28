@@ -78,6 +78,14 @@ The following new features and changes are available for managed deployments.
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
 
+### ![IBM Cloud only](images/ibm-cloud.png) 24 September 2021
+{: #24september2021}
+<!--4.0.3-1.2-->
+
+- **Confidence scores are returned for enrichments**: Relevance and confidence scores are displayed for NLU enrichments that are returned by search. 
+
+  For example, when you open the JSON view of the document preview from a query result, you can see confidence scores for Entities mentions and relevance scores for Keyword mentions.
+
 ### ![IBM Cloud only](images/ibm-cloud.png) 9 September 2021
 {: #9september2021}
 
