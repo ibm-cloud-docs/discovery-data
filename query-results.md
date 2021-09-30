@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-28"
 
 keywords: passages, query results
 
@@ -97,7 +97,10 @@ To change the content of the query results, complete the following steps:
 1.  From the *Improvement tools* pane, expand **Customize display**, and then click **Search results**.
 1.  **Optional**: Change the field that is shown as the title of the query result.
 
-    The title is displayed after the text excerpt.
+    The title is displayed after the text excerpt. 
+    
+    This option is not available for *Conversational Search* projects.
+    {: note}
 1.  Choose **Field** to switch to showing excerpts from a specific field, and then select the field that you want to use as the source of the query result text.
 1.  Click **Apply**.
 
@@ -108,4 +111,4 @@ To change the content of the query results, complete the following steps:
 
 {{site.data.keyword.discoveryshort}} uses sentence boundary detection to pick a passage that includes a full sentence. It searches for passages that have an approximate length of 200 characters, then looks at chunks of content that are twice that length to find passages that contain full sentences. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
-For all project types except Conversational Search, you can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
+For all project types except *Conversational Search*, you can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
