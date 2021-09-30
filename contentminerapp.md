@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-30"
 
 subcollection: discovery-data
 
@@ -44,7 +44,7 @@ This page describes using the Content Mining application. For information about 
 
 ![IBM Watson Discovery Content Mining](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_7m4thupw){: video output="iframe" data-script="#video-transcript-ui" id="mediacenterplayer" frameborder="0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen}
 
-#### Video transcript
+### Video transcript
 {: #video-transcript-ui}
 {: notoc}
 Watson Discovery Content Mining Project presented by Stuart Strolin -- (Music intro) The purpose of this video is to familiarize you with the content mining project in Watson Discovery. 

@@ -171,6 +171,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
     The processing time increases when this feature is enabled.
     {: note}
+
 1. Click **Finish**.
 
 The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
@@ -213,4 +214,5 @@ To enrich database content for use in a Document Retrieval project, complete the
 
     When you are prompted to choose a collection, choose **Reuse data from an existing collection**. If necessary, scroll to see this option.
     {: note}
+
 1.  Select the collection that you created and enriched by using the Content Mining project, and then click **Finish**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-30"
 
 subcollection: discovery-data
 
@@ -85,6 +85,7 @@ To annotate documents, complete the following steps:
     
       You cannot change the field label color later.
       {: important}
+
     - Click **Create**.
 1.  First, click a field label to activate it.
 1.  Next, click the block that represents the content that you want to label as the field type.
@@ -112,6 +113,7 @@ To annotate documents, complete the following steps:
 
     Continue annotating documents until Watson can correctly and consistently map different types of content to the appropriate fields for you.
     {: note}
+
 1.  After you teach Watson to identify fields, click **Apply changes and reprocess**.
 
 Custom fields that you define by using the SDU tool are indexed as root-level fields.

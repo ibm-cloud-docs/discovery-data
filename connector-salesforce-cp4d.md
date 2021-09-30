@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-09-30"
 
 subcollection: discovery-data
 
@@ -91,7 +91,7 @@ For information about downloading the WSDL JAR files, see the following links:
 
 1. Compress the JAR files into a compressed file. You will upload the compressed file to {{site.data.keyword.discoveryshort}} in the next procedure.
 
-#### Connecting to a Salesforce data source
+### Connecting to a Salesforce data source
 {: #connector-salesforce-cp4d-task}
 
 From your {{site.data.keyword.discoveryshort}} project, complete the following steps:

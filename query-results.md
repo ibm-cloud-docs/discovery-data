@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: passages, query results
 
@@ -87,7 +87,7 @@ Preview the default query results.
 - If you want to learn more about what information is indexed per document, see [Interpreting the results](/docs/discovery-data?topic=discovery-data-test#test-json).
 - For tips on how you can improve the quality of your results, see [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements).
 
-### Changing the result content
+## Changing the result content
 {: #query-results-content}
 
 For all project types, you can control where the data comes from that is returned in query results. By default, results consist of passages from the `text` field. The passages that {{site.data.keyword.discoveryshort}} calculates to contain the most relevant information are returned. However, you can change the result content to return content from a field other than the `text` field.
