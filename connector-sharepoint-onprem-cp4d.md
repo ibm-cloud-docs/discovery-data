@@ -127,6 +127,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
     The processing time increases when this feature is enabled.
     {: note}
+
 1. Click **Finish**.
 
 The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
