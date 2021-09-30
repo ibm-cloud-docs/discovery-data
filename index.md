@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 subcollection: discovery-data
 
@@ -39,9 +39,12 @@ Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understan
 
 ![Discovery diagram](images/aboutdiscovery.png)
 
+## Using Discovery
+{: #about-deployment-types}
+
 {{site.data.keyword.discoveryshort}} can be deployed as a managed cloud service or can be installed on premises. This documentation describes how to use the product regardless of how it is deployed. Information that applies exclusively to one deployment type is denoted by the appropriate icon:
 
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** for installed instances, such as {{site.data.keyword.discovery-data_short}}.
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** for installed instances, such as {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}}.
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** for managed instances, such as {{site.data.keyword.discoveryshort}} Plus and Premium plan instances that are hosted by {{site.data.keyword.cloud_notm}} or instances that are provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html).
 
 Click the Help ![Help icon](images/help_icon.png) icon from the header of any page to open the {{site.data.keyword.discoveryshort}} documentation.
