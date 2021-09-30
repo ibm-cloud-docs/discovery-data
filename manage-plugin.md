@@ -38,7 +38,7 @@ You can use the `scripts/manage_crawler_plugin.sh` script to perform common plug
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## Commands and options for managing your crawler plug-ins
 {: #mng-plugin-cmd-opt}

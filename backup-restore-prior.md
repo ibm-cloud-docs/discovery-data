@@ -38,7 +38,7 @@ Use the following procedures to back up and restore data in your {{site.data.key
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 These procedures are for advanced users who have experience with administering {{site.data.keyword.discovery-data_short}} clusters. You do not need to back up and restore data as part of standard use or maintenance.
 {: important}
@@ -415,7 +415,7 @@ To migrate your Box crawler, complete the following steps:
     ```
     ./migrate-box-credential.sh migrate <json_file_name> <user_data_directory> <backup_file_name>
     ```
-    {:pre}
+    {: pre}
 
 To see the backup, restore, and migration restrictions for all versions of {{site.data.keyword.discoveryshort}}, see [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore). For more information about the backup and restore methods, see [Back up and restore methods](/docs/discovery-data?topic=discovery-data-backup-restore#backup-restore-methods).
 

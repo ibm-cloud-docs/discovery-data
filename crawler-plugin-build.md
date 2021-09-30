@@ -38,7 +38,7 @@ subcollection: discovery-data
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 Any custom code that you use with {{site.data.keyword.discoveryfull}} is the responsibility of the developer; IBM Support does not cover any custom code that the developer creates.
 {: note}

@@ -35,12 +35,12 @@ subcollection: discovery-data
 {: #connector-web-cp4d}
 
 Crawl a website. You can crawl public websites and websites that require authentication.
-{:shortdesc}
+{: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments. For more information about crawling a website from a managed deployment, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
-{:note}
+{: note}
 
 ## What documents are crawled
 {: #connector-web-cp4d-docs}

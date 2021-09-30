@@ -35,12 +35,12 @@ subcollection: discovery-data
 {: #connector-database-cp4d}
 
 Crawl documents that are stored in a database that supports the Java Database Connectivity (JDBC) API.
-{:shortdesc}
+{: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## What documents are crawled
 {: #connector-database-cp4d-docs}

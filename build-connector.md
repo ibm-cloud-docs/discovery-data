@@ -38,7 +38,7 @@ subcollection: discovery-data
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 Any custom code that is used with {{site.data.keyword.discoveryfull}} is the responsibility of the developer and is not covered by IBM support.
 {: note}
@@ -85,7 +85,7 @@ These capabilities can be implemented by using the interfaces and methods that a
 {: #connector-notes}
 
 Observe the following notes and warnings when you implement a custom connector.
-{:shortdesc}
+{: shortdesc}
 
 - Custom connectors do *not* support the following features:
 

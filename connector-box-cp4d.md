@@ -35,12 +35,12 @@ subcollection: discovery-data
 {: #connector-box-cp4d}
 
 Crawl documents that are stored in a Box data source.
-{:shortdesc}
+{: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments. For more information about connecting to Box from a managed deployment, see [Box](/docs/discovery-data?topic=discovery-data-connector-box-cloud).
-{:note}
+{: note}
 
 ## What documents are crawled
 {: #connector-box-cp4d-docs}

@@ -35,12 +35,12 @@ subcollection: discovery-data
 {: #connector-notes-cp4d}
 
 Crawl an HCL Notes (formerly Lotus Notes) database.
-{:shortdesc}
+{: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## What documents are crawled
 {: #connector-notes-cp4d-docs}

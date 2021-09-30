@@ -40,7 +40,7 @@ Find information about how to install IBM Watson Discovery Cartridge for IBM Clo
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 You install {{site.data.keyword.icp4dfull}}, and then install the {{site.data.keyword.discoveryshort}} service.
 

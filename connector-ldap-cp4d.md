@@ -35,12 +35,12 @@ subcollection: discovery-data
 {: #connector-ldap-cp4d}
 
 Crawl records in an external directory that supports the Lightweight Directory Access Protocol (LDAP).
-{:shortdesc}
+{: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 As the directory data is added to your collection, {{site.data.keyword.discoveryshort}} interprets and stores key attributes of each record according to the configuration that you specify. Later, you can find relevant records by filtering on the attributes that are of interest to you. For example, you can capture department and location information, and then filter records by location later.
 

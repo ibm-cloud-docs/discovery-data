@@ -35,12 +35,12 @@ subcollection: discovery-data
 {: #connector-sharepoint-online-cp4d}
 
 Crawl documents that are stored in an online Microsoft SharePoint data source.
-{:shortdesc}
+{: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments. For more information about connecting to an online SharePoint site from a managed deployment, see [SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
-{:note}
+{: note}
 
 ## What documents are crawled
 {: #connector-sharepoint-online-cp4d-docs}

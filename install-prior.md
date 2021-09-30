@@ -40,7 +40,7 @@ Find information related to scaling and upgrading earlier releases of {{site.dat
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 For full installation instructions, see the following topics:
 
