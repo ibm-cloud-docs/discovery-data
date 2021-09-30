@@ -38,7 +38,7 @@ After you build and deploy a crawler plug-in, you can configure your {{site.data
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 - You can create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). 
 - You can select a successfully deployed crawler plug-in when you create and manage a collection.

@@ -38,7 +38,7 @@ The crawler plug-in includes a file that is called `com.ibm.es.ama.plugin.Crawle
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## Interfaces and Javadoc
 {: #plugin-interfaces-jdoc}

@@ -38,7 +38,7 @@ After you write the source code for your crawler plug-in, you must assemble and 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## Prerequisites
 {: #plugin-composition-prereqs}

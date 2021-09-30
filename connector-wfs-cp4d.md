@@ -35,12 +35,12 @@ subcollection: discovery-data
 {: #connector-wfs-cp4d}
 
 Crawl documents that are stored in a Microsoft Windows file system.
-{:shortdesc}
+{: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## What documents are crawled
 {: #connector-wfs-cp4d-docs}

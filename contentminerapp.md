@@ -571,7 +571,7 @@ The number of regular expression patterns that you can define per service instan
 {: #doc-flags}
 
 By using document flags, you can assign a custom flag to a document or a group of documents for classification, export, or further analysis.
-{:shortdesc}
+{: shortdesc}
 
 Document flagging is convenient after you perform multiple searches to find the set of documents that you want to further examine, export, or classify. The administrator creates the document flags that users can select in the Content Mining application. After you flag documents, users can filter the documents by viewing the flag count on the document result set for further analysis. When you click **Add flag**, the **Document flags** dialog box opens, where you can name the flag, add a description, and choose a flag color. Select **Enabled** so that the flags appear in your documents, and click **Save** to make them available in your collection.
 

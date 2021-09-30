@@ -38,7 +38,7 @@ You package a number of component files together to create a custom connector.
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## Custom connector components
 {: #ccs-components}
@@ -201,6 +201,7 @@ To hide the **Enable Document Level Security** option from {{site.data.keyword.d
     <declare type="boolean" name="document_level_security_supported" hidden="true" initial-value="false"/>
     ```
     {: codeblock}
+
 1.  Rebuild the connector package, and then upload it again.
 
 ### Section: `datasource_settings`

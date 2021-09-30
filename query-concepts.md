@@ -436,7 +436,7 @@ How to estimate the number of queries your application will use per month depend
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 If you enable document level security for a collection, only documents that the current user has permission to access are returned in search results. For more information, see [Configuring document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 

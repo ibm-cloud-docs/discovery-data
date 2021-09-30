@@ -38,7 +38,7 @@ The custom connector example includes a Java package named `com.ibm.es.ama.custo
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
-{:note}
+{: note}
 
 ## Interfaces and Javadoc
 {: #ccs-interfaces-jdoc}
