@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-30"
 
 subcollection: discovery-data
 
@@ -19,7 +19,7 @@ subcollection: discovery-data
 {:screen: .screen}
 {:download: .download}
 {:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
+{:apikey: data-credential-placeholder='apikey'}
 {:url: data-credential-placeholder='url'}
 {:curl: .ph data-hd-programlang='curl'}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -129,11 +129,11 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
 1.  Make each script executable by running the following command:
 
     ```bash
-    chmod +x <script-name>
+    chmod +x <name-of-script>
     ```
     {: pre}
 
-    where `<script-name>` is the name of the script.
+    where `<name-of-script>` is the name of the script.
 
 1.  Run the `all-backup-restore.sh` script.
 
@@ -143,14 +143,14 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
     {: pre}
 
     By default, the backup and restore scripts create a `tmp` directory in the current directory that is uses for extracting or compressing backup files.
-      
+
     If you are backing up version 2.1.4, enter the following command:
-  
+
     ```bash
     ./all-backup-restore.sh backup <release_name> [ -f backup_file_name ] [--pvc]
     ```
     {: pre}
-  
+
     The `-f backup_file_name` parameter is optional. The name `watson_discovery_<timestamp>.backup` is used if you don't specify a name.
 
     The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#pvc).
@@ -164,7 +164,7 @@ tar xvf <backup_file_name>
 
 #### Configuring jobs to use PVC
 {: #pvc}
-    
+
 The backup and restore process uses Kubernetes jobs. The jobs use ephemeral volumes that use ephemeral storage. It is a temporary storage mount on the pod that uses local storage of a node. In rare cases, the ephemeral storage is not large enough. You can optionally instruct the job to mount a Persistent Volume Claim (PVC) on its pod to use for storing the backup data. To do so, specify the `--pvc` option when you run the script. The scripts use `emptyDir` of Kubernetes otherwise.
 
 In most cases, you don't need to use a persistent volume. If you choose to use a persistent volume, the volume must be three times as large as the largest backup file in the data store. The size of data store's backup file depends on usage. After you create a backup, you can unpack the archive file to check the file sizes.
@@ -175,7 +175,7 @@ In most cases, you don't need to use a persistent volume. If you choose to use a
 Complete the following steps to restore data in {{site.data.keyword.discoveryfull}} by using the restore scripts:
 
 1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance. HOW???
-  
+
     -  `Postgresql`
     -  `Etcd`
     -  `ElasticSearch`
@@ -197,14 +197,14 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 1.  Make each script executable by running the following command:
 
     ```bash
-    chmod +x <script-name>
+    chmod +x <name-of-script>
     ```
     {: pre}
 
-    where `<script-name>` is the name of the script.
+    where `<name-of-script>` is the name of the script.
 
 1.  Restore the data from the backup file on your local machine to the new {{site.data.keyword.discoveryshort}} deployment by running the following command:
-      
+
     ```bash
     ./all-backup-restore.sh restore -f backup_file_name [--pvc]
     ```
@@ -223,7 +223,7 @@ Manually back up data that is not backed up by using the scripts.
 To manually back up your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
 
 1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
-   
+
     ```bash
     oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
     ```
@@ -254,7 +254,7 @@ Manually restore data that cannot be restored by using the script.
 To manually restore your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
 
 1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
-   
+
     ```bash
     oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
     ```
@@ -282,7 +282,7 @@ To manually restore your data from an instance of {{site.data.keyword.discoverys
 ### Resetting the project type
 {: #contracts}
 
-To use the Content intelligence feature in the 2.2.1 release, you enabled the feature in the overrides YAML file and then installed the service. Afterward, every Document Retrieval project that was created was able to understand contract content by default. 
+To use the Content intelligence feature in the 2.2.1 release, you enabled the feature in the overrides YAML file and then installed the service. Afterward, every Document Retrieval project that was created was able to understand contract content by default.
 
 With the 4.0.0 release, the way to enable contract understanding changed. Now, you do not need to make any customizations before installing the service. Instead, you can create a Document Retrieval project, and then apply the Contracts enrichment to the project. In addition to simplifying the enablement steps, this change means that you can now create a Document Retrieval project without the Contracts enrichment feature if you don't need it.
 
@@ -293,7 +293,7 @@ To change the project type that is assigned to a project that requires the Contr
 Changing a project type with the API is only supported in this specific upgrade scenario. Do not change a project type under any other circumstances or your project might become unusable.
 {: important}
 
-1.  Get the appropriate URL and project ID information for the project that you want to reset. 
+1.  Get the appropriate URL and project ID information for the project that you want to reset.
 
     For more information, see [Using the API](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-api-use#api-use-cpd).
 1.  Use the [Update a project](https://cloud.ibm.com/apidocs/discovery-data#updateproject){: external} API method to change the type that is associated with your project.
