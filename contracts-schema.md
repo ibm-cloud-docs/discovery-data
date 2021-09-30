@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-09-28"
 
 subcollection: discovery-data
 
@@ -32,8 +32,13 @@ subcollection: discovery-data
 # Understanding contracts ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #contracts-schema}
 
-The *Contracts* enrichment is applied to collections in *Document Retrieval for Contract* project types automatically. Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+The *Contracts* enrichment is applied to collections in *Document Retrieval for Contract* project types automatically.
 {: shortdesc}
+
+Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+{: note}
+
+When you create a *Document Retrieval for Contract* project type, the Contracts enrichment is applied to the collections automatically. The enrichment is applied to the `html` field of the documents.
 
 After a document is processed by the Contracts enrichment, the service generates JSON output in the following schema:
 

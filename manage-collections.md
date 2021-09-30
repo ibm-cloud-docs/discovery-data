@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-28"
 
 subcollection: discovery-data
 
@@ -60,7 +60,9 @@ To change how a data source is processed, complete the following steps:
 1.  Click the **Processing settings** tab.
 1.  Make any changes that you want to make to the processing settings.
 
-    The setting options differ by data source type.
+    The setting options differ by data source type. 
+    
+    For more information about changing data synchronization schedules, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Click **Apply changes and reprocess**.
 
 ## Finding where a collection is used

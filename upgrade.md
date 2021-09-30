@@ -67,8 +67,8 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
       - Data center location, such as Dallas or Frankfurt
       - Account ID
       - Resource group name
-      - Resourc group ID
+      - Resource group ID
 
-        The resource group is created by the account holder.
+        The resource group is created by the account holder. For more information, see [Assigning access to resources by using resource groups](/docs/account?topic=account-access-getstarted&interface=ui).
 
 For more information about plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
