@@ -2,33 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:beta: .beta}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Applying prebuilt enrichments
 {: #nlu}
@@ -43,7 +23,7 @@ With Watson NLU, you can identify and tag meaningful information in your collect
 - [Parts of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
 - [Sentiment](#nlu-sentiment): Understands the overall sentiment of the content.
 
-For example, the following image shows a transcript of the US Declaration of Independence that was added to a {{site.data.keyword.discoveryshort}} collection. The Entities enrichment recognizes the terms *Governments*, *States*, and *King of Great Britain* and tags them as entity mentions.
+For example, the following image shows a transcript of the US Declaration of Independence that was added to a {{site.data.keyword.discoveryshort}} collection. The Entities enrichment recognizes the terms *Governments* and *King of Great Britain* (among others) and tags them as entity mentions.
 
 ![Shows the first two paragraphs of the declaration with the terms Governments, States, and King of Great Britain highlighted and with associated JSON representation of the mentions.](images/decl-annotated.png)
 
@@ -65,7 +45,7 @@ For more information about how to create custom enrichments, see [Adding domain-
 ## Add enrichments
 {: #nlu-task}
 
-To add an NLU enrichment, complete the following steps: 
+To add an NLU enrichment, complete the following steps:
 
 1.  Open your project and go to the *Manage collections* page.
 1.  Click to open the collection that you want to enrich.
@@ -74,6 +54,7 @@ To add an NLU enrichment, complete the following steps:
 
     Both built-in enrichments and custom enrichments are listed. Built-in enrichments have a type value of `System`.
     {: note}
+
 1.  Choose one or more fields to apply the enrichment to.
 
     You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. You cannot apply enrichments to fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
@@ -97,9 +78,10 @@ If you want to use the Entities v1 legacy enrichment instead of Entities v2, you
 #### Input
 {: #nlu-entities-example-input}
 
-```
+```text
 "IBM is an American multinational technology company headquartered in Armonk."
 ```
+{: codeblock}
 
 #### Response
 {: #nlu-entities-example-response}
@@ -160,9 +142,10 @@ Returns important keywords in the content.
 #### Input
 {: #nlu-keywords-example-input}
 
-```
+```text
 "Watson Discovery is an award-winning AI search technology."
 ```
+{: codeblock}
 
 #### Response
 {: #nlu-keywords-example-response}
@@ -229,7 +212,7 @@ Recognizes and tags parts of speech, including nouns, verbs, adjectives, adverbs
 
 Analyzes the sentiment that is expressed in text and returns `positive`, `neutral`, or `negative` sentiment.
 
-To understand the sentiment of an entire document, apply this enrichment to a field that contains as much of the text from the document as possible, such as the `text` field. 
+To understand the sentiment of an entire document, apply this enrichment to a field that contains as much of the text from the document as possible, such as the `text` field.
 
 To analyze sentiment in text from multiple fields at once and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Enabling multiple text fields](/docs/discovery-data?topic=discovery-data-contentminerapp#enable-multiple-fields) and [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
 
@@ -239,9 +222,10 @@ To analyze sentiment in text from multiple fields at once and capture the overal
 #### Input
 {: #nlu-sentiment-example-input}
 
-```
+```text
 "It is powerful and easy to use and integrate with third party applications."
 ```
+{: codeblock}
 
 #### Response
 {: #nlu-sentiment-example-response}

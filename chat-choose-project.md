@@ -2,32 +2,13 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Choosing the right project type for a chatbot
 {: #chat-choose-project}
@@ -43,7 +24,7 @@ To help you choose the right {{site.data.keyword.discoveryshort}} project type, 
 |----------|-----------------------|--------------------|
 | Enrichment support | No enrichments are applied automatically. | The *Parts of Speech* and *Entities* enrichments are applied to collections that you add to this project type automatically. These enrichments are helpful for identifying important information and introduce more ways to filter query results. |
 | Testing queries from the *Improve and customize* page in {{site.data.keyword.discoveryshort}} | You see only one of the responses that will be returned from the chatbot. You cannot see all of the available responses and cannot analyze individual query results. | You can filter query results by enrichment-based facets. You can review details about fields that are indexed in the source documents that are returned for a query. Access to more information makes it easier to troubleshoot unexpected results. |
-| Search triggers | Returns answers from the `text` field only. | You can apply a Smart Document Understanding (SDU) model or enrichments to your collections and retrieve useful information from fields other than `text` when search is triggered from the assistant. |
+| Search triggers | Returns answers from the `text` field automatically. If answers are stored in another field, you must change the configuration. | You can apply a Smart Document Understanding (SDU) model or enrichments to your collections and retrieve useful information from fields other than `text` when search is triggered from the assistant. |
 {: caption="Project type details" caption-side="top"}
 
 For both project types, the best way to test is to trigger search from the {{site.data.keyword.conversationshort}} preview. When you configure search support for an assistant, you can fine-tune the experience in ways that aren't available in {{site.data.keyword.discoveryshort}}. And settings that are available from the *Search results* tool for a *Document Retrieval* project type are replaced by configuration settings that you specify in {{site.data.keyword.conversationshort}}. For example, the query response title and body are defined in {{site.data.keyword.conversationshort}}. And a passage length of 325 characters is applied to responses regardless of what you specify in the **Max characters in a passage** field.

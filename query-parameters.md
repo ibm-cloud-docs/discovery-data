@@ -2,34 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-27"
+lastupdated: "2021-10-01"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:beta: .beta}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:beta: .beta}
+{{site.data.keyword.attribute-definition-list}}
 
 # Query parameters
 {: #query-parameters}
@@ -61,79 +40,79 @@ The answer finding feature behaves in the following ways:
 In the passage examples that follow, the short answers are shown in bold font.
 {: note}
 
-- Finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
+-   Finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
 
-  “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
+    “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
 
-- Handles synonyms and lexical variations if the answer is available.
+-   Handles synonyms and lexical variations if the answer is available.
 
-  - Example question: “When did IBM purchase Red Hat?”
-  - Passage: “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
+    -   Example question: “When did IBM purchase Red Hat?”
+    -   Passage: “IBM closed its $34 billion acquisition of Red Hat in **July of 2019**."
 
-- Combines information across multiple sentences if they are close together (within approximately 2,000 characters).
+-   Combines information across multiple sentences if they are close together (within approximately 2,000 characters).
 
-  - Example question: “When did IBM purchase Red Hat?”
-  - Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
+    -   Example question: “When did IBM purchase Red Hat?”
+    -   Passage: “IBM acquired Red Hat for $34 billion. The deal closed in **July of 2019**."
 
-- Handles implicit questions similar to the way it would handle the equivalent explicit question.
+-   Handles implicit questions similar to the way it would handle the equivalent explicit question.
 
-  Example questions: 
+    Example questions:
 
-  - `company that developed the AS/400`
-  - `What company developed the AS/400?`
+    -   `company that developed the AS/400`
+    -   `What company developed the AS/400?`
 
-- Works well with questions with longer phrase or clause answers.
+-   Works well with questions with longer phrase or clause answers.
 
-  - Example question: How do I flip a pancake?
-  - Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
+    -   Example question: How do I flip a pancake?
+    -   Passage: The key to getting a world-class pancake is flipping it properly. The best way to flip a pancake is to **stick a spatula under it, lift it at least 4 inches in the air, and quickly rotate the spatula 180 degrees.**
 
-- Many how or why questions are only fully answered by much longer spans of text. The answer-finding feature does not return a whole document as the answer (and it doesn't summarize a document length answer).
+-   Many how or why questions are only fully answered by much longer spans of text. The answer-finding feature does not return a whole document as the answer (and it doesn't summarize a document length answer).
 
-- Handles yes or no questions that are factual and have a concise answer in the text
+-   Handles yes or no questions that are factual and have a concise answer in the text
 
-  - Example question: Is there a library in Timbuktu
-  - Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house that contains more than 20,000 manuscripts that cover centuries of Mali's history.
+    -   Example question: Is there a library in Timbuktu
+    -   Passage: Timbuktu's **main library, officially called the Ahmed Baba Institute of Higher Islamic Studies and Research**, is a treasure house that contains more than 20,000 manuscripts that cover centuries of Mali's history.
 
-- Handles questions with very short answers, such as names and dates, especially when the type of answer that is required is explicit in the text.
-- Handles opinion questions, but only by finding a statement of that opinion; it does not assess the validity of the opinion.
+-   Handles questions with very short answers, such as names and dates, especially when the type of answer that is required is explicit in the text.
+-   Handles opinion questions, but only by finding a statement of that opinion; it does not assess the validity of the opinion.
 
-  - Example question: Should I try blue eyeshadow?
-  - Passage: We think **blue eye shadow is trending** this year.
+    -   Example question: Should I try blue eyeshadow?
+    -   Passage: We think **blue eye shadow is trending** this year.
 
 The answer-finding API adds the following parameters to the `passage` section of the query API:
 
-- `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), the answer-finding feature is enabled.
-- `max_answers_per_passage` is optional and defaults to `1`. In this case, the answer-finding feature finds the number of answers that are specified at most from any one passage.
+-   `find_answers` is optional and defaults to `false`. If it is set to `true` (and the `natural_language_query` parameter is set to a query string), the answer-finding feature is enabled.
+-   `max_answers_per_passage` is optional and defaults to `1`. In this case, the answer-finding feature finds the number of answers that are specified at most from any one passage.
 
 For more information about these parameters, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
 
 A section is also added to the return value within each `passage` object. That section is called `answers`, and it is a list of answer objects. The list can be up to `max_answers_per_passage` in length. Each answer object contains the following fields:
 
-- `answer_text` is the text of the concise answer to the query.
-- `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Some answers have low confidence and are unlikely to be correct. Be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
-- `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from. It is greater than or equal to the start offset of the passage (since the answer must be within the passage).
-- `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from. It is less than or equal to the end offset of the passage.
+-   `answer_text` is the text of the concise answer to the query.
+-   `confidence` is a number between `0` and `1` that is an estimate of the probability that the answer is correct. Some answers have low confidence and are unlikely to be correct. Be selective about what you do with answers based on this value. The confidence and order of documents in the search results are adjusted based on this combination if the `per_document` parameter of passage retrieval is set to `true` (which is the default).
+-   `start_offset` is the start character offset (the index of the first character) of the answer within the field that the passage came from. It is greater than or equal to the start offset of the passage (since the answer must be within the passage).
+-   `end_offset` is the end character offset (the index of the last character, plus one) of the answer within the field that the passage came from. It is less than or equal to the end offset of the passage.
 
 To find answers across the entire project:
 
-- Set `passages/enabled` to `true`
-- Set `passages/find_answers` to `true`
+-   Set `passages/enabled` to `true`
+-   Set `passages/find_answers` to `true`
 
 To find answers within a single known document (for example, a document review application with long, complex documents):
 
-- Set `passages/enabled` to `true`
-- Set `passages/find_answers` to `true`
-- Set `filter` to select the `document_id` for the document 
+-   Set `passages/enabled` to `true`
+-   Set `passages/find_answers` to `true`
+-   Set `filter` to select the `document_id` for the document
 
 The following example shows a query that uses this API:
 
-```bash
+```sh
 POST /v2/projects/{project_id}/query{
   "natural_language_query": "Why did Nixon resign?",
   "passages": {
     "enabled": true, "find_answers":true
-    } 
   }
+}
 ```
 {: codeblock}
 
@@ -143,21 +122,27 @@ Example response:
 {
   "matching_results": 74, "retrieval_details": { "document_retrieval_strategy": "untrained"},
   "results": [
-     {"document_id": "63919442-7d5b-4cae-ab7e-56f58b1390fe",
-     "result_metadata":{"collection_id": "collection_id1234","document_retrieval_source":"search","confidence": 0.78214},
-     "metadata": {"parent_document_id": "63919442-7d5b-4cae-ab7e-56f58b1390fg"},
-     "title": "Watergate scandal",
-     "document_passages": [
-      {"passage_text": "With his complicity in the cover-up made public and his political support completely eroded, Nixon resigned from office on August 9, 1974. It is believed that, had he not done so, he would have been impeached by the House and removed from office by a trial in the Senate.",
-         "field": "text",
-         "start_offset": 281,
-         "end_offset": 553,
-         "answers": [
-            {"answer_text": "his complicity in the cover-up made public and his political support completely eroded",
-            "start_offset": 286, "end_offset": 373, "confidence": 0.78214}
-            ]
-...
-}     
+    {
+      "document_id": "63919442-7d5b-4cae-ab7e-56f58b1390fe",
+      "result_metadata":{"collection_id": "collection_id1234","document_retrieval_source":"search","confidence": 0.78214},
+      "metadata": {"parent_document_id": "63919442-7d5b-4cae-ab7e-56f58b1390fg"},
+      "title": "Watergate scandal",
+      "document_passages": [
+        {
+          "passage_text": "With his complicity in the cover-up made public and his political support completely eroded, Nixon resigned from office on August 9, 1974. It is believed that, had he not done so, he would have been impeached by the House and removed from office by a trial in the Senate.",
+          "field": "text",
+          "start_offset": 281,
+          "end_offset": 553,
+          "answers": [
+            {
+              "answer_text": "his complicity in the cover-up made public and his political support completely eroded",
+              "start_offset": 286, "end_offset": 373, "confidence": 0.78214
+            }
+          ]
+        }
+      ]
+  ...
+}
 ```
 {: codeblock}
 
@@ -176,13 +161,12 @@ A query search returns all documents in your data set with full enrichments and 
 ## `aggregation`
 {: #aggregation}
 
-Aggregation queries return a count of documents that match a set of data values. For the full list of aggregation options, see [Query aggregations](/docs/discovery-data?topic=discovery-data-query-aggregations). 
-
+Aggregation queries return a count of documents that match a set of data values. For the full list of aggregation options, see [Query aggregations](/docs/discovery-data?topic=discovery-data-query-aggregations).
 
 ## `filter`
 {: #filter}
 
-A cacheable query that excludes any documents that don't mention the query content. Filter search results are **not** returned in order of relevance. 
+A cacheable query that excludes any documents that don't mention the query content. Filter search results are **not** returned in order of relevance.
 
 When you write a query that includes both a `filter`, and an `aggregation`, `query`, or `natural_language_query` parameter, the `filter` parameter runs first, and then any `aggregation`, `query`, or `natural_language_query` parameters run in parallel.
 
@@ -198,7 +182,7 @@ Structure parameters define the content and organization of the documents in the
 - how the result set is sorted
 - which fields to return for each document
 - whether to remove duplicate documents
-- whether to remove extracted relevant passages from the results set. 
+- whether to remove extracted relevant passages from the results set.
 
 Structure parameters don't affect which documents are part of the entire results set.
 
@@ -235,7 +219,8 @@ A Boolean that specifies whether to include a `highlight` object in the returned
 The output lists the `highlight` object after the `enriched_text` object, as shown in the following example.
 
 ```bash
-curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=Hybrid%20cloud%20companies&highlight=true'
+curl -H "Authorization: Bearer {token}" \
+'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=Hybrid%20cloud%20companies&highlight=true'
 ```
 {: pre}
 
@@ -288,40 +273,41 @@ The JSON that is returned is of the following format:
 {
   "matching_results": 40,
   "retrieval_details": {
-  "document_retrieval_strategy": "untrained"
+    "document_retrieval_strategy": "untrained"
   },
   "suggested_refinements": [
-     {
-       "text": "spss"
-     },
-     {
-       "text": "environment"
-     },
-     {
-       "text": "DataEnterprise Edition"
-     },
-     {
-       "text": "InstallPackage"
-     },
-     {
-       "text": "modules"
-     },
-     {
-       "text": "refinery"
-     },
-     {
-       "text": "store"
-     },
-     {
-       "text": "iira"
-     },
-     {
-       "text": "registration"
-     },
-     {
-       "text": "put"
-     }
-  ],
+    {
+      "text": "spss"
+    },
+    {
+      "text": "environment"
+    },
+    {
+      "text": "DataEnterprise Edition"
+    },
+    {
+      "text": "InstallPackage"
+    },
+    {
+      "text": "modules"
+    },
+    {
+      "text": "refinery"
+    },
+    {
+      "text": "store"
+    },
+    {
+      "text": "iira"
+    },
+    {
+      "text": "registration"
+    },
+    {
+      "text": "put"
+    }
+  ]
+}
 ```
 {: codeblock}
 
@@ -353,35 +339,35 @@ The `passages` parameter returns matching passages (`passage_text`), and the `sc
 The JSON that is returned from the query has the following format:
 
 ```json
- {
-   "matching_results":2,
-   "passages":[
-     {
-       "document_id":"ab7be56bcc9476493516b511169739f0",
-       "passage_score":15.230205287402338,
-       "passage_text":"a privately held company that provides hybrid cloud recovery, cloud migration and business continuity software for enterprise data centers and cloud infrastructure."
-       "start_offset":120
-       "end_offset":300
-       "field":"text"       
-     },
-     {
-       "passage_text":"Disaster Recovery Services for Hybrid Cloud</title></head>\n<body>\n\n\n<p>Published: Thu, 27 Oct 2016 07:01:21 GMT</p>\n"
-       "passage_score":10.153470191601558,
-       "document_id":"fbb5dcb4d8a6a29f572ebdeb6fbed20e",              
-       "start_offset":70
-       "end_offset":120
-       "field":"html"
-     },
-  ...
+  {
+    "matching_results":2,
+    "passages":[
+      {
+        "document_id":"ab7be56bcc9476493516b511169739f0",
+        "passage_score":15.230205287402338,
+        "passage_text":"a privately held company that provides hybrid cloud recovery, cloud migration and business continuity software for enterprise data centers and cloud infrastructure."
+        "start_offset":120
+        "end_offset":300
+        "field":"text"
+      },
+      {
+        "passage_text":"Disaster Recovery Services for Hybrid Cloud</title></head>\n<body>\n\n\n<p>Published: Thu, 27 Oct 2016 07:01:21 GMT</p>\n"
+        "passage_score":10.153470191601558,
+        "document_id":"fbb5dcb4d8a6a29f572ebdeb6fbed20e",
+        "start_offset":70
+        "end_offset":120
+        "field":"html"
+      },
+      ...
 ```
-{: codeblock}                        
+{: codeblock}
 
 ### `passages.fields`
 {: #passages_fields}
 
 A comma-separated list of fields in the index that passages are drawn from. If this parameter is not specified, then passages from all root-level fields are included.
 
-You can specify fields in both the `return` and `passages.fields` parameters. When you specify both parameters, each with different values, they are treated separately. 
+You can specify fields in both the `return` and `passages.fields` parameters. When you specify both parameters, each with different values, they are treated separately.
 
 For example, the request might include the parameters `"return": ["docno"]` and `"passages":{"fields": ["body"]`. The `body` field is specified in `passages.fields`, but not in `return`. In the result, passages from the document body are returned, but the contents of the body field itself is not returned.
 
@@ -403,7 +389,8 @@ If [Table understanding](/docs/discovery-data?topic=discovery-data-understanding
 Example query:
 
 ```bash
- curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=interest%20appraised&table_results=true'
+ curl -H "Authorization: Bearer {token}" \
+ 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{collection_id}/query?version=2019-11-29&natural_language_query=interest%20appraised&table_results=true'
 ```
 {: pre}
 
@@ -411,26 +398,26 @@ The JSON that is returned from the query has the following format:
 
 ```json
 {
-  “matching_results”: 1,
-  “session_token”: “1_FDjAVkn9SW6oH9y5_9Ek3KsNFG”,
-  “results”: [
+  "matching_results": 1,
+  "session_token": "1_FDjAVkn9SW6oH9y5_9Ek3KsNFG",
+  "results": [
     {
-     ...
+      ...
     }
   ]
   {
-  "table_results": [
-    {
-      "table_id": "e883d3df1d45251121cd3d5aef86e4edc9658b21",
-      "source_document_id": "c774c3df0c90255191cc0d4bb8b5e8edc6638d96",
-      "collection_id": "collection_id",
-      "table_html": "html snippet of the table info",
-      "table_html_offset": 42500,
-      "table": [
-        {
-          "location": {
-            "begin": 42878,
-            "end": 44757
+    "table_results": [
+      {
+        "table_id": "e883d3df1d45251121cd3d5aef86e4edc9658b21",
+        "source_document_id": "c774c3df0c90255191cc0d4bb8b5e8edc6638d96",
+        "collection_id": "collection_id",
+        "table_html": "html snippet of the table info",
+        "table_html_offset": 42500,
+        "table": [
+          {
+            "location": {
+              "begin": 42878,
+              "end": 44757
           },
           "text": "Appraisal Premise Interest Appraised Date of Value Value Conclusion\nMarket Value \"As Is\" Fee Simple Estate January 12, 2016 $1,100,000\n",
           "section_title": {
@@ -515,4 +502,3 @@ When `true`, a `table_results` array is included in the response with a list of 
 {: #table_count}
 
 This parameter specifies the maximum number of tables that can be included in the `table_results` array. Only returned if `table_results.enabled`=`true`. The default is `10`.
-

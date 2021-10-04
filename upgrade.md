@@ -8,20 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Upgrading
 {: #upgrade}
@@ -52,7 +39,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
     - If you decide you want to keep the Plus plan after using the 30-day free trial, no action is required.
 
       After 30 days of using the Plus plan at no cost, you are charged for it.
-      
+
     - If you decide you do *not* want to continue using the Plus plan, delete the Plus plan service instance before the 30-day trial period ends. You can delete the service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
 
       The number of days that are left in your trial is displayed in the page header.

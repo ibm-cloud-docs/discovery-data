@@ -2,32 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-10-03"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Assembling and compiling a custom Cloud Pak for Data connector
 {: #assemble}
@@ -46,7 +27,7 @@ This information applies only to installed deployments.
 A custom connector package is a .zip file that contains the following components:
 
 | Path              | Description |
-|-------------------|------------|
+|-------------------|-------------|
 | `config/template.xml` | A [configuration template](#ccs-config-template)|
 | `config/messages.properties` | A [properties file](#ccs-properties-file) for UI messages|
 | `lib/*.jar` | [JAR files](#ccs-jar-files) required by the custom connector, not including the connector code that you write|
@@ -63,13 +44,13 @@ The configuration template is an XML file that is divided into sections. Each se
 Declared settings are represented by the `<declare />` element. The element has the following attributes:
 
 | Attribute name  | Description |
-|----------------|-----------|
-| `type`          | Data type; one of `string`, `long`, `boolean`, `list` of strings, or `enum`|
-| `name`          | The name of the setting|
-| `initial-value` | The initial value of the setting|
-| `enum-value`    | A list of `enum` values separated by vertical bars (<tt>&#124;</tt>)|
-| `required`      | Indicates that the setting is required|
-| `hidden`        | Indicates whether to hide the setting from the UI. Specify a value of `true` to hide the setting.|
+|-----------------|-------------|
+| `type`          | Data type; one of `string`, `long`, `boolean`, `list` of strings, or `enum` |
+| `name`          | The name of the setting |
+| `initial-value` | The initial value of the setting |
+| `enum-value`    | A list of `enum` values separated by vertical bars (`\|`) |
+| `required`      | Indicates that the setting is required |
+| `hidden`        | Indicates whether to hide the setting from the UI. Specify a value of `true` to hide the setting. |
 {: caption="Declare element attributes" caption-side="top"}
 
 In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discoveryshort}} tooling.
@@ -105,7 +86,7 @@ To declare a required `long`, use code similar to the following:
 Conditional settings are represented by the `<condition />` element. A conditional setting is displayed only if the condition is satisfied. The element has the following attributes:
 
 | Attribute name  | Description |
-|----------------|-----------|
+|-----------------|-------------|
 | `name`          | The name of the setting|
 | `enable`        | Enable the setting if the value of the `name` attribute equals the value of the `enable` attribute|
 | `in`            | Enable the setting if the value of the `name` attribute is included in a specified list of values|
@@ -145,10 +126,10 @@ To enable a section by using an `enum` condition, use code similar to the follow
 
 Each section includes one `<declare />` element for each of its settings.
 
-|XPath expression                           |Description          |
+| XPath expressio                        | Description         |
 |----------------------------------------|---------------------|
-|`/function/@name` | The name (type) of the crawler. Not a display name for the UI. Cannot contain spaces.|
-|`/function/prototype/proto-section` |A section of the configuration.|
+| `/function/@name` | The name (type) of the crawler. Not a display name for the UI. Cannot contain spaces.|
+| `/function/prototype/proto-section` | A section of the configuration.|
 {: caption="Template sections" caption-side="top"}
 
 ### Section: `general_settings`
@@ -168,25 +149,25 @@ The XPath expression for this section is `/function/prototype/proto-section[@sec
 
 The custom crawler is initialized with the following settings in the `general_settings` section. For information about the interfaces, see [Developing custom connector code](/docs/discovery-data?topic=discovery-data-connector-dev).
 
-|Name                                  |Value                             |
+| Name                                 | Value                            |
 |--------------------------------------|----------------------------------|
-|`custom_config_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration` interface|
-|`custom_crawler_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface|
-|`custom_security_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface|
-|`document_level_security_supported`| Specifies whether document-level security is enabled (`true`) or disabled (`false`)|
+| `custom_config_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawlerConfiguration` interface|
+| `custom_crawler_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawler` interface|
+| `custom_security_class` | The name of a class that implements the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface|
+| `document_level_security_supported`| Specifies whether document-level security is enabled (`true`) or disabled (`false`)|
 {: caption="General settings section defaults" caption-side="top"}
 
 To specify the interfaces, use code similar to the following:
 
 ```xml
-	    	<!-- Configuration class -->        
-            <declare type="string" name="custom_config_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
-	    	<!-- Crawler class -->        
-            <declare type="string" name="custom_crawler_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
-	    	<!-- Document level security class -->        
-            <declare type="string" name="custom_security_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
-            <!-- Document level security is enabled or not -->
-            <declare type="boolean" name="document_level_security_supported" initial-value="true" hidden="true"/>
+<!-- Configuration class -->
+  <declare type="string" name="custom_config_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
+<!-- Crawler class -->
+  <declare type="string" name="custom_crawler_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
+<!-- Document level security class -->
+  <declare type="string" name="custom_security_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
+<!-- Document level security is enabled or not -->
+  <declare type="boolean" name="document_level_security_supported" initial-value="true" hidden="true"/>
 ```
 {: codeblock}
 
@@ -210,25 +191,24 @@ To hide the **Enable Document Level Security** option from {{site.data.keyword.d
 The XPath expression for this section is `/function/prototype/proto-section[@section="datasource_settings"]`. It includes settings specific to the data source.
 
 ```xml
-		<!-- Data source settings change on each server -->
-        <proto-section section="datasource_settings">
-			<!-- Sample: SFTP server settings -->
-            <declare type="string" name="host" required="required" initial-value="localhost"/>
-            <declare type="long" name="port" required="required" initial-value="22"/>
-            <declare type="string" name="user" required="required" />
-
-			<!-- Sample: Use key file or password -->
-            <declare type="boolean" name="use_key" initial-value="true" />
-			<!-- Sample: If use key, input key and passphrase -->
-            <condition name="use_key" enabled="true">
-                <declare type="string" name="key" hidden="false" />
-                <declare type="password" name="passphrase" hidden="false" />
-            </condition>
-            <!-- Sample: If use password, input password -->           
-            <condition name="use_key" enabled="false">
-                <declare type="password" name="secret_key" hidden="false" />
-            </condition>
-        </proto-section>
+<!-- Data source settings change on each server -->
+  <proto-section section="datasource_settings">
+    <!-- Sample: SFTP server settings -->
+      <declare type="string" name="host" required="required" initial-value="localhost"/>
+      <declare type="long" name="port" required="required" initial-value="22"/>
+      <declare type="string" name="user" required="required" />
+    <!-- Sample: Use key file or password -->
+      <declare type="boolean" name="use_key" initial-value="true" />
+    <!-- Sample: If use key, input key and passphrase -->
+      <condition name="use_key" enabled="true">
+        <declare type="string" name="key" hidden="false" />
+        <declare type="password" name="passphrase" hidden="false" />
+      </condition>
+    <!-- Sample: If use password, input password -->
+      <condition name="use_key" enabled="false">
+        <declare type="password" name="secret_key" hidden="false" />
+      </condition>
+  </proto-section>
 ```
 {: codeblock}
 
@@ -238,10 +218,10 @@ The XPath expression for this section is `/function/prototype/proto-section[@sec
 The XPath expression for this section is `/function/prototype/proto-section[@section="crawlspace_settings"]`. The section contains only one `<declare />` element to specify the path. The value of the path is provided by the connector code.
 
 ```xml
-		<!-- Do not modify, must be here -->    
-        <proto-section section="crawlspace_settings" cardinality="multiple">
-            <declare type="string" name="path" hidden="true" />
-        </proto-section>
+<!-- Do not modify, must be here -->
+  <proto-section section="crawlspace_settings" cardinality="multiple">
+    <declare type="string" name="path" hidden="true" />
+  </proto-section>
 ```
 {: codeblock}
 
@@ -266,18 +246,18 @@ After you write the source code and configuration files for your custom connecto
 
 To compile a custom connector, you need to have the following items on your local machine. See [Custom connector example](/docs/discovery-data?topic=discovery-data-connector-dev#example-connection-requirements) for details.
 
-- JDK 1.8 or higher
-- [Gradle](https://gradle.org/install/){: external}
-- The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance
-- The JSch package
-- The following files for the example custom connector:
-  
-  - Java source code (`SftpCrawler.java` and `SftpSecurityHandler.java`)
-  - XML definition file (`template.xml`)
-  - Properties file (`messages.properties`)
+-   JDK 1.8 or higher
+-   [Gradle](https://gradle.org/install/){: external}
+-   The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance
+-   The JSch package
+-   The following files for the example custom connector:
 
-  Do not change the names or paths of the example custom connector files. Doing so can result in problems, including build failures.
-  {: important}
+    -   Java source code (`SftpCrawler.java` and `SftpSecurityHandler.java`)
+    -   XML definition file (`template.xml`)
+    -   Properties file (`messages.properties`)
+
+    Do not change the names or paths of the example custom connector files. Doing so can result in problems, including build failures.
+    {: important}
 
 ### Compiling and packaging the source code
 {: #compile-connector}
@@ -298,7 +278,7 @@ To compile a custom connector, you need to have the following items on your loca
 
 Gradle creates a file in `{local_directory}/build/distributions/{built_connector_zip_file}`, where the name of the `{built_connector_zip_file}` is based on the `rootProject.name` value of `settings.gradle`. For example, if the line reads as follows, Gradle generates a file named `{local_directory}/build/distributions/my-sftp-connector.zip`.
 
-```
+```text
 rootProject.name = 'my-sftp-connector'
 ```
 {: codeblock}

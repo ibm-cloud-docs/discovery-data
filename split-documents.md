@@ -2,33 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-04-29"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 # Split documents to make query results more succinct
 {: #split-documents}
@@ -42,7 +22,7 @@ To control how your documents are split, you specify a field, such as `subtitle`
 Before you begin, decide which field to use as the page break marker.
 
 - You can use any of the fields that are indexed by default. For more information, see [Fields indexed by default](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-default-fields).
-- If the fields that are created by default don't meet your needs, you can use the Smart Document Understanding tool to define a custom field, and then split documents by the custom field. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+- If the fields that are created by default don't meet your needs, you can use the Smart Document Understanding tool to define a custom field, and then split documents by the custom field. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
 - The number of segments per document is limited to `1,000`. After segment number `999` is created, any remaining document content is stored within segment `1,000`.
 - Metadata from PDF and Microsoft Word documents and any custom metadata is extracted and included in the index with each segment.
 

@@ -2,34 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:external: target="_blank" .external}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Local File System
 {: #connector-lfs-cp4d}
@@ -52,7 +31,7 @@ This information applies only to installed deployments.
 ## Prerequisite steps
 {: #connector-lfs-cp4d-prereq}
 
-Before you connect to the Local File System data source, complete the following step: 
+Before you connect to the Local File System data source, complete the following step:
 
 - [Create a persistent volume claim on the crawler pod](#mount-persistent-volume)
 
@@ -77,14 +56,14 @@ Complete the following steps:
     You might see output similar to the following:
 
     ```bash
-    NAME                             PROVISIONER                     RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-    portworx-gp3-sc                  kubernetes.io/portworx-volume   Retain          Immediate           true                   51d
+    NAME             PROVISIONER                    RECLAIMPOLICY  VOLUMEBINDINGMODE  ALLOWVOLUMEEXPANSION  AGE
+    portworx-gp3-sc  kubernetes.io/portworx-volume  Retain         Immediate          true                  51d
     ```
     {: codeblock}
 
 1.  Create a file named `crawler-pvc-portworx.yaml` to define the persistent volume claim (PVC) with the following content:
 
-    ```bash
+    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
@@ -118,13 +97,14 @@ Complete the following steps:
 1.  Enter the following command to mount the persistent volume claim to the crawler pod:
 
     ```bash
-    oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<name-of-portworx-pvc>" } } } } }'
+    oc patch wd wd --type=merge \
+    --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<name-of-portworx-pvc>" } } } } }'
     ```
     {: pre}
 
     Replace `<name-of-portworx-pvc>` with the name of your dynamic Portworx persistent volume claim. For example, `jdoe-pvc-portworx`.
 
-1.  Enter the following command to copy the files that you want to crawl to your dynamic Portworx persistent volume claim. 
+1.  Enter the following command to copy the files that you want to crawl to your dynamic Portworx persistent volume claim.
 
     You only need to run this command one time against one of the existing crawler pods. The persistent volume claim is shared amongst all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
 
@@ -147,10 +127,10 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  If the language of the documents that you want to crawl is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
+1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1. In the *Specify what you want to crawl* section, enter the file path that you want to crawl in the **Path** field, and then click **Add**. 
+1. In the *Specify what you want to crawl* section, enter the file path that you want to crawl in the **Path** field, and then click **Add**.
 
     The file path is case-sensitive.
 1.  Optionally, add more file paths.
@@ -158,9 +138,10 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
     The processing time increases when this feature is enabled.
     {: note}
+
 1. Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
 
@@ -179,7 +160,7 @@ If the local file system files or folders that you want to crawl are stored in a
 
 1.  Create a file named `crawler-pv-nfs.yaml` with the following content:
 
-    ```bash
+    ```yaml
     apiVersion: v1
     kind: PersistentVolume
     metadata:
@@ -234,7 +215,7 @@ If the local file system files or folders that you want to crawl are stored in a
     {: codeblock}
 
     Replace the following variables:
-    
+
     - `<persistent-volume-claim-name>` with the name of your persistent volume claim. For example, `jdoe-nfs-pvc`.
     - `<persistent-volume-name>` with the name of your persistent volume. For example, `jdoe-nfs-pv`.
 
@@ -252,21 +233,22 @@ If the local file system files or folders that you want to crawl are stored in a
     ```
     {: codeblock}
 
-1.  Enter the following command to mount the persistent volume claim to the crawler pod. 
+1.  Enter the following command to mount the persistent volume claim to the crawler pod.
 
     This command also mounts the persistent volume claim to all ingestion-api pods. Replace `<persistent-volume-claim-name>` with the name of your persistent volume claim. For example, `jdoe-nfs-pvc`.
 
     ```bash
-    oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<persistent-volume-claim-name>" } } } } }'
+    oc patch wd wd --type=merge \
+    --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<persistent-volume-claim-name>" } } } } }'
     ```
     {: pre}
 
 ### Configuring dynamic provisioning with an NFS storage class
 {: #dyn-prov-nfs}
 
-If you want to crawl your local file system files or folders but you do not want to prepare an extra NFS server to store those files or folders, you can configure dynamic storage by using an NFS storage class. 
+If you want to crawl your local file system files or folders but you do not want to prepare an extra NFS server to store those files or folders, you can configure dynamic storage by using an NFS storage class.
 
-For more information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/plan/storage_considerations.html){: external}. 
+For more information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/plan/storage_considerations.html){: external}.
 
 Before you complete this task, copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. If you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the files along with the `crawler-pvc-dynamic.yaml` file that you will create in this task to each cluster.
 
@@ -282,14 +264,14 @@ Complete the following steps:
     A message is displayed.
 
     ```bash
-    NAME         PROVISIONER                                      RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-    nfs-client   cluster.local/innocence-nfs-client-provisioner   Delete          Immediate           true                   177m
+    NAME        PROVISIONER                                     RECLAIMPOLICY  VOLUMEBINDINGMODE  ALLOWVOLUMEEXPANSION  AGE
+    nfs-client  cluster.local/innocence-nfs-client-provisioner  Delete         Immediate          true                  177m
     ```
     {: codeblock}
 
 1.  Create a file named `crawler-pvc-dynamic.yaml` and add the following content to it:
 
-    ```bash
+    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
@@ -320,18 +302,19 @@ Complete the following steps:
     ```
     {: codeblock}
 
-1.  Enter the following command to mount the persistent volume claim to the crawler pod. 
+1.  Enter the following command to mount the persistent volume claim to the crawler pod.
 
     This command also mounts the persistent volume claim to all ingestion-api pods.
 
     ```bash
-    oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<name-of-dynamic-pvc>" } } } } }'
+    oc patch wd wd --type=merge \
+    --patch='{"spec": {"ingestion": {"crawler": {"mount": {"enabled": true, "persistentVolumeClaimName": "<name-of-dynamic-pvc>" } } } } }'
     ```
     {: pre}
 
     Replace `<name-of-dynamic-pvc>` with the name of your dynamic NFS persistent volume claim in the previous step. For example, `jdoe-dynamic-pvc`.
 
-1.  Enter the following command to copy the files that you want to crawl to your dynamic NFS persistent volume claim. 
+1.  Enter the following command to copy the files that you want to crawl to your dynamic NFS persistent volume claim.
 
     You must run this command only one time against one of the existing crawler pods. The persistent volume claim is shared amongst all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
 
@@ -363,7 +346,7 @@ Complete the following steps to create and mount a persistent volume on the craw
 
 1. Create a file called `crawler-pv.yaml`. The content of the file looks like the following. Replace the `<>` and the content inside with the required information:
 
-   ```bash
+   ```yaml
    apiVersion: v1
    kind: PersistentVolume
    metadata:
@@ -384,14 +367,14 @@ Complete the following steps to create and mount a persistent volume on the craw
 
 1. Enter the following command to set `crawler-pv.yaml` as the persistent volume:
 
-   ```
+   ```bash
    create -f crawler-pv.yaml
    ```
    {: pre}
 
 1. If you are using version 2.1.3 or 2.1.4, mount the persistent volume to the crawler pod by editing `override.yaml` to include the following input. This file overrides any default settings that you choose. In the `label` and `value` fields, you must use the same string that you specified when you created the `crawler-pv.yaml` file in step 1. Replace the `<>` and the content inside with the required information:
 
-   ```bash
+   ```yaml
    core:
      ingestion:
        mount:
@@ -406,7 +389,7 @@ Complete the following steps to create and mount a persistent volume on the craw
 
    If you are using a version earlier than 2.1.3, mount the persistent volume to the crawler pod by creating a file called `override.yaml` in `ibm-watson-discovery-ppa/deploy/`. You might see the following content in `override.yaml`:
 
-   ```bash
+   ```yaml
    core:
      ingestion:
        mount:
@@ -423,7 +406,8 @@ Complete the following steps to create and mount a persistent volume on the craw
    If you are using a version earlier than 2.1.3, from the `deploy` subdirectory, run the `deploy.sh` script by entering the `-d` flag, the file path to the files that you want to make accessible to `ibm-watson-discovery`, the `-O` flag, and your `override.yaml` file. You can also enter the `-e` flag with your `release-name-prefix`. If you do, your `release-name-prefix` must be 13 characters or fewer, or the installation will fail. If you do not enter the `-e` flag, the default `release-name-prefix` is `disco`. See the following example. Replace the `<>` and the content inside with the required information:
 
    ```bash
-   ./deploy.sh -d </local root directory/subdirectory/>ibm-watson-discovery -O ./override.yaml -e <release-name-prefix>
+   ./deploy.sh -d </local root directory/subdirectory/>ibm-watson-discovery \
+   -O ./override.yaml -e <release-name-prefix>
    ```
    {: codeblock}
 
@@ -440,37 +424,39 @@ You can also copy your local files that you want to crawl to the crawler pod. Be
 
 Complete the following steps to copy your local file system files to the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, replacing the `<>` and the content inside with the required information:
 
-1. Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
+1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
 
-   ```bash
-   oc login https://<OpenShift administrative console URL> -u <cluster-administrator> -p <password>
-   ```
-   {: pre}
+    ```bash
+    oc login https://<OpenShift administrative console URL> \
+    -u <cluster-administrator> -p <password>
+    ```
+    {: pre}
 
-1. Enter the following command to switch to the proper namespace:
-   ```bash
-   oc project <discovery-install namespace>
-   ```
-   {: pre}
+1.  Enter the following command to switch to the proper namespace:
 
-1. Enter `oc get pods|grep crawler` to find the crawler pod. If you are using a version earlier than 2.1.3, enter `oc get pods|grep ingestion` to find the ingestion pod.
+    ```bash
+    oc project <discovery-install namespace>
+    ```
+    {: pre}
+
+1.  Enter `oc get pods|grep crawler` to find the crawler pod. If you are using a version earlier than 2.1.3, enter `oc get pods|grep ingestion` to find the ingestion pod.
 1. Enter the following command to copy the local file system folders that you want to crawl to the `/mnt` directory on the crawler pod:
 
-   ```bash
-   oc rsync <path to local file system folder> <crawler pod>:/mnt
-   ```
-   {: pre}
+    ```bash
+    oc rsync <path to local file system folder> <crawler pod>:/mnt
+    ```
+    {: pre}
 
-   If you are using a version of {{site.data.keyword.discoveryshort}} that is older than 2.1.3, enter the following command:
+    If you are using a version of {{site.data.keyword.discoveryshort}} that is older than 2.1.3, enter the following command:
 
-   ```
-   oc rsync <path to local file system folder> <ingestion pod>:/mnt
-   ```
-   {: pre}
+    ```bash
+    oc rsync <path to local file system folder> <ingestion pod>:/mnt
+    ```
+    {: pre}
 
-   In versions earlier than 2.1.3, the files that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
+    In versions earlier than 2.1.3, the files that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
 
-   If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
-   {: important}
+    If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
+    {: important}
 
 For more information about creating and mounting a persistent volume on the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, see [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](#mount-pv-orig). For more information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).

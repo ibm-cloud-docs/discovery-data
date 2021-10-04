@@ -2,33 +2,13 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:beta: .beta}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Box
 {: #connector-box-cloud}
@@ -70,52 +50,52 @@ You must obtain any required service licenses for the data source that you want 
 
 You must create a custom application in Box before you can connect to Box from {{site.data.keyword.discoveryshort}}.
 
-1.  In Box, create a custom app that uses *Server Authentication with JWT* as its authentication method. 
+1.  In Box, create a custom app that uses *Server Authentication with JWT* as its authentication method.
 
     For detailed steps, see [Setup with JWT](https://developer.box.com/guides/authentication/jwt/jwt-setup/){: external} in the Box Developer Documentation.
 
 Follow these guidelines when you create the app:
 
-- During the setup procedure, choose to use the *Server Authentication with JWT* method to verify application identity with a key pair.
-- When you configure the custom app, you can choose to use one of the application access levels:
+-   During the setup procedure, choose to use the *Server Authentication with JWT* method to verify application identity with a key pair.
+-   When you configure the custom app, you can choose to use one of the application access levels:
 
-  - App access only
-  - App access plus Enterprise access
+    -   App access only
+    -   App access plus Enterprise access
 
-  Refreshing documents on a schedule is supported only when you choose **App access plus Enterprise access**. If you set up the connection with **App access**, new and modified documents are not crawled during a refresh.
-  {: important}
+    Refreshing documents on a schedule is supported only when you choose **App access plus Enterprise access**. If you set up the connection with **App access**, new and modified documents are not crawled during a refresh.
+    {: important}
 
-  - If you are an administrator, configure **App access plus Enterprise access**. Otherwise, you can configure the app to have **App access**. However, you must get application approval from a Box administrator.
-  
-  - For both application access levels, specify the following settings:
+    -   If you are an administrator, configure **App access plus Enterprise access**. Otherwise, you can configure the app to have **App access**. However, you must get application approval from a Box administrator.
 
-    - Choose the following scopes:
+    -   For both application access levels, specify the following settings:
 
-      - *Read all folders stored in Box*
-      - *Write all folders stored in Box*
-      - *Manage Users*
+    -   Choose the following scopes:
 
-      **For apps with Enterprise access only**: Add this extra scope:
+        -   *Read all folders stored in Box*
+        -   *Write all folders stored in Box*
+        -   *Manage Users*
 
-      - *Manage Enterprise Properties*
-    - Enable the following advanced features:
+        **For apps with Enterprise access only**: Add this extra scope:
 
-       - *Make API calls using the as-user header*
-       - *Generate User Access Tokens*
+        - *Manage Enterprise Properties*
+    -   Enable the following advanced features:
 
-- Get the custom app authorized by an administrator.
+        -   *Make API calls using the as-user header*
+        -   *Generate User Access Tokens*
 
-  For more information, see [App approval](https://developer.box.com/guides/authorization/custom-app-approval/){: external} in the Box Developer Documentation.
-- After the app is created, authorized, and authentication is configured, download the app settings as a JSON file from the dev console.
+-   Get the custom app authorized by an administrator.
 
-  You provide the following information from this file when it is requested later:
+    For more information, see [App approval](https://developer.box.com/guides/authorization/custom-app-approval/){: external} in the Box Developer Documentation.
+-   After the app is created, authorized, and authentication is configured, download the app settings as a JSON file from the dev console.
 
-    -  `client_id`
-    -  `enterprise_id`
-    -  `client_secret`
-    -  `public_key_id`
-    -  `private_key`
-    -  `passphrase`
+    You provide the following information from this file when it is requested later:
+
+    -   `client_id`
+    -   `enterprise_id`
+    -   `client_secret`
+    -   `public_key_id`
+    -   `private_key`
+    -   `passphrase`
 
 ## Connecting to the Box data source
 {: ##connector-box-cloud-task}
@@ -127,18 +107,18 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  Click **Box**, and then click **Next**.
 1.  Refer to the values from the Box app settings JSON file that you downloaded during the previous procedure to complete the following fields:
 
-    - Client ID: The private key that you specify when you configure your Box app.
-    - Client Secret: The client secret that you specify when you configure your Box app.
-    - Enterprise ID: The enterprise ID of the Box account.
-    - Public Key ID: The public key ID that Box generates.
-    - Private Key: A part of the key pair that is generated to interact with the Box website.
-    - Passphrase: The passphrase that is required to decrypt the private key if the private key is an encrypted file.
+    -   Client ID: The private key that you specify when you configure your Box app.
+    -   Client Secret: The client secret that you specify when you configure your Box app.
+    -   Enterprise ID: The enterprise ID of the Box account.
+    -   Public Key ID: The public key ID that Box generates.
+    -   Private Key: A part of the key pair that is generated to interact with the Box website.
+    -   Passphrase: The passphrase that is required to decrypt the private key if the private key is an encrypted file.
 1.  Click **Next**.
 1.  Name the collection.
 1.  If the language of the documents in Box is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
+1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Choose the folders that you want to crawl.
@@ -153,6 +133,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1.  Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

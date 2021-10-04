@@ -2,32 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Installing a custom Cloud Pak for Data connector
 {: #install-connector}
@@ -48,14 +29,14 @@ This information applies only to installed deployments.
 You can install your custom connector to your {{site.data.keyword.discoveryshort}} instance by performing the following steps.
 
 1.  Ensure that you have completed all steps to create a custom connector up to and including the steps listed in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
-    
+
 1.  Run the following command from the directory on your local machine where you created and compiled your custom connector:
 
-     ```sh
-     bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file}
-     ```
-     {: pre}
-    
+    ```sh
+    bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file}
+    ```
+    {: pre}
+
     where `{built_connector_zip_file}` is the name of the file you packaged in [Compiling and packaging the example connector](/docs/discovery-data?topic=discovery-data-assemble#compile-package-connector).
 
     If your {{site.data.keyword.discoveryshort}} instance is running on Red Hat OpenShift, specify the `-o` or `--openshift` parameter with the script.
@@ -63,10 +44,10 @@ You can install your custom connector to your {{site.data.keyword.discoveryshort
 
     For example:
 
-      ```sh
-      bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file} -o true
-      ```
-      {: pre}
+    ```sh
+    bash scripts/manage_custom_crawler.sh deploy -z {built_connector_zip_file} -o true
+    ```
+    {: pre}
 
 ## Verifying an installed connector
 {: #verify-connector-install}
@@ -103,7 +84,7 @@ bash scripts/manage_custom_crawler.sh undeploy -n {built_connector_name} -o true
 
 The `manage_custom_crawler.sh` script has the following internal documentation:
 
-```
+```text
 Usage: ${BASH_SOURCE[0]} [--pathToZip PATH] [--properties PROPERTIES] [--xml XML]
 
 Watson Discovery Custom Crawler Manager
@@ -130,6 +111,3 @@ Options:
   --help                Show this message.
 ```
 {: screen}
-
-
-

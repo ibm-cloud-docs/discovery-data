@@ -2,32 +2,13 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-25"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Default query settings
 {: #query-defaults}
@@ -43,9 +24,9 @@ You can override some of the default values by using improvement tools in the us
 {: #query-defaults-table1}
 
 | Query default | Document Retrieval | Document Retrieval for Contracts |
-| --- | --- | --- |
-| `aggregation` | `[term(enriched_text.entities.text,name:entities)]`  | `[term(enriched_html.contract. elements.categories.label,count:25,name:categories)]` |
-| `count` | `10`  | `10`  |
+|---------------|--------------------|--------------------------------- |
+| `aggregation` | `[term(enriched_text.entities.text,name:entities)]` | `[term(enriched_html.contract. elements.categories.label,count:25,name:categories)]`|
+| `count` | `10` | `10` |
 | `highlight` | `false` | `false` |
 | `passages.characters` | `200` | `200` |
 | `passages.count` | `10` | `10` |
@@ -69,14 +50,14 @@ You can override some of the default values by using improvement tools in the us
 {: #query-defaults-table-cont}
 
 | Query default | Conversational Search | Content Mining | Custom |
-| --- | --- | --- | --- |
+|---------------|-----------------------|----------------|--------|
 | `aggregation` | `[ ]` | `[ ]` | `[ ]` |
 | `count` | `10`  | `10` |  `10` |
 | `highlight` | `false` | `false` | `false` |
 | `passages.characters` | `200`  | `200` | `200` |
 | `passages.count` | `10` | `10` | `10` |
 | `passages.enabled` | `true` | `false` | `true` |
-| `passages.fields` | `["text", "title"] `| `["text", "title"]` | `["text", "title"]` |
+| `passages.fields` | `["text", "title"]` | `["text", "title"]` | `["text", "title"]` |
 | `passages.find_answers` | `false` | `false` | `false` |
 | `passages.max_answers_per_passage` | `1` | `1` | `1` |
 | `passages.max_per_document` | `1` | `1` | `1` |
@@ -95,7 +76,7 @@ You can override some of the default values by using improvement tools in the us
 {: #component-defaults-dr}
 
 | Default | Document Retrieval | Document Retrieval for Contracts |
-| --- | --- | --- |
+|---------|--------------------|----------------------------------|
 | Aggregations | See [table](#aggregations-dr) | See [table](#aggregations-dr-contracts) |
 | `autocomplete` | `true` | `true` |
 | `fields_shown.body.field` | `""` |  `""` |
@@ -112,7 +93,7 @@ The Custom project type has no project component default settings.
 {: note}
 
 | Default | Conversational search | Content Mining |
-| --- | --- | --- |
+|---------|-----------------------|----------------|
 | Aggregations | `[]` | `[]` |
 | `autocomplete` | `false` | `true` |
 | `fields_shown.body.field` | `""` | `text` |
@@ -126,7 +107,7 @@ The Custom project type has no project component default settings.
 {: #aggregations-dr}
 
 | aggregations.name | aggregations.label | aggregations.multiple_selections_allowed |
-|---|---|---|
+|-------------------|--------------------|------------------------------------------|
 | `"name": "entities"` | `"label": "Top Entities"`  | `"multiple_selections_allowed": false` |
 | *Premium plans only*: `"name": "_system_suggested_refinements"` | `"label": "Dynamic Facets"` | `"multiple_selections_allowed": true` |
 | `"name": "_system_collections"` | `"label": "Collections"` | `"multiple_selections_allowed": true` |
@@ -136,7 +117,7 @@ The Custom project type has no project component default settings.
 {: #aggregations-dr-contracts}
 
 | aggregations.name | aggregations.label | aggregations.multiple_selections_allowed |
-|---|---|---|
+|-------------------|--------------------|------------------------------------------|
 | `"name": "categories"` | `"label": "Category"` | `"multiple_selections_allowed": true` |
 | `"name": "natures"` | `"label": "Nature"` | `"multiple_selections_allowed": false` |
 | `"name": "contract_terms"` | `"label": "Contract Term"` | `"multiple_selections_allowed": false` |

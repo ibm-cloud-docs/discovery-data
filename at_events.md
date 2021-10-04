@@ -10,14 +10,7 @@ subcollection: discovery-data
 
 ---
 
-{:external: target="_blank" .external}
-{:shortdesc: .shortdesc}
-{:table: .aria-labeledby="caption"}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:important: .important}
-{:note: .note}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Activity Tracker events
 {: #at_events}
@@ -38,7 +31,7 @@ This information applies only to managed deployments.
 
 The following table lists the {{site.data.keyword.discoveryshort}} actions that generate an event.
 
-| Action                           | Description                        | 
+| Action                           | Description                        |
 |:---------------------------------|:-----------------------------------|
 | `discovery.document.create`        | Create a document                |
 | `discovery.document.add`           | Add one document                  |

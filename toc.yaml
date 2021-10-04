@@ -1,0 +1,201 @@
+toc:
+  properties:
+    subcollection: discovery-data
+    version: 2
+    category: ai
+    audience: service
+    href: /docs/discovery-data
+    product-page: https://www.ibm.com/cloud/watson-discovery
+    path: discovery-data
+    label: Discovery
+
+  entries:
+  - navgroup:
+      id: learn
+      topics:
+      - getting-started.md
+      - index.md
+      - version-choose.md
+      - topicgroup:
+          label: Videos and more
+          topics:
+          - sample-apps.md
+          - resources.md
+          - tours.md
+      - release-notes.md
+
+  - navgroup:
+      id: tutorial
+      topics:
+      - tutorial-convo.md
+
+  - navgroup:
+      id: howto
+      topics:
+      - product-overview.md
+      - topicgroup:
+          label: Creating a project
+          topics:
+          - projects.md
+          - chat-choose-project.md
+          - project-defaults.md
+      - topicgroup:
+          label: Connecting to your data
+          topics:
+          - collections.md
+          - upload-data.md
+          - topicgroup:
+              label: Configuring IBM Cloud data sources
+              topics:
+              - sources.md
+              - connector-box-cloud.md
+              - connector-cos-cloud.md
+              - connector-sharepoint-online-cloud.md
+              - connector-sharepoint-onprem-cloud.md
+              - connector-salesforce-cloud.md
+              - connector-web-cloud.md
+          - topicgroup:
+              label: Configuring IBM Cloud Pak for Data data sources
+              topics:
+              - collection-types.md
+              - connector-box-cp4d.md
+              - connector-database-cp4d.md
+              - connector-filenet-cp4d.md
+              - connector-ldap-cp4d.md
+              - connector-lfs-cp4d.md
+              - connector-notes-cp4d.md
+              - connector-salesforce-cp4d.md
+              - connector-sharepoint-online-cp4d.md
+              - connector-sharepoint-onprem-cp4d.md
+              - connector-web-cp4d.md
+              - connector-wfs-cp4d.md
+          - index-overview.md
+          - manage-collections.md
+      - topicgroup:
+          label: Previewing query results
+          topics:
+          - query-results.md
+          - facets.md
+          - search-bar.md
+          - query-defaults.md
+      - topicgroup:
+          label: Enriching your data
+          topics:
+          - topicgroup:
+              label: Preparing your documents for enrichment
+              topics:
+              - configuring-fields.md
+              - split-documents.md
+              - hide-data.md
+          - topicgroup:
+              label: Teaching Discovery about your domain
+              topics:
+              - domain.md
+              - enrichmig.md
+          - topicgroup:
+              label: Extracting meaning from your data
+              topics:
+              - nlu.md
+              - contracts-schema.md
+              - understanding_tables.md
+      - test.md
+      - topicgroup:
+          label: Improving your project
+          topics:
+          - improvements.md
+          - search-settings.md
+          - stopwords.md
+          - manage-enrichments.md
+          - train.md
+      - preview.md
+      - deploy.md
+      - contentminerapp.md
+      - topicgroup:
+          label: Installing
+          topics:
+          - install-overview.md
+          - install.md
+          - install-prior.md
+      - topicgroup:
+          label: Advanced development
+          topics:
+          - develop.md
+          - api-use.md
+          - analyzeapi.md
+          - curations.md
+          - topicgroup:
+              label: Querying
+              topics:
+              - query-concepts.md
+              - query-parameters.md
+              - query-operators.md
+              - query-aggregations.md
+          - topicgroup:
+              label: Confuguring a Cloud Pak for Data custom connector
+              topics:
+              - build-connector.md
+              - connector-dev.md
+              - assemble.md
+              - install-connector.md
+              - ccs-tooling.md
+          - topicgroup:
+              label: Confuguring a Cloud Pak for Data customer crawler plug-in
+              topics:
+              - crawler-plugin-build.md
+              - crawler-plugin-dev.md
+              - crawler-plugin-assemble.md
+              - manage-plugin.md
+              - crawler-plugin-tooling.md
+
+  - navgroup:
+      id: reference
+      topics:
+      - link:
+          label: API reference
+          href: https://{DomainName}/apidocs/discovery-data
+      - /watson/watson-using-sdks
+      - link:
+          label: Watson GitHub repos
+          href: https://github.com/watson-developer-cloud/
+      - topicgroup:
+          label: Backup and restore
+          topics:
+          - backup-restore.md
+          - backup-restore-prior.md
+          - recovery.md
+      - query-reference.md
+      - language-support.md
+      - topicgroup:
+          label: IBM Cloud security
+          topics:
+          - information-security.md
+          - admin.md
+          - at_events.md
+          - /watson/watson-keyservice
+          - /watson/watson-public-private-endpoints
+
+  - navgroup:
+      id: help
+      topics:
+      - faqs.md
+      - known-issues.md
+      - troubleshoot.md
+      - get-help.md
+      - pricing-plans.md
+      - upgrade.md
+      - topicgroup:
+          label: Community resources
+          links:
+          - link:
+              label: IBM Watson Apps community
+              href: https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f
+          - link:
+              label: IBM Cloud Pak for Data Community
+              href: https://community.ibm.com/community/user/cloudpakfordata/communities/community-home?communitykey=c0c16ff2-10ef-4b50-ae4c-57d769937235
+          - link:
+              label: Watson Developer Community Slack channel
+              href: http://wdc-slack-inviter.mybluemix.net/
+          - link:
+              label: Stack Overflow
+              href: http://stackoverflow.com/questions/tagged/watson-discovery
+      - accessibility.md

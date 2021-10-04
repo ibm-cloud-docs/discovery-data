@@ -8,26 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing enrichments
 {: #manage-enrichments}
@@ -44,7 +25,7 @@ For more information about available enrichments, see the following topics:
 
 To manage enrichments, complete the following steps:
 
-1.  From the navigation pane, open the **Manage collections** page, and then click a collection to open it. 
+1.  From the navigation pane, open the **Manage collections** page, and then click a collection to open it.
 1.  Click the **Enrichments** tab.
 1.  Find the enrichment that you want to apply or remove.
 1.  Click the twistie in the associated field to expand a list of fields.
@@ -66,7 +47,7 @@ To apply an enrichment by using the API, you must know the unique ID of the enri
 
 To apply an enrichment by using the API, complete the following steps:
 
-1.  Determine the base URL for the endpoint and the token or API key for your deployment. 
+1.  Determine the base URL for the endpoint and the token or API key for your deployment.
 
     For more information, see [Building custom applications with the API](/docs/discovery-data?topic=discovery-data-api-use).
 
@@ -76,8 +57,8 @@ To apply an enrichment by using the API, complete the following steps:
 
 1.  If you don't know the ID of the collection that you want to apply the enrichment to, get a list of your collections to find it.
 
-    For example: 
-    
+    For example:
+
     ```curl
     GET $authentication $url/v2/projects/$project_id/collections?version=2019-11-22
     ```
@@ -85,10 +66,10 @@ To apply an enrichment by using the API, complete the following steps:
 
     The `collection_id` is returned.
 
-1.  Send a GET request to return the configuration of the collection that lists the applied enrichments. 
+1.  Send a GET request to return the configuration of the collection that lists the applied enrichments.
 
-    For example: 
-    
+    For example:
+
     ```curl
     GET $authentication $url/v2/projects/$project_id/collections/$collection_id?version=2019-11-22
     ```
@@ -110,8 +91,8 @@ To apply an enrichment by using the API, complete the following steps:
 
 1.  Submit the updated JSON request body with the [update collection](https://cloud.ibm.com/apidocs/discovery-data#updatecollection){: external} method to apply the enrichment to your collection.
 
-    For example: 
-    
+    For example:
+
     ```curl
     POST $authentication -d '$requestBody' $url/v2/projects/$project_id/collections/$collection_id?version=2019-11-22
     ```

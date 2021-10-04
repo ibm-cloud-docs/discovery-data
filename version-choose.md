@@ -2,28 +2,13 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:preview: .preview}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:table: .aria-labeledby="caption"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting the most from Discovery
 {: #version-choose}
@@ -45,7 +30,7 @@ The latest version offers the following features and enhancements:
 - Connectors to popular data sources that can quickly access valuable data where it resides.
 - Smart Document Understanding that learns from the structure of human-readable documents, such as PDFs.
 - Natural language query support across all document types, optimized with machine learning to find targeted answers.
--	Advanced search capabilities, such as answer finding, curations, and table retrieval.
+- Advanced search capabilities, such as answer finding, curations, and table retrieval.
 - An out-of-the-box contract understanding function that helps you search and interpret legal contracts.
 - A full-featured Content Mining application that you can use to conduct in-depth analysis of unstructured text.
 - Customizable user interface components that help you to deploy custom applications.
@@ -58,7 +43,7 @@ If you are already familiar with the earlier version of the product, learn more 
 The latest version has new features that were previously unavailable. The following table describes feature support in both versions right now.
 
 | Feature | Latest version (v2) | Earlier version (v1) |
-|---------|---------------------|----------------------|
+|---------|:-------------------:|:--------------------:|
 | Use projects to organize your work | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Create a content mining project type and then use the built-in Content Mining application to do in-depth data analysis (*{{site.data.keyword.icp4dfull_notm}} and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Apply the Parts of Speech enrichment to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | |

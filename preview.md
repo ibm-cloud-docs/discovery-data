@@ -10,26 +10,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Previewing your project
 {: #preview}
@@ -37,7 +18,7 @@ subcollection: discovery-data
 Preview your project and share it with others.
 {: shortdesc}
 
-Try out your project and share it with others on your team for testing purposes. A test implementation of your project is created and hosted by IBM. Use this application preview to test your search results. 
+Try out your project and share it with others on your team for testing purposes. A test implementation of your project is created and hosted by IBM. Use this application preview to test your search results.
 
 To preview and share your project, complete the following steps:
 
@@ -51,4 +32,3 @@ To preview and share your project, complete the following steps:
 1.  Paste the URL into a web browser to test it yourself or send the URL to team members.
 
     Don't forget to send any login credentials that are needed to access the project when you send the link to your colleagues.
- 

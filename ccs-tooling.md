@@ -8,28 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:xml: .ph data-hd-programlang='xml'}
-{:properties: .ph data-hd-programlang='properties'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Using a custom Cloud Pak for Data connector from the Discovery user interface
 {: #ccs-tooling}
@@ -44,8 +23,8 @@ This information applies only to installed deployments.
 
 You create and manage a collection as described in [Creating and managing collections](/docs/discovery-data?topic=discovery-data-collections). You can use a successfully deployed custom connector during this process as follows. Follow these instructions to use a custom connector instead of one of the pre-built connectors that are listed in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
-1.  After you create a project, look for your custom connector to connect to a data source. 
-1.  Select the custom connector and then click **Next**. 
+1.  After you create a project, look for your custom connector to connect to a data source.
+1.  Select the custom connector and then click **Next**.
 
     The **Configure collection** page opens.
 

@@ -2,33 +2,13 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:beta: .beta}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Salesforce
 {: #connector-salesforce-cloud}
@@ -50,12 +30,15 @@ During subsequent scheduled recrawls, only new and modified documents are crawle
 
 All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
-The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
+{{site.data.keyword.discoveryshort}} can crawl the following objects:
 
-| Objects that are crawled |
-|--------------------------|
-| Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments |
-{: caption="Table 1. Data sources crawling support" caption-side="top"}
+-   Any default and custom objects that you have access to
+-   Accounts
+-   Contacts
+-   Cases
+-   Contracts
+-   Knowledge articles
+-   Attachments
 
 ## Data source requirements
 {: #connector-salesforce-cloud-reqs}
@@ -87,7 +70,7 @@ To configure the Salesforce data source, complete the following steps in {{site.
 
     - Username
     - Password plus service token
-    
+
       To form the password, concatenate the Password and Service token values that you noted earlier. For example, `myP@ssw0rdmnaO8jsRET5CiJww9JnURlNN`. The password and token values are never returned and are used only when credentials are created or modified.
     - URL
 
@@ -96,7 +79,7 @@ To configure the Salesforce data source, complete the following steps in {{site.
 1.  If the language of the documents on the site is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
+1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Select the objects that you want to crawl.
@@ -113,6 +96,6 @@ To configure the Salesforce data source, complete the following steps in {{site.
 
 1.  Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

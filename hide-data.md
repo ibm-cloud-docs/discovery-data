@@ -8,26 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Preventing content from being returned
 {: #hide-data}
@@ -37,7 +18,7 @@ Prevent content that you don't want customers to see from being included in quer
 
 You can prevent content from being included in query results in the following ways:
 
-- Delete an entire collection. 
+- Delete an entire collection.
 
    For more information, see [Deleting collections](/docs/discovery-data?topic=discovery-data-manage-collections#collection-delete).
 
@@ -62,4 +43,3 @@ You can prevent content from being included in query results in the following wa
       {: tip}
 
    1. A developer can use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API. The document ID is a required parameter.
-  

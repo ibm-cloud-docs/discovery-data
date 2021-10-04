@@ -8,26 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Creating projects
 {: #projects}
@@ -68,7 +49,7 @@ To create a project, complete the following steps:
 
     For more information about supported data sources, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
-Take advantage of the following resources that are available from the page header: 
+Take advantage of the following resources that are available from the page header:
 
 - To open the product documentation, select the **Help** ![Help icon](images/help_icon.png) icon.
 - To see all of your projects, click **My projects**.
@@ -165,7 +146,7 @@ Documents that you add as part of the initial collection are automatically enric
 
 - Parts of speech are identified and tagged.
 
-After you add a collection and optionally apply more enrichments to the data, a full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp). 
+After you add a collection and optionally apply more enrichments to the data, a full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Using the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 You can create a collection (CSV file only) from the deployed Content Mining application. The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection.
 {: note}

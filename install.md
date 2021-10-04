@@ -8,28 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:external: target="_blank" .external}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Installing 4.0.0
 {: #install}
@@ -48,7 +27,7 @@ You install {{site.data.keyword.icp4dfull}}, and then install the {{site.data.ke
 {: #beforebegin}
 
 For more information about security in {{site.data.keyword.icp4dfull_notm}}, see [Security considerations](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=planning-security-considerations){: external}.
-  
+
 Encryption of data at rest must be handled by the storage provider.
 {: important}
 
@@ -60,7 +39,7 @@ Review the {{site.data.keyword.discoveryshort}} release notes and known issues:
 ## System requirements
 {: #system-requirements}
 
-For more information about the system requirements for {{site.data.keyword.icp4dfull_notm}}, see [System requirements](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=planning-system-requirements){: external} 
+For more information about the system requirements for {{site.data.keyword.icp4dfull_notm}}, see [System requirements](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=planning-system-requirements){: external}
 
 ## Full installation instructions
 

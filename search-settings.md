@@ -2,33 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-13"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Expanding the meaning of queries
 {: #search-settings}
@@ -45,55 +25,55 @@ Synonyms that you add to improve the search results function differently from sy
 
 You can define two types of expansions:
 
-- **Bidirectional**: Each entry in the `expanded_terms` list expands to include all expanded terms. For example, a query for `ibm` expands to `ibm OR international business machines OR big blue`.
+-   **Bidirectional**: Each entry in the `expanded_terms` list expands to include all expanded terms. For example, a query for `ibm` expands to `ibm OR international business machines OR big blue`.
 
-  Bidirectional example:
+    Bidirectional example:
 
-  ```JSON
-  {
-    "expansions": [
-      {
-        "expanded_terms": [
-          "ibm",
-          "international business machines",
-          "big blue"
-        ]
-      }
-    ]
-  }
-  ```
-  {: codeblock}
+    ```json
+    {
+      "expansions": [
+        {
+          "expanded_terms": [
+            "ibm",
+            "international business machines",
+            "big blue"
+          ]
+        }
+      ]
+    }
+    ```
+    {: codeblock}
 
-- **Unidirectional**: The `input_terms` in the query is replaced by the `expanded_terms`. For example, a query for `banana` is converted to `plantain OR fruit` and does not contain the original term, `banana`. If you want an input term to be included in the query, then repeat the input term in the expanded terms list.
+-   **Unidirectional**: The `input_terms` in the query is replaced by the `expanded_terms`. For example, a query for `banana` is converted to `plantain OR fruit` and does not contain the original term, `banana`. If you want an input term to be included in the query, then repeat the input term in the expanded terms list.
 
-  Unidirectional example:
+    Unidirectional example:
 
-  ```JSON
-  {
-    "expansions": [
-      {
-        "input_terms": [
-          "banana"
-         ],
-        "expanded_terms": [
-          "plantain",
-          "fruit"
-         ]
-       },
-       {
-        "input_terms": [
-           "car"
-         ],
-        "expanded_terms": [
-           "car",
-           "automobile"
-           "vehicle"
-         ]
-       }
-     ]
-   }
-  ```
-  {: codeblock}
+    ```json
+    {
+      "expansions": [
+        {
+          "input_terms": [
+            "banana"
+          ],
+          "expanded_terms": [
+            "plantain",
+            "fruit"
+          ]
+        },
+        {
+          "input_terms": [
+            "car"
+          ],
+          "expanded_terms": [
+            "car",
+            "automobile"
+            "vehicle"
+          ]
+        }
+      ]
+    }
+    ```
+    {: codeblock}
 
 To enable query expansion, complete the following steps:
 
@@ -101,13 +81,13 @@ To enable query expansion, complete the following steps:
 
     Follow these guidelines:
 
-    - Specify the `input_terms` and `expanded_terms` in lowercase. Lowercase terms expand to uppercase.
-    - Multiword terms are supported only in bidirectional expansions.
-    - The synonyms files cannot contain terms that are specified as stop words. For example, if `on` is included in your stop words file, and you specify in your synonyms file that `rotfl` expands to `rolling on the floor laughing`, the expansion won't return the expected results. Check the words in the stop words file that is used by your collection by default to make sure that you don't use any of the same words. For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords).
+    -   Specify the `input_terms` and `expanded_terms` in lowercase. Lowercase terms expand to uppercase.
+    -   Multiword terms are supported only in bidirectional expansions.
+    -   The synonyms files cannot contain terms that are specified as stop words. For example, if `on` is included in your stop words file, and you specify in your synonyms file that `rotfl` expands to `rolling on the floor laughing`, the expansion won't return the expected results. Check the words in the stop words file that is used by your collection by default to make sure that you don't use any of the same words. For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords).
 
-    You can use the <a target="_blank" href="https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery/expansions.json" download>expansions.json <img src="../icons/launch-glyph.svg" alt="External link icon" title="External link icon"></a> file as a starting point when you build a query expansion list.
+    You can use the [expansions.json](https://watson-developer-cloud.github.io/doc-tutorial-downloads/discovery/expansions.json){: external} file as a starting point when you build a query expansion list.
 
-1.  From the navigation pane, open the **Improve and customize** page. 
+1.  From the navigation pane, open the **Improve and customize** page.
 1.  Expand **Improve relevance** from the Improvement tools pane.
 1.  Click **Synonyms**, and then click **Upload synonyms**.
 
