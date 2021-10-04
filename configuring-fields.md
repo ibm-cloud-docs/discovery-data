@@ -18,9 +18,8 @@ Smart Document Understanding (SDU) is technology that learns about the content o
 
 Use the Smart Document Understanding tool to add custom fields to a collection so you can do the following things:
 
-- Target enrichments at specific sections of a document.
-- Break large documents into smaller documents.
-
+-   Target enrichments at specific sections of a document.
+-   Break large documents into smaller documents.
 
 ## Identifying fields
 {: #identify-fields}
