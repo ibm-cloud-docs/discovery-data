@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# SharePoint Online
+# Microsoft SharePoint Online
 {: #connector-sharepoint-online-cp4d}
 
 Crawl documents that are stored in an online Microsoft SharePoint data source.

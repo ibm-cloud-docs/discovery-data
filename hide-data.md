@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-17"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Preventing content from being returned
+# Excluding content from query results
 {: #hide-data}
 
 Prevent content that you don't want customers to see from being included in query results.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# SharePoint OnPrem
+# Microsoft SharePoint OnPrem
 {: #connector-sharepoint-onprem-cp4d}
 
 Crawl documents that are stored in an on-premises Microsoft SharePoint data source.
