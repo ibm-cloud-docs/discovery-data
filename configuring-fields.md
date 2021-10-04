@@ -206,7 +206,7 @@ Use the imported model as-is. Do not make any more annotations. If you make anno
 
 The **Manage fields** tab contains several options:
 
--   **Identify fields to index**: For more information, see [Preventing content from being returned in results](/docs/discovery-data?topic=discovery-data-hide-data).
+-   **Identify fields to index**: For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
 -   **Improve query results by splitting your documents**: For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents)
 -   **Date format settings**
 
