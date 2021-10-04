@@ -25,7 +25,7 @@ With Watson NLU, you can identify and tag meaningful information in your collect
 
 For example, the following image shows a transcript of the US Declaration of Independence that was added to a {{site.data.keyword.discoveryshort}} collection. The Entities enrichment recognizes the terms *Governments* and *King of Great Britain* (among others) and tags them as entity mentions.
 
-![Shows the first two paragraphs of the declaration with the terms Governments, States, and King of Great Britain highlighted and with associated JSON representation of the mentions.](images/decl-annotated.png)
+![Shows the first two paragraphs of the declaration with the terms Governments and King of Great Britain highlighted and with associated JSON representation of the mentions.](images/decl-annotated.png)
 
 Some of the NLU enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
 
