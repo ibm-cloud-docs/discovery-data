@@ -2,26 +2,13 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-10-02"
 
 subcollection: assistant-data
 
-
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Building custom applications with the API
 {: #api-use}
@@ -59,11 +46,12 @@ To use the API, you must construct the URL to use in your requests.
 1.  Copy the bearer token also. You will need to pass the token when you make an API call.
 1.  From the launched application instance, go to the **Integrate and Deploy** > **API Information** page.
 1.  Copy the project ID. You will specify this value as the `{project_id}`.
-1.  Construct a request URL by using the IDs you copied. 
+1.  Construct a request URL by using the IDs you copied.
 
     For example, the following request lists the collections in the project:
 
-    ```
-    curl -H "Authorization: Bearer {token}" "{url}/v2/projects/{project_id}/collections?version=2019-11-29 -k"
+    ```sh
+    curl -H "Authorization: Bearer {token}" \
+    "{url}/v2/projects/{project_id}/collections?version=2019-11-29 -k"
     ```
     {: codeblock}

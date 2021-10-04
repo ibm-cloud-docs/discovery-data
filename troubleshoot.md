@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-10-01"
 
 subcollection: discovery-data
 
@@ -10,19 +10,7 @@ content-type: troubleshoot
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:tsSymptoms: .tsSymptoms}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting
 {: #troubleshoot}
@@ -42,36 +30,36 @@ If the document status cannot be promoted to `Processing`, check the status of t
 
 1.  Run the following command:
 
-    ```
+    ```sh
     oc get pod -l 'tenant=wd,run in (inlet,outlet,converter)'
     ```
     {: pre}
 
 1.  If any of the pods are not showing a `Running` status, restart the failing pod by using the following command:
 
-    ```
+    ```sh
     oc delete pod <pod_name>
     ```
     {: pre}
 
 1.  Otherwise, open the *Manage collections*>*{collection name}*>*Activity* page. Check the *Warnings and errors at a glance* section for the message, `OutOfMemory happened during conversion. Please reconsider size of documents.` If shown, use the following command to raise the memory size for the converter:
-      
-    ```
-    oc patch wd wd --type=merge --patch='{"spec":{"ingestion":{"converter":{
-    "maxHeapMemory":"10240m","resources":{"limits":{"memory":"10Gi"}}}}}}'
+
+    ```sh
+    oc patch wd wd --type=merge \
+    --patch='{"spec":{"ingestion":{"converter":b{"maxHeapMemory":"10240m","resources":{"limits":{"memory":"10Gi"}}}}}}'
     ```
     {: pre}
-      
+
     Adjust the value of `maxHeapMemory` and the container memory according to your cluster resources.
     {: note}
 
 1.  After the converter pod restarts successfully, click **Reprocess** from the Activity tab.
 
 If documents are stuck in `Processing` status and cannot be promoted to the `Available` status for a collection, complete the following steps:
-    
+
 1.  Check the status of Hadoop by using the following command:
 
-    ```
+    ```sh
     oc get pod -l 'tenant=wd,run in (hdp-rm,hdp-worker)'
     ```
     {: pre}
@@ -80,23 +68,24 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
 
 1.  If any of the pods are not showing a `Running` status, restart the failing pod by using the following command:
 
-    ```
+    ```sh
     oc delete pod <pod_name>
     ```
     {: pre}
 
 1.  Check whether any of the Hadoop worker nodes has insufficient memory by using the following command to look for the `OOM when allocating` message:
 
-    ```
-    oc logs -l tenant=wd,run=hdp-worker -c logger --tail=-1 | grep "OOM when allocating"
+    ```sh
+    oc logs -l tenant=wd,run=hdp-worker -c logger --tail=-1 \
+    | grep "OOM when allocating"
     ```
     {: pre}
 
 1.  If a match is found, use the following command to patch the resource:
 
-    ```
-    oc patch wd wd --type=merge --patch='{"spec":{"orchestrator":{
-    "docproc":{"pythonAnalyzerMaxMemory":"8g"}}}}'
+    ```sh
+    oc patch wd wd --type=merge \
+    --patch='{"spec":{"orchestrator":{"docproc":{"pythonAnalyzerMaxMemory":"8g"}}}}'
     ```
     {: pre}
 
@@ -105,134 +94,135 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
 
 1.  Check whether any of the Hadoop worker nodes has insufficient memory by using the following command to look for the `OutOfMemoryError` message:
 
-    ```
-    oc logs -l tenant=wd,run=hdp-worker -c logger --tail=-1 | grep "OutOfMemoryError"
+    ```sh
+    oc logs -l tenant=wd,run=hdp-worker -c logger --tail=-1 \
+    | grep "OutOfMemoryError"
     ```
     {: pre}
 
 1.  If a match is found, check the current environment variable values and the Hadoop worker node memory resources by using following commands:
 
-    - To check the `"DOCPROC_MAX_MEMORY"` variable in the orchestrator container:
+    -   To check the `"DOCPROC_MAX_MEMORY"` variable in the orchestrator container:
 
-      ```
-      oc exec `oc get po -l run=orchestrator -o 'jsonpath={.items[0].metadata.name}'`
-      env | grep DOCPROC_MAX_MEMORY
-      ```
-      {: pre}
-      
-    - To check the `"YARN_NODEMANAGER_RESOURCE_MEMORY_MB"` variable in the Hadoop worker node container:
+        ```sh
+        oc exec `oc get po -l run=orchestrator -o 'jsonpath={.items[0].metadata.name}'` env \
+        | grep DOCPROC_MAX_MEMORY
+        ```
+        {: pre}
 
-      ```
-      oc exec `oc get po -lrun=hdp-worker -o 'jsonpath={.items[0].metadata.name}'` 
-      -c hdp-worker -- env | grep YARN_NODEMANAGER_RESOURCE_MEMORY_MB
-      ```
-      {: pre}
+    -   To check the `"YARN_NODEMANAGER_RESOURCE_MEMORY_MB"` variable in the Hadoop worker node container:
 
-    - To check the memory resource of the hdp-worker container:
+        ```sh
+        oc exec `oc get po -lrun=hdp-worker -o 'jsonpath={.items[0].metadata.name}'` \
+        -c hdp-worker -- env | grep YARN_NODEMANAGER_RESOURCE_MEMORY_MB
+        ```
+        {: pre}
 
-      ```
-      oc get po -l run=hdp-worker -o 'jsonpath=requests are {.items[*].spec.containers[
-      ?(.name=="hdp-worker")].resources.requests.memory}, limits are 
-      {.items[*].spec.containers[?(.name=="hdp-worker")].resources.limits.memory}'
-      ```
-      {: pre}
+    -   To check the memory resource of the hdp-worker container:
+
+        ```sh
+        oc get po -l run=hdp-worker -o 'jsonpath=requests are \
+        {.items[*].spec.containers[?(.name=="hdp-worker")].resources.requests.memory}, \
+        limits are {.items[*].spec.containers[?(.name=="hdp-worker")].resources.limits.memory}'
+        ```
+        {: pre}
 
 1.  Patch the environment variable resources gradually by using the following command:
 
-    ```
-    oc patch wd `oc get wd -o 'jsonpath={.items[0].metadata.name}'` --type=merge 
-    --patch='{"spec":{"orchestrator":{"docproc":{"maxMemory":"4g"}}, 
-    "hdp":{"worker":{"nm":{"memoryMB":12000}, "resources":{"limits":{"memory":"20Gi"},
+    ```sh
+    oc patch wd `oc get wd -o 'jsonpath={.items[0].metadata.name}'` \
+    --type=merge --patch='{"spec":{"orchestrator":{"docproc":{"maxMemory":"4g"}}, \
+    "hdp":{"worker":{"nm":{"memoryMB":12000}, "resources":{"limits":{"memory":"20Gi"}, \
     "requests":{"memory":"20Gi"}}}}}}'
     ```
     {: pre}
 
     The default values for the resources are as follows:
 
-    - `docproc.maxMemory`: 2g 
-      
-      Increase in increments of 2g at a time.
-    - `nm.memoryMB`: 10,240 
-      
-      Start from 12,000 and increase in increments of 2,000 at a time.
-    - `memory requests/limits`: 13Gi/18Gi 
-      
-      Increase in increments of 2Gi at a time.
+    -   `docproc.maxMemory`: 2g 
+
+        Increase in increments of 2g at a time.
+    -   `nm.memoryMB`: 10,240 
+
+        Start from 12,000 and increase in increments of 2,000 at a time.
+    -   `memory requests/limits`: 13Gi/18Gi 
+
+        Increase in increments of 2Gi at a time.
 
 1.  Check whether the Hadoop pods restart successfully by using the following command:
 
-    ```
+    ```sh
     oc get pods -l 'tenant=wd,run in (orchestrator,hdp-worker)'
     ```
     {: pre}
 
-1.  Confirm that the new configurations were applied after you patched the cluster. 
-      
+1.  Confirm that the new configurations were applied after you patched the cluster.
+
 1.  If the pod is not restarted, check whether the resource got updated by using the following command:
-      
-    ```
+
+    ```sh
     oc get wd wd -o yaml
     ```
     {: pre}
 
 1.  Check the status of Elasticsearch by checking the client and data nodes separately.
-    
+
 1.  On the client node, run the following command to check whether an out-of-memory exception occurred:
 
-    ```
-    oc logs -l tenant=wd,ibm-es-data=False,ibm-es-master=False 
+    ```sh
+    oc logs -l tenant=wd,ibm-es-data=False,ibm-es-master=False \
     -c elasticsearch --tail=-1 | grep "OutOfMemoryError"
     ```
     {: pre}
 
 1.  If an error message is found, excluding INFO messages, increase the memory resource by using the following command:
 
-    ```
-    oc patch wd wd --type=merge --patch='{"spec":{"elasticsearch":
-    {"clientNode":{"maxHeap":"896m","resources":{"limits":{"memory":"1792Mi"}}}}}}'
+    ```sh
+    oc patch wd wd --type=merge \
+    --patch='{"spec":{"elasticsearch":{"clientNode":{"maxHeap":"896m","resources":{"limits":{"memory":"1792Mi"}}}}}}'
     ```
     {: pre}
 
 1.  After you run this command, the Elasticsearch client pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
 
-    ```
+    ```sh
     oc get pod -l tenant=wd,ibm-es-data=False,ibm-es-master=False
     ```
     {: pre}
 
 1.  After the pod is restarted successfully, check the new value of `ES_JAVA_OPTS` and the container memory limit by using the following command:
 
-    ```
+    ```sh
     oc describe $(oc get po -l tenant=wd,ibm-es-data=False,ibm-es-master=False -o name)
     ```
     {: pre}
 
 1.  On the data node, run the following command to check whether an out-of-memory exception occurred:
 
-    ```
-    oc logs -l tenant=wd,ibm-es-data=True,ibm-es-master=False 
+    ```sh
+    oc logs -l tenant=wd,ibm-es-data=True,ibm-es-master=False \
     -c elasticsearch --tail=-1 | grep "OutOfMemoryError"
     ```
     {: pre}
 
 1.  If an error message is found, excluding INFO messages, increase the memory resource by using the following command:
 
-    ```
-    oc patch wd wd --type=merge --patch='{"spec":{"elasticsearch":{"dataNode":
-    {"maxHeap":"6g","resources":{"limits":{"memory":"10Gi"},"requests":{"memory":"8Gi"}}}}}}'
+    ```sh
+    oc patch wd wd --type=merge \
+    --patch='{"spec":{"elasticsearch":{"dataNode":{"maxHeap":"6g","resources":{"limits":{"memory":"10Gi"},"requests":{"memory":"8Gi"}}}}}}'
     ```
     {: pre}
 
 1.  After you run this command, the Elasticsearch client pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
 
-    ```
+    ```sh
     oc get pod -l tenant=wd,ibm-es-data=True,ibm-es-master=False
     ```
     {: pre}
 
 1.  After the pod is restarted successfully, check the new value of `ES_JAVA_OPTS` and the container memory requests/limit by using the following command:
 
-    ```
+    ```sh
     oc describe $(oc get po -l tenant=wd,ibm-es-data=True,ibm-es-master=False -o name)
     ```
     {: pre}
@@ -242,7 +232,7 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
 
     If the pod cannot be restarted after 30 mins by applying the `oc patch` command, collect logs to share with IBM Support by using the following command:
 
-    ```
+    ```sh
     oc logs -l control-plane=ibm-es-controller-manager --tail=-1
     ```
     {: pre}
@@ -251,18 +241,18 @@ For both issues, where document status cannot be promoted to `Processing` and wh
 
 1.  Run the following command to check whether the Elasticsearch disk is full:
 
-    ```
-    oc logs -l tenant=wd,run=elastic,ibm-es-master=True 
+    ```sh
+    oc logs -l tenant=wd,run=elastic,ibm-es-master=True \
     -c elasticsearch --tail=100000|grep 'disk watermark'
     ```
     {: pre}
 
 1.  If the log shows a message such as `watermark exceeded on x-data-1`, it means the disk on the node that is specified is full and you need to increase the disk size by using the following command:
 
-    ```
-    oc patch pvc $(oc get pvc -l tenant=wd,run=elastic,ibm-es-data=True,ibm-es-master=False 
-    -o jsonpath='{.items[N].metadata.name}') -p '{"spec": {"resources": {"requests": 
-    {"storage": "60Gi"}}}}'
+    ```sh
+    oc patch pvc $(oc get pvc -l tenant=wd,run=elastic,ibm-es-data=True,ibm-es-master=False \
+    -o jsonpath='{.items[N].metadata.name}') \
+    -p '{"spec": {"resources": {"requests":{"storage": "60Gi"}}}}'
     ```
     {: pre}
 
@@ -270,10 +260,9 @@ For both issues, where document status cannot be promoted to `Processing` and wh
 
     For example, if the log mentions `data-1` in the node name, then the command to use is:
 
-    ```
-    oc patch pvc $(oc get pvc -l tenant=wd,run=elastic,ibm-es-data=True,ibm-es-master=False 
-    -o jsonpath='{.items[1].metadata.name}') -p '{"spec": {"resources": {"requests": 
-    {"storage": "60Gi"}}}}'
+    ```sh
+    oc patch pvc $(oc get pvc -l tenant=wd,run=elastic,ibm-es-data=True,ibm-es-master=False \
+    -o jsonpath='{.items[1].metadata.name}') -p '{"spec": {"resources": {"requests":{"storage": "60Gi"}}}}'
     ```
     {: pre}
 
@@ -293,46 +282,47 @@ This limit of 1,000 shards does not apply to versions of {{site.data.keyword.dis
 ### Increasing the shard limit
 {: #increase-shards}
 
-1. Log in to your {{site.data.keyword.discoveryshort}} cluster.
-1. Access your data node.
-1. Enter the following command:
+1.  Log in to your {{site.data.keyword.discoveryshort}} cluster.
+1.  Access your data node.
+1.  Enter the following command:
 
-   ```sh
-   oc exec -it $(oc get pod -l app=elastic,ibm-es-data=True -o jsonpath='{.items[0].metadata.name}') -- bash
-   ```
-   {: pre}
+    ```sh
+    oc exec -it $(oc get pod \
+    -l app=elastic,ibm-es-data=True -o jsonpath='{.items[0].metadata.name}') -- bash
+    ```
+    {: pre}
 
-1. Enter the following command, replacing the `<>` and the content inside with your port number:
+1.  Enter the following command, replacing the `<>` and the content inside with your port number:
 
-   ```sh
-   curl -X POST http://localhost:<port_number>/_cluster/health?pretty
-   ```
-   {: pre}
+    ```sh
+    curl -X POST http://localhost:<port_number>/_cluster/health?pretty
+    ```
+    {: pre}
 
-   If you do not know what your port number is, enter the following command to find it:
+    If you do not know what your port number is, enter the following command to find it:
 
-   ```sh
-   oc get pod -l app=elastic,ibm-es-data=True -o json | jq .items[].spec.containers[].ports[0].containerPort | head -n 1`
-   ```
-   {: pre}
+    ```sh
+    oc get pod -l app=elastic,ibm-es-data=True -o json \
+    | jq .items[].spec.containers[].ports[0].containerPort | head -n 1`
+    ```
+    {: pre}
 
-   The curl `POST` command returns a value for `active_primary_shards`. If you have one data node that has a value larger than 1,000 or if you have two data nodes that have a value larger than 2,000, you must increase the shard limit to create new projects and collections in your cluster.
+    The curl `POST` command returns a value for `active_primary_shards`. If you have one data node that has a value larger than 1,000 or if you have two data nodes that have a value larger than 2,000, you must increase the shard limit to create new projects and collections in your cluster.
 
-   If you increase this limit, the cluster becomes less stable because it contains an increased number of shards.
-   {: important}
+    If you increase this limit, the cluster becomes less stable because it contains an increased number of shards.
+    {: important}
 
-1. Enter the following command to increase the number of shards, replacing `<port_number>` with your port number and `<total_shards_per_node>` and `<max_shards_per_node>` with the new shard limit that you want to assign to a node:
+1.  Enter the following command to increase the number of shards, replacing `<port_number>` with your port number and `<total_shards_per_node>` and `<max_shards_per_node>` with the new shard limit that you want to assign to a node:
 
-   ```sh
-   curl -X POST http://localhost:<port_number>/_cluster/settings -d '{
-     "persistent": {
-       "cluster.routing.allocation.total_shards_per_node":<total_shards_per_node>, "cluster.max_shards_per_node":<max_shards_per_node>
-     }
-   }' -XPUT -H 'Content-Type:application/json'
-   ```
-   {: pre}
+    ```sh
+    curl -X POST http://localhost:<port_number>/_cluster/settings \
+    -d '{"persistent": {"cluster.routing.allocation.total_shards_per_node":<total_shards_per_node>, \
+    "cluster.max_shards_per_node":<max_shards_per_node>} }' \
+    -XPUT -H 'Content-Type:application/json'
+    ```
+    {: pre}
 
-   After you increase the shard limit, you can create more projects and collections on your cluster.
+    After you increase the shard limit, you can create more projects and collections on your cluster.
 
 ## Clearing a lock state
 {: #troubleshoot-ls}
@@ -344,7 +334,7 @@ If the Discovery API does not come online or if the `gateway-0` pod looks like i
 
 The logs would indicate if Liquibase is failing and unable to run. If the system is locked, you might see something similar to the following:
 
-```
+```text
 [11/7/19 5:07:51:491 UTC] 0000002f liquibase.executor.jvm.JdbcExecutor I SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
 [11/7/19 5:07:51:593 UTC] 0000002f liquibase.lockservice.StandardLockService I Waiting for changelog lock....
 [11/7/19 5:08:01:601 UTC] 0000002f liquibase.executor.jvm.JdbcExecutor I SELECT LOCKED FROM public.databasechangeloglock WHERE ID=1
@@ -357,7 +347,7 @@ The logs would indicate if Liquibase is failing and unable to run. If the system
 
 It is possible to manually unlock the plug-in. If you have {{site.data.keyword.discoveryshort}} 2.1.4 or earlier, enter the following command on the postgres database that the `gateway-0` pod is looking at:
 
-```
+```sh
 psql dadmin
 UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null where ID=1;
 ```
@@ -365,7 +355,7 @@ UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null w
 
 If you have {{site.data.keyword.discoveryshort}} 2.2.0 or later, enter the following command on the postgres database that the `gateway-0` pod is looking at:
 
-```
+```sh
 oc exec -it wd-discovery-postgres-0 -- bash -c 'env PGPASSWORD="$PG_PASSWORD" psql "postgresql://$PG_USER@$STKEEPER_CLUSTER_NAME-proxy-service:$STKEEPER_PG_PORT/dadmin" -c "UPDATE DATABASECHANGELOGLOCK SET LOCKE
 D=FALSE, LOCKGRANTED=null, LOCKEDBY=null where ID=1"'
 ```
@@ -379,7 +369,7 @@ If you can then restart the gateway pod, everything should resume normally.
 
 ![Cloud Pak for Data only](images/desktop.png) **Installed only**: There are two environment variables that need to be adjusted for Smart Document Understanding in {{site.data.keyword.discoveryfull}} version 2.1.0. This was resolved in version 2.1.1, see [2.1.1 release, 24 Jan 2020](/docs/discovery-data?topic=discovery-data-release-notes#24jan2020).
 
-```
+```sh
 SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS
 SDU_YOLO_TIMEOUT_SEC
 ```
@@ -400,29 +390,32 @@ These values should be set when the software is installed or reinstalled.
 
 If you receive error messages that are related to timeouts and insufficient memory for your enrichments, you can enter the following commands to change timeout and memory settings to potentially resolve these error messages:
 
-- Notice message: `<enrichment_name>: Document enrichment timed out`
-  
-  Suggested action: Increase the document processing timeout. Enter the following command to increase the default timeout from 10 to 20 minutes:
-  
-  ```
-  oc patch wd wd --type=merge --patch='{"spec": {"orchestrator": {"docproc": {"defaultTimeoutSeconds": 1200 } } } }'
-  ```
-  {: pre}
+-   Notice message: `<enrichment_name>: Document enrichment timed out`
 
-- Notice message: `<enrichment_name>: Document enrichment failed due to lack of memory`
-  
-  Suggested action: Increase the orchestrator container memory limit. Enter the following command to increase the memory limit from 4 Gi to 6 Gi:
-  
-  ```
-  oc patch wd wd --type=merge --patch='{"spec": {"orchestrator": {"resources": {"limits": {"memory": "6Gi"} } } } }'
-  ```
-  {: pre}
+    Suggested action: Increase the document processing timeout. Enter the following command to increase the default timeout from 10 to 20 minutes:
 
-- Notice messsage: `Indexing request timed out`
-  
-  Suggested action: Increase the timeout for pushing documents to Elasticsearch. Enter the following command to increase the default timeout from 10 to 20 minutes:
+    ```sh
+    oc patch wd wd --type=merge \
+    --patch='{"spec": {"orchestrator": {"docproc": {"defaultTimeoutSeconds": 1200 } } } }'
+    ```
+    {: pre}
 
-  ```
-  oc patch wd wd --type=merge --patch='{"spec": {"shared": {"elastic": {"publishTimeoutSeconds": 1200 } } } }'
-  ```
-  {: pre}
+-   Notice message: `<enrichment_name>: Document enrichment failed due to lack of memory`
+
+    Suggested action: Increase the orchestrator container memory limit. Enter the following command to increase the memory limit from 4 Gi to 6 Gi:
+
+    ```sh
+    oc patch wd wd --type=merge \
+    --patch='{"spec": {"orchestrator": {"resources": {"limits": {"memory": "6Gi"} } } } }'
+    ```
+    {: pre}
+
+-   Notice messsage: `Indexing request timed out`
+
+    Suggested action: Increase the timeout for pushing documents to Elasticsearch. Enter the following command to increase the default timeout from 10 to 20 minutes:
+
+    ```sh
+    oc patch wd wd --type=merge \
+    --patch='{"spec": {"shared": {"elastic": {"publishTimeoutSeconds": 1200 } } } }'
+    ```
+    {: pre}

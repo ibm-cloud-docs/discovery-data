@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-10-01"
 
 subcollection: discovery-data
 
@@ -14,6 +14,12 @@ content-type: conref
 
 # Content references for overview subcollection
 {: #conref}
+
+## Second-level heading
+{: #conref-second-level}
+
+### Third-level heading
+{: #conref-third-level}
 
 #### Supported data sources
 {: #data-sources-reuse}

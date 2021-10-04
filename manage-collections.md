@@ -2,32 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing data collections
 {: #manage-collections}
@@ -40,7 +21,7 @@ After the processing of a new data collection is finished, you can see a summary
 From this page, you can access the following tabs:
 
 - **Activity**: Shows the status of a synchronization and the number of documents that were added to the collection. It also shows whether any documents from the data source were skipped or generated errors as the collection was created and why. ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Shows the time of the next scheduled synchronization.
-- **Identify fields**: To teach {{site.data.keyword.discoveryshort}} to recognize fields based on the structure of the source document (H1 equals title, for example), apply a Smart Document Understanding model or use the Smart Document Understanding tool to train a model by annotating documents. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+- **Identify fields**: To teach {{site.data.keyword.discoveryshort}} to recognize fields based on the structure of the source document (H1 equals title, for example), apply a Smart Document Understanding model or use the Smart Document Understanding tool to train a model by annotating documents. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
 - **Manage fields**: Review the fields from the source documents that are being indexed and make any necessary changes. For more information, see [preventing content from being returned](/docs/discovery-data?topic=discovery-data-hide-data). You can also break large documents into multiple smaller documents. For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 - **Enrichments**: Review the enrichments that are being applied to the documents to determine whether you want to add or remove any enrichments. For more information, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu) and [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#classifier).
 - **Processing settings**: Review the data collection configuration settings that were specified when the data source collection was created. You can make adjustments, such as changing the frequency of synchronizations. If you are uploading data, you can indicate whether you want to extract text from images by changing the optical character recognition (OCR) setting.
@@ -60,8 +41,8 @@ To change how a data source is processed, complete the following steps:
 1.  Click the **Processing settings** tab.
 1.  Make any changes that you want to make to the processing settings.
 
-    The setting options differ by data source type. 
-    
+    The setting options differ by data source type.
+
     For more information about changing data synchronization schedules, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Click **Apply changes and reprocess**.
 
@@ -71,8 +52,8 @@ To change how a data source is processed, complete the following steps:
 <!-- c/s help for the *Collection usage and sharing* page. Do not delete. -->
 
 To find out whether a collection is being shared, open the *My Projects* page, and then complete the appropriate step for your deployment:
- 
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Click **Collection usage and sharing**. 
+
+- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Click **Collection usage and sharing**.
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Click **Data usage and GDPR**, and then review the **Collection usage** page.
 
 Collections can be associated with a single project, shared by two or more projects, or not associated with any project.
@@ -106,13 +87,13 @@ For more information about the other tabs, see the following topics:
 
 Find out whether a collection is being used anywhere before you delete it from the *Collection usage* page. Unshared collections can be deleted directly from this page.
 
-- To delete a single collection from a project, open the *Manage collections* page from the navigation panel, find the collection tile, and then click the delete icon. 
+-   To delete a single collection from a project, open the *Manage collections* page from the navigation panel, find the collection tile, and then click the delete icon.
 
-  Decide whether to keep the underlying data and configuration settings. If you choose to keep the data, you can find the collection in the unshared list on the *Collection usage* page. You might need to wait a few minutes before the collection is displayed.
-  
-  Click **Delete from project**.
+    Decide whether to keep the underlying data and configuration settings. If you choose to keep the data, you can find the collection in the unshared list on the *Collection usage* page. You might need to wait a few minutes before the collection is displayed.
 
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon, and then choose **Delete environment**.
+    Click **Delete from project**.
 
-  *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
-  {: tip}
+-   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon, and then choose **Delete environment**.
+
+    *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
+    {: tip}

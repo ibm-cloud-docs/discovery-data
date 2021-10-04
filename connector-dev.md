@@ -2,32 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Developing custom Cloud Pak for Data connector code
 {: #connector-dev}
@@ -155,41 +136,44 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
 1.  Log in to your {{site.data.keyword.discoveryshort}} cluster.
 
 1.  Enter the following command to obtain your crawler pod name:
-     
-     ```
+
+     ```sh
      oc get pods | grep crawler
      ```
      {: pre}
 
      You might see output that looks like this:
 
-     ```
+     ```text
      wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
      ```
-  
+     {: codeblock}
+
 1.  Enter the following command to obtain the `custom-crawler-docs.zip` file, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in step 2:
-     
-     ```
-     oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep custom-crawler-docs
+
+     ```sh
+     oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ \
+     | grep custom-crawler-docs
      ```
      {: pre}
 
      You might see output that is similar to the following:
 
-     ```
+     ```text
      -rw-r--r--. 1 dadmin dadmin 59451 Jan 19 03:50 custom-crawler-docs-${build-version}.zip
      ```
-  
+     {: codeblock}
+
 1.  Enter the following command to copy the `custom-crawler-docs.zip` file to the host server, replacing `{build-version}` with the build version number in step 3:
-     
-     ```
+
+     ```sh
      oc cp {crawler-pod-name}:/opt/ibm/wex/zing/resources/custom-crawler-docs-${build-version}.zip custom-crawler-docs.zip
      ```
      {: pre}
 
 1.  Enter the following command to expand the `custom-crawler-docs.zip` file:
-  
-     ```
+
+     ```sh
      unzip custom-crawler-docs.zip -d custom-crawler-docs-master
      ```
      {: pre}
@@ -214,28 +198,28 @@ In {{site.data.keyword.discoveryshort}} version 2.2.0 and earlier, perform the f
 
 1. Enter the following command to log in to the Docker registry where your {{site.data.keyword.discoveryshort}} images are available. Include your entitlement key in the following command:
 
-   ```
+   ```sh
    docker login cp.icr.io -u cp -p {entitlement_key}
    ```
    {: pre}
 
 1. Enter the following command to pull the `custom-crawler-sdk` image:
 
-   ```
+   ```sh
    docker pull cp.icr.io/cp/watson-discovery/custom-crawler-sdk:2.1.3
    ```
    {: pre}
 
 1. Enter the following command to run the `custom-crawler-sdk` image:
 
-   ```
+   ```sh
    docker run cp.icr.io/cp/watson-discovery/custom-crawler-sdk:2.1.3
    ```
    {: pre}
 
 1. Enter the following command to copy `custom-crawler-docs.zip` from the container where the image is running:
 
-   ```
+   ```sh
    docker cp {container_name}:/crawler/custom-crawler-docs.zip .
    ```
    {: pre}
@@ -269,7 +253,7 @@ For information about downloading the `custom-crawler-docs.zip` file on {{site.d
 
 The `custom-crawler-docs.zip` file expands into a `custom-crawler-docs-master` directory that includes the following contents:
 
-```
+```text
 custom-crawler-docs-master/
 ├── README.md
 ├── build.gradle

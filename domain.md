@@ -2,33 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:beta: .beta}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Adding domain-specific resources
 {: #domain}
@@ -57,11 +37,11 @@ For more information about how to apply built-in enrichments to your collection,
 
 To add a resource, complete the following steps:
 
-1.  Open your project and go to the *Improve and customize* page. 
+1.  Open your project and go to the *Improve and customize* page.
 1.  On the **Improvement tools** panel, expand **Teach domain concepts**, and then choose the resource that you want to add.
 
     After you create the resource, it becomes a new type of enrichment that you can apply to your data.
-1.  Specify the collection and field in which to apply the enrichment. 
+1.  Specify the collection and field in which to apply the enrichment.
 
     You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. You cannot apply enrichments to fields that begin with `extracted_metadata`, `enriched_`, or `metadata`.
     {: tip}
@@ -81,15 +61,15 @@ Add a classifier to assign documents in your collection into categories. {{site.
 
     The CSV file must be in UTF-8 encoding format and must meet the following requirements:
 
-    -  The format must be `text,label`. The `text` is the example text, and the `label` is the category name. 
-    
-       You can add more `label` columns if you need to apply more than one label to the sentence in the `text` column. For example, `text,label,label`.
-    -  The file must have at least two columns with no header.
-    -  Add at least 10 entries for each category that you want to define. The minimum number of entries that are required per category is 3. The more examples that you provide for each category, the better the classifier can predict the categories of other content in your collection.
+    -   The format must be `text,label`. The `text` is the example text, and the `label` is the category name.
+
+        You can add more `label` columns if you need to apply more than one label to the sentence in the `text` column. For example, `text,label,label`.
+    -   The file must have at least two columns with no header.
+    -   Add at least 10 entries for each category that you want to define. The minimum number of entries that are required per category is 3. The more examples that you provide for each category, the better the classifier can predict the categories of other content in your collection.
 
     The following example is a CSV file that defines two categories, named `facility_temperature` and `catering`. The example text consists of feedback from conference attendees.
 
-    ```
+    ```text
     The rooms were too cold.,facility_temperature
     Breakfast did not include gluten-free options.,catering
     The rooms were too warm.,facility_temperature
@@ -170,7 +150,7 @@ To add dictionary terms one by one, complete the following steps:
 1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Dictionaries**.
 1.  Click **New**.
 1.  Name your dictionary and choose the language.
-1.  Optional: Expand Advanced options, and specify a facet path to categorize any text that matches the dictionary entry. The text can be filtered by this facet later. 
+1.  Optional: Expand Advanced options, and specify a facet path to categorize any text that matches the dictionary entry. The text can be filtered by this facet later.
 
     If you use a hierarchy of categories, add a period between category names in the facet path to represent the hierarchy. For example, `automobiles.motorsports`.
 1.  Enter a term, and then select the **+** button to add it.
@@ -183,6 +163,7 @@ To add dictionary terms one by one, complete the following steps:
 
     Suggested terms are taken from the field to which the **Parts of Speech** enrichment is applied. Suggestions are not displayed if the **Parts of Speech** enrichment is not enabled.
     {: note}
+
 1.  Click **Save dictionary**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
 
@@ -194,29 +175,29 @@ To add dictionary from a CSV file, complete the following steps:
 
     - To define a set of synonymous terms, use the following syntax:
 
-      ```
+      ```text
       <term>,<synonym>,<synonym>,<synonym>
       ```
 
       For example:
 
-      ```
+      ```text
       car,automobile,vehicle,sedan,convertible,station wagon
       ```
 
-      The enrichment that is created is named after the first term per line. 
-      
+      The enrichment that is created is named after the first term per line.
+
       For example, the entry in this example creates an enrichment that is named `car`. When the enrichment is applied to a document, any mentions of `car`, `automobile`, `vehicle`, `sedan`, `convertible`, or `station wagon` are tagged as instances of the `car` enrichment.
 
     - To define a set of terms in the same category, use the following syntax:
 
-      ```
+      ```text
       <category>,<related-term>,<related-term>
       ```
 
       For example:
 
-      ```
+      ```text
       engine,gasket,carburetor,piston,valves
       ```
 
@@ -225,7 +206,7 @@ To add dictionary from a CSV file, complete the following steps:
 1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Dictionaries**.
 1.  Click **Upload**.
 1.  Name your dictionary and choose the language that was used in the CSV file.
-1.  Optional: Expand Advanced options, and specify a facet path to categorize any text that matches the dictionary entry. The text can be filtered by this facet later. 
+1.  Optional: Expand Advanced options, and specify a facet path to categorize any text that matches the dictionary entry. The text can be filtered by this facet later.
 
     If you use a hierarchy of categories, add a period between category names in the facet path to represent the hierarchy. For example, `automobiles.motorsports`.
 1.  Click **Upload** to browse for the CSV file that you created earlier.
@@ -254,7 +235,7 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
 ```
 {: codeblock}
 
-As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_{field_name}.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically. 
+As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_{field_name}.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically.
 
 If you add a dictionary by using the Enrichment API, you must apply the dictionary enrichment to a field before the new dictionary will be displayed in the Dictionaries page.
 
@@ -275,9 +256,9 @@ The number of dictionaries and term entries you can create per service instance 
 
 Define regular expressions that can identify and extract information from fields in your collection.
 
-For example, this regular expression finds occurrences of credit card numbers of a specific format and length. 
+For example, this regular expression finds occurrences of credit card numbers of a specific format and length.
 
-```
+```text
 4[0-9]{15}
 ```
 
@@ -285,12 +266,12 @@ To add a regular expression, complete the following steps:
 
 1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Regular expression**.
 1.  Click **Upload**.
-1.  Optional: Specify a facet path to categorize any text that matches the regular expression. The text can be filtered by this facet later. 
+1.  Optional: Specify a facet path to categorize any text that matches the regular expression. The text can be filtered by this facet later.
 
     If you use a hierarchy of categories, add a period between category names in the facet path to represent the hierarchy. For example, if you are adding a regex that can recognize phone numbers, you might have a facet path such as `international.europe`.
 1.  Add the regular expression.
 
-    - Use a Java&trade; regular expression. 
+    - Use a Java&trade; regular expression.
 
       For more information, see the [Java documentation](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html){: external}. Another useful resource is [Regex 101](https://regex101.com/){: external}.
     - Keep the regular expression as short and understandable as possible.
@@ -369,8 +350,8 @@ To add a Machine Learning model, complete the following steps:
 
       - [Creating a rule-based model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-rule-annotator)
       - [Creating a machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-ml_annotator)
-    - [Watson Explorer Content Analytics Studio](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=analytics-content-studio-advanced-text){: external} 
-    
+    - [Watson Explorer Content Analytics Studio](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=analytics-content-studio-advanced-text){: external}
+
         You must export the model from Watson Explorer Content Analytics Studio as a UIMA PEAR file. For more information, see: [Creating Custom PEAR Files for use with Lexical Analysis Streams](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=las-creating-custom-pear-files-use-lexical-analysis-streams){: external}.
 
 1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Machine learning**.
@@ -405,7 +386,7 @@ In the output, the information that is extracted by the Machine Learning enrichm
           "path": ".wksrule.entities.SURNAME",
           "text": "Washington",
           "type": "SURNAME"
-        },                    
+        },
         {
           "path": ".wksrule.entities.POSITION",
           "text": "politician",
@@ -534,7 +515,7 @@ The number of advanced rules models that you can define per service instance dep
 Patterns is a beta feature that is available in {{site.data.keyword.cloud_notm}} deployments only. The feature is available for English-language documents only.
 {: beta}
 
-Add a Patterns resource to teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. The Patterns feature uses pattern induction, which generates extraction patterns from examples that you provide as training data. After you specify a few examples, {{site.data.keyword.discoveryshort}} suggests more rules that you must review and accept to complete the pattern. 
+Add a Patterns resource to teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. The Patterns feature uses pattern induction, which generates extraction patterns from examples that you provide as training data. After you specify a few examples, {{site.data.keyword.discoveryshort}} suggests more rules that you must review and accept to complete the pattern.
 
 Pattern recognition works best on text with consistent structure in casing, length, text, or numeric values. Examples of patterns you can teach {{site.data.keyword.discoveryshort}} to identify in your documents:
 
@@ -544,31 +525,31 @@ Pattern recognition works best on text with consistent structure in casing, leng
 
 If you need to identify specific terms or text, such as product names, add a [dictionary](#dictionary).
 
-Patterns cannot be used in a Content Mining application.  
+Patterns cannot be used in a Content Mining application.
 {: note}
 
 To define a pattern, complete the following steps:
 
 1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Patterns**.
 1.  Click **New**.
-1.  Pick how you want to choose documents. 
+1.  Pick how you want to choose documents.
 
     - Allow {{site.data.keyword.discoveryshort}} to choose 10 random documents for you.
     - Choose the documents yourself (up to 20 can be selected).
-    
-      Each document must be under 5,000 characters in length. Documents that exceed the limit are truncated to 5000 characters. 
-      
+
+      Each document must be under 5,000 characters in length. Documents that exceed the limit are truncated to 5000 characters.
+
 1.  Click **Next**.
-1.  Start selecting example words or phrases that fit the pattern you want to define. 
+1.  Start selecting example words or phrases that fit the pattern you want to define.
 
     For example, if you have a collection of articles that discuss `ISO` standards, you might start highlighting the numbers of the standards in each document.
 
     If you annotate something, and then change your mind, hover over the selection, and then click `x` to delete it.
-1.  Continue selecting examples. 
+1.  Continue selecting examples.
 
-    After you identify enough examples, {{site.data.keyword.discoveryshort}} shows a list of suggested examples for you to review and determine to be valid or not valid examples. Suggested examples are taken from the field that is configured to be used in search results. If the source of result content is configured to be passages, the `text` field is used. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content). 
-    
-1.  Choose **Yes** or **No** for each suggestion. 
+    After you identify enough examples, {{site.data.keyword.discoveryshort}} shows a list of suggested examples for you to review and determine to be valid or not valid examples. Suggested examples are taken from the field that is configured to be used in search results. If the source of result content is configured to be passages, the `text` field is used. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content).
+
+1.  Choose **Yes** or **No** for each suggestion.
 
     Click the **Preview document** icon if you want to see the example in context before you make a choice.
 1.  Continue highlighting examples and validating suggestions until a message is displayed to inform you that you identified enough examples.

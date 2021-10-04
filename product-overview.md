@@ -2,33 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Start getting value from your data
 {: #product-overview}
@@ -75,6 +55,7 @@ If extracting meaning is your goal, complete the steps that are listed in the fo
 |:----:|------|---------------------|
 | ![checkbox](images/checkbox.png) | Create any project type. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add collections that connect to external data sources or contain uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
+| ![checkbox](images/checkbox.png) | Chunk large documents into many smaller documents so you can apply more targeted enrichments to the content. | [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) |
 | ![checkbox](images/checkbox.png) | Enhance your data by applying built-in NLU enrichments. | [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu) |
 | ![checkbox](images/checkbox.png) | Identify and promote terms and patterns from your data with special significance to your use case. | [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain) |
 | ![checkbox](images/checkbox.png) | Submit test queries to assess the results. | [Testing your project](/docs/discovery-data?topic=discovery-data-test) |

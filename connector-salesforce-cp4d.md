@@ -2,34 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:external: target="_blank" .external}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Salesforce
 {: #connector-salesforce-cp4d}
@@ -50,12 +29,15 @@ This information applies only to installed deployments. For more information abo
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index during refresh.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
-The following table illustrates the objects that {{site.data.keyword.discoveryshort}} can crawl.
+{{site.data.keyword.discoveryshort}} can crawl the following objects:
 
-| Objects that are crawled |
-|--------------------------|
-| Any default and custom objects that you have access to, accounts, contacts, cases, contracts, knowledge articles, attachments |
-{: caption="Table 1. Data sources crawling support" caption-side="top"}
+-   Any default and custom objects that you have access to
+-   Accounts
+-   Contacts
+-   Cases
+-   Contracts
+-   Knowledge articles
+-   Attachments
 
 ## Data source requirements
 {: #connector-salesforce-cp4d-reqs}
@@ -77,19 +59,19 @@ If you plan to crawl documents from both a Sandbox and Production instance of Sa
 
 For information about downloading the WSDL JAR files, see the following links:
 
-   - [Generate or Obtain the Web Service WSDL](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_generate_wsdl.htm){: external}
-   - [Import the WSDL File Into Your Development Platform](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_import_wsdl.htm){: external}
-   - [Download Apache Commons BeanUtils](https://commons.apache.org/proper/commons-beanutils/download_beanutils.cgi){: external}
-   - [Apache Commons BeanUtils](https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils){: external}
+-   [Generate or Obtain the Web Service WSDL](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_generate_wsdl.htm){: external}
+-   [Import the WSDL File Into Your Development Platform](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_import_wsdl.htm){: external}
+-   [Download Apache Commons BeanUtils](https://commons.apache.org/proper/commons-beanutils/download_beanutils.cgi){: external}
+-   [Apache Commons BeanUtils](https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils){: external}
 
-1. Download the following JAR files:
+1.  Download the following JAR files:
 
-   - `force-partner.jar` (from partner WSDL)
-   - `force-metadata.jar` (from metadata WSDL)
-   - `force-wsc.jar` (from Force.com Web Service Connector (WSC))
-   - `commons-beanutils.jar` (from Apache Commons BeanUtils)
+    -   `force-partner.jar` (from partner WSDL)
+    -   `force-metadata.jar` (from metadata WSDL)
+    -   `force-wsc.jar` (from Force.com Web Service Connector (WSC))
+    -   `commons-beanutils.jar` (from Apache Commons BeanUtils)
 
-1. Compress the JAR files into a compressed file. You will upload the compressed file to {{site.data.keyword.discoveryshort}} in the next procedure.
+1.  Compress the JAR files into a compressed file. You will upload the compressed file to {{site.data.keyword.discoveryshort}} in the next procedure.
 
 ### Connecting to a Salesforce data source
 {: #connector-salesforce-cp4d-task}
@@ -103,7 +85,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  If the language of the documents in Salesforce is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
+1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  In the *Specify what you want to crawl* section, enter values in the following fields:
@@ -120,12 +102,12 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
       - **Password**: The proxy server password to use to authenticate, if the proxy server requires authentication. If you do not know your password, you can get it from the administrator of your proxy server.
       - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
       - **Proxy server port number**: The network port that you want to connect to on the proxy server.
-1.  In the *Object Types** section, specify the object types to crawl. 
+1.  In the *Object Types** section, specify the object types to crawl.
 
-    The default behavior is to crawl all object types. 
-    
-    - For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, to crawl MyCustomObject, specify `MyCustomObject__c`. 
-    - Do not specify a comment object, such as `FeedComment`, `CaseComment`, `IdeaComment`, without also specifying the corresponding root object, such as `FeedItem`, `Case`, and `Idea`. 
+    The default behavior is to crawl all object types.
+
+    - For custom object names, append `__c` to match the Salesforce API convention for custom object names. For example, to crawl MyCustomObject, specify `MyCustomObject__c`.
+    - Do not specify a comment object, such as `FeedComment`, `CaseComment`, `IdeaComment`, without also specifying the corresponding root object, such as `FeedItem`, `Case`, and `Idea`.
     - If you specify a tag object, you must also specify its parent. For example, do not specify the `AccountTag` object without also specifying the `Account` object.
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
@@ -134,6 +116,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1. Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

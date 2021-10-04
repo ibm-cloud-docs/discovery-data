@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-10-02"
 
 keywords: known issues
 
@@ -10,26 +10,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Known issues
 {: #known-issues}
@@ -55,267 +36,273 @@ Known issues are regularly addressed with periodic software patches. For more in
 ### ![Cloud Pak for Data only](images/desktop.png) 4.0.0, 13 July 2021
 {: #13july2021ki}
 
-- Machine learning model enrichments that you apply by using the Analyze API can fail.
+-   Machine learning model enrichments that you apply by using the Analyze API can fail.
 
-  - **Error**: `[WKSML_MODEL_NAME]: Enrichment of a document failed`
-  - **Cause**: There is a known issue in Watson Knowledge Studio that can cause a timeout in enrichment processing.
-  - **Solution**: When you use the Analyze API to apply a Watson Knowledge Studio model enrichment to a collection, keep the size of the input document under 50 KB.
+    -   **Error**: `[WKSML_MODEL_NAME]: Enrichment of a document failed`
+    -   **Cause**: There is a known issue in Watson Knowledge Studio that can cause a timeout in enrichment processing.
+    -   **Solution**: When you use the Analyze API to apply a Watson Knowledge Studio model enrichment to a collection, keep the size of the input document under 50 KB.
 
 #### 2.2.1 issues that were fixed in subsequent releases
 {: #26feb2021ki-fixed}
 
-- [Fixed in version 4] If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
+-   [Fixed in version 4] If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
 
-  ```
-  [WKSML_MODEL_NAME]: Document analysis timed out
-  ```
-  
-  For additional timeout details, you can check your {{site.data.keyword.knowledgestudioshort}} machine learning logs, which might look similar to the following:
+    ```text
+    [WKSML_MODEL_NAME]: Document analysis timed out
+    ```
 
-  ```json
-  {
-    "message": "Analysis failed due to: 
-  org.apache.uima.analysis_engine.AnalysisEngineProcessException
-	        at c.i.n.b.SIREAnnotator.process(_:454)
-	        ... ",
-    "level": "SEVERE",
-  }
-  ```
+    For additional timeout details, you can check your {{site.data.keyword.knowledgestudioshort}} machine learning logs, which might look similar to the following:
 
-  Documents that time out during processing are indexed without {{site.data.keyword.knowledgestudioshort}} enrichment results.
+    ```json
+    {
+      "message": "Analysis failed due to:
+        org.apache.uima.analysis_engine.AnalysisEngineProcessException
+        at c.i.n.b.SIREAnnotator.process(_:454)
+      ... ",
+      "level": "SEVERE",
+    }
+    ```
+    {: codeblock}
+
+    Documents that time out during processing are indexed without {{site.data.keyword.knowledgestudioshort}} enrichment results.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2.1, 26 February 2021
 {: #26feb2021ki}
 
-- If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
+-   If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
 
-  - **Error**: Some Discovery pods might report an `ImagePullBackoff` error.
-  - **Cause**: The wrong image pull secret is being used.
-  - **Solution**: Complete the following steps during the installation:
+    -   **Error**: Some Discovery pods might report an `ImagePullBackoff` error.
+    -   **Cause**: The wrong image pull secret is being used.
+    -   **Solution**: Complete the following steps during the installation:
 
-    - Start installing Watson Discovery.
-    - After watson-discovery-operator module completes, check if a WatsonDiscovery custom resource is created by running the following command:
+        -   Start installing Watson Discovery.
+        -   After watson-discovery-operator module completes, check if a WatsonDiscovery custom resource is created by running the following command:
 
-      ```
-      oc get WatsonDiscovery wd
-      ```
-      {: pre}
+            ```sh
+            oc get WatsonDiscovery wd
+            ```
+            {: pre}
 
-    - After the custom resource is created, run the following commands to point the correct image pull secret to pull images from the external registry:
+        -   After the custom resource is created, run the following commands to point the correct image pull secret to pull images from the external registry:
 
-      ```
-      pull_secret=$(oc get secrets | grep 'docker-pull-.*-watson-discovery-registry-registry' | cut -d ' ' -f 1)
-      cat << EOS > discovery-patch.yaml
-      spec:
-        shared:
-          imagePullSecret: $pull_secret
-      EOS
-      oc patch wd wd --type=merge --patch "$(cat discovery-patch.yaml)"
-      ```
-      {: codeblock}
+            ```sh
+            pull_secret=$(oc get secrets | grep 'docker-pull-.*-watson-discovery-registry-registry' | cut -d ' ' -f 1)
+            cat << EOS > discovery-patch.yaml
+            spec:
+              shared:
+                imagePullSecret: $pull_secret
+            EOS
+            oc patch wd wd --type=merge --patch "$(cat discovery-patch.yaml)"
+            ```
+            {: codeblock}
 
-    - If the RabbitMQ pods are still in ImagePullBackoff state, remove the RabbitMQ CR to enable the rabbitmq-operator to re-create the RabbitMQ clusters. You can use the following command:
+        -   If the RabbitMQ pods are still in ImagePullBackoff state, remove the RabbitMQ CR to enable the rabbitmq-operator to re-create the RabbitMQ clusters. You can use the following command:
 
-      ```
-      oc delete IbmRabbitmq wd-rabbitmq
-      ```
-      {: pre}
+            ```sh
+            oc delete IbmRabbitmq wd-rabbitmq
+            ```
+            {: pre}
 
-- In {{site.data.keyword.discoveryfull}}, the `Content Mining` project only supports one collection per project. If you create more than one `Content Mining` collection, you might experience errors. If you experience errors, delete additional `Content Mining` collections so that each `Content Mining` project has only one associated collection.
+-   In {{site.data.keyword.discoveryfull}}, the `Content Mining` project only supports one collection per project. If you create more than one `Content Mining` collection, you might experience errors. If you experience errors, delete additional `Content Mining` collections so that each `Content Mining` project has only one associated collection.
+-   If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
+-   If you are upgrading your {{site.data.keyword.discovery-data_short}} instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli upgrade` command completes before rolling updates complete. For information about verifying that your upgrade completed successfully, see [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade).
+-   Model-train images are not updated after upgrading from Discovery 2.2.0 to 2.2.1. To work around this issue, delete the deployments that the model-train operator creates, and wait for the operator to recreate the deployments. Enter the following command to delete the deployments:
 
-- If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
-- If you are upgrading your {{site.data.keyword.discovery-data_short}} instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli upgrade` command completes before rolling updates complete. For information about verifying that your upgrade completed successfully, see [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade).
-- Model-train images are not updated after upgrading from Discovery 2.2.0 to 2.2.1. To work around this issue, delete the deployments that the model-train operator creates, and wait for the operator to recreate the deployments. Enter the following command to delete the deployments:
-
-  ```
-  oc delete deploy -l 'app.kubernetes.io/managed-by=ibm-modeltrain'
-  ```
-  {: pre}
-
-  After you run this command, the model-train operator creates new deployments.
-
-- If you upgrade {{site.data.keyword.discovery-data_short}} from 2.2.0 to 2.2.1, you might receive the following error message:
-
-  ```
-  [ERROR] [2021-03-04 05:12:44-0657] Exiting due to error (Storage class is immutable. Module ibm-watson-gateway-operator x86_64 from Assembly portworx-shared-gp3 was installed with ibm-watson-gateway-operator x86_64, but new install/upgrade command is requesting portworx-db-gp3-sc. If you installed the assembly with a different storage class, please upgrade it individually.). Please check /ibm/cpd-cli-workspace/logs/CPD-2021-03-04T05-12-04.log for details
-  [ERROR] 2021-03-04T05:12:44.659615Z Execution error:  exit status 1
-  ```
-
-  This error message is generated because the storage class that was used for installation is different than the one that was used during the upgrade. This discrepancy results from a different add-on installing the dependency operators because the storage class dependency operators of the different add-on were recorded as the ones that were used for installation. To work around this issue, you must upgrade the following subassemblies individually:
-
-  - Upgrade the Watson gateway operator:
-
-    ```
-    ./cpd-cli upgrade \
-    --repo ./repo.yaml \
-    --assembly ibm-watson-gateway-operator \
-    --arch Cluster_architecture \
-    --namespace <Project> \
-    --transfer-image-to <Registry_location> \
-    --cluster-pull-prefix <Registry_from_cluster> \
-    --ask-pull-registry-credentials \
-    --ask-push-registry-credentials
-    ```
-    {: pre}
-  
-  - Upgrade Minio operator:
-
-    ```
-    ./cpd-cli upgrade \
-    --repo ./repo.yaml \
-    --assembly ibm-minio-operator \
-    --namespace <Project> \
-    --transfer-image-to <Registry_location> \
-    --cluster-pull-prefix <Registry_from_cluster> \
-    --ask-pull-registry-credentials \
-    --ask-push-registry-credentials
-    ```
-    {: pre}
-  
-  - Upgrade RabbitMQ operator:
-
-    ```
-    ./cpd-cli upgrade \
-    --repo ./repo.yaml \
-    --assembly ibm-rabbitmq-operator \
-    --namespace <Project> \
-    --transfer-image-to <Registry_location> \
-    --cluster-pull-prefix <Registry_from_cluster> \
-    --ask-pull-registry-credentials \
-    --ask-push-registry-credentials
-    ```
-    {: pre}
-  
-  - Upgrade etcd operator:
-
-    ```
-    ./cpd-cli upgrade \
-    --repo ./repo.yaml \
-    --assembly ibm-etcd-operator \
-    --namespace <Project> \
-    --transfer-image-to <Registry_location> \
-    --cluster-pull-prefix <Registry_from_cluster> \
-    --ask-pull-registry-credentials \
-    --ask-push-registry-credentials
-    ```
-    {: pre}
-  
-  - Upgrade model train classic operator:
-
-    ```
-    ./cpd-cli upgrade \
-    --repo ./repo.yaml \
-    --assembly modeltrain-classic \
-    --arch Cluster_architecture \
-    --namespace <Project> \
-    --transfer-image-to <Registry_location> \
-    --cluster-pull-prefix <Registry_from_cluster> \
-    --ask-pull-registry-credentials \
-    --ask-push-registry-credentials
-    ```
-    {: pre}
-  
-  - Upgrade Elasticsearch operator:
-
-    ```
-    ./cpd-cli upgrade \
-    --repo ./repo.yaml \
-    --assembly ibm-cloudpakopen-elasticsearch-operator \
-    --namespace <Project> \
-    --transfer-image-to <Registry_location> \
-    --cluster-pull-prefix <Registry_from_cluster> \
-    --ask-pull-registry-credentials \
-    --ask-push-registry-credentials
+    ```sh
+    oc delete deploy -l 'app.kubernetes.io/managed-by=ibm-modeltrain'
     ```
     {: pre}
 
-    where `<Project>` is the namespace where your {{site.data.keyword.discovery-data_short}} 2.2.0 instance is installed, where `<Registry_location>` is the location of the images that you pushed to the registry server, and where `<Registry_from_cluster>` is the location from which pods on the cluster can pull images.
+    After you run this command, the model-train operator creates new deployments.
 
-- When you install on Cloud Pak for Data 3.5, you might encounter the following issue:
+-   If you upgrade {{site.data.keyword.discovery-data_short}} from 2.2.0 to 2.2.1, you might receive the following error message:
 
-  - **Error**: If you try to provision the Discovery service on a cluster where Planning Analytics is running, some of the Discovery pods don't start and installation fails. The logs for the pod show messages such as, `java.lang.NumberFormatException: For input string`.
-  - **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. Discovery does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
-  - **Solution**: [Install patch cpd-watson-discovery-2.2.1-patch-1](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}, which fixes this issue.
+    ```text
+    [ERROR] [2021-03-04 05:12:44-0657] Exiting due to error (Storage class is immutable. Module ibm-watson-gateway-operator x86_64 from Assembly portworx-shared-gp3 was installed with ibm-watson-gateway-operator x86_64, but new install/upgrade command is requesting portworx-db-gp3-sc. If you installed the assembly with a different storage class, please upgrade it individually.). Please check /ibm/cpd-cli-workspace/logs/CPD-2021-03-04T05-12-04.log for details
+    [ERROR] 2021-03-04T05:12:44.659615Z Execution error:  exit status 1
+    ```
+
+    This error message is generated because the storage class that was used for installation is different than the one that was used during the upgrade. This discrepancy results from a different add-on installing the dependency operators because the storage class dependency operators of the different add-on were recorded as the ones that were used for installation. To work around this issue, you must upgrade the following subassemblies individually:
+
+    -   Upgrade the Watson gateway operator:
+
+        ```sh
+        ./cpd-cli upgrade \
+        --repo ./repo.yaml \
+        --assembly ibm-watson-gateway-operator \
+        --arch Cluster_architecture \
+        --namespace <Project> \
+        --transfer-image-to <Registry_location> \
+        --cluster-pull-prefix <Registry_from_cluster> \
+        --ask-pull-registry-credentials \
+        --ask-push-registry-credentials
+        ```
+        {: pre}
+
+    -   Upgrade Minio operator:
+
+        ```sh
+        ./cpd-cli upgrade \
+        --repo ./repo.yaml \
+        --assembly ibm-minio-operator \
+        --namespace <Project> \
+        --transfer-image-to <Registry_location> \
+        --cluster-pull-prefix <Registry_from_cluster> \
+        --ask-pull-registry-credentials \
+        --ask-push-registry-credentials
+        ```
+        {: pre}
+
+    -   Upgrade RabbitMQ operator:
+
+        ```sh
+        ./cpd-cli upgrade \
+        --repo ./repo.yaml \
+        --assembly ibm-rabbitmq-operator \
+        --namespace <Project> \
+        --transfer-image-to <Registry_location> \
+        --cluster-pull-prefix <Registry_from_cluster> \
+        --ask-pull-registry-credentials \
+        --ask-push-registry-credentials
+        ```
+        {: pre}
+
+    -   Upgrade etcd operator:
+
+        ```sh
+        ./cpd-cli upgrade \
+        --repo ./repo.yaml \
+        --assembly ibm-etcd-operator \
+        --namespace <Project> \
+        --transfer-image-to <Registry_location> \
+        --cluster-pull-prefix <Registry_from_cluster> \
+        --ask-pull-registry-credentials \
+        --ask-push-registry-credentials
+        ```
+        {: pre}
+
+    -   Upgrade model train classic operator:
+
+        ```sh
+        ./cpd-cli upgrade \
+        --repo ./repo.yaml \
+        --assembly modeltrain-classic \
+        --arch Cluster_architecture \
+        --namespace <Project> \
+        --transfer-image-to <Registry_location> \
+        --cluster-pull-prefix <Registry_from_cluster> \
+        --ask-pull-registry-credentials \
+        --ask-push-registry-credentials
+        ```
+        {: pre}
+
+    -   Upgrade Elasticsearch operator:
+
+        ```sh
+        ./cpd-cli upgrade \
+        --repo ./repo.yaml \
+        --assembly ibm-cloudpakopen-elasticsearch-operator \
+        --namespace <Project> \
+        --transfer-image-to <Registry_location> \
+        --cluster-pull-prefix <Registry_from_cluster> \
+        --ask-pull-registry-credentials \
+        --ask-push-registry-credentials
+        ```
+        {: pre}
+
+        where `<Project>` is the namespace where your {{site.data.keyword.discovery-data_short}} 2.2.0 instance is installed, where `<Registry_location>` is the location of the images that you pushed to the registry server, and where `<Registry_from_cluster>` is the location from which pods on the cluster can pull images.
+
+-   When you install on Cloud Pak for Data 3.5, you might encounter the following issue:
+
+    -   **Error**: If you try to provision the Discovery service on a cluster where Planning Analytics is running, some of the Discovery pods don't start and installation fails. The logs for the pod show messages such as, `java.lang.NumberFormatException: For input string`.
+    -   **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. Discovery does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
+    -   **Solution**: [Install patch cpd-watson-discovery-2.2.1-patch-1](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}, which fixes this issue.
 
 Also, see the issues in all previous releases.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2, 8 December 2020
 {: #8dec2020ki}
 
-- When a small CSV file (generally a CSV with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
-- If you have set up your collections using a custom crawler built with the [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector), and then remove the custom crawler deployment, the Processing Settings page will not display the crawler configuration. This is because the underlying crawler is not available. To work around this issue, confirm that the custom crawler is deployed when there are collections using it.
-- When using a [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for Cloud Pak for Data 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fails. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
-- When you create a custom enrichment in the tooling, you must choose a field the enrichment should be applied to and click **Apply**. If no field is selected, then the **Apply and reprocess** button will be disabled for enrichments changes until the new enrichment has a field.
-- If you apply the [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema) enrichment or the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to a collection, you might receive the following error message when that collection is ingesting documents: `The number of nested documents has exceeded the allowed limit of [X].` Contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to adjust the limit.
-- When text is enriched with a custom dictionary, the output of `entities.type` should be the full facet path for the Dictionary enrichment. However, in this release, the full facet path will not be displayed. To work around this, reprocess the collection. For example, if the facet path is `sample1.sample2`, it will look like this before reprocessing:
+-   When a small CSV file (generally a CSV with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
+-   If you have set up your collections using a custom crawler built with the [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector), and then remove the custom crawler deployment, the Processing Settings page will not display the crawler configuration. This is because the underlying crawler is not available. To work around this issue, confirm that the custom crawler is deployed when there are collections using it.
+-   When using a [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for Cloud Pak for Data 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fails. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
+-   When you create a custom enrichment in the tooling, you must choose a field the enrichment should be applied to and click **Apply**. If no field is selected, then the **Apply and reprocess** button will be disabled for enrichments changes until the new enrichment has a field.
+-   If you apply the [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema) enrichment or the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to a collection, you might receive the following error message when that collection is ingesting documents: `The number of nested documents has exceeded the allowed limit of [X].` Contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to adjust the limit.
+-   When text is enriched with a custom dictionary, the output of `entities.type` should be the full facet path for the Dictionary enrichment. However, in this release, the full facet path will not be displayed. To work around this, reprocess the collection. For example, if the facet path is `sample1.sample2`, it will look like this before reprocessing:
 
-  ```
-  {
-    "result" : {
-      "enriched_text" : [ {
-        "entities" : [ {
-          "text" : "capital",
-          "type" : "sample2",
-          ...
-       "model_name" : "Dictionary:.sample1.sample2"}
-          ...
-  ```
-  {: codeblock}
-
-  And this after:
-
-  ```
-  {
-    "result" : {
-      "enriched_text" : [ {
-        "entities" : [ {
-          "text" : "capital",
-          "type" : "sample1.sample2",
-          ...
-        "model_name" : "Dictionary:.sample1.sample2"}
-          ...
-  ```
-  {: codeblock}
-
-- When a CSV file is uploaded with the converter settings set to `auto_detection=true`, the **CSV settings** tab in the tooling will display the incorrect settings. If you update the settings on the **CSV settings** tab, `auto_detection` will no longer be set to `true`.
-- In Office documents ('.doc', '.docx', '.odf', '.xls', '.xlsx', '.ods', '.ppt', '.pptx', '.odp') converted using a Smart Document Understanding (SDU) custom model, the `publicationdate` may not display in `extracted_metadata` field in the JSON response. It will instead appear in the `html` field of the JSON response. The `publicationdate` in the `html` field will be the date the document was ingested and not the document's original publication date.
-- The Analyze API uses an in-memory cache to hold the enrichment models associated with the collection used to run the documents. If the collection contains many large enrichments or multiple of these collections are used at the same time, the cache may run out of memory. When this happens, the Analyze API returns null results (see example) and the stateless api rest proxy will display this message in its log: `RESOURCE_EXHAUSTED: stateless.Analysis/analyze: RESOURCE_EXHAUSTED`.
-
-  ```json
-  {
-    "result": null,
-    "notices": null
-  } 
-  ```
-  {: codeblock}
-
-  To workaround this issue:
-  1. Review the enrichments used in the collection and remove those that are not necessary for your application. In particular, remove the `Parts of Speech` enrichment.
-  1. Reduce the number of collections used concurrently with the Analyze API. 
-  3. Increase the cache memory:
-     * Increase the memory limit of `container model-runtime` in `deployment core-discovery-stateless-api-model-runtime` to `10` GB or more
-     * Edit the environment variable `CAPACITY_MB` in `deployment core-discovery-stateless-api-model-runtime`, set it to 1`0240` or more
-
-- If the model runtime container is restarted but the model mesh runtime container is not, the Analyze API can run into problems.
-
-  - **Error**: The Analzye API call returns 500 error on a specific collection and the log contains the following entry:
-
-    ```
-    "message": "error occurred in analyzer
-      java.lang.NullPointerException
-      at c.i.e.a.a.s.r.ModelManager$2.analyze(ModelManager.java:112)
+    ```json
+    {
+      "result" : {
+        "enriched_text" : [
+          {
+            "entities" : [
+              {
+                "text" : "capital",
+                "type" : "sample2",
+                ...
+                "model_name" : "Dictionary:.sample1.sample2"}
+                ...
     ```
     {: codeblock}
 
-  - **Cause**: The model runtime container and model mesh runtime container are out of sync.
-  - **Solution**: Delete the `wd-stateless-api-model-runtime` pods to restart both the model mesh and model runtime containers.
+    And this after:
+
+    ```json
+    {
+      "result" : {
+        "enriched_text" : [
+          {
+            "entities" : [
+              {
+                "text" : "capital",
+                "type" : "sample1.sample2",
+                ...
+                "model_name" : "Dictionary:.sample1.sample2"}
+                ...
+    ```
+    {: codeblock}
+
+-   When a CSV file is uploaded with the converter settings set to `auto_detection=true`, the **CSV settings** tab in the tooling will display the incorrect settings. If you update the settings on the **CSV settings** tab, `auto_detection` will no longer be set to `true`.
+-   In Office documents ('.doc', '.docx', '.odf', '.xls', '.xlsx', '.ods', '.ppt', '.pptx', '.odp') converted using a Smart Document Understanding (SDU) custom model, the `publicationdate` may not display in `extracted_metadata` field in the JSON response. It will instead appear in the `html` field of the JSON response. The `publicationdate` in the `html` field will be the date the document was ingested and not the document's original publication date.
+-   The Analyze API uses an in-memory cache to hold the enrichment models associated with the collection used to run the documents. If the collection contains many large enrichments or multiple of these collections are used at the same time, the cache may run out of memory. When this happens, the Analyze API returns null results (see example) and the stateless api rest proxy will display this message in its log: `RESOURCE_EXHAUSTED: stateless.Analysis/analyze: RESOURCE_EXHAUSTED`.
+
+    ```json
+    {
+      "result": null,
+      "notices": null
+    }
+    ```
+    {: codeblock}
+
+    To work around this issue:
+
+    1.  Review the enrichments used in the collection and remove those that are not necessary for your application. In particular, remove the `Parts of Speech` enrichment.
+    1.  Reduce the number of collections used concurrently with the Analyze API.
+    1.  Increase the cache memory:
+
+        -   Increase the memory limit of `container model-runtime` in `deployment core-discovery-stateless-api-model-runtime` to `10` GB or more
+        -   Edit the environment variable `CAPACITY_MB` in `deployment core-discovery-stateless-api-model-runtime`, set it to 1`0240` or more
+
+-   If the model runtime container is restarted but the model mesh runtime container is not, the Analyze API can run into problems.
+
+    -   **Error**: The Analzye API call returns 500 error on a specific collection and the log contains the following entry:
+
+        ```json
+        "message": "error occurred in analyzer
+          java.lang.NullPointerException
+          at c.i.e.a.a.s.r.ModelManager$2.analyze(ModelManager.java:112)
+        ```
+        {: codeblock}
+
+    -   **Cause**: The model runtime container and model mesh runtime container are out of sync.
+    -   **Solution**: Delete the `wd-stateless-api-model-runtime` pods to restart both the model mesh and model runtime containers.
 
 Also see the issues identified in all previous releases.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.4, 2 September 2020:
 {: #2sept2020ki}
 
-- When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To workaround this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
+- When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To work around this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
 - The [Guided Tours](/docs/discovery-data?topic=discovery-data-tours) do not run on Firefox. For the list of other supported browsers, see [Browser support](/docs/discovery-data?topic=discovery-data-about#about-browser).
 - Ingesting documents into a collection that uses a custom [Advanced Rules model](/docs/discovery-data?topic=discovery-data-domain#advanced-rules) built in Watson Knowledge Studio may fail if multiple extractors in the model internally use the same names for one or more output views.
 - If you delete a large number of documents, then immediately ingest a large number of documents, it may take longer for all the documents to become available.
@@ -326,13 +313,13 @@ Also see the issues identified in all previous releases.
 #### 2.1.4 issues that were fixed in subsequent releases
 {: #2sept2020ki-fixed}
 
-- [Fixed in version 2.2] In the deployed Content Mining application, if you include the tilde (~) symbol in a search query to enable fuzzy matching or include an asterisk (*) symbol to represent a wildcard, the search customizations function properly, but the matching string is not highlighted in the query result.
-- [Fixed in version 2.2] A conversion error may occur when the **Include in index** field on the **Manage fields** tab in the tooling is changed. The document will not be indexed if this error occurs. To work around the issue:
-  1. `oc edit sts core-discovery-converter`
-  1. Edit between `containers` and `- name: INGESTION_POD_NAME` as follows:
+-   [Fixed in version 2.2] In the deployed Content Mining application, if you include the tilde (~) symbol in a search query to enable fuzzy matching or include an asterisk (*) symbol to represent a wildcard, the search customizations function properly, but the matching string is not highlighted in the query result.
+-   [Fixed in version 2.2] A conversion error may occur when the **Include in index** field on the **Manage fields** tab in the tooling is changed. The document will not be indexed if this error occurs. To work around the issue:
+    1.  `oc edit sts core-discovery-converter`
+    1.  Edit between `containers` and `- name: INGESTION_POD_NAME` as follows:
 
-     ```
-          containers:
+        ```yaml
+        containers:
           - command:
             - bash
             - -c
@@ -356,12 +343,12 @@ Also see the issues identified in all previous releases.
               /opt/ibm/wex/zing/bin/entrypoint.sh /opt/ibm/wex/zing/bin/controller.sh
             env:
             - name: INGESTION_POD_NAME
-      ```
-      {: codeblock}
+        ```
+        {: codeblock}
 
-      Added lines from `- command:` to `/opt/ibm/wex/zing/bin/entrypoint.sh` `/opt/ibm/wex/zing/bin/controller.sh` and removed `-` before `env:`
+        Added lines from `- command:` to `/opt/ibm/wex/zing/bin/entrypoint.sh` `/opt/ibm/wex/zing/bin/controller.sh` and removed `-` before `env:`
 
-  1. Save the changes. It will restart the converter pod.
+    1.  Save the changes. It will restart the converter pod.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.3, 19 June 2020:
 {: #19jun2020ki}
@@ -380,30 +367,30 @@ Also see the issues identified in all previous releases.
 - When Optical Character Recognition (OCR) is set to `on` for a Collection AND no trained Smart Document Understanding (SDU) model is applied, PNG, TIFF, and JPG files will not be processed for text recognition. Images embedded in PDF, Word, PowerPoint, and Excel documents will not be processed - only the non-image portion of these documents will be processed for text recognition. To work around this issue, import or train an SDU model and reprocess the collection. This will allow text to be extracted from the images.
 - After you create a Search Skill in Watson Assistant and are directed to the Watson {{site.data.keyword.discoveryshort}} tooling, the screen is blank. This happens because the URL is missing the {{site.data.keyword.discoveryshort}} instance ID. To work around this issue:
 
-  1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**. For example: `https://mycluster.com/zen/#/myInstances`.
-  1.  Select the Discovery instance you are using and click **Launch Tool**.
-  1.  Once the tooling is loaded, the URL should have the following structure: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/projects`
-  1.  Copy the entire path, excluding `/projects`. For example: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876`
-  1.  Go back to the browser tab that is displaying the blank Discovery screen. That URL structure will look like this: `https://mycluster.com/discovery/core/collections/new?redirect_uri=...`
-  1.  Replace `https://mycluster.com/discovery/core` with the URL you copied previously, so the new URL should look like this: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/collections/new?redirect_uri=...`
-  1.  Press enter to open updated URL. You should now be on the Watson {{site.data.keyword.discoveryshort}} **Manage collections** page.
+    1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**. For example: `https://mycluster.com/zen/#/myInstances`.
+    1.  Select the Discovery instance you are using and click **Launch Tool**.
+    1.  Once the tooling is loaded, the URL should have the following structure: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/projects`
+    1.  Copy the entire path, excluding `/projects`. For example: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876`
+    1.  Go back to the browser tab that is displaying the blank Discovery screen. That URL structure will look like this: `https://mycluster.com/discovery/core/collections/new?redirect_uri=...`
+    1.  Replace `https://mycluster.com/discovery/core` with the URL you copied previously, so the new URL should look like this: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/collections/new?redirect_uri=...`
+    1.  Press enter to open updated URL. You should now be on the Watson {{site.data.keyword.discoveryshort}} **Manage collections** page.
 
 Also see the issues identified in all previous releases.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.2, 31 March 2020
 {: #31mar2020ki}
 
-- When using passage retrieval with Korean, Polish, Japanese, Slovak or Chinese you may encounter much slower response times in this version. To resolve this, either disable passage retrieval, or upload a custom stopword list with words that are common in your documents (for example, prepositions and pronouns).  See [Defining stopwords](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-search-settings#stopwords) for example stopword lists in several languages. Also see [Stopwords ISO](https://github.com/stopwords-iso/){: external}) on GitHub.
-- [Update: fixed in version 2.1.3] In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
-- Smart Document Understanding does not support `.doc`, `.docx`, `.odf`, `.xls`, `.xlsx`, `.ods`, `.ppt`, `.pptx`, and `.odp` conversion when FIPS (Federal Information Processing Standards) is enabled.
-- In a Content Mining application, any document flags set will disappear if the index is rebuilt for that collection.
-- Beginning with the 2.1.2 release, uploading and managing relevancy training data using the v1 APIs will not train a relevancy training model. The v1 APIs have been superseded by the [Projects relevancy training v2 APIs](https://{DomainName}/apidocs/discovery/discovery-data#createtrainingquery){: external}. If your training data needs to be preserved, it can be listed using the v1 API, then added to a project with the v2 API.
-- Multiple [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex) cannot be applied to a collection at the same time.
-- ![Cloud Pak for Data only](images/desktop.png) There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
+-   When using passage retrieval with Korean, Polish, Japanese, Slovak or Chinese you may encounter much slower response times in this version. To resolve this, either disable passage retrieval, or upload a custom stopword list with words that are common in your documents (for example, prepositions and pronouns).  See [Defining stopwords](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-search-settings#stopwords) for example stopword lists in several languages. Also see [Stopwords ISO](https://github.com/stopwords-iso/){: external}) on GitHub.
+-   [Update: fixed in version 2.1.3] In versions 2.1.2, 2.1.1, and 2.1.0, PNG, TIFF, and JPG individual image files are not scanned, and no text is extracted from those files. PNG, TIFF, and JPEG images embedded in PDF, Word, PowerPoint, and Excel files are also not scanned, and no text is extracted from those image files.
+-   Smart Document Understanding does not support `.doc`, `.docx`, `.odf`, `.xls`, `.xlsx`, `.ods`, `.ppt`, `.pptx`, and `.odp` conversion when FIPS (Federal Information Processing Standards) is enabled.
+-   In a Content Mining application, any document flags set will disappear if the index is rebuilt for that collection.
+-   Beginning with the 2.1.2 release, uploading and managing relevancy training data using the v1 APIs will not train a relevancy training model. The v1 APIs have been superseded by the [Projects relevancy training v2 APIs](https://{DomainName}/apidocs/discovery/discovery-data#createtrainingquery){: external}. If your training data needs to be preserved, it can be listed using the v1 API, then added to a project with the v2 API.
+-   Multiple [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex) cannot be applied to a collection at the same time.
+-   ![Cloud Pak for Data only](images/desktop.png) There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
 
-  - A change to the description of the `--cluster-pull-prefix PREFIX` argument.
-  - The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
-  
+    -   A change to the description of the `--cluster-pull-prefix PREFIX` argument.
+    -   The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
+
 Also see the issues identified in all previous releases.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.1, 24 January 2020
@@ -419,13 +406,13 @@ Also see the issues identified in all previous releases.
 #### 2.1.1 issues that were fixed in subsequent releases
 {: ##24jan2020ki-fixed}
 
-- [Fixed in version 2.1.2] When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`. To fix the issue:
+-   [Fixed in version 2.1.2] When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`. To fix the issue:
 
-     1. Open the `ranker-rest` editor with this command: `kubectl edit deployment {release-name}-{watson-discovery}-ranker-rest`
-     2. In the editor, search for the `ranker-rest image` (for example: `{docker-registry}/{namespace}/discovery-ranker-rest-service:20200113-150050-2-d1527c2`) 
-     3. Add the following command below `{docker-registry}/{namespace}/discovery-ranker-rest-service:20200113-150050-2-d1527c2`:
+    1.  Open the `ranker-rest` editor with this command: `kubectl edit deployment {release-name}-{watson-discovery}-ranker-rest`
+    2.  In the editor, search for the `ranker-rest image` (for example: `{docker-registry}/{namespace}/discovery-ranker-rest-service:20200113-150050-2-d1527c2`)
+    3.  Add the following command below `{docker-registry}/{namespace}/discovery-ranker-rest-service:20200113-150050-2-d1527c2`:
 
-        ```bash
+        ```sh
         command: ["/tini"]
         args: ["-s", "-v", "--", "java", "-Dkaryon.ssl=true", "-Dkaryon.port=9081", "-Dkaryon.ssl.port=9090", "-Dkaryon.ssl.certificate=/opt/bluegoat/karyon/ssl/karyon-cert.pem", "-Dkaryon.ssl.privatekey=/opt/bluegoat/karyon/ssl/karyon-private-key.pem", "-Djavax.net.ssl.trustStore=/opt/bluegoat/karyon/ssl/keystore.jks", "-Djavax.net.ssl.keyStore=/opt/bluegoat/karyon/ssl/keystore.jks", "-Dlog4j.debug=false", "-Dlitelinks.threadcontexts=log4j_mdc", "-Dwatson.ssl.truststore.path=/opt/bluegoat/karyon/ssl/litelinks-truststore.jks", "-Dwatson.ssl.truststore.password=watson15qa", "-Dlitelinks.delay_client_close=false", "-Drxnetty.http.maxcontentlength=314572800", "-cp", "lib/logback-classic-1.2.3.jar:*:lib/*", "com.ibm.watson.raas.rest.Runner"]
         ```
@@ -496,5 +483,5 @@ Also see the issues identified in all previous releases.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 16 July 2020
 {: #16jul2020ki}
-  
+
 - ![IBM Cloud only](images/ibm-cloud.png) When connecting to an {{site.data.keyword.cos_full}} data source, only the first 75 buckets for a given credential are displayed.

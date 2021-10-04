@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -11,22 +11,7 @@ completion-time: 2h
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:new_window: target="_blank"}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:gif: data-image-type='gif'}
-{:step: data-tutorial-type='step'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting answers from existing help content
 {: #tutorial-convo}
@@ -99,12 +84,7 @@ We want the virtual assistant that we will build to be able to answer questions 
 1.  In the **Collection name** field, add `COVID FAQ`.
 
     ![Shows the Web crawl name field](images/tut-web-crawl1.png)
-1.  In the **Starting URLs** field, add the following URL:
-
-    ```
-    https://www.cdc.gov/coronavirus/2019-ncov/faq.html
-    ```
-    {: codeblock}
+1.  In the **Starting URLs** field, add the URL `https://www.cdc.gov/coronavirus/2019-ncov/faq.html`.
 
     ![Shows the Starting URLs field](images/tut-web-crawl2.png)
 
@@ -138,6 +118,7 @@ In this tutorial, you will create an assistant with a single search skill. Both 
 
     Keep the {{site.data.keyword.discoveryshort}} project open in a separate tab so you can switch between the two applications.
     {: tip}
+
 1.  Create a Trial plan {{site.data.keyword.conversationshort}} service instance in the same location where the {{site.data.keyword.discoveryshort}} service instance is hosted.
 
     If you already have a Trial plan service instance in the correct location, you can skip this step. Use your existing Trial service instance instead. (You might need to delete a skill to stay under the allowed limit.)
@@ -195,7 +176,7 @@ To connect your assistant to your {{site.data.keyword.discoveryshort}} project, 
 1.  In the **Name** field, add `COVID answers`, and then click **Continue**.
 
     ![Shows the Add a search skill dialog](images/tut-search-skill1.png)
-1.  Select the Discovery instance where your project is stored. 
+1.  Select the Discovery instance where your project is stored.
 1.  Select the tutorial project with the COVID FAQ collection, and then click **Next**.
 
     ![Shows the search skill page where you connect to Discovery](images/tut-search-skill-connect.png)
@@ -206,7 +187,7 @@ To connect your assistant to your {{site.data.keyword.discoveryshort}} project, 
 
     ![Shows the Emphasize the answer switcher](images/tut-search-skill-emphasize-answer.png)
 
-1.  Note that the *Adjust result quantity* section is set to return 3 results. 
+1.  Note that the *Adjust result quantity* section is set to return 3 results.
 
     You could limit the number of results that are displayed to just 1 because you know each question has a paired answer. But, to do so would limit insightful information that might get returned by the assistant otherwise. The assistant evaluates the confidence of each possible response. It might find an answer that is better than the paired answer or that has a slightly different meaning that will better address the user's question.
 
@@ -236,9 +217,9 @@ For more information about search skills, see [Adding skills to your assistant](
 {: #tutorial-convo-deploy-chat}
 {: step}
 
-You will deploy your virtual assistant as a web chat integration. You can create the integration and then embed it on your own web page. 
+You will deploy your virtual assistant as a web chat integration. You can create the integration and then embed it on your own web page.
 
-There are other ways to deploy your assistant. We are using the web chat integration because it is quick and easy to set up. For more information about other deployment options, see [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external}. 
+There are other ways to deploy your assistant. We are using the web chat integration because it is quick and easy to set up. For more information about other deployment options, see [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external}.
 
 1.  From the Preview page, click **New integration** to create a web chat integration.
 1.  Click **Create**.
@@ -250,6 +231,7 @@ There are other ways to deploy your assistant. We are using the web chat integra
 
     You can skip this step. If you skip it, set the home screen switch to off.
     {: tip}
+
 1.  Click **Save and exit**.
 1.  Reopen the web chat by clicking the **Web chat** tile in the *Integrations* section.
 
@@ -261,10 +243,10 @@ There are other ways to deploy your assistant. We are using the web chat integra
     <html>
     <head></head>
     <body>
-        <title>My Test Page</title>
-        <p>The body of my page.</p>
-        <!-- copied script elements -->
-        </body>
+      <title>My Test Page</title>
+      <p>The body of my page.</p>
+      <!-- copied script elements -->
+      </body>
     </html>
     ```
     {: codeblock}

@@ -2,33 +2,13 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-10-01"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:beta: .beta}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Microsoft SharePoint OnPrem
 {: #connector-sharepoint-onprem-cloud}
@@ -71,19 +51,19 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 You must have the following information ready. If you don't know it, ask your SharePoint administrator to provide the information or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
 
-- **Username**: The username to use to connect to the SharePoint OnPrem web application that you want to crawl. For example, `siteadmin01`.
-- **Password**: The password to connect to the SharePoint OnPrem web application that you want to crawl. 
+-   **Username**: The username to use to connect to the SharePoint OnPrem web application that you want to crawl. For example, `siteadmin01`.
+-   **Password**: The password to connect to the SharePoint OnPrem web application that you want to crawl.
 
-  This value is never returned and is only used when credentials are created or modified.
-- **Web Application URL**: The SharePoint web application URL. For example, `https://sharepointwebapp.com:8443`. 
+    This value is never returned and is only used when credentials are created or modified.
+-   **Web Application URL**: The SharePoint web application URL. For example, `https://sharepointwebapp.com:8443`.
 
-  If you do not enter a port number, the default value of `80` is used for an HTTP URL and `443` for HTTPS.
-- **Domain**: The domain name of the SharePoint OnPrem account. For example, `sharepoint.mycointernal`.
+    If you do not enter a port number, the default value of `80` is used for an HTTP URL and `443` for HTTPS.
+-   **Domain**: The domain name of the SharePoint OnPrem account. For example, `sharepoint.mycointernal`.
 
 ## Prerequisite step
 {: #connector-sharepoint-onprem-cloud-prereq-task}
 
-Before you can connect to a SharePoint OnPrem data source, you must install and configure {{site.data.keyword.SecureGatewayfull}}. 
+Before you can connect to a SharePoint OnPrem data source, you must install and configure {{site.data.keyword.SecureGatewayfull}}.
 
 For more information, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
 
@@ -97,10 +77,10 @@ To configure the Microsoft SharePoint OnPrem data source, complete the following
 1.  Click **SharePoint OnPrem**, and then click **Next**.
 1.  Add values to the following fields:
 
-    - Username
-    - Password
-    - Web Application URL
-    - Domain
+    -   Username
+    -   Password
+    -   Web Application URL
+    -   Domain
 
     Click **Next**.
 1.  Name the collection.
@@ -121,6 +101,6 @@ To configure the Microsoft SharePoint OnPrem data source, complete the following
 
 1.  Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

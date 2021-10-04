@@ -8,26 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # How your data source is processed
 {: #index-overview}
@@ -45,12 +26,12 @@ The processing that is applied to all data sources includes the following steps:
 
 You can see a list of the fields that were indexed from the *Manage fields* page.
 
-1.  Go to the *Manage collections* page, and then choose the collection. 
+1.  Go to the *Manage collections* page, and then choose the collection.
 
     Make sure that the processing of the collection is finished first. The Activity page shows the processing status.
 1.  Click the *Manage fields* tab.
 
-The purpose of the fields is self-explanatory given their field names. 
+The purpose of the fields is self-explanatory given their field names.
 
 What is not obvious is the importance of the `text` field. The `text` field typically contains the main body of text from the original document. Most of the content that is returned in search results originates from this one field. How to parse and return only relevant chunks of information from this field is determined by the query result configuration that is used by the project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
 

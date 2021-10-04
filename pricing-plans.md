@@ -8,27 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'}
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
 # Discovery pricing plans
 {: #pricing-plans}
@@ -40,10 +20,10 @@ Learn more about the {{site.data.keyword.discoveryfull}} service plans, so you c
 ## Plus
 {: #plusplan}
 
-Find targeted answers and insights across many document types. 
+Find targeted answers and insights across many document types.
 
 The first Plus plan created includes a 30-day free trial.
-You must pay for each additional Plus plan (and for use of the first plan after the 30-day trial ends). 
+You must pay for each additional Plus plan (and for use of the first plan after the 30-day trial ends).
 
 If you continue to use a Plus plan service instance after the 30-day trial ends, you are charged for it. To avoid being charged after 30 days, delete the Plus plan service instance.
 {: important}
@@ -59,7 +39,7 @@ For subscription accounts, the monthly fee per instance is $500.
 - Optical Character Recognition(OCR)
 - Out of the box data source connectors
 - Table Retrieval
-- Custom NLP models 
+- Custom NLP models
 - Custom Relevance Model
 
 ### Artifact limits

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-08-04"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 
@@ -10,21 +10,7 @@ content-type: faq
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:external: target="_blank" .external}
-{:deprecated: .deprecated}
-{:important: .important}
-{:note: .note}
-{:tip: .tip}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:swift: .ph data-hd-programlang='swift'}
-{:faq: data-hd-content-type='faq'}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQ
 {: #faqs}
@@ -91,7 +77,7 @@ Yes. Use the intuitive tools provided with the product to teach {{site.data.keyw
 {: #faq-sdu}
 {: faq}
 
-You can use the Smart Document Understanding tool to teach {{site.data.keyword.discoveryshort}} about fields in your documents that you want {{site.data.keyword.discoveryshort}} to index. You can define a new field, and then annotate documents to train {{site.data.keyword.discoveryshort}} to understand what type of information is typically stored in the field. For more information, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+You can use the Smart Document Understanding tool to teach {{site.data.keyword.discoveryshort}} about fields in your documents that you want {{site.data.keyword.discoveryshort}} to index. You can define a new field, and then annotate documents to train {{site.data.keyword.discoveryshort}} to understand what type of information is typically stored in the field. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
 
 ## What's the best way to add synonyms?
 {: #faq-synonyms}

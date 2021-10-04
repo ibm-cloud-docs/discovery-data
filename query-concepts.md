@@ -2,32 +2,13 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-10-01"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Query API overview
 {: #query-concepts}
@@ -54,26 +35,26 @@ The `natural_language_query` parameter accepts text strings as input, not query 
 ## How to write a Discovery Query Language query
 {: #structure-basic-query}
 
-The Discovery Query Language leverages the structure of indexed documents. The following JSON snippet shows an indexed document from a collection where the *Entities* enrichment is applied. As a result of the enrichment, the JSON structure captures any mentions of known entities, such as city names, companies, or famous people. 
+The Discovery Query Language leverages the structure of indexed documents. The following JSON snippet shows an indexed document from a collection where the *Entities* enrichment is applied. As a result of the enrichment, the JSON structure captures any mentions of known entities, such as city names, companies, or famous people.
 
 In this example, the recognized entity is the company name `IBM`.
 
 ```json
 {
   "document": {
-      "document_id": "f7f27ea30eb3e4c0ce21830618d9ee99",
-      "enriched_text": [
+    "document_id": "f7f27ea30eb3e4c0ce21830618d9ee99",
+    "enriched_text": [
+      {
+        "entities": [
           {
-              "entities": [
-                  {
-                      "model_name": "natural_language_understanding",
-                      "mentions": [],
-                      "text":"IBM",
-                      "type":"Organization"
-                  }
-              ]
+            "model_name": "natural_language_understanding",
+            "mentions": [],
+            "text":"IBM",
+            "type":"Organization"
           }
-      ]
+        ]
+      }
+    ]
   }
 }
 ```
@@ -87,23 +68,23 @@ This basic query contains a nested path expression before the `:` operator. Each
 
 The `::` operator indicates that the text must be matched exactly in the result. For more information, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators). You can see how the two operators are used in the following examples.
 
-- To return matching document in order of relevance, pass the following data object in the POST request:
+-   To return matching document in order of relevance, pass the following data object in the POST request:
 
-  ```json
-  {
-	"query":"enriched_text.entities.text:IBM"
-  }
-  ```
-  {: codeblock}
+    ```json
+    {
+      "query":"enriched_text.entities.text:IBM"
+    }
+    ```
+    {: codeblock}
 
-- To return matching documents in any order, pass the following data object in the POST request as the query body:
+-   To return matching documents in any order, pass the following data object in the POST request as the query body:
 
-  ```json
-  {
-	"filter":"enriched_text.entities.text::IBM"
-  }
-  ```
-  {: codeblock}
+    ```json
+    {
+      "filter":"enriched_text.entities.text::IBM"
+    }
+    ```
+    {: codeblock}
 
 ## Using the filter and query parameters together
 {: #query-concepts-filter-and-query}
@@ -119,11 +100,11 @@ Query body:
 
 ```json
 {
-    "filter": "document_id::b6d8c6e3-1097-421b-9e39-75717d2554aa"
+  "filter": "document_id::b6d8c6e3-1097-421b-9e39-75717d2554aa"
 }
- ```
- {: codeblock}
- 
+```
+{: codeblock}
+
 If the document exists, the query returns 1 matching result. If it doesn't, the query returns no matching results.
 
 ### Filter example: Find a document ID by its file name
@@ -135,8 +116,8 @@ Query body:
 
 ```json
 {
-    "filter": "extracted_metadata.filename::100674.txt",
-    "return": [ "document_id", "extracted_metadata" ]
+  "filter": "extracted_metadata.filename::100674.txt",
+  "return": [ "document_id", "extracted_metadata" ]
 }
 ```
 {: codeblock}
@@ -145,17 +126,17 @@ Response:
 
 ```json
 {
-    "matching_results": 1,
-    "results": [
-        {
-            "document_id": "b6d8c6e3-1097-421b-9e39-75717d2554aa",
-            "extracted_metadata": {
-                "sha1": "AD447F7592A17CDCBF0A589C4E6EC2087AF7H35F",
-                "filename": "100674.txt",
-                "file_type": "text"
-            }
-        }
-    ]
+  "matching_results": 1,
+  "results": [
+    {
+      "document_id": "b6d8c6e3-1097-421b-9e39-75717d2554aa",
+      "extracted_metadata": {
+        "sha1": "AD447F7592A17CDCBF0A589C4E6EC2087AF7H35F",
+        "filename": "100674.txt",
+        "file_type": "text"
+      }
+    }
+  ]
 }
 ```
 {: codeblock}
@@ -168,7 +149,7 @@ Query body:
 
 ```json
 {
-    "filter": "enriched_text.entities.text::Gilroy"
+  "filter": "enriched_text.entities.text::Gilroy"
 }
 ```
 {: codeblock}
@@ -177,7 +158,7 @@ Response:
 
 ```json
 {
-    "matching_results": 4
+  "matching_results": 4
 }
 ```
 {: codeblock}
@@ -193,7 +174,7 @@ One way to write the query is as follows:
 
 ```json
 {
-    "filter": "enriched_text.entities.text::Gilroy,enriched_text.entities.type::Location"
+  "filter": "enriched_text.entities.text::Gilroy,enriched_text.entities.type::Location"
 }
 ```
 {: codeblock}
@@ -206,20 +187,20 @@ Query body:
 
 ```json
 {
-    "filter": "enriched_text.entities:(text::Gilroy,type::Location)"
+  "filter": "enriched_text.entities:(text::Gilroy,type::Location)"
 }
 ```
 {: codeblock}
 
 This stricter query matches only those documents in which there is an `entities` object with `text` equal to `Gilroy` and `type` equal to `Location`.
 
-As another example, if you want to match documents that contain an `entities` object with `text` equal to `Gilroy` but `type` **not** equal to `Location`, you can use the 
+As another example, if you want to match documents that contain an `entities` object with `text` equal to `Gilroy` but `type` **not** equal to `Location`, you can use the
 *not equal* operator in the query, for example:
 
 ```json
 {
-    "filter": "enriched_text.entities:(text::Gilroy,type::!Location)"
-}  
+  "filter": "enriched_text.entities:(text::Gilroy,type::!Location)"
+}
 ```
 {: codeblock}
 
@@ -236,11 +217,11 @@ The aggregation parameter returns data about the field with the highest value.
 
 ```json
 "aggregations": [
-        {
-            "type": "max",
-            "field": "order.total",
-            "value": 100668.00
-        }
+  {
+    "type": "max",
+    "field": "order.total",
+    "value": 100668.00
+  }
 ]
 ```
 {: codeblock}
@@ -254,8 +235,8 @@ Use the `term()` aggregation to count how many times certain values appear in th
 
 ```json
 {
-     "filter": "enriched_text.entities:(text::Gilroy,type::Location)",
-     "aggregation": "term(enriched_text.entities.type)"
+  "filter": "enriched_text.entities:(text::Gilroy,type::Location)",
+  "aggregation": "term(enriched_text.entities.type)"
 }
 ```
 {: codeblock}
@@ -264,50 +245,50 @@ The query first selects the documents that have at least one entity of type `Loc
 
 ```json
 {
-    "matching_results": 3,
-    "retrieval_details": {
-        "document_retrieval_strategy": "untrained"
-    },
-    "aggregations": [
+  "matching_results": 3,
+  "retrieval_details": {
+    "document_retrieval_strategy": "untrained"
+  },
+  "aggregations": [
+    {
+      "type": "term",
+      "field": "enriched_text.entities.type",
+      "results": [
         {
-            "type": "term",
-            "field": "enriched_text.entities.type",
-            "results": [
-                {
-                    "key": "Location",
-                    "matching_results": 3
-                },
-                {
-                    "key": "Person",
-                    "matching_results": 3
-                },
-                {
-                    "key": "Company",
-                    "matching_results": 2
-                },
-                {
-                    "key": "GeographicFeature",
-                    "matching_results": 2
-                },
-                {
-                    "key": "Organization",
-                    "matching_results": 2
-                },
-                {
-                    "key": "Quantity",
-                    "matching_results": 2
-                },
-                {
-                    "key": "Facility",
-                    "matching_results": 1
-                },
-                {
-                    "key": "PrintMedia",
-                    "matching_results": 1
-                }
-            ]
+          "key": "Location",
+          "matching_results": 3
+        },
+        {
+          "key": "Person",
+          "matching_results": 3
+        },
+        {
+          "key": "Company",
+          "matching_results": 2
+        },
+        {
+          "key": "GeographicFeature",
+          "matching_results": 2
+        },
+        {
+          "key": "Organization",
+          "matching_results": 2
+        },
+        {
+          "key": "Quantity",
+          "matching_results": 2
+        },
+        {
+          "key": "Facility",
+          "matching_results": 1
+        },
+        {
+          "key": "PrintMedia",
+          "matching_results": 1
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 {: codeblock}
@@ -318,8 +299,8 @@ By default, the top 10 matches are returned, sorted by relevance. You can change
 
 ```json
 {
-     "filter": "enriched_text.entities:(text::Gilroy,type::Location)",
-     "aggregation": "term(enriched_text.entities.type,count:20)"
+  "filter": "enriched_text.entities:(text::Gilroy,type::Location)",
+  "aggregation": "term(enriched_text.entities.type,count:20)"
 }
 ```
 {: codeblock}
@@ -331,7 +312,7 @@ Use the `filter()` in the aggregation clause to filter results. For example, you
 
 ```json
 {
-    "aggregation": "filter(enriched_text.entities:(text::Gilroy,type::Location)).term(enriched_text.entities.type)"
+  "aggregation": "filter(enriched_text.entities:(text::Gilroy,type::Location)).term(enriched_text.entities.type)"
 }
 ```
 {: codeblock}
@@ -346,8 +327,8 @@ In the previous examples, the `"matching_counts"` value represents the number of
 For example, in the following query the `nested()` segment selects all `enriched_text.entities` nested objects as the input used by the `filter()` and `term()` segments.
 
 ```json
-{ 
-    "aggregation": "nested(enriched_text.entities).filter(enriched_text.entities.type::Organization).term(enriched_text.entities.text,count:3)"
+{
+  "aggregation": "nested(enriched_text.entities).filter(enriched_text.entities.type::Organization).term(enriched_text.entities.text,count:3)"
 }
 ```
 {: codeblock}
@@ -356,41 +337,41 @@ The query results in an `aggregations` object that looks as follows:
 
 ```json
 {
+  "aggregations": [
+    {
+      "type": "nested",
+      "path": "enriched_text.entities",
+      "matching_results": 1993,
       "aggregations": [
         {
-            "type": "nested",
-            "path": "enriched_text.entities",
-            "matching_results": 1993,
-            "aggregations": [
+          "type": "filter",
+          "match": "enriched_text.entities.type::Organization",
+          "matching_results": 645,
+          "aggregations": [
+            {
+              "type": "term",
+              "field": "enriched_text.entities.text",
+              "count": 3,
+              "results": [
                 {
-                    "type": "filter",
-                    "match": "enriched_text.entities.type::Organization",
-                    "matching_results": 645,
-                    "aggregations": [
-                        {
-                            "type": "term",
-                            "field": "enriched_text.entities.text",
-                            "count": 3,
-                            "results": [
-                                {
-                                    "key": "IBM",
-                                    "matching_results": 36
-                                },
-                                {
-                                    "key": "Docker",
-                                    "matching_results": 12
-                                },
-                                {
-                                    "key": "OpenShift",
-                                    "matching_results": 12
-                                }
-                            ]
-                        }
-                    ]
+                  "key": "IBM",
+                  "matching_results": 36
+                },
+                {
+                  "key": "Docker",
+                  "matching_results": 12
+                },
+                {
+                  "key": "OpenShift",
+                  "matching_results": 12
                 }
-            ]
+              ]
+            }
+          ]
         }
-    ],
+      ]
+    }
+  ]
 }
 ```
 {: codeblock}
@@ -405,10 +386,10 @@ A query is any operation that submits a POST request to the `/query` endpoint of
 The number of search queries that you can submit per month per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Queries per month per service instance |
-|--------------|--------------------------------:|
-| Cloud Pak for Data |                 Unlimited |
-| Premium      |                       Unlimited |
-| Plus (includes Trial)         |        500,000 |
+|--------------|-------------------------------:|
+| Cloud Pak for Data |                Unlimited |
+| Premium      |                      Unlimited |
+| Plus (includes Trial)        |        500,000 |
 {: caption="Number of queries per month" caption-side="top"}
 
 The number of queries that can be processed per second per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
@@ -425,7 +406,7 @@ For more information about the supported number of queries for Lite and Advanced
 ## Estimating query usage
 {: #query-estimate}
 
-How to estimate the number of queries your application will use per month depends on your use case. 
+How to estimate the number of queries your application will use per month depends on your use case.
 
 - For use cases that focus more on data enrichment and analysis or where the output from the document processing is not heavily searched, you can estimate query numbers based on the total number of documents.
 - For use cases where many users interact with the application that leverages Discovery, you can estimate by calculating the number of searches per user times the number of expected users. For example, 50% of the questions that are submitted by users to a virtual assistant are likely to be answered by Discovery. With 100,000 users per month and an average of 3 questions per user, you can expect 15,000 queries per month. (10,000 users/mo * 3 queries/user * 50% to Discovery = 15,000)
@@ -450,18 +431,20 @@ If the current user does not meet these requirements, no search results are retu
 The username that is associated with your {{site.data.keyword.discoveryshort}} instance is used to generate an authorization token. The token is used to authenticate {{site.data.keyword.discoveryshort}} queries.
 
 To generate each access token, run the following command:
- 
+
 ```bash
-curl -u "{username}:{password}" "https://{hostname}:{port}/v1/preauth/validateAuth"
+curl -u "{username}:{password}" \
+"https://{hostname}:{port}/v1/preauth/validateAuth"
 ```
 {: pre}
-   
+
 Replace `{username}` and `{password}` with the user's {{site.data.keyword.discoveryshort}} credentials.
 
 Use the bearer token that is associated with the user when you run the query. For example:
 
 ```bash
-curl -H "Authorization: Bearer {token}" 'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{Collection_ID}/query\?version\=2019-11-29'
+curl -H "Authorization: Bearer {token}" \
+'https://{hostname}/{instance_name}/v2/projects/{project_id}/collections/{Collection_ID}/query\?version\=2019-11-29'
 ```
 {: pre}
 

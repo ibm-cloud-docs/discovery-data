@@ -2,39 +2,20 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-10-03"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Query reference
 {: #query-reference}
 
-The full list of {{site.data.keyword.discoveryshort}} query parameters, operators, and aggregations. You can refer to this information for help when you write queries with the {{site.data.keyword.discoveryshort}} Query Language. 
+The full list of {{site.data.keyword.discoveryshort}} query parameters, operators, and aggregations. You can refer to this information for help when you write queries with the {{site.data.keyword.discoveryshort}} Query Language.
 
-- For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. 
+- For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}.
 - For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
@@ -85,10 +66,10 @@ Operators are the separators between different parts of a query. The following t
 | [`::`](/docs/discovery-data?topic=discovery-data-query-operators#match) | Exact match | `title::"Query building"` |
 | [`:!`](/docs/discovery-data?topic=discovery-data-query-operators#notinclude) | Does not include | `text:!computer` |
 | [`::!`](/docs/discovery-data?topic=discovery-data-query-operators#notamatch) | Not an exact match | `text::!winter` |
-| [`\`](/docs/discovery-data?topic=discovery-data-query-operators#escape) | Escape character | `title::"Dorothy said: \"There's no place like home\""` |
+| [`\\`](/docs/discovery-data?topic=discovery-data-query-operators#escape) | Escape character | `title::"Dorothy said: \\"There's no place like home.\\""` |
 | [`""`](/docs/discovery-data?topic=discovery-data-query-operators#phrase) | Phrase query | `enriched_text.concepts.text:"IBM Watson"` |
 | [`()`, `[]`](/docs/discovery-data?topic=discovery-data-query-operators#nestedquery) | Nested groups | `filter-entities:(text:Turkey,type:Location)` |
-| [<code>&#124;</code>](/docs/discovery-data?topic=discovery-data-query-operators#or) | or | <code>query-enriched.entities.text:Google&#124;IBM</code> |
+| [\|](/docs/discovery-data?topic=discovery-data-query-operators#or) | or | `query-enriched.entities.text:Google\|IBM` |
 | [`,`](/docs/discovery-data?topic=discovery-data-query-operators#and) | and | `query-enriched.entities.text:Google,IBM` |
 | [`<=`, `>=`, `>`, `<`](/docs/discovery-data?topic=discovery-data-query-operators#comparisons) | Numerical comparisons |  `enriched_text.sentiment.document.score>0.679`     |
 | [`^x`](/docs/discovery-data?topic=discovery-data-query-operators#multiplier) | Score multiplier | `text:IBM^3` |

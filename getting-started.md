@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-10-04"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -11,27 +11,7 @@ completion-time: 20m
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'}
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:step: data-tutorial-type='step'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with Watson Discovery
 {: #getting-started}
@@ -50,24 +30,24 @@ This information applies to {{site.data.keyword.discovery-data_short}}, Plus pla
 
 Choose the appropriate step to complete for your deployment:
 
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Complete the following steps:
+-   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+-   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Complete the following steps:
 
-  1. Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
-  1. You can use a Plus plan for 30 days at no cost. However, to create a Plus plan instance of the service, you must have a paid account. 
-  
-     For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}. 
-  
-     If you decide to discontinue use of the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
-     {: important}
-  
-  1. Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
+    1.  Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
+    1.  You can use a Plus plan for 30 days at no cost. However, to create a Plus plan instance of the service, you must have a paid account.
+
+        For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}.
+
+        If you decide to discontinue use of the Plus plan and don't want to pay for it, delete the service instance before the 30-day trial period ends.
+        {: important}
+
+    1.  Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
 
 ## Open Watson Discovery
 {: #getting-started-launch-tool}
 {: step}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** 
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
 
 These instructions apply to all managed deployments, including {{site.data.keyword.icp4dfull_notm}} as a Service instances.
 
@@ -95,11 +75,11 @@ These instructions apply to {{site.data.keyword.discoveryshort}} deployments tha
 {: #open-project-tool}
 {: step}
 
-A new browser tab or window opens and the *My Projects* page is displayed. 
+A new browser tab or window opens and the *My Projects* page is displayed.
 
 ![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
 
-In this tutorial, you explore the sample project. 
+In this tutorial, you explore the sample project.
 
 The sample project is a built-in project that is provided as a resource for you to initially explore the product. The sample project is a *Document Retrieval* project type. Document Retrieval projects are used to search and find the most relevant answers from your data.
 
@@ -122,7 +102,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     Any collections in your project are displayed here. This project has only one collection.
 
-   ![Shows the collections page with the Sample Collection only.](images/gs-manage-collection.png)
+    ![Shows the collections page with the Sample Collection only.](images/gs-manage-collection.png)
 
 1.  Click **Sample Collection**.
 
@@ -135,13 +115,13 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 1.  Click the **Enrichments** tab.
 
     The *Enrichments* page shows you a list of available enrichments. Enrichments make meaningful information easier to find and return in searches. You can apply built-in enrichments to your collection to leverage powerful Natural Language Understanding models that tag terms, such as commonly known keywords.
-    
+
     ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments.png)
 
     The following enrichments are applied to the sample collection:
 
-    - **Entities**: Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
-    - **Parts of Speech**: Identifies the parts of speech (nouns and verbs, for example) in the content.
+    -   **Entities**: Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
+    -   **Parts of Speech**: Identifies the parts of speech (nouns and verbs, for example) in the content.
 
     These enrichments are applied automatically to collections that are added to projects of the *Document Retrieval* type.
 
@@ -155,10 +135,10 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     Again, you can see that the enrichment is applied to the `text` field.
 
-    From this page, you can apply new enrichments to your collection or change the fields where an enrichment is applied. 
-    
-    A powerful feature of Discovery is that you can add your own custom enrichments, such as dictionaries, patterns, and machine learning models. When you create custom enrichments, they are listed on this page also. You can manage where they are used from here. 
-    
+    From this page, you can apply new enrichments to your collection or change the fields where an enrichment is applied.
+
+    A powerful feature of Discovery is that you can add your own custom enrichments, such as dictionaries, patterns, and machine learning models. When you create custom enrichments, they are listed on this page also. You can manage where they are used from here.
+
     For more information about custom enrichments, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
     {: tip}
 
@@ -181,15 +161,15 @@ Learn about ways you can manage and enhance a collection by exploring the sample
     Smart Document Understanding (SDU) is a technology that learns about the content of a document based on the document's structure. You can apply a prebuilt SDU model or create a custom SDU model.
 
     ![Shows the SDU model options.](images/gs-sample-id-fields.png)
-    
+
     To create a custom SDU model, you select the *User-trained model* option, and then annotate fields in your document. (You will not annotate documents as part of this tutorial.)
 
     ![Shows that Smart Document Understanding tool.](images/gs-sample-sdu.png)
 
-    For more information about SDU, see [Adding custom fields with Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+    For more information about SDU, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
     {: tip}
 
-1.  Click **Manage fields**. 
+1.  Click **Manage fields**.
 
     The *Manage fields* page lists the indexed fields. From here, you can include or remove fields from the index. You can also split large documents into many smaller documents.
 
@@ -202,7 +182,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 {: #sample-project-try}
 {: step}
 
-1.  Click the **Improve and customize** icon from the navigation panel. 
+1.  Click the **Improve and customize** icon from the navigation panel.
 
     The *Improve and customize* page is where you can try out queries, then add and test customizations to improve the query results for your project. A list of sample queries is displayed to help you get started with submitting test queries.
 
@@ -210,16 +190,16 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     Query results are displayed.
 
-1.  From one of the query results, click **View passages in document**. 
+1.  From one of the query results, click **View passages in document**.
 
     A preview of the document where the result was found is shown.
 
 1.  Click **JSON**.
 
-    A JSON representation of the document is displayed. 
-    
+    A JSON representation of the document is displayed.
+
     ![Shows the JSON representation of the document.](images/gs-json-tab.png)
-    
+
     You can explore the JSON representation to see information that Discovery captured from the document. For example, if you expand the `enriched_text` section, and then expand the `entities` section, you can see mentions of entities that were recognized and tagged by the Entities enrichment.
 
     ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png)
@@ -232,7 +212,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  From the *Improve and customize* page, submit the following natural language query:
 
-    ```
+    ```text
     How do I install Discovery?
     ```
 
@@ -252,15 +232,15 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
     ![Shows the options for the types of facets you can add.](images/gs-facet-add-options.png)
 
-1.  Choose `enriched_text.keywords.mentions.text`, change the label to `Keywords`, and then click **Apply**. 
+1.  Choose `enriched_text.keywords.mentions.text`, change the label to `Keywords`, and then click **Apply**.
 
     ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png)
 
-    Remember the JSON representation of the document that you looked at earlier? Now that the Keywords enrichment is applied to the `text` field, and the documents are reprocessed, any keyword mentions found in the `text` field are included in the JSON representation of the document. 
-    
+    Remember the JSON representation of the document that you looked at earlier? Now that the Keywords enrichment is applied to the `text` field, and the documents are reprocessed, any keyword mentions found in the `text` field are included in the JSON representation of the document.
+
     The field you picked to use for the facet (`enriched_text.keywords.mentions.text`) reflects where the keyword text is stored in JSON.
 
-    ```
+    ```json
     "enriched_{field_name}": [
       "keywords" : [
         "mentions : [
@@ -270,7 +250,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
     ]
     ```
     {: codeblock}
-    
+
 1.  The new facet is displayed. You can click a keyword to filter the documents to include only those results that mention the keyword.
 
     ![Shows the keyword facet looks.](images/gs-keyword-facet-added.png)
@@ -281,7 +261,7 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 {: #gs-deploy}
 {: step}
 
-1.  Click **Integrate and deploy** from the navigation panel. 
+1.  Click **Integrate and deploy** from the navigation panel.
 
     From here, you can share your project with colleagues and deploy it.
 
@@ -291,9 +271,9 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 
     After you build your own search application and are ready to deploy it, you can use prebuilt user interface components or build a custom application.
 
-    - Click **API Information**. From this page, you can get the project ID for your project. You need the project ID to use the Discovery API. You also need the service instance URL and API key. The credential details are available from the Manage page of your service instance in IBM Cloud.
-    
-    - Click **UI Components** to find links to ready-to-use code that you can use to create a full-featured search application faster.
+    -   Click **API Information**. From this page, you can get the project ID for your project. You need the project ID to use the Discovery API. You also need the service instance URL and API key. The credential details are available from the Manage page of your service instance in IBM Cloud.
+
+    -   Click **UI Components** to find links to ready-to-use code that you can use to create a full-featured search application faster.
 
 ## Add your own content
 {: #gs-start-here}
@@ -311,7 +291,7 @@ Now that you know more about some product features, you're ready to create a pro
 1.  Click **New project**, and choose the right type of project for your use case.
 
     See the [Project descriptions](#gs-projects) for help.
-    
+
 1. Add data to the project.
 
     See the [Supported data sources](#gs-data-sources) table to learn about your options.
@@ -320,7 +300,7 @@ Now that you know more about some product features, you're ready to create a pro
 {: #gs-projects}
 
 | Need | Goal | Project type |
-|--------------------|------|--------------|
+|------|------|--------------|
 | *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a stand-alone enterprise search application or in the search field of a business application. | **Document Retrieval** |
 | *Where is the part of the contract that I need for my task?* | Quickly extract critical information from contracts. | **Document Retrieval for Contracts** |
 | *I want the chatbot I'm building to use knowledge that I own* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |

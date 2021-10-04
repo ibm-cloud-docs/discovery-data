@@ -2,33 +2,13 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:beta: .beta}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # IBM Cloud Object Storage
 {: #connector-cos-cloud}
@@ -64,18 +44,18 @@ Obtain any required service licenses for the content on the website that you wan
 
 You must have the following information ready:
 
-- **Endpoint**: The `endpoint` name to use to interact with {{site.data.keyword.cos_full_notm}} data. For example, `s3.us-south.cloud-object-storage.appdomain.cloud`.
+-   **Endpoint**: The `endpoint` name to use to interact with {{site.data.keyword.cos_full_notm}} data. For example, `s3.us-south.cloud-object-storage.appdomain.cloud`.
 
-  Do not include `http://` or `https://` in the endpoint value. For more information, see [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region){: external}.
-- **Access key id**: The `access_key_id` that was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `apr75g55a35547e6a80d80344b9h55a0`.
-- **Secret access key**: The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `806a16c5d35266db8570a074512972341j82999a5160b3rf`.
+    Do not include `http://` or `https://` in the endpoint value. For more information, see [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region){: external}.
+-   **Access key id**: The `access_key_id` that was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `apr75g55a35547e6a80d80344b9h55a0`.
+-   **Secret access key**: The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `806a16c5d35266db8570a074512972341j82999a5160b3rf`.
 
 ## Prerequisite step
 {: #connector-cos-cloud-prereq-task}
 
-IAM authentication is not supported currently. 
+IAM authentication is not supported currently.
 
-1.  Set up HMAC authentication before you configure this connector. 
+1.  Set up HMAC authentication before you configure this connector.
 
     See [Service Credentials](/docs/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) for instructions.
 
@@ -89,19 +69,19 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  Click **IBM Cloud Object Storage**, and then click **Next**.
 1.  Add values to the following fields:
 
-    - Endpoint
-    - Access key id
-    - Secret access key
+    -   Endpoint
+    -   Access key id
+    -   Secret access key
 
     Click **Next**.
 1.  Name the collection.
 1.  If the language of the documents in storage is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
+1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1.  Choose the buckets that you want to crawl. 
+1.  Choose the buckets that you want to crawl.
 
     The more buckets that you select, the longer the processing of the documents takes.
 
@@ -116,6 +96,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1.  Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

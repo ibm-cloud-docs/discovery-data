@@ -8,27 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Customizing the search bar
 {: #search-bar}
@@ -46,7 +26,7 @@ These search bar customizations are available for all project types except *Conv
 
 To customize search bar behavior, complete the following steps:
 
-1.  From the navigation pane, open the **Improve and customize** page. 
+1.  From the navigation pane, open the **Improve and customize** page.
 1.  Expand **Customize display** from the Improvement tools pane, and then click **Search bar**.
 1.  The following features are enabled by default. If you want to disable a feature, set the switcher to off.
 

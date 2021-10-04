@@ -8,30 +8,9 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:external: target="_blank" .external}
+{{site.data.keyword.attribute-definition-list}}
 
-
-# Overview of Cloud Pak for Data data sources 
+# Overview of Cloud Pak for Data data sources
 {: #collection-types}
 
 <!-- 2.1.3 c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
@@ -91,7 +70,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
 
 When you deploy one or more crawler plug-ins, you can configure your collection to use one of the plug-ins.
 
-These settings are only available when crawler plug-ins are deployed. 
+These settings are only available when crawler plug-ins are deployed.
 
 - For more information about building a plug-in, see [Building a Cloud Pak for Data crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 - For more information about deploying a crawler plug-in, see [Commands and options for managing your crawler plug-ins](/docs/discovery-data?topic=discovery-data-manage-plugin#mng-plugin-cmd-opt).

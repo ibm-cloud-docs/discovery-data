@@ -2,32 +2,13 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-02"
 
 subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'}
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Backing up and restoring data in Cloud Pak for Data
 {: #backup-restore}
@@ -225,7 +206,8 @@ To manually back up your data from an instance of {{site.data.keyword.discoverys
 1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
 
     ```bash
-    oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
+    oc login https://<OpenShift administrative console URL> \
+    -u <cluster administrator username> -p <password>
     ```
     {: pre}
 
@@ -256,7 +238,8 @@ To manually restore your data from an instance of {{site.data.keyword.discoverys
 1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
 
     ```bash
-    oc login https://<OpenShift administrative console URL> -u <cluster administrator username> -p <password>
+    oc login https://<OpenShift administrative console URL> \
+    -u <cluster administrator username> -p <password>
     ```
     {: pre}
 
@@ -300,7 +283,7 @@ Changing a project type with the API is only supported in this specific upgrade 
 
     For example, the following POST request changes the project type of the project with ID `ef5b7eb5-15d4-4a97-b325-a4cb2436966e`:
 
-    ```curl
+    ```bash
     curl -X POST -H "Authorization: Bearer {token}" \
     -H "Content-Type: application/json" \
     -d "{ \
@@ -308,4 +291,4 @@ Changing a project type with the API is only supported in this specific upgrade 
     }" \
     "https://mycluster/discovery/wd/instances/1621739945813501/api/v2/projects/ef5b7eb5-15d4-4a97-b325-a4cb2436966e?version=2020-08-30" \
     ```
-    {: codeblock}
+    {: pre}

@@ -8,27 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:beta: .beta}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Web crawl
 {: #connector-web-cloud}
@@ -72,10 +52,10 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 {: #connector-web-cloud-prereq-task}
 
 If you want to connect to a website that is hosted behind a firewall, set up an {{site.data.keyword.SecureGatewayfull}} connection first.
-    
+
 Valuable content is often stored on your company's internal website. Typically, such intranet websites are accessible only from a computer that is connected to your office network or through a VPN connection. You can establish a persistent and more secure connection between the web crawler and this type of internal site by using {{site.data.keyword.SecureGateway}}.
-    
-For more information about how to set up the connection, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic). 
+
+For more information about how to set up the connection, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
 
 ## Connecting to the data source
 {: #connector-web-cloud-task}
@@ -89,7 +69,7 @@ To configure the web crawl collection, complete the following steps:
 1.  If the language of the content on the website is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: You can change the synchronization schedule. 
+1.  **Optional**: You can change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Specify the URL of the website that you want to crawl.
@@ -99,7 +79,7 @@ To configure the web crawl collection, complete the following steps:
       Add a username and password with access to the site, and then click **Save credentials**. You can specify only one set of credentials per collection.
 
       For example, you can specify `https://cloud.ibm.com` as the starting URL and add your IBMid as the credentials.
-      
+
       If you want to start the crawl from a specific section of the site, specify it in the **Starting URLs** field. The domain name of the subsection must match the domain in the URL you specified earlier.
 
       For example, you might change the starting URL to `https://cloud.ibm.com/unifiedsupport/supportcenter`.
@@ -107,21 +87,21 @@ To configure the web crawl collection, complete the following steps:
 
       The final forward slash (`/`) in the URL determines the subtree to crawl. If you specify `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, for example. If you specify `https://www.example.com/banking` all URLs that begin with `https://www.example.com/` are crawled.
 
-      By default, the number of consecutive links that the crawl follows from the starting URL is `2`. To change the number of hops or to list website sections to exclude from the crawl, click the edit icon. 
-      
-      - The maximum number of hops allowed is `20`. 
-      - To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/licenses` and `https://example.com/pricing` by entering `/licenses/, /pricing/`. 
+      By default, the number of consecutive links that the crawl follows from the starting URL is `2`. To change the number of hops or to list website sections to exclude from the crawl, click the edit icon.
+
+      - The maximum number of hops allowed is `20`.
+      - To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/licenses` and `https://example.com/pricing` by entering `/licenses/, /pricing/`.
       - If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
 
-    - If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step. 
-    
+    - If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
+
       After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/web-crawl-edit-url.png). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
 
       Executing JavaScript is a beta feature. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically. When you enable this setting, the time it takes to crawl the page increases.
       {: beta}
 
     - To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
-    
+
       Expand *More connection settings*, and then set **Connect to on-premise network** to `On`. Provide details about your {{site.data.keyword.SecureGateway}} connection.
 
 1.  Optional: Add another web address to the **Starting URLs** field.
@@ -144,6 +124,6 @@ To configure the web crawl collection, complete the following steps:
 
 1.  Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: passages, query results
 
@@ -10,26 +10,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Previewing the default query results
 {: #query-results}
@@ -54,26 +35,26 @@ Preview the default query results.
         If the result text shows `Excerpt unavailable`, the search results might be configured to show a field that doesn't exist in your collection. You can change the results to consist of information from a different field or to switch between showing passages or field content. For more information, see [Changing the result content](#query-results-content).
         {: important}
 
-    - **Conversational Search project**: A single search field is displayed that mimics the user interface of a virtual assistant. 
-    
-      - Submit a phrase or keyword. 
-      
+    - **Conversational Search project**: A single search field is displayed that mimics the user interface of a virtual assistant.
+
+      - Submit a phrase or keyword.
+
         The query results are returned as passages by default. You can configure the search to return a field instead. See [Changing the result content](#query-results-content).
-    - **Custom project**: 
-    
-      - Submit your own phrase or keyword from the search bar. 
-    
+    - **Custom project**:
+
+      - Submit your own phrase or keyword from the search bar.
+
         The query results that are returned consist of passages.
-    - **Document Retrieval for Contracts project**: Contract-related elements that are recognized in your collection are displayed. 
-    
+    - **Document Retrieval for Contracts project**: Contract-related elements that are recognized in your collection are displayed.
+
       - Filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
-      - To view the contract elements in more detail, click a document result to open it. Open the *Contract Data* tab. 
-      
+      - To view the contract elements in more detail, click a document result to open it. Open the *Contract Data* tab.
+
       For more information about the elements, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
-    - **Content Mining project**: 
-    
-      - Choose a facet by which to filter the documents. 
-    
+    - **Content Mining project**:
+
+      - Choose a facet by which to filter the documents.
+
         Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
@@ -97,10 +78,11 @@ To change the content of the query results, complete the following steps:
 1.  From the *Improvement tools* pane, expand **Customize display**, and then click **Search results**.
 1.  **Optional**: Change the field that is shown as the title of the query result.
 
-    The title is displayed after the text excerpt. 
-    
+    The title is displayed after the text excerpt.
+
     This option is not available for *Conversational Search* projects.
     {: note}
+
 1.  Choose **Field** to switch to showing excerpts from a specific field, and then select the field that you want to use as the source of the query result text.
 1.  Click **Apply**.
 

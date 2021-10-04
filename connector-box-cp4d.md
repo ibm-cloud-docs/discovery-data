@@ -8,28 +8,7 @@ subcollection: discovery-data
 
 ---
 
-{:shortdesc: .shortdesc}
-{:external: target="_blank" .external}
-{:tip: .tip}
-{:note: .note}
-{:pre: .pre}
-{:important: .important}
-{:deprecated: .deprecated}
-{:codeblock: .codeblock}
-{:screen: .screen}
-{:download: .download}
-{:hide-dashboard: .hide-dashboard}
-{:apikey: data-credential-placeholder='apikey'} 
-{:url: data-credential-placeholder='url'}
-{:curl: .ph data-hd-programlang='curl'}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:java: .ph data-hd-programlang='java'}
-{:python: .ph data-hd-programlang='python'}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:swift: .ph data-hd-programlang='swift'}
-{:go: .ph data-hd-programlang='go'}
-{:external: target="_blank" .external}
-
+{{site.data.keyword.attribute-definition-list}}
 
 # Box
 {: #connector-box-cp4d}
@@ -54,7 +33,7 @@ This information applies only to installed deployments. For more information abo
 ## Data source requirements
 {: #connector-box-cp4d-reqs}
 
-In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your Box data source must meet the following requirement: 
+In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your Box data source must meet the following requirement:
 
 - You must obtain any required service licenses for the data source that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 
@@ -85,7 +64,7 @@ To create a custom application, complete the following steps:
 
     1.  Make a copy of `public-box.pem`.
 
-1.  Next, create a custom app that uses *Server Authentication with JWT* as its authentication method. 
+1.  Next, create a custom app that uses *Server Authentication with JWT* as its authentication method.
 
     For detailed steps, see [Setup with JWT](https://developer.box.com/guides/authentication/jwt/jwt-setup/){: external} in the Box Developer Documentation.
 
@@ -133,7 +112,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  If the language of the documents in Box is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule. 
+1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  In the *Enter your credentials* section, click **Select file** and then browse to find and upload the `config.json` file that you created in the prerequisite step.
@@ -148,12 +127,12 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     - To crawl a specific user, enter `box://app.box.com/user/USER'S_ACCOUNT_ID/`.
 
 1.  **Optional**: If you are using a proxy server to access the data source server, then in the *Proxy settings* section, set the **Enable proxy settings** switch to `On`. Add values to the following fields:
-      
+
     - **Username**: Optional: The username that you use to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of the proxy server.
     - **Password**: Optional: The password that you use to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of the proxy server.
     - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
     - **Proxy server port number**: The network port that you want to connect to on the proxy server.
-1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`. 
+1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
     When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to Box. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
@@ -164,6 +143,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1.  Click **Finish**.
 
-The collection is created quickly. It takes more time for the data to be processed as it is added to the collection. 
+The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
