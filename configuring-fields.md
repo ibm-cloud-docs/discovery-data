@@ -21,24 +21,35 @@ Use the Smart Document Understanding tool to add custom fields to a collection s
 -   Target enrichments at specific sections of a document.
 -   Break large documents into smaller documents.
 
-## Identifying fields
+## Applying an SDU model
 {: #identify-fields}
 
 <!-- c/s help for the **Identify fields** tab. Do not delete.  -->
 
-To identify fields, complete the following steps:
+First decide whether you want to use a pretrained model or define your own.
+
+-   **Pretrained model**: Applies a non-customizable model that extracts text and identifies tables, lists, and sections.
+
+    Instead of training the model yourself, you can apply an existing model that was trained to identify tables, lists, and sections in various types of documents.
+
+    This model converts table information to HTML format and stores it in the `html` field. You can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to the field later.
+-   **User-trained model**: Opens the Smart Document Understanding tool that you can use to pick certain types of text to store in fields other than the `text` field. 
+
+    When you label a section of a document as a custom field, later you can apply enrichments to the field or split your documents on each occurrence of the field. You can search or filter by the field, or omit the field from the index.
+
+To apply a Smart Document Understanding model to your collection, complete the following steps:
 
 1.  Open the **Improve and customize** page from the navigation panel. On the *Improvement tools* panel, expand *Define structure*, and then choose **New fields**.
 1.  If your project has more than one collection, select the collection with documents that you want to annotate.
 1.  Choose the type of model you want to use:
 
-    -   **Text extraction only**: Any text that is recognized in the source document is indexed in the `text` field. This option is selected by default.
-    -   **User-trained models**: Opens the Smart Document Understanding tool that you can use to pick certain types of text to store in fields other than the `text` field.
-    -   **Pre-trained-models**: Applies a non-customizable model that extracts text and identifies tables, lists, and sections. This model converts table information to HTML format and stores it in the `html` field. You can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to the field later.
-1.  Click **Submit**
-1.  Click **Apply changes and reprocess**.
+    -   **User-trained models**
+    -   **Pre-trained-models**
 
-If you selected **User-trained models**, a subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types. Continue to the [Creating a user-trained model](#sdu-task) procedure.
+    If you don't want to apply an SDU model, then you're done. The **Text extraction only** option is used by default. Any text that is recognized in the source documents is indexed in the `text` field.
+1.  If you choose to apply a model, click **Submit**, and then click **Apply changes and reprocess**.
+
+If you selected **User-trained models**, a subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types. Continue to the *Creating a user-trained model* procedure.
 
 ## Creating a user-trained model
 {: #sdu-task}
@@ -49,7 +60,7 @@ The following video shows you how to select a label, and then apply it to a repr
 
 Before you begin, get a feel for the structure of the document you plan to annotate. Are there subtitled sections that you want Discovery to return per answer? If so, identify all subtitles. Later you can split the document into discrete subdocuments, each starting with a subtitle. For more information, see [When to use Smart Document Understanding](#sdu-when).
 
-To annotate documents, complete the following steps:
+To create a user-trained model, complete the following steps:
 
 1.  Review the document preview.
 
@@ -57,12 +68,13 @@ To annotate documents, complete the following steps:
 
     The blocks are all the color of the `text` field label because all of the current text is considered to be standard text and will be indexed in the `text` field.
 
-    To annotate the document, label blocks that represent specific types of information, such as titles or page footers, with other field labels.
+    Label blocks that represent specific types of information, such as titles or page footers, with other field labels. For example, when you apply the title field label to a document title that would otherwise be indexed as text, you are defining a more precise representation of the document content.
+    
+    The process of using labels to identify different parts of the document's structure is called *annotating* the document.
 
-    For example, when you apply the title field label to a document title that would otherwise be indexed as text, you are defining a more precise representation of the document content.
 1.  Review the field labels that you can use to annotate the document. They are displayed in the *Field labels* panel.
 
-    See the [Default field labels table](#sdu-default-fields) for a list of the fields and their descriptions.
+    See the [Default field labels](#sdu-default-fields) table for a list of the fields and their descriptions.
 1.  To create a custom field label, click **Create new**.
 
     -   Specify a field label with lowercase letters and no spaces. For example, `complex_task` is a valid field label.
