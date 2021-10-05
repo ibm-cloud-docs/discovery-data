@@ -161,21 +161,21 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
       - To exclude the entire ibm.com domain:
 
-        ```
+        ```text
         forbid domain www.ibm.com
         ```
         {: codeblock}
 
       - To crawl any domain that ends with `ibm.com`: 
       
-        ```
+        ```text
         allow domain *.ibm.com
         ```
         {: codeblock}
 
       - To crawl only port `443` on IBM domains that begin with `server`: 
       
-        ```
+        ```text
         allow domain server*.ibm.com:443
         ```
         {: codeblock}
@@ -190,14 +190,14 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
       - To crawl pages in the public directory on this domain: 
       
-        ```
+        ```text
         allow prefix http://*.ibm.com/public/*
         ```
         {: codeblock}
 
       - To exclude all other directories on this domain:
       
-        ```
+        ```text
         forbid prefix http://*.ibm.com/*
         ```
         {: codeblock}
