@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-05"
 
 keywords: release notes
 
@@ -42,22 +42,17 @@ Find software release information for your deployment type:
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
-## All releases
-{: #rn-both}
-
-The following features or issues apply to both managed and installed deployments.
-
-### 21 September 2021
-{: #21september2021}
-
-- **Microsoft SharePoint Online connector is not crawling data**: Due to a change that was introduced in the Microsoft API that is used by the {{site.data.keyword.discoveryshort}} connector to crawl the external data source, the crawler is unable to access data. The {{site.data.keyword.discoveryshort}} is working with the vendor to address the API issue. For more information, see the discussion about the regression on the [Microsoft Q&A site](https://docs.microsoft.com/en-us/answers/questions/559971/sitedataasmx-does-not-return-any-resources-on-shar.html){: external}.
-
 ## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} releases
 {: #rn-cloud}
 
 The following new features and changes are available for managed deployments.
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
+
+### ![IBM Cloud only](images/ibm-cloud.png) 1 October 2021
+{: #1october2021}
+
+- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the Seoul, Sydney, London, Washington DC, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan. Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 24 September 2021
 {: #24september2021}
@@ -72,7 +67,7 @@ For more information about software releases for installed deployments, see [{{s
 {: #9september2021}
 
 - **Plus plan is available in more locations**: The Plus plan is now available from the Sydney location. Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product. For more information, see [Getting the most from {{site.data.keyword.discoveryshort}}](/docs/discovery-data?topic=discovery-data-version-choose).
-- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the Seoul, Sydney, London, Washington DC, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
+- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the Sydney, London, Washington DC, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 26 August 2021
 {: #26august2021}
@@ -192,6 +187,18 @@ This release is available for Premium instances of {{site.data.keyword.discovery
 The following new features and changes are available for installed deployments.
 
 For more information about software releases for managed deployments, see [{{site.data.keyword.cloud_notm}} releases](#rn-cloud).
+
+### ![Cloud Pak for Data only](images/desktop.png) 4.0.2 release, 5 October 2021
+{: #5october2021}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.2 is available.
+
+-   **Supports newer platform software**: {{site.data.keyword.icp4dfull}} 4.0.2 can be installed on {{site.data.keyword.openshiftlong}} 4.8.
+-   **Confidence scores are returned for enrichments**: Relevance and confidence scores are displayed for NLU enrichments that are returned by search.
+
+    For example, when you open the JSON view of the document preview from a query result, you can see confidence scores for Entities mentions and relevance scores for Keyword mentions.
+-   **Web crawl improvements**: The *Web crawl* data source supports more customization options, including the ability to ignore a site's robots.txt file. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d).
+-   **New upgrade support**: The 4.0.2 release supports in-place upgrade from {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.0. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}
 
 <!--### IBM Cloud Private End Of Support
 {: #30september2021}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-05"
 
 subcollection: discovery-data
 
@@ -129,21 +129,81 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     -   **Proxy server domains**: The domain or domains that the hosts reside in. You can specify a wildcard in this field, such as an asterisk (`*`) to crawl all domains or a leading asterisk (`*.server1.bar.com`) to crawl domains that match a pattern.
     -   **Proxy server host name or IP address**: The hostname if you want to access the server by using a LAN, or the IP address of the server that you want to use as the proxy server.
     -   **Proxy server port number**: The network port that you want to connect to on the proxy server.
-1.  **Optional**: Complete the following fields in **Advanced Configuration**:
+1. **Optional**: Complete the following fields in **Advanced Configuration**:
 
-    -   **Code page to use**: Specify the character encoding of the website pages. If unspecified, the default value of `UTF-8` is used.
+    - **Code page to use**: Specify the character encoding of the website pages. If unspecified, the default value of `UTF-8` is used.
 
-        If you are crawling Chinese websites, specify `UTF-8`.
-        {: tip}
+      If you are crawling Chinese websites, specify `UTF-8`.
+      {: tip}
 
-    -   **URL Path Depth**: The level of site paths to crawl.
+    - **URL Path Depth**: The level of site paths to crawl. 
+    
+      For example, if you specify the starting URL of `https://www.example.com` and a path depth of `4`, then the crawler will access the page `https://www.example.com/some/more/examples/index.html`, which is located at a path that is four levels away from the root URL. 
+      
+      You can enter a positive value only. If unspecified, the default value is `5`. The maximum path depth allowed is `20`.
+    - **Maximum hops**: The number of consecutive links to follow from the start URL. 
+    
+      If unspecified, the default value is `5`. The maximum number of links that the crawler can follow is `20`. To not allow any hops, enter `-1`.
+    - **Ignore certificate**: Enable this setting if you want to ignore any SSL certificates on the target website.
 
-        For example, if you specify the starting URL of `https://www.example.com` and a path depth of `4`, then the crawler will access the page `https://www.example.com/some/more/examples/index.html`, which is located at a path that is four levels away from the root URL.
+      This option applies to HTTPS URLs only.
+    - **Ignore robots.txt**: Enable this setting if you want the crawler to ignore the allow and deny rules that are outlined by the website in its robots.txt file. 
+    
+      Keep in mind that sites typically use the file to improve crawl results. For example, they might use the robots.txt file to prevent duplicate information from being crawled, to prevent draft content from being read, or to delay crawling so as not to overload their site.
 
-        You can enter a positive value only. If unspecified, the default value is `5`. The maximum path depth allowed is `20`.
-    -   **Maximum hops**: The number of consecutive links to follow from the start URL.
+    - **Rules to crawl domain**: Specify the domain names that you want to either allow or forbid the crawler to crawl. 
+    
+      Domain names are case sensitive and the wildcard character (*) can occur anywhere in the domain name.
 
-        If unspecified, the default value is `5`. The maximum number of links that the crawler can follow is `20`. To not allow any hops, enter `-1`.
+      The order of the rules is significant. The crawler applies the first rule that matches a candidate URL. The default rule, forbid domain *, forbids all Web crawling and must occur last in the list of domain rules.
+
+      You can define the following types of rules, for example:
+
+      - To exclude the entire ibm.com domain:
+
+        ```
+        forbid domain www.ibm.com
+        ```
+        {: codeblock}
+
+      - To crawl any domain that ends with `ibm.com`: 
+      
+        ```
+        allow domain *.ibm.com
+        ```
+        {: codeblock}
+
+      - To crawl only port `443` on IBM domains that begin with `server`: 
+      
+        ```
+        allow domain server*.ibm.com:443
+        ```
+        {: codeblock}
+    
+    - **Rules to crawl URL prefixes**: Specify the HTTP and HTTPS prefixes that you want to either allow or forbid the crawler to crawl. 
+    
+      The wildcard character (*) can occur one or more times in the URL.
+
+      The order of the rules is significant. The crawler applies the first rule that matches a candidate URL.
+
+      You can define the following types of rules, for example:
+
+      - To crawl pages in the public directory on this domain: 
+      
+        ```
+        allow prefix http://*.ibm.com/public/*
+        ```
+        {: codeblock}
+
+      - To exclude all other directories on this domain:
+      
+        ```
+        forbid prefix http://*.ibm.com/*
+        ```
+        {: codeblock}
+
+    - **Advanced crawler properties**: Only use when instructed to do so by IBM Support.
+
 1.  **Optional**: If you want to ignore any SSL certificates on the target website, set the **Ignore certificate** switch to `On`.
 
     This option applies to HTTPS URLs only.

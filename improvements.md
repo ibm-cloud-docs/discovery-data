@@ -83,7 +83,7 @@ Text from diagrams and other images is not captured unless you enable the optica
 ## Answers from FAQs are not being returned
 {: #improve-faqs}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: If you applied FAQ extraction to your source documents, but {{site.data.keyword.discoveryshort}} did not generate a new document for every pair, determine whnich pairs were not recognized.
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: If you applied FAQ extraction to your source documents, but {{site.data.keyword.discoveryshort}} did not generate a new document for every pair, determine which pairs were not recognized.
 
 First check whether you can make easy formatting changes to help {{site.data.keyword.discoveryshort}} recognize them. For example, is a closing question mark missing from the question?
 
