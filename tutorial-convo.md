@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-07"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -113,6 +113,9 @@ While the website is being crawled and the data indexed, you can create your {{s
 {: step}
 
 In this tutorial, you will create an assistant with a single search skill. Both Lite and Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. You will create a Trial plan because a Plus or higher plan is required to add a search skill to an assistant and the Trial plan includes all Plus plan features. The Lite plan does not.
+
+The steps in the tutorial cover how to set up search with a standard version of {{site.data.keyword.conversationshort}}, not the beta version of the product.
+{: note}
 
 1.  Open a new web browser page.
 

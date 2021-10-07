@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-07"
 
 subcollection: discovery-data
 
@@ -15,14 +15,10 @@ content-type: conref
 # Content references for overview subcollection
 {: #conref}
 
-## Second-level heading
-{: #conref-second-level}
-
-### Third-level heading
-{: #conref-third-level}
-
-#### Supported data sources
+## Supported data sources
 {: #data-sources-reuse}
+
+The following table shows the supported data sources for each deployment type.
 
 | Data source | IBM Cloud | IBM Cloud Pak for Data |
 |-------------|-----------|------------------------|
@@ -42,7 +38,7 @@ content-type: conref
 {: caption="Supported data sources" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
 
-#### Project descriptions
+## Project descriptions
 {: #projects-reuse}
 
 | Need | Goal | Project type |

@@ -243,7 +243,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
     ```json
     "enriched_{field_name}": [
       "keywords" : [
-        "mentions : [
+        "mentions" : [
           "text": "Cloud Pak"
         ]
       ]
@@ -276,64 +276,26 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
     -   Click **UI Components** to find links to ready-to-use code that you can use to create a full-featured search application faster.
 
 ## Add your own content
+{: #gs-add-data}
+{: step}
+
+Now that you know more about some of the product features, you're ready to evaluate the data you want to search.
+
+Determine the types of content you own that can be leveraged for your use case.
+
+{{site.data.content.data-sources-reuse}}
+
+## Not sure what you can build?
 {: #gs-start-here}
 {: step}
 
-Now that you know more about some product features, you're ready to create a project and add your data.
-
-1.  Click **My Projects** to return to the main projects page.
-
-    A **Guided tours** link is available from the header of this page. The tours are a great way to learn about using the project.
-    {: tip}
-
-    ![Shows the Guided tours menu item in the page header.](images/gs-guided-tours.png)
-
-1.  Click **New project**, and choose the right type of project for your use case.
-
-    See the [Project descriptions](#gs-projects) for help.
-
-1. Add data to the project.
-
-    See the [Supported data sources](#gs-data-sources) table to learn about your options.
-
-### Project descriptions
-{: #gs-projects}
-
-| Need | Goal | Project type |
-|------|------|--------------|
-| *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a stand-alone enterprise search application or in the search field of a business application. | **Document Retrieval** |
-| *Where is the part of the contract that I need for my task?* | Quickly extract critical information from contracts. | **Document Retrieval for Contracts** |
-| *I want the chatbot I'm building to use knowledge that I own* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |
-| *I want to uncover insights I didn't know to ask about.* | Gain insights from pattern analysis or perform root cause analysis. | **Content Mining** |
-{: caption="Project type use cases" caption-side="top"}
-
-### Supported data sources
-{: #gs-data-sources}
-
-| Data source | IBM Cloud | IBM Cloud Pak for Data |
-|-------------|-----------|------------------------|
-| Box | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Database (IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| FileNet P8 | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| HCL Notes | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| IBM Cloud Object Storage | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Local file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Salesforce | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft SharePoint Online | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft SharePoint On-Premises | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Website | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft Windows file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Supported data sources" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
-
-## Get started with your own project
-{: #gs-start-project}
-{: step}
-
-Are you ready to start? 
-
-Review the types of search solutions you can build and understand the steps required to create them. See [Start getting value from your data](/docs/discovery-data?topic=discovery-data-product-overview).
+For more information about the types of search solutions you can build, see [Start getting value from your data](/docs/discovery-data?topic=discovery-data-product-overview).
 
 You can access the product documentation at any time by selecting the **Help** icon ![Help icon](images/help_icon.png) from the page header. The help content is customized to provide information that is related to what you're doing in the product.
+{: tip}
+
+No matter what you build, step one is to create a project. Decide which project type best fits your needs. 
+
+If none of the existing types is quite right, you can choose **None of the above** to create a custom project instead.
+
+{{site.data.content.projects-reuse}}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-27"
+lastupdated: "2021-10-07"
 
 subcollection: discovery-data
 
@@ -20,15 +20,7 @@ A project is a convenient way to collect and manage the resources in your {{site
 
 Before you create a project, decide which project type best fits your needs.
 
-| Need | Goal | Project type |
-|--------------------|------|--------------|
-| *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a stand-alone enterprise search application or in the search field of a business application. | **Document Retrieval** |
-| *Where is the part of the contract that I need for my task?* | Quickly extract critical information from contracts. | **Document Retrieval for Contracts** |
-| *I want the chatbot I'm building to use knowledge that I own* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |
-| *I want to uncover insights I didn't know to ask about.* | Gain insights from pattern analysis or perform root cause analysis. | **Content Mining** |
-{: caption="Project type use cases" caption-side="top"}
-
-<!--{{site.data.content.projects-reuse}}-->
+{{site.data.content.projects-reuse}}
 
 If you created the {{site.data.keyword.discoveryshort}} service as part of a {{site.data.keyword.icp4dfull_notm}} as a Service deployment, the {{site.data.keyword.discoveryshort}} project is separate and distinct from the deployment project that is displayed in {{site.data.keyword.cloud_notm}}.
 {: note}
@@ -127,8 +119,11 @@ If you need to perform more complex searches from your virtual assistant, you mi
 
 For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add)
+-   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
+-   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
+
+    From the beta version of {{site.data.keyword.conversationshort}}, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
+    {: beta}
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Follow steps to use this project type to enhance your virtual assistant by completing the [Getting answers from existing help content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
