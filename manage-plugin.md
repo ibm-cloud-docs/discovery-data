@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-06"
 
 subcollection: discovery-data
 
@@ -51,7 +51,7 @@ Options:
 ```
 {: codeblock}
 
-You can use the following commands to deploy, undeploy, and list your crawler plug-ins. Replace the `{}` and the content inside with the required information:
+You can use the following commands to deploy, undeploy, and list your crawler plug-ins. Replace the variable references `{variable}` with the required information:
 
 - Deploy crawler plug-in: `scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} deploy --name {plugin_name}`
 - Undeploy crawler plug-in: `scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} undeploy --id {crawler_resource_id}`

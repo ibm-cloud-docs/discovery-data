@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-07"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -328,7 +328,12 @@ Now that you know more about some product features, you're ready to create a pro
 {: caption="Supported data sources" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
 
-## Bonus: Get help from anywhere
-{: #handy-tools}
+## Get started with your own project
+{: #gs-start-project}
+{: step}
 
-To open the product documentation, select the **Help** icon ![Help icon](images/help_icon.png) from the page header. The help content is customized to provide information that is related to what you're doing in the product.
+Are you ready to start? 
+
+Review the types of search solutions you can build and understand the steps required to create them. See [Start getting value from your data](/docs/discovery-data?topic=discovery-data-product-overview).
+
+You can access the product documentation at any time by selecting the **Help** icon ![Help icon](images/help_icon.png) from the page header. The help content is customized to provide information that is related to what you're doing in the product.
