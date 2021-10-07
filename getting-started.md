@@ -281,7 +281,7 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 
 Now that you know more about some of the product features, you're ready to evaluate the data you want to search.
 
-Determine the types of content you own that can be leveraged for your use case.
+It's all about the data. Review the types of content you own that you want your search solution to be able to leverage.
 
 {{site.data.content.data-sources-reuse}}
 
@@ -299,3 +299,5 @@ No matter what you build, step one is to create a project. Decide which project 
 If none of the existing types is quite right, you can choose **None of the above** to create a custom project instead.
 
 {{site.data.content.projects-reuse}}
+
+For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).

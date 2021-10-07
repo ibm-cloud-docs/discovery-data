@@ -15,7 +15,6 @@ toc:
       topics:
       - getting-started.md
       - index.md
-      - version-choose.md
       - topicgroup:
           label: Videos and more
           topics:
@@ -181,6 +180,7 @@ toc:
       - known-issues.md
       - troubleshoot.md
       - get-help.md
+      - version-choose.md
       - pricing-plans.md
       - upgrade.md
       - topicgroup:
