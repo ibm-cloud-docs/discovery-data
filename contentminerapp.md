@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-12"
 
 subcollection: discovery-data
 
@@ -530,7 +530,7 @@ In **Display fields**, you can set the following display fields that typical app
 ### Enrichment tab
 {: #cm-enrich}
 
-You can select existing annotators to enrich your collection, such as **Part of speech**, **Sentiment of phrases**, and **Entities**. You can even apply a classifier if you want to enrich your collection based on document information or metadata. For information about creating and applying a document classifier to a Content Mining or {{site.data.keyword.discoveryshort}} collection, see *Creating and applying a document classifier*.
+You can select existing annotators to enrich your collection, such as **Part of speech**, **Sentiment of phrases**, and **Entities**. You can even apply a classifier if you want to enrich your collection based on document information or metadata. For information about creating and applying a document classifier to a Content Mining or {{site.data.keyword.discoveryshort}} collection, see [Creating and applying a document classifier](#create-doc-classifier).
 
 ### Facet tab
 {: #cm-facet}
@@ -624,6 +624,8 @@ If you want to apply a document classifier to your Content Mining or {{site.data
 
 If you want to apply your document classifier to a {{site.data.keyword.discoveryshort}} collection, you must have a .csv training file and a .csv target file. The purpose of the .csv training file is to train the classifier. The data in the .csv training file must have the same column names and value types as the .csv target file, such as string, number, and so on. The .csv target file contains the actual data that you want to apply your classifier to after you create it in your Content Mining application. For sample .csv training and .csv target data, see Table 1.
 {: important}
+
+For more information about creating a text classifier, see [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier).
 
 You can apply your document classifier to a collection in your Content Mining application, a {{site.data.keyword.discoveryshort}} collection, or both. To create and apply a document classifier to your Content Mining or {{site.data.keyword.discoveryshort}} collection, complete the following steps:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-12"
 
 subcollection: discovery-data
 
@@ -39,3 +39,40 @@ For more information about configuring search support from {{site.data.keyword.c
 - From an actions skill, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search){: external}.
 - From a dialog skill, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill){: external}.
 - From the new Beta user interface, see [Search trigger](/docs/watson-assistant?topic=watson-assistant-search-add#search-add-trigger){: external}.
+
+## How the assistant calls Discovery
+{: #chat-choose-project-api}
+
+When a user asks your assistant a question that triggers search, the following API request is sent to Discovery if *Emphasize the answer* is enabled:
+
+```json
+{
+    "aggregation": "",
+    "sort": "",
+    "count": 10,
+    "return": [],
+    "filter": <custom_filter_specified_in_assistant>
+    "passages": {
+		"enabled": "true",
+      	"fields": [
+        	<search_config_body_field_specified_in_assistant>
+      	],
+      	"characters": 325,
+      	"per_document": true,
+      	"max_per_document": 3,
+        "find_answers": true,
+        "max_answers_per_passage": 1
+    },
+    "highlight": false,
+    "spelling_suggestions": false,
+    "table_results": {
+      	"enabled": false
+    },
+    "suggested_refinements": {
+      	"enabled": false
+    }
+}
+```
+{: codeblock}
+
+When *Emphasize the answer* is used (`"find_answers": true`), Discovery rescores and reorders the documents to ensure that documents with the highest-quality answers are returned first.
