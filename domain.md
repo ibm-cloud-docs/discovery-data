@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-12"
 
 subcollection: discovery-data
 
@@ -124,6 +124,8 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
 {: codeblock}
 
 The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Parts of Speech information only. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Parts of Speech information and metadata that is added by other enrichments that are applied to the collection. If you want to apply a document classifier to a collection in a project type other than a Content Mining project, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
+
+A text classifier does not add an enriched text field for mentions with confidence scores that are lower than 0.5. You cannot change the confidence threshold that is used by the text classifier.
 
 ### Classifier limits
 {: #classifier-limits}
