@@ -43,7 +43,7 @@ For more information about configuring search support from {{site.data.keyword.c
 ## How the assistant calls Discovery
 {: #chat-choose-project-api}
 
-When a user asks your assistant a question that triggers search, the following API request is sent to Discovery if *Emphasize the answer* is enabled:
+When a user asks your assistant a question that triggers a search, the following API request is sent to Discovery if *Emphasize the answer* is enabled:
 
 ```json
 {

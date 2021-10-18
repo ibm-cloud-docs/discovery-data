@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-18"
 
 subcollection: discovery-data
 
@@ -95,3 +95,5 @@ The following limits apply only to Content Mining project types:
 
 - [Document classifier limits](/docs/discovery-data?topic=discovery-data-contentminerapp#doc-classifier-limits)
 - [Regular expression pattern limits](/docs/discovery-data?topic=discovery-data-contentminerapp#regex-pattern-limits)
+
+To check the current status of the limits and usage for your plan type, you can open the *Plan limits and usage* page at any time. From the product page header, click the user icon ![User icon](images/user-icon.png). The *Usage* section shows a short summary. Click **View all** to see usage information for all of the plan limit categories. To leave the page, click the web browser back button or the *My Projects* tab.
