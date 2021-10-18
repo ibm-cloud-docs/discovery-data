@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-18"
 
 keywords: release notes
 
@@ -49,10 +49,18 @@ The following new features and changes are available for managed deployments.
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
 
+### ![IBM Cloud only](images/ibm-cloud.png) 14 October 2021
+{: #14october2021}
+
+<!--4.0.3-3.2-->
+
+-   **Discovery has a new home page!**: When you start the product, a new home page is displayed. The home page gives you quick access to a product overview video, tours, and other helpful resources. You can collapse the welcome banner to see more projects.
+-   **Stay informed about plan usage**: You can check your usage against the limits for your plan type from the *Plan limits and usage* page. From the product page header, click the user icon ![User icon](images/user-icon.png). The *Usage* section shows a short summary. Click **View all** to see usage information for all of the plan limit categories.
+
 ### ![IBM Cloud only](images/ibm-cloud.png) 1 October 2021
 {: #1october2021}
 
-- **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the Seoul, Sydney, London, Washington DC, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan. Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product.
+-   **Lite and Advanced plans are no longer offered**: You cannot create new service instances that use the Lite or Advanced plan types in the Seoul, Sydney, London, Washington DC, Frankfurt, Tokyo, or Dallas locations. Any existing Lite and Advanced plans continue to function properly and continue to be supported. You can upgrade from a Lite plan to an Advanced plan. Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 24 September 2021
 {: #24september2021}

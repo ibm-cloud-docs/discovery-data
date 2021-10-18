@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-18"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ If pinpointing answers is your goal, complete the steps that are listed in the f
 | ![checkbox](images/checkbox.png) | Create a *Document Retrieval* project. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add up to 5 collections that connect to external data sources or contain uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |
-| ![checkbox](images/checkbox.png) | Take actions to improve your results. | [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements) |
+| ![checkbox](images/checkbox.png) | Take actions to improve your results. For example, you can customize the search bar to enable autocompletion. | [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements) |
 | ![checkbox](images/checkbox.png) | Deploy your search solution. | [Deploying your project](/docs/discovery-data?topic=discovery-data-deploy) |
 {: caption="Checklist for getting answers" caption-side="top"}
 
