@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-19"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -140,7 +140,7 @@ The size of each document that you can upload depends on your {{site.data.keywor
 
 | Plan | File size per document |
 |--------------|--------------------------------:|
-| Cloud Pak for Data |                     32 MB |
+| Cloud Pak for Data |                     50 MB |
 | Premium      |                           50 MB |
 | Plus (includes Trial)         |          10 MB |
 {: caption="Maximum document size" caption-side="top"}

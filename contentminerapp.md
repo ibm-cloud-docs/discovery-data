@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-19"
 
 subcollection: discovery-data
 
@@ -546,7 +546,6 @@ The number of regular expression patterns that you can define per service instan
 |--------------|--------------------------------:|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                              50 |
-| Plus (includes Trial) |                     20 |
 {: caption="Regular expression pattern plan details" caption-side="top"}
 
 ### Document flags tab
@@ -677,7 +676,7 @@ The number of document classifiers and labels that you can create per service in
 |---------|-------------------:|--------:|
 | Number of document classifiers per service instance | 20 | Unlimited |
 | Number of labeled data rows | 20,000 | 20,000 |
-| Size of labeled data file | Unlimited | Unlimited |
+| Maximum size in MB of training data after enrichment | 1,024 | 1,024 |
 | Number of labels | 1,000 | 1,000 |
 | Number of target fields | 50 | 50 |
 {: caption="Document classifier plan limits" caption-side="top"}
