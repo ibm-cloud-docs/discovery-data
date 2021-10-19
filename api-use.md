@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-19"
 
 subcollection: assistant-data
 
@@ -26,10 +26,22 @@ Use the {{site.data.keyword.discoveryshort}} API to build a custom application o
 This information applies to {{site.data.keyword.cloud_notm}} only.
 {: important}
 
-To use many of the API methods, you need your project ID.
+To use the API, you must construct the URL to use in your requests. Many of the API methods require the project ID.
 
+1.  From the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}, find the service page for your Discovery service instance.
+1.  From the *Credentials* section, copy the URL. You specify this value as the `{url}` in your API requests.
+1.  While you're on this page, copy the API key. You specify this value as the `{apikey}`.
 1.  Open your project in {{site.data.keyword.discoveryshort}}, and then go to the **Integrate and deploy** > **API Information** page.
-1.  Copy the project ID. You must specify this value as the `{project_id}` in your API requests.
+1.  Copy the project ID. You specify this value as the `{project_id}`.
+1.  Construct a request URL by using the IDs you copied.
+
+    For example, the following request lists the collections in the project:
+
+    ```sh
+    curl -X {request_method} -u "apikey:{apikey}" \
+    "{url}/v2/projects/{project_id}/collections?version=2019-11-29 -k"
+    ```
+    {: codeblock}
 
 ## Using the API from Cloud Pak for Data ![Cloud Pak for Data only](images/desktop.png)
 {: #api-use-cpd}

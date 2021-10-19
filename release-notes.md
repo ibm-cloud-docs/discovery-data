@@ -57,6 +57,7 @@ For more information about software releases for installed deployments, see [{{s
 -   **Discovery has a new home page!**: When you start the product, a new home page is displayed. The home page gives you quick access to a product overview video, tours, and other helpful resources. You can collapse the welcome banner to see more projects.
 -   **Stay informed about plan usage**: You can check your usage against the limits for your plan type from the *Plan limits and usage* page. From the product page header, click the user icon ![User icon](images/user-icon.png). The *Usage* section shows a short summary. Click **View all** to see usage information for all of the plan limit categories.
 -   **Search settings change**: The spelling correction setting changed from being enabled automatically in new projects to being disabled by default. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
+-   **Guided tours are always available**: The **Guided tours** button is now available from the product page header. Previously, it was available from the *My Projects* page only.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 1 October 2021
 {: #1october2021}
