@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-19"
 
 subcollection: discovery-data
 
@@ -60,7 +60,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
 ## FAQ extraction ![IBM Cloud only](images/ibm-cloud.png)
 {: #faq-extraction}
 
-The FAQ extraction feature is a beta feature and is not meant for use in production environments.
+The FAQ extraction feature is a beta feature and is not meant for use in production environments. The feature is not supported with Chinese-language collections.
 {: beta}
 
 When you configure a data source for any project type, you can enable the **Apply FAQ extraction** feature. This beta feature detects question-and-answer pairs in your documents and automatically extracts the pairs. Your application can use the extracted pairs to provide more precise query results.

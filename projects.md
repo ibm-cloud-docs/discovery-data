@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-10-19"
 
 subcollection: discovery-data
 
@@ -158,7 +158,7 @@ The number of projects you can create depends on your {{site.data.keyword.discov
 
 | Plan | Projects per service instance |
 |--------------|--------------------------------:|
-| Cloud Pak for Data |                       300 |
+| Cloud Pak for Data |                 Unlimited |
 | Premium      |                             100 |
 | Plus (includes Trial) |                     20 |
 {: caption="Plan details" caption-side="top"}

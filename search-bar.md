@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-10"
+lastupdated: "2021-10-19"
 
 subcollection: discovery-data
 
@@ -27,8 +27,8 @@ These search bar customizations are available for all project types except *Conv
 To customize search bar behavior, complete the following steps:
 
 1.  From the navigation pane, open the **Improve and customize** page.
-1.  Expand **Customize display** from the Improvement tools pane, and then click **Search bar**.
-1.  The following features are enabled by default. If you want to disable a feature, set the switcher to off.
+1.  Expand **Customize display** from the *Improvement tools* pane, and then click **Search bar**.
+1.  Turn the following features on or off by setting the associated switcher:
 
-    - **Autocompletion**: As the customer types a query into the search bar, similar queries that make sense based on the collection data are displayed as suggestions. The user can click a suggestion to submit as the query.
-    - **Spelling suggestions**: Recognizes words that are misspelled in the customer query. After the query is submitted, a `Did you mean:` link is displayed that shows a corrected version of the original query. The customer can click the corrected query to submit it.
+    - **Autocompletion**: As the customer types a query into the search bar, similar queries that make sense based on the collection data are displayed as suggestions. The user can click a suggestion to submit as the query. This setting is enabled by default.
+    - **Spelling suggestions**: Recognizes words that are misspelled in the customer query. After the query is submitted, a `Did you mean:` link is displayed that shows a corrected version of the original query. The customer can click the corrected query to submit it. This setting is disabled by default.

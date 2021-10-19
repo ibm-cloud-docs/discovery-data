@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-19"
 
 subcollection: discovery-data
 
@@ -136,7 +136,7 @@ The number of text classifiers and labels that you can create per service instan
 |---------|-------------------:|--------:|--------:|
 | Number of text classifiers per service instance | 5 | 20 | Unlimited |
 | Number of labeled data rows | 2,000 | 20,000 | 20,000 |
-| Size of labeled data file (in MB) | 16 | 1,024 | 1,024 |
+| Maximum size in MB of training data after enrichment | 16 | 1,024 | 1,024 |
 | Number of labels | 100 | 1,000 | 1,000 |
 {: caption="Text classifier plan limits" caption-side="top"}
 
