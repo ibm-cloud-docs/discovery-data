@@ -31,7 +31,7 @@ Watch a video about how {{site.data.keyword.discoveryshort}} uses AI-powered sea
 {: #video-transcript-ui}
 {: notoc}
 
-Watson Discovery Content Mining Project presented by David Williams -- (Music intro) Welcome to Watson Discovery with AI.
+Get started with Watson Discovery presented by David Williams -- (Music intro) Welcome to Watson Discovery with AI.
 
 In this video we'll walk through some key concepts and show you how to get started. 
 
