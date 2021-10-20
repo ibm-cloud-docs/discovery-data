@@ -26,6 +26,16 @@
     ],
     "section_videos": [
       {
+        "title": "Get started with Watson Discovery",
+        "href": "/docs/discovery-data?topic=discovery-data-about#about-video",
+        "thumbnail": "/images/thumb-intro.png"
+      },
+      {
+        "title": "IBM Watson Discovery: Content Mining",
+        "href": "/docs/discovery-data?topic=discovery-data-contentminerapp#cmvideo",
+        "thumbnail": "/images/thumb-content-mining.png"
+      },
+      {
         "title": "Watson Discovery Data Connector Demo",
         "href": "/docs/discovery-data?topic=discovery-data-collections#collections-video", 
         "thumbnail": "/images/thumb-create-collections.png" 
