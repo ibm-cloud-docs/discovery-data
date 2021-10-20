@@ -79,6 +79,9 @@ A new browser tab or window opens and the *My Projects* page is displayed.
 
 ![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
 
+To get familiar with the product, you can watch an under 3-minute overview video by clicking the **Watch a video** link.
+{: tip}
+
 In this tutorial, you explore the sample project.
 
 The sample project is a built-in project that is provided as a resource for you to initially explore the product. The sample project is a *Document Retrieval* project type. Document Retrieval projects are used to search and find the most relevant answers from your data.

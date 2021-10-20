@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-20"
 
 subcollection: discovery-data
 
@@ -19,6 +19,49 @@ subcollection: discovery-data
 Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understanding of your content, including tables and images, to help you find business value that is hidden in your enterprise data. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere.
 
 ![Discovery diagram](images/aboutdiscovery.png)
+
+## Overview video
+{: #about-video}
+
+Watch a video about how {{site.data.keyword.discoveryshort}} uses AI-powered search, retrieval, and content mining. This overview covers the key basics of projects, collections, fields, and enrichments. It explains how to upload your data and query for answers, find insights, and spot trends.
+
+![Get started with Watson Discovery](https://www.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/27941801/partner_id/1773841?iframeembed=true&entry_id=1_7l5wsvfs){: video output="iframe" data-script="#video-transcript-ui" id="mediacenterplayer" frameborder="0" width="560" height="315" allowfullscreen webkitallowfullscreen mozAllowFullScreen}
+
+### Video transcript
+{: #video-transcript-ui}
+{: notoc}
+
+Get started with Watson Discovery presented by David Williams -- (Music intro) Welcome to Watson Discovery with AI.
+
+In this video we'll walk through some key concepts and show you how to get started. 
+
+Watson Discovery is made up of four main concepts, projects, collections, fields, and enrichments.
+
+A project is a space where can import different types of data from a variety of sources, and query for insights or answers.
+
+A collection is a set of documents that you upload or crawl from a connected data source. 
+
+As documents are crawled, unstructured text is organized into fields such as author, file type, text, and more.
+
+And enrichments are AI capabilities that you can apply to fields to identify and extract relevant information from your documents. This helps you find answers or insights from your data.
+
+Let's dive in to the different project types.
+
+A document retrieval project is used to build an AI-powered search function that finds answers in your business data.
+
+A conversational project is used to enhance your chatbot's question and answer ability.
+
+A content mining project helps you spot trends across large volumes of text-heavy business data.
+
+Watson Discovery supports a wide selection of data sources you can crawl, like webpages, Cloud Object Storage, Microsoft SharePoint, and more. You can even upload your own data from any data source. 
+
+After connecting and processing your data, you can apply enrichments to bring your data to life. Some commonly used enrichments are entities, contracts, and table understanding. Entities enrichment can be used to recognize people, organizations, and more. Contracts enrichment can be used to decompose contracts to fields, clauses, and relationships. The table understanding enrichment can be used to identify tables and return them as an answer to a query.
+
+You can also create custom enrichments, such as a dictionary, so Discovery can understand your industry-specific terminology and support intelligent queries.
+
+Now, you know the basics.
+
+To get started, take our step-by-step product tour to get familiar with the user interface and sample project.
 
 ## Using Discovery
 {: #about-deployment-types}
