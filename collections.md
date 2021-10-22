@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -93,7 +93,7 @@ The following table shows the supported file types and information about feature
 
 | Supported file type | Use Smart Document Understanding to identify fields | Enable OCR to extract text from images |
 |---------------------|:---------------------------------------------------:|:--------------------------------------:|
-| Contract (written in any supported file type) | A pretrained SDU model is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) (Enabled by default) |
+| Contract (written in any supported file type) added to Document Retrieval for Contracts projects | A pretrained SDU model is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) (Enabled by default) |
 | CSV | | |
 | DOC, DOCX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | GIF | | |

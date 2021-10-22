@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-21"
 
 subcollection: discovery-data
 
@@ -35,11 +35,13 @@ You can prevent content from being included in query results in the following wa
 
    1. To remove a field from the index, set the **Include** switch to off.
 
-- Delete a single document by completing the following steps:
+- Delete a single document. 
+
+   You cannot currently delete uploaded documents from the product user interface. A developer can use the API to delete a document.
 
    1. Get the document ID, which is shown in the JSON view of a query response.
 
       To list all documents, you can submit an empty query from the *Improve and customize* page.
       {: tip}
 
-   1. A developer can use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API. The document ID is a required parameter.
+   1. Use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API. The document ID is a required parameter.
