@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-10-22"
 
 keywords: known issues
 
@@ -32,6 +32,21 @@ Find information about known issues per release for your deployment type:
 The following known issues apply to installed deployments.
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
+
+### ![Cloud Pak for Data only](images/desktop.png) 4.0.2, 5 October 2021
+{: #5october2021ki}
+
+-   Unable to reprocess documents after upgrade.
+
+    -   **Error**: After upgrading from 4.0.0 to 4.0.2, reprocessing documents fails.
+    -   **Cause**: The script you use to upgrade from 4.0.0 to 4.0.2 doesn't apply some database schema updates that are required by 4.0.2.
+    -   **Solution**: Run the following command:
+
+        ```bash
+        oc delete $(oc get job -l 'run=core-database-init,icpdsupport/addOnId=discovery' -o name)
+        ```
+        {: codeblock}
+
 
 ### ![Cloud Pak for Data only](images/desktop.png) 4.0.0, 13 July 2021
 {: #13july2021ki}
