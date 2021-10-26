@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-26"
 
 subcollection: discovery-data
 
@@ -239,7 +239,8 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
 
 As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_{field_name}.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically.
 
-If you add a dictionary by using the Enrichment API, you must apply the dictionary enrichment to a field before the new dictionary will be displayed in the Dictionaries page.
+If you add a dictionary by using the Enrichment API, after you apply the API-generated dictionary enrichment to a field, the dictionary is displayed in the Dictionaries page. However, you cannot edit the API-generated dictionary from the dictionary tool in the product user interface.
+{: note}
 
 ### Dictionary limits
 {: #dictionary-limits}
