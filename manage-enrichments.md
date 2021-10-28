@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-10-28"
 
 subcollection: discovery-data
 
@@ -31,13 +31,11 @@ To manage enrichments, complete the following steps:
 1.  Click the twistie in the associated field to expand a list of fields.
 1.  Do one of the following things:
 
-    - To apply an enrichment to documents, select the field or fields that you want to enrich.
+    -   To apply an enrichment to documents, select the field or fields that you want to enrich.
 
-      Do not choose a field that starts with `extracted_metadata`,`enriched_{field_name}`, or `metadata`. You cannot apply enrichments to them. To find out which fields you can apply enrichments to, check the field names that are listed in the *Manage fields* page.
-      {: note}
+        If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`.
+    -   To remove an enrichment, clear the checkboxes for fields that you want to remove the enrichment from.
 
-      If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`.
-    - To remove an enrichment, clear the checkboxes for fields that you want to remove the enrichment from.
 1. Click **Apply changes and reprocess** to apply your changes to the collection.
 
 ## Applying enrichments by using the API
