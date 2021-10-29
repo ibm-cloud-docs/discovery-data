@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-29"
 
 subcollection: discovery-data
 
@@ -42,6 +42,7 @@ Review the {{site.data.keyword.discoveryshort}} release notes and known issues:
 For more information about the system requirements for {{site.data.keyword.icp4dfull_notm}}, see [System requirements](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=planning-system-requirements){: external}
 
 ## Full installation instructions
+{: #full-installation-instructions}
 
 [Installing {{site.data.keyword.discoveryfull}} on {{site.data.keyword.icp4dfull}}](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}
 

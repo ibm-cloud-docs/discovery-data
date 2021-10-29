@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-29"
 
 subcollection: discovery-data
 
@@ -299,14 +299,14 @@ In [Language support](/docs/discovery-data?topic=discovery-data-language-support
 The **Repository** pane contains exported documents. You can download exported documents to your local file system from this pane. Click **Facet analysis** to return to the **Facet analysis** pane.
 
 ### Documents view
-{: docview}
+{: #docview}
 
 ![Documents view](images/cmdocsview.png "Documents view"){: caption="Figure 8. The Documents view showing sample documents" caption-side="bottom"}
 
 The **Documents** view is displayed when you show documents in the guided analysis view. The **Documents** view lists the documents in the current node of the mining graph.
 
 #### Toolbar for the Documents view
-{: dtool}
+{: #dtool}
 
 The toolbar that is available from the Documents view contains the following commands:
 
@@ -319,7 +319,7 @@ The toolbar that is available from the Documents view contains the following com
 -   **Show all fields** and **Hide all fields**: You can toggle between these two buttons to show all fields or just the title and date fields.
 
 #### Documents pane
-{: ddocs}
+{: #ddocs}
 
 In the **Documents** view, the pane lists all documents in summary form. Click a document title to view the entire document along with all fields. The following actions are available:
 
