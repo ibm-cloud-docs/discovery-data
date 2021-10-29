@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-29"
 
 keywords: release notes
 
@@ -163,7 +163,14 @@ For more information about software releases for installed deployments, see [{{s
 ### ![IBM Cloud only](images/ibm-cloud.png) 14 September 2020
 {: #14sept2020}
 
-- A new pre-trained model is available in Smart Document Understanding for Document Retrieval projects. This model is ideal if you need to extract data from documents that include a large number of tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
+-   A new pre-trained model is available in Smart Document Understanding for Document Retrieval projects. This model is ideal if you need to extract data from documents that include a large number of tables. For more information, see [Identifying fields](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
+
+### ![IBM Cloud only](images/ibm-cloud.png) 30 August 2020
+{: #30aug2020}
+
+-   **New API version**: The current API version (v2) is now 2020-08-30. The following change was made with this version:
+
+    The List enrichments method no longer returns the `options` object per enrichment. Use the Get enrichment method to return the `options` object for a single enrichment.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 16 July 2020
 {: #16jul2020}

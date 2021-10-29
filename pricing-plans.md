@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-05"
+lastupdated: "2021-10-29"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ If you continue to use a Plus plan service instance after the 30-day trial ends,
 {: important}
 
 ### What's included
-{: plusplan-features}
+{: #plusplan-features}
 
 For subscription accounts, the monthly fee per instance is $500.
 
@@ -43,7 +43,7 @@ For subscription accounts, the monthly fee per instance is $500.
 - Custom Relevance Model
 
 ### Artifact limits
-{: plusplan-limits}
+{: #plusplan-limits}
 
 - Up to 500,000 queries per month
 - Up to 500,000 documents per month

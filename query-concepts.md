@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-29"
 
 subcollection: discovery-data
 
@@ -142,6 +142,7 @@ Response:
 {: codeblock}
 
 ### Filter example: Find documents that mention an entity value
+{: #query-concepts-filter-example}
 
 The query looks for documents that mention the entity `Gilroy` and finds 4 matching documents.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-29"
 
 subcollection: discovery-data
 
@@ -41,7 +41,7 @@ To split the documents in a collection, complete the following steps:
 You can check the status of the splitting process from the *Activity* page.
 
 ## Updating documents that were split
-{: split-documents-update}
+{: #split-documents-update}
 
 If a document that was split changes and you want to upload the document again, work with a developer to replace the document by using the API. A developer can use the POST method to upload the latest version of the document to the `/environments/{environment_id}/collections/{collection_id}/documents/{document_id}` endpoint. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#updatedocument){: external}. To provide the `{document_id}` path variable that must be sent with the request, copy the contents of the `parent_id` field of one of the document's segments.
 

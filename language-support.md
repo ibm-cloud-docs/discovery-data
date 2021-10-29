@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-05-27"
+lastupdated: "2021-10-29"
 
 subcollection: discovery-data
 
@@ -42,7 +42,6 @@ subcollection: discovery-data
 | Slovak (`sk`) | Classifier (Document and Text), Dictionary, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Spanish (`es`) | Advanced rule models, Classifier (Document and Text), Dictionary, Parts of speech, Keywords, Entities, Document sentiment, Phrase sentiment, Regular expressions, Machine Learning, Smart Document Understanding, Table Understanding  |
 | Swedish (`sv`) | Classifier (Document and Text), Dictionary, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-
 
 \* **Optical character recognition (OCR)** is not available for Bosnian, Croatian, Hindi, and Serbian. Serbian supports Latin script only.
 
