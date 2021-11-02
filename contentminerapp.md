@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-02"
 
 subcollection: discovery-data
 
@@ -519,12 +519,12 @@ In **Field indexing option**, you can select how the available fields are indexe
 -   **Date**
 -   **None**
 
-If you select **String**, you can enable the options for making the field **Free text searchable** or a **Metadata facet**. These options are unavailable for the **Analyzable text content** and **None** index types. The **Metadata facet** is available, but not **Free text searchable**, for the **Date** type.
+If you select **String**, you can enable options to make the field **Free text searchable** or a **Metadata facet**. If you select **Analyzable text content**, which includes all words (in the body, captions and titles of documents and images) that can be assessed, use [Contextual View](#contextual-view) to apply to multiple fields; **Free text searchable** and **Metadata facet** are unavailable for this index type. If you select **Date** type, **Metadata facet** is available but not **Free text searchable**. If you select **None** as the index type, nothing more is necessary.
 
 In **Display fields**, you can set the following display fields that typical applications use:
 
--   **Body field** - Text content field which provides the body content of documents. Editable only when creating a new collection.
--   **Title field** - Text content field which provides the title of documents.
+-   **Body field** - Text content field that provides the body content of documents. Editable only when creating a new collection.
+-   **Title field** - Text content field that provides the title of documents.
 -   **Date field** - Date field that applications can use as a default in various situations.
 
 ### Enrichment tab
