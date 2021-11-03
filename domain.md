@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-03"
 
 subcollection: discovery-data
 
@@ -26,11 +26,37 @@ The following table shows you the correct resources to add to address common nee
 | Recognize and tag entities and relationships that are defined in a custom Machine Learning model. | [Machine Learning models](#machinelearning) | Requires a model that is built and exported from another IBM tool. |
 | Apply rules to fields that are based on rules you defined by creating an advanced rule model in {{site.data.keyword.knowledgestudiofull}}. | [Advanced rule models](#advanced-rules) |  Requires an advanced rule model that is built and exported from {{site.data.keyword.knowledgestudiofull}} or that uses an exported Patterns resource. |
 | ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Recognize terms that are mentioned in sentences that match a syntactic pattern that you teach {{site.data.keyword.discoveryshort}} to recognize. | [Patterns (beta)](#patterns) | Available as a beta feature for English-language collections hosted on IBM Cloud only. The enrichment that is derived by defining patterns cannot be applied to Content Mining projects. You can export the resource and use it as an advanced rule model. |
+| ![Premium plans only](images/premium.png): Recognizes entities that you identify as being significant by training an entity extractor machine learning model. | [Entity extractor (beta)](/docs/discovery-data?topic=discovery-data-entity-extractor) | Available as a beta feature for English-language collections in Premium plan instances only. |
 {: caption="Domain tools overview" caption-side="top"}
 
 Dictionaries and classifiers that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
 
 For more information about how to apply built-in enrichments to your collection, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
+
+## Choosing the right enrichment type
+{: #domain-choose-enrichment}
+
+You can use many enrichments together to tackle various challenges that you might encounter as you develop a search application. 
+
+Many teams start by creating a dictionary enrichment. Dictionaries are a great tool for identifying important terms and tagging them so they can be retrieved later. Let's say you're builidng a search application that needs to extract ingredients from recipes. A dictionary enrichment can recognize mentions of most ingredients. However, the dictionary enrichment might partially match against two-word terms. For terms such as `olive oil` or `mustard greens`, it might incorrectly recognize only `olive` and `mustard` respectively. To improve the accuracy of the search, you can augment the dictionary enrichment with a pattern enrichment that can recognize two-word ingredient mentions. Maybe a small number of recipes mention food coloring codes in European format (`E104`). You can add a regular expression enrichment to recognize occurrences of codes with the syntax `E1nn`. Finally, to catch terms that no other enrichment can recognize, you can use a machine learning enrichment, either one that you build in an external tool and import to {{site.data.keyword.discoveryshort}}, or one that you build in {{site.data.keyword.discoveryshort}} by creating an entity extractor enrichment.
+
+The entity extractor enrichment is more sophisticated than the other enrichments. For example, a dictionary enrichment recognizes only exact matches of dictionary terms and synonyms that occur in your documents. A regular expression enrichment recognizes only specific patterns. In contrast, occurrences of an entity are recognized based on the context in which an entity example is mentioned in a sentence.
+
+For example, maybe you want to recognize locations and the document you want to process contains the following types of sentences:
+
+-   I live in `Massachusetts`.
+-   We're traveling from `New York City` to `Paris` next week.
+
+To use a dictionary enrichment to recognize location names successfully, the dictionary must list every possible location. However, if you use an entity extractor enrichment, you can identify when a location is mentioned based on how the location is referenced in a sentence. With phrases such as, “I live in `x`” or “I'm from `x`” or “I'm traveling to `x`” in its training data, the entity extractor can learn that `x` is a reference to a location.
+
+When you need to choose between using a dictionary or an entity extractor enrichment, follow these guidelines:
+
+-   If the list of possible examples is short, use a dictionary.
+
+    It is more efficient to define a dictionary term `planet` with synonyms such as `Earth` and `Saturn`, than to create a `planet` entity because only 8 planets exist in our solar system. However, defining a list of every possible location on Earth is not feasible. An entity extractor can recognize more location mentions.
+-   If the list of possible examples is static, use a dictionary.
+
+    Controversy over Pluto aside, the `planet` category is a good example here too because the list of planets in our solar system is static. Or maybe you want to monitor general customer sentiment about your products. You need to be able to recognize product name mentions, but might not need specifics. If you have a large variety of product names, you can create a `product name` entity. As new products are added to your portfolio, or product names change over time, you do not need to maintain an overall product list. The entity extractor can continue to recognize general feedback about your products based on the context of the sentences in which products are mentioned.
 
 ## Add a resource
 {: #domain-task}
@@ -62,6 +88,8 @@ Add a classifier to assign documents in your collection into categories. {{site.
     The CSV file must be in UTF-8 encoding format and must meet the following requirements:
 
     -   The format must be `text,label`. The `text` is the example text, and the `label` is the category name.
+
+        Add complete sentences as text entries. Do not include any blank lines in the CSV file.
 
         You can add more `label` columns if you need to apply more than one label to the sentence in the `text` column. For example, `text,label,label`.
     -   The file must have at least two columns with no header.
@@ -133,7 +161,7 @@ A text classifier does not add an enriched text field for mentions with confiden
 The number of text classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Limit   | Plus | Premium | Cloud Pak for Data |
-|---------|-------------------:|--------:|--------:|
+|---------|-----:|--------:|-------------------:|
 | Number of text classifiers per service instance | 5 | 20 | Unlimited |
 | Number of labeled data rows | 2,000 | 20,000 | 20,000 |
 | Maximum size in MB of training data after enrichment | 16 | 1,024 | 1,024 |
@@ -239,8 +267,10 @@ In the following example, the **Facet Path** is `automobiles.motorsports`, and t
 
 As a result, if someone searches for the term `engine`, {{site.data.keyword.discoveryshort}} finds any passages that are tagged with the `enriched_{field_name}.entities.text:engine` enrichment. Source documents that contain a reference to a `carburetor` or `pistons` are returned in addition to the documents that mention `engine` specifically.
 
-If you add a dictionary by using the Enrichment API, after you apply the API-generated dictionary enrichment to a field, the dictionary is displayed in the Dictionaries page. However, you cannot edit the API-generated dictionary from the dictionary tool in the product user interface. To delete a dictionary, you must use the [Delete an enrichment](https://cloud.ibm.com/apidocs/discovery-data#deleteenrichment){: external} method of the {{site.data.keyword.discoveryshort}} v2 API.
+If you add a dictionary by using the Enrichment API, after you apply the API-generated dictionary enrichment to a field, the dictionary is displayed in the Dictionaries page. However, you cannot edit the API-generated dictionary from the dictionary tool in the product user interface.
 {: note}
+
+To delete a dictionary, you must use the [Delete an enrichment](https://cloud.ibm.com/apidocs/discovery-data#deleteenrichment){: external} method of the {{site.data.keyword.discoveryshort}} v2 API.
 
 ### Dictionary limits
 {: #dictionary-limits}
@@ -251,6 +281,7 @@ The number of dictionaries and term entries you can create per service instance 
 |-----------|-------------------:|------------------------:|--------------------------:|
 | Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
 | Premium | 100 | 10,000 | 1,000 |
+<!--| Enterprise | 100 | 10,000 | 1,000 |-->
 | Plus (includes Trial) | 20 | 1,000 | 50 |
 {: caption="Dictionary plan limits" caption-side="top"}
 
@@ -320,6 +351,7 @@ The number of regular expressions that you can define per service instance depen
 |--------------|--------------------------------:|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                             100 |
+<!--| Enterprise |                               100 |-->
 | Plus (includes Trial) |                     20 |
 {: caption="Regular expression plan details" caption-side="top"}
 
@@ -470,8 +502,11 @@ The number of Machine Learning (ML) models you can create per service instance d
 |-----------|-------------------:|
 | Cloud Pak for Data | Unlimited |
 | Premium | 10 |
+<!--| Enterprise | 10 |-->
 | Plus (includes Trial) | 3 |
 {: caption="ML model plan limits" caption-side="top"}
+
+For each {{site.data.keyword.knowledgestudioshort}} machine learning model, the maximum number of entities that can be detected is 50.
 
 ## Advanced rules models
 {: #advanced-rules}
@@ -509,6 +544,7 @@ The number of advanced rules models that you can define per service instance dep
 |--------------|--------------------------------:|
 | Cloud Pak for Data  |                Unlimited |
 | Premium  |                      3 |
+<!--| Enterprise |                                3 |-->
 | Plus (includes Trial) |                     1 |
 {: caption="Pattern plan limits" caption-side="top"}
 
@@ -579,5 +615,6 @@ The number of patterns that you can define per service instance depends on your 
 | Plan | Patterns per service instance |
 |--------------|--------------------------------:|
 | Premium      |                             100 |
+<!--| Enterprise |                               100 |-->
 | Plus (includes Trial)  |                    20 |
 {: caption="Pattern plan limits" caption-side="top"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-11-03"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -13,7 +13,7 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting answers from existing help content
+# Help your chatbot get answers from existing content
 {: #tutorial-convo}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="2h"}
@@ -114,7 +114,7 @@ While the website is being crawled and the data indexed, you can create your {{s
 
 In this tutorial, you will create an assistant with a single search skill. Both Lite and Trial plan {{site.data.keyword.conversationshort}} service instances are available at no cost. You will create a Trial plan because a Plus or higher plan is required to add a search skill to an assistant and the Trial plan includes all Plus plan features. The Lite plan does not.
 
-The steps in the tutorial cover how to set up search with a standard version of {{site.data.keyword.conversationshort}}, not the beta version of the product.
+The steps in the tutorial cover how to set up search with a standard version of {{site.data.keyword.conversationshort}}, not the new experience version of the product.
 {: note}
 
 1.  Open a new web browser page.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-03"
 
 keywords: release notes
 
@@ -49,12 +49,21 @@ The following new features and changes are available for managed deployments.
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
 
+### ![IBM Cloud only](images/ibm-cloud.png) 3 November 2021
+{: #xnovember2021}
+
+<!--4.0.4-0.5-->
+
+-   **Introducing the entity extractor enrichment!**: The new *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize terms that are meaningful to your business. Currently, this beta feature is available for English-language projects that are created in Premium plan service instances only. For more information, see [Customizing the terms that Discovery can recognize](/docs/discovery-data?topic=discovery-data-entity-extractor).
+-   **Helpful links are available from the home page**: The home page includes a *Helpful links* tab that has quick links to documentation, a community site, and other helpful resources. 
+-   **Field selection is improved**: When you apply an enrichment to a field or choose a field to use as the source for a facet, the fields that are displayed for you to choose from now include only fields that are valid choices. Previously, the list included fields that were not valid choices.
+
 ### ![IBM Cloud only](images/ibm-cloud.png) 14 October 2021
 {: #14october2021}
 
 <!--4.0.3-3.2-->
 
--   **Discovery has a new home page!**: When you start the product, a new home page is displayed. The home page gives you quick access to a product overview video, tours, and other helpful resources. You can collapse the welcome banner to see more projects.
+-   **Discovery has a new home page!**: When you start the product, a new home page is displayed. The home page gives you quick access to a product overview video and tours. You can collapse the home page welcome banner to see more projects.
 -   **Stay informed about plan usage**: You can check your usage against the limits for your plan type from the *Plan limits and usage* page. From the product page header, click the user icon ![User icon](images/user-icon.png). The *Usage* section shows a short summary. Click **View all** to see usage information for all of the plan limit categories.
 -   **Search settings change**: The spelling correction setting changed from being enabled automatically in new projects to being disabled by default. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
 -   **Guided tours are always available**: The **Guided tours** button is now available from the product page header. Previously, it was available from the *My Projects* page only.

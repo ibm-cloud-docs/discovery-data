@@ -90,6 +90,7 @@ toc:
               label: Teaching Discovery about your domain
               topics:
               - domain.md
+              - entity-extractor.md
               - enrichmig.md
           - topicgroup:
               label: Extracting meaning from your data
