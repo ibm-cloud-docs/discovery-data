@@ -50,7 +50,7 @@ The following new features and changes are available for managed deployments.
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 3 November 2021
-{: #xnovember2021}
+{: #3november2021}
 
 <!--4.0.4-0.5-->
 
