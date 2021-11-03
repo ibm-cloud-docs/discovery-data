@@ -26,7 +26,7 @@ The following table shows you the correct resources to add to address common nee
 | Recognize and tag entities and relationships that are defined in a custom Machine Learning model. | [Machine Learning models](#machinelearning) | Requires a model that is built and exported from another IBM tool. |
 | Apply rules to fields that are based on rules you defined by creating an advanced rule model in {{site.data.keyword.knowledgestudiofull}}. | [Advanced rule models](#advanced-rules) |  Requires an advanced rule model that is built and exported from {{site.data.keyword.knowledgestudiofull}} or that uses an exported Patterns resource. |
 | ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Recognize terms that are mentioned in sentences that match a syntactic pattern that you teach {{site.data.keyword.discoveryshort}} to recognize. | [Patterns (beta)](#patterns) | Available as a beta feature for English-language collections hosted on IBM Cloud only. The enrichment that is derived by defining patterns cannot be applied to Content Mining projects. You can export the resource and use it as an advanced rule model. |
-| ![Premium plans only](images/premium.png): Recognizes entities that you identify as being significant by training an entity extractor machine learning model. | [Entity extractor (beta)](/docs/discovery-data?topic=discovery-data-entity-extractor) | Available as a beta feature for English-language collections in Premium plan instances only. |
+| ![Premium plans only](images/premium.png) Recognizes entities that you identify as being significant by training an entity extractor machine learning model. | [Entity extractor (beta)](/docs/discovery-data?topic=discovery-data-entity-extractor) | Available as a beta feature for English-language collections in Premium plan instances only. |
 {: caption="Domain tools overview" caption-side="top"}
 
 Dictionaries and classifiers that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
@@ -160,12 +160,12 @@ A text classifier does not add an enriched text field for mentions with confiden
 
 The number of text classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
-| Limit   | Plus | Premium | Cloud Pak for Data |
-|---------|-----:|--------:|-------------------:|
-| Number of text classifiers per service instance | 5 | 20 | Unlimited |
-| Number of labeled data rows | 2,000 | 20,000 | 20,000 |
-| Maximum size in MB of training data after enrichment | 16 | 1,024 | 1,024 |
-| Number of labels | 100 | 1,000 | 1,000 |
+| Limit   | Plus | Enterprise | Premium | Cloud Pak for Data |
+|---------|-----:|--------:|-----------:|-------------------:|
+| Number of text classifiers per service instance | 5 | 20 | 20 | Unlimited |
+| Number of labeled data rows | 2,000 | 20,000 | 20,000 | 20,000 |
+| Maximum size in MB of training data after enrichment | 16 | 1,024 | 1,024 | 1,024 |
+| Number of labels | 100 | 1,000 | 1,000 | 1,000 |
 {: caption="Text classifier plan limits" caption-side="top"}
 
 ## Dictionary
@@ -281,7 +281,7 @@ The number of dictionaries and term entries you can create per service instance 
 |-----------|-------------------:|------------------------:|--------------------------:|
 | Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
 | Premium | 100 | 10,000 | 1,000 |
-<!--| Enterprise | 100 | 10,000 | 1,000 |-->
+| Enterprise | 100 | 10,000 | 1,000 |
 | Plus (includes Trial) | 20 | 1,000 | 50 |
 {: caption="Dictionary plan limits" caption-side="top"}
 
@@ -351,7 +351,7 @@ The number of regular expressions that you can define per service instance depen
 |--------------|--------------------------------:|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                             100 |
-<!--| Enterprise |                               100 |-->
+| Enterprise |                               100 |
 | Plus (includes Trial) |                     20 |
 {: caption="Regular expression plan details" caption-side="top"}
 
@@ -502,7 +502,7 @@ The number of Machine Learning (ML) models you can create per service instance d
 |-----------|-------------------:|
 | Cloud Pak for Data | Unlimited |
 | Premium | 10 |
-<!--| Enterprise | 10 |-->
+| Enterprise | 10 |
 | Plus (includes Trial) | 3 |
 {: caption="ML model plan limits" caption-side="top"}
 
@@ -544,7 +544,7 @@ The number of advanced rules models that you can define per service instance dep
 |--------------|--------------------------------:|
 | Cloud Pak for Data  |                Unlimited |
 | Premium  |                      3 |
-<!--| Enterprise |                                3 |-->
+| Enterprise |                                3 |
 | Plus (includes Trial) |                     1 |
 {: caption="Pattern plan limits" caption-side="top"}
 
@@ -615,6 +615,6 @@ The number of patterns that you can define per service instance depends on your 
 | Plan | Patterns per service instance |
 |--------------|--------------------------------:|
 | Premium      |                             100 |
-<!--| Enterprise |                               100 |-->
+| Enterprise |                               100 |
 | Plus (includes Trial)  |                    20 |
 {: caption="Pattern plan limits" caption-side="top"}

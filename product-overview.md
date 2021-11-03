@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-11-01"
 
 subcollection: discovery-data
 
@@ -83,14 +83,14 @@ If enhancing your chatbot is your goal, complete the steps that are listed in th
 | ![checkbox](images/checkbox.png) | From the Watson Assistant user interface, deploy the assistant. | [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external} |
 {: caption="Checklist for enhancing your chatbot" caption-side="top"}
 
-For help with walking through the steps, complete the [Getting answers from existing help content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+For help with walking through the steps, complete the [Helping your chatbot get answers from existing content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
-## Find trends  ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+## Find trends  ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #product-overview-mining}
 
 Uncover patterns, trends, and relationships in structured and unstructured data. Use text analytics to gain insights into social media, e-commerce trends, and user behavior. Or start to address problems by finding their root cause.
 
-Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
 ![Shows the content mining application user interface.](images/mining-search.png)
@@ -107,12 +107,12 @@ If finding trends in your data is your goal, complete the steps that are listed 
 {: caption="Checklist for finding trends" caption-side="top"}
 
 
-## Analyze contracts  ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+## Analyze contracts  ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #product-overview-contracts}
 
 Accelerate the pace at which experts can analyze complex documents.
 
-Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
 ![Shows the Contract Info tab for a contract document query result.](images/contract-search.png)

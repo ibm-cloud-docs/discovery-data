@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-25"
+lastupdated: "2021-11-01"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -68,6 +68,7 @@ The number of collections you can create per service instance depends on your {{
 |------|---------------------------------:|
 | Cloud Pak for Data |                300 |
 | Premium      |                      300 |
+| Enterprise |                        300 |
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
 
@@ -133,6 +134,7 @@ The document limit applies to the number of documents in the index. Upload fewer
 |------|-------------------------------:|
 | Cloud Pak for Data |          Unlimited |
 | Premium      |                Unlimited |
+| Enterprise |                  Unlimited |
 | Plus (includes Trial) |         500,000 |
 {: caption="Number of documents per service instance" caption-side="top"}
 
@@ -145,6 +147,7 @@ The size of each document that you can upload depends on your {{site.data.keywor
 |--------------|--------------------------------:|
 | Cloud Pak for Data |                     50 MB |
 | Premium      |                           50 MB |
+| Enterprise |                             10 MB |
 | Plus (includes Trial)         |          10 MB |
 {: caption="Maximum document size" caption-side="top"}
 

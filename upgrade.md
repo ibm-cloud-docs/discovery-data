@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-11-01"
 
 subcollection: discovery-data
 
@@ -36,26 +36,39 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
 
 1.  How you upgrade depends on your plan.
 
-    - If you decide you want to keep the Plus plan after using the 30-day free trial, no action is required.
+    -   If you decide you want to keep the Plus plan after using the 30-day free trial, no action is required.
 
-      After 30 days of using the Plus plan at no cost, you are charged for it.
+        After 30 days of using the Plus plan at no cost, you are charged for it.
 
-    - If you decide you do *not* want to continue using the Plus plan, delete the Plus plan service instance before the 30-day trial period ends. You can delete the service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
+    -   If you decide you do *not* want to continue using the Plus plan, delete the Plus plan service instance before the 30-day trial period ends. You can delete the service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
 
-      The number of days that are left in your trial is displayed in the page header.
+        The number of days that are left in your trial is displayed in the page header.
 
-    - You cannot do an in-place upgrade from a Plus plan to a Premium plan.
+    -   To upgrade a Plus plan to an Enterprise plan, complete the following steps:
 
-      A Premium plan instance must be provisioned for you. To start the process, contact [Sales](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson&disableCookie=Yes){: external}. You will be asked to provide the following details:
+        Open the service page for your Plus plan service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
+        Click *Upgrade*.
+        Choose the Enterprise plan, and then click *Save*.
+        Give the upgrade process time to finish. During the process, you can continue to submit search queries in your existing projects.
+        
+        
+        Avoid the following actions:
 
-      - Customer name
-      - Customer email
-      - Planned deployment date
-      - Data center location, such as Dallas or Frankfurt
-      - Account ID
-      - Resource group name
-      - Resource group ID
+        -   Adding new projects or collections
+        -   Deleting or changing existing collections, including adding documents, editing fields, and changing enrichment settings.
 
-        The resource group is created by the account holder. For more information, see [Assigning access to resources by using resource groups](/docs/account?topic=account-access-getstarted&interface=ui).
+    -   You cannot do an in-place upgrade from a Plus plan to a Premium plan.
+
+        A Premium plan instance must be provisioned for you. To start the process, contact [Sales](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson&disableCookie=Yes){: external}. You will be asked to provide the following details:
+
+        -   Customer name
+        -   Customer email
+        -   Planned deployment date
+        -   Data center location, such as Dallas or Frankfurt
+        -   Account ID
+        -   Resource group name
+        -   Resource group ID
+
+            The resource group is created by the account holder. For more information, see [Assigning access to resources by using resource groups](/docs/account?topic=account-access-getstarted&interface=ui).
 
 For more information about plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).

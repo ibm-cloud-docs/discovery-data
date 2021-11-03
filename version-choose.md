@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-11-03"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Use the latest version of {{site.data.keyword.discoveryshort}} to take advantage of new features and a simpler way to build solutions.
 {: shortdesc}
 
-When you create a Premium or Plus (including a Plus Trial) plan instance on {{site.data.keyword.cloud_notm}}, you get the latest version of the {{site.data.keyword.discoveryshort}} user interface. The latest version uses version 2 of the {{site.data.keyword.discoveryshort}} API. The same is true when you install and provision an instance on {{site.data.keyword.icp4dfull_notm}}; you get the latest version.
+When you create a Premium, Enterprise, or Plus (including a Plus Trial) plan instance on {{site.data.keyword.cloud_notm}}, you get the latest version of the {{site.data.keyword.discoveryshort}} user interface. The latest version uses version 2 of the {{site.data.keyword.discoveryshort}} API. The same is true when you install and provision an instance on {{site.data.keyword.icp4dfull_notm}}; you get the latest version.
 
 The earlier version was provisioned for you previously when you created a Lite or Advanced plan instance on {{site.data.keyword.cloud_notm}}. The earlier version of the {{site.data.keyword.discoveryshort}} user interface uses version 1 of the {{site.data.keyword.discoveryshort}} API.
 

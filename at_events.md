@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-03"
 
 keywords: IBM, activity tracker, event, security, IBM Cloud Activity Tracker
 
@@ -64,7 +64,7 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.dictionary.update`      | Update a dictionary. |
 | `discovery.document.add`           | Add one document. |
 | `discovery.document.create`        | Create a document. |
-| `discovery.document.delete`        | Delete document by ID. |
+| `discovery.document.delete`        | Delete a document by ID. |
 | `discovery.document.read`          | Download a PDF version of a document. |
 | `discovery.document.update`        | Update one document by ingesting new or modified content for a document given a document ID, or by changing the label for a specified document ID. |
 | `discovery.document-annotation.read` | Read document annotations. |
@@ -111,7 +111,7 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.training-query.create`  | Add a query to the training data. |
 | `discovery.training-query.delete`  | Delete a query from the training data. |
 | `discovery.training-query.read`    | Read the contents of a query. |
-| `discovery.user-data.delete`       | Delete all data associated with specified customer ID. |
+| `discovery.user-data.delete`       | Delete all data associated with a customer ID. |
 {: caption="Table 1. Actions that generate events" caption-side="top"}
 
 ## Viewing events

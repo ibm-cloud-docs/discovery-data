@@ -33,6 +33,8 @@ If you continue to use a Plus plan service instance after the 30-day trial ends,
 
 For subscription accounts, the monthly fee per instance is $500.
 
+The plan includes the following features:
+
 - 10,000 documents per month ($50 for every additional 1,000 documents per month)
 - 10,000 queries per month ($20 for every additional 1,000 queries per month)
 - Up to 5 queries per second
@@ -51,10 +53,47 @@ For subscription accounts, the monthly fee per instance is $500.
 - Up to 40 collections
 - Up to 10MB document size
 - Up to 3 custom Watson Knowledge Studio machine learning models
+- Up to 3 advanced rules learning models
 - Up to 40 custom fields for Smart Document Understanding model and model import and export
 - Up to 20 custom dictionaries
 - Up to 20 custom pattern extraction models
 - Up to 20 custom regular expression models
+- Up to 20 custom text classification models
+- Up to 20 custom document classification models
+
+## Enterprise
+{: #enterpriseplan}
+
+Scale and secure your Discovery application with enterprise-grade support and performance and address more use cases including contract analysis and content mining to explore insights across documents.
+
+### What's included
+{: #enterpriseplan-features}
+
+For subscription accounts, the monthly fee per instance is $5,000.
+
+The plan includes the following features:
+
+- 100,000 documents per month ($5 for every additional 1,000 documents per month)
+- 100,000 queries per month ($5 for every additional 1,000 queries per month)
+- Up to 5 queries per second
+- Everything that's available in Plus
+- Content Intelligence
+- Content Mining
+- Document classification
+
+### Artifact limits
+{: #enterpriseplan-limits}
+
+- Unlimited queries per month
+- Unlimited documents per month
+- Up to 100 projects
+- Up to 300 collections
+- Up to 10 MB document size
+- Up to 10 custom Watson Knowledge Studio machine learning models
+- Up to 100 custom fields for Smart Document Understanding model and model import and export
+- Up to 100 custom dictionaries
+- Up to 100 custom pattern extraction models
+- Up to 100 custom regular expression models
 - Up to 20 custom text classification models
 
 ## Premium

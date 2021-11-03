@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-01"
 
 subcollection: discovery-data
 
@@ -390,6 +390,7 @@ The number of search queries that you can submit per month per service instance 
 |--------------|-------------------------------:|
 | Cloud Pak for Data |                Unlimited |
 | Premium      |                      Unlimited |
+| Enterprise |                        Unlimited |
 | Plus (includes Trial)        |        500,000 |
 {: caption="Number of queries per month" caption-side="top"}
 
@@ -399,6 +400,7 @@ The number of queries that can be processed per second per service instance depe
 |--------------|--------------------------------:|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                              50 |
+| Enterprise |                                 5 |
 | Plus (includes Trial) |                      5 |
 {: caption="Number of concurrent queries" caption-side="top"}
 
