@@ -82,15 +82,20 @@ Create entities by completing the following steps:
 
 1.  Click **Next**.
 
-## Labeling entity examples
-{: #entity-extractor-label}
+### Labeling tips
+{: #entity-extractor-label-tips}
 
-Label terms in the document that represent examples of the entities you created. Review these tips before you begin:
+Review these tips before you begin:
 
-- Start with good documents. Use a collection that contains documents with many and varied examples of the entities you want the entity extractor to recognize.
+- Start with a representative set of documents. Use a collection that contains documents with many and varied examples of the entities you want the entity extractor to recognize.
 - Define entities that are clearly distinct from one another.
 - Aim to label at least 40 examples of each entity.
 - Label every valid example of an entity. Do not skip any occurrences of entity examples. To speed up the process, enable the bulk label feature.
+
+## Labeling entity examples
+{: #entity-extractor-label}
+
+Label terms in the document that represent examples of the entities you created.
 
 To label entity examples, complete the following steps:
 
@@ -107,16 +112,14 @@ To label entity examples, complete the following steps:
     ![Shows that a label is applied the word transmission in a sentence.](images/extractor-label.png)
 
     The example text is also added to the Entities panel. If you click the chevron to view details, you can see that the example is listed. The example text is lowercase.
-    The message **Bulk label this example?** is displayed. Using the bulk label feature is a great way to speed up the process of labeling your documents. When you turn it on, every occurrence of a term that you label is labeled everywhere it occurs automatically.
+    
+    The message **Bulk label this example?** is displayed. Using the bulk label feature is a great way to speed up the process of labeling your documents. When you turn it on, every occurrence of a term that you label is labeled everywhere it occurs automatically. 
+    
+    To turn on the bulk label feature for this term, click **Bulk label this example?**. Choose whether to label occurrences of the term in this document only or in all of the documents in the collection, and then click **Run**. For more information, see [Labeling example in bulk](#entity-extractor-bulk-label).
 
-    For most entity examples, enabling the bulk label feature is helpful. You might want to skip it if a term has more than one meaning in different contexts. In that case, you might want to evaluate each occurrence individually. Remember, if you enable the bulk label feature, you can check the accuracy of the labels that were added automatically and make corrections when necessary as you review the document.
+1.  If you make a mistake and label the wrong word, you can delete the label. 
 
-1.  To turn on the bulk label feature for this term, click **Bulk label this example?**. Choose whether to label occurrences of the term in this document only or in all of the documents in the collection. Click **Run**.
-        
-    The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
-
-    After you enable the bulk label feature, a notification is displayed that indicates how many mentions of this entity example were found in the current document. From the current page, the labeling tool cannot access other documents to report how many mentions exist in other documents from the collection. However, the mention count is shown in the Entities panel. When you first open other documents, you can check the mention counts to see how many mentions were labeled automatically.
-1.  If you make a mistake and label the wrong word, hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
+    Hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
 1.  Label every valid example of every entity that you want your extractor to recognize.
 
     The model learns as much from the terms that you don't label as the terms that you do.
@@ -135,6 +138,15 @@ To label entity examples, complete the following steps:
     At any time during the labeling process, you can click **Save and exit** to take a break.
 1.  After you label examples in as many documents in the collection as you want, click **Next**.
 
+### Labeling examples in bulk
+{: #entity-extractor-bulk-label}
+
+For most entity examples, enabling the bulk label feature is helpful. You might want to skip it if a term has more than one meaning in different contexts. In that case, you might want to evaluate each occurrence individually. Remember, if you enable the bulk label feature, you can check the accuracy of the labels that were added automatically and make corrections when necessary as you review the document.
+
+When you enable the bulk label feature, you can choose whether to label every occurrence of the example text in the current document or in all of the documents in the collection. The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
+
+After you enable the bulk label feature, a notification is displayed that indicates how many occurrences of this entity example were found in the current document. From the current page, the labeling tool cannot access other documents to report how many occurrences exist in other documents from the collection. However, the mention count is shown in the Entities panel. When you first open other documents, you can check the mention counts to see how many mentions were labeled automatically.
+
 ### Entity example suggestions
 {: #entity-extractor-suggestions}
 
@@ -152,26 +164,28 @@ You can accept all of the suggestions for all of the entity examples or for a si
 ## Training the extractor
 {: #entity-extractor-train}
 
-After you label documents, review the training data that will be used to train the extractor model.
-
-You can make the following advanced customizations:
-
--   Include documents that were not reviewed by a person in the training set.
-
-    Typically, only documents that a person labeled, reviewed, and explicitly marked complete can be candidates for inclusion in the training set. However, if you want to allow documents that were not marked complete to be included in the training set, you can do so.
--   Change the ratio of documents that are included in the document sets that comprise your training data.
-
-    The documents from your collection are split at random into the following sets:
-    
-    -   Training set: The documents that you label and that are used to train the entity extractor machine learning model. The goal of the training set is to teach the machine learning model about correct labels, which includes teaching the model through text that is not labeled.
-    -   Test set: The documents that are used to test the trained model. After you run a test, you can review the results, closely analyze areas where the model got something wrong, and find ways to improve the model's performance.
-    -   Blind set: Documents that are set aside and used to test the model periodically after several iterations of testing and improvement are completed. The documents in the blind set are intentionally roped off. As you test the model with document from the test set and analyze the results, you become familiar with the underlying test documents. Because the test documents are used iteratively to improve the model, they can start to influence the model training indirectly. That's why the blind set of documents is so important. The blind set gives you a way to generate an unbiased evaluation of the model periodically.
-    
-    The default split applies a ratio (70%-27%-3%) that is commonly used for machine learning training.
+After you label documents, review the training data that will be used to train the entity extractor model.
 
 To train the extractor, complete the following step:
 
-1.  From the *Review and finish* page, click **Train extractor**.
+1.  Decide whether you want to apply an advanced customization.
+
+    The following customization are available from the *Review and finish* page:
+
+    -   Include documents that were not reviewed by a person in the training set.
+
+        Typically, only documents that a person labeled, reviewed, and explicitly marked complete can be candidates for inclusion in the training set. However, if you want to allow documents that were not marked complete to be included in the training set, you can do so.
+    -   Change the ratio of documents that are included in the document sets that comprise your training data.
+
+        The documents from your collection are split at random into the following sets:
+    
+        -   Training set: The documents that you label and that are used to train the entity extractor machine learning model. The goal of the training set is to teach the machine learning model about correct labels.
+        -   Test set: The documents that are used to test the trained model. After you run a test, you can review the results, closely analyze areas where the model got something wrong, and find ways to improve the model's performance.
+        -   Blind set: Documents that are set aside and used to test the model periodically after several iterations of testing and improvement are completed. The documents in the blind set are intentionally roped off. As you test the model with documents from the test set and analyze the results, you become familiar with the underlying test documents. Because the test documents are used iteratively to improve the model, they can start to influence the model training indirectly. That's why the blind set of documents is so important. The blind set gives you a way to generate an unbiased evaluation of the model periodically.
+    
+        The default split applies a ratio (70%-23%-7%) that is commonly used for machine learning training.
+
+1.  Click **Train extractor**.
 
 When you train the extractor, {{site.data.keyword.discoveryshort}} uses documents from the training set to build a machine learning model. After the model is generated, it runs a test against the documents from the test set automatically. The results of the test are displayed for you to review.
 

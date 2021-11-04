@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-01"
 
 subcollection: discovery-data
 
@@ -10,13 +10,13 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding contracts ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+# Understanding contracts ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #contracts-schema}
 
 The *Contracts* enrichment is applied to collections in *Document Retrieval for Contract* project types automatically.
 {: shortdesc}
 
-Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium plan managed deployments can create this type of project.
+Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
 When you create a *Document Retrieval for Contract* project type, the Contracts enrichment is applied to the collections automatically. The enrichment is applied to the `html` field of the documents.
