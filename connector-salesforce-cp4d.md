@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-04"
 
 subcollection: discovery-data
 
@@ -62,7 +62,7 @@ For information about downloading the WSDL JAR files, see the following links:
 -   [Generate or Obtain the Web Service WSDL](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_generate_wsdl.htm){: external}
 -   [Import the WSDL File Into Your Development Platform](https://developer.salesforce.com/docs/atlas.en-us.210.0.api.meta/api/sforce_api_quickstart_steps_import_wsdl.htm){: external}
 -   [Download Apache Commons BeanUtils](https://commons.apache.org/proper/commons-beanutils/download_beanutils.cgi){: external}
--   [Apache Commons BeanUtils](https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils){: external}
+-   [Apache Commons BeanUtils](https://mvnrepository.com/artifact/commons-beanutils){: external}
 
 1.  Download the following JAR files:
 

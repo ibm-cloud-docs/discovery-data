@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-11-04"
 
 subcollection: discovery-data
 
@@ -115,11 +115,9 @@ To label entity examples, complete the following steps:
     
     The message **Bulk label this example?** is displayed. Using the bulk label feature is a great way to speed up the process of labeling your documents. When you turn it on, every occurrence of a term that you label is labeled everywhere it occurs automatically. 
     
-    To turn on the bulk label feature for this term, click **Bulk label this example?**. Choose whether to label occurrences of the term in this document only or in all of the documents in the collection, and then click **Run**. For more information, see [Labeling example in bulk](#entity-extractor-bulk-label).
+1.  To turn on the bulk label feature for this term, click **Bulk label this example?**. Choose whether to label occurrences of the term in this document only or in all of the documents in the collection, and then click **Run**. 
 
-1.  If you make a mistake and label the wrong word, you can delete the label. 
-
-    Hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
+    For more information, see [Labeling example in bulk](#entity-extractor-bulk-label).
 1.  Label every valid example of every entity that you want your extractor to recognize.
 
     The model learns as much from the terms that you don't label as the terms that you do.
@@ -128,6 +126,9 @@ To label entity examples, complete the following steps:
     If you miss labeling a valid example, the model learns that when the term is used in that context, it is not a valid mention of the entity. In some cases, an omission is appropriate. For example, some terms have different meanings in different contexts. And you don't want to label the term when it is used in the wrong context. However, if the term is used in the right context and you don't label it, you are teaching the model to ignore it. You decrease the model's effectiveness when your training data is inconsistent.
 
     After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions. Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions).
+1.  If you make a mistake and label the wrong word or a word was labeled incorrectly by the bulk label process, you can delete the label.
+
+    Hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
 1.  After you label all of the entity examples in the current document, click **Mark complete**.
 
     Another document from the collection is displayed. 
