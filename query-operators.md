@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-11-04"
 
 subcollection: discovery-data
 
@@ -127,10 +127,27 @@ enriched_text.entities:(text:IBM,type:Company)
 
 Boolean operator for "or".
 
-For example:
+In the following example, documents in which `Google` or `IBM` are identified as entities are returned:
+
+```bash
+enriched_text.entities.text:Google|enriched_text.entities.text:IBM
+```
+{: codeblock}
+
+The includes (`:`,`:!`) and match (`::`, `::!`) operators have precedence over the `OR` operator.
+{: note}
+
+For example, the following syntax searches for documents in which `Google` is identified as an entity or the string `IBM` is present:
 
 ```bash
 enriched_text.entities.text:Google|IBM
+```
+{: codeblock}
+
+It is treated as follows:
+
+```bash
+(enriched_text.entities.text:Google) OR IBM
 ```
 {: codeblock}
 
@@ -139,10 +156,27 @@ enriched_text.entities.text:Google|IBM
 
 Boolean operator for "and".
 
-For example:
+In the following example, documents in which `Google` and `IBM` both are identified as entities are returned:
+
+```bash
+enriched_text.entities.text:Google,enriched_text.entities.text:IBM
+```
+{: codeblock}
+
+The includes (`:`,`:!`) and match (`::`, `::!`) operators have precedence over the `AND` operator.
+{: note}
+
+For example, the following syntax searches for documents in which `Google` is identified as an entity and the string `IBM` is present:
 
 ```bash
 enriched_text.entities.text:Google,IBM
+```
+{: codeblock}
+
+It is treated as follows:
+
+```bash
+(enriched_text.entities.text:Google) AND IBM
 ```
 {: codeblock}
 
