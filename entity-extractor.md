@@ -125,7 +125,11 @@ To label entity examples, complete the following steps:
     
     If you miss labeling a valid example, the model learns that when the term is used in that context, it is not a valid mention of the entity. In some cases, an omission is appropriate. For example, some terms have different meanings in different contexts. And you don't want to label the term when it is used in the wrong context. However, if the term is used in the right context and you don't label it, you are teaching the model to ignore it. You decrease the model's effectiveness when your training data is inconsistent.
 
-    After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions. Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions).
+    After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions. 
+    
+    ![Shows the prompt shown to ask whether you want to accept a suggestion.](images/suggestion-accept.png)
+    
+    Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions).
 1.  If you make a mistake and label the wrong word or a word was labeled incorrectly by the bulk label process, you can delete the label.
 
     Hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
@@ -144,7 +148,11 @@ To label entity examples, complete the following steps:
 
 For most entity examples, enabling the bulk label feature is helpful. You might want to skip it if a term has more than one meaning in different contexts. In that case, you might want to evaluate each occurrence individually. Remember, if you enable the bulk label feature, you can check the accuracy of the labels that were added automatically and make corrections when necessary as you review the document.
 
-When you enable the bulk label feature, you can choose whether to label every occurrence of the example text in the current document or in all of the documents in the collection. The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
+When you enable the bulk label feature, you can choose whether to label every occurrence of the example text in the current document or in all of the documents in the collection. 
+
+![Shows suggestions for family member entities.](images/auto-label-all-docs.png)
+
+The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
 
 After you enable the bulk label feature, a notification is displayed that indicates how many occurrences of this entity example were found in the current document. From the current page, the labeling tool cannot access other documents to report how many occurrences exist in other documents from the collection. However, the mention count is shown in the Entities panel. When you first open other documents, you can check the mention counts to see how many mentions were labeled automatically.
 
@@ -152,6 +160,10 @@ After you enable the bulk label feature, a notification is displayed that indica
 {: #entity-extractor-suggestions}
 
 After you label enough entity examples, suggested entity examples are displayed. The system learns from the types of examples you label, and applies what it learns to identify potential new examples. For example, after you label `red`, `orange`, `yellow`, `green`, and `blue` as examples of the `color` entity, the *Example suggestions* panel might show `indigo` and `violet` as suggested examples for you to label. Suggestions are not displayed until after you label many examples of an entity.
+
+The following example shows suggestions that are made for family member mentions.
+
+![Shows suggestions for family member entities.](images/sugestions-example.png)
 
 When the system is not confident that a mention is a valid example, a conflict icon is displayed with the suggestions. A conflict can occur for various reasons. 
 
