@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-04"
+lastupdated: "2021-11-06"
 
 subcollection: discovery-data
 
@@ -109,7 +109,7 @@ To label entity examples, complete the following steps:
 
     The term is selected and a color label is applied to the term. The first two characters of the entity name are shown in uppercase superscript within the label boundary. Both the 2-character ID and the label color help you to associate the example with the entity it represents.
 
-    ![Shows that a label is applied the word transmission in a sentence.](images/extractor-label.png)
+    ![Shows that a label is applied the word father in a sentence.](images/father-label.png)
 
     The example text is also added to the Entities panel. If you click the chevron to view details, you can see that the example is listed. The example text is lowercase.
     
@@ -245,6 +245,15 @@ When you publish the extractor, you specify the field where you want the extract
 1.  Click **Enrichments**.
 1.  Find the entity extractor name in the list, and then choose a field to apply the enrichment to. 
 1.  Click **Apply changes and reprocess**.
+
+### Entity extractor output
+{: #entity-extractor-json}
+
+When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in enrichments, such as the Entities enrichment that uses the *Natural Language Understanding* machine learning model.
+
+The following JSON output is produced by a custom model named *Literature* that recognizes family member mentions.
+
+![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png)
 
 ### Entity extractor limits
 {: #entity-extractor-limits}
