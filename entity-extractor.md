@@ -109,7 +109,7 @@ To label entity examples, complete the following steps:
 
     The term is selected and a color label is applied to the term. The first two characters of the entity name are shown in uppercase superscript within the label boundary. Both the 2-character ID and the label color help you to associate the example with the entity it represents.
 
-    ![Shows that a label is applied the word father in a sentence.](images/father-label.png)
+    ![Shows that a label is applied the word wife in a sentence.](images/wife-label.png)
 
     The example text is also added to the Entities panel. If you click the chevron to view details, you can see that the example is listed. The example text is lowercase.
     
