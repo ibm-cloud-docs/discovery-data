@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-04"
+lastupdated: "2021-11-06"
 
 subcollection: discovery-data
 
@@ -109,7 +109,7 @@ To label entity examples, complete the following steps:
 
     The term is selected and a color label is applied to the term. The first two characters of the entity name are shown in uppercase superscript within the label boundary. Both the 2-character ID and the label color help you to associate the example with the entity it represents.
 
-    ![Shows that a label is applied the word transmission in a sentence.](images/extractor-label.png)
+    ![Shows that a label is applied the word wife in a sentence.](images/wife-label.png)
 
     The example text is also added to the Entities panel. If you click the chevron to view details, you can see that the example is listed. The example text is lowercase.
     
@@ -125,7 +125,11 @@ To label entity examples, complete the following steps:
     
     If you miss labeling a valid example, the model learns that when the term is used in that context, it is not a valid mention of the entity. In some cases, an omission is appropriate. For example, some terms have different meanings in different contexts. And you don't want to label the term when it is used in the wrong context. However, if the term is used in the right context and you don't label it, you are teaching the model to ignore it. You decrease the model's effectiveness when your training data is inconsistent.
 
-    After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions. Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions).
+    After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions. 
+    
+    ![Shows the prompt shown to ask whether you want to accept a suggestion.](images/suggestion-accept.png)
+    
+    Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions).
 1.  If you make a mistake and label the wrong word or a word was labeled incorrectly by the bulk label process, you can delete the label.
 
     Hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
@@ -144,7 +148,11 @@ To label entity examples, complete the following steps:
 
 For most entity examples, enabling the bulk label feature is helpful. You might want to skip it if a term has more than one meaning in different contexts. In that case, you might want to evaluate each occurrence individually. Remember, if you enable the bulk label feature, you can check the accuracy of the labels that were added automatically and make corrections when necessary as you review the document.
 
-When you enable the bulk label feature, you can choose whether to label every occurrence of the example text in the current document or in all of the documents in the collection. The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
+When you enable the bulk label feature, you can choose whether to label every occurrence of the example text in the current document or in all of the documents in the collection. 
+
+![Shows suggestions for family member entities.](images/auto-label-all-docs.png)
+
+The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
 
 After you enable the bulk label feature, a notification is displayed that indicates how many occurrences of this entity example were found in the current document. From the current page, the labeling tool cannot access other documents to report how many occurrences exist in other documents from the collection. However, the mention count is shown in the Entities panel. When you first open other documents, you can check the mention counts to see how many mentions were labeled automatically.
 
@@ -152,6 +160,10 @@ After you enable the bulk label feature, a notification is displayed that indica
 {: #entity-extractor-suggestions}
 
 After you label enough entity examples, suggested entity examples are displayed. The system learns from the types of examples you label, and applies what it learns to identify potential new examples. For example, after you label `red`, `orange`, `yellow`, `green`, and `blue` as examples of the `color` entity, the *Example suggestions* panel might show `indigo` and `violet` as suggested examples for you to label. Suggestions are not displayed until after you label many examples of an entity.
+
+The following example shows suggestions that are made for family member mentions.
+
+![Shows suggestions for family member entities.](images/sugestions-example.png)
 
 When the system is not confident that a mention is a valid example, a conflict icon is displayed with the suggestions. A conflict can occur for various reasons. 
 
@@ -245,6 +257,15 @@ When you publish the extractor, you specify the field where you want the extract
 1.  Click **Enrichments**.
 1.  Find the entity extractor name in the list, and then choose a field to apply the enrichment to. 
 1.  Click **Apply changes and reprocess**.
+
+### Entity extractor output
+{: #entity-extractor-json}
+
+When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in enrichments, such as the Entities enrichment that uses the *Natural Language Understanding* machine learning model.
+
+The following JSON output is produced by a custom model named *Literature* that recognizes family member mentions.
+
+![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png)
 
 ### Entity extractor limits
 {: #entity-extractor-limits}
