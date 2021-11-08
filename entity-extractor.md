@@ -267,7 +267,7 @@ When you publish the extractor, you specify the field where you want the extract
 ### Entity extractor output
 {: #entity-extractor-json}
 
-When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in enrichments, such as the Entities enrichment that uses the *Natural Language Understanding* machine learning model.
+When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in Entities enrichment that uses the *Natural Language Understanding* machine learning model.
 
 The following JSON output is produced by a custom model named *Literature* that recognizes family member mentions.
 
