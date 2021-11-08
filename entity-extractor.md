@@ -189,7 +189,7 @@ To train the extractor, complete the following step:
 
 1.  Decide whether you want to apply an advanced option. Most models do not require changes to these options.
 
-    The following customizations are available from the *Review and finish* page.
+    The following customizations are available from the *Review and finish* page:
 
     -   Include documents that were not reviewed by a person in the training set.
 
