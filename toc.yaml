@@ -134,7 +134,7 @@ toc:
               - query-operators.md
               - query-aggregations.md
           - topicgroup:
-              label: Confuguring a Cloud Pak for Data custom connector
+              label: Configuring a Cloud Pak for Data custom connector
               topics:
               - build-connector.md
               - connector-dev.md
@@ -142,7 +142,7 @@ toc:
               - install-connector.md
               - ccs-tooling.md
           - topicgroup:
-              label: Confuguring a Cloud Pak for Data customer crawler plug-in
+              label: Configuring a Cloud Pak for Data customer crawler plug-in
               topics:
               - crawler-plugin-build.md
               - crawler-plugin-dev.md

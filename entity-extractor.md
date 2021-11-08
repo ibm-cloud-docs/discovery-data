@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-06"
+lastupdated: "2021-11-08"
 
 subcollection: discovery-data
 
@@ -57,8 +57,8 @@ To add an entity extractor, complete the following steps:
 1.  Choose a collection with documents that are representative of your domain data.
 1.  Choose fields from the document to show in the document view where you label documents in the collection.
 
-    -   **Document title** is shown in the page header to identify the document. Choose a field that has a unique value per document, such as the file name.
-    -   **Document body** is where you label entity examples. Choose a field that contains the bulk of the document content.
+    -   **Document title** is shown in the page header to identify the document. Choose a field that has a unique value per document, such as the file name, which is stored in the `extracted_metadata.filename` field.
+    -   **Document body** is where you label entity examples. Choose a field that contains the bulk of the document content, such as the `text` field.
 
     ![Shows that PP3.docx is the document title and the main text panel shows the body field.](images/extractor-title-body.png)
 1.  Click **Next**.
@@ -115,10 +115,12 @@ To label entity examples, complete the following steps:
     
     The message **Bulk label this example?** is displayed. Using the bulk label feature is a great way to speed up the process of labeling your documents. When you turn it on, every occurrence of a term that you label is labeled everywhere it occurs automatically. 
     
-1.  To turn on the bulk label feature for this term, click **Bulk label this example?**. Choose whether to label occurrences of the term in this document only or in all of the documents in the collection, and then click **Run**. 
+1.  To turn on the bulk label feature for this term, click **Bulk label this example?**. Choose whether to label occurrences of the term in this document only or in all of the documents in the collection, and then click **Run**.
+
+    ![Shows suggestions for family member entities.](images/auto-label-all-docs.png)
 
     For more information, see [Labeling example in bulk](#entity-extractor-bulk-label).
-1.  Label every valid example of every entity that you want your extractor to recognize.
+1.  Scroll through the document to label every valid example of every entity that you want your extractor to recognize.
 
     The model learns as much from the terms that you don't label as the terms that you do.
     {: important}
@@ -129,7 +131,7 @@ To label entity examples, complete the following steps:
     
     ![Shows the prompt shown to ask whether you want to accept a suggestion.](images/suggestion-accept.png)
     
-    Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions).
+    Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions). After you accept a suggestion, you can bulk label the term.
 1.  If you make a mistake and label the wrong word or a word was labeled incorrectly by the bulk label process, you can delete the label.
 
     Hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
@@ -150,11 +152,15 @@ For most entity examples, enabling the bulk label feature is helpful. You might 
 
 When you enable the bulk label feature, you can choose whether to label every occurrence of the example text in the current document or in all of the documents in the collection. 
 
-![Shows suggestions for family member entities.](images/auto-label-all-docs.png)
-
 The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
 
 After you enable the bulk label feature, a notification is displayed that indicates how many occurrences of this entity example were found in the current document. From the current page, the labeling tool cannot access other documents to report how many occurrences exist in other documents from the collection. However, the mention count is shown in the Entities panel. When you first open other documents, you can check the mention counts to see how many mentions were labeled automatically.
+
+Did the bulk label feature miss an occurrence?
+
+Occurrences of the term are not labeled if they occur in the same phrase in which the term is already labeled. For example, the first occurrence of the term `husband` is not labeled when the bulk label feature is switched on for the second occurrence of the term in the following sentence.
+
+![Shows when an overlapping occurrence is not given a label by the bulk label feature.](images/not-bulk-labeled.png)
 
 ### Entity example suggestions
 {: #entity-extractor-suggestions}
@@ -163,7 +169,7 @@ After you label enough entity examples, suggested entity examples are displayed.
 
 The following example shows suggestions that are made for family member mentions.
 
-![Shows suggestions for family member entities.](images/sugestions-example.png)
+![Shows suggestions for family member entities.](images/suggestions-example.png)
 
 When the system is not confident that a mention is a valid example, a conflict icon is displayed with the suggestions. A conflict can occur for various reasons. 
 
@@ -181,9 +187,9 @@ After you label documents, review the training data that will be used to train t
 
 To train the extractor, complete the following step:
 
-1.  Decide whether you want to apply an advanced customization.
+1.  Decide whether you want to apply an advanced option. Most models do not require changes to these options.
 
-    The following customization are available from the *Review and finish* page:
+    The following customizations are available from the *Review and finish* page:
 
     -   Include documents that were not reviewed by a person in the training set.
 
@@ -261,7 +267,7 @@ When you publish the extractor, you specify the field where you want the extract
 ### Entity extractor output
 {: #entity-extractor-json}
 
-When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in enrichments, such as the Entities enrichment that uses the *Natural Language Understanding* machine learning model.
+When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in Entities enrichment that uses the *Natural Language Understanding* machine learning model.
 
 The following JSON output is produced by a custom model named *Literature* that recognizes family member mentions.
 
