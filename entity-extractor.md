@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 subcollection: discovery-data
 
@@ -273,7 +273,7 @@ The following JSON output is produced by a custom model named *literature* that 
 
 ![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png)
 
-### Entity extractor limits
+## Entity extractor limits
 {: #entity-extractor-limits}
 
 The number of entity extractor models you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
@@ -282,3 +282,5 @@ The number of entity extractor models you can create per service instance depend
 |-----------|---------------------------------------------:|---------------------------:|-----------------------------------:|
 | Premium | 10 | 100 | 1,000 |
 {: caption="Entity extractor model plan limits" caption-side="top"}
+
+An entity extractor enrichment can identify up to 50 entities, each with one or many mentions, per collection.
