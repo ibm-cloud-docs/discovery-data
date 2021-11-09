@@ -134,7 +134,7 @@ In the JSON output:
 ### Entity limits
 {: #nlu-entities-limits}
 
-The Natural Language Understanding machine learning model can identify up to 50 entities, each with one or many mentions, per collection.
+The Entities enrichment can identify up to 50 entities, each with one or many mentions, per collection.
 
 ## Keywords
 {: #nlu-keywords}
@@ -210,7 +210,7 @@ In the JSON output:
 ### Keywords limits
 {: #nlu-keywords-limits}
 
-The Natural Language Understanding machine learning model can identify up to 50 keywords, each with one or many mentions, per collection.
+The Keywords enrichment can identify up to 50 keywords, each with one or many mentions, per collection.
 
 ## Parts of speech
 {: #nlu-pos}
