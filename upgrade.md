@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-11-09"
 
 subcollection: discovery-data
 
@@ -49,13 +49,12 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
         -   Open the service page for your Plus plan service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
         -   Click *Upgrade*.
         -   Choose the Enterprise plan, and then click *Save*.
-        -   Give the upgrade process time to finish. During the process, you can continue to submit search queries in your existing projects.
+        -   Give the upgrade process time to finish. 
         
-        
-        Avoid the following actions:
+            During the process, you can continue to submit search queries in your existing projects. However, avoid the following actions:
 
-        -   Adding new projects or collections
-        -   Deleting or changing existing collections, including adding documents, editing fields, and changing enrichment settings.
+            -   Adding new projects or collections
+            -   Deleting or changing existing collections, including adding documents, editing fields, and changing enrichment settings.
 
     -   You cannot do an in-place upgrade from a Plus plan to a Premium plan.
 

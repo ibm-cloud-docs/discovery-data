@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-11-09"
 
 subcollection: discovery-data
 
@@ -76,7 +76,7 @@ Remember these notes:
 -   If you apply FAQ extraction to a collection, you cannot use the [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) tool later to annotate fields.
 -   If you delete a question-and-answer pair from a webpage that you crawled previously, the question-and-answer pair that was already indexed in your collection remains in the index.
 
-To learn more about FAQ extraction, see the [Turn your FAQ pages into conversational AI](https://medium.com/ibm-data-ai/turn-your-faq-pages-into-conversational-ai-8ac7ae7ec793) blog post on Medium.
+To learn more about FAQ extraction, see the [Turn your FAQ pages into conversational AI](https://medium.com/ibm-data-ai/turn-your-faq-pages-into-conversational-ai-8ac7ae7ec793){: external} blog post on Medium.
 
 ### Disabling FAQ extraction
 {: #faq-extraction-diable}
