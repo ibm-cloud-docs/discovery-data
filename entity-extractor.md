@@ -53,7 +53,7 @@ To add an entity extractor, complete the following steps:
 1.  Click **New**.
 1.  Add an extractor name and optionally a description.
 
-    This name is used as the enrichment name that is displayed in the Enrichments page where you and others can apply it to collections.
+    This name is used as the model name and as the name of the enrichment that is created when you publish the model. The name is displayed as the enrichment name in the Enrichments page where you and others can apply it to collections. It also is displayed as the model name in the JSON representation of documents where custom entities are found. The name is stored with the capitalization and spacing that you specify.
 1.  Choose a collection with documents that are representative of your domain data.
 1.  Choose fields from the document to show in the document view where you label documents in the collection.
 
@@ -111,7 +111,7 @@ To label entity examples, complete the following steps:
 
     ![Shows that a label is applied the word wife in a sentence.](images/wife-label.png)
 
-    The example text is also added to the Entities panel. If you click the chevron to view details, you can see that the example is listed. The example text is lowercase.
+    The example text is also added to the Entities panel. If you click the chevron to view details, you can see that the example is listed. The example text is saved in lowercase, regardless of the capitalization that is used in the original text.
     
     The message **Bulk label this example?** is displayed. Using the bulk label feature is a great way to speed up the process of labeling your documents. When you turn it on, every occurrence of a term that you label is labeled everywhere it occurs automatically. 
     

@@ -43,7 +43,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
     -   If you decide you do *not* want to continue using the Plus plan, delete the Plus plan service instance before the 30-day trial period ends. You can delete the service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
 
         The number of days that are left in your trial is displayed in the page header.
-
+    <!--
     -   To upgrade a Plus plan to an Enterprise plan, complete the following steps:
 
         -   Open the service page for your Plus plan service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
@@ -55,7 +55,8 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
 
             -   Adding new projects or collections
             -   Deleting or changing existing collections, including adding documents, editing fields, and changing enrichment settings.
-
+    -->
+    -   You cannot upgrade from a Plus plan to an Enterprise plan currently.
     -   You cannot do an in-place upgrade from a Plus plan to a Premium plan.
 
         A Premium plan instance must be provisioned for you. To start the process, contact [Sales](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson&disableCookie=Yes){: external}. You will be asked to provide the following details:
