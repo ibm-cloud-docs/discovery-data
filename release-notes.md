@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-03"
+lastupdated: "2021-11-11"
 
 keywords: release notes
 
@@ -48,6 +48,11 @@ See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for t
 The following new features and changes are available for managed deployments.
 
 For more information about software releases for installed deployments, see [{{site.data.keyword.discovery-data_short}} releases](#rn-cpd).
+
+### ![IBM Cloud only](images/ibm-cloud.png) 11 November 2021
+{: #11november2021}
+
+-   **Enterprise plan is available in more locations**: The Enterprise plan is available from the Frankfurt, London, Sydney, Tokyo, and Washington DC locations in addition to the Dallas location. Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance and address more use cases including contract analysis and content mining to explore insights across documents. For more information, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 3 November 2021
 {: #3november2021}
