@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-11-11"
 
 keywords: upload, one-time upload, field names
 
@@ -64,13 +64,14 @@ When you upload a document, data in the file is indexed. For most unstructured f
 The following field names have special meaning. If possible avoid using these names in your structured source files.
 
 - id
-- document_id
 - highlight
 - html
 - metadata
 - result_metadata
 - score
 - spans
+
+If your source document has a field with the name `document_id`, the field is skipped and not added to the index in the collection.
 
 Avoid field names that meet the following conditions. Field names with these restricted characters are not queried.
 
