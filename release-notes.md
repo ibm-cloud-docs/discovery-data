@@ -13,7 +13,7 @@ content-type: release-note
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Release notes for Watson Discovery
+# Release notes for {{site.data.keyword.discoveryshort}} 
 {: #release-notes}
 
 The release notes provide information about changes to {{site.data.keyword.discoveryfull}} since the previous release.
@@ -43,7 +43,7 @@ IBM releases services, features, and language support for your evaluation that a
 ## ![IBM Cloud only](images/ibm-cloud.png) Discovery for {{site.data.keyword.cloud_notm}} releases
 {: #rn-cloud}
 
-The following new features and changes are available for managed deployments of Discovery.
+The following new features and changes are available for managed deployments of {{site.data.keyword.cloud_notm}}.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 11 November 2021
 {: #discovery-11november2021}
@@ -258,7 +258,8 @@ Change to 'options' object
 {: #discovery-16july2020}
 {: release-note}
 
-This release is available for Premium instances of {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} created after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
+New release for Premium instances
+:   This release is available for Premium instances of {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} created after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
 
 Change to **IBM Cloud Premium** 
 :   The Premium plan is now generally available.
@@ -296,18 +297,17 @@ New support for 12 languages
 Current API version
 :   The API version (v2) is `2019-11-29`.
 
-The following features are not available in this release:
-
-    -   Deduplication is not available in this release.
-    -   Anomaly Detection is not offered.
-    -   Watson Discovery News is no longer included.
-    -   Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
-    -   The SharePoint 2016 On-Premise and Box data sources are not available at this time.
+Change to features in this release
+:   Deduplication is not available in this release.
+:   Anomaly Detection is not offered.
+:   Watson Discovery News is no longer included.
+:   Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
+:   The SharePoint 2016 On-Premise and Box data sources are not available at this time.
 
 ## ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} releases
 {: #rn-cpd}
 
-The following new features and changes are available for installed deployments.
+The following new features and changes in each release and update are available for installed deployments of {{site.data.keyword.discovery-data_short}}. 
 
 ### ![Cloud Pak for Data only](images/desktop.png) 4.0.2 release, 5 October 2021
 {: #discovery-data-5october2021}
@@ -327,6 +327,7 @@ New upgrade support
 :   The 4.0.2 release supports in-place upgrade from {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.0. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}
 
 <!--### IBM Cloud Private End Of Support
+### ![Cloud Pak for Data only](images/desktop.png) 4 release, 30 September 2021
 {: #discovery-data-30september2021}
 
 Effective 30 September 2021, IBM withdrew support for the following programs:
@@ -340,9 +341,9 @@ For more information, see announcements [ENUS921-005.PDF](https://www.ibm.com/co
 ### ![Cloud Pak for Data only](images/desktop.png) 4 release, 13 July 2021
 {: #discovery-data-13july2021}
 
-{{site.data.keyword.discovery-data_short}} 4 is available.
-
-This release is supported on {{site.data.keyword.icp4dfull}} 4.0.0.
+New version now available
+:   {{site.data.keyword.discovery-data_short}} 4 is available
+:   This release is supported on {{site.data.keyword.icp4dfull}} 4.0.0.
 
 Change to service name
 :   The new name is {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}.
@@ -363,10 +364,8 @@ New Salesforce proxy support
 :   You can now connect to a Salesforce data source when using a proxy server. For more information, see [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d).
 
 Improved custom connector improvements
-:   Support was added for the following features:
-
-    -   Optical character recognition (OCR)
-    -   Document-level security
+:   Support was added for Optical character recognition (OCR)
+:   Support was added for Document-level security
 
     For more information about the custom connector, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
@@ -376,7 +375,8 @@ Change to Dynamic Faceted Search
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2.1 release, 26 February 2021
 {: #discovery-data-26february2021}
 
-IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2.1 is available.
+New release now available
+:   IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2.1 is available.
 
 Support for upgrade
 :   {{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 so that you do not need to manually uninstall an earlier version and then install the latest version of the service. For more information, see [Upgrading Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install#upgrade-discovery).
@@ -391,17 +391,15 @@ Change to Contracts enrichment tables
 :   In a `Document Retrieval` project that has the `Contracts` enrichment applied, tables are not included inside the `contracts` field, as they were previously in projects that had the `Contracts` enrichment enabled. Tables will continue to be included in a separate `tables` field when the `Table Understanding` enrichment is applied.
 
 Change to support for Oracle Database 11g and Postgres 9.5
-:   Support for connecting to these data sources was removed because the vendors ended version support
-
-    -   Oracle Database 11g: Vendor support ended on 31 December 2020
-    -   Postgres 9.5: Vendor support ended on 11 February 2021
+:   Support for connecting to Oracle Database 11g was removed because the vendor ended version support on 31 December 2020.
+:   Support for connecting to Postgres 9.5 was removed because the vendor ended version support on 11 February 2021.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.2.0 release, 8 December 2020
 {: #discovery-data-8december2020}
 
-IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2 is available.
-
-{{site.data.keyword.discovery-data_short}} now works with I{{site.data.keyword.icp4dfull}} 3.5.
+New release now available
+:   IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2 is available. 
+:   {{site.data.keyword.discovery-data_short}} now works with I{{site.data.keyword.icp4dfull}} 3.5.
 
 New support for Notes attachments
 :   Added support for attachments in the Notes data source. For more information, see [Notes](/docs/discovery-data?topic=discovery-data-collection-types#connectnotes)
@@ -421,7 +419,8 @@ Change to Dynamic Facets
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.4 release, 2 September 2020
 {: #discovery-data-2september2020}
 
-{{site.data.keyword.discovery-data_long}} version 2.1.4 is available.
+New release now available
+:   {{site.data.keyword.discovery-data_long}} version 2.1.4 is available.
 
 New Notes connector
 :   Crawl Notes version 9.0.1 systems. For more information, see [Notes connector](/docs/discovery-data?topic=discovery-data-collection-types#connectnotes).
@@ -442,9 +441,9 @@ New Analyze API usage monitoring
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.3 release, 19 June 2020
 {: #discovery-data-19june2020}
 
-{{site.data.keyword.discovery-data_long}} version 2.1.3 is available.
-
-{{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 3.0.1.
+New release now available
+:   {{site.data.keyword.discovery-data_long}} version 2.1.3 is available.
+:   {{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 3.0.1.
 
 New Finnish and Hebrew language support
 :   Added basic support for Finnish and Hebrew. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
@@ -473,7 +472,8 @@ Fixed defects in the 2.1.3 release
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.2 release, 31 March 2020
 {: #discovery-data-31march2020}
 
-{{site.data.keyword.discovery-data_long}} version 2.1.2 is available.
+New release now available
+:   {{site.data.keyword.discovery-data_long}} version 2.1.2 is available.
 
 New **IBM FileNet connector**
 :   You can now crawl IBM FileNet systems. For more information, see [FileNet connector](/docs/services/discovery-data?topic=discovery-data-collection-types#filenet-connect).
@@ -484,42 +484,42 @@ New Swedish, Norwegian, and Danish language support
 Change to Advanced Rule models enrichment
 :   The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-domain#advanced-rules) is now GA.
 
-Improved navigation, messages, and status updates
-
 New document preview for search results
 :   You can now view your search results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document, making the context clearer.
 
 New proxy support for Web Crawl
 :   Support was added to the [Web Crawl connector](/docs/services/discovery-data?topic=discovery-data-collection-types#connectwebcrawl) for proxy support.
 
-Running a query with an empty `aggregations` parameter returns zero aggregations in the response.
+Change to empty aggregations parameter
+:   Running a query with an empty `aggregations` parameter returns zero aggregations in the response.
 
 Change to Postgres support
 :   Support for connecting to Postgres 9.4 was removed because the vendor ended version support was ended by the vendor on 13 February 2020.
 
 Fixed the following defects in the 2.1.2 release
--   When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`.
--   When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Activity** page, but no further processing status displays until the number of documents increases.
--   Running a query with an empty `aggregations` parameter returns an empty aggregations array.
--   Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
+:   When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`.
+:   When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Activity** page, but no further processing status displays until the number of documents increases.
+:   Running a query with an empty `aggregations` parameter returns an empty aggregations array.
+:   Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.1 release, 24 January 2020
 {: #discovery-data-24january2020}
 
-{{site.data.keyword.discovery-data_long}} version 2.1.1 is available.
+New release now available
+:   {{site.data.keyword.discovery-data_long}} version 2.1.1 is available.
 
 Fixed the following defects in the 2.1.1 release:
-- In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
-- When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
-- If you are using Smart Document Understanding, two variables no longer need to be set during installation or reinstallation. For more information, see [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu).
-- Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a root-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
+:   In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
+:   When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
+:   If you are using Smart Document Understanding, two variables no longer need to be set during installation or reinstallation. For more information, see [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu).
+:   Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a root-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.1.0 release, 27 November 2019
 {: #discovery-data-27november2019}
 
-{{site.data.keyword.discovery-data_long}} version 2.1.0 is available.
-
-{{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.5.0.0.
+New release now available
+:   {{site.data.keyword.discovery-data_long}} version 2.1.0 is available.
+:   {{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.5.0.0.
 
 New Project-based interface
 :   Test your application like an end-user would with the **Document retrieval**, **Conversational Search**, and **Content Mining** project types. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
@@ -569,9 +569,9 @@ New beta Curations
 ### ![Cloud Pak for Data only](images/desktop.png) 2.0.1 release, 30 August 2019
 {: #discovery-data-30august2019}
 
-{{site.data.keyword.discovery-data_long}} version 2.0.1 is available.
-
-{{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.1.0.1.
+New release now available
+:   {{site.data.keyword.discovery-data_long}} version 2.0.1 is available.
+:   {{site.data.keyword.discovery-data_short}} now works with {{site.data.keyword.icp4dfull}} 2.1.0.1.
 
 New Windows File System and Database connectors
 :   Added the Windows File System and Database connectors. For more information, see [Database connector](/docs/discovery-data?topic=discovery-data-collection-types#databaseconnect) and [Windows File System connector](/docs/discovery-data?topic=discovery-data-collection-types#windowsfilesystemconnect).
@@ -588,18 +588,18 @@ New Classifier enrichment
 New Red Hat OpenShift support
 :   Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift.
 
-Fixed the following defects in {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019:
-
-- During an active web crawl, if you add an enrichment, then click the **Recrawl collection** button on the **Activity** page, the collection will stop processing. If the collection does not return to a Syncing state on its own, clicking the **Recrawl collection** button an additional time might be required.
-- While training a collection in the tooling , if you rate the relevancy of a result (for example, as`Relevant`), then switch to the opposite rating (`Not relevant`), the page may go blank. To restore the page, refresh the browser. Your updated rating will be retained.
-- Chinese, Japanese, and Korean language Microsoft Word, Excel, and PowerPoint documents will not display correctly in the index or the Smart Document Understanding editor.
-- If you upload a zip, gzip, or tar file to your collection, and that file contains multiple files/file types supported by Smart Document Understanding (PDF, Word, Excel, PowerPoint, PNG, TIFF, JPEG), only one of the files in that zip, gzip, or tar file will be available for training in the SDU editor (unless the SDU document limit has already been met). All of the documents will be available in the index. Unzip the file before uploading to avoid this issue.
-- Query expansion and autocomplete return the wrong error code when the `collection_id` is invalid. Query expansion will return a `500` error code instead of a `404`. Autocomplete will return a `400` when the `collection_id` is invalid and the `prefix` parameter isn’t set. It should also return a `404`.
-- When crawling Microsoft SharePoint 2019 collections, only HTML documents will be crawled and indexed. This is a SharePoint issue with how it processes mime-types. See this Microsoft [blog post](https://blog.stefan-gossner.com/2018/11/30/common-issue-sp2019-items-in-document-libraries-are-downloaded-with-mime-type-application-octet-stream-rather-than-the-accurate-one/) for a workaround.
-- If you delete an installation of the {{site.data.keyword.discovery-data_short}} add-on, the instance will not uninstall completely and your re-installation will fail. See the {{site.data.keyword.discovery-data_short}} Readme for post-cleanup steps.
-- If a JSON document that contains nested JSON objects is ingested, the nested JSON will be indexed as a JSON string.
+Fixed the following defects in {{site.data.keyword.discovery-data_short}} offerings purchased on or after August 30, 2019
+:   During an active web crawl, if you add an enrichment, then click the **Recrawl collection** button on the **Activity** page, the collection will stop processing. If the collection does not return to a Syncing state on its own, clicking the **Recrawl collection** button an additional time might be required.
+:   While training a collection in the tooling , if you rate the relevancy of a result (for example, as`Relevant`), then switch to the opposite rating (`Not relevant`), the page may go blank. To restore the page, refresh the browser. Your updated rating will be retained.
+:   Chinese, Japanese, and Korean language Microsoft Word, Excel, and PowerPoint documents will not display correctly in the index or the Smart Document Understanding editor.
+:   If you upload a zip, gzip, or tar file to your collection, and that file contains multiple files/file types supported by Smart Document Understanding (PDF, Word, Excel, PowerPoint, PNG, TIFF, JPEG), only one of the files in that zip, gzip, or tar file will be available for training in the SDU editor (unless the SDU document limit has already been met). All of the documents will be available in the index. Unzip the file before uploading to avoid this issue.
+:   Query expansion and autocomplete return the wrong error code when the `collection_id` is invalid. Query expansion will return a `500` error code instead of a `404`. Autocomplete will return a `400` when the `collection_id` is invalid and the `prefix` parameter isn’t set. It should also return a `404`.
+:   When crawling Microsoft SharePoint 2019 collections, only HTML documents will be crawled and indexed. This is a SharePoint issue with how it processes mime-types. See this Microsoft [blog post](https://blog.stefan-gossner.com/2018/11/30/common-issue-sp2019-items-in-document-libraries-are-downloaded-with-mime-type-application-octet-stream-rather-than-the-accurate-one/) for a workaround.
+:   If you delete an installation of the {{site.data.keyword.discovery-data_short}} add-on, the instance will not uninstall completely and your re-installation will fail. See the {{site.data.keyword.discovery-data_short}} Readme for post-cleanup steps.
+:   If a JSON document that contains nested JSON objects is ingested, the nested JSON will be indexed as a JSON string.
 
 ### ![Cloud Pak for Data only](images/desktop.png) 2.0.0, General Availability (GA) release, 28 June 2019
 {: #discovery-data-28june2019}
 
-The {{site.data.keyword.discovery-data_long}} service brings the cognitive capabilities of {{site.data.keyword.discoveryfull}} to the {{site.data.keyword.icp4dfull}} platform.
+Discovery for Cloud Pak for Data now available
+:   The {{site.data.keyword.discovery-data_long}} service brings the cognitive capabilities of {{site.data.keyword.discoveryfull}} to the {{site.data.keyword.icp4dfull}} platform.
