@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-15"
 
 subcollection: discovery-data
 
@@ -51,14 +51,17 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 You must have the following information ready. If you don't know it, ask your SharePoint administrator to provide the information or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
 
--   **Username**: The username to use to connect to the SharePoint OnPrem web application that you want to crawl. For example, `siteadmin01`.
--   **Password**: The password to connect to the SharePoint OnPrem web application that you want to crawl.
+Username
+:   The username to use to connect to the SharePoint OnPrem web application that you want to crawl. For example, `siteadmin01`.
 
-    This value is never returned and is only used when credentials are created or modified.
--   **Web Application URL**: The SharePoint web application URL. For example, `https://sharepointwebapp.com:8443`.
+Password
+:   The password to connect to the SharePoint OnPrem web application that you want to crawl. This value is never returned and is only used when credentials are created or modified.
 
-    If you do not enter a port number, the default value of `80` is used for an HTTP URL and `443` for HTTPS.
--   **Domain**: The domain name of the SharePoint OnPrem account. For example, `sharepoint.mycointernal`.
+Web Application URL
+:   The SharePoint web application URL. For example, `https://sharepointwebapp.com:8443`. If you do not enter a port number, the default value of `80` is used for an HTTP URL and `443` for HTTPS.
+
+Domain
+:   The domain name of the SharePoint OnPrem account. For example, `sharepoint.mycointernal`.
 
 ## Prerequisite step
 {: #connector-sharepoint-onprem-cloud-prereq-task}
