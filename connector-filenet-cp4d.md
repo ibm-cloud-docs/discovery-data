@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-06-15"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -60,20 +60,28 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Complete the following fields in the *Enter your credentials* section:
 
-    - **Content Engine Web Service URL**: The Content Engine web service URL of the IBM FileNet P8 server.
+    Content Engine Web Service URL
+    :   The Content Engine web service URL of the IBM FileNet P8 server.
 
-      When you enter the URL, use the format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `<server>` is the hostname of the server where the Content Platform Engine is deployed and the `<port>` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
-    - **User**: The username to use to crawl the FileNet P8 server. You can obtain your username from your FileNet administrator.
-    - **Password**: The password that is associated with the user.
+        When you enter the URL, use the format: `<protocol>://<server>:<port>/wsi/FNCEWS40MTOM`. You can use the HTTP or HTTPS protocol. The `<server>` is the hostname of the server where the Content Platform Engine is deployed and the `<port>` is the HTTP port that the application server uses, or where the Content Platform Engine is deployed.
+
+    User
+    :  The username to use to crawl the FileNet P8 server. You can obtain your username from your FileNet administrator.
+
+    Password
+    :   The password that is associated with the user.
+
 1.  In the *Specify what you want to crawl* section, enter the name of the object store that you want to use to create, search, retrieve, and store documents in the **ObjectStore Name** field.
 1.  In **Crawler Space Type**, select either **Folder** or **Class**.
 1.  Complete the following field:
 
-    - **Folder subpath or Subclass name**: The subfolder path that you can specify under RootFolder that crawls all documents that belong to the specified folder or the custom subclass of the `Document` class that crawls all documents that belong to the specified class. Before you specify anything in this field, keep in mind the following items:
+    Folder subpath or Subclass name
+    :   The subfolder path that you can specify under RootFolder that crawls all documents that belong to the specified folder or the custom subclass of the `Document` class that crawls all documents that belong to the specified class. Before you specify anything in this field, keep in mind the following items:
 
-      - You can specify multiple crawler spaces by using both the `Class` and `Folder` types and crawl the documents belonging to the folder name and class name.
-      - You cannot specify a class outside the object store that you defined.
-      - No support is available for specifying a class that is a subclass of a `Custom Object` and `Folder`.
+        - You can specify multiple crawler spaces by using both the `Class` and `Folder` types and crawl the documents belonging to the folder name and class name.
+        - You cannot specify a class outside the object store that you defined.
+        - No support is available for specifying a class that is a subclass of a `Custom Object` and `Folder`.
+
 1. After you enter one or more paths, click **Add**.
 1.  **Optional**: In the *Security* section, if you want to enable document level security, set the **Enable Document Level Security** switch to `On`.
 

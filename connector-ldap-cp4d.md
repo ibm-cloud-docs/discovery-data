@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -73,29 +73,45 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
     The crawler schedule options work as follows for LDAP directories:
 
-    -   **Full crawling**: Crawls all entries.
-    -   **Crawling updates**: Crawls all entries, then filters out any entries that were inserted, updated, or deleted since the last crawl.
-    -   **Crawling new and modified content**: Runs an LDAP query against the data source server to pick up any entries that were inserted or updated only.
+    Full crawling
+    :   Crawls all entries.
+    
+    Crawling updates
+    :   Crawls all entries, then filters out any entries that were inserted, updated, or deleted since the last crawl.
+    
+    Crawling new and modified content
+    :   Runs an LDAP query against the data source server to pick up any entries that were inserted or updated only.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Configure a secure connection to the directory.
 
-    -   Server type: Choose your server type from the following options:
+    Server type
+    :   Choose your server type from the following options:
 
         -   IBM Security Directory Server
         -   Microsoft Active Directory
         -   Oracle Directory Server
 
-    -   **LDAP protocol**: If you want to encrypt data and verify the server certificate over Transport Layer Security (TLS), choose `ldaps`.
-    -   **LDAP host name**: Specify the hostname of the directory server. For example: `<ldap-hostname>.mydomain.com`.
-    -   **LDAP host port**: By default, the LDAP port is 389 and the LDAP-S port is 636.
-    -   **LDAP binding username**: If the directory server requires credentials, the username that is used to bind to the directory service.
+    LDAP protocol
+    :   If you want to encrypt data and verify the server certificate over Transport Layer Security (TLS), choose `ldaps`.
+    
+    LDAP host name
+    :   Specify the hostname of the directory server. For example: `<ldap-hostname>.mydomain.com`.
+
+    LDAP host port
+    :   By default, the LDAP port is `389` and the LDAP-S port is `636`.
+
+    LDAP binding username
+    :   If the directory server requires credentials, the username that is used to bind to the directory service.
 
         In most cases, this username is a distinguished name (DN). The username is case-sensitive.
-    -   **LDAP binding user password**: The password that is associated with the username.
+
+    LDAP binding user password
+    :   The password that is associated with the username.
 1.  Specify the information that you want to index from the directory.
 
-    -   **LDAP Base DN**: The object where you want to start the crawl.
+    LDAP Base DN
+    :   The object where you want to start the crawl.
 
         LDAP directories have a hierarchical tree structure of objects. The base search distinguished name specifies the subtree in which you want the crawl to be constrained.
 
@@ -110,23 +126,24 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
         ```
         {: screen}
 
-    -   **LDAP user filter**: A filter to apply to the search to use to find LDAP entries that you want to crawl.
+    LDAP user filter
+    :   A filter to apply to the search to use to find LDAP entries that you want to crawl.
 
         If unspecified, a default value is applied that is considered the best filter for the server type that you selected. You can edit the predefined filter value.
 
-    -   Expand the *Advanced configuration* section to list specific attributes to include or exclude from the search.
+        -   Expand the *Advanced configuration* section to list specific attributes to include or exclude from the search.
 
-        For example, you might need to know the country in which an employee works, so you want to include a `c` attribute that stores the ISO country code. Or maybe you never want to return an employee's serial number, so you exclude the `serialnumber` attribute.
+            For example, you might need to know the country in which an employee works, so you want to include a `c` attribute that stores the ISO country code. Or maybe you never want to return an employee's serial number, so you exclude the `serialnumber` attribute.
 
-    -   Specify the search scope. You can choose to crawl records that are one level from the search base DN or to crawl the entire subtree that is associated with the search base DN.
+        -   Specify the search scope. You can choose to crawl records that are one level from the search base DN or to crawl the entire subtree that is associated with the search base DN.
 
-    -   If the LDAP directory data source has binary attributes, you can enable the **Allow binary attributes** option.
+        -   If the LDAP directory data source has binary attributes, you can enable the **Allow binary attributes** option.
 
-        When enabled, the crawler creates a separate document for each binary attribute that is specified. The document also contains any other non-binary LDAP attribute values.
+            When enabled, the crawler creates a separate document for each binary attribute that is specified. The document also contains any other non-binary LDAP attribute values.
 
-        For more information about the binary option, see [RTF 4522](https://datatracker.ietf.org/doc/html/rfc4522){: external}.
+            For more information about the binary option, see [RTF 4522](https://datatracker.ietf.org/doc/html/rfc4522){: external}.
 
-        In the **Binary attributes** field, specify the names of the binary attributes that you want to index.
+            In the **Binary attributes** field, specify the names of the binary attributes that you want to index.
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     The processing time increases when this feature is enabled.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 - You must obtain any required service licenses for the data source that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 
-## Prequisite steps
+## Prerequisite steps
 {: #connector-box-cp4d-prereq}
 
 If you want to enable document level security, you must take some steps to set it up. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
@@ -112,27 +112,34 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  If the language of the documents in Box is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  **Optional**: Change the synchronization schedule.
+1.  **Optional**. Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  In the *Enter your credentials* section, click **Select file** and then browse to find and upload the `config.json` file that you created in the prerequisite step.
 
     You can download the JSON file from the configuration page on the [Box Developer site](https://developer.box.com/){: external}.
-1.  **Optional**: In the *Specify what you want to crawl* section, choose a specific user's content or a specific folder with content that you want to crawl. If you don't specify anything, the service crawls all of the content that is available to the custom app.
+1.  **Optional**. In the *Specify what you want to crawl* section, choose a specific user's content or a specific folder with content that you want to crawl. If you don't specify anything, the service crawls all of the content that is available to the custom app.
 
     - To crawl an entire enterprise, enter `box://app.box.com/`.
     - To crawl a specific folder, enter `box://app.box.com/user/USER'S_ACCOUNT_ID/folder/FOLDER_ID/FolderName`.
 
-      For example: `box://example.app.box.com/user/460250779/folder/158001591642/My Folder`
+      For example, `box://example.app.box.com/user/460250779/folder/158001591642/My Folder`
     - To crawl a specific user, enter `box://app.box.com/user/USER'S_ACCOUNT_ID/`.
 
 1.  **Optional**: If you are using a proxy server to access the data source server, then in the *Proxy settings* section, set the **Enable proxy settings** switch to `On`. Add values to the following fields:
 
-    - **Username**: Optional: The username that you use to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of the proxy server.
-    - **Password**: Optional: The password that you use to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of the proxy server.
-    - **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
-    - **Proxy server port number**: The network port that you want to connect to on the proxy server.
-1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
+    Username
+    :   Optional. The username that you use to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of the proxy server.
+
+    Password
+    :   Optional. The password that you use to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of the proxy server.
+
+    Proxy server host name or IP address
+    :   The hostname or the IP address of the proxy server.
+
+    Proxy server port number
+    :   The network port that you want to connect to on the proxy server.
+1.  **Optional**. If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
     When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to Box. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 

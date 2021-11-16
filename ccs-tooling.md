@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -33,27 +33,49 @@ You create and manage a collection as described in [Creating and managing collec
 
 1.  Enter values for the following fields on the **Configure collection** page. If a field is already populated with a value, verify and change the value if needed. A prepopulated value indicates that a value was specified in the custom connector's `template.xml` or `message.properties` file.
 
-    - **General**
-      - **Collection name**
-      - **Collection language**
-      - **Crawl schedule**
-    - **Crawler properties**
-      - **Crawler name**
-      - **Crawler description**
-      - **Time to wait between retrieval requests (milliseconds)** (default `0`)
-      - **Maximum number of active crawler threads** (default `10`)
-      - **Maximum number of documents to crawl** (default `2000000000`)
-      - **Maximum document size (KB)** (default `32768`)
-    - **Data Source Properties**
-      - **Host name** (default `localhost`)
-      - **Port** (default `22`)
-      - **User name**
-      - **Use key file (or input password)** (default `On`)
-      - **Key file location**
-      - **passphrase**
-      - **Password**
-    - **Crawl space Properties**
+    General
+    :   Fill in the following fields
 
-    If the custom crawler supports document-level security and the `document_level_security_supported` value in the `template.xml` is set to `true`, then an **Enable Document Level Security** switch is displayed in a *Security* section of the data source connection setup page. To enable document-level security, set the **Enable Document Level Security** switch to **On**. If the switch is set to Off, then the collection that is created cannot support document-level security even if the custom crawler can support document-level security.
+        -   Collection name
+        -   Collection language
+        -   Crawl schedule
+
+    Crawler properties
+    :   Fill in the following fields
+
+        -   Crawler name
+        -   Crawler description
+        -   Time to wait between retrieval requests (milliseconds)
+
+            The default value is `0`.
+        -   Maximum number of active crawler threads
+
+            The default value is `10`.
+        - Maximum number of documents to crawl 
+
+          The default value `2000000000`.
+        - Maximum document size (KB)
+      
+          The default value is `32768`.
+
+    Data Source Properties
+    :   Fill in the following fields
+
+        -   Host name
+      
+            The default value is `localhost`.
+        -   Port
+      
+            The default value is `22`.
+        -   User name
+        -   Use key file (or input password)
+      
+            The default value is `On`.
+        -   Key file location
+        -   passphrase
+        -   Password
+
+    Crawl Space Properties
+    :   If the custom crawler supports document-level security and the `document_level_security_supported` value in the `template.xml` is set to `true`, then an **Enable Document Level Security** switch is displayed in a *Security* section of the data source connection setup page. To enable document-level security, set the **Enable Document Level Security** switch to **On**. If the switch is set to Off, then the collection that is created cannot support document-level security even if the custom crawler can support document-level security.
 
 1.  Click **Finish** to create the collection.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -107,12 +107,24 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  Click **Box**, and then click **Next**.
 1.  Refer to the values from the Box app settings JSON file that you downloaded during the previous procedure to complete the following fields:
 
-    -   Client ID: The private key that you specify when you configure your Box app.
-    -   Client Secret: The client secret that you specify when you configure your Box app.
-    -   Enterprise ID: The enterprise ID of the Box account.
-    -   Public Key ID: The public key ID that Box generates.
-    -   Private Key: A part of the key pair that is generated to interact with the Box website.
-    -   Passphrase: The passphrase that is required to decrypt the private key if the private key is an encrypted file.
+    Client ID
+    :   The private key that you specify when you configure your Box app.
+    
+    Client Secret
+    :   The client secret that you specify when you configure your Box app.
+    
+    Enterprise ID
+    :   The enterprise ID of the Box account.
+    
+    Public Key ID
+    :   The public key ID that Box generates.
+    
+    Private Key
+    :   A part of the key pair that is generated to interact with the Box website.
+    
+    Passphrase
+    :   The passphrase that is required to decrypt the private key if the private key is an encrypted file.
+
 1.  Click **Next**.
 1.  Name the collection.
 1.  If the language of the documents in Box is not English, select the appropriate language.

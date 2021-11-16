@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-08-12"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -53,9 +53,14 @@ You can monitor the usage of the Analyze API from the *API usage* page.
 
 To access the **API usage** page, open the **Projects** page, select **Data usage**, then **API usage**.
 
-- **Start date**: The start date of the API call-monitoring period.
-- **End date**: The end date of the API call-monitoring period.
-- **30-day call total**: Number of calls to the Analyze API in the 30-day time interval that is indicated by the **Start date** and **End date**. The time interval is determined by calculating the consecutive time period with the highest number of API calls. The 30-day window updates as the time interval with the highest number of API call changes.
+Start date
+:   The start date of the API call-monitoring period.
+
+End date
+:   The end date of the API call-monitoring period.
+
+30-day call total
+:   Number of calls to the Analyze API in the 30-day time interval that is indicated by the **Start date** and **End date**. The time interval is determined by calculating the consecutive time period with the highest number of API calls. The 30-day window updates as the time interval with the highest number of API call changes.
 
 The **API usage** is not displayed until some time after API usage monitoring begins. A delay in displaying the final total number of the **30-day call total** might occur, even if the 30-day period that is listed includes the current date.
 {: note}
