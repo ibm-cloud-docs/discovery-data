@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -25,7 +25,8 @@ Synonyms that you add to improve the search results function differently from sy
 
 You can define two types of expansions:
 
--   **Bidirectional**: Each entry in the `expanded_terms` list expands to include all expanded terms. For example, a query for `ibm` expands to `ibm OR international business machines OR big blue`.
+Bidirectional
+:   Each entry in the `expanded_terms` list expands to include all expanded terms. For example, a query for `ibm` expands to `ibm OR international business machines OR big blue`.
 
     Bidirectional example:
 
@@ -44,7 +45,8 @@ You can define two types of expansions:
     ```
     {: codeblock}
 
--   **Unidirectional**: The `input_terms` in the query is replaced by the `expanded_terms`. For example, a query for `banana` is converted to `plantain OR fruit` and does not contain the original term, `banana`. If you want an input term to be included in the query, then repeat the input term in the expanded terms list.
+Unidirectional
+:   The `input_terms` in the query is replaced by the `expanded_terms`. For example, a query for `banana` is converted to `plantain OR fruit` and does not contain the original term, `banana`. If you want an input term to be included in the query, then repeat the input term in the expanded terms list.
 
     Unidirectional example:
 
