@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -53,10 +53,17 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 You must have the following information ready. If you don't know it, ask your Salesforce administrator to provide the information or consult the [Salesforce developer documentation](https://developer.salesforce.com/docs/){: external}.
 
-- **Username**: The `username` of an account that has access to the Salesforce site. For example, `jdoe@example.com`
-- **Password**: The password associated with the username. For example, `myP@ssw0rd`.
-- **Service token**: A valid Salesforce security token. For example, `mnaO8jsRET5CiJww9JnURlNN`.
-- **URL**: The URL of the Salesforce site that you want to crawl. For example, `https://my.salesforce.com`
+Username
+:   The `username` of an account that has access to the Salesforce site. For example, `jdoe@example.com`
+
+Password
+:   The password associated with the username. For example, `myP@ssw0rd`.
+
+Service token
+:   A valid Salesforce security token. For example, `mnaO8jsRET5CiJww9JnURlNN`.
+
+URL
+:   The URL of the Salesforce site that you want to crawl. For example, `https://my.salesforce.com`
 
 ## Connecting to the data source
 {: #connector-salesforce-cloud-task}

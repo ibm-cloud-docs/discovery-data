@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -87,7 +87,8 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Complete the following fields in the *Enter your credentials* section:
 
-    -   **Database URL**: The URL of the database server.
+    Database URL
+    :   The URL of the database server.
 
         The following table shows example database URLs:
 
@@ -99,25 +100,40 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
         | Postgresql | `jdbc:postgresql://{host}:{port}/{database}` | `jdbc:postgresql://localhost/sample` |
         {: caption="Example database URLs"}
 
-    -   **User**: The username that you obtain from the database you selected. You use this username to crawl the source. Your username is different from database to database.
-    -   **Password**: The password that is associated with your username. Your password is different from database to database.
+    User
+    :   The username that you obtain from the database you selected. You use this username to crawl the source. Your username is different from database to database.
+
+    Password
+    :   The password that is associated with your username. Your password is different from database to database.
 
 1.  Complete the following fields in the *Connection settings* section:
 
-    -   **JDBC driver type**: Choose the database.
+    JDBC driver type
+    :   Choose the database.
 
         **Db2** is selected by default. If you want to crawl from a database type that is not listed, select **OTHER**.
-    -   **JDBC driver classname**: The JDBC driver class name that is associated with the database you selected. This field is autofilled, unless you select **OTHER**.
-    -   **JDBC driver classpath**: Upload a JDBC driver file, which can have a .jar or .zip file extension. Alternatively, you can reuse a .jar or .zip file that you uploaded previously.
+
+    JDBC driver classname
+    :   The JDBC driver class name that is associated with the database you selected. This field is autofilled, unless you select **OTHER**.
+
+    JDBC driver classpath
+    :   Upload a JDBC driver file, which can have a .jar or .zip file extension. Alternatively, you can reuse a .jar or .zip file that you uploaded previously.
+
 1.  Complete the following fields in the *Specify what you want to crawl* section, and then click **Add**:
 
-    -   **Schema Name**: The schema that you want to crawl.
-    -   **Table Name**: The table within a schema that you want to crawl.
+    Schema Name
+    :   The schema that you want to crawl.
+    
+    Table Name
+    :   The table within a schema that you want to crawl.
 
     Click the edit icon to specify more table crawl settings, including:
 
-    -   **Primary key**: The primary key of the target database table. If the primary key is not configured in the target database table, you must specify the key in this field. The JDBC database crawler appends this primary key value to the URL of each crawled row to keep its uniqueness. When the primary key is a composite key, concatenate the key names by using a comma, for example `key1,key2`. If unspecified, the project defaults to the primary key fields of the table. If the primary key is configured in the target database table, this key is automatically detected.
-    -   **Row filter**: Optional: Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed.
+    Primary key
+    :   The primary key of the target database table. If the primary key is not configured in the target database table, you must specify the key in this field. The JDBC database crawler appends this primary key value to the URL of each crawled row to keep its uniqueness. When the primary key is a composite key, concatenate the key names by using a comma, for example `key1,key2`. If unspecified, the project defaults to the primary key fields of the table. If the primary key is configured in the target database table, this key is automatically detected.
+
+    Row filter
+    :   Optional. Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed.
 
     The key and row filter values are not displayed with the schema and tables names, but the values are applied to the database connection.
 1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -44,11 +44,16 @@ Obtain any required service licenses for the content on the website that you wan
 
 You must have the following information ready:
 
--   **Endpoint**: The `endpoint` name to use to interact with {{site.data.keyword.cos_full_notm}} data. For example, `s3.us-south.cloud-object-storage.appdomain.cloud`.
+Endpoint
+:   The `endpoint` name to use to interact with {{site.data.keyword.cos_full_notm}} data. For example, `s3.us-south.cloud-object-storage.appdomain.cloud`.
 
     Do not include `http://` or `https://` in the endpoint value. For more information, see [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region){: external}.
--   **Access key id**: The `access_key_id` that was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `apr75g55a35547e6a80d80344b9h55a0`.
--   **Secret access key**: The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `806a16c5d35266db8570a074512972341j82999a5160b3rf`.
+
+Access key id
+:   The `access_key_id` that was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `apr75g55a35547e6a80d80344b9h55a0`.
+
+Secret access key
+:   The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `806a16c5d35266db8570a074512972341j82999a5160b3rf`.
 
 ## Prerequisite step
 {: #connector-cos-cloud-prereq-task}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -51,12 +51,23 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
     To configure document level security, you need to collect the following information:
 
-    -   **LDAP server URL**: The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
-    -   **LDAP binding username**: The username to use to bind to the directory service. This user must have administrative access and be listed in the internal Domino LDAP directory.
-    -   **LDAP binding user password**: The password that is associated with the user.
-    -   **LDAP base DN**: The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
-    -   **LDAP user filter**: The filter to apply to searches for user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
-    -   **LDAP group filter**: The filter to apply to searches for group entries in LDAP.
+    LDAP server URL
+    :   The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
+    
+    LDAP binding username
+    :   The username to use to bind to the directory service. This user must have administrative access and be listed in the internal Domino LDAP directory.
+
+    LDAP binding user password
+    :   The password that is associated with the user.
+
+    LDAP base DN
+    :   The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
+
+    LDAP user filter
+    :   The filter to apply to searches for user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
+    
+    LDAP group filter
+    :   The filter to apply to searches for group entries in LDAP.
 
 -   Before you can crawl servers by using the Domino Internet Inter-ORB Protocol (DIIOP) protocol, you must configure the Notes server to use the protocol. The server that you want to crawl must be running the DIIOP and HTTP tasks.
 
@@ -105,9 +116,15 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  In the *Enter your credentials* section, add values to the following fields:
 
-    -   **Host name**: The hostname of the Notes server.
-    -   **User name**: The username to use to crawl the Notes server.
-    -   **Password**: The password that is associated with the user.
+    Host name
+    :   The hostname of the Notes server.
+
+    User name
+    :   The username to use to crawl the Notes server.
+    
+    Password
+    :   The password that is associated with the user.
+
 1.  In the *Crawl type*, choose what you want to crawl from the following options:
 
     -   If you want to crawl a specific Notes database, choose **Database**, and then add the file name of the database to the **Database file name** field.
@@ -119,27 +136,50 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
         When set to **On**, your users can crawl the same content that they have access to in a Notes database or directory.
     - To use the Domino LDAP directory, set the **Use remote LDAP directory** switch to `On`. Provide details about the Domino LDAP directory. You collected this information when you performed the prerequisite step.
 
-        -   **LDAP server URL**: The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
-        -   **LDAP binding username**: The username to use to bind to the directory service.
-        -   **LDAP binding user password**: The password that is associated with the user.
-        -   **LDAP base DN**: The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
-        -   **LDAP user filter**: The filter to apply to searches for user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
-        -   **LDAP group filter**: The filter to apply to searches for group entries in LDAP.
+        LDAP server URL
+        :   The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
+
+        LDAP binding username
+        :   The username to use to bind to the directory service.
+        
+        LDAP binding user password
+        :   The password that is associated with the user.
+
+        LDAP base DN
+        :   The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
+        
+        LDAP user filter
+        :   The filter to apply to searches for user entries in LDAP. If unspecified, the default value is `(userPrincipalName=\{0\})`.
+        
+        LDAP group filter
+        :   The filter to apply to searches for group entries in LDAP.
 
 1.  **Optional**: In the *Advanced options* section, make choices about the following configuration settings:
 
-    -   **Crawl attachments**: If you want to crawl files that are attached to Notes documents, set the switcher to `On`.
-    -   **Automatic code page detection**: If you want the encoding converter to detect the code of pages to crawl, keep the switch set to `On`. If you set the switcher to `Off`, specify values for the following fields:
+    Crawl attachments
+    :   If you want to crawl files that are attached to Notes documents, set the switcher to `On`.
 
-        -   **Code page to use**: Specify the character encoding of the pages that you want to crawl. If unspecified, the default value of `UTF-8` is used.
-        -   **Notes formula**: Specify a Notes formula to use to filter the data that you want to crawl. For example, `SELECT @IsAvailable(Year) & Year > 2003`.
+    Automatic code page detection
+    :   If you want the encoding converter to detect the code of pages to crawl, keep the switch set to `On`. If you set the switcher to `Off`, specify values for the following fields:
+
+        Code page to use
+        :   Specify the character encoding of the pages that you want to crawl. If unspecified, the default value of `UTF-8` is used.
+
+        Notes formula
+        :   Specify a Notes formula to use to filter the data that you want to crawl. For example, `SELECT @IsAvailable(Year) & Year > 2003`.
 
         For more information, see [Formula language](https://help.hcltechsw.com/dom_designer/10.0.1/basic/H_NOTES_FORMULA_LANGUAGE.html){: external} in the HCL Notes documentation.
 1.  Specify the date you want to use when filtering documents. The date is stored in a field named `_ _$Date$_ _` in Notes documents. By default, the field stores the last modified date of the document. You can choose a different date to store in the field instead.
 
-    -   **Document modification date**: Uses the date that the document was last modified. This option is selected by default.
-    -   **Document crawl date**: Uses the last crawled date.
-    -   **Document creation date**: Uses the creation date of the document.
+    Document modification date
+    :   Uses the date that the document was last modified. This option is selected by default.
+
+    Document crawl date
+    :   Uses the last crawled date.
+
+    Document creation date
+    :   Uses the creation date of the document.
+
 1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     The processing time increases when this feature is enabled.
