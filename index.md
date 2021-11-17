@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-20"
+lastupdated: "2021-11-17"
 
 subcollection: discovery-data
 
@@ -79,12 +79,20 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The {{site.data.keyword.discovery-data_short}} user interface supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/cloud-paks/cp-data/3.5.0?topic=planning-system-requirements#rhos-reqs__web){: external}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The {{site.data.keyword.discoveryshort}} user interface supports the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** 
+
+-   Deployments of {{site.data.keyword.discoveryshort}} that are managed by {{site.data.keyword.cloud_notm}} follow the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
+-   For more information about browser support for deployments that are provisioned with Cloud Pak for Data as a Service, see [Which web browsers are supported for Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/faq.html?audience=wdp#which-browser){: external}. 
 
 ## Language support
 {: #about-language}
 
 Language support by feature is detailed in the [Supported languages](/docs/discovery-data?topic=discovery-data-language-support) topic.
+
+## Beta features
+{: #beta-features}
+
+IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
 
 ## Trademarks
 {: #about-trademarks}

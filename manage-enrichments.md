@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-17"
 
 subcollection: discovery-data
 
@@ -27,6 +27,10 @@ To manage enrichments, complete the following steps:
 
 1.  From the navigation pane, open the **Manage collections** page, and then click a collection to open it.
 1.  Click the **Enrichments** tab.
+
+    A list of available enrichments is displayed. 
+    
+    You can identify built-in enrichments because they are categorized as type `System`. The list also includes any custom enrichments that were created in any of the projects in your service instance.
 1.  Find the enrichment that you want to apply or remove.
 1.  Click the twistie in the associated field to expand a list of fields.
 1.  Do one of the following things:

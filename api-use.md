@@ -2,10 +2,11 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-11-17"
+
+keywords: api version,api,request syntax
 
 subcollection: assistant-data
-
 ---
 
 {{site.data.keyword.attribute-definition-list}}
@@ -19,6 +20,15 @@ Use the {{site.data.keyword.discoveryshort}} API to build a custom application o
 - For {{site.data.keyword.discoveryshort}} API reference documentation, see [API reference](https://cloud.ibm.com/apidocs/discovery-data){: external}.
 - For more information about using the Analyze API to process documents without storing them, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
 - For more information about using the API to define more complex queries by using the Discovery Query Language, see [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+
+## Service API Versioning
+{: #apiversioning}
+
+API requests require a version parameter that takes a date in the format `version=YYYY-MM-DD`. Whenever we change the API in a backwards-incompatible way, we release a new minor version of the API.
+
+Send the version parameter with every API request. The service uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
+
+The current version is `2020-08-30`.
 
 ## Getting your project ID ![IBM Cloud only](images/ibm-cloud.png)
 {: #api-use-cloud}

@@ -21,7 +21,13 @@ toc:
           - sample-apps.md
           - resources.md
           - tours.md
-      - release-notes.md
+      - topicgroup:
+          label: Release notes
+          topics:
+          - release-notes.md
+            navtitle: Release notes for IBM Cloud
+          - release-notes-data.md
+            navtitle: Release notes for IBM Cloud Pak for Data
 
   - navgroup:
       id: tutorial
