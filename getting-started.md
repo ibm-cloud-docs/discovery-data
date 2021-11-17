@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -129,8 +129,11 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     The following enrichments are applied to the sample collection:
 
-    -   **Entities**: Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
-    -   **Parts of Speech**: Identifies the parts of speech (nouns and verbs, for example) in the content.
+    Entities
+    :   Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
+
+    Parts of Speech
+    :   Identifies the parts of speech (nouns and verbs, for example) in the content.
 
     These enrichments are applied automatically to collections that are added to projects of the *Document Retrieval* type.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-11-16"
 
 subcollection: discovery-data
 
@@ -48,11 +48,21 @@ Before you create a SharePoint OnPrem collection, you must do the following thin
 
     You must collect the following information from the LDAP administrator:
 
-    -   **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-    -   **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
-    -   **LDAP binding user password**: The password used to bind to the directory service.
-    -   **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
-    -   **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
+    LDAP server URL
+    :   The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
+
+    LDAP binding username
+    :   The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
+
+    LDAP binding user password
+    :   The password used to bind to the directory service.
+
+    LDAP base DN
+    :   The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
+
+    LDAP user filter
+    :   The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
+
 -   Set up full read access for the web application.
 
 If you are using version 2.2.1 or earlier, then you must complete some extra prerequisite tasks before you can connect to the data source. For more information, see [SharePoint OnPrem prerequisite steps for prior releases](#prior-prereqs).
@@ -74,33 +84,59 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  In the *Enter your credentials* section, complete the following fields:
 
-    -   **Username**: The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed.
-    -   **Password**: The password of the SharePoint user.
+    Username
+    :   The username of the SharePoint user with access to all sites and lists that need to be crawled and indexed.
+    
+    Password
+    :   The password of the SharePoint user.
 
     This value is never returned and is only used when you create or modify credentials.
 1.  **Optional**: If you want to use Security Assertion Mark-up Language (SAML) claims-based authentication, set the **Enable SAML authentication** switch to `On`. Otherwise, Windows NT LAN Manager (NTLM) authentication is used. Add values to the following fields:
 
-    -   **Identity Provider endpoint**: The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
-    -   **Relying Party endpoint**: Optional: The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
-    -   **Relying Party Trust identifier**: The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
+    Identity Provider endpoint
+    :   The URL of the Identity Provider endpoint, for example `https://adfs.server.example.com/adfs/services/trust/2005/UsernameMixed`.
+    
+    Relying Party endpoint
+    :   Optional. The URL of the Relying Party Trust endpoint. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`.
+    
+    Relying Party Trust identifier
+    :   The URL of the Relying Party Trust identifier, for example `urn:sharepoint:sample`. If unspecified, the following value is used: `https://<sharepoint_server>:<port>/_trust/`. This feature is available in the 2013, 2016, and 2019 versions.
+
 1.  In the *Specify what you want to crawl* section, add the SharePoint web service URL to the **Web Application Url** field. For example, `https://<host>:<port>`.
 1.  **Optional**: If you are using a proxy server to access the data source server, then in the *Proxy settings* section, set the **Enable proxy settings** switch to `On`. Add values to the following fields:
 
-    -   **Username**: Optional: The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
-    -   **Password**: Optional: The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
-    -   **Proxy server host name or IP address**: The hostname or the IP address of the proxy server.
-    -   **Proxy server port number**: The network port that you want to connect to on the proxy server.
+    Username
+    :   Optional. The proxy server username to authenticate, if the proxy server requires authentication. If you do not know your username, you can obtain it from the administrator of your proxy server.
+    
+    Password
+    :   Optional. The proxy server password to authenticate, if the proxy server requires authentication. If you do not know your password, you can obtain it from the administrator of your proxy server.
+
+    Proxy server host name or IP address
+    :   The hostname or the IP address of the proxy server.
+
+    Proxy server port number
+    :   The network port that you want to connect to on the proxy server.
+
 1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
     When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. Complete the [prerequisite steps](#connector-sharepoint-onprem-cp4d-prereq) to add support.
 
     When you enable this option, you must provide values for the following fields:
 
-    -   **LDAP server URL**: The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
-    -   **LDAP binding username**: The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
-    -   **LDAP binding user password**: The password used to bind to the directory service.
-    -   **LDAP base DN**: The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
-    -   **LDAP user filter**: The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
+    LDAP server URL
+    :   The LDAP server URL to connect to, for example `ldap://<ldap_server>:<port>`.
+
+    LDAP binding username
+    :   The username used to bind to the directory service. In most cases, this username is a distinguished name (DN). The logon name might sometimes work with Active Directory. But unlike the general Windows logon, it is case sensitive. The distinguished name always works.
+
+    LDAP binding user password
+    :   The password used to bind to the directory service.
+
+    LDAP base DN
+    :   The starting point for searching user entries in LDAP, for example `CN=Users,DC=example,DC=com`.
+
+    LDAP user filter
+    :   The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
 
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 

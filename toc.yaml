@@ -100,7 +100,7 @@ toc:
               - understanding_tables.md
       - test.md
       - topicgroup:
-          label: Improving your project
+          label: Improving search results
           topics:
           - improvements.md
           - search-settings.md
