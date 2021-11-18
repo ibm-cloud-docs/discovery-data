@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-18"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,12 +24,19 @@ Learn about features and changes that were included for each release and update 
 For information about releases and updates for installed deployments, see [Release notes for IBM Watson Discovery Cartridge for IBM Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 18 November 2021
+{: #discovery-18november2021}
+{: release-note}
+
+Enterprise plan now available from all locations
+:   The Enterprise plan is available from all data center location. Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance and address more use cases including contract analysis and content mining to explore insights across documents. For more information, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
+
 ## 11 November 2021
 {: #discovery-11november2021}
 {: release-note}
 
 New locations for Enterprise plan now available
-:   The Enterprise plan is available from the Frankfurt, London, Sydney, and Tokyo locations in addition to the Dallas location. Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance and address more use cases including contract analysis and content mining to explore insights across documents. For more information, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
+:   The Enterprise plan is available from the Frankfurt, London, Sydney, and Tokyo locations in addition to the Dallas location.
 
 ## 3 November 2021
 {: #discovery-3november2021}
