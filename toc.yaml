@@ -24,11 +24,10 @@ toc:
       - topicgroup:
           label: Release notes
           topics:
-          - release-notes.md
+          - topic: release-notes.md
             navtitle: Release notes for IBM Cloud
-          - release-notes-data.md
+          - topic: release-notes-data.md
             navtitle: Release notes for IBM Cloud Pak for Data
-
   - navgroup:
       id: tutorial
       topics:
