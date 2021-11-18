@@ -28,7 +28,7 @@ For information about releases and updates for installed deployments, see [Relea
 {: #discovery-18november2021}
 {: release-note}
 
-Enterprise plan now available from all locations
+Enterprise plan is now available everywhere
 :   The Enterprise plan is available from all data center location. Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance and address more use cases including contract analysis and content mining to explore insights across documents. For more information, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 
 ## 11 November 2021
