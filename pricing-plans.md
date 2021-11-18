@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-18"
 
 subcollection: discovery-data
 
@@ -64,7 +64,7 @@ The plan includes the following features:
 ## Enterprise
 {: #enterpriseplan}
 
-Scale and secure your Discovery application with enterprise-grade support and performance and address more use cases including contract analysis and content mining to explore insights across documents.
+Scale and secure your Discovery application with enterprise-grade support and performance, and address more use cases including contract analysis and content mining to explore insights across documents.
 
 ### What's included
 {: #enterpriseplan-features}
