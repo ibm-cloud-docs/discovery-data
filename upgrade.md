@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-11-19"
 
 subcollection: discovery-data
 
@@ -45,6 +45,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
         The number of days that are left in your trial is displayed in the page header.
 
     -   You cannot upgrade from a Plus plan to an Enterprise plan currently.
+    -   If you previously had or have an existing Premium plan and are creating an Enterprise plan, you must create a new resource group for the new plan. You cannot use the same resource group for the new Enterprise plan that is or was associated with a Premium plan. For more information, see [Assigning access to resources by using resource groups](/docs/account?topic=account-access-getstarted&interface=ui).
     -   You cannot do an in-place upgrade from a Plus plan to a Premium plan.
 
         A Premium plan instance must be provisioned for you. To start the process, contact [Sales](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson&disableCookie=Yes){: external}. You will be asked to provide the following details:
@@ -61,7 +62,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
 
 For more information about plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 
-    <!--
+<!--
     -   To upgrade a Plus plan to an Enterprise plan, complete the following steps:
 
         -   Open the service page for your Plus plan service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
@@ -73,4 +74,4 @@ For more information about plans, see [Discovery pricing plans](/docs/discovery-
 
             -   Adding new projects or collections
             -   Deleting or changing existing collections, including adding documents, editing fields, and changing enrichment settings.
-    -->
+-->
