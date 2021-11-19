@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-18"
 
 subcollection: discovery-data
 
@@ -34,7 +34,7 @@ You create and manage a collection as described in [Creating and managing collec
 1.  Enter values for the following fields on the **Configure collection** page. If a field is already populated with a value, verify and change the value if needed. A prepopulated value indicates that a value was specified in the custom connector's `template.xml` or `message.properties` file.
 
     General
-    :   Fill in the following fields
+    :
 
         -   Collection name
         -   Collection language
