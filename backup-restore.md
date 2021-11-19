@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-19"
 
 subcollection: discovery-data
 
@@ -26,9 +26,12 @@ These procedures are for advanced users who have experience with administering {
 
 You can back up your data from and restore it to the following versions:
 
+- 4.0.x to 4.0.y
 - 2.2.1 to 4.0.0
 - 2.2.0 to 4.0.0
-- 2.1.4 to 4.0.0
+
+With the 4.x versions, you can do an in-place upgrade from one 4.x version to a later 4.x version as an alternative to following the procedures in this topic. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
+{: note}
 
 Back up and restore are supported on all versions of {{site.data.keyword.discoveryshort}}. For more information about backing up and restoring data in previous versions, see [Backing up and restoring data to 2.2.1 or earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-prior).
 
@@ -63,7 +66,7 @@ The following updates are made when your collections are restored:
 ## Back up and restore methods
 {: #backup-restore-methods}
 
-You can back up and restore your instance of {{site.data.keyword.discoveryshort}} manually or by using scripts.
+You can back up and restore your instance of {{site.data.keyword.discoveryshort}} manually or by using scripts. The scripts for 2.2.0 can be used for 2.2.1 and 4.0 also.
 
 - [Using the backup scripts](#wddata-backup)
 - [Using the restore scripts](#wddata-restore)
