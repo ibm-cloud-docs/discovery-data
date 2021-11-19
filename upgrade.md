@@ -45,7 +45,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
         The number of days that are left in your trial is displayed in the page header.
 
     -   You cannot upgrade from a Plus plan to an Enterprise plan currently.
-    -   If you previously had or have an existing Premium plan and are creating an Enterprise plan, you must create a new resource group for the new plan. You cannot use the same resource group for the new Enterprise plan that is or was associated with a Premium plan. For more information, see [Assigning access to resources by using resource groups](/docs/account?topic=account-access-getstarted&interface=ui).
+    -   If you are creating an Enterprise plan in the same data center location where you have an existing Premium plan, you must create a new resource group for the new plan. You cannot use the same resource group for Enterprise and Premium plans that are hosted in the same location. For more information, see [Managing resource groups](/docs/account?topic=account-rgs&interface=ui){: external}.
     -   You cannot do an in-place upgrade from a Plus plan to a Premium plan.
 
         A Premium plan instance must be provisioned for you. To start the process, contact [Sales](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson&disableCookie=Yes){: external}. You will be asked to provide the following details:
@@ -58,7 +58,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
         -   Resource group name
         -   Resource group ID
 
-            The resource group is created by the account holder. For more information, see [Assigning access to resources by using resource groups](/docs/account?topic=account-access-getstarted&interface=ui).
+            The resource group is created by the account holder. For more information, see [Managing resource groups](/docs/account?topic=account-rgs&interface=ui){: external}.
 
 For more information about plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 
