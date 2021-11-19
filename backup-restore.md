@@ -30,7 +30,7 @@ You can back up your data from and restore it to the following versions:
 - 2.2.1 to 4.0.0
 - 2.2.0 to 4.0.0
 
-With the 4.x versions, you can do an in-place upgrade from one 4.x version to a later 4.x version as an alternative to following the procedures in this topic. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
+With the 4.0.x versions, you can do an in-place upgrade from one 4.0.x version to a later 4.0.x version as an alternative to following the procedures in this topic. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
 {: note}
 
 Back up and restore are supported on all versions of {{site.data.keyword.discoveryshort}}. For more information about backing up and restoring data in previous versions, see [Backing up and restoring data to 2.2.1 or earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-prior).
