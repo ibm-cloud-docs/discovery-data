@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-11-22"
 
 keywords: known issues
 
@@ -486,7 +486,7 @@ Also see the issues identified in the previous release.
 ## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} releases
 {: #known-issues-cloud}
 
-The following known issues apply to Plus and Premium plan service instances that are managed by {{site.data.keyword.cloud_notm}}.
+The following known issues apply to Plus, Enterprise, and Premium plan service instances that are managed by {{site.data.keyword.cloud_notm}}.
 
 ### ![IBM Cloud only](images/ibm-cloud.png) 10 November 2020
 {: #10nov2020ki}
