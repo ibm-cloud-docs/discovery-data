@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-11-24"
 
 subcollection: discovery-data
 
@@ -89,9 +89,12 @@ To configure the web crawl collection, complete the following steps:
 
       By default, the number of consecutive links that the crawl follows from the starting URL is `2`. To change the number of hops or to list website sections to exclude from the crawl, click the edit icon.
 
-      - The maximum number of hops allowed is `20`.
-      - To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/licenses` and `https://example.com/pricing` by entering `/licenses/, /pricing/`.
-      - If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
+      -   The maximum number of hops allowed is `20`.
+      -   To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/pricing` by entering `/pricing/`. 
+      
+          Any section of the web address that contains the site path you specify is excluded. For example, if you specify `/licenses/`, the page `https://example.com/products/licenses/europe` is excluded, among others.
+
+      -   If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
 
     - If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
 
