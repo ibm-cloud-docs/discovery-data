@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-18"
+lastupdated: "2021-11-30"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -209,6 +209,12 @@ New Box connector
 New SharePoint 2016 On-Premise connector
 :   Crawl SharePoint 2016 On-Premise systems. For more information, see [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
 
+The Box connector does not run on Safari
+:   For more information, see [Box connector](/docs/discovery-data?topic=discovery-data-connector-box-cloud).
+
+Metadata conversion
+:   If the `metadata` property is converted to an array in the index, the document cannot be deleted by using the *Delete labeled data* API method. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}.
+
 ## 30 October 2020
 {: #discovery-30october2020}
 {: release-note}
@@ -279,6 +285,9 @@ Improved Autocomplete
 
 New support for 12 languages
 :   Language support for {{site.data.keyword.discoveryshort}} is now available in 12 additional languages. For the complete list, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
+Cloud Object Storage connector limitation
+:   When connecting to an {{site.data.keyword.cos_full}} data source, only the first 75 buckets for a given credential are displayed.
 
 Current API version
 :   The API version (v2) is `2019-11-29`.

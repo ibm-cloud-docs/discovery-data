@@ -40,7 +40,7 @@ list          List all crawler plug-ins for your Watson Discovery instance (defa
 
 Options:
 -e --endpoint         The endpoint URL for your cluster and add-on service instance
-                      (https://{cpd_cluster_host}{:port}/discovery/{release}/instances/{instance_id}/api)
+                      (https://{cpd_cluster_host}{: port}/discovery/{release}/instances/{instance_id}/api)
 -u --user             The user name of your Cloud Pak instance
 -p --password         The user password of your Cloud Pak instance
                       If the password is not specified, the command line prompts to input

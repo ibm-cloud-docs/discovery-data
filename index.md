@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-17"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -17,6 +17,8 @@ subcollection: discovery-data
 {: shortdesc}
 
 Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understanding of your content, including tables and images, to help you find business value that is hidden in your enterprise data. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere.
+
+Start by connecting your data to Discovery. Next, teach Discovery to understand the language and concepts that are unique to your business and industry. Enrich your data with award-winning Natural Language Understanding (NLU) technologies so you can identify key information and patterns. Finally, build search solutions that find answers to queries, explore the data to uncover patterns and insights, and leverage search results in critical workflows.
 
 ![Discovery diagram](images/aboutdiscovery.png)
 
@@ -73,7 +75,7 @@ To get started, take our step-by-step product tour to get familiar with the user
 
 For information about using Discovery from managed Lite and Advanced plan instances, or from Premium plan instances that were created before 16 July 2020, see the [Discovery (v1) documentation](/docs/discovery?topic=discovery-about).
 
-Click the Help ![Help icon](images/help_icon.png) icon from the header of any page to open the {{site.data.keyword.discoveryshort}} documentation.
+Click the Help ![Help icon](images/help_icon.png) icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
 {: tip}
 
 ## Browser support

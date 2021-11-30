@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-11-30"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -25,6 +25,54 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 {: note}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+## 4.0.3 release, 30 November 2021
+{: #discovery-data-30november2021}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.3 is available.
+
+Another storage option is supported
+:   IBM Spectrum Scale Container Native storage is now supported in addition to Red Hat OpenShift Container Storage and Portworx.
+
+Microsoft SharePoint Online data source improvement
+:   The *Sharepoint Online* data source now supports crawling your data as a service principal, which means you can access your data without disabling multifactor authentication. For more information, see [Microsoft Sharepoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cp4d).
+
+Microsoft Windows File System improvements
+:   Extra configuration options mean you can specify the following information:
+
+    -   The types of files (by file extension) to include or exclude from a crawl of a Windows directory.
+    -   The character encoding of the data to be crawled. Typically, the encoding is detected automatically. However, you can choose to specify the character encoding as a Java character set yourself.
+
+    For more information, see [Windows File System](/docs/discovery-data?topic=discovery-data-connector-wfs-cp4d).
+
+Field selection is improved
+:   When you apply an enrichment to a field or choose a field to use as the source for a facet, the fields that are displayed for you to choose from now shows only fields that are valid choices.
+
+Search settings change
+:   The spelling correction setting changed from being enabled automatically in new projects to being disabled by default. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
+
+A Salesforce crawling issue was fixed
+:   Previously, {{site.data.keyword.discoveryshort}} had an issue where it timed out before it crawled some of the object types in a Salesforce collection. If your collection is configured to crawl the following object types, run a full data source crawl to make sure that your collection contains the most up-to-date data from all of the objects in your Salesforce data source:
+
+    -   Attachment
+    -   ContentVersion
+    -   Document
+
+Security vulnerabilities were addressed
+:   The following security patches were applied:
+
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Node.js](https://www.ibm.com/support/pages/node/6516464){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Axios](https://www.ibm.com/support/pages/node/6516466){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Python Pillow](https://www.ibm.com/support/pages/node/6516468){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Commons Compress](https://www.ibm.com/support/pages/node/6516470){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Java](https://www.ibm.com/support/pages/node/6516472){: external}
+
+Features that are not available in this release
+:   The following features are available from {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Guided tours
+    -   Answer finding
 
 ## 4.0.2 release, 5 October 2021
 {: #release-notes-data-5october2021}

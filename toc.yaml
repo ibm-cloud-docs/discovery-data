@@ -123,6 +123,7 @@ toc:
           topics:
           - install-overview.md
           - install.md
+          - known-issues.md
           - install-prior.md
       - topicgroup:
           label: Advanced development
@@ -186,7 +187,6 @@ toc:
       id: help
       topics:
       - faqs.md
-      - known-issues.md
       - troubleshoot.md
       - get-help.md
       - version-choose.md
