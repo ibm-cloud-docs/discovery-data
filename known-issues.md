@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-22"
+lastupdated: "2021-11-30"
 
 keywords: known issues
 
@@ -18,37 +18,21 @@ subcollection: discovery-data
 Known issues are listed by the release in which they were identified.
 {: shortdesc}
 
-- For the list of {{site.data.keyword.discoveryfull}} release notes, see [Release notes](/docs/discovery-data?topic=discovery-data-release-notes).
-- For troubleshooting information, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot).
+-   For the list of release notes, see [Release notes](/docs/discovery-data?topic=discovery-data-release-notes-data).
+-   For troubleshooting information, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot).
 
-Find information about known issues per release for your deployment type:
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}} only**
 
-- [![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} releases](#known-issues-cpd)
-- [![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} releases](#known-issues-cloud)
-
-## ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.discovery-data_short}} releases
-{: #known-issues-cpd}
-
-The following known issues apply to installed deployments.
+The known issues that are described in this topic apply to installed deployments only.
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
-### ![Cloud Pak for Data only](images/desktop.png) 4.0.2, 5 October 2021
-{: #5october2021ki}
+## 4.0.3, 18 November 2021
+{: #18november2021ki}
 
--   Unable to reprocess documents after upgrade.
+-   The guided tours are not available in this release.
 
-    -   **Error**: After upgrading from 4.0.0 to 4.0.2, reprocessing documents fails.
-    -   **Cause**: The script you use to upgrade from 4.0.0 to 4.0.2 doesn't apply some database schema updates that are required by 4.0.2.
-    -   **Solution**: Run the following command:
-
-        ```bash
-        oc delete $(oc get job -l 'run=core-database-init,icpdsupport/addOnId=discovery' -o name)
-        ```
-        {: codeblock}
-
-
-### ![Cloud Pak for Data only](images/desktop.png) 4.0.0, 13 July 2021
+## 4.0.0, 13 July 2021
 {: #13july2021ki}
 
 -   Machine learning model enrichments that you apply by using the Analyze API can fail.
@@ -57,7 +41,7 @@ Known issues are regularly addressed with periodic software patches. For more in
     -   **Cause**: There is a known issue in Watson Knowledge Studio that can cause a timeout in enrichment processing.
     -   **Solution**: When you use the Analyze API to apply a Watson Knowledge Studio model enrichment to a collection, keep the size of the input document under 50 KB.
 
-#### 2.2.1 issues that were fixed in subsequent releases
+### 2.2.1 issues that were fixed in subsequent releases
 {: #26feb2021ki-fixed}
 
 -   [Fixed in version 4] If you add an {{site.data.keyword.knowledgestudiofull}} machine learning enrichment to a collection, the ingestion process might run very slowly but will eventually complete. If ingestion processes slowly, you might see the following error message in **Warnings and errors**:
@@ -81,7 +65,7 @@ Known issues are regularly addressed with periodic software patches. For more in
 
     Documents that time out during processing are indexed without {{site.data.keyword.knowledgestudioshort}} enrichment results.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.2.1, 26 February 2021
+## 2.2.1, 26 February 2021
 {: #26feb2021ki}
 
 -   If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
@@ -235,7 +219,7 @@ Known issues are regularly addressed with periodic software patches. For more in
 
 Also, see the issues in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.2, 8 December 2020
+## 2.2, 8 December 2020
 {: #8dec2020ki}
 
 -   When a small CSV file (generally a CSV with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
@@ -314,7 +298,7 @@ Also, see the issues in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.4, 2 September 2020:
+## 2.1.4, 2 September 2020:
 {: #2sept2020ki}
 
 - When configuring a Web crawl using FORM authentication, if you specify a URL without a trailing slash, for example: `https://webcrawlurl.com`, the web crawl will only crawl the login page. To work around this issue, add a trailing slash to the URL, for example: `https://webcrawlurl.com/`.
@@ -325,7 +309,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-#### 2.1.4 issues that were fixed in subsequent releases
+### 2.1.4 issues that were fixed in subsequent releases
 {: #2sept2020ki-fixed}
 
 -   [Fixed in version 2.2] In the deployed Content Mining application, if you include the tilde (~) symbol in a search query to enable fuzzy matching or include an asterisk (*) symbol to represent a wildcard, the search customizations function properly, but the matching string is not highlighted in the query result.
@@ -365,7 +349,7 @@ Also see the issues identified in all previous releases.
 
     1.  Save the changes. It will restart the converter pod.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.3, 19 June 2020:
+## 2.1.3, 19 June 2020:
 {: #19jun2020ki}
 
 - `Entity Subtypes` in {{site.data.keyword.knowledgestudiofull}} Machine Learning models are not supported in {{site.data.keyword.discovery-data_short}} 2.1.3 or later. For instructions on converting existing models, contact the [Support center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external}.
@@ -392,7 +376,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.2, 31 March 2020
+## 2.1.2, 31 March 2020
 {: #31mar2020ki}
 
 -   When using passage retrieval with Korean, Polish, Japanese, Slovak or Chinese you may encounter much slower response times in this version. To resolve this, either disable passage retrieval, or upload a custom stopword list with words that are common in your documents (for example, prepositions and pronouns).  See [Defining stopwords](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-search-settings#stopwords) for example stopword lists in several languages. Also see [Stopwords ISO](https://github.com/stopwords-iso/){: external}) on GitHub.
@@ -408,7 +392,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.1, 24 January 2020
+## 2.1.1, 24 January 2020
 {: #24jan2020ki}
 
 - When creating a [dictionary](/docs/discovery-data?topic=discovery-data-facets#facetdict), suggested dictionary terms are normalized to lowercase by default (for example, Watson Assistant will be normalized to watson assistant). To ensure matching on uppercase terms, they should be explicitly included as part of the `Other terms` list or as the `Base term`.
@@ -418,7 +402,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-#### 2.1.1 issues that were fixed in subsequent releases
+### 2.1.1 issues that were fixed in subsequent releases
 {: ##24jan2020ki-fixed}
 
 -   [Fixed in version 2.1.2] When installing {{site.data.keyword.discovery-data_short}} on OpenShift, the `ranker-rest` service might intermittently fail to startup, due to an incompatible jar in the `classpath`. To fix the issue:
@@ -433,7 +417,7 @@ Also see the issues identified in all previous releases.
         ```
         {: pre}
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.1.0, 27 November 2019
+## 2.1.0, 27 November 2019
 {: #29nov2019ki}
 
 - When you apply an enrichment to a collection, the enrichment language must match the collection language, or it will fail. The tooling displays all the collections, regardless of language.
@@ -455,7 +439,7 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in all previous releases.
 
-### ![Cloud Pak for Data only](images/desktop.png) 2.0.1, 30 August 2019
+## 2.0.1, 30 August 2019
 {: #30aug2019ki}
 
 - After you create a Machine Learning enrichment using a {{site.data.keyword.knowledgestudiofull}} model, two identically named enrichments may display on the **Enrich fields** page. This will not affect the enrichments, but it is best to use only one of them to select and apply the enrichment to one or more fields.
@@ -465,12 +449,12 @@ Also see the issues identified in all previous releases.
 
 Also see the issues identified in the previous release.
 
-#### 2.0.1 issues that were fixed in subsequent releases
+### 2.0.1 issues that were fixed in subsequent releases
 {: #30aug2019ki-fixed}
 
 - [Fixed in version 2.1.2] When you upload documents to a collection with existing documents, a `Documents uploaded!` message displays on the **Activity** page, but no further processing status displays until the number of documents increases.
 
-### ![Cloud Pak for Data only](images/desktop.png) General Availability (GA) release, 28 June 2019
+## General Availability (GA) release, 28 June 2019
 {: #known-issues-ga}
 
 - If you are working in the {{site.data.keyword.discovery-data_short}} tooling, and your {{site.data.keyword.icp4dfull}} session expires, you will receive a blank page. To return to the tooling, refresh the browser and log back in.
@@ -482,21 +466,3 @@ Also see the issues identified in the previous release.
 - Do not use metadata for column names in your CSV files. If you upload a CSV file that uses metadata for the column names in the header, then the `metadata` property of the indexed document will be converted to an array in the index.
 - CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).
 - Currently, unique collection names are not enforced. Using duplicate collection names is not recommended and should be avoided
-
-## ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}} releases
-{: #known-issues-cloud}
-
-The following known issues apply to Plus, Enterprise, and Premium plan service instances that are managed by {{site.data.keyword.cloud_notm}}.
-
-### ![IBM Cloud only](images/ibm-cloud.png) 10 November 2020
-{: #10nov2020ki}
-
-- ![IBM Cloud only](images/ibm-cloud.png) The [Box connector](/docs/discovery-data?topic=discovery-data-connector-box-cloud) does not run on Safari.
-- ![IBM Cloud only](images/ibm-cloud.png) If the `metadata` property is converted to an array in the index, the document cannot be deleted by using the **Delete labeled data** method in the [API reference](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}
-
-Also see the issues identified in all previous releases.
-
-### ![IBM Cloud only](images/ibm-cloud.png) 16 July 2020
-{: #16jul2020ki}
-
-- ![IBM Cloud only](images/ibm-cloud.png) When connecting to an {{site.data.keyword.cos_full}} data source, only the first 75 buckets for a given credential are displayed.

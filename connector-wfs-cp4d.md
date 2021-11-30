@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -44,14 +44,22 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
     To configure document level security, you need to collect the following information:
 
-    -   **LDAP server URL**: The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
-    -   **LDAP binding username**: The username to use to bind to the directory service.
+    LDAP server URL
+    :   The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
+
+    LDAP binding username
+    :   The username to use to bind to the directory service.
 
     In most cases, this username is a distinguished name (DN). An Active Directory username might work, but, unlike the general Windows logon, it is case sensitive.
 
-    -   **LDAP binding user password**: The password that is associated with the binding username.
-    -   **LDAP base DN**: The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
-    -   **LDAP user filter**: The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
+    LDAP binding user password
+    :   The password that is associated with the binding username.
+
+    LDAP base DN
+    :   The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
+
+    LDAP user filter
+    :   The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
 
 -   Before you configure a Windows File System collection, you must install the agent server on a remote Windows file server or on a remote Windows server. The agent server is a Windows service that retrieves data from data source servers and sends it to {{site.data.keyword.discoveryshort}}. The Windows agent can crawl remote Windows file systems, drives that are local to the agent, and shared network folders.
 
@@ -241,24 +249,64 @@ If you completed the prerequisite steps, return to the Windows File System data 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  In the *Enter your credentials* section, add values to the following fields. You provided these fields during the installation of the agent server, which was described in the [Prerequisite steps](#connector-wfs-cp4d-prereq) section.
 
-    -   **Host**: The hostname of the remote Microsoft Windows server, for example `<hostname>.mydomain.com`.
-    -   **Username**: The username to connect the agent server. You use the username to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
-    -   **Password**: The password that is associated with the username.
-    -   **Agent Authentication Port**: The port to use for authentication. The default port value is `8397`.
-    -   **Port**:  The port to use for transferring data. The default port value is `8398`.
+    Host
+    :   The hostname of the remote Microsoft Windows server, for example `<hostname>.mydomain.com`.
+
+    Username
+    :   The username to connect the agent server. You use the username to connect {{site.data.keyword.discoveryshort}} to the shared network folders and crawl content.
+
+    Password
+    :   The password that is associated with the username.
+
+    Agent Authentication Port
+    :   The port to use for authentication. The default port value is `8397`.
+
+    Port
+    :   The port to use for transferring data. The default port value is `8398`.
+
 1.  In the *Specify what you want to crawl* section, enter the file path that you want to crawl in the **Path** field, and then click **Add**.
 
     The file path is case sensitive.
-1.  Optionally, add more file paths.
+
+    Optionally, add more file paths.
+1.  **Optional**: Customize the types of files that are crawled.
+
+    The crawler is configured automatically to exclude a list of file extensions for file types that can be unsafe to crawl. You can add more file extensions to the excluded filter list, or list only the file extensions for file types that you want to include in the crawl. Listing the types of files to include is even more secure.
+
+    To change the file types that are crawled, in the *Extension filter* section, choose whether to use an Excluded or Included filter list. And then list the file extensions for the types of files you want to exclude or include.
+
+    This configuration option was introduced with the 4.0.3 release.
+    {: note}
+
+1.  **Optional**: Specify the character set of the data to crawl.
+
+    The converter that is used by the crawler is configured automatically to detect the character set of the files before it converts them. However, you can choose to specify a different character encoding to use for the data conversion. To specify a character encoding, complete the following steps:
+    
+    -   Set the **Automatic code page detection** switch to `Off`. 
+    -   In the *Code page to use* field, specify the character encoding as a [Java Charset](https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html){: external} value. For example, `UTF-8` or `UTF-16`. If you don't specify a character set, ISO-8859-1 is used.
+
+    This configuration option was introduced with the 4.0.3 release.
+    {: note}
+
 1.  **Optional**: If you want to enable document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
     When you enable this option, your users can crawl and query content that they have access to. You must provide the details about the LDAP directory you want to use.
 
-    -   **LDAP server URL**: The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
-    -   **LDAP binding username**: The username to use to bind to the directory service.
-    -   **LDAP binding user password**: The password that is associated with the binding username.
-    -   **LDAP base DN**: The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
-    -   **LDAP user filter**: The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
+    LDAP server URL
+    :   The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
+
+    LDAP binding username
+    :   The username to use to bind to the directory service.
+
+    LDAP binding user password
+    :   The password that is associated with the binding username.
+
+    LDAP base DN
+    :   The starting point for searching user entries in LDAP. For example, `CN=Users,DC=example,DC=com`.
+
+    LDAP user filter
+    :   The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
+
 1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     The processing time increases when this feature is enabled.

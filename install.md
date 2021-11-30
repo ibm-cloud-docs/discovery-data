@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -10,10 +10,10 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Installing 4.0.2
+# Installing 4.0.3
 {: #install}
 
-Find information about how to install IBM Watson Discovery Cartridge for IBM Cloud Pak for Data 4.0.2.
+Find information about how to install IBM Watson Discovery Cartridge for IBM Cloud Pak for Data 4.0.3.
 {: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
@@ -33,7 +33,7 @@ Encryption of data at rest must be handled by the storage provider.
 
 Review the {{site.data.keyword.discoveryshort}} release notes and known issues:
 
--  [Release notes](/docs/discovery-data?topic=discovery-data-release-notes#rn-cpd)
+-  [Release notes](/docs/discovery-data?topic=discovery-data-release-notes-data)
 -  [Known issues](/docs/discovery-data?topic=discovery-data-known-issues)
 
 ## System requirements
