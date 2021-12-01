@@ -94,7 +94,7 @@ The sample project is a built-in project that is provided as a resource for you 
 
 1.  Click **Sample Project**.
 
-    The **Improve and customize** page is displayed.
+    The *Improve and customize* page is displayed.
 
     If you just installed {{site.data.keyword.discoveryshort}}, the Sample Project needs time to finish processing documents. Wait for processing to finish before you start experimenting. You can check the status of data processing from the *Activity* page, which is described in the next step.
     {: note}

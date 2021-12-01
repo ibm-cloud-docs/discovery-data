@@ -24,6 +24,7 @@ Known issues are listed by the release in which they were identified.
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}} only**
 
 The known issues that are described in this topic apply to installed deployments only.
+{: note}
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 

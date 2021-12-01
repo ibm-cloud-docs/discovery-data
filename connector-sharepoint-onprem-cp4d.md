@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -25,7 +25,7 @@ This information applies only to installed deployments. For more information abo
 {: #connector-sharepoint-onprem-cp4d-docs}
 
 - Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
-- Document level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+- Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
@@ -44,7 +44,7 @@ For more information about SharePoint OnPrem, see [Microsoft SharePoint develope
 
 Before you create a SharePoint OnPrem collection, you must do the following things:
 
--   If you want to enable document level security, you must take some steps to set it up. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+-   If you want to enable document-level security, you must take some steps to set it up. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
     You must collect the following information from the LDAP administrator:
 
@@ -117,7 +117,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     Proxy server port number
     :   The network port that you want to connect to on the proxy server.
 
-1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
+1.  **Optional**: If you want to activate document-level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
     When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. Complete the [prerequisite steps](#connector-sharepoint-onprem-cp4d-prereq) to add support.
 

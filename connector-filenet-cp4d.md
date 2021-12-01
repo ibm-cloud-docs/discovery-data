@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -24,9 +24,9 @@ This information applies only to installed deployments.
 ## What documents are crawled
 {: #connector-filenet-cp4d-docs}
 
-- Document level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to FileNet. {{site.data.keyword.discoveryshort}} does not support role-based security when you crawl FileNet P8.
+- Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to FileNet. {{site.data.keyword.discoveryshort}} does not support role-based security when you crawl FileNet P8.
 
-   For more information about document level security, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+   For more information about document-level security, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
@@ -41,7 +41,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 ## Prerequisite steps
 {: #connector-filenet-cp4d-prereq}
 
-If you want to enable document level security, you must take some steps to set it up. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+If you want to enable document-level security, you must take some steps to set it up. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
 ## Connecting to a FileNet P8 data source
 {: #connector-filenet-cp4d-task}
@@ -83,7 +83,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
         - No support is available for specifying a class that is a subclass of a `Custom Object` and `Folder`.
 
 1. After you enter one or more paths, click **Add**.
-1.  **Optional**: In the *Security* section, if you want to enable document level security, set the **Enable Document Level Security** switch to `On`.
+1.  **Optional**: In the *Security* section, if you want to enable document-level security, set the **Enable Document Level Security** switch to `On`.
 
       When set to **On**, your users can crawl the same content that they have access to in FileNet.
     1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.

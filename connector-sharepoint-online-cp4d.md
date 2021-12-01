@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -27,7 +27,7 @@ This information applies only to installed deployments. For more information abo
 - During the initial crawl of the content, documents from all of the objects that can be accessed from the site collection path that you specify are crawled and added to your collection. Custom metadata that is associated with the SharePoint content is crawled also.
 - You can crawl one site collection path per collection.
 - Only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
-- Document level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+- Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
@@ -65,7 +65,7 @@ For more information about SharePoint Online, see [Microsoft SharePoint develope
 ### Prerequisite steps when using a User principal
 {: #connector-sharepoint-online-cp4d-prereqs-user-principal}
 
-If you want to enable document level security, you must take some steps to set it up. For more information, see [About document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+If you want to enable document-level security, you must take some steps to set it up. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
 The following table lists the permissions to set for a User principal authentication method.
 
@@ -182,7 +182,7 @@ The following table lists the permissions to set for a Service principal authent
 
 This procedure is required only if you want to configure the application permissions for each site collection.
 
-1.  Open a SharePoint Online Management Shell .
+1.  Open a SharePoint Online Management Shell.
 
     For more information, see [Get started with SharePoint Online Management Shell](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-online/connect-sharepoint-online?view=sharepoint-ps){: external}. 
 
@@ -201,7 +201,7 @@ This procedure is required only if you want to configure the application permiss
 
     Go to https://{tenant-name}.sharepoint.com/sites/{site}/_layouts/15/AppInv.aspx.
 
-    If document level security is enabled, specify the following XML request:
+    If document-level security is enabled, specify the following XML request:
 
     ```xml
     <AppPermissionRequests AllowAppOnlyPolicy="true">
@@ -210,7 +210,7 @@ This procedure is required only if you want to configure the application permiss
     ```
     {: codeblock}
 
-    If document level security is disabled, specify the following XML request:
+    If document-level security is disabled, specify the following XML request:
 
     ```xml
     <AppPermissionRequests AllowAppOnlyPolicy="true">
@@ -323,13 +323,13 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     Proxy server port number
     :   The network port that you want to connect to on the proxy server.
 
-1.  **Optional**: If you want to activate document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
+1.  **Optional**: If you want to activate document-level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
-    When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+    When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to SharePoint. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
     **User principal only**: When you enable this option, you must add the Azure ID that was assigned to the application upon registration to the **Application ID** field.
 
-    To enable document level security, you must register your application with SharePoint. For more information, see the prerequisite steps for the principal type you are using.
+    To enable document-level security, you must register your application with SharePoint. For more information, see the prerequisite steps for the principal type you are using.
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     The processing time increases when this feature is enabled.

@@ -18,7 +18,7 @@ subcollection: discovery-data
 
 Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understanding of your content, including tables and images, to help you find business value that is hidden in your enterprise data. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere.
 
-Start by connecting your data to Discovery. Next, teach Discovery to understand the language and concepts that are unique to your business and industry. Enrich your data with award-winning Natural Language Understanding (NLU) technologies so you can identify key information and patterns. Finally, build search solutions that find answers to queries, explore the data to uncover patterns and insights, and leverage search results in critical workflows.
+Start by connecting your data to Discovery. Next, teach Discovery to understand the language and concepts that are unique to your business and industry. Enrich your data with award-winning Natural Language Understanding (NLU) technologies so you can identify key information and patterns. Finally, build search solutions that find answers to queries, explore your data to uncover patterns and insights, and leverage search results in automated workflows.
 
 ![Discovery diagram](images/aboutdiscovery.png)
 
