@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -414,7 +414,7 @@ How to estimate the number of queries your application will use per month depend
 - For use cases that focus more on data enrichment and analysis or where the output from the document processing is not heavily searched, you can estimate query numbers based on the total number of documents.
 - For use cases where many users interact with the application that leverages Discovery, you can estimate by calculating the number of searches per user times the number of expected users. For example, 50% of the questions that are submitted by users to a virtual assistant are likely to be answered by Discovery. With 100,000 users per month and an average of 3 questions per user, you can expect 15,000 queries per month. (10,000 users/mo * 3 queries/user * 50% to Discovery = 15,000)
 
-## Querying with document level security enabled
+## Querying with document-level security enabled
 {: #querydls}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
@@ -422,7 +422,7 @@ How to estimate the number of queries your application will use per month depend
 This information applies only to installed deployments.
 {: note}
 
-If you enable document level security for a collection, only documents that the current user has permission to access are returned in search results. For more information, see [Configuring document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+If you enable document-level security for a collection, only documents that the current user has permission to access are returned in search results. For more information, see [Configuring document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
 To return search results that adhere to the security restrictions, the current user must meet these requirements:
 

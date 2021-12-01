@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -80,14 +80,14 @@ When you are ready to configure a collection to use a crawler plug-in that was c
 - **Enable plug-in**: By default, this switch is set to **Off**. Enable this option if you want to use a crawler plug-in to process documents.
 - **Plug-in**: Lists the names of available crawler plug-ins. Select a plug-in to use.
 
-## Supporting document level security
+## Supporting document-level security
 {: #configuredls}
 
-If document level security is activated, you can use the security settings from your source documents to control the search results that are returned to different users.
+If document-level security is activated, you can use the security settings from your source documents to control the search results that are returned to different users.
 
 {{site.data.keyword.discoveryshort}} supports prefiltering only. To prefilter, {{site.data.keyword.discoveryshort}} replicates the document's source access control list (ACL) at crawl time into the index. The search engine must compare user credentials to the replicated document ACLs. {{site.data.keyword.discoveryshort}} is faster when documents are prefiltered and when you control which documents you add to the index. However, it is difficult to model all of the security policies of the various data sources in the index and implement comparison logic uniformly. Also, prefiltering is not as responsive to changes that occur in the source ACLs after the most recent crawl.
 
-Document Level Security is supported by the following data source types:
+document-level security is supported by the following data source types:
 
 - Box
 - FileNet P8
@@ -96,20 +96,20 @@ Document Level Security is supported by the following data source types:
 - Microsoft SharePoint OnPrem
 - Microsoft Windows File System
 
-To enable document level security, you must complete the following steps:
+To enable document-level security, you must complete the following steps:
 
 1.  [Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system](#createusersdls).
 1.  [Associate users with your {{site.data.keyword.discoveryshort}} instance](#associateusersdls).
-1.  Enable document level security for the data source when you connect to it.
+1.  Enable document-level security for the data source when you connect to it.
 
-### Creating users for document level security
+### Creating users for document-level security
 {: #createusersdls}
 
-You must create users that match the users available on the source system that {{site.data.keyword.discoveryshort}} is connecting to so that they can query with document level security enabled.
+You must create users that match the users available on the source system that {{site.data.keyword.discoveryshort}} is connecting to so that they can query with document-level security enabled.
 {: shortdesc}
 
 1. Log in to {{site.data.keyword.discoveryshort}} as an administrator.
-1. Create users who match the users available on your source or who are connected to the LDAP server that your source system uses. If you create users for document level security, keep the following points in mind:
+1. Create users who match the users available on your source or who are connected to the LDAP server that your source system uses. If you create users for document-level security, keep the following points in mind:
 
    - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=platform-managing-users){: external}.
    - To connect to an LDAP server that the source is using, see [Connecting to your LDAP server](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=users-connecting-your-ldap-server){: external}.
@@ -122,7 +122,7 @@ You must create users that match the users available on the source system that {
 1. Click **Add users**.
 1. Add the users that you want from the list by clicking **Add user**, and then select the user from the list. Assign them to the **User** role, and then click **Add**.
 
-When you query collections where document level security is enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
+When you query collections where document-level security is enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document-level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
 {: important}
 
 {{site.data.keyword.discoveryshort}} does not synchronize changes that are made to the users in the LDAP server with the user list for the service. {{site.data.keyword.discoveryshort}} administrators must ensure that the user list is current and remove any non-current users.

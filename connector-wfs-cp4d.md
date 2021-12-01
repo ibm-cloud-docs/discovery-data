@@ -25,7 +25,7 @@ This information applies only to installed deployments.
 {: #connector-wfs-cp4d-docs}
 
 -   Only documents that are supported by {{site.data.keyword.discoveryshort}} in your file path are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
--   Document level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they access the file system directly.
+-   Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they access the file system directly.
 -   When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
 -   All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
@@ -40,9 +40,9 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 ## Prerequisite steps
 {: #connector-wfs-cp4d-prereq}
 
-- If you want to enable document level security, you must take some steps to set it up. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+- If you want to enable document-level security, you must take some steps to set it up. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
-    To configure document level security, you need to collect the following information:
+    To configure document-level security, you need to collect the following information:
 
     LDAP server URL
     :   The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
@@ -288,7 +288,7 @@ If you completed the prerequisite steps, return to the Windows File System data 
     This configuration option was introduced with the 4.0.3 release.
     {: note}
 
-1.  **Optional**: If you want to enable document level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
+1.  **Optional**: If you want to enable document-level security, in the *Security* section, set the **Enable Document Level Security** switch to `On`.
 
     When you enable this option, your users can crawl and query content that they have access to. You must provide the details about the LDAP directory you want to use.
 

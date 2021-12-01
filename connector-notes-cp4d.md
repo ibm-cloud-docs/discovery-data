@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-30"
 
 subcollection: discovery-data
 
@@ -27,7 +27,7 @@ This information applies only to installed deployments.
 - Each document in the Notes database is crawled and added to the collection as a document.
 - If a Notes document has a file attachment, and you choose to process file attachments, only documents that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 - If you choose to process attachments, the crawler attempts to crawl and index files that are attached to Notes documents. File types that are supported by {{site.data.keyword.discoveryshort}} are indexed. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
-- Document level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to Notes. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+- Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to Notes. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
@@ -45,11 +45,11 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 ## Prerequisite steps
 {: #connector-notes-cp4d-prereq}
 
--   If you want to enable document level security, you must take some steps to set it up. For more information, see [Supporting document level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+-   If you want to enable document-level security, you must take some steps to set it up. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
-    You can use the LDAP server that is used by Notes (either the internal Domino LDAP or an external LDAP directory) as a remote LDAP directory to manage document level security. Users who search the collection can be listed in an external LDAP directory. However, the user credentials that you use to set up the crawl must belong to a user who is listed in the internal Domino LDAP directory.
+    You can use the LDAP server that is used by Notes (either the internal Domino LDAP or an external LDAP directory) as a remote LDAP directory to manage document-level security. Users who search the collection can be listed in an external LDAP directory. However, the user credentials that you use to set up the crawl must belong to a user who is listed in the internal Domino LDAP directory.
 
-    To configure document level security, you need to collect the following information:
+    To configure document-level security, you need to collect the following information:
 
     LDAP server URL
     :   The LDAP server URL to connect to. For example, `ldap://<ldap_server>:<port>`.
@@ -129,9 +129,9 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
     -   If you want to crawl a specific Notes database, choose **Database**, and then add the file name of the database to the **Database file name** field.
     -   If you want to crawl multiple databases, choose **Directory**. Specify the directory in which the databases that you want to crawl are stored in the **Directory name** field.
-1.  **Optional**: In the *Security* section, specify whether you want to enable document level security.
+1.  **Optional**: In the *Security* section, specify whether you want to enable document-level security.
 
-    -   If you want to enable document level security, set the **Enable Document Level Security** switch to `On`.
+    -   If you want to enable document-level security, set the **Enable Document Level Security** switch to `On`.
 
         When set to **On**, your users can crawl the same content that they have access to in a Notes database or directory.
     - To use the Domino LDAP directory, set the **Use remote LDAP directory** switch to `On`. Provide details about the Domino LDAP directory. You collected this information when you performed the prerequisite step.

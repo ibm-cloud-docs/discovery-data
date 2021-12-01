@@ -46,10 +46,10 @@ Microsoft Windows File System improvements
     For more information, see [Windows File System](/docs/discovery-data?topic=discovery-data-connector-wfs-cp4d).
 
 Field selection is improved
-:   When you apply an enrichment to a field or choose a field to use as the source for a facet, the fields that are displayed for you to choose from now shows only fields that are valid choices.
+:   When you apply an enrichment to a field or choose a field to use as the source for a facet, the fields that are listed as options are all valid choices.
 
 Search settings change
-:   The spelling correction setting changed from being enabled automatically in new projects to being disabled by default. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
+:   The spelling correction setting changed from being enabled automatically to being disabled by default in new projects. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
 
 A Salesforce crawling issue was fixed
 :   Previously, {{site.data.keyword.discoveryshort}} had an issue where it timed out before it crawled some of the object types in a Salesforce collection. If your collection is configured to crawl the following object types, run a full data source crawl to make sure that your collection contains the most up-to-date data from all of the objects in your Salesforce data source:
@@ -225,7 +225,7 @@ Improved segment limit
 :   The segment limit when splitting documents has been increased to 1,000. For details, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 
 Improved Filenet connector
-:   The [Filenet connector](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect) has document level security.
+:   The [Filenet connector](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect) has document-level security.
 
 New beta Curations feature
 :   You can specify up to 1,000 curations. For details about this beta feature, see [Curations](/docs/discovery-data?topic=discovery-data-train#curations).
