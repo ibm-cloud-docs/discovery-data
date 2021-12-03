@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-01"
 
 subcollection: discovery-data
 
@@ -87,7 +87,7 @@ If document-level security is activated, you can use the security settings from 
 
 {{site.data.keyword.discoveryshort}} supports prefiltering only. To prefilter, {{site.data.keyword.discoveryshort}} replicates the document's source access control list (ACL) at crawl time into the index. The search engine must compare user credentials to the replicated document ACLs. {{site.data.keyword.discoveryshort}} is faster when documents are prefiltered and when you control which documents you add to the index. However, it is difficult to model all of the security policies of the various data sources in the index and implement comparison logic uniformly. Also, prefiltering is not as responsive to changes that occur in the source ACLs after the most recent crawl.
 
-document-level security is supported by the following data source types:
+Document-level security is supported by the following data source types:
 
 - Box
 - FileNet P8
