@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-07"
 
 subcollection: discovery-data
 
@@ -243,7 +243,7 @@ The following table shows suggested fixes for common problems.
 | Low precision | Look for entities that are commonly confused. Find and label more examples of each entity to help the entity extractor distinguish between the entities. |
 {: caption="Improvement actions" caption-side="top"}
 
-If you added 20 documents and trained the model and want to continue to improve the model, you can add more documents to label. Add the additional documents to the collection that you are using to train the model. After you label the first 20 documents, and the model is up-to-date with any changes, you can choose to continue labeling documents. The new documents that you added to the collection are loaded. You can label them to augment the training data, and then retrain your model.
+If you added 20 documents and trained the model and want to continue to improve the model, you can add more documents to label. Add the additional documents to the collection that you are using to train the model. After you label the first 20 documents, and the model is up to date with any changes, you can choose to continue labeling documents. The new documents that you added to the collection are loaded. You can label them to augment the training data, and then retrain your model.
 {: note}
 
 ## Publishing the entity extractor as an enrichment

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-06"
+lastupdated: "2021-12-07"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -21,10 +21,10 @@ Learn about features and changes that were included for each release and update 
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for IBM Watson Discovery Cartridge for IBM Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-release-notes-data).
+This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
-### 6 December 2021
+## 6 December 2021
 {: #discovery-6december2021}
 {: release-note}
 
@@ -37,17 +37,17 @@ Capturing the SharePoint ACL information from crawled documents
 :   You can now configure the data source crawl to store ACL information as metadata in the documents that are added to your SharePoint Online collection. For more information, see [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
 
 You can add more documents to the training data of the beta entity extractor model
-:   If you added and labeled 20 documents to train a model, and now want to continue to improve the model's performance, you can add more documents. Add the additional documents to the collection that you are using to train the model. After you label the first 20 documents, and the model is up-to-date with any changes, you can choose to continue labeling documents. The new documents that you added to the collection are loaded. You can label them to augment the training data, and then retrain your model.
+:   If you added and labeled 20 documents to train a model, and now want to continue to improve the model's performance, you can add more documents. Add the additional documents to the collection that you are using to train the model. After you label the first 20 documents, and the model is up to date with any changes, you can choose to continue labeling documents. The new documents that you added to the collection are loaded. You can label them to augment the training data, and then retrain your model. For more information, see [Customizing the terms that {{site.data.keyword.discoveryshort}} can recognize](/docs/discovery-data?topic=discovery-data-entity-extractor).
 
-Log out of Discovery
-:   You can log out of the Discovery service instance at any time by clicking **Log out** from the user profile menu that is available from the page header of the product user interface.
+Log out of {{site.data.keyword.discoveryshort}}
+:   You can log out of the {{site.data.keyword.discoveryshort}} service instance at any time by clicking **Log out** from the user profile menu that is available from the page header of the product user interface.
 
 ## 18 November 2021
 {: #discovery-18november2021}
 {: release-note}
 
 Enterprise plan is now available everywhere
-:   The Enterprise plan is available from all data center locations. Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance, and address more use cases including contract analysis and content mining to explore insights across documents. For more information, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
+:   The Enterprise plan is available from all data center locations. Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance, and address more use cases including contract analysis and content mining to explore insights across documents. For more information, see [{{site.data.keyword.discoveryshort}} pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 
 ## 11 November 2021
 {: #discovery-11november2021}
@@ -63,10 +63,10 @@ New locations for Enterprise plan now available
 <!--4.0.4-0.5-->
 
 New Enterprise plan
-:   Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance and address more use cases, including contract analysis and content mining to explore insights across documents. Currently, the Enterprise plan is available only from the Dallas location. For more information, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
+:   Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance and address more use cases, including contract analysis and content mining to explore insights across documents. Currently, the Enterprise plan is available only from the Dallas location. For more information, see [{{site.data.keyword.discoveryshort}} pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 
 New beta entity extractor enrichment
-:   The *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize meaningful terms for your business. Currently, this beta feature is available for English-language projects that are created in Premium plan service instances only. For more information, see [Customizing the terms that Discovery can recognize](/docs/discovery-data?topic=discovery-data-entity-extractor).
+:   The *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize meaningful terms for your business. Currently, this beta feature is available for English-language projects that are created in Premium plan service instances only. For more information, see [Customizing the terms that {{site.data.keyword.discoveryshort}} can recognize](/docs/discovery-data?topic=discovery-data-entity-extractor).
 
 New *Helpful links* tab
 :   The home page includes a *Helpful links* tab that has quick links to documentation, a community site, and other resources. 
@@ -80,8 +80,8 @@ Improved field selection choices
 
 <!--4.0.3-3.2-->
 
-New Discovery home page
-:   A new home page is displayed when you start Discovery and gives you quick access to a product overview video, and tours. You can collapse the home page welcome banner to see more projects.
+New {{site.data.keyword.discoveryshort}} home page
+:   A new home page is displayed when you start {{site.data.keyword.discoveryshort}} and gives you quick access to a product overview video, and tours. You can collapse the home page welcome banner to see more projects.
 
 New plan usage section 
 :   Stay informed about plan usage and check your usage against the limits for your plan type from the *Plan limits and usage* page. From the product page header, click the user icon ![User icon](images/user-icon.png). The *Usage* section shows a short summary. Click **View all** to see usage information for all of the plan limit categories.
@@ -176,7 +176,7 @@ Change to Lite and Advanced plans
 {: #discovery-6april2021}
 {: release-note}
 
-Change to Discovery API endpoint
+Change to {{site.data.keyword.discoveryshort}} API endpoint
 :   As part of work done to fully support Identity and Access Management (IAM) authentication, the endpoint that you use to access your {{site.data.keyword.discoveryshort}} service programmatically is changing. The old endpoint URLs are deprecated and **will be retired on 26 May 2021**. Update your API calls to use the new URLs.
 
     The pattern for the endpoint URL changed from `gateway-{location}.watsonplatform.net/discovery/api/` to `api.{location}.discovery.watson.cloud.ibm.com/`. The domain, location, and offering identifier are different in the new endpoint. For more information, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change){: external}.
@@ -269,7 +269,7 @@ Change to 'options' object
 {: release-note}
 
 New release for Premium instances
-:   This release is available for Premium instances of {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} created after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started).
+:   This release is available for Premium instances of {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}} created after 16 July 2020. For Premium instances created before that date and for all Lite and Advanced plans, see [Getting started with {{site.data.keyword.discoveryshort}}](/docs/discovery?topic=discovery-getting-started).
 
 Change to **IBM Cloud Premium** 
 :   The Premium plan is now generally available.
@@ -287,7 +287,7 @@ New dynamic faceted search feature
 :   Underspecified queries are common. Dynamic Faceted Search automatically categorizes your search results into intelligence facets without training by understanding how they are used in the sentences. See [Facets in Document retrieval projects](/docs/discovery-data?topic=discovery-data-facets#facetdr).
 
 New reusable components
-:   You no longer need to build a {{site.data.keyword.discoveryshort}} application from scratch. We now ship out of the box with reusable, open source, React components. As you configure your Discovery application, you are using the real components. From there you simply deploy to get a custom Discovery application. See [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
+:   You no longer need to build a {{site.data.keyword.discoveryshort}} application from scratch. We now ship out of the box with reusable, open source, React components. As you configure your {{site.data.keyword.discoveryshort}} application, you are using the real components. From there you simply deploy to get a custom {{site.data.keyword.discoveryshort}} application. See [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
 
 New Domain Vocabulary feature
 :   You can build a facet for your users without a Dictionary. Use Domain Vocabulary to build a powerful facet with our understanding of how the data is used in as little as 5 minutes.  See [Facets](/docs/discovery-data?topic=discovery-data-facets).
@@ -313,6 +313,6 @@ Current API version
 Change to features in this release
 :   Deduplication is not available in this release.
 :   Anomaly Detection is not offered.
-:   Watson Discovery News is no longer included.
+:   {{site.data.keyword.discoveryfull}} News is no longer included.
 :   Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
 :   The SharePoint 2016 On-Premise and Box data sources are not available at this time.
