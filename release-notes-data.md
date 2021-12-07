@@ -132,7 +132,7 @@ Improved custom connector improvements
 :   Support was added for Optical character recognition (OCR)
 :   Support was added for Document-level security
 
-    For more information about the custom connector, see [Building a {{site.data.keyword.discoveryshort} custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
+    For more information about the custom connector, see [Building a {{site.data.keyword.discoveryshort}} custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
 Change to Dynamic Faceted Search
 :   Support for *Dynamic Faceted Search* and its associated `suggested_refinements` API query parameter was removed.
@@ -141,13 +141,13 @@ Change to Dynamic Faceted Search
 {: #release-notes-data-26february2021}
 
 New release now available
-:   IBM Watson™ Discovery for {{site.data.keyword.cpd_full}} version 2.2.1 is available.
+:   {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} version 2.2.1 is available.
 
 Support for upgrade
-:   {{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 so that you do not need to manually uninstall an earlier version and then install the latest version of the service. For more information, see [Upgrading {{site.data.keyword.discoveryshort} for {{site.data.keyword.discoveryshort}](/docs/discovery-data?topic=discovery-data-install#upgrade-discovery).
+:   {{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 so that you do not need to manually uninstall an earlier version and then install the latest version of the service. For more information, see [Upgrading {{site.data.keyword.discoveryshort}} for {{site.data.keyword.cpd_full_notm}}](/docs/discovery-data?topic=discovery-data-install#upgrade-discovery).
 
 New SDK download support
-:   You can now download the custom connector SDK package from your {{site.data.keyword.discovery-data_short}} cluster, instead of retrieving the images and the SDK package from the Docker registry. For more information, see [Downloading the custom-crawler-docs.zip file in {{site.data.keyword.discoveryshort} 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
+:   You can now download the custom connector SDK package from your {{site.data.keyword.discovery-data_short}} cluster, instead of retrieving the images and the SDK package from the Docker registry. For more information, see [Downloading the custom-crawler-docs.zip file in {{site.data.keyword.cpd_full_notm}} 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
 
 Change to Invoices and Purchase orders
 :   `Invoices` and `Purchase orders` models can no longer be enabled in the tooling. If you need these models, please contact [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to obtain instructions for enabling these models.
@@ -163,7 +163,7 @@ Change to support for Oracle Database 11g and Postgres 9.5
 {: #release-notes-data-8december2020}
 
 New release now available
-:   IBM Watson™ Discovery for IBM {{site.data.keyword.discoveryshort} version 2.2 is available. 
+:   {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} version 2.2 is available. 
 :   {{site.data.keyword.discovery-data_short}} now works with I{{site.data.keyword.icp4dfull}} 3.5.
 
 New support for Notes attachments
