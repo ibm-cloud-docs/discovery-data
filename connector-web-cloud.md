@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-24"
+lastupdated: "2021-12-06"
 
 subcollection: discovery-data
 
@@ -26,9 +26,9 @@ This information applies only to managed deployments. For more information about
 
 You can connect to the following types of web content:
 
-- Public websites
-- Private company websites or other sites that require authentication
-- Websites that are behind a corporate firewall
+-   Public websites
+-   Private company websites or other sites that require authentication
+-   Websites that are behind a corporate firewall
 
 The web crawler can crawl dynamic websites that use JavaScript to render content, but cannot crawl sites that use dynamic URLs. If you can't see any content when you view the source code of a web page in your browser, then the service cannot crawl it.
 {: note}
@@ -74,38 +74,39 @@ To configure the web crawl collection, complete the following steps:
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Specify the URL of the website that you want to crawl.
 
-    - If the site you want to crawl requires a login, set **Basic authentication** to `On`, add the URL of the page to the **Starting URL** field, and then click **Add**.
+    -   If the site you want to crawl requires a login, set **Basic authentication** to `On`, add the URL of the page to the **Starting URL** field, and then click **Add**.
 
-      Add a username and password with access to the site, and then click **Save credentials**. You can specify only one set of credentials per collection.
+        Add a username and password with access to the site, and then click **Save credentials**. You can specify only one set of credentials per collection.
 
-      For example, you can specify `https://cloud.ibm.com` as the starting URL and add your IBMid as the credentials.
+        For example, you can specify `https://cloud.ibm.com` as the starting URL and add your IBMid as the credentials.
 
-      If you want to start the crawl from a specific section of the site, specify it in the **Starting URLs** field. The domain name of the subsection must match the domain in the URL you specified earlier.
+        If you want to start the crawl from a specific section of the site, specify it in the **Starting URLs** field. The domain name of the subsection must match the domain in the URL you specified earlier.
 
-      For example, you might change the starting URL to `https://cloud.ibm.com/unifiedsupport/supportcenter`.
-    - For any public web pages that you want to crawl, add the URL for the root page of the website to the **Starting URLs** field, and then click **Add**. You can add more than one starting page.
+        For example, you might change the starting URL to `https://cloud.ibm.com/unifiedsupport/supportcenter`.
 
-      The final forward slash (`/`) in the URL determines the subtree to crawl. If you specify `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, for example. If you specify `https://www.example.com/banking` all URLs that begin with `https://www.example.com/` are crawled.
+    -   For any public web pages that you want to crawl, add the URL for the root page of the website to the **Starting URLs** field, and then click **Add**. You can add more than one starting page.
 
-      By default, the number of consecutive links that the crawl follows from the starting URL is `2`. To change the number of hops or to list website sections to exclude from the crawl, click the edit icon.
+        The final forward slash (`/`) in the URL determines the subtree to crawl. If you specify `https://www.example.com/banking/faqs.html`, all URLs that begin with `https://www.example.com/banking/` are crawled, for example. If you specify `https://www.example.com/banking` all URLs that begin with `https://www.example.com/` are crawled.
 
-      -   The maximum number of hops allowed is `20`.
-      -   To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/pricing` by entering `/pricing/`. 
+        By default, the number of consecutive links that the crawl follows from the starting URL is `2`. To change the number of hops or to list website sections to exclude from the crawl, click the edit icon.
+
+        -   The maximum number of hops allowed is `20`.
+        -   To specify URL paths to exclude, add the site path. For example, if the starting URL is `https://example.com`, you can exclude `https://example.com/pricing` by entering `/pricing/`. 
       
-          Any section of the web address that contains the site path you specify is excluded. For example, if you specify `/licenses/`, the page `https://example.com/products/licenses/europe` is excluded, among others.
+            Any section of the web address that contains the site path you specify is excluded. For example, if you specify `/licenses/`, the page `https://example.com/products/licenses/europe` is excluded, among others.
 
-      -   If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
+        -   If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
 
-    - If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
+    -   If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
 
-      After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/web-crawl-edit-url.png). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
+        After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/web-crawl-edit-url.png). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
 
-      Executing JavaScript is a beta feature. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically. When you enable this setting, the time it takes to crawl the page increases.
-      {: beta}
+        When JavaScript processing is enabled, it takes 3 to 4 times longer to crawl a page. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically.
+        {: note}
 
-    - To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
+    -   To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
 
-      Expand *More connection settings*, and then set **Connect to on-premise network** to `On`. Provide details about your {{site.data.keyword.SecureGateway}} connection.
+        Expand *More connection settings*, and then set **Connect to on-premise network** to `On`. Provide details about your {{site.data.keyword.SecureGateway}} connection.
 
 1.  Optional: Add another web address to the **Starting URLs** field.
 

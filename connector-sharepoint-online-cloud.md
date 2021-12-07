@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-10-02"
+lastupdated: "2021-11-15"
 
 subcollection: discovery-data
 
@@ -60,20 +60,28 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 You must have the following information ready. If you don't know it, ask your SharePoint administrator to provide the information or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
 
--   **Username**: The username of the user account to use to connect to the SharePoint Online SiteCollection that you want to crawl.
+Username
+:   The username of the user account to use to connect to the SharePoint Online SiteCollection that you want to crawl.
 
     For example, `<janedoe>@exampledomain.onmicrosoft.com`.
--   **Password**: The password to connect to the SharePoint Online SiteCollection that you want to crawl.
+
+Password
+:   The password to connect to the SharePoint Online SiteCollection that you want to crawl.
 
     This value is never returned and is only used when credentials are created or modified.
--   **Organization URL**: The root URL of the source that you want to crawl. Specify the domain name of the URL, for example `https://<company>.<domain>.com`.
--   **Site collection path**: The `site_collection_path` to the section of the site where you want to start the crawl.
+
+Organization URL
+:   The root URL of the source that you want to crawl. Specify the domain name of the URL, for example `https://<company>.<domain>.com`.
+
+Site collection path
+:   The `site_collection_path` to the section of the site where you want to start the crawl.
 
     For example, if the content that you want to crawl is available from `https://<company>.<domain>.com/sites/test`, then you can specify `https://<company>.<domain>.com` as the Organization URL and `/sites/test` as the Site collection path.
 
     -   You cannot specify folder paths as input.
     -   You cannot specify a path to an Active Server Page Extended (ASPX) file, such as URLs to document libraries, lists, and subsites.
     -   If you don't specify a path, the default value of `/` is used, and the root site collection is crawled.
+-   **Application ID**: ID of the data source that you want to crawl. This information is required only if you want to store ACL information that is associated with the source documents.
 
 ## Connecting to the data source
 {: #connector-sharepoint-online-cloud-task}
@@ -98,6 +106,14 @@ To configure the Microsoft SharePoint Online data source, complete the following
 1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+1.  **Optional**: If you want to store any access control information that exists in the SharePoint documents that you crawl, in the *Security* section, set the **Include Access Control List** switch to `On`.
+
+    When you enable this option, information about SharePoint access rules that is stored in SharePoint source documents is retained and stored as metadata in the documents that are added to your collection.
+
+    This feature is not the same as enabling document level security for the collection. The access rules in the document metadata are not used by {{site.data.keyword.discoveryshort}} search. Enabling this feature merely stores the information so that you can leverage the access rules when you build a custom search solution.
+
+    Use of this feature increases the size of the documents that are generated in the collection and increases the crawl time. Only enable the feature if your use case requires that you store the SharePoint document ACL information.
+    {: important}
 1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).

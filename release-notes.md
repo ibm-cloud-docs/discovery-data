@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-06"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,24 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for IBM Watson Discovery Cartridge for IBM Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+### 6 December 2021
+{: #discovery-6december2021}
+{: release-note}
+
+<!-- 4.0.5-2.4 -->
+
+Crawling web pages with dynamic content is now generally available
+:   The *Execute JavaScript during crawl* feature was introduced as a beta feature, but is now generally available. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
+
+Capturing the SharePoint ACL information from crawled documents
+:   You can now configure the data source crawl to store ACL information as metadata in the documents that are added to your SharePoint Online collection. For more information, see [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
+
+You can add more documents to the training data of the beta entity extractor model
+:   If you added and labeled 20 documents to train a model, and now want to continue to improve the model's performance, you can add more documents. Add the additional documents to the collection that you are using to train the model. After you label the first 20 documents, and the model is up-to-date with any changes, you can choose to continue labeling documents. The new documents that you added to the collection are loaded. You can label them to augment the training data, and then retrain your model.
+
+Log out of Discovery
+:   You can log out of the Discovery service instance at any time by clicking **Log out** from the user profile menu that is available from the page header of the product user interface.
 
 ## 18 November 2021
 {: #discovery-18november2021}
