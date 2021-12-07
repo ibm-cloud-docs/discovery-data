@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2021
-lastupdated: "2021-11-19"
+lastupdated: "2021-12-06"
 
 subcollection: discovery-data
 
@@ -30,7 +30,7 @@ The page header shows the plan you are using today.
 
 ![Shows that the Trial plan is displayed in the page header](images/plan-in-header.png)
 
-You cannot upgrade from any v1 plan to any v2 plan. For example, you cannot upgrade a Lite or Advanced plan to a Plus plan. And you cannot upgrade an Advanced plan to a Premium (v2) plan. To start using v2, create a new Plus or Premium plan. For more information about the Lite and Advanced plans, see the [v1 pricing plans documentation](/docs/discovery?topic=discovery-discovery-pricing-plans){: external}.
+You cannot upgrade from any v1 plan to any v2 plan. For example, you cannot upgrade a Lite or Advanced plan to a Plus plan. And you cannot upgrade an Advanced plan to a Premium (v2) plan. To start using v2, create a new Plus, Enterprise, or Premium plan. For more information about the Lite and Advanced plans, see the [v1 pricing plans documentation](/docs/discovery?topic=discovery-discovery-pricing-plans){: external}.
 
 Even though you can use the Plus plan for the first 30 days at no charge, you must have a paid account to create a Plus plan. For more information about creating a paid account, see [Upgrading your account](/docs/account?topic=account-upgrading-account){: external}.
 
@@ -46,7 +46,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
 
     -   You cannot upgrade from a Plus plan to an Enterprise plan currently.
     -   If you are creating an Enterprise plan in the same data center location where you have an existing Premium plan, you must create a new resource group for the new plan. You cannot use the same resource group for Enterprise and Premium plans that are hosted in the same location. For more information, see [Managing resource groups](/docs/account?topic=account-rgs&interface=ui){: external}.
-    -   You cannot do an in-place upgrade from a Plus plan to a Premium plan.
+    -   You cannot do an in-place upgrade from a Plus or Enterprise plan to a Premium plan.
 
         A Premium plan instance must be provisioned for you. To start the process, contact [Sales](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-watson&disableCookie=Yes){: external}. You will be asked to provide the following details:
 
