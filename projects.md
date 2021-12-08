@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-12-08"
 
 subcollection: discovery-data
 
@@ -165,3 +165,14 @@ The number of projects you can create depends on your {{site.data.keyword.discov
 {: caption="Plan details" caption-side="top"}
 
 The Sample project is excluded from the total number of projects.
+
+### Deleting a project
+{: #projects-delete}
+
+If you want to delete a project, but keep a collection from the project, share the collection with another project before you complete these steps. From another project (a type that allows multiple collections), click the **Manage collections** tab, click **New collection**, click **Reuse data from an existing collection**, select the collection that you want to keep, and then click **Finish**.
+
+To delete a project, complete the following steps:
+
+1.  Go to the *My Projects* page.
+1.  Find the project that you want to delete, hover over the project tile, and then click the *Delete project* icon.
+1.  Click **Delete**.
