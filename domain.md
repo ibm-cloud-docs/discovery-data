@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-03"
+lastupdated: "2021-12-08"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ For more information about how to apply built-in enrichments to your collection,
 
 You can use many enrichments together to tackle various challenges that you might encounter as you develop a search application. 
 
-Many teams start by creating a dictionary enrichment. Dictionaries are a great tool for identifying important terms and tagging them so they can be retrieved later. Let's say you're builidng a search application that needs to extract ingredients from recipes. A dictionary enrichment can recognize mentions of most ingredients. However, the dictionary enrichment might partially match against two-word terms. For terms such as `olive oil` or `mustard greens`, it might incorrectly recognize only `olive` and `mustard` respectively. To improve the accuracy of the search, you can augment the dictionary enrichment with a pattern enrichment that can recognize two-word ingredient mentions. Maybe a small number of recipes mention food coloring codes in European format (`E104`). You can add a regular expression enrichment to recognize occurrences of codes with the syntax `E1nn`. Finally, to catch terms that no other enrichment can recognize, you can use a machine learning enrichment, either one that you build in an external tool and import to {{site.data.keyword.discoveryshort}}, or one that you build in {{site.data.keyword.discoveryshort}} by creating an entity extractor enrichment.
+Many teams start by creating a dictionary enrichment. Dictionaries are a great tool for identifying important terms and tagging them so they can be retrieved later. Let's say you're building a search application that needs to extract ingredients from recipes. A dictionary enrichment can recognize mentions of most ingredients. However, the dictionary enrichment might partially match against two-word terms. For terms such as `olive oil` or `mustard greens`, it might incorrectly recognize only `olive` and `mustard` respectively. To improve the accuracy of the search, you can augment the dictionary enrichment with a pattern enrichment that can recognize two-word ingredient mentions. Maybe a small number of recipes mention food coloring codes in European format (`E104`). You can add a regular expression enrichment to recognize occurrences of codes with the syntax `E1nn`. Finally, to catch terms that no other enrichment can recognize, you can use a machine learning enrichment, either one that you build in an external tool and import to {{site.data.keyword.discoveryshort}}, or one that you build in {{site.data.keyword.discoveryshort}} by creating an entity extractor enrichment.
 
 The entity extractor enrichment is more sophisticated than the other enrichments. For example, a dictionary enrichment recognizes only exact matches of dictionary terms and synonyms that occur in your documents. A regular expression enrichment recognizes only specific patterns. In contrast, occurrences of an entity are recognized based on the context in which an entity example is mentioned in a sentence.
 
@@ -558,7 +558,9 @@ The number of advanced rules models that you can define per service instance dep
 Patterns is a beta feature that is available in {{site.data.keyword.cloud_notm}} deployments only. The feature is available for English-language documents only.
 {: beta}
 
-Add a Patterns resource to teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. The Patterns feature uses pattern induction, which generates extraction patterns from examples that you provide as training data. After you specify a few examples, {{site.data.keyword.discoveryshort}} suggests more rules that you must review and accept to complete the pattern.
+Add a Patterns resource to teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. The Patterns feature uses pattern induction, which generates extraction patterns from examples that you provide as training data. After you specify a few examples, {{site.data.keyword.discoveryshort}} suggests more rules that you can review and accept to complete the pattern.
+
+Patterns produces a model by using a human-in-the-loop process. You aren't asked to build a large set of training data up front. Instead, you provide a few examples, and then participate in an interactive process to define the training data. You passively accept or reject smart suggestions that are proposed by the system.
 
 Pattern recognition works best on text with consistent structure in casing, length, text, or numeric values. Examples of patterns you can teach {{site.data.keyword.discoveryshort}} to identify in your documents:
 
