@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-01"
+lastupdated: "2021-12-09"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -215,3 +215,15 @@ If you want to change the flexible crawl schedule settings later, you can go to 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: The next scheduled crawl is displayed on the Activity page.
 
 If you change the schedule frequency, the next scheduled crawl time might not be what you expect. The crawls are set up to occur on a regular schedule at a specific time or day by default. For example, if you change the crawl schedule from weekly to monthly on 11 August, the next crawl might be scheduled for 31 August instead of 11 September. It is not scheduled for exactly a month from the day you made the change. Instead, it is scheduled to run on the day that is designated as the default run day for the selected crawl frequency.
+
+## Stopping a crawl
+{: #collections-crawl-stop}
+
+To stop a crawl that is in progress, delete the collection.
+
+1.  Open the *Manage collections* page from the navigation panel.
+1.  Hover over the collection tile, and then click the delete icon.
+
+    If you want to keep the underlying data and configuration settings, select **Don't delete underlying data**. If you choose to keep the data, you can create a new collection and reuse the data later.
+
+1.  Click **Delete from project**.
