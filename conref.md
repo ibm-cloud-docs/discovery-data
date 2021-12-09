@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-07"
+lastupdated: "2021-12-09"
 
 subcollection: discovery-data
 
@@ -30,7 +30,7 @@ The following table shows the supported data sources for each deployment type.
 | Local file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Salesforce | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Microsoft SharePoint Online | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft SharePoint On-Premises | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Microsoft SharePoint On-Premises | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Website | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Microsoft Windows file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
