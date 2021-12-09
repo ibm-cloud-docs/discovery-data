@@ -193,9 +193,9 @@ To create a crawl schedule, complete the following steps:
     -   By default, the crawl is scheduled to start during off-peak hours.
     -   Do not set the interval to a frequency that is shorter than the time it takes for the crawl to finish.
     -   Do not configure multiple crawlers to run at short intervals.
-    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
-1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}}**: In **More scheduling settings**, you can choose the type of schedule to use to crawl the collection from the following options:
+1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: In **More scheduling settings**, you can choose the type of schedule to use to crawl the collection from the following options:
 
     -   To control the frequency of the crawls yourself, choose this option:
 
@@ -219,7 +219,18 @@ If you change the schedule frequency, the next scheduled crawl time might not be
 ## Stopping a crawl
 {: #collections-crawl-stop}
 
-To stop a crawl that is in progress, delete the collection.
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** 
+
+To stop the crawl, complete the following steps:
+
+1.  Open the *Manage collections* page from the navigation panel. 
+1.  From the *Activity* page, click **Stop crawl**.
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
+
+To stop a crawl that is in progress, you must delete the collection. 
+
+To delete the collection, complete the following steps:
 
 1.  Open the *Manage collections* page from the navigation panel.
 1.  Hover over the collection tile, and then click the delete icon.
