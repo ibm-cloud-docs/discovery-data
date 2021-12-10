@@ -19,7 +19,7 @@ content-type: release-note
 Learn about features and changes that were included for each release and update of the product software.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.cpd_full_notm}} only** 
+![{{site.data.keyword.cpd_full_notm}} only](images/desktop.png) **{{site.data.keyword.cpd_full_notm}} only** 
 
 This information applies only to instances of {{site.data.keyword.discoveryfull}} that are installed on {{site.data.keyword.icp4dfull}}. For information about releases and updates for managed deployments, see [Release notes for Watson Discovery for {{site.data.keyword.cloud_notm}}](/docs/discovery-data?topic=discovery-data-release-notes).
 {: note}
