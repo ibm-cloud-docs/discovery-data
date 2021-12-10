@@ -182,6 +182,7 @@ toc:
           - at_events.md
           - /watson/watson-keyservice
           - /watson/watson-public-private-endpoints
+          - /watson/watson-virtual-private-endpoints
 
   - navgroup:
       id: help
