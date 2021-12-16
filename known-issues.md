@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-30"
+lastupdated: "2021-12-09"
 
 keywords: known issues
 
@@ -27,6 +27,11 @@ The known issues that are described in this topic apply to installed deployments
 {: note}
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
+
+## 4.0.4, 16 December 2021
+{: #16december2021ki}
+
+-   There are no known issues.
 
 ## 4.0.3, 18 November 2021
 {: #18november2021ki}

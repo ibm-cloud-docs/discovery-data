@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-07"
+lastupdated: "2021-12-10"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -26,6 +26,22 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+## 4.0.4 release, 16 December 2021
+{: #discovery-data-16december2021}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.4 is available.
+
+Guided tours are available
+:   Access guided tours from anywhere in the product user interface by clicking the **Guided tours** button in the page header.
+
+Security vulnerabilities were addressed
+:   The following security patches were applied:
+
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in LibTIFF](https://www.ibm.com/support/pages/node/6523814)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in TensorFlow](https://www.ibm.com/support/pages/node/6523816)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Node.js](https://www.ibm.com/support/pages/node/6523818)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Netty](https://www.ibm.com/support/pages/node/6523820)
+
 ## 4.0.3 release, 30 November 2021
 {: #discovery-data-30november2021}
 
@@ -46,10 +62,10 @@ Microsoft Windows File System improvements
     For more information, see [Windows File System](/docs/discovery-data?topic=discovery-data-connector-wfs-cp4d).
 
 Field selection is improved
-:   When you apply an enrichment to a field or choose a field to use as the source for a facet, the fields that are listed as options are all valid choices.
+:   When you apply an enrichment to a field or choose a field to use as the source for a facet, the fields that are displayed for you to choose from now shows only fields that are valid choices.
 
 Search settings change
-:   The spelling correction setting changed from being enabled automatically to being disabled by default in new projects. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
+:   The spelling correction setting changed from being enabled automatically in new projects to being disabled by default. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
 
 A Salesforce crawling issue was fixed
 :   Previously, {{site.data.keyword.discoveryshort}} had an issue where it timed out before it crawled some of the object types in a Salesforce collection. If your collection is configured to crawl the following object types, run a full data source crawl to make sure that your collection contains the most up-to-date data from all of the objects in your Salesforce data source:
@@ -61,11 +77,11 @@ A Salesforce crawling issue was fixed
 Security vulnerabilities were addressed
 :   The following security patches were applied:
 
-    -   [Security Bulletin: {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} affected by vulnerability in Node.js](https://www.ibm.com/support/pages/node/6516464){: external}
-    -   [Security Bulletin: {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} affected by vulnerability in Axios](https://www.ibm.com/support/pages/node/6516466){: external}
-    -   [Security Bulletin: {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} affected by vulnerability in Python Pillow](https://www.ibm.com/support/pages/node/6516468){: external}
-    -   [Security Bulletin: {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} affected by vulnerability in Apache Commons Compress](https://www.ibm.com/support/pages/node/6516470){: external}
-    -   [Security Bulletin: {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} affected by vulnerability in Java](https://www.ibm.com/support/pages/node/6516472){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Node.js](https://www.ibm.com/support/pages/node/6516464){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Axios](https://www.ibm.com/support/pages/node/6516466){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Python Pillow](https://www.ibm.com/support/pages/node/6516468){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Commons Compress](https://www.ibm.com/support/pages/node/6516470){: external}
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Java](https://www.ibm.com/support/pages/node/6516472){: external}
 
 Features that are not available in this release
 :   The following features are available from {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
@@ -98,8 +114,8 @@ New upgrade support
 Effective 30 September 2021, IBM withdrew support for the following programs:
 
 - IBM Watson Assistant Discovery Extension for IBM Cloud Private
-- {{site.data.keyword.discoveryfull}} for ICP for Data
-- {{site.data.keyword.discoveryfull}} for ICP for Data Add-on
+- IBM Watson Discovery for ICP for Data
+- IBM Watson Discovery for ICP for Data Add-on
 
 For more information, see announcements [ENUS921-005.PDF](https://www.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&infotype=an&appname=iSource&supplier=897&letternum=ENUS921-005){: external} and [ENUSLP21-0099.PDF](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/9/899/ENUSLP21-0099/index.html&request_locale=en).-->
 
@@ -132,7 +148,7 @@ Improved custom connector improvements
 :   Support was added for Optical character recognition (OCR)
 :   Support was added for Document-level security
 
-    For more information about the custom connector, see [Building a {{site.data.keyword.discoveryshort}} custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
+    For more information about the custom connector, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
 Change to Dynamic Faceted Search
 :   Support for *Dynamic Faceted Search* and its associated `suggested_refinements` API query parameter was removed.
@@ -141,13 +157,13 @@ Change to Dynamic Faceted Search
 {: #release-notes-data-26february2021}
 
 New release now available
-:   {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} version 2.2.1 is available.
+:   IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2.1 is available.
 
 Support for upgrade
-:   {{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 so that you do not need to manually uninstall an earlier version and then install the latest version of the service. For more information, see [Upgrading {{site.data.keyword.discoveryshort}} for {{site.data.keyword.cpd_full_notm}}](/docs/discovery-data?topic=discovery-data-install#upgrade-discovery).
+:   {{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 so that you do not need to manually uninstall an earlier version and then install the latest version of the service. For more information, see [Upgrading Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install#upgrade-discovery).
 
 New SDK download support
-:   You can now download the custom connector SDK package from your {{site.data.keyword.discovery-data_short}} cluster, instead of retrieving the images and the SDK package from the Docker registry. For more information, see [Downloading the custom-crawler-docs.zip file in {{site.data.keyword.cpd_full_notm}} 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
+:   You can now download the custom connector SDK package from your {{site.data.keyword.discovery-data_short}} cluster, instead of retrieving the images and the SDK package from the Docker registry. For more information, see [Downloading the custom-crawler-docs.zip file in Discovery 2.2.1 and later](/docs/discovery-data?topic=discovery-data-connector-dev#download-ccs-zip).
 
 Change to Invoices and Purchase orders
 :   `Invoices` and `Purchase orders` models can no longer be enabled in the tooling. If you need these models, please contact [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to obtain instructions for enabling these models.
@@ -163,20 +179,20 @@ Change to support for Oracle Database 11g and Postgres 9.5
 {: #release-notes-data-8december2020}
 
 New release now available
-:   {{site.data.keyword.discoveryfull}} for {{site.data.keyword.cpd_full}} version 2.2 is available. 
+:   IBM Watson™ Discovery for IBM Cloud Pak for Data version 2.2 is available. 
 :   {{site.data.keyword.discovery-data_short}} now works with I{{site.data.keyword.icp4dfull}} 3.5.
 
 New support for Notes attachments
 :   Added support for attachments in the Notes data source. For more information, see [Notes](/docs/discovery-data?topic=discovery-data-collection-types#connectnotes)
 
 New web crawl scheduling option
-:   You can specify the exact time that you would like your crawls to run for any data source, giving you the flexibility to run them at the times you prefer. For more information, see [Configuring {{site.data.keyword.cpd_full_notm}} data sources](/docs/discovery-data?topic=discovery-data-collection-types).
+:   You can specify the exact time that you would like your crawls to run for any data source, giving you the flexibility to run them at the times you prefer. For more information, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
 New Facet creation in Content Miner
 :   You can now create Facet groups in a Content Miner application. For more information, see [Facet analysis pane](/docs/discovery-data?topic=discovery-data-contentminerapp#cmofap).
 
 New custom crawler creation
-:   Added the option to create your own custom crawler plug-in. For more information, see [Building a {{site.data.keyword.cpd_full_notm}} crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build) **Note:** Any custom code used with Watson Discovery is the responsibility of the developer and is not covered by IBM support.
+:   Added the option to create your own custom crawler plug-in. For more information, see [Building a Cloud Pak for Data crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build) **Note:** Any custom code used with Watson Discovery is the responsibility of the developer and is not covered by IBM support.
 
 Change to Dynamic Facets
 :   Dynamic Facets are no longer enabled by default in Document Retrieval projects.
@@ -225,7 +241,7 @@ Improved segment limit
 :   The segment limit when splitting documents has been increased to 1,000. For details, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 
 Improved Filenet connector
-:   The [Filenet connector](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect) has document-level security.
+:   The [Filenet connector](/docs/discovery-data?topic=discovery-data-collection-types#filenet-connect) has document level security.
 
 New beta Curations feature
 :   You can specify up to 1,000 curations. For details about this beta feature, see [Curations](/docs/discovery-data?topic=discovery-data-train#curations).
@@ -276,7 +292,7 @@ Fixed the following defects in the 2.1.1 release:
 :   In Document Retrieval project types, when you perform an empty search, and the search results source is set to `passages,` the query results will display `excerpt unavailable` in the Project workspace.
 :   When visiting the Storybook links on the Integrate and deploy page, the links do not go to the correct location. Please visit [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook){: external} instead to view documentation.
 :   If you are using Smart Document Understanding, two variables no longer need to be set during installation or reinstallation. For more information, see [Environment variable settings for Smart Document Understanding](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-sdu).
-:   {{site.data.keyword.discoveryshort}} for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a root-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
+:   Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a root-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
 
 ## 2.1.0 release, 27 November 2019
 {: #release-notes-data-27november2019}
@@ -295,7 +311,7 @@ New Content Intelligence add-on
 :   Option to enrich your documents with pre-built domain knowledge for Contracts. For more information, see [Document Retrieval for Contracts](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts).
 
 New reusable components
-:  Use reusable components to quickly build your application with {{site.data.keyword.discoveryshort}}. We ship an autocomplete, rich preview, results and facets component. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
+:  Use reusable components to quickly build your application with Discovery. We ship an autocomplete, rich preview, results and facets component. For more information, see [Building and deploying components](/docs/discovery-data?topic=discovery-data-deploy).
 
 New Czech, Polish, Romanian, Russian, and Slovak language support
 :   Basic support for Czech, Slovak, Russian, Polish and Romanian is added. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
@@ -304,10 +320,10 @@ New built-in table understanding
 :   Extract tables from your documents without training, and optionally return tables as answers to natural language queries. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
 
 New SDK connector
-:   Build custom connectors your {{site.data.keyword.discoveryshort}} users can use to build their own applications. For more information, see [Building and implementing a custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
+:   Build custom connectors your Discovery users can use to build their own applications. For more information, see [Building and implementing a custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
 New pre-built sample project
-:   The sample project is preloaded with data, so you can learn about {{site.data.keyword.discoveryshort}}. For more information, see [Getting started with Watson Discovery](/docs/discovery-data?topic=discovery-data-getting-started).
+:   The sample project is preloaded with data, so you can learn about Discovery. For more information, see [Getting started with Watson Discovery](/docs/discovery-data?topic=discovery-data-getting-started).
 
 New passage retrieval
 :   Will return the most relevant passages from your documents, plus you can specify the number of passages returned per document. See [Passages](/docs/discovery-data?topic=discovery-data-query-parameters#passages).
@@ -365,5 +381,5 @@ Fixed the following defects in {{site.data.keyword.discovery-data_short}} offeri
 ## 2.0.0, General Availability (GA) release, 28 June 2019
 {: #release-notes-data-28june2019}
 
-{{site.data.keyword.discoveryshort}} for {{site.data.keyword.cpd_full_notm}} now available
+Discovery for Cloud Pak for Data now available
 :   The {{site.data.keyword.discovery-data_long}} service brings the cognitive capabilities of {{site.data.keyword.discoveryfull}} to the {{site.data.keyword.icp4dfull}} platform.
