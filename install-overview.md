@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-11-29"
+lastupdated: "2021-12-21"
 
 subcollection: discovery-data
 
@@ -25,6 +25,8 @@ You install {{site.data.keyword.icp4dfull}}, and then install the {{site.data.ke
 
 | {{site.data.keyword.discoveryshort}} version | {{site.data.keyword.icp4dfull_notm}} version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
+| 4.0.4 | 4.0.4 | 4.8 |
+| 4.0.4 | 4.0.4 | 4.6.29 or later |
 | 4.0.3 | 4.0.3 | 4.8 |
 | 4.0.3 | 4.0.3 | 4.6.29 or later |
 | 4.0.2 | 4.0.2 | 4.8 |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-12-10"
+lastupdated: "2021-12-21"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -26,8 +26,8 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
-## 4.0.4 release, 16 December 2021
-{: #discovery-data-16december2021}
+## 4.0.4 release, 20 December 2021
+{: #discovery-data-20december2021}
 
 {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.4 is available.
 
@@ -41,6 +41,14 @@ Security vulnerabilities were addressed
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in TensorFlow](https://www.ibm.com/support/pages/node/6523816)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Node.js](https://www.ibm.com/support/pages/node/6523818)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Netty](https://www.ibm.com/support/pages/node/6523820)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j](https://www.ibm.com/support/pages/node/6526072)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j 1.2](https://www.ibm.com/support/pages/node/6526478)
+
+Features that are not available in this release
+:   The following features are generally available from {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Answer finding
 
 ## 4.0.3 release, 30 November 2021
 {: #discovery-data-30november2021}
