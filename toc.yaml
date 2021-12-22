@@ -16,11 +16,15 @@ toc:
       - getting-started.md
       - index.md
       - topicgroup:
-          label: Videos and more
-          topics:
-          - sample-apps.md
-          - resources.md
-          - tours.md
+          label: Media resources
+          links:
+          - link:
+              label: Medium.com blogs
+              href: https://medium.com/ibm-data-ai/search?q=Watson%20Discovery
+          - link:
+              label: IBM.com blogs
+              href: https://www.ibm.com/blogs/watson/?s=watson%20discovery%20
+      - tours.md
       - topicgroup:
           label: Release notes
           topics:
@@ -130,6 +134,9 @@ toc:
           topics:
           - develop.md
           - api-use.md
+          - link:
+              label: Learn with sample apps
+              href: https://developer.ibm.com/learningpaths/get-started-watson-discovery/
           - analyzeapi.md
           - curations.md
           - topicgroup:

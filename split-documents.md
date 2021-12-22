@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2021-10-29"
+lastupdated: "2021-12-21"
 
 subcollection: discovery-data
 
@@ -14,6 +14,8 @@ subcollection: discovery-data
 {: #split-documents}
 
 Split your documents so that the search function can find more concise information to return in query results.
+
+For more information about the benefits of splitting documents, read the [Using IBM Watson Discovery’s New Document Segmentation Feature](https://medium.com/ibm-watson/using-ibm-watson-discoverys-new-document-segmentation-feature-7a58b44d32c2){: external} blog post on Medium.com.
 
 When you split a document, the original document is broken into segments. Each segment contains a more uniform set of information. By splitting the content in your documents into segmented groups, you can enrich and index your data at a more granular level.
 
