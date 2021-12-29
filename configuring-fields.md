@@ -47,7 +47,7 @@ To apply a Smart Document Understanding model to your collection, complete the f
 1.  Choose the type of model you want to use:
 
     -   **User-trained models**
-    -   **Pre-trained-models**
+    -   **Pre-trained models**
 
     If you don't want to apply an SDU model, then you're done. The **Text extraction only** option is used by default. Any text that is recognized in the source documents is indexed in the `text` field.
 1.  If you choose to apply a model, click **Submit**, and then click **Apply changes and reprocess**.

@@ -36,6 +36,7 @@ toc:
       id: tutorial
       topics:
       - tutorial-convo.md
+      - tutorial-sdu.md
 
   - navgroup:
       id: howto
@@ -173,12 +174,6 @@ toc:
       - link:
           label: Watson GitHub repos
           href: https://github.com/watson-developer-cloud/
-      - topicgroup:
-          label: Backup and restore
-          topics:
-          - backup-restore.md
-          - backup-restore-prior.md
-          - recovery.md
       - query-reference.md
       - language-support.md
       - topicgroup:
@@ -190,16 +185,24 @@ toc:
           - /watson/watson-keyservice
           - /watson/watson-public-private-endpoints
           - /watson/watson-virtual-private-endpoints
-
+      - topicgroup:
+          label: Backup and restore
+          topics:
+          - backup-restore.md
+          - backup-restore-prior.md
+          - recovery.md
   - navgroup:
       id: help
       topics:
       - faqs.md
       - troubleshoot.md
       - get-help.md
-      - version-choose.md
-      - pricing-plans.md
-      - upgrade.md
+      - topicgroup:
+          label: Plan information
+          topics:
+              - pricing-plans.md
+              - version-choose.md
+              - upgrade.md
       - topicgroup:
           label: Community resources
           links:
