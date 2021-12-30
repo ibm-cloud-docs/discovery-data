@@ -28,6 +28,8 @@ Before you begin, decide which field to use as the page break marker.
 - The number of segments per document is limited to `1,000`. After segment number `999` is created, any remaining document content is stored within segment `1,000`.
 - Metadata from PDF and Microsoft Word documents and any custom metadata is extracted and included in the index with each segment.
 
+Be careful with documents that contain repeating sections, such as a catalog that has a description and specifications section for each product entry. If you split the document at too granular a level, the subsections, such as a section with specification details, can be disassociated from the product to which it belongs.
+
 To split the documents in a collection, complete the following steps:
 
 1.  Click **Manage collections** from the navigation pane, and then click to open a collection.
