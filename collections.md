@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2021
+  years: 2019, 2022
 lastupdated: "2021-12-09"
 
 keywords: data sources, supported data sources, supported file types, document types

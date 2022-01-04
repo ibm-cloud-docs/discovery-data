@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2021
+  years: 2021, 2022
 lastupdated: "2021-11-03"
 
 keywords: IBM, activity tracker, event, security, IBM Cloud Activity Tracker
