@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2015, 2021
+  years: 2015, 2022
 lastupdated: "2021-11-17"
 
 keywords: api version,api,request syntax

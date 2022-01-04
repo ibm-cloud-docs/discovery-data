@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-03"
+  years: 2021, 2022
+lastupdated: "2022-01-04"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -13,7 +13,7 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Help your chatbot get answers from existing content
+# Help your chatbot answer frequently asked questions
 {: #tutorial-convo}
 {: toc-content-type="tutorial"}
 {: toc-completion-time="2h"}
@@ -52,7 +52,7 @@ This tutorial will take approximately 2 to 3 hours to complete.
 
     Go to the [{{site.data.keyword.discoveryshort}} resource](https://cloud.ibm.com/catalog/services/watson-discovery){: external} page in the {{site.data.keyword.cloud_notm}} catalog and create a Plus plan service instance.
 
-If you decide not to continue using the Plus plan and don't want to pay for it, delete the Plus plan service instance before the 30-day trial period ends.
+If you decide to stop using the Plus plan and don't want to pay for it, delete the Plus plan service instance before the 30-day trial period ends.
 {: important}
 
 ## Create the Conversational Search project
