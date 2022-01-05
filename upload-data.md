@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-11"
+lastupdated: "2022-01-05"
 
 keywords: upload, one-time upload, field names
 
@@ -59,7 +59,7 @@ Unlike other data sources, you cannot schedule regular updates for uploaded file
 ## How fields are handled
 {: #field-name-limits}
 
-When you upload a document, data in the file is indexed. For most unstructured file types, the bulk of the content from the file is added to a field named `text`. For files types that have an inherent data structure, such JSON files, names from the source file are used to name the fields in which the content is stored. When you upload files of this type, be aware of some naming limitations that exist for fields.
+When you upload a document, data in the file is indexed. For most unstructured file types, the bulk of the content from the file is added to a field named `text`. For file types that have an inherent data structure, such JSON files, names from the source file are used to name the fields in which the content is stored. When you upload files of this type, be aware of some naming limitations that exist for fields.
 
 The following field names have special meaning. If possible avoid using these names in your structured source files.
 

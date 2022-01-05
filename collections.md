@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-12-09"
+lastupdated: "2022-01-05"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -156,7 +156,11 @@ For more information about the supported number of documents for Lite and Advanc
 ## Field limits
 {: #collections-field-limits}
 
-When a document is added to a collection, content from the document is evaluated and added to the appropriate fields in an internal index. For example, when you crawl a website or upload an HTML file, the HTML content is added to the collection and indexed in an `html` field.
+When a document is added to a collection, content from the document is evaluated and added to the appropriate fields in an internal index.
+
+You cannot assign the data type, such as Date or String, of a field. The data type is detected automatically and assigned to the field during document ingestion. The assignment is based on the data type that is detected from the first document that is indexed. Ingestion errors can occur in subsequent documents if a different data type is detected for the value in the same field. Therefore, if your documents have a mix of data types in a single field, ingest the document that has a value with the most flexible data type, such as String, in the field first.
+
+When you crawl a website or upload an HTML file, the HTML content is added to the collection and indexed in an `html` field.
 
 The following table shows the maximum size limit for fields per document.
 
@@ -175,6 +179,9 @@ The following table shows how the fields are processed depending on the deployme
 | Cloud Pak for Data | The document is not indexed | The document is not indexed |
 | IBM Cloud | All of the fields in the document are indexed except the `html` field | The document is not indexed |
 {: caption="Exceeded field size behavior" caption-side="top"}
+
+If you are uploading a Microsoft Excel file and a message is displayed that indicates that the non-HTML field size limit is exceeded, consider converting the XSL file into a CSV file. When you upload a comma-separated value (CSV) file, each row is indexed as a separate document. As a result, no field size limits are exceeded.
+{: tip}
 
 For more information about how fields in uploaded files are handled, see [How fields are handled](/docs/discovery-data?topic=discovery-data-upload-data#field-name-limits).
 

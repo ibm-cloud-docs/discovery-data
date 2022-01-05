@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-11-18"
+lastupdated: "2022-01-05"
 
 subcollection: discovery-data
 
@@ -59,7 +59,6 @@ The plan includes the following features:
 - Up to 20 custom pattern extraction models
 - Up to 20 custom regular expression models
 - Up to 20 custom text classification models
-- Up to 20 custom document classification models
 
 ## Enterprise
 {: #enterpriseplan}
@@ -95,6 +94,7 @@ The plan includes the following features:
 - Up to 100 custom pattern extraction models
 - Up to 100 custom regular expression models
 - Up to 20 custom text classification models
+- Up to 20 custom document classification models
 
 ## Premium
 {: #premiumplan}
