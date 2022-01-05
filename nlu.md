@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-09"
+lastupdated: "2022-01-05"
 
 subcollection: discovery-data
 
@@ -58,6 +58,9 @@ To add an NLU enrichment, complete the following steps:
 1.  Choose one or more fields to apply the enrichment to.
 
     You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool.
+
+    If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`. Only the first 50,000 characters of a custom field from a JSON file are enriched.
+    {: note}
 1.  Click **Apply changes and reprocess**.
 
 For more information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
