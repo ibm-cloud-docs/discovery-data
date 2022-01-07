@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-12-08"
+lastupdated: "2022-01-05"
 
 subcollection: discovery-data
 
@@ -125,7 +125,7 @@ For more information about building a {{site.data.keyword.conversationshort}} se
     From the beta version of {{site.data.keyword.conversationshort}}, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
     {: beta}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Follow steps to use this project type to enhance your virtual assistant by completing the [Helping your chatbot get answers from existing content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Follow steps to use this project type to enhance your virtual assistant by completing the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
 ### Content Mining ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #mining}

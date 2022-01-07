@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-11-24"
+lastupdated: "2022-01-06"
 
 subcollection: discovery-data
 
@@ -158,7 +158,7 @@ In most cases, you don't need to use a persistent volume. If you choose to use a
 
 Complete the following steps to restore data in {{site.data.keyword.discoveryfull}} by using the restore scripts:
 
-1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance. HOW???
+1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
 
     -  `Postgresql`
     -  `Etcd`

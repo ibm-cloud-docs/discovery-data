@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2021-12-07"
+lastupdated: "2022-01-07"
 
 subcollection: discovery-data
 
@@ -119,7 +119,7 @@ To configure the Microsoft SharePoint Online data source, complete the following
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
-    The processing time increases when this feature is enabled.
+    When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
     {: note}
 
 1.  Click **Finish**.

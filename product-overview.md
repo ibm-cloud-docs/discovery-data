@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-01"
+lastupdated: "2022-01-05"
 
 subcollection: discovery-data
 
@@ -83,7 +83,7 @@ If enhancing your chatbot is your goal, complete the steps that are listed in th
 | ![checkbox](images/checkbox.png) | From the Watson Assistant user interface, deploy the assistant. | [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external} |
 {: caption="Checklist for enhancing your chatbot" caption-side="top"}
 
-For help with walking through the steps, complete the [Helping your chatbot get answers from existing content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+For help with walking through the steps, complete the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
 ## Find trends  ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #product-overview-mining}

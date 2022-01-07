@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-12-30"
+lastupdated: "2022-01-06"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -246,7 +246,9 @@ To improve the quality of the search results, build a Smart Document Understandi
 
 1.  When a page contains an image, the image is not displayed in the representation of the page. 
 
-    Images are never replicated. However, you can capture the text from an image so that the image text can be searched. To do so, enable the Optical Character Recognition (OCR) feature when you create a collection. After you enable OCR, if you want to remove annotated image text from the collection index, you can label the image so that you can exclude the associated text. You will learn about how to configure the index in the next procedure.
+    Images are never replicated. However, you can capture the text from an image so that the image text can be searched. To do so, enable the Optical Character Recognition (OCR) feature when you create a collection. OCR is helpful in cases where you want to extract text from images, such as from a scanned PDF, where the text is embedded in an image.
+    
+    After you enable OCR, if you want to remove annotated image text from the collection index, you can label the image so that you can exclude the associated text. You will learn about how to configure the index in the next procedure.
 
     ![Shows an image in the page.](images/tut-sdu-image.png)
     
