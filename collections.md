@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-07"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -58,6 +58,17 @@ Before you can create a collection, you must create a project. For more informat
 
         A collection can support only one data source.
         {: note}
+
+## Optical character recognition
+{: #ocr}
+
+One of the optional features that you can apply to a collection when you create it is optical character recognition. The optical character recognition (OCR) feature extracts text from images. This capability is useful for preserving information that is depicted in diagrams or graphs, or in text that is enbedded in files such as scanned PDFs. By converting the visual information into text, it can later be searched.
+
+Things to keep in mind when you enable OCR:
+
+-   OCR can read both clear and noisy images. It can convert noisy images to gray scale, and smooth and de-skew them. However, the image quality must meet the minimum requirement of 75 DPI (dots per inch).
+-   OCR can recognize many languages, but the language of the text in the image must be the same as the language that is specified for the collection where the file is added. Otherwise, the resulting transcription will contain meaningless text.
+-  The time it takes to ingest a document with images increases when OCR is enabled.
 
 ## Collection limits
 {: #collections-limits}

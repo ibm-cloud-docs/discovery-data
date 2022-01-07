@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-02"
+lastupdated: "2022-01-07"
 
 subcollection: discovery-data
 
@@ -136,7 +136,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  Optionally, add more file paths.
 1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
-    The processing time increases when this feature is enabled.
+    When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
     {: note}
 
 1. Click **Finish**.
