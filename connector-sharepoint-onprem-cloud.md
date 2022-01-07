@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Microsoft SharePoint OnPrem
+# Microsoft SharePoint On Prem
 {: #connector-sharepoint-onprem-cloud}
 
 Crawl documents that are stored in a Microsoft SharePoint data source that is hosted on premises.
@@ -34,13 +34,13 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 
 | Data source | Objects that are crawled |
 |-------------|--------------------------|
-| Microsoft SharePoint OnPrem | SiteCollections, Sites, SubSites, Lists, List Items, Document Libraries, List Item Attachments |
+| Microsoft SharePoint On Prem | SiteCollections, Sites, SubSites, Lists, List Items, Document Libraries, List Item Attachments |
 {: caption="Table 1. Data sources crawling support" caption-side="top"}
 
 ## Data source requirements
 {: #connector-sharepoint-onprem-cloud-reqs}
 
-In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements) for all managed deployments, your SharePoint OnPrem data source must meet the following requirements:
+In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements) for all managed deployments, your SharePoint On Prem data source must meet the following requirements:
 
 - You can connect to a SharePoint 2013, 2016, or 2019 on-premises data source.
 - The user ID must have `SiteCollection Administrator` permission and be able to access all of the sites and lists that they want to crawl.
@@ -52,32 +52,32 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 You must have the following information ready. If you don't know it, ask your SharePoint administrator to provide the information or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
 
 Username
-:   The username to use to connect to the SharePoint OnPrem web application that you want to crawl. For example, `siteadmin01`.
+:   The username to use to connect to the SharePoint On Prem web application that you want to crawl. For example, `siteadmin01`.
 
 Password
-:   The password to connect to the SharePoint OnPrem web application that you want to crawl. This value is never returned and is only used when credentials are created or modified.
+:   The password to connect to the SharePoint On Prem web application that you want to crawl. This value is never returned and is only used when credentials are created or modified.
 
 Web Application URL
 :   The SharePoint web application URL. For example, `https://sharepointwebapp.com:8443`. If you do not enter a port number, the default value of `80` is used for an HTTP URL and `443` for HTTPS.
 
 Domain
-:   The domain name of the SharePoint OnPrem account. For example, `sharepoint.mycointernal`.
+:   The domain name of the SharePoint On Prem account. For example, `sharepoint.mycointernal`.
 
 ## Prerequisite step
 {: #connector-sharepoint-onprem-cloud-prereq-task}
 
-Before you can connect to a SharePoint OnPrem data source, you must install and configure {{site.data.keyword.SecureGatewayfull}}.
+Before you can connect to a SharePoint On Prem data source, you must install and configure {{site.data.keyword.SecureGatewayfull}}.
 
 For more information, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
 
 ## Connecting to the data source
 {: #connector-sharepoint-onprem-cloud-task}
 
-To configure the Microsoft SharePoint OnPrem data source, complete the following steps in {{site.data.keyword.discoveryshort}}:
+To configure the Microsoft SharePoint On Prem data source, complete the following steps in {{site.data.keyword.discoveryshort}}:
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **SharePoint OnPrem**, and then click **Next**.
+1.  Click **SharePoint On Prem**, and then click **Next**.
 1.  Add values to the following fields:
 
     -   Username
@@ -93,6 +93,14 @@ To configure the Microsoft SharePoint OnPrem data source, complete the following
 1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+1.  **Optional**: If you want to store any access control information that exists in the SharePoint documents that you crawl, in the *Security* section, set the **Include Access Control List** switch to `On`.
+
+    When you enable this option, information about SharePoint access rules that is stored in SharePoint source documents is retained and stored as metadata in the documents that are added to your collection.
+
+    This feature is not the same as enabling document-level security for the collection. The access rules in the document metadata are not used by {{site.data.keyword.discoveryshort}} search. Enabling this feature merely stores the information so that you can leverage the access rules when you build a custom search solution.
+
+    Use of this feature increases the size of the documents that are generated in the collection and increases the crawl time. Only enable the feature if your use case requires that you store the SharePoint document ACL information.
+    {: important}
 1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).

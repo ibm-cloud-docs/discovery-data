@@ -70,6 +70,8 @@ Things to keep in mind when you enable OCR:
 -   OCR can recognize many languages, but the language of the text in the image must be the same as the language that is specified for the collection where the file is added. Otherwise, the resulting transcription will contain meaningless text.
 -  The time it takes to ingest a document with images increases when OCR is enabled.
 
+For a list of files types where you can apply OCR, see the [Supported file types](#supportedfiletypes) table.
+
 ## Collection limits
 {: #collections-limits}
 

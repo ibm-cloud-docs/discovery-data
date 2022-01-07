@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2021-11-09"
+lastupdated: "2022-01-07"
 
 subcollection: discovery-data
 
@@ -33,7 +33,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 - [Box](/docs/discovery-data?topic=discovery-data-connector-box-cloud)
 - [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud)
 - [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud)
-- [Microsoft SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud)
+- [Microsoft SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud)
 - [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cloud)
 - [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud)
 
@@ -131,7 +131,7 @@ When you connect to external data sources, you reduce the data isolation of your
 You can view a list of collections that are connected to a particular gateway. Complete the following steps to view collections that share a particular gateway:
 
 1.  From the **My projects** page, click **Data usage and GDPR**.
-1.  Click **On-premise connections**.
+1.  Click **On premises**.
 
     Collections that share a common gateway are displayed in the *Connected collections* list.
 
