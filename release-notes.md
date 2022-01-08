@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-12-07"
+lastupdated: "2022-01-07"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 7 January 2022
+{: #discovery-7january2022}
+{: release-note}
+
+<!-- 4.0.5-4.0 -->
+
+Capturing the ACL information in documents that are crawled from SharePoint On Prem
+:   You can now configure the data source crawl to store ACL information as metadata in the documents that are added to your SharePoint On Prem collection. For more information, see [Microsoft SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
 
 ## 6 December 2021
 {: #discovery-6december2021}
@@ -224,8 +233,8 @@ New Content Intelligence
 New Box connector
 :   Crawl Box systems. For more information, see [Box](/docs/discovery-data?topic=discovery-data-sources#connectboxpublic).
 
-New SharePoint 2016 On-Premise connector
-:   Crawl SharePoint 2016 On-Premise systems. For more information, see [SharePoint 2016 On-Premise](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
+New SharePoint 2016 On-Premises connector
+:   Crawl SharePoint 2016 On-Premises systems. For more information, see [SharePoint 2016 On-Premises](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
 
 The Box connector does not run on Safari
 :   For more information, see [Box connector](/docs/discovery-data?topic=discovery-data-connector-box-cloud).
@@ -315,4 +324,4 @@ Change to features in this release
 :   Anomaly Detection is not offered.
 :   {{site.data.keyword.discoveryfull}} News is no longer included.
 :   Several Watson Natural Language Understanding enrichments are not available at this time (Entity extraction, Relation extraction, Keyword extraction, Category classification, Concept tagging, Semantic Role extraction, Sentiment analysis, Emotion analysis)
-:   The SharePoint 2016 On-Premise and Box data sources are not available at this time.
+:   The SharePoint 2016 On-Premises and Box data sources are not available at this time.

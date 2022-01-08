@@ -106,7 +106,7 @@ To configure the web crawl collection, complete the following steps:
 
     -   To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
 
-        Expand *More connection settings*, and then set **Connect to on-premise network** to `On`. Provide details about your {{site.data.keyword.SecureGateway}} connection.
+        Expand *More connection settings*, and then set **Connect to on-premises network** to `On`. Provide details about your {{site.data.keyword.SecureGateway}} connection.
 
 1.  Optional: Add another web address to the **Starting URLs** field.
 
