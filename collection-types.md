@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-12-01"
+lastupdated: "2022-01-10"
 
 subcollection: discovery-data
 
@@ -50,7 +50,6 @@ If you have special requirements when adding source documents, such as a need to
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
 - The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When decompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
-- When optical character recognition (OCR) is enabled, images must meet the minimum image quality requirement of 75 DPI (dots per inch) to be processed successfully.
 - Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes one crawler pod, which allows three collections to be processed simultaneously. A production installation includes two crawler pods, which can process six collections simultaneously.
 
      If you are running a default installation and you want to process more than three collections simultaneously, you must increase the number of crawler pods by running the following commands:

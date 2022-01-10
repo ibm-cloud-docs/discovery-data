@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-01-10"
 
 subcollection: discovery-data
 
@@ -51,7 +51,6 @@ To use an {{site.data.keyword.appconnect_notm}} connector, you must create a sep
 The following requirements and limitations are specific to {{site.data.keyword.discoveryshort}} on {{site.data.keyword.cloud_notm}}:
 
 -   A collection can connect to only one data source.
--   When optical character recognition (OCR) is enabled, images must meet the minimum image quality requirement of 75 DPI (dots per inch) to be processed successfully.
 -   For more information about size limits, which can differ per plan, see the following topics:
 
     -   [Collection limits](/docs/discovery-data?topic=discovery-data-collections#collections-limits)
