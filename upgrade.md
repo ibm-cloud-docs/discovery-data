@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-10"
+lastupdated: "2022-01-11"
 
 subcollection: discovery-data
 
@@ -18,7 +18,7 @@ Learn how to upgrade your service plan.
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. For more information about upgrading an installed deployment that is hosted by {{site.data.keyword.icp4dfull_notm}}, see [Upgrading Watson Discovery](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson){: external}.
+This information applies only to managed deployments. For more information about upgrading an installed deployment that is hosted by {{site.data.keyword.icp4dfull_notm}}, see [Upgrading the service](/docs/discovery-data?topic=discovery-data-upgrade-data).
 {: note}
 
 ## Upgrading your plan
