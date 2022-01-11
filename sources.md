@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-10"
+lastupdated: "2022-01-11"
 
 subcollection: discovery-data
 
@@ -101,6 +101,11 @@ After you install the client for one on-premises data source, you can reuse it f
 The number of gateways that you can create is limited to 50.
 
 For more information, see [About Secure Gateway](/docs/SecureGateway?topic=SecureGateway-about-sg){: external}.
+
+You can use the IBM Secure Gateway with the following connectors only:
+
+-   [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud#connector-web-cloud-prereq-task)
+-   [Microsoft SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud#connector-sharepoint-onprem-cloud-prereq-task)
 
 To install {{site.data.keyword.SecureGatewayfull}}, complete the following steps:
 

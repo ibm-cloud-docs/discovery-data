@@ -26,7 +26,7 @@ This information applies only to installed deployments.
 
 In-place upgrade support was added with the 4.x releases. For information about how to upgrade from one 4.x release to a later one, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
 
-For information about how to backup and restore data from a 2.x deployment so that you can use it with Watson Discovery 4, read the following information:
+For information about how to back up and restore data from a 2.x deployment so that you can use it with Watson Discovery 4, read the following information:
 
 -   [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore)
 -   [Backing up and restoring data to 2.2.1 or earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-prior)
