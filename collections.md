@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-01-13"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -154,7 +154,15 @@ The document limit applies to the number of documents in the index. Upload fewer
 The maximum allowed number can vary slightly depending on the size of the documents. Use these values as a general guideline.
 {: note}
 
-The size of each document that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type.
+## File size limits
+{: #collections-file-size-limits}
+
+The maximum size of each file that you can crawl by using a connector differs by deployment type.
+
+-   ![IBM Cloud only](images/ibm-cloud.png) Managed deployments on {{site.data.keyword.cloud_notm}}: 10 MB
+-   ![Cloud Pak for Data only](images/desktop.png) Installed deployments on {{site.data.keyword.icp4dfull_notm}}: 32 MB
+
+The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | File size per document |
 |--------------|--------------------------------:|
