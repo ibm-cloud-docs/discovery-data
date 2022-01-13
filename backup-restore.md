@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-13"
 
 subcollection: discovery-data
 
@@ -90,14 +90,6 @@ A request is a current action that is being performed by {{site.data.keyword.dis
 
 Complete the following steps to back up {{site.data.keyword.discoveryfull}} data by using the backup scripts:
 
-1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
-
-    - `Postgresql`
-    - `Etcd`
-    - `ElasticSearch`
-    - `Hadoop`
-    - `Minio`
-    - `<release_name>-watson-discovery-gateway-0`
 1.  Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
 
     ```bash
@@ -158,14 +150,6 @@ In most cases, you don't need to use a persistent volume. If you choose to use a
 
 Complete the following steps to restore data in {{site.data.keyword.discoveryfull}} by using the restore scripts:
 
-1.  Ensure that the following services are running on your {{site.data.keyword.discoveryshort}} instance.
-
-    -  `Postgresql`
-    -  `Etcd`
-    -  `ElasticSearch`
-    -  `Hadoop`
-    -  `Minio`
-    -  `<release_name>-watson-discovery-gateway-0`
 1.  Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
 
     ```bash

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-12-21"
+lastupdated: "2022-01-13"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -115,17 +115,16 @@ Improved Web crawl
 New upgrade support
 :   The 4.0.2 release supports in-place upgrade from {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.0. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}
 
-<!--### IBM Cloud Private End Of Support
-## Deprecation notice
+## IBM Cloud Private End Of Support
 {: #release-notes-data-30september2021}
 
 Effective 30 September 2021, IBM withdrew support for the following programs:
 
-- IBM Watson Assistant Discovery Extension for IBM Cloud Private
-- IBM Watson Discovery for ICP for Data
-- IBM Watson Discovery for ICP for Data Add-on
+-   IBM Watson Assistant Discovery Extension for IBM Cloud Private 2.1.0–2.1.4
+-   IBM Watson Discovery for ICP for Data 2.1.0–2.1.4
+-   IBM Watson Discovery for ICP for Data Add-on 2.1.0–2.1.4
 
-For more information, see announcements [ENUS921-005.PDF](https://www.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&infotype=an&appname=iSource&supplier=897&letternum=ENUS921-005){: external} and [ENUSLP21-0099.PDF](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/9/899/ENUSLP21-0099/index.html&request_locale=en).-->
+For more information, see announcements [ENUS921-005.PDF](https://www.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&infotype=an&appname=iSource&supplier=897&letternum=ENUS921-005){: external} and [ENUSLP21-0099.PDF](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/9/899/ENUSLP21-0099/index.html&request_locale=en).
 
 ## 4 release, 13 July 2021
 {: #release-notes-data-13july2021}
