@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-14"
 
 subcollection: discovery-data
 
@@ -32,6 +32,8 @@ The following table shows you the correct resources to add to address common nee
 Dictionaries and classifiers that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
 
 For more information about how to apply built-in enrichments to your collection, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
+
+For more information about how to get the most from enrichments, read the [Enriching your documents can make search more effective](https://community.ibm.com/community/user/watsonapps/blogs/bill-murdock1/2022/01/14/enriching-your-documents-can-make-search-more-effe){: external} blog post.
 
 ## Choosing the right enrichment type
 {: #domain-choose-enrichment}
