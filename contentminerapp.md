@@ -659,10 +659,10 @@ To create a document classifier, complete the following steps:
     All of the fields are selected by default. You might need to scroll horizontally to review all of the fields.
 1.  On the *Classifier* page, specify the fields to use for machine learning training and prediction.
 
-    -   **Answer field**: Select the field from your training file where you categorize or classify the data. From the earlier example, the `User_sentiment` field is the best choice.
-    -   **Predicted field**: Specify a name to apply to the field that the classifier will generate to store the predicted class label. by detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `User_sentiment_predicted`.
-    -   **Test dataset**: Specifies the training data set to use to build the classifier model. By default, the training data CSV file that you uploaded and configured is used. However, you can optionally specify a different data set.
-    -   **Train federated model**: Train your data by a specified field value and create multiple models for each answer label.
+    -   **Answer field**: Select the field from your training file with the text that you want to classify. From the earlier example, the `Product_review` field is the best choice.
+    -   **Predicted field**: Specify a name to apply to the field that the classifier will generate to store the predicted class label. by detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `Product_review_predicted`.
+    -   **Test dataset**: Specifies the data set to use to test the classifier model. By default, the training data CSV file that you uploaded and configured is split into 3 data sets that are used for training, validation and test respectively. However, you can optionally specify a separate data set to use for testing the model.
+    -   **Train federated model**: Creates more than one model, based on values from a specific field in the data set. For example, if the document has a `product_name` field, you can configure the classifier to create a separate classifier model for each product name value that is specified in the field. By default, the classifier creates one machine learning classifier model.
 
     Click **Next**.
 1.  If you want to apply an enrichment to the text in your training data, select at least one field from the **Target fields** list where you want to apply enrichments. 
