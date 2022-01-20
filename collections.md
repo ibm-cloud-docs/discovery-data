@@ -154,6 +154,8 @@ The document limit applies to the number of documents in the index. Upload fewer
 The maximum allowed number can vary slightly depending on the size of the documents. Use these values as a general guideline.
 {: note}
 
+For more information about the supported number of documents for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
+
 ## File size limits
 {: #collections-file-size-limits}
 
@@ -171,8 +173,6 @@ The size of each file that you can upload depends on your {{site.data.keyword.di
 | Enterprise |                             10 MB |
 | Plus (includes Trial)         |          10 MB |
 {: caption="Maximum document size" caption-side="top"}
-
-For more information about the supported number of documents for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
 
 ## Field limits
 {: #collections-field-limits}

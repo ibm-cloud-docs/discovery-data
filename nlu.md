@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-14"
 
 subcollection: discovery-data
 
@@ -41,6 +41,8 @@ The following prebuilt enrichments are applied to some collections automatically
 - [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)
 
 For more information about how to create custom enrichments, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
+
+For more information about how to get the most from enrichments, read the [Enriching your documents can make search more effective](https://community.ibm.com/community/user/watsonapps/blogs/bill-murdock1/2022/01/14/enriching-your-documents-can-make-search-more-effe){: external} blog post.
 
 ## Add enrichments
 {: #nlu-task}

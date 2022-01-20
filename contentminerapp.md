@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-02"
+lastupdated: "2022-01-19"
 
 subcollection: discovery-data
 
@@ -619,45 +619,91 @@ By default, a Content Mining collection is configured to analyze the content of 
 ## Creating and applying a document classifier
 {: #create-doc-classifier}
 
-If you want to apply a document classifier to your Content Mining or {{site.data.keyword.discoveryshort}} collection, you must create the document classifier in the Content Mining application and then deploy the classifier as an enrichment. After you deploy the document classifier as an enrichment, you can add your document classifier to your Content Mining or {{site.data.keyword.discoveryshort}} collection.
+To create a document classifier, you must create a Content Mining project, and then launch the Content Mining application to create the document classifier. After you create the document classifier, you can apply it as an enrichment to the collection in your Content Mining project. The document classifier is available as an enrichment that you can apply to other collections in other projects in the same service instance.
 {: shortdesc}
 
-If you want to apply your document classifier to a {{site.data.keyword.discoveryshort}} collection, you must have a .csv training file and a .csv target file. The purpose of the .csv training file is to train the classifier. The data in the .csv training file must have the same column names and value types as the .csv target file, such as string, number, and so on. The .csv target file contains the actual data that you want to apply your classifier to after you create it in your Content Mining application. For sample .csv training and .csv target data, see Table 1.
+To apply a document classifier to a {{site.data.keyword.discoveryshort}} collection, you must have a .csv training file and a .csv target file. The purpose of the .csv training file is to train the classifier. The data in the .csv training file must have the same column names and data types (such as string, number, and so on) as the .csv target file. The .csv target file contains the actual data that you want to apply your classifier to. For sample .csv training and .csv target data, see Table 1.
 {: important}
 
 For more information about creating a text classifier, see [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier).
 
-You can apply your document classifier to a collection in your Content Mining application, a {{site.data.keyword.discoveryshort}} collection, or both. To create and apply a document classifier to your Content Mining or {{site.data.keyword.discoveryshort}} collection, complete the following steps:
+To create a document classifier, complete the following steps:
 
-1.  In {{site.data.keyword.discoveryshort}}, create a Content Mining project, and click **Upload data**.
-1.  Name your collection, and click **Next**.
-1.  Click **Select documents**, and select the .csv file that contains your training data.
-1.  After collection processing is complete, click **Launch application** to navigate to the Content Mining application.
-1.  On the **Create a collection** page in the content mining user app, create a classifier by selecting **classifier** in the drop-down list and then **Create classifier**. You can see a progress bar that has the following steps for configuring your classifier: **Create**, **Training data**, **Fields**, **Classifier**, and **Enrichment**.
-1.  In **Create**, name your classifier. You can also add a description and choose a language for your data.
-1.  In **Training data**, select the training data that is associated with a collection in the drop-down list, or upload the .csv file that contains your training data.
-1.  In **Fields**, select or clear the column names from your .csv training file that you want to include in or exclude from your classifier.
-1.  In **Classifier**, specify the fields for machine learning training and prediction. You can specify the following fields:
+1.  In {{site.data.keyword.discoveryshort}}, create a Content Mining project.
+1.  Choose to upload data to create the collection. Name your collection, and click **Next**.
+1.  Upload the CSV file that contains your training data.
 
-    -   **Answer field** - Select a field in your .csv training file that contains the answer label. If you want to specify multiple answer labels in a cell in your .csv file, separate the answer labels by using a semicolon (`;`). For example, if you want to specify the answer labels `orange` and `apple`, enter `orange;apple` in the cell.
-    -   **Predicted field** - Specify a field name that contains the label that the classifier predicts.
-    -   **Test dataset** - The training data set that is used by default. You can also explicitly specify a specific data set.
-    -   **Train federated model** - Train your data by a specified field value and create multiple models for each answer label.
-1.  In **Enrichment**, select the fields for annotation in **Target fields** and any annotators that enrich the selected text content field in **Annotators**.
-1.  In **Confirm**, verify your classifier configuration settings, and click **Save**.
-1.  In the **Overview** tab, click **New model** to create and train your machine learning model. You can name your model and add a description. It might take several minutes for model training to complete.
-1.  After model training is completed, deploy the model as an enrichment by either clicking the expandable menu icon in the **Actions** column and then **Deploy model** or by clicking **Deploy** in the pane where your model is displayed.
-1.  If you want to apply your document classifier to your Content Mining collection, click **Classifiers** to verify that your classifier is available on the **Create a classifier** page in your Content Mining user application, and after you verify that your classifier is available, select **collection** in the drop-down menu, click the expandable menu icon on your collection, and click **Edit collection**. If you do not want to apply your document classifier to a Content Mining collection but rather to a {{site.data.keyword.discoveryshort}} collection, skip to step 17.
+    The training data file must contain the following information at a minimum:
+
+    -   A column that contains sample text that you want to classify. For example, the sample text might be a product review.
+    -   A column that contains a class or category label that is assigned to the sample text. For example, the label options might be `promoter`, `detractor`, and `indifferent`. You can apply more than one label to a text sample. Separate multiple label values with a semicolon.
+
+    A row that has text such as `I love my XYZ blender. I use it to prepare every meal!` in the *Product_review* column will have a value such as `promoter` in the *User_sentiment* column.
+1.  After collection processing is complete, click **Launch application** to open the Content Mining application.
+
+    The facet details are displayed for the collection.
+1.  Click the **Collections** link in the breadcrumb to open the *Create a collection* page.
+1.  To create a classifier, click **collection**, and then select **classifier** from the list.
+1.  Click **Create classifier**.
+1.  Name your classifier, and then click **Next**. 
+
+    Optionally, add a description and identify the language of your training data by selecting it from the *Language* field.
+1.  On the *Training data* page, select the file that you uploaded previously from the list, and then click **Next**. 
+
+    Alternatively, you can upload a CSV file that contains your training data. However, if you upload a file now, it is saved as a new collection and a separate untitled Content Mining project is generated to contain the collection.
+
+    The *Fields* page is displayed. It shows details about the fields that are generated from the file that you added. Typically, each column in a CSV file is converted into a field and is named after the column header.
+
+1.  Deselect any fields that you want to exclude from the data set for your document classifier to analyze, and then click **Next**.
+
+    All of the fields are selected by default. You might need to scroll horizontally to review all of the fields.
+1.  On the *Classifier* page, specify the fields to use for machine learning training and prediction.
+
+    -   **Answer field**: Select the field from your training file with the text that you want to classify. From the earlier example, the `Product_review` field is the best choice.
+    -   **Predicted field**: Specify a name to apply to the field that the classifier will generate to store the predicted class label. by detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `Product_review_predicted`.
+    -   **Test dataset**: Specifies the data set to use to test the classifier model. By default, the training data CSV file that you uploaded and configured is split into 3 data sets that are used for training, validation and test respectively. However, you can optionally specify a separate data set to use for testing the model.
+    -   **Train federated model**: Creates more than one model, based on values from a specific field in the data set. For example, if the document has a `product_name` field, you can configure the classifier to create a separate classifier model for each product name value that is specified in the field. By default, the classifier creates one machine learning classifier model.
+
+    Click **Next**.
+1.  If you want to apply an enrichment to the text in your training data, select at least one field from the **Target fields** list where you want to apply enrichments. 
+
+    Typically, you want to choose a field that contains a body of text. 
+    
+    Next, select any annotators that you want to apply to enrich the text in the target field or fields, and then click **Next**.
+
+    The *Part of speech* annotator is selected by default. If you don't want to enrich any fields, deselect all of the annotators.
+1.  On the *Confirm* page, review your classifier configuration settings. To make changes, use the **Back** button. Otherwise, click **Save**.
+
+    An *Overview* page is displayed.
+1.  Click **New model** to create and train your machine learning model. You can name your model and add a description. 
+
+    It might take several minutes for model training to complete.
+
+To apply the document classifier to a collection in a Content Mining project, complete the following steps:
+
+1.  After model training is completed, deploy the model as an enrichment.
+
+    Do one of the following things:
+    
+    -   Click the expandable menu icon in the **Actions** column and then click **Deploy model**.
+    -   Click **Deploy** in the pane where your model is displayed.
+
+1.  Check whether your classifier is available. Go to the **Create a classifier** page in the Content Mining user application, and look for your classifier in the list.
+1.  Select **collection** in the drop-down menu, and then click the expandable menu icon on your collection, and click **Edit collection**.
 1.  Click the **Enrichment** tab, and scroll to the end of the page to view your classifier.
-1.  Select the checkbox for your classifier, and click **Save**. It might take several minutes for collection reindexing to complete.
-1.  If you want to apply your document classifier to a {{site.data.keyword.discoveryshort}} collection, in {{site.data.keyword.discoveryshort}}, create a project and a collection, or select an existing project and collection that has your uploaded target data. If you choose an existing project and collection, skip to step 21. You can find your classifier in the **Available enrichments** list in the **Enrichments** tab in your collection. Your classifier is available for any collection.
-1.  If you create a new project and collection, click **Upload data**, and in **Collection name**, enter the name of your collection.
-1.  Click **Select documents** to upload your .csv target file that contains the actual data that you want to apply your classifier to. For sample .csv training and target data, see Table 1. Your classifier now processes your documents.
-1.  Optional: In your collection, click the **CSV settings** tab, and verify that **Use header** is selected. You can manually configure the .csv file settings in this tab.
-1.  Click the **Manage fields** tab, include all of the fields that you want to index, and click **Apply changes and reprocess**.
-1. In the **Enrichments** tab, locate your classifier in the **Name** column, select the fields that you want to enrich in the **Fields to enrich** drop-down menu, and click **Apply changes and reprocess**.
+1.  Select the checkbox for your classifier, and click **Save**. 
 
-Your classifier processes your document based on your structured and textual data. If you upload multiple documents, some documents might not be assigned any classes. To verify that your classifier works, ensure that both your .csv training and .csv target files contain the same column names and the same value types. To see sample column names and their corresponding valid value types in both the .csv training and .csv target files, review Table 1:
+It might take several minutes for collection reindexing to complete.
+
+To apply the document classifier to a collection in a different project, complete the following steps:
+
+1.  In {{site.data.keyword.discoveryshort}}, create or open the collection that has the documents that you want to classify. 
+
+    The data in the collection where you apply the enrichment must have the same fields as the collection that you used to train the model.
+    {: note}
+1.  In the **Enrichments** tab, locate your classifier in the **Name** column, select the fields that you want to enrich in the **Fields to enrich** drop-down menu, and then click **Apply changes and reprocess**.
+
+Your classifier processes your document based on structured and textual data. If you upload multiple documents, some documents might not be assigned any classes. To verify that your classifier works, ensure that both your .csv training and .csv target files contain the same column names and the same value types. To see sample column names and their corresponding valid value types in both the .csv training and .csv target files, review Table 1:
 
 | File          | Column names | Value types                              |
 | ------------- | ------------ | ---------------------------------------- |
@@ -665,7 +711,7 @@ Your classifier processes your document based on your structured and textual dat
 | .csv target   | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_sex`, `client_age`, `body`, `label` | `1`, `2016/1/2`, `Ice cream`, `vanilla ice cream`, `Silver Card Member`, `Queens`, `Female`, `20`, `I got some ice cream for my children, but there was something like a piece of thread inside the cup.`, `contamination_tampering` |
 {: caption="Table 1. Sample data for .csv training and .csv target files" caption-side="top"}
 
-If you cannot find any documents that were classified, search for your document by using the name that you assigned to your machine learning model in step 12.
+If you cannot find any documents that were classified, search for your document by using the name that you assigned to your machine learning model.
 {: tip}
 
 ### Document classifier limits
