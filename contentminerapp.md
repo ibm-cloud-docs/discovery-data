@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-21"
 
 subcollection: discovery-data
 
@@ -652,15 +652,15 @@ To create a document classifier, complete the following steps:
 
     Alternatively, you can upload a CSV file that contains your training data. However, if you upload a file now, it is saved as a new collection and a separate untitled Content Mining project is generated to contain the collection.
 
-    The *Fields* page is displayed. It shows details about the fields that are generated from the file that you added. Typically, each column in a CSV file is converted into a field and is named after the column header.
+    The *Fields* page is displayed. It shows details about the fields that are generated from the file that you added. Typically, each column in a CSV file is converted into a field and is assigned a name that is copied from the column header.
 
-1.  Deselect any fields that you want to exclude from the data set for your document classifier to analyze, and then click **Next**.
+1.  Deselect any fields that you want to exclude from the data set for your document classifier to learn from, and then click **Next**.
 
     All of the fields are selected by default. You might need to scroll horizontally to review all of the fields.
 1.  On the *Classifier* page, specify the fields to use for machine learning training and prediction.
 
-    -   **Answer field**: Select the field from your training file with the text that you want to classify. From the earlier example, the `Product_review` field is the best choice.
-    -   **Predicted field**: Specify a name to apply to the field that the classifier will generate to store the predicted class label. by detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `Product_review_predicted`.
+    -   **Answer field**: Select the field from your training data file with the text that you want to classify. From the earlier example, the `Product_review` field is the best choice.
+    -   **Predicted field**: Specify a name to apply to the field that the classifier will generate to store the predicted class label. By detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `Product_review_predicted`.
     -   **Test dataset**: Specifies the data set to use to test the classifier model. By default, the training data CSV file that you uploaded and configured is split into 3 data sets that are used for training, validation and test respectively. However, you can optionally specify a separate data set to use for testing the model.
     -   **Train federated model**: Creates more than one model, based on values from a specific field in the data set. For example, if the document has a `product_name` field, you can configure the classifier to create a separate classifier model for each product name value that is specified in the field. By default, the classifier creates one machine learning classifier model.
 
