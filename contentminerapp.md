@@ -649,7 +649,9 @@ To create a document classifier, complete the following steps:
 
     Select **classifier** from the list.
 1.  Click **Create classifier**.
-1.  Name your classifier, and then click **Next**. 
+1.  Name your classifier, and then click **Next**.
+
+    When you deploy the model as an enrichment later, the enrichment is given a name with the format `{classifier name} - {model name}`. For example, if your classifier is named `Product reviews` and the model is named `v0.1`, then the enrichment name will be `Product reviews - v0.1`.
 
     Optionally, add a description and identify the language of your training data by selecting it from the *Language* field.
 1.  On the *Training data* page, select the file that you uploaded previously from the list, and then click **Next**. 
@@ -679,7 +681,7 @@ To create a document classifier, complete the following steps:
 1.  On the *Confirm* page, review your classifier configuration settings. To make changes, use the **Back** button. Otherwise, click **Save**.
 
     An *Overview* page is displayed.
-1.  Click **New model** to create and train your machine learning model. You can name your model and add a description. 
+1.  Click **New model** to create and train your machine learning model. You can name your model and add a description.
 
     It might take several minutes for model training to complete.
 1.  After model training is completed, deploy the model as an enrichment. Click the overflow menu in the **Actions** column, and then click **Deploy model**.
