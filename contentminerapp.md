@@ -643,7 +643,11 @@ To create a document classifier, complete the following steps:
 
     The facet details are displayed for the collection.
 1.  Click the **Collections** link in the breadcrumb to open the *Create a collection* page.
-1.  To create a classifier, click **collection**, and then select **classifier** from the list.
+1.  To create a classifier, click **collection**.
+
+    ![Shows the collection menu](images/cm-create-classifier)
+
+    Select **classifier** from the list.
 1.  Click **Create classifier**.
 1.  Name your classifier, and then click **Next**. 
 
@@ -678,15 +682,9 @@ To create a document classifier, complete the following steps:
 1.  Click **New model** to create and train your machine learning model. You can name your model and add a description. 
 
     It might take several minutes for model training to complete.
+1.  After model training is completed, deploy the model as an enrichment. Click the overflow menu in the **Actions** column, and then click **Deploy model**.
 
-To apply the document classifier to a collection in a Content Mining project, complete the following steps:
-
-1.  After model training is completed, deploy the model as an enrichment.
-
-    Do one of the following things:
-    
-    -   Click the expandable menu icon in the **Actions** column and then click **Deploy model**.
-    -   Click **Deploy** in the pane where your model is displayed.
+To apply the document classifier to a collection in your Content Mining project, complete the following steps:
 
 1.  Check whether your classifier is available. Go to the **Create a classifier** page in the Content Mining user application, and look for your classifier in the list.
 1.  Select **collection** in the drop-down menu, and then click the expandable menu icon on your collection, and click **Edit collection**.
