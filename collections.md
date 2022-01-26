@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-25"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -223,7 +223,11 @@ To create a crawl schedule, complete the following steps:
     -   Do not configure multiple crawlers to run at short intervals.
     -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
-1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: In **More scheduling settings**, you can choose the type of schedule to use to crawl the collection from the following options:
+1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: In **More scheduling settings**, you can choose the type of schedule to use to crawl the collection. 
+
+    The choices are self-explanatory for all of the connectors except the *Web crawl* connector. The *Web crawl* connector schedules crawls differently from the other connector types.
+
+    For the *Web crawl* connector only, choose among the following options:
 
     -   To control the frequency of the crawls yourself, choose this option:
 
