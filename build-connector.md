@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-02"
+lastupdated: "2022-01-26"
 
 subcollection: discovery-data
 
@@ -78,4 +78,4 @@ Observe the following notes and warnings when you implement a custom connector.
 -   The `list` parameter type is not supported.
 -   If a custom connector fails to connect to its source for any reason, it issues a generic error message such as `Failed to create connector` or `Timed out`, or a `500` HTTP error. Specific failure information is not currently provided.
 
-    See the [Release notes](/docs/discovery-data?topic=discovery-data-release-notes) for more possible issues.
+    See the [Release notes](/docs/discovery-data?topic=discovery-data-release-notes-data) for more possible issues.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-27"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -26,6 +26,20 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+## 4.0.5 release, 26 January 2022
+{: #discovery-data-26january2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.5 is available.
+
+A security vulnerability was addressed
+:   The following security patch was applied: [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j](https://www.ibm.com/support/pages/node/6538332)
+
+Features that are not available in this release
+:   The following features are generally available from {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Answer finding
+
 ## 4.0.4 release, 20 December 2021
 {: #discovery-data-20december2021}
 
@@ -43,12 +57,6 @@ Security vulnerabilities were addressed
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Netty](https://www.ibm.com/support/pages/node/6523820)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j](https://www.ibm.com/support/pages/node/6526072)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j 1.2](https://www.ibm.com/support/pages/node/6526478)
-
-Features that are not available in this release
-:   The following features are generally available from {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
-
-    -   Home page updates
-    -   Answer finding
 
 ## 4.0.3 release, 30 November 2021
 {: #discovery-data-30november2021}

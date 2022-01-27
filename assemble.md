@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-03"
+lastupdated: "2022-01-26"
 
 subcollection: discovery-data
 
@@ -126,7 +126,7 @@ To enable a section by using an `enum` condition, use code similar to the follow
 
 Each section includes one `<declare />` element for each of its settings.
 
-| XPath expressio                        | Description         |
+| XPath expression                       | Description         |
 |----------------------------------------|---------------------|
 | `/function/@name` | The name (type) of the crawler. Not a display name for the UI. Cannot contain spaces.|
 | `/function/prototype/proto-section` | A section of the configuration.|
