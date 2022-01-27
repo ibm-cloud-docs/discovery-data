@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-11-03"
+lastupdated: "2022-01-27"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ The latest version has new features that were previously unavailable. The follow
 | Feature | Latest version (v2) | Earlier version (v1) |
 |---------|:-------------------:|:--------------------:|
 | Use projects to organize your work | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Create a content mining project type and then use the built-in Content Mining application to do in-depth data analysis (*{{site.data.keyword.icp4dfull_notm}} and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Create a content mining project type and then use the built-in Content Mining application to do in-depth data analysis (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Apply the Parts of Speech enrichment to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Leverage intuitive user interface tools to add domain-specific artifacts, such as dictionaries and custom machine learning models | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Perform real-time NLP with the Analyze API (*{{site.data.keyword.icp4dfull_notm}} only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
@@ -56,7 +56,7 @@ The latest version has new features that were previously unavailable. The follow
 | You can enable optical character recognition (OCR) to process text from scanned documents or other images | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}} and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Use the Entity Extraction, Sentiment Analysis, and Keyword Extraction enrichments | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Discovery Query Language (DQL) API support | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Use the Smart Document Understanding (SDU) to annotate your documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
@@ -64,6 +64,7 @@ The latest version has new features that were previously unavailable. The follow
 | Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Perform relevancy training to improve query results | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure continuous relevancy training | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Query result deduplication | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Use the Watson Discovery News and COVID-19 collections to leverage pre-enriched data | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Identify document similarity | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure the normalization process of ingestion | | ![checkmark icon](../../icons/checkmark-icon.svg) |
