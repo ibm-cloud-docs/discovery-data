@@ -53,6 +53,9 @@ These instructions apply to all managed deployments, including {{site.data.keywo
 
 1.  Click the {{site.data.keyword.discoveryshort}} instance that you created to go to the service dashboard.
 
+    You can create a maximum of 10 instances per deployment. After you reach the maximum number, the *New instance* button is not displayed in {{site.data.keyword.icp4dfull_notm}}.
+    {: note}
+
 1.  On the **Manage** page, click **Launch Watson Discovery**.
 
     If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.

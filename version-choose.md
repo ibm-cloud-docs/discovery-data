@@ -64,6 +64,7 @@ The latest version has new features that were previously unavailable. The follow
 | Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Perform relevancy training to improve query results | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure continuous relevancy training | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Query result deduplication | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Use the Watson Discovery News and COVID-19 collections to leverage pre-enriched data | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Identify document similarity | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure the normalization process of ingestion | | ![checkmark icon](../../icons/checkmark-icon.svg) |

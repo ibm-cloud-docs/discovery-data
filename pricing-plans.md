@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-27"
 
 subcollection: discovery-data
 
@@ -78,7 +78,7 @@ The plan includes the following features:
 - Everything that's available in Plus
 - Content Intelligence
 - Content Mining
-- Document classification
+- Document classification (Text classification is available in all plans. Document classification is available with Enterprise and higher-level plans only.)
 
 ### Artifact limits
 {: #enterpriseplan-limits}

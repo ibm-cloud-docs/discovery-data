@@ -39,6 +39,7 @@ Features that are not available in this release
 
     -   Home page updates
     -   Answer finding
+    -   Guided tours
 
 ## 4.0.4 release, 20 December 2021
 {: #discovery-data-20december2021}
