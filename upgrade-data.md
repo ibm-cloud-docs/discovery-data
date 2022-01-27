@@ -31,6 +31,35 @@ For information about how to back up and restore data from a 2.x deployment so t
 -   [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore)
 -   [Backing up and restoring data to 2.2.1 or earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-prior)
 
+## Dependencies
+{: #upgrade-data-dependencies}
+
+Watson Discovery 4.0.5 has dependencies on the following packages. If you are using a manual subscription approval process, then you might be asked to approve updates to one or more of these resources.
+
+-   `ibm-etcd-operator`
+-   `ibm-minio-operator`
+-   `ibm-elasticsearch-operator`
+-   `ibm-model-train-classic-operator`
+-   `ibm-rabbitmq-operator`
+-   `ibm-watson-gateway-operator`
+-   `ibm-watson-discovery-operator`
+
+It also has dependencies on the following packages:
+
+-   IBM Cloud Pak foundational services
+
+    -   `ibm-common-service-operator`
+    -   `ibm-namespace-scope-operator`
+    -   `operand-deployment-lifecycle-manager`
+    -   `cloud-native-postgresql`
+    -   `ibm-cert-manager-operator`
+    -   `ibm-licensing-operator`
+    -   `ibm-zen-operator`
+
+-   Cloud Pak for Data
+
+    `cpd-platform-operator`
+
 ### Changing the subscription approval policy
 
 If you want to change the subscription approval policy after the initial installation of the service, you can patch the Subscription resource. 

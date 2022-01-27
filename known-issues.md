@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-12-21"
+lastupdated: "2022-01-21"
 
 keywords: known issues
 
@@ -27,6 +27,11 @@ The known issues that are described in this topic apply to installed deployments
 {: note}
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
+
+## 4.0.5, 26 January 2022
+{: #26january2022ki}
+
+-   There are no known issues.
 
 ## 4.0.4, 20 December 2021
 {: #20december2021ki}
@@ -73,6 +78,11 @@ Known issues are regularly addressed with periodic software patches. For more in
 
 ## 2.2.1, 26 February 2021
 {: #26feb2021ki}
+
+-   Deployment timing issue:
+
+    -   **Error**: After installing patch 7, when you try to provision a service instance, a `404 Not Found` error is displayed. The following message might be logged for the nginx pods: `open() "/usr/local/openresty/nginx/html/watson/common/discovery/auth" failed (2: No such file or directory)`
+    -   **Solution**: Restart the `zen-watcher` pod.
 
 -   If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
 
