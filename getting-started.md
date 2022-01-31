@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-30"
+lastupdated: "2022-01-27"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -53,9 +53,6 @@ These instructions apply to all managed deployments, including {{site.data.keywo
 
 1.  Click the {{site.data.keyword.discoveryshort}} instance that you created to go to the service dashboard.
 
-    You can create a maximum of 10 instances per deployment. After you reach the maximum number, the *New instance* button is not displayed in {{site.data.keyword.icp4dfull_notm}}.
-    {: note}
-
 1.  On the **Manage** page, click **Launch Watson Discovery**.
 
     If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
@@ -66,6 +63,10 @@ These instructions apply to {{site.data.keyword.discoveryshort}} deployments tha
 
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand **Services**, and then click **Instances**.
 1.  Find your instance, and then click it to open its summary page.
+
+    You can create a maximum of 10 instances per deployment. After you reach the maximum number, the *New instance* button is not displayed in {{site.data.keyword.icp4dfull_notm}}.
+    {: note}
+
 1.  Click **Launch tool**.
 
 These instructions apply to {{site.data.keyword.discoveryshort}} deployments that are installed on {{site.data.keyword.icp4dfull}} 3.x:
