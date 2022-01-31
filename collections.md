@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-01-27"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -56,7 +56,7 @@ Before you can create a collection, you must create a project. For more informat
         -   ![Cloud Pak for Data only](images/desktop.png) [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
         -   ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
-        A collection can support only one data source.
+        A collection can support only one data source. Documents in the collection must be in one language only, the language that you specify for the collection.
         {: note}
 
 ## Optical character recognition

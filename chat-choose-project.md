@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-10-12"
+lastupdated: "2022-01-28"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ For more information about configuring search support from {{site.data.keyword.c
 
 - From an actions skill, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search){: external}.
 - From a dialog skill, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill){: external}.
-- From the new Beta user interface, see [Search trigger](/docs/watson-assistant?topic=watson-assistant-search-add#search-add-trigger){: external}.
+- From the new experience user interface, see [Search trigger](/docs/watson-assistant?topic=watson-assistant-search-add#search-add-trigger){: external}.
 
 ## How the assistant calls Discovery
 {: #chat-choose-project-api}
