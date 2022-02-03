@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-03"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -223,20 +223,25 @@ To create a crawl schedule, complete the following steps:
     -   Do not configure multiple crawlers to run at short intervals.
     -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. You can schedule the crawl for 01:00 AM on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
-1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: In **More scheduling settings**, you can choose the type of schedule to use to crawl the collection. 
+1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: In **More scheduling settings**, choose the type of schedule to use to crawl the data source. 
 
-    The choices are self-explanatory for all of the connectors except the *Web crawl* connector. The *Web crawl* connector schedules crawls differently from the other connector types.
+    The choices for all of the connectors (except the *Web crawl* connector) are as follows:
 
-    For the *Web crawl* connector only, choose among the following options:
+    -   **Full crawling**: Recrawls the external data source to update documents in the collection.
+    -   **Crawling updates (look for new, modified, and deleted contents)**: Only updates the collection if data in the external data source was added, modified, or deleted since the last crawl.
+    -   **Crawling new and modified contents**: Only updates the collection if data in the external data source that was added or modified since the last crawl.
+    
+    **Web crawl connector only**: The *Web crawl* connector schedules crawls differently from the other connector types. For the *Web crawl* connector only, choose among the following options:
 
     -   To control the frequency of the crawls yourself, choose this option:
 
-        -   **Full crawling**:  When you choose a full crawl schedule type, the crawl occurs with the frequency that you specify in the *Crawl schedule* section of the page.
+        **Full crawling**  
+        
+        When you choose a full crawl schedule type, the crawl occurs with the frequency that you specify in the *Crawl schedule* section of the page.
 
     -   To allow the system to manage the frequency of the crawls for you, choose one of the following options:
 
-        -   **Crawling updates (look for new, modified, and deleted contents)**
-        -   **Crawling new and modified contents**
+        **Crawling updates (look for new, modified, and deleted contents)** or **Crawling new and modified contents**
 
         When you choose a schedule type that crawls for updates or for new and modified contents, the frequency that you specify for the crawl schedule is ignored. The frequency with which each document is crawled is variable and is managed entirely by the service. And the frequency changes depending on how often changes are found in a document. For example, if 5 of the 10 documents in a collection changed by the end of the first crawl interval, then the frequency is automatically increased for those 5 documents. Currently, the highest frequency at which these self-managed refreshes can run is daily.
 
