@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-02-01"
 
 subcollection: discovery-data
 
@@ -76,8 +76,6 @@ For more information about the other tabs, see the following topics:
 ## Deleting collections
 {: #collection-delete}
 
-You cannot delete the Sample Project collection. If you want to prevent results from the sample collection from being displayed when you submit queries, use the facet options to filter the results by collection.
-
 Find out whether a collection is being used anywhere before you delete it from the *Collection usage* page. Unshared collections can be deleted directly from this page.
 
 -   To delete a single collection from a project, open the *Manage collections* page from the navigation panel, find the collection tile, and then click the delete icon.
@@ -90,3 +88,5 @@ Find out whether a collection is being used anywhere before you delete it from t
 
     *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
     {: tip}
+
+You cannot delete the *Sample Project* collection.

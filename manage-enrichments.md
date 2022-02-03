@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-02-01"
 
 subcollection: discovery-data
 
@@ -42,6 +42,26 @@ To manage enrichments, complete the following steps:
     -   To remove an enrichment, clear the checkboxes for fields that you want to remove the enrichment from.
 
 1. Click **Apply changes and reprocess** to apply your changes to the collection.
+
+## Deleting an enrichment
+{: #enrichments-delete}
+
+You can delete a custom enrichment that you built to teach {{site.data.keyword.discoveryshort}} about your service. Custom enrichments include dictionaries, regular expressions, patterns, and so on. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
+
+You cannot delete a prebuilt enrichment. Prebuilt enrichments include the Natural Language Understanding enrichments, such as the Entities enrichment, that are built into the product. To determine which enrichments are built-in, check the *Type* column of the *Enrichments* page for a collection. Prebuilt enrichments have the `System` type.
+
+To delete a custom enrichment, complete the following steps:
+
+1.  Open a project that uses the custom enrichment. 
+1.  Click *Manage collections*, and then open a collection where the enrichment is in use.
+1.  From the *Enrichments* page of a collection, remove the enrichment from any fields where it is applied.
+1.  Click **Apply changes and reprocess**, and then wait for the system to process the documents in your collection without the enrichment.
+1.  Repeat the previous step for every collection in every project where the enrichment is used.
+
+    Remember, a custom enrichment can be used by any collection in any project within a single {{site.data.keyword.discoveryshort}} service instance.
+1.  From any of the collections that used the enrichment, open the *Enrichments* page, and then click the delete icon to delete the enrichment.
+
+The custom enrichment is removed from the *Enrichments* list everywhere in this service instance.
 
 ## Applying enrichments by using the API
 {: #enrichments-api}
