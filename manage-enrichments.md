@@ -48,7 +48,7 @@ To manage enrichments, complete the following steps:
 
 You can delete a custom enrichment that you built to teach {{site.data.keyword.discoveryshort}} about your service. Custom enrichments include dictionaries, regular expressions, patterns, and so on. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 
-You cannot delete a prebuilt enrichment. Prebuilt enrichments include the Natural Language Understanding enrichments, such as the Entities enrichment, that are built into the product. To determine which enrichments are built-in, check the *Type* column of the *Enrichments* page for a collection. Prebuilt enrichments have the `System` type.
+You cannot delete a prebuilt enrichment. Prebuilt enrichments include the Natural Language Understanding enrichments, such as the Entities enrichment, that are built into the product. To determine which enrichments are built in, check the *Type* column of the *Enrichments* page for a collection. Prebuilt enrichments have the `System` type.
 
 To delete a custom enrichment, complete the following steps:
 

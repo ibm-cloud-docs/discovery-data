@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-04"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -159,12 +159,15 @@ For more information about the supported number of documents for Lite and Advanc
 ## File size limits
 {: #collections-file-size-limits}
 
-The maximum size of each file that you can crawl by using a connector differs by deployment type.
+Crawled documents
+:   The maximum size of each file that you can crawl by using a connector differs by deployment type.
 
--   ![IBM Cloud only](images/ibm-cloud.png) Managed deployments on {{site.data.keyword.cloud_notm}}: 10 MB
--   ![Cloud Pak for Data only](images/desktop.png) Installed deployments on {{site.data.keyword.icp4dfull_notm}}: 32 MB
+    -   ![IBM Cloud only](images/ibm-cloud.png) Managed deployments on {{site.data.keyword.cloud_notm}}: 10 MB
+    -   ![Cloud Pak for Data only](images/desktop.png) Installed deployments on {{site.data.keyword.icp4dfull_notm}}: 32 MB
 
-The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type.
+Uploaded documents
+:   The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type. See the *Maximum document size table for details.
+
 
 | Plan | File size per document |
 |--------------|--------------------------------:|
