@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-03"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -233,6 +233,16 @@ New authentication types for Web crawler
 
 New Analyze API usage monitoring 
 :   You can now monitor the usage of the Analyze API using the tooling. For more information, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
+
+## 30 August 2020
+{: #release-notes-data-30august2020}
+
+Update to API version
+:   The current API version (v2) is now 2020-08-30. The following change was made with this version:
+
+Change to 'options' object
+:   The List enrichments method no longer returns the `options` object per enrichment. Use the Get enrichment method to return the `options` object for a single enrichment.
+
 
 ## 2.1.3 release, 19 June 2020
 {: #release-notes-data-19june2020}
