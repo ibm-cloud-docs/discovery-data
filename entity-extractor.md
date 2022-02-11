@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-12-07"
+lastupdated: "2022-02-11"
 
 subcollection: discovery-data
 
@@ -286,4 +286,4 @@ The number of entity extractor models you can create per service instance depend
 | Premium | 10 | 100 | 1,000 |
 {: caption="Entity extractor model plan limits" caption-side="top"}
 
-An entity extractor enrichment can identify up to 50 entities, each with one or many mentions, per collection.
+An entity extractor enrichment can identify up to 50 entities, each with one or many mentions, per document.

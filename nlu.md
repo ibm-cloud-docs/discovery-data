@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-02-11"
 
 subcollection: discovery-data
 
@@ -139,7 +139,7 @@ In the JSON output:
 ### Entity limits
 {: #nlu-entities-limits}
 
-The Entities enrichment can identify up to 50 entities, each with one or many mentions, per collection.
+The Entities enrichment can identify up to 50 entities, each with one or many mentions, per document.
 
 ## Keywords
 {: #nlu-keywords}
@@ -215,7 +215,7 @@ In the JSON output:
 ### Keywords limits
 {: #nlu-keywords-limits}
 
-The Keywords enrichment can identify up to 50 keywords, each with one or many mentions, per collection.
+The Keywords enrichment can identify up to 50 keywords, each with one or many mentions, per document.
 
 ## Parts of speech
 {: #nlu-pos}
