@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-14"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -63,10 +63,6 @@ These instructions apply to {{site.data.keyword.discoveryshort}} deployments tha
 
 1.  From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand **Services**, and then click **Instances**.
 1.  Find your instance, and then click it to open its summary page.
-
-    You can create a maximum of 10 instances per deployment. After you reach the maximum number, the *New instance* button is not displayed in {{site.data.keyword.icp4dfull_notm}}.
-    {: note}
-
 1.  Click **Launch tool**.
 
 These instructions apply to {{site.data.keyword.discoveryshort}} deployments that are installed on {{site.data.keyword.icp4dfull}} 3.x:
