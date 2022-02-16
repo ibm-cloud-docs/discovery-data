@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-10"
+lastupdated: "2022-02-16"
 
 subcollection: discovery-data
 
@@ -47,13 +47,32 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 -   The Site Collection that you connect to must be one that was created with an Enterprise plan. It cannot be a collection that was created with a frontline worker plan.
 -   You must have an Azure Active Directory user ID with permission to read all of the objects that you want to crawl. For example, `<admin_user>@.onmicrosoft.com`. The user ID does not need `SiteCollection Administrator` permission.
--   The connector supports the `Password hash synchronization (PHS)` method for enabling hybrid identity only. Use any other type (such as Pass-through authentication or Federation) at your own risk.
--   Unless you created your SharePoint Online account before January 2020, two-factor authentication is enabled for the account by default. You must disable two-factor authentication.
 
-    To view and change your multifactor authentication status, see [View the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#view-the-status-for-a-user){: external} or [Change the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#change-the-status-for-a-user){: external}.
--   The crawl user account must have legacy authentication and `Contribute` level permissions enabled.
+You can choose how to authenticate with the external Microsoft SharePoint account from the following options:
 
-    To enable legacy authentication, go to the [Azure portal](https://portal.azure.com/){: external} or contact your SharePoint administrator.
+Open Authentication (OAuth)
+:   Authenticates with the external data source by using a token so that your user credentials do not need to be shared. With this authentication method, you can log in to your Microsoft account directly during the set up of the connector. Select *Sign in with Microsoft* to log in to your Microsoft account in a separate dialog, which generates a token that is used by {{site.data.keyword.discoveryshort}} to connect to your data.
+
+    You cannot currently change the user account that is associated with the OAuth setup later, nor any of the details of the existing user account that the connector is configured to use. For example, you cannot update the password that was used to set up the connection after a password change in SharePoint.
+
+    The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature.
+    {: beta}
+
+Security Assertion Markup Language (SAML)
+:   An older mechanism for authentication and authorization that requires user credentials to be shared with the {{site.data.keyword.discoveryshort}} service.
+
+    If you choose to use this authentication method, your Microsoft SharePoint account must meet the following requirements:
+
+    -   Unless you created your SharePoint Online account before January 2020, two-factor authentication is enabled for the account by default. You must disable two-factor authentication.
+
+        To view and change your multifactor authentication status, see [View the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#view-the-status-for-a-user){: external} or [Change the status for a user](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates#change-the-status-for-a-user){: external}.
+    -   The crawl user account must have legacy authentication and `Contribute` level permissions enabled.
+
+        To enable legacy authentication, go to the [Azure portal](https://portal.azure.com/){: external} or contact your SharePoint administrator.
+    -   The connector supports the `Password hash synchronization (PHS)` method for enabling hybrid identity only. Use any other type (such as Pass-through authentication or Federation) at your own risk. 
+
+Support for the OAuth method of authentication was added with a software update in February 2022. If you want to update an existing connector to use OAuth instead of SAML, you must re-create the connector. You cannot currently change the authentication mechanism for an existing connector.
+{: note}
 
 ## What you need before you begin
 {: #connector-sharepoint-online-cloud-prereqs}
@@ -91,14 +110,27 @@ To configure the Microsoft SharePoint Online data source, complete the following
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
 1.  Click **SharePoint Online**, and then click **Next**.
-1.  Add values to the following fields:
+1.  Add a URL to the **Organization URL** field.
+1.  To enable access to your external data source, do one of the following things:
 
-    -   Username
-    -   Password
-    -   Organization URL
-    -   Site collection path
+    -   If you want to use Open Authentication to connect to your data, click **Sign in with Microsoft**.
 
-    Click **Next**.
+        Pop-ups must be enabled for this site in your web browser.
+        {: note}
+
+        Log in to your Microsoft SharePoint account with your user name and password, and then complete two-factor authentication, if necessary.
+        
+        If you are not prompted for a user name and password, take note. You might be logged in to a Microsoft Sharepoint account already. If you are logged in to an account that you don't want to use for this connector, stop here. (Any account where you are logged in will be used automatically. And you cannot change the account configuration later.) Open a web browser in incognito mode and start this procedure over from step 1.
+        {: important}
+
+        The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature.
+        {: beta}
+
+    -   Otherwise, you can specify a username and password for a user that is authorized to access the site you want to crawl, and then click **Next**.
+    
+        This method uses Security Assertion Markup Language (SAML) to authenticate with the external data source on your behalf.
+
+1.  Specify the path you want to crawl in the **Site collection path** field.
 1.  Name the collection.
 1.  If the language of the documents on the site is not English, select the appropriate language.
 
