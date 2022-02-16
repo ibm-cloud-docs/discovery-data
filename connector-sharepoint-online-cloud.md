@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-16"
 
 subcollection: discovery-data
 
@@ -51,7 +51,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 You can choose how to authenticate with the external Microsoft SharePoint account from the following options:
 
 Open Authentication (OAuth)
-:   Authenticates with the external data source by using a token, so that your user credentials do not need to be shared. With this authentication method, you can log in to your Microsoft account directly during the set up of the connector. Select *Sign in with Microsoft* to log in to your Microsoft account in a separate dialog, which generates a token that is used by {{site.data.keyword.discoveryshort}} to connect to your data.
+:   Authenticates with the external data source by using a token so that your user credentials do not need to be shared. With this authentication method, you can log in to your Microsoft account directly during the set up of the connector. Select *Sign in with Microsoft* to log in to your Microsoft account in a separate dialog, which generates a token that is used by {{site.data.keyword.discoveryshort}} to connect to your data.
 
     You cannot currently change the user account that is associated with the OAuth setup later, nor any of the details of the existing user account that the connector is configured to use. For example, you cannot update the password that was used to set up the connection after a password change in SharePoint.
 
@@ -71,7 +71,7 @@ Security Assertion Markup Language (SAML)
         To enable legacy authentication, go to the [Azure portal](https://portal.azure.com/){: external} or contact your SharePoint administrator.
     -   The connector supports the `Password hash synchronization (PHS)` method for enabling hybrid identity only. Use any other type (such as Pass-through authentication or Federation) at your own risk. 
 
-Support for the OAuth method of authentication was added with a software update in February 2022. If you want to update an existing connector to use OAuth instead of SAML, you must recreate the connector. You cannot currently change the authentication mechanism for an existing connector.
+Support for the OAuth method of authentication was added with a software update in February 2022. If you want to update an existing connector to use OAuth instead of SAML, you must re-create the connector. You cannot currently change the authentication mechanism for an existing connector.
 {: note}
 
 ## What you need before you begin
@@ -118,7 +118,7 @@ To configure the Microsoft SharePoint Online data source, complete the following
         Pop-ups must be enabled for this site in your web browser.
         {: note}
 
-        Log in to your Microsoft SharePoint account with your user name, password, and then complete two-factor authentication, if necessary.
+        Log in to your Microsoft SharePoint account with your user name and password, and then complete two-factor authentication, if necessary.
         
         If you are not prompted for a user name and password, take note. You might be logged in to a Microsoft Sharepoint account already. If you are logged in to an account that you don't want to use for this connector, stop here. (Any account where you are logged in will be used automatically. And you cannot change the account configuration later.) Open a web browser in incognito mode and start this procedure over from step 1.
         {: important}
