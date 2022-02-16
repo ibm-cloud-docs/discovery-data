@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-16"
 
 subcollection: discovery-data
 
@@ -67,8 +67,8 @@ The latest version has new features that were previously unavailable. The follow
 | Query result deduplication | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Use the Watson Discovery News and COVID-19 collections to leverage pre-enriched data | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Identify document similarity | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Configure the normalization process of ingestion | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction enrichments | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Configure the normalization process of ingestion, including document segmentation and inclusion or exclusion rules for HTML files | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction enrichments, which are available with the [Natural Language Understanding](/docs/natural-language-understanding?topic=natural-language-understanding-about){: external} service | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Review query logging and metrics | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}

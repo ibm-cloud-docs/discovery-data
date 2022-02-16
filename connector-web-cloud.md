@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 subcollection: discovery-data
 
@@ -110,7 +110,7 @@ To configure the web crawl collection, complete the following steps:
 
 1.  Optional: Add another web address to the **Starting URLs** field.
 
-    Keep the number of starting URLs to less than 100. If you have a requirement to crawl a large number of websites, see [I need to crawl lots of sites. What's my limit?](#connector-web-cloud-max-starting-urls).
+    The number of starting URLs for a single collection must be less than 100. If you have a requirement to crawl a large number of websites, see [I need to crawl lots of sites. What's my limit?](#connector-web-cloud-max-starting-urls).
     {: important}
 
     The number of web pages that are crawled is limited to 250,000, so the web crawler might not crawl all the specified websites.
@@ -135,7 +135,7 @@ If you want to check the progress, go to the Activity page. From the navigation 
 ### I need to crawl lots of sites. What's my limit?
 {: #connector-web-cloud-max-starting-urls}
 
-The service can support a total of 500 crawler connections per {{site.data.keyword.discoveryshort}} service instance. All of the data sources except Web crawl use one crawler connection each. For Web crawl, one connection is required for every 5 starting URLs. If you add 10 starting URLS, for example, Discovery generates the extra crawler connection that is needed to support the extra 5 URLs. Therefore, the maximum number of starting URLs that you can use for a single Web crawl collection depends on the other data collections that are configured in your service instance. You can calculate the limit yourself.
+The service can support a total of 500 crawler connections per {{site.data.keyword.discoveryshort}} service instance. All of the data sources except Web crawl use one crawler connection each. For Web crawl, one connection is required for every 5 starting URLs. If you add 10 starting URLS, for example, Discovery generates the extra crawler connection that is needed to support the extra 5 URLs. Therefore, the maximum number of starting URLs that you can use depends on the other data collections that are configured in your service instance. You can calculate the limit yourself.
 
 To calculate the starting URL limit, complete the following steps:
 
@@ -147,9 +147,9 @@ To calculate the starting URL limit, complete the following steps:
 
     For example, 500 - 5 = 495.
 
-1.  Multiply the remainder by 5 to determine the total number of starting URLs that you can use in your Web crawl collection. Remember, each Web crawl collection can handle 5 starting URLs.
+1.  Multiply the remainder by 5 to determine the total number of starting URLs that you can use.
 
     For example, 495 x 5 = 2,475.
 
-If one or more additional data sources are added subsequently to a project in this service instance, it impacts the number of starting URLs that this collection can crawl successfully. If you cannot prevent such future additions, consider adding fewer starting URLs than the absolute maximum.
+To use the maximum-allowed number of starting URLs in the example, you would need 25 web crawl collections because each collection allows a maximum of 100 starting URLs to be configured. However, don't configure your instance to use the absolute maximum number allowed. If one or more additional data sources are added subsequently to a project in this service instance, it will impact the number of starting URLs that the instance can crawl successfully.
 {: note}
