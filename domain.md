@@ -40,7 +40,7 @@ For more information about how to get the most from enrichments, read the [Enric
 
 The following diagram helps you to choose the right enrichment for your use case.
 
-![If you want to tag significant information in your data, find the right enrichment to use by answering these questions: Do you want to tag terms, passages, or documents? If passages or documents, create a classifier enrichment. If terms, are the terms expressed in a finite list? If yes, create a dictionary enrichment. If not, does the term syntax follow a pattern? If not, create an entity extractor to identify terms based on the context in which they're used. If so, do all of the variations of the term fit a single pattern? If so, create a regular expression enrichment. If not, create a patterns enrichment which uses term examples that you provide to find patterns in term variations.](images/enrichment-flowchart-plus-text.drawio.svg)
+![If you want to tag significant information in your data, find the right enrichment to use by answering these questions: Do you want to tag terms, passages, or documents? If passages or documents, create a classifier enrichment. If terms, are the terms expressed in a finite list? If yes, create a dictionary enrichment. If not, does the term syntax follow a pattern? If not, create an entity extractor to identify terms based on the context in which they're used. If so, do all of the variations of the term fit a single pattern? If so, create a regular expression enrichment. If not, create a patterns enrichment which uses term examples that you provide to find patterns in term variations.](images/enrichment-flowchart-plus-text.drawio.png)
 
 ### Using enrichments together
 {: #domain-enrichments-together}
