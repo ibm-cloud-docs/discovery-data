@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-18"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -75,6 +75,17 @@ For a list of files types where you can apply OCR, see the [Supported file types
 ## Collection limits
 {: #collections-limits}
 
+The number of collections that you can create per project differs by project type.
+
+| Project type | Collections per project |
+|--------------|------------------------:|
+| Document Retrieval |                 5 |
+| Document Retrieval for Contracts |   5 |
+| Conversational Search |              5 |
+| Content Mining |                     1 |
+| Custom |                             5 |
+{: caption="Collections per project limits" caption-side="top"}
+
 The number of collections you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Collections per service instance |
@@ -84,8 +95,6 @@ The number of collections you can create per service instance depends on your {{
 | Enterprise |                        300 |
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
-
-The maximum number of collections that is allowed per project differs by project type.
 
 For more information about the supported number of collections for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
 

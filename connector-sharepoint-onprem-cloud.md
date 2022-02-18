@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-02-18"
 
 subcollection: discovery-data
 
@@ -115,3 +115,10 @@ To configure the Microsoft SharePoint On Prem data source, complete the followin
 The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
+
+### Sample access control list information
+{: #connector-sharepoint-onprem-cloud-acl-sample}
+
+The following screen capture illustrates the type of ACL information that is stored in the document when you include the access control list.
+
+![Shows the Microsoft ACL information stored in the source object in the document metadata.](images/acl-in-output.png)
