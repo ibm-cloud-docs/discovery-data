@@ -30,4 +30,4 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
 
-When you enter a query from the product user interface, a natural language query is submitted. The default values for the supported query parameters differ by project type. For more information, see [Defaul query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
+When you enter a query from the product user interface, a natural language query is submitted. The default values for the supported query parameters differ by project type. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
