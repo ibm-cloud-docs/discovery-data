@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-08-09"
+lastupdated: "2022-02-18"
 
 subcollection: discovery-data
 
@@ -29,3 +29,5 @@ To learn more about project types, see [Creating projects](/docs/discovery-data?
 | Content Mining | Parts of Speech | None |
 | Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
+
+When you enter a query from the product user interface, a natural language query is submitted. The default values for the supported query parameters differ by project type. For more information, see [Defaul query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
