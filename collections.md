@@ -96,7 +96,7 @@ The number of collections you can create per service instance depends on your {{
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
 
-For more information about the supported number of collections for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
+For more information about the supported number of collections for Lite and Advanced plan instances, see [Discovery v1 pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
 
 ## Data source overview video
 {: #collections-video}
