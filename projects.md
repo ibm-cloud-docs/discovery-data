@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-02-18"
 
 subcollection: discovery-data
 
@@ -122,8 +122,8 @@ For more information about building a {{site.data.keyword.conversationshort}} se
 -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
 -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
 
-    From the beta version of {{site.data.keyword.conversationshort}}, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
-    {: beta}
+    From the new {{site.data.keyword.conversationshort}} experience, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
+    {: note}
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Follow steps to use this project type to enhance your virtual assistant by completing the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 

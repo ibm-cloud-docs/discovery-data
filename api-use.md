@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2021-11-17"
+lastupdated: "2022-02-21"
 
 keywords: api version,api,request syntax
 
@@ -77,3 +77,6 @@ To use the API, you must construct the URL to use in your requests.
     "{url}/v2/projects/{project_id}/collections?version=2019-11-29 -k"
     ```
     {: codeblock}
+
+The bearer token that is generated for an administrator can access any instance regardless of the access settings that are configured for the instance.
+{: important}

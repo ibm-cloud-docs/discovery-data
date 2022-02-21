@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-02-21"
 
 keywords: upload, one-time upload, field names
 
@@ -54,6 +54,23 @@ To upload data, complete the following steps:
 The file upload is completed quickly. It takes more time for the data to be processed as it is added to the collection. After the files are uploaded and processed, the Activity page shows the upload results.
 
 Unlike other data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file, you must delete the earlier version and rename the file before you upload it.
+
+## Troubleshooting ingestion issues
+{: #upload-data-ts}
+
+Find workarounds and solutions to problems that you might encounter when you upload data.
+
+### Microsoft document troubleshooting tips
+{: #upload-data-ts-ms}
+
+Failed to prepare document for SDU processing
+:    Some DOC, PPT, and XSL files that use older features which are no longer supported by Microsoft Office can cause ingestion issues. If you encouter this issue, open the file in a more recent version of Microsoft Office and convert the files to the DOCX, PPTX, or XSLX formats respectively, and then upload the DOCX, PPTX, or XSLX file.
+
+### PDF file troubleshooting tips
+{: #upload-data-ts-pdf}
+
+Failed to parse document due to invalid encoding
+:    Enable OCR for the file.
 
 ## How fields are handled
 {: #field-name-limits}
