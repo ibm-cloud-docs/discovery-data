@@ -64,7 +64,7 @@ Find workarounds and solutions to problems that you might encounter when you upl
 {: #upload-data-ts-ms}
 
 Failed to prepare document for SDU processing
-:    Some DOC, PPT, and XSL files that use older features which are no longer supported by Microsoft Office can cause ingestion issues. If you encouter this issue, open the file in a more recent version of Microsoft Office and convert the files to the DOCX, PPTX, or XSLX formats respectively, and then upload the DOCX, PPTX, or XSLX file.
+:    Some DOC, PPT, and XSL files that use older features which are no longer supported by Microsoft Office can cause ingestion issues. If you encounter this issue, open the file in a more recent version of Microsoft Office and convert the file to the DOCX, PPTX, or XSLX format respectively, and then upload the DOCX, PPTX, or XSLX file.
 
 ### PDF file troubleshooting tips
 {: #upload-data-ts-pdf}
