@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-02"
+lastupdated: "2022-01-25"
 
 subcollection: discovery-data
 
@@ -99,13 +99,16 @@ Use the `com.ibm.es.ama.custom.crawler.CustomCrawler.RecordKeeper` interface to 
 ### `CustomCrawlerSecurityHandler`
 {: #customcrawlersecurityhandler}
 
-Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface to implement security for your custom crawler. This interface is not used in the example connector code. The interface has the following methods:
+Use the `com.ibm.es.ama.custom.crawler.CustomCrawlerSecurityHandler` interface to implement security for your custom crawler. The interface has the following methods:
 
 |Method               |Description
 |---------------------|-----------------------|
 |`term`               |Terminate a security handler |
 |`getUserAndGroups`   |Get the ACLs of a given user|
 {: caption="CustomCrawlerSecurityHandler methods" caption-side="top"}
+
+When the `getUserAndGroups` logic of a connector is updated, it can take up to 10 minutes after the connector is redeployed for the change to take effect.
+{: important}
 
 ## Custom connector example
 {: #example-connector}

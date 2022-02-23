@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-03"
+lastupdated: "2022-02-23"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -25,6 +25,31 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 {: note}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+## 4.0.6 release, 28 February 2022
+{: #discovery-data-28february2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.6 is available.
+
+Multitenancy is now supported
+:   An administrator can now create up to 10 instances of the Discovery service per deployment, which means that more teams can work on discrete Discovery projects at the same time.
+
+Simpler installation and management of custom connectors
+:   The `manage_custom_crawler.sh` script was improved to make it easier for you to install and manage your custom connectors in a multitenant environment. For more information, see [Installing a custom crawler](/docs/discovery-data?topic=discovery-data-install-connector).
+
+Security vulnerabilities were addressed
+:   The following security patches were applied:
+
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Java](https://www.ibm.com/support/pages/node/6556970)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Logback](https://www.ibm.com/support/pages/node/6556972)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j](https://www.ibm.com/support/pages/node/6556974)
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Answer finding
+    -   Access to guided tours from the page header
 
 ## 4.0.5 release, 26 January 2022
 {: #discovery-data-26january2022}
@@ -58,6 +83,12 @@ Security vulnerabilities were addressed
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Netty](https://www.ibm.com/support/pages/node/6523820)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j](https://www.ibm.com/support/pages/node/6526072)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Log4j 1.2](https://www.ibm.com/support/pages/node/6526478)
+
+Features that are not available in this release
+:   The following features are generally available from {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Answer finding
 
 ## 4.0.3 release, 30 November 2021
 {: #discovery-data-30november2021}
@@ -242,7 +273,6 @@ Update to API version
 
 Change to 'options' object
 :   The List enrichments method no longer returns the `options` object per enrichment. Use the Get enrichment method to return the `options` object for a single enrichment.
-
 
 ## 2.1.3 release, 19 June 2020
 {: #release-notes-data-19june2020}

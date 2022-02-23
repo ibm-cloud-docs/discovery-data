@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-01-10"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Microsoft SharePoint OnPrem
+# Microsoft SharePoint On Prem
 {: #connector-sharepoint-onprem-cp4d}
 
 Crawl documents that are stored in an on-premises Microsoft SharePoint data source.
@@ -18,7 +18,7 @@ Crawl documents that are stored in an on-premises Microsoft SharePoint data sour
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
-This information applies only to installed deployments. For more information about connecting to an on-premises SharePoint site from a managed deployment, see [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
+This information applies only to installed deployments. For more information about connecting to an on-premises SharePoint site from a managed deployment, see [SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
 {: note}
 
 ## What documents are crawled
@@ -32,17 +32,17 @@ This information applies only to installed deployments. For more information abo
 ## Data source requirements
 {: #connector-sharepoint-onprem-cp4d-reqs}
 
-In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your SharePoint OnPrem data source must meet the following requirements:
+In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your SharePoint On Prem data source must meet the following requirements:
 
 - The data source connection supports SharePoint 2013, 2016, or 2019.
 - You must obtain any required service licenses for the data source that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 
-For more information about SharePoint OnPrem, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
+For more information about SharePoint On Prem, see [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}.
 
 ## Prerequisite steps
 {: #connector-sharepoint-onprem-cp4d-prereq}
 
-Before you create a SharePoint OnPrem collection, you must do the following things:
+Before you create a SharePoint On Prem collection, you must do the following things:
 
 -   If you want to enable document-level security, you must take some steps to set it up. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
@@ -65,16 +65,16 @@ Before you create a SharePoint OnPrem collection, you must do the following thin
 
 -   Set up full read access for the web application.
 
-If you are using version 2.2.1 or earlier, then you must complete some extra prerequisite tasks before you can connect to the data source. For more information, see [SharePoint OnPrem prerequisite steps for prior releases](#prior-prereqs).
+If you are using version 2.2.1 or earlier, then you must complete some extra prerequisite tasks before you can connect to the data source. For more information, see [SharePoint On Prem prerequisite steps for prior releases](#prior-prereqs).
 
-## Connecting to a SharePoint OnPrem data source
+## Connecting to a SharePoint On Prem data source
 {: #connector-sharepoint-onprem-cp4d-task}
 
 From your {{site.data.keyword.discoveryshort}} project, complete the following steps:
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **SharePoint OnPrem**, and then click **Next**.
+1.  Click **SharePoint On Prem**, and then click **Next**.
 1.  Name the collection.
 1.  If the language of the documents in SharePoint is not English, select the appropriate language.
 

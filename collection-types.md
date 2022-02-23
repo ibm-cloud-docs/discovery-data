@@ -36,7 +36,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 - [Notes](/docs/discovery-data?topic=discovery-data-connector-notes-cp4d)
 - [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d)
 - [SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cp4d)
-- [SharePoint OnPrem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d)
+- [SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d)
 - [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d)
 - [Windows File System](/docs/discovery-data?topic=discovery-data-connector-wfs-cp4d)
 
@@ -92,7 +92,7 @@ Document-level security is supported by the following data source types:
 - FileNet P8
 - HCL Notes
 - Microsoft SharePoint Online
-- Microsoft SharePoint OnPrem
+- Microsoft SharePoint On Prem
 - Microsoft Windows File System
 
 To enable document-level security, you must complete the following steps:
