@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-02-23"
 
 subcollection: discovery-data
 
@@ -75,14 +75,12 @@ You can back up and restore your instance of {{site.data.keyword.discoveryshort}
 
 You must have Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (where the data must be backed up) and administrative access to the new instance (where the data must be restored to).
 
-### Using the backup scripts
+## Using the backup scripts
 {: #wddata-backup}
-
-Backup prerequisites:
 
 Because changes to the data stored in {{site.data.keyword.discoveryfull}} during a backup can cause the backup to become corrupted and unusable, no in-flight requests are allowed during the backup period.
 
-A request is a current action that is being performed by {{site.data.keyword.discoveryfull}}, including the following actions:
+An in-flight request is any {{site.data.keyword.discoveryfull}} action that processes data, including the following actions:
 
 - Source crawl (scheduled or unscheduled)
 - Ingesting documents
@@ -116,9 +114,11 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
     ```bash
     ./all-backup-restore.sh backup [ -f backup_file_name ] [--pvc]
     ```
-    {: pre}
+    {: pre}    
 
-    By default, the backup and restore scripts create a `tmp` directory in the current directory that is uses for extracting or compressing backup files.
+    The `-f backup_file_name` parameter is optional. The name `watson_discovery_<timestamp>.backup` is used if you don't specify a name.
+
+    The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#pvc).
 
     If you are backing up version 2.1.4, enter the following command:
 
@@ -127,26 +127,79 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
     ```
     {: pre}
 
-    The `-f backup_file_name` parameter is optional. The name `watson_discovery_<timestamp>.backup` is used if you don't specify a name.
+    By default, the backup and restore scripts create a `tmp` directory in the current directory that the script uses for extracting or compressing backup files.
 
-    The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#pvc).
+### Extracting files from the backup archive file
+{: #backup-unpack}
 
-The scripts generate an archive file, including the backup files of the services that are listed in Step 1. You can unpack the archive file by running the following command:
+The scripts generate an archive file, including the backup files of the services that are listed in Step 1. 
 
-```bash
-tar xvf <backup_file_name>
-```
-{: pre}
+1.  You can extract files from the archive file by running the following command:
 
-#### Configuring jobs to use PVC
-{: #pvc}
+    ```bash
+    tar xvf <backup_file_name>
+    ```
+    {: pre}
+
+### Configuring jobs to use PVC
+{: #backup-pvc}
 
 The backup and restore process uses Kubernetes jobs. The jobs use ephemeral volumes that use ephemeral storage. It is a temporary storage mount on the pod that uses local storage of a node. In rare cases, the ephemeral storage is not large enough. You can optionally instruct the job to mount a Persistent Volume Claim (PVC) on its pod to use for storing the backup data. To do so, specify the `--pvc` option when you run the script. The scripts use `emptyDir` of Kubernetes otherwise.
 
-In most cases, you don't need to use a persistent volume. If you choose to use a persistent volume, the volume must be three times as large as the largest backup file in the data store. The size of data store's backup file depends on usage. After you create a backup, you can unpack the archive file to check the file sizes.
+In most cases, you don't need to use a persistent volume. If you choose to use a persistent volume, the volume must be three times as large as the largest backup file in the data store. The size of data store's backup file depends on usage. After you create a backup, you can [extract files from the archive file](#backup-unpack) to check the file sizes.
 
-### Using the restore scripts
+### Mapping multitenant clusters
+{: #backup-mapping}
+
+With version 4.0.6 or later, if you are restoring a multitenant cluster, you must perform an extra step. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
+
+This mapping step is not required if the instance IDs did not change between the back up and restore steps. For example, you can skip this step if you are restoring data to the same cluster where it was backed up from or if you are restoring data to a brand new cluster that has no Discovery instances.
+
+To create a mapping, complete the following steps:
+
+1.  Extract the mapping template file from the backup archive file.
+
+    ```bash
+    tar xf <backup_file_name> tmp/instance_mapping.json -O > <mapping_file_name> 
+    ```
+    {: pre}    
+
+1.  Make a list of the names and instance IDs of the service instances that are provisioned to the cluster where the data is being restored.
+
+    The instance ID is part of the URL that is specified in the instance summary page. From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand Services, and then click Instances. Find your instance, and then click it to open its summary page. Scroll to the *Access information* section of the page, and look for the instance ID in the *URL* field.
+
+    For example, `https://<host_name>/wd/<namespace>-wd/instances/<instance_id>/api`.
+
+    Repeat this step to make a note of the instance ID for every instance that is provisioned.
+
+1.  Edit the mapping file. 
+
+    Add the instance IDs for the destination service instances that you listed in the previous step. The following snippet is an example mapping file.
+
+    ```json
+    {
+      "instance_mappings": [
+        {
+          "display_name": "discovery-1",
+          "source_instance_id": "1644822491506334",
+          "dest_instance_id": "<new_instance_id>"
+        },
+        {
+          "display_name": "discovery-2",
+          "source_instance_id": "1644822552830325",
+          "dest_instance_id": "<new_instance_id>"
+        }
+      ]
+    }
+    ```
+    {: codeblock}
+
+When you run the restore script, include the optional `--mapping` parameter to apply this mapping file when the data is restored.
+
+## Using the restore scripts
 {: #wddata-restore}
+
+With version 4.0.6 or later, if you are restoring a multitenant cluster to a multitenant cluster where {{site.data.keyword.discoveryfull}} is running, see [Mapping multitenant clusters](#backup-mapping) before you begin.
 
 Complete the following steps to restore data in {{site.data.keyword.discoveryfull}} by using the restore scripts:
 
@@ -174,15 +227,19 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 1.  Restore the data from the backup file on your local machine to the new {{site.data.keyword.discoveryshort}} deployment by running the following command:
 
     ```bash
-    ./all-backup-restore.sh restore -f backup_file_name [--pvc]
+    ./all-backup-restore.sh restore -f backup_file_name [--pvc] [--mapping]
     ```
     {: pre}
 
-    The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#pvc).
+    The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#backup-pvc).
+
+    The `--mapping` parameter is optional. For more information about when to use it, see [Mapping multitenant clusters](#backup-mapping).
+
+    By default, the backup and restore scripts create a `tmp` directory in the current directory that the script uses for extracting or compressing backup files.
 
     The gateway, ingestion, orchestrator, hadoop worker, and controller pods automatically restart.
 
-### Backing up data manually
+## Backing up data manually
 {: #backup-user-data}
 
 Manually back up data that is not backed up by using the scripts.
@@ -214,7 +271,7 @@ To manually back up your data from an instance of {{site.data.keyword.discoverys
     ```
     {: pre}
 
-### Restoring data manually
+## Restoring data manually
 {: #restore-user-data}
 
 Manually restore data that cannot be restored by using the script.
