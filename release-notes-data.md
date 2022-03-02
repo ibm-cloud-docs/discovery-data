@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-03-01"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -26,8 +26,8 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
-## 4.0.6 release, 28 February 2022
-{: #discovery-data-28february2022}
+## 4.0.6 release, 01 March 2022
+{: #discovery-data-01march2022}
 
 {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.6 is available.
 
