@@ -43,11 +43,11 @@ Known issues are regularly addressed with periodic software patches. For more in
     -   **Cause**: The MT migration job does not complete successfully and restarts.
     -   **Solution**: Navigate to the Cloud Pak for Data UI and interact with the Disovery instance using the tooling or API. Wait approximately 5 hours, or manually refresh by running the following commands in a terminal that is logged into the cluster.
 
-                ```sh
-            oc proxy &
-curl -ksS -X PATCH -H "Accept: application/json, */*" -H "Content-Type: application/merge-patch+json" http://127.0.0.1:8001/apis/discovery.watson.ibm.com/v1/namespaces/<namespace>/watsondiscoveries/wd/status --data '{"status": null}'
-            ```
-            {: pre}
+        ```sh
+        oc proxy &
+        curl -ksS -X PATCH -H "Accept: application/json, */*" -H "Content-Type: application/merge-patch+json" http://127.0.0.1:8001/apis/discovery.watson.ibm.com/v1/namespaces/<namespace>/watsondiscoveries/wd/status --data '{"status": null}'
+        ```
+        {: pre}
 
 ## 4.0.5, 26 January 2022
 {: #26january2022ki}
