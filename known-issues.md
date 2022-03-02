@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-03-01"
 
 keywords: known issues
 
@@ -28,10 +28,26 @@ The known issues that are described in this topic apply to installed deployments
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
-## 4.0.6, 28 February 2022
-{: #28february2022ki}
+## 4.0.6, 1 March 2022
+{: #01March2022ki}
 
--   There are no known issues.
+-   Upgrade from 4.0.5 to 4.0.6 may fail.
+
+    -   **Error**: Upgrade from 4.0.5 to 4.0.6 fails if a Discovery instance is not provisioned.
+    -   **Cause**: The current code returns an error when no indices exist in the Elasticsearch.
+    -   **Solution**: Verify that an instance of Discovery has been provisioned in the Cloud Pak for Data UI before starting the upgrade to 4.0.6. Or remove the existing installation and install 4.0.6 if upgrade was attempted with no instance provisioned and migration failed.
+
+-   `Deployed` status of Custom Resource (CR) status stalls upon completion of the 4.0.6 upgrade.
+
+    -   **Error**: `oc get WatsonDiscovery` can be seen repeatedly toggling between `23/23` and `20/23`.
+    -   **Cause**: The MT migration job does not complete successfully and restarts.
+    -   **Solution**: Navigate to the Cloud Pak for Data UI and interact with the Disovery instance using the tooling or API. Wait approximately 5 hours, or manually refresh by running the following commands in a terminal that is logged into the cluster.
+
+                ```sh
+            oc proxy &
+curl -ksS -X PATCH -H "Accept: application/json, */*" -H "Content-Type: application/merge-patch+json" http://127.0.0.1:8001/apis/discovery.watson.ibm.com/v1/namespaces/<namespace>/watsondiscoveries/wd/status --data '{"status": null}'
+            ```
+            {: pre}
 
 ## 4.0.5, 26 January 2022
 {: #26january2022ki}
