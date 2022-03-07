@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-03-07"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -203,15 +203,13 @@ The following table shows the maximum size limit for fields per document.
 | Sum of all other fields | 1 MB |
 {: caption="Maximum field sizes" caption-side="top"}
 
-How a document is treated during collection creation if the maximum size of the fields in the document exceeds the allowed limit differs depending on how {{site.data.keyword.discoveryshort}} is deployed.
+If the maximum size of the fields in the document exceeds the allowed limits, they are treated as follows:
 
-The following table shows how the fields are processed depending on the deployment type.
+-   For a document with an oversized `html` field, all of the fields in the document are indexed except the `html` field. 
 
-| Deployment type | Document with an oversized `html` field | Document with oversized non-HTML fields |
-|--------------|--------------------------------|-----------------|
-| Cloud Pak for Data | The document is not indexed | The document is not indexed |
-| IBM Cloud | All of the fields in the document are indexed except the `html` field | The document is not indexed |
-{: caption="Exceeded field size behavior" caption-side="top"}
+    For {{site.data.keyword.icp4dfull_notm}} version 4.0 and earlier, the entire document is not indexed.
+    {: note}
+-   For a document with oversized non-HTML fields, the document is not indexed.
 
 If you are uploading a Microsoft Excel file and a message is displayed that indicates that the non-HTML field size limit is exceeded, consider converting the XSL file into a CSV file. When you upload a comma-separated value (CSV) file, each row is indexed as a separate document. As a result, no field size limits are exceeded.
 {: tip}
