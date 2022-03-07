@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-04"
 
 keywords: known issues
 
@@ -28,20 +28,22 @@ The known issues that are described in this topic apply to installed deployments
 
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
+For more information about installing the service, see [the {{site.data.keyword.icp4dfull}} documentation](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}.
+
 ## 4.0.6, 1 March 2022
 {: #01March2022ki}
 
--   Upgrade from 4.0.5 to 4.0.6 may fail.
+-   Upgrade to 4.0.6 fails if no Discovery instance is provisioned in the existing cluster before you begin the upgrade process.
 
-    -   **Error**: Upgrade from 4.0.5 to 4.0.6 fails if a Discovery instance is not provisioned.
-    -   **Cause**: The current code returns an error when no indices exist in the Elasticsearch.
-    -   **Solution**: Verify that an instance of Discovery has been provisioned in the Cloud Pak for Data UI before starting the upgrade to 4.0.6. Or remove the existing installation and install 4.0.6 if upgrade was attempted with no instance provisioned and migration failed.
+    -   **Error**: The 4.0.6 upgrade process assumes that a Discovery instance is provisioned in the existing cluster. For example, if you are upgrading from 4.0.5 to 4.0.6, you must have an instance provisioned in the 4.0.5 cluster before you begin the migration.
+    -   **Cause**: The current code returns an error when no instance exists because it cannot find a document index to migrate.
+    -   **Solution**: Verify that an instance of Discovery has been provisioned in the existing Cloud Pak for Data cluster before you start the upgrade to 4.0.6. If you tried to upgrade to 4.0.6, but no instances were provisioned and the migration failed, remove the existing installation and install 4.0.6 from scratch.
 
--   `Deployed` status of Custom Resource (CR) status stalls upon completion of the 4.0.6 upgrade.
+-   `Deployed` status of resources fluctuates after the 4.0.6 upgrade is completed.
 
-    -   **Error**: `oc get WatsonDiscovery` can be seen repeatedly toggling between `23/23` and `20/23`.
-    -   **Cause**: The MT migration job does not complete successfully and restarts.
-    -   **Solution**: Navigate to the Cloud Pak for Data UI and interact with the Disovery instance using the tooling or API. Wait approximately 5 hours, or manually refresh by running the following commands in a terminal that is logged into the cluster.
+    -   **Error**: When you check the status by submitting the `oc get WatsonDiscovery` command, the ready status of the resources toggles between showing `23/23` and `20/23` components as being ready for use.
+    -   **Cause**: The readiness state of the resources is not reported consistently after a migration.
+    -   **Solution**: Typically, the instance is ready for use despite the ready state instability. The ready state settles after approximately 5 hours. You can wait for the readiness state to consistently show `23/23` or you can manually refresh the status information by running the following commands in a terminal that is logged into the cluster:
 
         ```sh
         oc proxy &

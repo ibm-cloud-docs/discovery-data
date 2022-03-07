@@ -36,6 +36,7 @@ toc:
       id: tutorial
       topics:
       - tutorial-convo.md
+      - tutorial-crawl-short.md
       - tutorial-sdu.md
 
   - navgroup:
