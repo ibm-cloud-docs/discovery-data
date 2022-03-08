@@ -123,7 +123,7 @@ Let's find out whether the web crawl has finished.
 
     The response that is returned is a valid and complete answer to the question.
 
-    ![Shows that the correct answer to the question is returned](images/tut-web-crawl-data-sources-ui.png)
+    ![Shows that the correct answer to the question is returned](images/tut-crawl-data-sources-ui.png)
 
     Congratulations! Your project is answering questions successfully.
 
