@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-03-09"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -107,25 +107,67 @@ The IBM Cloud Docs site uses JavaScript to display the content dynamically on it
 
 1.  Click **Finish**.
 
-The service crawls the web page that you specified as the starting URL. Because you enabled JavaScript execution, the crawl will take time to complete, about 10 to 20 minutes. This is a good time to grab a cup of coffee or check your messages.
+The service crawls the web page that you specified as the starting URL. Because you enabled JavaScript execution, the crawl will take time to complete, about 10 to 20 minutes. Now is a good time to grab a cup of coffee or check your messages.
 
 ## Test your project
 {: #tutorial-crawl-short-test}
 {: step}
 
-Let's find out whether the web crawl has finished.
+To test your project, submit some natural language queries to see whether it can find and return the right answers from the product documentation.
 
-1.  After the website has been crawled and the data processed, the *Improve and customize* page is displayed.
+1.  First, let's find out whether the web crawl is finished. After the website is crawled and the data is processed, the *Improve and customize* page is displayed.
 
     If the crawl is not completed and you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the *Discovery doc* collection. The collection should contain over 90 documents. After the crawl is completed, go to the *Improve and customize* page.
 
-1.  In the *Search* field, enter `What data sources are supported` as the question.
+1.  In the *Search* field, enter the following question:
 
-    The response that is returned is a valid and complete answer to the question.
+    ```text
+    What data sources are supported?
+    ```
+    {: codeblock}
+
+    The responses that are returned are valid answers to the question.
 
     ![Shows that the correct answer to the question is returned](images/tut-crawl-data-sources-ui.png)
 
-    Congratulations! Your project is answering questions successfully.
+    The first query response looks promising. Let's take a closer look at the *Creating collections* web page that is being returned.
+
+1.  Copy the sentence in the returned passage that says, `The following table shows the supported data sources.`, and then click **View passage in document**.
+
+    ![Shows a sentence that is highlighted in the passage result.](images/tut-crawl-highlight-sentence.png)
+
+    A representation of the crawled HTML page is displayed.
+
+1.  Use the web browser page search function to find the sentence that you copied. 
+
+    For example, press Command + F and then paste the sentence into the search box to find it on the page.
+
+    ![Shows the sentence in context in the page.](images/tut-crawl-find-sentence.png)
+
+    The sentence introduces a table that lists the data sources that are supported for different Discovery deployment methods. 
+
+    Congratulations! Your project was able to find the section of the web page that contains a complete answer to the natural language question that was submitted.
+
+1.  Let's look at the table in context by opening the source web page. To get the URL to the crawled page, click the **JSON** tab.
+
+    A representation of the data that is stored in the Discovery index about the web page where the passage was found is displayed in JSON format.
+
+1.  Find the `extracted_metadata.filename` index field.
+
+    ![Shows a JSON representation of the web page where the passage was found.](images/tut-crawl-json-view.png)
+
+    Copy the file name.
+
+    ```text
+    discovery-data?topic=discovery-data-collections
+    ```
+    {: codeblock}
+
+1.  To get the full URL to the page where the passage was found, add the root URL for the IBM Cloud Docs site (`https://cloud.ibm.com/docs`) as a prefix to the file name.
+
+    `https://cloud.ibm.com/docs` + `/` + `discovery-data?topic=discovery-data-collections` = `https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-collections`
+
+1.  From a web browser, go to the URL to open the [Creating collections](/docs/discovery-data?topic=discovery-data-collections) web page. The data sources table is in the *Supported data sources* section.
 
 ## Deploy the application preview
 {: #tutorial-crawl-short-app-preview}
@@ -139,7 +181,12 @@ If you want to share the simple search app with your team members, you can send 
 
 1.  Paste the copied URL into a web browser to open the application preview.
 
-1.  In the *Search* field, enter `What types of data sources are supported?` as the question.
+1.  In the *Search* field, enter the following question:
+
+    ```text
+    What types of data sources are supported?
+    ```
+    {: codeblock}
 
     The same set of valid responses is returned.
 
@@ -150,4 +197,4 @@ If you want to share the simple search app with your team members, you can send 
 ### Next steps
 {: #tutorial-crawl-short-next}
 
-Learn more about ways to enrich the documents that you crawl from external data sources to acheive even better search results. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
+Learn more about ways to enrich the documents that you crawl from external data sources to achieve even better search results. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-03-08"
 
 keywords: upload, one-time upload, field names
 
@@ -65,6 +65,9 @@ Find workarounds and solutions to problems that you might encounter when you upl
 
 Failed to prepare document for SDU processing
 :    Some DOC, PPT, and XSL files that use older features which are no longer supported by Microsoft Office can cause ingestion issues. If you encounter this issue, open the file in a more recent version of Microsoft Office and convert the file to the DOCX, PPTX, or XSLX format respectively, and then upload the DOCX, PPTX, or XSLX file.
+
+Line breaks are inserted randomly to some DOCX files
+:    When some DOCX files are added to a collection, line breaks are inserted randomly to the text that is stored in the `html` index field. The unexpected line breaks can impact the efficiency of enrichments, such as custom rule recognition. If you encounter this issue, convert the DOCX file to a PDF file, and then import the PDF file.
 
 ### PDF file troubleshooting tips
 {: #upload-data-ts-pdf}
