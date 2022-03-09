@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-09"
 
 subcollection: discovery-data
 
@@ -111,7 +111,7 @@ Subcommands:
 
 Options:
   -e --endpoint         The endpoint URL for your cluster and add-on service instance
-                        (`https://{cpd_cluster_host}:{port}/discovery/{release}/instances/{instance_id}/api`)
+                        (`https://{cpd_cluster_host}{:port}/discovery/{release}/instances/{instance_id}/api`)
   -t --token            The authorization token of your Cloud Pak instance
   -u --user             The user name of your Cloud Pak instance
   -p --password         The user password of your Cloud Pak instance
