@@ -107,15 +107,15 @@ The IBM Cloud Docs site uses JavaScript to display the content dynamically on it
 
 1.  Click **Finish**.
 
-The service crawls the web page that you specified as the starting URL. Because you enabled JavaScript execution, the crawl will take time to complete, about 10 to 20 minutes. This is a good time to grab a cup of coffee or check your messages.
+The service crawls the web page that you specified as the starting URL. Because you enabled JavaScript execution, the crawl will take time to complete, about 10 to 20 minutes. Now is a good time to grab a cup of coffee or check your messages.
 
 ## Test your project
 {: #tutorial-crawl-short-test}
 {: step}
 
-To test your project, submit some natural language queries to see if it can find and return the right answers from the product documentation.
+To test your project, submit some natural language queries to see whether it can find and return the right answers from the product documentation.
 
-1.  First, let's find out whether the web crawl has finished. After the website has been crawled and the data processed, the *Improve and customize* page is displayed.
+1.  First, let's find out whether the web crawl is finished. After the website is crawled and the data is processed, the *Improve and customize* page is displayed.
 
     If the crawl is not completed and you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the *Discovery doc* collection. The collection should contain over 90 documents. After the crawl is completed, go to the *Improve and customize* page.
 
@@ -134,9 +134,9 @@ To test your project, submit some natural language queries to see if it can find
 
 1.  Copy the sentence in the returned passage that says, `The following table shows the supported data sources.`, and then click **View passage in document**.
 
-    ![Shows a sentence highlighted in the passage result.](images/tut-crawl-highlight-sentence.png)
+    ![Shows a sentence that is highlighted in the passage result.](images/tut-crawl-highlight-sentence.png)
 
-    A represenatation of the crawled HTML page is displayed.
+    A representation of the crawled HTML page is displayed.
 
 1.  Use the web browser page search function to find the sentence that you copied. 
 
@@ -163,7 +163,7 @@ To test your project, submit some natural language queries to see if it can find
     ```
     {: codeblock}
 
-1.  To get the full URL to the page where the passage was found, prepend the root URL for the IBM Cloud Docs site (`https://cloud.ibm.com/docs`) to the file name.
+1.  To get the full URL to the page where the passage was found, add the root URL for the IBM Cloud Docs site (`https://cloud.ibm.com/docs`) as a prefix to the file name.
 
     `https://cloud.ibm.com/docs` + `/` + `discovery-data?topic=discovery-data-collections` = `https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-collections`
 
@@ -181,7 +181,12 @@ If you want to share the simple search app with your team members, you can send 
 
 1.  Paste the copied URL into a web browser to open the application preview.
 
-1.  In the *Search* field, enter `What types of data sources are supported?` as the question.
+1.  In the *Search* field, enter the following question:
+
+    ```text
+    What types of data sources are supported?
+    ```
+    {: codeblock}
 
     The same set of valid responses is returned.
 
@@ -192,4 +197,4 @@ If you want to share the simple search app with your team members, you can send 
 ### Next steps
 {: #tutorial-crawl-short-next}
 
-Learn more about ways to enrich the documents that you crawl from external data sources to acheive even better search results. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
+Learn more about ways to enrich the documents that you crawl from external data sources to achieve even better search results. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
