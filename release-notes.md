@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-03-09"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -39,9 +39,6 @@ An alternative authentication mechanism is available for Microsoft Sharepoint On
 {: release-note}
 
 <!-- 4.0.5-4.0 -->
-
-Capturing the ACL information in documents that are crawled from SharePoint On Prem
-:   You can now configure the data source crawl to store ACL information as metadata in the documents that are added to your SharePoint On Prem collection. For more information, see [Microsoft SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud).
 
 Upgrade from Plus to Enterprise without help
 :   You can perform an in-place upgrade from a Plus plan to an Enterprise plan. For more information, see [Upgrading](/docs/discovery-data?topic=discovery-data-upgrade).

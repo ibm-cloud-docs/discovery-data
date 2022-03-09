@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-03-09"
 
 subcollection: discovery-data
 
@@ -93,14 +93,7 @@ To configure the Microsoft SharePoint On Prem data source, complete the followin
 1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1.  **Optional**: If you want to store any access control information that exists in the SharePoint documents that you crawl, in the *Security* section, set the **Include Access Control List** switch to `On`.
 
-    When you enable this option, information about SharePoint access rules that is stored in SharePoint source documents is retained and stored as metadata in the documents that are added to your collection.
-
-    This feature is not the same as enabling document-level security for the collection. The access rules in the document metadata are not used by {{site.data.keyword.discoveryshort}} search. Enabling this feature merely stores the information so that you can leverage the access rules when you build a custom search solution.
-
-    Use of this feature increases the size of the documents that are generated in the collection and increases the crawl time. Only enable the feature if your use case requires that you store the SharePoint document ACL information.
-    {: important}
 1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
@@ -115,10 +108,3 @@ To configure the Microsoft SharePoint On Prem data source, complete the followin
 The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
-
-### Sample access control list information
-{: #connector-sharepoint-onprem-cloud-acl-sample}
-
-The following screen capture illustrates the type of ACL information that is stored in the document when you include the access control list.
-
-![Shows the Microsoft ACL information stored in the source object in the document metadata.](images/acl-in-output.png)
