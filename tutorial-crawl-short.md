@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-03-09"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -113,19 +113,61 @@ The service crawls the web page that you specified as the starting URL. Because 
 {: #tutorial-crawl-short-test}
 {: step}
 
-Let's find out whether the web crawl has finished.
+To test your project, submit some natural language queries to see if it can find and return the right answers from the product documentation.
 
-1.  After the website has been crawled and the data processed, the *Improve and customize* page is displayed.
+1.  First, let's find out whether the web crawl has finished. After the website has been crawled and the data processed, the *Improve and customize* page is displayed.
 
     If the crawl is not completed and you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the *Discovery doc* collection. The collection should contain over 90 documents. After the crawl is completed, go to the *Improve and customize* page.
 
-1.  In the *Search* field, enter `What data sources are supported` as the question.
+1.  In the *Search* field, enter the following question:
 
-    The response that is returned is a valid and complete answer to the question.
+    ```text
+    What data sources are supported?
+    ```
+    {: codeblock}
+
+    The responses that are returned are valid answers to the question.
 
     ![Shows that the correct answer to the question is returned](images/tut-crawl-data-sources-ui.png)
 
-    Congratulations! Your project is answering questions successfully.
+    The first query response looks promising. Let's take a closer look at the *Creating collections* web page that is being returned.
+
+1.  Copy the sentence in the returned passage that says, `The following table shows the supported data sources.`, and then click **View passage in document**.
+
+    ![Shows a sentence highlighted in the passage result.](images/tut-crawl-highlight-sentence.png)
+
+    A represenatation of the crawled HTML page is displayed.
+
+1.  Use the web browser page search function to find the sentence that you copied. 
+
+    For example, press Command + F and then paste the sentence into the search box to find it on the page.
+
+    ![Shows the sentence in context in the page.](images/tut-crawl-find-sentence.png)
+
+    The sentence introduces a table that lists the data sources that are supported for different Discovery deployment methods. 
+
+    Congratulations! Your project was able to find the section of the web page that contains a complete answer to the natural language question that was submitted.
+
+1.  Let's look at the table in context by opening the source web page. To get the URL to the crawled page, click the **JSON** tab.
+
+    A representation of the data that is stored in the Discovery index about the web page where the passage was found is displayed in JSON format.
+
+1.  Find the `extracted_metadata.filename` index field.
+
+    ![Shows a JSON representation of the web page where the passage was found.](images/tut-crawl-json-view.png)
+
+    Copy the file name.
+
+    ```text
+    discovery-data?topic=discovery-data-collections
+    ```
+    {: codeblock}
+
+1.  To get the full URL to the page where the passage was found, prepend the root URL for the IBM Cloud Docs site (`https://cloud.ibm.com/docs`) to the file name.
+
+    `https://cloud.ibm.com/docs` + `/` + `discovery-data?topic=discovery-data-collections` = `https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-collections`
+
+1.  From a web browser, go to the URL to open the [Creating collections](/docs/discovery-data?topic=discovery-data-collections) web page. The data sources table is in the *Supported data sources* section.
 
 ## Deploy the application preview
 {: #tutorial-crawl-short-app-preview}
