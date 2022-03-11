@@ -132,7 +132,7 @@ To test your project, submit some natural language queries to see whether it can
 
     The first query response looks promising. Let's take a closer look at the *Creating collections* web page that is being returned.
 
-1.  Copy the sentence in the returned passage that says, `The following table shows the supported data sources.`, and then click **View passage in document**.
+1.  Copy the sentence in the returned passage that says, `The following table shows the supported data sources`, and then click **View passage in document**.
 
     ![Shows a sentence that is highlighted in the passage result.](images/tut-crawl-highlight-sentence.png)
 
@@ -192,7 +192,7 @@ If you want to share the simple search app with your team members, you can send 
 
     ![Shows that the correct answer to the question is returned](images/tut-web-crawl-preview-app.png)
 
-1.  You can share the URL with team members. Follow the steps that are shown on the page to give other people access to your project first.
+1.  You can share the URL for the *Application preview* with team members. Follow the steps that are shown on the page to give other people access to your project first.
 
 ### Next steps
 {: #tutorial-crawl-short-next}
