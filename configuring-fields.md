@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-16"
+lastupdated: "2022-03-11"
 
 subcollection: discovery-data
 
@@ -127,12 +127,6 @@ If your project is being used by a virtual assistant, update the search skill co
 
 ## When to use Smart Document Understanding
 {: #sdu-when}
-
-The following video provides a quick overview of Smart Document Understanding.
-
-![Watson Discovery Demo: Extract Answers From Large Documents in 5 Minutes](https://www.youtube.com/embed/Jpr3wVH3FVA){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To view the transcript, open the video on YouTube.
 
 The Smart Document Understanding (SDU) tool works better with some project types.
 
