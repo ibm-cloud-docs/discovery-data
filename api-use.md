@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-03-14"
 
 keywords: api version,api,request syntax
 
@@ -43,6 +43,9 @@ To use the API, you must construct the URL to use in your requests. Many of the 
 1.  While you're on this page, copy the API key. You specify this value as the `{apikey}`.
 1.  Open your project in {{site.data.keyword.discoveryshort}}, and then go to the **Integrate and deploy** > **API Information** page.
 1.  Copy the project ID. You specify this value as the `{project_id}`.
+
+    If you're using a Content Mining project, stay on the *Share Link* page. From the web browser's *location* field, copy the URL starting with `/projects`. For example, `projects/a8ce5fed-7f33-4405-aa4b-88ffba322712/deploy/beta`. The ID that is specified after the `/projects/` segment of the URL is your project ID.
+
 1.  Construct a request URL by using the IDs you copied.
 
     For example, the following request lists the collections in the project:
@@ -68,6 +71,9 @@ To use the API, you must construct the URL to use in your requests.
 1.  Copy the bearer token also. You will need to pass the token when you make an API call.
 1.  From the launched application instance, go to the **Integrate and Deploy** > **API Information** page.
 1.  Copy the project ID. You will specify this value as the `{project_id}`.
+
+    If you're using a Content Mining project, stay on the *Share Link* page. From the web browser's *location* field, copy the URL starting with `/projects`. For example, `projects/a8ce5fed-7f33-4405-aa4b-88ffba322712/deploy/beta`. The ID that is specified after the `/projects/` segment of the URL is your project ID.
+
 1.  Construct a request URL by using the IDs you copied.
 
     For example, the following request lists the collections in the project:
