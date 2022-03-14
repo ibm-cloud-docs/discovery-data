@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-10-21"
+lastupdated: "2022-03-14"
 
 subcollection: discovery-data
 
@@ -37,11 +37,16 @@ You can prevent content from being included in query results in the following wa
 
 - Delete a single document. 
 
-   You cannot currently delete uploaded documents from the product user interface. A developer can use the API to delete a document.
+   To delete a document, complete the following steps:
 
-   1. Get the document ID, which is shown in the JSON view of a query response.
+   1. From the navigation pane, open the **Manage collections** page, and then click a collection to open it.
+   1. Click the **Manage data** tab.
 
-      To list all documents, you can submit an empty query from the *Improve and customize* page.
-      {: tip}
+      A list of information from each document in the collection is displayed. If the information that is displayed doesn't help you identify the document that you want to delete, you can change what is displayed.
 
-   1. Use the [Delete a document](https://cloud.ibm.com/apidocs/discovery-data#deletedocument){: external} method of the API. The document ID is a required parameter.
+      -   Click the *Settings* icon in the table header.
+      -   Choose a field from which you want to fetch data to display in the first and second columns. You can choose fields such as `extracted_metadata.filename` to show the document file name, or `document_id`, for example.
+
+      Remember that you can page through the documents in the collection by using the controls in the table footer.
+
+   1. After you identify the document that you want to delete, select the document, and then click **Delete**. Confirm the deletion.

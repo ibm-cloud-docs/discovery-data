@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-14"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 10 March 2022
+{: #discovery-10march2022}
+{: release-note}
+
+<!-- 4.0.8-0.6 -->
+
+Manage the data in a collection from the new *Manage data* page
+:   You can now access the *Manage data* page for a collection from the *Manage collections* navigation pane. Go there to see a list of the documents in your collection and get a quick view of information from any field you choose, such as the text field or the document ID field. You can also delete documents from the collection with a few clicks.
 
 ## 15 February 2022
 {: #discovery-15february2022}
