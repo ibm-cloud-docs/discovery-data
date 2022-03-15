@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-15"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -31,7 +31,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 <!-- 4.0.8-0.6 -->
 
 Manage the data in a collection from the new *Manage data* page
-:   You can now access the *Manage data* page for a collection from the *Manage collections* navigation pane. Go there to see a list of the documents in your collection and get a quick view of information from any field you choose, such as the text field or the document ID field. You can also delete documents from the collection with a few clicks.
+:   You can now access the *Manage data* page for a collection from the *Manage collections* navigation pane. Go there to see a list of the documents in your collection and get a quick view of information about the documents. You can also delete documents from a collection with just a few clicks. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
 
 ## 15 February 2022
 {: #discovery-15february2022}
