@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-15"
 
 subcollection: discovery-data
 
@@ -45,8 +45,12 @@ You can prevent content from being included in query results in the following wa
       A list of information from each document in the collection is displayed. If the information that is displayed doesn't help you identify the document that you want to delete, you can change what is displayed.
 
       -   Click the *Settings* icon in the table header.
-      -   Choose a field from which you want to fetch data to display in the first and second columns. You can choose fields such as `extracted_metadata.filename` to show the document file name, or `document_id`, for example.
+      -   Choose fields from which you want to fetch data to display in the first and second columns. You can choose fields such as `extracted_metadata.filename` to show the document file name, or `document_id`, for example.
 
-      Remember that you can page through the documents in the collection by using the controls in the table footer.
+      You can page through the documents in the collection by using the controls in the table footer.
+      {: tip}
 
-   1. After you identify the document that you want to delete, select the document, and then click **Delete**. Confirm the deletion.
+   1. After you identify the document that you want to delete, select the checkbox that is associated with the document, and then click **Delete**. Confirm the deletion.
+
+      Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments. If you delete a subdocument or document segment, and then repeat the action that created it, the deleted document is added back in to your collection.
+      {: note}

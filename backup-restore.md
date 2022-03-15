@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-03-15"
 
 subcollection: discovery-data
 
@@ -267,7 +267,7 @@ To manually back up your data from an instance of {{site.data.keyword.discoverys
 1.  Enter the following command:
 
     ```bash
-    oc rsync <crawler pod>:/mnt <path-to-backup-directory>
+    oc cp <crawler pod>:/mnt <path-to-backup-directory>
     ```
     {: pre}
 
@@ -302,7 +302,7 @@ To manually restore your data from an instance of {{site.data.keyword.discoverys
 1.  Enter the following command:
 
     ```bash
-    oc rsync <path-to-backup-directory> <crawler pod>:/mnt
+    oc cp <path-to-backup-directory> <crawler pod>:/mnt
     ```
     {: pre}
 
