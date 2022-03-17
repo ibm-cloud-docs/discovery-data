@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-03-17"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ For subscription accounts, the monthly fee per instance is $500.
 
 The plan includes the following features:
 
--   10,000 documents per month ($50 for every additional 1,000 documents per month)
+-   10,000 documents ($50 per month for every additional 1,000 documents)
 -   10,000 queries per month ($20 for every additional 1,000 queries per month)
 -   Up to 5 queries per second
 -   Optical Character Recognition(OCR)
@@ -48,7 +48,7 @@ The plan includes the following features:
 {: #plusplan-limits}
 
 -   Up to 500,000 queries per month
--   Up to 500,000 documents per month
+-   Up to 500,000 documents
 -   Up to 20 projects
 -   Up to 40 collections
 -   Up to 10MB document size
@@ -72,7 +72,7 @@ For subscription accounts, the monthly fee per instance is $5,000.
 
 The plan includes the following features:
 
--   100,000 documents per month ($5 for every additional 1,000 documents per month)
+-   100,000 documents ($5 per month for every additional 1,000 documents)
 -   100,000 queries per month ($5 for every additional 1,000 queries per month)
 -   Up to 5 queries per second
 -   Everything that's available in Plus
@@ -84,7 +84,7 @@ The plan includes the following features:
 {: #enterpriseplan-limits}
 
 -   Unlimited queries per month
--   Unlimited documents per month
+-   Unlimited documents
 -   Up to 100 projects
 -   Up to 300 collections
 -   Up to 10 MB document size
