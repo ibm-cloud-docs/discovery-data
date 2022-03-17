@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-16"
 
 subcollection: discovery-data
 
@@ -52,5 +52,5 @@ You can prevent content from being included in query results in the following wa
 
    1. After you identify the document that you want to delete, select the checkbox that is associated with the document, and then click **Delete**. Confirm the deletion.
 
-      Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments. If you delete a subdocument or document segment, and then repeat the action that created it, the deleted document is added back in to your collection.
+      Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments and applying FAQ extraction generates a document for each question-and-answer pair that is identified. If you delete one of these generated documents, and then repeat the action that created it, the deleted document is added back in to your collection.
       {: note}
