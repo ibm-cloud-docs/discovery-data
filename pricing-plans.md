@@ -25,7 +25,7 @@ Find targeted answers and insights across many document types.
 The first Plus plan created includes a 30-day free trial.
 You must pay for each additional Plus plan (and for use of the first plan after the 30-day trial ends).
 
-If you continue to use a Plus plan service instance after the 30-day trial ends, you are charged for it. To avoid being charged after 30 days, delete the Plus plan service instance.
+If you continue to use a Plus plan service instance after the 30-day trial ends, you are charged for it. To avoid being charged after 30 days, you must delete the Plus plan service instance.
 {: important}
 
 ### What's included
