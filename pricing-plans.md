@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-17"
+lastupdated: "2022-03-18"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ The plan includes the following features:
 -   Up to 500,000 queries per month
 -   Up to 500,000 documents
 -   Up to 20 projects
--   Up to 40 collections
+-   Up to 40 collections (Up to 5 collections per project)
 -   Up to 10MB document size
 -   Up to 3 custom Watson Knowledge Studio machine learning models
 -   Up to 3 advanced rules learning models
@@ -86,7 +86,7 @@ The plan includes the following features:
 -   Unlimited queries per month
 -   Unlimited documents
 -   Up to 100 projects
--   Up to 300 collections
+-   Up to 300 collections (Up to 5 collections for all project types except Content Mining, which supports 1.)
 -   Up to 10 MB document size
 -   Up to 10 custom Watson Knowledge Studio machine learning models
 -   Up to 100 custom fields for Smart Document Understanding model and model import and export
