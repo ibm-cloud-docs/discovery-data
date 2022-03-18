@@ -25,7 +25,7 @@ Find targeted answers and insights across many document types.
 The first Plus plan created includes a 30-day free trial.
 You must pay for each additional Plus plan (and for use of the first plan after the 30-day trial ends).
 
-If you continue to use a Plus plan service instance after the 30-day trial ends, you are charged for it. To avoid being charged after 30 days, delete the Plus plan service instance.
+If you continue to use a Plus plan service instance after the 30-day trial ends, you are charged for it. To avoid being charged after 30 days, you must delete the Plus plan service instance.
 {: important}
 
 ### What's included
@@ -35,7 +35,7 @@ For subscription accounts, the monthly fee per instance is $500.
 
 The plan includes the following features:
 
--   10,000 documents ($50 per month for every additional 1,000 documents)
+-   10,000 documents per month ($50 for every additional 1,000 documents per month)
 -   10,000 queries per month ($20 for every additional 1,000 queries per month)
 -   Up to 5 queries per second
 -   Optical Character Recognition(OCR)
@@ -72,7 +72,7 @@ For subscription accounts, the monthly fee per instance is $5,000.
 
 The plan includes the following features:
 
--   100,000 documents ($5 per month for every additional 1,000 documents)
+-   100,000 documents per month ($5 for every additional 1,000 documents per month)
 -   100,000 queries per month ($5 for every additional 1,000 queries per month)
 -   Up to 5 queries per second
 -   Everything that's available in Plus
