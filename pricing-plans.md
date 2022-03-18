@@ -86,7 +86,7 @@ The plan includes the following features:
 -   Unlimited queries per month
 -   Unlimited documents
 -   Up to 100 projects
--   Up to 300 collections (Up to 5 collections for all project types except Content Mining, which supports 1.)
+-   Up to 300 collections (Up to 5 collections for all project types except Content Mining, which supports 1)
 -   Up to 10 MB document size
 -   Up to 10 custom Watson Knowledge Studio machine learning models
 -   Up to 100 custom fields for Smart Document Understanding model and model import and export
