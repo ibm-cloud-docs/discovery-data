@@ -703,7 +703,7 @@ To apply the document classifier to a collection in a different project, complet
     {: note}
 1.  In the **Enrichments** tab, locate your classifier in the **Name** column, select the fields that you want to enrich in the **Fields to enrich** drop-down menu, and then click **Apply changes and reprocess**.
 
-### Document classifier training data sample
+### Document classifier sample
 {: #create-doc-classifier-sample}
 
 Your classifier processes your document based on structured and textual data. If you upload multiple documents, some documents might not be assigned any classes. To verify that your classifier works, ensure that both your .csv training and .csv target files contain the same column names and the same value types. To see sample column names and their corresponding valid value types in both the .csv training and .csv target files, review Table 1.
