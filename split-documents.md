@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-12-21"
+lastupdated: "2022-03-21"
 
 subcollection: discovery-data
 
@@ -49,4 +49,15 @@ You can check the status of the splitting process from the *Activity* page.
 
 If a document that was split changes and you want to upload the document again, work with a developer to replace the document by using the API. A developer can use the POST method to upload the latest version of the document to the `/environments/{environment_id}/collections/{collection_id}/documents/{document_id}` endpoint. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#updatedocument){: external}. To provide the `{document_id}` path variable that must be sent with the request, copy the contents of the `parent_id` field of one of the document's segments.
 
-When you replace the original document, all of the segments are overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments remain in the index. A developer can delete each remaining segment separately by using the API. For more information, see the [delete document API](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}.
+When you replace the original document, all of the segments are overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments remain in the index. 
+
+## Deleting document segments from the index
+{: #split-documents-delete}
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+
+You can delete documents in a collection from the *Manage data* page. To find all of the document segments that were generated from a single document, check for documents with the same `metadata.parent_document_id` field value. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
+
+[Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+
+The *Manage data* page is not available in installed deployments. A developer can delete document segments by using the API. For more information, see the [delete document API](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}.
