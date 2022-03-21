@@ -59,4 +59,4 @@ You can prevent content from being included in query results in the following wa
 
    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
-   The *Manage data* page is not available from installed deployments. You must use the [Discovery API](/apidocs/discovery-data#deletedocument) to delete a document. And you must know the document ID of the document that you want to delete.
+   The *Manage data* page is not available in installed deployments. You must use the [Discovery API](/apidocs/discovery-data#deletedocument) to delete a document. And you must know the document ID of the document that you want to delete.
