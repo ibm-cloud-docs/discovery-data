@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-03-21"
 
 subcollection: discovery-data
 
@@ -703,12 +703,15 @@ To apply the document classifier to a collection in a different project, complet
     {: note}
 1.  In the **Enrichments** tab, locate your classifier in the **Name** column, select the fields that you want to enrich in the **Fields to enrich** drop-down menu, and then click **Apply changes and reprocess**.
 
-Your classifier processes your document based on structured and textual data. If you upload multiple documents, some documents might not be assigned any classes. To verify that your classifier works, ensure that both your .csv training and .csv target files contain the same column names and the same value types. To see sample column names and their corresponding valid value types in both the .csv training and .csv target files, review Table 1:
+### Document classifier training data sample
+{: #create-doc-classifier-sample}
+
+Your classifier processes your document based on structured and textual data. If you upload multiple documents, some documents might not be assigned any classes. To verify that your classifier works, ensure that both your .csv training and .csv target files contain the same column names and the same value types. To see sample column names and their corresponding valid value types in both the .csv training and .csv target files, review Table 1.
 
 | File          | Column names | Value types                              |
 | ------------- | ------------ | ---------------------------------------- |
-| .csv training | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_sex`, `client_age`, `body`, `label` | `0`, `2016/1/1`, `Tea`, `lemon tea`, `Not Member`, `Manhattan`, `Male`, `20`, `The straw was peeled off from the juice pack.`, `package_container` |
-| .csv target   | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_sex`, `client_age`, `body`, `label` | `1`, `2016/1/2`, `Ice cream`, `vanilla ice cream`, `Silver Card Member`, `Queens`, `Female`, `20`, `I got some ice cream for my children, but there was something like a piece of thread inside the cup.`, `contamination_tampering` |
+| .csv training | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_age`, `body`, `label` | `0`, `2016/1/1`, `Tea`, `lemon tea`, `Not Member`, `Manhattan`, `20`, `The straw was peeled off from the juice pack.`, `package_container` |
+| .csv target   | `claim_id`, `date`, `claim_product_line`, `claim_product`, `client_segment`, `client_location`, `client_age`, `body`, `label` | `1`, `2016/1/2`, `Ice cream`, `vanilla ice cream`, `Silver Card Member`, `Queens`, `20`, `I got some ice cream for my children, but there was something like a piece of thread inside the cup.`, `contamination_tampering` |
 {: caption="Table 1. Sample data for .csv training and .csv target files" caption-side="top"}
 
 If you cannot find any documents that were classified, search for your document by using the name that you assigned to your machine learning model.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-16"
+lastupdated: "2022-03-21"
 
 subcollection: discovery-data
 
@@ -68,7 +68,7 @@ Unidirectional
           ],
           "expanded_terms": [
             "car",
-            "automobile"
+            "automobile",
             "vehicle"
           ]
         }
