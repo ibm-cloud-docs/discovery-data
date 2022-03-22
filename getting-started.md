@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-03-22"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -210,15 +210,34 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     A preview of the document where the result was found is shown.
 
-1.  Click **JSON**.
+1.  Do one of the following things to explore the search result.
 
-    A JSON representation of the document is displayed.
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
+    
+      1.  Click **Open advanced view**.
 
-    ![Shows the JSON representation of the document.](images/gs-json-tab.png)
+          Useful summary information is displayed, such as the number of occurrences of any enrichments that are detected in the document. 
 
-    You can explore the JSON representation to see information that Discovery captured from the document. For example, if you expand the `enriched_text` section, and then expand the `entities` section, you can see mentions of entities that were recognized and tagged by the Entities enrichment.
+      1.  Select the `URL` entity to highlight mentions of URLs within the text.
 
-    ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png)
+          ![Shows the advanced text view with URL entities highlighted.](images/gs-doc-advanced-view.png)
+
+      1.  To see how the information from the document is stored in JSON format, click the *Display options* menu from the view header, and select **JSON view**.
+
+          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
+
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+
+      1.  Click **JSON**.
+
+          A JSON representation of the document is displayed.
+
+          ![Shows the JSON representation of the document.](images/gs-json-tab.png)
+
+          You can explore the JSON representation to see information that Discovery captured from the document. For example, if you expand the `enriched_text` section, and then expand the `entities` section, you can see mentions of entities that were recognized and tagged by the Entities enrichment.
+
+          ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png)
+
 
 ## Customize the sample project
 {: #customize-project-tool}
