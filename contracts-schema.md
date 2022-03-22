@@ -29,10 +29,20 @@ To see the elements that are identified by the *Contracts* enrichment, complete 
 
 1.  Click **View passage in document** for one of the search results that are displayed for the document that you want to review.
 
-1.  Click **Open advanced view** to see a list of the elements that the *Contracts* enrichment identified in the document.
+1.  Do one of the following things:
 
-    ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png)
+    - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
+
+      1.  Click **Open advanced view** to see the *Contract Data* page.
+
+          ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png)
     
+-   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+
+      1.  Click **Contract Data**.
+
+    A list of the elements that the *Contracts* enrichment identified in the document is displayed.
+
 ## Contract schema information
 {: #contracts-schema-details}
 
