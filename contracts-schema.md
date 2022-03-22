@@ -31,13 +31,13 @@ To see the elements that are identified by the *Contracts* enrichment, complete 
 
 1.  Do one of the following things:
 
-    - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
+    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
 
       1.  Click **Open advanced view** to see the *Contract Data* page.
 
           ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png)
     
--   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
 
       1.  Click **Contract Data**.
 

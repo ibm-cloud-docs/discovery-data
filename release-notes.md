@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-22"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -41,6 +41,9 @@ Improved format of search results from PDF documents
     
     The in-context view is available for PDF files to which a Smart Document Understanding model is applied. The PDF file must be uploaded; it cannot be a crawled PDF. The rich preview does not work on images, meaning it doesn't work on scanned PDF documents. The in-context view is available for PDFs in all languages; however, the enrichment highlighting might be misaligned in some languages.
     {: note}
+
+Tell us what you think
+:   Share your opinions and ideas with us at any time by clicking the **Share feedback** button from the page header of the product user interface.
 
 ## 10 March 2022
 {: #discovery-10march2022}

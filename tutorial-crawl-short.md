@@ -150,7 +150,7 @@ To test your project, submit some natural language queries to see whether it can
 
 1.  Let's look at the table in context by opening the source web page. To get the URL to the crawled page, let's look at the JSON representation of the document. Do one of the following things:
 
-    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
+    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
     
       1.  Click **Open advanced view**.
 
@@ -160,7 +160,7 @@ To test your project, submit some natural language queries to see whether it can
 
           ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
 
-    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
 
       1.  Click **JSON**.
 
