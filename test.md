@@ -39,7 +39,7 @@ To test your project, complete the following steps:
     
       1.  Click **Open advanced view**.
 
-          Useful summary information is displayed, such as the number of occurrences of any enrichments that are detected in the document. 
+          Useful summary information is displayed, such as the number of occurrences of any enrichments that are detected in the document. For a *Document Retrieval for Contracts* project, the *Contract Data* page is displayed. For more information about Contract filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
 
       1.  Click the *Display options* menu from the view header, and then select **JSON view**.
 
@@ -49,7 +49,7 @@ To test your project, complete the following steps:
 
       1.  Click **JSON**.
 
-For a *Document Retrieval for Contracts* project, click the **Contract Data** tab. For more information about the filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
+          For a *Document Retrieval for Contracts* project, click the **Contract Data** tab. For more information about Contract filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
 
 ## Interpreting the results
 {: #test-json}
