@@ -24,6 +24,24 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 21 March 2022
+{: #discovery-21march2022}
+{: release-note}
+
+<!-- 4.0.8-1.0 -->
+
+A more informative search result view is available
+:   When you click to view the passage from a search result, a document preview page is displayed that shows a representation of the original document where the search result was found. For most document types, you can open a new *advanced view* of the document to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document. You also can select one of the enrichments to highlight every occurrence of the element within the document text.
+
+    Currently, only the *Entities* and *Keywords* enrichments are listed.
+    {note}
+
+Improved format of search results from PDF documents
+:   When you click to view a passage from a search result that is extracted from a PDF document, a document preview page is displayed that shows the returned passage in the context of the original PDF page.
+    
+    The in-context view is available for PDF files to which a Smart Document Understanding model is applied. The PDF file must be uploaded; it cannot be a crawled PDF. The rich preview does not work on images, meaning it doesn't work on scanned PDF documents. The in-context view is available for PDFs in all language; however, the enrichment highlighting might be misaligned in some languages.
+    {: note}
+
 ## 10 March 2022
 {: #discovery-10march2022}
 {: release-note}

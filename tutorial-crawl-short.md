@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-22"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -148,7 +148,21 @@ To test your project, submit some natural language queries to see whether it can
 
     Congratulations! Your project was able to find the section of the web page that contains a complete answer to the natural language question that was submitted.
 
-1.  Let's look at the table in context by opening the source web page. To get the URL to the crawled page, click the **JSON** tab.
+1.  Let's look at the table in context by opening the source web page. To get the URL to the crawled page, let's look at the JSON representation of the document. Do one of the following things:
+
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
+    
+      1.  Click **Open advanced view**.
+
+          Useful summary information is displayed, such as the number of occurrences of any enrichments that are detected in the document. 
+
+      1.  Click the *Display options* menu from the view header, and then select **JSON view**.
+
+          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
+
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+
+      1.  Click **JSON**.
 
     A representation of the data that is stored in the Discovery index about the web page where the passage was found is displayed in JSON format.
 

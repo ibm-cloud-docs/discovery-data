@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-01"
+lastupdated: "2022-03-22"
 
 keywords: JSON, JSON representation, result JSON
 
@@ -30,9 +30,26 @@ To test your project, complete the following steps:
     -   *Content Mining* project: Choose or add a facet to apply to the documents, and then click **View filtered documents**.
     -   Other project types: Enter a test query to submit or leave the field empty and press Enter to submit an empty query.
 1.  From the query result list, click the link to view the document.
-1.  Click **JSON** to view the query result in JSON format.
 
-    For a *Document Retrieval for Contracts* project, click the **Contract Data** tab. For more information about the filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
+    A representation of the original document is displayed.
+
+1.  Do one of the following things to view the query result in JSON format.
+
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
+    
+      1.  Click **Open advanced view**.
+
+          Useful summary information is displayed, such as the number of occurrences of any enrichments that are detected in the document. 
+
+      1.  Click the *Display options* menu from the view header, and then select **JSON view**.
+
+          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
+
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+
+      1.  Click **JSON**.
+
+For a *Document Retrieval for Contracts* project, click the **Contract Data** tab. For more information about the filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
 
 ## Interpreting the results
 {: #test-json}
