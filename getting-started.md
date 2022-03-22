@@ -212,7 +212,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
 1.  Do one of the following things to explore the search result.
 
-    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
+    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
     
       1.  Click **Open advanced view**.
 
@@ -226,7 +226,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
           ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
 
-    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
 
       1.  Click **JSON**.
 

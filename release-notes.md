@@ -34,7 +34,7 @@ A more informative search result view is available
 :   When you click to view the passage from a search result, a document preview page is displayed that shows a representation of the original document where the search result was found. For most document types, you can open a new *advanced view* of the document to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document. You also can select one of the enrichments to highlight every occurrence of the element within the document text.
 
     Currently, only the *Entities* and *Keywords* enrichments are listed.
-    {note}
+    {: note}
 
 Improved format of search results from PDF documents
 :   When you click to view a passage from a search result that is extracted from a PDF document, a document preview page is displayed that shows the returned passage in the context of the original PDF page.
