@@ -39,7 +39,7 @@ A more informative search result view is available
 Improved format of search results from PDF documents
 :   When you click to view a passage from a search result that is extracted from a PDF document, a document preview page is displayed that shows the returned passage in the context of the original PDF page.
     
-    The in-context view is available for PDF files to which a Smart Document Understanding model is applied. The PDF file must be uploaded; it cannot be a crawled PDF. The rich preview does not work on images, meaning it doesn't work on scanned PDF documents. The in-context view is available for PDFs in all language; however, the enrichment highlighting might be misaligned in some languages.
+    The in-context view is available for PDF files to which a Smart Document Understanding model is applied. The PDF file must be uploaded; it cannot be a crawled PDF. The rich preview does not work on images, meaning it doesn't work on scanned PDF documents. The in-context view is available for PDFs in all languages; however, the enrichment highlighting might be misaligned in some languages.
     {: note}
 
 ## 10 March 2022

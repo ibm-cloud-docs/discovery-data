@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2021-11-01"
+lastupdated: "2022-03-22"
 
 subcollection: discovery-data
 
@@ -19,7 +19,32 @@ The *Contracts* enrichment is applied to collections in *Document Retrieval for 
 Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
-When you create a *Document Retrieval for Contract* project type, the Contracts enrichment is applied to the collections automatically. The enrichment is applied to the `html` field of the documents.
+When you create a *Document Retrieval for Contract* project type, the *Contracts* enrichment is applied to the collections automatically. The enrichment is applied to the `html` field of the documents.
+
+To see the elements that are identified by the *Contracts* enrichment, complete the following steps:
+
+1.  From the *Improve and Customize* page, submit a search query.
+
+    You can submit any keyword you want or pick one of the suggested keyword search terms.
+
+1.  Click **View passage in document** for one of the search results that are displayed for the document that you want to review.
+
+1.  Do one of the following things:
+
+    - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
+
+      1.  Click **Open advanced view** to see the *Contract Data* page.
+
+          ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png)
+    
+-   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+
+      1.  Click **Contract Data**.
+
+    A list of the elements that the *Contracts* enrichment identified in the document is displayed.
+
+## Contract schema information
+{: #contracts-schema-details}
 
 After a document is processed by the Contracts enrichment, the service generates JSON output in the following schema:
 
