@@ -35,7 +35,7 @@ To test your project, complete the following steps:
 
 1.  Do one of the following things to view the query result in JSON format.
 
-    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
     
       1.  Click **Open advanced view**.
 
