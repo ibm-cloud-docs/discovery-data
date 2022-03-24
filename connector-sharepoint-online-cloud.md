@@ -58,7 +58,7 @@ Open Authentication (OAuth)
     The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature.
     {: beta}
 
-    Before you can connect to SharePoint Online by using Open Authentication, the Discovery connector service must be registered with your Microsoft Azure service. To register, you must have a user ID with the *Application administrator* or *Cloud application administrator* role. To verify the registration, login to Microsoft Azure (https://portal.azure.com). From the *Enterprise applications* page in *Azure Active Directory*, look for the Discovery connector service. Its name has the syntax `IBM App Connect_<unique-ID>`. Under *Permissions*, click "Grant admin consent for <domain>".
+    Before you can connect to SharePoint Online by using Open Authentication, the Discovery connector service must be registered with your Microsoft Azure service. To register, you must have a user ID with the *Application administrator* or *Cloud application administrator* role. To verify the registration, login to Microsoft Azure (https://portal.azure.com). From the *Enterprise applications* page in *Azure Active Directory*, look for the Discovery connector service. Its name has the syntax `IBM App Connect_<unique-ID>`. Under *Permissions*, click *Grant admin consent for `<domain>`*.
 
     After the connector service is registered, all Azure users can use the connector service to crawl SharePoint Online. To restrict who can use the service, open the *Permissions* settings for the service (IBM App Connect), and then set *Assignment required* to `Yes`. From the *Users and Groups* list, add to the list only the users who you want to allow to crawl SharePoint Online.
 
