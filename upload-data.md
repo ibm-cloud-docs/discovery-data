@@ -69,6 +69,9 @@ Failed to prepare document for SDU processing
 Line breaks are inserted randomly to some DOCX files
 :    When some DOCX files are added to a collection, line breaks are inserted randomly to the text that is stored in the `html` index field. The unexpected line breaks can impact the efficiency of enrichments, such as custom rule recognition. If you encounter this issue, convert the DOCX file to a PDF file, and then import the PDF file.
 
+After applying a pretrained Smart Document Understanding model to a PPT file, table boundaries are not recognized properly
+:    During the conversion process, text that is extracted from the table is confused with text that is outside the table in some PPT pages. This issue is more likely to occur in tables with a lot of text and in tables with footnotes that are displayed just outside the table border. If you encounter this issue, export the PPT file as a PDF file, and then upload the PDF file instead. Apply a user-trained Smart Document Understanding (SDU) model to the document, and then use the SDU tool to identify the tables in the document. The resulting model handles table boundaries properly and can extract text from the tables cleanly.
+
 ### PDF file troubleshooting tips
 {: #upload-data-ts-pdf}
 
@@ -91,6 +94,7 @@ Ingestion notes:
 -   Each line that is defined in the CSV file is added to the index as a separate document.
 -   You cannot enable the Optical Character Recognition (OCR) feature for CSV files.
 -   If the CSV file has headers, the header names are used to name the fields in which the content from the corresponding column is stored. Avoid using names that have special meaning in {{site.data.keyword.discoveryshort}}. For more information, see [How fields are handled](/docs/discovery-data?topic=discovery-data-upload-data#field-name-limits).
+-   When a CSV file header name contains restricted characters, the document converter automatically removes the restricted characters from the field name when it adds the resulting field to the index. 
 
 Enrichment notes:
 
@@ -139,6 +143,3 @@ Avoid field names that meet the following conditions. Field names with these res
 - Start with the characters `_`, `+`, and `-`. For example, `+extracted-content`.
 - Contain the characters `.`, `,`, `#`, `?`, or `:` or spaces. For example, `new:extracted-content`.
 - End with numbers. For example, `extracted-content2`.
-
-When you configure a collection to use the CSV header, the document converter automatically changes any field names that contain restricted characters to remove them from the name.
-{: note}
