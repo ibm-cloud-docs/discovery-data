@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-25"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -58,6 +58,8 @@ Before you can create a collection, you must create a project. For more informat
 
         A collection can support only one data source. Documents in the collection must be in one language only, the language that you specify for the collection.
         {: note}
+
+For information about how to troubleshoot issues that you might encounter when adding documents to a collection, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot).
 
 ## Optical character recognition
 {: #ocr}
@@ -214,7 +216,7 @@ If the maximum size of the fields in the document exceeds the allowed limits, th
 If you are uploading a Microsoft Excel file and a message is displayed that indicates that the non-HTML field size limit is exceeded, consider converting the XSL file into a CSV file. When you upload a comma-separated value (CSV) file, each row is indexed as a separate document. As a result, no field size limits are exceeded.
 {: tip}
 
-For more information about how fields in uploaded files are handled, see [How fields are handled](/docs/discovery-data?topic=discovery-data-upload-data#field-name-limits).
+For more information about how fields in uploaded files are handled, see [How fields are handled](/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).
 
 {{site.data.content.data-sources-reuse}}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-04"
+lastupdated: "2022-03-25"
 
 keywords: known issues
 
@@ -19,7 +19,7 @@ Known issues are listed by the release in which they were identified.
 {: shortdesc}
 
 -   For the list of release notes, see [Release notes](/docs/discovery-data?topic=discovery-data-release-notes-data).
--   For troubleshooting information, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot).
+-   For troubleshooting information, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d).
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}} only**
 
@@ -462,7 +462,7 @@ Also see the issues identified in all previous releases.
 - When you apply an enrichment to a collection, the enrichment language must match the collection language, or it will fail. The tooling displays all the collections, regardless of language.
 - On the Manage Fields tab, you can edit system-generated fields. The following fields should not be edited by changing the field type or turning off indexing: `document_id`, `extracted_metadata`, `metadata`.
 - When you delete a Collection and select the option `Don't delete underlying data`, any incomplete document ingestion crawls will continue running in the background, which will impact the new crawl start times, until the existing crawls are completed.
-- ![Cloud Pak for Data only](images/desktop.png) Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. For more information on identifying and resolving this issue, see [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-ls).
+- ![Cloud Pak for Data only](images/desktop.png) Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. For more information on identifying and resolving this issue, see [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d#troubleshoot-ls).
 - If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
 - Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
 - If the Parts of Speech enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.
