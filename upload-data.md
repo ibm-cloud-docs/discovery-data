@@ -53,6 +53,6 @@ To upload data, complete the following steps:
 
 The file upload is completed quickly. It takes more time for the data to be processed as it is added to the collection. After the files are uploaded and processed, the *Activity* page shows the upload results.
 
-Unlike crawled data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file, you must delete the earlier version and rename the file before you upload it.
+Unlike crawled data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file, delete the earlier version of the file, and then upload the latest version.
 
 For information about how to troubleshoot issues that you might encounter when adding documents to a collection, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
