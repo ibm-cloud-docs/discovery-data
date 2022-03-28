@@ -13,14 +13,14 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments
-{: #troubleshoot}
+{: #troubleshoot-cp4d}
 
 Learn ways to troubleshoot and address issues that you might encounter while using the product.
 {: shortdesc}
 
 ![{{site.data.keyword.cpd_full_notm}} only](images/desktop.png) **{{site.data.keyword.cpd_full_notm}} only** 
 
-This information applies only to instances of {{site.data.keyword.discoveryfull}} that are installed on {{site.data.keyword.icp4dfull}}. For troubleshooting tips that apply to both installed and managed deployments, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot).
+This information applies only to instances of {{site.data.keyword.discoveryfull}} that are installed on {{site.data.keyword.icp4dfull}}. For troubleshooting tips about adding data to both installed and managed deployments, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
 {: note}
 
 The information in this topic suggests steps you can take to investigate issues that might occur. For information about known issues and their workarounds per version, see [Known issues](/docs/discovery-data?topic=discovery-data-known-issues).

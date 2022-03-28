@@ -79,7 +79,7 @@ toc:
               - connector-sharepoint-onprem-cp4d.md
               - connector-web-cp4d.md
               - connector-wfs-cp4d.md
-          - troubleshoot.md
+          - troubleshoot-ingestion.md
           - index-overview.md
           - manage-collections.md
       - topicgroup:
@@ -132,6 +132,7 @@ toc:
           - install.md
           - upgrade-data.md
           - troubleshoot-cp4d.md
+            navtitle: Troubleshooting deployments
           - known-issues.md
           - install-prior.md
       - topicgroup:

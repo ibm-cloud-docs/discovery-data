@@ -10,21 +10,16 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Troubleshooting
-{: #troubleshoot}
+# Troubleshooting ingestion
+{: #troubleshoot-ingestion}
 
-Learn about solutions and workarounds to problems you might encounter when using {{site.data.keyword.discoveryshort}}. 
+Learn about solutions and workarounds to problems you might encounter when you add data to a collection.
 {: shortdesc}
 
 This information applies both to managed and installed instances of {{site.data.keyword.discoveryshort}}. For more troubleshooting tips for installed deployments only, see [Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d).
 {: note}
 
-## Troubleshooting ingestion issues
-{: #upload-data-ts}
-
-Find workarounds and solutions to problems that you might encounter when you upload data.
-
-### Microsoft document troubleshooting tips
+## Microsoft document troubleshooting tips
 {: #upload-data-ts-ms}
 
 Failed to prepare document for SDU processing
@@ -36,7 +31,7 @@ Line breaks are inserted randomly to some DOCX files
 After applying a pretrained Smart Document Understanding model to a PPT file, table boundaries are not recognized properly
 :    During the conversion process, text that is extracted from the table is confused with text that is outside the table in some PPT pages. This issue is more likely to occur in tables with a lot of text and that have footnotes displayed just outside the table border. If you encounter this issue, export the PPT file as a PDF file, and then upload the PDF file instead. Apply a user-trained Smart Document Understanding (SDU) model to the document, and then use the SDU tool to identify the tables in the document. The resulting model handles table boundaries properly and can extract text from the tables cleanly.
 
-### PDF file troubleshooting tips
+## PDF file troubleshooting tips
 {: #upload-data-ts-pdf}
 
 Failed to parse document due to invalid encoding
