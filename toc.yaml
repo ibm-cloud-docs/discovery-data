@@ -218,9 +218,6 @@ toc:
               label: IBM Cloud Pak for Data Community
               href: https://community.ibm.com/community/user/cloudpakfordata/communities/community-home?communitykey=c0c16ff2-10ef-4b50-ae4c-57d769937235
           - link:
-              label: Watson Developer Community Slack channel
-              href: http://wdc-slack-inviter.mybluemix.net/
-          - link:
               label: Stack Overflow
               href: http://stackoverflow.com/questions/tagged/watson-discovery
       - accessibility.md
