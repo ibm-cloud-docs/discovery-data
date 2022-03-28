@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-28"
 
 keywords: upload, one-time upload, field names
 
@@ -20,11 +20,11 @@ You can perform a one-time document upload from your local file system at any ti
 
 You can upload up to 200 files at a time.
 
-To process document sets that are larger than 200 files, add them to an external data source and use a data source crawler to upload them. For {{site.data.keyword.icp4dfull_notm}} deployments, you can use a *Local File System* data source for this purpose.
+To process document sets that are larger than 200 files, you can add them to an external data source and use a data source crawler to upload them. For {{site.data.keyword.icp4dfull_notm}} deployments, you can use a *Local File System* data source for this purpose.
 
 For more information about the maximum size allowed for each file, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
 
-Before you upload a CSV file to a Content Mining project, decide whether you want to apply enrichments to the content. If so, consider adding headers to the source file so that any fields that are generated have meaningful names. Without headers, fields are given generic names, such as `column_0`, `column_1`, and so on.
+Before you upload a CSV file to a Content Mining project, consider adding headers to the source file so that any fields that are generated from the file have meaningful names. Without headers, fields are given generic names, such as `column_0`, `column_1`, and so on.
 {: tip}
 
 To upload data, complete the following steps:
@@ -55,4 +55,4 @@ The file upload is completed quickly. It takes more time for the data to be proc
 
 Unlike crawled data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file, you must delete the earlier version and rename the file before you upload it.
 
-For information about how to troubleshoot issues that you might encounter when adding documents to a collection, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot).
+For information about how to troubleshoot issues that you might encounter when adding documents to a collection, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
