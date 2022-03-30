@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-29"
 
 subcollection: discovery-data
 
@@ -31,11 +31,11 @@ You can see a list of the fields that were indexed from the *Manage fields* page
     Make sure that the processing of the collection is finished first. The Activity page shows the processing status.
 1.  Click the *Manage fields* tab.
 
-The purpose of the fields is self-explanatory given their field names.
+The fields that are shown can differ based on your data. However, one subset of fields are always listed. These fields, with names such as `footer` and `header`, are derived from the Smart Document Understanding (SDU) tool, and are listed even when you don't explicitly apply an SDU model to the collection. (For the full list of SDU-generated fields, see [Available fields](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-default-fields).) Only the fields with a data type specified are stored in the collection's index.
 
-What is not obvious is the importance of the `text` field. The `text` field typically contains the main body of text from the original document. Most of the content that is returned in search results originates from this one field. How to parse and return only relevant chunks of information from this field is determined by the query result configuration that is used by the project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
+One of the SDU-generated fields that is stored in the index is the `text` field. The `text` field typically contains the main body of text from the original document. Most of the content that is returned in search results originates from this one field. How to parse and return only relevant chunks of information from this field is determined by the query result configuration that is used by the project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
 
-More processing adds more fields. And more processing is applied automatically depending on the project type and on the document type. When processes run on documents in a collection, extra fields are added to store information that is associated with the process. For example, when the Entities enrichment is applied to a collection, it starts a process that adds fields with names that begin with `enriched_{field_name}.entities` to the documents in the collection.
+More processing adds more fields. And more processing is applied automatically depending on the project type. When processes run on documents in a collection, extra fields are added to store information that is associated with the process. For example, when the built-in Entities enrichment is applied to a collection, it starts a process that adds fields with names that begin with `enriched_{field_name}.entities` to the documents in the collection.
 
 - For more information about fields that are added to your collection, see [Interpreting the results](/docs/discovery-data?topic=discovery-data-test#test-json).
 - For more information about the enrichments that are applied by default, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).

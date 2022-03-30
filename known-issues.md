@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-30"
 
 keywords: known issues
 
@@ -29,6 +29,21 @@ The known issues that are described in this topic apply to installed deployments
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
 For more information about installing the service, see [the {{site.data.keyword.icp4dfull}} documentation](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}.
+
+## 4.0.7, 30 March 2022
+{: #30March2022ki}
+
+-   `Deployed` status of resources fluctuates after the 4.0.7 upgrade is completed.
+
+    -   **Error**: When you check the status by submitting the `oc get WatsonDiscovery` command, the ready status of the resources toggles between showing `23/23` and `20/23` components as being ready for use.
+    -   **Cause**: The readiness state of the resources is not reported consistently after a migration.
+    -   **Solution**: Typically, the instance is ready for use despite the ready state instability. The ready state settles after approximately 5 hours. You can wait for the readiness state to consistently show `23/23` or you can manually refresh the status information by running the following commands in a terminal that is logged into the cluster:
+
+        ```sh
+        oc proxy &
+        curl -ksS -X PATCH -H "Accept: application/json, */*" -H "Content-Type: application/merge-patch+json" http://127.0.0.1:8001/apis/discovery.watson.ibm.com/v1/namespaces/<namespace>/watsondiscoveries/wd/status --data '{"status": null}'
+        ```
+        {: pre}
 
 ## 4.0.6, 1 March 2022
 {: #01March2022ki}
