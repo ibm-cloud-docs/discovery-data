@@ -26,6 +26,46 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+## 4.0.7 release, 30 March 2022
+{: #discovery-data-30march2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.7 is available.
+
+IBM Cloud Block Storage is now supported
+:   When you install Discovery, you can specify IBM Cloud Block Storage Gold tier (ibmc-block-gold) as your storage class. For more information about the storage class, see [Storing data on classic IBM Cloud Block Storage](/docs/containers?topic=containers-block_storage){: external}.
+
+Security vulnerabilities were addressed
+:   The following security patches were applied:
+
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in NumPy](https://www.ibm.com/support/pages/node/6564599)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Spring](https://www.ibm.com/support/pages/node/6564601)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in FasterXML jackson-databind](https://www.ibm.com/support/pages/node/6564603)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in TensorFlow](https://www.ibm.com/support/pages/node/6564605)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in XStream](https://www.ibm.com/support/pages/node/6564607)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Go](https://www.ibm.com/support/pages/node/6564609)
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Answer finding
+    -   *Manage data* page
+    -   Advanced document view for search results
+    -   *Share feedback* button
+
+## 30 March 2020
+{: #release-notes-data-30march2020}
+
+A new document classifier API is available
+:   Use the new document classifier to programmatically get, add, update, or delete a document classifier. The following notes apply to this release:
+
+    -   The `enrichments` property of the Document Classifier object is documented as being optional. However, the property is required currently.
+    -   The `field` property in the `federated_classification` object is documented as a string. However, it is currently an array.
+
+    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocumentclassifiers){: external}. For more information about adding a document classifier by using the product user interface, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
+
+    The document classifier endpoints are not supported in the SDKs currently.
+
 ## 4.0.6 release, 1 March 2022
 {: #discovery-data-1march2022}
 

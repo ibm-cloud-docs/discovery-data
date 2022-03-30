@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-30"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,13 +24,27 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 30 March 2022
+{: #discovery-30march2022}
+{: release-note}
+
+A new document classifier API is available
+:   Use the new document classifier to programmatically get, add, update, or delete a document classifier. Document classifier methods are supported on installed intances (IBM Cloud Pak for Data) or IBM Cloud-managed Premium or Enterprise plan instances. The following notes apply to this release:
+
+    -   The `enrichments` property of the Document Classifier object is documented as being optional. However, the property is required currently.
+    -   The `field` property in the `federated_classification` object is documented as a string. However, it is currently an array.
+
+    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocumentclassifiers){: external}. For more information about adding a document classifier by using the product user interface, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
+
+    The document classifier endpoints are not supported in the SDKs currently.
+
 ## 21 March 2022
 {: #discovery-21march2022}
 {: release-note}
 
 <!-- 4.0.8-1.0 -->
 
-A more informative search result view is available
+Visualize enrichments found in your documents
 :   When you click to view the passage from a search result, a document preview page is displayed that shows a representation of the original document where the search result was found. For most document types, you can open a new *advanced view* of the document to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document. You also can select one of the enrichments to highlight every occurrence of the element within the document text.
 
     Currently, only the *Entities* and *Keywords* enrichments are listed.
