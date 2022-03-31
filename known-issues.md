@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: known issues
 
@@ -33,11 +33,26 @@ For more information about installing the service, see [the {{site.data.keyword.
 ## 4.0.7, 30 March 2022
 {: #30March2022ki}
 
+-   Discovery generates an error in the Cloud Pak for Data OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+
+    -  **Error**: The utility does not complete successfully and the following message is written to the log: `preBackupViaConfigHookRule on backupconfig/watson-discovery in namespace cpd (status=error)`
+    -  **Cause**: Discovery cannot be backed up and restored by using the OADP backup and restore utility. When the Discovery service is present, and an administrator attempts to backup an entire Cloud Pak for Data instance, Discovery prevents the utility from completing successfully.
+    -  **Solution**: Apply a patch that stops Discovery from preventing the utility from completing successfully.
+
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
+       1.  Run the following command in a terminal that is logged in to the cluster:
+
+           ```bash
+           oc create -f wks-aux-br-patch.yaml
+           ```
+           {: pre}
+
 -   `Deployed` status of resources fluctuates after the 4.0.7 upgrade is completed.
 
     -   **Error**: When you check the status by submitting the `oc get WatsonDiscovery` command, the ready status of the resources toggles between showing `23/23` and `20/23` components as being ready for use.
     -   **Cause**: The readiness state of the resources is not reported consistently after a migration.
-    -   **Solution**: Typically, the instance is ready for use despite the ready state instability. The ready state settles after approximately 5 hours. You can wait for the readiness state to consistently show `23/23` or you can manually refresh the status information by running the following commands in a terminal that is logged into the cluster:
+    -   **Solution**: Typically, the instance is ready for use despite the ready state instability. To manually refresh the status information, run the following commands in a terminal that is logged in to the cluster:
 
         ```sh
         oc proxy &

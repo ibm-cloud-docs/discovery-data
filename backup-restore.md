@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-15"
+lastupdated: "2022-03-31"
 
 subcollection: discovery-data
 
@@ -33,7 +33,18 @@ You can back up your data from and restore it to the following versions:
 You can do an in-place upgrade from one 4.0.x version to a later 4.0.y version as an alternative to following the procedures in this topic. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
 {: note}
 
-Back up and restore are supported on all versions of {{site.data.keyword.discoveryshort}}. For more information about backing up and restoring data in previous versions, see [Backing up and restoring data to 2.2.1 or earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-prior).
+If you plan to backup and restore an entire Cloud Pak for Data instance by using the Cloud Pak for Data OpenShift® APIs for Data Protection (OADP) backup and restore utility, you must apply a patch before you start the backup. The patch stops Discovery from preventing the utility from completing successfully.
+
+1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
+1.  Run the following command in a terminal that is logged in to the cluster:
+
+    ```bash
+    oc create -f wks-aux-br-patch.yaml
+    ```
+    {: pre}
+
+For more information about backing up and restoring data in previous versions, see [Backing up and restoring data to 2.2.1 or earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-prior).
 
 ## Process overview
 {: #overview}
