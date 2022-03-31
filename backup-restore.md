@@ -40,7 +40,7 @@ If you plan to backup and restore an entire Cloud Pak for Data instance by using
 1.  Run the following command in a terminal that is logged in to the cluster:
 
     ```bash
-    oc create -f wks-aux-br-patch.yaml
+    oc create -f wd-aux-br-patch.yaml
     ```
     {: pre}
 

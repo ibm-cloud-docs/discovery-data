@@ -44,7 +44,7 @@ For more information about installing the service, see [the {{site.data.keyword.
        1.  Run the following command in a terminal that is logged in to the cluster:
 
            ```bash
-           oc create -f wks-aux-br-patch.yaml
+           oc create -f wd-aux-br-patch.yaml
            ```
            {: pre}
 

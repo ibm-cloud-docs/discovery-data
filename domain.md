@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-09"
+lastupdated: "2022-03-31"
 
 subcollection: discovery-data
 
@@ -198,7 +198,14 @@ To add dictionary terms one by one, complete the following steps:
     If you use a hierarchy of categories, add a period between category names in the facet path to represent the hierarchy. For example, `automobiles.motorsports`.
 1.  Enter a term, and then select the **+** button to add it.
 
+    In English dictionaries, specify the dictionary terms in lowercase. Only use uppercase if you want Discovery to ignore lowercase mentions of the term when they occur in text. When terms are analyzed to determine whether they are occurrences of the dictionary enrichment, the surface form of the term with uppercase match is used. For example, a `vehicle` entry in the dictionary, results in annotations for `vehicle`, `Vehicle`, or `VEHICLE` mentions when they occur in text. For a `Sat` entry in the dictionary, annotations are added to `Sat` or `SAT`, but not to `sat`.
+    
+    Dictionary matching is case-sensitive for Arabic, Chinese, Korean, Japanese and Hebrew.
+
 1.  To add synonyms for the term, click the *Edit* icon, and then enter synonyms in the **Other terms** field. Separate multiple synonyms with a comma. Click **Save term**.
+
+    Be careful not to add too many synonyms. And test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
+    {: tip}
 
 1.  Continue adding terms.
 
