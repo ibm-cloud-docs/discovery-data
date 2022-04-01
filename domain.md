@@ -198,7 +198,7 @@ To add dictionary terms one by one, complete the following steps:
     If you use a hierarchy of categories, add a period between category names in the facet path to represent the hierarchy. For example, `automobiles.motorsports`.
 1.  Enter a term, and then select the **+** button to add it.
 
-    In English dictionaries, specify the dictionary terms in lowercase. Only use uppercase if you want Discovery to ignore lowercase mentions of the term when they occur in text. When terms are analyzed to determine whether they are occurrences of the dictionary enrichment, the surface form of the term with uppercase match is used. For example, a `vehicle` entry in the dictionary, results in annotations for `vehicle`, `Vehicle`, or `VEHICLE` mentions when they occur in text. For a `Sat` entry in the dictionary, annotations are added for `Sat` or `SAT`, but not for `sat`.
+    In English dictionaries, specify the dictionary terms in lowercase. Only use uppercase if you want {{site.data.keyword.discoveryshort}} to ignore lowercase mentions of the term when they occur in text. When terms are analyzed to determine whether they are occurrences of the dictionary enrichment, the surface form of the term with uppercase match is used. For example, a `vehicle` entry in the dictionary, results in annotations for `vehicle`, `Vehicle`, or `VEHICLE` mentions when they occur in text. For a `Sat` entry in the dictionary, annotations are added for `Sat` or `SAT`, but not for `sat`.
     
     Dictionary matching is case-sensitive for Arabic, Chinese, Korean, Japanese and Hebrew.
 
@@ -470,7 +470,7 @@ In the output, the information that is extracted by the Machine Learning enrichm
 ```
 {: codeblock}
 
-As a result, if someone [uses the API](/docs/discovery-data?topic=discovery-data-query-concepts) to submit a Discovery Query Language query to look for occurrences of the `enriched_{field_name}.entities.type:jobtitle` enrichment, any passages that discuss a person's job title are returned.
+As a result, if someone [uses the API](/docs/discovery-data?topic=discovery-data-query-concepts) to submit a {{site.data.keyword.discoveryshort}} Query Language query to look for occurrences of the `enriched_{field_name}.entities.type:jobtitle` enrichment, any passages that discuss a person's job title are returned.
 
 ### Machine learning model example
 {: #machinelearning-ml}

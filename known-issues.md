@@ -33,11 +33,11 @@ For more information about installing the service, see [the {{site.data.keyword.
 ## 4.0.7, 30 March 2022
 {: #30March2022ki}
 
--   Discovery generates an error in the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+-   {{site.data.keyword.discoveryshort}} generates an error in the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
 
     -  **Error**: The utility does not complete successfully and the following message is written to the log: `preBackupViaConfigHookRule on backupconfig/watson-discovery in namespace cpd (status=error)`
-    -  **Cause**: Discovery cannot be backed up and restored by using the OADP backup and restore utility. When the Discovery service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, Discovery prevents the utility from completing successfully.
-    -  **Solution**: Apply a patch that stops Discovery from preventing the utility from completing successfully.
+    -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
+    -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
 
        1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
        1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
@@ -63,11 +63,11 @@ For more information about installing the service, see [the {{site.data.keyword.
 ## 4.0.6, 1 March 2022
 {: #01March2022ki}
 
--   Upgrade to 4.0.6 fails if no Discovery instance is provisioned in the existing cluster before you begin the upgrade process.
+-   Upgrade to 4.0.6 fails if no {{site.data.keyword.discoveryshort}} instance is provisioned in the existing cluster before you begin the upgrade process.
 
-    -   **Error**: The 4.0.6 upgrade process assumes that a Discovery instance is provisioned in the existing cluster. For example, if you are upgrading from 4.0.5 to 4.0.6, you must have an instance provisioned in the 4.0.5 cluster before you begin the migration.
+    -   **Error**: The 4.0.6 upgrade process assumes that a {{site.data.keyword.discoveryshort}} instance is provisioned in the existing cluster. For example, if you are upgrading from 4.0.5 to 4.0.6, you must have an instance provisioned in the 4.0.5 cluster before you begin the migration.
     -   **Cause**: The current code returns an error when no instance exists because it cannot find a document index to migrate.
-    -   **Solution**: Verify that an instance of Discovery has been provisioned in the existing {{site.data.keyword.icp4dfull_notm}} cluster before you start the upgrade to 4.0.6. If you tried to upgrade to 4.0.6, but no instances were provisioned and the migration failed, remove the existing installation and install 4.0.6 from scratch.
+    -   **Solution**: Verify that an instance of {{site.data.keyword.discoveryshort}} has been provisioned in the existing {{site.data.keyword.icp4dfull_notm}} cluster before you start the upgrade to 4.0.6. If you tried to upgrade to 4.0.6, but no instances were provisioned and the migration failed, remove the existing installation and install 4.0.6 from scratch.
 
 -   `Deployed` status of resources fluctuates after the 4.0.6 upgrade is completed.
 
@@ -139,11 +139,11 @@ For more information about installing the service, see [the {{site.data.keyword.
 
 -   If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
 
-    -   **Error**: Some Discovery pods might report an `ImagePullBackoff` error.
+    -   **Error**: Some {{site.data.keyword.discoveryshort}} pods might report an `ImagePullBackoff` error.
     -   **Cause**: The wrong image pull secret is being used.
     -   **Solution**: Complete the following steps during the installation:
 
-        -   Start installing Watson Discovery.
+        -   Start installing Watson {{site.data.keyword.discoveryshort}}.
         -   After watson-discovery-operator module completes, check if a WatsonDiscovery custom resource is created by running the following command:
 
             ```sh
@@ -174,7 +174,7 @@ For more information about installing the service, see [the {{site.data.keyword.
 -   In {{site.data.keyword.discoveryfull}}, the `Content Mining` project only supports one collection per project. If you create more than one `Content Mining` collection, you might experience errors. If you experience errors, delete additional `Content Mining` collections so that each `Content Mining` project has only one associated collection.
 -   If you are preparing your {{site.data.keyword.discovery-data_short}} clusters for an in-place upgrade of your instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli adm` command fails, showing the following error message: `Error from server (UnsupportedMediaType): error when applying patch`. If you receive this error message, enter `oc delete scc cpd-zensys-scc cpd-user-scc cpd-noperm-scc edb-operator-scc admin-discovery-scc` to delete the related resources, and re-enter the `cpd-cli adm` command.
 -   If you are upgrading your {{site.data.keyword.discovery-data_short}} instance from 2.2.0 to 2.2.1, occasionally, the `cpd-cli upgrade` command completes before rolling updates complete. For information about verifying that your upgrade completed successfully, see [Verifying that your upgrade completed successfully](/docs/discovery-data?topic=discovery-data-install#verify-upgrade).
--   Model-train images are not updated after upgrading from Discovery 2.2.0 to 2.2.1. To work around this issue, delete the deployments that the model-train operator creates, and wait for the operator to recreate the deployments. Enter the following command to delete the deployments:
+-   Model-train images are not updated after upgrading from {{site.data.keyword.discoveryshort}} 2.2.0 to 2.2.1. To work around this issue, delete the deployments that the model-train operator creates, and wait for the operator to recreate the deployments. Enter the following command to delete the deployments:
 
     ```sh
     oc delete deploy -l 'app.kubernetes.io/managed-by=ibm-modeltrain'
@@ -282,8 +282,8 @@ For more information about installing the service, see [the {{site.data.keyword.
 
 -   When you install on {{site.data.keyword.icp4dfull_notm}} 3.5, you might encounter the following issue:
 
-    -   **Error**: If you try to provision the Discovery service on a cluster where Planning Analytics is running, some of the Discovery pods don't start and installation fails. The logs for the pod show messages such as, `java.lang.NumberFormatException: For input string`.
-    -   **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. Discovery does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
+    -   **Error**: If you try to provision the {{site.data.keyword.discoveryshort}} service on a cluster where Planning Analytics is running, some of the {{site.data.keyword.discoveryshort}} pods don't start and installation fails. The logs for the pod show messages such as, `java.lang.NumberFormatException: For input string`.
+    -   **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. {{site.data.keyword.discoveryshort}} does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
     -   **Solution**: [Install patch cpd-watson-discovery-2.2.1-patch-1](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}, which fixes this issue.
 
 Also, see the issues in all previous releases.
@@ -293,7 +293,7 @@ Also, see the issues in all previous releases.
 
 -   When a small CSV file (generally a CSV with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
 -   If you have set up your collections using a custom crawler built with the [{{site.data.keyword.icp4dfull_notm}} custom connector](/docs/discovery-data?topic=discovery-data-build-connector), and then remove the custom crawler deployment, the Processing Settings page will not display the crawler configuration. This is because the underlying crawler is not available. To work around this issue, confirm that the custom crawler is deployed when there are collections using it.
--   When using a [{{site.data.keyword.icp4dfull_notm}} custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for {{site.data.keyword.icp4dfull_notm}} 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fails. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
+-   When using a [{{site.data.keyword.icp4dfull_notm}} custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with {{site.data.keyword.discoveryshort}} for {{site.data.keyword.icp4dfull_notm}} 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fails. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
 -   When you create a custom enrichment in the tooling, you must choose a field the enrichment should be applied to and click **Apply**. If no field is selected, then the **Apply and reprocess** button will be disabled for enrichments changes until the new enrichment has a field.
 -   If you apply the [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema) enrichment or the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to a collection, you might receive the following error message when that collection is ingesting documents: `The number of nested documents has exceeded the allowed limit of [X].` Contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to adjust the limit.
 -   When text is enriched with a custom dictionary, the output of `entities.type` should be the full facet path for the Dictionary enrichment. However, in this release, the full facet path will not be displayed. To work around this, reprocess the collection. For example, if the facet path is `sample1.sample2`, it will look like this before reprocessing:
@@ -436,10 +436,10 @@ Also see the issues identified in all previous releases.
 - After you create a Search Skill in Watson Assistant and are directed to the Watson {{site.data.keyword.discoveryshort}} tooling, the screen is blank. This happens because the URL is missing the {{site.data.keyword.discoveryshort}} instance ID. To work around this issue:
 
     1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, choose **My Instances**. For example: `https://mycluster.com/zen/#/myInstances`.
-    1.  Select the Discovery instance you are using and click **Launch Tool**.
+    1.  Select the {{site.data.keyword.discoveryshort}} instance you are using and click **Launch Tool**.
     1.  Once the tooling is loaded, the URL should have the following structure: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/projects`
     1.  Copy the entire path, excluding `/projects`. For example: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876`
-    1.  Go back to the browser tab that is displaying the blank Discovery screen. That URL structure will look like this: `https://mycluster.com/discovery/core/collections/new?redirect_uri=...`
+    1.  Go back to the browser tab that is displaying the blank {{site.data.keyword.discoveryshort}} screen. That URL structure will look like this: `https://mycluster.com/discovery/core/collections/new?redirect_uri=...`
     1.  Replace `https://mycluster.com/discovery/core` with the URL you copied previously, so the new URL should look like this: `https://mycluster.com/discovery/core/instances/00000000-0000-0000-0001-597165341876/collections/new?redirect_uri=...`
     1.  Press enter to open updated URL. You should now be on the Watson {{site.data.keyword.discoveryshort}} **Manage collections** page.
 
@@ -454,7 +454,7 @@ Also see the issues identified in all previous releases.
 -   In a Content Mining application, any document flags set will disappear if the index is rebuilt for that collection.
 -   Beginning with the 2.1.2 release, uploading and managing relevancy training data using the v1 APIs will not train a relevancy training model. The v1 APIs have been superseded by the [Projects relevancy training v2 APIs](https://{DomainName}/apidocs/discovery/discovery-data#createtrainingquery){: external}. If your training data needs to be preserved, it can be listed using the v1 API, then added to a project with the v2 API.
 -   Multiple [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex) cannot be applied to a collection at the same time.
--   ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
+-   ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [{{site.data.keyword.discoveryshort}} Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
 
     -   A change to the description of the `--cluster-pull-prefix PREFIX` argument.
     -   The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
@@ -492,11 +492,11 @@ Also see the issues identified in all previous releases.
 - When you apply an enrichment to a collection, the enrichment language must match the collection language, or it will fail. The tooling displays all the collections, regardless of language.
 - On the Manage Fields tab, you can edit system-generated fields. The following fields should not be edited by changing the field type or turning off indexing: `document_id`, `extracted_metadata`, `metadata`.
 - When you delete a Collection and select the option `Don't delete underlying data`, any incomplete document ingestion crawls will continue running in the background, which will impact the new crawl start times, until the existing crawls are completed.
-- ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. For more information on identifying and resolving this issue, see [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d#troubleshoot-ls).
+- ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) {{site.data.keyword.discoveryshort}} can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. For more information on identifying and resolving this issue, see [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d#troubleshoot-ls).
 - If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
 - Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
 - If the Parts of Speech enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.
-- [Update: fixed in version 2.1.1] Discovery for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a root-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
+- [Update: fixed in version 2.1.1] {{site.data.keyword.discoveryshort}} for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a root-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
 - When viewing the Content Miner deploy page, sometimes the full application URL is not displayed for copying. To fix, refresh the page.
 - [Update: fixed in version 2.1.2] Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.
 - [Update: fixed in version 2.1.3] On the Improvement tools panel, the enrichment `Sentiment of phrases` is listed, but is not currently available.
