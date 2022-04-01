@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-04-01"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Learn how to upgrade the version of your installed service deployment.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
 {: note}
@@ -26,15 +26,32 @@ This information applies only to installed deployments.
 
 In-place upgrade support was added with the 4.0.2 release. For information about how to upgrade from one 4.x release to a later one, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
 
-For information about how to back up and restore data from a 2.x deployment so that you can use it with Watson Discovery 4, read the following information:
+For information about how to back up and restore data from a 2.x deployment so that you can use it with {{site.data.keyword.discoveryfull}} 4, read the following information:
 
--   [Backing up and restoring data in Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-backup-restore)
+-   [Backing up and restoring data in {{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-backup-restore)
 -   [Backing up and restoring data to 2.2.1 or earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-prior)
+
+## Supported upgrade paths
+{: #upgrade-data-paths}
+
+The following table lists the supported upgrade paths for the {{site.data.keyword.discoveryshort}} service.
+
+| 4.0 refresh in use | 4.0 refresh you can upgrade to |
+|------------------------------|----------------------|
+| 4.0.0 | 4.0.2 and 4.0.3 |
+| 4.0.2 | 4.0.3 |
+| 4.0.3 | 4.0.4 |
+| 4.0.4 | 4.0.5 |
+| 4.0.5 | 4.0.6 |
+| 4.0.6 | 4.0.7 |
+{: caption="Supported upgrade paths" caption-side="top"}
+
+For more information about the supported upgrade paths for {{site.data.keyword.icp4dfull_notm}}, see [Upgrading {{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=upgrading){: external}.
 
 ## Dependencies
 {: #upgrade-data-dependencies}
 
-Watson Discovery 4.0.5 has dependencies on the following packages. If you are using a manual subscription approval process, then you might be asked to approve updates to one or more of these resources.
+{{site.data.keyword.discoveryshort}} 4.0.5 has dependencies on the following packages. If you are using a manual subscription approval process, then you might be asked to approve updates to one or more of these resources.
 
 -   `ibm-etcd-operator`
 -   `ibm-minio-operator`
@@ -56,7 +73,7 @@ It also has dependencies on the following packages:
     -   `ibm-licensing-operator`
     -   `ibm-zen-operator`
 
--   Cloud Pak for Data
+-   {{site.data.keyword.icp4dfull_notm}}
 
     `cpd-platform-operator`
 
