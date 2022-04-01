@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 subcollection: discovery-data
 
@@ -204,7 +204,7 @@ To add dictionary terms one by one, complete the following steps:
 
 1.  To add synonyms for the term, click the *Edit* icon, and then enter synonyms in the **Other terms** field. Separate multiple synonyms with a comma. Click **Save term**.
 
-    Be careful not to add too many synonyms. And test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
+    Be careful not to add too many synonyms and test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
     {: tip}
 
 1.  Continue adding terms.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: known issues
 
@@ -21,7 +21,7 @@ Known issues are listed by the release in which they were identified.
 -   For the list of release notes, see [Release notes](/docs/discovery-data?topic=discovery-data-release-notes-data).
 -   For troubleshooting information, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d).
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.discovery-data_short}} only**
+![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) **{{site.data.keyword.discovery-data_short}} only**
 
 The known issues that are described in this topic apply to installed deployments only.
 {: note}
@@ -33,10 +33,10 @@ For more information about installing the service, see [the {{site.data.keyword.
 ## 4.0.7, 30 March 2022
 {: #30March2022ki}
 
--   Discovery generates an error in the Cloud Pak for Data OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+-   Discovery generates an error in the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
 
     -  **Error**: The utility does not complete successfully and the following message is written to the log: `preBackupViaConfigHookRule on backupconfig/watson-discovery in namespace cpd (status=error)`
-    -  **Cause**: Discovery cannot be backed up and restored by using the OADP backup and restore utility. When the Discovery service is present, and an administrator attempts to backup an entire Cloud Pak for Data instance, Discovery prevents the utility from completing successfully.
+    -  **Cause**: Discovery cannot be backed up and restored by using the OADP backup and restore utility. When the Discovery service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, Discovery prevents the utility from completing successfully.
     -  **Solution**: Apply a patch that stops Discovery from preventing the utility from completing successfully.
 
        1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
@@ -67,7 +67,7 @@ For more information about installing the service, see [the {{site.data.keyword.
 
     -   **Error**: The 4.0.6 upgrade process assumes that a Discovery instance is provisioned in the existing cluster. For example, if you are upgrading from 4.0.5 to 4.0.6, you must have an instance provisioned in the 4.0.5 cluster before you begin the migration.
     -   **Cause**: The current code returns an error when no instance exists because it cannot find a document index to migrate.
-    -   **Solution**: Verify that an instance of Discovery has been provisioned in the existing Cloud Pak for Data cluster before you start the upgrade to 4.0.6. If you tried to upgrade to 4.0.6, but no instances were provisioned and the migration failed, remove the existing installation and install 4.0.6 from scratch.
+    -   **Solution**: Verify that an instance of Discovery has been provisioned in the existing {{site.data.keyword.icp4dfull_notm}} cluster before you start the upgrade to 4.0.6. If you tried to upgrade to 4.0.6, but no instances were provisioned and the migration failed, remove the existing installation and install 4.0.6 from scratch.
 
 -   `Deployed` status of resources fluctuates after the 4.0.6 upgrade is completed.
 
@@ -280,7 +280,7 @@ For more information about installing the service, see [the {{site.data.keyword.
 
         where `<Project>` is the namespace where your {{site.data.keyword.discovery-data_short}} 2.2.0 instance is installed, where `<Registry_location>` is the location of the images that you pushed to the registry server, and where `<Registry_from_cluster>` is the location from which pods on the cluster can pull images.
 
--   When you install on Cloud Pak for Data 3.5, you might encounter the following issue:
+-   When you install on {{site.data.keyword.icp4dfull_notm}} 3.5, you might encounter the following issue:
 
     -   **Error**: If you try to provision the Discovery service on a cluster where Planning Analytics is running, some of the Discovery pods don't start and installation fails. The logs for the pod show messages such as, `java.lang.NumberFormatException: For input string`.
     -   **Cause**: An environment variable named `COUCHDB_PORT` is added to the Kubernetes cluster by the couchdb service that is installed with Planning Analytics. Discovery does not use couchdb, and therefore does not specify a value for this environment variable. However, some pods attempt to parse the variable, which results in the error.
@@ -292,8 +292,8 @@ Also, see the issues in all previous releases.
 {: #8dec2020ki}
 
 -   When a small CSV file (generally a CSV with 99 lines or fewer) is uploaded, the header and/or first row may not be ingested correctly. If this happens, in the tooling, navigate to the CSV Settings tab and update the settings. After reprocessing, navigate to the **Manage fields** tab and update the field types if needed.
--   If you have set up your collections using a custom crawler built with the [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector), and then remove the custom crawler deployment, the Processing Settings page will not display the crawler configuration. This is because the underlying crawler is not available. To work around this issue, confirm that the custom crawler is deployed when there are collections using it.
--   When using a [Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for Cloud Pak for Data 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fails. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
+-   If you have set up your collections using a custom crawler built with the [{{site.data.keyword.icp4dfull_notm}} custom connector](/docs/discovery-data?topic=discovery-data-build-connector), and then remove the custom crawler deployment, the Processing Settings page will not display the crawler configuration. This is because the underlying crawler is not available. To work around this issue, confirm that the custom crawler is deployed when there are collections using it.
+-   When using a [{{site.data.keyword.icp4dfull_notm}} custom connector](/docs/discovery-data?topic=discovery-data-build-connector) with Discovery for {{site.data.keyword.icp4dfull_notm}} 2.2, the script `scripts/manage_custom_crawler.sh` used to deploy and remove the deployment of the custom crawler fails. To work around this issue, replace  line 37 `podname="gateway"` with `podname="wd-discovery-gateway"` in `scripts/manage_custom_crawler.sh`, and then rerun the deploy command.
 -   When you create a custom enrichment in the tooling, you must choose a field the enrichment should be applied to and click **Apply**. If no field is selected, then the **Apply and reprocess** button will be disabled for enrichments changes until the new enrichment has a field.
 -   If you apply the [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema) enrichment or the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to a collection, you might receive the following error message when that collection is ingesting documents: `The number of nested documents has exceeded the allowed limit of [X].` Contact the [IBM Support Center](https://cloud.ibm.com/unifiedsupport/supportcenter){: external} to adjust the limit.
 -   When text is enriched with a custom dictionary, the output of `entities.type` should be the full facet path for the Dictionary enrichment. However, in this release, the full facet path will not be displayed. To work around this, reprocess the collection. For example, if the facet path is `sample1.sample2`, it will look like this before reprocessing:
@@ -425,12 +425,12 @@ Also see the issues identified in all previous releases.
 - You cannot upload CSV files that include a space in the file name (for example: `file 1.csv`) to a Content Mining project. Rename the file to work around the issue.
 - When performing Project level relevancy training, if you have multiple collections, and two or more of those collections contains a duplicate `document_id`, then project level relevancy training will fail. Example of duplicate `document_ids`: `Collection A` contains a document with the id of `1234`, and `Collection B` also contains a document with the id of `1234`.
 - Only the first facet using a field with the prefix `extracted_metadata` is saved correctly after creation. Others with that prefix will appear but after a screen refresh will be gone. This only happens once per project, so the workaround is to refresh and add the facet again.
-- ![Cloud Pak for Data only](images/desktop.png) During installation on {{site.data.keyword.icp4dfull}} 2.5.0.0, some Kubernetes Jobs may incorrectly report their status as `OOMKilled`, causing the install to timeout. To resolve this, once a Job returns `OOMKilled` verify the logs of the Pod associated with that Job. There should be no obvious error messages in the logs and the resources are reported in the logs as created. Manually verify these resources exist in the namespace and then delete the Job. This will cause the install to continue.
+- ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) During installation on {{site.data.keyword.icp4dfull}} 2.5.0.0, some Kubernetes Jobs may incorrectly report their status as `OOMKilled`, causing the install to timeout. To resolve this, once a Job returns `OOMKilled` verify the logs of the Pod associated with that Job. There should be no obvious error messages in the logs and the resources are reported in the logs as created. Manually verify these resources exist in the namespace and then delete the Job. This will cause the install to continue.
 - Some documents may show two `html` fields when applying an enrichment. Both `html` fields shown are the same and operate as such.
 - When creating a data source in Firefox, you may not see the entire list of options, including the **More processing settings** settings. To work around the issue, zoom out, increase the browser height, or use another supported browser.
 - When customizing the display of search results, the changes made sometimes do not save after clicking the `Apply` button. To work around this issue, refresh the browser and try to make the changes again.
 - When setting up a data source or web crawler for your collection, if you enter an incorrect configuration, then try to update it on the **Processing settings** page, the data source update or crawl may not start when you click the `Apply changes and reprocess` button. You can confirm this issue by opening the **Activity** page for your collection to see if processing has started. If you see that processing has not started for your data source, click the `Recrawl` button, then the `Apply changes and reprocess` button. If you see that processing has not started for your web crawl, click the `Stop` button, then the `Recrawl` button.
-- ![Cloud Pak for Data only](images/desktop.png) When running Helm tests on the `core` deployment using `helm test core`, the `core-discovery-api-post-install-test` will return a `FAILED` status. This is due to a bug within the test pod's image. The test result can be ignored as the failure is not related to anything within the deployment.
+- ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) When running Helm tests on the `core` deployment using `helm test core`, the `core-discovery-api-post-install-test` will return a `FAILED` status. This is due to a bug within the test pod's image. The test result can be ignored as the failure is not related to anything within the deployment.
 - By default, Optical Character Recognition (OCR) is set to `off` when you create any **Project type** with the tooling. However, if you create a Project using the API, OCR is set to `on`. To work around this issue, open the Tooling and change the **Project setting** to `off`.
 - When Optical Character Recognition (OCR) is set to `on` for a Collection AND no trained Smart Document Understanding (SDU) model is applied, PNG, TIFF, and JPG files will not be processed for text recognition. Images embedded in PDF, Word, PowerPoint, and Excel documents will not be processed - only the non-image portion of these documents will be processed for text recognition. To work around this issue, import or train an SDU model and reprocess the collection. This will allow text to be extracted from the images.
 - After you create a Search Skill in Watson Assistant and are directed to the Watson {{site.data.keyword.discoveryshort}} tooling, the screen is blank. This happens because the URL is missing the {{site.data.keyword.discoveryshort}} instance ID. To work around this issue:
@@ -454,7 +454,7 @@ Also see the issues identified in all previous releases.
 -   In a Content Mining application, any document flags set will disappear if the index is rebuilt for that collection.
 -   Beginning with the 2.1.2 release, uploading and managing relevancy training data using the v1 APIs will not train a relevancy training model. The v1 APIs have been superseded by the [Projects relevancy training v2 APIs](https://{DomainName}/apidocs/discovery/discovery-data#createtrainingquery){: external}. If your training data needs to be preserved, it can be listed using the v1 API, then added to a project with the v2 API.
 -   Multiple [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex) cannot be applied to a collection at the same time.
--   ![Cloud Pak for Data only](images/desktop.png) There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
+-   ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) There were two small changes to the installation instructions README included with the download of {{site.data.keyword.discovery-data_long}}. For the updated version of the README, see the [Discovery Helm chart README.md](https://github.com/ibm-cloud-docs/data-readmes/blob/master/discovery-README.md){: external}.
 
     -   A change to the description of the `--cluster-pull-prefix PREFIX` argument.
     -   The language extension pack name has been updated from `ibm-watson-discovery-pack1-2.1.2.tar.xz.` to `ibm-wat-dis-pack1-prod-2.1.2.tar.xz`.
@@ -492,7 +492,7 @@ Also see the issues identified in all previous releases.
 - When you apply an enrichment to a collection, the enrichment language must match the collection language, or it will fail. The tooling displays all the collections, regardless of language.
 - On the Manage Fields tab, you can edit system-generated fields. The following fields should not be edited by changing the field type or turning off indexing: `document_id`, `extracted_metadata`, `metadata`.
 - When you delete a Collection and select the option `Don't delete underlying data`, any incomplete document ingestion crawls will continue running in the background, which will impact the new crawl start times, until the existing crawls are completed.
-- ![Cloud Pak for Data only](images/desktop.png) Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. For more information on identifying and resolving this issue, see [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d#troubleshoot-ls).
+- ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) Discovery can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. For more information on identifying and resolving this issue, see [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d#troubleshoot-ls).
 - If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
 - Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
 - If the Parts of Speech enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.

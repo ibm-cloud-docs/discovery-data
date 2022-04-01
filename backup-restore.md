@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Use the following procedures to back up and restore data in your {{site.data.keyword.discovery-data_long}} instance.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
 {: note}
@@ -30,10 +30,10 @@ You can back up your data from and restore it to the following versions:
 - 2.2.1 to 4.0.x
 - 2.2.0 to 4.0.x
 
-You can do an in-place upgrade from one 4.0.x version to a later 4.0.y version as an alternative to following the procedures in this topic. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
+You can do an in-place upgrade from one 4.0.x version to a later 4.0.y version as an alternative to following the procedures in this topic. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
 {: note}
 
-If you plan to backup and restore an entire Cloud Pak for Data instance by using the Cloud Pak for Data OpenShift® APIs for Data Protection (OADP) backup and restore utility, you must apply a patch before you start the backup. The patch stops Discovery from preventing the utility from completing successfully.
+If you plan to backup and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility, you must apply a patch before you start the backup. The patch stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
 
 1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
 1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
@@ -164,7 +164,7 @@ In most cases, you don't need to use a persistent volume. If you choose to use a
 
 With version 4.0.6 or later, if you are restoring a multitenant cluster, you must perform an extra step. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
 
-This mapping step is not required if the instance IDs did not change between the back up and restore steps. For example, you can skip this step if you are restoring data to the same cluster where it was backed up from or if you are restoring data to a brand new cluster that has no Discovery instances.
+This mapping step is not required if the instance IDs did not change between the back up and restore steps. For example, you can skip this step if you are restoring data to the same cluster where it was backed up from or if you are restoring data to a brand new cluster that has no {{site.data.keyword.discoveryshort}} instances.
 
 To create a mapping, complete the following steps:
 
