@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-03"
+lastupdated: "2022-04-04"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -50,6 +50,73 @@ To deploy your project, complete the following steps:
 
     - [GitHub](https://github.com/watson-developer-cloud/discovery-components#using-discovery-components){: external}
     - [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook/){: external}
+
+### Getting started with the GitHub sample app
+{: #dr-deploy-ui-comps-gs}
+
+From resources available in GitHub, you can run a script to start a sample app with prebuilt UI components. In fact, the sample app looks a lot like the *Improve and customize* page of the product because the product itself uses these UI components.
+
+The script requires some prerequisite software to function. After you start the script, it checks whether you have the necessary software installed on your system. If not, it lets you know what software you need to install. Install the following packages if they are not installed already:
+
+-   [Node.js](https://nodejs.org/en/){: external}
+-   [Yarn](https://yarnpkg.com/getting-started/install){: external}
+
+The script needs information about your service instance and project to use the data and search settings that you configured for your project and apply them to the sample app. You must collect the following information so that you can share it with the script when it asks you for the information later:
+
+Service credentials
+:   The following information is used by the sample app script to construct an endpoint where it can send API requests and to authenticate with your service instance:
+
+    -   URL
+    -   API key
+
+    To get this information, complete the appropriate steps for the type of deployment you are using:
+
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Go to the {{site.data.keyword.discoveryshort}} service overview in IBM Cloud. From the page header, click the user icon, and then click **IBM Cloud Dashboard**. Open the Resource list, expand the *Services and software* section, and then find the service instance that you created earlier in this tutorial. Click the instance to open its overview page. From the *Credentials* section, copy the URL and API key values and store them somewhere where you can access them later, such as a local text file.
+
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: From the IBM Cloud Pak for Data web client main menu, expand *Services*, and then click *Instances*. Find your instance, and then click it to open its summary page. Scroll to the *Access information* section of the page, and then copy the *URL* and bearer token. Store the values somewhere where you can access them later, such as a local text file. (The bearer token serves as the apikey for installed deployments.)
+
+Project ID
+:   The unique identifier for the project you created in this tutorial. 
+
+    You can copy the project ID from the *API Information* tab of the *Integrate and deploy* page.
+
+To run the script that starts the sample app, complete the following steps:
+
+1.  Do one of the following things:
+
+    -   If you downloaded the repo, extract the files from the archive to a workding directory on your system. Open a command terminal window, and then change to the directory where you downloaded the repository files.
+
+    -   If you cloned the repo, open a terminal window from the directory to which you cloned the repository.
+
+1.  Enter the following command to start the script:
+
+    ```bash
+    ./runExampleApp.sh
+    ```
+    {: codeblock}
+
+    Give the script time to set up the necessary resources to run the application.
+
+    If any required prerequisite software packages are missing, the script lets you know what packages you need to install before you can use the script successfully.
+
+1.  When prompted to specify the `authType`, enter the type of authentication you use. The type differs based on how your service instance is deployed:
+
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Enter `iam`
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Enter `CP4D`.
+
+        The `iam` value indicates that you are using Identity and Access Management, which is a service that is used by IBM Cloud to authenticate its managed services. For installed instances that are deployed on IBM Cloud Pak for Data, `CP4D` is specified instead.
+
+    For the next three prompts, enter the information that you copied and saved earlier.
+
+    -  url
+    -  apikey
+    -  project_id
+
+When the script is done, it asks if you want to start the sample app now. Enter `y` for yes. A new web browser window or tab is displayed and the sample app is rendered in the page. The URL for the sample app is `http://localhost:3000/`, which means that the app is running locally and cannot be accessed by anyone who is using a different computer.
+
+![Shows the sample app user interface](images/tut-crawl-app.png)
+
+The sampe app gives you a preview of your search project. Use it to test your search project and make any necessary adjustments.
 
 ## Deploying a Document Retrieval for Contracts project
 {: #dr-contracts-deploy}
