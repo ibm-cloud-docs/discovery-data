@@ -51,7 +51,6 @@ Features that are not available in this release
     -   Answer finding
     -   *Manage data* page
     -   Advanced document view for search results
-    -   *Share feedback* button
 
 ## 30 March 2020
 {: #release-notes-data-30march2020}

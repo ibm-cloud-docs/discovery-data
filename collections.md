@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-04-04"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -64,7 +64,7 @@ For information about how to troubleshoot issues that you might encounter when a
 ## Optical character recognition
 {: #ocr}
 
-One of the optional features that you can apply to a collection when you create it is optical character recognition. The optical character recognition (OCR) feature extracts text from images. This capability is useful for preserving information that is depicted in diagrams or graphs, or in text that is enbedded in files such as scanned PDFs. By converting the visual information into text, it can later be searched.
+One of the optional features that you can apply to a collection when you create it is optical character recognition. The optical character recognition (OCR) feature extracts text from images. This capability is useful for preserving information that is depicted in diagrams or graphs, or in text that is embedded in files such as scanned PDFs. By converting the visual information into text, it can later be searched.
 
 Things to keep in mind when you enable OCR:
 

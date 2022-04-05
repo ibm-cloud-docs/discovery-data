@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-05"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -116,7 +116,9 @@ When the script is done, it asks if you want to start the sample app now. Enter 
 
 ![Shows the sample app user interface](images/tut-crawl-app.png)
 
-The sampe app gives you a preview of your search project. Use it to test your search project and make any necessary adjustments.
+The sample app gives you a preview of your search project. Use it to test your search project and make any necessary adjustments.
+
+When you're done testing with the sample app, you can stop it by returning to the terminal window where you ran the initial script, and pressing `Ctrl + C`.
 
 ## Deploying a Document Retrieval for Contracts project
 {: #dr-contracts-deploy}
