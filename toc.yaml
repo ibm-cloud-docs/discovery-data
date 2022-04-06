@@ -131,7 +131,7 @@ toc:
           - install-overview.md
           - install.md
           - upgrade-data.md
-          - topic: troubleshoot-cp4d.md
+          - topic: troubleshoot.md
             navtitle: Troubleshooting deployments
           - known-issues.md
           - install-prior.md
