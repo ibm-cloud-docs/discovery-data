@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-04-06"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Learn about solutions and workarounds to problems you might encounter when you add data to a collection.
 {: shortdesc}
 
-This information applies both to managed and installed instances of {{site.data.keyword.discoveryshort}}. For more troubleshooting tips for installed deployments only, see [Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments](/docs/discovery-data?topic=discovery-data-troubleshoot-cp4d).
+This information applies both to managed and installed instances of {{site.data.keyword.discoveryshort}}. For more troubleshooting tips for installed deployments only, see [Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments](/docs/discovery-data?topic=discovery-data-troubleshoot).
 {: note}
 
 ## Microsoft document troubleshooting tips

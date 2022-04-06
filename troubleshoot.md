@@ -13,7 +13,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 # Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments
-{: #troubleshoot-cp4d}
+{: #troubleshoot}
 
 Learn ways to troubleshoot and address issues that you might encounter while using the product.
 {: shortdesc}
