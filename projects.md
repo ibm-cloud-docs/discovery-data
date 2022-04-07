@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-04-04"
 
 subcollection: discovery-data
 
@@ -166,6 +166,18 @@ The number of projects you can create depends on your {{site.data.keyword.discov
 
 The Sample project is excluded from the total number of projects.
 
+## Renaming a project
+{: #projects-rename}
+
+You cannot rename the *Sample Project*.
+{: note}
+
+To rename a project after you create it, complete the following steps:
+
+1.  Go to the *My Projects* page.
+1.  Find the project that you want to rename, click the *Project actions* icon ![three vertical dot overflow menu icon](images/overflow-menu-vertical.png), and then choose **Rename**.
+1.  Edit the project name, and then click **Apply**.
+
 ## Deleting a project
 {: #projects-delete}
 
@@ -177,5 +189,5 @@ You cannot delete the *Sample Project*.
 To delete a project, complete the following steps:
 
 1.  Go to the *My Projects* page.
-1.  Find the project that you want to delete, hover over the project tile, and then click the *Delete project* icon.
+1.  Find the project that you want to delete, click the *Project actions* icon ![three vertical dot overflow menu icon](images/overflow-menu-vertical.png), and then choose **Delete**.
 1.  Click **Delete**.
