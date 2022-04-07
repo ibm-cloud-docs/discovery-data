@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-06"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 6 April 2022
+{: #discovery-6april2022}
+{: release-note}
+
+<!-- 4.0.9-0.1 -->
+
+Project tile has a more intuitive menu
+:   The project tile was updated to include an overflow menu that you can use to perform actions such as deleting or renaming a project.
 
 ## 30 March 2022
 {: #discovery-30march2022}
