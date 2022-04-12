@@ -360,8 +360,9 @@ The JSON that is returned from the query has the following format:
         "start_offset":70,
         "end_offset":120,
         "field":"html"
-      },
-      ...
+      }
+    ]
+  }
 ```
 {: codeblock}
 
@@ -404,9 +405,7 @@ The JSON that is returned from the query has the following format:
   "matching_results": 1,
   "session_token": "1_FDjAVkn9SW6oH9y5_9Ek3KsNFG",
   "results": [
-    {
-      ...
-    }
+    {}
   ]
   {
     "table_results": [
