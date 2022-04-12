@@ -349,17 +349,17 @@ The JSON that is returned from the query has the following format:
       {
         "document_id":"ab7be56bcc9476493516b511169739f0",
         "passage_score":15.230205287402338,
-        "passage_text":"a privately held company that provides hybrid cloud recovery, cloud migration and business continuity software for enterprise data centers and cloud infrastructure."
-        "start_offset":120
-        "end_offset":300
+        "passage_text":"a privately held company that provides hybrid cloud recovery, cloud migration and business continuity software for enterprise data centers and cloud infrastructure.",
+        "start_offset":120,
+        "end_offset":300,
         "field":"text"
       },
       {
-        "passage_text":"Disaster Recovery Services for Hybrid Cloud</title></head>\n<body>\n\n\n<p>Published: Thu, 27 Oct 2016 07:01:21 GMT</p>\n"
+        "passage_text":"Disaster Recovery Services for Hybrid Cloud</title></head>\n<body>\n\n\n<p>Published: Thu, 27 Oct 2016 07:01:21 GMT</p>\n",
         "passage_score":10.153470191601558,
         "document_id":"fbb5dcb4d8a6a29f572ebdeb6fbed20e",
-        "start_offset":70
-        "end_offset":120
+        "start_offset":70,
+        "end_offset":120,
         "field":"html"
       },
       ...
