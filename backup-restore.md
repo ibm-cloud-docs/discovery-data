@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-13"
 
 subcollection: discovery-data
 
@@ -20,9 +20,6 @@ Use the following procedures to back up and restore data in your {{site.data.key
 
 This information applies only to installed deployments.
 {: note}
-
-These procedures are for advanced users who have experience with administering {{site.data.keyword.discovery-data_short}} clusters. You do not need to back up and restore data as part of standard use or maintenance.
-{: important}
 
 You can back up your data from and restore it to the following versions:
 
