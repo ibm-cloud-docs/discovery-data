@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-20"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,27 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 20 April 2022
+{: #discovery-20april2022}
+{: release-note}
+
+Analyze API is supported in Enterprise plan deployments
+:   Use the Analyze API to process a JSON file according to a collection's configuration settings, and then return the file for realtime use without storing it in the collection. The Analyze API was supported only in installed deployments previously. For more information, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
+
+A new document status API is available
+:   Use the new document status API to programmatically get a list of the documents in a collection and to get details about a single document. The following notes apply to this release:
+
+    -   The API is supported for collections that are created after 23 March 2022. 
+    
+        If you want to get status information about a collection that was created earlier, trigger a process that runs the conversion step of ingestion on the documents. For example, you can enable the API by making changes in the *Identify fields*, *Manage fields*, *CSV settings*, or *Processing settings* (such as OCR or FAQ extraction settings) pages, or by applying a Smart Document Understanding model to the older collection.
+    -   The API is available only from Plus and Enterprise plan instances. 
+    -   The API is not supported from the SDKs currently.
+
+    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocuments){: external}.
+
+More messages are shown to keep you informed about the status of document processing
+:   An issue was fixed which previously prevented informative messages from being displayed about the status of document conversion and indexing during the ingestion process. Now that the issue is fixed, you might see more messages than usual when you add or reprocess documents. This increase is expected. Nothing you did caused the increase in messages.
 
 ## 6 April 2022
 {: #discovery-6april2022}

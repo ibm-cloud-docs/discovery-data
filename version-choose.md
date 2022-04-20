@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-04-14"
 
 subcollection: discovery-data
 
@@ -48,7 +48,7 @@ The latest version has new features that were previously unavailable. The follow
 | Create a content mining project type and then use the built-in Content Mining application to do in-depth data analysis (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Apply the Parts of Speech enrichment to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Leverage intuitive user interface tools to add domain-specific artifacts, such as dictionaries and custom machine learning models | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Perform real-time NLP with the Analyze API (*{{site.data.keyword.icp4dfull_notm}} only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Perform real-time NLP with the Analyze API (*{{site.data.keyword.icp4dfull_notm}} and Enterprise plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Apply a pre-trained Smart Document Understanding model to your collection for similar benefits with less effort | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Extract meaning from tables | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Retrieve tables | ![checkmark icon](../../icons/checkmark-icon.svg) | |

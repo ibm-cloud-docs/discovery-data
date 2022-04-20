@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-04-20"
 
 subcollection: discovery-data
 
@@ -63,10 +63,33 @@ To delete a custom enrichment, complete the following steps:
 
 The custom enrichment is removed from the *Enrichments* list everywhere in this service instance.
 
-## Applying enrichments by using the API
+## Using the API to manage enrichments
 {: #enrichments-api}
 
-To apply an enrichment by using the API, you must know the unique ID of the enrichment. If you have another project that uses the enrichment already, you can use the API to [get a list of the enrichments](https://cloud.ibm.com/apidocs/discovery-data#listenrichments){: external}. The list that is returned includes enrichment ID information.
+To apply an enrichment to data by using the API, complete the following steps:
+
+1.  First, you must know the unique ID of the enrichment that you want to apply. For more information, see [Enrichment IDs](#enrichments-id).
+1.  Use the *Create collection* or *Update collection* methods to apply an enrichment to the documents in a collection. For more information, see [Apply enrichment by using the API](#enrichments-api-task)
+
+### Enrichment IDs
+{: #enrichments-ids}
+
+If you want to apply a custom enrichment that you created for one collection to another collection, you must know the unique ID that was generated for the enrichment when it was created. Use the API to [list enrichments](https://cloud.ibm.com/apidocs/discovery-data#listenrichments){: external} from the collection where the custom enrichment is in use. The list that is returned includes enrichment ID information.
+
+For prebuilt enrichments, the unique IDs do not change. The following table lists the IDs that are associated with each prebuilt enrichment type and identifies the collection languages for which the enrichment is supported. An enrichment cannot be applied to a collection unless the collection language is supported by the enrichment. For more information about all of the supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
+| Name | Enrichment ID | Supported languages |
+|------|---------------|---------------------|
+| Contracts | 701db916-fc83-57ab-0000-000000000014 | en |
+| Entities v2 | 701db916-fc83-57ab-0000-00000000001e | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
+| Keywords | 701db916-fc83-57ab-0000-000000000018 | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
+| Part of Speech | 701db916-fc83-57ab-0000-000000000002 | All supported languages|
+| Sentiment of Document | 701db916-fc83-57ab-0000-000000000016 | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
+| Table Understanding | 701db916-fc83-57ab-0000-000000000012 | All supported languages |
+{: caption="Prebuilt enrichment IDs" caption-side="top"}
+
+### Apply enrichments by using the API
+{: #enrichments-api-task}
 
 To apply an enrichment by using the API, complete the following steps:
 
@@ -98,6 +121,8 @@ To apply an enrichment by using the API, complete the following steps:
     ```
     {: codeblock}
 
+    For the enrichment IDs for the prebuilt enrichments, see [Enrichment IDs](#enrichments-ids).
+
 1.  Add the enrichment that you want to apply.
 
     You can also replace an enrichment. For example, if you want to use the Entities v1 legacy enrichment instead of the Entities v2 enrichment, you can find the Entities v2 enrichment definition (it has the ID `701db916-fc83-57ab-0000-00000000001e`), and then replace it with the Entities v1 legacy enrichment ID (with the ID `701db916-fc83-57ab-0000-000000000017`).
@@ -112,6 +137,9 @@ To apply an enrichment by using the API, complete the following steps:
     ```
     {: codeblock}
 
+    Any enrichments that you specify replace the default enrichments. Therefore, if you want to retain a default enrichment, don't forget to include it in the list of enrichments that you apply to the collection. For a list of default enrichments per project type, see [Default enrichments per project type](#enrichments-defaults).
+    {: note}
+
 1.  Submit the updated JSON request body with the [update collection](https://cloud.ibm.com/apidocs/discovery-data#updatecollection){: external} method to apply the enrichment to your collection.
 
     For example:
@@ -120,3 +148,21 @@ To apply an enrichment by using the API, complete the following steps:
     POST $authentication -d '$requestBody' $url/v2/projects/$project_id/collections/$collection_id?version=2019-11-22
     ```
     {: codeblock}
+
+### Default enrichments per project type
+{: #enrichments-defaults}
+
+Some prebuilt enrichments are applied automatically to collections in a project based on the project type. The following table shows the default enrichments that are applied to each project type.
+
+| Enrichment | Document Retrieval | Document Retrieval for Contracts | Conversational Search | Content Mining |
+|------------|--------------------|----------------------------------|-----------------------|----------------|
+| Contracts | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| Entities v2 | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| Keywords | | | | |
+| Parts of Speech | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Sentiment of Document | | | | |
+| Table Understanding | | | | |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Default enrichments per project type" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify project types. The column headers identify different enrichments. To understand which enrichments are applied to a project type by default, go to the row that describes the enrichments, and find the columns for the project type that you are interested in."}

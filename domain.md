@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-19"
 
 subcollection: discovery-data
 
@@ -70,6 +70,8 @@ When you need to choose between using a dictionary or an entity extractor enrich
 ## Add a resource
 {: #domain-task}
 
+When you add a custom enrichment to a project it is available to any collection in the project.
+
 To add a resource, complete the following steps:
 
 1.  Open your project and go to the *Improve and customize* page.
@@ -86,7 +88,7 @@ To add a resource, complete the following steps:
     If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`. Only the first 50,000 characters of a custom field from a JSON file are enriched.
     {: note}
 
-You can choose to apply resource-derived enrichments to your data later. Go to the *Manage collections* page, choose the collection where you want to apply the enrichment, and then open the **Enrichments** tab. Make sure the status of the enrichment shows that it is *Ready*, and then apply the enrichment to a field in the collection.
+You can choose to apply resource-derived enrichments to your data later. Enrichments that you add to a project are available for use from any collection in the project. Go to the *Manage collections* page, choose the collection where you want to apply the enrichment, and then open the **Enrichments** tab. Make sure the status of the enrichment shows that it is *Ready*, and then apply the enrichment to a field in the collection. For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
 
 From the deployed Content Mining application, you can create a classifier or a custom annotator from a dictionary, regular expression, Machine Learning, or PEAR file and use it as an enrichment in collections that are stored in other project types.
 

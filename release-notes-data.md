@@ -26,6 +26,16 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+## {{site.data.keyword.discoveryfull}} for ICP for Data 2.2.x End Of Support
+{: #release-notes-data-eos-15april2022}
+
+Effective 30 April 2022, IBM will withdraw support for the following programs:
+
+-   IBM Watson Discovery for ICP for Data 2.2.x
+-   IBM Watson Discovery for ICP for Data Add-on 2.2.x
+
+For more information, see announcement [ENUS921-134.PDF](https://www.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/4/897/ENUS921-134/index.html&request_locale=en){: external}.
+
 ## 4.0.7 release, 30 March 2022
 {: #discovery-data-30march2022}
 

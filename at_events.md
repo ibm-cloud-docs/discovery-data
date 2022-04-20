@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2021-11-03"
+lastupdated: "2022-04-14"
 
 keywords: IBM, activity tracker, event, security, IBM Cloud Activity Tracker
 
@@ -33,6 +33,7 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 
 | Action                           | Description                        |
 |:---------------------------------|:-----------------------------------|
+| `discovery.analyze-api.read`     | Process text by using the Analyze API. |
 | `discovery.autocompletion.read`    | Suggest complete queries based on documents. |
 | `discovery.collection-notices.read` | Get notices for a collection. |
 | `discovery.collection-training-status.read` | Get the training status of a single-collection training. |

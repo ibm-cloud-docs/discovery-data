@@ -120,11 +120,8 @@ toc:
           - manage-enrichments.md
           - train.md
       - preview.md
-      - topicgroup:
-              label: Deploying a search solution
-              topics:
-              - deploy.md
-              - contentminerapp.md
+      - deploy.md
+      - contentminerapp.md
       - topicgroup:
           label: Installing
           topics:

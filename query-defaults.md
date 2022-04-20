@@ -39,7 +39,7 @@ The enrichments that are applied to your data autmoatically differ by project ty
 | `passages.max_per_document` | `1` | `1` |
 | `passages.per_document` | `true` | `true` |
 | `return` | `[]` | `[]` |
-| `spelling_suggestions` | `true` | `true` |
+| `spelling_suggestions` | `false` | `true` |
 | `sort` | `""` | `""` |
 | *Premium plans only*: `suggested_refinements.count` | `10` | `10` |
 | *Premium plans only*: `suggested_refinements.enabled` | `false` | `false` |
