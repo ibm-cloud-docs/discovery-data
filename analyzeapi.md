@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-14"
 
 subcollection: discovery-data
 
@@ -10,25 +10,21 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Analyze API
+# Analyze API ![Enterprise plan](images/enterprise.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #analyzeapi}
 
-Use the Analyze endpoint to process text documents through the enrichment pipeline of the {{site.data.keyword.discoveryshort}} service without storing the source documents.
+Use the Analyze API to process text documents through the enrichment pipeline of the {{site.data.keyword.discoveryshort}} service without storing the source documents.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
-
-This information applies only to installed deployments.
+The Analyze API is supported with Enterprise plan deployments and installed deployments only.
 {: note}
 
 This approach is ideal for business automation purposes. For example, if you want to classify emails, you can use the Analyze API to synchronously call {{site.data.keyword.discoveryshort}} to get a classification of the email. Then, you can use the output of that classification in your business logic.
 
-Use of the Analyze API affects license usage. For more information, see the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=discovery){: external}.
-
 The Analyze API supports JSON documents only.
 {: important}
 
-When you analyze a document with the API, you indicate how you want the document to be processed by specifying the collection to associate with the analysis. The document is not stored in the collection. Instead, the configuration settings of the collection are applied to the document. For example, if you want to find keyword references in a document, run the Analyze API against a collection where the Keywords enrichment is applied. The resulting document analysis identifies any keyword mentions in the document.
+When you analyze a document with the API, you indicate how you want the document to be processed by specifying the collection to associate with the analysis. The document is not stored in the collection. Instead, the configuration settings of the collection are applied to the document. For example, if you want to find entity references in a document, run the Analyze API against a collection where the *Entities* enrichment is applied. The resulting document analysis identifies any entity mentions in the document.
 
 The following enrichments are supported in the Analyze API:
 
@@ -168,6 +164,19 @@ The result contains a list of keywords that were recognized in the quotation.
 }
 ```
 {: codeblock}
+
+## Analyze API limits
+{: #analyzeapi-limits}
+
+The following table shows the file size and usage limits for the Analyze API.
+
+| Deployment type | File size limit | Concurrent collections limit | Concurrent queries per collection limit |
+|-----------------|-----------------|------------------------------|-----------------------------------------|
+| Cloud Pak for Data installed deployment | Unlimited | Unlimited | Unlimited |
+| Enterprise plan managed deployment | 50 KB | 5 | 5 |
+{: caption="Limits applied to Analyze API usage" caption-side="top"}
+
+Use of the Analyze API affects license usage. For more information, see the latest [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
 
 <!--## Monitoring usage
 {: #api-usage}

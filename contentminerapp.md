@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-20"
+lastupdated: "2022-04-18"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using the Content Mining application ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+# Analyze documents with the Content Mining application ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #contentminerapp}
 
 The {{site.data.keyword.discoveryfull}} Content Mining application is an analytical tool that helps you discover hidden insights by analyzing anomalies, trends, and relationships in your documents.
@@ -552,20 +552,36 @@ The number of regular expression patterns that you can define per service instan
 ### Document flags tab
 {: #doc-flags}
 
-By using document flags, you can assign a custom flag to a document or a group of documents for classification, export, or further analysis.
+Use document flags to assign a custom flag to a document or a group of documents for classification, export, or further analysis.
 {: shortdesc}
 
-Document flagging is convenient after you perform multiple searches to find the set of documents that you want to further examine, export, or classify. The administrator creates the document flags that users can select in the Content Mining application. After you flag documents, users can filter the documents by viewing the flag count on the document result set for further analysis. When you click **Add flag**, the **Document flags** dialog box opens, where you can name the flag, add a description, and choose a flag color. Select **Enabled** so that the flags appear in your documents, and click **Save** to make them available in your collection.
+Document flagging is a useful way to keep track of documents that you want to examine, export, or classify further after you perform several searches. 
+
+The administrator creates the document flags that users can select in the Content Mining application.
+
+To add document flags, complete the following steps:
+
+1.  From the *Edit collection* page, click **Add flag**.
+1.  In the *Document flags* dialog box, name the flag, add a description, choose a flag color, and then click **Apply**.
+1.  Repeat the previous steps to add more flags.
+1.  From the *Document flags* view, select **Enabled** so that the flags appear in your documents, and then click **Save** to make them available in your collection.
+
+To apply flags, complete the following steps:
+
+1.  From the analysis view of a collection, create a query that returns a set of documents with specific characteristics.
+1.  Apply a document flag to the query result by clicking the *Document flags* icon from the resuls view, and then selecting a flag.
+1.  You can choose to apply the flag to all query results or to selected documents, and then click **Apply**.
+
+    You can't set a document flag more than 50 times per collection. Whether you flag one document that you select individually or flag a query, which might return many documents, each action counts as setting a flag one time.
+1.  To view the documents to which a flag is applied, select a document flag on the *Document flags* dashboard, click **Analyze more**, and then click **Show documents**. 
+
+    You cannot remove a document flag from a *Document flags* query by clearing the checkbox for a document flag in the *Manage flags* dialog box. If you clear the checkbox and click **Apply**, you receive an error message. To work around this issue, see [Removing document flags from a Document Flags query](#remove-doc-flags). If you want to remove a document flag from a document and you do not want to complete the workaround, do not create a **Document flags** query.
+    {: important}
 
 Note the following points when you use document flags:
 
 -   A flagged document set dynamically changes before and after incremental ingestion. Flagged document sets are stored as queries in the index. Each flag has a query that represents the document set that it is associated with. For example, after you create the document flag and you search for the term `ice cream` and apply a red flag to all of the documents that have this word, `ice cream` is stored as the query that represents the flag. Then, if you search for the term `coffee` and apply the red flag to all of the documents that have that word, the internal flag query is `(ice cream) OR coffee`. Therefore, if new documents that contain the word `coffee` are ingested, those documents have the red flag displayed.
 -   Requests to update a document flag fail if a nested query that represents a document flag exceeds a certain depth.
-
-After you create a query and apply a document flag to a query result, you can click the **Document flags** facet in the **Facet analysis** pane to create a **Document flags** query. Next, you can select a document flag on the **Document flags** dashboard and click **Analyze more** and then **Show documents** to analyze the documents that have a specific document flag applied to them. However, when you reach this point, you cannot remove a document flag from a **Document flags** query by clearing the checkbox for a document flag in the **Manage flags** dialog box. If you clear the checkbox and click **Apply**, you receive an error message. To work around this issue, see [Removing document flags from a Document Flags query](#remove-doc-flags).
-
-If you want to remove a document flag from a document and you do not want to complete the workaround, do not create a **Document flags** query.
-{: important}
 
 #### Removing document flags from a Document Flags query
 {: #remove-doc-flags}
