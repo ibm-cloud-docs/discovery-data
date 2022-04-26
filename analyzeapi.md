@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-25"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ For more information, see the {{site.data.keyword.discoveryshort}} [API referenc
 ## Analysis example
 {: #analyzeapi-example}
 
-The following JSON file contains a quotation in the `Quote` field that you want to analyze to find any keyword mentions in the text.
+The data that you submit for analysis must be in JSON format. The text must be specified as a string; it cannot be specified as an array. For example, the following JSON file contains a quotation in the `Quote` field that you want to analyze to find any keyword mentions in the text.
 
 ```json
 {
@@ -164,6 +164,36 @@ The result contains a list of keywords that were recognized in the quotation.
 }
 ```
 {: codeblock}
+
+You cannot submit an array of objects as input. For example, you might want to analyze multiple quotations, so your source might look as follows:
+
+```json
+{
+  "quotations":[
+    {
+      "Author": "Jane Austen",
+      "Book": "Sense and Sensibility",
+      "Quote": "Is there a felicity in the world superior to this?",
+      "Year": "1811/01/01",
+      "Subject": "Nature",
+      "Speaker": "Marianne Dashwood",
+      "url": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm#link2HCH0059"
+    },
+    {
+      "Author": "Jane Austen",
+      "Book": "Persuasion",
+      "Quote": "A man does not recover from such a devotion of the heart to such a woman. He ought not; he does not.",
+      "Subject": "Romantic love",
+      "Year": "1818/01/01",
+      "Speaker": "Captain Wentworth",
+      "url": "https://www.gutenberg.org/files/105/105-h/105-h.htm#chap20"
+    }
+  ]
+}
+```
+{: codeblock}
+
+If so, break each object into a separate file and analyze each file individually.
 
 ## Analyze API limits
 {: #analyzeapi-limits}
