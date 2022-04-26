@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-04-26"
 
 subcollection: discovery-data
 
@@ -74,9 +74,9 @@ To apply an enrichment to data by using the API, complete the following steps:
 ### Enrichment IDs
 {: #enrichments-ids}
 
-If you want to apply a custom enrichment that you created for one collection to another collection, you must know the unique ID that was generated for the enrichment when it was created. Use the API to [list enrichments](https://cloud.ibm.com/apidocs/discovery-data#listenrichments){: external} from the collection where the custom enrichment is in use. The list that is returned includes enrichment ID information.
+If you want to apply a custom enrichment that you created for one collection to another collection, you must know the unique ID that was generated for the enrichment when it was created. Use the API to [list enrichments](https://cloud.ibm.com/apidocs/discovery-data#listenrichments){: external} from the project where the custom enrichment is in use. The list that is returned includes enrichment ID information.
 
-For prebuilt enrichments, the unique IDs do not change. The following table lists the IDs that are associated with each prebuilt enrichment type and identifies the collection languages for which the enrichment is supported. An enrichment cannot be applied to a collection unless the collection language is supported by the enrichment. For more information about all of the supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+For prebuilt enrichments, the unique IDs do not change. The following table lists the IDs that are associated with each prebuilt enrichment type and identifies the collection languages for which the enrichment is supported. An enrichment cannot be applied to a collection unless the collection language is supported by the enrichment.
 
 | Name | Enrichment ID | Supported languages |
 |------|---------------|---------------------|
@@ -87,6 +87,8 @@ For prebuilt enrichments, the unique IDs do not change. The following table list
 | Sentiment of Document | 701db916-fc83-57ab-0000-000000000016 | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
 | Table Understanding | 701db916-fc83-57ab-0000-000000000012 | All supported languages |
 {: caption="Prebuilt enrichment IDs" caption-side="top"}
+
+For more information about all of the supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
 ### Apply enrichments by using the API
 {: #enrichments-api-task}
@@ -161,7 +163,7 @@ Some prebuilt enrichments are applied automatically to collections in a project 
 | Keywords | | | | |
 | Parts of Speech | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Sentiment of Document | | | | |
-| Table Understanding | | | | |
+| Table Understanding | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Default enrichments per project type" caption-side="top"}
