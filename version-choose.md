@@ -58,6 +58,7 @@ The latest version has new features that were previously unavailable. The follow
 | Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Use the Entity Extraction, Sentiment Analysis, and Keyword Extraction enrichments | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction enrichments, which are available with the [Natural Language Understanding](/docs/natural-language-understanding?topic=natural-language-understanding-about){: external} service | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Discovery Query Language (DQL) API support | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Use the Smart Document Understanding (SDU) to annotate your documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Retrieve passages from documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
@@ -68,7 +69,6 @@ The latest version has new features that were previously unavailable. The follow
 | Use the Watson Discovery News and COVID-19 collections to leverage pre-enriched data | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Identify document similarity | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure the normalization process of ingestion, including document segmentation and inclusion or exclusion rules for HTML files | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction enrichments, which are available with the [Natural Language Understanding](/docs/natural-language-understanding?topic=natural-language-understanding-about){: external} service | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Review query logging and metrics | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}

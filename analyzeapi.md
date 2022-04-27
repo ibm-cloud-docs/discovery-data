@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-04-27"
 
 subcollection: discovery-data
 
@@ -206,7 +206,7 @@ The following table shows the file size and usage limits for the Analyze API.
 | Enterprise plan managed deployment | 50 KB | 5 | 5 |
 {: caption="Limits applied to Analyze API usage" caption-side="top"}
 
-Use of the Analyze API affects license usage. For more information, see the latest [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
+Use of the Analyze API from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} affects license usage. For more information, see the latest [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
 
 <!--## Monitoring usage
 {: #api-usage}
