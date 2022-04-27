@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-25"
 
 keywords: known issues
 
@@ -30,6 +30,35 @@ Known issues are regularly addressed with periodic software patches. For more in
 
 For more information about installing the service, see [the {{site.data.keyword.icp4dfull}} documentation](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}.
 
+## 4.0.8, 27 April 2022
+{: #27april2022ki}
+
+-   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
+
+    -   **Error**: When you upgrade to version 4.0.8 with a user ID other than admin, the migration job fails.
+    -   **Cause**: The migration script assumes that the script is run by a user with the admin user ID.
+    -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
+
+        1.  From the Cloud Pak for Data web client, get the user ID of the owner of the instance that you want to upgrade.
+        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-migration-uid-patch.zip){: external} repository.
+        1.  Extract the **wd-migration-uid-patch.yaml** file from the archive file, and then open it in a text editor.
+        1.  Replace the `<user_id>` variable with the user ID of the owner of the instance that you want to upgrade.
+        1.  Run the following command in a terminal that is logged in to the cluster:
+
+            ```bash
+            oc create -f wd-migration-uid-patch.yaml
+            ```
+            {: codeblock}
+
+        1.  Delete the previous migration job by using the following command:
+
+            ```bash
+            oc delete job wd-discovery-multi-tenant-migration
+            ```
+            {: codeblock}
+
+    After the job is deleted, the migration job restarts and the migration resumes.
+
 ## 4.0.7, 30 March 2022
 {: #30March2022ki}
 
@@ -48,6 +77,8 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
+    This issue is fixed with the 4.0.8 release.
+
 -   `Deployed` status of resources fluctuates after the 4.0.7 upgrade is completed.
 
     -   **Error**: When you check the status by submitting the `oc get WatsonDiscovery` command, the ready status of the resources toggles between showing `23/23` and `20/23` components as being ready for use.
@@ -59,6 +90,34 @@ For more information about installing the service, see [the {{site.data.keyword.
         curl -ksS -X PATCH -H "Accept: application/json, */*" -H "Content-Type: application/merge-patch+json" http://127.0.0.1:8001/apis/discovery.watson.ibm.com/v1/namespaces/<namespace>/watsondiscoveries/wd/status --data '{"status": null}'
         ```
         {: pre}
+
+    This issue is fixed with the 4.0.8 release.
+
+-   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
+
+    -   **Error**: When you upgrade to version 4.0.8 with a user ID other than admin, the migration job fails.
+    -   **Cause**: The migration script assumes that the script is run by a user with the admin user ID.
+    -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
+
+        1.  From the Cloud Pak for Data web client, get the user ID of the owner of the instance that you want to upgrade.
+        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-migration-uid-patch.zip){: external} repository.
+        1.  Extract the **wd-migration-uid-patch.yaml** file from the archive file, and then open it in a text editor.
+        1.  Replace the `<user_id>` variable with the user ID of the owner of the instance that you want to upgrade.
+        1.  Run the following command in a terminal that is logged in to the cluster:
+
+            ```bash
+            oc create -f wd-migration-uid-patch.yaml
+            ```
+            {: codeblock}
+
+        1.  Delete the previous migration job by using the following command:
+
+            ```bash
+            oc delete job wd-discovery-multi-tenant-migration
+            ```
+            {: codeblock}
+
+    After the job is deleted, the migration job restarts and the migration resumes.
 
 ## 4.0.6, 1 March 2022
 {: #01March2022ki}
@@ -81,20 +140,112 @@ For more information about installing the service, see [the {{site.data.keyword.
         ```
         {: pre}
 
+    This issue is fixed with the 4.0.8 release.
+
+-   {{site.data.keyword.discoveryshort}} generates an error in the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+
+    -  **Error**: The utility does not complete successfully and the following message is written to the log: `preBackupViaConfigHookRule on backupconfig/watson-discovery in namespace cpd (status=error)`
+    -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
+    -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
+
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
+       1.  Run the following command in a terminal that is logged in to the cluster:
+
+           ```bash
+           oc create -f wd-aux-br-patch.yaml
+           ```
+           {: pre}
+
+    This issue is fixed with the 4.0.8 release.
+
+-   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
+
+    -   **Error**: When you upgrade to version 4.0.8 with a user ID other than admin, the migration job fails.
+    -   **Cause**: The migration script assumes that the script is run by a user with the admin user ID.
+    -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
+
+        1.  From the Cloud Pak for Data web client, get the user ID of the owner of the instance that you want to upgrade.
+        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-migration-uid-patch.zip){: external} repository.
+        1.  Extract the **wd-migration-uid-patch.yaml** file from the archive file, and then open it in a text editor.
+        1.  Replace the `<user_id>` variable with the user ID of the owner of the instance that you want to upgrade.
+        1.  Run the following command in a terminal that is logged in to the cluster:
+
+            ```bash
+            oc create -f wd-migration-uid-patch.yaml
+            ```
+            {: codeblock}
+
+        1.  Delete the previous migration job by using the following command:
+
+            ```bash
+            oc delete job wd-discovery-multi-tenant-migration
+            ```
+            {: codeblock}
+
+    After the job is deleted, the migration job restarts and the migration resumes.
+
 ## 4.0.5, 26 January 2022
 {: #26january2022ki}
 
--   There are no known issues.
+-   {{site.data.keyword.discoveryshort}} generates an error in the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+
+    -  **Error**: The utility does not complete successfully and the following message is written to the log: `preBackupViaConfigHookRule on backupconfig/watson-discovery in namespace cpd (status=error)`
+    -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
+    -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
+
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
+       1.  Run the following command in a terminal that is logged in to the cluster:
+
+           ```bash
+           oc create -f wd-aux-br-patch.yaml
+           ```
+           {: pre}
+
+    This issue is fixed with the 4.0.8 release.
 
 ## 4.0.4, 20 December 2021
 {: #20december2021ki}
 
--   There are no known issues.
+-   {{site.data.keyword.discoveryshort}} generates an error in the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+
+    -  **Error**: The utility does not complete successfully and the following message is written to the log: `preBackupViaConfigHookRule on backupconfig/watson-discovery in namespace cpd (status=error)`
+    -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
+    -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
+
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
+       1.  Run the following command in a terminal that is logged in to the cluster:
+
+           ```bash
+           oc create -f wd-aux-br-patch.yaml
+           ```
+           {: pre}
+
+    This issue is fixed with the 4.0.8 release.
 
 ## 4.0.3, 18 November 2021
 {: #18november2021ki}
 
 -   The guided tours are not available in this release.
+
+-   {{site.data.keyword.discoveryshort}} generates an error in the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+
+    -  **Error**: The utility does not complete successfully and the following message is written to the log: `preBackupViaConfigHookRule on backupconfig/watson-discovery in namespace cpd (status=error)`
+    -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
+    -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
+
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
+       1.  Run the following command in a terminal that is logged in to the cluster:
+
+           ```bash
+           oc create -f wd-aux-br-patch.yaml
+           ```
+           {: pre}
+
+    This issue is fixed with the 4.0.8 release.
 
 ## 4.0.0, 13 July 2021
 {: #13july2021ki}

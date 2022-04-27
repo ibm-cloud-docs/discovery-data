@@ -26,6 +26,27 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
 
+## 4.0.8 release, 27 April 2022
+{: #discovery-data-27april2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.8 is available.
+
+The `Development` deployment type was changed to `Starter`
+:   When you install Watson Discovery, you can optionally specify the type of deployment by including the `deploymentType` parameter in your custom resource. The `Development` option is now called the `Starter` option.
+
+    The `Development` and `Starter` options are functionally the same, and both values are accepted by the service.
+
+Security vulnerabilities were addressed
+:   The following security patches were applied:
+ 
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Google Protocol Buffers](https://www.ibm.com/support/pages/node/6570937)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Node.js](https://www.ibm.com/support/pages/node/6570939)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Java](https://www.ibm.com/support/pages/node/6570941)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in PostgreSQL](https://www.ibm.com/support/pages/node/6570943)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Kotlin](https://www.ibm.com/support/pages/node/6570945)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache POI](https://www.ibm.com/support/pages/node/6570947)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data is affected by a remote code execution in Spring Framework (CVE-2022-22965)](https://www.ibm.com/support/pages/node/6570949)
+
 ## {{site.data.keyword.discoveryfull}} for ICP for Data 2.2.x End Of Support
 {: #release-notes-data-eos-15april2022}
 
