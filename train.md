@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-29"
+lastupdated: "2022-04-27"
 
 subcollection: discovery-data
 
@@ -70,9 +70,10 @@ To train a project:
     - Rate more results
     - Add more variety to your ratings
 
-    You must evaluate at least 50 unique queries, maybe more depending on the complexity of your data.
+    You must evaluate at least 50 unique queries, maybe more depending on the complexity of your data. You cannot add more than 10,000 training queries per collection.
+
 1.  You can continue adding queries and rating results after you have reached the threshold. You should enter all queries you think your users will ask.
-1.  To delete a trainig query, click the **Delete** icon.
+1.  To delete a training query, click the **Delete** icon.
 
     To delete all of the training queries in your collection at one time, use the API. For more information, see [Delete training queries](https://{DomainName}/apidocs/discovery-data#deletetrainingqueries){: external}.
 
