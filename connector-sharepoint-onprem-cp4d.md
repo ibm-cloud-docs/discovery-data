@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-10"
+lastupdated: "2022-04-27"
 
 subcollection: discovery-data
 
@@ -44,7 +44,11 @@ For more information about SharePoint On Prem, see [Microsoft SharePoint develop
 
 Before you create a SharePoint On Prem collection, you must do the following things:
 
--   If you want to enable document-level security, you must take some steps to set it up. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+1.  Work with the Sharepoint administrator to coordinate the set up of full read access for the web application. 
+
+    For more information, see [Manage permissions for a web application in Sharepoint Server](https://docs.microsoft.com/en-us/sharepoint/administration/manage-permissions-for-a-web-application){: external}.
+
+1.  If you want to enable document-level security, you must take some steps to set it up. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
     You must collect the following information from the LDAP administrator:
 
@@ -62,8 +66,6 @@ Before you create a SharePoint On Prem collection, you must do the following thi
 
     LDAP user filter
     :   The user filter to search user entries in LDAP. If unspecified, the default value is `(userPrincipalName={0})`.
-
--   Set up full read access for the web application.
 
 If you are using version 2.2.1 or earlier, then you must complete some extra prerequisite tasks before you can connect to the data source. For more information, see [SharePoint On Prem prerequisite steps for prior releases](#prior-prereqs).
 
