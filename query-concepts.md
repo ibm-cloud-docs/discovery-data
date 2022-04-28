@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-30"
+lastupdated: "2022-04-28"
 
 subcollection: discovery-data
 
@@ -404,7 +404,9 @@ The number of queries that can be processed per second per service instance depe
 | Plus (includes Trial) |                      5 |
 {: caption="Number of concurrent queries" caption-side="top"}
 
-For more information about the supported number of queries for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
+For information about pricing, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
+
+For information about the supported number of queries for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the Discovery v1 product documentation.
 
 ## Estimating query usage
 {: #query-estimate}

@@ -2,12 +2,11 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-28"
 
-keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
+keywords: discovery cloud pak for data release notes,watson discovery cartridge release notes,cp4d release notes
 
 subcollection: discovery-data
-content-type: release-note
 
 ---
 
@@ -46,6 +45,15 @@ Security vulnerabilities were addressed
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Kotlin](https://www.ibm.com/support/pages/node/6570945)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache POI](https://www.ibm.com/support/pages/node/6570947)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data is affected by a remote code execution in Spring Framework (CVE-2022-22965)](https://www.ibm.com/support/pages/node/6570949)
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Answer finding
+    -   *Manage data* page
+    -   Advanced document view for search results
+    -   Document status API
 
 ## {{site.data.keyword.discoveryfull}} for ICP for Data 2.2.x End Of Support
 {: #release-notes-data-eos-15april2022}
