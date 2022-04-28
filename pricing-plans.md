@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 subcollection: discovery-data
 
@@ -73,14 +73,14 @@ For subscription accounts, the monthly fee per instance is $5,000.
 The plan includes the following features:
 
 -   100,000 documents per month ($5 for every additional 1,000 documents per month)
--   100,000 query or analyze API calls per month ($5 for every additional 1,000 queries per month)
+-   100,000 query or analyze API calls per month ($5 for every additional 1,000 calls per month)
 -   Up to 5 queries per second
 -   Everything that's available in Plus
 -   Content Intelligence
 -   Content Mining
 -   Document classification (Text classification is available in all plans. Document classification is available with Enterprise and higher-level plans only.)
 
-Your bill labels requests that are generated both from query searches and analyze API calls as "Queries".
+Your bill labels requests that are generated from both query searches and analyze API calls as "Queries".
 {: note}
 
 ### Artifact limits
