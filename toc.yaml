@@ -7,7 +7,7 @@ toc:
     href: /docs/discovery-data
     product-page: https://www.ibm.com/cloud/watson-discovery
     path: discovery-data
-    label: Discovery
+    label: Discovery v2
 
   entries:
   - navgroup:
@@ -15,6 +15,14 @@ toc:
       topics:
       - getting-started.md
       - index.md
+      - topicgroup:
+          label: Getting the most from Discovery
+          topics:
+          - topic: version-choose.md
+            navtitle: Overview
+          - migrate-to-v2.md
+          - migrate-to-v2-api.md
+          - migration-faq.md
       - topicgroup:
           label: Media resources
           links:
@@ -38,7 +46,6 @@ toc:
       - tutorial-convo.md
       - tutorial-crawl-short.md
       - tutorial-sdu.md
-
   - navgroup:
       id: howto
       topics:
@@ -165,7 +172,6 @@ toc:
               - crawler-plugin-assemble.md
               - manage-plugin.md
               - crawler-plugin-tooling.md
-
   - navgroup:
       id: reference
       topics:
@@ -203,7 +209,6 @@ toc:
           label: Plan information
           topics:
               - pricing-plans.md
-              - version-choose.md
               - upgrade.md
       - topicgroup:
           label: Community resources
