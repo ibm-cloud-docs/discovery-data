@@ -95,7 +95,7 @@ The following table shows plan types for managed deployments that are generally 
 | Premium | Not applicable | Enterprise or Premium |
 {: caption="Similar plans" caption-side="top"}
 
-To check the data usage from your existing v1 instance, go to the IBM Cloud Usage page. For more information, see [Viewing your usage](/docs/billing-usage?topic=billing-usage-viewingusage&interface=ui){: external}.
+To get information about the current storage, documents, and collections used, click the *Environment details* icon from the product user interface header.
 {: tip}
 
 You cannot do an in-place upgrade from a v1 plan, such as Lite or Advanced, to a v2 plan. You must create a new v2 plan, and then move your data to the new service instance. While you migrate your data from v1 to v2, you will likely have both a v1 and v2 instance deployed at the same time. Consider leveraging the 30-day no charge trial that is available with your first Plus plan instance during this time.
