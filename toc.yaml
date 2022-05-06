@@ -190,7 +190,6 @@ toc:
           - information-security.md
           - admin.md
           - at_events.md
-          - /watson/watson-keyservice
           - /watson/watson-public-private-endpoints
           - /watson/watson-virtual-private-endpoints
       - topicgroup:
