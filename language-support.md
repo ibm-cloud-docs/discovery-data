@@ -18,7 +18,7 @@ subcollection: discovery-data
 | Arabic (`ar`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities, Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Bosnian (`bs`)\* | Classifier (Document and Text), Dictionary, Parts of speech, Regular expressions |
 | Chinese, simplified (`zh-CN`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities, Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding|
-| Chinese, traditional</br> (`zh-TW`) | Advanced rule models, Classifier (Document and Text), Dictionary, Regular expressions, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Smart Document Understanding, Table Understanding |
+| Chinese, traditional (`zh-TW`) | Advanced rule models, Classifier (Document and Text), Dictionary, Regular expressions, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Smart Document Understanding, Table Understanding |
 | Croatian (`hr`)\* | Classifier (Document and Text), Dictionary, Regular expressions, Parts of speech |
 | Czech (`cs`) | Classifier (Document and Text), Dictionary, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Danish (`da`) | Classifier (Document and Text), Dictionary, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
@@ -40,7 +40,7 @@ subcollection: discovery-data
 | Russian (`ru`) | Classifier (Document and Text), Dictionary, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
 | Serbian (`sr`)\* | Classifier (Document and Text), Dictionary, Parts of speech, Regular expressions|
 | Slovak (`sk`) | Classifier (Document and Text), Dictionary, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Spanish (`es`) | Advanced rule models, Classifier (Document and Text), Dictionary, Parts of speech, Keywords, Entities, Document sentiment, Optical character recognition, Phrase sentiment, Regular expressions, Machine Learning, Smart Document Understanding, Table Understanding  |
+| Spanish (`es`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities, Keywords, Machine Learning, Optical character recognition, Parts of speech, Optical character recognition, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Swedish (`sv`) | Classifier (Document and Text), Dictionary, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 
 \* **Optical character recognition (OCR)** is not available for Bosnian, Croatian, Hindi, and Serbian. Serbian supports Latin script only.
