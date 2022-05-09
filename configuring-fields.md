@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-05-09"
 
 subcollection: discovery-data
 
@@ -20,6 +20,8 @@ Use the Smart Document Understanding tool to add custom fields to a collection s
 
 -   Target enrichments at specific sections of a document.
 -   Break large documents into smaller documents.
+
+For help with deciding whether SDU can help your use case, read [When to use Smart Document Understanding](#sdu-when).
 
 ## Applying an SDU model
 {: #identify-fields}
