@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-05-09"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -69,7 +69,7 @@ One of the optional features that you can apply to a collection when you create 
 Things to keep in mind when you enable OCR:
 
 -   OCR can read both clear and noisy images. It can convert noisy images to gray scale, and smooth and de-skew them. However, the image quality must meet the minimum requirement of 75 DPI (dots per inch).
--   OCR can recognize many languages, but the language of the text in the image must be the same as the language that is specified for the collection where the file is added. Otherwise, the resulting transcription will contain meaningless text.
+-   OCR can recognize many languages, but the language of the text in the image must be the same as the language that is specified for the collection where the file is added. Otherwise, the resulting transcription will contain meaningless text. For more information about languages where OCR is supported, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 -  The time it takes to ingest a document with images increases when OCR is enabled.
 
 For a list of files types where you can apply OCR, see the [Supported file types](#supportedfiletypes) table.
