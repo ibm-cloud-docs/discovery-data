@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-05-10"
 
 subcollection: discovery-data
 
@@ -25,7 +25,13 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 The information in this topic suggests steps you can take to investigate issues that might occur. For information about known issues and their workarounds per version, see [Known issues](/docs/discovery-data?topic=discovery-data-known-issues).
 
-## A `java.lang.OutOfMemoryError: Java heap space` message is displayed in the log ![Cloud Pak for Data only](images/desktop.png)
+## A `No space left on device` message is displayed in the log
+{: #ts-no-space}
+{: troubleshoot}
+
+If the a `wd-ibm-elasticsearch-es-server-client` pod restarts repeatedly and then reports the `Crashloopbackoff` state with the message `No space left on device` written to the log for the pod, then the issue might be a lack of memory on the pod. Follow the steps to [troubleshoot out of memory issues](#ts-oom) or contact IBM Support.
+
+## A `java.lang.OutOfMemoryError: Java heap space` message is displayed in the log
 {: #ts-oom}
 {: troubleshoot}
 
@@ -271,7 +277,7 @@ For both issues, where document status cannot be promoted to `Processing` and wh
     ```
     {: pre}
 
-## Setting the shard limit in Discovery for Cloud Pak for Data ![Cloud Pak for Data only](images/desktop.png)
+## Setting the shard limit in Discovery for Cloud Pak for Data
 {: #shard-limit}
 {: troubleshoot}
 
@@ -372,7 +378,7 @@ If you can then restart the gateway pod, everything should resume normally.
 {: #troubleshoot-sdu}
 {: troubleshoot}
 
-![Cloud Pak for Data only](images/desktop.png) **Installed only**: There are two environment variables that need to be adjusted for Smart Document Understanding in {{site.data.keyword.discoveryfull}} version 2.1.0. This was resolved in version 2.1.1, see [2.1.1 release, 24 Jan 2020](/docs/discovery-data?topic=discovery-data-release-notes#24jan2020).
+There are two environment variables that need to be adjusted for Smart Document Understanding in {{site.data.keyword.discoveryfull}} version 2.1.0. This was resolved in version 2.1.1, see [2.1.1 release, 24 Jan 2020](/docs/discovery-data?topic=discovery-data-release-notes#24jan2020).
 
 ```sh
 SDU_PYTHON_REST_RESPONSE_TIMEOUT_MS

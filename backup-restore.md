@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-05-10"
 
 subcollection: discovery-data
 
@@ -28,6 +28,11 @@ You can back up your data from and restore it to the following versions:
 - 2.2.0 to 4.0.x
 
 You can do an in-place upgrade from one 4.0.x version to a later 4.0.y version as an alternative to following the procedures in this topic. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
+{: note}
+
+**For versions 4.0.3-4.0.7 only**: If you plan to backup and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility, you must apply a patch before you start the backup. The patch enables the utility to run successfully. 
+
+This procedure is not required with versions 4.0.8 or later.
 {: note}
 
 If you plan to backup and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility, you must apply a patch before you start the backup. The patch stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
