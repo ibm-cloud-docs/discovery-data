@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-05-10"
 
 subcollection: discovery-data
 
@@ -13,10 +13,10 @@ subcollection: discovery-data
 # Applying prebuilt enrichments
 {: #nlu}
 
-Take advantage of award-winning Watson Natural Language Understanding (NLU) capabilities by adding prebuilt enrichments to your documents.
+Take advantage of award-winning Watson Natural Language Processing (NLP) capabilities by adding prebuilt enrichments to your documents.
 {: shortdesc}
 
-With Watson NLU, you can identify and tag meaningful information in your collections so you can understand what it all means and make more informed decisions. The following enrichments are available:
+With Watson NLP, you can identify and tag meaningful information in your collections so you can understand what it all means and make more informed decisions. The following enrichments are available:
 
 - [Entities](#nlu-entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
 - [Keywords](#nlu-keywords): Recognizes significant terms in your content.
@@ -27,7 +27,7 @@ For example, the following image shows a transcript of the US Declaration of Ind
 
 ![Shows the first two paragraphs of the declaration with the terms Governments and King of Great Britain highlighted and with associated JSON representation of the mentions.](images/decl-annotated.png)
 
-Some of the NLU enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
+Some of the NLP enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
 
 | Enrichment that is applied automatically | Project type |
 |------------------------------------------|--------------|
@@ -47,12 +47,12 @@ For more information about how to get the most from enrichments, read the [Enric
 ## Add enrichments
 {: #nlu-task}
 
-To add an NLU enrichment, complete the following steps:
+To add an NLP enrichment, complete the following steps:
 
 1.  Open your project and go to the *Manage collections* page.
 1.  Click to open the collection that you want to enrich.
 1.  Open the **Enrichments** tab.
-1.  Scroll to find the NLU enrichment that you want to apply to your documents.
+1.  Scroll to find the NLP enrichment that you want to apply to your documents.
 
     Both built-in enrichments and custom enrichments are listed. Built-in enrichments have a type value of `System`.
     {: note}
@@ -61,8 +61,6 @@ To add an NLU enrichment, complete the following steps:
 
     You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool.
 
-    If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`. Only the first 50,000 characters of a custom field from a JSON file are enriched.
-    {: note}
 1.  Click **Apply changes and reprocess**.
 
 For more information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
@@ -70,7 +68,10 @@ For more information about how to remove an enrichment, see [Managing enrichment
 ## Entities
 {: #nlu-entities}
 
-Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system that is defined by the {{site.data.keyword.nlushort}} service. For more information, see [Entities Version 2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
+Identifies entities. *Entities* are terms that typically represent proper nouns such as people, cities, and organizations that are mentioned in the data collection. {{site.data.keyword.discoveryshort}} can recognize entities that are part of an entity type system that is defined by the Watson Natural Language Processing (NLP) service.
+
+The Watson NLP entity extractor service that is used by Discovery is called the *NLU type system*. The name originates from the fact that the type system is used by the Watson Natural Language Understanding (NLU) service in addition to the Watson Discovery service. However, it is the Watson NLP implementation of the type system that is used directly by Discovery, not the Watson NLU implementation. As a result, the two implementations can produce different results. To get a general idea of the types of entities that are recognized by the service, see [Entities v2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
+{: note}
 
 For Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. For example, any English or Korean collections that were added to Document Retrieval projects had Entities v1 applied to them automatically. These collections continue to use the Entities v1 legacy enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the legacy enrichment is disabled automatically.
 {: note}
