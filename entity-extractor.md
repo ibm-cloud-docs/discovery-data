@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-05-10"
 
 subcollection: discovery-data
 
@@ -270,7 +270,7 @@ When you publish the extractor, you specify the field where you want the extract
 ### Entity extractor output
 {: #entity-extractor-json}
 
-When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in Entities enrichment that uses the *Natural Language Understanding* machine learning model.
+When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in Entities enrichment. The built-in enrichment uses the Watson NLP service to identity entites that are part of what it calls the *Natural Language Understanding* type system. For more information about the built-in Entities enrichment, see [Entities](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities).
 
 The following JSON output is produced by a custom model named *literature* that recognizes family member mentions.
 
