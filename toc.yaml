@@ -104,7 +104,6 @@ toc:
               topics:
               - configuring-fields.md
               - split-documents.md
-              - hide-data.md
           - topicgroup:
               label: Teaching Discovery about your domain
               topics:
@@ -124,6 +123,7 @@ toc:
           - improvements.md
           - search-settings.md
           - stopwords.md
+          - hide-data.md
           - manage-enrichments.md
           - train.md
       - preview.md

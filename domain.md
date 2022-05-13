@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-05-11"
 
 subcollection: discovery-data
 
@@ -595,6 +595,12 @@ If you need to identify specific terms or text, such as product names, add a [di
 
 Patterns cannot be used in a Content Mining application.
 {: note}
+
+For more information, read the following blog posts:
+
+-   [Part 1: Pattern Induction — What is a Pattern?](https://medium.com/ibm-data-ai/part-i-pattern-induction-what-is-a-pattern-b661ad46b8c0)
+-   [Part 2: Pattern Induction - Using Watson Discovery to Extract Patterns?](https://community.ibm.com/community/user/watsonapps/blogs/bikalpa-neupane/2021/11/10/part-ii)
+-   [Part 3: Pattern Induction - Best Practices for Highlighting Examples and Providing Expert Feedback](https://community.ibm.com/community/user/watsonapps/blogs/bikalpa-neupane/2021/11/10/part-iii-pattern-induction-best-practices-for-high)
 
 To define a pattern, complete the following steps:
 
