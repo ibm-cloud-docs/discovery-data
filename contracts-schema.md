@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-13"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Understanding contracts ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #contracts-schema}
 
-The *Contracts* enrichment can identify contract-related elements in a document.
+The *Contracts* enrichment identifies contract-related elements in a document.
 {: shortdesc}
 
 When you create a *Document Retrieval for Contract* project type, the *Contracts* enrichment is applied to the collections automatically.
