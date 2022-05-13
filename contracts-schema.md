@@ -16,17 +16,10 @@ subcollection: discovery-data
 The *Contracts* enrichment identifies contract-related elements in a document.
 {: shortdesc}
 
-When you create a *Document Retrieval for Contract* project type, the *Contracts* enrichment is applied to the collections automatically.
+To use the Contracts enrichment, create a *Document Retrieval* project type and select the *Apply contracts enrichment* option. When you make this selection, a *Document Retrieval for Contracts* project is created.
 
 Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create a *Document Retrieval for Contract* project type.
 {: note}
-
-You can apply the *Contracts* enrichment to documents in other project types also. For example, you can apply the enrichment to documents in a *Document Retrieval* project type. To do so, complete the following steps:
-
-1.  Apply a pretrained Smart Document Understanding (SDU) model to the collection.
-
-    For more information, see [Applying an SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields). The pretrained model stores information of interest in a newly-generated `html` field.
-1.  From the *Enrichments* tab, apply the *Contracts* enrichment to the `html` field.
 
 To see the elements that are identified by the *Contracts* enrichment, complete the following steps:
 
@@ -52,6 +45,8 @@ To see the elements that are identified by the *Contracts* enrichment, complete 
 
 ## Contract schema information
 {: #contracts-schema-details}
+
+Contract enrichments are applied to the `html` field of documents that are added to the project.
 
 After a document is processed by the Contracts enrichment, the service generates JSON output in the following schema:
 
