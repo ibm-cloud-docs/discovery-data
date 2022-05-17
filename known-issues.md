@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-25"
+lastupdated: "2022-05-16"
 
 keywords: known issues
 
@@ -77,7 +77,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue is fixed with the 4.0.8 release.
+    The issue that prevents the OADP utility from running when Discovery is installed is fixed with the 4.0.8 release.
 
 -   `Deployed` status of resources fluctuates after the 4.0.7 upgrade is completed.
 
@@ -157,7 +157,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue is fixed with the 4.0.8 release.
+    The issue that prevents the OADP utility from running when Discovery is installed is fixed with the 4.0.8 release.
 
 -   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
 
@@ -203,7 +203,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue is fixed with the 4.0.8 release.
+    The issue that prevents the OADP utility from running when Discovery is installed is fixed with the 4.0.8 release.
 
 ## 4.0.4, 20 December 2021
 {: #20december2021ki}
@@ -245,7 +245,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue is fixed with the 4.0.8 release.
+    The issue that prevents the OADP utility from running when Discovery is installed is fixed with the 4.0.8 release.
 
 ## 4.0.0, 13 July 2021
 {: #13july2021ki}
