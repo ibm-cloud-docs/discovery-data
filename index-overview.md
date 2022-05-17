@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-17"
 
 subcollection: discovery-data
 
@@ -60,7 +60,7 @@ If your source document has a field with the name `document_id`, the field is sk
 Avoid field names that meet the following conditions. Field names with these restricted characters are not queried.
 
 - Start with the characters `_`, `+`, and `-`. For example, `+extracted-content`.
-- Contain the characters `.`, `,`, `#`, `?`, or `:` or spaces. For example, `new:extracted-content`.
+- Contain the characters `.`, `,`, `#`, `?`, or `:` or spaces. For example, `extracted content` or `new:extracted-content`.
 - End with numbers. For example, `extracted-content2`.
 
 ## How file types are handled
@@ -78,7 +78,7 @@ Ingestion notes:
 
 -   Each line that is defined in the CSV file is added to the index as a separate document.
 -   You cannot enable the Optical Character Recognition (OCR) feature for CSV files.
--   If the CSV file has headers, the header names are used to name the fields in which the content from the corresponding column is stored. Avoid using names that have special meaning in {{site.data.keyword.discoveryshort}}. For more information, see [How fields are handled](#field-name-limits). For example, you can rename `start date` to `start_date` and `label1` to `label-one`.
+-   If the CSV file has headers, the header names are used to name the fields in which the content from the corresponding column is stored. Avoid using names that have special meaning in {{site.data.keyword.discoveryshort}}. Be sure the names conform to the field naming rules, such as having no spaces and no appended numbers. For example, you can rename the `start date` header to `start_date` and `label1` to `label-one` before you add the file. For more information, see [How fields are handled](#field-name-limits).
 -   When a CSV file header name contains restricted characters, the document converter automatically removes the restricted characters from the field name when it adds the resulting field to the index. 
 
 Enrichment notes:
@@ -91,7 +91,7 @@ Enrichment notes:
 Ingestion notes:
 
 -   Each object that is defined in an array in a JSON file is added to the index as a separate document.
--   Object names from the source JSON file are used to name the fields in which the content is stored. Avoid using names that have special meaning in {{site.data.keyword.discoveryshort}}. For more information, see [How fields are handled](#field-name-limits). For example, you can rename `updated on` to `updated_on` and `answer2` to `answer-two`.
+-   Object names from the source JSON file are used to name the fields in which the content is stored. Avoid using names that have special meaning in {{site.data.keyword.discoveryshort}}. Be sure the names conform to the field naming rules, such as having no spaces and no appended numbers. For example, you can rename the `updated on` object to `updated_on` and `answer2` to `answer-two` before you add the file. For more information, see [How fields are handled](#field-name-limits).
 -   If a root-level field is an array but contains no items, the field is omitted from the index.
 -   If a root-level field is an array and contains only one item, the array is indexed as the data type of the one item. For example, a string array with one string is indexed as a string.
 -   If a nested field contains an array, even if the array has only one value, it is indexed as an array.
