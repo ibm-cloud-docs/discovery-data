@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-18"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -130,7 +130,7 @@ The following table shows the supported file types and information about feature
 | PPT, PPTX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | TIFF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | TXT | | |
-| XSL, XSLX | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| XLS, XLSX | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Supported file types" caption-side="top"}
@@ -213,7 +213,7 @@ If the maximum size of the fields in the document exceeds the allowed limits, th
     {: note}
 -   For a document with oversized non-HTML fields, the document is not indexed.
 
-If you are uploading a Microsoft Excel file and a message is displayed that indicates that the non-HTML field size limit is exceeded, consider converting the XSL file into a CSV file. When you upload a comma-separated value (CSV) file, each row is indexed as a separate document. As a result, no field size limits are exceeded.
+If you are uploading a Microsoft Excel file and a message is displayed that indicates that the non-HTML field size limit is exceeded, consider converting the XLS file into a CSV file. When you upload a comma-separated value (CSV) file, each row is indexed as a separate document. As a result, no field size limits are exceeded.
 {: tip}
 
 For more information about how fields in uploaded files are handled, see [How fields are handled](/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: known issues
 
@@ -77,7 +77,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    The issue is fixed with the 4.0.8 release. (You still cannot backup the Discovery service by using the OADP utility, but the OADP utility can successfully backup other services when Discovery is installed.)
+    The issue is fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
 
 -   `Deployed` status of resources fluctuates after the 4.0.7 upgrade is completed.
 
@@ -157,7 +157,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue was fixed with the 4.0.8 release. (You still cannot backup the Discovery service by using the OADP utility, but the OADP utility can successfully backup other services when Discovery is installed.)
+    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
 
 -   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
 
@@ -203,7 +203,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue was fixed with the 4.0.8 release. (You still cannot backup the Discovery service by using the OADP utility, but the OADP utility can successfully backup other services when Discovery is installed.)
+    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
 
 ## 4.0.4, 20 December 2021
 {: #20december2021ki}
@@ -245,7 +245,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue was fixed with the 4.0.8 release. (You still cannot backup the Discovery service by using the OADP utility, but the OADP utility can successfully backup other services when Discovery is installed.)
+    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
 
 ## 4.0.0, 13 July 2021
 {: #13july2021ki}
