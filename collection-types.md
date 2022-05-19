@@ -42,7 +42,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 
 *Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
-If you have special requirements when adding source documents, such as a need to exclude certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
+If you have special requirements when you add source documents, such as a need to exclude certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 
 ## Data source requirements
 {: #requirements}
@@ -59,7 +59,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
      ```
      {: pre}
 
-     In a default installation, the maximum number of simultaneous collections that can perform a crawl is 3. If you start a fourth, that collection does not start to process until the prior three crawls finish.
+     In a default installation, the maximum number of simultaneous collections that can crawl an external data source is 3. If you start a fourth, that collection does not start to process until the prior three crawls finish.
      {: note}
 
      Each `number-of-replicas` allows 3 simultaneous crawls, so `number-of-replicas=2` increases the replicas to 6, and `number-of -replicas=3` increases them to 9.
@@ -124,5 +124,5 @@ You must create users that match the users available on the source system that {
 When you query collections where document-level security is enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document-level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
 {: important}
 
-{{site.data.keyword.discoveryshort}} does not synchronize changes that are made to the users in the LDAP server with the user list for the service. {{site.data.keyword.discoveryshort}} administrators must ensure that the user list is current and remove any non-current users.
+{{site.data.keyword.discoveryshort}} does not synchronize changes that are made to the users in the LDAP server with the user list for the service. {{site.data.keyword.discoveryshort}} administrators must ensure that the user list is current and remove any noncurrent users.
 {: note}

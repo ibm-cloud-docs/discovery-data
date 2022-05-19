@@ -17,7 +17,7 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Manage collections* page. Do not delete. -->
 
-A collection is a set of documents that you upload or crawl from where it resides on a connected data source.
+A collection is a set of documents that you upload or crawl from where it is stored on a connected data source.
 {: shortdesc}
 
 ## How do I decide what to add to a collection?
@@ -27,13 +27,13 @@ There a few things to consider as you decide how to break up your source content
 
 -   Getting content from different data sources
 
-    If you store similar content in more than one type of data source (a website and Salesforce, for example), you can create one project with two separate collections. Each collection adds documents from a single data source. When they are built together into a single project, a user can search across both sources at once.
+    If you store similar content in more than one type of data source (a website and Salesforce, for example), you can create one project with two separate collections. Each collection adds documents from a single data source. When they are built together into a single project, a user can search across both sources at the same time.
 -   Creating separate Smart Document Understanding (SDU) models
 
     You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department that use one template and 20 PDF files that were created by your Research department that use a different template, group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
 -   Applying enrichments
 
-    Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents with frequently asked questions that are formatted in a consistent manner. After grouping the documents, you can apply the FAQ extraction feature to the collection. Or maybe a subset of your documents contains industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
+    Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents with frequently asked questions that are formatted in a consistent manner. After you group the documents, you can apply the FAQ extraction feature to the collection. Or maybe a subset of your documents contains industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
 
 ## Creating a collection
 {: #createcollection}
@@ -47,7 +47,7 @@ Before you can create a collection, you must create a project. For more informat
     -   The Conversational Search, Document Retrieval, and Custom project types can contain up to 5 collections.
     -   A Content Mining project can contain only 1 collection.
     -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
-1.  Choose a data source type, reuse data from an existing data collection, or perform a one-time document upload from your local file system.
+1.  Choose a data source type, reuse data from an existing data collection, or upload a document from your local file system.
 
     -   [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
     -   [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse)
@@ -59,7 +59,7 @@ Before you can create a collection, you must create a project. For more informat
         A collection can support only one data source. Documents in the collection must be in one language only, the language that you specify for the collection.
         {: note}
 
-For information about how to troubleshoot issues that you might encounter when adding documents to a collection, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
+For information about how to troubleshoot issues that you might encounter when you add documents to a collection, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
 
 ## Optical character recognition
 {: #ocr}
@@ -70,7 +70,7 @@ Things to keep in mind when you enable OCR:
 
 -   OCR can read both clear and noisy images. It can convert noisy images to gray scale, and smooth and de-skew them. However, the image quality must meet the minimum requirement of 75 DPI (dots per inch).
 -   OCR can recognize many languages, but the language of the text in the image must be the same as the language that is specified for the collection where the file is added. Otherwise, the resulting transcription will contain meaningless text. For more information about languages where OCR is supported, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
--  The time it takes to ingest a document with images increases when OCR is enabled.
+-  The time that it takes to ingest a document with images increases when OCR is enabled.
 
 For a list of files types where you can apply OCR, see the [Supported file types](#supportedfiletypes) table.
 
@@ -105,7 +105,7 @@ For more information about the supported number of collections for Lite and Adva
 
 This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
 
-![Watson Discovery Demo: Connect to the data source you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe"  data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+![Watson Discovery Demo: Connect to the data source that you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe"  data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 To view the transcript, open the video on YouTube.
 
@@ -146,7 +146,7 @@ The Document Retrieval for Contracts project type is the best project type to us
 
 The number of documents that are allowed per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
-The document limit applies to the number of documents in the index. Upload fewer documents at the start if the enrichments you plan to apply might increase the number of documents later. For example, the following configurations generate more documents:
+The document limit applies to the number of documents in the index. Upload fewer documents at the start if the enrichments that you plan to apply might increase the number of documents later. For example, the following configurations generate more documents:
 
 - Splitting documents segments one document into multiple documents
 - Applying FAQ extractions produces one document for each question-and-answer pair that is found
@@ -193,7 +193,7 @@ Uploaded documents
 
 When a document is added to a collection, content from the document is evaluated and added to the appropriate fields in an internal index.
 
-You cannot assign the data type, such as Date or String, of a field. The data type is detected automatically and assigned to the field during document ingestion. The assignment is based on the data type that is detected from the first document that is indexed. Ingestion errors can occur in subsequent documents if a different data type is detected for the value in the same field. Therefore, if your documents have a mix of data types in a single field, ingest the document that has a value with the most flexible data type, such as String, in the field first.
+You cannot assign the data type, such as Date or String, of a field. The data type is detected automatically and assigned to the field during document ingestion. The assignment is based on the data type that is detected from the first document that is indexed. Ingestion errors can occur in subsequent documents if a different data type is detected for the value in the same field. Therefore, if your documents have a mix of data types in a single field, first ingest the document that has a value with the most flexible data type, such as String, in the field.
 
 When you crawl a website or upload an HTML file, the HTML content is added to the collection and indexed in an `html` field.
 
@@ -233,7 +233,7 @@ To create a crawl schedule, complete the following steps:
     -   By default, the crawl is scheduled to start during off-peak hours.
     -   Do not set the interval to a frequency that is shorter than the time it takes for the crawl to finish.
     -   Do not configure multiple crawlers to run at short intervals.
-    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour between 1 and 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
 1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: In **More scheduling settings**, choose the type of schedule to use to crawl the data source. 
 
@@ -263,7 +263,7 @@ If you want to change the flexible crawl schedule settings later, you can go to 
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: The next scheduled crawl is displayed on the Activity page.
 
-If you change the schedule frequency, the next scheduled crawl time might not be what you expect. The crawls are set up to occur on a regular schedule at a specific time or day by default. For example, if you change the crawl schedule from weekly to monthly on 11 August, the next crawl might be scheduled for 31 August instead of 11 September. It is not scheduled for exactly a month from the day you made the change. Instead, it is scheduled to run on the day that is designated as the default run day for the selected crawl frequency.
+If you change the schedule frequency, the next scheduled crawl time might not be what you expect. The crawls are set up to occur on a regular schedule at a specific time or day by default. For example, if you change the crawl schedule from weekly to monthly on 11 August, the next crawl might be scheduled for 31 August instead of 11 September. It is not scheduled for exactly a month from the day that you made the change. Instead, it is scheduled to run on the day that is designated as the default run day for the selected crawl frequency.
 
 ## Stopping a crawl
 {: #collections-crawl-stop}
