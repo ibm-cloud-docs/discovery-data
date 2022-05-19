@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-30"
+lastupdated: "2022-05-19"
 
 subcollection: discovery-data
 
@@ -33,9 +33,9 @@ Watch a video about how {{site.data.keyword.discoveryshort}} uses AI-powered sea
 {: #video-transcript-ui}
 {: notoc}
 
-Get started with Watson Discovery presented by David Williams -- (Music intro) Welcome to Watson Discovery with AI.
+Get started with Watson Discovery presented by David Williams - (Music intro) Welcome to Watson Discovery with AI.
 
-In this video we'll walk through some key concepts and show you how to get started. 
+In this video, we'll walk through some key concepts and show you how to get started. 
 
 Watson Discovery is made up of four main concepts, projects, collections, fields, and enrichments.
 

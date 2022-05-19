@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-19"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # API version comparison
 {: #migrate-to-v2-api}
 
-For most API methods, the request parameters and response bodies differ between v1 and v2. Learn about the equivalent or alternative v2 methods that you can use to perform actions that are supported with the v1 API.
+For most API methods, the request parameters and response bodies differ between v1 and v2. Learn about the equivalent or alternative v2 methods that you can use to do actions that are supported by the v1 API.
 
 The comparison information assumes you are using the latest version of the v1 API (version `2019-04-30`) and compares it to the latest version of the v2 API (version `2020-08-30`).
 
@@ -49,9 +49,9 @@ You cannot customize the conversion of documents during the ingestion process in
 | `"conversions.image_text_recognition": { ... }` | Not available from the API. However, you can enable optical character recognition (OCR) for a collection from the product user interface to extract text from images. OCR has other benefits, too. For example, if a page in a document can't be processed, OCR converts the page into an image and scans it to ensure that the document is uploaded successfully.
 | `"conversions.json_normalizations": { ... }` | Not available |
 | `"conversions.pdf": { ... }` | Not available |
-| `"conversions.segment": { ... }` | Not available programatically. You can split a document at each occurrence of an SDU-generated field such as `subtitle` from the product user interface. You can also apply FAQ extraction to a collection from the product user interface in v2 to generate a separate question-and-answer document for each FAQ that is found in a single source document. |
+| `"conversions.segment": { ... }` | Not available programmatically. You can split a document at each occurrence of an SDU-generated field such as `subtitle` from the product user interface. You can also apply FAQ extraction to a collection from the product user interface in v2 to generate a separate question-and-answer document for each FAQ that is found in a single source document. |
 | `"conversions.word": { ... }` | Not available |
-| `"enrichments": { ... }` | [`/v2/projects/{project_id}/enrichments`](/apidocs/discovery-data#listenrichments), [`/v2/projects/{project_id}/collections/{collection_id}`](/apidocs/discovery-data#getcollection)  \n Use the enrichments API to explore existing enrichments. Use the collections API to see and change the enrichments enabled on a field in a collection.  \n Some enrichments are applied to the service by default based on the type of project that you create. For more details, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults). |
+| `"enrichments": { ... }` | [`/v2/projects/{project_id}/enrichments`](/apidocs/discovery-data#listenrichments), [`/v2/projects/{project_id}/collections/{collection_id}`](/apidocs/discovery-data#getcollection)  \n Use the enrichments API to explore existing enrichments. Use the collections API to see and change the enrichments that are enabled on a field in a collection.  \n Some enrichments are applied to the service by default based on the type of project that you create. For more details, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults). |
 | `"normalizations": [ ... ]` | Not available |
 | `"source": { ... }` | Not available. Configure connections to external data sources through the user interface. For more information, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections). |
 {: caption="Configuration setting details" caption-side="top"}
@@ -105,7 +105,7 @@ The methods that were available in v1 for configuring the query behavior program
 | Delete a document | [`DELETE /v1/environments/{environment_id}/collections /{collection_id}/documents/{document_id}`](/apidocs/discovery#deletedocument) | [`DELETE /v2/projects/{project_id}/collections/{collection_id}/documents/{document_id}`](/apidocs/discovery-data#deletedocument)  \n Segments of an uploaded document cannot be deleted individually. Delete all segments with a DELETE request that includes the parent_document_id of a segment result. |
 {: caption="Documents API support details" caption-side="top"}
 
-v2 introduces a custom header named `X-Watson-Discovery-Force` that is not available in v1. You must include the header when you perform an operation on data that is shared across many collections to indicate that you want to perform the operation in each collection. If you do not include the header, a `403` error is returned.
+v2 introduces a custom header that is named `X-Watson-Discovery-Force` that is not available in v1. You must include the header when you perform an operation on data that is shared across many collections to indicate that you want to perform the operation in each collection. If you do not include the header, a `403` error is returned.
 
 ## Queries
 {: #migrate-to-v2-api-queries}
@@ -124,7 +124,7 @@ Some query result configurations are applied to the service by default based on 
 ### Query notes
 {: #migrate-to-v2-api-queries-notes}
 
--   v2 queries return results from all of the collections in the project. To restrict the query to use only certain collections within the project, use the `collection_ids` query parameter. You cannot query multiple collections that reside in different projects with one v2 query request.
+-   v2 queries return results from all of the collections in the project. To restrict the query to use only certain collections within the project, use the `collection_ids` query parameter. You cannot query multiple collections that are added to different projects with one v2 query request.
 -   Use POST calls (instead of GET calls) to submit queries with v2.
 -   v1 queries accept many parameters. The *Query parameters comparison* table maps v1 parameters to v2 parameters.
 
@@ -159,7 +159,7 @@ These two objects have separate API endpoints in v1. In v2, the examples that ar
 
 For example, to add a trained query and its training example documents in v2, you use the request `POST /v2/projects/{project_id}/training_data/queries` and pass the query and all examples in the payload of one call. Similarly, if you want to update one example in the training set in v2, you must pass the query and the modified example (along with all of the other examples) to the v2 update endpoint. In v1, to update the example information, you use the update example endpoint to modify one example only.
 
-Another important difference between v1 and v2 is that in v1, the trained model is associated with a particular collection. In v2, the trained model is associated with a project. You can use the data from multiple collections within a project to train a relevancy model. This also means that when creating or updating training examples in v2, the API requires the `collection_id` for the collection where the document is stored.
+Another important difference between v1 and v2 is that in v1, the trained model is associated with a particular collection. In v2, the trained model is associated with a project. You can use the data from multiple collections within a project to train a relevancy model. When you create or update training examples in v2, the API requires the `collection_id` for the collection where the document is stored.
 
 | Action | v1 API | v2 API |
 |--------|--------|--------|
@@ -168,11 +168,11 @@ Another important difference between v1 and v2 is that in v1, the trained model 
 | Delete all training data | [`DELETE /v1/environments/{environment_id}/collections/{collection_id}/training_data`](/apidocs/discovery#deletealltrainingdata) | [`DELETE /v2/projects/{project_id}/training_data /queries`](/apidocs/discovery-data#deletetrainingqueries) |
 | Get details about a query | [`GET /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}`](/apidocs/discovery#gettrainingdata) | [`GET /v2/projects/{project_id}/training_data /queries/{query_id}`](/apidocs/discovery-data#gettrainingquery) |
 | Delete a training data query | [`DELETE /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}`](/apidocs/discovery#deletetrainingdata) | [`DELETE /v2/projects/{project_id}/training_data /queries/{query_id}`](/apidocs/discovery-data#deletetrainingquery) |
-| List examples for a training data query | [`GET /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples`](/apidocs/discovery#listtrainingexamples) | [`GET /v2/projects/{project_id}/training_data /queries/{query_id}`](/apidocs/discovery-data#gettrainingquery)  \n The examples will be in the list returned with the query. |
-| Add example to training data query | [`POST /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples`](/apidocs/discovery#createtrainingexample) | [`POST /v2/projects/{project_id}/training_data /queries/{query_id}`](/apidocs/discovery-data#updatetrainingquery)  \n Use the *Create training query* method in v2 and pass all examples when creating the query. Otherwise, use the update API. |
+| List examples for a training data query | [`GET /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples`](/apidocs/discovery#listtrainingexamples) | [`GET /v2/projects/{project_id}/training_data /queries/{query_id}`](/apidocs/discovery-data#gettrainingquery)  \n The examples are in the list that is returned with the query. |
+| Add example to training data query | [`POST /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples`](/apidocs/discovery#createtrainingexample) | [`POST /v2/projects/{project_id}/training_data /queries/{query_id}`](/apidocs/discovery-data#updatetrainingquery)  \n Use the *Create training query* method in v2 and pass all examples when you create the query. Otherwise, use the update API. |
 | Delete example for training data query | [`DELETE /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples/{example_id}`](/apidocs/discovery#deletetrainingexample) | [`POST /v2/projects/{project_id}/training_data/ queries/{query_id}`](/apidocs/discovery-data#updatetrainingquery)  \n Use the v2 training_data update method. |
-| Change label or cross reference for example | [`PUT /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples/{example_id}`](/apidocs/discovery#updatetrainingexample) | [`POST /v2/projects/{project_id}/training_data/ queries/{query_id}`](/apidocs/discovery-data#updatetrainingquery)  \n Use the v2 training_data update method. |
-| Get details for a training data example | [`GET /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples/{example_id}`](/apidocs/discovery#gettrainingexample) | Not available. Use the Read all examples call to get all examples associated with a query and find the example you need in the returned list. |
+| Change label or cross-reference for example | [`PUT /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples/{example_id}`](/apidocs/discovery#updatetrainingexample) | [`POST /v2/projects/{project_id}/training_data/ queries/{query_id}`](/apidocs/discovery-data#updatetrainingquery)  \n Use the v2 training_data update method. |
+| Get details for a training data example | [`GET /v1/environments/{environment_id}/collections/{collection_id}/training_data/{query_id}/examples/{example_id}`](/apidocs/discovery#gettrainingexample) | Not available. Use the Read all examples call to get all examples associated with a query and find the example that you need in the returned list. |
 {: caption="Training data API support details" caption-side="top"}
 
 ## User data
@@ -193,14 +193,14 @@ The v1 events and feedback API (`/v1/events`) is not available in v2.
 ## Credentials
 {: #migrate-to-v2-api-credentials}
 
-The v1 credentials API (`/v1/environments/{environment_id}/credentials`) is not available in v2. The functionality is available from the v2 product user interface.
+The v1 credentials API (`/v1/environments/{environment_id}/credentials`) is not available in v2. The function is available from the v2 product user interface.
 
 ## Gateway configuration
 {: #migrate-to-v2-api-gateway-configuration}
 
-The v1 gateways API (`/v1/environments/{environment_id}/gateways`) is not available in v2. The functionality is available from the v2 product user interface. For more information, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
+The v1 gateways API (`/v1/environments/{environment_id}/gateways`) is not available in v2. The function is available from the v2 product user interface. For more information, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
 
 ## Status codes
 {: #migrate-to-v2-api-status-codes}
 
-For almost every API method, the status codes that are returned for v2 requests are different from those that are returned for v1 requests.
+For almost every API method, the status codes that are returned for v2 requests are different from the status codes that are returned for v1 requests.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-05-19"
 
 subcollection: discovery-data
 
@@ -106,7 +106,7 @@ Complete the following steps:
 
 1.  Enter the following command to copy the files that you want to crawl to your dynamic Portworx persistent volume claim.
 
-    You only need to run this command one time against one of the existing crawler pods. The persistent volume claim is shared amongst all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
+    You only need to run this command one time against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
 
     ```bash
     oc rsync <path-to-local-file-system-folder> <crawler-pod>:/mnt
@@ -115,7 +115,7 @@ Complete the following steps:
 
 You mounted the persistent volume claim (PVC) and copied the files that you want to crawl to the PVC.
 
-## Connecting to a Local File System data source
+## Connecting to a local file system data source
 {: #connector-lfs-cp4d-task}
 
 From your {{site.data.keyword.discoveryshort}} project, complete the following steps:
@@ -216,8 +216,8 @@ If the local file system files or folders that you want to crawl are stored in a
 
     Replace the following variables:
 
-    - `<persistent-volume-claim-name>` with the name of your persistent volume claim. For example, `jdoe-nfs-pvc`.
-    - `<persistent-volume-name>` with the name of your persistent volume. For example, `jdoe-nfs-pv`.
+    - `<persistent-volume-claim-name>`: Specify the name of your persistent volume claim. For example, `jdoe-nfs-pvc`.
+    - `<persistent-volume-name>`: Specify the name of your persistent volume. For example, `jdoe-nfs-pv`.
 
 1.  Enter the following command to create the persistent volume claim:
 
@@ -250,7 +250,7 @@ If you want to crawl your local file system files or folders but you do not want
 
 For more information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/plan/storage_considerations.html){: external}.
 
-Before you complete this task, copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. If you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the files along with the `crawler-pvc-dynamic.yaml` file that you will create in this task to each cluster.
+Before you complete this task, copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. If you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the files along with the `crawler-pvc-dynamic.yaml` file that you create in this task to each cluster.
 
 Complete the following steps:
 
@@ -269,7 +269,7 @@ Complete the following steps:
     ```
     {: codeblock}
 
-1.  Create a file named `crawler-pvc-dynamic.yaml` and add the following content to it:
+1.  Create a file that is named `crawler-pvc-dynamic.yaml` and add the following content to it:
 
     ```yaml
     kind: PersistentVolumeClaim
@@ -316,7 +316,7 @@ Complete the following steps:
 
 1.  Enter the following command to copy the files that you want to crawl to your dynamic NFS persistent volume claim.
 
-    You must run this command only one time against one of the existing crawler pods. The persistent volume claim is shared amongst all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
+    You must run this command only one time against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
 
     ```bash
     oc rsync <path-to-local-file-system-folder> <crawler-pod>:/mnt
@@ -419,7 +419,7 @@ For more information about copying your local files that you want to crawl to th
 ### Copying local file system files to the crawler pod on versions 2.1.4 and earlier
 {: #copy-local-folders}
 
-You can also copy your local files that you want to crawl to the crawler pod. Before you create a [Local File System collection](#configurelocalfilesystem), you must have the OpenShift CLI, or `oc`, installed. For more information about installing the OpenShift Origin CLI, see [Installing the OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+You can also copy your local files that you want to crawl to the crawler pod. Before you create a [Local File System collection](#configurelocalfilesystem), you must have the Red Hat OpenShift CLI, or `oc`, installed. For more information about installing the Red Hat OpenShift Origin CLI, see [Installing the Red Hat OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 {: shortdesc}
 
 Complete the following steps to copy your local file system files to the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, replacing the `<>` and the content inside with the required information:
