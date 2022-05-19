@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-05-19"
 
 subcollection: discovery-data
 
@@ -193,7 +193,7 @@ This procedure is required only if you want to configure the application permiss
     ```
     {: codeblock}
 
-    For more information, see [Set-PnPTenant](https://docs.microsoft.com/en-us/powershell/module/sharepoint-pnp/set-pnptenant?view=sharepoint-ps){: external}.
+    For more information, see [Set-PnPTenant](https://pnp.github.io/powershell/cmdlets/Set-PnPTenant.html?q=Set-PnPTenant){: external}.
 
 1.  Follow the steps in the Microsoft documentation to [Grant access using SharePoint App-Only](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs){: external}.
 1.  Copy the Client ID and Client Secret values.

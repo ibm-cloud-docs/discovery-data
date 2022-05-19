@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-05-19"
 
 subcollection: discovery-data
 
@@ -58,6 +58,6 @@ When you replace the original document, all of the segments are overwritten, unl
 
 You can delete documents in a collection from the *Manage data* page. To find all of the document segments that were generated from a single document, check for documents with the same `metadata.parent_document_id` field value. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
 
-[Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
 
 The *Manage data* page is not available in installed deployments. A developer can delete document segments by using the API. For more information, see the [delete document API](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}.
