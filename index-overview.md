@@ -31,7 +31,7 @@ You can see a list of the fields that were indexed from the *Manage fields* page
     Make sure that the processing of the collection is finished first. The Activity page shows the processing status.
 1.  Click the *Manage fields* tab.
 
-The fields that are shown can differ based on your data. However, one subset of fields are always listed. These fields, with names such as `footer` and `header`, are derived from the Smart Document Understanding (SDU) tool, and are listed even when you don't explicitly apply an SDU model to the collection. (For the full list of SDU-generated fields, see [Available fields](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-default-fields).) Only the fields with a data type specified are stored in the collection's index.
+The fields that are shown can differ based on your data. However, one subset of fields is always listed. These fields, with names such as `footer` and `header`, are derived from the Smart Document Understanding (SDU) tool, and are listed even when you don't explicitly apply an SDU model to the collection. (For the full list of SDU-generated fields, see [Available fields](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-default-fields).) Only the fields with a data type specified are stored in the collection's index.
 
 One of the SDU-generated fields that is stored in the index is the `text` field. The `text` field typically contains the main body of text from the original document. Most of the content that is returned in search results originates from this one field. How to parse and return only relevant chunks of information from this field is determined by the query result configuration that is used by the project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
 
@@ -45,7 +45,7 @@ More processing adds more fields. And more processing is applied automatically d
 
 For most unstructured file types, the bulk of the content from the file is added to a field named `text`. For file types that have an inherent data structure, such JSON files, names from the source file are used to name the fields in which the content is stored. When you upload files of this type, be aware of some naming limitations that exist for fields.
 
-The following field names have special meaning. If possible avoid using these names in your structured source files.
+The following field names have special meaning. If possible do not use these names in your structured source files.
 
 - id
 - highlight
@@ -78,7 +78,7 @@ Ingestion notes:
 
 -   Each line that is defined in the CSV file is added to the index as a separate document.
 -   You cannot enable the Optical Character Recognition (OCR) feature for CSV files.
--   If the CSV file has headers, the header names are used to name the fields in which the content from the corresponding column is stored. Avoid using names that have special meaning in {{site.data.keyword.discoveryshort}}. Be sure the names conform to the field naming rules, such as having no spaces and no appended numbers. For example, you can rename the `start date` header to `start_date` and `label1` to `label-one` before you add the file. For more information, see [How fields are handled](#field-name-limits).
+-   If the CSV file has headers, the header names are used to name the fields in which the content from the corresponding column is stored. Do not use names that have special meaning in {{site.data.keyword.discoveryshort}}. Be sure that the field names conform to the naming rules, such as having no spaces and no appended numbers. For example, you can rename the `start date` header to `start_date` and `label1` to `label-one` before you add the file. For more information, see [How fields are handled](#field-name-limits).
 -   When a CSV file header name contains restricted characters, the document converter automatically removes the restricted characters from the field name when it adds the resulting field to the index. 
 
 Enrichment notes:
@@ -91,7 +91,7 @@ Enrichment notes:
 Ingestion notes:
 
 -   Each object that is defined in an array in a JSON file is added to the index as a separate document.
--   Object names from the source JSON file are used to name the fields in which the content is stored. Avoid using names that have special meaning in {{site.data.keyword.discoveryshort}}. Be sure the names conform to the field naming rules, such as having no spaces and no appended numbers. For example, you can rename the `updated on` object to `updated_on` and `answer2` to `answer-two` before you add the file. For more information, see [How fields are handled](#field-name-limits).
+-   Object names from the source JSON file are used to name the fields in which the content is stored. Do not use names that have special meaning in {{site.data.keyword.discoveryshort}}. Be sure that the names conform to the naming rules, such as having no spaces and no appended numbers. For example, you can rename the `updated on` object to `updated_on` and `answer2` to `answer-two` before you add the file. For more information, see [How fields are handled](#field-name-limits).
 -   If a root-level field is an array but contains no items, the field is omitted from the index.
 -   If a root-level field is an array and contains only one item, the array is indexed as the data type of the one item. For example, a string array with one string is indexed as a string.
 -   If a nested field contains an array, even if the array has only one value, it is indexed as an array.

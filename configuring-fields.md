@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-05-19"
 
 subcollection: discovery-data
 
@@ -28,10 +28,10 @@ For help with deciding whether SDU can help your use case, read [When to use Sma
 
 <!-- c/s help for the **Identify fields** tab. Do not delete.  -->
 
-First decide whether you want to use a pretrained model or define your own.
+First, decide whether you want to use a pretrained model or define your own.
 
 Pretrained model
-:   Applies a non-customizable model that extracts text and identifies tables, lists, and sections.
+:   Applies a noncustomizable model that extracts text and identifies tables, lists, and sections.
 
     Instead of training the model yourself, you can apply an existing model that was trained to identify tables, lists, and sections in various types of documents.
 
@@ -46,7 +46,7 @@ To apply a Smart Document Understanding model to your collection, complete the f
 
 1.  Open the **Improve and customize** page from the navigation panel. On the *Improvement tools* panel, expand *Define structure*, and then choose **New fields**.
 1.  If your project has more than one collection, select the collection with documents that you want to annotate.
-1.  Choose the type of model you want to use:
+1.  Choose the type of model that you want to use:
 
     -   **User-trained models**
     -   **Pre-trained models**
@@ -83,7 +83,7 @@ To create a user-trained model, complete the following steps:
 1.  To create a custom field label, click **Create new**.
 
     -   Specify a field label with lowercase letters and no spaces. For example, `complex_task` is a valid field label.
-    -   If you want to change the color that will be used to represent the field, repeatedly click the color block ![Square block of color with two arrows that point in a circle](images/sdu-label-color.png) until it is displayed in the color that you want to use.
+    -   If you want to change the color that is used to represent the field, repeatedly click the color block ![Square block of color with two arrows that point in a circle](images/sdu-label-color.png) until it is displayed in the color that you want to use.
 
         You cannot change the field label color later.
         {: important}
@@ -109,7 +109,7 @@ To create a user-trained model, complete the following steps:
     -   To annotate a table, click the text at the start of the table and then drag to select the text in the entire table.
     -   When you label one or more tables, the *Table Understanding* enrichment is enabled for the entire collection automatically. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
     -   Images from the source documents are not rendered in the preview. If Optical Character Recognition (OCR) is enabled, any text from the image or diagram is extracted and rendered in the preview.
-    -   Do not label whitespace.
+    -   Do not label white space.
 
 1.  When everything that you want to label is labeled, submit the page. Click **Submit page**.
 
@@ -134,13 +134,13 @@ The Smart Document Understanding (SDU) tool works better with some project types
 
 -   The tool is most beneficial when used with *Document Retrieval* projects. Use the tool to break your documents into smaller, more consumable chunks of information. When you help {{site.data.keyword.discoveryshort}} index the correct set of information in your documents, you improve the answers that your application can find and return.
 
-    For example, your documents might contain tips that are shown in sections with an H4 heading. If you want to extract the information from these tips separately, you can add a field named `tips`, and teach the model to recognize it. After applying the model to your collection, you can apply an enrichment to the `tips` field only. Later, you can limit the search to return content from only the `tips` field.
+    For example, your documents might contain tips that are shown in sections with an H4 heading. If you want to extract the information from these tips separately, you can add a field that is named `tips`, and teach the model to recognize it. After you apply the model to your collection, you can apply an enrichment to the `tips` field only. Later, you can limit the search to return content from only the `tips` field.
   
     Or maybe you have extra large documents that contain subsections. You can teach the SDU model to recognize these subsections, and then split the large document into multiple, smaller, and easier-to-manage documents that begin with one of these subsections.
 
 -   The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. You can use the SDU tool to find and annotate them. If you configure the project to contain answers in an answer field, you must update the search configuration in {{site.data.keyword.conversationshort}} to get the body of the response from the custom answer field.
   
-    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use. FAQ stores the answer in the text field, so you can use the default {{site.data.keyword.conversationshort}} search configuration.
+    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use. FAQ stores the answer in the `text` field, so you can use the default {{site.data.keyword.conversationshort}} search configuration.
 
 -   *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. Instead of you annotating contract-related content in your documents, the project applies a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
 -   The SDU tool is rarely used with *Content Mining* projects.
@@ -176,7 +176,7 @@ Documents come in all shapes and sizes. Your collection might have a mix of diff
 
 The following fields are available for you to apply to documents by using the Smart Document Understanding tool.
 
-The fields are arbitrary. You can apply the `image` field to every title in the document if you want. Although, it might be difficult to know which field to search later for information you need if the field names don't match theh content. The default set are representative field types that are meant to help you get started. Only the `text` and `table` fields have special significance; do not use them to identify anything other than text and tables respectively.
+The fields are arbitrary. You can apply the `image` field to every title in the document if you want. Although, it might be difficult to know which field to search later for information that you need if the field names don't match the content. The default set are representative field types that are meant to help you get started. Only the `text` and `table` fields have special significance. Do not use them to identify anything other than text and tables.
 
 | Field      | Definition |
 |------------|------------|
@@ -187,10 +187,10 @@ The fields are arbitrary. You can apply the `image` field to every title in the 
 | `question` | In a question-and-answer pair (often in an FAQ), the question. |
 | `subtitle` | The secondary title of the document. |
 | `table_of_contents` | Use this tag on lists in the document table of contents. |
-| `text`     | By default, every block of text in the document is labeled as text. Only apply different labels to blocks of text with special meaning. |
+| `text`     | By default, every block of text in the document is labeled as text. Apply different labels only to blocks of text with special meaning. |
 | `title`    | The main title of the document. |
 | `table`    | Use this tag to annotate tables in your document. |
-| `image`    | Images are not shown in the document preview. If you enable OCR, text from an image or diagram is displayed in the preview instead. If you want to prevent text from some images from being included in search results, you can tag the image text as an image, and then exclude the image field from the index later. |
+| `image`    | Images are not shown in the document preview. If you enable OCR, text from an image or diagram is displayed in the preview instead. If you want to prevent text from some images from being included in search results, tag the image text as an image. You can exclude the image field from the index later. |
 {: caption="Default field labels" caption-side="top"}
 
 ### Reusing SDU models
@@ -226,7 +226,7 @@ Improve query results by splitting your documents
 Date format settings
 :   For more information, see [Date format settings](#field-date-settings).
 
-To access the **Manage fields** page, click the **Manage collections** icon on the navigation pane and open a collection. Click the **Manage fields** tab. For more information on collections, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
+To access the **Manage fields** page, click the **Manage collections** icon on the navigation panel and open a collection. Click the **Manage fields** tab. For more information about collections, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
 ### Date format settings
 {: #field-date-settings}
@@ -237,10 +237,10 @@ Date formats
 :   Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. This field supports the Java `SimpleDateFormat` class, so the date formats string can be in any format that the `SimpleDateFormat` class supports. If you know that your data does not match any of the predefined date formats, you can add a format that the Java `SimpleDateFormat` class supports, or you can delete any of the predefined formats. {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the beginning of the list. You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
 
 Select a time zone
-:   You can use this option to designate a time zone for a document that has a generated time but no time-zone information. You can use this option to store a document creation time into a date-type data set field. For example, if a document is generated on `1 January 2020 1:00 AM Eastern Standard Time (EST)`, the document metadata only stores `2020-01-01 01:00 a.m.`. In this case, {{site.data.keyword.discoveryshort}} cannot parse `2020-01-01 01:00 a.m.` because, without time-zone information that is associated with the document, `2020-01-01 01:00 a.m.` is not specific. Because `1 January 2020 1:00 AM Eastern Standard Time (EST)` and `1 January 2020 1:00 AM Pacific Standard Time (PST)` are different times, you must select **(GMT-05:00) Eastern Standard Time** as the time zone ID so that {{site.data.keyword.discoveryshort}} parses `1 January 2020 1:00 AM` with the EST time zone, as intended.
+:   You can use this option to designate a time zone for a document that has a generated time but no time-zone information. You can use this option to store a document creation time into a date-type data set field. For example, if a document is generated on `1 January 2020 1:00 AM Eastern Standard Time (EST)`, the document metadata stores only `2020-01-01 01:00 a.m.`. In this case, {{site.data.keyword.discoveryshort}} cannot parse `2020-01-01 01:00 a.m.` because, without time-zone information that is associated with the document, `2020-01-01 01:00 a.m.` is not specific. Because `1 January 2020 1:00 AM Eastern Standard Time (EST)` and `1 January 2020 1:00 AM Pacific Standard Time (PST)` are different times, you must select **(GMT-05:00) Eastern Standard Time** as the time zone ID so that {{site.data.keyword.discoveryshort}} parses `1 January 2020 1:00 AM` with the EST time zone, as intended.
 
 Select a language
-:   Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. You can also use this option to manage any cultural- or language-specific patterns of the dates in your documents. For example, using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
+:   Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. You can also use this option to manage any cultural- or language-specific patterns of the dates in your documents. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
 
 ## Smart Document Understanding limits
 {: #sdu-limits}

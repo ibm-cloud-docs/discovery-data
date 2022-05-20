@@ -91,7 +91,7 @@ To configure the Notes server to use DIIOP, complete the following steps:
     -   Open the Internet Protocol page, and then open the HTTP page. Set the **Allow HTTP clients to browse database** option to **Yes**.
 1.  Configure the user document.
 
-    -   Open the `user` document for the user whose credentials you want to use for LDAP binding. This document is stored in the Domino directory.
+    -   Open the `user` document for the user whose credentials that you want to use for LDAP binding. This document is stored in the Domino directory.
     -   On the Basics page in the **Internet password** field, specify a password.
 
         You specify this user and password information when you set up the data source.
@@ -169,7 +169,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
         :   Specify a Notes formula to use to filter the data that you want to crawl. For example, `SELECT @IsAvailable(Year) & Year > 2003`.
 
         For more information, see [Formula language](https://help.hcltechsw.com/dom_designer/10.0.1/basic/H_NOTES_FORMULA_LANGUAGE.html){: external} in the HCL Notes documentation.
-1.  Specify the date you want to use when filtering documents. The date is stored in a field named `_ _$Date$_ _` in Notes documents. By default, the field stores the last modified date of the document. You can choose a different date to store in the field instead.
+1.  Specify the date that you want to use when you filter the documents. The date is stored in a field that is named `_ _$Date$_ _` in Notes documents. By default, the field stores the last modified date of the document. You can choose a different date to store in the field instead.
 
     Document modification date
     :   Uses the date that the document was last modified. This option is selected by default.
