@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-20"
 
 subcollection: discovery-data
 
@@ -48,7 +48,7 @@ You cannot customize the conversion of documents during the ingestion process in
 | `"conversions.html": { ... }` | Not available |
 | `"conversions.image_text_recognition": { ... }` | Not available from the API. However, you can enable optical character recognition (OCR) for a collection from the product user interface to extract text from images. OCR has other benefits, too. For example, if a page in a document can't be processed, OCR converts the page into an image and scans it to ensure that the document is uploaded successfully.
 | `"conversions.json_normalizations": { ... }` | Not available |
-| `"conversions.pdf": { ... }` | Not available |
+| `"conversions.pdf": { ... }` | Not available. If you used special parameters to extract text from images in PDFs, enable optical character recognition (OCR) from the product user interface for the collection that contains the PDFs instead.|
 | `"conversions.segment": { ... }` | Not available programmatically. You can split a document at each occurrence of an SDU-generated field such as `subtitle` from the product user interface. You can also apply FAQ extraction to a collection from the product user interface in v2 to generate a separate question-and-answer document for each FAQ that is found in a single source document. |
 | `"conversions.word": { ... }` | Not available |
 | `"enrichments": { ... }` | [`/v2/projects/{project_id}/enrichments`](/apidocs/discovery-data#listenrichments), [`/v2/projects/{project_id}/collections/{collection_id}`](/apidocs/discovery-data#getcollection)  \n Use the enrichments API to explore existing enrichments. Use the collections API to see and change the enrichments that are enabled on a field in a collection.  \n Some enrichments are applied to the service by default based on the type of project that you create. For more details, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults). |
