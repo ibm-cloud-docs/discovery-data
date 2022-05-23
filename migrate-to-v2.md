@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-05-05"
+lastupdated: "2022-05-20"
 
 subcollection: discovery-data
 
@@ -63,7 +63,7 @@ One of the main changes between versions is that Discovery v2 introduces project
 
 Things to consider when you adapt your application to use projects:
 
--   While the concept of an environment does not exist in v2, data is still organized into collections. In v2, collections are grouped into projects. In most cases, you will want to migrate a single v1 collection to a single v2 collection.
+-   Although the concept of an environment does not exist in v2, data is still organized into collections. In v2, collections are grouped into projects. In most cases, you will want to migrate a single v1 collection to a single v2 collection.
 
     If you want to keep relevancy training information that is applied to a v1 collection, add the collection documents to a single collection in your v2 project.
 

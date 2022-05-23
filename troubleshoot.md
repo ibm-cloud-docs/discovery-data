@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-05-23"
 
 subcollection: discovery-data
 
@@ -24,6 +24,42 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 {: note}
 
 The information in this topic suggests steps you can take to investigate issues that might occur. For information about known issues and their workarounds per version, see [Known issues](/docs/discovery-data?topic=discovery-data-known-issues).
+
+## Minio pods enter a reboot loop during installation or upgrade
+{: #ts-minio-loop}
+{: troubleshoot}
+<!-- disco support 1566-->
+
+-   **Error**: `Cannot find volume "export" to mount into container "ibm-minio"` is displayed during an installation or upgrade of {{site.data.keyword.discoveryshort}}. When you check the status of the Minio pods by using the command, `oc get pods -l release=wd-minio -o wide`, and then check the Minio operator logs by using the commands, `oc get pods -A | grep ibm-minio-operator`, and then `oc logs -n <namespace> ibm-minio-operator-XXXXX`, you see an error similar to the following one in the logs:
+
+    ```text
+    ibm-minio/templates/minio-create-bucket-job.yaml failed: jobs.batch "wd-minio-discovery-create-bucket" already exists) and failed rollback: failed to replace object"
+    ```
+    {: codeblock}
+
+-   **Cause**: A job that creates a storage bucket for Minio and then is typically deleted when it is done is not being deleted properly.
+-   **Solution**: Complete the following steps to check whether an incomplete `create-bucket` job for Minio exists. If so, delete the incomplete job so that the job can be recreated and can then run successfully.
+
+    1.  Check for the Minio job by using the following command:
+
+        ```bash
+        oc get jobs | grep 'wd-minio-discovery-create-bucket'
+        ```
+        {: codeblock}
+
+    1.  If an existing job is listed in the response, delete the job by using the following command:
+
+        ```bash
+        oc delete job $(oc get jobs -oname | grep 'wd-minio-discovery-create-bucket')
+        ```
+        {: codeblock}
+
+    1.  Verify that all of the Minio pods start successfully by using the following command:
+
+        ```bash
+        oc get pods -l release=wd-minio -o wide
+        ```
+        {: codeblock}
 
 ## A `No space left on device` message is displayed in the log
 {: #ts-no-space}
