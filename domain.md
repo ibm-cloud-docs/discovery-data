@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-24"
 
 subcollection: discovery-data
 
@@ -395,6 +395,9 @@ The following types of models are supported:
 -  Rule-based models created in {{site.data.keyword.knowledgestudioshort}} that find entities in documents based on rules that you define. (File format: `.pear`)
 -  Machine learning models created in {{site.data.keyword.knowledgestudioshort}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: `.zip`)
 -  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: `.pear`)
+
+Discovery cannot identify entity subtypes that are defined by a {{site.data.keyword.knowledgestudioshort}} model.
+{: note}
 
 To add a Machine Learning model, complete the following steps:
 

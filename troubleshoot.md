@@ -37,7 +37,7 @@ The information in this topic suggests steps you can take to investigate issues 
     ```
     {: codeblock}
 
--   **Cause**: A job that creates a storage bucket for Minio and then is typically deleted when it is done is not being deleted properly.
+-   **Cause**: A job that creates a storage bucket for Minio and then is deleted after it completes, is not being deleted properly.
 -   **Solution**: Complete the following steps to check whether an incomplete `create-bucket` job for Minio exists. If so, delete the incomplete job so that the job can be recreated and can then run successfully.
 
     1.  Check for the Minio job by using the following command:
