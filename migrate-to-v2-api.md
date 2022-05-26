@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-05-20"
+lastupdated: "2022-05-25"
 
 subcollection: discovery-data
 
@@ -106,6 +106,8 @@ The methods that were available in v1 for configuring the query behavior program
 {: caption="Documents API support details" caption-side="top"}
 
 v2 introduces a custom header that is named `X-Watson-Discovery-Force` that is not available in v1. You must include the header when you perform an operation on data that is shared across many collections to indicate that you want to perform the operation in each collection. If you do not include the header, a `403` error is returned.
+
+Fields from JSON files that are added to a collection are converted differently during ingestion between v1 and v2. For more information about how JSON files are stored in the v2 index, see [JSON files](/docs/discovery-data?topic=discovery-data-index-overview#file-type-json).
 
 ## Queries
 {: #migrate-to-v2-api-queries}

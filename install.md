@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-27"
 
 subcollection: discovery-data
 
@@ -10,10 +10,10 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Installing 4.0.8
+# Installing 4.0.9
 {: #install}
 
-Find information about how to install IBM Watson Discovery Cartridge for IBM Cloud Pak for Data 4.0.8.
+Find information about how to install IBM Watson Discovery Cartridge for IBM Cloud Pak for Data 4.0.9.
 {: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-18"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Analyze API ![Enterprise plan](images/enterprise.png) ![Cloud Pak for Data](images/cp4d.png)
+# Analyze API  ![Enterprise plan](images/enterprise.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #analyzeapi}
 
 Use the Analyze API to process text documents through the enrichment pipeline of the {{site.data.keyword.discoveryshort}} service without storing the source documents.
@@ -208,10 +208,13 @@ The following table shows the file size and usage limits for the Analyze API.
 
 Use of the Analyze API from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} affects license usage. For more information, see the latest [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
 
-<!--## Monitoring usage
+## Monitoring usage  ![Cloud Pak for Data](images/cp4d.png)
 {: #api-usage}
 
 You can monitor the usage of the Analyze API from the *API usage* page.
+
+The *API usage* page is available from installed deployments only. For Enterprise plans, analyze method call information is combined with query method call information and is reported as part of the query metrics.
+{: note}
 
 To access the **API usage** page, open the **Projects** page, select **Data usage**, then **API usage**.
 
@@ -226,4 +229,3 @@ End date
 
 The **API usage** is not displayed until some time after API usage monitoring begins. A delay in displaying the final total number of the **30-day call total** might occur, even if the 30-day period that is listed includes the current date.
 {: note}
--->

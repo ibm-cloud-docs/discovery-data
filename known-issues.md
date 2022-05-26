@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-05-26"
 
 keywords: known issues
 
@@ -29,6 +29,15 @@ The known issues that are described in this topic apply to installed deployments
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
 For more information about installing the service, see [the {{site.data.keyword.icp4dfull}} documentation](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}.
+
+## 4.0.9, 25 May 2022
+{: #25may2022ki}
+
+-   {{site.data.keyword.discoveryshort}} generates a partial failure status message for the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+
+    -  **Error**: When you check the status of the OADP backup utility after using it to backup a cluster where {{site.data.keyword.discoveryshort}} is installed, a `Phase: PartiallyFailed` message is displayed. One or more {{site.data.keyword.discoveryshort}} components are included in the `Failed` list.
+    -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator backs up an entire {{site.data.keyword.icp4dfull_notm}} instance, a status message is displayed that indicates a partial failure. This status is displayed because the persistent volume claims (PVCs) for {{site.data.keyword.discoveryshort}} are not backed up. However, the message does not impact the back up of the rest of the services.
+    -  **Solution**: No action is required to resolve the status message. You can remove the persistent volume claims that are associated with the Discovery service separately. After using the scripts to back up your Discovery service data, you can follow the step that is documented in the uninstall instructions for the Discovery service to delete the PVCs. For more information about how to remove the PVC associated with Discovery, see [Uninstalling the Discovery service](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-uninstalling-service){: external}.
 
 ## 4.0.8, 27 April 2022
 {: #27april2022ki}
@@ -59,6 +68,12 @@ For more information about installing the service, see [the {{site.data.keyword.
 
     After the job is deleted, the migration job restarts and the migration resumes.
 
+-   {{site.data.keyword.discoveryshort}} generates a partial failure status message for the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+
+    -  **Error**: When you check the status of the OADP backup utility after using it to backup a cluster where {{site.data.keyword.discoveryshort}} is installed, a `Phase: PartiallyFailed` message is displayed. One or more {{site.data.keyword.discoveryshort}} components are included in the `Failed` list.
+    -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator backs up an entire {{site.data.keyword.icp4dfull_notm}} instance, a status message is displayed that indicates a partial failure. This status is displayed because the persistent volume claims (PVCs) for {{site.data.keyword.discoveryshort}} are not backed up. However, the message does not impact the back up of the rest of the services.
+    -  **Solution**: No action is required to resolve the status message. You can remove the persistent volume claims that are associated with the Discovery service separately. After using the scripts to back up your Discovery service data, you can follow the step that is documented in the uninstall instructions for the Discovery service to delete the PVCs. For more information about how to remove the PVC associated with Discovery, see [Uninstalling the Discovery service](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-uninstalling-service){: external}.
+
 ## 4.0.7, 30 March 2022
 {: #30March2022ki}
 
@@ -77,7 +92,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    The issue is fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
+    The issue is fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can back up other services when Discovery is installed.)
 
 -   `Deployed` status of resources fluctuates after the 4.0.7 upgrade is completed.
 
@@ -157,7 +172,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
+    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can back up other services when Discovery is installed.)
 
 -   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
 
@@ -203,7 +218,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
+    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can back up other services when Discovery is installed.)
 
 ## 4.0.4, 20 December 2021
 {: #20december2021ki}
@@ -223,7 +238,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue is fixed with the 4.0.8 release.
+    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can back up other services when Discovery is installed.)
 
 ## 4.0.3, 18 November 2021
 {: #18november2021ki}
@@ -245,7 +260,7 @@ For more information about installing the service, see [the {{site.data.keyword.
            ```
            {: pre}
 
-    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can successfully back up other services when Discovery is installed.)
+    This issue was fixed with the 4.0.8 release. (You still cannot back up the Discovery service by using the OADP utility, but the OADP utility can back up other services when Discovery is installed.)
 
 ## 4.0.0, 13 July 2021
 {: #13july2021ki}

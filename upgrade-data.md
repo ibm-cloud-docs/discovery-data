@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-04-01"
 
 subcollection: discovery-data
 
@@ -45,6 +45,7 @@ The following table lists the supported upgrade paths for the {{site.data.keywor
 | 4.0.5 | 4.0.6 |
 | 4.0.6 | 4.0.7 |
 | 4.0.7 | 4.0.8 |
+| 4.0.8 | 4.0.9 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
 For more information about the supported upgrade paths for {{site.data.keyword.icp4dfull_notm}}, see [Upgrading {{site.data.keyword.icp4dfull_notm}}](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=upgrading){: external}.

@@ -404,7 +404,7 @@ The way that your application shows query results might need to be updated due t
 -   Deduplication and similarity information are not included in the v2 query response.
 -   In v2, `enriched_text` is an array instead of an object.
 -   In Discovery v2, the Entities v2 enrichment is used. Entity type names in v2 are specified in headline case, instead of all uppercase letters. If you use a query or aggregation that specifies an entity name, you must change the capitalization. For example, change `PERSON` to `Person`.
--  Fields from JSON files that are added to a collection are converted differently during ingestion between v1 and v2. If your application manipulates these results, you might need to make adjustments.
+-   Fields from JSON files that are added to a collection are converted differently during ingestion between v1 and v2. If your application manipulates these results, you might need to make adjustments.
 
     | Original JSON field content | v1 representation | v2 representation | Notes |
     |-----------------------------|-------------------|-------------------|-------|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-25"
 
 subcollection: discovery-data
 
@@ -153,6 +153,8 @@ You can use the SDU tool to annotate the following file types only:
 -   PDF
 
 For a complete list of file types that {{site.data.keyword.discoveryshort}} supports, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+The Smart Document Understanding tool uses optical character recognition (OCR) to extract text from images in the files that it analyzes. Images must meet the minimum quality requirements that are supported by OCR. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
 
 The tool cannot read documents with the following characteristics; remove them from your collection before you begin:
 
