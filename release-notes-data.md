@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-05-26"
 
 keywords: discovery cloud pak for data release notes,watson discovery cartridge release notes,cp4d release notes
 
@@ -58,6 +58,7 @@ Features that are not available in this release
     -   Answer finding
     -   *Manage data* page
     -   Advanced document view for search results
+    -   Updated JSON view
 
 ## 4.0.8 release, 27 April 2022
 {: #discovery-data-27april2022}
