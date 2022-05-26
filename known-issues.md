@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-05-26"
 
 keywords: known issues
 
@@ -70,11 +70,7 @@ For more information about installing the service, see [the {{site.data.keyword.
 
 -   {{site.data.keyword.discoveryshort}} generates a partial failure status message for the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
 
-    -  **Error**: When you check the status of the OADP backup utility after using it to backup a cluster where {{site.data.keyword.discoveryshort}} is installed, a `Phase: PartiallyFailed` message is displayed. The following {{site.data.keyword.discoveryshort}} components are listed as `Failed`:
-
-        -    `{namepsace}/wd-discovery-cn-postgres-1: pgdata`
-        -    `{namepsace}/wd-minio-discovery-1: export`
-
+    -  **Error**: When you check the status of the OADP backup utility after using it to backup a cluster where {{site.data.keyword.discoveryshort}} is installed, a `Phase: PartiallyFailed` message is displayed. One or more {{site.data.keyword.discoveryshort}} components are included in the `Failed` list.
     -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator backs up an entire {{site.data.keyword.icp4dfull_notm}} instance, a status message is displayed that indicates a partial failure. This status is displayed because the persistent volume claims (PVCs) for {{site.data.keyword.discoveryshort}} are not backed up. However, the message does not impact the back up of the rest of the services.
     -  **Solution**: No action is required to resolve the status message. You can remove the persistent volume claims that are associated with the Discovery service separately. After using the scripts to back up your Discovery service data, you can follow the step that is documented in the uninstall instructions for the Discovery service to delete the PVCs. For more information about how to remove the PVC associated with Discovery, see [Uninstalling the Discovery service](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-uninstalling-service){: external}.
 
