@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-25"
 
 keywords: discovery cloud pak for data release notes,watson discovery cartridge release notes,cp4d release notes
 
@@ -24,6 +24,40 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 {: note}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+## 4.0.9 release, 25 May 2022
+{: #discovery-data-25may2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.9 is available.
+
+API usage information is now available from the user interface
+:   You can now get information about analyze API usage from the *Data usage>API usage* page in the product user interface. For more information about the analyze API, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
+
+A new document status API is supported in {{site.data.keyword.icp4dfull}} instances
+:   Use the new document status API to programmatically get a list of the documents in a collection and to get details about a single document.
+
+    -   The API is supported for collections that are created after 23 March 2022. 
+    
+        If you want to get status information about a collection that was created earlier, trigger a process that runs the conversion step of ingestion on the documents. For example, from the *Activity* page for the collection, click **Recrawl**.
+    -   The API is not supported from the SDKs currently.
+
+    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocuments){: external}.
+
+Security vulnerabilities were addressed
+:   The following security patches were applied:
+ 
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Node.js](https://www.ibm.com/support/pages/node/6584209)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache Xerces](https://www.ibm.com/support/pages/node/6584213)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in OpenSSL](https://www.ibm.com/support/pages/node/6584215)
+    -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Google Protocol Buffers](https://www.ibm.com/support/pages/node/6584217)
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Home page updates
+    -   Answer finding
+    -   *Manage data* page
+    -   Advanced document view for search results
 
 ## 4.0.8 release, 27 April 2022
 {: #discovery-data-27april2022}

@@ -35,8 +35,6 @@ You can do an in-place upgrade from one 4.0.x version to a later 4.0.y version a
 This procedure is not required with versions 4.0.8 or later.
 {: note}
 
-If you plan to backup and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility, you must apply a patch before you start the backup. The patch stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
-
 1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
 1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
 1.  Run the following command in a terminal that is logged in to the cluster:
