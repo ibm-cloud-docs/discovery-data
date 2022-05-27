@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-05-25"
+lastupdated: "2022-05-27"
 
 subcollection: discovery-data
 
@@ -84,13 +84,13 @@ The following table shows the important differences between the v1 and v2 collec
 ## Query modifications
 {: #migrate-to-v2-api-query-modifications}
 
-The methods that were available in v1 for configuring the query behavior programmatically are not supported in the v2 API currently. Some of the actions are available only from the v2 product user interface.
+The method that was available in v1 for configuring tokenization programmatically is not supported in the v2 API.
 
-| v1 API | v2 product user interface |
+| v1 API | v2 API |
 |--------|--------|
-| [Tokenization dictionary API](/apidocs/discovery#createtokenizationdictionary) | Not available from the v2 API or product user interface. |
-| [Expansions API](/apidocs/discovery#listexpansions) | No API is available in v2 currently. To add or manage expansions, create synonyms in the v2 product user interface. For more information, see [Expanding the meaning of queries](/docs/discovery-data?topic=discovery-data-search-settings). |
-| [Stopwords API](/apidocs/discovery#getstopwordliststatus) | No API is available in v2 currently. You can update stop words only from the v2 product user interface. For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords). |
+| [Tokenization dictionary API](/apidocs/discovery#createtokenizationdictionary) | Not available. |
+| [Expansions v1 API](/apidocs/discovery#listexpansions) | [Expansions v2 API](/apidocs/discovery-data#listexpansions) |
+| [Stopwords v1 API](/apidocs/discovery#getstopwordliststatus) | [Stopwords v2 API](/apidocs/discovery-data#getstopwordlist) |
 {: caption="Query modifications API support details" caption-side="top"}
 
 ## Documents
