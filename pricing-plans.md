@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-27"
 
 subcollection: discovery-data
 
@@ -98,6 +98,13 @@ Your bill labels requests that are generated from both query searches and analyz
 -   Up to 100 custom regular expression models
 -   Up to 20 custom text classification models
 -   Up to 20 custom document classification models
+
+### How is document pricing calculated?
+{: #pricing-docs}
+
+Document pricing uses the maximum number of documents per day and then prorates to calculate the total per month.
+
+For example, imagine there are 300,000 documents added to a collection for 6 days (6/30), then another 1 million documents are added over a two-day span. In the first day (1/30) of the two-day span, 700,000 documents are added. All of the documents (1,300,000) remain in the collection index for the rest of the month 23/30). The number of documents for the month is calculated by using an equation like this: `300K * (6/30) + 700K * (1/30) * 1300K * (23/30)`.
 
 ## Premium
 {: #premiumplan}
