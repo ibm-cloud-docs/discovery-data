@@ -102,9 +102,11 @@ Your bill labels requests that are generated from both query searches and analyz
 ### How is document pricing calculated?
 {: #pricing-docs}
 
-Document pricing uses the maximum number of documents per day and then prorates to calculate the total per month.
+To calculate the document price, IBM uses the maximum number of documents per day and then prorates to calculate the cost for a month.
 
-For example, imagine there are 300,000 documents added to a collection for 6 days (6/30), then another 1 million documents are added over a two-day span. In the first day (1/30) of the two-day span, 700,000 documents are added. All of the documents (1,300,000) remain in the collection index for the rest of the month 23/30). The number of documents for the month is calculated by using an equation like this: `300K * (6/30) + 700K * (1/30) * 1300K * (23/30)`.
+For example, imagine there are 300,000 documents added to a collection in the first 6 days (6/30) of the month, and then another 1 million documents are added over a two-day span. In the first day (1/30) of the two-day span, 700,000 documents are added. All of the documents (1 million + 300,000 = 1,300,000) remain in the collection index for the rest of the month (23/30). The number of documents for the month might be calculated by using an equation like this: 
+
+`300K * (6/30) + 700K * (1/30) + 1300K * (23/30)`
 
 ## Premium
 {: #premiumplan}
