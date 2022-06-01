@@ -20,7 +20,7 @@ You can perform a one-time document upload from your local file system at any ti
 
 You can upload up to 200 files at a time.
 
-To process document sets that are larger than 200 files, you can add them to an external data source and use a data source crawler to upload them. For {{site.data.keyword.icp4dfull_notm}} deployments, you can use a *Local File System* data source for this purpose. Alternatively, you can use the [Discovery v2 API](){: external} to add documents.
+To process document sets that are larger than 200 files, you can add them to an external data source and use a data source crawler to upload them. For {{site.data.keyword.icp4dfull_notm}} deployments, you can use a *Local File System* data source for this purpose.
 
 For more information about the maximum size allowed for each file, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
 
