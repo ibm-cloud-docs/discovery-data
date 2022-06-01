@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-05-19"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Customizing the terms that Discovery can recognize ![Premium plan](images/premium.png)
+# Customizing the terms that Discovery can recognize
 {: #entity-extractor}
 
 Teach {{site.data.keyword.discoveryshort}} about terms that are significant to your business by creating an entity extractor.
@@ -18,27 +18,29 @@ Teach {{site.data.keyword.discoveryshort}} about terms that are significant to y
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-The entity extractor is a beta feature that is available in English-language projects that are managed by Premium plan deployments only.
+The entity extractor is a beta feature that is available from managed deployment only.
 {: beta}
 
 An *entity extractor* is a machine learning model that recognizes and tags terms that you indicate are significant to your business need or use case. If you are familiar with the built-in Entities enrichment, you know that the enrichment can recognize terms that match generalized categories, such as `Person` and `Location`. With the entity extractor, you control what constitutes terms or phrases that are meaningful.
 
 For example, in your use case, you might need to extract terms that represent objects, such as vegetable names from cooking recipes or the make and model of cars from accident reports. Or maybe you need to extract attributes of objects, such as color and quantity. Your search application might need to extract short phrases (`107 deaths in France`, `revenue of $343M`) or full sentences (`out of warranty clauses; clauses describing payment terms`). When you create an entity extractor, you get to decide the content and scope of information to find and extract from your data.
 
-An *entity* is a type of thing. To create an entity extractor, you define a set of *entities* that you care about. You then annotate a collection of your own documents by finding terms or phrases that represent the type of information you want to extract, and labeling them as entity examples. After you define entities and label entity examples, you can generate a machine learning model. The model learns about the information you care about based on how the terms or phrases that you label as examples are referenced in sentences. The model learns from the context and language with which the entities are referenced in the training data.
+An *entity type* is a type of thing. To create an entity extractor, you define a set of *entity types* that you care about. You then annotate a collection of your own documents by finding terms or phrases that represent the type of information you want to extract, and labeling them as entity examples. After you define entity types and label entity examples, you can generate a machine learning model. The model learns about the information you care about based on how the terms or phrases that you label as examples are referenced in sentences. The model learns from the context and language with which the entity examples are referenced in the training data.
 
-After the machine learning model is trained well enough to recognize your entities, you can publish the model as an enrichment and apply the enrichment to new documents. The customized entity enrichment recognizes and tags new mentions of the same and similar terms as occurrences of the entities you care about.
+After the machine learning model is trained well enough to recognize your entity types, you can publish the model as an enrichment and apply the enrichment to new documents. The custom entity extractor enrichment recognizes and tags new mentions of the same and similar terms as occurrences of the entity types that you care about.
 
-The following image shows the terms that an enrichment that recognizes `family members` entity might extract from text. The example illustrates how family member mentions and the entity mentions (that are recognized by the built-in Entities enrichment) both might be predicted.
+The following image shows the terms that an enrichment that recognizes `family members` entity type mentions might extract from text. The example illustrates how family member mentions and other entity mentions (that are recognized by the built-in Entities enrichment) both might be predicted.
 
 ![Shows an excerpt from Pride and Prejudice with family member mentions and entity mentions labeled.](images/pp3-both-annotations.png)
 
 This excerpt comes from Chapter 3 of *Pride and Prejudice* by Jane Austen.
 
+For information about the languages with which the entity extractor can be used, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
 ## Before you begin
 {: #entity-extractor-prereq}
 
-Find or create a collection with documents that have various examples of the entities you want Discovery to learn about. To teach the extractor, you must label examples of entities. You can only label examples if your collection contains valid examples. Try to find documents that have many and varying terms that function as examples of every entity you want to define.
+Find or create a collection with documents that have various examples of the entity types that you want Discovery to learn about. To teach the extractor, you must label examples of entity types. You can only label examples if your collection contains valid examples. Try to find documents that have many and varying terms that function as examples of every entity type that you want to define.
 
 ## Adding an entity extractor
 {: #entity-extractor-add}
@@ -55,106 +57,137 @@ To add an entity extractor, complete the following steps:
 
     This name is used as the model name and as the name of the enrichment that is created when you publish the model. The name is displayed as the enrichment name in the Enrichments page where you and others can apply it to collections. It also is displayed as the model name in the JSON representation of documents where custom entities are found. The name is stored with the capitalization and spacing that you specify.
 1.  Choose a collection with documents that are representative of your domain data.
-1.  Choose fields from the document to show in the document view where you label documents in the collection.
+1.  Choose fields from the document to show in the document view where you will label documents from the collection.
 
-    -   **Document title** is shown in the page header to identify the document. Choose a field that has a unique value per document, such as the file name, which is stored in the `extracted_metadata.filename` field.
+    -   **Document title** is shown in the page header as the document name. Choose a field that has a unique value per document, such as the file name, which is stored in the `extracted_metadata.filename` field.
     -   **Document body** is where you label entity examples. Choose a field that contains the bulk of the document content, such as the `text` field.
 
-    ![Shows that PP3.docx is the document title and the main text panel shows the body field.](images/extractor-title-body.png)
-1.  Click **Next**.
+    ![Shows that PP3.docx is the document title and the main text panel shows the body field.](images/ee-title-body.png)
+1.  Click **Create**.
 
-## Creating entities
+A document from the collection that you selected is displayed in the *Label documents* view. You will label occurrences of the entity types that you want Discovery to recognize from this and other documents in the collection.
+
+If there is no text in the body of the page, start over now by creating a new entity extractor. This time, when you select a value for the *Document body* field, be sure to choose a field from your processed documents that contains text.
+{: tip}
+
+## Defining entity types
 {: #entity-extractor-add-entities}
 
-Create entities by completing the following steps:
+Define entity types by completing the following steps:
 
-1.  Add the entity name and an optional description.
+1.  Click **Add an entity type**.
+
+1.  Add the entity type name and an optional description.
 
     Use a naming convention that works for your data. The built-in Entities enrichment uses initial capitals and no spaces, for example `EmailAddress`. To distinguish your entities from entities that are extracted by other enrichments, you might want to use a different convention.
-1.  Pick the color to use for highlighting text in the document that you want to label as an example of the entity. 
+1.  Optional: Pick the color to use for highlighting text in the document that you want to label as an example of this entity type. 
 
-     -   Click the *Label color* palette icon. 
-     -   You can click a color, click the *Renew color* icon to tab from one color to the next, or use a custom color by specifying its hexadecimal color code (#fff0f7).
-1.  Click **Add entity**.
-1.  Repeat this process to add all of the entities that you want the extractor to recognize.
+    You can click a color from the *Label color* palette, click the *Renew color* icon to tab from one color to the next, or use a custom color by specifying its hexadecimal color code (#fff0f7).
+1.  Click **Create**.
+1.  Repeat this process to add all of the entity types that you want the extractor to recognize.
     
-    If you aren't sure what to add for entities, it might help to review the documents in the collection first. By reviewing the content, you can get a feel for which terms have significant meaning and look for logical ways to group such terms. To do so, skip adding entities. You can add them later.
+    If you aren't sure what to add for entity types, it might help to review the documents in the collection first. By reviewing the content, you can get a feel for which terms have significant meaning and look for logical ways to group such terms.
 
-1.  Click **Next**.
+## Label significant terms
+{: #entity-extractor-label}
+
+From the *Label documents* view, find terms of significance in the documents from your collection and label them to indicate their entity types. 
+
+Before you begin labeling documents, decide whether you want to keep bulk labeling enabled. The bulk label feature is a great way to speed up the process of labeling your documents. When enabled, every term that you label is labeled automatically everywhere it occurs in the document. Otherwise, you must label each occurrence of the term one at a time.
+
+If you decide that you don't want to bulk label examples, set the **Bulk label entity examples** switch to **Off**. For more information, see [Labeling examples in bulk](#entity-extractor-bulk-label).
+
+![Shows the bulk label feature switcher.](images/ee-bulk-label-enable.png)
 
 ### Labeling tips
 {: #entity-extractor-label-tips}
 
 Review these tips before you begin:
 
-- Start with a representative set of documents. Use a collection that contains documents with many and varied examples of the entities you want the entity extractor to recognize.
-- Define entities that are clearly distinct from one another.
-- Aim to label at least 40 examples of each entity.
-- Label every valid example of an entity. Do not skip any occurrences of entity examples. To speed up the process, enable the bulk label feature.
+- The document collection that you label must contain a representative set of documents. The documents must have many and varied examples of the entity types that you want the entity extractor to recognize. If the collection you selected when you started to create the entity extractor does not meet the requirement, stop now and start over with a different document collection.
+- Define entity types that are clearly distinct from one another.
+- Aim to label at least 40 examples of each entity type.
+- Label every valid example of an entity type. Do not skip any occurrences. To speed up the process, use the bulk label feature.
 
-## Labeling entity examples
-{: #entity-extractor-label}
+### Labeling entity examples
+{: #entity-extractor-label-task}
 
-Label terms in the document that represent examples of the entities you created.
+Label terms in the document that represent examples of the entity types you defined. When you are done with one document, switch the document status from *In progress* to *Complete*, and then move on to the next document.
 
 To label entity examples, complete the following steps:
 
 1.  Review the text of the document. Look for entity examples to label.
 
-    For example, for a `color` entity, label color mentions, such as `white` or `green`, as examples of the `color` entity.
+    The following table shows some examples.
 
-    If you didn't create any entities yet, add an entity. From the Entities panel, click **Create new**. For more information about adding entities, see [Creating entities](#entity-extractor-add-entities).
-1.  First, click the entity from the Entities panel.
+    | Entity type | Examples to label in the document |
+    |-------------|-----------------------------------|
+    | color | white, green, purple |
+    | car | convertible, SUV, sedan |
+    | auto_model | Explorer, Civic, Sorrento |
+    | auto_manufacturer | Ford, Honda, Kia |
+    | clothing | shirt, blouse, skort |
+    | instruments | bonds, stocks, ETFs, munis |
+    {: caption="Entity types and examples" caption-side="top"}
+
+    If an entity type that you want to identify is not created yet, add the entity type. From the *Entity types* panel, click **Create new**. For more information about adding entity types, see [Defining entity types](#entity-extractor-add-entities).
+1.  First, click the entity type from the *Entity types* panel.
 1.  In the document body, select the word or phrase that represents the entity example.
 
-    The term is selected and a color label is applied to the term. The first two characters of the entity name are shown in uppercase superscript within the label boundary. Both the 2-character ID and the label color help you to associate the example with the entity it represents.
+    The term is selected and a color label is applied to the term. The first two characters of the entity type name are shown in uppercase superscript within the label boundary. Both the 2-character ID and the label color help you to associate the example with the entity type it represents.
 
     ![Shows that a label is applied the word wife in a sentence.](images/wife-label.png)
 
-    The example text is also added to the Entities panel. If you click the chevron to view details, you can see that the example is listed. The example text is saved in lowercase, regardless of the capitalization that is used in the original text.
+    The example text is also added to the *Entity types* panel. If you click the chevron to view details, you can see that the example is listed. The example text is saved in lowercase, regardless of the capitalization that is used in the original text.
     
-    The message **Bulk label this example?** is displayed. Using the bulk label feature is a great way to speed up the process of labeling your documents. When you turn it on, every occurrence of a term that you label is labeled everywhere it occurs automatically. 
-    
-1.  To turn on the bulk label feature for this term, click **Bulk label this example?**. Choose whether to label occurrences of the term in this document only or in all of the documents in the collection, and then click **Run**.
+1.  If bulk labeling is enabled, a notification is displayed to show the number of occurrences of the term that were found and labeled in the current document. 
 
-    ![Shows suggestions for family member entities.](images/auto-label-all-docs.png)
+1.  If you want to label occurrences of the term in all of the documents in the collection, click **Apply to all documents**. 
 
-    For more information, see [Labeling example in bulk](#entity-extractor-bulk-label).
-1.  Scroll through the document to label every valid example of every entity that you want your extractor to recognize.
+    When you enable this option, occurrences of the term are labeled in all of the documents in the collection, including documents that you already reviewed and marked complete.
 
-    The model learns as much from the terms that you don't label as the terms that you do.
+    ![Shows the notification that asks whether to apply bulk labeling to all documents.](images/ee-bulk-label-all-docs.png)
+
+    You are asked to confirm the action because it cannot be undone. If you don't want to have to confirm the action every time you choose to apply bulk labeling to all documents, select **Do not ask for confirmation again**. Click **Run**.
+
+    ![Shows the bulk labeling confirmation dialog box.](images/ee-bulk-label-confirmation.png)
+
+    For more information, see [Labeling examples in bulk](#entity-extractor-bulk-label).
+1.  Scroll through the document to label every valid example of every entity type that you want your extractor to recognize.
+
+    The machine learning model learns as much from the terms that you don't label as the terms that you do.
     {: important}
     
-    If you miss labeling a valid example, the model learns that when the term is used in that context, it is not a valid mention of the entity. In some cases, an omission is appropriate. For example, some terms have different meanings in different contexts. And you don't want to label the term when it is used in the wrong context. However, if the term is used in the right context and you don't label it, you are teaching the model to ignore it. You decrease the model's effectiveness when your training data is inconsistent.
+    If you miss labeling a valid example, the model learns that when the term is used in that context, it is not a valid mention of the entity type. In some cases, an omission is appropriate. For example, some terms have different meanings in different contexts. You don't want to label the term when it is used in the wrong context. However, if the term is used in the right context and you don't label it, you are teaching the model to ignore it. You decrease the model's effectiveness when your training data is inconsistent.
 
-    After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions. 
+    After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions.
     
-    ![Shows the prompt shown to ask whether you want to accept a suggestion.](images/suggestion-accept.png)
+    ![Shows the prompt shown to ask whether you want to accept a suggestion.](images/ee-suggestion.png)
     
     Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions). After you accept a suggestion, you can bulk label the term.
-1.  If you make a mistake and label the wrong word or a word was labeled incorrectly by the bulk label process, you can delete the label.
 
-    Hover over the labeled word until the **Delete entity** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
-1.  After you label all of the entity examples in the current document, click **Mark complete**.
+1.  If you make a mistake and label the wrong word or a word was labeled incorrectly by the bulk labeling process, you can delete the label.
+
+    Hover over the labeled word until the **Delete this example** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
+1.  After you label all of the entity examples in the current document, change the document status from *In progress* to **Complete**.
+
+    ![Shows the document status menu.](images/entity-extractor-mark-complete.png)
 
     Another document from the collection is displayed. 
-1.  Label entity examples in each document in the collection. 
+1.  Label examples of your entity types in each document in the collection. 
 
-    You can work on the documents consecutively or click the *Previous document* and *Next document* chevrons in the header to move to specific documents.
+    At any time during the labeling process, you can click **Save entity extractor** to save your work.
+1.  If you don't have enough examples in the current set of documents, you can add more documents.
 
-    At any time during the labeling process, you can click **Save and exit** to take a break.
-1.  After you label examples in as many documents in the collection as you want, click **Next**.
+    From the *Document list* panel, click **Add documents**. The option is available only if there are more documents available in the collection. You can add up to 20 documents. If bulk labeling for all documents is enabled, labels are applied to the newly-added documents automatically.
+1.  After you label examples in as many documents in the collection as you want, click **Save entity extractor**, and then open the *Train extractor* page.
 
 ### Labeling examples in bulk
 {: #entity-extractor-bulk-label}
 
-For most entity examples, enabling the bulk label feature is helpful. You might want to skip it if a term has more than one meaning in different contexts. In that case, you might want to evaluate each occurrence individually. Remember, if you enable the bulk label feature, you can check the accuracy of the labels that were added automatically and make corrections when necessary as you review the document.
+For most entity examples, enabling the bulk label feature is helpful. You might want to skip it if a term has more than one meaning in different contexts. In that case, evaluate each occurrence individually. Remember, if you enable the bulk label feature, you can check the accuracy of the labels that were added automatically and make corrections when necessary as you review the document.
 
-When you enable the bulk label feature, you can choose whether to label every occurrence of the example text in the current document or in all of the documents in the collection. 
-
-The tool can remember your answer to this question and use the same option without asking the next time that you label an example. The tool remembers your choice for this labeling session only, meaning if you leave the current page, you are asked to make the choice again.
-
-After you enable the bulk label feature, a notification is displayed that indicates how many occurrences of this entity example were found in the current document. From the current page, the labeling tool cannot access other documents to report how many occurrences exist in other documents from the collection. However, the mention count is shown in the Entities panel. When you first open other documents, you can check the mention counts to see how many mentions were labeled automatically.
+After you enable the bulk label feature, a notification is displayed that indicates how many occurrences of an entity example were found in the current document. From the current page, the labeling tool cannot access other documents to report how many occurrences exist in other documents from the collection. However, the mention count is shown in the *Entity types* panel. When you first open other documents, you can check the mention counts to see how many mentions were labeled automatically.
 
 Did the bulk label feature miss an occurrence?
 
@@ -165,20 +198,19 @@ Occurrences of the term are not labeled if they occur in the same phrase in whic
 ### Entity example suggestions
 {: #entity-extractor-suggestions}
 
-After you label enough entity examples, suggested entity examples are displayed. The system learns from the types of examples you label, and applies what it learns to identify potential new examples. For example, after you label `red`, `orange`, `yellow`, `green`, and `blue` as examples of the `color` entity, the *Example suggestions* panel might show `indigo` and `violet` as suggested examples for you to label. Suggestions are not displayed until after you label many examples of an entity.
+After you label enough examples, suggested entity type examples are displayed. The system learns from the types of examples you label, and applies what it learns to identify potential new examples. For example, after you label `red`, `orange`, `yellow`, `green`, and `blue` as examples of the `color` entity type, the *Example suggestions* panel might show `indigo` and `violet` as suggested examples for you to label. Suggestions are not displayed until after you label many examples of an entity type.
 
 The following example shows suggestions that are made for family member mentions.
 
 ![Shows suggestions for family member entities.](images/suggestions-example.png)
 
-When the system is not confident that a mention is a valid example, a conflict icon is displayed with the suggestions. A conflict can occur for various reasons. 
+You might notice that a term that you chose to bulk label is not labeled, but is displayed as a suggestion instead. A term is skipped in the following situations:
 
--   A term might be a possible example of more than one entity. For example, the word `top` might mean *the best* or might mean *shirt*.
--   A word might be a valid example on its own and as part of a multiple-word mention. For example, a mention of `IBM` might refer to the company *International Business Machines, Corp.* or might be used as part of a product name, such as *IBM Cloud Pak for Data*. However, a word or phrase can be part of only one example. Example labels cannot overlap one another. Therefore, you must choose which example suggestion is the most accurate. In this example, where the term *IBM* is used as part of a product name, it is more accurate to label the full phrase as an example of the `Product` entity.
+-   The term might occur in different noun phrases in different sections of the document. For example, the term `father` might occur in the noun phrases `the kindest *father*` and `to her *father*`. When a word is included in a noun phrase with adjectives, the meaning can change. Therefore, such terms sometimes are suggested rather than labeled automatically.
+-   A word might be a valid example on its own and as part of a multiple-word mention. For example, a mention of `IBM` might refer to the company *International Business Machines, Corp.* or might be used as part of a product name, such as *IBM Cloud Pak for Data*. However, a word or phrase can be part of only one example. Example labels cannot overlap one another. Therefore, you must choose which example suggestion is the most accurate. In this example, where the term *IBM* is used as part of a product name, it is more accurate to label the full phrase as an example of the `Product` entity type.
+-   The service might recognize that a term is a possible example of more than one entity type. For example, the word `top` might mean *the best* or might mean *shirt*.
 
-The conflict alerts you so that you can review the mention. Click the example recommendation where a conflict is highlighted to open the source document. After you see the mention in context, you can decide whether to accept or reject the suggestion.
-
-You can accept all of the suggestions for all of the entity examples or for a single entity example at a time. If conflicts exist, you can accept all of the suggestions except the suggestions for which conflicts are identified.
+To investigate a suggestion further, click it to see the word in context within the document. Seeing the term in context helps you to decide whether the occurrence is a valid entity example for you to label.
 
 ## Training the extractor
 {: #entity-extractor-train}
@@ -211,14 +243,16 @@ When you train the extractor, {{site.data.keyword.discoveryshort}} uses document
 ## Evaluating the extractor
 {: #entity-extractor-evaluate-model}
 
+To review metrics from the test run of the entity extractor model that you created, click the **Evalute extractor** tab.
+
 The following table describes the available evaluation metrics.
 
 | Metric | Description |
 |--------|-------------|
-| Confusion matrix | A table that provides a detailed numeric breakdown of annotated document sets. Use it to compare entity mentions that are labeled by the machine learning model to entity mentions that are labeled in the training data. |
+| Confusion matrix | A table that provides a detailed numeric breakdown of annotated document sets. Use it to compare entity type mentions that are labeled by the machine learning model to entity type mentions that are labeled in the training data. |
 | F1 Score | Measures whether the optimal balance between precision and recall is reached. The F1 score can be interpreted as a weighted average of the precision and recall values. An F1 score reaches its best value at 1 and worst value at 0. Overall scores are lower if the model doesn't have enough training data to learn from. |
-| Precision | Measures how many of the overall extracted mentions are classified as the correct entity. A false positive is when an entity label is incorrect, but was predicted to be correct (Predicted = Positive, Actual = Negative). False positives typically mean low precision. |
-| Recall | Measures how often entity mentions that should be extracted are extracted. A false negative is when an entity label is correct, but was predicted to be incorrect (Predicted = Negative, Actual = Positive). False negatives typically mean low recall. |
+| Precision | Measures how many of the overall extracted mentions are classified as the correct entity type. A false positive is when an entity label is incorrect, but was predicted to be correct (Predicted = Positive, Actual = Negative). False positives typically mean low precision. |
+| Recall | Measures how often entity type mentions that should be extracted are extracted. A false negative is when an entity type label is correct, but was predicted to be incorrect (Predicted = Negative, Actual = Positive). False negatives typically mean low recall. |
 {: caption="Metrics details" caption-side="top"}
 
 1.  Review the metrics that are provided about the extractor model test run to determine whether more training is needed.
@@ -226,8 +260,8 @@ The following table describes the available evaluation metrics.
 
     Documents from the test set are displayed with the predicted labels shown in one panel and the ground truth shown in the other. 
     
-    -   Predicted labels are the entity examples that the entity extractor identified and labeled as entities.
-    -   The ground truth has entity examples that a person labeled or that were bulk labeled and reviewed by a person. Labels in the ground truth are considered the correct labels. 
+    -   Predicted labels are the examples that the entity extractor identified and labeled as entity types.
+    -   The *ground truth* has examples that a person labeled or that were bulk labeled and reviewed by a person. Labels in the ground truth are considered the correct labels.
     
     The performance of the model is rated based on how closely the predicted labels match the ground truth.
 
@@ -239,8 +273,8 @@ The following table shows suggested fixes for common problems.
 | Problem | Action to remedy the problem |
 |---------|------------------------------|
 | Low overall scores | You might not have enough documents with labeled examples in your training set. Label more examples in more of your documents. |
-| Low recall | Label more documents with new examples of the entities that the extractor missed. |
-| Low precision | Look for entities that are commonly confused. Find and label more examples of each entity to help the entity extractor distinguish between the entities. |
+| Low recall | Label more documents with new examples of the entity types that the extractor missed. |
+| Low precision | Look for entity types that are commonly confused. Find and label more examples of each entity type to help the entity extractor distinguish between the entity types. |
 {: caption="Improvement actions" caption-side="top"}
 
 If you added 20 documents and trained the model and want to continue to improve the model, you can add more documents to label. Add the additional documents to the collection that you are using to train the model. After you label the first 20 documents, and the model is up to date with any changes, you can choose to continue labeling documents. The new documents that you added to the collection are loaded. You can label them to augment the training data, and then retrain your model.
@@ -249,7 +283,7 @@ If you added 20 documents and trained the model and want to continue to improve 
 ## Publishing the entity extractor as an enrichment
 {: #entity-extractor-publish}
 
-When you think the entity extractor is ready, publish the entity extractor. How to know when it's ready? If the score doesn't change after several test runs in which you make improvements, the model is ready. You can return to update and retrain the model after you publish it.
+When you think the entity extractor is ready, publish the entity extractor. How do you know when it's ready? If the score doesn't change after several test runs in which you make improvements, the model is ready. You can return to update and retrain the model after you publish it.
 
 1.  From the *Evaluate extractor* page, click **Publish extractor**.
 1.  Click **Apply to data**.
@@ -276,14 +310,30 @@ The following JSON output is produced by a custom model named *literature* that 
 
 ![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png)
 
+### Monitoring performance over time
+{: #entity-extractor-history}
+
+You can retrain your entity extractor model at any time. Each time you train the model, review the performance metric scores to determine whether your most recent changes increase or decrease the model's scores. 
+
+1.  To compare one test run against another, click **View score history**. 
+
+    The history view shows the last 5 training runs. 
+
+    To retain the score information for more than the most recent 5 training runs, you can export the metrics in comma-separated value format, and track the scores in a separate application. Click the tabular representation icon ![Tabular representation icon](images/ee-tabular-icon.png), and then click **Download as CSV**.
+    {: tip}
+
+If a subsequent training run results in lower scores, don't publish that version of the model.
+
 ## Entity extractor limits
 {: #entity-extractor-limits}
 
 The number of entity extractor models you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
-| Plan      | Entity extractor models per service instance | Maximum entities per model | Maximum documents in training data |
-|-----------|---------------------------------------------:|---------------------------:|-----------------------------------:|
+| Plan | Entity extractor models per service instance | Maximum entity types per model | Maximum documents in training data |
+|------|---------------------------------------------:|---------------------------:|-----------------------------------:|
 | Premium | 10 | 75 | 1,000 |
+| Enterprise | 10 | 75 | 1,000 |
+| Plus (including Trial) | 3 | 75 | 1,000 |
 {: caption="Entity extractor model plan limits" caption-side="top"}
 
-An entity extractor enrichment can identify up to 50 entities, each with one or many mentions, per document.
+An entity extractor enrichment can identify up to 50 entity types, each with one or many mentions, per document.
