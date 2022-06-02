@@ -332,8 +332,8 @@ The number of entity extractor models you can create per service instance depend
 | Plan | Entity extractor models per service instance | Maximum entity types per model | Maximum documents in training data |
 |------|---------------------------------------------:|---------------------------:|-----------------------------------:|
 | Premium | 10 | 75 | 1,000 |
-| Enterprise | 10 | 75 | 1,000 |
-| Plus (including Trial) | 3 | 75 | 1,000 |
+| Enterprise | 10 | 50 | 1,000 |
+| Plus (including Trial) | 3 | 20 | 100 |
 {: caption="Entity extractor model plan limits" caption-side="top"}
 
-An entity extractor enrichment can identify up to 50 entity types, each with one or many mentions, per document.
+An entity extractor enrichment can identify up to 50 entities, each with one or many mentions, per document.

@@ -37,7 +37,7 @@ The entity extractor is now available in more plans and languages
 :   The entity extractor beta feature is now available to users of Plus and Enterprise plans in addition to Premium plans. The extractor enrichment is supported for collections in languages other than English.
 
 When you remove a starting URL from a Web crawl connector its associated documents are deleted
-:   The Web crawl connector was updated. Starting with collections that you create after April 2022, if you remove a starting URL from the Web crawl configuration, any indexed documents that were derived from the content of the web page at that URL are deleted with the next crawl.
+:   The Web crawl connector was updated. Starting with collections that you create after April 2022, if you remove a starting URL from the Web crawl configuration, any indexed documents that were derived from the content of the web page at that URL are deleted with the next crawl. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
 
 ## 13 May 2022
 {: #discovery-13may2022}
