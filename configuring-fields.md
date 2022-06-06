@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-06-02"
 
 subcollection: discovery-data
 
@@ -243,6 +243,23 @@ Select a time zone
 
 Select a language
 :   Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. You can also use this option to manage any cultural- or language-specific patterns of the dates in your documents. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
+
+## Troubleshooting issues
+{: #sdu-troubleshoot}
+
+Follow these workarounds if you experience problems when working with the Smart Document Understanding tool.
+
+### Insufficient resources to process document
+{: ts-insufficient-resources}
+
+Error
+:   When you apply a pretrained model to your collection, document processing does not complete successfully and an `Insufficient resources to process document` message is displayed.
+
+Cause
+:   The error is displayed because out of memory errors occur during the parse, structure identification, or assembly phases of the process that builds the machine learning model. Resources are insufficient when one or more of the documents in your collection are too large or have too many complex tables for the tool to handle.
+
+Solution
+:   Review your collection for large documents or documents with many tables and break them up into more smaller documents before you apply the pretrained model to the collection.
 
 ## Smart Document Understanding limits
 {: #sdu-limits}
