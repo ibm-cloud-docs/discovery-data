@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-06-03"
 
 subcollection: discovery-data
 
@@ -53,7 +53,7 @@ For more information about the supported upgrade paths for {{site.data.keyword.i
 ## Dependencies
 {: #upgrade-data-dependencies}
 
-{{site.data.keyword.discoveryshort}} 4.0.5 has dependencies on the following packages. If you are using a manual subscription approval process, then you might be asked to approve updates to one or more of these resources.
+{{site.data.keyword.discoveryshort}} has dependencies on the following packages. If you are using a manual subscription approval process, then you might be asked to approve updates to one or more of these resources.
 
 -   `ibm-etcd-operator`
 -   `ibm-minio-operator`
