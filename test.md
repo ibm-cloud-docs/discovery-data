@@ -33,21 +33,20 @@ To test your project, complete the following steps:
 
     A representation of the original document is displayed. 
     
-1.  Click **Open advanced view** to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document.
+1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: Click **Open advanced view** to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document.
 
     Only the Entities and Keywords enrichments are listed currently.
+    {: note}
 
-1.  **Optional**: Select an enrichment to highlight every occurrence of the element within the document text.
+    **Optional**: Select an enrichment to highlight every occurrence of the element within the document text.
+
+    For a *Document Retrieval for Contracts* project, the *Contract Data* page is displayed. For more information about Contract filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
 
 1.  If you want to view the query result in JSON format, you can do one of the following things depending on your deployment type:
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
-    
-      1.  Click **Open advanced view**.
 
-          Useful summary information is displayed, such as the number of occurrences of any enrichments that are detected in the document. For a *Document Retrieval for Contracts* project, the *Contract Data* page is displayed. For more information about Contract filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
-
-      1.  Click the *Display options* menu from the view header, and then select **JSON view**.
+      1.  Click the *Display options* menu from the advanced view header, and then select **JSON view**.
 
           ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
 
