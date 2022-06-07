@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-06-07"
 
 subcollection: discovery-data
 
@@ -153,3 +153,9 @@ To calculate the starting URL limit, complete the following steps:
 
 To use the maximum-allowed number of starting URLs in the example, you would need 25 web crawl collections because each collection allows a maximum of 100 starting URLs to be configured. However, don't configure your instance to use the absolute maximum number allowed. If one or more additional data sources are added subsequently to a project in this service instance, it will impact the number of starting URLs that the instance can crawl successfully.
 {: note}
+
+### Troubleshooting crawler issues
+{: #connector-web-cloud-ts}
+
+A 403 Forbidden error is returned
+:    The website that you want to crawl might block requests from all but a specific set of named entities. If possible, add the crawler to the allowlist for the site. The identifying header for the crawler is `User-Agent: IBM-AppConnect/V1`.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-06-07"
 
 keywords: JSON, JSON representation, result JSON
 
@@ -31,9 +31,15 @@ To test your project, complete the following steps:
     -   Other project types: Enter a test query to submit or leave the field empty and press Enter to submit an empty query.
 1.  From the query result list, click the link to view the document.
 
-    A representation of the original document is displayed.
+    A representation of the original document is displayed. 
+    
+1.  Click **Open advanced view** to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document.
 
-1.  Do one of the following things to view the query result in JSON format.
+    Only the Entities and Keywords enrichments are listed currently.
+
+1.  **Optional**: Select an enrichment to highlight every occurrence of the element within the document text.
+
+1.  If you want to view the query result in JSON format, you can do one of the following things depending on your deployment type:
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
     
