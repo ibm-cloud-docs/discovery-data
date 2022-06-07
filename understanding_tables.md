@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2021-10-01"
+lastupdated: "2022-06-07"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -20,11 +20,11 @@ Apply the *Table Understanding* enrichment to get detailed information about tab
 
 You can apply the enrichment only to a field that contains an HTML representation of the table. That's the only way that the enrichment can read the parts of the table, such as header rows and columns, and interpret the information in the table properly.
 
-You can complete one of these tasks to generate an HTML field with table information and apply the Table Understanding enrichment to your collection automatically:
+The following tasks generate an HTML field with table information and apply the Table Understanding enrichment to it for your collection:
 
 -   If you are using a *Document Retrieval for Contracts* project type, the `Table Understanding` enrichment is automatically applied to the `html` field that is generated for the collection.
 -   If you use the Smart Document Understanding tool to apply the `table` field label to one or more tables in the documents from a collection, then the `Table Understanding` enrichment is applied to the `html` field of the collection automatically.
--   If you use the Smart Document Understanding tool and choose the **Pre-trained-models** option, tables are annotated for you automatically.
+-   If you use the Smart Document Understanding tool and choose the **Pre-trained models** option, tables are annotated for you automatically.
 
     For more information, see [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 

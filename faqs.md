@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-06-07"
 
 subcollection: discovery-data
 
@@ -36,6 +36,14 @@ Find answers to frequently asked questions.
 | Regular expression | A regular expression, also known as a *regex*, is a standardized format for defining search patterns. You can define patterns with special significance to your application. For example, the bill of materials (BOM) numbers for parts that you manufacture might have a standard syntax of two uppercase letters followed by four numbers (`GT2345`). You can teach {{site.data.keyword.discoveryshort}} to recognize BOM mentions by adding a regular expression that can recognize and tag occurrences of the pattern in text. [Learn more](/docs/discovery-data?topic=discovery-data-domain#regex). |
 | Stopword | Words to filter out of queries because they are not useful in a search, such as `a`, `an`, and `the`. You can add words that are common and not useful to your use case as stopwords to improve the relevance of results for natural language queries. [Learn more](/docs/discovery-data?topic=discovery-data-search-settings#stopwords). |
 {: caption="Definitions of Discovery terms" caption-side="top"}
+
+## How do I search the product documentation?
+{: #faq-search-doc}
+{: faq}
+
+To search the entire IBM Cloud Docs site, enter your search term into the search field in the IBM Cloud website banner. To search for information about the {{site.data.keyword.discoveryshort}} service only, scroll to the start of the page and enter your search term into the search field in the page header.
+
+![Shows where the documentation search field is situated at the start of the page](images/search-doc.png)
 
 ## Can I integrate Watson Discovery with Watson Assistant?
 {: #faq-integrate}
@@ -77,7 +85,7 @@ Yes. Use the intuitive tools provided with the product to teach {{site.data.keyw
 {: #faq-sdu}
 {: faq}
 
-You can use the Smart Document Understanding tool to teach {{site.data.keyword.discoveryshort}} about fields in your documents that you want {{site.data.keyword.discoveryshort}} to index. You can define a new field, and then annotate documents to train {{site.data.keyword.discoveryshort}} to understand what type of information is typically stored in the field. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+You can use the Smart Document Understanding tool to teach {{site.data.keyword.discoveryshort}} about sections in your documents with distinct format and structure that you want {{site.data.keyword.discoveryshort}} to index. You can define a new field, and then annotate documents to train {{site.data.keyword.discoveryshort}} to understand what type of information is typically stored in the field. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
 
 ## What's the best way to add synonyms?
 {: #faq-synonyms}
@@ -87,6 +95,12 @@ You can use two different methods to define synonyms.
 
 - To define synonyms that are recognized and tagged when a document is ingested and that can be retrieved by search, create a dictionary and add synonyms for the dictionary term entry. A dictionary defines special terms that you want to tag in your documents, such as product names or industry-specific terminology. You can use the dictionary terms later to create facets and to filter documents. For more information, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary).
 - To define synonyms that are applied to the query text that is submitted by users to expand the meaning of the query, add synonyms by using the Synonyms tool on the *Improve relevance* section of the *Improve and customize* page. For more information, see [Expanding the meaning of queries](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
+
+## What is a nested field?
+{: #faq-nested-fields}
+{: faq}
+
+When you ingest a file or crawl an external data source, the data that you add to {{site.data.keyword.discoveryshort}} is processed and added to the collection as a document. Fields from the original file are converted to document fields and are added to the collection's index. Some content is added to root-level index fields and some information is stored in nested fields. Where data gets stored differs by file type. Most of the fields from structured data sources are stored as root-level fields. For files with unstructured data, much of the body of the file is stored in the `text` field in the index. Other information, such as the file name, is stored in nested fields with names like `extracted_metadata.filename`. You can determine whether a field is a nested field by its name. If the field name includes a period, it is a nested field. For more information about how different file types are handled, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).
 
 ## Seeing errors that mention watsonplatform.net
 {: #faq-watsonplatform}

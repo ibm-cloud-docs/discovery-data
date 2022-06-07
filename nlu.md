@@ -23,9 +23,9 @@ With Watson NLP, you can identify and tag meaningful information in your collect
 - [Parts of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
 - [Sentiment](#nlu-sentiment): Understands the overall sentiment of the content.
 
-For example, the following image shows a transcript of the US Declaration of Independence that was added to a {{site.data.keyword.discoveryshort}} collection. The Entities enrichment recognizes the terms *Governments* and *King of Great Britain* (among others) and tags them as entity mentions.
+For example, the following image shows a transcript of the US Declaration of Independence that was added to a {{site.data.keyword.discoveryshort}} collection. The Entities enrichment recognizes the terms *Systems of Government* and *King of Great Britain* (among others) and tags them as entity mentions.
 
-![Shows the first two paragraphs of the declaration with the terms Governments and King of Great Britain highlighted and with associated JSON representation of the mentions.](images/decl-annotated.png)
+![Shows the first two paragraphs of the declaration with the terms Governments and King of Great Britain highlighted and with associated JSON representation of the mentions.](images/nlu-rich-view.png)
 
 Some of the NLP enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
 
@@ -73,10 +73,9 @@ Identifies entities. *Entities* are terms that typically represent proper nouns 
 The Watson NLP entity extractor service that is used by Discovery is called the *NLU type system*. The name originates from the fact that the type system is used by the Watson Natural Language Understanding (NLU) service in addition to the Watson Discovery service. However, it is the Watson NLP implementation of the type system that is used directly by Discovery, not the Watson NLU implementation. As a result, the two implementations can produce different results. To get a general idea of the types of entities that are recognized by the service, see [Entities v2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
 {: note}
 
-For Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. For example, any English or Korean collections that were added to Document Retrieval projects had Entities v1 applied to them automatically. These collections continue to use the Entities v1 legacy enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the legacy enrichment is disabled automatically.
-{: note}
+You can view the underlying JSON for the entity mentions from the product user interface. For example, the following image shows the JSON view of the mentions that are recognized in the US Declaraion of Independence document.
 
-If you want to use the Entities v1 legacy enrichment instead of Entities v2, you can use the API to swap the enrichment that is applied to your collection. For more information, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).
+![Shows the JSON view of the Systems of Government and King of Great Britain entities that are identified in the document](images/nlu-json-view.png)
 
 ### Example
 {: #nlu-entities-example}
@@ -136,6 +135,11 @@ In the JSON output:
 }
 ```
 {: codeblock}
+
+For Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. For example, any English or Korean collections that were added to Document Retrieval projects had Entities v1 applied to them automatically. These collections continue to use the Entities v1 legacy enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the legacy enrichment is disabled automatically.
+{: note}
+
+If you want to use the Entities v1 legacy enrichment instead of Entities v2, you can use the API to swap the enrichment that is applied to your collection. For more information, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).
 
 ### Entity limits
 {: #nlu-entities-limits}
