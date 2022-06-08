@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-06-08"
 
 subcollection: discovery-data
 
@@ -76,7 +76,7 @@ The following screen capture shows that the Entities enrichment recognizes the t
 
 ![Shows the declaration with the terms Governments and King of Great Britain highlighted.](images/nlu-rich-view.png)
 
-From the JSON view of the document, you can see the underlying JSON structure for the entity mentions.
+From the JSON view of the document, you can see the underlying JSON structure of the entity mentions.
 
 ![Shows the JSON view of the Systems of Government and King of Great Britain entities that are identified in the document](images/nlu-json-view.png)
 
@@ -139,10 +139,8 @@ In the JSON output:
 ```
 {: codeblock}
 
-For Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. For example, any English or Korean collections that were added to Document Retrieval projects had Entities v1 applied to them automatically. These collections continue to use the Entities v1 legacy enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the legacy enrichment is disabled automatically.
+For Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. For example, any English or Korean collections that were added to Document Retrieval projects had Entities v1 applied to them automatically. These collections continue to use the Entities v1 legacy enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the legacy enrichment is disabled automatically. If you want to use the Entities v1 legacy enrichment instead of Entities v2, you can use the API to swap the enrichment that is applied to your collection. For more information, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).
 {: note}
-
-If you want to use the Entities v1 legacy enrichment instead of Entities v2, you can use the API to swap the enrichment that is applied to your collection. For more information, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).
 
 ### Entity limits
 {: #nlu-entities-limits}
@@ -154,11 +152,11 @@ The Entities enrichment can identify up to 50 entities, each with one or many me
 
 Returns important keywords in the content.
 
-For example, the following screen capture shows highlighted terms that are recognized by the Keywords enrichment.
+For example, the following screen capture shows highlighted terms from the US Declaration of Independence that are recognized by the Keywords enrichment.
 
 ![Shows the keywords that are recognized in the document text](images/nlu-rich-keywords.png)
 
-From the JSON view of the document, you can see the underlying JSON structure for the keyword mentions.
+From the JSON view of the document, you can see the underlying JSON structure of the `Declaration` keyword mention.
 
 ![Shows the JSON view of keywords that are identified in the document](images/nlu-json-keywords.png)
 
@@ -245,7 +243,7 @@ Analyzes the sentiment that is expressed in text and returns `positive`, `neutra
 
 To understand the sentiment of an entire document, apply this enrichment to a field that contains as much of the text from the document as possible, such as the `text` field.
 
-To analyze sentiment in text from multiple fields at once and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Enabling multiple text fields](/docs/discovery-data?topic=discovery-data-contentminerapp#enable-multiple-fields) and [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
+To analyze sentiment in text from multiple fields at one time and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Enabling multiple text fields](/docs/discovery-data?topic=discovery-data-contentminerapp#enable-multiple-fields) and [Enabling sentiment analysis](/docs/discovery-data?topic=discovery-data-contentminerapp#sentiment-analysis).
 
 ### Example
 {: #nlu-sentiment-example}
