@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-07-19"
+lastupdated: "2022-06-08"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Developing and implementing a Cloud Pak for Data custom crawler plug-in
 {: #crawler-plugin-dev}
 
-The crawler plug-in includes a file that is called `com.ibm.es.ama.plugin.CrawlerPlugin`. This file is the [Initialization interface](/docs/discovery-data?topic=discovery-data-crawler-plugin-dev#plugin-init-interface) that includes methods that you can use when you work with your crawler plug-in.
+The crawler plug-in includes a file that is called `com.ibm.es.ama.plugin.CrawlerPlugin`. This file is the [initialization interface](/docs/discovery-data?topic=discovery-data-crawler-plugin-dev#plugin-init-interface) that has methods you can use when you work with your crawler plug-in.
 {: shortdesc}
 
 ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
@@ -24,12 +24,12 @@ This information applies only to installed deployments.
 ## Interfaces and Javadoc
 {: #plugin-interfaces-jdoc}
 
-The interface library is available as `lib/ama-zing-crawler-plugin-${build-version}.jar` in the SDK directory. The Javadoc for the .jar file is available as `lib/ama-zing-crawler-plugin-${build-version}-javadoc.jar` in the same directory.
+The interface library is stored in the `lib/ama-zing-crawler-plugin-${build-version}.jar` directory of the SDK directory. The Javadoc for the JAR file is available in the `lib/ama-zing-crawler-plugin-${build-version}-javadoc.jar` file in the same directory.
 
 ## Initialization interface
 {: #plugin-init-interface}
 
-Use the `com.ibm.es.ama.plugin.CrawlerPlugin` interface to start or stop a crawler plug-in or to update the crawled documents. The interface has the following methods:
+Use the `com.ibm.es.ama.plugin.CrawlerPlugin` interface to manage the crawler plug-in. The interface has the following methods:
 
 | Method               | Description
 |----------------------|------------------------------|
@@ -41,9 +41,21 @@ Use the `com.ibm.es.ama.plugin.CrawlerPlugin` interface to start or stop a crawl
 ## Dependency management
 {: #dep-mgmt}
 
-The file `build.gradle` manages the Java dependency.
+The file `build.gradle` manages the Java dependencies.
 
-## Crawler plug-in example
+## Crawler plug-in sample
 {: #plugin-example}
 
-The example crawler plug-in `src/main/java/com/ibm/es/ama/plugin/sample/SampleCrawlerPlugin.java` adds, updates, and deletes metadata. The plug-in example also updates and deletes the content of documents that the local file system connector crawls.
+A sample crawler plug-in is available that illustrates how to add, update, and delete metadata. The plug-in example also updates and deletes documents that are crawled by the local file system connector. The Java source code file is named `src/main/java/com/ibm/es/ama/plugin/sample/SampleCrawlerPlugin.java`.
+
+## Logging messages
+{: #logging}
+
+The custom crawler plug-in supports the `java.util.logging.Logger` package for logging messages.
+
+Any log messages that you add must meet the following requirements:
+
+-   The log level must be `INFO` or higher.
+-   The logger name must start with `com.ibm.es.ama`.
+
+Messages are written to the log file of the crawler pod where the plug-in is running. A logging sample is available in the crawler plug-in sample.
