@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-10-04"
+lastupdated: "2022-06-08"
 
 keywords: improving results, troubleshooting search
 
@@ -45,33 +45,10 @@ To do so, you can create a Smart Document Understanding user-trained model. Find
 
 You can then split the document by the `chapter` field to create many subdocuments segmented by chapter. For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 
-## Results are not well formatted
-{: #improve-plain-text}
-
-If the query result shows an excerpt that is hard to read, it might be content that is coming from a table.
-
-If meaningful information is typically stored in tables in your documents, apply the *table understanding* enrichment to your collection to make the information easier to find and understand in the results. For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
-
-The following table illustrates how the query result looks before and after table understanding is applied to the collection.
-
-| View passage in document before enrichment | View table in document after enrichment |
-|--------------------------------------------|-----------------------------------------|
-| ![Text grouped together](images/sdu-before.png) | ![Text in orderly rows](images/sdu-after-table.png) |
-{: caption="Before and after applying table understanding" caption-side="top"}
-
-If responses are displayed in plain text when you view the passage in the document, you can apply richer formatting to them by applying a Smart Document Understanding user-trained or pretrained model. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields)
-
-In the following example, the same search result is returned whether an SDU model is applied or not, but the result text looks different. The table illustrates what the document view of a query result looks like before and after a user-trained SDU model is created.
-
-| Before SDU | After SDU |
-|------------|-----------|
-| ![Text grouped together](images/format-before.png) | ![Text in orderly rows](images/format-after.png) |
-{: caption="Before and after training a Smart Document Understanding model" caption-side="top"}
-
 ## Information from tables is not found
 {: #improve-tables}
 
-The table understanding enrichment must be applied to your collection for information from tables to be searchable. The table understanding enrichment is applied to collections automatically in some situations. If it isn't, you can apply the *table understanding* enrichment yourself.
+The table understanding enrichment must be applied to your collection for information from tables to be searchable. The table understanding enrichment is applied to collections automatically in some situations. If it isn't and your collection has an HTML field in its index, you can apply the *table understanding* enrichment yourself.
 
 For more information, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
 
