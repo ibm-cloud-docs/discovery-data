@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-09"
 
 subcollection: discovery-data
 
@@ -110,6 +110,8 @@ For example, imagine there are 300,000 documents added to a collection in the fi
 
 Document pricing counts the number of indexed documents in each collection. If you reuse data in a second collection, it generates a second set of documents in the index which are counted separately.
 
+For more information about what counts as a document, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
+
 ## Premium
 {: #premiumplan}
 
@@ -129,7 +131,6 @@ For more information about the differences between v2 and v1, see [Getting the m
 ## Additional information
 {: #pricingadd}
 
--   For more information about how documents are counted, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
 -   For more information about how queries are counted, see [Query limits](/docs/discovery-data?topic=discovery-data-query-concepts#query-limits).
 -   For more information about pricing or to create a service instance, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/watson-discovery){: external}.
 
