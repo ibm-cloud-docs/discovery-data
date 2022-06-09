@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-06-09"
 
 keywords: api version,api,request syntax
 
@@ -86,3 +86,5 @@ To use the API, you must construct the URL to use in your requests.
 
 The bearer token that is generated for an administrator can access any instance regardless of the access settings that are configured for the instance.
 {: important}
+
+The bearer token expires after 12 hours. For more information about customizing the length of a session, see [Setting the idle session timeout](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=client-setting-idle-session-timeout){: external}.
