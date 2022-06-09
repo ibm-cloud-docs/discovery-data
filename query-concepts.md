@@ -394,6 +394,9 @@ The number of search queries that you can submit per month per service instance 
 | Plus (includes Trial)        |        500,000 |
 {: caption="Number of queries per month" caption-side="top"}
 
+For Enterprise plans only, your bill labels requests that are generated from both query searches and analyze API calls as "Queries". For more information about Analyze API calls, see [Analyze API limits](/docs/discovery-data?topic=discovery-data-analyzeapi#analyzeapi-limits).
+{: note}
+
 The number of queries that can be processed per second per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Concurrent queries per service instance |
