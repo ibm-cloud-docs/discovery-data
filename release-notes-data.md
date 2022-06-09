@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-09"
 
 keywords: discovery cloud pak for data release notes,watson discovery cartridge release notes,cp4d release notes
 
@@ -146,6 +146,9 @@ A new document classifier API is available
 
 Multitenancy is now supported
 :   An administrator can now create up to 10 instances of the Discovery service per deployment, which means that more teams can work on discrete Discovery projects at the same time.
+
+    The computing resources, such as CPU and memory, that are provisioned for the installation are shared by all of the deployed instances. For planning purposes, consider the total size of artifacts, such as collections and enrichments, from across all of the instances, not the size per instance.
+    {: note}
 
 Simpler installation and management of custom connectors
 :   The `manage_custom_crawler.sh` script was improved to make it easier for you to install and manage your custom connectors in a multitenant environment. For more information, see [Installing a custom crawler](/docs/discovery-data?topic=discovery-data-install-connector).

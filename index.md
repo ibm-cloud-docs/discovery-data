@@ -81,12 +81,25 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
 ## Browser support
 {: #about-browser}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** 
+![Cloud Pak for Data only](images/desktop.png) **Installed on {{site.data.keyword.icp4dfull_notm}}** 
 
--   The product user interface supports the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
+-   The minimum required browser software for the product user interface includes the following browsers:
+
+    Google Chrome
+    :    Latest version -1 for your operating system
+
+    Mozilla Firefox
+    :    Latest regular -1 and Extended Support Release (ESR) version for your operating system
+
+    Microsoft Edge
+    :    Latest version -1 for Windows
+
+    Apple Safari
+    :    Latest veresion -1 for Mac
+
 -   The {{site.data.keyword.icp4dfull_notm}} web client where you create service instances supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=requirements-software#software-reqs__web){: external}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** 
+![IBM Cloud only](images/ibm-cloud.png) **Managed by {{site.data.keyword.cloud_notm}}** 
 
 -   Deployments of {{site.data.keyword.discoveryshort}} that are managed by {{site.data.keyword.cloud_notm}} follow the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
 -   For more information about browser support for deployments that are provisioned with Cloud Pak for Data as a Service, see [Which web browsers are supported for Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/faq.html?audience=wdp#which-browser){: external}. 
