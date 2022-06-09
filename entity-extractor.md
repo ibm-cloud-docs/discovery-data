@@ -43,7 +43,7 @@ This video provides an overview of how to define custom entity types and then us
 
 ![Define custom entity types with Watson Discovery](https://www.youtube.com/embed/nqO_2mL0U7A0){: video output="iframe"  data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=nqO_2mL0U7A0&feature=emb_imp_woyt), click the *More actions* icon, and then choose *Open transcript*.
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=nqO_2mL0U7A0), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Example
 {: #entity-extractor-example}

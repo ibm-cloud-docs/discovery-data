@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-09"
 
 subcollection: discovery-data
 
@@ -26,7 +26,7 @@ The following 15-minute video demonstrates relevancy training, along with other 
 
 ![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" data-script="none"  id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-To view the transcript, open the video on YouTube.
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=wi_V9s8XF3c), click the *More actions* icon, and then choose *Open transcript*.
 
 Unlike Discovery Query Language queries, with natural language queries you cannot specify which fields from the document you care about or how much significance to give to each one. Instead, when a natural language query is submitted, the root-level fields are all considered to have equal significance. The way to identify document fields that are more significant than others is through relevancy training. When you teach Discovery with examples, the service figures out for you how much weight to give to each field.
 
