@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-06-09"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -107,7 +107,7 @@ This video provides an overview of connecting to data sources in {{site.data.key
 
 ![Watson Discovery Demo: Connect to the data source that you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe"  data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-To view the transcript, open the video on YouTube.
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=MPCOwMgn1p4), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Supported file types
 {: #supportedfiletypes}

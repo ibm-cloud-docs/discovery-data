@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-06-09"
 
 subcollection: discovery-data
 
@@ -21,21 +21,40 @@ Teach {{site.data.keyword.discoveryshort}} about terms that are significant to y
 The entity extractor is a beta feature that is available from managed deployment only.
 {: beta}
 
-An *entity extractor* is a machine learning model that recognizes and tags terms that you indicate are significant to your business need or use case. If you are familiar with the built-in Entities enrichment, you know that the enrichment can recognize terms that match generalized categories, such as `Person` and `Location`. With the entity extractor, you control what constitutes terms or phrases that are meaningful.
+An *entity extractor* is a machine learning model that recognizes and tags terms that you indicate are significant to your business need or use case. When you create an entity extractor, you get to decide the content and scope of information to find and extract. Your extractor can extract any of the following things:
 
-For example, in your use case, you might need to extract terms that represent objects, such as vegetable names from cooking recipes or the make and model of cars from accident reports. Or maybe you need to extract attributes of objects, such as color and quantity. Your search application might need to extract short phrases (`107 deaths in France`, `revenue of $343M`) or full sentences (`out of warranty clauses; clauses describing payment terms`). When you create an entity extractor, you get to decide the content and scope of information to find and extract from your data.
+-  Terms that represent objects, such as vegetable names from cooking recipes or the make and model of cars from accident reports
+-  Attributes of objects, such as color and quantity
+-  Short phrases, such `107 deaths in France`, `revenue of $343M`
+-  Full sentences, such as `out of warranty clauses; clauses describing payment terms`
 
-An *entity type* is a type of thing. To create an entity extractor, you define a set of *entity types* that you care about. You then annotate a collection of your own documents by finding terms or phrases that represent the type of information you want to extract, and labeling them as entity examples. After you define entity types and label entity examples, you can generate a machine learning model. The model learns about the information you care about based on how the terms or phrases that you label as examples are referenced in sentences. The model learns from the context and language with which the entity examples are referenced in the training data.
+An *entity type* is a type of thing. To create an entity extractor, you define a set of *entity types* that you care about. You then annotate a collection of your own documents by finding terms or phrases that represent the type of information you want to extract and labeling them as entity examples. 
+
+After you define entity types and label entity examples, you can generate a machine learning model. The model learns about the information you care about based on how the terms or phrases that you label as examples are referenced in sentences. The model learns from the context and language with which the entity examples are referenced in the training data.
 
 After the machine learning model is trained well enough to recognize your entity types, you can publish the model as an enrichment and apply the enrichment to new documents. The custom entity extractor enrichment recognizes and tags new mentions of the same and similar terms as occurrences of the entity types that you care about.
+
+For information about the languages with which the entity extractor can be used, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
+## Entity extractor overview video
+{: #entity-extractor-video}
+
+This video provides an overview of how to define custom entity types and then use them to extract terms of interest from your data.
+
+![Define custom entity types with Watson Discovery](https://www.youtube.com/embed/nqO_2mL0U7A0){: video output="iframe"  data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=nqO_2mL0U7A0), click the *More actions* icon, and then choose *Open transcript*.
+
+## Example
+{: #entity-extractor-example}
+
+If you are familiar with the built-in Entities enrichment, you know that the enrichment can recognize terms that match generalized categories, such as `Person` and `Location`. With the entity extractor, you control what constitutes terms or phrases that are meaningful.
 
 The following image shows the terms that an enrichment that recognizes `family members` entity type mentions might extract from text. The example illustrates how family member mentions and other entity mentions (that are recognized by the built-in Entities enrichment) both might be predicted.
 
 ![Shows an excerpt from Pride and Prejudice with family member mentions and entity mentions labeled.](images/pp3-both-annotations.png)
 
 This excerpt comes from Chapter 3 of *Pride and Prejudice* by Jane Austen.
-
-For information about the languages with which the entity extractor can be used, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
 ## Before you begin
 {: #entity-extractor-prereq}
