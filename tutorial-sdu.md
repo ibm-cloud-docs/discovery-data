@@ -2,10 +2,11 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-06-10"
 
 subcollection: discovery-data
 content-type: tutorial
+services: discovery
 account-plan: plus
 completion-time: 3h
 
@@ -16,6 +17,7 @@ completion-time: 3h
 # Use Smart Document Understanding (SDU) to improve search results
 {: #tutorial-sdu}
 {: toc-content-type="tutorial"}
+{: toc-services="discovery"}
 {: toc-completion-time="2h"}
 
 In this tutorial, you use the Smart Document Understanding feature of the {{site.data.keyword.discoveryshort}} service to create a user-trained Smart Document Understanding (SDU) model. You then split a single document into many smaller documents so that some types of answers are easier to find.

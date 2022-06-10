@@ -6,6 +6,7 @@ lastupdated: "2022-01-04"
 
 subcollection: discovery-data
 content-type: tutorial
+services: discovery
 account-plan: plus
 completion-time: 2h
 
@@ -16,6 +17,7 @@ completion-time: 2h
 # Help your chatbot answer frequently asked questions
 {: #tutorial-convo}
 {: toc-content-type="tutorial"}
+{: toc-services="discovery"}
 {: toc-completion-time="2h"}
 
 In this tutorial, you will use the {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} services to create a virtual assistant that can answer questions about COVID-19 with information from the Center for Disease Control website.
