@@ -20,16 +20,15 @@ Apply the *Table Understanding* enrichment to get detailed information about tab
 
 The following tasks generate an HTML field with table information and apply the Table Understanding enrichment to it for your collection automatically:
 
--   If you are using a *Document Retrieval for Contracts* project type, the `Table Understanding` enrichment is applied to the `html` field that is generated for the collection.
--   If you use the Smart Document Understanding tool and choose the *User-trained models* option, the `Table Understanding` enrichment is applied to the `html` field that is generated for the collection.
--   If you use the Smart Document Understanding tool and choose the *Pre-trained models* option, tables are annotated for you.
+-   If you use the Smart Document Understanding tool to define a user-trained or pretrained SDU model, the `Table Understanding` enrichment is applied to the `html` field that is generated for the collection.
+-   If you create a *Document Retrieval for Contracts* project type, a pretrained SDU model is applied to your collection automatically. As a result, the `Table Understanding` enrichment is applied to the `html` field that is generated for the collection.
 
     For more information, see [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 
 ## Applying the table enrichment
 {: #table-task}
 
-You can apply the enrichment only to a field that contains an HTML representation of the table. That's the only way that the enrichment can read the parts of the table, such as header rows and columns, and interpret the information in the table properly.
+You can apply the enrichment only to a field that contains an HTML representation of the table.
 
 To apply the enrichment, complete the following steps:
 

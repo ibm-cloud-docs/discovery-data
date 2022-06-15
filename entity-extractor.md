@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-15"
 
 subcollection: discovery-data
 
@@ -33,6 +33,8 @@ An *entity type* is a type of thing. To create an entity extractor, you define a
 After you define entity types and label entity examples, you can generate a machine learning model. The model learns about the information you care about based on how the terms or phrases that you label as examples are referenced in sentences. The model learns from the context and language with which the entity examples are referenced in the training data.
 
 After the machine learning model is trained well enough to recognize your entity types, you can publish the model as an enrichment and apply the enrichment to new documents. The custom entity extractor enrichment recognizes and tags new mentions of the same and similar terms as occurrences of the entity types that you care about.
+
+For more information about how to use the entity extractor to add domain customization to your AI applications, see the [Entity Extractor (Beta) Feature in Watson Discovery v2](https://community.ibm.com/community/user/watsonai/blogs/ananya-poddar/2022/06/09/entity-extraction-in-watson-discovery-v2){: external} blog post.
 
 For information about the languages with which the entity extractor can be used, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 

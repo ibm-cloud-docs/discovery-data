@@ -213,8 +213,8 @@ toc:
           label: Community resources
           links:
           - link:
-              label: IBM Watson Apps community
-              href: https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f
+              label: Watson Natural Language AI community
+              href: https://community.ibm.com/community/user/watsonai/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f
           - link:
               label: IBM Cloud Pak for Data Community
               href: https://community.ibm.com/community/user/cloudpakfordata/communities/community-home?communitykey=c0c16ff2-10ef-4b50-ae4c-57d769937235
