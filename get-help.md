@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2021-11-09"
+lastupdated: "2022-06-16"
 
 subcollection: discovery-data
 
@@ -20,7 +20,7 @@ Use these resources to get answers to your questions:
 
 -   Walk through a guided tour to learn about a project type or a feature. Click **Guided tours** from the page header to see a list of available tours.
 -   For answers to frequently asked questions, see the [FAQ](/docs/discovery-data?topic=discovery-data-faqs).
--   Find answers to common questions or ask questions where experts and other community members can answer. Go to the [Watson Discovery Community forum](https://community.ibm.com/community/user/watsonapps/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f){: external}.
+-   Find answers to common questions or ask questions where experts and other community members can answer. Go to the [Watson Discovery Community forum](https://community.ibm.com/community/user/watsonai/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f){: external}.
 
 ## ![IBM Cloud only](images/ibm-cloud.png)  Contacting IBM Cloud Support for managed deployments
 {: #get-help-support-cloud}
