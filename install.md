@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-16"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ In a multitenant environment, you install the {{site.data.keyword.discoveryshort
 For planning purposes, consider the total size of artifacts, such as collections and enrichments, from across all of the instances, not the size per instance.
 
 ## Scaling the service
-{: #scaling-discovery}
+{: #scale-task}
 
 To scale a deployment, you must have administrative privileges for the project where the deployment is hosted.
 
@@ -82,7 +82,7 @@ To scale the size of your deployment, complete the following steps:
     ```
     {: codeblock}
 
-    For more information about the YAML files that you can edit, see [YAML files](#scaling-yaml-files).
+    For more information about the YAML files that you can edit, see [YAML files](#scale-yaml-files).
 
 1.  After you edit the YAML file for the PVC, save and close it. Give the cluster a few minutes to pick up and apply the changes. 
 
@@ -115,12 +115,12 @@ To scale the size of your deployment, complete the following steps:
     {: codeblock} 
 
 ### YAML files
-{: #scaling-yaml-files}
+{: #scale-yaml-files}
 
 Definitions that are specified in YAML files provide instructions to the cluster about how to manage the pods that are used by the service. 
 
 #### UI pods
-{: #scaling-ui}
+{: #scale-ui}
 
 ```yaml
 spec:
@@ -133,7 +133,7 @@ spec:
 {: codeblock}
 
 #### API gateway pod
-{: #scaling-api-gateway}
+{: #scale-api-gateway}
 
 ```yaml
 spec:
@@ -143,7 +143,7 @@ spec:
 {: codeblock}
 
 #### Elastic search pods
-{: #scaling-elastic}
+{: #scale-elastic}
 
 ```yaml
 spec:
@@ -158,7 +158,7 @@ spec:
 {: codeblock}
 
 #### Hadoop worker pod
-{: #scaling-hadoop}
+{: #scale-hadoop}
 
 ```yaml
 spec:
@@ -169,7 +169,7 @@ spec:
 {: codeblock}
 
 #### Crawler pod
-{: #scaling-crawler}
+{: #scale-crawler}
 
 ```yaml
 spec:
@@ -180,7 +180,7 @@ spec:
 {: codeblock}
 
 #### Analyze API pod
-{: #scaling-analyze-api}
+{: #scale-analyze-api}
 
 ```yaml
 spec:
@@ -191,7 +191,7 @@ spec:
 {: codeblock}
 
 #### Watson Knowledge Studio model enrichment pod
-{: #scaling-wks}
+{: #scale-wks}
 
 ```yaml
 spec:

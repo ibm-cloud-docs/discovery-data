@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-16"
 
 subcollection: discovery-data
 
@@ -33,7 +33,7 @@ Dictionaries and classifiers that you add to one project can be used by other pr
 
 For more information about how to apply built-in enrichments to your collection, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
 
-For more information about how to get the most from enrichments, read the [Enriching your documents can make search more effective](https://community.ibm.com/community/user/watsonapps/blogs/bill-murdock1/2022/01/14/enriching-your-documents-can-make-search-more-effe){: external} blog post.
+For more information about how to get the most from enrichments, read the [Enriching your documents can make search more effective](https://community.ibm.com/community/user/watsonai/blogs/bill-murdock1/2022/01/14/enriching-your-documents-can-make-search-more-effe){: external} blog post.
 
 ## Choosing the right enrichment type
 {: #domain-choose-enrichment}
@@ -605,8 +605,8 @@ Patterns cannot be used in a Content Mining application.
 For more information, read the following blog posts:
 
 -   [Part 1: Pattern Induction — What is a Pattern?](https://medium.com/ibm-data-ai/part-i-pattern-induction-what-is-a-pattern-b661ad46b8c0)
--   [Part 2: Pattern Induction - Using Watson Discovery to Extract Patterns?](https://community.ibm.com/community/user/watsonapps/blogs/bikalpa-neupane/2021/11/10/part-ii)
--   [Part 3: Pattern Induction - Best Practices for Highlighting Examples and Providing Expert Feedback](https://community.ibm.com/community/user/watsonapps/blogs/bikalpa-neupane/2021/11/10/part-iii-pattern-induction-best-practices-for-high)
+-   [Part 2: Pattern Induction - Using Watson Discovery to Extract Patterns?](https://community.ibm.com/community/user/watsonai/blogs/bikalpa-neupane/2021/11/10/part-ii)
+-   [Part 3: Pattern Induction - Best Practices for Highlighting Examples and Providing Expert Feedback](https://community.ibm.com/community/user/watsonai/blogs/bikalpa-neupane/2021/11/10/part-iii-pattern-induction-best-practices-for-high)
 
 To define a pattern, complete the following steps:
 
