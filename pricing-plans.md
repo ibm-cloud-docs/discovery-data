@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-20"
 
 subcollection: discovery-data
 
@@ -76,6 +76,7 @@ The plan includes the following features:
 -   100,000 query or analyze API calls per month ($5 for every additional 1,000 calls per month)
 -   Up to 5 queries per second
 -   Everything that's available in Plus
+-   Analyze API
 -   Content Intelligence
 -   Content Mining
 -   Document classification (Text classification is available in all plans. Document classification is available with Enterprise and higher-level plans only.)
@@ -98,6 +99,9 @@ Your bill labels requests that are generated from both query searches and analyz
 -   Up to 100 custom regular expression models
 -   Up to 20 custom text classification models
 -   Up to 20 custom document classification models
+
+Autocompletion, curation, and notice requests are not billed in any plan type.
+{: note}
 
 ### How is document pricing calculated?
 {: #pricing-docs}
