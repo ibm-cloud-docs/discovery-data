@@ -39,9 +39,9 @@ If the result shows `Excerpt unavailable` instead of response text, you might ne
 ## Results include more than exact matches
 {: #improve-search-exact-match}
 
-Unlike some other search applications, adding quotation marks to a phrase that you submit from the *Improve and customize* page does not return only exact matches. Queries that are submitted from the product user interface are natural language queries. These types of queries always return any documents that include all of the terms in the phrase together and each term on its own.
+Unlike some other search applications, adding quotation marks to a phrase that you submit from the *Improve and customize* page does not return only exact matches. Queries that are submitted from the product user interface are natural language queries. When quoted text is submitted in a natural language query, the phrase is used to boost result scores, but results don't have to contain the entire phrase.
 
-To submit a query that looks for only exact matches, you must use the query API. For more information about the `phrase` operator of the query API, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators#phrase).
+If you want more control over how queries are handled, you must use the query API. For more information about the `phrase` operator of the query API, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators#phrase).
 
 ## Results have too much text
 {: #improve-too-much-text}
