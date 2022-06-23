@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-11-04"
+lastupdated: "2022-06-23"
 
 subcollection: discovery-data
 
@@ -24,60 +24,71 @@ Operators are the separators between different parts of a query. For the complet
 
 This delimiter separates the levels of hierarchy in the JSON schema
 
-For example:
+For example, the following query argument identifies the section of the enriched_text object that contains entities and the text recognized as an entity.
 
 ```bash
-enriched_text.concepts.text
+enriched_text.entities.text
 ```
 {: codeblock}
+
+The JSON representation of this section looks as follows:
+
+![JSON source that shows the enriched_text.entities.text object structure](images/api-placement.png)
 
 ## `:` (Includes)
 {: #includes}
 
-This operator specifies a match for the query term.
+This operator specifies inclusion of the query term.
 
-For example:
+For example, the following query searches for documents that contain the term `cloud computing` in the `text` field:
 
 ```bash
-enriched_text.concepts.text:"cloud computing"
+enriched_text.entities.text:"cloud computing"
 ```
 {: codeblock}
 
 ## `::` (Exact match)
 {: #match}
 
-This operator specifies an exact match for the query term.
+This operator specifies an exact match for the query term. 
 
-For example:
+For example, the following query searches for documents that contain entities of type `Organization`:
 
 ```bash
-enriched_text.concepts.text::"Cloud computing"
+enriched_text.entities.type::"Organization"
 ```
 {: codeblock}
 
-Exact matches are case-sensitive.
+The entire content of the field that you specify must match the phrase you specify. Exact matches are case-sensitive. 
+
+For example, the following query finds documents in which only entity mentions of `IBM Cloud` are detected, not `IBM Cloud Pak for Data` or `IBM cloud` or `Cloud`.
+
+```bash
+enriched_text.entities.text::"IBM Cloud"
+```
+{: codeblock}
 
 ## `:!` (Does not include)
 {: #notinclude}
 
-This operator specifies that the results do not contain a match for the query term
+This operator specifies that the results do not contain a match for the query term.
 
 For example:
 
 ```bash
-enriched_text.concepts.text:!"cloud computing"
+enriched_text.entities.text:!"cloud computing"
 ```
 {: codeblock}
 
 ## `::!` (Not an exact match)
 {: #notamatch}
 
-This operator specifies that the results do not exactly match the query term
+This operator specifies that the results do not exactly match the query term.
 
 For example:
 
 ```bash
-enriched_text.concepts.text::!"Cloud computing"
+enriched_text.entities.text::!"Cloud computing"
 ```
 {: codeblock}
 
@@ -98,7 +109,7 @@ title::"Dorothy said: \"There's no place like home\""
 ## `""` (Phrase query)
 {: #phrase}
 
-All contents of a phrase query are processed as escaped. So no special characters within a phrase query are parsed, except for double quotation marks (`"`) inside a phrase query, which must be escaped (`\"`). Use phrase queries with full-text, rank-based queries, and not with Boolean filter operations. Do not use wildcards (`*`) in phrase queries.
+Use phrase queries with full-text, rank-based queries, and not with Boolean filter operations. Do not use wildcards (`*`) in phrase queries. All contents of a phrase query are processed as escaped. So no special characters within a phrase query are parsed, except for double quotation marks (`"`) inside a phrase query, which must be escaped (`\"`).
 
 Single quotation marks (`'`) are not supported.
 {: note}
@@ -205,7 +216,7 @@ Increases the score value of a search term.
 For example:
 
 ```bash
-enriched_text.concepts.text:IBM^3
+enriched_text.entities.text:IBM^3
 ```
 {: codeblock}
 
@@ -229,7 +240,7 @@ The number of one-character changes that need to be made to one string to make i
 For example:
 
 ```bash
-enriched_text.concepts.text:Watson~3
+enriched_text.entities.text:Watson~3
 ```
 {: codeblock}
 
