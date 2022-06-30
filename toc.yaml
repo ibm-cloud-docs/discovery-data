@@ -196,7 +196,6 @@ toc:
           label: Backup and restore
           topics:
           - backup-restore.md
-          - backup-restore-prior.md
           - recovery.md
   - navgroup:
       id: help

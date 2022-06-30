@@ -50,7 +50,7 @@ enriched_text.entities.text:"cloud computing"
 ## `::` (Exact match)
 {: #match}
 
-This operator specifies an exact match for the query term. 
+This operator specifies an exact match for the query term. Exact matches are case-sensitive.
 
 For example, the following query searches for documents that contain entities of type `Organization`:
 
@@ -59,9 +59,7 @@ enriched_text.entities.type::"Organization"
 ```
 {: codeblock}
 
-The entire content of the field that you specify must match the phrase you specify. Exact matches are case-sensitive. 
-
-For example, the following query finds documents in which only entity mentions of `IBM Cloud` are detected, not `IBM Cloud Pak for Data` or `IBM cloud` or `Cloud`.
+The entire content of the field that you specify must match the phrase you specify. For example, the following query finds documents in which only entity mentions of `IBM Cloud` are detected, not `IBM Cloud Pak for Data` or `IBM cloud` or `Cloud`.
 
 ```bash
 enriched_text.entities.text::"IBM Cloud"
@@ -97,9 +95,9 @@ Exact matches are case-sensitive.
 ## `\` (Escape character)
 {: #escape}
 
-Escape character for queries that require the ability to query terms by using string literals that contain control characters.
+Escape character that preserves the literal value of the character that follows it. 
 
-For example:
+For example, you can place an escape character before a quotation mark in query text to include the quotation mark in the query string.
 
 ```bash
 title::"Dorothy said: \"There's no place like home\""

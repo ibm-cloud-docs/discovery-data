@@ -2,11 +2,12 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-29"
 
-keywords: discovery cloud pak for data release notes,watson discovery cartridge release notes,cp4d release notes
+keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
 subcollection: discovery-data
+content-type: release-note
 
 ---
 
@@ -24,6 +25,20 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 {: note}
 
 See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for the list of {{site.data.keyword.discoveryfull}} known issues.
+
+## 4.5 release, 29 June 2022
+{: #discovery-data-29june2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.5 is available.
+
+For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x//fixlist/discovery-fixlist.html){: external}
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Answer finding
+    -   *Manage data* page
+    -   Advanced document view for search results
 
 ## 4.0.9 release, 25 May 2022
 {: #discovery-data-25may2022}
@@ -51,15 +66,6 @@ Security vulnerabilities were addressed
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in OpenSSL](https://www.ibm.com/support/pages/node/6584215)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Google Protocol Buffers](https://www.ibm.com/support/pages/node/6584217)
 
-Features that are not available in this release
-:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
-
-    -   Home page updates
-    -   Answer finding
-    -   *Manage data* page
-    -   Advanced document view for search results
-    -   Updated JSON view
-
 ## 4.0.8 release, 27 April 2022
 {: #discovery-data-27april2022}
 
@@ -80,15 +86,6 @@ Security vulnerabilities were addressed
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Kotlin](https://www.ibm.com/support/pages/node/6570945)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache POI](https://www.ibm.com/support/pages/node/6570947)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data is affected by a remote code execution in Spring Framework (CVE-2022-22965)](https://www.ibm.com/support/pages/node/6570949)
-
-Features that are not available in this release
-:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
-
-    -   Home page updates
-    -   Answer finding
-    -   *Manage data* page
-    -   Advanced document view for search results
-    -   Document status API
 
 ## {{site.data.keyword.discoveryfull}} for ICP for Data 2.2.x End Of Support
 {: #release-notes-data-eos-15april2022}
@@ -146,9 +143,6 @@ A new document classifier API is available
 
 Multitenancy is now supported
 :   An administrator can now create up to 10 instances of the Discovery service per deployment, which means that more teams can work on discrete Discovery projects at the same time.
-
-    The computing resources, such as CPU and memory, that are provisioned for the installation are shared by all of the deployed instances. For planning purposes, consider the total size of artifacts, such as collections and enrichments, from across all of the instances, not the size per instance.
-    {: note}
 
 Simpler installation and management of custom connectors
 :   The `manage_custom_crawler.sh` script was improved to make it easier for you to install and manage your custom connectors in a multitenant environment. For more information, see [Installing a custom crawler](/docs/discovery-data?topic=discovery-data-install-connector).

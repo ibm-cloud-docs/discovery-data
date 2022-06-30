@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-02"
+lastupdated: "2022-06-29"
 
 subcollection: discovery-data
 
@@ -23,8 +23,174 @@ This information applies only to installed deployments.
 
 For full installation instructions, see the following topics:
 
-- [Installing 2.2.0, 2.2.1](https://www.ibm.com/docs/cloud-paks/cp-data/3.5.0?topic=services-watson-discovery){: external}
-- [Installing 2.1.3, 2.1.4](https://www.ibm.com/docs/cloud-paks/cp-data/3.0.1?topic=services-watson-discovery){: external}
+-   [Installing 4.0.x](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}
+-   [Installing 2.2.0, 2.2.1](https://www.ibm.com/docs/cloud-paks/cp-data/3.5.0?topic=services-watson-discovery){: external}
+-   [Installing 2.1.3, 2.1.4](https://www.ibm.com/docs/cloud-paks/cp-data/3.0.1?topic=services-watson-discovery){: external}
+
+## Custom scaling in {{site.data.keyword.discovery-data_short}} 4.0.x
+{: #scaling-discovery-40x}
+
+In a multitenant environment, you install the {{site.data.keyword.discoveryshort}} service one time, and up to 10 service instances can be deployed. The computing resources, such as CPU and memory, that are provisioned for the installation are shared by all of the deployed instances. For planning purposes, consider the total size of artifacts, such as collections and enrichments, from across all of the instances, not the size per instance.
+
+To scale a deployment, you must have administrative privileges for the project where the deployment is hosted.
+
+To scale the size of your deployment, complete the following steps:
+
+1.  Edit the YAML file for the persistent volume claim (PVC) where the resource that you want to change is running.
+
+1.  Use the following command to get the PVC name. The name is typically something like `data-wd-ibm-elasticsearch-es-server-client-0`.
+
+    ```bash
+    oc get pvc | grep 'elasticsearch-es-server-client'
+    ```
+    {: codeblock}
+    
+1.  Use the following command to edit the file:
+
+    ```bash
+    oc edit pvc {PVC NAME FROM PREVIOUS STEP}
+    ```
+    {: codeblock}
+
+1.  Edit the YAML file for the PVC pod. You can change settings such as the number of replicas for the target pods or the replica size.
+
+    In the following example, the storage size for the Elastic search client node is changed from `1 Gi` to `2 Gi`.
+
+    ```yaml
+    spec:
+      ...
+      resources:
+        requests:
+          storage: 2Gi
+    ```
+    {: codeblock}
+
+    In this example, the number of replicas of the API gateway pod is increased from `1` to `2`:
+
+    ```yaml
+    spec:
+      api:
+        replicas: 2
+    ```
+    {: codeblock}
+
+    For more information about the YAML files that you can edit, see [YAML files](#scaling-yaml-files).
+
+1.  After you edit the YAML file for the PVC, save and close it. Give the cluster a few minutes to pick up and apply the changes. 
+
+    You can verify that the changes were applied by running the following command:
+
+    ```bash
+    oc get pvc {PVC NAME}
+    ```
+    {: codeblock}
+    
+1.  To ensure that any new nodes that start will use the latest settings, edit the custom resource for the service. Change the default settings to reflect the new values.
+    
+    For example, to change the default size for Elastic search storage pods, make the following change in the custom resource definition:
+
+    ```yaml
+    elasticsearch:
+      clientNode:
+        persistence:
+          size: 2Gi
+    ```
+    {: codeblock}
+
+    For more information, see [Additional installation options](https://www.ibm.com/docs/en/SSQNUZ_4.0/svc-discovery/discovery-install-overview.html#operator-install__options){: external}. Not all of the resources that are used by the service are listed in the default custom resource. You can add other resources to the CR if adjustments to their defaults are needed.
+
+1.  Run the following command to apply the CR changes:
+
+    ```bash
+    oc patch wd wd --patch "$(cat $file_name)" --type='merge'
+    ```
+    {: codeblock} 
+
+### YAML files
+{: #scaling-yaml-files}
+
+Definitions that are specified in YAML files provide instructions to the cluster about how to manage the pods that are used by the service. 
+
+#### UI pods
+{: #scaling-ui}
+
+```yaml
+spec:
+  tooling:
+    minerapp:
+      replicas: {number of replicas}
+    tooling:
+      replicas: {number of replicas}
+```
+{: codeblock}
+
+#### API gateway pod
+{: #scaling-api-gateway}
+
+```yaml
+spec:
+  api:
+    replicas: {number of replicas}
+```
+{: codeblock}
+
+#### Elastic search pods
+{: #scaling-elastic}
+
+```yaml
+spec:
+  elasticsearch:
+    clientNode:
+      replicas: {number of replicas}
+    dataNode:
+      replicas: {number of replicas}
+    masterNode:
+      replicas: {number of replicas}
+```
+{: codeblock}
+
+#### Hadoop worker pod
+{: #scaling-hadoop}
+
+```yaml
+spec:
+  hdp:
+    worker:
+      replicas: {number of replicas}
+```
+{: codeblock}
+
+#### Crawler pod
+{: #scaling-crawler}
+
+```yaml
+spec:
+  ingestion:
+    crawler:
+      replicas: {number of replicas}
+```
+{: codeblock}
+
+#### Analyze API pod
+{: #scaling-analyze-api}
+
+```yaml
+spec:
+  statelessapi:
+    runtime:
+      replicas: {number of replicas}
+```
+{: codeblock}
+
+#### Watson Knowledge Studio model enrichment pod
+{: #scaling-wks}
+
+```yaml
+spec:
+  wksml:
+    replicas: {number of replicas}
+```
+{: codeblock}
 
 ## Custom scaling in {{site.data.keyword.discovery-data_short}} 2.2.0
 {: #scaling-discovery}
@@ -47,88 +213,7 @@ You can perform custom scaling on pods in {{site.data.keyword.discoveryshort}} 2
     ```
     {: codeblock}
 
-The following sections describe the parameters list for each pod.
-
-### UI pods
-{: #scaling-ui}
-
-```yaml
-spec:
-  tooling:
-    minerapp:
-      replicas:
-    tooling:
-      replicas:
-```
-{: codeblock}
-
-### API gateway pod
-{: #scaling-api-gateway}
-
-```yaml
-spec:
-  api:
-    replicas:
-```
-{: codeblock}
-
-### Elastic search pods
-{: #scaling-elastic}
-
-```yaml
-spec:
-  elasticsearch:
-    clientNode:
-      replicas:
-    dataNode:
-      replicas:
-    masterNode:
-      replicas:
-```
-{: codeblock}
-
-### Hadoop worker pod
-{: #scaling-hadoop}
-
-```yaml
-spec:
-  hdp:
-    worker:
-      replicas:
-```
-{: codeblock}
-
-### Crawler pod
-{: #scaling-crawler}
-
-```yaml
-spec:
-  ingestion:
-    crawler:
-      replicas:
-```
-{: codeblock}
-
-### Analyze API pod
-{: #scaling-analyze-api}
-
-```yaml
-spec:
-  statelessapi:
-    runtime:
-      replicas:
-```
-{: codeblock}
-
-### Watson Knowledge Studio model enrichment pod
-{: #scaling-wks}
-
-```yaml
-spec:
-  wksml:
-    replicas:
-```
-{: codeblock}
+For more information about the YAML files that you can edit, see [YAML files](#scaling-yaml-files).
 
 ## Upgrading Discovery for Cloud Pak for Data from 2.2.0 to 2.2.1
 {: #upgrade-discovery}

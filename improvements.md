@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-22"
+lastupdated: "2022-06-24"
 
 keywords: improving results, troubleshooting search
 
@@ -39,7 +39,7 @@ If the result shows `Excerpt unavailable` instead of response text, you might ne
 ## Results include more than exact matches
 {: #improve-search-exact-match}
 
-Unlike some other search applications, adding quotation marks to a phrase that you submit from the *Improve and customize* page does not return only exact matches. Queries that are submitted from the product user interface are natural language queries. When quoted text is submitted in a natural language query, the phrase is used to boost result scores, but results don't have to contain the entire phrase.
+Unlike some other search applications, adding quotation marks to a phrase that you submit does *not* return only exact matches. Queries that are submitted from the product user interface are natural language queries. When quoted text is submitted in a natural language query, the phrase is used to boost result scores. However, results are not limited to documents that contain the entire phrase.
 
 If you want more control over how queries are handled, you must use the query API. For more information about the `phrase` operator of the query API, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators#phrase).
 

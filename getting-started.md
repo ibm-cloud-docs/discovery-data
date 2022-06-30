@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-06-29"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -81,16 +81,10 @@ These instructions apply to {{site.data.keyword.discoveryshort}} deployments tha
 
 A new browser tab or window opens and the *My Projects* page is displayed.
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
-
 ![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
 
 To get familiar with the product, you can watch an under 3-minute overview video by clicking the *Watch a video* link from the product home page.
 {: tip}
-
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**
-
-![Shows the main My Projects page with a single Sample Project tile in Cloud Pak for Data.](images/my-projects-cpd.png)
 
 In this tutorial, you explore the sample project.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-29"
 
 keywords: known issues
 
@@ -29,6 +29,11 @@ The known issues that are described in this topic apply to installed deployments
 Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
 
 For more information about installing the service, see [the {{site.data.keyword.icp4dfull}} documentation](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}.
+
+## 4.5.0, 29 June 2022
+{: #29june2022ki}
+
+See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x?topic=issues-watson-discovery){: external}.
 
 ## 4.0.9, 25 May 2022
 {: #25may2022ki}
