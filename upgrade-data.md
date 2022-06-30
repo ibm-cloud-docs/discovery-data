@@ -28,7 +28,5 @@ You can do an in-place upgrade of the service from version 4.x to version 4.5 by
 
 For information about how to do an in-place upgrade from one 4.0.x release to a later 4.0.y release, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
 
-You cannot do an in-place upgrade from releases prior to version 4.x. For information about how to move from a 2.x deployment to {{site.data.keyword.discoveryfull}} 4.5, read the following information:
+You cannot do an in-place upgrade from releases prior to version 4.x. For information about how to move from a 2.x deployment to {{site.data.keyword.discoveryfull}} 4.5, see [Backing up and restoring data in {{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-backup-restore).
 
--   [Backing up and restoring data in {{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-backup-restore)
--   [Backing up and restoring data in earlier releases](/docs/discovery-data?topic=discovery-data-backup-restore-40x)
