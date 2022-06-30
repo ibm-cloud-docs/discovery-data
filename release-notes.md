@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-06-30"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,20 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 30 June 2022
+{: #discovery-30june2022}
+{: release-note}
+
+Watson SDK support change
+:   Support for the following SDKs is provided by the Watson community of developers instead of IBM:
+
+    -   Go
+    -   Ruby
+    -   Swift
+    -   Unity
+
+    For more information, see [Watson SDKs](/docs/discovery-data?topic=watson-using-sdks).
 
 ## 1 June 2022
 {: #discovery-1june2022}
