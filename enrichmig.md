@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-10-01"
+lastupdated: "2022-06-30"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ The following types of resources can be migrated from Watson Explorer to {{site.
 
 If you have [user dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external} from IBM Watson Explorer Analytical Components, you can import them by using the {{site.data.keyword.discoveryshort}} [content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
-The default file location and name for dictionaries that are saved in Watson Explorer Analytical Components is `${master_server_node}/{master_configuration}/{collection_ID}/{dictionary_name}.fdic.xml`.
+The default file location and name for dictionaries that are saved in Watson Explorer Analytical Components is `${primary_server_node}/{primary_configuration}/{collection_ID}/{dictionary_name}.fdic.xml`.
 {: tip}
 
 1.  Download your user dictionaries from Watson Explorer Analytical Components.
