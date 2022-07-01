@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-06-30"
 
 subcollection: discovery-data
 
@@ -177,7 +177,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
 1.  Enter the following command to expand the `custom-crawler-docs.zip` file:
 
      ```sh
-     unzip custom-crawler-docs.zip -d custom-crawler-docs-master
+     unzip custom-crawler-docs.zip -d custom-crawler-docs-primary
      ```
      {: pre}
 
@@ -254,10 +254,10 @@ For information about downloading the `custom-crawler-docs.zip` file on {{site.d
 #### Understanding the `custom-crawler-docs.zip` file
 {: #ccs-grok-crawler-zip-file}
 
-The `custom-crawler-docs.zip` file expands into a `custom-crawler-docs-master` directory that includes the following contents:
+The `custom-crawler-docs.zip` file expands into a directory named `custom-crawler-docs-primary` that includes the following contents:
 
 ```text
-custom-crawler-docs-master/
+custom-crawler-docs-primary
 ├── README.md
 ├── build.gradle
 ├── config
