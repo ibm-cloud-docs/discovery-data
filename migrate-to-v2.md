@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-05-20"
+lastupdated: "2022-07-06"
 
 subcollection: discovery-data
 
@@ -192,6 +192,9 @@ Document IDs are assigned to the documents that you add to a v2 collection when 
 You might want to retain the IDs of your v1 documents in v2 if you are using processes that depend on these unique identifiers. For example, regression testing for the application might verify specific documents are returned by checking the document IDs. Relevancy training uses the document IDs to track documents between training runs. These processes are easier to adapt if the document IDs are the same between your v1 and v2 instances. Otherwise, the processes that are used with the Discovery v1 instance must be remapped to the IDs that are assigned to the documents after they are added to the Discovery v2 instance.
 
 If you specified your own documents IDs when you added documents to the v1 service instance, you can retain the IDs by using the *Update a document* method instead of the *Add a document* method. With the update method, you can assign a document ID to the document as you add it to the v2 collection. For more information, see [Update a document](/apidocs/discovery-data#updatedocument){: external}.
+
+If your data is stored in a JSON file, an array in the original document generates a document ID with a number appended to it. For example, `original_id_n`. To retain the original document ID without the number suffix, remove the array in the JSON file. Change `[ {"name": "value"} ]` to `{"name": "value"}`, for example.
+{: note}
 
 If your v1 documents have system-generated IDs, you can submit an empty [search query](https://cloud.ibm.com/apidocs/discovery#query) to retrieve a list of the documents and their IDs. You can then assign the same ID to each document as you add it to your new collection in v2.
 
