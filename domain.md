@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-06"
 
 subcollection: discovery-data
 
@@ -218,6 +218,9 @@ To add dictionary terms one by one, complete the following steps:
 
 1.  Click **Save dictionary**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
+
+### Uploading dictionary terms
+{: #dictionary-csv}
 
 To add dictionary from a CSV file, complete the following steps:
 
