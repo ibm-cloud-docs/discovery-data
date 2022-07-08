@@ -233,7 +233,7 @@ To access the **Manage fields** page, click the **Manage collections** icon on t
 ### Date format settings
 {: #field-date-settings}
 
-If your documents have a root-level field with date information in it, you can set the field to be a `date` data type field in the index. For example, you might import CSV or JSON files that contain date fields.
+If your documents have a root-level field with date information in it, you can set the field to be a `Date` data type field in the index. For example, you might import CSV or JSON files that contain date fields.
 
 {{site.data.keyword.discoveryshort}} recognizes the following date formats automatically:
 
@@ -249,13 +249,13 @@ yyyy/MM/dd
 ```
 {: screen}
 
-If you store dates in other formats, you can add the format to the list of supported formats. From the *Manage fields* page for the collection, add a format to the **Date formats** field. Specify a date format that is supported by the Java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html){: external} class.
+If you store dates in other formats, you can add the format to the list of supported formats. From the *Manage fields* page for the collection, add a format as a new line in the **Date formats** field. Specify a date format that is supported by the Java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html){: external} class.
     
 For example, if your records store only year values for dates, add `yyyy` to the supported date formats list. You can then set the data type for the field that contains a year value to *Date*, and reprocess your collection. As a result, an occurrence of `2019` in the date field is stored as `2019-01-01T05:00:00Z` in the index.
 
-When you add a new date format, you must specify the time zone in which to set the date also.
+When you add a new date format, you must specify an associated time zone for the date.
 
-{{site.data.keyword.discoveryshort}} cannot store dates that are mentioned within text as fields with a date data type. You can, however, use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
+{{site.data.keyword.discoveryshort}} cannot store a date that is mentioned within a text field as a *Date* field in the index. You can, however, use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
 
 Date formats
 :   Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. Specify dates in a format that the `SimpleDateFormat` class supports.
