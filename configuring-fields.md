@@ -258,7 +258,7 @@ When you add a new date format, you must specify an associated time zone for the
 {{site.data.keyword.discoveryshort}} cannot store a date that is mentioned within a text field as a *Date* field in the index. You can, however, use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
 
 Date formats
-:   Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. Specify dates in a format that the `SimpleDateFormat` class supports.
+:   Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT` and `1994-11-06` are parsed as the same date. Specify dates in a format that the `SimpleDateFormat` class supports.
 
     {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the beginning of the list. You can delete formats that you don't want to use from the list.
     
