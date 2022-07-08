@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-07-08"
 
 subcollection: discovery-data
 
@@ -233,10 +233,36 @@ To access the **Manage fields** page, click the **Manage collections** icon on t
 ### Date format settings
 {: #field-date-settings}
 
-The following options are useful if you want to use time series visualization in the **Content Mining** project type or if you want to correctly parse dates from text in different languages. Use this option to add or delete date formats that are used to convert date strings to date-type data set fields. Only strings that are compatible with the Java `SimpleDateFormat` class are supported. You cannot add any documents that include alternative date formats to the index.
+If your documents have a root-level field with date information in it, you can set the field to be a `date` data type field in the index. For example, you might import CSV or JSON files that contain date fields.
+
+{{site.data.keyword.discoveryshort}} recognizes the following date formats automatically:
+
+```text
+yyyy-MM-dd'T'HH:mm:ssZ
+yyyy-MM-dd'T'HH:mm:ssXXX
+yyyy-MM-dd'T'HH:mm:ss.SSSZ
+yyyy-MM-dd'T'HH:mm:ss.SSSX
+yyyy-MM-dd
+M/d/yy
+yyyyMMdd
+yyyy/MM/dd
+```
+{: screen}
+
+If you store dates in other formats, you can add the format to the list of supported formats. From the *Manage fields* page for the collection, add a format to the **Date formats** field. Specify a date format that is supported by the Java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html){: external} class.
+    
+For example, if your records store only year values for dates, add `yyyy` to the supported date formats list. You can then set the data type for the field that contains a year value to *Date*, and reprocess your collection. As a result, an occurrence of `2019` in the date field is stored as `2019-01-01T05:00:00Z` in the index.
+
+When you add a new date format, you must specify the time zone in which to set the date also.
+
+{{site.data.keyword.discoveryshort}} cannot store dates that are mentioned within text as fields with a date data type. You can, however, use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
 
 Date formats
-:   Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. This field supports the Java `SimpleDateFormat` class, so the date formats string can be in any format that the `SimpleDateFormat` class supports. If you know that your data does not match any of the predefined date formats, you can add a format that the Java `SimpleDateFormat` class supports, or you can delete any of the predefined formats. {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the beginning of the list. You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
+:   Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT`, or `1994-11-06`, is parsed as the same date. Specify dates in a format that the `SimpleDateFormat` class supports.
+
+    {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the beginning of the list. You can delete formats that you don't want to use from the list.
+    
+    You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
 
 Select a time zone
 :   You can use this option to designate a time zone for a document that has a generated time but no time-zone information. You can use this option to store a document creation time into a date-type data set field. For example, if a document is generated on `1 January 2020 1:00 AM Eastern Standard Time (EST)`, the document metadata stores only `2020-01-01 01:00 a.m.`. In this case, {{site.data.keyword.discoveryshort}} cannot parse `2020-01-01 01:00 a.m.` because, without time-zone information that is associated with the document, `2020-01-01 01:00 a.m.` is not specific. Because `1 January 2020 1:00 AM Eastern Standard Time (EST)` and `1 January 2020 1:00 AM Pacific Standard Time (PST)` are different times, you must select **(GMT-05:00) Eastern Standard Time** as the time zone ID so that {{site.data.keyword.discoveryshort}} parses `1 January 2020 1:00 AM` with the EST time zone, as intended.
