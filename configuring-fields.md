@@ -285,7 +285,7 @@ Cause
 :   The error is displayed because out of memory errors occur during the parse, structure identification, or assembly phases of the process that builds the machine learning model. Resources are insufficient when one or more of the documents in your collection are too large or have too many complex tables for the tool to handle.
 
 Solution
-:   Review your collection for large documents or documents with many tables and break them up into more smaller documents before you apply the pretrained model to the collection.
+:   Review your collection for large documents or documents with many tables and break them up into more smaller documents before you apply the pretrained model to the collection. Exact limits differ based on the complexity of your documents. Generally, split documents that are over 400 pages long and avoid including more than 20 complex tables in a single document.
 
 ## Smart Document Understanding limits
 {: #sdu-limits}
