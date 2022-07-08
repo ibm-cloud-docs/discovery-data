@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-07-08"
 
 subcollection: discovery-data
 
@@ -681,10 +681,13 @@ To create a document classifier, complete the following steps:
     All of the fields are selected by default. You might need to scroll horizontally to review all of the fields.
 1.  On the *Classifier* page, specify the fields to use for machine learning training and prediction.
 
-    -   **Answer field**: Select the field from your training data file with the text that you want to classify. From the earlier example, the `Product_review` field is the best choice.
-    -   **Predicted field**: Specify a name to apply to the field that the classifier will generate to store the predicted class label. By detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `Product_review_predicted`.
+    -   **Answer field**: Select the field from your training data file with the classification label. From the earlier example, the `User_sentiment` field is the best choice.
+    -   **Predicted field**: Specify a name to apply to the field that the classifier will generate to store the predicted class label. By detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `User_sentiment_predicted`.
     -   **Test dataset**: Specifies the data set to use to test the classifier model. By default, the training data CSV file that you uploaded and configured is split into 3 data sets that are used for training, validation and test respectively. However, you can optionally specify a separate data set to use for testing the model.
     -   **Train federated model**: Creates more than one model, based on values from a specific field in the data set. For example, if the document has a `product_name` field, you can configure the classifier to create a separate classifier model for each product name value that is specified in the field. By default, the classifier creates one machine learning classifier model.
+
+    You don't need to specify the field that contains the text to be classified. The system detects this field automatically. To check which field will be used and change it if necessary, open the *Edit collection* page, go to the *Fields* tab, and look for the field with the *Analyzable text content* index type. To open the *Edit collection* page, click **Collections** in the page breadcrumb, click the menu icon on the collection tile, and then choose **Edit collection**.
+    {: note}
 
     Click **Next**.
 1.  If you want to apply an enrichment to the text in your training data, select at least one field from the **Target fields** list where you want to apply enrichments. 
@@ -709,7 +712,7 @@ To apply the document classifier to a collection in your Content Mining project,
 1.  Click the **Enrichment** tab, and scroll to the end of the page to view your classifier.
 1.  Select the checkbox for your classifier, and click **Save**. 
 
-It might take several minutes for collection reindexing to complete.
+It might take several minutes for collection reindexing to finish.
 
 To apply the document classifier to a collection in a different project, complete the following steps:
 
