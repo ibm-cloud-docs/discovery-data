@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-07-07"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -210,7 +210,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
           ![Shows the advanced text view with URL entities highlighted.](images/gs-doc-advanced-view.png)
 
-      1.  To see how the information from the document is stored in JSON format, click the *Display options* menu from the view header, and select **JSON view**.
+      1.  To see how the information from the document is stored in JSON format, click the *View as* menu from the view header, and select **JSON**.
 
           ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
 
