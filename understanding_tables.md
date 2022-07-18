@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-18"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -25,7 +25,7 @@ The following tasks generate an HTML field with table information and apply the 
 
     For more information, see [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 
-## Applying the table enrichment
+## Applying the table understanding enrichment
 {: #table-task}
 
 You can apply the enrichment only to a field that contains an HTML representation of the table.

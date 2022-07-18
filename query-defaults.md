@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-07-18"
 
 subcollection: discovery-data
 
@@ -41,8 +41,6 @@ The enrichments that are applied to your data autmoatically differ by project ty
 | `return` | `[]` | `[]` |
 | `spelling_suggestions` | `false` | `true` |
 | `sort` | `""` | `""` |
-| *Premium plans only*: `suggested_refinements.count` | `10` | `10` |
-| *Premium plans only*: `suggested_refinements.enabled` | `false` | `false` |
 | `table_results.count` | `10` | `10` |
 | `table_results.enabled` | `false` | `true` |
 | `table_results.per_document` | `0` | `0` |
@@ -67,8 +65,6 @@ The enrichments that are applied to your data autmoatically differ by project ty
 | `return` | `[]` | `[]` | `[]` |
 | `spelling_suggestions` | `false` | `true` | `true` |
 | `sort` | `""` | `""` | `""` |
-| *Premium plans only*: `suggested_refinements.count` | `10` | `10` | `10` |
-| *Premium plans only*: `suggested_refinements.enabled` | `false` | `false` | `false` |
 | `table_results.count` | `10` | `10` | `10` |
 | `table_results.enabled` | `false` | `false` | `false` |
 | `table_results.per_document` | `0` | `0` | `0` |
@@ -111,7 +107,6 @@ The Custom project type has no project component default settings.
 | aggregations.name | aggregations.label | aggregations.multiple_selections_allowed |
 |-------------------|--------------------|------------------------------------------|
 | `"name": "entities"` | `"label": "Top Entities"`  | `"multiple_selections_allowed": false` |
-| *Premium plans only*: `"name": "_system_suggested_refinements"` | `"label": "Dynamic Facets"` | `"multiple_selections_allowed": true` |
 | `"name": "_system_collections"` | `"label": "Collections"` | `"multiple_selections_allowed": true` |
 {: caption="Document Retrieval project aggregations" caption-side="top"}
 
