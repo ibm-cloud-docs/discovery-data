@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-07-18"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Troubleshooting ingestion
 {: #troubleshoot-ingestion}
 
-Learn about solutions and workarounds to problems you might encounter when you add data to a collection.
+Learn about solutions and workarounds to warnings or errors that you might encounter when you add data to a collection.
 {: shortdesc}
 
 This information applies both to managed and installed instances of {{site.data.keyword.discoveryshort}}. For more troubleshooting tips for installed deployments only, see [Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments](/docs/discovery-data?topic=discovery-data-troubleshoot).
@@ -40,3 +40,9 @@ After applying a pretrained Smart Document Understanding model to a PPT file, ta
 
 Failed to parse document due to invalid encoding
 :    Enable OCR for the file.
+
+## Enrichment troubleshooting tips
+{: #upload-data-ts-enrichments}
+
+Table Understanding: *n* input tables excluded by enrichment
+:    If a document contains complex tables, meaning tables with inconsistent column and row spans, or tables that are too large for the system to process properly, the table understanding enrichment step is skipped during ingestion. Skipping the enrichment of such tables happens by design to prevent slower processing time and inaccurate responses that might otherwise be returned due to misinterpreted data. If you want a skipped table to be processed, consider reformatting the table to have a simpler table format or split a single large table into many smaller tables. To find the table that was skipped, check the warning message. It lists the document line numbers where the table begins and ends.
