@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-07-08"
 
 keywords: JSON, JSON representation, result JSON
 
@@ -34,9 +34,6 @@ To test your project, complete the following steps:
     A representation of the original document is displayed. 
     
 1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: Click **Open advanced view** to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document.
-
-    Only the Entities and Keywords enrichments are listed currently.
-    {: note}
 
     **Optional**: Select an enrichment to highlight every occurrence of the element within the document text.
 
