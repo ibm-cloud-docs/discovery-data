@@ -24,6 +24,11 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## Discovery v1 deprecation announcement
+{: #discovery-v1-deprecation-12july2022}
+
+Watson Discovery v1 is being deprecated. Existing clients who use Watson Discovery v1 are asked to migrate to Watson Discovery v2 before the end-of-support date of **July 11th, 2023**. End of Support means that no v1 instance will work on or after July 11th, 2023. For more information about migration, see [Getting the most from Discovery](/docs/discovery-data?topic=discovery-data-version-choose).
+
 ## 11 July 2022
 {: #discovery-11july2022}
 {: release-note}
@@ -38,7 +43,7 @@ The advanced document view highlights even more enrichments
     -   Custom entities and relationships that are defined by Watson Knowledge Studio machine learning and rules-based models
     -   Custom entities that are defined by using the entity extractor tool that is available as a beta feature
 
-    For more information about enrichments that you can add to your documents, see [Adding domain-specific resources](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-domain).
+    For more information about enrichments that you can add to your documents, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 
 ## 30 June 2022
 {: #discovery-30june2022}
