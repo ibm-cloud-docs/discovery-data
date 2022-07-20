@@ -97,13 +97,13 @@ toc:
           - search-bar.md
           - query-defaults.md
       - topicgroup:
+          label: Preparing your documents for enrichment
+          topics:
+          - configuring-fields.md
+          - split-documents.md
+      - topicgroup:
           label: Enriching your data
           topics:
-          - topicgroup:
-              label: Preparing your documents for enrichment
-              topics:
-              - configuring-fields.md
-              - split-documents.md
           - topicgroup:
               label: Teaching Discovery about your domain
               topics:
