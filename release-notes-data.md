@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-20"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -31,7 +31,7 @@ See [Known issues](/docs/discovery-data?topic=discovery-data-known-issues) for t
 
 {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.5 is available.
 
-For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x//fixlist/discovery-fixlist.html){: external}
+For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x/fixlist/discovery-fixlist.html){: external}
 
 Features that are not available in this release
 :   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:

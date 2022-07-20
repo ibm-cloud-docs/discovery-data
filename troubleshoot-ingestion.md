@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-07-20"
 
 subcollection: discovery-data
 
@@ -45,4 +45,4 @@ Failed to parse document due to invalid encoding
 {: #upload-data-ts-enrichments}
 
 Table Understanding: *n* input tables excluded by enrichment
-:    If a document contains complex tables, meaning tables with inconsistent column and row spans, or tables that are too large for the system to process properly, the table understanding enrichment step is skipped during ingestion. Skipping the enrichment of such tables happens by design to prevent slower processing time and inaccurate responses that might otherwise be returned due to misinterpreted data. If you want a skipped table to be processed, consider reformatting the table to have a simpler table format or split a single large table into many smaller tables. To find the table that was skipped, check the warning message. It lists the document line numbers where the table begins and ends.
+:    If a document contains tables with inconsistent column and row spans or that are too large for the system to process completely, the table understanding enrichment is not applied. Information from tables for which the enrichment step is skipped cannot be returned in search results. If you want the enrichment to be applied to a table, consider reformatting the table to have a simpler table format or split a single large table into many smaller tables. To find the table where the enrichment was not applied, check the warning message. It lists the character offsets in the document where the table begins and ends.
