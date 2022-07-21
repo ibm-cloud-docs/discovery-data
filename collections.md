@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-21"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -97,8 +97,6 @@ The number of collections you can create per service instance depends on your {{
 | Enterprise |                        300 |
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
-
-For more information about the supported number of collections for Lite and Advanced plan instances, see [Discovery v1 pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
 
 ## Data source overview video
 {: #collections-video}

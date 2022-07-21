@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-07-21"
 
 subcollection: discovery-data
 
@@ -18,7 +18,7 @@ Crawl documents that are stored in an {{site.data.keyword.cos_full}} data source
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
-This information applies only to managed deployments. If you are using a Discovery service instance that was created with a Lite or an Advanced plan, or that was created with a Premium plan before 16 July 2020, see [IBM Cloud Object Storage](/docs/discovery?topic=discovery-sources#connectcos){: external}.
+This information applies only to managed deployments.
 {: note}
 
 ## What documents are crawled
