@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-20"
 
 subcollection: discovery-data
 
@@ -72,8 +72,6 @@ To get started, take our step-by-step product tour to get familiar with the user
 
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** for installed instances, such as {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}}.
 - ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}** for managed instances, such as {{site.data.keyword.discoveryshort}} Plus, Enterprise, and Premium plan instances that are hosted by {{site.data.keyword.cloud_notm}} or instances that are provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html).
-
-For information about using Discovery from managed Lite and Advanced plan instances, or from Premium plan instances that were created before 16 July 2020, see the [Discovery (v1) documentation](/docs/discovery?topic=discovery-about).
 
 Click the Help ![Help icon](images/help_icon.png) icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
 {: tip}

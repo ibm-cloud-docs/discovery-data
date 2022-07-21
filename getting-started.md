@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-20"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -20,9 +20,6 @@ completion-time: 20m
 
 In this tutorial, we introduce {{site.data.keyword.discoveryfull}} and walk you through the {{site.data.keyword.discoveryshort}} sample project. Exploring the sample project is a great way to tour and try out some of the product's features.
 {: shortdesc}
-
-This information applies to {{site.data.keyword.discovery-data_short}}, Plus plan instances, and Premium plan instances that were created on {{site.data.keyword.cloud_notm}} after 16 July 2020. For Premium instances that were created before that date and for all Lite and Advanced plans, see [Getting started with Discovery](/docs/discovery?topic=discovery-getting-started){: external}.
-{: important}
 
 ## Before you begin
 {: #before-you-begin-tool}
