@@ -36,7 +36,7 @@ Use the content mining application to analyze documents in your collection based
 
 The guided mode view of the results shows suggested next steps that you can take to analyze your data further. If you don't want to see suggestions, you can switch to **Expert mode**. In Expert mode, the *Documents* view that lists the search results is returned whenever you submit a search. The tasks in this topic describe how to use the application in guided mode.
 
-![Expert mode toggle](images/cm-facet-pair.png){: caption="Figure 1. Mode toggle" caption-side="bottom"}
+![Expert mode toggle](images/cm-expert-mode.png){: caption="Figure 1. Mode toggle" caption-side="bottom"}
 
 ## Analyze relationships between facets
 {: #cm-facets-compare}
@@ -123,7 +123,6 @@ To apply flags, complete the following steps:
     {: note}
 
 A flagged document set dynamically changes as the collection is updated. Flagged document sets are stored as queries in the index. Each flag has a query that represents the document set that it is associated with. For example, after you create the document flag and you search for the term `ice cream` and apply a red flag to all of the documents that have this word, `ice cream` is stored as the query that represents the flag. Then, if you search for the term `coffee` and apply the red flag to all of the documents that have that word, the internal flag query changes to `(ice cream) OR coffee`. Therefore, if new documents that contain the word `coffee` are ingested, the red flag is applied to those documents automatically.
-{: note}
 
 ### Viewing flagged documents
 {: #cm-flags-view}
