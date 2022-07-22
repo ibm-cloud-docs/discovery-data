@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-07-22"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -154,4 +154,4 @@ To deploy your project, complete the following steps:
 1.  Go to the **Integrate and Deploy** > **Launch application** page.
 1.  Click **Launch**.
 
-For more information about how to use the application, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+For more information about how to use the application, see [Analyzing your data with the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).

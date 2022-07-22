@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-07-22"
 
 subcollection: discovery-data
 
@@ -24,7 +24,7 @@ Find answers to frequently asked questions.
 
 | Term | Definition |
 |------|------------|
-| Classifier | A resource that you can train to recognize document types and categorize them in your collection. You can create two types of classifiers, a *text classifier* and a *document classifier*. A *document classifier* can classify documents based on Part of Speech information and metadata that is added by other enrichments that are applied to the collection. You can create a document classifier from the deployed Content Mining application only. From all other project types, you can create a *text classifier*. A text classifier can classify documents based on Part of Speech information only. You can apply a document classifier that you create by using the deployed Content Mining application to categorize documents in other project types. [Learn more](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier) |
+| Classifier | A resource that you can train to recognize document types and categorize them in your collection. You can create two types of classifiers, a *text classifier* and a *document classifier*. A *document classifier* can classify documents based on Part of Speech information and metadata that is added by other enrichments that are applied to the collection. You can create a document classifier from the deployed Content Mining application only. From all other project types, you can create a *text classifier*. A text classifier can classify documents based on Part of Speech information only. You can apply a document classifier that you create by using the deployed Content Mining application to categorize documents in other project types. [Learn more](/docs/discovery-data?topic=discovery-data-cm-doc-classifier) |
 | Collection | A set of documents that you can enrich and later search for meaningful information. [Learn more](/docs/discovery-data?topic=discovery-data-collections). |
 | Content Intelligence | A feature that you can use to enrich documents in a Document Retrieval project such that it can recognize information that is relevant to business contracts. A Document Retrieval project with this feature enabled is referred to as a *Document Retrieval for Contracts* project type. [Learn more](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts) |
 | Data source | An external application or service where valuable knowledge resources are stored. Connect to a service where your data is stored so you can crawl the data without having to move it. [Learn more](/docs/discovery-data?topic=discovery-data-collections). |
@@ -95,6 +95,12 @@ You can use two different methods to define synonyms.
 
 - To define synonyms that are recognized and tagged when a document is ingested and that can be retrieved by search, create a dictionary and add synonyms for the dictionary term entry. A dictionary defines special terms that you want to tag in your documents, such as product names or industry-specific terminology. You can use the dictionary terms later to create facets and to filter documents. For more information, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary).
 - To define synonyms that are applied to the query text that is submitted by users to expand the meaning of the query, add synonyms by using the Synonyms tool on the *Improve relevance* section of the *Improve and customize* page. For more information, see [Expanding the meaning of queries](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
+
+## Can I use {{site.data.keyword.discoveryshort}} to detect sentiment?
+{: #faq-synonyms}
+{: faq}
+
+You can use {{site.data.keyword.discoveryshort}} to detect both phrase and document sentiment. Document sentiment is a built-in Natural Language Processing enrichment that is available for all project types. Document sentiment evaluates the overall sentiment that is expressed in a document to determine whether it is positive, neutral, or negative. Phrase sentiment does the same. However, phrase sentiment can detect and assess multiple opinions in a single document and, in English and Japanese documents, can find specific phrases. For more information about document sentiment, see [Sentiment](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment). For more information about phrase sentiment, see [Detecting phrases that express sentiment](/docs/discovery-data?topic=discovery-data-cm-phrase-sentiment).
 
 ## What is a nested field?
 {: #faq-nested-fields}

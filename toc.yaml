@@ -131,7 +131,8 @@ toc:
       - topicgroup:
           label: Analyzing your data with the Content Mining application
           topics:
-          - contentminerapp.md
+          - topic: contentminerapp.md
+            navtitle: Analyzing your data
           - cm-analyze-data.md
           - topicgroup:
             label: Customizing your analysis

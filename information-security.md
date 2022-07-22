@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-10-02"
+lastupdated: "2022-07-22"
 
 subcollection: discovery-data
 
@@ -58,7 +58,7 @@ The following stored information can be deleted using a `customer_id` if the `cu
 - exported documents (Only when created in the Content Miner using the {{site.data.keyword.discoveryshort}} tooling)
 - reports (Only when created in the Content Miner using the {{site.data.keyword.discoveryshort}} tooling)
 
-Exported documents and reports can be viewed in the [Repository](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorp) and [Report](/docs/discovery-data?topic=discovery-data-contentminerapp#cmorepv) panes of the Content Miner. They are not available using the API.
+Exported documents and reports can be viewed in the *Repository* and *Report* panes of the Content Mining application. They are not available by using the API.
 
 For information about the options for labeling data in {{site.data.keyword.discoveryshort}}, see [Labeling data](/docs/discovery-data?topic=discovery-data-information-security#labeling).
 
