@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-07-22"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -123,7 +123,7 @@ A new document classifier API is available
     -   The `enrichments` property of the Document Classifier object is documented as being optional. However, the property is required currently.
     -   The `field` property in the `federated_classification` object is documented as a string. However, it is currently an array.
 
-    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocumentclassifiers){: external}. For more information about adding a document classifier by using the product user interface, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
+    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocumentclassifiers){: external}. For more information about adding a document classifier by using the product user interface, see [Classifying documents](/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
 
     The document classifier endpoints are not supported in the SDKs currently.
 
@@ -430,7 +430,7 @@ New Project-based interface
 :   The project-based UI includes configurations optimized for three common use cases: Document Retrieval, Conversational Search, and Content Mining. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
 New Content Mining app
-:   This entirely new capability of Watson {{site.data.keyword.discoveryshort}} allows you to find insights in your data when you may not even know the question to ask. The powerful correlation tooling will help you unlock value from large unstructured data sets. For details, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+:   This entirely new capability of Watson {{site.data.keyword.discoveryshort}} allows you to find insights in your data when you may not even know the question to ask. The powerful correlation tooling will help you unlock value from large unstructured data sets. For details, see [Analyzing your data with the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 New tables as answers
 :   Snippets of text aren't helpful if they are found in a table, so {{site.data.keyword.discoveryshort}} instead returns a formatted table as an answer if your question is best answered by a table. For more information, see [Table retrieval](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).

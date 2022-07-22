@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-07-22"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -132,7 +132,7 @@ A new document classifier API is available
     -   The `enrichments` property of the Document Classifier object is documented as being optional. However, the property is required currently.
     -   The `field` property in the `federated_classification` object is documented as a string. However, it is currently an array.
 
-    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocumentclassifiers){: external}. For more information about adding a document classifier by using the product user interface, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp#create-doc-classifier).
+    For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocumentclassifiers){: external}. For more information about adding a document classifier by using the product user interface, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
 
     The document classifier endpoints are not supported in the SDKs currently.
 
@@ -346,7 +346,7 @@ New web crawl scheduling option
 :   You can specify the exact time that you would like your crawls to run for any data source, giving you the flexibility to run them at the times you prefer. For more information, see [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
 New Facet creation in Content Miner
-:   You can now create Facet groups in a Content Miner application. For more information, see [Facet analysis pane](/docs/discovery-data?topic=discovery-data-contentminerapp#cmofap).
+:   You can now create Facet groups in a Content Miner application.
 
 New custom crawler creation
 :   Added the option to create your own custom crawler plug-in. For more information, see [Building a Cloud Pak for Data crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build) **Note:** Any custom code used with Watson Discovery is the responsibility of the developer and is not covered by IBM support.
@@ -398,7 +398,7 @@ Change to Analyze endpoint
 :   The Analyze endpoint, which supports stateless document ingestion workflows. For details, see the [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi). The Analyze API supports JSON documents only. Use of the Analyze API affects license usage, please reference the latest [license information](http://www.ibm.com/software/sla/sladb.nsf/searchlis/?searchview&searchorder=4&searchmax=0&query=(watson+discovery){: external}.
 
 New options for Content Miner
-:   The content mining application includes two new options: [Cyclic time scale](/docs/discovery-data?topic=discovery-data-contentminerapp#cmotsdb) on the Time series dashboard, and the [Contextual view](/docs/discovery-data?topic=discovery-data-contentminerapp#contextual-view) tab.
+:   The content mining application includes two new options: Cyclic time scale on the *Time series* dashboard, and the *Contextual view* tab.
 
 New shortcut for Content Mining projects
 :   For **Content Mining** projects only, the **Improve and customize** page includes a shortcut: the **Launch application** button. Previously, you were required to open the **Integrate and deploy** page, select the **Launch application** tab, and click the **Launch** button.
@@ -471,7 +471,7 @@ New Project-based interface
 :   Test your application like an end-user would with the **Document retrieval**, **Conversational Search**, and **Content Mining** project types. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
 New Content Mining app
-:   Build an end user interface for extracting insights proactively from your entire corpus. For more information, see [Using the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+:   Build an end user interface for extracting insights proactively from your entire corpus. For more information, see [Analyzing your data with the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 New Content Intelligence add-on
 :   Option to enrich your documents with pre-built domain knowledge for Contracts. For more information, see [Document Retrieval for Contracts](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts).
