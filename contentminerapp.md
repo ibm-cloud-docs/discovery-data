@@ -75,19 +75,21 @@ The resulting annotations function as new facets that you can use to filter and 
 
 With your new *`component`* and *`phenomenon`* facets, for example, you can look for correlations between components and phenomena that are involved in traffic incidents.
 
+[Learn about the ways that you can analyze your data](/docs/discovery-data?topic=discovery-data-cm-analyze-data).
+
 ## Digging deeper
 {: cm-deeper}
 
 To dig even deeper into your data, apply or create AI models that can find different types of information in your documents. You can apply built-in natural language processing models, such as the *Entities* enrichment that can recognize mentions of commonly known things, such as business or location names and other types of proper nouns. Or you can apply a custom model that recognizes terms and categories that are unique to your data.
 
--   [Learn about the ways that you can analyze your data](/docs/discovery-data?topic=discovery-data-cm-analyze-data).
--   [Extend your analysis by adding your own facets](/docs/discovery-data?topic=discovery-data-cm-add-facets).
--   [Share what you learn by generating reports](/docs/discovery-data?topic=discovery-data-cm-report).
+[Extend your analysis by adding your own facets](/docs/discovery-data?topic=discovery-data-cm-add-facets).
 
 ## Getting started
 {: #cmstart}
 
-Before you can use the application, you must create a {{site.data.keyword.discoveryshort}} Content Mining project. After the project is created and data is uploaded, you can open the Content Mining application. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+Before you can use the application, you must create a {{site.data.keyword.discoveryshort}} Content Mining project. After the project is created and data is uploaded, you can open the Content Mining application. 
+
+For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
 You can't get out useful insights if you don't put the right type of information in. Be sure to include consistent data. If you want to find trends over time, your data must include data points that specify a date. 
 
