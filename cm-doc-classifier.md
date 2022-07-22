@@ -100,7 +100,7 @@ To create a document classifier, complete the following steps:
     The status of index creation is displayed. Wait for the collection to be fully indexed before you continue with this procedure.
 1.  To create a classifier, click **collection**, and then choose **classifier** from the list.
 
-    ![Shows the collection menu](images/cm-create-classifier)
+    ![Shows the collection menu](images/cm-create-classifier.png)
 
 1.  Click **Create classifier**.
 1.  Name your classifier.
