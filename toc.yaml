@@ -128,7 +128,21 @@ toc:
           - train.md
       - preview.md
       - deploy.md
-      - contentminerapp.md
+      - topicgroup:
+          label: Analyzing your data with the Content Mining application
+          topics:
+          - cm-analyze.md
+          - cm-analyze-data.md
+          - topicgroup:
+            label: Customizing your analysis
+            topics:
+            - cm-add-facets.md
+            - cm-custom-annotator.md
+            - cm-doc-classifier.md
+            - cm-phrase-sentiment.md
+          - cm-edit-collection.md
+          - cm-csv-file.md
+          - cm-report.md
       - topicgroup:
           label: Installing
           topics:
