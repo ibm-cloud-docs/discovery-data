@@ -74,6 +74,13 @@ The entity extractor is now available in more plans and languages
 When you remove a starting URL from a Web crawl connector its associated documents are deleted
 :   The Web crawl connector was updated. Starting with collections that you create after April 2022, if you remove a starting URL from the Web crawl configuration, any indexed documents that were derived from the content of the web page at that URL are deleted with the next crawl. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
 
+## 16 May 2022
+{: #discovery-16may2022}
+{: release-note}
+
+Added API methods for working with stop words and expansion lists
+:   You can now get, add, and remove a stop words or expansion list for a collection programmatically. For more information, see the [Query modifications](/apidocs/discovery-data#getstopwordlist){: external} methods.
+
 ## 13 May 2022
 {: #discovery-13may2022}
 {: release-note}

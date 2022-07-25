@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-25"
 
 subcollection: discovery-data
 
@@ -143,7 +143,7 @@ Documents that you add as part of the initial collection are automatically enric
 
 After you add a collection and optionally apply more enrichments to the data, a full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Analyzing your data with the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
-You can create a collection (CSV file only) from the deployed Content Mining application. The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection.
+You can create a collection from the deployed Content Mining application. The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection. The collection can contain an uploaded CSV file only. The project that is generated is given the name that you specify for the collection.
 {: note}
 
 ### Custom
