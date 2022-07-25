@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-25"
 
 subcollection: discovery-data
 
@@ -18,9 +18,9 @@ Use tools from the Content Mining application to analyze your data.
 
 You can analyze your data in the following ways:
 
--   [Analyze relationships](#cm-facets-compare)
 -   [Find trends](#cm-trends)
 -   [Find characteristic words](#cm-characteristic-words)
+-   [Analyze relationships](#cm-facets-compare)
 
 As you review the results of your analysis, you can flag documents that you want to research further later. For more information, see [Flagging documents](#cm-flags). 
 
@@ -38,28 +38,6 @@ The guided mode view of the results shows suggested next steps that you can take
 
 ![Expert mode toggle](images/cm-expert-mode.png){: caption="Figure 1. Mode toggle" caption-side="bottom"}
 
-## Analyze relationships between facets
-{: #cm-facets-compare}
-
-To compare two facets, complete the following steps:
-
-1.  From the *Facet analysis* pane, select **Pairs**.
-1.  Find the first facet that you want to compare in the list. Click either the X- or Y-axis icon that is associated with the facet to indicate where you want the facet values to be displayed in a two-dimensional graph.
-1.  Find the second facet, and then click the remaining axis icon. For example, if you selected the X-axis icon previously, select the Y-axis icon for the second facet.
-
-    Data from the two facets is displayed in a graph.
-
-    ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 2. Facet comparison graph" caption-side="bottom"}
-
-To compare two or more facets, complete the following steps:
-
-1.  From the *Facet analysis* pane, select **Connections**.
-1.  Select the facets that you want to compare from the list, and then click **Analyze**.
-
-    Data from the facets is displayed in a network graph.
-
-    ![Facet group comparison graph](images/cm-facet-network.png){: caption="Figure 3. Facet network graph" caption-side="bottom"}
-
 ## Find trends
 {: #cm-trends}
 
@@ -68,22 +46,27 @@ Find trends in your data.
 Your documents must contain at least one date field for trend information to be available.
 {: important}
 
-1.  From the initial search page, enter a term or select a facet by which to filter the documents.
+1.  From the initial search page, enter a keyword or select a facet with number values to filter the documents.
+
 1.  Click **Find trends and anomaly** from the list of suggested next steps that is displayed in the guided mode view.
 
     The resulting bar graph shows the number of documents that mention the term or facet value that you specified in the search query over time.
 
-    ![Facet trend graph](images/cm-facet-trend.png){: caption="Figure 4. Facet trend graph" caption-side="bottom"}
+    ![Facet trend graph](images/cm-heatmap.png){: caption="Figure 2. Facet trend graph" caption-side="bottom"}
 
-The cyclic data is calculated from the current time zone setting of your collection.
+    The time series chart is rendered as a heat map. Each cell color indicates a level of correlation.
 
-By default, the time series chart is rendered as a heat map. Each cell color indicates a level of correlation.
+1.  You can click a facet to investigate it more closely. The facet is shown in a bar graph.
 
-You can change from a heat map to a bar graph by clicking a facet label. Each individual bar graph highlights trends in your data that deviate from the normal distribution by displaying *increase indicators*. Increase indicators measure how much the frequency of a facet value on a specific date or in a particular time interval deviates from the expected average frequency. The average is calculated based on the changes in the past time interval frequencies.
+    ![Facet trend graph](images/cm-bar-graph.png){: caption="Figure 3. Facet trend detail in bar graph" caption-side="bottom"}
 
-To select items for further analysis, click individual items. You can also drag the mouse cursor to select contiguous items.
+    Each individual bar graph highlights trends in your data that deviate from the normal distribution by displaying *increase indicators*. 
+    
+    Increase indicators measure how much the frequency of a facet value on a specific date or in a particular time interval deviates from the expected average frequency. The average is calculated based on the changes in the past time interval frequencies.
 
-If you want to change the time zone that is used by the graph, see [Change the time zone](/docs/discovery-data?topic=discovery-data-cm-edit-collection#cm-edit-collection-time-zone).
+You can click individual items in a visualization or click and drag the cursor to select contiguous items.
+
+The cyclic data is calculated from the current time zone setting of your collection. If you want to change the time zone that is used by the graph, see [Change the time zone](/docs/discovery-data?topic=discovery-data-cm-edit-collection#cm-edit-collection-time-zone).
 
 ## Find significant terms
 {: #cm-characteristic-words}
@@ -96,9 +79,31 @@ You can click a word from the word cloud to add it to the existing query and fil
 
     The characteristic words view is displayed.
 
-    ![Facet word cloud](images/cm-word-cloud.png){: caption="Figure 5. Characteristic word cloud" caption-side="bottom"}
+    ![Facet word cloud](images/cm-word-cloud.png){: caption="Figure 4. Characteristic word cloud" caption-side="bottom"}
 
 1.  Click a word in the cloud to limit the document set to include only documents that mention the word.
+
+## Analyze relationships between facets
+{: #cm-facets-compare}
+
+To compare two facets, complete the following steps:
+
+1.  From the *Facet analysis* pane, select **Pairs**.
+1.  Find the first facet that you want to compare in the list. Click either the X- or Y-axis icon that is associated with the facet to indicate where you want the facet values to be displayed in a two-dimensional graph.
+1.  Find the second facet, and then click the remaining axis icon. For example, if you selected the X-axis icon previously, select the Y-axis icon for the second facet.
+
+    Data from the two facets is displayed in a graph.
+
+    ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 5. Facet comparison graph" caption-side="bottom"}
+
+To compare two or more facets, complete the following steps:
+
+1.  From the *Facet analysis* pane, select **Connections**.
+1.  Select the facets that you want to compare from the list, and then click **Analyze**.
+
+    Data from the facets is displayed in a network graph.
+
+    ![Facet group comparison graph](images/cm-facet-network.png){: caption="Figure 6. Facet network graph" caption-side="bottom"}
 
 ## Flag documents of interest
 {: #cm-flags}
@@ -114,7 +119,7 @@ To apply flags, complete the following steps:
 1.  From the analysis view of your collection, create a query that returns a set of documents with specific characteristics.
 1.  From the documents view, click the *Document flags* icon.
 
-    ![Collection tile overflow menu](images/cm-doc-flags-icon.png){: caption="Figure 9. Document flags" caption-side="bottom"}
+    ![Collection tile overflow menu](images/cm-doc-flags-icon.png){: caption="Figure 7. Document flags" caption-side="bottom"}
 
 1.  Select a flag.
 1.  You can choose to apply the flag to all query results or to selected documents, and then click **Apply**.

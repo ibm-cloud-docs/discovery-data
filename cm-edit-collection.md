@@ -39,7 +39,9 @@ You might want to change the following characteristics:
     The following message is displayed: 
 
     ```text
-    You need to clear index to make these changes. After clearing index, fully build the index to analyze using this collection.
+    You need to clear index to make these changes. 
+    After clearing index, fully build the index to 
+    analyze using this collection.
     ```
     {: screen}
 
