@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-26"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ You might want to change the following characteristics:
     ```
     {: screen}
 
-    You don't need to take any action. The index is rebuilt automatically when you click **OK**.
+    You don't need to take any action. The index is rebuilt automatically when you click *OK*.
 
 1.  Click **OK** to verify the change. 
 1.  Click **Close** to return to the *Collections* page.
