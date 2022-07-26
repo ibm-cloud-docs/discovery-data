@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-26"
 
 subcollection: discovery-data
 
@@ -42,7 +42,9 @@ Follow these guidelines when you create a CSV file for use in the project:
     ```
     {: screen}
 
-    If you store dates in other formats, you can add the format to the list of supported formats. From the *Manage fields* page for the collection, add a format to the **Date formats** field. Specify a date format that is supported by the Java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html){: external} class.
+    If you store dates in other formats, you can add the format to the list of supported formats. 
+    
+    From the {{site.data.keyword.discoveryshort}} user interface, open the *Manage collection* page. Click your collection tile. From the *Manage fields* page for the collection, add a format to the **Date formats** field. Specify a date format that is supported by the Java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html){: external} class.
     
     For example, if your records store only year values for dates, add `yyyy` to the supported date formats list. You can then set the data type for the field that contains a year value to *Date*, and reprocess your collection. As a result, an occurrence of `2019` in the date field is stored as `2019-01-01T05:00:00Z` in the index.
 
