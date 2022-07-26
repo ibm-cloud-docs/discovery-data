@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-07-26"
 
 subcollection: discovery-data
 
@@ -34,9 +34,11 @@ Use the content mining application to analyze documents in your collection based
 1.  Enter a search term, click a facet with which to filter the documents, or leave the search field blank to return all of your documents.
 1.  Click **Search**.
 
-The guided mode view of the results shows suggested next steps that you can take to analyze your data further. If you don't want to see suggestions, you can switch to **Expert mode**. In Expert mode, the *Documents* view that lists the search results is returned whenever you submit a search. The tasks in this topic describe how to use the application in guided mode.
+The guided mode view of the results shows suggested next steps that you can take to analyze your data further. If you don't want to see suggestions, you can switch to **Expert mode**. In Expert mode, the *Documents* view that lists the search results is returned whenever you submit a search.
 
 ![Expert mode toggle](images/cm-expert-mode.png){: caption="Figure 1. Mode toggle" caption-side="bottom"}
+
+The tasks in this topic describe how to use the application in guided mode.
 
 ## Find trends
 {: #cm-trends}
@@ -52,7 +54,7 @@ Your documents must contain at least one date field for trend information to be 
 
     The resulting bar graph shows the number of documents that mention the term or facet value that you specified in the search query over time.
 
-    ![Facet trend graph](images/cm-heatmap.png){: caption="Figure 2. Facet trend graph" caption-side="bottom"}
+    ![Facet trend heat map](images/cm-heatmap.png){: caption="Figure 2. Facet trend graph" caption-side="bottom"}
 
     The time series chart is rendered as a heat map. Each cell color indicates a level of correlation.
 

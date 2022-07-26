@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-26"
 
 subcollection: discovery-data
 
@@ -57,7 +57,18 @@ What will you do with Watson Discovery? (Music outro)
 ## How it works
 {: cm-explained}
 
-To analyze your data, you use *facets*. Facets give you a way to slice your data and visualize a subset of information so it is easier to comprehend. 
+To analyze your data, you use *facets*. Facets give you a way to slice your data and visualize a subset of information so it is easier to comprehend.
+
+From the data analysis page for your collection, you can choose for the data to be shown in one of the following views:
+
+Facets
+:    Shows facets that are derived from from annotations that are added to your documents by enrichments that are applied to your documents. Enrichments can include built-in Natural Language Processing enrichments, such as *Part of Speech* or *Entities*. They can also include custom enrichments that you add, such as dictionaries, regular expression patterns, and machine learning models.
+
+Metadata facets
+:    Shows acets that are derived from your data. When you add files to a collection, {{site.data.keyword.discoveryshort}} analyzes and indexes the data. Annotations are added to identify content types and are shown as metadata facets. The best metadata facets result when you ingest structured data, such as records from a CSV file.
+
+Custom
+:    Shows only the facets that you choose to add to the view. You can add a mix of enrichment-derived and content-derived facets to your custom view.
 
 When you create a *Content Mining* project type, the *Part of Speech* facet is applied to your data automatically. This facet is a great place to start because it is valid for all data, no matter the subject. The output gives you a quick look at the terminology that is most common in the data. 
 
@@ -91,6 +102,6 @@ Before you can use the application, you must create a {{site.data.keyword.discov
 
 For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
-You can't get out useful insights if you don't put the right type of information in. Be sure to include consistent data. If you want to find trends over time, your data must include data points that specify a date. 
+Of course, you can't get out useful insights if you don't put the right type of information in. Be sure to include consistent data. If you want to find trends over time, your data must include data points that specify a date. 
 
-Data that is submitted in CSV file format is optimal. For a sample of a CSV file that provides interesting analysis capabilities, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file). When you start with structured data, such as records in a CSV file, facets are created automatically from the fields in your documents. To view these domain-specific facets, switch the *Facets* view to show **Metadata facets**.
+Data that is submitted in CSV file format is optimal. For a sample of a CSV file that provides interesting analysis capabilities, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file).
