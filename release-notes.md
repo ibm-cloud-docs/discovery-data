@@ -30,6 +30,20 @@ This information applies only to managed instances of {{site.data.keyword.discov
 Watson Discovery v1 is being deprecated. Existing clients who use Watson Discovery v1 are asked to migrate to Watson Discovery v2 before the end-of-support date of **11 July 2023**. End of Support means that no v1 instance will work on or after 11 July 2023. For more information about migration, see [Getting the most from Discovery](/docs/discovery-data?topic=discovery-data-version-choose).
 {: deprecated}
 
+## 28 July 2022
+{: #discovery-28july2022}
+{: release-note}
+
+API updates
+:    The following changes were made to the Discovery v2 API.
+
+     New fields are available:
+
+     -   A `smart_document_understanding` field is returned with the *Get collection* method. This new field specifies whether an SDU model is enabled for the collection and indicates the model type.
+     -   A `similar` parameter is available from the Query method. Use it to find documents that are similar to documents of interest to you.
+     
+     The `suggested_refinements` parameter of the Query method is deprecated. The `suggested_refinements` parameter was used to identify dynamic facets from Premium plan data.
+
 ## 11 July 2022
 {: #discovery-11july2022}
 {: release-note}

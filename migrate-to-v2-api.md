@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-05-27"
+lastupdated: "2022-07-28"
 
 subcollection: discovery-data
 
@@ -76,8 +76,8 @@ The following table shows the important differences between the v1 and v2 collec
 
 | Method | Notes |
 |--------|-------|
-| Create a collection | The v2 response doesn't include the `status` and `configuration_id` fields. You can get status information for a specific document by using the [Get document details](/apidocs/discovery-data#getdocument) method.  \n The objects `disk_usage`, `training_status`, `crawl_status`, and `smart_document_understanding` are not present in the response body in v2. The `document_counts` object is not present in the response body in v2 currently. Training status is returned in the [Get project](/apidocs/discovery-data#getproject){: external} method response. The other information is not available in v2.  In v2, you can define the enrichments to apply to the documents in the collection by specifying an optional `enrichments` object. |
-| Get collection details | The v2 response doesn't include the `status` and `configuration_id` fields. You can get status information for a specific document by using the [Get document details](/apidocs/discovery-data#getdocument) method.  \n The objects `document_counts`, `disk_usage`, `training_status`, `crawl_status`, and `smart_document_understanding` are not present in the response body in v2. Training status is returned in the *Get project* method response. The other information is not available in v2. For example, you cannot get the document count for a collection and cannot get the crawl status for a collection that connects to an external data source in v2. In v2, you can get information about the enrichments that are applied to the collection. |
+| Create a collection | The v2 response doesn't include the `status` and `configuration_id` fields. You can get status information for a specific document by using the [Get document details](/apidocs/discovery-data#getdocument) method.  \n The objects `disk_usage`, `training_status`, and `crawl_status` are not present in the response body in v2. The `document_counts` object is not present in the response body in v2 currently. Training status is returned in the [Get project](/apidocs/discovery-data#getproject){: external} method response. The other information is not available in v2.  In v2, you can define the enrichments to apply to the documents in the collection by specifying an optional `enrichments` object. |
+| Get collection details | The v2 response doesn't include the `status` and `configuration_id` fields. You can get status information for a specific document by using the [Get document details](/apidocs/discovery-data#getdocument) method.  \n The objects `document_counts`, `disk_usage`, `training_status`, and `crawl_status` are not present in the response body in v2. Training status is returned in the *Get project* method response. The other information is not available in v2. For example, you cannot get the document count for a collection and cannot get the crawl status for a collection that connects to an external data source in v2. In v2, you can get information about the enrichments that are applied to the collection. |
 | Update a collection | v2 uses `POST` instead of `PUT`. In v2, you can update the enrichments that are applied to the documents in the collection by specifying an optional `enrichments` object.  \n The v2 response doesn't include the `status` and `configuration_id` fields. |
 {: caption="Collections API notes" caption-side="top"}
 
@@ -145,7 +145,7 @@ Some query result configurations are applied to the service by default based on 
     | highlight | highlight | If `passages.enabled` and `passages.per_document` are `true`, then passages are returned for each document instead of highlights. |
     | spelling_suggestions | spelling_suggestions | No notes. |
     | deduplicate | **N/A** | Not supported in v2. |
-    | similar     | **N/A** | Not supported in v2. |
+    | similar     | similar | The format changed in v2. The `similar:true` parameter changed to `similar.enable:true`. The `document_ids` and `fields` parameters changed from strings to string arrays. The `document_ids` parameter now is required if `enabled` is true. |
     | bias        | **N/A** | Not supported in v2. |
     {: caption="Query parameters comparison" caption-side="top"}
 
