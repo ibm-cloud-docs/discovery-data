@@ -35,7 +35,7 @@ Watson Discovery v1 is being deprecated. Existing clients who use Watson Discove
 {: release-note}
 
 API updates
-:    The following changes were made to the Discovery v2 API.
+:    The following changes were made to the [Discovery v2 API](/apidocs/discovery-data){: external}.
 
      New fields are available:
 
