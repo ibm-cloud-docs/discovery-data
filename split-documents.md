@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -23,7 +23,7 @@ To control how your documents are split, you specify a field, such as `subtitle`
 
 Before you begin, decide which field to use as the page break marker.
 
-- You can use any of the fields that are indexed by default. For more information, see [Fields indexed by default](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-default-fields).
+- You can use any of the fields that are indexed by default. To see your choices, check the *Fields to index* list. Fields that have a *Type* value are stored in the index.
 - If the fields that are created by default don't meet your needs, you can use the Smart Document Understanding tool to define a custom field, and then split documents by the custom field. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
 - The number of segments per document is limited to `1,000`. After segment number `999` is created, any remaining document content is stored within segment `1,000`.
 - Metadata from PDF and Microsoft Word documents and any custom metadata is extracted and included in the index with each segment.

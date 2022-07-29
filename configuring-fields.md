@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using Smart Document Understanding
+# Document structure
 {: #configuring-fields}
 
 Smart Document Understanding (SDU) is technology that learns about the content of a document based on the document's structure.
