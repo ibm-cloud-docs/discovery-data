@@ -40,9 +40,9 @@ API updates
      New fields are available:
 
      -   A `smart_document_understanding` field is returned with the *Get collection* method. This new field specifies whether an SDU model is enabled for the collection and indicates the model type.
-     -   A `similar` parameter is available from the Query method. Use it to find documents that are similar to documents of interest to you.
+     -   A `similar` parameter is available from the *Query* method. Use it to find documents that are similar to documents of interest to you.
      
-     The `suggested_refinements` parameter of the Query method is deprecated. The `suggested_refinements` parameter was used to identify dynamic facets from Premium plan data.
+     The `suggested_refinements` parameter of the *Query* method is deprecated. The `suggested_refinements` parameter was used to identify dynamic facets from Premium plan data.
 
 ## 11 July 2022
 {: #discovery-11july2022}
