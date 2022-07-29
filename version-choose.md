@@ -83,16 +83,16 @@ Discovery v2 has new features that were previously unavailable. The following ta
 
 For more information about artifact limits per plan, see the feature documentation:
 
-- [Advanced rules model limits](/docs/discovery-data?topic=discovery-data-domain#advanced-rules-limits)
-- [Classifier limits](/docs/discovery-data?topic=discovery-data-domain#classifier-limits)
+- [Advanced rules model limits](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules-limits)
+- [Classifier limits](/docs/discovery-data?topic=discovery-data-domain-classifier#classifier-limits)
 - [Collection limits](/docs/discovery-data?topic=discovery-data-collections#collections-limits)
-- [Dictionary limits](/docs/discovery-data?topic=discovery-data-domain#dictionary-limits)
+- [Dictionary limits](/docs/discovery-data?topic=discovery-data-domain-dictionary#dictionary-limits)
 - [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits)
-- [Machine Learning model limits](/docs/discovery-data?topic=discovery-data-domain#machinelearning-limits)
-- [Pattern limits](/docs/discovery-data?topic=discovery-data-domain#patterns-limits)
+- [Machine Learning model limits](/docs/discovery-data?topic=discovery-data-domain-ml#machinelearning-limits)
+- [Pattern limits](/docs/discovery-data?topic=discovery-data-domain-pattern#patterns-limits)
 - [Project limits](/docs/discovery-data?topic=discovery-data-projects#projects-limits)
 - [Query limits](/docs/discovery-data?topic=discovery-data-query-concepts#query-limits)
-- [Regular expression limits](/docs/discovery-data?topic=discovery-data-domain#regex-limits)
+- [Regular expression limits](/docs/discovery-data?topic=discovery-data-domain-regex#regex-limits)
 - [SDU limits](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-limits)
 
 The following limits apply only to Content Mining project types:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-01"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -78,7 +78,7 @@ To create a facet by creating a dictionary, complete the following steps:
 
 1.  As you test the facet, you can add more terms to the dictionary you created by selecting **Teach domain concepts** > **Dictionaries**.
 
-    The dictionary that you created is shown in the list on the **Dictionaries** page. For more information, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#dictionary).
+    The dictionary that you created is shown in the list on the **Dictionaries** page. For more information, see [Dictionaries](/docs/discovery-data?topic=discovery-data-domain-dictionary).
 
 ### Creating a facet by identifying a pattern
 {: #facetpattern}

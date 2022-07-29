@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -20,7 +20,7 @@ You can improve the quality of search results by expanding the meaning of the qu
 
 To expand the scope of a query beyond exact matches, add a synonyms list to your collection. When synonyms are defined, the customer does not need to submit an exact phrase or keyword that your project is trained to understand. Even variations of the term are recognized and used to find the best results. For example, you can expand a query for `ibm` to include `international business machines` and `big blue`. Query expansion terms are typically synonyms, antonyms, or common misspellings for terms.
 
-Synonyms that you add to improve the search results function differently from synonyms that you add to a dictionary. Dictionary synonyms are recognized and tagged at the time that a document is ingested. The synonyms that you define are recognized and tagged as occurrences of the associated dictionary term, so that they can be retrieved later by search. For more information about adding synonyms that are recognized when documents are processed, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain#dictionary).
+Synonyms that you add to improve the search results function differently from synonyms that you add to a dictionary. Dictionary synonyms are recognized and tagged at the time that a document is ingested. The synonyms that you define are recognized and tagged as occurrences of the associated dictionary term, so that they can be retrieved later by search. For more information about adding synonyms that are recognized when documents are processed, see [Dictionaries](/docs/discovery-data?topic=discovery-data-domain-dictionary).
 {: note}
 
 You can define two types of expansions:
