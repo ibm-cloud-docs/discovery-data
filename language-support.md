@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -58,4 +58,4 @@ You specify the collection language when you create a collection. For more infor
 The following features are currently supported in English only:
 
 -  [Document Retrieval for Contract project type](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts)
--  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: [Patterns (beta)](/docs/discovery-data?topic=discovery-data-domain#patterns)
+-  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: [Patterns (beta)](/docs/discovery-data?topic=discovery-data-domain-pattern)

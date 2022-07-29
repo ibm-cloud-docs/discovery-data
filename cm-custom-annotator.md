@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -20,7 +20,7 @@ Before you begin, have the following data ready.
 
 | Annotator type | Description | Data |
 |----------------|-------------|------|
-| Dictionary | Assigns facets to terms that match dictionary entries that you define or upload. | You can optionally upload a CSV file of dictionary terms. For more information about the file format requirements, see [Uploading dictionary terms](/docs/discovery-data?topic=discovery-data-domain#dictionary-csv) |
+| Dictionary | Assigns facets to terms that match dictionary entries that you define or upload. | You can optionally upload a CSV file of dictionary terms. For more information about the file format requirements, see [Uploading dictionary terms](/docs/discovery-data?topic=discovery-data-domain-dictionary#dictionary-csv) |
 | Machine learning | Assigns facets to mentions that are recognized by a machine learning model that you upload. | A compressed file of a machine learning model that is exported from Watson Knowledge Studio is required. |
 | Regular expression | Assigns facets to text that matches Java regular expression patterns that you define or upload. | You can optionally upload a JSON file that contains regular expression patterns. |
 {: caption="Custom annotator prerequisite data" caption-side="top"}

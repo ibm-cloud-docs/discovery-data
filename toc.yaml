@@ -107,8 +107,16 @@ toc:
           - topicgroup:
               label: Teaching Discovery about your domain
               topics:
-              - domain.md
-              - entity-extractor.md
+              - topicgroup:
+                label: Adding custom enrichments
+                topics:
+                - domain.md
+                - domain-classifier.md
+                - domain-dictionary.md
+                - entity-extractor.md
+                - domain-ml.md
+                - domain-pattern.md
+                - domain-regex.md
               - enrichmig.md
           - topicgroup:
               label: Extracting meaning from your data

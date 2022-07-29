@@ -428,7 +428,7 @@ New Swedish, Norwegian, and Danish language support
 :   Added basic support for Swedish, Norwegian (Bokma&#778;l and Nynorsk), and Danish. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
 Change to Advanced Rule models enrichment
-:   The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-domain#advanced-rules) is now GA.
+:   The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules) is now GA.
 
 New document preview for search results
 :   You can now view your search results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document, making the context clearer.
@@ -507,7 +507,7 @@ New dynamic Facets
 :   Automatically generate facets based on the understanding of your data. For more information, see [Facets](/docs/discovery-data?topic=discovery-data-facets).
 
 New Dictionary suggestions
-:   Dictionary terms are suggested based on your content. For more information, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary).
+:   Dictionary terms are suggested based on your content. For more information, see [Dictionary](/docs/discovery-data?topic=discovery-data-domain-dictionary).
 
 New beta Curations
 :   Specify a particular result for a given query. For more information, see the [API reference](https://{DomainName}/apidocs/discovery/discovery-data#createcuration){: external}.
@@ -529,7 +529,7 @@ New FISMA support
 :   Federal Information Security Management Act (FISMA) support is available for {{site.data.keyword.discovery-data_long}} offerings purchased on or after August 30, 2019. FISMA support is also available to those who purchased the June 28, 2019 version and upgrade to the August 30, 2019 version. {{site.data.keyword.discovery-data_long}} is FISMA High Ready.
 
 New Classifier enrichment
-:   Released the Classifier enrichment. For more information, see [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier).
+:   Released the Classifier enrichment. For more information, see [Classifier](/docs/discovery-data?topic=discovery-data-domain-classifier).
 
 New Red Hat OpenShift support
 :   Added support for installing {{site.data.keyword.icp4dfull}} on Red Hat OpenShift.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -28,12 +28,12 @@ When you analyze a document with the API, you indicate how you want the document
 
 The following enrichments are supported in the Analyze API:
 
-- [Dictionary](/docs/discovery-data?topic=discovery-data-domain#dictionary)
-- [Regular expressions](/docs/discovery-data?topic=discovery-data-domain#regex)
-- [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain#machinelearning)
+- [Dictionary](/docs/discovery-data?topic=discovery-data-domain-dictionary)
+- [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex)
+- [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain-ml)
 - [Document classifier](/docs/discovery-data?topic=discovery-data-cm-doc-classifier)
-- [Text classifier](/docs/discovery-data?topic=discovery-data-domain#classifier)
-- [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain#advanced-rules)
+- [Text classifier](/docs/discovery-data?topic=discovery-data-domain-classifier)
+- [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules)
 - [Entities](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities)
 - [Keywords](/docs/discovery-data?topic=discovery-data-nlu#nlu-keywords)
 - [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)

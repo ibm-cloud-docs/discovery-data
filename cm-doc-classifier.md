@@ -27,7 +27,7 @@ Classifying documents is useful when you want to sort many documents into groups
 To create a document classifier, you build a machine learning model that can recognize which class best captures the point of customer feedback that is specified in natural language. And you define the class labels so that they represent real scenarios that make sense for your business.
 
 What's the difference between a document classifier and a text classifier?
-:    A document classifier can classify documents based on *Part of Speech* information and metadata that is added by other enrichments that you apply to the collection. A text classifier can classify documents based on *Part of Speech* information only. For more information about how to create a text classifier, see [Classifier](/docs/discovery-data?topic=discovery-data-domain#classifier).
+:    A document classifier can classify documents based on *Part of Speech* information and metadata that is added by other enrichments that you apply to the collection. A text classifier can classify documents based on *Part of Speech* information only. For more information about how to create a text classifier, see [Classifier](/docs/discovery-data?topic=discovery-data-domain-classifier).
 
 ## Before you begin
 {: #cm-doc-classifier-prereqs}

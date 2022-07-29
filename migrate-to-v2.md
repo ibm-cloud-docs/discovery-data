@@ -292,7 +292,7 @@ Machine learning models
 
     -   **{{site.data.keyword.cloud_notm}}**: [Deploying a machine learning model to Watson Discovery](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-publish-ml#wks_madiscovery){: external}
     
-    For information about how to import a model to Discovery v2, see [Importing Machine Learning models](/docs/discovery-data?topic=discovery-data-domain#machinelearning).
+    For information about how to import a model to Discovery v2, see [Importing Machine Learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
 
 ## Update your application to use the v2 API
 {: #migrate-to-v2-difs}
