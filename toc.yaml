@@ -23,6 +23,7 @@ toc:
           - migrate-to-v2.md
           - migrate-to-v2-api.md
           - migration-faq.md
+          - enrichmig.md
       - topicgroup:
           label: Media resources
           links:
@@ -107,17 +108,13 @@ toc:
           - topicgroup:
               label: Teaching Discovery about your domain
               topics:
-              - topicgroup:
-                label: Adding custom enrichments
-                topics:
-                - domain.md
-                - domain-classifier.md
-                - domain-dictionary.md
-                - entity-extractor.md
-                - domain-ml.md
-                - domain-pattern.md
-                - domain-regex.md
-              - enrichmig.md
+              - domain.md
+              - domain-classifier.md
+              - domain-dictionary.md
+              - entity-extractor.md
+              - domain-ml.md
+              - domain-pattern.md
+              - domain-regex.md
           - topicgroup:
               label: Extracting meaning from your data
               topics:

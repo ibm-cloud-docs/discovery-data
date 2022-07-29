@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Adding domain-specific resources
+# Adding custom enrichments
 {: #domain}
 
 Add resources that can teach {{site.data.keyword.discoveryshort}} about terms or patterns that have special meaning to your application.
