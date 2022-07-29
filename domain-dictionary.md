@@ -30,9 +30,9 @@ To add dictionary terms one by one, complete the following steps:
     If you use a hierarchy of categories, add a period between category names in the facet path to represent the hierarchy. For example, `automobiles.motorsports`.
 1.  Enter a term, and then select the **+** button to add it.
 
-    In English dictionaries, specify the dictionary terms in lowercase. Only use uppercase if you want {{site.data.keyword.discoveryshort}} to ignore lowercase mentions of the term when they occur in text. When terms are analyzed to determine whether they are occurrences of the dictionary enrichment, the surface form of the term with uppercase match is used. For example, a `vehicle` entry in the dictionary, results in annotations for `vehicle`, `Vehicle`, or `VEHICLE` mentions when they occur in text. For a `Sat` entry in the dictionary, annotations are added for `Sat` or `SAT`, but not for `sat`.
+    In English dictionaries, specify the dictionary terms in lowercase. Only use uppercase if you want {{site.data.keyword.discoveryshort}} to ignore lowercase mentions of the term when they occur in text. When terms are analyzed to determine whether they are occurrences of the dictionary enrichment, the surface form of the term with uppercase match is used. For example, a `vehicle` entry in the dictionary results in annotations for `vehicle`, `Vehicle`, or `VEHICLE` mentions when they occur in text. For a `Sat` entry in the dictionary, annotations are added for `Sat` or `SAT`, but not for `sat`.
     
-    Dictionary matching is case-sensitive for Arabic, Chinese, Korean, Japanese and Hebrew.
+    Dictionary matching is case-sensitive for Arabic, Chinese, Korean, Japanese, and Hebrew.
 
 1.  To add synonyms for the term, click the *Edit* icon, and then enter synonyms in the **Other terms** field. Separate multiple synonyms with a comma. Click **Save term**.
 
@@ -61,7 +61,7 @@ To add dictionary from a CSV file, complete the following steps:
     - To define a set of synonymous terms, use the following syntax:
 
       ```text
-      <term>,<synonym>,<synonym>,<synonym>
+      <term>,<synonym>,<synonym>,<synonym>,...
       ```
 
       For example:
@@ -77,7 +77,7 @@ To add dictionary from a CSV file, complete the following steps:
     - To define a set of terms in the same category, use the following syntax:
 
       ```text
-      <category>,<related-term>,<related-term>
+      <category>,<related-term>,<related-term>,...
       ```
 
       For example:

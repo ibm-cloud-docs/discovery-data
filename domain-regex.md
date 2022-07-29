@@ -41,7 +41,7 @@ To add a regular expression, complete the following steps:
     - Use common patterns. For example, use `a(b|c|d)` instead of `(ab|ac|ad)`.
     - The regular expression engine might fail if it backtracks because it can't make a negative match toward the end of the string and then attempts too many permutations. To prevent backtracks, consider using a possessive quantifier, such as `(a+b*)++c`.
 1.  Click **Create**.
-1.  Choose the collection and field to search for occurrences of text that matches this regular expression pattern.
+1.  Choose the collection and field to search for occurrences of text that match this regular expression pattern.
 
 In the output, the information that is extracted by the regular expression enrichment can be found under `enriched_{field_name}`, within the `entities` array.
 

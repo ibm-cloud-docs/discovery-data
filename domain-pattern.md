@@ -48,7 +48,7 @@ To define a pattern, complete the following steps:
     - Allow {{site.data.keyword.discoveryshort}} to choose 10 random documents for you.
     - Choose the documents yourself (up to 20 can be selected).
 
-      Each document must be under 5,000 characters in length. Documents that exceed the limit are truncated to 5000 characters.
+      Each document must be under 5,000 characters in length. Documents that exceed the limit are truncated to 5,000 characters.
 
 1.  Click **Next**.
 1.  Start selecting example words or phrases that fit the pattern you want to define.
@@ -99,7 +99,7 @@ Add an advanced rules model to apply a text extraction model that was created an
 Your model must be created with the appropriate {{site.data.keyword.knowledgestudioshort}} deployment:
 
 - ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: You can add models that were created with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}.
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: You can add models that were created with a {{site.data.keyword.knowledgestudiofull}} instance that is hosted in {{site.data.keyword.cloud_notm}} only.
+- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: You can add models that were created with a {{site.data.keyword.knowledgestudiofull}} instance that is hosted on {{site.data.keyword.cloud_notm}} only.
 
 {{site.data.keyword.knowledgestudioshort}} support for building models with the beta Advanced Rules Editor in instances that are managed by {{site.data.keyword.cloud_notm}} ended on 30 June 2022. Any rules models that were exported from {{site.data.keyword.knowledgestudioshort}} before that date can continue to be run in {{site.data.keyword.discoveryshort}}.
 {: note}
