@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -607,9 +607,8 @@ Patterns cannot be used in a Content Mining application.
 
 For more information, read the following blog posts:
 
--   [Part 1: Pattern Induction — What is a Pattern?](https://medium.com/ibm-data-ai/part-i-pattern-induction-what-is-a-pattern-b661ad46b8c0)
--   [Part 2: Pattern Induction - Using Watson Discovery to Extract Patterns?](https://community.ibm.com/community/user/watsonai/blogs/bikalpa-neupane/2021/11/10/part-ii)
--   [Part 3: Pattern Induction - Best Practices for Highlighting Examples and Providing Expert Feedback](https://community.ibm.com/community/user/watsonai/blogs/bikalpa-neupane/2021/11/10/part-iii-pattern-induction-best-practices-for-high)
+-   [Extracting Text Patterns with User Highlights with Pattern Induction](https://towardsdatascience.com/pattern-induction-what-is-a-pattern-part-1-79ee1bd5adc6)
+-   [Pattern Induction: Best Practices for Extracting Text Patterns](https://maeda-han.medium.com/pattern-induction-best-practices-for-extracting-text-patterns-part-3-2c0ee6481a3c)
 
 To define a pattern, complete the following steps:
 
