@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-28"
 
 subcollection: discovery-data
 
@@ -23,7 +23,7 @@ The major structural differences between Discovery v1 and v2 include:
 - There is no concept of an environment in v2. The deployment details such as size and index capacity are managed for you when you choose the appropriate service plan for your needs. For managed deployments, you can choose a Plus, Enterprise, or Premium plan, for example. For installed deployments, the sizing is managed by the deployment type that you specify when you install the service in Cloud Pak for Data.
 - There is no single configuration object in v2. Control of the enrichments that are applied to documents is managed in the collections and project objects in v2. Other v1 configuration capabilities, such as the ability to customize the conversion step of ingestion, are not available in v2.
 - Greater programmatic support is available for custom enrichments in v2. New enrichment API methods are available that you can use to create enrichments. v2 also introduces document classifier API methods that you can use to train document classifier models programatically. You can subsequently apply these custom enrichments to a collection by using the API.
-- The capabilities of a natural language query search are expanded in v2 to enable the return of the top passages per document and of succinct answers from passages. Other advanced search capabilities are introduced, including table retrieval. In v2, the deduplication and similarity parameters are not available and the continuous relevancy training and query logging functions are not available.
+- The capabilities of a natural language query search are expanded in v2 to enable the return of the top passages per document and of succinct answers from passages. Other advanced search capabilities are introduced, including table retrieval. In v2, the deduplication parameter is not available and the continuous relevancy training and query logging functions are not available.
 
 -  For more information about feature differences, see [the feature comparison table](/docs/discovery-data?topic=discovery-data-version-choose#version-choose-comparison).
 -  For more information about detailed API differences, see [API version comparison](/docs/discovery-data?topic=discovery-data-migrate-to-v2-api).
@@ -404,7 +404,7 @@ The way that your application shows query results might need to be updated due t
     ![Mentions in Discovery v2](/images/result-detail.png)
 
 -   The JSON structure of query responses is rearranged slightly in v2.
--   Deduplication and similarity information are not included in the v2 query response.
+-   Deduplication information is not included in the v2 query response.
 -   In v2, `enriched_text` is an array instead of an object.
 -   In Discovery v2, the Entities v2 enrichment is used. Entity type names in v2 are specified in headline case, instead of all uppercase letters. If you use a query or aggregation that specifies an entity name, you must change the capitalization. For example, change `PERSON` to `Person`.
 -   Fields from JSON files that are added to a collection are converted differently during ingestion between v1 and v2. If your application manipulates these results, you might need to make adjustments.

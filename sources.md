@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-07-27"
 
 subcollection: discovery-data
 
@@ -64,7 +64,10 @@ The FAQ extraction feature is a beta feature and is not meant for use in product
 
 When you configure a data source for any project type, you can enable the **Apply FAQ extraction** feature. This beta feature detects question-and-answer pairs in your documents and automatically extracts the pairs. Your application can use the extracted pairs to provide more precise query results.
 
-Apply FAQ extraction only to a data source with documents that contain frequently asked questions that follow a consistent style. For example, ensure that the questions in the FAQ end with a question mark. The answer must be grouped with the question that it answers.
+Apply FAQ extraction only to a data source with documents that contain frequently asked questions that follow a consistent style. For example, ensure that the questions in the FAQ end with a question mark. The answer must be grouped with the question that it answers. 
+
+FAQ extraction works best with HTML files that are generated from web crawls. It is less effective with crawls that return PDF files.
+{: tip}
 
 To turn on FAQ extraction for your data source, expand the *Syncing FAQ Content?* section, and then select **Apply FAQ extraction**.
 

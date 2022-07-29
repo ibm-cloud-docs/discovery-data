@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-07-28"
 
 subcollection: discovery-data
 
@@ -70,7 +70,7 @@ Discovery v2 has new features that were previously unavailable. The following ta
 | Configure continuous relevancy training | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Retrieve tables | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Query result deduplication | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Identify document similarity in query results | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Identify document similarity in query results | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Indicate a preference (bias) in queries | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Review query logging and metrics | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
