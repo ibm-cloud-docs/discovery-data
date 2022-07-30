@@ -101,7 +101,6 @@ toc:
           label: Preparing your documents for enrichment
           topics:
           - configuring-fields.md
-          - split-documents.md
       - topicgroup:
           label: Enriching your data
           topics:
@@ -127,6 +126,7 @@ toc:
           topics:
           - improvements.md
           - search-settings.md
+          - split-documents.md
           - stopwords.md
           - hide-data.md
           - manage-enrichments.md

@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Adding domain-specific resources
+# Classifiers
 {: #domain-classifier}
 
 Define categories by which text in your documents can be classified.

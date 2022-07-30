@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Customizing the terms that Discovery can recognize
+# Entity extractor
 {: #entity-extractor}
 
 Teach {{site.data.keyword.discoveryshort}} about terms that are significant to your business by creating an entity extractor.
