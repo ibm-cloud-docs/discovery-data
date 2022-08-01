@@ -88,8 +88,8 @@ toc:
               - connector-web-cp4d.md
               - connector-wfs-cp4d.md
           - troubleshoot-ingestion.md
-          - index-overview.md
           - manage-collections.md
+      - index-overview.md
       - topicgroup:
           label: Previewing query results
           topics:
@@ -98,28 +98,28 @@ toc:
           - search-bar.md
           - query-defaults.md
       - topicgroup:
-          label: Preparing your documents for enrichment
-          topics:
-          - configuring-fields.md
-      - topicgroup:
           label: Enriching your data
           topics:
           - topicgroup:
-              label: Teaching Discovery about your domain
+              label: Adding custom enrichments
               topics:
-              - domain.md
+              - topic: domain.md
+                navtitle: Teaching Discovery about your domain
               - domain-classifier.md
               - domain-dictionary.md
               - entity-extractor.md
               - domain-ml.md
               - domain-pattern.md
               - domain-regex.md
+              - configuring-fields.md
           - topicgroup:
-              label: Extracting meaning from your data
+              label: Applying prebuilt enrichments
               topics:
-              - nlu.md
+              - topic: nlu.md
+                navtitle: Extracting meaning from your data
               - contracts-schema.md
               - understanding_tables.md
+              - sdu-pretrained.md
       - test.md
       - topicgroup:
           label: Improving search results
