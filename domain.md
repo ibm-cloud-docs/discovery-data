@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -28,6 +28,8 @@ The following table shows you the correct resources to add to address common nee
 | ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Recognize terms that are mentioned in sentences that match a syntactic pattern that you teach {{site.data.keyword.discoveryshort}} to recognize. | [Patterns (beta)](/docs/discovery-data?topic=discovery-data-domain-pattern) | Available as a beta feature for English-language collections in managed deployments only. The enrichment that is derived by defining patterns cannot be applied to Content Mining projects. You can export the resource and use it as an advanced rule model. |
 | ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Recognizes entities that you identify as being significant by training an entity extractor machine learning model. | [Entity extractor (beta)](/docs/discovery-data?topic=discovery-data-entity-extractor) | Available as a beta feature in managed deployments only. |
 {: caption="Domain tools overview" caption-side="top"}
+
+Alternatively, you can extract meaning from documents based on the document structure. Use the Smart Document Understanding tool to identify new fields by which to target enrichments or to split large documents into more manageable chunks. For more information, see [Structural meaning with SDU](/docs/discovery-data?topic=discovery-data-configuring-fields).
 
 Dictionaries and classifiers that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
 

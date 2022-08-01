@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -10,10 +10,10 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Document structure
+# Structural meaning with SDU
 {: #configuring-fields}
 
-Smart Document Understanding (SDU) is technology that learns about the content of a document based on the document's structure.
+Create a Smart Document Understanding (SDU) model that learns about the content of a document based on the document's structure.
 {: shortdesc}
 
 Use the Smart Document Understanding tool to add custom fields to a collection so you can do the following things:
@@ -33,28 +33,26 @@ First, decide whether you want to use a pretrained model or define your own.
 Pretrained model
 :   Applies a noncustomizable model that extracts text and identifies tables, lists, and sections.
 
-    Instead of training the model yourself, you can apply an existing model that was trained to identify tables, lists, and sections in various types of documents.
+    Instead of training the model yourself, you can apply an existing model that is trained to identify tables, lists, and sections in various types of documents.
 
-    This model converts table information to HTML format and stores it in the `html` field. You can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to the field later.
+    If capturing information from tables is critical to your use case, consider using a pretrained model. For more information about creating a pretrained SDU model, see [Applying a pretrained SDU model](/docs/discovery-data?topic=discovery-data-sdu-pretrained).
 
 User-trained model
 :   Opens the Smart Document Understanding tool that you can use to pick certain types of text to store in fields other than the `text` field. 
 
     When you label a section of a document as a custom field, later you can apply enrichments to the field or split your documents on each occurrence of the field. You can search or filter by the field, or omit the field from the index.
 
-To apply a Smart Document Understanding model to your collection, complete the following steps:
+To apply a user-trained Smart Document Understanding model to your collection, complete the following steps:
 
-1.  Open the **Improve and customize** page from the navigation panel. On the *Improvement tools* panel, expand *Define structure*, and then choose **New fields**.
+1.  Open the **Manage collections** page from the navigation panel.
 1.  If your project has more than one collection, select the collection with documents that you want to annotate.
-1.  Choose the type of model that you want to use:
+1.  Open the *Identify fields* page.
+1.  Choose **User-trained models**.
 
-    -   **User-trained models**
-    -   **Pre-trained models**
+    The **Text extraction only** option is used by default. With this model, any text that is recognized in the source documents is indexed in the `text` field.
+1.  Click **Submit**, and then click **Apply changes and reprocess**.
 
-    If you don't want to apply an SDU model, then you're done. The **Text extraction only** option is used by default. Any text that is recognized in the source documents is indexed in the `text` field.
-1.  If you choose to apply a model, click **Submit**, and then click **Apply changes and reprocess**.
-
-If you selected **User-trained models**, a subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types. Continue to the *Creating a user-trained model* procedure.
+A subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types.
 
 ## Creating a user-trained model
 {: #sdu-task}
@@ -142,7 +140,7 @@ The Smart Document Understanding (SDU) tool works better with some project types
   
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use. FAQ stores the answer in the `text` field, so you can use the default {{site.data.keyword.conversationshort}} search configuration.
 
--   *Document Retrieval for Contracts* projects apply a custom SDU model to the documents in your collection automatically. Instead of you annotating contract-related content in your documents, the project applies a pretrained SDU model that already knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
+-   A pretrained SDU model is applied to *Document Retrieval for Contracts* projects automatically. The pretrained SDU model knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
 -   The SDU tool is rarely used with *Content Mining* projects.
 
 You can use the SDU tool to annotate the following file types only:
@@ -226,66 +224,9 @@ Improve query results by splitting your documents
 :   For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
 
 Date format settings
-:   For more information, see [Date format settings](#field-date-settings).
+:   For more information, see [Date format settings](/docs/discovery-data?topic=discovery-data-index-overview#field-date-settings).
 
 To access the **Manage fields** page, click the **Manage collections** icon on the navigation panel and open a collection. Click the **Manage fields** tab. For more information about collections, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
-
-### Date format settings
-{: #field-date-settings}
-
-If your documents have a root-level field with date information in it, you can set the field to be a `Date` data type field in the index. For example, you might import CSV or JSON files that contain date fields.
-
-{{site.data.keyword.discoveryshort}} recognizes the following date formats automatically:
-
-```text
-yyyy-MM-dd'T'HH:mm:ssZ
-yyyy-MM-dd'T'HH:mm:ssXXX
-yyyy-MM-dd'T'HH:mm:ss.SSSZ
-yyyy-MM-dd'T'HH:mm:ss.SSSX
-yyyy-MM-dd
-M/d/yy
-yyyyMMdd
-yyyy/MM/dd
-```
-{: screen}
-
-If you store dates in other formats, you can add the format to the list of supported formats. From the *Manage fields* page for the collection, add a format as a new line in the **Date formats** field. Specify a date format that is supported by the Java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html){: external} class.
-    
-For example, if your records store only year values for dates, add `yyyy` to the supported date formats list. You can then set the data type for the field that contains a year value to *Date*, and reprocess your collection. As a result, an occurrence of `2019` in the date field is stored as `2019-01-01T05:00:00Z` in the index.
-
-When you add a new date format, you must specify an associated time zone for the date.
-
-{{site.data.keyword.discoveryshort}} cannot store a date that is mentioned within a text field as a *Date* field in the index. You can, however, use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
-
-Date formats
-:   Use this option to parse a string representation into the `Date` data type. For example, `Sun, 06 Nov 1994 08:49:37 GMT` and `1994-11-06` are parsed as the same date. Specify dates in a format that the `SimpleDateFormat` class supports.
-
-    {{site.data.keyword.discoveryshort}} checks the date formats in order for each date-type data set field and uses the first format that successfully parses the field. Therefore, be sure to place the date format that you want to use at the beginning of the list. You can delete formats that you don't want to use from the list.
-    
-    You must run a full crawl or a full import to apply any changes to documents that are currently in the data set.
-
-Select a time zone
-:   You can use this option to designate a time zone for a document that has a generated time but no time-zone information. You can use this option to store a document creation time into a date-type data set field. For example, if a document is generated on `1 January 2020 1:00 AM Eastern Standard Time (EST)`, the document metadata stores only `2020-01-01 01:00 a.m.`. In this case, {{site.data.keyword.discoveryshort}} cannot parse `2020-01-01 01:00 a.m.` because, without time-zone information that is associated with the document, `2020-01-01 01:00 a.m.` is not specific. Because `1 January 2020 1:00 AM Eastern Standard Time (EST)` and `1 January 2020 1:00 AM Pacific Standard Time (PST)` are different times, you must select **(GMT-05:00) Eastern Standard Time** as the time zone ID so that {{site.data.keyword.discoveryshort}} parses `1 January 2020 1:00 AM` with the EST time zone, as intended.
-
-Select a language
-:   Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. You can also use this option to manage any cultural- or language-specific patterns of the dates in your documents. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
-
-## Troubleshooting issues
-{: #sdu-troubleshoot}
-
-Follow these workarounds if you experience problems when working with the Smart Document Understanding tool.
-
-### Insufficient resources to process document
-{: ts-insufficient-resources}
-
-Error
-:   When you apply a pretrained model to your collection, document processing does not complete successfully and an `Insufficient resources to process document` message is displayed.
-
-Cause
-:   The error is displayed because out of memory errors occur during the parse, structure identification, or assembly phases of the process that builds the machine learning model. Resources are insufficient when one or more of the documents in your collection are too large or have too many complex tables for the tool to handle.
-
-Solution
-:   Review your collection for large documents or documents with many tables and break them up into more smaller documents before you apply the pretrained model to the collection. Exact limits differ based on the complexity of your documents. Generally, split documents that are over 400 pages long and avoid including more than 20 complex tables in a single document.
 
 ## Smart Document Understanding limits
 {: #sdu-limits}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -10,18 +10,29 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Applying prebuilt enrichments
+# Watson NLP enrichments
 {: #nlu}
 
 Take advantage of award-winning Watson Natural Language Processing (NLP) capabilities by adding prebuilt enrichments to your documents.
 {: shortdesc}
 
-With Watson NLP, you can identify and tag meaningful information in your collections so you can understand what it all means and make more informed decisions. The following enrichments are available:
+With Watson NLP, you can identify and tag meaningful information in your collections so you can understand what it all means and make more informed decisions. 
 
-- [Entities](#nlu-entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
-- [Keywords](#nlu-keywords): Recognizes significant terms in your content.
-- [Parts of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
-- [Sentiment](#nlu-sentiment): Understands the overall sentiment of the content.
+The following Watson NLP enrichments are available:
+
+-   [Entities](#nlu-entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
+-   [Keywords](#nlu-keywords): Recognizes significant terms in your content.
+-   [Parts of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
+-   [Sentiment](#nlu-sentiment): Understands the overall sentiment of the content.
+
+The following other pretrained enrichments are available with {{site.data.keyword.discoveryshort}}:
+
+-   [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema)
+-   [Document structure](/docs/discovery-data?topic=discovery-data-sdu-pretrained)
+-   [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)
+
+## Watson NLP enrichments
+{: #nlu-overview}
 
 For example, the following screen capture shows a transcript of the US Declaration of Independence that was added to a {{site.data.keyword.discoveryshort}} collection where the Entities and Keywords enrichments are enabled. The mentions that are recognized by the enrichments are highlighted in the document text.
 

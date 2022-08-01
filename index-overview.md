@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -62,6 +62,58 @@ Avoid field names that meet the following conditions. Field names with these res
 - Start with the characters `_`, `+`, and `-`. For example, `+extracted-content`.
 - Contain the characters `.`, `,`, `#`, `?`, or `:` or spaces. For example, `extracted content` or `new:extracted-content`.
 - End with numbers. For example, `extracted-content2`.
+
+## How dates are handled
+{: #field-dates}
+
+Dates are captured in different ways depending on the file type.
+
+Unstructured files
+:    The best way to capture date information in unstructured data is to use a natural language processing model. For example, the prebuilt Entities enrichment recognizes dates and annotates them. In a document where the enrichment is applied, you can find dates by looking for fields that are labeled as `enriched_{fieldname}.entities.type`=`Date`.
+
+Structured files
+:    Structure files that you import, such as CSV or JSON files, might contain date fields that you want to store as date data types. {{site.data.keyword.discoveryshort}} can recognize many date formats. However, you might need to add a format to the list. For more information, see *Date format settings*.
+
+### Date format settings
+{: #field-date-settings}
+
+If your documents have a root-level field with date information in it, you can set the field to be a `Date` data type field in the index.
+
+{{site.data.keyword.discoveryshort}} recognizes the following date formats automatically:
+
+```text
+yyyy-MM-dd'T'HH:mm:ssZ
+yyyy-MM-dd'T'HH:mm:ssXXX
+yyyy-MM-dd'T'HH:mm:ss.SSSZ
+yyyy-MM-dd'T'HH:mm:ss.SSSX
+yyyy-MM-dd
+M/d/yy
+yyyyMMdd
+yyyy/MM/dd
+```
+{: screen}
+
+If you store dates in other formats, you can add the format to the list of supported formats. 
+
+To add more date formats, complete the following steps:
+
+1.  From the *Manage fields* page for the collection, add a format as a new line in the **Date formats** field. 
+
+    Specify a date format that is supported by the Java [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html){: external} class.
+    
+    For example, if your records store only year values for dates, add `yyyy` to the supported date formats list. You can then set the data type for the field that contains a year value to *Date*, and reprocess your collection. As a result, an occurrence of `2019` in the date field is stored as `2019-01-01T05:00:00Z` in the index.
+
+    When you add a new date format, you must specify an associated time zone for the date.
+
+1.  Specify a time zone.
+
+1.  Optionally, select a language. 
+
+    Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
+
+1.  If you already imported documents with dates in formats that were not recognized, reprocess the documents.
+
+{{site.data.keyword.discoveryshort}} cannot store a date that is mentioned within a text field as a *Date* field in the index. You can, however, use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
 
 ## How file types are handled
 {: #file-type-notes}
