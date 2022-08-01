@@ -57,8 +57,6 @@ To apply a pretrained Smart Document Understanding model to your collection, com
     The **Text extraction only** option is used by default. With this model, any text that is recognized in the source documents is indexed in the `text` field.
 1.  Click **Submit**, and then click **Apply changes and reprocess**.
 
-<!--This model converts table information to HTML format and stores it in the `html` field. You can apply the [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables) enrichment to the field later.-->
-
 ## Troubleshooting issues
 {: #sdu-troubleshoot}
 
