@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-08-02"
 
 subcollection: discovery-data
 
@@ -111,6 +111,12 @@ Language support by feature is detailed in the [Supported languages](/docs/disco
 {: #beta-features}
 
 IBM releases services, features, and language support for your evaluation that are classified as beta. These features might be unstable, might change frequently, and might be discontinued with short notice. Beta features also might not provide the same level of performance or compatibility that generally available features provide and are not intended for use in a production environment.
+
+## Terms and notices
+{: #about-terms}
+
+- ![Cloud Pak for Data only](images/desktop.png) Installed {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}} instances: [Security on Cloud Pak for Data](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=planning-security-considerations){: external}
+- ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}}-managed instances: [IBM Cloud Terms of use](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}
 
 ## Trademarks
 {: #about-trademarks}
