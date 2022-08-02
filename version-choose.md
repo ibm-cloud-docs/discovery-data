@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -53,7 +53,7 @@ Discovery v2 has new features that were previously unavailable. The following ta
 | Process text from scanned documents or other images | ![checkmark icon](../../icons/checkmark-icon.svg) |![checkmark icon](../../icons/checkmark-icon.svg) |
 | Extract meaning from tables | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Apply the Parts of Speech enrichment to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Apply the *Part of Speech* enrichment to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Use the Entity Extraction, Sentiment Analysis, and Keyword Extraction enrichments | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction enrichments, which are available with the [Natural Language Understanding](/docs/natural-language-understanding?topic=natural-language-understanding-about){: external} service | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |

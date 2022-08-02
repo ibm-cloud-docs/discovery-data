@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -43,7 +43,7 @@ To add dictionary terms one by one, complete the following steps:
 
     Similar terms from your collection are suggested as new entries.
 
-    Suggested terms are taken from the field to which the **Parts of Speech** enrichment is applied. Suggestions are not displayed if the **Parts of Speech** enrichment is not enabled.
+    Suggested terms are taken from the field to which the *Part of Speech* enrichment is applied. Suggestions are not displayed if the *Part of Speech* enrichment is not enabled.
     {: note}
 
 1.  Click **Save dictionary**.

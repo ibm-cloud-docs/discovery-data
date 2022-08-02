@@ -22,7 +22,7 @@ The following Watson NLP enrichments are available:
 
 -   [Entities](#nlu-entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
 -   [Keywords](#nlu-keywords): Recognizes significant terms in your content.
--   [Parts of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
+-   [Part of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
 -   [Sentiment](#nlu-sentiment): Understands the overall sentiment of the content.
 
 The following other pretrained enrichments are available with {{site.data.keyword.discoveryshort}}:
@@ -43,7 +43,7 @@ Some of the NLP enrichments are applied to projects automatically. You don't nee
 | Enrichment that is applied automatically | Project type |
 |------------------------------------------|--------------|
 | Entities                                 | Document Retrieval, Document Retrieval for Contracts |
-| Parts of Speech                          | Content Mining, Document Retrieval, Document Retrieval for Contracts |
+| Part of Speech                          | Content Mining, Document Retrieval, Document Retrieval for Contracts |
 {: caption="Default enrichments for project types" caption-side="top"}
 
 The following prebuilt enrichments are applied to some collections automatically also:
@@ -242,7 +242,7 @@ In the JSON output:
 
 The Keywords enrichment can identify up to 50 keywords, each with one or many mentions, per document.
 
-## Parts of speech
+## Part of speech
 {: #nlu-pos}
 
 Recognizes and tags parts of speech, including nouns, verbs, adjectives, adverbs, conjunctions, interjections, and numerals.

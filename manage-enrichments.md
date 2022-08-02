@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -161,7 +161,7 @@ Some prebuilt enrichments are applied automatically to collections in a project 
 | Contracts | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
 | Entities v2 | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
 | Keywords | | | | |
-| Parts of Speech | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Part of Speech | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Sentiment of Document | | | | |
 | Table Understanding | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
 {: row-headers}
