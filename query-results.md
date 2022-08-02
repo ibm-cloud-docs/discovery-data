@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-10-01"
+lastupdated: "2022-08-01"
 
 keywords: passages, query results
 
@@ -55,7 +55,7 @@ Preview the default query results.
 
       - Choose a facet by which to filter the documents.
 
-        Facets based on the Parts of Speech enrichment that is applied to the project by default are shown.
+        Facets based on the *Part of Speech* enrichment that is applied to the project by default are shown.
 
     ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
 

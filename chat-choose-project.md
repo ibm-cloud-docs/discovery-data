@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 
@@ -22,7 +22,7 @@ To help you choose the right {{site.data.keyword.discoveryshort}} project type, 
 
 | Function | Conversational Search | Document Retrieval |
 |----------|-----------------------|--------------------|
-| Enrichment support | No enrichments are applied automatically. | The *Parts of Speech* and *Entities* enrichments are applied to collections that you add to this project type automatically. These enrichments are helpful for identifying important information and introduce more ways to filter query results. |
+| Enrichment support | No enrichments are applied automatically. | The *Part of Speech* and *Entities* enrichments are applied to collections that you add to this project type automatically. These enrichments are helpful for identifying important information and introduce more ways to filter query results. |
 | Testing queries from the *Improve and customize* page in {{site.data.keyword.discoveryshort}} | You see only one of the responses that will be returned from the chatbot. You cannot see all of the available responses and cannot analyze individual query results. | You can filter query results by enrichment-based facets. You can review details about fields that are indexed in the source documents that are returned for a query. Access to more information makes it easier to troubleshoot unexpected results. |
 | Search triggers | Returns answers from the `text` field automatically. If answers are stored in another field, you must change the configuration. | You can apply a Smart Document Understanding (SDU) model or enrichments to your collections and retrieve useful information from fields other than `text` when search is triggered from the assistant. |
 {: caption="Project type details" caption-side="top"}

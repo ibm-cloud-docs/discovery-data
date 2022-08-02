@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-08-01"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -121,7 +121,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
     Entities
     :   Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
 
-    Parts of Speech
+    Part of Speech
     :   Identifies the parts of speech (nouns and verbs, for example) in the content.
 
     These enrichments are applied automatically to collections that are added to projects of the *Document Retrieval* type.
@@ -132,7 +132,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     ![Shows that the Entities enrichment is applied to the text field.](images/gs-entities-on-text.png)
 
-1.  For the *Parts of Speech* enrichment, click **1x Selected fields**.
+1.  For the *Part of Speech* enrichment, click **1x Selected fields**.
 
     Again, you can see that the enrichment is applied to the `text` field.
 

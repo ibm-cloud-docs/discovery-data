@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-07-29"
 
 subcollection: discovery-data
 
@@ -42,27 +42,44 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 
 Obtain any required service licenses for the content on the website that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 
-You must have the following information ready:
-
 Endpoint
-:   The `endpoint` name to use to interact with {{site.data.keyword.cos_full_notm}} data. For example, `s3.us-south.cloud-object-storage.appdomain.cloud`.
+:   The `endpoint` for your {{site.data.keyword.cos_full_notm}} data. For example, `s3.us-south.cloud-object-storage.appdomain.cloud`.
 
     Do not include `http://` or `https://` in the endpoint value. For more information, see [Regional Endpoints](/docs/cloud-object-storage/basics?topic=cloud-object-storage-endpoints#endpoints-region){: external}.
 
+In addition to the endpoint, you must provide credentials to enable authentication with the object store. You can choose to use one of the following authentication methods:
+
+HMAC
+:    Uses a hash-based message authentication code to authenticate users. HMAC is a cryptographic authentication technique that uses a hash function and a secret key. The data is scrambled before it is sent over the internet. Then, the intended recipient uses the secret key to unscrambles the data. For more information, see [HMAC authentication](#connector-cos-cloud-hmac).
+
+IAM
+:    Uses the IBM Cloud Identity and Access Management (IAM) service to authenticate users. The advantage of this authentication type is that the user can use the same process to access all of the resources in the IBM Cloud Platform. For more information, see [IAM authentication](#connector-cos-cloud-iam).
+
+To access the credential information, go to the service credentials page of your {{site.data.keyword.cos_full_notm}} service instance. Expand the service credential to see the credential details. 
+
+For more information, see [Service credentials](/docs/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials){: external} in the Object Storage product documentation.
+
+### HMAC authentication
+{: #connector-cos-cloud-hmac}
+
+If you want to use HMAC authentication, you must have the following information ready:
+
 Access key id
-:   The `access_key_id` that was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `apr75g55a35547e6a80d80344b9h55a0`.
+:   The `access_key_id` that was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `347aa3a4b34344f8bc7c7cccdf856e4c`.
 
 Secret access key
-:   The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example, `806a16c5d35266db8570a074512972341j82999a5160b3rf`.
+:   The `secret_access_key` to use to sign requests. This key was generated when the {{site.data.keyword.cos_full_notm}} instance was created. For example,  `gvurfb82712ad14W7a7915h763a6i87155d30a1234364f61`.
 
-## Prerequisite step
-{: #connector-cos-cloud-prereq-task}
+### IAM authentication
+{: #connector-cos-cloud-iam}
 
-IAM authentication is not supported currently.
+If you want to use IAM authentication, you must have the following information ready:
 
-1.  Set up HMAC authentication before you configure this connector.
+IAM API key
+:   For example, `0viPHOY7LbLNa9eLftrtHPpTjoGv6hbLD1QalRXikliJ`.
 
-    See [Service Credentials](/docs/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials) for instructions.
+Resource instance ID
+:   For example, `crn:v1:bluemix:public:cloud-object-storage:global:a/3ag0e9402tyfd5d29761c3e97696b71n:d6f74k03-6k4f-4a82-b165-697354o63903::`.
 
 ## Connecting to the data source
 {: #connector-cos-cloud-task}
@@ -72,12 +89,11 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
 1.  Click **IBM Cloud Object Storage**, and then click **Next**.
-1.  Add values to the following fields:
+1.  Choose a credential type, and then complete the fields with the information that you collected earlier.
 
-    -   Endpoint
-    -   Access key id
-    -   Secret access key
-
+    -   IAM
+    -   HMAC
+    
     Click **Next**.
 1.  Name the collection.
 1.  If the language of the documents in storage is not English, select the appropriate language.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-08-01"
 
 keywords: known issues
 
@@ -515,7 +515,7 @@ Also, see the issues in all previous releases.
 
     To work around this issue:
 
-    1.  Review the enrichments used in the collection and remove those that are not necessary for your application. In particular, remove the `Parts of Speech` enrichment.
+    1.  Review the enrichments used in the collection and remove those that are not necessary for your application. In particular, remove the *Part of Speech* enrichment.
     1.  Reduce the number of collections used concurrently with the Analyze API.
     1.  Increase the cache memory:
 
@@ -666,7 +666,7 @@ Also see the issues identified in all previous releases.
 - ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) {{site.data.keyword.discoveryshort}} can fail to start up correctly due to components getting into a lock state. Manual database intervention may be needed to clear the lock. For more information on identifying and resolving this issue, see [Clearing a lock state](/docs/discovery-data?topic=discovery-data-troubleshoot#troubleshoot-ls).
 - If you upload a document with the Upload Data function, delete that document, and then try to upload either the same document or another document with the same document ID,the upload will fail and the message `Error during creating a document` will be displayed.
 - Documents that produce an `html` field when processed can not be used with relevancy training. html is produced for documents processed with Smart Document Understanding or Content Intelligence. The `html` field must be removed before relevancy training can complete successfully.
-- If the Parts of Speech enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.
+- If the *Part of Speech* enrichment is not turned on: Dynamic facets will not be created, Dictionary suggestions cannot be used, Content Miner "extracted facets" will not generate.
 - [Update: fixed in version 2.1.1] {{site.data.keyword.discoveryshort}} for Content Intelligence and Table Understanding enrichments are configured out of the box to be applied on a field named `html`. When a user uploads a JSON document without a root-level field named `html`, these enrichments will not yield results in the index. To run the enrichments on this kind of JSON documents, users must re-configure the enrichments to run on an existing field (or fields) in the JSON document.
 - When viewing the Content Miner deploy page, sometimes the full application URL is not displayed for copying. To fix, refresh the page.
 - [Update: fixed in version 2.1.2] Deprovisioning a {{site.data.keyword.discovery-data_long}} Instance will not delete the underlying data. Delete the collections and documents manually.

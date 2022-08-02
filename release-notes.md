@@ -30,6 +30,15 @@ This information applies only to managed instances of {{site.data.keyword.discov
 Watson Discovery v1 is being deprecated. Existing clients who use Watson Discovery v1 are asked to migrate to Watson Discovery v2 before the end-of-support date of **11 July 2023**. End of Support means that no v1 instance will work on or after 11 July 2023. For more information about migration, see [Getting the most from Discovery](/docs/discovery-data?topic=discovery-data-version-choose).
 {: deprecated}
 
+## 2 August 2022
+{: #discovery-2august2022}
+{: release-note}
+
+<!-- 4.6.0-4.2 -->
+
+IAM authentication support was added to the IBM Cloud Object Storage connector
+:   You can now choose to authenticate with the IBM Cloud Identity and Access Management (IAM) service. For more information, see [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud).
+
 ## 28 July 2022
 {: #discovery-28july2022}
 {: release-note}
