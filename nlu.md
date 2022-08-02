@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-02"
 
 subcollection: discovery-data
 
@@ -90,6 +90,10 @@ The following screen capture shows that the Entities enrichment recognizes the t
 From the JSON view of the document, you can see the underlying JSON structure of the entity mentions.
 
 ![Shows the JSON view of the Systems of Government and King of Great Britain entities that are identified in the document](images/nlu-json-view.png)
+
+If you want to search for the Organization entity type, for example, you can copy all of the JSON content into a text editor and search for `Organization`. Click the *Copy* icon from the root of the JSON tree view.
+
+![Shows the copy icon at the root of the JSON tree](images/nlu-json-root-copy.png)
 
 ### Example
 {: #nlu-entities-example}

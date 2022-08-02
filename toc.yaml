@@ -126,8 +126,8 @@ toc:
           topics:
           - improvements.md
           - search-settings.md
-          - split-documents.md
           - stopwords.md
+          - split-documents.md
           - hide-data.md
           - manage-enrichments.md
           - train.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-02"
 
 subcollection: discovery-data
 
@@ -24,12 +24,15 @@ The following types of resources can be migrated from Watson Explorer to {{site.
 - From Watson Explorer Analytical Components: [User dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external}
 - From Watson Explorer oneWEX: [Dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_dict_ann.html){: external}, [character patterns](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_char_ann.html){: external}, and [facets](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=las-creating-custom-pear-files-use-lexical-analysis-streams){: external}.
 
-For more information about how to apply enrichments to a collection in the Content Mining application, see [Applying the annotator](/docs/discovery-data?topic=discovery-data-cm-custom-annotator#cm-custom-annotator-deploy).
+To analyze data with these migrated enrichments, you can use a Content Mining project. The tools in the associated Content Mining application are similar to tools that are available in Watson Explorer. 
+
+-   For more information about how to create a Content Mining project, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+-   For more information about how to apply enrichments to a collection in the Content Mining application, see [Applying the annotator](/docs/discovery-data?topic=discovery-data-cm-custom-annotator#cm-custom-annotator-deploy).
 
 ## Importing dictionaries from Watson Explorer Analytical Components
 {: #enrichdictca}
 
-If you have [user dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external} from IBM Watson Explorer Analytical Components, you can import them by using the {{site.data.keyword.discoveryshort}} [content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+You can import [user dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external} from IBM Watson Explorer Analytical Components.
 
 The default file location and name for dictionaries that are saved in Watson Explorer Analytical Components is `${primary_server_node}/{primary_configuration}/{collection_ID}/{dictionary_name}.fdic.xml`.
 {: tip}
@@ -51,7 +54,7 @@ The default file location and name for dictionaries that are saved in Watson Exp
 ## Uploading dictionaries from Watson Explorer oneWEX
 {: #enrichdictow}
 
-If you have [dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_dict_ann.html){: external} from IBM Watson Explorer oneWEX, you can upload them to {{site.data.keyword.discoveryshort}}.
+You can import [dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_dict_ann.html){: external} from IBM Watson Explorer oneWEX.
 
 1.  From Watson Explorer oneWEX, Version 12.0.0 or later modifications or fix packs, download the dictionary CSV file.
 
@@ -75,7 +78,7 @@ If you have [dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW
 ## Importing character patterns from Watson Explorer oneWEX
 {: #enrichcpow}
 
-If you have [character patterns](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_char_ann.html){: external} from IBM Watson Explorer oneWEX, you can import them by using the {{site.data.keyword.discoveryshort}} [content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+You can import [character patterns](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.watson.wex.ee.doc/c_ce_adm_char_ann.html){: external} from IBM Watson Explorer oneWEX.
 
 1.  From your {{site.data.keyword.discoveryshort}} Content mining project, open the Content Mining application.
 1.  From the analysis view of your collection, click the **Collections** link in the breadcrumb to open the *Create a collection for your analytics solutions* page of the Content Mining application.
