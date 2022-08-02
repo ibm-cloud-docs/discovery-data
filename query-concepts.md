@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-08-02"
 
 subcollection: discovery-data
 
@@ -18,9 +18,6 @@ subcollection: discovery-data
 
 For more information about the Query API, see the [API reference documentation](https://cloud.ibm.com/apidocs/discovery-data#query){: external}.
 
-On the *Improve and customize* page of the {{site.data.keyword.discoveryshort}} user interface, you can submit natural language queries only. A few other supported Query API parameters are specified and given default values based on the project type in use. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
-{: important}
-
 ## Discovery Query Language
 {: #query-dql-params}
 
@@ -31,6 +28,27 @@ The Discovery Query Language defines syntax you can use to filter, search, and a
 - `aggregation`
 
 The `natural_language_query` parameter accepts text strings as input, not query language syntax.
+
+On the *Improve and customize* page of the {{site.data.keyword.discoveryshort}} user interface, you can submit natural language queries only. 
+
+A few other supported Query API parameters are specified and given default values based on the project type in use. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
+{: important}
+
+## Choosing the right query type
+{: #query-choose}
+
+The following table summarizes the capabilities that are supported for each query type. Use it to help you determine which type of query to submit.
+
+| Goal | Natural Language Query (NLQ) | Discovery Query Language (DQL) |
+|------|-----|-----|
+| Return passages from documents | x | x |
+| Search specific document fields or enrichments | | x |
+| Use operators, such as boolean clauses in the search | | x |
+| Add curations to return hard-coded answers to certain questions | x | |
+| Use relevancy training | x |  |
+| Enable answer finding to return a succinct answer from a passage | x | |
+| Leverage table retrieval | x | |
+{: caption="Query types comparison" caption-side="top"}
 
 ## How to write a Discovery Query Language query
 {: #structure-basic-query}

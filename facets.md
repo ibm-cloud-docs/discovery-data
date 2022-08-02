@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-02"
 
 subcollection: discovery-data
 
@@ -18,7 +18,7 @@ To help you analyze the results of linguistic processing and text analysis, {{si
 
 Facets help you to filter documents so that you can perform deep analysis faster. Whether you are trying to find the proverbial needle in the haystack or to discover unexpected trends, starting with facets can speed up the research process.
 
--   For *Content Mining* projects, facets are extracted from your collection based on parts of speech information (that is captured by the *Part of Speech* enrichment that is applied to projects of this type by default).
+-   For *Content Mining* projects, facets are extracted from your collection based on parts of speech information (that is captured by the *Part of Speech* enrichment that is applied to projects of this type by default). You can also view facets that are derived from metadata in your documents.
 
     ![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page that shows parts of speech facets that are extracted by default"){: caption="Figure 1. The Improve and Customize page of a Content Mining project showing default extracted facets and no default metadata facets" caption-side="bottom"}
 
@@ -31,7 +31,9 @@ For more information about the *Entities* and *Part of Speech* enrichments, see 
 ## Creating facets
 {: #facets-create}
 
-You can create facets in the following ways:
+For more information about how to add facets to a Content Mining project, see [Adding facets](/docs/discovery-data?topic=discovery-data-cm-add-facets).
+
+For other project types, you can create facets in the following ways:
 
 -   [From existing fields in a collection](#facetexist)
 -   [By adding a dictionary entry](#facetdict)
