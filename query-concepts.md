@@ -41,14 +41,17 @@ The following table summarizes the capabilities that are supported for each quer
 
 | Goal | Natural Language Query (NLQ) | Discovery Query Language (DQL) |
 |------|-----|-----|
-| Return passages from documents | x | x |
-| Search specific document fields or enrichments | | x |
-| Use operators, such as boolean clauses in the search | | x |
-| Add curations to return hard-coded answers to certain questions | x | |
-| Use relevancy training | x |  |
-| Enable answer finding to return a succinct answer from a passage | x | |
-| Leverage table retrieval | x | |
+| Return passages from documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Search specific document fields or enrichments | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Use operators, such as boolean clauses in the search | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Add curations to return hard-coded answers to certain questions | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Use relevancy training | ![checkmark icon](../../icons/checkmark-icon.svg) |  |
+| Enable answer finding to return a succinct answer from a passage | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Leverage table retrieval | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+{: row-headers}
+{: class="comparison-table"}
 {: caption="Query types comparison" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify query types. The column headers identify different goals you might have when you submit a query. To understand which query to use to support your goal, go to the row that describes the goal, and find the column that identifies the query type that supports your goal."}
 
 ## How to write a Discovery Query Language query
 {: #structure-basic-query}
