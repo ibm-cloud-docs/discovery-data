@@ -35,7 +35,7 @@ Pretrained model
 
     Instead of training the model yourself, you can apply an existing model that is trained to identify tables, lists, and sections in various types of documents.
 
-    If capturing information from tables is critical to your use case, consider using a pretrained model. For more information about creating a pretrained SDU model, see [Applying a pretrained SDU model](/docs/discovery-data?topic=discovery-data-sdu-pretrained).
+    If capturing information from tables is critical to your use case, consider using a pretrained model. For more information about creating a pretrained SDU model, see [Apply a pretrained SDU model](/docs/discovery-data?topic=discovery-data-sdu-pretrained).
 
 User-trained model
 :   Opens the Smart Document Understanding tool that you can use to pick certain types of text to store in fields other than the `text` field. 
@@ -214,24 +214,6 @@ To reuse a model, complete the following steps:
 
 Use the imported model as-is. Do not make any more annotations. If you make annotations after you import the `.sdumodel` file, the imported model will be overwritten.
 
-## Managing fields
-{: #field-settings}
-
-<!-- c/s help for **Manage fields** page. Do not delete. -->
-
-The **Manage fields** tab contains several options:
-
-Identify fields to index
-:   For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
-
-Improve query results by splitting your documents
-:   For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
-
-Date format settings
-:   For more information, see [Date format settings](/docs/discovery-data?topic=discovery-data-index-overview#field-date-settings).
-
-To access the **Manage fields** page, click the **Manage collections** icon on the navigation panel and open a collection. Click the **Manage fields** tab. For more information about collections, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
-
 ## Smart Document Understanding limits
 {: #sdu-limits}
 
@@ -254,3 +236,21 @@ The maximum number of documents that you can annotate to train an SDU model per 
 | Enterprise |                                40 |
 | Plus (includes Trial)  |                    40 |
 {: caption="Training set limits" caption-side="top"}
+
+## Managing fields
+{: #field-settings}
+
+<!-- c/s help for **Manage fields** page. Do not delete. -->
+
+The **Manage fields** tab contains several options:
+
+Identify fields to index
+:   For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
+
+Improve query results by splitting your documents
+:   For more information, see [Split documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
+
+Date format settings
+:   For more information, see [Date format settings](/docs/discovery-data?topic=discovery-data-index-overview#field-date-settings).
+
+To access the **Manage fields** page, click the **Manage collections** icon on the navigation panel and open a collection. Click the **Manage fields** tab. For more information about collections, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-08-04"
 
 subcollection: discovery-data
 
@@ -52,20 +52,13 @@ All of the CSV files (training, test, and target) must have the same column name
 ### Document classifier training data sample
 {: #create-doc-classifier-sample}
 
-The following table shows an example of the type of content to store in the CSV files that are used to train a document classifier. 
+The following table shows an example of the type of content to store in the CSV files that are used to train a document classifier.
 
-| Column name | CSV training file value | CSV target file value | 
-|-------------|-------------------------|-----------------------|
-| Claim_id | 0 | 1 |
-| Date | `2016/1/1` | `2016/1/2` |
-| Product_line | tea | ice cream |
-| Product | lemon tea | vanilla ice cream |
-| Client_segments | Not Member | Silver Member |
-| Client_location | Manhattan | Queens |
-| Client_age | 20 | 20 |
-| Feedback | The straw was peeled off from the juice pack. | I got some ice cream for my children, but there was something like a piece of thread inside the cup. |
-| Label | package_container | contamination_tampering |
-{: caption="Table 1. Sample data for .csv training and .csv target files" caption-side="top"}
+| Claim_id | Date | Product_line | Product | Client_segments | Client_location | Client age | Feedback | Label | 
+|----------|------|--------------|---------|-----------------|-----------------|------------|----------|-------|
+| 0 | `2016/1/1` | tea | lemon tea | Not Member | Manhattan | 20 | The straw was peeled off from the juice pack. | package_container |
+| 1 | `2016/1/2` | ice cream | Silver Member | Queens | 20 | I got some ice cream for my children, but there was something like a piece of thread inside the cup. | contamination_tampering |
+{: caption="Table 1. Sample data for CSV files" caption-side="top"}
 
 Note that the two required fields are present in the sample. The required fields have the following names:
 
