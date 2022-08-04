@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Structural meaning with SDU
+# Define a user-trained SDU model
 {: #configuring-fields}
 
 Create a Smart Document Understanding (SDU) model that learns about the content of a document based on the document's structure.

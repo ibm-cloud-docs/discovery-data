@@ -111,15 +111,14 @@ toc:
               - domain-ml.md
               - domain-pattern.md
               - domain-regex.md
-              - configuring-fields.md
+          - nlu.md
           - topicgroup:
-              label: Applying prebuilt enrichments
+              label: Using SDU to analyze document structure
               topics:
-              - topic: nlu.md
-                navtitle: Extracting meaning from your data
+              - configuring-fields.md
+              - sdu-pretrained.md
               - contracts-schema.md
               - understanding_tables.md
-              - sdu-pretrained.md
       - test.md
       - topicgroup:
           label: Improving search results

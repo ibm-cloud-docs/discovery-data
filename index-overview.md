@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-03"
 
 subcollection: discovery-data
 
@@ -107,9 +107,9 @@ To add more date formats, complete the following steps:
 
 1.  Specify a time zone.
 
-1.  Optionally, select a language. 
+1.  Optionally, select a date locale. 
 
-    Use this option to choose a language to parse a string value that represents the date for the date-type data set fields. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
+    The locale you choose is used to parse a string value that represents the date for the date-type data set fields. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
 
 1.  If you already imported documents with dates in formats that were not recognized, reprocess the documents.
 
