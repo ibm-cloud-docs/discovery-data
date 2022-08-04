@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-03"
 
 subcollection: discovery-data
 
@@ -29,10 +29,10 @@ The Discovery Query Language defines syntax you can use to filter, search, and a
 
 The `natural_language_query` parameter accepts text strings as input, not query language syntax.
 
-On the *Improve and customize* page of the {{site.data.keyword.discoveryshort}} user interface, you can submit natural language queries only. 
+On the *Improve and customize* page of the {{site.data.keyword.discoveryshort}} user interface, you can submit natural language queries only.
+{: important}
 
 A few other supported Query API parameters are specified and given default values based on the project type in use. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
-{: important}
 
 ## Choosing the right query type
 {: #query-choose}

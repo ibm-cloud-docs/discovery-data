@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-04"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Watson NLP enrichments
+# Applying prebuilt Watson NLP enrichments
 {: #nlu}
 
 Take advantage of award-winning Watson Natural Language Processing (NLP) capabilities by adding prebuilt enrichments to your documents.
