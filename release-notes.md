@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-08-04"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -104,6 +104,9 @@ When you remove a starting URL from a Web crawl connector its associated documen
 
 Added API methods for working with stop words and expansion lists
 :   You can now get, add, and remove a stop words or expansion list for a collection programmatically. For more information, see the [Query modifications](/apidocs/discovery-data#getstopwordlist){: external} methods.
+
+    The API is not supported from the SDKs currently.
+    {: note}
 
 ## 13 May 2022
 {: #discovery-13may2022}
