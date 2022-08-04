@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-04"
 
 subcollection: discovery-data
 
@@ -10,15 +10,15 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Applying a pretrained SDU model
+# Apply a pretrained SDU model
 {: #sdu-pretrained}
 
-Apply a model that can extract text and is trained to identify tables, lists, and sections in documents. 
+Apply a Smart Document Understanding (SDU) model that can extract text and is trained to identify tables, lists, and sections in documents. 
 {: shortdesc}
 
 Use the pretrained model if your documents contain tables with valuable information that you want to capture. The model is also able to preserve the meaning inherent in the nesting structure of tables, lists, and sections. Using the pretrained model speeds up the process of capturing information from the structure of a document.
 
-If you want to customize how the document structure is used to infer meaning from a document, create a user-trained model instead. For more information, see [Structural meaning with SDU](/docs/discovery-data?topic=discovery-data-configuring-fields).
+If you want to customize how the document structure is used to infer meaning from a document, create a user-trained model instead. For more information, see [Define a user-trained SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields).
 
 A pretrained model is applied to *Document Retrieval for Contracts* projects automatically. Instead of you annotating contract-related content in your documents, the project applies a model that already knows how to recognize terms and concepts that are significant to contracts.
 
