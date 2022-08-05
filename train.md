@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-06-09"
+lastupdated: "2022-08-04"
 
 subcollection: discovery-data
 
@@ -20,7 +20,11 @@ The relevance of natural language query results can be improved in {{site.data.k
 
 To train a relevancy model, you provide sample natural language queries, submit them to get results, and then rate those results. As you add more examples, the information you provide about result relevance for each query is used to learn about your project. After you train the project, when new queries are submitted to it, Discovery knows how to reorder the results so that the most relevant results are displayed first. 
 
-Relevancy training is optional. If the results of your queries meet your needs, no further training is necessary. For more information about when to use relevancy training, read the [Relevancy training for time-sensitive users](https://medium.com/ibm-data-ai/ibm-watson-discovery-relevancy-training-time-sensitive-18a190b0874a){: external} blog post on Medium.
+Relevancy training is optional. Test the quality of your search results. If the results of your queries meet your needs, no further training is necessary. 
+
+The training improves the relevancy of the documents that are returned in query responses. It does not improve the passages or answers that are returned per document. If you're using passage retrieval and your test results are returning good documents, but the wrong passages from the documents, relevancy training will not help.
+
+For more information about when to use relevancy training, read the [Relevancy training for time-sensitive users](https://medium.com/ibm-data-ai/ibm-watson-discovery-relevancy-training-time-sensitive-18a190b0874a){: external} blog post on Medium.
 
 The following 15-minute video demonstrates relevancy training, along with other features.
 
