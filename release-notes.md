@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-08-08"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -30,6 +30,13 @@ This information applies only to managed instances of {{site.data.keyword.discov
 Watson Discovery v1 is being deprecated. Existing clients who use Watson Discovery v1 are asked to migrate to Watson Discovery v2 before the end-of-support date of **11 July 2023**. End of Support means that no v1 instance will work on or after 11 July 2023. For more information about migration, see [Getting the most from Discovery](/docs/discovery-data?topic=discovery-data-version-choose).
 {: deprecated}
 
+## 8 August 2022
+{: #discovery-8august2022}
+{: release-note}
+
+Larger documents can be crawled
+:   The maximum file sizes that are allowed for crawled documents increased for Premium plans. It also increased for the Box, IBM Cloud Object Storage, and Salesforce connectors. For more information, see [File size limits](/docs/discovery-data?topic=discovery-data-collections#collections-file-size-limits).
+
 ## 2 August 2022
 {: #discovery-2august2022}
 {: release-note}
@@ -52,6 +59,9 @@ API updates
      -   A `similar` parameter is available from the *Query* method. Use it to find documents that are similar to documents of interest to you.
      
      The `suggested_refinements` parameter of the *Query* method is deprecated. The `suggested_refinements` parameter was used to identify dynamic facets from Premium plan data.
+
+    These API updates is not supported from the SDKs currently.
+    {: note}
 
 ## 11 July 2022
 {: #discovery-11july2022}
