@@ -60,7 +60,7 @@ API updates
      
      The `suggested_refinements` parameter of the *Query* method is deprecated. The `suggested_refinements` parameter was used to identify dynamic facets from Premium plan data.
 
-    These API updates is not supported from the SDKs currently.
+    These API updates are not supported from the SDKs currently.
     {: note}
 
 ## 11 July 2022
