@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-08"
 
 subcollection: discovery-data
 
@@ -69,7 +69,9 @@ Avoid field names that meet the following conditions. Field names with these res
 Dates are captured in different ways depending on the file type.
 
 Unstructured files
-:    The best way to capture date information in unstructured data is to use a natural language processing model. For example, the prebuilt Entities enrichment recognizes dates and annotates them. In a document where the enrichment is applied, you can find dates by looking for fields that are labeled as `enriched_{fieldname}.entities.type`=`Date`.
+:    The best way to capture date information from the body of a document with unstructured data is to use a natural language processing model enrichment. For example, the prebuilt Entities enrichment recognizes dates and annotates them in the `text` field (or other body fields with the `String` data type). In a document where the enrichment is applied, you can find dates by looking for fields that are labeled as `enriched_{fieldname}.entities.type`=`Date`.
+
+    Dates from metadata date fields, such as `extracted_metadata.publicationdate`, are stored in the index as dates as long as the date format matches one of the supported date data type formats. You can't see nested fields from the *Manage fields* page. And when you view a search result as JSON, date field values are displayed as String values because JSON doesn't have a Date data type. The JSON editor represents the Date as a String. However, values from date fields behave like dates. You can use greater than (`>`) or less than (`<`) operators with such fields in Discovery Query Language queries, for example.
 
 Structured files
 :    Structure files that you import, such as CSV or JSON files, might contain date fields that you want to store as date data types. {{site.data.keyword.discoveryshort}} can recognize many date formats. However, you might need to add a format to the list. For more information, see *Date format settings*.

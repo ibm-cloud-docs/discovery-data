@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-07-28"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -168,15 +168,25 @@ For more information about the supported number of documents for Lite and Advanc
 ## File size limits
 {: #collections-file-size-limits}
 
-Crawled documents
-:   The maximum size of each file that you can crawl by using a connector differs by deployment type.
+### Crawled documents
 
-    -   ![IBM Cloud only](images/ibm-cloud.png) Managed deployments on {{site.data.keyword.cloud_notm}}: 10 MB
-    -   ![Cloud Pak for Data only](images/desktop.png) Installed deployments on {{site.data.keyword.icp4dfull_notm}}: 32 MB
+The maximum size of each file that you can crawl by using a connector differs by deployment type.
 
-Uploaded documents
-:   The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type. See the *Maximum document size table for details.
+![IBM Cloud only](images/ibm-cloud.png) Managed deployments on {{site.data.keyword.cloud_notm}}
+    
+-   Premium plans: 50 MB
+-   Box: 50 MB
+-   IBM Cloud Object Store: 50 MB
+-   Salesforce Files objects : 50 MB
+-   All other data sources and plans: 10 MB
 
+![Cloud Pak for Data only](images/desktop.png) Installed deployments on {{site.data.keyword.icp4dfull_notm}}
+
+-   All data sources: 32 MB
+
+### Uploaded documents
+
+The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type. See the *Maximum document size table for details.
 
 | Plan | File size per document |
 |--------------|--------------------------------:|
