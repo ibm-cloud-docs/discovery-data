@@ -42,7 +42,7 @@ To add an advanced rule model, complete the following steps:
 1.  Click **Create**.
 1.  Choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
 
-### Advanced rules model limits
+## Advanced rules model limits
 {: #advanced-rules-limits}
 
 The number of advanced rules models that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
