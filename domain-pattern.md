@@ -72,7 +72,7 @@ To define a pattern, complete the following steps:
 
 1.  To apply the pattern immediately, choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
 
-When Discovery finds text in a document that matches a pattern that you defined, it is annotated in the `enriched_{fieldname}.entities` field. You can find it by checking the `enriched_{fieldname}.entities.model_name` field for your pattern name.
+When {{site.data.keyword.discoveryshort}} finds text in a document that matches a pattern that you defined, it is annotated in the `enriched_{fieldname}.entities` field. You can find it by checking the `enriched_{fieldname}.entities.model_name` field for your pattern name.
 
 ## Downloading a pattern
 {: #patterns-download}
