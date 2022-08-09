@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-08-09"
 
 subcollection: discovery-data
 
@@ -93,7 +93,7 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
     ```
     {: pre}
 
-1.  Get the backup script from the [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.2.0){: external}.
+1.  Get the backup script from the [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/latest){: external}.
 
     You need all of the files in the repository to complete a backup and restore. Follow the instructions in GitHub Help to clone or download a compressed file of the repository.
     {: important}
