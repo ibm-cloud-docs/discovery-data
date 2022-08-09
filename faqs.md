@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-09"
 
 subcollection: discovery-data
 
@@ -74,6 +74,18 @@ No. {{site.data.keyword.discoveryshort}} support multiple languages. For more in
 {: faq}
 
 {{site.data.keyword.discoveryshort}} can ingest most standard business file types, including PDF, Microsoft Word documents, spreadsheets, and presentations. For a complete list, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+## Can I find related documents after I add them to a collection
+{: #faq-keep-doc-relationship}
+{: faq}
+
+If you want to retain information about the relationship of two or more documents to one another, you can do so. For example, if 3 documents are uploaded from the same folder and their placement in the folder is significant to their meaning, you might want to retain the parent folder information.
+
+When you upload a document, no such information about its relationships to other documents is stored by default. To add the information, you can use the API to add the documents. When you add documents by using the API, you can specify metadata values. You might want to specify a metadata value, such as `"foldername": "company_a"`, for each document. 
+
+Alterntively, you can copy the document body of each document into a JSON file, where each document is an object in a single array. When the JSON file is ingested, each item in the array is added as a separate document with a seprarate document ID. Each document shares the same parent ID, which identifies the relationship between them.
+
+From an IBM Cloud-managed instance, you can quickly find documents that share the same parent ID or other common metadata value from the *Manage data* page. Customize the view to show the field, such as `extracted_metadata.parent_document_id` or `extracted_metadata.foldername`, that the documents share in common.
 
 ## Can I customize Discovery to understand my data
 {: #faq-customize}

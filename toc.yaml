@@ -105,6 +105,7 @@ toc:
               topics:
               - topic: domain.md
                 navtitle: Teaching Discovery about your domain
+              - domain-advanced-rules.md
               - domain-classifier.md
               - domain-dictionary.md
               - entity-extractor.md
