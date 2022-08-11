@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-01"
+lastupdated: "2022-08-10"
 
 subcollection: discovery-data
 
@@ -129,10 +129,10 @@ Back up your machine learning model .zip or .pear files, and store them locally.
 1. On the **Improvement tools** panel, click **Teach domain concepts** and then **Patterns (Beta)**.
 1. Click the download icon next to your pattern. Your pattern model then downloads as a .zip file.
 
-### Advanced rule models enrichment
+### Advanced rules models enrichment
 {: #advrmenrich}
 
-Back up your model files as .zip files, and store them locally. For more information, see [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules).
+Back up your model files as .zip files, and store them locally. For more information, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules).
 
 ### Classifier enrichments
 {: #classifierenrich}
@@ -207,4 +207,4 @@ You can restore pattern enrichment .zip files as advanced rules models .zip file
 After you upload pattern model .zip files for recovery, you cannot use the pattern editor to further edit the .zip files.
 {: note}
 
-For more information about uploading an advanced rules models .zip file, see [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules).
+For more information about uploading an advanced rules models .zip file, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules).

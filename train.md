@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-08-04"
+lastupdated: "2022-08-11"
 
 subcollection: discovery-data
 
@@ -18,7 +18,26 @@ subcollection: discovery-data
 The relevance of natural language query results can be improved in {{site.data.keyword.discoveryfull}} with training.
 {: shortdesc}
 
-To train a relevancy model, you provide sample natural language queries, submit them to get results, and then rate those results. As you add more examples, the information you provide about result relevance for each query is used to learn about your project. After you train the project, when new queries are submitted to it, Discovery knows how to reorder the results so that the most relevant results are displayed first. 
+A relevancy model determines the most relevant documents to return in search results. Without relevancy training, a standard mechanism is used to determine relevance based on common factors. When you train a relevancy model, you help {{site.data.keyword.discoveryshort}} to use features that are unique to your documents as it determines relevance.
+
+To train a relevancy model, you provide sample natural language queries, submit them to get results from your documents, and then rate those results. As you add more examples, the information you provide about result relevance for each query is used to learn about your project. After a successful relevancy training session, a ranker model is created. The model is used automatically by Discovery with the next natural language query. Discovery reorders the document results so that the most relevant results according to the relevancy training model are displayed first.
+
+Relevancy training does not run continuously. Training occurs only when you initiate it. The set of documents that constitute the training data are used only during the training process. If a subsequent change is made to a document that was used to train the model, it does not change the trained model and does not trigger a new training session. Keep in mind that if many of the documents in your project change, it might be time to retrain the model to use the features from the updated documents.
+
+At most one trained relevancy model is used at a time per project. If you retrain a model, the existing model is used until the new model is successfully trained, at which time the new model replaces the old model. You do not enable use of the training model with a query parameter. If present, the model is used for every natural language query that is submitted. The model is used whether you limit the search to one collection or all of the collections. For this reason, it is important that your training data represents queries that are likely to be answered by all of the collections in your project. To stop a project from using the relevancy training model, you can delete the model by using the API.
+
+If documents that were used previously to train the model are removed from a collection, you must remove any references to them from the training data before you start to retrain the model. The model expects both the documents and queries from training data pairs to continue to exist. To remove these references, delete the training queries that returned the deleted documents. If the queries continue to be relevant, you can add them back to the training data and pair them with other documents.
+
+For more information about the relevancy training API, see the [API reference documentation](https://cloud.ibm.com/apidocs/discovery-data#createtrainingquery){: external}.
+
+The following 15-minute video demonstrates relevancy training, along with other features. The training information starts 9 minutes in.
+
+![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" data-script="none"  id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+
+To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=wi_V9s8XF3c), click the *More actions* icon, and then choose *Open transcript*.
+
+## When to use relevancy training
+{: #train-when}
 
 Relevancy training is optional. Test the quality of your search results. If the results of your queries meet your needs, no further training is necessary. 
 
@@ -26,17 +45,14 @@ The training improves the relevancy of the documents that are returned in query 
 
 For more information about when to use relevancy training, read the [Relevancy training for time-sensitive users](https://medium.com/ibm-data-ai/ibm-watson-discovery-relevancy-training-time-sensitive-18a190b0874a){: external} blog post on Medium.
 
-The following 15-minute video demonstrates relevancy training, along with other features.
+## How fields are handled
+{: #train-fields}
 
-![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" data-script="none"  id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=wi_V9s8XF3c), click the *More actions* icon, and then choose *Open transcript*.
-
-Unlike Discovery Query Language queries, with natural language queries you cannot specify which fields from the document you care about or how much significance to give to each one. Instead, when a natural language query is submitted, the root-level fields are all considered to have equal significance. The way to identify document fields that are more significant than others is through relevancy training. When you teach Discovery with examples, the service figures out for you how much weight to give to each field.
+Unlike Discovery Query Language queries, with natural language queries you cannot specify which fields from the document you care about or how much significance to give to each one. Instead, when a natural language query is submitted, the root-level fields are all considered to have equal significance. When you teach Discovery with examples, the service figures out for you how much weight to give to each field.
 
 Discovery builds a model that assigns different weights to term, bigram, and skip-gram matches for each of the root-level fields and balances them against matches from all of the other document fields. With enough examples, Discovery can return better answers because it knows where the best answers are typically stored.
 
-Relevancy training cannot be used to give more weight to nested fields because nested fields are grouped and assigned one overall score. No matter how much you train, Discovery never gives a nested field more weight than it gives to a root-level field. For more information about nested fields, see the [FAQ](/docs/discovery-data?topic=discovery-data-faqs#faq-nested-fields).
+Relevancy training cannot be used to give more weight to nested fields. Nested fields are grouped and assigned one overall score. No matter how much you train, Discovery never gives a nested field more weight than it gives to a root-level field. For more information about nested fields, see the [FAQ](/docs/discovery-data?topic=discovery-data-faqs#faq-nested-fields).
 {: note}
 
 ## Training a project
@@ -68,7 +84,7 @@ To apply relevancy training to a project, complete the following steps:
     -   Rate more results
     -   Add more variety to your ratings
 
-    You must evaluate at least 50 unique queries, maybe more, depending on the complexity of your data. You cannot add more than 10,000 training queries per collection.
+    You must evaluate at least 50 unique queries, maybe more, depending on the complexity of your data. You cannot add more than 10,000 training queries.
 1.  You can continue adding queries and rating results after you reach the threshold. Enter all of the queries that you think your users will ask.
 
     To delete a training query, click the **Delete** icon. To delete all of the training queries in your collection at one time, use the API. For more information, see [Delete training queries](https://{DomainName}/apidocs/discovery-data#deletetrainingqueries){: external}.
@@ -117,6 +133,15 @@ The `confidence` score can be found in the query results, under the `result_meta
 The `document_retrieval_strategy` can be found under the `retrieval_details`. If you query a trained collection by using the {{site.data.keyword.discoveryshort}} Query Language, or the trained model is temporarily disabled, the `document_retrieval_strategy` is `untrained`.
 
 For more information on querying a project, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+
+## Relevancy training limits
+{: #train-limits}
+
+The following limits apply to relevancy training models:
+
+-    One model per project
+-    10,000 queries per model
+-    40 models per service instance for Enterprise and Premium plans; 20 models for Plus plan instances
 
 ## Other ways to improve relevancy
 {: #train-alternatives}

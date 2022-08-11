@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-10"
 
 subcollection: discovery-data
 
@@ -33,7 +33,7 @@ The following enrichments are supported in the Analyze API:
 - [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain-ml)
 - [Document classifier](/docs/discovery-data?topic=discovery-data-cm-doc-classifier)
 - [Text classifier](/docs/discovery-data?topic=discovery-data-domain-classifier)
-- [Advanced rule models](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules)
+- [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules)
 - [Entities](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities)
 - [Keywords](/docs/discovery-data?topic=discovery-data-nlu#nlu-keywords)
 - [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-08-11"
 
 subcollection: discovery-data
 
@@ -205,7 +205,7 @@ Index value of the position of the search result where the set of results to ret
 ## `spell correction`
 {: #spell}
 
-In natural language queries, you can check and correct the spelling of terms in the `natural_language_query` parameter. The most likely correction is returned in the `suggested_query` field of the response (if one exists).
+In natural language queries, checks the query that is submitted for misspelled terms. The query is processed as-is. However, likely corrections to the original query, if any exist, are returned in the `suggested_query` field of the response. The suggestions are not used automatically, but your application can make use of them.
 
 ## `sort`
 {: #sort}

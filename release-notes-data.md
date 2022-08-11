@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-10"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -441,8 +441,8 @@ New **IBM FileNet connector**
 New Swedish, Norwegian, and Danish language support
 :   Added basic support for Swedish, Norwegian (Bokma&#778;l and Nynorsk), and Danish. For more information, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
-Change to Advanced Rule models enrichment
-:   The [Advanced Rule models enrichment](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules) is now GA.
+Change to Advanced rules models enrichment
+:   The [Advanced rules models enrichment](/docs/discovery-data?topic=discovery-data-domain-advanced-rules) is now GA.
 
 New document preview for search results
 :   You can now view your search results in a document preview for the following source documents: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of image files. This view makes it easier for you to see search results as highlighted passages within the text of the original document, making the context clearer.
