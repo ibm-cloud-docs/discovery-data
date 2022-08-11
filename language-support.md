@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-10"
 
 subcollection: discovery-data
 
@@ -15,32 +15,32 @@ subcollection: discovery-data
 
 | Language | Supported features|
 |:---|:---|
-| Arabic (`ar`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Arabic (`ar`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Bosnian (`bs`)\* | Classifier (Document and Text), Dictionary, Entities (custom), Parts of speech, Regular expressions |
-| Chinese, simplified (`zh-CN`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding|
-| Chinese, traditional (`zh-TW`) | Advanced rule models, Classifier (Document and Text), Dictionary, Entities (custom), Regular expressions, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Smart Document Understanding, Table Understanding |
+| Chinese, simplified (`zh-CN`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding|
+| Chinese, traditional (`zh-TW`) | Advanced rules models, Classifier (Document and Text), Dictionary, Entities (custom), Regular expressions, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Smart Document Understanding, Table Understanding |
 | Croatian (`hr`)\* | Classifier (Document and Text), Dictionary, Entities (custom), Regular expressions, Parts of speech |
 | Czech (`cs`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Danish (`da`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Dutch (`nl`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
-| English (`en`) | Advanced rule models, Classifier (Document and Text), Contracts, Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
+| Dutch (`nl`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
+| English (`en`) | Advanced rules models, Classifier (Document and Text), Contracts, Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
 | Finnish (`fi`) | Classifier (Document and Text), Dictionary, Entities (custom), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| French (`fr`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| German (`de`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| French (`fr`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| German (`de`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Hebrew (`he`) | Classifier (Document and Text), Dictionary, Entities (custom), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Hindi (`hi`)\* | Classifier (Document and Text), Dictionary, Entities (custom), Parts of speech, Regular expressions |
-| Italian (`it`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Japanese (`ja`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
-| Korean (`ko`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Italian (`it`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Japanese (`ja`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
+| Korean (`ko`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Norwegian (Bokma&#778;l) (`nb`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Norwegian (Nynorsk) (`nn`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Polish (`pl`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Portuguese, Brazilian (`pt-br`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Portuguese, Brazilian (`pt-br`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Romanian (`ro`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Russian (`ru`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
 | Serbian (`sr`)\* | Classifier (Document and Text), Dictionary, Entities (custom), Parts of speech, Regular expressions|
 | Slovak (`sk`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Spanish (`es`) | Advanced rule models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
+| Spanish (`es`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Swedish (`sv`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 
 \* **Optical character recognition (OCR)** supports Latin script only in the Serbian language.
