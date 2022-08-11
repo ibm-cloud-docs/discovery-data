@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-08"
+lastupdated: "2022-08-11"
+
+keywords: curation,snippet,hard-coded answers
 
 subcollection: discovery-data
 

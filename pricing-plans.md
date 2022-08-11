@@ -2,7 +2,9 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-08-11"
+
+keywords: plans, pricing, service instances, billing
 
 subcollection: discovery-data
 

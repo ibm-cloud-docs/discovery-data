@@ -2,7 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-08-11"
+
+keywords: backup,restore
 
 subcollection: discovery-data
 

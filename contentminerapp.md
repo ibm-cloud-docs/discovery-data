@@ -2,7 +2,9 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-08-11"
+
+keywords: content mining,content analytics studio,facets
 
 subcollection: discovery-data
 

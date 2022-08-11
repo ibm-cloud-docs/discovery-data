@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-08-11"
+
+keywords: document structure,smart document understanding,sdu
 
 subcollection: discovery-data
 

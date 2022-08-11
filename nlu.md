@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-08-11"
+
+keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
 subcollection: discovery-data
 
