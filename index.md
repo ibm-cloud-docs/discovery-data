@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-11"
+
+keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
 subcollection: discovery-data
 

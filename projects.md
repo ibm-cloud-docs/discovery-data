@@ -2,7 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-08-11"
+
+keywords: projects, project types
 
 subcollection: discovery-data
 

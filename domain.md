@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-08-11"
+
+keywords: choose enrichments,enrichment overview
 
 subcollection: discovery-data
 

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-08-11"
 
-keywords: api version,api,request syntax
+keywords: api version,api,request syntax,api key,bearer token
 
 subcollection: assistant-data
 ---
