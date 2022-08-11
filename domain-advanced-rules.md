@@ -86,4 +86,4 @@ The number of advanced rules models that you can define per service instance dep
 | Premium  |                      3 |
 | Enterprise |                                3 |
 | Plus (includes Trial) |                     1 |
-{: caption="Advanced rules model limits" caption-side="top"}
+{: caption="Advanced rules model plan limits" caption-side="top"}
