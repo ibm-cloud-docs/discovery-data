@@ -93,7 +93,7 @@ Table retrieval
 ## Query limits
 {: #query-limits}
 
-A query is any operation that submits a POST request to the `/query` endpoint of the API. Such operations include queries that are submitted by using the API. It does not include queries that are submitted from the search bar on the *Improve and customize* page of the product user interface.
+A query is any operation that submits a `POST` request to the `/query` endpoint of the API. Such operations include queries that are submitted by using the API. It does not include queries that are submitted from the search bar on the *Improve and customize* page of the product user interface.
 
 A query is counted only if the request is successful, meaning it returns a response (with message code 200).
 

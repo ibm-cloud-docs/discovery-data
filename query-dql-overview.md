@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-12"
 
 keywords: Discovery Query Language, DQL
 
@@ -54,7 +54,7 @@ This basic query contains a nested path expression before the `:` operator. Each
 
 The `::` operator indicates that the text must be matched exactly in the result. For more information, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators). You can see how the two operators are used in the following examples.
 
--   To return matching document in order of relevance, pass the following data object in the POST request:
+-   To return matching documents in order of relevance, pass the following data object in the `POST` request:
 
     ```json
     {
@@ -63,7 +63,7 @@ The `::` operator indicates that the text must be matched exactly in the result.
     ```
     {: codeblock}
 
--   To return matching documents in any order, pass the following data object in the POST request as the query body:
+-   To return matching documents in any order, pass the following data object in the `POST` request as the query body:
 
     ```json
     {
@@ -304,7 +304,7 @@ Use the `filter()` in the aggregation clause to filter results. For example, you
 ```
 {: codeblock}
 
-In this case, the `filter().term()` aggregation finds the same result as the example before with the separate  `filter` and `aggregation` clauses. However, results are ranked differently when the  `filter` clause is used. You can leverage this difference by using the `filter()` clause within the  `aggregation` clause to filter results from a sequence of expressions, as shown in the next example.
+In this case, the `filter().term()` aggregation finds the same result as the earlier example with the separate  `filter` and `aggregation` clauses. However, results are ranked differently when the  `filter` clause is used. You can leverage this difference by using the `filter()` clause within the  `aggregation` clause to filter results from a sequence of expressions, as shown in the next example.
 
 ### Example: Nested aggregation
 {: #nested-aggregation}
