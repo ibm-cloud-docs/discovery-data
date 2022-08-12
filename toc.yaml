@@ -170,9 +170,10 @@ toc:
           - analyzeapi.md
           - curations.md
           - topicgroup:
-              label: Querying
+              label: Query API
               topics:
               - query-concepts.md
+              - query-dql-overview.md
               - query-parameters.md
               - query-operators.md
               - query-aggregations.md
