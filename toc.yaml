@@ -149,6 +149,7 @@ toc:
           - cm-edit-collection.md
           - cm-csv-file.md
           - cm-report.md
+          - cm-export.md
       - topicgroup:
           label: Installing
           topics:
@@ -186,7 +187,7 @@ toc:
               - install-connector.md
               - ccs-tooling.md
           - topicgroup:
-              label: Configuring a Cloud Pak for Data customer crawler plug-in
+              label: Configuring a Cloud Pak for Data custom crawler plug-in
               topics:
               - crawler-plugin-build.md
               - crawler-plugin-dev.md

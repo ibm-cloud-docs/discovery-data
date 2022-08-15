@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-15"
 
 subcollection: discovery-data
 
@@ -176,16 +176,7 @@ With a simple query, especially on a small data set, the `filter` and `query` pa
 ## Structure parameters
 {: #query-parameters-structure}
 
-Structure parameters define the content and organization of the documents in the returned JSON. They determine the following things:
-
-- the number of results to return
-- where in the results set to start returning documents
-- how the result set is sorted
-- which fields to return for each document
-- whether to remove duplicate documents
-- whether to remove extracted relevant passages from the results set.
-
-Structure parameters don't affect which documents are part of the entire results set.
+Structure parameters define the content and organization of the documents in the returned JSON. Structure parameters don't affect which documents are part of the entire results set.
 
 ## `return`
 {: #return}

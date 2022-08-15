@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-08-15"
 
 subcollection: discovery-data
 
@@ -48,3 +48,21 @@ The following table shows the supported data sources for each deployment type.
 | *I want the chatbot I'm building to use knowledge that I own* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |
 | *I want to uncover insights I didn't know to ask about.* | Gain insights from pattern analysis or perform root cause analysis. | **Content Mining** |
 {: caption="Project type use cases" caption-side="top"}
+
+## Default enrichments per project type
+{: #enrichment-defaults-reuse}
+
+Some prebuilt enrichments are applied automatically to collections in a project based on the project type. The following table shows the default enrichments that are applied to each project type.
+
+| Enrichment | Document Retrieval | Document Retrieval for Contracts | Conversational Search | Content Mining |
+|------------|--------------------|----------------------------------|-----------------------|----------------|
+| Contracts | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| Entities v2 | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| Keywords | | | | |
+| Part of Speech | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Sentiment of Document | | | | |
+| Table Understanding | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="Default enrichments per project type" caption-side="top"}
+{: summary="This table has row and column headers. The row headers identify project types. The column headers identify different enrichments. To understand which enrichments are applied to a project type by default, go to the row that describes the enrichments, and find the columns for the project type that you are interested in."}

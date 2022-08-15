@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-08-15"
 
 keywords: upload, one-time upload, field names
 
@@ -56,3 +56,5 @@ The file upload is completed quickly. It takes more time for the data to be proc
 Unlike crawled data sources, you cannot schedule regular updates for uploaded files. If you want to add a later version of a file, delete the earlier version of the file, and then upload the latest version.
 
 For information about how to troubleshoot issues that you might encounter when adding documents to a collection, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
+
+For more information about what happens next, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).

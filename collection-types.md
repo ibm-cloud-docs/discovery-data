@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-10"
+lastupdated: "2022-08-15"
 
 subcollection: discovery-data
 
@@ -95,10 +95,13 @@ Document-level security is supported by the following data source types:
 - Microsoft SharePoint On Prem
 - Microsoft Windows File System
 
+When you query collections where document-level security is enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document-level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
+{: important}
+
 To enable document-level security, you must complete the following steps:
 
 1.  [Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system](#createusersdls).
-1.  [Associate users with your {{site.data.keyword.discoveryshort}} instance](#associateusersdls).
+1.  [Associate users with your {{site.data.keyword.discoveryshort}} instance]. For more information, see [Giving users access to Discovery](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=a-giving-users-access){: external}.
 1.  Enable document-level security for the data source when you connect to it.
 
 ### Creating users for document-level security
@@ -108,21 +111,10 @@ You must create users that match the users available on the source system that {
 {: shortdesc}
 
 1. Log in to {{site.data.keyword.discoveryshort}} as an administrator.
-1. Create users who match the users available on your source or who are connected to the LDAP server that your source system uses. If you create users for document-level security, keep the following points in mind:
+1. Create users who match the users available on your source or who are connected to the identity provider that your source system uses. If you create users for document-level security, keep the following points in mind:
 
-   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=platform-managing-users){: external}.
-   - To connect to an LDAP server that the source is using, see [Connecting to your LDAP server](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=users-connecting-your-ldap-server){: external}.
+   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=a-managing-users-1){: external}.
+   - To connect to an identity provider that the source is using, see [Connecting to your identity provider](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=users-connecting-your-identity-provider){: external}.
 
-### Associating users with an instance
-{: #associateusersdls}
-
-1. Click the main menu icon, expand **Services**, and then click **Instances**.
-1. Find instance that you want to add users to. Click the overflow menu, and then select **Manage Access**.
-1. Click **Add users**.
-1. Add the users that you want from the list by clicking **Add user**, and then select the user from the list. Assign them to the **User** role, and then click **Add**.
-
-When you query collections where document-level security is enabled, no results are returned if the users associated with your {{site.data.keyword.discoveryshort}} instance are not present in the source system. For more information about querying these collections, see [Querying with document-level security enabled](/docs/discovery-data?topic=discovery-data-query-concepts#querydls).
-{: important}
-
-{{site.data.keyword.discoveryshort}} does not synchronize changes that are made to the users in the LDAP server with the user list for the service. {{site.data.keyword.discoveryshort}} administrators must ensure that the user list is current and remove any noncurrent users.
+{{site.data.keyword.discoveryshort}} does not synchronize changes that are made to the users in the identity provider with the user list for the service. {{site.data.keyword.discoveryshort}} administrators must ensure that the user list is current and remove any noncurrent users.
 {: note}
