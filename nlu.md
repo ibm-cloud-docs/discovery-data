@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-15"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
@@ -42,13 +42,9 @@ For example, the following screen capture shows a transcript of the US Declarati
 
 Some of the NLP enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
 
-| Enrichment that is applied automatically | Project type |
-|------------------------------------------|--------------|
-| Entities                                 | Document Retrieval, Document Retrieval for Contracts |
-| Part of Speech                          | Content Mining, Document Retrieval, Document Retrieval for Contracts |
-{: caption="Default enrichments for project types" caption-side="top"}
+{{site.data.content.enrichment-defaults-reuse}}
 
-The following prebuilt enrichments are applied to some collections automatically also:
+For more information about the following prebuilt enrichments, see the following topics:
 
 - [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema)
 - [Table Understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)

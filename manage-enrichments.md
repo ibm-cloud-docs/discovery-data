@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-15"
 
 subcollection: discovery-data
 
@@ -151,20 +151,4 @@ To apply an enrichment by using the API, complete the following steps:
     ```
     {: codeblock}
 
-### Default enrichments per project type
-{: #enrichments-defaults}
-
-Some prebuilt enrichments are applied automatically to collections in a project based on the project type. The following table shows the default enrichments that are applied to each project type.
-
-| Enrichment | Document Retrieval | Document Retrieval for Contracts | Conversational Search | Content Mining |
-|------------|--------------------|----------------------------------|-----------------------|----------------|
-| Contracts | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| Entities v2 | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| Keywords | | | | |
-| Part of Speech | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Sentiment of Document | | | | |
-| Table Understanding | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-{: row-headers}
-{: class="comparison-table"}
-{: caption="Default enrichments per project type" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify project types. The column headers identify different enrichments. To understand which enrichments are applied to a project type by default, go to the row that describes the enrichments, and find the columns for the project type that you are interested in."}
+{{site.data.content.enrichment-defaults-reuse}}
