@@ -54,7 +54,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
 
         1.  From the Cloud Pak for Data web client, get the user ID of the owner of the instance that you want to upgrade.
-        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-migration-uid-patch.zip){: external} repository.
+        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-migration-uid-patch.zip){: external} repository.
         1.  Extract the **wd-migration-uid-patch.yaml** file from the archive file, and then open it in a text editor.
         1.  Replace the `<user_id>` variable with the user ID of the owner of the instance that you want to upgrade.
         1.  Run the following command in a terminal that is logged in to the cluster:
@@ -88,7 +88,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
     -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
 
-       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-aux-br-patch.zip) repository.
        1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
        1.  Run the following command in a terminal that is logged in to the cluster:
 
@@ -120,7 +120,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
 
         1.  From the Cloud Pak for Data web client, get the user ID of the owner of the instance that you want to upgrade.
-        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-migration-uid-patch.zip){: external} repository.
+        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-migration-uid-patch.zip){: external} repository.
         1.  Extract the **wd-migration-uid-patch.yaml** file from the archive file, and then open it in a text editor.
         1.  Replace the `<user_id>` variable with the user ID of the owner of the instance that you want to upgrade.
         1.  Run the following command in a terminal that is logged in to the cluster:
@@ -168,7 +168,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
     -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
 
-       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-aux-br-patch.zip) repository.
        1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
        1.  Run the following command in a terminal that is logged in to the cluster:
 
@@ -186,7 +186,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
 
         1.  From the Cloud Pak for Data web client, get the user ID of the owner of the instance that you want to upgrade.
-        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-migration-uid-patch.zip){: external} repository.
+        1.  Download the `wd-migration-uid-patch.zip` patch file from the [Watson Developer Cloud GitHub](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-migration-uid-patch.zip){: external} repository.
         1.  Extract the **wd-migration-uid-patch.yaml** file from the archive file, and then open it in a text editor.
         1.  Replace the `<user_id>` variable with the user ID of the owner of the instance that you want to upgrade.
         1.  Run the following command in a terminal that is logged in to the cluster:
@@ -214,7 +214,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
     -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
 
-       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-aux-br-patch.zip) repository.
        1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
        1.  Run the following command in a terminal that is logged in to the cluster:
 
@@ -234,7 +234,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
     -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
 
-       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-aux-br-patch.zip) repository.
        1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
        1.  Run the following command in a terminal that is logged in to the cluster:
 
@@ -256,7 +256,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
     -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator attempts to backup an entire {{site.data.keyword.icp4dfull_notm}} instance, {{site.data.keyword.discoveryshort}} prevents the utility from completing successfully.
     -  **Solution**: Apply a patch that stops {{site.data.keyword.discoveryshort}} from preventing the utility from completing successfully.
 
-       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/2.2.0/wd-aux-br-patch.zip) repository.
+       1.  Download the `wd-aux-br-patch.zip` file from the [Watson Developer Cloud Github](https://github.com/watson-developer-cloud/doc-tutorial-downloads/blob/master/discovery-data/latest/wd-aux-br-patch.zip) repository.
        1.  Extract the `wd-aux-br-patch.yaml` file from the ZIP file.
        1.  Run the following command in a terminal that is logged in to the cluster:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-08-16"
 
 subcollection: discovery-data
 
@@ -10,20 +10,20 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Getting the most from Discovery
+# Getting the most from {{site.data.keyword.discoveryshort}}
 {: #version-choose}
 
 {{site.data.keyword.discoveryshort}} was redesigned to introduce new features and a simpler way to build solutions.
 {: shortdesc}
 
-The redesigned product is referred to as Discovery v2. When you create a Plus, Enterprise, or Premium plan instance on {{site.data.keyword.cloud_notm}}, you get the new and improved version of {{site.data.keyword.discoveryshort}}. Discovery v2 is deployed when you install and provision an instance on {{site.data.keyword.icp4dfull_notm}} also.
+The redesigned product is referred to as {{site.data.keyword.discoveryshort}} v2. When you create a Plus, Enterprise, or Premium plan instance on {{site.data.keyword.cloud_notm}}, you get the new and improved version of {{site.data.keyword.discoveryshort}}. {{site.data.keyword.discoveryshort}} v2 is deployed when you install and provision an instance on {{site.data.keyword.icp4dfull_notm}} also.
 
-Discovery v1 is provisioned when you create a Lite or Advanced plan instance on {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.discoveryshort}} v1 is provisioned when you create a Lite or Advanced plan instance on {{site.data.keyword.cloud_notm}}.
 
 ## Advantages of using the latest version
 {: #version-choose-v2-highlights}
 
-Discovery v2 offers the following features and enhancements:
+{{site.data.keyword.discoveryshort}} v2 offers the following features and enhancements:
 
 - A project-based experience that supports many different use cases within a single environment.
 - Built-in customization tools for adding dictionaries, patterns, and classifiers to help business users build projects that understand the language of their domain.
@@ -35,12 +35,14 @@ Discovery v2 offers the following features and enhancements:
 - A full-featured Content Mining application that you can use to conduct in-depth analysis of unstructured text.
 - Customizable user interface components that help you to deploy custom applications.
 
+For more information, see [Migrating to {{site.data.keyword.discoveryshort}} v2](/docs/discovery-data?topic=discovery-data-migrate-to-v2).
+
 ## Comparing v1 and v2 features
 {: #version-choose-comparison}
 
-If you are already familiar with Discovery v1, learn more about how Discovery v2 compares.
+If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn more about how {{site.data.keyword.discoveryshort}} v2 compares.
 
-Discovery v2 has new features that were previously unavailable. The following table describes feature support in both versions right now.
+{{site.data.keyword.discoveryshort}} v2 has new features that were previously unavailable. The following table describes feature support in both versions right now.
 
 | Feature | Product redesign (v2) | Earlier version (v1) |
 |---------|:-------------------:|:--------------------:|
@@ -59,12 +61,12 @@ Discovery v2 has new features that were previously unavailable. The following ta
 | Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Use the Watson Discovery News collection to leverage pre-enriched data | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Use the Watson {{site.data.keyword.discoveryshort}} News collection to leverage pre-enriched data | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Programmatically configure external data source crawls | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure the normalization process of ingestion by document type. Configuration options include things like document segmentation, HTML file inclusion or exclusion rules, and JSON normalization | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure dictionary tokenization | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Advanced question-answering capabilities, such as extracting FAQs (beta) and returning the exact answer | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Discovery Query Language (DQL) API support | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| {{site.data.keyword.discoveryshort}} Query Language (DQL) API support | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Retrieve passages from documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Perform relevancy training to improve query results | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure continuous relevancy training | | ![checkmark icon](../../icons/checkmark-icon.svg) |

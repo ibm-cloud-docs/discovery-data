@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-16"
 
 keywords: backup,restore
 
@@ -203,7 +203,7 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
     ```
     {: pre}
 
-1.  If you haven't already, get the restore script from the [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/2.2.0){: external}.
+1.  If you haven't already, get the restore script from the [GitHub repository](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/latest){: external}.
 
     You need all of the files in the repository to complete a back up and restore. Follow the instructions in GitHub Help to clone or download a compressed file of the repository.
     {: important}

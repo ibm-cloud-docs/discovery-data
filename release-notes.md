@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-08"
+lastupdated: "2022-08-15"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,11 +24,24 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
-## Discovery v1 deprecation announcement
-{: #discovery-v1-deprecation-12july2022}
+## 15 August 2022
+{: #discovery-15august2022}
+{: release-note}
 
-Watson Discovery v1 is being deprecated. Existing clients who use Watson Discovery v1 are asked to migrate to Watson Discovery v2 before the end-of-support date of **11 July 2023**. End of Support means that no v1 instance will work on or after 11 July 2023. For more information about migration, see [Getting the most from Discovery](/docs/discovery-data?topic=discovery-data-version-choose).
-{: deprecated}
+SDKs were updated to reflect the latest API changes.
+:    The following [Discovery v2 API](/apidocs/discovery-data){: external} changes are now reflected in the SDKs:
+
+    -   Use the new document classifier API to get, add, update, or delete a document classifier.
+
+    -   A new document status API is available. You can use it to get a list of the documents in a collection and to get details about a single document.
+
+    -   You can now get, add, and remove a stop words or expansion list for a collection.
+
+    -   A `smart_document_understanding` field is returned with the *Get collection* method. This new field specifies whether an SDU model is enabled for the collection and indicates the model type.
+
+    -   A `similar` parameter is available from the *Query* method. Use it to find documents that are similar to documents of interest to you.
+     
+    -   The `suggested_refinements` parameter of the *Query* method is deprecated. The `suggested_refinements` parameter was used to identify dynamic facets from Premium plan data.
 
 ## 8 August 2022
 {: #discovery-8august2022}
@@ -62,6 +75,12 @@ API updates
 
     These API updates are not supported from the SDKs currently.
     {: note}
+
+## Discovery v1 deprecation announcement
+{: #discovery-v1-deprecation-12july2022}
+
+Watson Discovery v1 is being deprecated. Existing clients who use Watson Discovery v1 are asked to migrate to Watson Discovery v2 before the end-of-support date of **11 July 2023**. End of Support means that no v1 instance will work on or after 11 July 2023. For more information about migration, see [Getting the most from Discovery](/docs/discovery-data?topic=discovery-data-version-choose).
+{: deprecated}
 
 ## 11 July 2022
 {: #discovery-11july2022}
