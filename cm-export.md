@@ -29,7 +29,7 @@ To export your data, complete the following steps:
     -   If you want to export the data in JSON format, complete the following steps:
 
         1.  Choose **Export JSON** to generate one JSON file for each record.
-        1.  You can optionally change the following values:
+        1.  **Optional**: You can change the following values:
 
             -   Name. The file is named `export_document_{today's_date}` by default.
             -   Encoding. `UTF-8` is used by default.
@@ -37,16 +37,18 @@ To export your data, complete the following steps:
 
     -   If you want to export the data in CSV format, complete the following steps:
 
-        1.  Choose **Export CSV with advanced options** to customize the CSV output.
-        1.  You can define the format of the following elements:
+        1.  **Optional**: To customize the CSV output, choose **Export CSV with advanced options**.
+        
+            You can define the format of the following elements:
 
             -   *Main body field* (or fields, if you configured more than one field with analyzable text): You can choose to exclude it from the export. It is exported as a column for a fact table by default.
             -   *All other fields*: You can choose to export them as columns for fact tables or export them as dimension tables. The are excluded from the export by default.
             -   *Facets*: You can choose to export the facets as separate CSV files that can be used as dimension tables. They are excluded from the export by default.
 
-        1.  After customizing the CSV format, click **Save**.
+            After customizing the CSV format, click **Save**.
+
         1.  Click the *Export* icon from the toolbar again, and then choose **Export CSV**.
-        1.  You can optionally change the following values:
+        1.  **Optional**: You can change the following values:
 
             -   Name. The file is named `export_document_{today's_date}` by default.
             -   Encoding. `UTF-8` is used by default.
