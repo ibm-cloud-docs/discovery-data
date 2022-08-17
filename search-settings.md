@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-16"
 
 subcollection: discovery-data
 
@@ -90,7 +90,7 @@ To enable query expansion, complete the following steps:
 
 1.  From the navigation pane, open the **Improve and customize** page.
 1.  Expand **Improve relevance** from the Improvement tools pane.
-1.  Click **Synonyms**, and then click **Upload synonyms**.
+1.  Click **Synonyms**, and then click **Upload synonyms** for the collection.
 
     Do not upload a synonyms file while documents are being added to your collection. The ingestion processing that occurs when documents are added can cause the index to be unavailable.
 
