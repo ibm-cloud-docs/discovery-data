@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-10-02"
+lastupdated: "2022-08-16"
 
 subcollection: discovery-data
 
@@ -70,9 +70,10 @@ To define stop words, complete the following steps:
 
 1.  From the navigation pane, open the **Improve and customize** page.
 1.  Expand **Improve relevance** from the Improvement tools pane.
-1.  Click **Stopwords**, and then click **Upload stopwords**.
+1.  Click **Stopwords**, and then click **Upload stopwords** for the collection.
 
     Only one stop words list can be uploaded per collection. The stop words list that you upload replaces the default stop words list for your collection.
+
 1.  Click **Done**.
 
 To disable a custom stop words file and revert to using the default stop words, delete the custom stop words file.

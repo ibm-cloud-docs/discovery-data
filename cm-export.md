@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-08-17"
 
 subcollection: discovery-data
 
@@ -22,21 +22,36 @@ You can export your data as a CSV file or you can generate a separate JSON file 
 
 To export your data, complete the following steps:
 
-1.  From the *Documents* view, click the *Export* icon in the toolbar.
+1.  From the *Documents* view, click the *Export* icon ![Export icon](images/cm-export-icon.png) in the toolbar.
 
-    ![Export icon](images/cm-export-icon.png){: caption="Figure 1. Export icon" caption-side="bottom"} 
+1.  Complete the appropriate steps for the format in which you want to export the data.
 
-1.  Choose the format in which to export the data. The options include:
+    -   If you want to export the data in JSON format, complete the following steps:
 
-    -   JSON:  Generates one JSON file for each record.
-    -   CSV: Generates a CSV file.
-    <!---   CSV with advanced options: Generates a CSV file that excludes any fields or facets that you choose to exclude from the export.-->
+        1.  Choose **Export JSON** to generate one JSON file for each record.
+        1.  **Optional**: You can change the following values:
 
-1.  You can optionally change the following values:
+            -   Name. The file is named `export_document_{today's_date}` by default.
+            -   Encoding. `UTF-8` is used by default.
+            -   Choose whether to include fields and facets. They are excluded by default.
 
-    -   Name. The file is named `export_document_{today's_date}` by default.
-    -   Encoding. `UTF-8` is used by default.
-    -   For CSV files only, you can specify the date and time format. `Unix epoch time` is used by default.
-    -   For JSON files only, you can choose to include fields and facets. They are excluded by default.
+    -   If you want to export the data in CSV format, complete the following steps:
+
+        1.  **Optional**: To customize the CSV output, choose **Export CSV with advanced options**.
+        
+            You can define the format of the following elements:
+
+            -   *Main body field* (or fields, if you configured more than one field with analyzable text): You can choose to exclude it from the export. It is exported as a column for a fact table by default.
+            -   *All other fields*: You can choose to export them as columns for fact tables or export them as dimension tables. The are excluded from the export by default.
+            -   *Facets*: You can choose to export the facets as separate CSV files that can be used as dimension tables. They are excluded from the export by default.
+
+            After customizing the CSV format, click **Save**.
+
+        1.  Click the *Export* icon from the toolbar again, and then choose **Export CSV**.
+        1.  **Optional**: You can change the following values:
+
+            -   Name. The file is named `export_document_{today's_date}` by default.
+            -   Encoding. `UTF-8` is used by default.
+            -   Date and time format. `Unix epoch time` is used by default.
 
 1.  Click **Export**.
