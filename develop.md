@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-12"
+lastupdated: "2022-08-18"
 
 subcollection: discovery-data
 
@@ -14,6 +14,8 @@ subcollection: discovery-data
 {: #develop}
 
 A developer can use APIs, SDKs, and other tools that are provided with {{site.data.keyword.discoveryshort}} to enhance the capabilities of your project.
+
+For more information about how to use custom user interface components that are available, see [Deploying your project](/docs/discovery-data?topic=discovery-data-deploy).
 
 A developer can make the following enhancements:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-08-18"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -22,7 +22,8 @@ Deploy your project to start gaining new insights from your data.
 
 The method that you use to deploy your project differs by project type.
 
-- [Document Retrieval and Custom projects](#dr-deploy)
+- [Document Retrieval projects](#dr-deploy)
+- [Document Retrieval for Contracts projects](#dr-contracts-deploy)
 - [Conversational Search projects](#cs-deploy)
 - [Content Mining projects](#cm-deploy)
 
