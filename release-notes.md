@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-08-17"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -73,9 +73,6 @@ API updates
      
      The `suggested_refinements` parameter of the *Query* method is deprecated. The `suggested_refinements` parameter was used to identify dynamic facets from Premium plan data.
 
-    These API updates are not supported from the SDKs currently.
-    {: note}
-
 ## Discovery v1 deprecation announcement
 {: #discovery-v1-deprecation-12july2022}
 
@@ -134,9 +131,6 @@ When you remove a starting URL from a Web crawl connector its associated documen
 Added API methods for working with stop words and expansion lists
 :   You can now get, add, and remove a stop words or expansion list for a collection programmatically. For more information, see the [Query modifications](/apidocs/discovery-data#getstopwordlist){: external} methods.
 
-    The API is not supported from the SDKs currently.
-    {: note}
-
 ## 13 May 2022
 {: #discovery-13may2022}
 {: release-note}
@@ -160,7 +154,6 @@ A new document status API is available
     
         If you want to get status information about a collection that was created earlier, trigger a process that runs the conversion step of ingestion on the documents. For example, you can enable the API by making changes in the *Identify fields*, *Manage fields*, *CSV settings*, or *Processing settings* (such as OCR or FAQ extraction settings) pages, or by applying a Smart Document Understanding model to the older collection.
     -   The API is available only from Plus and Enterprise plan instances. 
-    -   The API is not supported from the SDKs currently.
 
     For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocuments){: external}.
 
@@ -181,14 +174,9 @@ Project tile has a more intuitive menu
 {: release-note}
 
 A new document classifier API is available
-:   Use the new document classifier to programmatically get, add, update, or delete a document classifier. Document classifier methods are supported on installed intances (IBM Cloud Pak for Data) or IBM Cloud-managed Premium or Enterprise plan instances. The following notes apply to this release:
-
-    -   The `enrichments` property of the Document Classifier object is documented as being optional. However, the property is required currently.
-    -   The `field` property in the `federated_classification` object is documented as a string. However, it is currently an array.
+:   Use the new document classifier to programmatically get, add, update, or delete a document classifier. Document classifier methods are supported on installed intances (IBM Cloud Pak for Data) or IBM Cloud-managed Premium or Enterprise plan instances.
 
     For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocumentclassifiers){: external}. For more information about adding a document classifier by using the product user interface, see [Classifying documents](/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
-
-    The document classifier endpoints are not supported in the SDKs currently.
 
 ## 21 March 2022
 {: #discovery-21march2022}

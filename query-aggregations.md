@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2021-07-21"
+lastupdated: "2022-08-17"
 
 subcollection: discovery-data
 
@@ -28,19 +28,19 @@ Returns the mean of values of the specified field across all matching documents.
 For example:
 
 ```json
-average(product.price)
+average(product_price)
 ```
 {: codeblock}
 
 ## `filter`
 {: #aggfilter}
 
-A modifier that narrows down the document set of the aggregation query it precedes. This example filters the set to include only documents with the concept `Cloud computing`.
+A modifier that narrows down the document set of the aggregation query it precedes. This example filters the set to include only documents that mention `IBM`.
 
 For example:
 
 ```json
-filter(enriched_text.concepts.text:"cloud computing")
+filter(enriched_text.entities.text:"IBM")
 ```
 {: codeblock}
 
@@ -54,7 +54,7 @@ For example, if your data set includes the price of several items, like: `“pri
 For example:
 
 ```json
-histogram(product.price,interval:1)
+histogram(product_price,interval:1)
 ```
 {: codeblock}
 
@@ -66,7 +66,7 @@ Returns the highest value in the specified field across all matching documents.
 For example:
 
 ```json
-max(product.price)
+max(product_price)
 ```
 {: codeblock}
 
@@ -78,7 +78,7 @@ Returns the lowest value in the specified field across all matching documents.
 For example:
 
 ```json
-min(product.price)
+min(product_price)
 ```
 {: codeblock}
 
@@ -102,19 +102,19 @@ Adds the values of the specified field across all matching documents.
 For example:
 
 ```json
-sum(product.price)
+sum(product_price)
 ```
 {: codeblock}
 
 ## `term`
 {: #term}
 
-Returns the top values (by score and by frequency) for the selected enrichments. All enrichments are valid values. You can optionally use `count` to specify the number of terms to return. This example returns the full text and enrichments of the top values with the concept enrichment, and specifies to return 10 terms.
+Returns the top values (by score and by frequency) for the selected enrichments. All enrichments are valid values. You can optionally use `count` to specify the number of terms to return. This example returns the full text and enrichments of the top values with the Entities enrichment, and specifies to return 10 terms.
 
 For example:
 
 ```json
-term(enriched_text.concepts.text,count:10)
+term(enriched_text.entities.text,count:10)
 ```
 {: codeblock}
 
@@ -131,7 +131,7 @@ Returns the documents ranked by the score of the query or enrichment. Can be use
 For example:
 
 ```json
-term(enriched_text.concepts.text).top_hits(10)
+term(enriched_text.entities.text).top_hits(10)
 ```
 {: codeblock}
 
