@@ -41,9 +41,9 @@ To export your data, complete the following steps:
         
             You can define the format of the following elements:
 
-            -   *Main body field* (or fields, if you configured more than one field with analyzable text): You can choose to exclude it from the export. It is exported as a column for a fact table by default.
-            -   *All other fields*: You can choose to export them as columns for fact tables or export them as dimension tables. They are excluded from the export by default.
-            -   *Facets*: You can choose to export the facets as separate CSV files that can be used as dimension tables. They are excluded from the export by default.
+            -   Text content field: This is the main body field (or fields, if you configured more than one field with analyzable text). You can choose to exclude it from the export. It is exported as a column for a fact table by default.
+            -   All other fields: You can choose to export them as columns for fact tables or export them as dimension tables. They are excluded from the export by default.
+            -   Facets: You can choose to export the facets as separate CSV files that can be used as dimension tables. They are excluded from the export by default.
 
             After customizing the CSV format, click **Save**.
 
