@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-08-19"
 
 subcollection: discovery-data
 
@@ -45,9 +45,12 @@ To export your data, complete the following steps:
             -   All other fields: You can choose to export them as columns for fact tables or export them as dimension tables. They are excluded from the export by default.
             -   Facets: You can choose to export the facets as separate CSV files that can be used as dimension tables. They are excluded from the export by default.
 
-            After customizing the CSV format, click **Save**.
+            After customizing the CSV format, click **Save**, and then click the *Export* icon from the toolbar again.
 
-        1.  Click the *Export* icon from the toolbar again, and then choose **Export CSV**.
+            If you use the same web browser to export data in CSV format again later, your saved settings are applied automatically.
+            {: note}
+
+        1.  Choose **Export CSV**.
         1.  **Optional**: You can change the following values:
 
             -   Name. The file is named `export_document_{today's_date}` by default.
