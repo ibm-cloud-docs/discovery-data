@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-08-29"
 
 subcollection: discovery-data
 
@@ -318,6 +318,15 @@ The maximum number of passages to return. The search returns fewer passages if t
 {: #passages_characters}
 
 The approximate number of characters that any one passage can have. The default value is `200`. The minimum is `50`. The maximum is `2,000`. Passages that are returned can contain up to twice the requested length (if necessary) to get them to begin and end at sentence boundaries.
+
+## `similar`
+{: #similar}
+
+![IBM Cloud only](images/ibm-cloud.png) The `similar` parameter is supported in managed deployments only.
+
+Finds documents that are similar to documents that you identify as being of interest to you. To find similar documents, {{site.data.keyword.discoveryshort}} identifies the 25 most relevant terms from the original document and then searches for documents with similar relevant terms.
+
+If `similar.enabled` is `true`, you must specify the `similar.document_ids` field to include a comma-separated list of the documents of interest.
 
 ## `table retrieval`
 {: #table_retrieval}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-08-29"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -26,6 +26,20 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x?topic=issues-watson-discovery){: external}.
 
+## 15 August 2022
+{: #discovery-data-15august2022}
+
+SDKs were updated to reflect the latest API changes.
+:    The following [Discovery v2 API](/apidocs/discovery-data){: external} changes are now reflected in the SDKs:
+
+    -   Use the new document classifier API to get, add, update, or delete a document classifier.
+
+    -   A new document status API is available. You can use it to get a list of the documents in a collection and to get details about a single document.
+
+    -   You can now get, add, and remove a stop words or expansion list for a collection.
+     
+    -   The `suggested_refinements` parameter of the *Query* method is deprecated.
+
 ## 4.5.1 release, 3 August 2022
 {: #discovery-data-3august2022}
 
@@ -39,6 +53,8 @@ Features that are not available in this release
     -   Answer finding
     -   *Manage data* page
     -   Advanced document view for search results
+    -   The **similar** parameter of the Query method
+    -   The **smart_document_understanding** field in the *Get collection* method response
 
 ## 4.5 release, 29 June 2022
 {: #discovery-data-29june2022}
