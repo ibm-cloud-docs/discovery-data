@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-08-30"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -36,12 +36,12 @@ For more information about building your own, see the [Building custom applicati
 
 For Document Retrieval and Custom (the type assigned to projects when you do not apply a specific project type) projects, a set of user interface components are available for your use. The following table describes them.
 
-| UI component | Illustration | Description | Storybook link |
-|--------------|--------------|-------------|----------------|
-| Search bar | ![Search bar type ahead](images/search-bar-example.png) | A search box that uses a natural language understanding query to fetch the most relevant results. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external} |
-| Search results | ![Search results list](images/search-results-example.png) | A set of results that rank the most relevant passages and tables to a query. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} |
-| Facets | ![Facets](images/search-facets-example.png) | Refine your results with facets that help users filter the search results by specific categories and domains. | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external} |
-| Document preview | ![Document preview](images/search-doc-preview-example.png) | Displays your results in a document preview. This view helps you to see search results by highlighting passages within the text of the original document, which makes the context clearer. The preview is available for the following types of source documents: Excel, PDF, PowerPoint, Word, and all image files. (For more information about the supported image files, see [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default){: external} |
+| UI component | Illustration | Storybook link |
+|--------------|--------------|----------------|
+| Search bar  \n A search box that uses a natural language understanding query to fetch the most relevant results.  | ![Search bar type ahead](images/search-bar-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external} |
+| Search results  \n A set of results that rank the most relevant passages and tables to a query. | ![Search results list](images/search-results-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} |
+| Facets  /n Refine your results with facets that help users filter the search results by specific categories and domains. | ![Facets](images/search-facets-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external} |
+| Rich document preview  \n Displays your results in a document preview. This view highlights result passages within the text of the original document. It also shows any enrichment mentions that are detected in the document. The rich preview is available with source documents where an SDU model is applied, such as PDF, Microsoft PowerPoint, and Microsoft Word files. | ![Rich document preview](images/search-doc-preview-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default){: external} |
 {: caption="Available UI components" caption-side="top"}
 
 To deploy your project, complete the following steps:
