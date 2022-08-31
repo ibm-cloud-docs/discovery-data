@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-31"
 
 keywords: document structure,smart document understanding,sdu
 
@@ -83,6 +83,10 @@ To create a user-trained model, complete the following steps:
 1.  To create a custom field label, click **Create new**.
 
     -   Specify a field label with lowercase letters and no spaces. For example, `complex_task` is a valid field label.
+
+        Avoid using field names that have special meaning for {{site.data.keyword.discoveryshort}}. For more information, see [How fields are handled](/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).
+        {: note}
+
     -   If you want to change the color that is used to represent the field, repeatedly click the color block ![Square block of color with two arrows that point in a circle](images/sdu-label-color.png) until it is displayed in the color that you want to use.
 
         You cannot change the field label color later.
