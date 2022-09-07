@@ -140,12 +140,12 @@ toc:
             navtitle: Analyzing your data
           - cm-analyze-data.md
           - topicgroup:
-            label: Customizing your analysis
-            topics:
-            - cm-add-facets.md
-            - cm-custom-annotator.md
-            - cm-doc-classifier.md
-            - cm-phrase-sentiment.md
+              label: Customizing your analysis
+              topics:
+              - cm-add-facets.md
+              - cm-custom-annotator.md
+              - cm-doc-classifier.md
+              - cm-phrase-sentiment.md
           - cm-edit-collection.md
           - cm-csv-file.md
           - cm-report.md
