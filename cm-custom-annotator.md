@@ -70,7 +70,7 @@ To add a dictionary, complete the following steps:
         1.  Click **Add**.
         1.  Click *Word list* to add the dictionary terms.
         1.  Click **Add**, and then add the term in the **Base word** field and any synonyms that you want to define for the term in the **Other words** field. Separate multiple synonyms with commas. Click **OK**.
-        1.  Repeat the previous step to add dictionary terms.
+        1.  Repeat the previous step to add more dictionary terms.
         1.  After you finish adding dictionary terms, click *Basic settings*.
 
 1.  Name the dictionary.
