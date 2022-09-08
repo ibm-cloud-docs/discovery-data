@@ -85,7 +85,7 @@ To download a pattern, complete the following step:
 
 You can import the downloaded ZIP file as the source for an advanced rules model resource. For more information, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules).
 
-### Pattern limits
+## Pattern limits
 {: #patterns-limits}
 
 The number of patterns that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.

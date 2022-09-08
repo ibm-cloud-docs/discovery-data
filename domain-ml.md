@@ -56,7 +56,7 @@ To add a Machine Learning model, complete the following steps:
 1.  Click **Create**.
 1.  Choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
 
-### Rule-based model example
+## Rule-based model example
 {: #machinelearning-rules}
 
 For example, when a machine learning model is applied as an enrichment to a field, it extracts all entity types in that field that were specified in a {{site.data.keyword.knowledgestudioshort}} rule-based model. If the model recognizes entity types such as `person`, `surname`, and `job title` they are recognized in your documents and tagged.
@@ -110,7 +110,7 @@ In the output, the information that is extracted by the Machine Learning enrichm
 
 As a result, if someone [uses the API](/docs/discovery-data?topic=discovery-data-query-concepts) to submit a {{site.data.keyword.discoveryshort}} Query Language query to look for occurrences of the `enriched_{field_name}.entities.type:jobtitle` enrichment, any passages that discuss a person's job title are returned.
 
-### Machine learning model example
+## Machine learning model example
 {: #machinelearning-ml}
 
 In this example, a Machine learning model extracts entity types such as `person`, `oranization`, and `date`, and information about relationships between the entities. When this ML model is applied as an enrichment to a field, it uses machine learning to understand the linguistic nuances, meaning, and relationships that are mentioned in the document.
@@ -154,7 +154,7 @@ In the output, the information that is extracted by the Machine Learning enrichm
 ```
 {: codeblock}
 
-### Machine learning model limits
+## Machine learning model limits
 {: #machinelearning-limits}
 
 The number of Machine Learning (ML) models you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
