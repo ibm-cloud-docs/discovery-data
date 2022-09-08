@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-09-08"
 
 subcollection: discovery-data
 
@@ -70,7 +70,7 @@ To add a dictionary, complete the following steps:
         1.  Click **Add**.
         1.  Click *Word list* to add the dictionary terms.
         1.  Click **Add**, and then add the term in the **Base word** field and any synonyms that you want to define for the term in the **Other words** field. Separate multiple synonyms with commas. Click **OK**.
-        1.  Repeat the previous step to add another dictionary term.
+        1.  Repeat the previous step to add dictionary terms.
         1.  After you finish adding dictionary terms, click *Basic settings*.
 
 1.  Name the dictionary.
@@ -78,14 +78,23 @@ To add a dictionary, complete the following steps:
 1.  If you want the terms to be case-sensitive, deselect the **Ignore case** checkbox.
 1.  Identify the facet name to use for this dictionary.
 
-    You can create a hierarchical facet by including a period (.) in the facet name. For example, you might create one dictionary with the facet path `Weather.Rain` and others with the facet paths `Weather.Storm` and `Weather.Lightning`.
-
     The facet name that you specify for the annotator is the facet name that is displayed from the collection search view.
+
+    You can create a hierarchical facet by including a period (.) in the facet name. For example, you might create one dictionary with the facet path `Food.Vegetables` and others with the facet paths `Food.Fruits` and `Food.Proteins`. Add more facet groups with more periods. For example, you can add `Food.Proteins.Nuts` and `Food.Proteins.Meats` to categorize proteins even further.
+
+    ![Shows how to add a dictionary](images/cm-dict-add.png)
 
 1.  If you want documents that are returned for a subfacet to be included when a user filters on the root facet, select **Lift up words**.
 
-    For example, you might enable *Lift up words* for `Weather.Rain` and `Weather.Storm` but not `Weather.Lightning`. As a result, when a user clicks the Weather facet, the returned documents include documents that mention *rain* and *storm*. However, a user must click the *Weather>Lightning* facet explicitly to get documents that mention *lightning* to be returned.
+    For example, you might enable *Lift up words* for `Food.Fruits` and `Food.Proteins` but not `Food.Vegetables`. As a result, when a user clicks the Food facet, the returned documents include documents that mention terms included in the Fruits and Meats dictionaries, such as *apples* and *beef*.
+    
+    ![Shows how to add a dictionary](images/cm-dict-lift-up.png)
+    
+    However, a user must click the *Food>Vegetables* facet explicitly to get documents that mention terms in the Vegetables dictionary, such as *lettuce*, to be returned.
 
+    ![Shows how to add a dictionary](images/cm-dict-veg.png)
+
+1.  Repeat previous steps to add more dictionaries.
 1.  Click **Save**.
 
 From the custom annotator page, you can see dictionaries that were created in other projects, including non-Content Mining projects. Dictionaries from other project types show the enrichment name as the annotator name. The *Ignore case* and *Lift up words* settings are disabled and the dictionary is named  `custom dict`.
