@@ -44,7 +44,7 @@ To create a custom annotator, complete the following steps:
     -   [Machine learning model](#cm-custom-annotator-ml)
     -   [Regular expressions](#cm-custom-annotator-regex)
 
-### Dictionary configuration
+## Dictionary configuration
 {: #cm-custom-annotator-dictionary}
 
 You can import an existing dictionary by uploading it or you can create a dictionary by adding terms one at a time.
@@ -90,7 +90,7 @@ To add a dictionary, complete the following steps:
 
 From the custom annotator page, you can see dictionaries that were created in other projects, including non-Content Mining projects. Dictionaries from other project types show the enrichment name as the annotator name. The *Ignore case* and *Lift up words* settings are disabled and the dictionary is named  `custom dict`.
 
-#### Dictionary limits
+### Dictionary limits
 {: #dictionary-limits}
 
 | Plan | Number of dictionaries per service instance | Number of term entries per dictionary | Number of terms for which suggestions can be generated |
@@ -102,7 +102,7 @@ From the custom annotator page, you can see dictionaries that were created in ot
 
 Totals include enrichments that you create in this Content Mining project and in other projects in the same service instance.
 
-### Machine learning configuration
+## Machine learning configuration
 {: #cm-custom-annotator-ml}
 
 You can import an existing machine learning model. 
@@ -118,7 +118,7 @@ To import a model, complete the following steps:
 
 1.  Click **Save**.
 
-#### Machine learning model limits
+### Machine learning model limits
 {: #ml-model-limits}
 
 | Plan      | ML models per service instance |
@@ -130,7 +130,7 @@ To import a model, complete the following steps:
 
 Totals include enrichments that you create in this Content Mining project and in other projects in the same service instance.
 
-### Regular expressions configuration
+## Regular expressions configuration
 {: #cm-custom-annotator-regex}
 
 You can import existing patterns by uploading them in a JSON file or you can add patterns.
@@ -180,7 +180,7 @@ To import patterns, complete the following steps:
 1.  Click **Import**, and then choose the JSON file where the patterns are defined.
 1.  Click **Save**.
 
-#### Regular expression limits
+### Regular expression limits
 {: #regex-limits}
 
 | Plan | Regex enrichments per service instance | Regex patterns per service instance | 

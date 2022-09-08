@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-09-08"
 
 subcollection: discovery-data
 
@@ -86,14 +86,16 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
 ```
 {: codeblock}
 
-The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Part of Speech information only. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Part of Speech information and metadata that is added by other enrichments that are applied to the collection. If you want to apply a document classifier to a collection in a project type other than a Content Mining project, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
+The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Part of Speech information. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Part of Speech information and metadata that is added by other enrichments that are applied to the collection. You can apply a document classifier to a collection in a project type other than a Content Mining project. To do so, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
+
+The text classifier uses Part of Speech information regardless of whether the Part of Speech enrichment is applied to the project.
 
 Text classifiers that you add to one project can be used by other projects, including Content Mining projects.
 
 A text classifier does not classify the target text field with confidence scores that are lower than 0.5. You cannot change the confidence threshold that is used by the text classifier. If you expected certain types of passages to be classified that weren't, you can add passages with similar characteristics to your training data and train another classifier.
 {: tip}
 
-### Classifier limits
+## Classifier limits
 {: #classifier-limits}
 
 The number of text classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.

@@ -69,7 +69,7 @@ In this example, the **Facet Path** is `regex.cccardnumber`, and the field that 
 
 As a result, a customer can filter their results by the credit card number facet that you defined to show passages that include credit card number references.
 
-### Regular expression limits
+## Regular expression limits
 {: #regex-limits}
 
 The number of regular expressions that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.

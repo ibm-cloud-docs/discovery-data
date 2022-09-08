@@ -49,7 +49,7 @@ To add dictionary terms one by one, complete the following steps:
 1.  Click **Save dictionary**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
 
-### Uploading dictionary terms
+## Uploading dictionary terms
 {: #dictionary-csv}
 
 To add dictionary from a CSV file, complete the following steps:
@@ -132,7 +132,7 @@ There is a limitation in how words with Hankaku (half-width) characters in Japan
 
 Dictionaries that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
 
-### Dictionary limits
+## Dictionary limits
 {: #dictionary-limits}
 
 The number of dictionaries and term entries you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
