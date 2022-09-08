@@ -88,11 +88,11 @@ To add a dictionary, complete the following steps:
 
     For example, you might enable *Lift up words* for `Food.Fruits` and `Food.Proteins` but not `Food.Vegetables`. As a result, when a user clicks the Food facet, the returned documents include documents that mention terms included in the Fruits and Meats dictionaries, such as *apples* and *beef*.
     
-    ![Shows how to add a dictionary](images/cm-dict-lift-up.png)
+    ![Shows that documents with all of the terms except those in the Vegetables dictionary are returned when the Food facet is selected.](images/cm-dict-lift-up.png)
     
     However, a user must click the *Food>Vegetables* facet explicitly to get documents that mention terms in the Vegetables dictionary, such as *lettuce*, to be returned.
 
-    ![Shows how to add a dictionary](images/cm-dict-veg.png)
+    ![Shows that only documents that mention vegetables are returned when the Vegetables facet is selected.](images/cm-dict-veg.png)
 
 1.  Repeat previous steps to add more dictionaries.
 1.  Click **Save**.
