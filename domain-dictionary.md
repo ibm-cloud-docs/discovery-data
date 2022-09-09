@@ -42,9 +42,11 @@ To add dictionary terms one by one, complete the following steps:
 
 1.  To add synonyms for the term, click the *Edit* icon, and then enter synonyms in the **Other terms** field. Separate multiple synonyms with a comma. Click **Save term**.
 
-    For the `vehicle` term, you can add synonyms such as car,automobile,sedan,convertible,station wagon, and so on, for example. For `engine`, you can add gasket,carburetor,piston,valves.
+    The dictionary can contain terms and their synonyms or a category and terms that belong to the category.
+    
+    For the term `vehicle`, you can specify synonyms such as car, automobile, sedan, convertible, station wagon, and so on. For `engine`, you can specify gasket, carburetor, piston, and valves.
 
-    Be careful not to add too many synonyms and test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
+    Be careful not to add too many synonyms. Test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
     {: tip}
 
 1.  Continue adding terms.
