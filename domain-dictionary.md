@@ -44,7 +44,7 @@ To add dictionary terms one by one, complete the following steps:
 
     The dictionary can contain terms and their synonyms or a category and terms that belong to the category.
     
-    For the term `vehicle`, you can specify synonyms such as car, automobile, sedan, convertible, station wagon, and so on. For `engine`, you can specify gasket, carburetor, piston, and valves.
+    For the term `vehicle`, you can specify synonyms such as `car`, `automobile`, `sedan`, `convertible`, `station wagon`, and so on. For `engine`, you can specify `gasket`, `carburetor`, `piston`, and `valves`.
 
     Be careful not to add too many synonyms. Test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
     {: tip}
@@ -72,12 +72,12 @@ The resulting facet that is created for the dictionary is displayed in the searc
 
 The document where the enrichment is applied contains the following sentence:
 
-```
+```text
 Some car fluids can be acidic, such as battery fluid.
 ```
 {: screen}
 
-The following JSON snippet illustrates how a Transportation dictionary enrichment mention is stored when the term `car`, which is a synonym for the `vehicle` dictionary entry is found in the document. In this collection, the dictionary enrichment is applied to the `text` field, so the mention is listed in the `entities` array that is in the `enriched_text` array.
+The following JSON snippet illustrates how a Transportation dictionary enrichment mention is stored when the term `car`, which is a synonym for the `vehicle` dictionary entry, is found in the document. In this collection, the dictionary enrichment is applied to the `text` field, so the mention is listed in the `entities` array that is in the `enriched_text` array.
 
 ```json
 {
