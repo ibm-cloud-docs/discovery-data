@@ -24,9 +24,17 @@ To add dictionary terms one by one, complete the following steps:
 
 1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Dictionaries**.
 1.  Click **New**.
-1.  Name your dictionary, and then choose the language.
-1.  **Optional**: Expand *Advanced options*, and specify edit the facet name for the dictionary. Facets are used to categorize documents. A user can choose a facet type to narrow their search. The dictionary name in lowercase is used as the facet name by default. You might want to change the facet to be uppercase.
+1.  Name your dictionary.
+
+    For example, `Transportation`.
+1.  Choose the language. A dictionary can contain terms in only one language.
+1.  **Optional**: Expand *Advanced options*, and edit the facet name for the dictionary. 
+
+    Facets are used to categorize documents. A user can choose a facet type to narrow their search results. The dictionary name in lowercase is used as the facet name by default. You might want to change the facet to be uppercase.
+
 1.  Enter a term, and then select the **+** button to add it.
+
+    For example `vehicle` and `engine`.
 
     In English dictionaries, specify the dictionary terms in lowercase. Only use uppercase if you want {{site.data.keyword.discoveryshort}} to ignore lowercase mentions of the term when they occur in text. When terms are analyzed to determine whether they are occurrences of the dictionary enrichment, the surface form of the term with uppercase match is used. For example, a `vehicle` entry in the dictionary results in annotations for `vehicle`, `Vehicle`, or `VEHICLE` mentions when they occur in text. For a `Sat` entry in the dictionary, annotations are added for `Sat` or `SAT`, but not for `sat`.
     
@@ -34,7 +42,11 @@ To add dictionary terms one by one, complete the following steps:
 
 1.  To add synonyms for the term, click the *Edit* icon, and then enter synonyms in the **Other terms** field. Separate multiple synonyms with a comma. Click **Save term**.
 
-    Be careful not to add too many synonyms and test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
+    The dictionary can contain terms and their synonyms or a category and terms that belong to the category.
+    
+    For the term `vehicle`, you can specify synonyms such as `car`, `automobile`, `sedan`, `convertible`, `station wagon`, and so on. For `engine`, you can specify `gasket`, `carburetor`, `piston`, and `valves`.
+
+    Be careful not to add too many synonyms. Test the impact of any synonyms that you add. When you test, use data that is different from the data you use to derive the synonyms.
     {: tip}
 
 1.  Continue adding terms.
@@ -46,6 +58,53 @@ To add dictionary terms one by one, complete the following steps:
 
 1.  Click **Save dictionary**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
+
+## Example
+{: #dictionary-example}
+
+A transportation dictionary is added to a project.
+
+![Transportation dictionary in the product ui](images/dict-transportation.png)
+
+The resulting facet that is created for the dictionary is displayed in the search page.
+
+![Search page with Transportation facet](images/dict-facet.png)
+
+The document where the enrichment is applied contains the following sentence:
+
+```text
+Some car fluids can be acidic, such as battery fluid.
+```
+{: screen}
+
+The following JSON snippet illustrates how a Transportation dictionary enrichment mention is stored when the term `car`, which is a synonym for the `vehicle` dictionary entry, is found in the document. In this collection, the dictionary enrichment is applied to the `text` field, so the mention is listed in the `entities` array that is in the `enriched_text` array.
+
+```json
+{
+  "enriched_text": [
+    {
+      "entities": [
+        {
+          "model_name": "Dictionary:.Transportation",
+          "mentions": [
+            {
+              "confidence": 1,
+              "location": {
+                "end": 91122,
+                "begin": 91119
+              },
+              "text": "car"
+            }
+          ],
+          "text": "vehicle",
+          "type": "Transportation"
+        }
+      ]
+    }
+  ]
+}
+```
+{: codeblock}
 
 ## Uploading dictionary terms
 {: #dictionary-csv}
@@ -91,53 +150,6 @@ To add dictionary from a CSV file, complete the following steps:
 1.  Click **Upload** to browse for the CSV file that you created earlier.
 1.  Click **Create**.
 1.  Choose the collections and fields where you want to apply the dictionary, and then click **Apply**.
-
-## Example
-{: #dictionary-example}
-
-A transportation dictionary is added to a project.
-
-![Transportation dictionary in the product ui](images/dict-transportation.png)
-
-The resulting facet that is created for the dictionary is displayed in the search page.
-
-
-
-The document where the enrichment is applied contains the following sentence:
-
-```
-Some car fluids can be acidic, such as battery fluid.
-```
-{: screen}
-
-The following JSON snippet illustrates how a Transportation dictionary enrichment mention is stored when the term `car`, which is a synonym for the `vehicle` dictionary entry is found in the document. In this collection, the dictionary enrichment is applied to the `text` field, so the mention is listed in the `entities` array that is in the `enriched_text` array.
-
-```json
-{
-  "enriched_text": [
-    {
-      "entities": [
-        {
-          "model_name": "Dictionary:.transportation",
-          "mentions": [
-            {
-              "confidence": 1,
-              "location": {
-                "end": 91122,
-                "begin": 91119
-              },
-              "text": "car"
-            }
-          ],
-          "text": "vehicle",
-          "type": "transportation"
-        }
-      ]
-    }
-  ]
-}
-```
-{: codeblock}
 
 If you add a dictionary by using the Enrichment API, after you apply the API-generated dictionary enrichment to a field, the dictionary is displayed in the Dictionaries page. However, you cannot edit the API-generated dictionary from the dictionary tool in the product user interface.
 {: note}
