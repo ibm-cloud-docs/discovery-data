@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-09-14"
 
 subcollection: discovery-data
 
@@ -29,8 +29,11 @@ To analyze data with these migrated enrichments, you can use a Content Mining pr
 -   For more information about how to create a Content Mining project, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 -   For more information about how to apply enrichments to a collection in the Content Mining application, see [Applying the annotator](/docs/discovery-data?topic=discovery-data-cm-custom-annotator#cm-custom-annotator-deploy).
 
-## Importing dictionaries from Watson Explorer Analytical Components
+## Importing dictionaries from Watson Explorer Analytical Components ![Cloud Pak for Data](images/cp4d.png)
 {: #enrichdictca}
+
+You can import an XML file to use as the dictionary source file from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} deployments only.
+{: note}
 
 You can import [user dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external} from IBM Watson Explorer Analytical Components.
 
@@ -93,8 +96,11 @@ You can import [character patterns](https://www.ibm.com/support/knowledgecenter/
 1.  Click the **Import** button.
 1.  Select the JSON file that you want to import, and then click **Save**.
 
-## Importing facets from Watson Explorer Content Analytics Studio
+## Importing facets from Watson Explorer Content Analytics Studio ![Cloud Pak for Data](images/cp4d.png)
 {: #enrichml}
+
+You can import a PEAR file to use as the machine learning source file from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} deployments only.
+{: note}
 
 You can show Content Analytics Studio facets in the Content Mining application. Only facets with a UIMA Feature of type `Literal Value` are displayed.
 
@@ -113,6 +119,6 @@ For more information about how to import Content Analytics Studio machine learni
 
 1.  Click **Create custom annotator**.
 1.  Name your annotator, and then optionally add a description.
-1.  From the **Annotator Type** menu, select **Machine learning**, and then click **Next**.
+1.  From the **Annotator Type** menu, select **PEAR File**, and then click **Next**.
 1.  Click **Select file** to find the .pear file that you exported.
 1.  Specify a facet path, and then click **Save**.
