@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-09-15"
 
 subcollection: discovery-data
 
@@ -52,7 +52,10 @@ To add a facet from existing fields, complete the following steps:
 
 1.  On the **Improve and customize** page, click **Customize display**, and then click **Facets**.
 1.  Click **New facet** > **From existing fields in a collection**.
-1.  Choose the field you'd like your facet to use, such as `enriched_text.entities.type`. Add the facet label, filtering options, and the maximum number of facets to show in the query results.
+1.  Choose the field you'd like your facet to use, such as `enriched_text.entities.type`. Add the facet label and choose a filter control option.
+1.  **Optional**: You can adjust the maximum number of facet values that are displayed. 
+
+    The maximum number is the sum of the number of facet values that are displayed for each facet type. By default, a total of 10 facet values are displayed.
 1.  As you test the facet, you can adjust the options.
 
 ### Creating a facet by creating a dictionary
