@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-13"
+lastupdated: "2022-09-16"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 16 September 2022
+{: #discovery-16september2022}
+{: release-note}
+
+<!-- 4.6.0-6.4 -->
+
+In-context document preview is now available for PDF files that are crawled
+:   When you click to view a passage from a search result that is extracted from a PDF document, a document preview page is displayed that shows the returned passage in the context of the original PDF page. The in-context view is available for PDF files to which a Smart Document Understanding model is applied.
 
 ## 15 August 2022
 {: #discovery-15august2022}
@@ -193,7 +202,7 @@ Visualize enrichments found in your documents
 Improved format of search results from PDF documents
 :   When you click to view a passage from a search result that is extracted from a PDF document, a document preview page is displayed that shows the returned passage in the context of the original PDF page.
     
-    The in-context view is available for PDF files to which a Smart Document Understanding model is applied. The PDF file must be uploaded; it cannot be a crawled PDF. The rich preview does not work on images, meaning it doesn't work on scanned PDF documents. The in-context view is available for PDFs in all languages; however, the enrichment highlighting might be misaligned in some languages.
+    The in-context view is available for PDF files to which a Smart Document Understanding model is applied. The rich preview does not work on images, meaning it doesn't work on scanned PDF documents. The in-context view is available for PDFs in all languages; however, the enrichment highlighting might be misaligned in some languages.
     {: note}
 
 Tell us what you think

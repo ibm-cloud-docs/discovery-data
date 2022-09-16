@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-09-16"
 
 keywords: backup,restore
 
@@ -23,12 +23,18 @@ Use the following procedures to back up and restore data in your {{site.data.key
 This information applies only to installed deployments.
 {: note}
 
-You can use the scripts to back up your data from and restore it to the following versions:
+You use the same set of backup and restore scripts to back up and restore data in any of the supported upgrade paths. The backup script stores the version number of the service with data to back up from the existing deployment. The restore script detects the version of the service that is installed on the new {{site.data.keyword.icp4dfull_notm}} deployment, and then follows the appropriate steps to restore data to the detected version.
 
-- 4.5.0 to 4.5.0
-- 4.0.x to 4.5.0
-- 2.2.1 to 4.5.0
-- 2.2.0 to 4.5.0
+The following table lists the upgrade paths that are supported by the scripts.
+
+| Version in use | Version you can upgrade to |
+|----------------|----------------------------|
+| 4.5.0 | 4.5.1 |
+| 4.0.x | 4.5.1 |
+| 4.0.x | 4.0.9 |
+| 2.2.1 | 4.5.1 |
+| 2.2.1 | 4.0.9 |
+{: caption="Supported upgrade paths" caption-side="top"}
 
 If you are upgrading from 4.0.x to 4.5.0, there's a simpler way to complete the upgrade. For more information, see [Upgrading Watson Discovery from Version 4.0 to Version 4.5](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-discovery/discovery-upgrade-v4.html){: external}.
 
