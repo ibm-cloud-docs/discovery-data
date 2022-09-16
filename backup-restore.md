@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-14"
+lastupdated: "2022-09-16"
 
 keywords: backup,restore
 
@@ -23,7 +23,7 @@ Use the following procedures to back up and restore data in your {{site.data.key
 This information applies only to installed deployments.
 {: note}
 
-You use the same set of backup and restore scripts to back up and restore data in any of the supported upgrade paths. The backup script stores the version of the service with data to back up on the existing deployment. The restore script detects the version of the service that is installed on the new {{site.data.keyword.icp4dfull_notm}} deployment and follows the appropriate steps to restore data to the detected version. 
+You use the same set of backup and restore scripts to back up and restore data in any of the supported upgrade paths. The backup script stores the version number of the service with data to back up from the existing deployment. The restore script detects the version of the service that is installed on the new {{site.data.keyword.icp4dfull_notm}} deployment, and then follows the appropriate steps to restore data to the detected version.
 
 The following table lists the upgrade paths that are supported by the scripts.
 
