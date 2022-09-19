@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-09-19"
 
 subcollection: discovery-data
 
@@ -24,7 +24,7 @@ You might want to change the following characteristics:
 -   [Group text body fields](#group-multiple-fields)
 -   [Add, remove, or change the enrichments that are applied to the collection](#cm-enrichments)
 
-## Editing a collection
+## Edit a collection
 {: #cm-edit-collection-task}
 
 1.  From the analysis view of your collection, click the **Collections** breadcrumb link in the page header.
@@ -76,7 +76,7 @@ To add document flags, complete the following steps:
 
 For more information about how to flag documents, see [Flag documents of interest](/docs/discovery-data?topic=discovery-data-cm-analyze-data#cm-flags).
 
-## Identifying the text field
+## Identify the text field
 {: #text-field}
 
 When you analyze data with the Content Mining application, Discovery determines which field contains the body of the text to be analyzed. You can check which field is designated as the main text body field and change it or augment it.
@@ -107,7 +107,7 @@ If you select multiple fields to analyze, you cannot see the facet analysis for 
 
 Now you can return to the data analysis page for your collection. From the **Facet analysis** panel, you can click **Contextual view selection** to see the text fields that you grouped. You can select one of the text fields to view the facet analysis for that field. 
 
-## Enriching your collection
+## Enrich your collection
 {: #cm-enrichments}
 
 Discovery provides built-in natural language processing models, such as the *Entities* enrichment that can recognize mentions of commonly known things, such as business or location names and other types of proper nouns. You can apply these built-in NLP enrichments to your collection.

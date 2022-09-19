@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-09-19"
 
 subcollection: discovery-data
 
@@ -142,7 +142,7 @@ Back up your classifier .csv files, and store them locally. For more information
 ## Restoring your data to a new Watson Discovery instance
 {: #restoredata}
 
-Consider using your backups to restore to a new {{site.data.keyword.discoveryshort}} instance in a different data center, also known as a region or location. These regions or locations include Dallas; Washington, DC; London; Seoul; Tokyo; Sydney; and Frankfurt.
+Consider using your backups to restore to a new {{site.data.keyword.discoveryshort}} instance in a different data center, also known as a region or location. These regions or locations include Dallas; Washington, DC; London; Tokyo; Sydney; and Frankfurt.
 {: note}
 
 To begin restoration, first start by reviewing your list of collections and associated data sources, as well as your file backups.
