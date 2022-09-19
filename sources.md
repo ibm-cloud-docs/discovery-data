@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-27"
+lastupdated: "2022-09-19"
 
 subcollection: discovery-data
 
@@ -30,15 +30,12 @@ All {{site.data.keyword.discoveryshort}} data source connectors are read-only. R
 
 You can use {{site.data.keyword.discoveryshort}} to crawl from the following data sources:
 
-- [Box](/docs/discovery-data?topic=discovery-data-connector-box-cloud)
-- [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud)
-- [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud)
-- [Microsoft SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud)
-- [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cloud)
-- [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud)
-
-You cannot crawl the supported data sources from a {{site.data.keyword.discoveryshort}} service instance that is hosted in the Seoul data center.
-{: note}
+-   [Box](/docs/discovery-data?topic=discovery-data-connector-box-cloud)
+-   [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud)
+-   [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud)
+-   [Microsoft SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cloud)
+-   [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cloud)
+-   [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud)
 
 *Your data source isn't listed?* Check whether {{site.data.keyword.appconserviceshort}} has a connector to the data source. You can use a default connector that is built for {{site.data.keyword.appconnect_notm}} to send data from a data source to {{site.data.keyword.discoveryshort}}. For a list of the data sources supported by {{site.data.keyword.appconnect_notm}} default connectors, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}. For more information about integrating {{site.data.keyword.appconnect_notm}} with {{site.data.keyword.discoveryshort}}, see [How to use IBM App Connect with {{site.data.keyword.discoveryfull}}](https://www.ibm.com/support/knowledgecenter/SS6KM6/com.ibm.appconnect.dev.doc/how-to-guides-for-apps/watson-discovery.html){: external}.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-09-16"
 
 subcollection: discovery-data
 
@@ -85,17 +85,18 @@ If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn 
 
 For more information about artifact limits per plan, see the feature documentation:
 
-- [Advanced rules model limits](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules-limits)
-- [Classifier limits](/docs/discovery-data?topic=discovery-data-domain-classifier#classifier-limits)
-- [Collection limits](/docs/discovery-data?topic=discovery-data-collections#collections-limits)
-- [Dictionary limits](/docs/discovery-data?topic=discovery-data-domain-dictionary#dictionary-limits)
-- [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits)
-- [Machine Learning model limits](/docs/discovery-data?topic=discovery-data-domain-ml#machinelearning-limits)
-- [Pattern limits](/docs/discovery-data?topic=discovery-data-domain-pattern#patterns-limits)
-- [Project limits](/docs/discovery-data?topic=discovery-data-projects#projects-limits)
-- [Query limits](/docs/discovery-data?topic=discovery-data-query-concepts#query-limits)
-- [Regular expression limits](/docs/discovery-data?topic=discovery-data-domain-regex#regex-limits)
-- [SDU limits](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-limits)
+-   [Advanced rules model limits](/docs/discovery-data?topic=discovery-data-domain-pattern#advanced-rules-limits)
+-   [Classifier limits](/docs/discovery-data?topic=discovery-data-domain-classifier#classifier-limits)
+-   [Collection limits](/docs/discovery-data?topic=discovery-data-collections#collections-limits)
+-   [Dictionary limits](/docs/discovery-data?topic=discovery-data-domain-dictionary#dictionary-limits)
+-   [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits)
+-   [Entity extractor limits](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-limits)
+-   [Machine Learning model limits](/docs/discovery-data?topic=discovery-data-domain-ml#machinelearning-limits)
+-   [Pattern limits](/docs/discovery-data?topic=discovery-data-domain-pattern#patterns-limits)
+-   [Project limits](/docs/discovery-data?topic=discovery-data-projects#projects-limits)
+-   [Query limits](/docs/discovery-data?topic=discovery-data-query-concepts#query-limits)
+-   [Regular expression limits](/docs/discovery-data?topic=discovery-data-domain-regex#regex-limits)
+-   [SDU limits](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-limits)
 
 The following limits apply only to Content Mining project types:
 

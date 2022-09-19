@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-19"
+lastupdated: "2022-09-19"
 
 keywords: content mining,content analytics studio,facets
 
@@ -15,7 +15,7 @@ subcollection: discovery-data
 # Analyzing your data with the Content Mining application ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #contentminerapp}
 
-Analyze your data to find patterns, trends, and anomalies.
+Use the {{site.data.keyword.discoveryshort}} Content Mining application to analyze your data. The application shows subsets of your information in visualizations that can help you to find patterns, trends, and anomalies.
 {: shortdesc}
 
 Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Enterprise and Premium plan managed deployments can use the Content Mining application.
