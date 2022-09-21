@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-23"
+lastupdated: "2022-09-21"
 
 subcollection: discovery-data
 
@@ -73,7 +73,7 @@ If the a `wd-ibm-elasticsearch-es-server-client` pod restarts repeatedly and the
 
 When indexing a large set of documents that have multiple enrichments applied to them, the worker node can run out of space. To address the issue, first determine which pod is out of memory by completing the following steps:
 
-If the document status cannot be promoted to `Processing`, check the status of the inlet, outlet, and converter pods.
+If the document status cannot be promoted to `Processing`, check the status of the `inlet`, `outlet`, and `converter` pods.
 
 1.  Run the following command:
 
@@ -165,7 +165,7 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
         ```
         {: pre}
 
-    -   To check the memory resource of the hdp-worker container:
+    -   To check the memory resource of the `hdp-worker` container:
 
         ```sh
         oc get po -l run=hdp-worker -o 'jsonpath=requests are \
