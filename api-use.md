@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-23"
 
 keywords: api version,api,request syntax,api key,bearer token
 
@@ -16,10 +16,6 @@ subcollection: assistant-data
 
 Use the {{site.data.keyword.discoveryshort}} API to build a custom application or component that searches your data.
 {: shortdesc}
-
-- For {{site.data.keyword.discoveryshort}} API reference documentation, see [API reference](https://cloud.ibm.com/apidocs/discovery-data){: external}.
-- For more information about using the Analyze API to process documents without storing them, see [Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
-- For more information about using the API to define more complex queries by using the Discovery Query Language, see [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 
 ## Service API Versioning
 {: #apiversioning}
@@ -88,3 +84,12 @@ The bearer token that is generated for an administrator can access any instance 
 {: important}
 
 The bearer token expires after 12 hours. For more information about customizing the length of a session, see [Setting the idle session timeout](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=client-setting-idle-session-timeout){: external}.
+
+## Next steps
+{: #api-use-next}
+
+A developer can make the following enhancements:
+
+- Use the API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-dql-overview).
+- Specify the exact document to return in response to a specific query with [curations](/docs/discovery-data?topic=discovery-data-curations).
+- Process documents without storing them in a collection by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).

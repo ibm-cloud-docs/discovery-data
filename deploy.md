@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying your project
+# Deploying a project
 {: #deploy}
 
 <!-- c/s help for the *Integrate and deploy* page. Do not delete. -->

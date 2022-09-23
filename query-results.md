@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Previewing the default query results
+# Previewing query results
 {: #query-results}
 
 See the types of query results that are returned automatically and learn about how they are derived.
