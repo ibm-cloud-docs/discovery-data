@@ -159,3 +159,12 @@ Enrichment notes:
 -   When you apply an enrichment to a field from the JSON file, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, "field1": "Discovery" becomes "field1": ["Discovery"]. 
 -   Only the first 50,000 characters of a custom field from a JSON file are enriched.
 -   If you want to apply an enrichment to a nested field, you must create a Content Mining project, and then apply the enrichment to the field. If you want to use a different project type, you can reuse the collection that you created with the Content Mining project type elsewhere. For more information, see [Applying enrichments](/docs/discovery-data?topic=discovery-data-connector-database-cp4d#connector-database-cp4d-enrich-db).
+
+## How passages are derived
+{: #query-results-passages}
+
+{{site.data.keyword.discoveryshort}} uses sophisticated algorithms to determine the best passages of text from all of the documents that are returned by a query. Passages are returned per document by default. They are displayed as a section within each document query result and are ordered by passage relevance.
+
+{{site.data.keyword.discoveryshort}} uses sentence boundary detection to pick a passage that includes a full sentence. It searches for passages that have an approximate length of 200 characters, then looks at chunks of content that are twice that length to find passages that contain full sentences. Sentence boundary detection works for all supported languages and uses language-specific logic.
+
+For all project types except *Conversational Search*, you can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.

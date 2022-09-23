@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-09-23"
 
 subcollection: discovery-data
 
@@ -19,9 +19,6 @@ For more information about how to use custom user interface components that are 
 
 A developer can make the following enhancements:
 
-- Process documents without storing them in a collection by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
-- Specify the exact document to return in response to a specific query with [curations](/docs/discovery-data?topic=discovery-data-curations).
-- Use API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-dql-overview).
 - Connect to a data source that isn't available by default by [creating a custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 - Apply special settings that control how documents are added to a collection by [building a crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 

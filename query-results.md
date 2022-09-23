@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-01"
+lastupdated: "2022-09-22"
 
 keywords: passages, query results
 
@@ -12,85 +12,97 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Previewing the default query results
+# Previewing query results
 {: #query-results}
 
-See the types of query results that are returned automatically and learn about how they are derived. Understanding how default results are created can help you decide next steps to improve your results.
+See the types of query results that are returned automatically and learn about how they are derived.
 {: shortdesc}
 
-When a document is ingested, the text is extracted and indexed in the`text` field. When a customer searches a collection at run time, you don't want every word in a 10,000-word document to be returned as the query result. Instead, you want to return a subsection of the text from the original document that contains only information that is relevant to the query. {{site.data.keyword.discoveryshort}} achieves this goal by returning *passages* from the `text` field in all project types except Content Mining. For more information about passages, see [How passages are derived](#query-results-passages).
+When a document is ingested, the text is extracted and indexed in the`text` field. To return only the subset of information that is relevant to the query, {{site.data.keyword.discoveryshort}} returns *passages* from the `text` field. For more information about passages, see [How passages are derived](/docs/discovery-data?topic=discovery-data-index-overview#query-results-passages).
 
-Preview the default query results.
+To preview the default query results, complete the following steps:
 
 1.  From the navigation pane, open the **Improve and customize** page.
-1.  Take the appropriate action for your project type:
+1.  Take the appropriate next steps for your project type.
 
-    - **Document Retrieval project**:
+    -  [Document Retrieval](#query-results-dr)
+    -  [Conversational Search](#query-results-chat)
+    -  [Document Retrieval for Contracts](#query-results-contract)
+    -  [Content Mining](#query-results-cm)
 
-      - Click **Run search** for one of the keywords that {{site.data.keyword.discoveryshort}} calculated to have special meaning in your collection.
-      - Submit your own phrase or keyword from the search bar.
+## Document Retrieval
+{: #query-results-dr}
 
-        You can see that the query results that are returned consist of passages. Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
+1.  Do one of the following things:
 
-        If the result text shows `Excerpt unavailable`, the search results might be configured to show a field that doesn't exist in your collection. You can change the results to consist of information from a different field or to switch between showing passages or field content. For more information, see [Changing the result content](#query-results-content).
-        {: important}
+    -   Click **Run search** for one of the keywords that {{site.data.keyword.discoveryshort}} calculated to have special meaning in your collection.
+    -   Submit your own phrase or keyword from the search bar.
 
-    - **Conversational Search project**: A single search field is displayed that mimics the user interface of a virtual assistant.
+    You can see that the query results that are returned consist of passages. 
+        
+    Entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default) are displayed as facets by which you can filter the query results.
 
-      - Submit a phrase or keyword.
+1.  To explore a query result in more detail, click **View passage in document**.
+1.  Click **Open advanced view** to explore the entity mentions that are recognized by Discovery.
+1.  You can switch to the **JSON** view to learn more about how the metadata and enrichments are stored in the document where the query result was found.
 
-        The query results are returned as passages by default. You can configure the search to return a field instead. See [Changing the result content](#query-results-content).
-    - **Custom project**:
+    ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
 
-      - Submit your own phrase or keyword from the search bar.
+### Excerpt unavailable
+{: #improve-search-result}
 
-        The query results that are returned consist of passages.
-    - **Document Retrieval for Contracts project**: Contract-related elements that are recognized in your collection are displayed.
+If the result shows `Excerpt unavailable` instead of response text, you might need to adjust where the content of the response is taken from. By default, a passage from the document is returned as the response. You can change what is returned.
 
-      - Filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
-      - To view the contract elements in more detail, click a document result to open it. Open the *Contract Data* tab.
+1.  From the *Improvement tools* panel, expand **Customize display**.
+1.  Click **Search results**.
+1.  For the source of result content, select **Field**, and then choose the field from which you want to extract the response.
 
-      For more information about the elements, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
-    - **Content Mining project**:
+    ![Shows the Search results dialog](images/search-result-by-field.png)
 
-      - Choose a facet by which to filter the documents.
+1.  Click **Apply**.
 
-        Facets based on the *Part of Speech* enrichment that is applied to the project by default are shown.
+### FAQ results ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
+{: #query-results-faq}
 
-    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: The following optional project configuration setting impacts how the query results are formatted:
+If you enabled FAQ extraction, set the `text` field as the query result source by following the steps in the previous section.
 
-    - If you enable FAQ extraction, each question-and-answer pair that is found in the original document is added to a new, separate document with the question in the `title` field and answer in the `text` field. By separating the pairs into independent documents, the correct answer can be returned quickly when a phrase that is the same or similar to the associated question is submitted as the query.
+When the collection is processed, each question-and-answer pair that is found in the original document is added as a new, separate document with the question in the `title` field and answer in the `text` field. 
 
-      If the results are not useful, try changing the search result content. Set the Search results to use the `text` field. Answers from the FAQ pairs are stored in the `text` field by default.
+If your source document contains 10 question-and-answer pairs, then 10 documents are generated during processing. If you want to see all of the documents that were generated, check the *Manage data* page.
 
-      If your source document contains 10 question-and-answer pairs, then 10 documents are generated during processing. If you want to see all of the documents that were generated, submit an empty search string.
+## Conversational Search
+{: #query-results-chat}
+
+A single search field is displayed that mimics the user interface of a virtual assistant.
+
+1.  Submit a phrase or keyword.
+
+The query results are returned as passages by default. You can [configure the search to return a specific field](#improve-search-result) instead.
+
+## Document Retrieval for Contracts
+{: #query-results-contract}
+
+Contract-related elements that are recognized in your collection are displayed.
+
+1.  Do one of the following things:
+
+    -   Filter the documents by one of the highlighted elements or by entities that are recognized in your documents (based on the Entities enrichment that is applied to the project by default).
+    -   To view the contract elements in more detail, click a document result to open it. Open the *Contract Data* tab.
+
+For more information about the elements, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
+
+## Content Mining
+{: #query-results-cm}
+
+1.  Choose a facet by which to filter the documents.
+
+    Facets based on the *Part of Speech* enrichment are shown.
 
 - If you want to learn more about what information is indexed per document, see [Interpreting the results](/docs/discovery-data?topic=discovery-data-test#test-json).
 - For tips on how you can improve the quality of your results, see [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements).
 
-## Changing the result content
-{: #query-results-content}
+## What to do next
+{: #query-next}
 
-For all project types, you can control where the data comes from that is returned in query results. By default, results consist of passages from the `text` field. The passages that {{site.data.keyword.discoveryshort}} calculates to contain the most relevant information are returned. However, you can change the result content to return content from a field other than the `text` field.
-
-To change the content of the query results, complete the following steps:
-
-1.  From the *Improvement tools* pane, expand **Customize display**, and then click **Search results**.
-1.  **Optional**: Change the field that is shown as the title of the query result.
-
-    The title is displayed after the text excerpt.
-
-    This option is not available for *Conversational Search* projects.
-    {: note}
-
-1.  Choose **Field** to switch to showing excerpts from a specific field, and then select the field that you want to use as the source of the query result text.
-1.  Click **Apply**.
-
-### How passages are derived
-{: #query-results-passages}
-
-{{site.data.keyword.discoveryshort}} uses sophisticated algorithms to determine the best passages of text from all of the documents that are returned by a query. Passages are returned per document by default. They are displayed as a section within each document query result and are ordered by passage relevance.
-
-{{site.data.keyword.discoveryshort}} uses sentence boundary detection to pick a passage that includes a full sentence. It searches for passages that have an approximate length of 200 characters, then looks at chunks of content that are twice that length to find passages that contain full sentences. Sentence boundary detection works for all supported languages and uses language-specific logic.
-
-For all project types except *Conversational Search*, you can change how the passages are displayed in the search results from the **Customize display > Search results** page. For example, you can configure the number of passages that are shown per document and the maximum character size per passage.
+-  For more information about how to enrich your documents so that you can find key information, see [Teaching Discovery about your domain](/docs/discovery-data?topic=discovery-data-domain).
+-  To explore ways to improve the query results, see [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements).
