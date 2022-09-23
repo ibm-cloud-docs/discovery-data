@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-30"
+lastupdated: "2022-09-23"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -139,11 +139,10 @@ To deploy your project, connect this project to an assistant that is built with 
 
     For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
-    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
-    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
-
-        From the {{site.data.keyword.conversationshort}} new experience, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
-        {: beta}
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: From the new experience, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}.
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: From the classic experience, see [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}.
+    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add){: external}.
+    
 
 ## Deploying a Content Mining project
 {: #cm-deploy}
