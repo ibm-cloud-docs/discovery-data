@@ -44,14 +44,13 @@ To preview the default query results, complete the following steps:
 
 1.  To explore a query result in more detail, click **View passage in document**.
 1.  Click **Open advanced view** to explore the entity mentions that are recognized by Discovery.
-1.  You can switch to the **JSON** view to learn more about how the metadata and enrichments are stored in the document where the query result was found.
 
-    ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
+    
 
 ### Excerpt unavailable
 {: #improve-search-result}
 
-If the result shows `Excerpt unavailable` instead of response text, you might need to adjust where the content of the response is taken from. By default, a passage from the document is returned as the response. You can change what is returned.
+If the result shows “Excerpt unavailable”, you might need to adjust where the content of the response is taken from. By default, a passage from the document is returned as the response. You can change what is returned.
 
 1.  From the *Improvement tools* panel, expand **Customize display**.
 1.  Click **Search results**.
@@ -61,8 +60,11 @@ If the result shows `Excerpt unavailable` instead of response text, you might ne
 
 1.  Click **Apply**.
 
-### FAQ results ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
+### FAQ results
 {: #query-results-faq}
+
+![IBM Cloud only](images/ibm-cloud.png)  FAQ extraction is available from {{site.data.keyword.cloud_notm}}-managed instances only.
+{: note}
 
 If you enabled FAQ extraction, set the `text` field as the query result source by following the steps in the previous section.
 
