@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-28"
 
 subcollection: discovery-data
 
@@ -31,9 +31,9 @@ The crawler plug-ins support the following functions:
 - Exclude a crawled document
 - Reference crawler configurations, masking password values
 - Show notice messages in the {{site.data.keyword.discoveryshort}} user interface
-- Output log messages to the crawler pod console
+- Output log messages to the `crawler` pod console
 
-However, the crawler plug-ins cannot support the following functions:
+However, the `crawler` plug-ins cannot support the following functions:
 
 - Split a crawled document into multiple documents
 - Combine content from multiple documents into a single document
@@ -42,7 +42,7 @@ However, the crawler plug-ins cannot support the following functions:
 ## Crawler plug-in requirements
 {: #plugin-reqs}
 
-Make sure that the following items are installed on the development server that you plan to use to develop a crawler plug-in by using this SDK:
+Make sure that the following items are installed on the development server that you plan to use to develop a `crawler` plug-in by using this SDK:
 
 - Java SE Development Kit (JDK) 1.8 or higher
 - [Gradle](https://gradle.org/install/){: external}
@@ -53,7 +53,7 @@ Make sure that the following items are installed on the development server that 
 {: #obtain-sdk}
 
 1. Log in to your {{site.data.keyword.discoveryshort}} cluster.
-1. Enter the following command to obtain your crawler pod name:
+1. Enter the following command to obtain your `crawler` pod name:
 
    ```curl
    oc get pods | grep crawler
@@ -67,7 +67,7 @@ Make sure that the following items are installed on the development server that 
    ```
    {: codeblock}
 
-1. Enter the following command to obtain the SDK package name, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in step 2:
+1. Enter the following command to obtain the SDK package name, replacing `{crawler-pod-name}` with the `crawler` pod name that you obtained in step 2:
 
    ```curl
    oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep wd-crawler-plugin-sdk

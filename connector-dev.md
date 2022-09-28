@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-30"
+lastupdated: "2022-09-28"
 
 subcollection: discovery-data
 
@@ -138,7 +138,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
 
 1.  Log in to your {{site.data.keyword.discoveryshort}} cluster.
 
-1.  Enter the following command to obtain your crawler pod name:
+1.  Enter the following command to obtain your `crawler` pod name:
 
      ```sh
      oc get pods | grep crawler
@@ -152,7 +152,7 @@ In {{site.data.keyword.discoveryshort}} version 2.2.1 and later, perform the fol
      ```
      {: codeblock}
 
-1.  Enter the following command to obtain the `custom-crawler-docs.zip` file, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in step 2:
+1.  Enter the following command to obtain the `custom-crawler-docs.zip` file, replacing `{crawler-pod-name}` with the `crawler` pod name that you obtained in step 2:
 
      ```sh
      oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ \
