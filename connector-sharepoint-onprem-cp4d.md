@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-09-28"
 
 subcollection: discovery-data
 
@@ -165,7 +165,7 @@ If you are using version 2.2.1 or earlier, then you must complete these extra st
 To obtain the web services package from your {{site.data.keyword.discoveryshort}} cluster, complete the following steps:
 
 1.  Log in to your {{site.data.keyword.discoveryshort}} cluster.
-1.  Enter the following command to obtain your crawler pod name:
+1.  Enter the following command to obtain your `crawler` pod name:
 
     ```sh
     oc get pods | grep crawler
@@ -178,7 +178,7 @@ To obtain the web services package from your {{site.data.keyword.discoveryshort}
     wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
     ```
 
-1.  Enter the following command to obtain the `ESSPSolution.wsp` file, replacing `{crawler-pod-name}` with the crawler pod name that you obtained in the previous step:
+1.  Enter the following command to obtain the `ESSPSolution.wsp` file, replacing `{crawler-pod-name}` with the `crawler` pod name that you obtained in the previous step:
 
     ```sh
     oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep ESSPSolution
@@ -191,7 +191,7 @@ To obtain the web services package from your {{site.data.keyword.discoveryshort}
     -rw-r--r--. 1 dadmin dadmin  8600 Feb  3 08:23 ESSPSolution-${build-version}.wsp
     ```
 
-1.  Enter the following command to copy the `ESSPSolution.wsp` file to the host server, replacing `{build-version}` with the build version number from the previous step and `{crawler-pod-name}` with the crawler pod name:
+1.  Enter the following command to copy the `ESSPSolution.wsp` file to the host server, replacing `{build-version}` with the build version number from the previous step and `{crawler-pod-name}` with the `crawler` pod name:
 
     ```sh
     oc cp {crawler-pod-name}:/opt/ibm/wex/zing/resources/ESSPSolution-${build-version}.wsp ESSPSolution.wsp

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-09-28"
 
 subcollection: discovery-data
 
@@ -65,7 +65,7 @@ To scale the size of your deployment, complete the following steps:
     ```
     {: codeblock}
 
-    In this example, the number of replicas of the API gateway pod is increased from `1` to `2`:
+    In this example, the number of replicas of the `API gateway` pod is increased from `1` to `2`:
 
     ```yaml
     spec:
@@ -87,7 +87,7 @@ To scale the size of your deployment, complete the following steps:
     
 1.  To ensure that any new nodes that start will use the latest settings, edit the custom resource for the service. Change the default settings to reflect the new values.
     
-    For example, to change the default size for Elastic search storage pods, make the following change in the custom resource definition:
+    For example, to change the default size for `Elastic search storage` pods, make the following change in the custom resource definition:
 
     ```yaml
     elasticsearch:
@@ -111,7 +111,7 @@ To scale the size of your deployment, complete the following steps:
 
 Definitions that are specified in YAML files provide instructions to the cluster about how to manage the pods that are used by the service. 
 
-#### UI pods
+#### `UI` pods
 {: #scaling-ui}
 
 ```yaml
@@ -124,7 +124,7 @@ spec:
 ```
 {: codeblock}
 
-#### API gateway pod
+#### `API gateway` pod
 {: #scaling-api-gateway}
 
 ```yaml
@@ -134,7 +134,7 @@ spec:
 ```
 {: codeblock}
 
-#### Elastic search pods
+#### `Elastic search` pods
 {: #scaling-elastic}
 
 ```yaml
@@ -149,7 +149,7 @@ spec:
 ```
 {: codeblock}
 
-#### Hadoop worker pod
+#### `Hadoop worker` pod
 {: #scaling-hadoop}
 
 ```yaml
@@ -160,7 +160,7 @@ spec:
 ```
 {: codeblock}
 
-#### Crawler pod
+#### `Crawler` pod
 {: #scaling-crawler}
 
 ```yaml
@@ -171,7 +171,7 @@ spec:
 ```
 {: codeblock}
 
-#### Analyze API pod
+#### `Analyze API` pod
 {: #scaling-analyze-api}
 
 ```yaml
@@ -182,7 +182,7 @@ spec:
 ```
 {: codeblock}
 
-#### Watson Knowledge Studio model enrichment pod
+#### `Watson Knowledge Studio model enrichment` pod
 {: #scaling-wks}
 
 ```yaml

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-09-28"
 
 keywords: known issues
 
@@ -305,7 +305,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
 
 -   Deployment timing issue:
 
-    -   **Error**: After installing patch 7, when you try to provision a service instance, a `404 Not Found` error is displayed. The following message might be logged for the nginx pods: `open() "/usr/local/openresty/nginx/html/watson/common/discovery/auth" failed (2: No such file or directory)`
+    -   **Error**: After installing patch 7, when you try to provision a service instance, a `404 Not Found` error is displayed. The following message might be logged for the `nginx` pods: `open() "/usr/local/openresty/nginx/html/watson/common/discovery/auth" failed (2: No such file or directory)`
     -   **Solution**: Restart the `zen-watcher` pod.
 
 -   If you perform an air-gapped installation that pulls container images from an external container registry, you might experience the following issue:
@@ -335,7 +335,7 @@ See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/
             ```
             {: codeblock}
 
-        -   If the RabbitMQ pods are still in ImagePullBackoff state, remove the RabbitMQ CR to enable the rabbitmq-operator to re-create the RabbitMQ clusters. You can use the following command:
+        -   If the `RabbitMQ` pods are still in ImagePullBackoff state, remove the RabbitMQ CR to enable the rabbitmq-operator to re-create the RabbitMQ clusters. You can use the following command:
 
             ```sh
             oc delete IbmRabbitmq wd-rabbitmq
@@ -587,7 +587,7 @@ Also see the issues identified in all previous releases.
 
         Added lines from `- command:` to `/opt/ibm/wex/zing/bin/entrypoint.sh` `/opt/ibm/wex/zing/bin/controller.sh` and removed `-` before `env:`
 
-    1.  Save the changes. It will restart the converter pod.
+    1.  Save the changes. It will restart the `converter` pod.
 
 ## 2.1.3, 19 June 2020:
 {: #19jun2020ki}
@@ -601,7 +601,7 @@ Also see the issues identified in all previous releases.
 - When creating a data source in Firefox, you may not see the entire list of options, including the **More processing settings** settings. To work around the issue, zoom out, increase the browser height, or use another supported browser.
 - When customizing the display of search results, the changes made sometimes do not save after clicking the `Apply` button. To work around this issue, refresh the browser and try to make the changes again.
 - When setting up a data source or web crawler for your collection, if you enter an incorrect configuration, then try to update it on the **Processing settings** page, the data source update or crawl may not start when you click the `Apply changes and reprocess` button. You can confirm this issue by opening the **Activity** page for your collection to see if processing has started. If you see that processing has not started for your data source, click the `Recrawl` button, then the `Apply changes and reprocess` button. If you see that processing has not started for your web crawl, click the `Stop` button, then the `Recrawl` button.
-- ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) When running Helm tests on the `core` deployment using `helm test core`, the `core-discovery-api-post-install-test` will return a `FAILED` status. This is due to a bug within the test pod's image. The test result can be ignored as the failure is not related to anything within the deployment.
+- ![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) When running Helm tests on the `core` deployment using `helm test core`, the `core-discovery-api-post-install-test` will return a `FAILED` status. This is due to a bug within the `test` pod's image. The test result can be ignored as the failure is not related to anything within the deployment.
 - By default, Optical Character Recognition (OCR) is set to `off` when you create any **Project type** with the tooling. However, if you create a Project using the API, OCR is set to `on`. To work around this issue, open the Tooling and change the **Project setting** to `off`.
 - When Optical Character Recognition (OCR) is set to `on` for a Collection AND no trained Smart Document Understanding (SDU) model is applied, PNG, TIFF, and JPG files will not be processed for text recognition. Images embedded in PDF, Word, PowerPoint, and Excel documents will not be processed - only the non-image portion of these documents will be processed for text recognition. To work around this issue, import or train an SDU model and reprocess the collection. This will allow text to be extracted from the images.
 - After you create a Search Skill in Watson Assistant and are directed to the Watson {{site.data.keyword.discoveryshort}} tooling, the screen is blank. This happens because the URL is missing the {{site.data.keyword.discoveryshort}} instance ID. To work around this issue:

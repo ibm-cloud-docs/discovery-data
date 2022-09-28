@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-09-28"
 
 subcollection: discovery-data
 
@@ -158,6 +158,12 @@ Enrichment notes:
 -   You cannot apply prebuilt or user-trained Smart Document Understanding models to JSON files.
 -   When you apply an enrichment to a field from the JSON file, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, "field1": "Discovery" becomes "field1": ["Discovery"]. 
 -   Only the first 50,000 characters of a custom field from a JSON file are enriched.
+-   In project types where the *Part of Speech* (POS) enrichment is applied automatically, the enrichment is applied to the field that contains the bulk of the file content. In JSON files, this field is determined by the following rules:
+
+    -   If a field is named `text`, the POS enrichment is applied to it.
+    -   The field with the longest string value and highest number of distinct values is chosen.
+    -   If more than one field meets the previous condition, one of the fields is chosen at random.
+
 -   If you want to apply an enrichment to a nested field, you must create a Content Mining project, and then apply the enrichment to the field. If you want to use a different project type, you can reuse the collection that you created with the Content Mining project type elsewhere. For more information, see [Applying enrichments](/docs/discovery-data?topic=discovery-data-connector-database-cp4d#connector-database-cp4d-enrich-db).
 
 ## How passages are derived

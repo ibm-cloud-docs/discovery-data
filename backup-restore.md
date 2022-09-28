@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-28"
 
 keywords: backup,restore
 
@@ -236,7 +236,7 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 
     By default, the backup and restore scripts create a `tmp` directory in the current directory that the script uses for extracting or compressing backup files.
 
-    The gateway, ingestion, orchestrator, hadoop worker, and controller pods automatically restart.
+    The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
 
 ## Using OADP to backup a cluster where {{site.data.keyword.discoveryshort}} is installed
 {: #backup-restore-450-oadp}

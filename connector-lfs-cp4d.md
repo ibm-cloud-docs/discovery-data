@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-09-28"
 
 subcollection: discovery-data
 
@@ -37,12 +37,10 @@ Before you connect to the Local File System data source, complete the following 
 
 The service uses Portworx storage by default. However, if you are using Network File System (NFS) storage, see [Prerequisite steps for NFS storage](#connector-lfs-cp4d-prereq-nfs) instead.
 
-If you're using {{site.data.keyword.discoveryshort}} for {{site.data.keyword.icp4dfull_notm}} 2.1.4, see [Prerequisite steps for version 2.1.4 and earlier](#connector-lfs-cp4d-prereq-214).
-
 ### Creating and mounting a persistent volume claim on the crawler pod
 {: #mount-persistent-volume}
 
-Before you can crawl a local file system, you must create a persistent volume claim and mount it on the crawler pod. You also need to copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. If you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the files along with the `crawler-pvc-portworx.yaml` file that you will create in this task to each cluster.
+Before you can crawl a local file system, you must create a persistent volume claim and mount it on the `crawler` pod. You also need to copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. If you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the files along with the `crawler-pvc-portworx.yaml` file that you will create in this task to each cluster.
 
 Complete the following steps:
 
@@ -94,7 +92,7 @@ Complete the following steps:
    ```
    {: codeblock}
 
-1.  Enter the following command to mount the persistent volume claim to the crawler pod:
+1.  Enter the following command to mount the persistent volume claim to the `crawler` pod:
 
     ```bash
     oc patch wd wd --type=merge \
@@ -106,7 +104,7 @@ Complete the following steps:
 
 1.  Enter the following command to copy the files that you want to crawl to your dynamic Portworx persistent volume claim.
 
-    You only need to run this command one time against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
+    You only need to run this command one time against one of the existing `crawler` pods. The persistent volume claim is shared among all `crawler` and `ingestion-api` pods. Replace the variables in the command with the appropriate information.
 
     ```bash
     oc rsync <path-to-local-file-system-folder> <crawler-pod>:/mnt
@@ -148,7 +146,7 @@ If you want to check the progress, go to the Activity page. From the navigation 
 ## Prerequisite steps for NFS storage
 {: #connector-lfs-cp4d-prereq-nfs}
 
-Choose one of the following methods to enable the crawler pod to access the file system:
+Choose one of the following methods to enable the `crawler` pod to access the file system:
 
 - [Configure an external NFS server](#use-external-nfs)
 - [Configure dynamic provisioning with an NFS storage class](#dyn-prov-nfs)
@@ -233,9 +231,9 @@ If the local file system files or folders that you want to crawl are stored in a
     ```
     {: codeblock}
 
-1.  Enter the following command to mount the persistent volume claim to the crawler pod.
+1.  Enter the following command to mount the persistent volume claim to the `crawler` pod.
 
-    This command also mounts the persistent volume claim to all ingestion-api pods. Replace `<persistent-volume-claim-name>` with the name of your persistent volume claim. For example, `jdoe-nfs-pvc`.
+    This command also mounts the persistent volume claim to all `ingestion-api` pods. Replace `<persistent-volume-claim-name>` with the name of your persistent volume claim. For example, `jdoe-nfs-pvc`.
 
     ```bash
     oc patch wd wd --type=merge \
@@ -302,9 +300,9 @@ Complete the following steps:
     ```
     {: codeblock}
 
-1.  Enter the following command to mount the persistent volume claim to the crawler pod.
+1.  Enter the following command to mount the persistent volume claim to the `crawler` pod.
 
-    This command also mounts the persistent volume claim to all ingestion-api pods.
+    This command also mounts the persistent volume claim to all `ingestion-api` pods.
 
     ```bash
     oc patch wd wd --type=merge \
@@ -316,7 +314,7 @@ Complete the following steps:
 
 1.  Enter the following command to copy the files that you want to crawl to your dynamic NFS persistent volume claim.
 
-    You must run this command only one time against one of the existing crawler pods. The persistent volume claim is shared among all crawler and ingestion-api pods. Replace the variables in the command with the appropriate information.
+    You must run this command only one time against one of the existing `crawler` pods. The persistent volume claim is shared among all `crawler` and `ingestion-api` pods. Replace the variables in the command with the appropriate information.
 
     ```bash
     oc rsync <path-to-local-file-system-folder> <crawler-pod>:/mnt
@@ -324,139 +322,3 @@ Complete the following steps:
     {: pre}
 
 You mounted the persistent volume claim (PVC) and copied all of the files that you want to crawl to the PVC.
-
-## Prerequisite steps for version 2.1.4 and earlier
-{: #connector-lfs-cp4d-prereq-214}
-
-If you have {{site.data.keyword.discoveryshort}} for {{site.data.keyword.icp4dfull_notm}} 2.1.4, choose one of the following methods to enable the crawler pod to access the file system:
-
-- [Mount a persistent volume on the crawler pod](#mount-pv-orig)
-- [Copy files from the crawler pod](#copy-local-folders)
-
-### Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier
-{: #mount-pv-orig}
-
-If you do not want to copy your [Local File System](#configurelocalfilesystem) files or folders to the crawler pod, you can establish a link from your cluster to a remote Network File System (NFS), which you can configure to serve as a persistent volume and mount on the crawler pod. After you establish this link and after {{site.data.keyword.discoveryshort}} crawls your files, you can edit these files later so that, after the next crawl, your edits are automatically reflected in the index.
-{: shortdesc}
-
-If you plan to install {{site.data.keyword.discoveryshort}} version 2.1.4 and earlier, you must create and configure the persistent volume _before_ you install {{site.data.keyword.discoveryshort}}.
-{: important}
-
-Complete the following steps to create and mount a persistent volume on the crawler pod on your {{site.data.keyword.discoveryshort}} instance version 2.1.4 and earlier:
-
-1. Create a file called `crawler-pv.yaml`. The content of the file looks like the following. Replace the `<>` and the content inside with the required information:
-
-   ```yaml
-   apiVersion: v1
-   kind: PersistentVolume
-   metadata:
-     name: "<label-name>"
-     labels:
-       "<label-name>": "<label-value>"
-   spec:
-     capacity:
-       storage: "10Gi"
-     accessModes:
-       - ReadWriteMany
-     persistentVolumeReclaimPolicy: Retain
-     nfs:
-       server: <NFS server hostname or IP address>
-       path: <Path of NFS exported folder>
-   ```
-   {: codeblock}
-
-1. Enter the following command to set `crawler-pv.yaml` as the persistent volume:
-
-   ```bash
-   create -f crawler-pv.yaml
-   ```
-   {: pre}
-
-1. If you are using version 2.1.3 or 2.1.4, mount the persistent volume to the crawler pod by editing `override.yaml` to include the following input. This file overrides any default settings that you choose. In the `label` and `value` fields, you must use the same string that you specified when you created the `crawler-pv.yaml` file in step 1. Replace the `<>` and the content inside with the required information:
-
-   ```yaml
-   core:
-     ingestion:
-       mount:
-         useDynamicProvisioning: false
-         storageClassName: ""
-         accessModes: "ReadWriteMany"
-         selector:
-           label: "<label-name>"
-           value: "<label-value>"
-   ```
-   {: codeblock}
-
-   If you are using a version earlier than 2.1.3, mount the persistent volume to the crawler pod by creating a file called `override.yaml` in `ibm-watson-discovery-ppa/deploy/`. You might see the following content in `override.yaml`:
-
-   ```yaml
-   core:
-     ingestion:
-       mount:
-         useDynamicProvisioning: false
-         storageClassName: ""
-         selector:
-           label: "<label-name>"
-           value: "<label-value>"
-   ```
-   {: codeblock}
-
-1. Install {{site.data.keyword.discoveryshort}} along with `override.yaml`. For more information about installing {{site.data.keyword.discoveryshort}}, see [Installing the Watson Discovery service](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-install.html){: external}. For more information about overriding values in `override.yaml` when you install {{site.data.keyword.discoveryshort}}, see [Override values for Watson Discovery installation](https://www.ibm.com/support/knowledgecenter/en/SSQNUZ_3.0.1/cpd/svc/watson/discovery-override.html){: external}.
-
-   If you are using a version earlier than 2.1.3, from the `deploy` subdirectory, run the `deploy.sh` script by entering the `-d` flag, the file path to the files that you want to make accessible to `ibm-watson-discovery`, the `-O` flag, and your `override.yaml` file. You can also enter the `-e` flag with your `release-name-prefix`. If you do, your `release-name-prefix` must be 13 characters or fewer, or the installation will fail. If you do not enter the `-e` flag, the default `release-name-prefix` is `disco`. See the following example. Replace the `<>` and the content inside with the required information:
-
-   ```bash
-   ./deploy.sh -d </local root directory/subdirectory/>ibm-watson-discovery \
-   -O ./override.yaml -e <release-name-prefix>
-   ```
-   {: codeblock}
-
-   For a list of flags and their descriptions or for help, run `./deploy.sh -h`.
-   {: tip}
-
-For more information about copying your local files that you want to crawl to the crawler pod, see [Copying local file system files to the crawler pod on versions 2.1.4 and earlier](#copy-local-folders). For more information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
-
-### Copying local file system files to the crawler pod on versions 2.1.4 and earlier
-{: #copy-local-folders}
-
-You can also copy your local files that you want to crawl to the crawler pod. Before you create a [Local File System collection](#configurelocalfilesystem), you must have the Red Hat OpenShift CLI, or `oc`, installed. For more information about installing the Red Hat OpenShift Origin CLI, see [Installing the Red Hat OpenShift Origin CLI (`oc`)](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-{: shortdesc}
-
-Complete the following steps to copy your local file system files to the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, replacing the `<>` and the content inside with the required information:
-
-1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
-
-    ```bash
-    oc login https://<OpenShift administrative console URL> \
-    -u <cluster-administrator> -p <password>
-    ```
-    {: pre}
-
-1.  Enter the following command to switch to the proper namespace:
-
-    ```bash
-    oc project <discovery-install namespace>
-    ```
-    {: pre}
-
-1.  Enter `oc get pods|grep crawler` to find the crawler pod. If you are using a version earlier than 2.1.3, enter `oc get pods|grep ingestion` to find the ingestion pod.
-1. Enter the following command to copy the local file system folders that you want to crawl to the `/mnt` directory on the crawler pod:
-
-    ```bash
-    oc rsync <path to local file system folder> <crawler pod>:/mnt
-    ```
-    {: pre}
-
-    If you are using a version of {{site.data.keyword.discoveryshort}} that is older than 2.1.3, enter the following command:
-
-    ```bash
-    oc rsync <path to local file system folder> <ingestion pod>:/mnt
-    ```
-    {: pre}
-
-    In versions earlier than 2.1.3, the files that you copy apply to all of the gateway and ingestion pods. The default number of ingestion pods is 1.
-
-    If you edit files that you copied to the ingestion or gateway pod, your changes are not reflected in the index after a recrawl, unless you recopy the edited files to the gateway or ingestion pod.
-    {: important}
-
-For more information about creating and mounting a persistent volume on the crawler pod on an instance of {{site.data.keyword.discoveryshort}} versions 2.1.4 and earlier, see [Mounting a persistent volume on the crawler pod on versions 2.1.4 and earlier](#mount-pv-orig). For more information about the different ways of creating and mounting a persistent volume in all {{site.data.keyword.discoveryshort}} versions, see [Creating and mounting a persistent volume claim on the crawler pod](#mount-persistent-volume).
