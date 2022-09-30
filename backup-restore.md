@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-09-30"
 
 keywords: backup,restore
 
@@ -248,15 +248,15 @@ If you plan to back up and restore an entire {{site.data.keyword.icp4dfull_notm}
     For more information, see [Using the backup scripts](#wddata-backup).
 1.  Use the OADP backup utility to back up the cluster. 
 
-    For more information see [Backing up a deployment with the Cloud Pak for Data OADP backup and restore utility](https://ibmdocs-test.mybluemix.net/docs/en/SSQNUZ_4.5_test?topic=obrcpdd-backing-up-deployment-cloud-pak-data-oadp-backup-restore-utility){: external}.
+    For more information see [Cloud Pak for Data online backup and restore](https://www.ibm.com/docs/SSQNUZ_4.5.x/cpd/admin/cpd_oadp_online_parent.html){: external}.
 
 1.  Delete the `zen` project. This process removes the persistent volume claims and persistent volumes that are associated with {{site.data.keyword.discoveryshort}}.
 
-    For more information, see [Deleting an instance of {{site.data.keyword.icp4dfull_notm}} on the source cluster](https://ibmdocs-test.mybluemix.net/docs/en/SSQNUZ_4.5_test?topic=restore-restoring-online-backup-same-cluster#reference_c3y_vzj_ptb__delete_cpd_instance){: external}
+    For more information, see [Deleting an instance of {{site.data.keyword.icp4dfull_notm}} on the source cluster](https://www.ibm.com/docs/SSQNUZ_4.5.x/cpd/admin/cpd_oadp_online_restore_same_cluster.html){: external}.
 
 1.  Use the OADP backup utility to restore the cluster.
 
-    For more information see [Restoring a deployment with the Cloud Pak for Data OADP backup and restore utility](https://ibmdocs-test.mybluemix.net/docs/en/SSQNUZ_4.5_test?topic=obrcpdd-restoring-deployment-cloud-pak-data-oadp-backup-restore-utility){: external}.
+    For more information see [Restoring a deployment with the Cloud Pak for Data OADP backup and restore utility](https://www.ibm.com/docs/SSQNUZ_4.5.x/cpd/admin/cpd_oadp_online_restore_same_cluster.html){: external}.
 1.  Uninstall {{site.data.keyword.discoveryshort}}, and then install {{site.data.keyword.discoveryshort}} again on the restored cluster.
 
     A repeat of the installation is required because the utility does not always reinstall {{site.data.keyword.discoveryshort}} correctly.
