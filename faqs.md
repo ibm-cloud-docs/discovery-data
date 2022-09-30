@@ -109,7 +109,7 @@ You can use two different methods to define synonyms.
 - To define synonyms that are applied to the query text that is submitted by users to expand the meaning of the query, add synonyms by using the Synonyms tool on the *Improve relevance* section of the *Improve and customize* page. For more information, see [Expanding the meaning of queries](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
 
 ## Can I use {{site.data.keyword.discoveryshort}} to detect sentiment?
-{: #faq-synonyms}
+{: #faq-sentiment}
 {: faq}
 
 You can use {{site.data.keyword.discoveryshort}} to detect both phrase and document sentiment. Document sentiment is a built-in Natural Language Processing enrichment that is available for all project types. Document sentiment evaluates the overall sentiment that is expressed in a document to determine whether it is positive, neutral, or negative. Phrase sentiment does the same. However, phrase sentiment can detect and assess multiple opinions in a single document and, in English and Japanese documents, can find specific phrases. For more information about document sentiment, see [Sentiment](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment). For more information about phrase sentiment, see [Detecting phrases that express sentiment](/docs/discovery-data?topic=discovery-data-cm-phrase-sentiment).

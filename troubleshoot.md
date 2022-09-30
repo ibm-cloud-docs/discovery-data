@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-09-30"
 
 subcollection: discovery-data
 
@@ -30,7 +30,7 @@ The information in this topic suggests steps you can take to investigate issues 
 {: troubleshoot}
 <!-- disco support 1566-->
 
--   **Error**: `Cannot find volume "export" to mount into container "ibm-minio"` is displayed during an installation or upgrade of {{site.data.keyword.discoveryshort}}. When you check the status of the `Minio` pods by using the command, `oc get pods -l release=wd-minio -o wide`, and then check the `Minio operator` logs by using the commands, `oc get pods -A | grep ibm-minio-operator`, and then `oc logs -n <namespace> ibm-minio-operator-XXXXX`, you see an error similar to the following one in the logs:
+-   **Error**: `Cannot find volume "export" to mount into container "ibm-minio"` is displayed during an installation or upgrade of {{site.data.keyword.discoveryshort}}. When you check the status of the Minio pods by using the command, `oc get pods -l release=wd-minio -o wide`, and then check the `Minio operator` logs by using the commands, `oc get pods -A | grep ibm-minio-operator`, and then `oc logs -n <namespace> ibm-minio-operator-XXXXX`, you see an error similar to the following one in the logs:
 
     ```text
     ibm-minio/templates/minio-create-bucket-job.yaml failed: jobs.batch "wd-minio-discovery-create-bucket" already exists) and failed rollback: failed to replace object"
@@ -54,7 +54,7 @@ The information in this topic suggests steps you can take to investigate issues 
         ```
         {: codeblock}
 
-    1.  Verify that all of the `Minio` pods start successfully by using the following command:
+    1.  Verify that all of the Minio pods start successfully by using the following command:
 
         ```bash
         oc get pods -l release=wd-minio -o wide
@@ -196,7 +196,7 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
 
         Increase in increments of 2Gi at a time.
 
-1.  Check whether the `Hadoop` pods restart successfully by using the following command:
+1.  Check whether the Hadoop pods restart successfully by using the following command:
 
     ```sh
     oc get pods -l 'tenant=wd,run in (orchestrator,hdp-worker)'
@@ -230,7 +230,7 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
     ```
     {: pre}
 
-1.  After you run this command, the `Elasticsearch client` pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
+1.  After you run this command, the Elasticsearch client pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
 
     ```sh
     oc get pod -l tenant=wd,ibm-es-data=False,ibm-es-master=False
@@ -260,7 +260,7 @@ If documents are stuck in `Processing` status and cannot be promoted to the `Ava
     ```
     {: pre}
 
-1.  After you run this command, the `Elasticsearch client` pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
+1.  After you run this command, the Elasticsearch client pod is restarted about 20 minutes later. Monitor the "AGE" of the pod by using the following command:
 
     ```sh
     oc get pod -l tenant=wd,ibm-es-data=True,ibm-es-master=False
