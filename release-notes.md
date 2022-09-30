@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-30"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,13 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 30 September 2022
+{: #discovery-30september2022}
+{: release-note}
+
+Lite plans are no longer available from the London data center
+:   Lite plans are discontinued. You cannot create **new** service instances that use the Lite plan type in any location, including London. Use the new Plus plan and its associated 30-day free trial to explore new features and a simpler way to build that is available with the latest version of the product.
 
 ## 22 September 2022
 {: #discovery-22september2022}
