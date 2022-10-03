@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-08-04"
+lastupdated: "2022-10-03"
 
 subcollection: discovery-data
 
@@ -57,7 +57,7 @@ The following table shows an example of the type of content to store in the CSV 
 | Claim_id | Date | Product_line | Product | Client_segments | Client_location | Client age | Feedback | Label | 
 |----------|------|--------------|---------|-----------------|-----------------|------------|----------|-------|
 | 0 | `2016/1/1` | tea | lemon tea | Not Member | Manhattan | 20 | The straw was peeled off from the juice pack. | package_container |
-| 1 | `2016/1/2` | ice cream | Silver Member | Queens | 20 | I got some ice cream for my children, but there was something like a piece of thread inside the cup. | contamination_tampering |
+| 1 | `2016/1/2` | ice cream | vanilla ice cream | Silver Member | Queens | 20 | I got some ice cream for my children, but there was something like a piece of thread inside the cup. | contamination_tampering |
 {: caption="Table 1. Sample data for CSV files" caption-side="top"}
 
 Note that the two required fields are present in the sample. The required fields have the following names:
