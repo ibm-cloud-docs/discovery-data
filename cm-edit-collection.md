@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-10-04"
 
 subcollection: discovery-data
 
@@ -79,7 +79,9 @@ For more information about how to flag documents, see [Flag documents of interes
 ## Identify the text field
 {: #text-field}
 
-When you analyze data with the Content Mining application, Discovery determines which field contains the body of the text to be analyzed. You can check which field is designated as the main text body field and change it or augment it.
+When you analyze data with the Content Mining application, Discovery determines which field contains the *body* of the text to be analyzed. It does so by looking for the field with the highest average word count.
+
+You can check which field is designated as the main text body field, and change it or augment it by adding more fields to the analyzable text fields list.
 
 1.  Complete the steps in [Editing a collection](#cm-edit-collection-task) to get the collection into edit mode.
 1.  Click the **Fields** tab. Check the **Index type** column to find the field designated with the **Analyzable text content** index type.
