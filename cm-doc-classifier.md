@@ -35,7 +35,7 @@ What's the difference between a document classifier and a text classifier?
 To train the model, you must provide sample documents that are labeled appropriately. Prepare the following files:
 
 Training data
-:    Required. CSV file that is used to train the document classifier machine learning model. The file contains key data points per column. The data points vary, but the file must include the following columns:
+:    Required. CSV file that is used to train the document classifier machine learning model. The file can contain key data points per column. The data points can vary, but the file must include the following columns:
 
      -   Natural language text that you want to classify or label.
      -   Label or class name that categorizes the idea that is expressed in the document text.
@@ -49,10 +49,12 @@ Target data
 All of the CSV files (training, test, and target) must have the same column names. The data in the columns must have the same data types, such as string, number, and so on.
 {: important}
 
+For more information about formatting a CSV file, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file).
+
 ### Document classifier training data sample
 {: #create-doc-classifier-sample}
 
-The following table shows an example of the type of content to store in the CSV files that are used to train a document classifier.
+The following table shows an example of the type of content that might be stored in CSV files that are used to train a document classifier.
 
 | Claim_id | Date | Product_line | Product | Client_segments | Client_location | Client age | Feedback | Label | 
 |----------|------|--------------|---------|-----------------|-----------------|------------|----------|-------|

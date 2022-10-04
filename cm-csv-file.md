@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-10-03"
 
 subcollection: discovery-data
 
@@ -24,7 +24,7 @@ Follow these guidelines when you create a CSV file for use in the project:
 -   Include a column for each significant data point.
 -   Specify column headers.
 
-    The root-level field that is added to the document is given the column header name. If no header exists, hardcoded names, such as *column_0* and *column_1*, are applied to the columns. Because the column names are used as field names, if you don't specify one, the resulting field names have no meaning.
+    The root-level field that is added to the document is given the column header name. If no header exists, hardcoded names, such as *column_0* and *column_1*, are applied to the columns. Specify column names to ensure that the resulting document fields have meaningful names.
 
 -   If you want to find trends over time, be sure that each record has some date information that can be used to plot the information on a timeline.
 

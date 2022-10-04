@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-07-26"
+lastupdated: "2022-10-04"
 
 subcollection: discovery-data
 
@@ -82,6 +82,9 @@ You can click a word from the word cloud to add it to the existing query and fil
     The characteristic words view is displayed.
 
     ![Facet word cloud](images/cm-word-cloud.png){: caption="Figure 4. Characteristic word cloud" caption-side="bottom"}
+
+    The different font colors help to distinguish the words from one another; they have no statistical meaning.
+    {: note}
 
 1.  Click a word in the cloud to limit the document set to include only documents that mention the word.
 
