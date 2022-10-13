@@ -198,29 +198,29 @@ toc:
   - navgroup:
       id: reference
       topics:
-      glossary.md
-      - link:
-          label: API reference
-          href: https://{DomainName}/apidocs/discovery-data
-      - /watson/watson-using-sdks
-      - link:
-          label: Watson GitHub repos
-          href: https://github.com/watson-developer-cloud/
-      - query-reference.md
-      - language-support.md
-      - topicgroup:
+        - glossary.md
+        - link:
+            label: API reference
+            href: https://{DomainName}/apidocs/discovery-data
+        - /watson/watson-using-sdks
+        - link:
+            label: Watson GitHub repos
+            href: https://github.com/watson-developer-cloud/
+        - query-reference.md
+        - language-support.md
+        - topicgroup:
           label: IBM Cloud security
           topics:
-          - information-security.md
-          - admin.md
-          - at_events.md
-          - /watson/watson-public-private-endpoints
-          - /watson/watson-virtual-private-endpoints
-      - topicgroup:
+            - information-security.md
+            - admin.md
+            - at_events.md
+            - /watson/watson-public-private-endpoints
+            - /watson/watson-virtual-private-endpoints
+        - topicgroup:
           label: Backup and restore
           topics:
-          - backup-restore.md
-          - recovery.md
+            - backup-restore.md
+            - recovery.md
   - navgroup:
       id: help
       topics:
