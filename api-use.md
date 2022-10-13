@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-11"
+lastupdated: "2022-10-13"
 
 keywords: api version,api,request syntax,api key,bearer token
 
@@ -34,7 +34,7 @@ This information applies to {{site.data.keyword.cloud_notm}} only.
 
 To use the API, you must construct the URL to use in your requests. Many of the API methods require the project ID.
 
-1.  From the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}, expand **AI/Machine Learning**, and then find the service page for your Discovery service instance.
+1.  From the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}, expand *AI/Machine Learning*, and then find the service page for your Discovery service instance.
 1.  From the *Credentials* section, copy the URL. You specify this value as the `{url}` in your API requests.
 1.  While you're on this page, copy the API key. You specify this value as the `{apikey}`.
 1.  Open your project in {{site.data.keyword.discoveryshort}}, and then go to the **Integrate and deploy** > **API Information** page.
