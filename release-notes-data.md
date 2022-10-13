@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-29"
+lastupdated: "2022-10-06"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -26,6 +26,22 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x?topic=issues-watson-discovery){: external}.
 
+## 4.5.3 release, 13 October 2022
+{: #discovery-data-13october2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.5.3 is available.
+
+There are no new features in this release. For a list of bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x/fixlist/discovery-fixlist.html){: external}
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Answer finding
+    -   *Manage data* page
+    -   Advanced document view for search results
+    -   The **similar** parameter of the Query method
+    -   The **smart_document_understanding** field in the *Get collection* method response
+
 ## 15 August 2022
 {: #discovery-data-15august2022}
 
@@ -43,7 +59,7 @@ SDKs were updated to reflect the latest API changes.
 ## 4.5.1 release, 3 August 2022
 {: #discovery-data-3august2022}
 
-{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.5 is available.
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.5.1 is available.
 
 There are no new features in this release. For a list of bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x/fixlist/discovery-fixlist.html){: external}
 

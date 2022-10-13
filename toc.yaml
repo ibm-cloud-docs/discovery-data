@@ -198,6 +198,7 @@ toc:
   - navgroup:
       id: reference
       topics:
+      glossary.md
       - link:
           label: API reference
           href: https://{DomainName}/apidocs/discovery-data

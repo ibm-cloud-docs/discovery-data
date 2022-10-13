@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-16"
+lastupdated: "2022-10-05"
 
 subcollection: discovery-data
 
@@ -61,7 +61,6 @@ If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn 
 | Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../../icons/checkmark-icon.svg) | |
 | Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Use the Watson {{site.data.keyword.discoveryshort}} News collection to leverage pre-enriched data | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Programmatically configure external data source crawls | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure the normalization process of ingestion by document type. Configuration options include things like document segmentation, HTML file inclusion or exclusion rules, and JSON normalization | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | Configure dictionary tokenization | | ![checkmark icon](../../icons/checkmark-icon.svg) |
