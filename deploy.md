@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-10-11"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -72,7 +72,7 @@ Service credentials
 
     To get this information, complete the appropriate steps for the type of deployment you are using:
 
-    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Go to the {{site.data.keyword.discoveryshort}} service overview in IBM Cloud. From the page header, click the user icon, and then click **IBM Cloud Dashboard**. Open the Resource list, expand the *Services and software* section, and then find the service instance that you created earlier in this tutorial. Click the instance to open its overview page. From the *Credentials* section, copy the URL and API key values and store them somewhere where you can access them later, such as a local text file.
+    -   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: From the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}, expand the *AI/Machine Learning* section, and then find the service instance that you created earlier. Click the instance to open its overview page. From the *Credentials* section, copy the URL and API key values and store them somewhere where you can access them later, such as a local text file.
 
     -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: From the IBM Cloud Pak for Data web client main menu, expand *Services*, and then click *Instances*. Find your instance, and then click it to open its summary page. Scroll to the *Access information* section of the page, and then copy the *URL* and bearer token. Store the values somewhere where you can access them later, such as a local text file. (The bearer token serves as the apikey for installed deployments.)
 

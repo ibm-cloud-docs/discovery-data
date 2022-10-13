@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-13"
 
 keywords: data sources, supported data sources, supported file types, document types
 
@@ -114,21 +114,21 @@ To read a transcript of the video, [open the video on YouTube.com](https://www.y
 
 The following table shows the supported file types and information about feature support that varies by file type.
 
-| Supported file type | Supports using Smart Document Understanding | Supports OCR to extract text from images |
-|---------------------|:---------------------------------------------------:|:--------------------------------------:|
+| File type | Supported | Supports using Smart Document Understanding | Supports OCR to extract text from images |
+|-----------|:----------|--------------------------------------------:|:----------------------------------------:|
 | Contract (written in any supported file type) added to a Document Retrieval for Contracts project | A pretrained SDU model is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) (Enabled by default) |
-| CSV | | |
-| DOC, DOCX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| GIF | | |
-| HTML | | |
-| JPG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| JSON | | |
-| PDF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| PNG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| PPT, PPTX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| TIFF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| TXT | | |
-| XLS, XLSX | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| CSV | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| DOC, DOCX | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| GIF | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| HTML | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| JPG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| JSON | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| PDF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| PNG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| PPT, PPTX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| TIFF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| TXT | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| XLS, XLSX | ![checkmark icon](../../icons/checkmark-icon.svg) | | ![checkmark icon](../../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Supported file types" caption-side="top"}
@@ -177,11 +177,14 @@ The maximum size of each file that you can crawl by using a connector differs by
 
 ![IBM Cloud only](images/ibm-cloud.png) Managed deployments on {{site.data.keyword.cloud_notm}}
     
--   Premium plans: 50 MB
--   Box: 50 MB
--   IBM Cloud Object Store: 50 MB
--   Salesforce Files objects : 50 MB
--   All other data sources and plans: 10 MB
+-   Premium plans only:
+
+    -   Box: 50 MB
+    -   IBM Cloud Object Store: 50 MB
+    -   Salesforce Files objects: 50 MB
+    -   All other data sources: 10 MB
+
+-   All other plans: 10 MB
 
 ![Cloud Pak for Data only](images/desktop.png) Installed deployments on {{site.data.keyword.icp4dfull_notm}}
 

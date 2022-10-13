@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-10-05"
 
 keywords: backup,restore
 
@@ -29,16 +29,17 @@ The following table lists the upgrade paths that are supported by the scripts.
 
 | Version in use | Version you can upgrade to |
 |----------------|----------------------------|
-| 4.5.0 | 4.5.1 |
-| 4.0.x | 4.5.1 |
+| 4.5.1 | 4.5.3 |
+| 4.5.0 | 4.5.3 |
+| 4.0.x | 4.5.3 |
 | 4.0.x | 4.0.9 |
-| 2.2.1 | 4.5.1 |
+| 2.2.1 | 4.5.3 |
 | 2.2.1 | 4.0.9 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
-If you are upgrading from 4.0.x to 4.5.0, there's a simpler way to complete the upgrade. For more information, see [Upgrading Watson Discovery from Version 4.0 to Version 4.5](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-discovery/discovery-upgrade-v4.html){: external}.
+If you are upgrading from 4.0.x to 4.5.x, there's a simpler way to complete the upgrade. For more information, see [Upgrading Watson Discovery from Version 4.0.x](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-discovery/discovery-upgrade-v4.html){: external}.
 
-If you use {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility to backup and restore an entire cluster from 4.0.x to 4.5.0, there are a few extra steps you need to take. For more information, see [Using OADP to backup a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-450-oadp).
+If you use {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility to backup and restore an entire cluster from 4.0.x to 4.5.x, there are a few extra steps you need to take. For more information, see [Using OADP to backup a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-450-oadp).
 
 You can do an in-place upgrade from one 4.0.x version to a later 4.0.y version. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}.
 
@@ -241,7 +242,7 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 ## Using OADP to backup a cluster where {{site.data.keyword.discoveryshort}} is installed
 {: #backup-restore-450-oadp}
 
-If you plan to back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present.
+If you plan to back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} OpenShift APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present.
 
 1.  Run the {{site.data.keyword.discoveryshort}} backup script.
 
