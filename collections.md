@@ -116,9 +116,9 @@ The following table shows the supported file types and information about feature
 
 | File type | Supported | Supports using Smart Document Understanding | Supports OCR to extract text from images |
 |-----------|:----------|--------------------------------------------:|:----------------------------------------:|
-| Contract (written in any supported file type) added to a Document Retrieval for Contracts project | A pretrained SDU model is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) (Enabled by default) |
+| Contract (written in any supported file type) added to a Document Retrieval for Contracts project | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) A pretrained SDU model is applied automatically | ![checkmark icon](../../icons/checkmark-icon.svg) Enabled by default |
 | CSV | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| DOC, DOCX | | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| DOC, DOCX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
 | GIF | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
 | HTML | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
 | JPG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
