@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-27"
+lastupdated: "2022-10-17"
 
 subcollection: discovery-data
 
@@ -321,6 +321,8 @@ When you publish the extractor, you specify the field where you want the extract
 1.  Click **Enrichments**.
 1.  Find the entity extractor name in the list, and then choose a field to apply the enrichment to. 
 1.  Click **Apply changes and reprocess**.
+
+For more information about how to remove an entity extractor enrichment from a collection, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
 
 ### Entity extractor output
 {: #entity-extractor-json}
