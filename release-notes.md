@@ -38,6 +38,9 @@ Lite plans are no longer available from the London data center
 Plus plan supports more entity extractors
 :   The maximum number of entity extractors that you can create with a Plus plan increased from 3 to 6.
 
+You cannot apply a Smart Document Understanding model to Microsoft Excel files
+:   The quality of structural analysis that can be produced for Excel files is not sufficient. Starting on 22 September 2022, you cannot apply an SDU model to Excel files. This change does not impact Excel files in collections where an SDU model was applied before 22 September 2022.
+
 ## 16 September 2022
 {: #discovery-16september2022}
 {: release-note}
