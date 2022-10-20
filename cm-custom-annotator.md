@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-10-18"
 
 subcollection: discovery-data
 
@@ -102,7 +102,7 @@ From the custom annotator page, you can see dictionaries that were created in ot
 ### Dictionary limits
 {: #dictionary-limits}
 
-| Plan | Number of dictionaries per service instance | Number of term entries per dictionary | Number of terms for which suggestions can be generated |
+| Plan | Number of dictionaries per service instance | Number of base words per dictionary | Number of terms for which suggestions can be generated |
 |-----------|-------------------:|------------------------:|--------------------------:|
 | Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
 | Premium | 100 | 10,000 | 1,000 |

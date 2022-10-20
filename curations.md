@@ -18,7 +18,7 @@ subcollection: discovery-data
 The Curations feature is beta functionality.
 {: beta}
 
-Use curations to specify the exact document to return in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query will always be `1.00000`.
+Use curations to specify the exact document to return in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query is always `1.00000`.
 
 This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#createcuration){: external} in the API reference.
 

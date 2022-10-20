@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-14"
+lastupdated: "2022-10-20"
 
-keywords: data sources, supported data sources, supported file types, document types
+keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
 subcollection: discovery-data
 
