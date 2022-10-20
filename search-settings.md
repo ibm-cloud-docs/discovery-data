@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-10-20"
+
+keywords: expansions,synonyms,query expansion
 
 subcollection: discovery-data
 

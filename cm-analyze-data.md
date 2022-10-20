@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-04"
+lastupdated: "2022-10-20"
 
 subcollection: discovery-data
 
@@ -100,6 +100,8 @@ To compare two facets, complete the following steps:
     Data from the two facets is displayed in a graph.
 
     ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 5. Facet comparison graph" caption-side="bottom"}
+
+The graph shows two numbers, the first number is a frequency count and the second number is a correlation value. Correlation measures the level of uniqueness of the frequency count compared to other documents that match your query. To help you identify anomalies that might require more in-depth analysis, high correlation values are shown in increasing shades of color, from yellow, which indicates a lower potential anomaly, to orange, to red. 
 
 To compare two or more facets, complete the following steps:
 

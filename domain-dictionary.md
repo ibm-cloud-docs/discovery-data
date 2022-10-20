@@ -2,7 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-09"
+lastupdated: "2022-10-20"
+
+keywords: dictionary,synonyms
 
 subcollection: discovery-data
 
