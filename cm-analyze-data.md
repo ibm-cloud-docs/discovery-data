@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-21"
 
 subcollection: discovery-data
 
@@ -101,7 +101,7 @@ To compare two facets, complete the following steps:
 
     ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 5. Facet comparison graph" caption-side="bottom"}
 
-The graph shows two numbers, the first number is a frequency count and the second number is a correlation value. Correlation measures the level of uniqueness of the frequency count compared to other documents that match your query. To help you identify anomalies that might require more in-depth analysis, high correlation values are shown in increasing shades of color, from yellow, which indicates a lower potential anomaly, to orange, to red. 
+The graph shows two numbers, the first number is a frequency count and the second number is a correlation value. The frequency count measures how many times the two data points are found together in a document. Correlation measures the level of uniqueness of the frequency count compared to other documents that match your query. If the correlation shows 2.0, it means that the number of times that the two data points intersect is 2 times larger than expected. To help you identify anomalies that might require more in-depth analysis, high correlation values are shown in shades of color with increasing intensity. The color shades begin at yellow, which indicates a lower potential anomaly, then increase to orange, and finally to red.
 
 To compare two or more facets, complete the following steps:
 
@@ -111,6 +111,55 @@ To compare two or more facets, complete the following steps:
     Data from the facets is displayed in a network graph.
 
     ![Facet group comparison graph](images/cm-facet-network.png){: caption="Figure 6. Facet network graph" caption-side="bottom"}
+
+### Changing number ranges
+{: #cm-change-range}
+
+If the scale of a graph is not optimized for your data, you can change it. For example, to plot vehicle speeds, you might want a range that increments by tens or twenties rather than by thousands.
+
+To change the scale of a graph for a facet, complete the following steps:
+
+1.  Click **Collections** breadcrumb link in the page header.
+1.  In the tile for your collection, click the *Open and close list of options* icon, and then choose **Edit collection**.
+1.  In the *Facet* tab, find the facet for which you want to change the number range.
+1.  In the Range field, click **Edit**.
+1.  Define each range that you want to use as a JSON object. You can add or remove objects to change the number of data points in the range.
+
+    For example, the JSON objects that identify the ranges for vehicle speeds might look as follows:
+
+    ```json
+    [
+      {
+        "query": "[1, 20)",
+        "label": "1 - 19"
+      },
+      {
+        "query": "[20, 40)",
+        "label": "20 - 39"
+      },
+      {
+        "query": "[40, 60)",
+        "label": "40 - 59"
+      },
+      {
+        "query": "[60, 80)",
+        "label": "60 - 79"
+      },
+      {
+        "query": "[80, 100000)",
+        "label": "80+"
+      }
+    ]
+    ```
+    {: codeblock}
+
+1.  Click **Apply**.
+1.  Click **Save**, and then click **Close**.
+1.  Click your collection tile to return to the collection and continue your analysis.
+
+The changes to the number ranges for vehicle speeds introduces more opportunities for relationships or anomalies in the data to be highlighted.
+
+![Shows a pair comparison chart where the each row lists a state and each column shows a vehicle speed. Where TN and 80 plus MPH meet is highlighted in orange to show an anomaly.](images/cm-range-change.png)
 
 ## Flag documents of interest
 {: #cm-flags}
