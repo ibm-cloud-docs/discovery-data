@@ -101,7 +101,7 @@ To compare two facets, complete the following steps:
 
     ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 5. Facet comparison graph" caption-side="bottom"}
 
-The graph shows two numbers, the first number is a frequency count and the second number is a correlation value. Correlation measures the level of uniqueness of the frequency count compared to other documents that match your query. To help you identify anomalies that might require more in-depth analysis, high correlation values are shown in increasing shades of color, from yellow, which indicates a lower potential anomaly, to orange, to red. 
+The graph shows two numbers, the first number is a frequency count and the second number is a correlation value. The frequency count measures how many times the two data points are found together in a document. Correlation measures the level of uniqueness of the frequency count compared to other documents that match your query. If the correlation shows 2.0, it means that the number of times that the two data points intersect is 2 times larger than expected. To help you identify anomalies that might require more in-depth analysis, high correlation values are shown in shades of color with increasing intensity. The color shades begin at yellow, which indicates a lower potential anomaly, then increase to orange, and finally to red.
 
 To compare two or more facets, complete the following steps:
 
