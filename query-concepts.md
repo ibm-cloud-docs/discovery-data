@@ -45,13 +45,13 @@ The following table summarizes the capabilities that are supported for each quer
 
 | Goal | Natural Language Query (NLQ) | {{site.data.keyword.discoveryshort}} Query Language (DQL) |
 |------|-----|-----|
-| Return passages from documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Search specific document fields or enrichments | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Use operators, such as Boolean clauses in the search | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Add curations to return hardcoded answers to certain questions | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Use relevancy training | ![checkmark icon](../../icons/checkmark-icon.svg) |  |
-| Enable answer finding to return a succinct answer from a passage | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Use table retrieval | ![checkmark icon](../../icons/checkmark-icon.svg) | |
+| Return passages from documents | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Search specific document fields or enrichments | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Use operators, such as Boolean clauses in the search | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Add curations to return hardcoded answers to certain questions | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Use relevancy training | ![checkmark icon](../icons/checkmark-icon.svg) |  |
+| Enable answer finding to return a succinct answer from a passage | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Use table retrieval | ![checkmark icon](../icons/checkmark-icon.svg) | |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Query types comparison" caption-side="top"}

@@ -46,34 +46,34 @@ If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn 
 
 | Feature | Product redesign (v2) | Earlier version (v1) |
 |---------|:-------------------:|:--------------------:|
-| Use projects to organize your work | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Use the Smart Document Understanding (SDU) to annotate your documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Leverage intuitive user interface tools to add domain-specific artifacts, such as dictionaries and custom machine learning models | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Create a content mining project type and then use the built-in Content Mining application to do in-depth data analysis (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Perform real-time NLP with the Analyze API (*{{site.data.keyword.icp4dfull_notm}} and Enterprise plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Apply a pretrained Smart Document Understanding model to your collection for similar benefits with less effort | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Process text from scanned documents or other images | ![checkmark icon](../../icons/checkmark-icon.svg) |![checkmark icon](../../icons/checkmark-icon.svg) |
-| Extract meaning from tables | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Apply the *Part of Speech* enrichment to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Use the Entity Extraction, Sentiment Analysis, and Keyword Extraction enrichments | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction enrichments, which are available with the [Natural Language Understanding](/docs/natural-language-understanding?topic=natural-language-understanding-about){: external} service | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Programmatically configure external data source crawls | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Configure the normalization process of ingestion by document type. Configuration options include things like document segmentation, HTML file inclusion or exclusion rules, and JSON normalization | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Configure dictionary tokenization | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Advanced question-answering capabilities, such as extracting FAQs (beta) and returning the exact answer | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| {{site.data.keyword.discoveryshort}} Query Language (DQL) API support | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Retrieve passages from documents | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Perform relevancy training to improve query results | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Configure continuous relevancy training | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Retrieve tables | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Query result deduplication | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Identify document similarity in query results | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Indicate a preference (bias) in queries | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Review query logging and metrics | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Use projects to organize your work | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Use the Smart Document Understanding (SDU) to annotate your documents | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Leverage intuitive user interface tools to add domain-specific artifacts, such as dictionaries and custom machine learning models | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Create a content mining project type and then use the built-in Content Mining application to do in-depth data analysis (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Perform real-time NLP with the Analyze API (*{{site.data.keyword.icp4dfull_notm}} and Enterprise plans only*) | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Apply a pretrained Smart Document Understanding model to your collection for similar benefits with less effort | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Process text from scanned documents or other images | ![checkmark icon](../icons/checkmark-icon.svg) |![checkmark icon](../icons/checkmark-icon.svg) |
+| Extract meaning from tables | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Get insights from contracts (*{{site.data.keyword.icp4dfull_notm}}, Enterprise, and Premium plans only*) | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Apply the *Part of Speech* enrichment to your data | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Use the Entity Extraction, Sentiment Analysis, and Keyword Extraction enrichments | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction enrichments, which are available with the [Natural Language Understanding](/docs/natural-language-understanding?topic=natural-language-understanding-about){: external} service | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Programmatically configure external data source crawls | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Configure the normalization process of ingestion by document type. Configuration options include things like document segmentation, HTML file inclusion or exclusion rules, and JSON normalization | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Configure dictionary tokenization | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Advanced question-answering capabilities, such as extracting FAQs (beta) and returning the exact answer | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| {{site.data.keyword.discoveryshort}} Query Language (DQL) API support | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Retrieve passages from documents | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Perform relevancy training to improve query results | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Configure continuous relevancy training | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Retrieve tables | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Query result deduplication | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Identify document similarity in query results | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Indicate a preference (bias) in queries | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Review query logging and metrics | | ![checkmark icon](../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Feature support details" caption-side="top"}

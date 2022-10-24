@@ -22,17 +22,17 @@ The following table shows the supported data sources for each deployment type.
 
 | Data source | IBM Cloud | IBM Cloud Pak for Data |
 |-------------|-----------|------------------------|
-| Box | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Database (IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| FileNet P8 | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| HCL Notes | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| IBM Cloud Object Storage | ![checkmark icon](../../icons/checkmark-icon.svg) | |
-| Local file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Salesforce | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft SharePoint Online | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft SharePoint On Premises | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Website | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| Microsoft Windows file system | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Box | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Database (IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| FileNet P8 | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| HCL Notes | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| IBM Cloud Object Storage | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Local file system | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Salesforce | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Microsoft SharePoint Online | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Microsoft SharePoint On Premises | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Website | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Microsoft Windows file system | | ![checkmark icon](../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Supported data sources" caption-side="top"}
@@ -56,12 +56,12 @@ Some prebuilt enrichments are applied automatically to collections in a project 
 
 | Enrichment | Document Retrieval | Document Retrieval for Contracts | Conversational Search | Content Mining |
 |------------|--------------------|----------------------------------|-----------------------|----------------|
-| Contracts | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| Entities v2 | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| Contracts | | ![checkmark icon](../icons/checkmark-icon.svg) | | |
+| Entities v2 | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | | |
 | Keywords | | | | |
-| Part of Speech | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| Part of Speech | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Sentiment of Document | | | | |
-| Table Understanding | | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
+| Table Understanding | | ![checkmark icon](../icons/checkmark-icon.svg) | | |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Default enrichments per project type" caption-side="top"}
