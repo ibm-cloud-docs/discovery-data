@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-24"
 
-keywords: autocompletion,auto-completion,spelling correction,autocorrection,auto-correction
+keywords: autocompletion,auto-completion,spelling correction,autocorrection,auto-correction,type ahead,type-ahead
 
 subcollection: discovery-data
 

@@ -116,18 +116,18 @@ The following table shows the supported file types and information about feature
 
 | File type | Text extraction support | Smart Document Understanding (SDU) support | Optical Character Recognition (OCR) support |
 |-----------|:------------------------|-------------------------------------------:|:-------------------------------------------:|
-| CSV | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| DOC, DOCX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| GIF | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| HTML | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| JPG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| JSON | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| PDF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| PNG | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| PPT, PPTX | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| TIFF | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) | ![checkmark icon](../../icons/checkmark-icon.svg) |
-| TXT | ![checkmark icon](../../icons/checkmark-icon.svg) | | |
-| XLS, XLSX | ![checkmark icon](../../icons/checkmark-icon.svg) | | ![checkmark icon](../../icons/checkmark-icon.svg) |
+| CSV | ![checkmark icon](../icons/checkmark-icon.svg) | | |
+| DOC, DOCX | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| GIF | ![checkmark icon](../icons/checkmark-icon.svg) | | |
+| HTML | ![checkmark icon](../icons/checkmark-icon.svg) | | |
+| JPG | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| JSON | ![checkmark icon](../icons/checkmark-icon.svg) | | |
+| PDF | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| PNG | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| PPT, PPTX | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| TIFF | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| TXT | ![checkmark icon](../icons/checkmark-icon.svg) | | |
+| XLS, XLSX | ![checkmark icon](../icons/checkmark-icon.svg) | | ![checkmark icon](../icons/checkmark-icon.svg) |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Supported file types" caption-side="top"}
