@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-29"
+lastupdated: "2022-10-25"
 
 subcollection: discovery-data
 
@@ -206,9 +206,12 @@ A comma-separated list of fields in the document to sort by. You can optionally 
 ## `highlight`
 {: #highlight}
 
-A Boolean that specifies whether to include a `highlight` object in the returned output. When included, the highlight returns keys that are field names and values that are arrays. The arrays contain segments of query-matching text that is highlighted by using the HTML emphasis (`<em>`) tag.
+A Boolean value that specifies whether to include a `highlight` object in the returned output. When included, the highlight returns keys that are field names and values that are arrays. The arrays contain segments of query-matching text that is highlighted by using the HTML emphasis (`<em>`) tag.
 
 This parameter is ignored if `passages.enabled` and `passages.per_document` are `true`, in which case passages are returned for each document instead of highlights.
+
+Currently, if the query searches for an `exact match` of an enrichment mention, only lowercase matches are highlighted. When the `includes` operator is used, upper- and lowercase matches are highlighted.
+{: note}
 
 The output lists the `highlight` object after the `enriched_text` object, as shown in the following example.
 
@@ -262,7 +265,7 @@ A Boolean that specifies whether the service returns a set of the most relevant 
 
 Since sentence boundary adjustments expand passage size, the average passage length can increase. If your application has limited screen space, you might want to set a smaller value for `passages.characters` or truncate the passages that are returned by {{site.data.keyword.discoveryshort}}. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
-Passages are returned `per_document` by default. Passages are grouped with each document result and are ordered by passage relevance. Including passage retrieval in queries increases the response time because it takes to score the passages. Search results are displayed in a preview of your document for the following document types: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of supported image files.
+One passage is returned per document by default. You can increase the maximum number of passages to return per document by specifying a higher number with the `passages.max_per_document` parameter. Passages are grouped with each document result and are ordered by passage relevance. Including passage retrieval in queries increases the response time because it takes more time to score the passages. Search results are displayed in a preview of your document for the following document types: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of supported image files.
 
 You can adjust the fields in the documents for passage retrieval to search with the [`passages.fields`](/docs/discovery-data?topic=discovery-data-query-parameters#passages_fields) parameter.
 

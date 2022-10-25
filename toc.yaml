@@ -105,7 +105,6 @@ toc:
           - stopwords.md
           - split-documents.md
           - hide-data.md
-          - manage-enrichments.md
           - train.md
       - topicgroup:
           label: Enriching your data
@@ -130,6 +129,7 @@ toc:
               - sdu-pretrained.md
               - contracts-schema.md
               - understanding_tables.md
+          - manage-enrichments.md
       - test.md
       - deploy.md
       - topicgroup:
