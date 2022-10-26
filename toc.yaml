@@ -202,7 +202,7 @@ toc:
         - link:
             label: API reference
             href: https://{DomainName}/apidocs/discovery-data
-        - /watson/watson-using-sdks
+        - include: ../watson/getting-started-sdks.md
         - link:
             label: Watson GitHub repos
             href: https://github.com/watson-developer-cloud/
@@ -214,8 +214,8 @@ toc:
             - information-security.md
             - admin.md
             - at_events.md
-            - /watson/watson-public-private-endpoints
-            - /watson/watson-virtual-private-endpoints
+            - include: ../watson/service-endpoints.md
+            - include: ../watson/virtual-endpoints.md
         - topicgroup:
           label: Backup and restore
           topics:
