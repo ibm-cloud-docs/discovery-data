@@ -265,7 +265,7 @@ A Boolean that specifies whether the service returns a set of the most relevant 
 
 Since sentence boundary adjustments expand passage size, the average passage length can increase. If your application has limited screen space, you might want to set a smaller value for `passages.characters` or truncate the passages that are returned by {{site.data.keyword.discoveryshort}}. Sentence boundary detection works for all supported languages and uses language-specific logic.
 
-One passage is returned per document by default. You can increase the maximum number of passages to return per document by specifying a higher number with the `passages.max_per_document` parameter. Passages are grouped with each document result and are ordered by passage relevance. Including passage retrieval in queries increases the response time because it takes more time to score the passages. Search results are displayed in a preview of your document for the following document types: PDF, Word, PowerPoint, Excel, and all image files. See [supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes) for the list of supported image files.
+Passages are grouped with each document result and are ordered by passage relevance. Including passage retrieval in queries increases the response time because it takes more time to score the passages.
 
 You can adjust the fields in the documents for passage retrieval to search with the [`passages.fields`](/docs/discovery-data?topic=discovery-data-query-parameters#passages_fields) parameter.
 
@@ -321,6 +321,10 @@ The maximum number of passages to return. The search returns fewer passages if t
 {: #passages_characters}
 
 The approximate number of characters that any one passage can have. The default value is `200`. The minimum is `50`. The maximum is `2,000`. Passages that are returned can contain up to twice the requested length (if necessary) to get them to begin and end at sentence boundaries.
+
+### 'passages.max_per_document`
+
+One passage is returned per document by default. You can increase the maximum number of passages to return per document by specifying a higher number in the `passages.max_per_document` parameter. 
 
 ## `similar`
 {: #similar}
