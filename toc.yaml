@@ -209,16 +209,16 @@ toc:
         - query-reference.md
         - language-support.md
         - topicgroup:
-          label: IBM Cloud security
-          topics:
+            label: IBM Cloud security
+            topics:
             - information-security.md
             - admin.md
             - at_events.md
             - /watson/watson-public-private-endpoints
             - /watson/watson-virtual-private-endpoints
         - topicgroup:
-          label: Backup and restore
-          topics:
+            label: Backup and restore
+            topics:
             - backup-restore.md
             - recovery.md
   - navgroup:
@@ -230,8 +230,8 @@ toc:
       - topicgroup:
           label: Plan information
           topics:
-              - pricing-plans.md
-              - upgrade.md
+          - pricing-plans.md
+          - upgrade.md
       - topicgroup:
           label: Community resources
           links:
