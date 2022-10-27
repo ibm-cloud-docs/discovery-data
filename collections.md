@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-20"
+lastupdated: "2022-10-27"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -164,8 +164,6 @@ The document limit applies to the number of documents in the index. Upload fewer
 
 The maximum allowed number can vary slightly depending on the size of the documents. Use these values as a general guideline.
 {: note}
-
-For more information about the supported number of documents for Lite and Advanced plan instances, see [Discovery pricing plans](/docs/discovery?topic=discovery-discovery-pricing-plans#advanced){: external} in the earlier version of the product documentation.
 
 ## File size limits
 {: #collections-file-size-limits}
