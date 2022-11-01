@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-11-01"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ The JSON representation of this section looks as follows:
 ## `:` (Includes)
 {: #includes}
 
-This operator specifies inclusion of the query term.
+This operator specifies inclusion of the full query term.
 
 For example, the following query searches for documents that contain the term `cloud computing` in the `text` field:
 
@@ -46,6 +46,22 @@ For example, the following query searches for documents that contain the term `c
 enriched_text.entities.text:"cloud computing"
 ```
 {: codeblock}
+
+The **includes** operator does not return a partial match for the query term. If you want to find a partial match for a term, use a **wildcard** operator with the **includes** operator. For example, if you want to find any occurrences of `TP53` or `p53` in the `test_results` field, the following query will *not* find occurrences of both terms:
+
+```bash
+test_results:P53
+```
+{: codeblock}
+
+Instead, include a wildcard in the request. For example, use the following query request. Because we are using the wildcard operator, we also changed the term to lowercase.
+
+```bash
+test_results:*p53
+```
+{: codeblock}
+
+With this syntax, occurrences of `p53`, `tp53`, `P53`, or `TP53` are all returned.
 
 ## `::` (Exact match)
 {: #match}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-11-01"
 
 keywords: backup,restore
 
@@ -82,6 +82,8 @@ You can back up and restore your instance of {{site.data.keyword.discoveryshort}
 
 You must have Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (where the data to be backed up is stored) and administrative access to the new instance (where the data will be restored to).
 
+The backup and restore scripts perform many operations and can take quite a bit of time to run. To avoid timeout issues, run a tool the prevents timeouts, such as `nohup`.
+
 ## Using the backup scripts
 {: #wddata-backup}
 
@@ -151,7 +153,7 @@ In most cases, you don't need to use a persistent volume. If you choose to use a
 ### Mapping multitenant clusters
 {: #backup-mapping}
 
-With version 4.0.6 or later, if you are restoring a multitenant cluster, you must perform an extra step. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
+When restoring data that was backed up from a version earlier than 4.0.6 to version 4.0.6 or later, if you are restoring a multitenant cluster, you must perform an extra step. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
 
 This mapping step is not required if the instance IDs did not change between the back up and restore steps. For example, you can skip this step if you are restoring data to the same cluster where it was backed up from or if you are restoring data to a brand new cluster that has no {{site.data.keyword.discoveryshort}} instances.
 
