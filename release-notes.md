@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-11-01"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,21 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 1 November 2022
+{: #discovery-1november2022}
+{: release-note}
+
+<!-- 4.7.0-1.0 -->
+
+Entity extractor loads the first 40,000 characters from training data documents
+:   Even extra long documents from the collection that you use to define custom entity examples are loaded into the document view of the tool. However, only the first 40,000 characters, which is approximately 15-20 pages, is displayed. The rest of the file content is truncated. You'll know if your document is truncated because a notification is displayed in the document view. For more information, see [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor).
+
+You can set the passages per document setting to be higher than one
+:   A bug was fixed that prevented you from using the search bar settings in the product user interface to increase the maximum number of passages to return per document. For more information, see [How passages are derived](/docs/discovery-data?topic=discovery-data-index-overview#query-results-passages).
+
+Improved query aggregation documentation
+:   The documentation that describes the aggregation types that you can specify in the query aggregation parameter was updated. For more information, see [Query aggregations](/docs/discovery-data?topic=discovery-data-query-aggregations).
 
 ## 30 September 2022
 {: #discovery-30september2022}
