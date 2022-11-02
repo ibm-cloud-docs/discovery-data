@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-02"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,6 +24,16 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 2 November 2022
+{: #discovery-2november2022}
+{: release-note}
+
+A new and improved optical character recognition technology is available
+:   A new version of optical character recognition technology that was developed by IBM Research is now available. This latest version (OCR v2) is available for English, German, French, Spanish, Dutch, Brazilian Portuguese, and Hebrew collections in all {{site.data.keyword.cloud_notm}} service plans. The new optical character recognition model is better at extracting text from scanned documents and other images that have the following limitations:
+
+    -   Low quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, unaligned pages, and badly printed documents
+    -   Documents with irregular fonts or a variety of colors, font sizes, and backgrounds
+
 ## 1 November 2022
 {: #discovery-1november2022}
 {: release-note}
@@ -31,7 +41,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 <!-- 4.7.0-1.0 -->
 
 Entity extractor loads the first 40,000 characters from training data documents
-:   Even extra long documents from the collection that you use to define custom entity examples are loaded into the document view of the tool. However, only the first 40,000 characters, which is approximately 15-20 pages, is displayed. The rest of the file content is truncated. You'll know if your document is truncated because a notification is displayed in the document view. For more information, see [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor).
+:   Even extra long documents from the collection that you use to define custom entity examples are loaded into the document view of the tool. However, only the first 40,000 characters, which is approximately 15-20 pages, are displayed. The rest of the file content is truncated. You'll know if your document is truncated because a notification is displayed in the document view. For more information, see [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor).
 
 You can set the passages per document setting to be higher than one
 :   A bug was fixed that prevented you from using the search bar settings in the product user interface to increase the maximum number of passages to return per document. For more information, see [How passages are derived](/docs/discovery-data?topic=discovery-data-index-overview#query-results-passages).
