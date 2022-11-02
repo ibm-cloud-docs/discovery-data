@@ -29,7 +29,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: release-note}
 
 A new and improved optical character recognition technology is available
-:   A new version of optical character recognition technology that was developed by IBM Research is now available. This latest version (OCR v2) is available for English, German, French, Spanish, Dutch, Brazilian Portuguese, and Hebrew collections in all {{site.data.keyword.cloud_notm}} service plans. The new optical character recognition model is better at extracting text from scanned documents and other images that have the following limitations:
+:   A new version of optical character recognition technology is now available. This latest version (OCR v2) is used automatically when you enable OCR for English, German, French, Spanish, Dutch, Brazilian Portuguese, and Hebrew collections in all {{site.data.keyword.cloud_notm}} service plans. The new optical character recognition model was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
 
     -   Low quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, unaligned pages, and badly printed documents
     -   Documents with irregular fonts or a variety of colors, font sizes, and backgrounds
