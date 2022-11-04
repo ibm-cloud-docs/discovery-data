@@ -15,7 +15,7 @@ subcollection: discovery-data
 
 Each collection that you add to a project must contain documents of the same language. You specify the language of the collection when you create it. 
 
-Discovery is not optimized for multilingual search. You can add several collections, each one with documents in a separate language, into one mulitlingual project. However, the query results for a query in one language might include irrelevant passages from a document in another language.
+Discovery is not optimized for multilingual search. You can add several collections, each one with documents in a separate language, into one mulitlingual project. However, the query results that are returned from the project might include irrelevant passages from a document in a language that is different from the language of the user's query.
 {: note)
 
 The following table describes the product features that are supported in each language.
