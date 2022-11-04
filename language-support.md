@@ -13,7 +13,10 @@ subcollection: discovery-data
 # Language support
 {: #language-support}
 
-You specify the collection language when you create a collection. For more information, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
+Each collection that you add to a project must contain documents of the same language. You specify the language of the collection when you create it. 
+
+Discovery is not optimized for multilingual search. You can add several collections, each one with documents in a separate language, into one mulitlingual project. However, the query results for a query in one language might include irrelevant passages from a document in another language.
+{: note)
 
 The following table describes the product features that are supported in each language.
 
