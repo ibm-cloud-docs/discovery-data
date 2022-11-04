@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-07-28"
+lastupdated: "2022-11-03"
 
 subcollection: discovery-data
 
@@ -284,7 +284,7 @@ SDU models
 :   You can use an SDU model that you built in v1. However, you cannot edit the migrated SDU model in v2. If you want to reuse a model as-is, you can [export it from v1](/docs/discovery?topic=discovery-sdu#import){: external} and [import the SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields#import) to v2.
 
 Machine learning models
-:   You can import machine learning models that you create and export from Watson Knowledge Studio. The model must have been exported from Knowledge Studio after 16 July 2020. If you have a model that was exported before that date, you must re-export the model from Watson Knowledge Studio. Only paid Knowledge Studio plans support exporting models. 
+:   You cannot deploy models directly to Discovery v2 service instances from {{site.data.keyword.knowledgestudioshort}}. Instead, you must export the machine learning models from {{site.data.keyword.knowledgestudioshort}}, and then import them into Discovery. The model must have been exported from {{site.data.keyword.knowledgestudioshort}} after 16 July 2020. If you have a model that was exported before that date, you must re-export the model from {{site.data.keyword.knowledgestudioshort}}. Only paid {{site.data.keyword.knowledgestudioshort}} plans support exporting models.
 
     For more information, see one of the following topics:
     
