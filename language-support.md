@@ -42,13 +42,13 @@ The following table describes the product features that are supported in each la
 | Portuguese, Brazilian (`pt-br`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Romanian (`ro`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Russian (`ru`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
-| Serbian (`sr`)<sup>1</sup> | Classifier (Document and Text), Dictionary, Entities (custom), Parts of speech, Regular expressions|
+| Serbian (`sr`)[^tabletext] | Classifier (Document and Text), Dictionary, Entities (custom), Parts of speech, Regular expressions|
 | Slovak (`sk`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Spanish (`es`) | Advanced rules models, Classifier (Document and Text), Dictionary, Document sentiment, Entities (built-in and custom), Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Swedish (`sv`) | Classifier (Document and Text), Dictionary, Entities (custom), Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 {: caption="Feature support per language" caption-side="top"}
 
-<sup>1</sup> Serbian supports Latin script only.
+[^tabletext]: Serbian supports Latin script only.
 
 Optical character recognition (OCR) v2 was introduced in Cloud-managed service instances on 2 November 2022.
 {: note}
