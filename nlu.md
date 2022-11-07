@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-11-04"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
@@ -72,7 +72,7 @@ To add an NLP enrichment, complete the following steps:
 
 1.  Click **Apply changes and reprocess**.
 
-For more information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
+Enrichments that you enable are applied to the documents in random order. For more information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
 
 ## Entities
 {: #nlu-entities}

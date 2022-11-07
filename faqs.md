@@ -103,6 +103,12 @@ You can use {{site.data.keyword.discoveryshort}} to detect both phrase and docum
 
 When you ingest a file or crawl an external data source, the data that you add to {{site.data.keyword.discoveryshort}} is processed and added to the collection as a document. Fields from the original file are converted to document fields and are added to the collection's index. Some content is added to root-level index fields and some information is stored in nested fields. Where data gets stored differs by file type. Most of the fields from structured data sources are stored as root-level fields. For files with unstructured data, much of the body of the file is stored in the `text` field in the index. Other information, such as the file name, is stored in nested fields with names like `extracted_metadata.filename`. You can determine whether a field is a nested field by its name. If the field name includes a period, it is a nested field. For more information about how different file types are handled, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).
 
+## Which type of query should I use in my custom app?
+{: #faq-query-choose}
+{: faq}
+
+When you submit a query, you can choose to submit a natural language query or use the Discovery Query Language to customize the search to target specific fields in the index, for example. For more information about the different types of queries and how to decide which one to use, see [Choosing the right query type](/docs/discovery-data?topic=discovery-data-query-concepts#query-choose).
+
 ## What's causing the errors that mention watsonplatform.net
 {: #faq-watsonplatform}
 {: faq}

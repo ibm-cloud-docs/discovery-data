@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-05"
+lastupdated: "2022-11-07"
 
 keywords: known issues
 
@@ -26,14 +26,18 @@ Known issues are listed by the release in which they were identified.
 The known issues that are described in this topic apply to installed deployments only.
 {: note}
 
-Known issues are regularly addressed with periodic software patches. For more information about how to check for and install available patches, see [Checking for available patches](https://www.ibm.com/docs/en/cloud-paks/cp-data/3.5.0?topic=iwd-installing-watson-discovery#svc-install__patches-section){: external}.
-
-For more information about installing the service, see [the {{site.data.keyword.icp4dfull}} documentation](https://www.ibm.com/docs/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}.
+Known issues are cumulative. Issues from previous releases persist in later releases unless otherwise noted.
+{: important}
 
 ## 4.5.x releases
 {: #4dot5}
 
 See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-discovery/discovery-known-issues.html){: external}.
+
+## 4.0.x releases
+{: #4dot0}
+
+For more information about known issues, see the [{{site.data.keyword.icp4dfull_notm}} documentation](https://www.ibm.com/docs/SSQNUZ_4.0/svc-discovery/discovery-known-issues.html){: external}.
 
 ## 4.0.9, 25 May 2022
 {: #25may2022ki}

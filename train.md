@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-08-11"
+lastupdated: "2022-11-04"
 
 subcollection: discovery-data
 
@@ -20,7 +20,7 @@ The relevance of natural language query results can be improved in {{site.data.k
 
 A relevancy model determines the most relevant documents to return in search results. Without relevancy training, a standard mechanism is used to determine relevance based on common factors. When you train a relevancy model, you help {{site.data.keyword.discoveryshort}} to use features that are unique to your documents as it determines relevance.
 
-To train a relevancy model, you provide sample natural language queries, submit them to get results from your documents, and then rate those results. As you add more examples, the information you provide about result relevance for each query is used to learn about your project. After a successful relevancy training session, a ranker model is created. The model is used automatically by Discovery with the next natural language query. Discovery reorders the document results so that the most relevant results according to the relevancy training model are displayed first.
+To train a relevancy model, you provide sample natural language queries, submit them to get results from your documents, and then rate those results. As you add more examples, the information you provide about result relevance for each query is used to learn about your project. The system uses your assessments to assign importance to different types of structural information within the documents. For example, it learns the importance of when a keyword from the search query appears in the title versus the header, body, or in the metadata of the document. It also learns from the importance of the distance between one matching keyword and another. After a successful relevancy training session, a ranker model is created. The model is used automatically by Discovery with the next natural language query. Discovery reorders the document results so that the most relevant results according to the relevancy training model are displayed first.
 
 Relevancy training does not run continuously. Training occurs only when you initiate it. The set of documents that constitute the training data are used only during the training process. If a subsequent change is made to a document that was used to train the model, it does not change the trained model and does not trigger a new training session. Keep in mind that if many of the documents in your project change, it might be time to retrain the model to use the features from the updated documents.
 
@@ -163,6 +163,26 @@ Answers to common questions about training a project.
 Run a natural language query and check the `document_retrieval_strategy`. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence).
 
 If you are using the API, see [List training queries](https://{DomainName}/apidocs/discovery-data#listtrainingqueries){: external}.
+
+### How long does it take to train a model?
+{: #understanding-duration}
+
+It can take between 45 minutes to an hour for the training to finish. The duration of the training differs depending on the amount and variety of the data that is used to train the relevancy model. Also, the training occurs asynchronously. It can be delayed if other data that it needs is unavailable because it is being searched or processed in some other way.
+
+### How do I stop relevancy training from being applied to my project?
+{: #understanding-stop}
+
+Use the API to delete the relevancy model that is associated with your project. To delete the model, you delete that training data that is associated with the ranker model. For more information, see [Deleting training queries](/apidocs/discovery-data#deletetrainingqueries).
+
+### Does relevancy training impact passage search?
+{: #understanding-passage-influence}
+
+No. Relevancy training is used for document search only. It has no impact on passage search.
+
+### Does relevancy training impact answer finding?
+{: #understanding-answer-influence}
+
+Not directly. Relevancy training indirectly impacts answer finding because it changes the order of the documents from which answers are retrieved. It reranks the returned documents from most to least relevant.
 
 ### How do I check errors and warnings?
 {: #understanding-errors}
