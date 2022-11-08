@@ -221,6 +221,7 @@ toc:
             topics:
             - backup-restore.md
             - recovery.md
+            - delete.md
   - navgroup:
       id: help
       topics:
