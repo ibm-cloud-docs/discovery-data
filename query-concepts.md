@@ -60,7 +60,7 @@ The following table summarizes the capabilities that are supported for each quer
 Query analysis
 {: #query-analysis}
 
-When you submit a query, the query text string is analyzed. During query analysis, any stop words that occur in the original query string are removed and synonym expansions that are defined for any terms that occur in the original query string are added. For the remaining keywords, the root (or lemma) of the key terms in the query are identified. This enhanced version of the query is what gets submitted to {{site.data.keyword.discoveryshort}}.
+When you submit a query, the query text string is analyzed. During query analysis, any stop words that occur in the original query string are removed and synonym expansions that are defined for any terms that occur in the original query string are added. For the remaining keywords, the root (or lemma) of each key term in the query is identified. This enhanced version of the query is what gets submitted to {{site.data.keyword.discoveryshort}}.
 
 The same analysis is performed on all queries, whether they are submitted as natural language queries or by using Discovery Query Language syntax.
 
