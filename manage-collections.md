@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-11-08"
 
 subcollection: discovery-data
 
@@ -23,7 +23,7 @@ For more information about how to create a collection, see [Creating collections
 ## Changing how a data source is processed
 {: #collection-change-processing}
 
-You can change settings that were applied to a collection when it was created. You might want to change the schedule at which an external data source is crawled, for example. Or you might want to apply or remove a process, such as optical character recognition (OCR), after using the collection for a while.
+You can change settings that were applied to a collection when it was created. You might want to change the schedule at which an external data source is crawled, for example.
 
 To change how a data source is processed, complete the following steps:
 
@@ -32,9 +32,14 @@ To change how a data source is processed, complete the following steps:
 1.  Click the **Processing settings** tab.
 1.  Make any changes that you want to make to the processing settings.
 
-    The setting options differ by data source type.
+    For example, you might want to enable or disable optical character recognition (OCR), which is a feature that extracts text from images. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
 
     For more information about changing data synchronization schedules, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+
+    ![IBM Cloud only](images/ibm-cloud.png) For service instances that are managed by {{site.data.keyword.cloud_notm}}, you can enable or disable the FAQ extraction feature. For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
+
+    Other setting options differ by data source type.
+
 1.  Click **Apply changes and reprocess**.
 
 ## Finding where a collection is used
