@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-07"
+lastupdated: "2022-11-08"
 
 keywords: known issues
 
@@ -53,7 +53,7 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
 
 -   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
 
-    -   **Error**: When you upgrade to version 4.0.8 with a user ID other than admin, the migration job fails.
+    -   **Error**: When you upgrade with a user ID other than admin, the migration job fails.
     -   **Cause**: The migration script assumes that the script is run by a user with the admin user ID.
     -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
 
@@ -76,6 +76,8 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
             {: codeblock}
 
     After the job is deleted, the migration job restarts and the migration resumes.
+
+    The issue is fixed with the 4.0.9 release.
 
 -   {{site.data.keyword.discoveryshort}} generates a partial failure status message for the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
 
@@ -119,7 +121,7 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
 
 -   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
 
-    -   **Error**: When you upgrade to version 4.0.8 with a user ID other than admin, the migration job fails.
+    -   **Error**: When you upgrade with a user ID other than admin, the migration job fails.
     -   **Cause**: The migration script assumes that the script is run by a user with the admin user ID.
     -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
 
@@ -142,6 +144,8 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
             {: codeblock}
 
     After the job is deleted, the migration job restarts and the migration resumes.
+
+    The issue is fixed with the 4.0.9 release.
 
 ## 4.0.6, 1 March 2022
 {: #01March2022ki}
@@ -185,7 +189,7 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
 
 -   The wd-discovery-multi-tenant-migration job fails if anyone besides a system administrator performs the upgrade.
 
-    -   **Error**: When you upgrade to version 4.0.8 with a user ID other than admin, the migration job fails.
+    -   **Error**: When you upgrade with a user ID other than admin, the migration job fails.
     -   **Cause**: The migration script assumes that the script is run by a user with the admin user ID.
     -   **Solution**: Apply a patch that allows the migration to be successful. Complete the following steps:
 
@@ -208,6 +212,8 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
             {: codeblock}
 
     After the job is deleted, the migration job restarts and the migration resumes.
+
+    The issue is fixed with the 4.0.9 release.
 
 ## 4.0.5, 26 January 2022
 {: #26january2022ki}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-11-04"
+lastupdated: "2022-11-08"
 
 subcollection: discovery-data
 
@@ -202,7 +202,7 @@ The following list has explanations for some common error and warning messages.
 ### Warning: `Invalid training data found: The document was not returned in the top 100 search results for the given query, and will not be used for training`
 {: #warning-docnotreturned}
 
-This warning is caused by the `document_ids` in your training data not matching the `document_ids` in a search that is performed against the collection. Check your queries to make sure that the `document_id` of the document you are rating is returned in the top 100 results for that query. If it is not, then you might want to check two things:
+This warning occurs when the `document_ids` in your training data do not match the `document_ids` in a search that is performed against the collection. Check your queries to make sure that the `document_id` of the document you are rating is returned in the top 100 results for that query. If it is not, then you might want to check two things:
 
 -   If the document is not returned in the top 100, it might not be an example of a high-quality result. Reevaluate whether to use the document.
 -   If the document is not returned at all, then review why it is not returned and see whether any text in the document matches portions of the query.
@@ -213,7 +213,7 @@ This warning indicates that you might have one or more failed queries. It doesn'
 ### Error: `Invalid training data found: Syntax error when parsing query`
 {: #error-syntax}
 
-A syntax error means that the query is invalid, which can happen when you add a filter to your natural language query.
+A syntax error means that the query is invalid. Syntax errors can occur when you increase the complexity of the query by adding a filter to the natural language query, for example. Run the query against the collection outside of relevancy training by using the API. After you confirm that the query is valid and returns results, you can add it as a relevancy training query.
 
 ### Error: `Training data quality standards not met: You will need additional training queries with labeled examples. (To be considered for training, each example must appear in the top 100 search results for its query.)`
 {: #error-labels}
