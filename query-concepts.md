@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-09"
 
 keywords: search goals
 
@@ -57,7 +57,7 @@ The following table summarizes the capabilities that are supported for each quer
 {: caption="Query types comparison" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify query types. The column headers identify different goals you might have when you submit a query. To understand which query to use to support your goal, go to the row that describes the goal, and find the column that identifies the query type that supports your goal."}
 
-Query analysis
+## Query analysis
 {: #query-analysis}
 
 When you submit a query, the query text string is analyzed. During query analysis, any stop words that occur in the original query string are removed and synonym expansions that are defined for any terms that occur in the original query string are added. For the remaining keywords, the root (or lemma) of each key term in the query is identified. This enhanced version of the query is what gets submitted to {{site.data.keyword.discoveryshort}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-11-09"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -66,18 +66,13 @@ For information about how to troubleshoot issues that you might encounter when y
 
 One of the optional features that you can apply to a collection when you create it is optical character recognition. The optical character recognition (OCR) feature extracts text from images. This capability is useful for preserving information that is depicted in diagrams or graphs, or in text that is embedded in files such as scanned PDFs. By converting the visual information into text, it can later be searched.
 
-![IBM Cloud only](images/ibm-cloud.png) A new version of the technology was introduced in cloud-managed instances. OCR v2 was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
-
--   Low quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, misaligned pages, and badly printed documents
--   Documents with irregular fonts or a variety of colors, font sizes, and backgrounds
-
 Things to keep in mind when you enable OCR:
 
 -   The time that it takes to ingest a document with images increases when OCR is enabled.
 -   OCR can read both clear and noisy images. It can convert noisy images to gray scale, and smooth and de-skew them. However, the image quality must meet the minimum requirement of **80 DPI** (dots per inch).
 -   OCR can recognize many languages, but the language of the text in the image must be the same as the language that is specified for the collection where the file is added. 
 
-For more information about languages for which OCR v1 and OCR v2 are supported, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+For more information about languages for which OCR is supported, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
 For a list of files types where you can apply OCR, see the [Supported file types](#supportedfiletypes) table.
 
