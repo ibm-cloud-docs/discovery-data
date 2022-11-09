@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-02"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,16 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 2 November 2022
+{: #discovery-2november2022}
+{: release-note}
+
+A new and improved optical character recognition technology is available
+:   A new version of optical character recognition technology is now available. This latest version (OCR v2) is used automatically when you enable OCR for English, German, French, Spanish, Dutch, Brazilian Portuguese, and Hebrew collections in all {{site.data.keyword.cloud_notm}} service plans. The new optical character recognition model was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
+
+    -   Low quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, unaligned pages, and badly printed documents
+    -   Documents with irregular fonts or a variety of colors, font sizes, and backgrounds
 
 ## 1 November 2022
 {: #discovery-1november2022}
