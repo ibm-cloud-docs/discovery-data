@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-11-11"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,17 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 12 November 2022
+{: #discovery-12november2022}
+{: release-note}
+
+Discovery users might experience issues with documents in collections where OCR is enabled that were added or processed between Nov 1 and Nov 11
+:   Between 1 November and 11 November 2022, some projects with optical character recognition (OCR) enabled, including Document Retrieval for Contracts projects, experienced problems. The problems were related to a new version of the optical character recognition (OCR v2) feature that was enabled automatically for English, German, French, Spanish, Dutch, Brazilian Portuguese, and Hebrew collections during that timeframe. The new version changes sentence boundaries in ways that can negatively impact other functions, including element identification in contracts and the document labeling view in the entity extractor tool.
+
+    If you experience any of these issues with documents that were added or processed during this period, revert the version of OCR that is applied to the documents. Starting on 12 November 2022, OCR v1 is applied to all collections where OCR is enabled. To go back to using OCR v1, make a change that will reprocess the affected documents. For example, you can re-add documents that were added during the timeframe to reprocess them. Or you can reprocess an entire collection.
+
+    To reprocess a collection, from the *Manage collections* page, open the collection, and then go to the *Processing settings* tab. Expand the *More processing settings* section, set the OCR switch to **Off**, and then set it back to **On**. Click **Apply changes and reprocess** to reprocess your collection.
 
 ## 2 November 2022
 {: #discovery-2november2022}

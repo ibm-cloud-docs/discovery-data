@@ -59,12 +59,12 @@ To analyze keyword relevance, complete the following steps:
 
     Each relevancy pane shows a list of the keywords that occur in the documents that match the facet type.
     
-The *Count* column shows the number of documents in the current result set that contain the keyword. The *Relevancy* column shows the level of uniqueness of the frequency count compared to other documents that match your query. High relevancy values are shown in shades of color with increasing intensity. The color shades begin at yellow. It increases to orange, and then to red.
+The *Count* column shows the number of documents in the current result set that contain the keyword. The *Relevancy* column shows the level of uniqueness of the frequency count compared to other documents that match your query. High relevancy values are shown in shades of color with increasing intensity. The color begins at yellow, then increases to orange, and then to red.
 
 ## Find trends
 {: #cm-trends}
 
-Use *Trends* analysis to find trends in your data. For example, you might see that a new product release aligns with uptick in customer interest. Or that a new customer care approach is followed by an increase in customer satisfaction.
+Use *Trends* analysis to find trends in your data. For example, you might see that a new product release aligns with an uptick in customer interest. Or that a new customer care approach is followed by an increase in customer satisfaction.
 
 Your documents must contain at least one date field for trend information to be available.
 {: important}
@@ -119,7 +119,7 @@ To find anomalies, complete the following steps:
 
     The resulting time series graph shows changes in the frequency of keyword mentions over time.
 
-    ![Topic analysis graph shows that Equipment has some orange bars in the summer months](images/cm-word-cloud.png){: caption="Figure 5. Topic analysis time series view" caption-side="bottom"}
+    ![Topic analysis graph shows that Equipment has some orange bars in the summer months](images/cm-facet-topic.png){: caption="Figure 5. Topic analysis time series view" caption-side="bottom"}
 
     Color coding is used to highlight when the number of mentions deviates from the expected frequency. The higher the deviation, the more intense the color, from yellow to orange to red. The average is calculated based on the frequency of occurrence of other keywords in the same time period.
 
