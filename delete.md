@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-09"
 
 keywords: delete service
 
@@ -33,7 +33,10 @@ To delete your {{site.data.keyword.discoveryshort}} service instance, complete t
 
 The data that is associated with the service instance is retained for 7 days. After the 7-day retention period, it is deleted. If a service instance is deleted by mistake, you can restore it as long as you do so before the 7-day window closes. For more information, see [Using resource reclamations](/docs/account?topic=account-resource-reclamation&interface=cli){: external} in the {{site.data.keyword.cloud_notm}} documentation.
 
-For more information about how data is handled by {{site.data.keyword.cloud_notm}}, see the [[Data Processing and Protection Datasheet]](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=A1417A507E8211E6BA51E79BE9476040){: external}.
+For more information about how data is handled by {{site.data.keyword.cloud_notm}}, see the following information:
+
+-   [Data Processing and Protection Datasheet](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=A1417A507E8211E6BA51E79BE9476040){: external}.
+-   [IBM Cloud Data security and privacy terms](https://www.ibm.com/support/customer/csol/terms/){: external}
 
 ## Deleting an installed service instance ![Cloud Pak for Data only](images/desktop.png)
 {: #delete-cp4d}
