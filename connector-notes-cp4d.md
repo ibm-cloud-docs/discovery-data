@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-11-11"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 - The data source can crawl HCL Notes 9.0.1 databases.
 - The HCL Notes data source supports the Domino Internet Inter-ORB Protocol (DIIOP) protocol only.
-- To crawl documents, including ACLs, you must have at least `Reader` level access to the server, database, and document access on the Domino server.
+- To crawl documents, including ACLs, you must have at least `Reader` level access to server, database, and document access on the Domino server.
 - For group extractions from the internal Domino LDAP directory, you must have `Reader` access to the `names.nsf` directory database.
 - For group extractions from the external LDAP directory, you must have the credential for the external LDAP server.
 

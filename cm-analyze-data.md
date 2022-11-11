@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-25"
+lastupdated: "2022-11-11"
 
 subcollection: discovery-data
 
@@ -18,9 +18,12 @@ Use tools from the Content Mining application to analyze your data.
 
 You can analyze your data in the following ways:
 
+-   [Look for relevant keywords](#cm-relevance)
 -   [Find trends](#cm-trends)
+-   [Identify anomalies in cyclical patterns](#cm-topic)
 -   [Find characteristic words](#cm-characteristic-words)
 -   [Analyze relationships](#cm-facets-compare)
+-   [Analyze relationships between many facets](#cm-facets-network)
 
 As you review the results of your analysis, you can flag documents that you want to research further later. For more information, see [Flagging documents](#cm-flags). 
 
@@ -31,6 +34,8 @@ When you find important insights, you can take a snapshot of the view, and then 
 
 Use the content mining application to analyze documents in your collection based on the document text and any annotations or enrichments that are stored in the documents.
 
+To start your analysis, complete the following steps:
+
 1.  Enter a search term, click a facet with which to filter the documents, or leave the search field blank to return all of your documents.
 1.  Click **Search**.
 
@@ -40,13 +45,31 @@ The guided mode view of the results shows suggested next steps that you can take
 
 The tasks in this topic describe how to use the application in guided mode.
 
+## Look for relevant keywords
+{: #cm-relevance}
+
+To analyze keyword relevance, complete the following steps:
+
+1.  From the initial search page, submit a keyword search to filter the documents.
+1.  From the search results page in guided mode, click **Analyze cause or characteristics**.
+
+    After the characteristic words pane, a pane with relevancy information for each facet type is displayed.
+
+    ![Facet relevancy graphs](images/cm-facet-relevancy.png){: caption="Figure 2. Facet relevancy" caption-side="bottom"}
+
+    Each relevancy pane shows a list of the keywords that occur in the documents that match the facet type.
+    
+The *Count* column shows the number of documents in the current result set that contain the keyword. The *Relevancy* column shows the level of uniqueness of the frequency count compared to other documents that match your query. High relevancy values are shown in shades of color with increasing intensity. The color shades begin at yellow. It increases to orange, and then to red.
+
 ## Find trends
 {: #cm-trends}
 
-Find trends in your data. 
+Use *Trends* analysis to find trends in your data. For example, you might see that a new product release aligns with uptick in customer interest. Or that a new customer care approach is followed by an increase in customer satisfaction.
 
 Your documents must contain at least one date field for trend information to be available.
 {: important}
+
+To find trends, complete the following steps:
 
 1.  From the initial search page, enter a keyword or select a facet with number values to filter the documents.
 
@@ -54,13 +77,13 @@ Your documents must contain at least one date field for trend information to be 
 
     The resulting bar graph shows the number of documents that mention the term or facet value that you specified in the search query over time.
 
-    ![Facet trend heat map](images/cm-heatmap.png){: caption="Figure 2. Facet trend graph" caption-side="bottom"}
+    ![Facet trend heat map](images/cm-heatmap.png){: caption="Figure 3. Facet trend graph" caption-side="bottom"}
 
     The time series chart is rendered as a heat map. Each cell color indicates a level of relevancy.
 
 1.  You can click a facet to investigate it more closely. The facet is shown in a bar graph.
 
-    ![Facet trend graph](images/cm-bar-graph.png){: caption="Figure 3. Facet trend detail in bar graph" caption-side="bottom"}
+    ![Facet trend graph](images/cm-bar-graph.png){: caption="Figure 4. Facet trend detail in bar graph" caption-side="bottom"}
 
     Each individual bar graph highlights trends in your data that deviate from the normal distribution by displaying *increase indicators*. 
     
@@ -68,7 +91,39 @@ Your documents must contain at least one date field for trend information to be 
 
 You can click individual items in a visualization or click and drag the cursor to select contiguous items.
 
-The cyclic data is calculated from the current time zone setting of your collection. If you want to change the time zone that is used by the graph, see [Change the time zone](/docs/discovery-data?topic=discovery-data-cm-edit-collection#cm-edit-collection-time-zone).
+The cyclical data is calculated from the current time zone setting of your collection. If you want to change the time zone that is used by the graph, see [Change the time zone](/docs/discovery-data?topic=discovery-data-cm-edit-collection#cm-edit-collection-time-zone).
+
+## Identify anomalies in cyclical patterns
+{: #cm-topic}
+
+Use *Topic* analysis to find anomalies in seasonal, monthly, or even daily patterns that are present in your data.
+
+Your documents must contain at least one date or time field for topic information to be available.
+{: important}
+
+Topic analysis focuses on how much the frequency of a keyword deviates from the expected average frequency in a specific time period. The expected average uses all of the averages of the frequency counts for other keywords in the same time period. This method of analysis is useful for identifying patterns that occur cyclically and highlights any unexpected changes that might occur in these cyclical patterns.
+
+To find anomalies, complete the following steps:
+
+1.  From the initial search page, enter a keyword or select a facet with number values to filter the documents.
+1.  From the search results page in guided mode, click **Analyze cause or characteristics**.
+1.  From the *Facet analysis* pane, select **Topic**.
+1.  Adjust the following values to suit your analysis:
+
+    -   Number of results
+    -   Date facet
+    -   Time scale
+    -   Date range
+
+1.  Choose a target facet or subfacet, and then click **Analyze**.
+
+    The resulting time series graph shows changes in the frequency of keyword mentions over time.
+
+    ![Topic analysis graph shows that Equipment has some orange bars in the summer months](images/cm-word-cloud.png){: caption="Figure 5. Topic analysis time series view" caption-side="bottom"}
+
+    Color coding is used to highlight when the number of mentions deviates from the expected frequency. The higher the deviation, the more intense the color, from yellow to orange to red. The average is calculated based on the frequency of occurrence of other keywords in the same time period.
+
+The cyclical data is calculated from the current time zone setting of your collection. If you want to change the time zone that is used by the graph, see [Change the time zone](/docs/discovery-data?topic=discovery-data-cm-edit-collection#cm-edit-collection-time-zone).
 
 ## Find significant terms
 {: #cm-characteristic-words}
@@ -77,19 +132,23 @@ Find characteristic words from your data set. The characteristic words view is a
 
 You can click a word from the word cloud to add it to the existing query and filter the current document set to include only documents that also mention the specified word.
 
+To find significant terms, complete the following steps:
+
 1.  From the search results page in guided mode, click **Analyze cause or characteristics**.
 
     The characteristic words view is displayed.
 
-    ![Facet word cloud](images/cm-word-cloud.png){: caption="Figure 4. Characteristic word cloud" caption-side="bottom"}
+    ![Facet word cloud](images/cm-word-cloud.png){: caption="Figure 6. Characteristic word cloud" caption-side="bottom"}
 
     The different font colors help to distinguish the words from one another; they have no statistical meaning.
     {: note}
 
 1.  Click a word in the cloud to limit the document set to include only documents that mention the word.
 
-## Analyze relationships between facets
+## Analyze relationships between two facets
 {: #cm-facets-compare}
+
+Use *Pairs* analysis to see how two facets are related to one another.
 
 To compare two facets, complete the following steps:
 
@@ -99,18 +158,26 @@ To compare two facets, complete the following steps:
 
     Data from the two facets is displayed in a graph.
 
-    ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 5. Facet comparison graph" caption-side="bottom"}
+    ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 7. Facet comparison graph" caption-side="bottom"}
 
-The graph shows two numbers, the first number is a frequency count and the second number is a relevancy value. The frequency count measures how many times the two data points are found together in a document. Relevancy measures the level of uniqueness of the frequency count compared to other documents that match your query. If the relevancy shows 2.0, it means that the number of times that the two data points intersect is 2 times larger than expected. To help you identify anomalies that might require more in-depth analysis, high relevancy values are shown in shades of color with increasing intensity. The color shades begin at yellow, which indicates a lower potential anomaly, then increase to orange, and finally to red.
+The graph shows two numbers. The first number is a frequency count and the second number is a relevancy value. The frequency count measures how many times the two data points are found together in a document. Relevancy measures the level of uniqueness of the frequency count compared to other documents that match your query. If the relevancy shows 2.0, it means that the number of times that the two data points intersect is 2 times larger than expected. To help you identify anomalies that might require more in-depth analysis, high relevancy values are shown in shades of color with increasing intensity, from yellow to orange to red.
+
+## Analyze relationships between many facets
+{: #cm-facets-network}
+
+Use *Connections* analysis to see how multiple facets are related to each other.
 
 To compare two or more facets, complete the following steps:
 
 1.  From the *Facet analysis* pane, select **Connections**.
-1.  Select the facets that you want to compare from the list, and then click **Analyze**.
+1.  Select the root facet that you want to compare to other facets first. 
+1.  Select up to 4 more facets from the list, and then click **Analyze**.
 
-    Data from the facets is displayed in a network graph.
+    Pair analysis is done between the first facet and each other facet in turn.
 
-    ![Facet group comparison graph](images/cm-facet-network.png){: caption="Figure 6. Facet network graph" caption-side="bottom"}
+    ![Facet group comparison graph](images/cm-facet-network.png){: caption="Figure 8. Facet network graph" caption-side="bottom"}
+
+    The resulting network graph shows only highly relevant and high-frequency pairs. Each node represents a facet value. The node color reflects the facet type. A solid-line connection between nodes identifies highly relevant pairs. A dotted-line connection identifies high-frequency pairs.
 
 ### Changing number ranges
 {: #cm-change-range}
@@ -119,7 +186,7 @@ If the scale of a graph is not optimized for your data, you can change it. For e
 
 To change the scale of a graph for a facet, complete the following steps:
 
-1.  Click **Collections** breadcrumb link in the page header.
+1.  Click **Collections** link in the page header.
 1.  In the tile for your collection, click the *Open and close list of options* icon, and then choose **Edit collection**.
 1.  In the *Facet* tab, find the facet for which you want to change the number range.
 1.  In the Range field, click **Edit**.
@@ -157,9 +224,9 @@ To change the scale of a graph for a facet, complete the following steps:
 1.  Click **Save**, and then click **Close**.
 1.  Click your collection tile to return to the collection and continue your analysis.
 
-The changes to the number ranges for vehicle speeds introduces more opportunities for relationships or anomalies in the data to be highlighted.
+The changes to the number ranges for vehicle speeds introduce more opportunities for relationships or anomalies in the data to be highlighted.
 
-![Shows a pair comparison chart where the each row lists a state and each column shows a vehicle speed. Where TN and 80 plus MPH meet is highlighted in orange to show an anomaly.](images/cm-range-change.png)
+![Shows a pair comparison chart where each row lists a state and each column shows a vehicle speed. Where TN and 80 plus MPH meet is highlighted in orange to show an anomaly.](images/cm-range-change.png){: caption="Figure 9. Results after changed number range" caption-side="bottom"}
 
 ## Flag documents of interest
 {: #cm-flags}
@@ -175,7 +242,7 @@ To apply flags, complete the following steps:
 1.  From the analysis view of your collection, create a query that returns a set of documents with specific characteristics.
 1.  From the documents view, click the *Document flags* icon.
 
-    ![Collection tile overflow menu](images/cm-doc-flags-icon.png){: caption="Figure 7. Document flags" caption-side="bottom"}
+    ![Collection tile overflow menu](images/cm-doc-flags-icon.png){: caption="Figure 10. Document flags" caption-side="bottom"}
 
 1.  Select a flag.
 1.  You can choose to apply the flag to all query results or to selected documents, and then click **Apply**.
