@@ -276,7 +276,7 @@ In the JSON output:
 
 - `score` = Sentiment score from `-1` (negative) to `1` (positive)
 - `label` = `positive`, `negative`, or `neutral`
-- `mixed` = Indicates whether the document has a mix of emotions or not
+- `mixed` = Indicates that the document expresses a combination of different sentiments
 
 ```json
 {
