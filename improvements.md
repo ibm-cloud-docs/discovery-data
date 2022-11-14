@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-11-14"
 
 keywords: improving results, troubleshooting search
 
@@ -26,6 +26,15 @@ You can use the tools that are built in to {{site.data.keyword.discoveryshort}} 
 Unlike some other search applications, adding quotation marks to a phrase that you submit does *not* return only exact matches. Queries that are submitted from the product user interface are natural language queries. When quoted text is submitted in a natural language query, the phrase is used to boost result scores. However, results are not limited to documents that contain the entire phrase.
 
 If you want more control over how queries are handled, you must use the query API. For more information about the `phrase` operator of the query API, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators#phrase).
+
+## A short query returns irrelevant results
+{: #improve-all-stopwords}
+
+It might be that your query contains too many stop words and not enough distinct terms to trigger a meaningful search. When you submit a query, the query text is analyzed and optimized before it is submitted to the project. One of the changes that occurs is the removal of any stop words from the text. A *stop word* is a word that is considered to be not useful in distinguishing the semantic meaning of the content. Examples of stop words include terms such as `and`, `the`, and `about`. {{site.data.keyword.discoveryshort}} defines a list of stop words that it ignores automatically both when the data is indexed and when it is searched. When you submit a query that contains mostly or only stop words, such as `About us`, it is equivalent to submitting an empty query.
+
+You can edit the stop words that are used by your collection. However, stop words that you define are used only at query time. They do not affect the stop word list that is used by {{site.data.keyword.discoveryshort}} when data is added to a collection and the index is created. Therefore, even if you remove stop words from the list that is used at query time, they won't find a match for the terms because the terms were not added to the index when the data was ingested.
+
+For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords).
 
 ## Results have too much text
 {: #improve-too-much-text}
