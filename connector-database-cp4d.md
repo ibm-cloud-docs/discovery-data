@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-11-14"
 
 subcollection: discovery-data
 
@@ -36,10 +36,15 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 -   {{site.data.keyword.discoveryshort}} supports the following data source versions:
 
+    -   Data Virtualization on {{site.data.keyword.icp4dfull_notm}} 1.8.3 which uses Db2 11.5
     -   IBM Db2: 10.5, 11.1, 11.5
     -   Microsoft SQL Server: 2012, 2014, 2016, 2017
     -   Oracle Database: 12c, 18c, 19c
     -   PostgreSQL: 9.6, 10, 11
+
+    Support for Data Virtualization was added with {{site.data.keyword.icp4dfull_notm}} 4.5.x releases
+    {: note}
+
 -   You must obtain any required service licenses for the data source that you want to connect to. For more information about licenses, contact the system administrator of the data source.
 
 ## Prerequisite step
@@ -49,18 +54,26 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
     -   Schema names
     -   Table names
+
+    For Data Virtualization on {{site.data.keyword.icp4dfull_notm}}, you can get these details from the {{site.data.keyword.icp4dfull_notm}} web client. Click the main menu icon, expand Data, and then select *Data virtualization*. At the start of the page, choose to show *Virtualized data*.
+
+    ![Shows the Data virtualization view from Cloud Pak for Data](images/connector-db-dv.png)
+
 -   Be careful if you plan to crawl multiple tables that have columns with the same name but different data types. In Content Mining projects, columns with the same name but different data types are assigned to fields that have a data type suffix in the name, such as `DATA_string`. In all other project types, the data in one of the tables is excluded from the index. For example, if you have two tables that have columns that are called `DATA` and the `DATA` column in one table is populated with dates and the column in the other table is populated with strings, the data in one of the tables is excluded from the index.
 -   Get the user credentials for a user who has permission to access the tables that you want to crawl.
 -   Before you can connect to a database, you must get the JDBC driver library for the database. When you set up the database data source, you are asked to specify the JDBC driver class path.
+-   Before you can connect to the Data Virtualization service by using JDBC, you must install IBM Data Server driver packages. For more information, see [Connecting applications to the Data Virtualization service](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-dv/connecting_apps_dv_service.html){: external}.
+-   If you want to connect to an instance of Data Virtualization that is hosted in a different cluster from your {{site.data.keyword.discoveryshort}} service, you must forward traffic that is routed for Data Virtualization from an external infrastructure node to the master nodes of your cluster. For more information, see [Updating HAProxy configuration file](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-dv/dv-netreqs.html){: external}.
 
 1.  Download the JAR files for the JDBC driver library from the database server or vendor's website.
 
     The following files are associated with each database:
 
-    -   Db2: `db2jcc4.jar`
+    -   Db2 and Data Virtualization: `db2jcc4.jar`
     -   Oracle: `ojdbc8.jar`
     -   SQL Server: `mssql-jdbc-7.2.2.jre8.jar`
     -   PostgreSQL: `postgresql-42.2.6.jar`
+
 1.  Compress the JAR files into a single compressed file.
 
     If you have a JDBC driver that has only one JAR file, skip this step.
@@ -94,6 +107,8 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
         | Database | Syntax | Example |
         |----------|--------|---------|
+        | Data virtualization (same cluster) | `jdbc:db2://{fully-qualified-hostname-of-dv-service}:{jdbc-ssl-internal-port}/bigsql` | `jdbc:db2://c-db2u-dv-db2u-engn-svc.myproject.svc.cluster.local:50001/bigsql` |
+        | Data virtualization (separate cluster) | jdbc:db2://{cluster-address}:{jdbc-ssl-external-port}/bigsql | jdbc:db2://api.conn.cp.example.com:32337/bigsql |
         | Db2 | `jdbc:db2://{server}:{port}/{database_name}` | `jdbc:db2://localhost:50000/sample` |
         | Oracle | `jdbc:oracle:thin:@//{host}:{TCPport}/{service_name}` | `jdbc:oracle:thin:@localhost:1521/sample` |
         | SQL Server | `jdbc:sqlserver://{serverName}[\{instanceName}]:{port}[;property=value]` | `jdbc:sqlserver://localhost:1433;DatabaseName=sample` |
@@ -111,7 +126,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     JDBC driver type
     :   Choose the database.
 
-        **Db2** is selected by default. If you want to crawl from a database type that is not listed, select **OTHER**.
+        **Db2** is selected by default. If you want to crawl from a database type that is not listed, select **OTHER**. To crawl data that is  managed by Data Virtualization on {{site.data.keyword.icp4dfull_notm}}, keep `Db2` selected.
 
     JDBC driver classname
     :   The JDBC driver class name that is associated with the database you selected. This field is autofilled, unless you select **OTHER**.
