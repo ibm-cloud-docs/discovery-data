@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-15"
 
 subcollection: discovery-data
 
@@ -443,6 +443,4 @@ Do not expect the search results to be exactly the same for queries that you sub
 ## Using a news service with v2
 {: #migrate-to-v2-news}
 
-If you used the Watson Discovery News data source in v1 and want to create a data source with equivalent function in v2, consider using the Webz.io News API. You can use the Webz.io News API to extract news articles in JSON format, and then upload the JSON files to create a News collection in your v2 project.
- 
-To figure out how many API calls you need to make to Webz.io, determine the number of news documents that you're currently retrieving from Watson Discovery News per month. One document in Discovery News is equivalent to one article (JSON object) from the Webz.io News API. A single Webz.io News API call returns approximately 100 news articles. Therefore, if you're using 50,000 Discovery News documents per month, you need to make approximately 500 Webz.io News API calls per month (50,000/100 = 500). For more information, see [Webz.io News API](https://webz.io/data-apis/news-api){: external}.
+If you used the Watson Discovery News data source in v1 and want to create a data source with equivalent function in v2, find a news and events data provider service. Look for a service that offers a News API that extracts news articles in JSON format. You can then upload the JSON files to create a News collection in your v2 project.
