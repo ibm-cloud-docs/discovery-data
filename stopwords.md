@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-16"
+lastupdated: "2022-11-15"
 
 subcollection: discovery-data
 
@@ -18,11 +18,11 @@ To ignore meaningless terms during searches, add a list of custom stop words. St
 
 In English, `the`, `is` and `and` are examples of stop words.
 
-The stop words you define are filtered out of queries and improves the relevance of natural language query results.
+The stop words that you define are filtered out of queries and improve the relevance of natural language query results.
 
 For example, a company has three tiers of service. The documents in one of the collections pertain to only one tier, the Silver tier. You might want to add `"silver"` to the stop words list because the term doesn't help to distinguish the significance of one document over another, given that all of the documents relate to the Silver service tier. When a customer mentions the Silver tier in a query string, it is ignored. Other terms in the query that are more significant are used to search the data instead. Or maybe the document collection consists of car accident reports only. You might want to add `"car"` to the stop words list to prevent mentions of `car` in queries from adding noise to the search.
 
-{{site.data.keyword.discoveryshort}} applies a list of default stop words for most supported languages automatically. These stop words are applied both at indexing time and at query time. The predefined stop words are ignored when content is indexed and they are filtered out of queries. When you upload a custom list of stop words, they override the default list. However, your stop words are used at query time only.
+{{site.data.keyword.discoveryshort}} applies a list of default stop words for most supported languages automatically. These stop words are applied both at indexing time and at query time. The predefined stop words are ignored when content is indexed and they are filtered out of queries. When you upload a custom list of stop words, they augment the default list. You can add stop words, but you cannot remove stop words. The stop words that you define are used at query time only.
 
 Example custom stop word list:
 
@@ -63,7 +63,6 @@ To define stop words, complete the following steps:
     Follow these guidelines:
 
     - Specify stop words in lowercase.
-    - Do not remove common terms like `a` and `the` from your custom file or query performance can be reduced.
     - In general, keep your list of stop words under `200` total words. The size limit is one million characters. However, if you specify too many terms, you might negatively affect search accuracy.
 
     You can use the default English stop words list file, [custom_stopwords_en.json](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/custom_stopwords_en.json){: external}, as a starting point when you build a custom stop word list in English.
@@ -72,7 +71,7 @@ To define stop words, complete the following steps:
 1.  Expand **Improve relevance** from the Improvement tools pane.
 1.  Click **Stopwords**, and then click **Upload stopwords** for the collection.
 
-    Only one stop words list can be uploaded per collection. The stop words list that you upload replaces the default stop words list for your collection.
+    Only one stop words list can be uploaded per collection. The stop words list that you upload augments the default stop words list for your collection.
 
 1.  Click **Done**.
 

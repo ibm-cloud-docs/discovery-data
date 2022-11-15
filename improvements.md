@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: improving results, troubleshooting search
 
@@ -32,7 +32,10 @@ If you want more control over how queries are handled, you must use the query AP
 
 It might be that your query contains too many stop words and not enough distinct terms to trigger a meaningful search. When you submit a query, the query text is analyzed and optimized before it is submitted to the project. One of the changes that occurs is the removal of any stop words from the text. A *stop word* is a word that is considered to be not useful in distinguishing the semantic meaning of the content. Examples of stop words include terms such as `and`, `the`, and `about`. {{site.data.keyword.discoveryshort}} defines a list of stop words that it ignores automatically both when the data is indexed and when it is searched. When you submit a query that contains mostly or only stop words, such as `About us`, it is equivalent to submitting an empty query.
 
-You can edit the stop words that are used by your collection. However, stop words that you define are used only at query time. They do not affect the stop word list that is used by {{site.data.keyword.discoveryshort}} when data is added to a collection and the index is created. Therefore, even if you remove stop words from the list that is used at query time, they won't find a match for the terms because the terms were not added to the index when the data was ingested.
+While *us* is not included in the stop words list, it is lemmatized to *we*, which is listed as a stop word.
+{: note}
+
+You can edit the stop words that are used by your collection. However, you can only augment the stop words list; you cannot remove stop words. And the stop words that you define are used only at query time. They do not affect the stop word list that is used by {{site.data.keyword.discoveryshort}} when data is added to a collection and the index is created.
 
 For more information, see [Identifying words to ignore](/docs/discovery-data?topic=discovery-data-stopwords).
 

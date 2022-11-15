@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-15"
+lastupdated: "2022-11-15"
 
 keywords: curation,snippet,hard-coded answers
 
@@ -36,6 +36,8 @@ This example shows how a curation is added with the API. When querying with the 
  }
 ```
 {: codeblock}
+
+The natural language query that is submitted by the customer must be an exact match for the query that is specified in the curation after the query analyzer runs. The query analyzer lemmatizes text, removes stop words, and adds query expansions.
 
 You can optionally specify a hard-coded response to the query by including a snippet. A snippet is a response that you author and that is returned when the associated document is returned for the specified natural language query. Synonyms are not applied to curation queries.
 
