@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 subcollection: discovery-data
 
@@ -36,7 +36,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 -   {{site.data.keyword.discoveryshort}} supports the following data source versions:
 
-    -   Data Virtualization on {{site.data.keyword.icp4dfull_notm}} 1.8.3 which uses Db2 11.5
+    -   Data Virtualization on {{site.data.keyword.icp4dfull_notm}} 1.8.0, 1.8.3 which use Db2 11.5
     -   IBM Db2: 10.5, 11.1, 11.5
     -   Microsoft SQL Server: 2012, 2014, 2016, 2017
     -   Oracle Database: 12c, 18c, 19c
@@ -107,8 +107,8 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
         | Database | Syntax | Example |
         |----------|--------|---------|
-        | Data virtualization (same cluster) | `jdbc:db2://{fully-qualified-hostname-of-dv-service}:{jdbc-ssl-internal-port}/bigsql` | `jdbc:db2://c-db2u-dv-db2u-engn-svc.myproject.svc.cluster.local:50001/bigsql` |
-        | Data virtualization (separate cluster) | jdbc:db2://{cluster-address}:{jdbc-ssl-external-port}/bigsql | jdbc:db2://api.conn.cp.example.com:32337/bigsql |
+        | Data virtualization (same cluster) | `jdbc:db2://{fully-qualified-hostname-of-dv-service}:{jdbc-nonssl-internal-port}/bigsql` | `jdbc:db2://c-db2u-dv-db2u-engn-svc.myproject.svc.cluster.local:50000/bigsql` |
+        | Data virtualization (separate cluster) | jdbc:db2://{cluster-address}:{jdbc-nonssl-external-port}/bigsql | jdbc:db2://api.conn.cp.example.com:30269/bigsql |
         | Db2 | `jdbc:db2://{server}:{port}/{database_name}` | `jdbc:db2://localhost:50000/sample` |
         | Oracle | `jdbc:oracle:thin:@//{host}:{TCPport}/{service_name}` | `jdbc:oracle:thin:@localhost:1521/sample` |
         | SQL Server | `jdbc:sqlserver://{serverName}[\{instanceName}]:{port}[;property=value]` | `jdbc:sqlserver://localhost:1433;DatabaseName=sample` |
