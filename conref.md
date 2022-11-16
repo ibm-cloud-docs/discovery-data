@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-15"
+lastupdated: "2022-11-16"
 
 subcollection: discovery-data
 
@@ -23,7 +23,7 @@ The following table shows the supported data sources for each deployment type.
 | Data source | IBM Cloud | IBM Cloud Pak for Data |
 |-------------|-----------|------------------------|
 | Box | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
-| Database (IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Database (IBM Data Virtualization, IBM Db2, Microsoft SQL, Oracle, Postgres) | | ![checkmark icon](../icons/checkmark-icon.svg) |
 | FileNet P8 | | ![checkmark icon](../icons/checkmark-icon.svg) |
 | HCL Notes | | ![checkmark icon](../icons/checkmark-icon.svg) |
 | IBM Cloud Object Storage | ![checkmark icon](../icons/checkmark-icon.svg) | |
