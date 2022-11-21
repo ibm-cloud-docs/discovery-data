@@ -209,8 +209,8 @@ toc:
         - query-reference.md
         - language-support.md
         - topicgroup:
-          label: IBM Cloud security
-          topics:
+            label: IBM Cloud security
+            topics:
             - information-security.md
             - admin.md
             - at_events.md
