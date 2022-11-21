@@ -1,7 +1,7 @@
 toc:
   properties:
     subcollection: discovery-data
-    version: 2
+    service-name: Watson Discovery
     category: ai
     audience: service
     href: /docs/discovery-data
