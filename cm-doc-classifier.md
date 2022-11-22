@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-11-22"
 
 subcollection: discovery-data
 
@@ -38,7 +38,7 @@ Training data
 :    Required. CSV file that is used to train the document classifier machine learning model. The file can contain key data points per column. The data points can vary, but the file must include the following columns:
 
      -   Natural language text that you want to classify or label.
-     -   Label or class name that categorizes the idea that is expressed in the document text.
+     -   Label or class name that categorizes the idea that is expressed in the document text. You can apply more than one label to a text sample. Separate multiple label values with a semicolon.
 
 Test data 
 :    Optional. CSV file that is used to test the document classifier machine learning model after it is trained. If you don't specify a separate file for testing, a subset of the training data content is used for testing purposes. 
@@ -142,7 +142,15 @@ To create a document classifier, complete the following steps:
 
     An *Overview* page is displayed.
 1.  Click **New model** to create and train your machine learning model. 
-1.  You can optionally change the name of the model and add a description. Click **Create**.
+1.  You can optionally change the name of the model and add a description. 
+
+    You can change the default ratio values that are specified for the following data sets:
+
+    -   Training dataset: Updates the weights of the training model.
+    -   Validation set: Monitors the accuracy of the training model during training. The accuracy result is used to draw a training loss graph.
+    -   Test dataset: Calculates the score of the trained model.
+
+1.  Click **Create**.
 
     It might take several minutes for model training to complete.
 
