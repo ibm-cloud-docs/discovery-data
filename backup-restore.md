@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-28"
 
 keywords: backup,restore
 
@@ -82,7 +82,8 @@ You can back up and restore your instance of {{site.data.keyword.discoveryshort}
 
 You must have Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (where the data to be backed up is stored) and administrative access to the new instance (where the data will be restored to).
 
-The backup and restore scripts perform many operations and can take quite a bit of time to run. To avoid timeout issues, run a tool the prevents timeouts, such as `nohup`.
+The backup and restore scripts perform many operations and can take quite a bit of time to run. To avoid timeout issues, run a tool that prevents timeouts, such as `nohup`.
+{: note}
 
 ## Using the backup scripts
 {: #wddata-backup}
