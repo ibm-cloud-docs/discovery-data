@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-11-30"
 
 subcollection: discovery-data
 
@@ -15,8 +15,6 @@ subcollection: discovery-data
 
 Teach {{site.data.keyword.discoveryshort}} about terms that are significant to your business by creating an entity extractor.
 {: shortdesc}
-
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
 The entity extractor is a beta feature that is available from managed deployment only.
 {: beta}
@@ -134,6 +132,8 @@ Review these tips before you begin:
 {: #entity-extractor-label-task}
 
 Label terms in the document that represent examples of the entity types you defined. When you are done with one document, switch the document status from *In progress* to *Complete*, and then move on to the next document.
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: Only the first 40,000 characters from each document are available for labeling. 40,000 characters is approximately 20 pages.
 
 To label entity examples, complete the following steps:
 

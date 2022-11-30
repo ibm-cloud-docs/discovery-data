@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-10-06"
 
 subcollection: discovery-data
 
@@ -34,8 +34,11 @@ This information applies only to installed deployments.
 
 In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your Windows File System data source must meet the following requirements:
 
--   The connector supports Microsoft Windows Server 2012 R2, 2016, and 2019.
+-   The connector supports Microsoft Windows Server 2012 R2, 2016, 2019, and 2022.
 -   The remote agent server and the file servers to be crawled must belong to the same Windows domain. The crawler can gather access control list (ACL) data from a single Windows domain only.
+
+Support for Microsoft Windows Server 2022 was added with the 4.6 release.
+{: note}
 
 ## Prerequisite steps
 {: #connector-wfs-cp4d-prereq}
@@ -61,20 +64,54 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
     LDAP user filter
     :   The user filter to search user entries in LDAP. If empty, the default value is `(userPrincipalName={0})`.
 
--   Before you configure a Windows File System collection, you must install the agent server on a remote Windows file server or on a remote Windows server. The agent server is a Windows service that retrieves data from data source servers and sends it to {{site.data.keyword.discoveryshort}}. The Windows agent can crawl remote Windows file systems, drives that are local to the agent, and shared network folders.
+-   Before you configure a Windows File System collection, you must install the IBM Watson Discovery Agent for Windows File Systems on a remote Windows file server or on a remote Windows server. The agent is a Windows service that retrieves data from data source servers and sends it to {{site.data.keyword.discoveryshort}}. The agent can crawl remote Windows file systems, drives that are local to the agent, and shared network folders.
 
-    If you install the agent server on a remote Windows server, the remote Windows server must be able to mount one or more file servers so that the agent can crawl remote Windows file systems.
+    If you install the agent on a remote Windows server, the remote Windows server must be able to mount one or more file servers so that the agent can crawl the remote Windows file systems.
 
-    To install and configure the agent server, complete the following tasks:
+    To install and configure the agent, complete the following tasks:
 
-    -   [Install the agent server](#connector-wfs-cp4d-prereq1).
+    -   [Install the agent](#connector-wfs-cp4d-prereq1).
     -   [Configure shared directories on the agent server](#connector-wfs-cp4d-prereq2).
     -   [Start and monitor the status of the agent server](#connector-wfs-cp4d-prereq3).
 
-### Install the agent server
+### Install the agent
 {: #connector-wfs-cp4d-prereq1}
 
-To install the agent server, complete the following steps:
+With the 4.6 release, the IBM Watson Discovery Agent for Windows File Systems was updated to run with 64-bit versions of Windows. If you installed the agent with a release prior to 4.6, you must uninstall the previous version, delete it, and then reinstall the agent. 
+
+Do one of the following tasks:
+
+-  You are using the connector for the first time: [Install the agent](#connector-wfs-cp4d-prereq1-new)
+-  You have a previous installation: [Replace the previous agent](#connector-wfs-cp4d-prereq1-replace)
+
+#### Replacing the previous agent
+{: #connector-wfs-cp4d-prereq1-replace}
+
+Required for deployments where a version of the IBM Watson Discovery Agent for Windows File Systems that is earlier than 4.6.0.0 is installed.
+
+To replace an earlier version of the agent, complete the following steps:
+
+1.  Copy the configuration file that defines the shared network directories that the Windows File System agent can access to a directory that is outside the agent's file path, which is `C:\Program Files (x86)\IBM\es`. 
+
+    For example, copy the `C:\Program Files (x86)\IBM\es\distributed\esadmin\config\esfsexport.txt` file to a directory such as `C:\temp` directory.
+1.  From the Microsoft Windows *Apps & features* utility, find the earlier version of *IBM Watson Discovery Agent for Windows File Systems*, and then click *Uninstall*.
+1.  Choose *Completely delete IBM Watson Discovery Agent for Windows File Systems*, and then click *Uninstall*.
+1.  Restart your system.
+1.  Complete the steps in [Installing the agent](#connector-wfs-cp4d-prereq1-task) to install the latest version of the agent.
+1.  Replace the new version of the `C:\Program Files\IBM\es\distributed\esadmin\config\esfsexport.txt` file with the file that you copied in Step 1.
+
+    This step adds the configuration of the shared directories that you set up for the previous version of the agent to the new installation. When you reuse the file share, you can skip the step of configuring the shared directories.
+1.  Run the following command to verify that the directory is shared with the agent service:
+
+    ```screen
+    C:\Users\Administrator> esagent --lsshare
+    ```
+    {: codeblock}
+
+#### Installing the agent
+{: #connector-wfs-cp4d-prereq1-new}
+
+To install the IBM Watson Discovery Agent for Windows File Systems for the first time, complete the following steps:
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
@@ -146,7 +183,10 @@ To install the agent server, complete the following steps:
 ### Configuring shared directories on the agent server
 {: #connector-wfs-cp4d-prereq2}
 
-After the software is installed, you must set up shared network directories that the Windows File System agent can access. To define a new file system share, export a local or remote network directory. You can also reuse a share that was defined previously.
+After the software is installed, you must set up shared network directories that the Windows File System agent can access. To define a new file system share, export a local or remote network directory. 
+
+If you are replacing an agent that you installed with a release that is earlier than 4.6.0.0, skip this procedure. The replacement instructions explain how to reuse the file share that was defined previously.
+{: important}
 
 1.  Export a local directory from the server where the agent is installed:
 

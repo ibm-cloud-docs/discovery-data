@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-10-17"
 
 subcollection: discovery-data
 
@@ -25,7 +25,7 @@ This information applies only to installed deployments. For more information abo
 {: #connector-box-cp4d-docs}
 
 - Only documents that are supported by {{site.data.keyword.discoveryshort}} in your Box folders are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
-- Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to Box. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+- Document-level security is supported only for connectors that are configured to use the *App + Enterprise Access* as the Box application's app access level. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to Box. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 - When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
 - All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 - Box notes are stored in JSON format, so {{site.data.keyword.discoveryshort}} also ingests any Box notes in the specified folders.
@@ -42,27 +42,11 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 If you want to enable document-level security, you must take some steps to set it up. For more information, see [About document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
-You must create a custom application in Box before you can connect to Box from {{site.data.keyword.discoveryshort}}.
+You must create a custom application in Box before you can connect to Box from {{site.data.keyword.discoveryshort}}. Anyone can create the custom app, but only a Box administrator can authorize it.
 
 To create a custom application, complete the following steps:
 
-1.  Make sure you have a [Box account](https://www.box.com/){: external}. During this process, you obtain the public key 1 ID and the enterprise ID.
-
-1.  Establish an RSA key pair. You can create one yourself or let Box.com generate the key pair for you.
-
-    1.  To create the key pair yourself, run the following shell commands:
-
-        ```bash
-        openssl genrsa 2048 > private-box.pem
-        ```
-        {: pre}
-
-        ```bash
-        openssl rsa -in private-box.pem -pubout -out public-box.pem
-        ```
-        {: pre}
-
-    1.  Make a copy of `public-box.pem`.
+1.  Make sure you have a [Box account](https://www.box.com/){: external}. During this process, you get the configuration file and the client ID.
 
 1.  Next, create a custom app that uses *Server Authentication with JWT* as its authentication method.
 
@@ -70,35 +54,78 @@ To create a custom application, complete the following steps:
 
     Follow these guidelines when you create the app:
 
-    - During the setup procedure, choose to use the *Server Authentication with JWT* method to verify application identity with a key pair.
-    - When you configure the custom app, set the application access level to *App access plus Enterprise access*.
-    - Choose the following scopes:
+    1.  During the setup procedure, choose to use the *Server Authentication with JWT* method to verify application identity with a key pair.
+    1.  Choose the appropriate access level for the Box content that you want to crawl:
 
-      - *Read all folders stored in Box*
-      - *Write all folders stored in Box*
-      - *Manage Users*
-      - *Manage Enterprise Properties*
+        -   Box files that are shared with managed users: **App access plus Enterprise access**
+        -   Box files which are shared with the service account: **App access only**
+        -   Box files which are shared with the service account and its app users: **App access only**
 
-    - Enable the following advanced features:
+        Support for configuring the Box level access with App access only was added with the 4.6 release.
+        {: note}
 
-       - *Make API calls using the as-user header*
-       - *Generate User Access Tokens*
+    1.  Configure the access level by following the appropriate steps for your app access level type:
 
-    - When you add a public key, enter the content of `public-box.pem` that you generated when you created the RSA key pair.
-    - Copy the public key 1 ID.
+        -   **App access plus Enterprise access**
 
-1. Next, you must authorize the app. In the Box admin console, complete the following tasks:
+            Choose the following application scopes:
 
-   - In the **App info** pane on the **General** page, copy the **Enterprise ID**.
-   - Enter the client ID in the **API Key** field, and authorize your new app. You copied the client ID when you created the app. If you modify the app later, you must reauthorize it.
+            -   *Read all folders stored in Box*
+            -   *Write all folders stored in Box*
+            -   *Manage Users*
 
-1. Establish the OAuth2 parameters. Make sure that you complete the following tasks:
+            Enable the following advanced feature:
 
-   - On the **General** page, ensure that your app name is correct. You can also provide a description of your app or a custom website URL.
-   - Under **Public Key Management**, paste your public key into the provided text box, and click **Verify**.
-   - After the key is verified, click **Save** to finish setting up your public key.
+            -   *Generate User Access Tokens*
 
-1. After you receive your client ID, client secret, encoded private key, private key passphrase, key ID, and enterprise ID on the configuration page on [Box Developers](https://developer.box.com/){: external}, download the app settings as a JSON file, or `config.json`.
+        -   **App access only**
+
+            To crawl files that are shared with only the service account, complete the following steps:
+            
+            1.  Choose the following application scopes:
+
+                -   *Read all folders stored in Box*
+                -   *Write all folders stored in Box*
+
+            1.  Share the target Box folders and files with the service account by completing the following steps:
+
+                1.  From the General Settings page, copy the email for the service account ID.
+                1.  When logged in as a managed user, share the folder or files that you want the connector to be able to crawl.
+                1.  Add the service account ID email as the person to invite to share the files.
+
+                For more information, see [the Box documentation](https://developer.box.com/guides/getting-started/user-types/service-account/#folder-tree-and-collaboration){: external}.
+
+            To crawl files that are shared with the service account and its app users, complete the following steps:
+            
+            1.  Choose the following application scopes:
+
+                -   *Read all folders stored in Box*
+                -   *Write all folders stored in Box*
+                -  *Manage Users*
+
+            1.  Enable the following advanced feature:
+
+                -   *Generate User Access Tokens*
+
+            1.  Share the target Box folders and files with the appropriate app users. 
+            
+                For more information, see [the Box documentation](https://developer.box.com/guides/getting-started/user-types/app-users/#creation){: external}.
+
+1. Create keys for authentication. Make sure that you complete the following tasks:
+
+   1.  From the *General settings* page, click **Add a Public Key**.
+   1.  Save the downloaded configuration file that is generated for the private key.
+   1.  Click **Save Changes**.
+   1.  From the *Configuration* page, copy the *Client ID* value.
+
+1. Next, you must ask a Box administrator to authorize the app. In the Box admin console, complete the following tasks:
+
+   1.  In the **Apps > Custom Apps Manager** page, click **Add App**.
+   1.  Enter the client ID, and then click **Next**.
+
+       For more information, see [Custom App Approval](https://developer.box.com/guides/authorization/custom-app-approval/){: external}.
+
+1. Box administrator step: From the Box admin console, check that the app information is accurate, and then click **Authorize**.
 
 ## Connecting to the Box data source
 {: #connector-box-cp4d-task}
@@ -115,9 +142,9 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  **Optional**. Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-1.  In the *Enter your credentials* section, click **Select file** and then browse to find and upload the `config.json` file that you created in the prerequisite step.
+1.  In the *Enter your credentials* section, click **Select file** and then browse to find the configuration file that was generated and downloaded when you added the public key as part of the prerequisite steps.
 
-    You can download the JSON file from the configuration page on the [Box Developer site](https://developer.box.com/){: external}.
+    You can download a configuration file again from the configuration page on the [Box Developer site](https://developer.box.com/){: external}.
 1.  **Optional**. In the *Specify what you want to crawl* section, choose a specific user's content or a specific folder with content that you want to crawl. If you don't specify anything, the service crawls all of the content that is available to the custom app.
 
     - To crawl an entire enterprise, enter `box://app.box.com/`.
