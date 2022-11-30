@@ -29,6 +29,11 @@ The known issues that are described in this topic apply to installed deployments
 Known issues are cumulative. Issues from previous releases persist in later releases unless otherwise noted.
 {: important}
 
+## 4.6.x releases
+{: #4dot6}
+
+See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-known-issues.html)
+
 ## 4.5.x releases
 {: #4dot5}
 

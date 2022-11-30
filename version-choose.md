@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-30"
 
 subcollection: discovery-data
 
@@ -58,6 +58,7 @@ If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn 
 | Apply the *Part of Speech* enrichment to your data | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Use the Entity Extraction, Document and Phrase Sentiment Analysis, and Keyword Extraction enrichments | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Use the Category classification, Concept tagging, Relation Extraction, Emotion Analysis, and Semantic Role Extraction, Sentiment of Keywords and Entities enrichments, which are available with the [Natural Language Understanding](/docs/natural-language-understanding?topic=natural-language-understanding-about){: external} service | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Build a custom entity type system | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Apply Watson Knowledge Studio NLP models to your data | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../icons/checkmark-icon.svg) | |
