@@ -58,9 +58,11 @@ Open Authentication (OAuth)
     The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature.
     {: beta}
 
-    Before you can connect to SharePoint Online by using Open Authentication, Discovery must be registered with your Microsoft Azure service. You do not need to register Discovery in Azure yourself. When you choose SharePoint Online as the data source, the Discovery service registers the app for you. Then, an Azure administrator must authorize the app one time only. To authorize the app, a user with the *Application administrator* or *Cloud application administrator* role must log in to [Microsoft Azure](https://portal.azure.com){: external}. From the *Enterprise applications* page in *Azure Active Directory*, look for the Discovery app. Its name has the syntax `IBM App Connect_{unique-ID}`. Under *Permissions*, click *Grant admin consent for `<domain>`*.
+    Before you can connect to SharePoint Online by using Open Authentication, Discovery must be registered with your Microsoft Azure service. You do not need to register Discovery in Azure yourself. When you choose SharePoint Online as the data source, the Discovery service registers the app for you. Then, an Azure administrator must authorize the app one time only. 
+    
+    To authorize the app, a user with the *Application administrator* or *Cloud application administrator* role must log in to [Microsoft Azure](https://portal.azure.com){: external}. From the *Enterprise applications* page in *Azure Active Directory*, look for the Discovery app. Its name has the syntax `IBM App Connect_{unique-ID}`. Under *Permissions*, click *Grant admin consent for `<domain>`*.
 
-    After the Discovery app is registered and authorized, all Azure users can use the connector service to crawl SharePoint Online. To restrict who can use the service, open the *Properties* settings for the service (IBM App Connect_{unique-ID}), and then set *Assignment required* to `Yes`. From the *Users and Groups* list, add to the list only the users who you want to allow to crawl SharePoint Online.
+    After the Discovery app is registered and authorized, all Azure users can use the Discovery app to crawl SharePoint Online. To restrict who can use the app, open the *Properties* settings for the app (IBM App Connect_{unique-ID}), and then set *Assignment required* to `Yes`. From the *Users and Groups* list, add only the users that you want to allow to crawl SharePoint Online.
 
 Security Assertion Markup Language (SAML)
 :   An older mechanism for authentication and authorization that requires user credentials to be shared with the {{site.data.keyword.discoveryshort}} service.
