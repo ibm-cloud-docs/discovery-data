@@ -124,6 +124,8 @@ To configure the Microsoft SharePoint Online data source, complete the following
         Pop-ups must be enabled for this site in your web browser.
         {: note}
 
+        **One time only**: Discovery registers an app with the SharePoint organization that you specify. Someone with SharePoint administtrative privileges must authorize the app before the site collection can be crawled for the first time. For more information about what the administrator must do, see [What you need before you begin](#connector-sharepoint-online-cloud-prereqs).
+
         Log in to your Microsoft SharePoint account with your user name and password, and then complete two-factor authentication, if necessary.
         
         If you are not prompted for a user name and password, take note. You might be logged in to a Microsoft Sharepoint account already. If you are logged in to an account that you don't want to use for this connector, stop here. (Any account where you are logged in will be used automatically. And you cannot change the account configuration later.) Open a web browser in incognito mode and start this procedure over from step 1.
