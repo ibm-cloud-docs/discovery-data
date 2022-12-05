@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-02"
 
 subcollection: discovery-data
 
@@ -16,8 +16,8 @@ subcollection: discovery-data
 Teach {{site.data.keyword.discoveryshort}} about terms that are significant to your business by creating an entity extractor.
 {: shortdesc}
 
-The entity extractor is a beta feature that is available from managed deployment only.
-{: beta}
+The entity extractor is generally available for installed deployments and is available as a beta feature for managed deployments.
+{: note}
 
 An *entity extractor* is a machine learning model that recognizes and tags terms that you indicate are significant to your business need or use case. When you create an entity extractor, you get to decide the content and scope of information to find and extract. Your extractor can extract any of the following things:
 
@@ -336,11 +336,11 @@ The following JSON output is produced by a custom model named *literature* that 
 ### Monitoring performance over time
 {: #entity-extractor-history}
 
-You can retrain your entity extractor model at any time. Each time you train the model, review the performance metric scores to determine whether your most recent changes increase or decrease the model's scores. 
+You can retrain your entity extractor model at any time. Each time you train the model, review the performance metric scores to determine whether your most recent changes increase or decrease the model's scores.
 
-1.  To compare one test run against another, click **View score history**. 
+1.  To compare one test run against another, click **View score history**.
 
-    The history view shows the last 5 training runs. 
+    The history view shows the last 5 training runs.
 
     To retain the score information for more than the most recent 5 training runs, you can export the metrics in comma-separated value format, and track the scores in a separate application. Click the tabular representation icon ![Tabular representation icon](images/ee-tabular-icon.png), and then click **Download as CSV**.
     {: tip}
@@ -356,7 +356,7 @@ The number of entity extractors that you can create per service instance depends
 |------|--------------------------------:|---------------------------:|-----------------------------------:|
 | Premium | 10 | 75 | 1,000 |
 | Enterprise | 10 | 50 | 1,000 |
-| Plus (including Trial) | 6 | 20 | 100 |
+| Plus (including Trial) | 3 | 20 | 100 |
 {: caption="Entity extractor plan limits" caption-side="top"}
 
 An entity extractor enrichment can identify up to 50 entities, each with one or many mentions, per document.

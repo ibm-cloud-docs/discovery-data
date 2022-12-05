@@ -29,6 +29,13 @@ This information applies only to managed instances of {{site.data.keyword.discov
 
 The beta FAQ extraction feature that detects and extracts question-and-answer pairs from documents is being removed. Support for the feature will end in 1Q 2023.
 
+## 1 December 2022
+{: #discovery-1december2022}
+{: release-note}
+
+Plus plan supports fewer entity extractors
+:   The maximum number of entity extractors that you can create with a Plus plan decreased from 6 to 3.
+
 ## 12 November 2022
 {: #discovery-12november2022}
 {: release-note}
