@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-12-06"
 
 keywords: search goals
 
@@ -46,8 +46,11 @@ The following table summarizes the capabilities that are supported for each quer
 | Goal | Natural Language Query (NLQ) | {{site.data.keyword.discoveryshort}} Query Language (DQL) |
 |------|-----|-----|
 | Return passages from documents | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Highlight terms in responses (unless passages per document is enabled) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Define custom stop words or query expansions | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Search specific document fields or enrichments | | ![checkmark icon](../icons/checkmark-icon.svg) |
-| Use operators, such as Boolean clauses in the search | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Use operators, such as boolean clauses in the search | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Enable spelling correction | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Add curations to return hardcoded answers to certain questions | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Use relevancy training | ![checkmark icon](../icons/checkmark-icon.svg) |  |
 | Enable answer finding to return a succinct answer from a passage | ![checkmark icon](../icons/checkmark-icon.svg) | |
