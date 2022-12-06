@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-02"
+lastupdated: "2022-12-05"
 
 subcollection: discovery-data
 
@@ -24,7 +24,6 @@ An *entity extractor* is a machine learning model that recognizes and tags terms
 -  Terms that represent objects, such as vegetable names from cooking recipes or the make and model of cars from accident reports
 -  Attributes of objects, such as color and quantity
 -  Short phrases, such as `107 deaths in France`, `revenue of $343M`
--  Full sentences, such as `out of warranty clauses; clauses describing payment terms`
 
 An *entity type* is a type of thing. To create an entity extractor, you define a set of *entity types* that you care about. You then annotate a collection of your own documents by finding terms or phrases that represent the type of information you want to extract and labeling them as entity examples. 
 
