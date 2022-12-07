@@ -132,7 +132,7 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
 
     The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#pvc). By default, the backup and restore scripts create a `tmp` directory in the current directory that the script uses for extracting or compressing backup files.
 
-    If you run into issues with the backup, rerun the backup command and include the `--use-job` parameter. This parameter instructs the backup script to use a Kubernetes job to back up ElasticSearch and MinIO in addition to Postgres, which uses a Kubernetes job by default. If the size of the data in ElsaticSearch and MinIO is large and ephemeral storage is insufficient, include the `--pvc` option. When you do so, the script uses the persistent volume claim that is specified with the `--pvc` option instead of `emptyDir`, which is ephemeral storage, as the temporary working directory for the job.
+    If you run into issues with the back up, rerun the backup command and include the `--use-job` parameter. This parameter instructs the backup script to use a Kubernetes job to back up ElasticSearch and MinIO in addition to Postgres, which uses a Kubernetes job by default. If the size of the data in ElasticSearch and MinIO is large and ephemeral storage is insufficient, include the `--pvc` option. When you do so, the script uses the persistent volume claim that is specified with the `--pvc` option instead of the `emptyDir` ephemeral storage as the temporary working directory for the job.
 
 ### Extracting files from the backup archive file
 {: #backup-unpack}
