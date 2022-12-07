@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-07"
 
 subcollection: discovery-data
 
@@ -62,7 +62,7 @@ Open Authentication (OAuth)
     
     To authorize the app, a user with the *Application administrator* or *Cloud application administrator* role must log in to [Microsoft Azure](https://portal.azure.com){: external}. From the *Enterprise applications* page in *Azure Active Directory*, look for the Discovery app. Its name has the syntax `IBM App Connect_{unique-ID}`. Under *Permissions*, click *Grant admin consent for `<domain>`*.
 
-    After the Discovery app is registered and authorized, all Azure users can use the Discovery app to crawl SharePoint Online. To restrict who can use the app, open the *Properties* settings for the app (IBM App Connect_{unique-ID}), and then set *Assignment required* to `Yes`. From the *Users and Groups* list, add only the users that you want to allow to crawl SharePoint Online.
+    After the Discovery app is registered and authorized, all Azure users can use the Discovery app to crawl SharePoint Online. To restrict who can use the app, in Azure, open the *Properties* settings for the app (IBM App Connect_{unique-ID}). Set *Assignment required* to `Yes`. From the *Users and Groups* list, add only the users that you want to allow to crawl SharePoint Online.
 
 Security Assertion Markup Language (SAML)
 :   An older mechanism for authentication and authorization that requires user credentials to be shared with the {{site.data.keyword.discoveryshort}} service.

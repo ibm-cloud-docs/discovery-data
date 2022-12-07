@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-01-07"
+lastupdated: "2022-12-07"
 
 subcollection: discovery-data
 
@@ -202,7 +202,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     Maximum hops
     :   The number of consecutive links to follow from the start URL. 
     
-        If unspecified, the default value is `5`. The maximum number of links that the crawler can follow is `20`. To not allow any hops, enter `-1`.
+        If unspecified, the default value is `5`. The maximum number of links that the crawler can follow is `20`. To not allow any hops, enter `0`.
 
     Ignore certificate
     :   Enable this setting if you want to ignore any SSL certificates on the target website.
