@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-08"
 
 keywords: backup,restore
 
@@ -240,7 +240,7 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 
     The `--mapping` parameter is optional. For more information about when to use it, see [Mapping multitenant clusters](#backup-mapping).
 
-    By default, the backup and restore scripts create a `tmp` directory in the current directory that the script uses for extracting or compressing backup files.
+    By default, the backup and restore scripts create a `tmp` directory in the current directory that the script uses for extracting or compressing backup files. If you used the `--use-job` parameter when you backed up the data, specify it again when you restore the data. This parameter instructs the backup script to use a Kubernetes job to back up ElasticSearch and MinIO.
 
     The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
 

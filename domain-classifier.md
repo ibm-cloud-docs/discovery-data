@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-08"
+lastupdated: "2022-12-08"
 
 subcollection: discovery-data
 
@@ -28,7 +28,7 @@ Add a classifier to assign documents in your collection into categories. {{site.
 
         You can add more `label` columns if you need to apply more than one label to the sentence in the `text` column. For example, `text,label,label`.
     -   The file must have at least two columns with no headers.
-    -   Add at least 10 entries for each category that you want to define. The minimum number of entries that are required per category is 3. The more examples that you provide for each category, the better the classifier can predict the categories of other content in your collection.
+    -   Add 10 or more entries for each category that you want to define. The minimum number of entries that are required per category is 3. The more examples that you provide for each category, the better the classifier can predict the categories of other content in your collection.
 
     The following example is a CSV file that defines two categories, named `facility_temperature` and `catering`. The example text consists of feedback from conference attendees.
 
