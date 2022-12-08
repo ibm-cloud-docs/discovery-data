@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-12-08"
 
 subcollection: discovery-data
 
@@ -19,6 +19,35 @@ After the processing of a new data collection is finished, you can see a summary
 {: shortdesc}
 
 For more information about how to create a collection, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
+
+## Managing data
+{: #manage-data}
+
+![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+
+After you create a collection and the documents in the collection are indexed, you can see a list of the documents from the *Manage data* page.
+
+1.  Open the *Manage collections* page.
+1.  Click to open the collection that you want to change.
+1.  Click the **Manage data** tab.
+
+    A list of the documents in the collection is displayed.
+
+1.  **Optional**: You can change the information that is displayed.
+
+    To change the fields that are shown in the view, click the *Settings* icon at the start of the view. Choose a different field for the first and second columns, and then click **Apply**.
+
+    For example, you can change the fields in the view to accomplish the following goals:
+
+    -   Get the document ID for a document that you want to work with by using the API.
+    -   Find the parent document for a document. Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection, for example. And splitting a document turns one document into multiple document segments.
+    -   Retrieve the original file name for a document.
+    -   Find out how many pages are in a document.
+
+    The custom settings that you apply are not retained. The default field settings are shown the next time that you access the page.
+    {: note}
+
+1.  **Optional**: You can delete a document from the collection from this page. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
 
 ## Changing how a data source is processed
 {: #collection-change-processing}
