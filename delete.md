@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-12-08"
 
 keywords: delete service
 
@@ -37,6 +37,8 @@ For more information about how data is handled by {{site.data.keyword.cloud_notm
 
 -   [Data Processing and Protection Datasheet](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=A1417A507E8211E6BA51E79BE9476040){: external}.
 -   [IBM Cloud Data security and privacy terms](https://www.ibm.com/support/customer/csol/terms/){: external}
+
+For more information about how to delete a deployment of the service from Cloud Pak for Data as a Service, see [Deleting a deployment](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-deploy-delete.html?audience=wdp){: external}.
 
 ## Deleting an installed service instance ![Cloud Pak for Data only](images/desktop.png)
 {: #delete-cp4d}

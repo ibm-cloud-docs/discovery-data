@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-12-12"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -30,15 +30,19 @@ When you analyze a document with the API, you indicate how you want the document
 
 The following enrichments are supported in the Analyze API:
 
-- [Dictionary](/docs/discovery-data?topic=discovery-data-domain-dictionary)
-- [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex)
-- [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain-ml)
-- [Document classifier](/docs/discovery-data?topic=discovery-data-cm-doc-classifier)
-- [Text classifier](/docs/discovery-data?topic=discovery-data-domain-classifier)
-- [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules)
-- [Entities](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities)
-- [Keywords](/docs/discovery-data?topic=discovery-data-nlu#nlu-keywords)
-- [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)
+-   [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules)
+-   [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema)
+-   [Custom entities](/docs/discovery-data?topic=discovery-data-entity-extractor)
+-   [Dictionary](/docs/discovery-data?topic=discovery-data-domain-dictionary)
+-   [Document classifier](/docs/discovery-data?topic=discovery-data-cm-doc-classifier)
+-   [Entities (NLP)](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities)
+-   [Keywords (NLP)](/docs/discovery-data?topic=discovery-data-nlu#nlu-keywords)
+-   [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain-ml)
+-   [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex)
+-   [Patterns](/docs/discovery-data?topic=discovery-data-domain-pattern) ![Enterprise plan](images/enterprise.png)
+-   [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)
+-   [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)
+-   [Text classifier](/docs/discovery-data?topic=discovery-data-domain-classifier)
 
 For the complete list of the enrichments that are supported in each language, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
@@ -67,7 +71,9 @@ You know the name of a collection in your project where the *Keywords* enrichmen
 After you get the collection ID, include it in the POST request that you submit to apply the configuration settings from the collection to your JSON file. For example, the following request submits the JSON snippet in a file named `favorites2.json` for keyword analysis.
 
 ```curl
-curl --location --request POST 'https://my-cloud-pak-for-data-cluster/discovery/zen-wd/instances/{instance-id}/api/v2/projects/{project-id}/collections/{collection-id}/analyze?version=2020-08-30' \
+curl --location --request POST \
+'https://my-cloud-pak-for-data-cluster/discovery/zen-wd/instances/{instance-id}/api/v2/ \
+projects/{project-id}/collections/{collection-id}/analyze?version=2020-08-30' \
 --header 'Authorization: Bearer ...' \
 --form 'file=@"/quotations/favorites2.json"'
 ```
@@ -196,6 +202,64 @@ You cannot submit an array of objects as input. For example, you might want to a
 {: codeblock}
 
 If so, break each object into a separate file and analyze each file individually.
+
+## Analyzing a text snippet
+{: #analyzeapi-text}
+
+The following example request shows how to analyze text that you specify in the request, not that you pass in a physical file.
+
+```curl
+curl -u "apikey:$KEY" -X POST \
+-H "Content-Type: multipart/form-data; boundary=----boundary_123" \
+-d $'------boundary_123\r\n \
+Content-Disposition: form-data; name="file"; \
+filename="dummy.txt"\r\n \
+Content-Type: application/json\r\n\r\n \
+{  "text": "ISO 9000 is a standard."}\r\n \
+------boundary_123--'  \
+"$URL/v2/projects/$project_id/collections/$collection_id/analyze?version=2020-08-30"
+```
+{: codeblock}
+
+The response might looks as follows.
+
+```json
+{
+  "result" : {
+    "enriched_text" : [ {
+      "entities" : [ {
+        "text" : "ISO 9000",
+        "type" : "my_iso_pattern",
+        "mentions" : [ {
+          "text" : "ISO 9000",
+          "confidence" : 1.0,
+          "location" : {
+            "begin" : 0,
+            "end" : 8
+          }
+        } ],
+        "model_name" : "My ISO Pattern"
+      }, {
+        "text" : "9000",
+        "type" : "Number",
+        "mentions" : [ {
+          "text" : "9000",
+          "confidence" : 0.8,
+          "location" : {
+            "begin" : 4,
+            "end" : 8
+          }
+        } ],
+        "model_name" : "natural_language_understanding"
+      } ]
+    } ],
+    "metadata" : { },
+    "text" : [ "ISO 9000 is a standard." ]
+  },
+  "notices" : [ ]
+}
+```
+{: codeblock}
 
 ## Analyze API limits
 {: #analyzeapi-limits}
