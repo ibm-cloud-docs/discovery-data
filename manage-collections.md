@@ -25,6 +25,9 @@ For more information about how to create a collection, see [Creating collections
 
 ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
 
+This procedure is available in service instances that are managed by {{site.data.keyword.cloud_notm}} only. The *Manage data* page is not available in installed deployments.
+{: note}
+
 After you create a collection and the documents in the collection are indexed, you can see a list of the documents from the *Manage data* page.
 
 1.  Open the *Manage collections* page.
