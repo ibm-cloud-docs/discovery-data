@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-12"
+lastupdated: "2022-12-16"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -41,8 +41,10 @@ The following enrichments are supported in the Analyze API:
 -   [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex)
 -   [Patterns](/docs/discovery-data?topic=discovery-data-domain-pattern) ![Enterprise plan](images/enterprise.png)
 -   [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)
--   [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)
+-   [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)\*
 -   [Text classifier](/docs/discovery-data?topic=discovery-data-domain-classifier)
+
+\* For the table understanding enrichment to produce any results, the input must contain a `<table>` HTML element to analyze.
 
 For the complete list of the enrichments that are supported in each language, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
@@ -206,6 +208,15 @@ If so, break each object into a separate file and analyze each file individually
 ## Analyzing a text snippet
 {: #analyzeapi-text}
 
+You can submit text for analysis as long as you specify the text in JSON format by using syntax like this:
+
+```json
+{
+"text":"The text that you want to analyze."
+}
+```
+{: codeblock}
+
 The following example request shows how to analyze text that you specify in the request, not that you pass in a physical file.
 
 ```curl
@@ -257,6 +268,168 @@ The response might looks as follows.
     "text" : [ "ISO 9000 is a standard." ]
   },
   "notices" : [ ]
+}
+```
+{: codeblock}
+
+## Analyzing HTML content
+{: #analyzeapi-html}
+
+You can analyze HTML as long as you submit the html in JSON format by using syntax like this:
+
+```json
+{
+"html":"<p>My html content.</p>"
+}
+```
+{: codeblock}
+
+The following example request shows how to analyze text that you specify in the request, not that you pass in a physical file. 
+
+The collection to which the request is made has the following enrichments applied to it, which means these enrichment will be applied to the content that you submit with the API request:
+
+-   Entities
+-   Keywords
+-   Table Understanding
+
+### Request endpoint
+{: #analyzeapi-html-url}
+
+```
+https://cpd-abc.example.com/discovery/abc-wd/instances/1671204318684041/api/v2/projects/d457fcd9-a4ce-4637-a340-33123b5cbe2c/collections/2d47dbcc-64c7-84e9-0000-01851bb9d998/analyze?version=2020-08-30
+```
+{: codeblock}
+
+### Request body
+{: #analyzeapi-html-body}
+
+The body of the request contains `form-data` with the name `file`. The value is the JSON content to be analyzed.
+
+```
+file: "{
+  "html":"<html><head>This is my html file</head><body><p>My file contains a table.</p><table><tbody><tr><th>Holiday</th><th>Popular greeting</th></tr><tr><td>Christmas</td><td>Merry Christma!s</td></tr></tbody></table></body></html>",
+  "text":"This is a sentence that contains key words, such as George Washington and Boston, MA."
+}"
+```
+{: codeblock}
+
+### Results
+{: #analyzeapi-html-results}
+
+The results show the output of the Entities, Keywords, and Table Understanding enrichments on the `text` and `html` fields that were submitted.
+
+```
+{
+    "result": {
+        "text": [
+            "This is a sentence that contains key words, such as George Washington and Boston, MA."
+        ],
+        "enriched_text": [
+            {
+                "keywords": [
+                    {
+                        "text": "George Washington",
+                        "mentions": [
+                            {
+                                "text": "George Washington",
+                                "location": {
+                                    "begin": 52,
+                                    "end": 69
+                                }
+                            }
+                        ],
+                        "relevance": 0.952591
+                    },
+                    {
+                        "text": "Boston",
+                        "mentions": [
+                            {
+                                "text": "Boston",
+                                "location": {
+                                    "begin": 74,
+                                    "end": 80
+                                }
+                            }
+                        ],
+                        "relevance": 0.578079
+                    },
+                    {
+                        "text": "MA",
+                        "mentions": [
+                            {
+                                "text": "MA",
+                                "location": {
+                                    "begin": 82,
+                                    "end": 84
+                                }
+                            }
+                        ],
+                        "relevance": 0.146905
+                    }
+                ],
+                "entities": [
+                    {
+                        "text": "George Washington",
+                        "type": "Location",
+                        "mentions": [
+                            {
+                                "text": "George Washington",
+                                "confidence": 0.54922265,
+                                "location": {
+                                    "begin": 52,
+                                    "end": 69
+                                }
+                            }
+                        ],
+                        "model_name": "natural_language_understanding"
+                    },
+                    {
+                        "text": "Boston, MA",
+                        "type": "Location",
+                        "mentions": [
+                            {
+                                "text": "Boston, MA",
+                                "confidence": 0.66049105,
+                                "location": {
+                                    "begin": 74,
+                                    "end": 84
+                                }
+                            }
+                        ],
+                        "model_name": "natural_language_understanding"
+                    }
+                ]
+            }
+        ],
+        "metadata": {},
+        "enriched_html": [
+            {
+                "tables": [
+                    {
+                        "body_cells": [
+                            {}
+                        ],
+                        "location": {
+                            "begin": 99,
+                            "end": 183
+                        },
+                        "row_headers": [],
+                        "key_value_pairs": [],
+                        "section_title": {},
+                        "contexts": [],
+                        "text": "Holiday Popular greeting Christmas Merry Christmas!",
+                        "table_headers": [],
+                        "title": {},
+                        "column_headers": []
+                    }
+                ]
+            }
+        ],
+        "html": [
+            "<html><head>This is my html file</head><body><p>My file contains a table.</p><table><tbody><tr><th>Holiday</th><th>Popular greeting</th></tr><tr><td>Christmas</td><td>Merry Christmas!</td></tr></tbody></table></body></html>"
+        ]
+    },
+    "notices": []
 }
 ```
 {: codeblock}
