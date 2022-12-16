@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-16"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -47,11 +47,11 @@ Before you can create a collection, you must create a project. For more informat
     -   The Conversational Search, Document Retrieval, and Custom project types can contain up to 5 collections.
     -   A Content Mining project can contain only 1 collection.
 
-1.  Choose a data source type, reuse data from an existing data collection, or upload a document from your local file system.
+1.  Choose how you want to add data to your collection.
 
     -   [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
     -   [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse)
-    -   For external data sources, see the appropriate topic for your deployment:
+    -   Crawling an external data source. For supported data sources, see the appropriate topic for your deployment type:
 
         -   ![Cloud Pak for Data only](images/desktop.png) [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
         -   ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
