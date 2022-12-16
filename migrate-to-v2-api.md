@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-11-16"
+lastupdated: "2022-12-16"
 
 subcollection: discovery-data
 
@@ -127,6 +127,9 @@ Some query result configurations are applied to the service by default based on 
 {: #migrate-to-v2-api-queries-notes}
 
 -   v2 queries return results from all of the collections in the project. To restrict the query to use only certain collections within the project, use the `collection_ids` query parameter. You cannot query multiple collections that are added to different projects with one v2 query request.
+-   v2 results include a `confidence` field, but not a `score` field.
+
+    The confidence score replaced the score information in v1, but score was retained for backward compatibility. In v2, only the confidence field is returned.
 -   Use POST calls (instead of GET calls) to submit queries with v2.
 -   v1 queries accept many parameters. The *Query parameters comparison* table maps v1 parameters to v2 parameters.
 
