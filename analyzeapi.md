@@ -220,15 +220,11 @@ You can submit text for analysis as long as you specify the text in JSON format 
 The following example request shows how to analyze text that you specify in the request, not that you pass in a physical file.
 
 ```curl
-curl -u "apikey:$KEY" -X POST \
--H "Content-Type: multipart/form-data; boundary=----boundary_123" \
--d $'------boundary_123\r\n \
-Content-Disposition: form-data; name="file"; \
-filename="dummy.txt"\r\n \
-Content-Type: application/json\r\n\r\n \
-{  "text": "ISO 9000 is a standard."}\r\n \
-------boundary_123--'  \
-"$URL/v2/projects/$project_id/collections/$collection_id/analyze?version=2020-08-30"
+curl --location --request POST \
+'https://my-cloud-pak-for-data-cluster/discovery/zen-wd/instances/{instance-id}/api/v2/ \
+projects/{project-id}/collections/{collection-id}/analyze?version=2020-08-30' \
+--header 'Authorization: Bearer ...' \
+--form 'file={"text": "ISO 9000 is a standard."}'
 ```
 {: codeblock}
 
@@ -292,24 +288,19 @@ The collection to which the request is made has the following enrichments applie
 -   Keywords
 -   Table Understanding
 
-### Request endpoint
-{: #analyzeapi-html-url}
-
-```
-https://cpd-abc.example.com/discovery/abc-wd/instances/1671204318684041/api/v2/projects/d457fcd9-a4ce-4637-a340-33123b5cbe2c/collections/2d47dbcc-64c7-84e9-0000-01851bb9d998/analyze?version=2020-08-30
-```
-{: codeblock}
-
-### Request body
-{: #analyzeapi-html-body}
+### Request example
+{: #analyzeapi-html-request}
 
 The body of the request contains `form-data` with the name `file`. The value is the JSON content to be analyzed.
 
-```
-file: "{
+```curl
+curl --location --request POST \
+'https://cpd-abc.example.com/discovery/abc-wd/instances/1671204318684041/api/v2/projects/d457fcd9-a4ce-4637-a340-33123b5cbe2c/collections/2d47dbcc-64c7-84e9-0000-01851bb9d998/analyze?version=2020-08-30' \
+--header 'Authorization: Bearer ...' \
+--form 'file={
   "html":"<html><head>This is my html file</head><body><p>My file contains a table.</p><table><tbody><tr><th>Holiday</th><th>Popular greeting</th></tr><tr><td>Christmas</td><td>Merry Christma!s</td></tr></tbody></table></body></html>",
   "text":"This is a sentence that contains key words, such as George Washington and Boston, MA."
-}"
+}'
 ```
 {: codeblock}
 
