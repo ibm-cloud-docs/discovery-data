@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-28"
+lastupdated: "2022-12-15"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -46,7 +46,7 @@ Before you can create a collection, you must create a project. For more informat
 
     -   The Conversational Search, Document Retrieval, and Custom project types can contain up to 5 collections.
     -   A Content Mining project can contain only 1 collection.
-    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
+
 1.  Choose a data source type, reuse data from an existing data collection, or upload a document from your local file system.
 
     -   [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
@@ -104,6 +104,8 @@ The number of collections you can create per service instance depends on your {{
 | Enterprise |                        300 |
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
+
+![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
 
 ## Data source overview video
 {: #collections-video}

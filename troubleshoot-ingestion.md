@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-21"
+lastupdated: "2022-12-15"
 
 subcollection: discovery-data
 
@@ -19,6 +19,9 @@ Learn about solutions and workarounds to warnings or errors that you might encou
 This information applies both to managed and installed instances of {{site.data.keyword.discoveryshort}}. For more troubleshooting tips for installed deployments only, see [Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments](/docs/discovery-data?topic=discovery-data-troubleshoot).
 {: note}
 
+Unable to process one or more documents
+:    This notification is displayed in the page header when a processing delay of any kind occurs in any project across the entire service instance. If the message is displayed while you are adding data to a collection, you can ignore it. If any problems occur that are related to the creation of your collection, a message is displayed in the *Activity* page for the collection. Check there for any pertinent messages.
+
 ## Microsoft document troubleshooting tips
 {: #upload-data-ts-ms}
 
@@ -34,6 +37,9 @@ Line breaks are inserted randomly
 
 After applying a pretrained Smart Document Understanding model to a PPT file, table boundaries are not recognized properly
 :    During the conversion process, text that is extracted from the table is confused with text that is outside the table in some PPT pages. This issue is more likely to occur in tables with a lot of text and that have footnotes displayed just outside the table border. If you encounter this issue, export the PPT file as a PDF file, and then upload the PDF file instead. Apply a user-trained Smart Document Understanding (SDU) model to the document, and then use the SDU tool to identify the tables in the document. The resulting model handles table boundaries properly and can extract text from the tables cleanly.
+
+Document cannot be converted to PDF format
+:    If you are using an installed deployment in a FIPS-enabled cluster, you might see a message when you ingest Microsoft Word documents that says, `Document cannot be processed because it cannot be converted to PDF format. Convert the document to PDF format before you add it to the collection`. You can ignore this message. It is displayed prematurely. Give the service more time and the document will be ingested successfully.
 
 ## PDF file troubleshooting tips
 {: #upload-data-ts-pdf}
