@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-12-16"
 
 keywords: curation,snippet,hard-coded answers
 
@@ -22,7 +22,7 @@ Use curations to specify the exact document to return in response to a specific 
 
 This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#createcuration){: external} in the API reference.
 
-This example shows how a curation is added with the API. When querying with the same or similar `natural_language_query` the document with the `document_id` of `document_id1234` is returned. 
+This example shows how a curation is added with the API. When querying with the same or similar `natural_language_query` the document with the `document_id` of `document_id1234` is returned.
 
 ```json
 {
@@ -37,9 +37,9 @@ This example shows how a curation is added with the API. When querying with the 
 ```
 {: codeblock}
 
-The natural language query that is submitted by the customer must be an exact match for the query that is specified in the curation after the query analyzer runs. The query analyzer lemmatizes text, removes stop words, and adds query expansions.
+The natural language query that is submitted by the customer must be an exact match for the query that is specified in the curation. Both queries, the one submitted by the user at run time and the one that is submitted by the curation API and then stored in the index, undergo query analysis. The query analyzer lemmatizes text, removes stop words, and adds query expansions.
 
-You can optionally specify a hard-coded response to the query by including a snippet. A snippet is a response that you author and that is returned when the associated document is returned for the specified natural language query. Synonyms are not applied to curation queries.
+You can optionally specify a hard-coded response to the query by including a snippet. A snippet is a response that you author and that is returned when the associated document is returned for the specified natural language query.
 
 ```json
 {

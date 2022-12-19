@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-19"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -288,22 +288,9 @@ If you change the schedule frequency, the next scheduled crawl time might not be
 ## Stopping a crawl
 {: #collections-crawl-stop}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}** 
-
-To stop the crawl, complete the following steps:
-
-1.  Open the *Manage collections* page from the navigation panel. 
-1.  From the *Activity* page, click **Stop crawl**.
-
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
-
-To stop a crawl that is in progress, you must delete the collection. 
-
-To delete the collection, complete the following steps:
+To stop a crawl, complete the following steps:
 
 1.  Open the *Manage collections* page from the navigation panel.
-1.  Hover over the collection tile, and then click the delete icon.
-
-    If you want to keep the underlying data and configuration settings, select **Don't delete underlying data**. If you choose to keep the data, you can create a new collection and reuse the data later.
-
-1.  Click **Delete from project**.
+1.  From the *Activity* page, if the crawl is not in progress, click **Recrawl** to start the crawl, and then click **Stop**.
+    
+    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: After you stop a crawl, the crawl will not start again until you click **Recrawl** to restart it. When restarted, data from the data source is ingested from scratch, overwriting existing documents and adding new ones.

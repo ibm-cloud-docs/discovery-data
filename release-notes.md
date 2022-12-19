@@ -29,6 +29,20 @@ This information applies only to managed instances of {{site.data.keyword.discov
 
 The beta FAQ extraction feature that detects and extracts question-and-answer pairs from documents is being removed. Support for the feature will end in 1Q 2023.
 
+## 6 December 2022
+{: #discovery-6december2022}
+{: release-note}
+
+<!-- 4.7.0-3.0 -->
+
+Now you can stop a data source crawl
+:   You can stop a crawl that is in progress or that is scheduled to occur in the future. For more information, see [Stopping a crawl](/docs/discovery-data?topic=discovery-data-collections#collections-crawl-stop).
+
+The following item is a known issue:
+
+Box data source scheduled crawls are not updating documents
+:   Due to a problem in the Box Events API, changes that occur between crawls in documents that are stored in Box are not detected and picked up by the Discovery collection during scheduled recrawls. To ensure that your collection is up-to-date, stop and restart the crawl.
+
 ## 1 December 2022
 {: #discovery-1december2022}
 {: release-note}
