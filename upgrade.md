@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-12-20"
 
 subcollection: discovery-data
 
@@ -51,9 +51,11 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
         -   Open the service page for your Plus plan service instance from the [IBM Cloud Resource list](https://cloud.ibm.com/resources){: external}.
         -   Click *Upgrade*.
         -   Choose the Enterprise plan, and then click *Save*.
-        -   Give the upgrade process time to finish. 
+        -   Give the upgrade process time to finish.
         
-            During the process, you can continue to submit search queries in your existing projects. However, avoid the following actions:
+            The time it takes to convert the plan varies depending on the amount of data in your existing Plus plan service instance. It takes at least 20 minutes and, for instances with large amounts of data, can take more than a day to complete. The {{site.data.keyword.cloud_notm}} page does not show progress information and doesn't indicate when the plan upgrade process is finished. To check whether the new plan is in effect, you must refresh the service instance overview page, and then check for the new plan name to be displayed in the *Plan* tile.
+            
+            During the plan upgrade process, you can continue to submit search queries in your existing projects. However, avoid the following actions:
 
             -   Adding new projects or collections
             -   Deleting or changing existing collections, including adding documents, editing fields, and changing enrichment settings.
