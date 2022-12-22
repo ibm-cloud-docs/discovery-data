@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-12-22"
 
 keywords: plans, pricing, service instances, billing
 
@@ -105,7 +105,7 @@ Your bill labels requests that are generated from both query searches and analyz
 Autocompletion, curation, and notice requests are not billed in any plan type.
 {: note}
 
-### How is document pricing calculated?
+## How is document pricing calculated?
 {: #pricing-docs}
 
 IBM uses the maximum number of documents per day and then prorates the document price to calculate the cost for a month.

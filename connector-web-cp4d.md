@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-21"
 
 subcollection: discovery-data
 
@@ -104,6 +104,8 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     -   It crawls the same domain name as the start URL.
     -   It crawls all URL content up to and including the last slash (`/`) in **Starting URLs**. If your start URL has a subtree, the web crawl does not crawl that subtree, unless you specify its URL in **Starting URLs**.
 
+1.  **If the URL starts with HTTPS**: In the *Advanced Configuration* section, set the **Ignore certificate** switcher to **On** to ignore any SSL certificates on the target website.
+
 1.  **Optional**: Click **Authentication settings** to specify the authentication type to apply to one or more of the starting URLs:
 
     -   Choose the starting URL.
@@ -184,7 +186,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     Proxy server port number
     :   The network port that you want to connect to on the proxy server.
 
-1. **Optional**: Complete the following fields in **Advanced Configuration**:
+1. **Optional**: Complete the following fields in *Advanced Configuration*:
 
     Code page to use
     :   Specify the character encoding of the website pages. If unspecified, the default value of `UTF-8` is used.
@@ -203,11 +205,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     :   The number of consecutive links to follow from the start URL. 
     
         If unspecified, the default value is `5`. The maximum number of links that the crawler can follow is `20`. To not allow any hops, enter `0`.
-
-    Ignore certificate
-    :   Enable this setting if you want to ignore any SSL certificates on the target website.
-
-        This option applies to HTTPS URLs only.
 
     Ignore robots.txt
     :   Enable this setting if you want the crawler to ignore the allow and deny rules that are outlined by the website in its robots.txt file. 
