@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-19"
+lastupdated: "2022-12-23"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -17,8 +17,14 @@ subcollection: discovery-data
 
 <!-- c/s help for the *Manage collections* page. Do not delete. -->
 
-A collection is a set of documents that you upload or crawl from where it is stored on a connected data source.
+A collection is a set of documents that you add to a project so that you can analyze, enrich, and extract useful information from it.
 {: shortdesc}
+
+You can add data to your project in the following ways:
+
+-   Upload locally-accessible files.
+-   Crawl an external data source. Crawling is the process of systematically browsing and retrieving content from where it is stored on a connected data source.
+-   Use the API to integrate the addition of content with an existing application.
 
 ## How do I decide what to add to a collection?
 {: #createcollection-why}
@@ -28,21 +34,21 @@ There a few things to consider as you decide how to break up your source content
 -   Getting content from different data sources
 
     If you store similar content in more than one type of data source (a website and Salesforce, for example), you can create one project with two separate collections. Each collection adds documents from a single data source. When they are built together into a single project, a user can search across both sources at the same time.
--   Creating separate Smart Document Understanding (SDU) models
-
-    You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department that use one template and 20 PDF files that were created by your Research department that use a different template, group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
 -   Applying enrichments
 
     Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, you might want to create a collection of documents with frequently asked questions that are formatted in a consistent manner. After you group the documents, you can apply the FAQ extraction feature to the collection. Or maybe a subset of your documents contains industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
+-   Creating separate Smart Document Understanding (SDU) models
+
+    You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department that use one template and 20 PDF files that were created by your Research department that use a different template, group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
 
 ## Creating a collection
 {: #createcollection}
 
-When you create a collection, {{site.data.keyword.discoveryshort}} pulls documents from a data source by *crawling* the data source. Crawling is the process of systematically browsing and retrieving documents from a specified start location.
-
 Before you can create a collection, you must create a project. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
-1.  To create a collection, open a project, go to the **Manage collections** page, and then click **New collection**.
+To create a collection, complete the following steps:
+
+1.  Open a project, go to the **Manage collections** page, and then click **New collection**.
 
     -   The Conversational Search, Document Retrieval, and Custom project types can contain up to 5 collections.
     -   A Content Mining project can contain only 1 collection.
@@ -51,7 +57,9 @@ Before you can create a collection, you must create a project. For more informat
 
     -   [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data)
     -   [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse)
-    -   Crawling an external data source. For supported data sources, see the appropriate topic for your deployment type:
+    -   Crawling an external data source.
+    
+        For supported data sources, see the appropriate topic for your deployment type:
 
         -   ![Cloud Pak for Data only](images/desktop.png) [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
         -   ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
@@ -60,6 +68,8 @@ Before you can create a collection, you must create a project. For more informat
         {: note}
 
 For information about how to troubleshoot issues that you might encounter when you add documents to a collection, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
+
+For more information about how to create a collection programmatically, see the [API reference documentation](/apidocs/discovery-data#createcollection){: external}.
 
 ## Optical character recognition
 {: #ocr}
