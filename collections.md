@@ -22,9 +22,9 @@ A collection is a set of documents that you add to a project so that you can ana
 
 You can add data to your project in the following ways:
 
--   Upload locally accessible files.
+-   Upload locally-accessible files.
 -   Crawl an external data source. Crawling is the process of systematically browsing and retrieving content from where it is stored on a connected data source.
--   Use the API to integrate the addition of content with an existing application or create your own custom upload mechanism.
+-   Use the API to integrate the addition of content with an existing application.
 
 ## How do I decide what to add to a collection?
 {: #createcollection-why}
