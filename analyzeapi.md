@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-23"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Analyze API  ![Enterprise plan](images/enterprise.png) ![Cloud Pak for Data](images/cp4d.png)
+# Analyzing data on demand with the Analyze API  ![Enterprise plan](images/enterprise.png) ![Cloud Pak for Data](images/cp4d.png)
 {: #analyzeapi}
 
 Use the Analyze API to process text documents through the enrichment pipeline of the {{site.data.keyword.discoveryshort}} service without storing the source documents.

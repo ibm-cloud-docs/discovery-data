@@ -136,8 +136,6 @@ toc:
           label: Deploying a custom application
           topics:
           - api-use.md
-          - analyzeapi.md
-          - curations.md
           - topicgroup:
               label: Query API
               topics:
@@ -146,11 +144,13 @@ toc:
               - query-parameters.md
               - query-operators.md
               - query-aggregations.md
+          - curations.md
           - link:
               label: Learn with sample apps
               href: https://developer.ibm.com/learningpaths/get-started-watson-discovery/
+      - analyzeapi.md
       - topicgroup:
-          label: Analyzing your data with the Content Mining application
+          label: Analyzing data with the Content Mining application
           topics:
           - topic: contentminerapp.md
             navtitle: Analyzing your data
