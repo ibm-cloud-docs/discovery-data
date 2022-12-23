@@ -46,6 +46,11 @@ There a few things to consider as you decide how to break up your source content
 
 Before you can create a collection, you must create a project. For more information, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 
+Things to keep in mind:
+
+-   A collection can support only one external data source.
+-   Documents in the collection must be in one language only, the language that you specify for the collection.
+
 To create a collection, complete the following steps:
 
 1.  Open a project, go to the **Manage collections** page, and then click **New collection**.
@@ -64,8 +69,8 @@ To create a collection, complete the following steps:
         -   ![Cloud Pak for Data only](images/desktop.png) [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
         -   ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
-        A collection can support only one data source. Documents in the collection must be in one language only, the language that you specify for the collection.
-        {: note}
+        These topics also describe how to connect to data sources that are not supported by default per deployment type.
+        {: tip}
 
 For information about how to troubleshoot issues that you might encounter when you add documents to a collection, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
 

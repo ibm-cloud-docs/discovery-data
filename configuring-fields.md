@@ -86,7 +86,9 @@ When you build a custom Smart Document Understanding model, the conversion time 
 
 Documents come in all shapes and sizes. Your collection might have a mix of different document structures. Smart Document Understanding works best when the documents in a single collection have similar style characteristics. For example, the documents use consistent font sizes and colors for titles and headers, and tables in the document have similar layouts. To create the best model for your collection, take this prerequisite step:
 
-1.  Review the documents to look for style and layout patterns. If your data contains documents that follow four different formatting styles, break the documents up into four separate collections, one for each style. Add documents with a uniform layout and style to each collection. A good target size per collection is 40 documents.
+1.  Review your documents to look for style and layout patterns, and then separate the documents into groups based on their style.
+
+    For example, if your data contains documents that follow four different formatting styles, break the documents into four separate collections, one for each style. Add documents with a uniform layout and style to each collection. A good target size per collection is 40 documents.
 1.  Use the SDU tool to annotate this representative set of documents and train Watson to recognize custom content in your data.
 1.  Apply the custom SDU model to the full collection. For more information, see [Reusing SDU models](#import).
 
