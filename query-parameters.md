@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-12-23"
 
 subcollection: discovery-data
 
@@ -35,7 +35,9 @@ Documents that you do not have permissions to access are not returned in query r
 
 ![IBM Cloud only](images/ibm-cloud.png) The `find_answers` parameter is supported in managed deployments only.
 
-By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When the answer-finding feature is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use the answer-finding feature can display this short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, displaying the short answer emphasized within the full passage is preferable, because answers generally make more sense in context.
+By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When the answer-finding feature is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. After a user submits a query, the query analysis process occurs. Query analysis transforms the user's original query (by lemmatizing words, removing stop words, and adding query expansions) to improve the chances of finding the best search results. However, a copy of the user's original input also is stored. It is this original text string that the answer finding module uses to find the best short answer to the query.
+
+Applications that use the answer-finding feature can display the short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, displaying the short answer emphasized within the full passage is preferable, because answers generally make more sense in context.
 
 The answer finding feature behaves in the following ways:
 
@@ -44,7 +46,7 @@ In the passage examples that follow, the short answers are shown in bold font.
 
 -   Finds answers. It doesn’t create answers. The answer must be part of the text; it can't be inferred.
 
-    “What was IBM’s revenue in 2017?” can get a correct answer if you have a document that states what IBM’s revenue was in 2017. However, if you have a document that lists what IBM’s revenue was in each quarter of 2017, it doesn't add them up and give you a total.
+    “What was IBM’s revenue in 2022?” can get a correct answer if you have a document that states what IBM’s revenue was in 2022. However, if you have a document that lists what IBM’s revenue was in each quarter of 2022, it doesn't add them up and give you a total.
 
 -   Handles synonyms and lexical variations if the answer is available.
 
@@ -97,13 +99,13 @@ A section is also added to the return value within each `passage` object. That s
 
 To find answers across the entire project:
 
--   Set `passages/enabled` to `true`
--   Set `passages/find_answers` to `true`
+-   Set `passages.enabled` to `true`
+-   Set `passages.find_answers` to `true`
 
 To find answers within a single known document (for example, a document review application with long, complex documents):
 
--   Set `passages/enabled` to `true`
--   Set `passages/find_answers` to `true`
+-   Set `passages.enabled` to `true`
+-   Set `passages.find_answers` to `true`
 -   Set `filter` to select the `document_id` for the document
 
 The following example shows a query that uses this API:
