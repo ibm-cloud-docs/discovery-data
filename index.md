@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-29"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -97,7 +97,7 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
     Apple Safari
     :    Latest veresion -1 for Mac
 
--   The {{site.data.keyword.icp4dfull_notm}} web client where you create service instances supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=requirements-software#software-reqs__web){: external}
+-   The {{site.data.keyword.icp4dfull_notm}} web client where you create service instances supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.6.x?topic=requirements-software#software-reqs__web){: external}
 
 ![IBM Cloud only](images/ibm-cloud.png) **Managed by {{site.data.keyword.cloud_notm}}** 
 
@@ -117,7 +117,7 @@ IBM releases services, features, and language support for your evaluation that a
 ## Terms and notices
 {: #about-terms}
 
-- ![Cloud Pak for Data only](images/desktop.png) Installed {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}} instances: [Security on Cloud Pak for Data](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=planning-security-considerations){: external}
+- ![Cloud Pak for Data only](images/desktop.png) Installed {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}} instances: [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
 - ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}}-managed instances: [IBM Cloud Terms of use](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}
 
 ## Trademarks

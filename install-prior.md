@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-12-29"
 
 subcollection: discovery-data
 
@@ -219,8 +219,6 @@ For more information about the YAML files that you can edit, see [YAML files](#s
 {: #upgrade-discovery}
 
 To upgrade versions of {{site.data.keyword.discoveryfull}} that are earlier than 2.2.0, you must uninstall the current version and then install the newer version.
-
-For more information about how to uninstall the service, see [Uninstalling {{site.data.keyword.discovery-data_short}}](https://www.ibm.com/docs/cloud-paks/cp-data/3.5.0?topic=discovery-uninstalling-watson){: external}
 
 {{site.data.keyword.discovery-data_short}} supports an in-place upgrade from version 2.2.0 to 2.2.1 only, so you do not need to uninstall version 2.2.0 and install version 2.2.1. For more information, see the following sections:
 
