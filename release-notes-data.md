@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-29"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -19,12 +19,17 @@ content-type: release-note
 Learn about features and changes that were included for each release and update of the product software.
 {: shortdesc}
 
-![{{site.data.keyword.cpd_full_notm}} only](images/desktop.png) **{{site.data.keyword.cpd_full_notm}} only** 
+![{{site.data.keyword.cpd_full_notm}} only](images/desktop.png) **{{site.data.keyword.cpd_full_notm}} only**
 
 This information applies only to instances of {{site.data.keyword.discoveryfull}} that are installed on {{site.data.keyword.icp4dfull}}. For information about releases and updates for managed deployments, see [Release notes for Watson Discovery for {{site.data.keyword.cloud_notm}}](/docs/discovery-data?topic=discovery-data-release-notes).
 {: note}
 
 For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.6.x?topic=issues-watson-discovery){: external}.
+
+## 4.6.1 release, December 2022
+{: #discovery-data-december2022}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} was not refreshed as part of 4.6.1. However, the product documentation was updated with fixes and enhancements.
 
 ## 4.6 release, 30 November 2022
 {: #discovery-data-30november2022}
@@ -322,7 +327,7 @@ Improved Web crawl
 :   The *Web crawl* data source supports more customization options, including the ability to ignore a site's robots.txt file. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d).
 
 New upgrade support
-:   The 4.0.2 release supports in-place upgrade from {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.0. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-upgrading-watson-version-40){: external}
+:   The 4.0.2 release supports in-place upgrade from {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.0.0. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/SSQNUZ_4.0/svc-discovery/discovery-upgrade-v4.html){: external}
 
 ## IBM Cloud Private End Of Support
 {: #release-notes-data-30september2021}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-12-29"
 
 subcollection: discovery-data
 
@@ -101,7 +101,7 @@ When you query collections where document-level security is enabled, no results 
 To enable document-level security, you must complete the following steps:
 
 1.  [Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system](#createusersdls).
-1.  [Associate users with your {{site.data.keyword.discoveryshort}} instance]. For more information, see [Giving users access to Discovery](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=a-giving-users-access){: external}.
+1.  [Associate users with your {{site.data.keyword.discoveryshort}} instance]. For more information, see [Giving users access to a Watson Discovery instance](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-admin-add-users.html){: external}.
 1.  Enable document-level security for the data source when you connect to it.
 
 ### Creating users for document-level security
@@ -113,8 +113,8 @@ You must create users that match the users available on the source system that {
 1. Log in to {{site.data.keyword.discoveryshort}} as an administrator.
 1. Create users who match the users available on your source or who are connected to the identity provider that your source system uses. If you create users for document-level security, keep the following points in mind:
 
-   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=a-managing-users-1){: external}.
-   - To connect to an identity provider that the source is using, see [Connecting to your identity provider](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.5.x?topic=users-connecting-your-identity-provider){: external}.
+   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/admin/users.html){: external}.
+   - To connect to an identity provider that the source is using, see [Connecting to your identity provider](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/admin/ldap.html){: external}.
 
 {{site.data.keyword.discoveryshort}} does not synchronize changes that are made to the users in the identity provider with the user list for the service. {{site.data.keyword.discoveryshort}} administrators must ensure that the user list is current and remove any noncurrent users.
 {: note}
