@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-12-23"
+  years: 2019, 2023
+lastupdated: "2023-01-05"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -22,9 +22,19 @@ A collection is a set of documents that you add to a project so that you can ana
 
 You can add data to your project in the following ways:
 
--   Upload locally-accessible files.
--   Crawl an external data source. Crawling is the process of systematically browsing and retrieving content from where it is stored on a connected data source.
--   Use the API to integrate the addition of content with an existing application.
+-   Upload locally-accessible files by using the product user interface. This method is the best way to get started and test your use case.
+-   Set up a scheduled crawl of documents that are stored on an external data source.
+
+    The product user interface offers several built-in data source connectors for you to choose from. The options differ depending on your deployment type. For more information, see [Supported data sources](#collections-include-data-sources-reuse).
+-   Connect to an external data source for which there is no built-in support:
+
+    ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}}
+    :    Use IBM App Connect to set up a scheduled crawl of documents that are stored on other external data sources.
+    
+    ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.icp4dfull_notm}}
+    :    Build a connector to crawl documents that are stored on other external data sources.
+
+-   To automate the process of adding data to your project, use the Discovery APIs to create a collection and upload documents to it.
 
 ## How do I decide what to add to a collection?
 {: #createcollection-why}
