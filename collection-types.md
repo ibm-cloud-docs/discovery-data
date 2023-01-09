@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-12-29"
+  years: 2019, 2023
+lastupdated: "2023-01-09"
 
 subcollection: discovery-data
 
@@ -113,7 +113,7 @@ You must create users that match the users available on the source system that {
 1. Log in to {{site.data.keyword.discoveryshort}} as an administrator.
 1. Create users who match the users available on your source or who are connected to the identity provider that your source system uses. If you create users for document-level security, keep the following points in mind:
 
-   - Optional: For each user who you want to access query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/admin/users.html){: external}.
+   - Optional: For each user that you want to have access to query results, you must add users. The username must match the username that the source uses. This option is only for development and testing purposes. To create users individually, see [Managing users](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/admin/users.html){: external}.
    - To connect to an identity provider that the source is using, see [Connecting to your identity provider](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/admin/ldap.html){: external}.
 
 {{site.data.keyword.discoveryshort}} does not synchronize changes that are made to the users in the identity provider with the user list for the service. {{site.data.keyword.discoveryshort}} administrators must ensure that the user list is current and remove any noncurrent users.
