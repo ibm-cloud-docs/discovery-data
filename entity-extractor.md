@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-01-10"
 
 subcollection: discovery-data
 
@@ -353,7 +353,7 @@ The number of entity extractors that you can create per service instance depends
 
 | Plan | Entity extractors per service instance | Maximum entity types per extractor | Maximum documents in training data |
 |------|--------------------------------:|---------------------------:|-----------------------------------:|
-| Cloud Pak for Data | 10 | 75 | 1,000 |
+| Cloud Pak for Data | Unlimited | 75 | 1,000 |
 | Premium | 10 | 75 | 1,000 |
 | Enterprise | 10 | 50 | 1,000 |
 | Plus (including Trial) | 3 | 20 | 100 |

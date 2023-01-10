@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-10"
 
 subcollection: discovery-data
 
@@ -86,12 +86,12 @@ In the passage examples that follow, the short answers are shown in bold font.
 
 After a user submits a query, the query is analyzed by the Discovery service. Query analysis transforms the user's original query in ways that improve the chances of finding the best search results. For example, it lemmatizing words, removes stop words, and adds query expansions. The search is performed and the resulting documents and passages are returned.
 
-Answer finding is applied to the returned passages. Up to 60 passages are sent to the answer-finding service. How the 60 passages are chosen differs based on the `passages.per_document` parameter value.
+Answer finding is applied to the returned passages. Up to 60 passages are sent to the answer-finding service. How these 60 passages are chosen differs based on the `passages.per_document` parameter value.
 
 -   If `passages.per_document` is `false`, the top 60 passages from all of the documents that are returned by search are chosen based on their passage scores only.
 -   If `passages.per_document` is `true`, the returned documents are ranked first, and then the top 60 passages from these top documents are chosen.
 
-For example, if you set the query to return 100 documents (count=100) and ask for 2 passages from each document (passages.max_per_document=2), then 2 passages are chosen from each of the 30 top-ranked documents (2 x 30 = 60 passages) only. No passages are chosen from the remaining 70 documents.
+    For example, if you set the query to return 100 documents (count=100) and ask for 2 passages from each document (passages.max_per_document=2), then 2 passages are chosen from each of the 30 top-ranked documents (2 x 30 = 60 passages) only. No passages are chosen from the remaining 70 documents.
 
 If your goal is to get the best 10 short answers, a good approach is to give the answer-finding feature various passages from more documents than just the top 10. To do so, set `passages.per_document` to `true`, and then request 20 documents and up to 3 passages from each document with the answer-finding feature enabled. The answer-finding feature searches for answers in up to 20*3 = 60 passages.
 {: tip}
