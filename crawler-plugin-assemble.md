@@ -16,7 +16,7 @@ subcollection: discovery-data
 After you write the source code for your crawler plug-in, you must assemble and compile it.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
 {: note}

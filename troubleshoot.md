@@ -375,7 +375,7 @@ This limit of 1,000 shards does not apply to versions of {{site.data.keyword.dis
 {: #troubleshoot-ls}
 {: troubleshoot}
 
-![Cloud Pak for Data only](images/desktop.png) **Installed only**: When the `gateway` pod restarts, it runs a database validation plug-in that checks for changes and applies the latest change sets to the shared database. If the pod is restarted while this check is in process, the plug-in might remain in a lock state, preventing the service from starting. Manual database intervention might be needed to clear the lock.
+[IBM Cloud Pak for Data]{: tag-cp4d} **Installed only**: When the `gateway` pod restarts, it runs a database validation plug-in that checks for changes and applies the latest change sets to the shared database. If the pod is restarted while this check is in process, the plug-in might remain in a lock state, preventing the service from starting. Manual database intervention might be needed to clear the lock.
 
 If the Discovery API does not come online or if the `gateway-0` pod looks like it is in a constant crash loop, you can try checking the Liberty server logs for the API service located here: `/opt/ibm/wlp/output/wdapi/logs/messages.log`
 

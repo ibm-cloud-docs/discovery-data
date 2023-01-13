@@ -16,7 +16,7 @@ subcollection: discovery-data
 Crawl documents that are stored in a local file system.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
 {: note}

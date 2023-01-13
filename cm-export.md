@@ -18,7 +18,7 @@ If you discover insights as you analyze your data, you can export the data to sh
 
 You can export your data as a CSV file or you can generate a separate JSON file for each record.
 
-![Cloud Pak for Data only](images/desktop.png) For {{site.data.keyword.icp4dfull_notm}} only, you cannot export secured collections. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
+[IBM Cloud Pak for Data]{: tag-cp4d} For {{site.data.keyword.icp4dfull_notm}} only, you cannot export secured collections. For more information, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
 
 To export your data, complete the following steps:
 

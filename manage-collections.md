@@ -108,7 +108,7 @@ Enrichments and improvement tool settings are not included when a collection is 
 For more information about the other tabs, see the following topics:
 
 - **GDPR data label** ![IBM Cloud only](images/ibm-cloud.png): For more information about GDPR and labeling data, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).
-- **API usage** ![Cloud Pak for Data only](images/desktop.png): For more information about monitoring Analyze API usage, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
+- **API usage** [IBM Cloud Pak for Data]{: tag-cp4d} For more information about monitoring Analyze API usage, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
 
 ## Deleting collections
 {: #collection-delete}

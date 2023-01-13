@@ -40,7 +40,7 @@ For more information about how data is handled by {{site.data.keyword.cloud_notm
 
 For more information about how to delete a deployment of the service from Cloud Pak for Data as a Service, see [Deleting a deployment](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-deploy-delete.html?audience=wdp){: external}.
 
-## Deleting an installed service instance ![Cloud Pak for Data only](images/desktop.png)
+## Deleting an installed service instance [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #delete-cp4d}
 
 Only the owner or an Administrator of the provisioned service instance can delete it.

@@ -52,7 +52,7 @@ To use the API, you must construct the URL to use in your requests. Many of the 
     ```
     {: codeblock}
 
-## Using the API from Cloud Pak for Data ![Cloud Pak for Data only](images/desktop.png)
+## Using the API from Cloud Pak for Data [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #api-use-cpd}
 
 This information applies to {{site.data.keyword.discovery-data_short}} only.

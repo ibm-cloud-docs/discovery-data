@@ -16,7 +16,7 @@ subcollection: discovery-data
 Find information related to scaling and upgrading earlier releases of {{site.data.keyword.discovery-data_short}}.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
 {: note}

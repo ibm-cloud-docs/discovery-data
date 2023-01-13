@@ -81,7 +81,7 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
 ## Browser support
 {: #about-browser}
 
-![Cloud Pak for Data only](images/desktop.png) **Installed on {{site.data.keyword.icp4dfull_notm}}** 
+[IBM Cloud Pak for Data]{: tag-cp4d} **Installed on {{site.data.keyword.icp4dfull_notm}}** 
 
 -   The minimum required browser software for the product user interface includes the following browsers:
 
@@ -117,7 +117,7 @@ IBM releases services, features, and language support for your evaluation that a
 ## Terms and notices
 {: #about-terms}
 
-- ![Cloud Pak for Data only](images/desktop.png) Installed {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}} instances: [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
+- [IBM Cloud Pak for Data]{: tag-cp4d} Installed {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}} instances: [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
 - ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}}-managed instances: [IBM Cloud Terms of use](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}
 
 ## Trademarks

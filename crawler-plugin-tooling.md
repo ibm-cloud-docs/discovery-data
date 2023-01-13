@@ -16,7 +16,7 @@ subcollection: discovery-data
 After you build and deploy a crawler plug-in, you can configure your {{site.data.keyword.discoveryshort}} collection to use your plug-in to process documents.
 {: shortdesc}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
 
 This information applies only to installed deployments.
 {: note}

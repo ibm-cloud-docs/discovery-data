@@ -31,7 +31,7 @@ You can add data to your project in the following ways:
     ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}}
     :    Use IBM App Connect to set up a scheduled crawl of documents that are stored on other external data sources.
     
-    ![Cloud Pak for Data only](images/desktop.png) {{site.data.keyword.icp4dfull_notm}}
+    [IBM Cloud Pak for Data]{: tag-cp4d} {{site.data.keyword.icp4dfull_notm}}
     :    Build a connector to crawl documents that are stored on other external data sources.
 
 -   To automate the process of adding data to your project, use the Discovery APIs to create a collection and upload documents to it.
@@ -76,7 +76,7 @@ To create a collection, complete the following steps:
     
         For supported data sources, see the appropriate topic for your deployment type:
 
-        -   ![Cloud Pak for Data only](images/desktop.png) [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
+        -   [IBM Cloud Pak for Data]{: tag-cp4d} [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
         -   ![IBM Cloud only](images/ibm-cloud.png) [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
         These topics also describe how to connect to data sources that are not supported by default per deployment type.
@@ -217,7 +217,7 @@ The maximum size of each file that you can crawl by using a connector differs by
 
 -   All other plans: 10 MB
 
-![Cloud Pak for Data only](images/desktop.png) Installed deployments on {{site.data.keyword.icp4dfull_notm}}
+[IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments on {{site.data.keyword.icp4dfull_notm}}
 
 -   All data sources: 32 MB
 

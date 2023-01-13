@@ -60,7 +60,7 @@ You can prevent content from being included in query results in the following wa
       Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments and applying FAQ extraction generates a document for each question-and-answer pair that is identified. If you delete one of these generated documents, and then repeat the action that created it, the deleted document is added back in to your collection.
       {: note}
 
-   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+   [IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
 
    The *Manage data* page is not available in installed deployments. You must use the [Discovery API](/apidocs/discovery-data#deletedocument) to delete a document. And you must know the document ID of the document that you want to delete. To get the document ID, use the [List documents](/apidocs/discovery-data#listdocuments) API method.
 
