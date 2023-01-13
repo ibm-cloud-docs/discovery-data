@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-23"
+lastupdated: "2022-01-13"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Analyzing data on demand with the Analyze API  ![Enterprise plan](images/enterprise.png) ![Cloud Pak for Data](images/cp4d.png)
+# Analyzing data on demand with the Analyze API
 {: #analyzeapi}
 
 Use the Analyze API to process text documents through the enrichment pipeline of the {{site.data.keyword.discoveryshort}} service without storing the source documents.
@@ -39,7 +39,7 @@ The following enrichments are supported in the Analyze API:
 -   [Keywords (NLP)](/docs/discovery-data?topic=discovery-data-nlu#nlu-keywords)
 -   [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain-ml)
 -   [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex)
--   [Patterns](/docs/discovery-data?topic=discovery-data-domain-pattern) ![Enterprise plan](images/enterprise.png)
+-   [Patterns](/docs/discovery-data?topic=discovery-data-domain-pattern) (Enterprise plan only)
 -   [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)
 -   [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)\*
 -   [Text classifier](/docs/discovery-data?topic=discovery-data-domain-classifier)
@@ -438,7 +438,7 @@ The following table shows the file size and usage limits for the Analyze API.
 
 Use of the Analyze API from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} affects license usage. For more information, see the latest [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
 
-## Monitoring usage  ![Cloud Pak for Data](images/cp4d.png)
+## Monitoring usage  [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #api-usage}
 
 You can monitor the usage of the Analyze API from the *API usage* page.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2022-05-13"
+lastupdated: "2023-01-13"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding contracts ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+# Understanding contracts
 {: #contracts-schema}
 
 The *Contracts* enrichment identifies contract-related elements in a document.
@@ -31,13 +31,13 @@ To see the elements that are identified by the *Contracts* enrichment, complete 
 
 1.  Do one of the following things:
 
-    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
+    [IBM Cloud]{: tag-ibm-cloud}
 
       1.  Click **Open advanced view** to see the *Contract Data* page.
 
           ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png)
     
-    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+    [IBM Cloud Pak for Data]{: tag-cp4d}
 
       1.  Click **Contract Data**.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-09-19"
+lastupdated: "2023-01-13"
 
 keywords: content mining,content analytics studio,facets
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Analyzing your data with the Content Mining application ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+# Analyzing your data with the Content Mining application
 {: #contentminerapp}
 
 Use the {{site.data.keyword.discoveryshort}} Content Mining application to analyze your data. The application shows subsets of your information in visualizations that can help you to find patterns, trends, and anomalies.

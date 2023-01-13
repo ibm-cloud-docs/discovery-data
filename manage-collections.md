@@ -81,8 +81,8 @@ To change how a data source is processed, complete the following steps:
 
 To find out whether a collection is being shared, open the *My Projects* page, and then complete the appropriate step for your deployment:
 
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Click **Collection usage and sharing**.
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Click **Data usage and GDPR**, and then review the **Collection usage** page.
+- [IBM Cloud Pak for Data]{: tag-cp4d}: Click **Collection usage and sharing**.
+- [IBM Cloud]{: tag-ibm-cloud}: Click **Data usage and GDPR**, and then review the **Collection usage** page.
 
 Collections can be associated with a single project, shared by two or more projects, or not associated with any project.
 
@@ -121,7 +121,7 @@ Find out whether a collection is being used anywhere before you delete it from t
 
     Click **Delete from project**.
 
--   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon, and then choose **Delete environment**.
+-   [IBM Cloud Pak for Data]{: tag-cp4d}: To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon, and then choose **Delete environment**.
 
     *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
     {: tip}

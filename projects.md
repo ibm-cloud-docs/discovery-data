@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-08-11"
+lastupdated: "2023-01-13"
 
 keywords: projects, project types
 
@@ -57,11 +57,11 @@ Choose a project type to get the correct set of enrichments applied to your docu
 
 The following project types are available:
 
-- [Document Retrieval](#doc-retrieval)
-- [Document Retrieval for Contracts](#doc-retrieval-contracts) ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
-- [Conversational Search](#conversational)
-- [Content Mining](#mining) ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
-- [Custom](#custom)
+-    [Document Retrieval](#doc-retrieval)
+-    [Document Retrieval for Contracts](#doc-retrieval-contracts)
+-    [Conversational Search](#conversational)
+-    [Content Mining](#mining)
+-    [Custom](#custom)
 
 For more information about the different settings that are applied to each project type, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 
@@ -80,7 +80,7 @@ This tagged information is used later when a natural language phrase is submitte
 A sample Document Retrieval project is available for you to explore. For more information, see [Getting started with Watson Discovery](/docs/discovery-data?topic=discovery-data-getting-started).
 {: tip}
 
-### Document Retrieval for Contracts ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+### Document Retrieval for Contracts
 {: #doc-retrieval-contracts}
 
 If you are working with English-language legal contracts, enable the Content Intelligence feature to apply a contracts enrichment that can recognize and tag contract-related concepts in your data. Use this project type to automate complex business processes, such as contract review and negotiation. This project type can help to increase productivity, minimize costs, and reduce your legal exposure.
@@ -98,9 +98,6 @@ For any collection that you add to the project, optical character recognition (O
 When you apply the contracts enrichment, you cannot use Smart Document Understanding to annotate documents. A pretrained SDU model that can recognize contract-related information is applied automatically. The Table understanding enrichment is automatically applied.
 {: note}
 
-- ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Create a Document Retrieval project, and then select **Apply contracts enrichment**.
-- ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Enable the Content Intelligence feature when you install the {{site.data.keyword.discoveryshort}} service
-
 For more information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
 
 ### Conversational Search
@@ -114,22 +111,22 @@ The documents that you add to this type of project are not enriched automaticall
 
 If you need to perform more complex searches from your virtual assistant, you might want to create a *Document Retrieval* project instead of *Conversational Search* project. For more information, see [Choosing the right project type for a chatbot](/docs/discovery-data?topic=discovery-data-chat-choose-project).
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
+[IBM Cloud]{: tag-ibm-cloud}
 
 - Consider enabling the *FAQ extraction* feature when you add a collection. The FAQ extraction feature runs extra processes to identify and tag clear question-and-answer pairs in your data source. This additional step makes it easier for a virtual assistant to return a concise and accurate answer in response to a question that is the same or similar to its pair.
 - Another feature to consider enabling is the *Emphasize the answer* beta feature. When enabled, the answers that are returned to customers who interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
 
 For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
--   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
--   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
+-   [IBM Cloud Pak for Data]{: tag-cp4d}: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
+-   [IBM Cloud]{: tag-ibm-cloud}: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
 
     From the new {{site.data.keyword.conversationshort}} experience, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
     {: note}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Follow steps to use this project type to enhance your virtual assistant by completing the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+[IBM Cloud]{: tag-ibm-cloud}: Follow steps to use this project type to enhance your virtual assistant by completing the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
-### Content Mining ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+### Content Mining
 {: #mining}
 
 Use this project type to discover hidden insights, trends, and relationships in your data.

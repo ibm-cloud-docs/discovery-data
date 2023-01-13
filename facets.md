@@ -37,7 +37,7 @@ For other project types, you can create facets in the following ways:
 
 -   [From existing fields in a collection](#facetexist)
 -   [By adding a dictionary entry](#facetdict)
--   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: [By identifying a pattern](#facetpattern)
+-   [IBM Cloud]{: tag-ibm-cloud} [By identifying a pattern](#facetpattern)
 
 ### Creating a facet from existing fields in a collection
 {: #facetexist}

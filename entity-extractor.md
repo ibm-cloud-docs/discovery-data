@@ -132,7 +132,7 @@ Review these tips before you begin:
 
 Label terms in the document that represent examples of the entity types you defined. When you are done with one document, switch the document status from *In progress* to *Complete*, and then move on to the next document.
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: Only the first 40,000 characters from each document are available for labeling. 40,000 characters is approximately 20 pages.
+[IBM Cloud Pak for Data]{: tag-cp4d} Only the first 40,000 characters from each document are available for labeling. 40,000 characters is approximately 20 pages.
 
 To label entity examples, complete the following steps:
 

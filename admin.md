@@ -18,7 +18,7 @@ subcollection: discovery-data
 Share a preview of your search application or build a team to work on a project. You can give team members access to your Discovery service instance through {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
+[IBM Cloud]{: tag-ibm-cloud}
 
 The information in this topic applies to managed deployments only.
 {: important}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-07-22"
+lastupdated: "2023-01-13"
 
 subcollection: discovery-data
 
@@ -85,7 +85,7 @@ If enhancing your chatbot is your goal, complete the steps that are listed in th
 
 For help with walking through the steps, complete the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
-## Find trends  ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+## Find trends
 {: #product-overview-mining}
 
 Uncover patterns, trends, and relationships in structured and unstructured data. Use text analytics to gain insights into social media, e-commerce trends, and user behavior. Or start to address problems by finding their root cause.
@@ -107,7 +107,7 @@ If finding trends in your data is your goal, complete the steps that are listed 
 {: caption="Checklist for finding trends" caption-side="top"}
 
 
-## Analyze contracts  ![Enterprise plan](images/enterprise.png) ![Premium plan](images/premium.png) ![Cloud Pak for Data](images/cp4d.png)
+## Analyze contracts
 {: #product-overview-contracts}
 
 Accelerate the pace at which experts can analyze complex documents.

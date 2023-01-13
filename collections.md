@@ -130,7 +130,7 @@ The number of collections you can create per service instance depends on your {{
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
+[IBM Cloud Pak for Data]{: tag-cp4d}: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
 
 ## Data source overview video
 {: #collections-video}
@@ -278,9 +278,9 @@ To create a crawl schedule, complete the following steps:
     -   By default, the crawl is scheduled to start during off-peak hours.
     -   Do not set the interval to a frequency that is shorter than the time it takes for the crawl to finish.
     -   Do not configure multiple crawlers to run at short intervals.
-    -   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
-1.  ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**: In **More scheduling settings**, choose the type of schedule to use to crawl the data source. 
+1.  [IBM Cloud Pak for Data]{: tag-cp4d} In **More scheduling settings**, choose the type of schedule to use to crawl the data source. 
 
     The choices for all of the connectors (except the *Web crawl* connector) are as follows:
 
@@ -306,7 +306,7 @@ To create a crawl schedule, complete the following steps:
 
 If you want to change the flexible crawl schedule settings later, you can go to the *Processing settings* page, edit the settings, and then click **Apply changes and reprocess**.
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: The next scheduled crawl is displayed on the Activity page.
+[IBM Cloud]{: tag-ibm-cloud} The next scheduled crawl is displayed on the Activity page.
 
 If you change the schedule frequency, the next scheduled crawl time might not be what you expect. The crawls are set up to occur on a regular schedule at a specific time or day by default. For example, if you change the crawl schedule from weekly to monthly on 11 August, the next crawl might be scheduled for 31 August instead of 11 September. It is not scheduled for exactly a month from the day that you made the change. Instead, it is scheduled to run on the day that is designated as the default run day for the selected crawl frequency.
 
@@ -318,4 +318,4 @@ To stop a crawl, complete the following steps:
 1.  Open the *Manage collections* page from the navigation panel.
 1.  From the *Activity* page, if the crawl is not in progress, click **Recrawl** to start the crawl, and then click **Stop**.
     
-    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: After you stop a crawl, the crawl will not start again until you click **Recrawl** to restart it. When restarted, data from the data source is ingested from scratch, overwriting existing documents and adding new ones.
+    [IBM Cloud]{: tag-ibm-cloud} After you stop a crawl, the crawl will not start again until you click **Recrawl** to restart it. When restarted, data from the data source is ingested from scratch, overwriting existing documents and adding new ones.

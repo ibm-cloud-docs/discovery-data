@@ -33,7 +33,7 @@ To test your project, complete the following steps:
 
     A representation of the original document is displayed. 
     
-1.  ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**: Click **Open advanced view** to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document.
+1.  [IBM Cloud]{: tag-ibm-cloud} Click **Open advanced view** to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document.
 
     **Optional**: Select an enrichment to highlight every occurrence of the element within the document text.
 
@@ -41,13 +41,13 @@ To test your project, complete the following steps:
 
 1.  If you want to view the query result in JSON format, you can do one of the following things depending on your deployment type:
 
-    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:
+    [IBM Cloud]{: tag-ibm-cloud}
 
       1.  Click the *Display options* menu from the advanced view header, and then select **JSON view**.
 
           ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
 
-    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+    [IBM Cloud Pak for Data]{: tag-cp4d}
 
       1.  Click **JSON**.
 

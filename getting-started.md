@@ -27,8 +27,8 @@ In this tutorial, we introduce {{site.data.keyword.discoveryfull}} and walk you 
 
 Choose the appropriate step to complete for your deployment:
 
--   ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
--   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**: Complete the following steps:
+-   [IBM Cloud Pak for Data]{: tag-cp4d}: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+-   [IBM Cloud]{: tag-ibm-cloud}: Complete the following steps:
 
     1.  Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
     1.  You can use a Plus plan for 30 days at no cost. However, to create a Plus plan instance of the service, you must have a paid account.
@@ -44,7 +44,7 @@ Choose the appropriate step to complete for your deployment:
 {: #getting-started-launch-tool}
 {: step}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}}**
+[IBM Cloud]{: tag-ibm-cloud}
 
 These instructions apply to all managed deployments, including {{site.data.keyword.icp4dfull_notm}} as a Service instances.
 
@@ -54,7 +54,7 @@ These instructions apply to all managed deployments, including {{site.data.keywo
 
     If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
-![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}}**
+[IBM Cloud Pak for Data]{: tag-cp4d}
 
 These instructions apply to {{site.data.keyword.discoveryshort}} deployments:
 
@@ -197,7 +197,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
 1.  Do one of the following things to explore the search result.
 
-    ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**:  
+    [IBM Cloud]{: tag-ibm-cloud}  
     
       1.  Click **Open advanced view**.
 
@@ -211,7 +211,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
           ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
 
-    ![Cloud Pak for Data only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**:
+    [IBM Cloud Pak for Data]{: tag-cp4d}
 
       1.  Click **JSON**.
 

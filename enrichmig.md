@@ -29,7 +29,7 @@ To analyze data with these migrated enrichments, you can use a Content Mining pr
 -   For more information about how to create a Content Mining project, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 -   For more information about how to apply enrichments to a collection in the Content Mining application, see [Applying the annotator](/docs/discovery-data?topic=discovery-data-cm-custom-annotator#cm-custom-annotator-deploy).
 
-## Importing dictionaries from Watson Explorer Analytical Components ![Cloud Pak for Data](images/cp4d.png)
+## Importing dictionaries from Watson Explorer Analytical Components [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #enrichdictca}
 
 You can import an XML file to use as the dictionary source file from {{site.data.keyword.icp4dfull_notm}} deployments only.
@@ -96,7 +96,7 @@ You can import [character patterns](https://www.ibm.com/support/knowledgecenter/
 1.  Click the **Import** button.
 1.  Select the JSON file that you want to import, and then click **Save**.
 
-## Importing facets from Watson Explorer Content Analytics Studio ![Cloud Pak for Data](images/cp4d.png)
+## Importing facets from Watson Explorer Content Analytics Studio [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #enrichml}
 
 You can import a PEAR file to use as the machine learning source file from {{site.data.keyword.icp4dfull_notm}} deployments only.
