@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2022
+  years: 2019, 2023
 lastupdated: "2022-12-01"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
