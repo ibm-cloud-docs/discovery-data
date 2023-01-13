@@ -16,7 +16,7 @@ subcollection: discovery-data
 Learn how to upgrade the version of your installed service deployment.
 {: shortdesc}
 
-![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d}
 
 This information applies only to installed deployments.
 {: note}

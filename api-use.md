@@ -26,7 +26,7 @@ Send the version parameter with every API request. The service uses the API vers
 
 The current version is `2020-08-30`.
 
-## Getting your project ID ![IBM Cloud only](images/ibm-cloud.png)
+## Getting your project ID [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #api-use-cloud}
 
 This information applies to {{site.data.keyword.cloud_notm}} only.

@@ -81,7 +81,7 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
 ## Browser support
 {: #about-browser}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **Installed on {{site.data.keyword.icp4dfull_notm}}** 
+[IBM Cloud Pak for Data]{: tag-cp4d}
 
 -   The minimum required browser software for the product user interface includes the following browsers:
 
@@ -99,7 +99,7 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
 
 -   The {{site.data.keyword.icp4dfull_notm}} web client where you create service instances supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.6.x?topic=requirements-software#software-reqs__web){: external}
 
-![IBM Cloud only](images/ibm-cloud.png) **Managed by {{site.data.keyword.cloud_notm}}** 
+[IBM Cloud]{: tag-ibm-cloud}
 
 -   Deployments of {{site.data.keyword.discoveryshort}} that are managed by {{site.data.keyword.cloud_notm}} follow the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
 -   For more information about browser support for deployments that are provisioned with Cloud Pak for Data as a Service, see [Which web browsers are supported for Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/faq.html?audience=wdp#which-browser){: external}. 
@@ -117,8 +117,8 @@ IBM releases services, features, and language support for your evaluation that a
 ## Terms and notices
 {: #about-terms}
 
-- [IBM Cloud Pak for Data]{: tag-cp4d} Installed {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}} instances: [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
-- ![IBM Cloud only](images/ibm-cloud.png) {{site.data.keyword.cloud_notm}}-managed instances: [IBM Cloud Terms of use](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}
+- [IBM Cloud Pak for Data]{: tag-cp4d} [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
+- [IBM Cloud]{: tag-ibm-cloud} [IBM Cloud Terms of use](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}
 
 ## Trademarks
 {: #about-trademarks}

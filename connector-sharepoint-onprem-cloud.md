@@ -16,7 +16,7 @@ subcollection: discovery-data
 Crawl documents that are stored in a Microsoft SharePoint data source that is hosted on premises.
 {: shortdesc}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about connecting to an on-premises SharePoint data source from an installed deployment, see [SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d).
 {: note}

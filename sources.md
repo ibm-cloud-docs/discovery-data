@@ -18,7 +18,7 @@ subcollection: discovery-data
 You can use {{site.data.keyword.discoveryfull}} on the {{site.data.keyword.cloud}} to connect to and crawl documents from remote sources.
 {: shortdesc}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Overview of Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 {: note}
@@ -53,7 +53,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
     -   [Collection limits](/docs/discovery-data?topic=discovery-data-collections#collections-limits)
     -   [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits)
 
-## FAQ extraction ![IBM Cloud only](images/ibm-cloud.png)
+## FAQ extraction [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #faq-extraction}
 
 The FAQ extraction feature is a beta feature and is not meant for use in production environments. The feature is not supported with Chinese-language collections.

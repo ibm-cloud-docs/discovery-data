@@ -19,7 +19,7 @@ content-type: release-note
 Learn about features and changes that were included for each release and update of the product software.
 {: shortdesc}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
