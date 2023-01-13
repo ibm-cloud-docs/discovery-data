@@ -27,8 +27,8 @@ In this tutorial, we introduce {{site.data.keyword.discoveryfull}} and walk you 
 
 Choose the appropriate step to complete for your deployment:
 
--   [IBM Cloud Pak for Data]{: tag-cp4d}: Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
--   [IBM Cloud]{: tag-ibm-cloud}: Complete the following steps:
+-   [IBM Cloud Pak for Data]{: tag-cp4d} Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+-   [IBM Cloud]{: tag-ibm-cloud} Complete the following steps:
 
     1.  Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
     1.  You can use a Plus plan for 30 days at no cost. However, to create a Plus plan instance of the service, you must have a paid account.

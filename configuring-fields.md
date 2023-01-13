@@ -57,7 +57,7 @@ The Smart Document Understanding (SDU) tool works better with some project types
 
 -   The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. You can use the SDU tool to find and annotate them. If you configure the project to contain answers in an answer field, you must update the search configuration in {{site.data.keyword.conversationshort}} to get the body of the response from the custom answer field.
   
-    [IBM Cloud]{: tag-ibm-cloud}: Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use. FAQ stores the answer in the `text` field, so you can use the default {{site.data.keyword.conversationshort}} search configuration.
+    [IBM Cloud]{: tag-ibm-cloud} Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use. FAQ stores the answer in the `text` field, so you can use the default {{site.data.keyword.conversationshort}} search configuration.
 
 -   A pretrained SDU model is applied to *Document Retrieval for Contracts* projects automatically. The pretrained SDU model knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
 -   The SDU tool is rarely used with *Content Mining* projects.

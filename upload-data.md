@@ -35,7 +35,7 @@ To upload data, complete the following steps:
 1.  If the language of the documents in storage is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  [IBM Cloud]{: tag-ibm-cloud}: If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
+1.  [IBM Cloud]{: tag-ibm-cloud} If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 1.  Optionally, click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**.
@@ -46,7 +46,7 @@ To upload data, complete the following steps:
 1.  Click **Next**.
 1.  Browse for the files you want to crawl.
 
-    [IBM Cloud]{: tag-ibm-cloud}: You can drag documents that you want to add to your collection.
+    [IBM Cloud]{: tag-ibm-cloud} You can drag documents that you want to add to your collection.
 
     For more information about supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 1.  Click **Finish**.

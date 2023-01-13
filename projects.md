@@ -118,13 +118,13 @@ If you need to perform more complex searches from your virtual assistant, you mi
 
 For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
--   [IBM Cloud Pak for Data]{: tag-cp4d}: [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
--   [IBM Cloud]{: tag-ibm-cloud}: [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
+-   [IBM Cloud Pak for Data]{: tag-cp4d} [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
+-   [IBM Cloud]{: tag-ibm-cloud} [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
 
     From the new {{site.data.keyword.conversationshort}} experience, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
     {: note}
 
-[IBM Cloud]{: tag-ibm-cloud}: Follow steps to use this project type to enhance your virtual assistant by completing the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+[IBM Cloud]{: tag-ibm-cloud} Follow steps to use this project type to enhance your virtual assistant by completing the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
 ### Content Mining
 {: #mining}

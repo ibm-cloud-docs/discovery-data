@@ -130,7 +130,7 @@ The number of collections you can create per service instance depends on your {{
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
 
-[IBM Cloud Pak for Data]{: tag-cp4d}: The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
+[IBM Cloud Pak for Data]{: tag-cp4d} The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
 
 ## Data source overview video
 {: #collections-video}
