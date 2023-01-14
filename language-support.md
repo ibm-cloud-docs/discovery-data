@@ -66,4 +66,4 @@ Optical character recognition (OCR) v2 was introduced in Cloud-managed service i
 The following features are currently supported in English only:
 
 -  [Document Retrieval for Contract project type](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts)
--  ![IBM Cloud only](images/ibm-cloud.png) **IBM Cloud only**: [Patterns (beta)](/docs/discovery-data?topic=discovery-data-domain-pattern)
+-  [IBM Cloud Pak for Data]{: tag-cp4d} **IBM Cloud only**: [Patterns (beta)](/docs/discovery-data?topic=discovery-data-domain-pattern)

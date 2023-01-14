@@ -18,7 +18,7 @@ subcollection: discovery-data
 Use the following procedures to back up and restore data in your {{site.data.keyword.discovery-data_long}} instance.
 {: shortdesc}
 
-![{{site.data.keyword.icp4dfull_notm}} only](images/desktop.png) **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d}
 
 This information applies only to installed deployments.
 {: note}

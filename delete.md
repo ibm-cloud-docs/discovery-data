@@ -18,7 +18,7 @@ subcollection: discovery-data
 The procedure that you follow to delete a service instance differs depending on how the instance was deployed.
 {: shortdesc}
 
-## Deleting a managed service instance ![IBM Cloud only](images/ibm-cloud.png)
+## Deleting a managed service instance [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #delete-cloud}
 
 When you delete a {{site.data.keyword.discoveryshort}} service instance, the data associated with your service is also removed.

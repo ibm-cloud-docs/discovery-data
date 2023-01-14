@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Patterns ![IBM Cloud only](images/ibm-cloud.png)
+# Patterns [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #domain-pattern}
 
 Recognize terms that are mentioned in sentences that match a syntactic pattern that you teach {{site.data.keyword.discoveryshort}} to recognize.

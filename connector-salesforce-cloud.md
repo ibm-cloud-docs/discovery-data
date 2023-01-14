@@ -16,7 +16,7 @@ subcollection: discovery-data
 Crawl documents that are stored in a Salesforce data source.
 {: shortdesc}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about connecting to Salesforce from an installed deployment, see [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d).
 {: note}

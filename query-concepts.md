@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-06"
+lastupdated: "2023-01-13"
 
-keywords: search goals
+keywords: search goals, log, logging
 
 subcollection: discovery-data
 
@@ -37,6 +37,8 @@ The `natural_language_query` parameter accepts text strings as input, not query 
 A few other supported Query API parameters are specified and given default values based on the project type in use. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
 
 For more information about the {{site.data.keyword.discoveryshort}} Query Language, see [DQL overview](/docs/discovery-data?topic=discovery-data-query-dql-overview) or see the [API reference documentation](https://cloud.ibm.com/apidocs/discovery-data#query){: external}.
+
+{{site.data.keyword.discoveryshort}} does not log query request data. You cannot opt in to request logging.
 
 ## Choosing the right query type
 {: #query-choose}

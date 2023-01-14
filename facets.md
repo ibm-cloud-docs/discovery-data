@@ -91,7 +91,7 @@ To create a facet by creating a dictionary, complete the following steps:
 Patterns is a beta feature and supports English language documents only.
 {: beta}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
 This facet is available only to managed deployments and in **Document Retrieval** and **Conversational Search** projects.
 {: note}

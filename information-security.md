@@ -16,7 +16,7 @@ subcollection: discovery-data
 IBM is committed to providing our clients and partners with innovative data privacy, security and governance solutions.
 {: shortdesc}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments.
 {: note}

@@ -57,7 +57,7 @@ When you replace the original document, all of the segments are overwritten, unl
 ## Deleting document segments from the index
 {: #split-documents-delete}
 
-![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
 You can delete documents in a collection from the *Manage data* page. To find all of the document segments that were generated from a single document, check for documents with the same `metadata.parent_document_id` field value. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
 

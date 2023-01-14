@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-12-08"
+lastupdated: "2023-01-13"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ You can prevent content from being included in query results in the following wa
 
 - Delete a single document.
 
-   ![IBM Cloud only](images/ibm-cloud.png) **{{site.data.keyword.cloud_notm}} only**
+   [IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
 
    If you use the Smart Document Understanding tool to annotate a document, and then decide that you want to delete the document and its associated SDU annotations, you must remove the annotations before you delete the document. To remove the annotations, annotate the document again. This time, label all of the content as `text`.
    {: note}
@@ -56,6 +56,8 @@ You can prevent content from being included in query results in the following wa
       {: tip}
 
    1. After you identify the document that you want to delete, select the checkbox that is associated with the document, and then click **Delete**. Confirm the deletion.
+
+      Documents that are added to a collection from an external data source will be added back to the collection with the next scheduled crawl of the data source. The delete function removes the document from the index of the collection, not from the external data source.
 
       Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments and applying FAQ extraction generates a document for each question-and-answer pair that is identified. If you delete one of these generated documents, and then repeat the action that created it, the deleted document is added back in to your collection.
       {: note}

@@ -33,7 +33,7 @@ Documents that you do not have permissions to access are not returned in query r
 ## Answer finding
 {: #answer-finding}
 
-![IBM Cloud only](images/ibm-cloud.png) The `find_answers` parameter is supported in managed deployments only.
+[IBM Cloud Pak for Data]{: tag-cp4d} The `find_answers` parameter is supported in managed deployments only.
 
 By default, {{site.data.keyword.discoveryshort}} provides answers by returning the entire [passage](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#passages) that contains the answer to a natural language query. When the answer-finding feature is enabled, {{site.data.keyword.discoveryshort}} also provides a "short answer" within the passage, and a confidence score to show whether the "short answer" answers the question that is explicit or implicit in the user query. Applications that use the answer-finding feature can display the short answer alone or can display the short answer emphasized in the context of the full passage. For most applications, displaying the short answer emphasized within the full passage is preferable, because answers generally make more sense in context.
 
@@ -345,7 +345,7 @@ One passage is returned per document by default. You can increase the maximum nu
 ## `similar`
 {: #similar}
 
-![IBM Cloud only](images/ibm-cloud.png) The `similar` parameter is supported in managed deployments only.
+[IBM Cloud Pak for Data]{: tag-cp4d} The `similar` parameter is supported in managed deployments only.
 
 Finds documents that are similar to documents that you identify as being of interest to you. To find similar documents, {{site.data.keyword.discoveryshort}} identifies the 25 most relevant terms from the original document and then searches for documents with similar relevant terms.
 

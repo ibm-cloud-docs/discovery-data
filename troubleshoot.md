@@ -18,7 +18,7 @@ content-type: troubleshoot
 Learn ways to troubleshoot and address issues that you might encounter while using the product.
 {: shortdesc}
 
-![{{site.data.keyword.cpd_full_notm}} only](images/desktop.png) **{{site.data.keyword.cpd_full_notm}} only** 
+[IBM Cloud Pak for Data]{: tag-cp4d}
 
 This information applies only to instances of {{site.data.keyword.discoveryfull}} that are installed on {{site.data.keyword.icp4dfull}}. For troubleshooting tips about adding data to both installed and managed deployments, see [Troubleshooting ingestion](/docs/discovery-data?topic=discovery-data-troubleshoot-ingestion).
 {: note}
