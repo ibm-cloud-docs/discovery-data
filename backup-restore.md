@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-12-08"
+lastupdated: "2023-01-23"
 
 keywords: backup,restore
 
@@ -98,6 +98,9 @@ An in-flight request is any {{site.data.keyword.discoveryfull}} action that proc
 -   Ingesting documents
 -   Training a trained query model
 
+The amount of storage that is available in the node where you run the backup script must be 3 times the size of the PostgreSQL data store that you plan to back up and restore. If your data store is large, consider using a persistent volume claim instead of relying on the node's ephemeral storage. For more information, see [Configuring jobs to use PVC](#pvc).
+{: attention}
+
 Complete the following steps to back up {{site.data.keyword.discoveryfull}} data by using the backup scripts:
 
 1.  Enter the following command to set the current namespace where your {{site.data.keyword.discoveryshort}} instance is deployed:
@@ -151,7 +154,9 @@ The scripts generate an archive file, including the backup files of the services
 
 The backup and restore process uses Kubernetes jobs. The jobs use ephemeral volumes that use ephemeral storage. It is a temporary storage mount on the pod that uses local storage of a node. In rare cases, the ephemeral storage is not large enough. You can optionally instruct the job to mount a Persistent Volume Claim (PVC) on its pod to use for storing the backup data. To do so, specify the `--pvc` option when you run the script. The scripts use `emptyDir` of Kubernetes otherwise.
 
-In most cases, you don't need to use a persistent volume. If you choose to use a persistent volume, the volume must be three times as large as the largest backup file in the data store. The size of the data store's backup file depends on usage. After you create a backup, you can [extract files from the archive file](#backup-unpack) to check the file sizes.
+In most cases, you don't need to use a persistent volume. If you choose to use a persistent volume, the volume must be 3 times as large as the largest backup file in the data store. The size of the data store's backup file depends on usage. After you create a backup, you can [extract files from the archive file](#backup-unpack) to check the file sizes. 
+
+Also, you must have 2 times as much disk space available as the size of the data store. After the backup process gets data from the data store and compresses it, it then splits the resulting archive file before copying it over from the pod to the system where the backup script is being executed. The split file is then recombined on the local system.
 
 ### Mapping multitenant clusters
 {: #backup-mapping}
