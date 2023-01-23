@@ -98,7 +98,7 @@ An in-flight request is any {{site.data.keyword.discoveryfull}} action that proc
 -   Ingesting documents
 -   Training a trained query model
 
-The amount of storage that is available in the node where you run the backup script must be 3 times the size of the PostgreSQL data store that you plan to back up and restore. If your data store is large, consider using a persistent volume claim instead of relying on the node's ephemeral storage. For more information, see [Configuring jobs to use PVC](#pvc).
+The amount of storage that is available in the node where you run the backup script must be 3 times as large as the largest backup file in the data store that you plan to back up. If your data store is large, consider using a persistent volume claim instead of relying on the node's ephemeral storage. For more information, see [Configuring jobs to use PVC](#pvc).
 {: attention}
 
 Complete the following steps to back up {{site.data.keyword.discoveryfull}} data by using the backup scripts:
@@ -156,7 +156,7 @@ The backup and restore process uses Kubernetes jobs. The jobs use ephemeral volu
 
 In most cases, you don't need to use a persistent volume. If you choose to use a persistent volume, the volume must be 3 times as large as the largest backup file in the data store. The size of the data store's backup file depends on usage. After you create a backup, you can [extract files from the archive file](#backup-unpack) to check the file sizes. 
 
-Also, you must have 2 times as much disk space available as the size of the data store. After the backup process gets data from the data store and compresses it, it then splits the resulting archive file before copying it over from the pod to the system where the backup script is being executed. The split file is then recombined on the local system.
+Also, you must have 2 times as much disk space available on the local system as the size of the data store because the archive of the data is split and then recombined to prevent issues that might otherwise occur when copying large files from the cluster node to the local system.
 
 ### Mapping multitenant clusters
 {: #backup-mapping}
