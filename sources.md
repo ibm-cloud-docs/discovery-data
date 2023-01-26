@@ -18,7 +18,7 @@ subcollection: discovery-data
 You can use {{site.data.keyword.discoveryfull}} on the {{site.data.keyword.cloud}} to connect to and crawl documents from remote sources.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about {{site.data.keyword.icp4dfull_notm}} data sources, see [Overview of Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 {: note}

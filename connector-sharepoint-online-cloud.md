@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-12-07"
+lastupdated: "2023-01-26"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Crawl documents that are stored in a Microsoft SharePoint Online data source.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about connecting to SharePoint Online from an installed deployment, see [SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cp4d).
 {: note}
@@ -50,19 +50,13 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
 You can choose how to authenticate with the external Microsoft SharePoint account from the following options:
 
-Open Authentication (OAuth)
-:   Authenticates with the external data source by using a token so that your user credentials do not need to be shared. With this authentication method, you can log in to your Microsoft account directly during the set up of the connector. Select *Sign in with Microsoft* to log in to your Microsoft account in a separate dialog, which generates a token that is used by {{site.data.keyword.discoveryshort}} to connect to your data.
+Open Authentication (OAuth v2)
+:   Authenticates with the external data source by using a token so that your user credentials do not need to be shared. With this authentication method, you can log in to your Microsoft account directly to generate a token that is used by {{site.data.keyword.discoveryshort}} to connect to your data.
 
-    You cannot currently change the user account that is associated with the OAuth setup later, nor any of the details of the existing user account that the connector is configured to use. For example, you cannot update the password that was used to set up the connection after a password change in SharePoint.
-
-    The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature.
+    The *Sign in with Microsoft* option that uses Open Authentication v2 to authenticate with the external data source is a beta feature.
     {: beta}
 
-    Before you can connect to SharePoint Online by using Open Authentication, Discovery must be registered with your Microsoft Azure service. You do not need to register Discovery in Azure yourself. When you choose SharePoint Online as the data source, the Discovery service registers the app for you. Then, an Azure administrator must authorize the app one time only. 
-    
-    To authorize the app, a user with the *Application administrator* or *Cloud application administrator* role must log in to [Microsoft Azure](https://portal.azure.com){: external}. From the *Enterprise applications* page in *Azure Active Directory*, look for the Discovery app. Its name has the syntax `IBM App Connect_{unique-ID}`. Under *Permissions*, click *Grant admin consent for `<domain>`*.
-
-    After the Discovery app is registered and authorized, all Azure users can use the Discovery app to crawl SharePoint Online. To restrict who can use the app, in Azure, open the *Properties* settings for the app (IBM App Connect_{unique-ID}). Set *Assignment required* to `Yes`. From the *Users and Groups* list, add only the users that you want to allow to crawl SharePoint Online.
+    Before anyone can create connectors that use this authentication method, a user with the *Global Administrator* role must complete a one-time [prerequisite steps](#connector-sharepoint-online-cloud-oauth-prereq) to authorize the connection for all projects in the {{site.data.keyword.discoveryshort}} service instance.
 
 Security Assertion Markup Language (SAML)
 :   An older mechanism for authentication and authorization that requires user credentials to be shared with the {{site.data.keyword.discoveryshort}} service.
@@ -75,25 +69,23 @@ Security Assertion Markup Language (SAML)
     -   The crawl user account must have legacy authentication and `Contribute` level permissions enabled.
 
         To enable legacy authentication, go to the [Azure portal](https://portal.azure.com/){: external} or contact your SharePoint administrator.
-    -   The connector supports the `Password hash synchronization (PHS)` method for enabling hybrid identity only. Use any other type (such as Pass-through authentication or Federation) at your own risk. 
+    -   The connector supports the `Password hash synchronization (PHS)` method for enabling hybrid identity only. Use any other type (such as Pass-through authentication or Federation) at your own risk.
+    -   You must know the following information:
 
-Support for the OAuth method of authentication was added with a software update in February 2022. If you want to update an existing connector to use OAuth instead of SAML, you must re-create the connector. You cannot currently change the authentication mechanism for an existing connector.
-{: note}
+        Username
+        :   The username of the user account to use to connect to the SharePoint Online SiteCollection that you want to crawl.
+
+            For example, `<janedoe>@exampledomain.onmicrosoft.com`.
+
+        Password
+        :   The password to connect to the SharePoint Online SiteCollection that you want to crawl.
+
+            This value is never returned and is only used when credentials are created or modified.
 
 ## What you need before you begin
 {: #connector-sharepoint-online-cloud-prereqs}
 
 You must have the following information ready. If you don't know it, ask your SharePoint administrator to provide the information or consult the [Microsoft SharePoint developer documentation](https://docs.microsoft.com/en-us/sharepoint/dev/){: external}:
-
-Username
-:   The username of the user account to use to connect to the SharePoint Online SiteCollection that you want to crawl.
-
-    For example, `<janedoe>@exampledomain.onmicrosoft.com`.
-
-Password
-:   The password to connect to the SharePoint Online SiteCollection that you want to crawl.
-
-    This value is never returned and is only used when credentials are created or modified.
 
 Organization URL
 :   The root URL of the source that you want to crawl. Specify the domain name of the URL, for example `https://<company>.<domain>.com`.
@@ -106,7 +98,78 @@ Site collection path
     -   You cannot specify folder paths as input.
     -   You cannot specify a path to an Active Server Page Extended (ASPX) file, such as URLs to document libraries, lists, and subsites.
     -   If you don't specify a path, the default value of `/` is used, and the root site collection is crawled.
+
 -   **Application ID**: ID of the data source that you want to crawl. This information is required only if you want to store ACL information that is associated with the source documents.
+
+## One-time prerequisite step for OAuth
+{: #connector-sharepoint-online-cloud-oauth-prereq}
+
+Before anyone can configure the connector to use OAuth v2 authentication method, a user with the *Global Administrator* role in Microsoft Azure Directory where the data source is located must complete steps to register the Discovery enterprise application in Microsoft Azure. This step must be completed once per {{site.data.keyword.discoveryshort}} service instance.
+
+The administrator does not need to create the application in Azure. When they choose SharePoint Online as the data source, the Discovery service generates the app automatically. As described in the procedure to follow, during the set up of the connector, the administrator must log in to Microsoft with credentials for a user with the *Global Administrator* role in Microsoft Azure Directory and allow the enterprise application to be registered.
+
+The following steps must be completed by a global administrator one time only per service instance:
+
+1.  Review the default user access settings that will be applied to the enterprise application in Microsoft Azure. 
+
+    Enterprise applications can handle user access in many ways. Check the default settings to ensure that they are appropriate for your deployment by completing the following steps:
+
+    1.  Log in to [Microsoft Azure](https://portal.azure.com){: external}. 
+    1.  From the *Enterprise applications* page in *Azure Active Directory*, click *Consent and permissions*.
+
+    ![Azure Enterprise App Permissions user interface](images/spo-ad-user-permissions.png)
+
+    1.  Do one of the following things:
+
+        -   If *Allow user consent for apps* is selected, no more action is needed.
+        -   If *Allow user consent for apps from verified publishers, for selected permissions* is selected, then complete the following steps:
+
+            Click *Permissions classifications* link, and then ensure that the following permissions are configured at a minimum:
+
+            -    Office 365 SharePoint Online: MyFiles.Read
+            -    Office 365 SharePoint Online: AllSites.Read
+            -    Microsoft Graph: offline_access
+            -    Microsoft Graph: profile
+
+        The *Do not allow user consent option* is not supported.
+
+        The settings that you specify will be applied to the enterprise application that is created by {{site.data.keyword.discoveryshort}} in subsequent steps.
+
+1.  From the navigation pane of {{site.data.keyword.discoveryshort}}, choose **Manage collections**.
+1.  Click **New collection**.
+1.  Click **SharePoint Online**, and then click **Next**.
+1.  Add a URL to the **Organization URL** field.
+1.  Click **Sign in with Microsoft**.
+
+    Pop-ups must be enabled for this site in your web browser.
+
+    The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature.
+    {: beta}
+
+    Log in to your Microsoft SharePoint account with your user name and password, and then complete two-factor authentication, if necessary. 
+    
+    Remember, the credentials you use must have the *Global Administrator* role in Microsoft Azure Directory. If you are not prompted for a user name and password, take note. You might be logged in to a Microsoft Sharepoint account already. If you are logged in to an account that you don't want to use for this connector, stop here. (Any account where you are logged in will be used automatically. And you cannot change the account configuration later.) Open a web browser in incognito mode and start this procedure over from step 1.
+    {: important}
+
+    Discovery generates an enterprise application that it will register with the SharePoint organization that you specify. The enterprise application name has the format *IBM App Connect_{unique name}*.
+
+1.  Review the permissions that are associated with the enterprise application that Discovery will register, and then select **Consent on behalf of your organization**.
+
+    ![Permission request dialog that asks you to consent on behalf of your organization to allow the app to 1. Read user files. 2. Read items in all site collections. 3. Maintain access to data you have given it access. 4. View users' basic profile.](images/spo-app-permission.png)
+
+1.  Click **Accept**.
+1.  If you want to create a collection, you can name the collection, and then click **Finish**.
+    
+    Otherwise, you can click **Back** to exit the collection creation process.
+
+Now, anyone from your organization who works in a project that is hosted by the same {{site.data.keyword.discoveryshort}} service instance can create a collection by using the SharePoint Online connector.
+
+### OAuth support revisions
+{: #connector-sharepoint-online-cloud-oath-versions}
+
+Support for the OAuth method of authentication was added with a software update in February 2022. If you want to update an existing connector to use OAuth instead of SAML, you must re-create the connector. You cannot change the authentication mechanism for an existing connector.
+
+The OAuth method of authentication was updated in January 2023. The enterprise application that is registered with Microsoft Azure now requires *Read* access only. Previously, the enterprise application required *Write* access. If you want to take advantage of this change, delete your current enterprise application and recreate the connector. For more information about how to delete an enterprise application, see [the Microsoft documentation]( https://learn.microsoft.com/en-us/azure/active-directory/manage-apps/delete-application-portal?pivots=portal){: external}.
 
 ## Connecting to the data source
 {: #connector-sharepoint-online-cloud-task}
@@ -117,26 +180,20 @@ To configure the Microsoft SharePoint Online data source, complete the following
 1.  Click **New collection**.
 1.  Click **SharePoint Online**, and then click **Next**.
 1.  Add a URL to the **Organization URL** field.
-1.  To enable access to your external data source, do one of the following things:
+1.  To enable access to your external data source, choose the method that you want to use to authenticate with the data source from the following options:
 
-    -   If you want to use Open Authentication to connect to your data, click **Sign in with Microsoft**.
+    Open Authentication (OAuth v2)
+    :   Click **Sign in with Microsoft**.
 
         Pop-ups must be enabled for this site in your web browser.
-        {: note}
-
-        **One time only**: Discovery registers an app with the SharePoint organization that you specify. Someone with SharePoint administtrative privileges must authorize the app before the site collection can be crawled for the first time. For more information about what the administrator must do, see [What you need before you begin](#connector-sharepoint-online-cloud-prereqs).
-
-        Log in to your Microsoft SharePoint account with your user name and password, and then complete two-factor authentication, if necessary.
         
-        If you are not prompted for a user name and password, take note. You might be logged in to a Microsoft Sharepoint account already. If you are logged in to an account that you don't want to use for this connector, stop here. (Any account where you are logged in will be used automatically. And you cannot change the account configuration later.) Open a web browser in incognito mode and start this procedure over from step 1.
-        {: important}
-
         The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature.
         {: beta}
 
-    -   Otherwise, you can specify a username and password for a user that is authorized to access the site you want to crawl, and then click **Next**.
-    
-        This method uses Security Assertion Markup Language (SAML) to authenticate with the external data source on your behalf.
+        Log in to your Microsoft SharePoint account with your user name and password, and then complete two-factor authentication, if necessary.
+
+    Security Assertion Markup Language (SAML)
+    :   Specify a username and password for a user that is authorized to access the site you want to crawl, and then click **Next**.
 
 1.  Specify the path you want to crawl in the **Site collection path** field.
 1.  Name the collection.
@@ -154,6 +211,22 @@ To configure the Microsoft SharePoint Online data source, complete the following
 
     Use of this feature increases the size of the documents that are generated in the collection and increases the crawl time. Only enable the feature if your use case requires that you store the SharePoint document ACL information.
     {: important}
+
+    If you enable this feature, someone with the administrator role in Microsoft SharePoint must take extra steps to ensure that users who crawl the site have the right permissions to access ACL metadata.
+
+    An administrator must complete the following steps:
+
+    1.  Log in to Microsoft SharePoint.
+    1.  Open the page for your SharePoint site.
+    1.  From the settings menu, choose *Site permissions*.
+    1.  Click *Advanced permission settings*.
+    1.  Make sure that people who want to collect access control information during a crawl have or are members of a group that has the *Full Control* permission for the site.
+
+        ![Shows the SharePoint user interface where you define permissions for users and groups.](images/spo-acl-access.png)
+
+        When access control list information is not extracted, *Read* permission is sufficient for all users who crawl the content.
+        {: note}
+
 1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
     For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
@@ -167,6 +240,9 @@ To configure the Microsoft SharePoint Online data source, complete the following
 The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
+
+You cannot currently change the user account that is associated with the OAuth setup later, nor any of the details of the existing user account that the connector is configured to use. For example, you cannot update the password that was used to set up the connection after a password change in SharePoint.
+{: note}
 
 ### Sample access control list information
 {: #connector-sharepoint-online-cloud-acl-sample}

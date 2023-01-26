@@ -23,7 +23,7 @@ For more information about how to create a collection, see [Creating collections
 ## Managing data
 {: #manage-data}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This procedure is available in service instances that are managed by {{site.data.keyword.cloud_notm}} only. The *Manage data* page is not available in installed deployments.
 {: note}

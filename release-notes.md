@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-01"
+lastupdated: "2023-01-26"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -19,10 +19,23 @@ content-type: release-note
 Learn about features and changes that were included for each release and update of the product software.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 25 January 2023
+{: #discovery-25january2023}
+{: release-note}
+
+<!-- 4.7.0-4.0 -->
+
+Set up a Microsoft SharePoint Online data store connector that has *Read* permission
+:   When you create a Microsoft SharePoint Online connector to crawl a SharePoint data source by using Open Authentication v2, the enterprise application that is created by Discovery to make the connection requires *Read* permission only. The enterprise application that was configured for you previously required *Write* permission.
+
+    If you want to update an existing connector so that you can use the new Read permission configuration, you must delete your existing enterprise application first.
+
+    For more information, see [Microsoft SharePoint Online connector](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
 
 ## FAQ extraction deprecation announcement
 {: #faq-extraction-deprecation-1december2022}

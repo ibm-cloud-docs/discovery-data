@@ -16,7 +16,7 @@ subcollection: discovery-data
 Crawl documents that are stored in an {{site.data.keyword.cos_full}} data source.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments.
 {: note}
