@@ -37,7 +37,7 @@ You can prevent content from being included in query results in the following wa
 
 - Delete a single document.
 
-   [IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+   [IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
    If you use the Smart Document Understanding tool to annotate a document, and then decide that you want to delete the document and its associated SDU annotations, you must remove the annotations before you delete the document. To remove the annotations, annotate the document again. This time, label all of the content as `text`.
    {: note}

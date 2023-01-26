@@ -16,7 +16,7 @@ subcollection: discovery-data
 Learn how to upgrade your service plan.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about upgrading an installed deployment that is hosted by {{site.data.keyword.icp4dfull_notm}}, see [Upgrading the service](/docs/discovery-data?topic=discovery-data-upgrade-data).
 {: note}

@@ -16,7 +16,7 @@ subcollection: discovery-data
 Crawl documents that are stored in a Box data source.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about connecting to Box from an installed deployment, see [Box](/docs/discovery-data?topic=discovery-data-connector-box-cp4d).
 {: note}

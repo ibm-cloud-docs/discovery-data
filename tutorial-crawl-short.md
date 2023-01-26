@@ -23,7 +23,7 @@ completion-time: 1h
 In this tutorial, you will use the {{site.data.keyword.discoveryshort}} service to create a simple search application that can answer questions about Watson Discovery with information from the IBM Cloud Docs site.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 Follow this tutorial only if you are using a managed deployment. The tutorial relies on a feature (JavaScript support) that is currently available in managed deployments only. If you want to complete the tutorial and are using an installed deployment, you can do so. However, you must connect to a different website, one without dynamic content. The steps to follow are similar otherwise.
 {: note}

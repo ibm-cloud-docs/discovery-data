@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-07-21"
+lastupdated: "2023-01-26"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Add a web crawl collection to crawl a website, analyze its page content, and store meaningful information. Specify one or more base web page URLs and configure how many linked pages for the web crawl to follow. You can configure how often to synchronize with the website, so you control how up to date the data in your collection is.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
 This information applies only to managed deployments. For more information about connecting to a website from an installed deployment, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d).
 {: note}
@@ -30,10 +30,9 @@ You can connect to the following types of web content:
 -   Private company websites or other sites that require authentication
 -   Websites that are behind a corporate firewall
 
-The web crawler can crawl dynamic websites that use JavaScript to render content, but cannot crawl sites that use dynamic URLs. If you can't see any content when you view the source code of a web page in your browser, then the service cannot crawl it.
-{: note}
+The web crawler can crawl web pages that use JavaScript to render content, but crawler works best on individual pages, not entire websites. It cannot crawl sites that use dynamic URLs; if you can't see any content when you view the source code of a web page in your browser, then the service cannot crawl it.
 
-If you want to crawl a group of URLs that includes some websites that require authentication and some that don't, consider creating a different collection for each authentication type.
+If you want to crawl a group of URLs that includes some websites that require authentication and some that don't, consider creating a different collection for each authentication type. The connector does not support cookie-based crawling.
 
 During the initial crawl of the content, all website pages that match your search settings are crawled and added to the document index of your collection.
 
@@ -101,7 +100,7 @@ To configure the web crawl collection, complete the following steps:
 
         After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/web-crawl-edit-url.png). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
 
-        When JavaScript processing is enabled, it takes 3 to 4 times longer to crawl a page. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically.
+        When JavaScript processing is enabled, it takes 3 to 4 times longer to crawl a page. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically. If you see timeout messages or the crawl ends without adding content to the collection, decrease the number of web pages that are included in the crawl. For example, you can specify the exact page to crawl in the *Starting URLs* field, and set *Maximum number of links to follow* to 0.
         {: note}
 
     -   To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
