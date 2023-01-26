@@ -68,7 +68,7 @@ To change how a data source is processed, complete the following steps:
 
     For more information about changing data synchronization schedules, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 
-    [IBM Cloud Pak for Data]{: tag-cp4d} For service instances that are managed by {{site.data.keyword.cloud_notm}}, you can enable or disable the FAQ extraction feature. For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
+    [IBM Cloud]{: tag-ibm-cloud} For service instances that are managed by {{site.data.keyword.cloud_notm}}, you can enable or disable the FAQ extraction feature. For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 
     Other setting options differ by data source type.
 
@@ -107,7 +107,7 @@ Enrichments and improvement tool settings are not included when a collection is 
 
 For more information about the other tabs, see the following topics:
 
-- **GDPR data label** [IBM Cloud Pak for Data]{: tag-cp4d}: For more information about GDPR and labeling data, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).
+- **GDPR data label** [IBM Cloud]{: tag-ibm-cloud}: For more information about GDPR and labeling data, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).
 - **API usage** [IBM Cloud Pak for Data]{: tag-cp4d} For more information about monitoring Analyze API usage, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
 
 ## Deleting collections

@@ -28,10 +28,10 @@ You can add data to your project in the following ways:
     The product user interface offers several built-in data source connectors for you to choose from. The options differ depending on your deployment type. For more information, see [Supported data sources](#collections-include-data-sources-reuse).
 -   Connect to an external data source for which there is no built-in support:
 
-    [IBM Cloud Pak for Data]{: tag-cp4d} {{site.data.keyword.cloud_notm}}
+    [IBM Cloud]{: tag-ibm-cloud}
     :    Use IBM App Connect to set up a scheduled crawl of documents that are stored on other external data sources.
     
-    [IBM Cloud Pak for Data]{: tag-cp4d} {{site.data.keyword.icp4dfull_notm}}
+    [IBM Cloud Pak for Data]{: tag-cp4d}
     :    Build a connector to crawl documents that are stored on other external data sources.
 
 -   To automate the process of adding data to your project, use the Discovery APIs to create a collection and upload documents to it.
@@ -76,8 +76,8 @@ To create a collection, complete the following steps:
     
         For supported data sources, see the appropriate topic for your deployment type:
 
-        -   [IBM Cloud Pak for Data]{: tag-cp4d} [{{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-collection-types)
-        -   [IBM Cloud Pak for Data]{: tag-cp4d} [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
+        -   [IBM Cloud Pak for Data]{: tag-cp4d} [{{site.data.keyword.icp4dfull_notm}} data sources](/docs/discovery-data?topic=discovery-data-collection-types)
+        -   [IBM Cloud]{: tag-ibm-cloud} [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
         These topics also describe how to connect to data sources that are not supported by default per deployment type.
         {: tip}
@@ -91,7 +91,7 @@ For more information about how to create a collection programmatically, see the 
 
 One of the optional features that you can apply to a collection when you create it is optical character recognition. The optical character recognition (OCR) feature extracts text from images. This capability is useful for preserving information that is depicted in diagrams or graphs, or in text that is embedded in files such as scanned PDFs. By converting the visual information into text, it can later be searched.
 
-[IBM Cloud Pak for Data]{: tag-cp4d} A new version of the technology was introduced in cloud-managed instances. OCR v2 was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
+[IBM Cloud]{: tag-ibm-cloud} A new version of the technology was introduced in cloud-managed instances. OCR v2 was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
 
 -   Low quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, misaligned pages, and badly printed documents
 -   Documents with irregular fonts or a variety of colors, font sizes, and backgrounds
@@ -206,7 +206,7 @@ The maximum allowed number can vary slightly depending on the size of the docume
 
 The maximum size of each file that you can crawl by using a connector differs by deployment type.
 
-[IBM Cloud Pak for Data]{: tag-cp4d} Managed deployments on {{site.data.keyword.cloud_notm}}
+[IBM Cloud]{: tag-ibm-cloud} Managed deployments on {{site.data.keyword.cloud_notm}}
     
 -   Premium plans only:
 
