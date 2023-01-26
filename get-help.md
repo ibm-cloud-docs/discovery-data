@@ -22,7 +22,7 @@ Use these resources to get answers to your questions:
 -   For answers to frequently asked questions, see the [FAQ](/docs/discovery-data?topic=discovery-data-faqs).
 -   Find answers to common questions or ask questions where experts and other community members can answer. Go to the [Watson Discovery Community forum](https://community.ibm.com/community/user/watsonai/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f){: external}.
 
-## [IBM Cloud Pak for Data]{: tag-cp4d}  Contacting IBM Cloud Support for managed deployments
+## [IBM Cloud]{: tag-ibm-cloud}  Contacting IBM Cloud Support for managed deployments
 {: #get-help-support-cloud}
 
 Managed deployments are deployments that are hosted on IBM Cloud, including {{site.data.keyword.icp4dfull_notm}} as a Service deployments.
