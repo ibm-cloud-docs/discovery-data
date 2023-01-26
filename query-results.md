@@ -45,8 +45,6 @@ To preview the default query results, complete the following steps:
 1.  To explore a query result in more detail, click **View passage in document**.
 1.  Click **Open advanced view** to explore the entity mentions that are recognized by Discovery.
 
-    
-
 ### Excerpt unavailable
 {: #improve-search-result}
 
@@ -63,7 +61,7 @@ If the result shows “Excerpt unavailable”, you might need to adjust where th
 ### FAQ results
 {: #query-results-faq}
 
-[IBM Cloud Pak for Data]{: tag-cp4d}  FAQ extraction is available from {{site.data.keyword.cloud_notm}}-managed instances only.
+[IBM Cloud]{: tag-ibm-cloud}  FAQ extraction is available from {{site.data.keyword.cloud_notm}}-managed instances only.
 {: note}
 
 If you enabled FAQ extraction, set the `text` field as the query result source by following the steps in the previous section.
