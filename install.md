@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-11-30"
+lastupdated: "2023-01-27"
 
 subcollection: discovery-data
 
@@ -10,18 +10,18 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Installing 4.6
+# Installing 4.6.2
 {: #install}
 
-Find information about how to install and manage IBM Watson Discovery Cartridge for IBM Cloud Pak for Data 4.6.
+Find information about how to install and manage {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.6.2.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d}
 
 This information applies only to installed deployments.
 {: note}
 
-You install {{site.data.keyword.icp4dfull}}, and then install the {{site.data.keyword.discoveryshort}} service.
+You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.data.keyword.discoveryshort}} service.
 
 ## Full installation instructions
 {: #full-installation-instructions}

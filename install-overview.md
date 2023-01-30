@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-10-21"
+lastupdated: "2023-01-27"
 
 subcollection: discovery-data
 
@@ -13,18 +13,20 @@ subcollection: discovery-data
 # Installation overview
 {: #install-overview}
 
-Find information about how to install IBM Watson Discovery Cartridge for IBM Cloud Pak for Data.
+Find information about how to install {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d}
 
 This information applies only to installed deployments.
 {: note}
 
-You install {{site.data.keyword.icp4dfull}}, and then install the {{site.data.keyword.discoveryshort}} service.
+You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.data.keyword.discoveryshort}} service.
 
 | {{site.data.keyword.discoveryshort}} version | {{site.data.keyword.icp4dfull_notm}} version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
+| 4.6.2 | 4.6.2 | 4.10 |
+| 4.6.2 | 4.6.2 | 4.8 |
 | 4.6.0 | 4.6.0 | 4.10 |
 | 4.6.0 | 4.6.0 | 4.8 |
 | 4.5.3 | 4.5.3 | 4.10 |

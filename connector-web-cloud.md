@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-01-27"
 
 subcollection: discovery-data
 
@@ -30,7 +30,7 @@ You can connect to the following types of web content:
 -   Private company websites or other sites that require authentication
 -   Websites that are behind a corporate firewall
 
-The web crawler can crawl web pages that use JavaScript to render content, but crawler works best on individual pages, not entire websites. It cannot crawl sites that use dynamic URLs; if you can't see any content when you view the source code of a web page in your browser, then the service cannot crawl it.
+The web crawler can crawl web pages that use JavaScript to render content, but the crawler works best on individual pages, not entire websites. It cannot crawl sites that use dynamic URLs; if you can't see any content when you view the source code of a web page in your browser, then the service cannot crawl it.
 
 If you want to crawl a group of URLs that includes some websites that require authentication and some that don't, consider creating a different collection for each authentication type. The connector does not support cookie-based crawling.
 
