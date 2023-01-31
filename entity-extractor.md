@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-01-31"
 
 subcollection: discovery-data
 
@@ -32,6 +32,10 @@ After you define entity types and label entity examples, you can generate a mach
 After the machine learning model is trained well enough to recognize your entity types, you can publish the model as an enrichment and apply the enrichment to new documents. The custom entity extractor enrichment recognizes and tags new mentions of the same and similar terms as occurrences of the entity types that you care about.
 
 For more information about how to use the entity extractor to add domain customization to your AI applications, see the [Entity Extractor (Beta) Feature in Watson Discovery v2](https://community.ibm.com/community/user/watsonai/blogs/ananya-poddar/2022/06/09/entity-extraction-in-watson-discovery-v2){: external} blog post.
+
+{{site.data.keyword.discoveryshort}} also has a built-in *Entities* enrichment that can be applied directly to your collection. It doesn't require any training to recognize commonly-known proper nouns. For more information about the Watson NLP Entities enrichment, see [Entities](/docs/discovery-data?topic=discovery-data-nlu).
+
+[IBM Cloud Pak for Data]{: tag-cp4d} You already built an entity type system in {{site.data.keyword.knowledgestudioshort}}? You can use the corpus that is associated with your machine learning model as a starting point for your entity extractor training data. For more information, see [Importing a corpus](#entity-extractor-import-wks).
 
 For information about the languages with which the entity extractor can be used, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 
@@ -71,6 +75,9 @@ To add an entity extractor, complete the following steps:
 1.  Click **Improve and customize** from the navigation panel.
 1.  From the *Improvement tools* panel, expand **Teach domain concepts**, and then click **Extract entities**.
 1.  Click **New**.
+
+    [IBM Cloud Pak for Data]{: tag-cp4d} If you want to create an entity extractor that is based on the entity type system from a {{site.data.keyword.knowledgestudiofull}} corpus, click the arrow, and then choose **Import a {{site.data.keyword.knowledgestudioshort}} corpus**. For next steps, see [Importing a {{site.data.keyword.knowledgestudioshort}} corpus](#entity-extractor-import-wks).
+
 1.  Add an extractor name and optionally a description.
 
     This name is used as the model name and as the name of the enrichment that is created when you publish the model. The name is displayed as the enrichment name in the Enrichments page where you and others can apply it to collections. It also is displayed as the model name in the JSON representation of documents where custom entities are found. The name is stored with the capitalization and spacing that you specify.
@@ -232,6 +239,39 @@ You might notice that a term that you chose to bulk label is not labeled, but is
 
 To investigate a suggestion further, click it to see the word in context within the document. Seeing the term in context helps you to decide whether the occurrence is a valid entity example for you to label.
 
+## Importing a {{site.data.keyword.knowledgestudioshort}} corpus [IBM Cloud Pak for Data]{: tag-cp4d}
+{: #entity-extractor-import-wks}
+
+The import capability is available only from installed deployments starting with the 4.6.2 release.
+{: note}
+
+You can import a corpus of documents that were annotated in {{site.data.keyword.knowledgestudiofull}} to use as the training data for an entity extractor in {{site.data.keyword.discoveryshort}}.
+
+Entity types that were defined in {{site.data.keyword.knowledgestudioshort}} are shown as new entity types in {{site.data.keyword.discoveryshort}}. You can continue to annotate the imported documents when you customize the entity extractor model.
+
+Entity subtypes and relations from the {{site.data.keyword.knowledgestudioshort}} machine learning model are not represented, neither are any custom dictionaries that are associated with the model.
+
+Before you can import a corpus, you must export the machine learning model from {{site.data.keyword.knowledgestudioshort}} as a .zip file. Follow the appropriate steps for exporting based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
+
+-   [IBM Cloud](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-publish-ml#wks_madiscovery_next)
+-   [Cloud Pak for Data](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-publish-ml#exporting-a-machine-learning-model)
+
+To import a {{site.data.keyword.knowledgestudioshort}} corpus, complete the following steps:
+
+1.  Open the project where you want to import the corpus.
+1.  Click **Improve and customize** from the navigation panel.
+1.  From the *Improvement tools* panel, expand **Teach domain concepts**, and then click **Extract entities**.
+1.  Click the arrow that is associated with the *New* button. and then click **Import a {{site.data.keyword.knowledgestudioshort}} corpus**.
+1.  Add an extractor name and optionally a description.
+
+    This name is used as the model name and as the name of the enrichment that is created when you publish the model. The name is displayed as the enrichment name in the Enrichments page where you and others can apply it to collections. It also is displayed as the model name in the JSON representation of documents where custom entities are found. The name is stored with the capitalization and spacing that you specify.
+
+1.  Click **Upload**, and then browse to find and select the .zip file that you exported from {{site.data.keyword.knowledgestudioshort}}. Click **Create**.
+
+    The annotated documents that you imported are stored with the entity extractor workspace, not as a new collection in the project, but you can continue to annotate them.
+
+Give {{site.data.keyword.discoveryshort}} some time to import and process the machine learning model corpus. After the entity extractor is created, the extractor is opened to the *Label documents* page.
+
 ## Training the extractor
 {: #entity-extractor-train}
 
@@ -309,6 +349,29 @@ When you think the entity extractor is ready, publish the entity extractor. How 
 1.  Click **Apply to data**.
 1.  Choose a collection, and then select the document field where you want the entity extractor enrichment to be applied.
 1.  Click **Apply**.
+
+## Exporting the entity extractor [IBM Cloud Pak for Data]{: tag-cp4d}
+{: #entity-extractor-export}
+
+The export capability is available only from installed deployments starting with the 4.6.2 release.
+{: note}
+
+You can export an entity extractor so that you can use it in a project from another service instance. To use it elsewhere, follow the steps to create a machine learning model from [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml). You cannot continue to edit an entity extractor that you import into another project.
+
+The entity extractor that you want to export must be fully trained.
+
+To export an entity extractor, complete the following steps:
+
+1.  Open the project with the entity extractor that you want to export.
+1.  Click **Improve and customize** from the navigation panel.
+1.  Expand *Teach domain concepts*, and then click **Extract entities**.
+1.  From the *Entity extractors* list, find the entity extractor that you want to export. 
+1.  Click the *Actions* icon for your extractor, and then choose **Download model** to save the model to your system.
+
+    The *Download model* option is not available unless the model is trained.
+    {: note}
+
+The entity extractor model is saved as an .ent file. You can import it into a project in another service instance as a machine learning model, and then apply it to your collections. For more information about importing the model, see [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
 
 ## Applying an entity extractor enrichment
 {: #entity-extractor-apply}
