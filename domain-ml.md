@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-07-29"
+lastupdated: "2023-01-31"
 
 subcollection: discovery-data
 
@@ -20,7 +20,7 @@ Add Machine Learning models that you created with IBM tools that you can use to 
 
 The type of models you can add depend on your deployment:
 
-- [IBM Cloud Pak for Data]{: tag-cp4d} You can add models that were created with Watson Explorer Content Analytics Studio models, or with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}.
+- [IBM Cloud Pak for Data]{: tag-cp4d} You can add models that were created with Watson Explorer Content Analytics Studio models, or with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}. Starting with the 4.6.2 release, you can also add custom entity extractor models that were created in and exported from another instance of {{site.data.keyword.discoveryshort}}.
 - [IBM Cloud]{: tag-ibm-cloud} You can add models that were created with a {{site.data.keyword.knowledgestudiofull}} instance that is hosted in {{site.data.keyword.cloud_notm}} only.
 
 The following types of models are supported:
@@ -28,6 +28,7 @@ The following types of models are supported:
 -  Rule-based models created in {{site.data.keyword.knowledgestudioshort}} that find entities in documents based on rules that you define. (File format: .pear)
 -  Machine learning models created in {{site.data.keyword.knowledgestudioshort}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: .zip)
 -  [IBM Cloud Pak for Data]{: tag-cp4d} Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: .pear)
+-  [IBM Cloud Pak for Data]{: tag-cp4d} Custom entity extractor that are created in and exported from {{site.data.keyword.discoveryshort}}. (File format: .ent)
 
 Discovery cannot identify entity subtypes that are defined by a {{site.data.keyword.knowledgestudioshort}} model.
 {: note}
@@ -38,21 +39,23 @@ To add a Machine Learning model, complete the following steps:
 
     For more information, see the following documentation:
 
-    - {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.icp4dfull}}
+    -   {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.icp4dfull}}
 
-      - [Creating a rule-based model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-rule-annotator)
-      - [Creating a machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-ml_annotator)
-    - {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.cloud_notm}}
+        -   [Creating a rule-based model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-rule-annotator)
+        -   [Creating a machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-ml_annotator)
+    -   {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.cloud_notm}}
 
-      - [Creating a rule-based model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-rule-annotator)
-      - [Creating a machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-ml_annotator)
-    - [Watson Explorer Content Analytics Studio](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=analytics-content-studio-advanced-text){: external}
+        -   [Creating a rule-based model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-rule-annotator)
+        -   [Creating a machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-ml_annotator)
+    -   [Watson Explorer Content Analytics Studio](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=analytics-content-studio-advanced-text){: external}
 
         You must export the model from Watson Explorer Content Analytics Studio as a UIMA PEAR file. For more information, see: [Creating Custom PEAR Files for use with Lexical Analysis Streams](https://www.ibm.com/docs/en/watson-explorer/12.0.x?topic=las-creating-custom-pear-files-use-lexical-analysis-streams){: external}.
+    
+    -   [{{site.data.keyword.discoveryshort}} entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-export)
 
 1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Machine learning**.
 1.  Specify a name for the model, and then choose the language that was used to define the model.
-1.  Click **Upload** to browse for the .pear or .zip file that you exported earlier.
+1.  Click **Upload** to browse for the file that you exported earlier.
 1.  Click **Create**.
 1.  Choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
 
