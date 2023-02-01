@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-13"
+lastupdated: "2023-02-01"
 
 subcollection: discovery-data
 
@@ -76,14 +76,12 @@ If enhancing your chatbot is your goal, complete the steps that are listed in th
 | Step | Task | Related information |
 |:----:|------|---------------------|
 | ![checkbox](images/checkbox.png) | Create a *Conversational Search* project. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
-| ![checkbox](images/checkbox.png) | Add a collection that connects to an external data source or contains uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) If appropriate, enable FAQ extraction to make it easier for the chatbot to find answers to questions. |
+| ![checkbox](images/checkbox.png) | Add a collection that connects to an external data source or contains uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |
 | ![checkbox](images/checkbox.png) | Take actions to improve your results. | [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements) |
 | ![checkbox](images/checkbox.png) | Connect your project to a virtual assistant that is built with Watson Assistant. | [Deploying your project](/docs/discovery-data?topic=discovery-data-deploy) Turn on the *Emphasize the answer* feature to enable answer finding. |
 | ![checkbox](images/checkbox.png) | From the Watson Assistant user interface, deploy the assistant. | [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external} |
 {: caption="Checklist for enhancing your chatbot" caption-side="top"}
-
-For help with walking through the steps, complete the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
 ## Find trends
 {: #product-overview-mining}

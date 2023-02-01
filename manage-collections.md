@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-08"
+lastupdated: "2023-02-01"
 
 subcollection: discovery-data
 
@@ -67,8 +67,6 @@ To change how a data source is processed, complete the following steps:
     For example, you might want to enable or disable optical character recognition (OCR), which is a feature that extracts text from images. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
 
     For more information about changing data synchronization schedules, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
-
-    [IBM Cloud]{: tag-ibm-cloud} For service instances that are managed by {{site.data.keyword.cloud_notm}}, you can enable or disable the FAQ extraction feature. For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 
     Other setting options differ by data source type.
 

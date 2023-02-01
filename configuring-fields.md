@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-23"
+lastupdated: "2023-02-01"
 
 keywords: document structure,smart document understanding,sdu
 
@@ -56,8 +56,6 @@ The Smart Document Understanding (SDU) tool works better with some project types
     Or maybe you have extra large documents that contain subsections. You can teach the SDU model to recognize these subsections, and then split the large document into multiple, smaller, and easier-to-manage documents that begin with one of these subsections.
 
 -   The best way to prepare a collection for use in *Conversational Search* projects is to identify discrete question-and-answer pairs. You can use the SDU tool to find and annotate them. If you configure the project to contain answers in an answer field, you must update the search configuration in {{site.data.keyword.conversationshort}} to get the body of the response from the custom answer field.
-  
-    [IBM Cloud]{: tag-ibm-cloud} Try out the FAQ extraction feature, which basically does the work of identifying question-and-answer pairs for you, but is available as a beta and therefore is not appropriate for production use. FAQ stores the answer in the `text` field, so you can use the default {{site.data.keyword.conversationshort}} search configuration.
 
 -   A pretrained SDU model is applied to *Document Retrieval for Contracts* projects automatically. The pretrained SDU model knows how to recognize terms and concepts that are significant to contracts. As a result, you cannot apply a user-trained SDU model to this project type, but you also don't need to.
 -   The SDU tool is rarely used with *Content Mining* projects.

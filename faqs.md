@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-11-16"
+lastupdated: "2023-02-01"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ To search the entire {{site.data.keyword.cloud_notm}} Docs site, enter your sear
 {: #faq-integrate}
 {: faq}
 
-You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} to make information that is stored in external data sources available to a virtual assistant. Create a *Conversational Search* project in {{site.data.keyword.discoveryshort}}, and then add the data sources that you want to make available to it. Next, create a *search skill* in {{site.data.keyword.conversationshort}}, and connect it to your {{site.data.keyword.discoveryshort}} project and collection. For more information, see the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} to make information that is stored in external data sources available to a virtual assistant. Create a *Conversational Search* project in {{site.data.keyword.discoveryshort}}, and then add the data sources that you want to make available to it. Next, create a *search integration* in {{site.data.keyword.conversationshort}}, and connect it to your {{site.data.keyword.discoveryshort}} project and collection.
 
 ## How does Watson Discovery access my data?
 {: #faq-connectors}

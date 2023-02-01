@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-13"
+lastupdated: "2023-02-01"
 
 keywords: projects, project types
 
@@ -111,20 +111,15 @@ The documents that you add to this type of project are not enriched automaticall
 
 If you need to perform more complex searches from your virtual assistant, you might want to create a *Document Retrieval* project instead of *Conversational Search* project. For more information, see [Choosing the right project type for a chatbot](/docs/discovery-data?topic=discovery-data-chat-choose-project).
 
-[IBM Cloud]{: tag-ibm-cloud}
-
-- Consider enabling the *FAQ extraction* feature when you add a collection. The FAQ extraction feature runs extra processes to identify and tag clear question-and-answer pairs in your data source. This additional step makes it easier for a virtual assistant to return a concise and accurate answer in response to a question that is the same or similar to its pair.
-- Another feature to consider enabling is the *Emphasize the answer* beta feature. When enabled, the answers that are returned to customers who interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
+[IBM Cloud]{: tag-ibm-cloud}  Another feature to consider enabling is the *Emphasize the answer* feature. When enabled, the answers that are returned to customers who interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
 
 For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
--   [IBM Cloud Pak for Data]{: tag-cp4d} [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add).
+-   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}.
 -   [IBM Cloud]{: tag-ibm-cloud} [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
 
-    From the new {{site.data.keyword.conversationshort}} experience, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}
+    From the classic {{site.data.keyword.conversationshort}} experience, see [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add){: external}.
     {: note}
-
-[IBM Cloud]{: tag-ibm-cloud} Follow steps to use this project type to enhance your virtual assistant by completing the [Help your chatbot answer frequently asked questions](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
 
 ### Content Mining
 {: #mining}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-10-20"
+lastupdated: "2023-02-01"
 
 keywords: upload,one-time upload,add document,add files
 
@@ -35,9 +35,7 @@ To upload data, complete the following steps:
 1.  If the language of the documents in storage is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
-1.  [IBM Cloud]{: tag-ibm-cloud} If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
 
-    For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 1.  Optionally, click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**.
 
     When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
