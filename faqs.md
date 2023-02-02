@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-02"
 
 subcollection: discovery-data
 
@@ -28,12 +28,6 @@ To search the entire {{site.data.keyword.cloud_notm}} Docs site, enter your sear
 
 ![Shows where the documentation search field is situated at the start of the page](images/search-doc.png)
 
-## Can I integrate Watson Discovery with Watson Assistant?
-{: #faq-integrate}
-{: faq}
-
-You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} to make information that is stored in external data sources available to a virtual assistant. Create a *Conversational Search* project in {{site.data.keyword.discoveryshort}}, and then add the data sources that you want to make available to it. Next, create a *search integration* in {{site.data.keyword.conversationshort}}, and connect it to your {{site.data.keyword.discoveryshort}} project and collection.
-
 ## How does Watson Discovery access my data?
 {: #faq-connectors}
 {: faq}
@@ -57,6 +51,22 @@ No. {{site.data.keyword.discoveryshort}} support multiple languages. For more in
 {: faq}
 
 {{site.data.keyword.discoveryshort}} can ingest most standard business file types, including PDF, Microsoft Word documents, spreadsheets, and presentations. For a complete list, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+## How do I know whether I have {{site.data.keyword.discoveryshort}} v1 or v2?
+{: #faq-identify-version}
+{: faq}
+
+If you're using {{site.data.keyword.discoveryshort}} on {{site.data.keyword.icp4dfull}}, then you're using {{site.data.keyword.discoveryshort}} v2. 
+
+If you have a service instance that is managed by {{site.data.keyword.cloud_notm}}, then check what you see when you launch the product. When you open the product user interface in v2, the following page is displayed:
+
+![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
+
+## Can I integrate Watson Discovery with Watson Assistant?
+{: #faq-integrate}
+{: faq}
+
+You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} to make information that is stored in external data sources available to a virtual assistant. Create a *Conversational Search* project in {{site.data.keyword.discoveryshort}}, and then add the data sources that you want to make available to it. Next, create a *search integration* in {{site.data.keyword.conversationshort}}, and connect it to your {{site.data.keyword.discoveryshort}} project and collection.
 
 ## Can I find related documents after I add them to a collection
 {: #faq-keep-doc-relationship}
