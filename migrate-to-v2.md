@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2021
-lastupdated: "2022-11-16"
+lastupdated: "2023-02-01"
 
 subcollection: discovery-data
 
@@ -10,15 +10,15 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Migrating to Discovery v2
+# Migrating to {{site.data.keyword.discoveryshort}} v2
 {: #migrate-to-v2}
 
-A redesign of the product, Discovery v2, was introduced in November 2019. Discovery v2 offers significant advantages over Discovery v1.
+A redesign of the product, {{site.data.keyword.discoveryshort}} v2, was introduced in November 2019. {{site.data.keyword.discoveryshort}} v2 offers significant advantages over {{site.data.keyword.discoveryshort}} v1.
 {: shortdesc}
 
-The information in this topic describes how to migrate a v1 Discovery service instance to Discovery v2, including how to move data and update your applications.
+The information in this topic describes how to migrate a v1 {{site.data.keyword.discoveryshort}} service instance to {{site.data.keyword.discoveryshort}} v2, including how to move data and update your applications.
 
-The major structural differences between Discovery v1 and v2 include:
+The major structural differences between {{site.data.keyword.discoveryshort}} v1 and v2 include:
 
 - There is no concept of an environment in v2. The deployment details such as size and index capacity are managed for you when you choose the appropriate service plan for your needs. For managed deployments, you can choose a Plus, Enterprise, or Premium plan, for example. For installed deployments, the sizing is managed by the deployment type that you specify when you install the service in Cloud Pak for Data.
 - There is no single configuration object in v2. Control of the enrichments that are applied to documents is managed in the collections and project objects in v2. Other v1 configuration capabilities, such as the ability to customize the conversion step of ingestion, are not available in v2.
@@ -28,12 +28,12 @@ The major structural differences between Discovery v1 and v2 include:
 -  For more information about feature differences, see [the feature comparison table](/docs/discovery-data?topic=discovery-data-version-choose#version-choose-comparison).
 -  For more information about detailed API differences, see [API version comparison](/docs/discovery-data?topic=discovery-data-migrate-to-v2-api).
 
-Discovery v2 is available for all users of Plus or Enterprise plan instances, or Premium plan instances that were created after 15 July 2020. v2 is also available for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} users.
+{{site.data.keyword.discoveryshort}} v2 is available for all users of Plus or Enterprise plan instances, or Premium plan instances that were created after 15 July 2020. v2 is also available for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} users.
 
 ## Migration overview
 {: #migrate-to-v2-overview}
 
-Migrating from Discovery v1 to v2 is a multistep process that you can do independently.
+Migrating from {{site.data.keyword.discoveryshort}} v1 to v2 is a multistep process that you can do independently.
 
 The two versions of the {{site.data.keyword.discoveryshort}} service have many differences, but you can adopt techniques and utilities that were applied to a v1 instance for use with your new v2 instance.
 
@@ -54,12 +54,12 @@ Get familiar with what's new in v2 and learn about how it differs from v1 before
 
 When you're ready to start the migration, create a migration schedule that you and your team can follow as you complete the process. Be sure to set up the new v2 service instance and get projects and collections recreated in the new service instance before you switch over to using the v2 service and before you delete your v1 instance.
 
-Learn about the Discovery v2 plan options, so you can choose the right plan for your long term needs. The Plus plan that you use to get started might be sufficient. However, you might choose to use an Enterprise or Premium plan instead. From a Plus plan, you can do an in-place upgrade to an Enterprise plan, but not to a Premium plan.
+Learn about the {{site.data.keyword.discoveryshort}} v2 plan options, so you can choose the right plan for your long term needs. The Plus plan that you use to get started might be sufficient. However, you might choose to use an Enterprise or Premium plan instead. From a Plus plan, you can do an in-place upgrade to an Enterprise plan, but not to a Premium plan.
 
 ### Plan how to adapt your application
 {: #migrate-to-v2-projects}
 
-One of the main changes between versions is that Discovery v2 introduces projects. A project consists of one or more collections. The advantage of using projects is that one query can run against many collections at the same time. Each collection can contain documents that you upload or that you crawl from a single data source, such as a website, Microsoft SharePoint, and more.
+One of the main changes between versions is that {{site.data.keyword.discoveryshort}} v2 introduces projects. A project consists of one or more collections. The advantage of using projects is that one query can run against many collections at the same time. Each collection can contain documents that you upload or that you crawl from a single data source, such as a website, Microsoft SharePoint, and more.
 
 Things to consider when you adapt your application to use projects:
 
@@ -75,14 +75,14 @@ Things to consider when you adapt your application to use projects:
     -   [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults)
     -   [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults)
 
--   The Discovery v2 API changed to account for projects and collections, among other enhancements. Some API calls changed to support actions at the project level instead of the collection level, such as submitting a query and running relevancy training. Many other API methods changed and some are not available in v2. For a detailed comparison of the v1 and v2 API methods, see [API version comparison](/docs/discovery-data?topic=discovery-data-migrate-to-v2-api).
+-   The {{site.data.keyword.discoveryshort}} v2 API changed to account for projects and collections, among other enhancements. Some API calls changed to support actions at the project level instead of the collection level, such as submitting a query and running relevancy training. Many other API methods changed and some are not available in v2. For a detailed comparison of the v1 and v2 API methods, see [API version comparison](/docs/discovery-data?topic=discovery-data-migrate-to-v2-api).
 
 ### Picking a service plan
 {: #migrate-to-v2-plan-overview}
 
 Choose among the *Plus*, *Enterprise*, and *Premium* managed plans or opt for an on-premises installation by purchasing the {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}}. Review the benefits and limits of each type of plan before you choose one.
 
--   For more information about the plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
+-   For more information about the plans, see [{{site.data.keyword.discoveryshort}} pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 -   For more information about artifact limits, see [Limit details](/docs/discovery-data?topic=discovery-data-version-choose#plan-limit-links).
 
 The following table shows plan types for managed deployments that are generally similar between v1 and v2.
@@ -138,9 +138,9 @@ Recreate one collection at a time. If you start multiple ingestion processes at 
 ### Uploaded data
 {: #docs-uploaded}
 
-If you used the API to upload documents into Discovery v1, a similar API is available in v2 to upload documents into collections. You must update any workflows you use to automate the process to account for the new arrangement of projects and collections.
+If you used the API to upload documents into {{site.data.keyword.discoveryshort}} v1, a similar API is available in v2 to upload documents into collections. You must update any workflows you use to automate the process to account for the new arrangement of projects and collections.
 
-If the original documents that you ingested into Discovery v1 are no longer available, you can use the query API to extract the document text from Discovery v1. You can then add the text to a collection in Discovery v2. For more information, see [Recovering documents](#migrate-to-v2-advanced-transfer).
+If the original documents that you ingested into {{site.data.keyword.discoveryshort}} v1 are no longer available, you can use the query API to extract the document text from {{site.data.keyword.discoveryshort}} v1. You can then add the text to a collection in {{site.data.keyword.discoveryshort}} v2. For more information, see [Recovering documents](#migrate-to-v2-advanced-transfer).
 
 ### Crawled data
 {: #docs-crawled}
@@ -156,16 +156,16 @@ The service needs time and resources to crawl and ingest documents from external
 
 The following built-in data source collections are not available in v2:
 
-Watson Discovery News
+Watson {{site.data.keyword.discoveryshort}} News
 :   This pre-enriched data source is not offered in v2. For more information about an alternative way to get news data, see [Using a news service with v2](#migrate-to-v2-news).
 
 COVID-19 kit
-:   This pre-built collection was designed to help you fuel a dynamic chatbot that is built with IBM Watson™ Assistant and Discovery to answer your customers' questions about COVID-19. In v2, you can build a similar solution. Create a *Conversational Search* project type with collections that crawl trusted websites for answers to COVID-19 questions. For more information, see the [Helping your chatbot get answers from existing help content](/docs/discovery-data?topic=discovery-data-tutorial-convo) tutorial.
+:   This pre-built collection was designed to help you fuel a dynamic chatbot that is built with {{site.data.keyword.conversationfull}} and {{site.data.keyword.discoveryshort}} to answer your customers' questions about COVID-19. In v2, you can build a similar solution. Create a *Conversational Search* project type with collections that crawl trusted websites for answers to COVID-19 questions.
 
 ## Ingesting data
 {: #migrate-to-v2-ingest}
 
-To ingest v1 data into a Discovery v2 instance, complete the following steps:
+To ingest v1 data into a {{site.data.keyword.discoveryshort}} v2 instance, complete the following steps:
 
 1.  Create a v2 service instance.
 1.  Create a project.
@@ -179,7 +179,7 @@ To ingest v1 data into a Discovery v2 instance, complete the following steps:
     
     -   Crawled data: You cannot crawl data from an external data source programmatically in v2. From the product user interface, re-create the connection to the external data source, and then crawl the external data source from scratch.
 
-1.  From the product user interface, you can configure the Discovery v2 collection. For example, you can choose whether to enable optical character recognition or FAQ extraction. For an external data source, you can set the crawl schedule.
+1.  From the product user interface, you can configure the {{site.data.keyword.discoveryshort}} v2 collection. For example, you can choose whether to enable optical character recognition. For an external data source, you can set the crawl schedule.
 1.  Apply enrichments to your data. You can apply pre-built Natural Language Processing enrichments or custom enrichments that you create.
 
     In v1, enrichments are associated with the configuration that is generated when you create the environment. In v2, enrichments are associate with the collection configuration. Some enrichments are applied to your collection by default, depending on the type of project used. For more information, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults). In v2, you can configure the collection to use any subset of available enrichments on the fields of your document.
@@ -189,7 +189,7 @@ To ingest v1 data into a Discovery v2 instance, complete the following steps:
 
 Document IDs are assigned to the documents that you add to a v2 collection when you upload them from the product user interface or add them by using the [Add a document](/apidocs/discovery-data#adddocument) API method.
 
-You might want to retain the IDs of your v1 documents in v2 if you are using processes that depend on these unique identifiers. For example, regression testing for the application might verify specific documents are returned by checking the document IDs. Relevancy training uses the document IDs to track documents between training runs. These processes are easier to adapt if the document IDs are the same between your v1 and v2 instances. Otherwise, the processes that are used with the Discovery v1 instance must be remapped to the IDs that are assigned to the documents after they are added to the Discovery v2 instance.
+You might want to retain the IDs of your v1 documents in v2 if you are using processes that depend on these unique identifiers. For example, regression testing for the application might verify specific documents are returned by checking the document IDs. Relevancy training uses the document IDs to track documents between training runs. These processes are easier to adapt if the document IDs are the same between your v1 and v2 instances. Otherwise, the processes that are used with the {{site.data.keyword.discoveryshort}} v1 instance must be remapped to the IDs that are assigned to the documents after they are added to the {{site.data.keyword.discoveryshort}} v2 instance.
 
 If you specified your own documents IDs when you added documents to the v1 service instance, you can retain the IDs by using the *Update a document* method instead of the *Add a document* method. With the update method, you can assign a document ID to the document as you add it to the v2 collection. For more information, see [Update a document](/apidocs/discovery-data#updatedocument){: external}.
 
@@ -201,7 +201,7 @@ If your v1 documents have system-generated IDs, you can submit an empty [search 
 ### Recovering documents
 {: #migrate-to-v2-advanced-transfer}
 
-In some cases, the original documents that were ingested into Discovery V1 are no longer available. You can use the Discovery v1 instance to retrieve information from the document. Discovery creates a text copy of each document that it ingests. The copy is text only, so any documents in HTML, PDF, or other nontext formats are converted to a text-only version.
+In some cases, the original documents that were ingested into {{site.data.keyword.discoveryshort}} V1 are no longer available. You can use the {{site.data.keyword.discoveryshort}} v1 instance to retrieve information from the document. {{site.data.keyword.discoveryshort}} creates a text copy of each document that it ingests. The copy is text only, so any documents in HTML, PDF, or other nontext formats are converted to a text-only version.
 
 You can recover only the first 10,000 documents in a collection by using this method.
 {: important}
@@ -245,30 +245,30 @@ To transfer document information from v1 to v2, complete the following steps:
     
 1.  Prepare the exported documents to be ingested into v2.
 
-    Each resulting JSON file that you get from Discovery v1 contains data that is extracted from the original document, such as text, html, and other fields. If custom metadata was associated with the document when it was uploaded to v1, it is also present in the JSON file. In addition, the file contains several fields that were generated by the v1 analysis. Retain only a subset of this data as part of the document that you add to Discovery v2. 
+    Each resulting JSON file that you get from {{site.data.keyword.discoveryshort}} v1 contains data that is extracted from the original document, such as text, html, and other fields. If custom metadata was associated with the document when it was uploaded to v1, it is also present in the JSON file. In addition, the file contains several fields that were generated by the v1 analysis. Retain only a subset of this data as part of the document that you add to {{site.data.keyword.discoveryshort}} v2. 
     
     The following tips can help you decide which fields to keep:
 
     -   Include the `text` field or any other field with textual content that you want to be able to enrich or search in Disocvery v2.
-    -   Include any custom metadata that is stored in the document. This metatdata is typically specific to the application that leverages Discovery and is used to filter documents in a search. For example, `metadata.customer_id`.
-    -   Do not include enrichments from Discovery v1. For example, `enriched_text.entities`. Discovery v2 generates its own enrichments.
-    -   Exclude fields that are generated by Discovery unless they are leveraged by your application and contain information that is unique to the v1 version of the document. In that case, rename the field so that it does not get replaced when the document is ingested into Discovery v2. For example, `extracted_metadata.publicationdate` is a field that is generated by Discovery when a document is ingested. Maybe you want to retain the `metadata.parent_document_id` information from v1 to understand how subdocuments were originally generated from a single source document.
+    -   Include any custom metadata that is stored in the document. This metatdata is typically specific to the application that leverages {{site.data.keyword.discoveryshort}} and is used to filter documents in a search. For example, `metadata.customer_id`.
+    -   Do not include enrichments from {{site.data.keyword.discoveryshort}} v1. For example, `enriched_text.entities`. {{site.data.keyword.discoveryshort}} v2 generates its own enrichments.
+    -   Exclude fields that are generated by {{site.data.keyword.discoveryshort}} unless they are leveraged by your application and contain information that is unique to the v1 version of the document. In that case, rename the field so that it does not get replaced when the document is ingested into {{site.data.keyword.discoveryshort}} v2. For example, `extracted_metadata.publicationdate` is a field that is generated by {{site.data.keyword.discoveryshort}} when a document is ingested. Maybe you want to retain the `metadata.parent_document_id` information from v1 to understand how subdocuments were originally generated from a single source document.
     -   Avoid fields that have reserved field names. For more information, see [How fields are handled](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).
 
-1.  Ingest each edited v1 JSON document into the Discovery v2 instance. The Discovery v1 document ID can be maintained in Discovery v2. For more information about how to retain the document ID, see [Retaining document IDs](#migrate-to-v2-keep-docid).
+1.  Ingest each edited v1 JSON document into the {{site.data.keyword.discoveryshort}} v2 instance. The {{site.data.keyword.discoveryshort}} v1 document ID can be maintained in {{site.data.keyword.discoveryshort}} v2. For more information about how to retain the document ID, see [Retaining document IDs](#migrate-to-v2-keep-docid).
 
 ## Transferring relevancy training
 {: #migrate-to-v2-transfer-relevance}
 
-Relevancy training that was done in Discovery v1 can be transferred to Discovery v2. Transferring the training works best with a Discovery v2 project that has one collection that contains the same documents from the Discovery v1 collection.
+Relevancy training that was done in {{site.data.keyword.discoveryshort}} v1 can be transferred to {{site.data.keyword.discoveryshort}} v2. Transferring the training works best with a {{site.data.keyword.discoveryshort}} v2 project that has one collection that contains the same documents from the {{site.data.keyword.discoveryshort}} v1 collection.
 
 Even if collections were added or documents changed, the relevancy training can be transferred. However, you must update the training to account for the changes.
 
 To transfer relevancy training, complete the following steps:
 
-1.  Load the documents in Discovery v2.
-1.  Programmatically download the queries that were used for relevancy training in Discovery v1. For more information, see [List training data](https://cloud.ibm.com/apidocs/discovery#listtrainingdata){: external}.
-1.  Programmatically re-create the relevancy training data in Discovery v2. Add each training query separately by using the *Create a query* method. For more information, see [Create a training query](https://cloud.ibm.com/apidocs/discovery-data#createtrainingquery){: external}.
+1.  Load the documents in {{site.data.keyword.discoveryshort}} v2.
+1.  Programmatically download the queries that were used for relevancy training in {{site.data.keyword.discoveryshort}} v1. For more information, see [List training data](https://cloud.ibm.com/apidocs/discovery#listtrainingdata){: external}.
+1.  Programmatically re-create the relevancy training data in {{site.data.keyword.discoveryshort}} v2. Add each training query separately by using the *Create a query* method. For more information, see [Create a training query](https://cloud.ibm.com/apidocs/discovery-data#createtrainingquery){: external}.
 
     Be sure to specify the v2 collection ID. You must also specify the document ID also. 
     
@@ -284,24 +284,24 @@ SDU models
 :   You can use an SDU model that you built in v1. However, you cannot edit the migrated SDU model in v2. If you want to reuse a model as-is, you can [export it from v1](/docs/discovery?topic=discovery-sdu#import){: external} and [import the SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields#import) to v2.
 
 Machine learning models
-:   You cannot deploy models directly to Discovery v2 service instances from {{site.data.keyword.knowledgestudioshort}}. Instead, you must export the machine learning models from {{site.data.keyword.knowledgestudioshort}}, and then import them into Discovery. The model must have been exported from {{site.data.keyword.knowledgestudioshort}} after 16 July 2020. If you have a model that was exported before that date, you must re-export the model from {{site.data.keyword.knowledgestudioshort}}. Only paid {{site.data.keyword.knowledgestudioshort}} plans support exporting models.
+:   You cannot deploy models directly to {{site.data.keyword.discoveryshort}} v2 service instances from {{site.data.keyword.knowledgestudioshort}}. Instead, you must export the machine learning models from {{site.data.keyword.knowledgestudioshort}}, and then import them into {{site.data.keyword.discoveryshort}}. The model must have been exported from {{site.data.keyword.knowledgestudioshort}} after 16 July 2020. If you have a model that was exported before that date, you must re-export the model from {{site.data.keyword.knowledgestudioshort}}. Only paid {{site.data.keyword.knowledgestudioshort}} plans support exporting models.
 
     For more information, see one of the following topics:
     
     -   **{{site.data.keyword.icp4dfull}}**: [Exporting a machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-publish-ml#exporting-a-machine-learning-model){: external}
 
-    -   **{{site.data.keyword.cloud_notm}}**: [Deploying a machine learning model to Watson Discovery](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-publish-ml#wks_madiscovery){: external}
+    -   **{{site.data.keyword.cloud_notm}}**: [Deploying a machine learning model to Watson {{site.data.keyword.discoveryshort}}](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-publish-ml#wks_madiscovery){: external}
     
-    For information about how to import a model to Discovery v2, see [Importing Machine Learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
+    For information about how to import a model to {{site.data.keyword.discoveryshort}} v2, see [Importing Machine Learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
 
 ## Update your application to use the v2 API
 {: #migrate-to-v2-difs}
 
-The Watson Developer SDKs support both Discovery v1 and v2.
+The Watson Developer SDKs support both {{site.data.keyword.discoveryshort}} v1 and v2.
 
 These instructions assume that your application is using the latest version of the v1 API (version `2019-04-30`).
 
-When you port an application that currently uses the Discovery v1 API to use v2, you must plan how to address the following high-level differences between the two versions. 
+When you port an application that currently uses the {{site.data.keyword.discoveryshort}} v1 API to use v2, you must plan how to address the following high-level differences between the two versions. 
 
 In addition to these high-level changes, review the differences at a per-method level to understand what else you might need to change. For more information, see [API version comparison](/docs/discovery-data?topic=discovery-data-migrate-to-v2-api).
 
@@ -402,12 +402,12 @@ The way that your application shows query results might need to be updated due t
 
     Each entry in the mention corresponds to an occurrence of the entity in the document text. In the following example, seven occurrences are found. For each occurrence, a confidence score and the offsets of the mention text are displayed. You can use the offsets to highlight the mention in the document text when the result is displayed in a user interface.
 
-    ![Mentions in Discovery v2](/images/result-detail.png)
+    ![Mentions in {{site.data.keyword.discoveryshort}} v2](/images/result-detail.png)
 
 -   The JSON structure of query responses is rearranged slightly in v2.
 -   Deduplication information is not included in the v2 query response.
 -   In v2, `enriched_text` is an array instead of an object.
--   In Discovery v2, the Entities v2 enrichment is used. Entity type names in v2 are specified in headline case, instead of all uppercase letters. If you use a query or aggregation that specifies an entity name, you must change the capitalization. For example, change `PERSON` to `Person`.
+-   In {{site.data.keyword.discoveryshort}} v2, the Entities v2 enrichment is used. Entity type names in v2 are specified in headline case, instead of all uppercase letters. If you use a query or aggregation that specifies an entity name, you must change the capitalization. For example, change `PERSON` to `Person`.
 -   Fields from JSON files that are added to a collection are converted differently during ingestion between v1 and v2. If your application manipulates these results, you might need to make adjustments.
 
     | Original JSON field content | v1 representation | v2 representation | Notes |
@@ -436,7 +436,7 @@ To verify that the migration was successful, compare the following metrics to th
 
     The number of documents per collection should be close to the number of documents that were stored in the same collection in v1. The numbers might not be exactly the same. 
     
-    For crawled data, do not be surprised if the v2 collection has fewer documents. The v1 connectors do not delete documents from a Discovery collection that are deleted from the external data source. Your v2 version of the collection will be a fresher crawl of the data as it exists in the external data source today.
+    For crawled data, do not be surprised if the v2 collection has fewer documents. The v1 connectors do not delete documents from a {{site.data.keyword.discoveryshort}} collection that are deleted from the external data source. Your v2 version of the collection will be a fresher crawl of the data as it exists in the external data source today.
 
 Do not expect the search results to be exactly the same for queries that you submit in the v1 and v2 instances.
 {: tip}
@@ -444,4 +444,4 @@ Do not expect the search results to be exactly the same for queries that you sub
 ## Using a news service with v2
 {: #migrate-to-v2-news}
 
-If you used the Watson Discovery News data source in v1 and want to create a data source with equivalent function in v2, find a news and events data provider service. Look for a service that offers a News API that extracts news articles in JSON format. You can then upload the JSON files to create a News collection in your v2 project.
+If you used the Watson {{site.data.keyword.discoveryshort}} News data source in v1 and want to create a data source with equivalent function in v2, find a news and events data provider service. Look for a service that offers a News API that extracts news articles in JSON format. You can then upload the JSON files to create a News collection in your v2 project.
