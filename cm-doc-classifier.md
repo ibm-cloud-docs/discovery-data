@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-11-22"
+lastupdated: "2023-02-03"
 
 subcollection: discovery-data
 
@@ -119,7 +119,7 @@ To create a document classifier, complete the following steps:
     :    Select the field from your training data file with the classification label. From the earlier example, the `Label` field is the best choice.
     
     Predicted field
-    :    Specify a name to apply to the field that the classifier will generate to store the predicted class label. By detault, the field name has the syntax *`<Answer field value>`*`_predicted`. For example, `Label_predicted`.
+    :    You can accept the default field name which has the syntax *`<Answer field value>`*`_predicted`. For example, `Label_predicted`. This field is used by the training process only. It is not stored in the collection index.
 
     Test dataset
     :    Specifies the data set to use to test the classifier model. By default, the training data CSV file that you uploaded and configured is split into three data sets that are used for training, validation, and test respectively. However, you can optionally specify a separate data set to use for testing the model.
@@ -172,6 +172,12 @@ After model training is completed, deploy the model as an enrichment.
             {: note}
         1.  In the **Enrichments** tab, locate your classifier in the **Name** column. From the **Fields to enrich** field, choose the same text field that was used to train the model. (This field is determined by the system and is indexed as the *Analyzable text content* field. For more information, see [Identifying the text field](/docs/discovery-data?topic=discovery-data-cm-edit-collection#text-field).)
         1.  Click **Apply changes and reprocess**.
+
+When the document classifier classifies a document, it stores the classification in the `document_level_enrichment.classes.class_name` field.
+
+For example, the following JSON excerpt shows a document that was classified with the `package_container` class.
+
+![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png)
 
 ### Document classifier limits
 {: #doc-classifier-limits}

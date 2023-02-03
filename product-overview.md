@@ -80,7 +80,7 @@ If enhancing your chatbot is your goal, complete the steps that are listed in th
 | ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |
 | ![checkbox](images/checkbox.png) | Take actions to improve your results. | [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements) |
 | ![checkbox](images/checkbox.png) | Connect your project to a virtual assistant that is built with Watson Assistant. | [Deploying your project](/docs/discovery-data?topic=discovery-data-deploy) Turn on the *Emphasize the answer* feature to enable answer finding. |
-| ![checkbox](images/checkbox.png) | From the Watson Assistant user interface, deploy the assistant. | [Deploying your assistant](/docs/assistant?topic=assistant-deploy-overview){: external} |
+| ![checkbox](images/checkbox.png) | From the Watson Assistant user interface, deploy the assistant. | [Deploying your assistant](/docs/watson-assistant?topic=watson-assistant-web-chat-overview){: external} |
 {: caption="Checklist for enhancing your chatbot" caption-side="top"}
 
 ## Find trends
