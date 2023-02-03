@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-02-03"
 
 keywords: choose enrichments,enrichment overview
 
@@ -84,14 +84,14 @@ To add a resource, complete the following steps:
     After you create the resource, it becomes a new type of enrichment that you can apply to your data.
 1.  Specify the collection and field in which to apply the enrichment.
 
-    You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool.
+    You can apply enrichments to the `text` and `html` fields, and to custom fields that were added from uploaded JSON or CSV files or from the Smart Document Understanding (SDU) tool. Only the first 50,000 characters of a custom field from a JSON file are enriched.
     {: tip}
 
     For example, if you add a dictionary and choose to apply it to the `text` field of a collection, the documents in the collection are reprocessed. If the term `vehicle` is specified as a synonym of the `car` dictionary entry and occurs in the document text, `vehicle` is tagged as a mention of the `car` dictionary entry type. If a customer later searches for `car`, the passage that contains the `vehicle` mention is included in the search results.
 
-    If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`. Only the first 50,000 characters of a custom field from a JSON file are enriched.
+    If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`.
     {: note}
 
 You can choose to apply resource-derived enrichments to your data later. Enrichments that you add to a project are available for use from any collection in the project. Go to the *Manage collections* page, choose the collection where you want to apply the enrichment, and then open the **Enrichments** tab. Make sure the status of the enrichment shows that it is *Ready*, and then apply the enrichment to a field in the collection. Enrichments that you enable are applied to the documents in random order. For more information, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
 
-From the deployed Content Mining application, you can create a classifier or a custom annotator from a dictionary, regular expression, Machine Learning, or PEAR file and use it as an enrichment in collections that are stored in other project types.
+From the deployed Content Mining application, you can create a classifier or a custom annotator from a dictionary, regular expression, Machine Learning, or PEAR file and use it as an enrichment in collections that are stored in other project types. For more information, see [Adding facets](/docs/discovery-data?topic=discovery-data-cm-add-facets).
