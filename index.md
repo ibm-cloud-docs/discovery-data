@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-29"
+lastupdated: "2023-02-01"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -23,6 +23,8 @@ Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understan
 Start by connecting your data to Discovery. Next, teach Discovery to understand the language and concepts that are unique to your business and industry. Enrich your data with award-winning Natural Language Understanding (NLU) technologies so you can identify key information and patterns. Finally, build search solutions that find answers to queries, explore your data to uncover patterns and insights, and leverage search results in automated workflows.
 
 ![Discovery diagram](images/aboutdiscovery.png)
+
+Find out how {{site.data.keyword.discoveryshort}} is transforming data into artist insights at the 2023 GRAMMYs&reg;. Read the [IBM Business Operations blog post](https://www.ibm.com/blogs/internet-of-things/watson-discovery-grammys){: external} to learn more.
 
 ## Overview video
 {: #about-video}
