@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-06"
 
 subcollection: discovery-data
 
@@ -29,7 +29,7 @@ Find checklists of the high-level steps to follow to achieve the following goals
 
 Help customers find answers faster. Analyze content from various connected data sources, pinpoint the most relevant passage or phrase, and return the right information when someone asks for it.
 
-![Shows the search bar with search results after it.](images/dr-search.png)
+![Shows the search bar with search results after it.](images/dr-search.png){: caption="Figure 1. Search bar with search results" caption-side="bottom"}
 
 If pinpointing answers is your goal, complete the steps that are listed in the following table.
 
@@ -47,7 +47,7 @@ If pinpointing answers is your goal, complete the steps that are listed in the f
 
 Use award-winning natural language processing technology to enrich your data and ensure that the right information is found when someone searches for answers.
 
-![Shows a custom machine learning facet.](images/nlu-search.png)
+![Shows a custom machine learning facet.](images/nlu-search.png){: caption="Figure 2. Machine learning facet for filtering search results with custom enrichment values" caption-side="bottom"}
 
 If extracting meaning is your goal, complete the steps that are listed in the following table.
 
@@ -69,7 +69,7 @@ If extracting meaning is your goal, complete the steps that are listed in the fo
 
 Delight your customers by fortifying your chatbot with an answer to every question. Discovery is designed to work seemlessly with Watson Assistant to search and deliver answers from help content that you already own.
 
-![Shows a chat bot with emphasize the answer enabled.](images/convo-search.png)
+![Shows a chat bot with emphasize the answer enabled.](images/convo-search.png){: caption="Figure 3. Answer finding enabled in the Assistant web chat" caption-side="bottom"}
 
 If enhancing your chatbot is your goal, complete the steps that are listed in the following table.
 
@@ -91,7 +91,7 @@ Uncover patterns, trends, and relationships in structured and unstructured data.
 Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
-![Shows the content mining application user interface.](images/mining-search.png)
+![Shows the content mining application user interface.](images/mining-search.png){: caption="Figure 4. Analyzing data with the Content Mining application" caption-side="bottom"}
 
 If finding trends in your data is your goal, complete the steps that are listed in the following table.
 
@@ -113,7 +113,7 @@ Accelerate the pace at which experts can analyze complex documents.
 Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
-![Shows the Contract Info tab for a contract document query result.](images/contract-search.png)
+![Shows the Contract Info tab for a contract document query result.](images/contract-search.png){: caption="Figure 5. Analyzing contracts" caption-side="bottom"}
 
 If analyzing contracts is your goal, complete the steps that are listed in the following table.
 

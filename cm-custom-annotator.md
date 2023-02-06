@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-12-22"
+lastupdated: "2023-02-03"
 
 subcollection: discovery-data
 
@@ -31,7 +31,7 @@ To create a custom annotator, complete the following steps:
 
 1.  To create an annotator, click **collection**, and then select **custom annotator** from the list.
 
-    ![Shows the collection menu](images/cm-collection-menu.png)
+    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
 
 1.  Click **Create custom annotator**.
 1.  Name your annotator, and then optionally add a description.
@@ -89,17 +89,17 @@ To add a dictionary, complete the following steps:
 
     You can create a hierarchical facet by including a period (.) in the facet name. For example, you might create one dictionary with the facet path `Food.Vegetables` and others with the facet paths `Food.Fruits` and `Food.Proteins`. Add more facet groups with more periods. For example, you can add `Food.Proteins.Nuts` and `Food.Proteins.Meats` to categorize proteins even further.
 
-    ![Shows how to add a dictionary](images/cm-dict-add.png)
+    ![Shows how to add a dictionary](images/cm-dict-add.png){: caption="Figure 2. Adding a dictionary" caption-side="bottom"}
 
 1.  If you want documents that are returned for a subfacet to be included when a user filters on the root facet, select **Lift up words**.
 
     For example, you might enable *Lift up words* for `Food.Fruits` and `Food.Proteins` but not `Food.Vegetables`. As a result, when a user clicks the Food facet, the returned documents include documents that mention terms included in the Fruits and Meats dictionaries, such as *apples* and *beef*.
     
-    ![Shows that documents with all of the terms except those in the Vegetables dictionary are returned when the Food facet is selected.](images/cm-dict-lift-up.png)
+    ![Shows that documents with all of the terms except those in the Vegetables dictionary are returned when the Food facet is selected.](images/cm-dict-lift-up.png){: caption="Figure 3. Dictionary enrichment application" caption-side="bottom"}
     
     However, a user must click the *Food>Vegetables* facet explicitly to get documents that mention terms in the Vegetables dictionary, such as *lettuce*, to be returned.
 
-    ![Shows that only documents that mention vegetables are returned when the Vegetables facet is selected.](images/cm-dict-veg.png)
+    ![Shows that only documents that mention vegetables are returned when the Vegetables facet is selected.](images/cm-dict-veg.png){: caption="Figure 4. Subfacets" caption-side="bottom"}
 
 1.  Repeat previous steps to add more dictionaries.
 1.  Click **Save**.

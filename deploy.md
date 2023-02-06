@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-10-11"
+lastupdated: "2023-02-03"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -38,10 +38,10 @@ For Document Retrieval and Custom (the type assigned to projects when you do not
 
 | UI component | Illustration | Storybook link |
 |--------------|--------------|----------------|
-| **Search bar**  \n A search box that uses a natural language understanding query to fetch the most relevant results.  | ![Search bar type ahead](images/search-bar-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external} |
-| **Search results**  \n A set of results that rank the most relevant passages and tables to a query. | ![Search results list](images/search-results-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} |
-| **Facets**  \n Refine your results with facets that help users filter the search results by specific categories and domains. | ![Facets](images/search-facets-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external} |
-| **Rich document preview**  \n Displays your results in a document preview. This view highlights result passages within the text of the original document. It also shows any enrichment mentions that are detected in the document. The rich preview is available with source documents where an SDU model is applied, such as PDF, Microsoft PowerPoint, and Microsoft Word files. | ![Rich document preview](images/search-doc-preview-example.png) | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default){: external} |
+| **Search bar**  \n A search box that uses a natural language understanding query to fetch the most relevant results.  | ![Search bar type ahead](images/search-bar-example.png){: caption="Figure 1. SEarch bar type ahead" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external} |
+| **Search results**  \n A set of results that rank the most relevant passages and tables to a query. | ![Search results list](images/search-results-example.png){: caption="Figure 2. Search results list" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} |
+| **Facets**  \n Refine your results with facets that help users filter the search results by specific categories and domains. | ![Facets](images/search-facets-example.png){: caption="Figure 3. Facets" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external} |
+| **Rich document preview**  \n Displays your results in a document preview. This view highlights result passages within the text of the original document. It also shows any enrichment mentions that are detected in the document. The rich preview is available with source documents where an SDU model is applied, such as PDF, Microsoft PowerPoint, and Microsoft Word files. | ![Rich document preview](images/search-doc-preview-example.png){: caption="Figure 4. Rich document view" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default){: external} |
 {: caption="Available UI components" caption-side="top"}
 
 To deploy your project, complete the following steps:
@@ -115,7 +115,7 @@ To run the script that starts the sample app, complete the following steps:
 
 When the script is done, it asks if you want to start the sample app now. Enter `y` for yes. A new web browser window or tab is displayed and the sample app is rendered in the page. The URL for the sample app is `http://localhost:3000/`, which means that the app is running locally and cannot be accessed by anyone who is using a different computer.
 
-![Shows the sample app user interface](images/tut-crawl-app.png)
+![Shows the sample app user interface](images/tut-crawl-app.png){: caption="Figure 5. Sample app user interface" caption-side="bottom"}
 
 The sample app gives you a preview of your search project. Use it to test your search project and make any necessary adjustments.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-09-14"
+lastupdated: "2023-02-03"
 
 subcollection: discovery-data
 
@@ -46,7 +46,7 @@ The default file location and name for dictionaries that are saved in Watson Exp
 
 1.  To create an annotator, click **collection**, and then select **custom annotator** from the list.
 
-    ![Shows the collection menu](images/cm-collection-menu.png)
+    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
 
 1.  Click **Create custom annotator**.
 1.  Name your annotator, and then optionally add a description.
@@ -70,7 +70,7 @@ You can import [dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8
 
 1.  To create an annotator, click **collection**, and then select **custom annotator** from the list.
 
-    ![Shows the collection menu](images/cm-collection-menu.png)
+    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Figure 2. Collection menu" caption-side="bottom"}
 
 1.  Click **Create custom annotator**.
 1.  Name your annotator, and then optionally add a description.
@@ -88,7 +88,7 @@ You can import [character patterns](https://www.ibm.com/support/knowledgecenter/
 
 1.  To create an annotator, click **collection**, and then select **custom annotator** from the list.
 
-    ![Shows the collection menu](images/cm-collection-menu.png)
+    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Figure 3. Collection menu" caption-side="bottom"}
 
 1.  Click **Create custom annotator**.
 1.  Name your annotator, and then optionally add a description.
@@ -115,7 +115,7 @@ For more information about how to import Content Analytics Studio machine learni
 
 1.  To create an annotator, click **collection**, and then select **custom annotator** from the list.
 
-    ![Shows the collection menu](images/cm-collection-menu.png)
+    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Figure 4. Collection menu" caption-side="bottom"}
 
 1.  Click **Create custom annotator**.
 1.  Name your annotator, and then optionally add a description.

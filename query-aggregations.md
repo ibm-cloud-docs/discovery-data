@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-10-26"
+lastupdated: "2023-02-06"
 
 subcollection: discovery-data
 
@@ -20,7 +20,7 @@ An aggregation is defined by an `aggregation` parameter that you can specify in 
 
 You can use an aggregation to do calculatations from values in the result document set. For example, to get information about the highest dollar amount in the `order.total` field of the documents that are returned as query results, use the following syntax:
 
-![Example aggregation query structure](images/aggregation_structure.png)
+![Example aggregation query structure](images/aggregation_structure.png){: caption="Figure 1. Aggregation query structure example" caption-side="bottom"}
 
 The aggregation parameter returns data about the field with the highest value.
 

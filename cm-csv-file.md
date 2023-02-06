@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-10-03"
+lastupdated: "2023-02-03"
 
 subcollection: discovery-data
 
@@ -53,6 +53,6 @@ Follow these guidelines when you create a CSV file for use in the project:
 
 The following image shows an excerpt from a CSV file with data that is well suited for analysis with the Content Mining application. The data comes from 2010 traffic records that are published by the National Highway Traffic Safety Administration (NHTSA). Each record includes car make, model, and year information, the date of the traffic incident, and text from the driver's statement, along with other useful data points.
 
-![Shows an excerpt from a csv file with the columns: MAKETXT, MODELTXT, YEARTXT, CRASH, FAILDATE, FIRE, COMPDESC, CITY, STATE, DATEA, LDATE, MILES, CDESCR](images/cm-csv-sample.png)
+![Shows an excerpt from a csv file with the columns: MAKETXT, MODELTXT, YEARTXT, CRASH, FAILDATE, FIRE, COMPDESC, CITY, STATE, DATEA, LDATE, MILES, CDESCR](images/cm-csv-sample.png){: caption="Figure 1. Sample CSV file" caption-side="bottom"}
 
 For more information about the sample data, see [https://www.nhtsa.gov/data/traffic-records](https://www.nhtsa.gov/data/traffic-records){: external}.

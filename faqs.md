@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-02"
+lastupdated: "2023-02-03"
 
 subcollection: discovery-data
 
@@ -26,7 +26,7 @@ For more information about Discovery-specific concepts, such as *projects* or *e
 
 To search the entire {{site.data.keyword.cloud_notm}} Docs site, enter your search term into the search field in the {{site.data.keyword.cloud_notm}} website banner. To search for information about the {{site.data.keyword.discoveryshort}} service only, scroll to the start of the page and enter your search term into the search field in the page header.
 
-![Shows where the documentation search field is situated at the start of the page](images/search-doc.png)
+![Shows where the documentation search field is situated at the start of the page](images/search-doc.png){: caption="Figure 1. Search bar for this product documentation versus all IBM Cloud docs" caption-side="bottom"}
 
 ## How does Watson Discovery access my data?
 {: #faq-connectors}
@@ -60,7 +60,7 @@ If you're using {{site.data.keyword.discoveryshort}} on {{site.data.keyword.icp4
 
 If you have a service instance that is managed by {{site.data.keyword.cloud_notm}}, then check what you see when you launch the product. When you open the product user interface in v2, the following page is displayed:
 
-![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
+![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png){: caption="Figure 2. Discovery v2 home page" caption-side="bottom"}
 
 ## Can I integrate Watson Discovery with Watson Assistant?
 {: #faq-integrate}

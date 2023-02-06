@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-08-01"
+lastupdated: "2023-02-06"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -72,7 +72,7 @@ These instructions apply to {{site.data.keyword.discoveryshort}} deployments:
 
 A new browser tab or window opens and the *My Projects* page is displayed.
 
-![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png)
+![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png){: caption="Figure 1. My projects page of the Sample project" caption-side="bottom"}
 
 To get familiar with the product, you can watch an under 3-minute overview video by clicking the *Watch a video* link from the product home page.
 {: tip}
@@ -88,7 +88,7 @@ The sample project is a built-in project that is provided as a resource for you 
     If you just installed {{site.data.keyword.discoveryshort}}, the Sample Project needs time to finish processing documents. Wait for processing to finish before you start experimenting. You can check the status of data processing from the *Activity* page, which is described in the next step.
     {: note}
 
-    ![Shows the Improve and customize page for the Sample Project.](images/gs-sample-project-improve.png)
+    ![Shows the Improve and customize page for the Sample Project.](images/gs-sample-project-improve.png){: caption="Figure 2. Sample project *Improve and customize* page." caption-side="bottom"}
 
 ## Learn about the sample collection
 {: #tour-project-tool}
@@ -100,13 +100,13 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     Any collections in your project are displayed here. This project has only one collection.
 
-    ![Shows the collections page with the Sample Collection only.](images/gs-manage-collection.png)
+    ![Shows the collections page with the Sample Collection only.](images/gs-manage-collection.png){: caption="Figure 3. Collections page in the Sample project" caption-side="bottom"}
 
 1.  Click **Sample Collection**.
 
     The *Activity* page is displayed. This page shows the status of the collection. For example, it shows the total number of documents and when it was last updated. If Discovery encounters a problem when a document is uploaded or a data source is crawled, any associated messages are displayed here.
 
-    ![Shows the Activity page for the Sample Collection.](images/gs-sample-activity-tab.png)
+    ![Shows the Activity page for the Sample Collection.](images/gs-sample-activity-tab.png){: caption="Figure 4. Activities page in the Sample project" caption-side="bottom"}
 
     After you create a collection, you can come to this page to find information about the processing status of the data in the collection.
 
@@ -114,7 +114,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     The *Enrichments* page shows you a list of available enrichments. Enrichments make meaningful information easier to find and return in searches. You can apply built-in enrichments to your collection to leverage powerful Natural Language Understanding models that tag terms, such as commonly known keywords.
 
-    ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments.png)
+    ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments.png){: caption="Figure 5. Enrichments page of the Sample project" caption-side="bottom"}
 
     The following enrichments are applied to the sample collection:
 
@@ -130,7 +130,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     A list of available fields is displayed and the `text` field is selected. This selection means that the *Entities* enrichment was applied to content that was indexed and added to a field named `text` when documents from the collection were processed.
 
-    ![Shows that the Entities enrichment is applied to the text field.](images/gs-entities-on-text.png)
+    ![Shows that the Entities enrichment is applied to the text field.](images/gs-entities-on-text.png){: caption="Figure 6. Entities enrichment being applied to the text field" caption-side="bottom"}
 
 1.  For the *Part of Speech* enrichment, click **1x Selected fields**.
 
@@ -149,7 +149,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
 1.  Scroll through the list of fields until you find the `text` field, and select it.
 
-    ![Shows the fields where you can apply the Keyword enrichment .](images/gs-keyword-find.png)
+    ![Shows the fields where you can apply the Keyword enrichment .](images/gs-keyword-find.png){: caption="Figure 7. Fields to which you can apply the Keywords enrichment" caption-side="bottom"}
 
 1.  Click **Apply changes and reprocess**.
 
@@ -161,11 +161,11 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     Smart Document Understanding (SDU) is a technology that learns about the content of a document based on the document's structure. You can apply a prebuilt SDU model or create a custom SDU model.
 
-    ![Shows the SDU model options.](images/gs-sample-id-fields.png)
+    ![Shows the SDU model options.](images/gs-sample-id-fields.png){: caption="Figure 8. Smart Document Understanding model options" caption-side="bottom"}
 
     To create a custom SDU model, you select the *User-trained model* option, and then annotate fields in your document. (You will not annotate documents as part of this tutorial.)
 
-    ![Shows that Smart Document Understanding tool.](images/gs-sample-sdu.png)
+    ![Shows the Smart Document Understanding tool.](images/gs-sample-sdu.png){: caption="Figure 9. Smart Document Understanding annotation tool" caption-side="bottom"}
 
     For more information about SDU, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
     {: tip}
@@ -174,7 +174,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     The *Manage fields* page lists the indexed fields. From here, you can include or remove fields from the index. You can also split large documents into many smaller documents.
 
-    ![Shows the fields in the index.](images/gs-sample-field-index.png)
+    ![Shows the fields in the index.](images/gs-sample-field-index.png){: caption="Figure 10. Fields in the collection index" caption-side="bottom"}
 
     For more information about splitting documents, see [Splitting documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
     {: tip}
@@ -205,11 +205,11 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
       1.  Select the `URL` entity to highlight mentions of URLs within the text.
 
-          ![Shows the advanced text view with URL entities highlighted.](images/gs-doc-advanced-view.png)
+          ![Shows the advanced text view with URL entities highlighted.](images/gs-doc-advanced-view.png){: caption="Figure 11. Advanced view that shows entities that were recognized" caption-side="bottom"}
 
       1.  To see how the information from the document is stored in JSON format, click the *View as* menu from the view header, and select **JSON**.
 
-          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
+          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png){: caption="Figure 12. Overflow menu options from the Advanced view" caption-side="bottom"}
 
     [IBM Cloud Pak for Data]{: tag-cp4d}
 
@@ -217,11 +217,11 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
           A JSON representation of the document is displayed.
 
-          ![Shows the JSON representation of the document.](images/gs-json-tab.png)
+          ![Shows the JSON representation of the document.](images/gs-json-tab.png){: caption="Figure 13. JSON representation of the document" caption-side="bottom"}
 
           You can explore the JSON representation to see information that Discovery captured from the document. For example, if you expand the `enriched_text` section, and then expand the `entities` section, you can see mentions of entities that were recognized and tagged by the Entities enrichment.
 
-          ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png)
+          ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png){: caption="Figure 14. Shows the enrichment_text.entities section of the JSON representation" caption-side="bottom"}
 
 
 ## Customize the sample project
@@ -238,7 +238,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  Review the query results that are displayed.
 
-    ![Shows the query results for a natural language query with the Top Entities facet expanded.](images/gs-sample-entities-facet.png)
+    ![Shows the query results for a natural language query with the Top Entities facet expanded.](images/gs-sample-entities-facet.png){: caption="Figure 15. Top Entities facet results" caption-side="bottom"}
 
     Notice that a *Top Entities* section is displayed. You can expand the entities and click one of them to filter the query results to show only those results in which the entity is mentioned. The *Top Entities* section is a built-in facet. It uses information that was added to the documents by the Entities enrichment.
 
@@ -246,15 +246,15 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  On the **Improvement tools** panel, expand **Customize display**, and then click **Facets**.
 
-    ![Shows the expanded Customize display section in the Improvement tools pane.](images/gs-facet-sidebar.png)
+    ![Shows the expanded Customize display section in the Improvement tools pane.](images/gs-facet-sidebar.png){: caption="Figure 16. Customize display options" caption-side="bottom"}
 
 1.  Click **New facet**, and then click the **From existing fields in a collection** button.
 
-    ![Shows the options for the types of facets you can add.](images/gs-facet-add-options.png)
+    ![Shows the options for the types of facets you can add.](images/gs-facet-add-options.png){: caption="Figure 17. Facet options" caption-side="bottom"}
 
 1.  Choose `enriched_text.keywords.mentions.text`, change the label to `Keywords`, and then click **Apply**.
 
-    ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png)
+    ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png){: caption="Figure 18. Creating a Keywords-based facet" caption-side="bottom"}
 
     Remember the JSON representation of the document that you looked at earlier? Now that the Keywords enrichment is applied to the `text` field, and the documents are reprocessed, any keyword mentions found in the `text` field are included in the JSON representation of the document.
 
@@ -273,7 +273,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  The new facet is displayed. You can click a keyword to filter the documents to include only those results that mention the keyword.
 
-    ![Shows the keyword facet looks.](images/gs-keyword-facet-added.png)
+    ![Shows how the keyword facet looks.](images/gs-keyword-facet-added.png){: caption="Figure 19. Keywords facet" caption-side="bottom"}
 
 You successfully added a built-in NLU enrichment that recognizes keywords in the sample collection documents. Then, you added a facet that uses the keywords enrichment to let you filter the documents by keyword.
 
@@ -287,7 +287,7 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 
 1.  Follow the on-screen instructions to add a user, and then send login credentials and the provided link to your colleague.
 
-    ![Shows the Integrate and deploy page.](images/gs-deploy.png)
+    ![Shows the Integrate and deploy page.](images/gs-deploy.png){: caption="Figure 20. Integrate and deploy page" caption-side="bottom"}
 
     After you build your own search application and are ready to deploy it, you can use prebuilt user interface components or build a custom application.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-10-14"
+lastupdated: "2023-02-06"
 
 keywords: Discovery Query Language, DQL
 
@@ -48,7 +48,7 @@ In this example, the recognized entity is the company name `IBM`.
 
 To create a query that returns all of the documents in which the entity `IBM` is mentioned, use the following syntax:
 
-![Example query structure](images/query_structure.png)
+![Example query structure](images/query_structure.png){: caption="Figure 1. The structure of the query *enriched_text.entities.text:IBM*, where *text* in *enriched_text* is the field where the enrichment is applied, and *IBM* is the term you are looking for in the *enriched_text.entities.text* subfield." caption-side="bottom"}
 
 This basic query contains a nested path expression before the `:` operator. Each path element is the name of a field in the document separated by a period (`.`). The `:` operator indicates that the text that follows the operator must be included in the result.
 
