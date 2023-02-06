@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-06"
 
 subcollection: discovery-data
 
@@ -95,7 +95,7 @@ To create a document classifier, complete the following steps:
     The status of index creation is displayed. Wait for the collection to be fully indexed before you continue with this procedure.
 1.  To create a classifier, click **collection**, and then choose **classifier** from the list.
 
-    ![Shows the collection menu](images/cm-create-classifier.png)
+    ![Shows the collection menu](images/cm-create-classifier.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
 
 1.  Click **Create classifier**.
 1.  Name your classifier.
@@ -119,7 +119,7 @@ To create a document classifier, complete the following steps:
     :    Select the field from your training data file with the classification label. From the earlier example, the `Label` field is the best choice.
     
     Predicted field
-    :    You can accept the default field name which has the syntax *`<Answer field value>`*`_predicted`. For example, `Label_predicted`. This field is used by the training process only. It is not stored in the collection index.
+    :    The name of the facet that is generated for the predicted class values. By default, the facet name has the syntax *`<Answer field value>`*`_predicted`. For example, `Label_predicted`.
 
     Test dataset
     :    Specifies the data set to use to test the classifier model. By default, the training data CSV file that you uploaded and configured is split into three data sets that are used for training, validation, and test respectively. However, you can optionally specify a separate data set to use for testing the model.
@@ -177,7 +177,7 @@ When the document classifier classifies a document, it stores the classification
 
 For example, the following JSON excerpt shows a document that was classified with the `package_container` class.
 
-![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png)
+![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png){: caption="Figure 2. Document classifier enrichment syntax" caption-side="bottom"}
 
 ### Document classifier limits
 {: #doc-classifier-limits}

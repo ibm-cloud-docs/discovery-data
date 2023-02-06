@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-11-15"
+lastupdated: "2023-02-03"
 
 subcollection: discovery-data
 
@@ -57,7 +57,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 
     For Data Virtualization on {{site.data.keyword.icp4dfull_notm}}, you can get these details from the {{site.data.keyword.icp4dfull_notm}} web client. Click the main menu icon, expand Data, and then select *Data virtualization*. At the start of the page, choose to show *Virtualized data*.
 
-    ![Shows the Data virtualization view from Cloud Pak for Data](images/connector-db-dv.png)
+    ![Shows the Data virtualization view from Cloud Pak for Data](images/connector-db-dv.png){: caption="Figure 1. Virtualized data view in Cloud Pak for Data" caption-side="bottom"}
 
 -   Be careful if you plan to crawl multiple tables that have columns with the same name but different data types. In Content Mining projects, columns with the same name but different data types are assigned to fields that have a data type suffix in the name, such as `DATA_string`. In all other project types, the data in one of the tables is excluded from the index. For example, if you have two tables that have columns that are called `DATA` and the `DATA` column in one table is populated with dates and the column in the other table is populated with strings, the data in one of the tables is excluded from the index.
 -   Get the user credentials for a user who has permission to access the tables that you want to crawl.

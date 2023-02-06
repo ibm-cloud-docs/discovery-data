@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2022-06-10"
+lastupdated: "2023-02-06"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -68,7 +68,7 @@ For more information about project types, see [Creating projects](/docs/discover
 1.  From the *My Projects* page, click **New Project**.
 1.  Name your project `Discovery help`, and then click the **Document Retrieval** tile.
 
-    ![Shows the project type options](images/tut-crawl-project.png)
+    ![Shows the project type options](images/tut-crawl-project.png){: caption="Figure 1. Project type options" caption-side="bottom"}
 1.  Click **Next**.
 
 You'll configure the data source for the project in the next step.
@@ -84,28 +84,28 @@ The IBM Cloud Docs site uses JavaScript to display the content dynamically on it
 
 1.  From the *Select data source* page, click **Web crawl**, and then click **Next**.
 
-    ![Shows the data source options](images/tut-crawl-collection.png)
+    ![Shows the data source options](images/tut-crawl-collection.png){: caption="Figure 2. Data source options" caption-side="bottom"}
 1.  In the **Collection name** field, add `Discovery doc`.
 
-    ![Shows the Web crawl name field](images/tut-crawl-web-crawl-name.png)
+    ![Shows the Web crawl name field](images/tut-crawl-web-crawl-name.png){: caption="Figure 3. Web crawl data connector name field" caption-side="bottom"}
 
     Keep the *Crawl schedule* set to `Weekly`. The product documentation is updated regularly, but you can keep up with the most critical changes by using a weekly synchronization schedule.
 1.  Scroll down to the **Starting URLs** field, and then add the URL `https://cloud.ibm.com/docs/discovery-data`.
 
-    ![Shows the Starting URLs field](images/tut-crawl-web-crawl-url.png)
+    ![Shows the Starting URLs field](images/tut-crawl-web-crawl-url.png){: caption="Figure 4. Web crawl data connector Starting URLs field" caption-side="bottom"}
 
 1.  Click **Add**.
 
 1.  Click the *Edit* icon for the URL that you just added.
 
-    ![Shows the Starting URLs field](images/tut-crawl-edit-url.png)
+    ![Shows the Starting URLs field](images/tut-crawl-edit-url.png){: caption="Figure 5. Edit icon for the Starting URLs field" caption-side="bottom"}
 1.  In the **Maximum number of links to follow** field, change the value to 1.
 
     By changing the value to 1, you limit the number of links that are followed. As a result, Discovery crawls mostly topics within the official product documentation set and adds them to the collection. It doesn't follow as many links that go to external websites.
 
 1.  Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
 
-    ![Shows the Starting URLs field](images/tut-crawl-edit-settings.png)
+    ![Shows the Starting URLs field](images/tut-crawl-edit-settings.png){: caption="Figure 6. Execute JavaScript feature switcher" caption-side="bottom"}
 
 1.  Click **Finish**.
 
@@ -130,13 +130,13 @@ To test your project, submit some natural language queries to see whether it can
 
     The responses that are returned are valid answers to the question.
 
-    ![Shows that the correct answer to the question is returned](images/tut-crawl-data-sources-ui.png)
+    ![Shows that the correct answer to the question is returned](images/tut-crawl-data-sources-ui.png){: caption="Figure 7. Correct answer is returned for the question" caption-side="bottom"}
 
     The first query response looks promising. Let's take a closer look at the *Creating collections* web page that is being returned.
 
 1.  Copy the sentence in the returned passage that says, `The following table shows the supported data sources`, and then click **View passage in document**.
 
-    ![Shows a sentence that is highlighted in the passage result.](images/tut-crawl-highlight-sentence.png)
+    ![Shows a sentence that is highlighted in the passage result.](images/tut-crawl-highlight-sentence.png){: caption="Figure 8. A sentence is highlighted in the passage result" caption-side="bottom"}
 
     A representation of the crawled HTML page is displayed.
 
@@ -144,7 +144,7 @@ To test your project, submit some natural language queries to see whether it can
 
     For example, press Command + F and then paste the sentence into the search box to find it on the page.
 
-    ![Shows the sentence in context in the page.](images/tut-crawl-find-sentence.png)
+    ![Shows the sentence in context in the page.](images/tut-crawl-find-sentence.png){: caption="Figure 9. Sentence in context in the page" caption-side="bottom"}
 
     The sentence introduces a table that lists the data sources that are supported for different Discovery deployment methods. 
 
@@ -160,7 +160,7 @@ To test your project, submit some natural language queries to see whether it can
 
       1.  Click the *Display options* menu from the view header, and then select **JSON view**.
 
-          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png)
+          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png){: caption="Figure 10. Overflow menu options for the Advanced text view" caption-side="bottom"}
 
     [IBM Cloud Pak for Data]{: tag-cp4d}
 
@@ -170,7 +170,7 @@ To test your project, submit some natural language queries to see whether it can
 
 1.  Find the `extracted_metadata.filename` index field.
 
-    ![Shows a JSON representation of the web page where the passage was found.](images/tut-crawl-json-view.png)
+    ![Shows a JSON representation of the web page where the passage was found.](images/tut-crawl-json-view.png){: caption="Figure 11. JSON representation of the web page where the passage was found" caption-side="bottom"}
 
     Copy the file name.
 
@@ -206,7 +206,7 @@ If you want to share the simple search app with your team members, you can send 
 
     The same set of valid responses is returned.
 
-    ![Shows that the correct answer to the question is returned](images/tut-web-crawl-preview-app.png)
+    ![Shows that the correct answer to the question is returned](images/tut-web-crawl-preview-app.png){: caption="Figure 12. The correct answer to the question is returned" caption-side="bottom"}
 
 1.  You can share the URL for the *Application preview* with team members. Follow the steps that are shown on the page to give other people access to your project first.
 

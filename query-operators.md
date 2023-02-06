@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-11-01"
+lastupdated: "2023-02-06"
 
 subcollection: discovery-data
 
@@ -33,7 +33,7 @@ enriched_text.entities.text
 
 The JSON representation of this section looks as follows:
 
-![JSON source that shows the enriched_text.entities.text object structure](images/api-placement.png)
+![JSON source that shows the enriched_text.entities.text object structure](images/api-placement.png){: caption="Figure 1. JSON representation of the enriched_text.entities.text field" caption-side="bottom"}
 
 ## `:` (Includes)
 {: #includes}

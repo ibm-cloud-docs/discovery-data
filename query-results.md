@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-09-22"
+lastupdated: "2023-02-06"
 
 keywords: passages, query results
 
@@ -54,7 +54,7 @@ If the result shows “Excerpt unavailable”, you might need to adjust where th
 1.  Click **Search results**.
 1.  For the source of result content, select **Field**, and then choose the field from which you want to extract the response.
 
-    ![Shows the Search results dialog](images/search-result-by-field.png)
+    ![Shows the Search results dialog](images/search-result-by-field.png){: caption="Figure 1. Search results dialog" caption-side="bottom"}
 
 1.  Click **Apply**.
 

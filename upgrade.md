@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-12-20"
+lastupdated: "2023-02-06"
 
 subcollection: discovery-data
 
@@ -28,7 +28,7 @@ You can explore the {{site.data.keyword.discoveryshort}} [service plan options](
 
 The page header shows the plan you are using today.
 
-![Shows that the Trial plan is displayed in the page header](images/plan-in-header.png)
+![Shows that the Plus plan is displayed in the page header](images/plan-in-header.png){: caption="Figure 1. Plus plan is displayed in the page header" caption-side="bottom"}
 
 You cannot upgrade from any v1 plan to any v2 plan. For example, you cannot upgrade a Lite plan to a Plus, Enterprise, or Premium (v2) plan. And you cannot upgrade an Advanced, Partner, Standard, or Premium (v1) plan to an Enterprise or Premium (v2) plan. To start using v2, create a new Plus, Enterprise, or Premium plan.
 

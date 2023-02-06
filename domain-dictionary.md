@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-10-20"
+lastupdated: "2023-02-03"
 
 keywords: dictionary,synonyms
 
@@ -66,11 +66,11 @@ To add dictionary terms one by one, complete the following steps:
 
 A transportation dictionary is added to a project.
 
-![Transportation dictionary in the product ui](images/dict-transportation.png)
+![Transportation dictionary in the product ui](images/dict-transportation.png){: caption="Figure 1. Transportation dictionary" caption-side="bottom"}
 
 The resulting facet that is created for the dictionary is displayed in the search page.
 
-![Search page with Transportation facet](images/dict-facet.png)
+![Search page with Transportation facet](images/dict-facet.png){: caption="Figure 2. Transportation facet" caption-side="bottom"}
 
 The document where the enrichment is applied contains the following sentence:
 

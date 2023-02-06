@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2022-07-18"
+lastupdated: "2023-02-06"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -284,11 +284,11 @@ The schema is arranged as follows.
 
 The following table is an example table from an input document.
 
-![Example table](images/example-table.png)
+![Example table](images/example-table.png){: caption="Figure 1. Table example" caption-side="bottom"}
 
 The table is composed as follows:
 
-![Table composition](images/table-comp.png)
+![Table composition](images/table-comp.png){: caption="Figure 2. Anatomy of the example table" caption-side="bottom"}
 
 The following syntax is used in the table:
 

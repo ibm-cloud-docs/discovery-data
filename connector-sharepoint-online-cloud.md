@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-02-03"
 
 subcollection: discovery-data
 
@@ -117,7 +117,7 @@ The following steps must be completed by a global administrator one time only pe
     1.  Log in to [Microsoft Azure](https://portal.azure.com){: external}. 
     1.  From the *Enterprise applications* page in *Azure Active Directory*, click *Consent and permissions*.
 
-    ![Azure Enterprise App Permissions user interface](images/spo-ad-user-permissions.png)
+    ![Azure Enterprise App Permissions user interface](images/spo-ad-user-permissions.png){: caption="Figure 1. Microsoft Azure Enterprise application permissions user interface" caption-side="bottom"}
 
     1.  Do one of the following things:
 
@@ -155,7 +155,7 @@ The following steps must be completed by a global administrator one time only pe
 
 1.  Review the permissions that are associated with the enterprise application that Discovery will register, and then select **Consent on behalf of your organization**.
 
-    ![Permission request dialog that asks you to consent on behalf of your organization to allow the app to 1. Read user files. 2. Read items in all site collections. 3. Maintain access to data you have given it access. 4. View users' basic profile.](images/spo-app-permission.png)
+    ![Permission request dialog that asks you to consent on behalf of your organization to allow the app to 1. Read user files. 2. Read items in all site collections. 3. Maintain access to data you have given it access. 4. View users' basic profile.](images/spo-app-permission.png){: caption="Figure 2. Discovery permission request dialog" caption-side="bottom"}
 
 1.  Click **Accept**.
 1.  If you want to create a collection, you can name the collection, and then click **Finish**.
@@ -222,7 +222,7 @@ To configure the Microsoft SharePoint Online data source, complete the following
     1.  Click *Advanced permission settings*.
     1.  Make sure that people who want to collect access control information during a crawl have or are members of a group that has the *Full Control* permission for the site.
 
-        ![Shows the SharePoint user interface where you define permissions for users and groups.](images/spo-acl-access.png)
+        ![Shows the SharePoint user interface where you define permissions for users and groups.](images/spo-acl-access.png){: caption="Figure 3. Microsoft SharePoint permissions user interface" caption-side="bottom"}
 
         When access control list information is not extracted, *Read* permission is sufficient for all users who crawl the content.
         {: note}
@@ -249,4 +249,4 @@ You cannot currently change the user account that is associated with the OAuth s
 
 The following screen capture illustrates the type of ACL information that is stored in the document when you include the access control list.
 
-![Shows the Microsoft ACL information stored in the source object in the document metadata.](images/acl-in-output.png)
+![Shows the Microsoft ACL information stored in the source object in the document metadata.](images/acl-in-output.png){: caption="Figure 4. Representation of ACL information in document metadata" caption-side="bottom"}
