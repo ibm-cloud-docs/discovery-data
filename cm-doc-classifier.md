@@ -95,7 +95,7 @@ To create a document classifier, complete the following steps:
     The status of index creation is displayed. Wait for the collection to be fully indexed before you continue with this procedure.
 1.  To create a classifier, click **collection**, and then choose **classifier** from the list.
 
-    ![Shows the collection menu](images/cm-create-classifier.png){: caption="Figure 2. Collection menu" caption-side="bottom"}
+    ![Shows the collection menu](images/cm-create-classifier.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
 
 1.  Click **Create classifier**.
 1.  Name your classifier.
@@ -177,7 +177,7 @@ When the document classifier classifies a document, it stores the classification
 
 For example, the following JSON excerpt shows a document that was classified with the `package_container` class.
 
-![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png){: caption="Figure 1. Document classifier enrichment syntax" caption-side="bottom"}
+![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png){: caption="Figure 2. Document classifier enrichment syntax" caption-side="bottom"}
 
 ### Document classifier limits
 {: #doc-classifier-limits}
