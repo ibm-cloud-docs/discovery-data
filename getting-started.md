@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -88,7 +88,7 @@ The sample project is a built-in project that is provided as a resource for you 
     If you just installed {{site.data.keyword.discoveryshort}}, the Sample Project needs time to finish processing documents. Wait for processing to finish before you start experimenting. You can check the status of data processing from the *Activity* page, which is described in the next step.
     {: note}
 
-    ![Shows the Improve and customize page for the Sample Project.](images/gs-sample-project-improve.png){: caption="Figure 2. Sample project *Improve and customize* page." caption-side="bottom"}
+    ![Shows the Improve and customize page for the Sample Project.](images/gs-sample-project-improve.png){: caption="Figure 2. Sample project Improve and customize page" caption-side="bottom"}
 
 ## Learn about the sample collection
 {: #tour-project-tool}

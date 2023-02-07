@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-01-13"
+lastupdated: "2023-02-07"
 
 keywords: content mining,content analytics studio,facets
 
@@ -74,7 +74,7 @@ Custom
 
 When you create a *Content Mining* project type, the *Part of Speech* facet is applied to your data automatically. This facet is a great place to start because it is valid for all data, no matter the subject. The output gives you a quick look at the terminology that is most common in the data. 
 
-![Watson Discovery content mining launch page](images/miningloginapp.png "Content mining app initial launch page that asks you what you want to analyze"){: caption="Figure 1. The Discovery Content Mining application showing the page you see after launching the app" caption-side="bottom"}
+![Watson Discovery content mining launch page](images/miningloginapp.png "Content mining app initial launch page that asks you what you want to analyze"){: caption="Figure 1. Watson Discovery Content Mining application home page" caption-side="bottom"}
 
 From this starting point, you can determine other ways to filter the data that might be useful. 
 

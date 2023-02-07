@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -189,14 +189,14 @@ To improve the quality of the search results, build a Smart Document Understandi
     If you don't choose a model, the *text extraction* model is applied automatically. With the text extraction model, most of the document content is treated as standard text and is indexed in the `text` field.
 1.  Click **User-trained models**, and then click **Submit**.
 
-    ![Shows the confirmation dialog after you choose the User-trained models option.](images/tut-sdu-pick-user-trained.png){: caption="Figure 10. Confirmation dialog after you choose the user-trained Smart Document Understanding model option" caption-side="bottom"}
+    ![Shows the confirmation dialog after you choose the User-trained models option.](images/tut-sdu-pick-user-trained.png){: caption="Figure 10. Confirmation dialog for user-trained model" caption-side="bottom"}
 1.  Click **Apply changes and reprocess**.
 
     ![Shows the Apply changes and reprocess button is active.](images/tut-sdu-extra-step.png){: caption="Figure 11. Apply changes and reprocess button" caption-side="bottom"}
 
     After the evaluation process is complete, a representation of the document is displayed in the Smart Document Understanding tool.
 
-    ![Shows the PDF as it is displayed in the SDU tool.](images/tut-sdu-tool.png){: caption="Figure 12. PDF is displayed in the Smart Document Understanding tool" caption-side="bottom"}
+    ![Shows the PDF as it is displayed in the SDU tool.](images/tut-sdu-tool.png){: caption="Figure 12. PDF is displayed in the SDU tool" caption-side="bottom"}
     
     The tool shows you a view of the original document along with a representation of the document, where the text is replaced by blocks. The blocks represent field types.
 
@@ -236,7 +236,7 @@ To improve the quality of the search results, build a Smart Document Understandi
 
     For most pages, the content includes a `subtitle`, a `footnote`, and the bulk of the content on the page remains labeled as `text`.
 
-    ![Shows the subtitle, footnote, and text labels that are being applied to a page in the SDU tool.](images/tut-sdu-typical-labels.png){: caption="Figure 17. Subtitle, footnote, and text abels are being applied to a page in the Smart Document Understanding tool" caption-side="bottom"}
+    ![Shows the subtitle, footnote, and text labels that are being applied to a page in the SDU tool.](images/tut-sdu-typical-labels.png){: caption="Figure 17. Subtitle, footnote, and text labels are being applied" caption-side="bottom"}
 
     As you label and submit pages, the model learns from the annotations that you make. Gradually, the labels that are applied automatically become accurate and don't require any adjustments. 
 
@@ -244,7 +244,7 @@ To improve the quality of the search results, build a Smart Document Understandi
 
 1.  For tables, select the table caption and the entire table and label them with the `table` label.
 
-    ![Shows how to label a table in the SDU tool.](images/tut-sdu-table.png){: caption="Figure 18. A table is being labeled in the Smart Document Understanding tool" caption-side="bottom"}
+    ![Shows how to label a table in the SDU tool.](images/tut-sdu-table.png){: caption="Figure 18. A table is being labeled" caption-side="bottom"}
 
 1.  When a page contains an image, the image is not displayed in the representation of the page. 
 
@@ -256,11 +256,11 @@ To improve the quality of the search results, build a Smart Document Understandi
     
 1.  When you reach the *Bibliography*, create a new label named `bibliography`.
 
-    ![Shows how to create the bibliography label.](images/tut-sdu-bibliography.png){: caption="Figure 20. Shows how to create a bibliography label" caption-side="bottom"}
+    ![Shows how to create the bibliography label.](images/tut-sdu-bibliography.png){: caption="Figure 20. Creating a bibliography label" caption-side="bottom"}
 
     Apply the new label to each page.
 
-    ![Shows the bibliography label that is being applied to an entire page.](images/tut-sdu-apply-biblio.png){: caption="Figure 21. A bibliography label is being applied to a page" caption-side="bottom"}
+    ![Shows the bibliography label that is being applied to an entire page.](images/tut-sdu-apply-biblio.png){: caption="Figure 21. A bibliography label is being applied" caption-side="bottom"}
 
 1.  After you annotate and submit all the pages, click **Apply changes and reprocess**.
 
@@ -313,7 +313,7 @@ When you annotated the document, you identified the `subtitle` field. These subt
 
 1.  Select **`subtitle`** from the *Split document on each occurrence of* field.
 
-    ![Shows the subtitle field that is being selected from the split document field](images/tut-sdu-split-doc.png){: caption="Figure 24. Choosing the subtitle field as the field on which to split documents" caption-side="bottom"}
+    ![Shows the subtitle field that is being selected from the split document field](images/tut-sdu-split-doc.png){: caption="Figure 24. Choosing to split documents on the subtitle field" caption-side="bottom"}
 
 1.  Click **Apply changes and reprocess**.
 
@@ -353,13 +353,13 @@ Let's find out whether we improved the search function by adding a user-trained 
 
     `(“principal trading firms” or “PTFs”)`
 
-    ![Shows responses that are returned to answer the question about PTFs.](images/tut-sdu-ptf-responses.png){: caption="Figure 27. Shows responses that are returned to answer the question about PTFs" caption-side="bottom"}
+    ![Shows responses that are returned to answer the question about PTFs.](images/tut-sdu-ptf-responses.png){: caption="Figure 27. Responses that answer the question about PTFs" caption-side="bottom"}
 
 1.  Let's try the other problematic search query. Enter `Where do muni bond trades get reported to?` as the search query.
 
     This time it's the third response that provides an answer to the question. You must view the full passage to see the entire definition.
 
-    ![Shows responses that are returned to answer the question about muni bonds.](images/tut-sdu-muni-responses.png){: caption="Figure 28. Shows responses that are returned to answer the question about muni bonds" caption-side="bottom"}
+    ![Shows responses that are returned to answer the question about muni bonds.](images/tut-sdu-muni-responses.png){: caption="Figure 28. Responses that answer the question about muni bonds" caption-side="bottom"}
 
     Click the *View passage in document* link to see the full definition highlighted in the document.
 
@@ -375,15 +375,15 @@ Now that we are getting more passages returned per query, it might be useful to 
 
 1.  To create a dictionary, from the *Improvement tools* panel of the *Improve and customize* page, expand *Teach domain concepts*, and then click **Dictionaries**.
 
-    ![Shows the Dictionaries option from the Teach domain concepts tool panel.](images/tut-sdu-dictionary.png){: caption="Figure 29. Show the Dictionaries option from the Teach domain concepts tool panel" caption-side="bottom"}
+    ![Shows the Dictionaries option from the Teach domain concepts tool panel.](images/tut-sdu-dictionary.png){: caption="Figure 29. Dictionaries tool" caption-side="bottom"}
 
 1.  Click **New**.
 
-    ![Shows the New button in the dictionary page.](images/tut-sdu-dictionary-new.png){: caption="Figure 30. Shows the New button in the dictionary page" caption-side="bottom"}
+    ![Shows the New button in the dictionary page.](images/tut-sdu-dictionary-new.png){: caption="Figure 30. New button in the dictionary page" caption-side="bottom"}
 
 1.  Enter `Financial instruments` as the dictionary name, add the term `municipal bond`, and then click the *Add term* button.
 
-    ![Shows the Financial instruments dictionary with one term.](images/tut-sdu-dictionary-add.png){: caption="Figure 31. The Financial instruments dictionary with one term" caption-side="bottom"}
+    ![Shows the Financial instruments dictionary with one term.](images/tut-sdu-dictionary-add.png){: caption="Figure 31. Financial instruments dictionary with one term" caption-side="bottom"}
 
 1.  Add synonyms for the term by clicking the edit icon for the term.
 
@@ -394,7 +394,7 @@ Now that we are getting more passages returned per query, it might be useful to 
 
     Add synonyms in a comma-separated list, and then click **Save term**.
 
-    ![Shows the edit dialog for the dictionary entry with synonyms that are specified for a term.](images/tut-sdu-dictionary-synonym.png){: caption="Figure 32. Edit dialog of dictionary with synonyms specified for a term" caption-side="bottom"}
+    ![Shows the edit dialog for the dictionary entry with synonyms that are specified for a term.](images/tut-sdu-dictionary-synonym.png){: caption="Figure 32. Synonyms are specified for a term" caption-side="bottom"}
 
 1.  Click **Save dictionary**. 
 
@@ -414,7 +414,7 @@ Now that we are getting more passages returned per query, it might be useful to 
 
 1.  Choose the index field that is associated with the dictionary enrichment that you applied to the `subtitle` field. From the *Field* field, select `enriched_subsection.entities.mentions.text`
 
-    ![Shows the options for the facet field.](images/tut-sdu-facet-field.png){: caption="Figure 35. Shows options for fields from which you can create a facet" caption-side="bottom"}
+    ![Shows the options for the facet field.](images/tut-sdu-facet-field.png){: caption="Figure 35. Fields from which you can create a facet" caption-side="bottom"}
 
     You might need to hover over the entries to see the full field names.
 
@@ -432,7 +432,7 @@ Now that we are getting more passages returned per query, it might be useful to 
 
     The best answer is now listed as the second response instead of the third.
 
-    ![Best answer now is listed as the second result in the list](images/tut-sdu-muni-selected.png){: caption="Figure 38. Best answer is shown as the second result in the list" caption-side="bottom"}
+    ![Best answer now is listed as the second result in the list](images/tut-sdu-muni-selected.png){: caption="Figure 38. Best answer is the second result" caption-side="bottom"}
 
 ### Summary
 {: #tutorial-sdu-summary}
