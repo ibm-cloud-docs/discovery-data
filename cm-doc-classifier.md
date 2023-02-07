@@ -157,7 +157,7 @@ To create a document classifier, complete the following steps:
 ## Deploying the document classifier model
 {: #cm-doc-classifier-deploy}
 
-After model training is completed, deploy the model as an enrichment. 
+After the model is trained, deploy the model as an enrichment. 
 
 1.  Click the overflow menu icon in the **Actions** column, and then click **Deploy model**. Specify the name and other details, and then click **Deploy**.
 
@@ -172,6 +172,10 @@ After model training is completed, deploy the model as an enrichment.
             {: note}
         1.  In the **Enrichments** tab, locate your classifier in the **Name** column. From the **Fields to enrich** field, choose the same text field that was used to train the model. (This field is determined by the system and is indexed as the *Analyzable text content* field. For more information, see [Identifying the text field](/docs/discovery-data?topic=discovery-data-cm-edit-collection#text-field).)
         1.  Click **Apply changes and reprocess**.
+
+After the enrichment is applied to a collection, a facet is generated that you can use to find the predicted classes. In this example, the predicted field is named `label_answer_predicted`.
+
+![Shows the Label_answer_predicted facet](images/cm-doc-class-predicted.png){: caption="Figure 2. Shows the facet that is generated after the doc classifier enrichment is applied to a collection" caption-side="bottom"}
 
 When the document classifier classifies a document, it stores the classification in the `document_level_enrichment.classes.class_name` field.
 
