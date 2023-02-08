@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-08"
 
 subcollection: discovery-data
 
@@ -251,10 +251,12 @@ Entity types that were defined in {{site.data.keyword.knowledgestudioshort}} are
 
 Entity subtypes and relations from the {{site.data.keyword.knowledgestudioshort}} machine learning model are not represented, neither are any custom dictionaries that are associated with the model.
 
-Before you can import a corpus, you must export the machine learning model from {{site.data.keyword.knowledgestudioshort}} as a .zip file. Follow the appropriate steps for exporting based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
+Before you can import a corpus, you must export the document set from {{site.data.keyword.knowledgestudioshort}} as a .zip file. Follow the appropriate steps for exporting based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
--   [IBM Cloud](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-publish-ml#wks_madiscovery_next)
--   [Cloud Pak for Data](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-publish-ml#exporting-a-machine-learning-model)
+-   [IBM Cloud](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_doc)
+-   [Cloud Pak for Data](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc)
+
+Although you need to download both the document set and type system for annotations to be included in documents that you upload to another {{site.data.keyword.knowledgestudioshort}} workspace, the same is not true in this use case. You import only the document set to {{site.data.keyword.discoveryshort}}. Any annotations in the documents are recreated in {{site.data.keyword.discoveryshort}}. The {{site.data.keyword.knowledgestudioshort}} type system is not needed.
 
 To import a {{site.data.keyword.knowledgestudioshort}} corpus, complete the following steps:
 
