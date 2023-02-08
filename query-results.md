@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-08"
 
 keywords: passages, query results
 
@@ -57,18 +57,6 @@ If the result shows “Excerpt unavailable”, you might need to adjust where th
     ![Shows the Search results dialog](images/search-result-by-field.png){: caption="Figure 1. Search results dialog" caption-side="bottom"}
 
 1.  Click **Apply**.
-
-### FAQ results
-{: #query-results-faq}
-
-[IBM Cloud]{: tag-ibm-cloud}  FAQ extraction is available from {{site.data.keyword.cloud_notm}}-managed instances only.
-{: note}
-
-If you enabled FAQ extraction, set the `text` field as the query result source by following the steps in the previous section.
-
-When the collection is processed, each question-and-answer pair that is found in the original document is added as a new, separate document with the question in the `title` field and answer in the `text` field. 
-
-If your source document contains 10 question-and-answer pairs, then 10 documents are generated during processing. If you want to see all of the documents that were generated, check the *Manage data* page.
 
 ## Conversational Search
 {: #query-results-chat}

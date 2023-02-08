@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-02-08"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -273,7 +273,7 @@ To create a crawl schedule, complete the following steps:
 
 1.  In the in *Crawl schedule* section, choose a frequency.
 
-    -   If you want to crawl every 12 hours or every 10 days, choose **Custom intervals**. You can schedule the crawler to run on a custom number of days, hours, or minutes.
+    -   If you want to crawl every 12 hours or every 10 days, choose **Custom intervals**. You can schedule the crawler to run on a custom number of days or hours.
     -   By default, the crawl is scheduled to start during off-peak hours.
     -   Do not set the interval to a frequency that is shorter than the time it takes for the crawl to finish.
     -   Do not configure multiple crawlers to run at short intervals.

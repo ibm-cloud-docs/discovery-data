@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-07-21"
+lastupdated: "2023-02-08"
 
 subcollection: discovery-data
 
@@ -92,9 +92,6 @@ To configure the Salesforce data source, complete the following steps in {{site.
 1.  Select the objects that you want to crawl.
 
     The more objects that you select, the longer the processing of the documents takes.
-1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
-
-    For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 

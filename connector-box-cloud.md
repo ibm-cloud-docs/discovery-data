@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-07-21"
+lastupdated: "2023-02-08"
 
 subcollection: discovery-data
 
@@ -134,10 +134,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 1.  Choose the folders that you want to crawl.
-1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
-
-    For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
-
 1.  If you want the web crawl to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
