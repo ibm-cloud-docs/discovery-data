@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-08"
 
 subcollection: discovery-data
 
@@ -227,9 +227,6 @@ To configure the Microsoft SharePoint Online data source, complete the following
         When access control list information is not extracted, *Read* permission is sufficient for all users who crawl the content.
         {: note}
 
-1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
-
-    For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).

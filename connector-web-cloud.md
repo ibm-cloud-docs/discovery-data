@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-02-08"
 
 subcollection: discovery-data
 
@@ -115,10 +115,6 @@ To configure the web crawl collection, complete the following steps:
     The number of web pages that are crawled is limited to 250,000, so the web crawler might not crawl all the specified websites.
 
     The number of child URLs per URL that are crawled is limited to 10,000. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
-
-1.  If you want to look for and extract question-and-answer pairs, select **Apply FAQ extraction**.
-
-    For more information, see [FAQ extraction](/docs/discovery-data?topic=discovery-data-sources#faq-extraction).
 
 1.  If you want the web crawl to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
