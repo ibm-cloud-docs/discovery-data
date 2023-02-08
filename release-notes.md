@@ -28,7 +28,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: #discovery-7febuary2023}
 {: release-note}
 
-<!-- 4.7.0-5.0 -->
+<!-- 4.7.0-6.0 -->
 
 You can no longer enable FAQ extraction for a collection
 :   The checkbox to enable or disable the beta FAQ extraction feature was removed. FAQ extraction was a beta feature that captured question-and-answer pairs from the data source as it was crawled. FAQ extraction generated a new subdocument for each pair and stored the question in the title field and the answer in the text field.
