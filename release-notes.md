@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-26"
+lastupdated: "2023-02-08"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -29,6 +29,9 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: release-note}
 
 <!-- 4.7.0-6.0 -->
+
+Support for hourly crawls was removed
+:   You can no longer choose to crawl a data source every hour. If an existing collection is configured to crawl hourly, you will be prompted to change the scheduled crawl the next time you edit the connector settings.
 
 You can no longer enable FAQ extraction for a collection
 :   The checkbox to enable or disable the beta FAQ extraction feature was removed. FAQ extraction was a beta feature that captured question-and-answer pairs from the data source as it was crawled. FAQ extraction generated a new subdocument for each pair and stored the question in the title field and the answer in the text field.
