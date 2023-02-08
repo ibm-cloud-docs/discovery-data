@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-07"
 
 subcollection: discovery-data
 
@@ -22,7 +22,7 @@ The stop words that you define are filtered out of queries and improve the relev
 
 For example, a company has three tiers of service. The documents in one of the collections pertain to only one tier, the Silver tier. You might want to add `"silver"` to the stop words list because the term doesn't help to distinguish the significance of one document over another, given that all of the documents relate to the Silver service tier. When a customer mentions the Silver tier in a query string, it is ignored. Other terms in the query that are more significant are used to search the data instead. Or maybe the document collection consists of car accident reports only. You might want to add `"car"` to the stop words list to prevent mentions of `car` in queries from adding noise to the search.
 
-{{site.data.keyword.discoveryshort}} applies a list of default stop words for many of the supported languages automatically. These stop words are applied both at indexing time and at query time. The predefined stop words are ignored when content is indexed and they are filtered out of queries. When you upload a custom list of stop words, they augment the default list. You can add stop words, but you cannot remove stop words. The stop words that you define are used at query time only.
+{{site.data.keyword.discoveryshort}} applies a list of default stop words for many of the supported languages automatically. These stop words are applied both at indexing time and at query time. The predefined stop words are ignored when content is indexed and they are filtered out of queries. However, stop words that you define are used at query time only. Your list doesn't replace the default list; it augments the default list. You can add stop words, but you cannot remove stop words.
 
 Example custom stop word list:
 

@@ -24,6 +24,21 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 7 Febuary 2023
+{: #discovery-7febuary2023}
+{: release-note}
+
+<!-- 4.7.0-6.0 -->
+
+You can no longer enable FAQ extraction for a collection
+:   The checkbox to enable or disable the beta FAQ extraction feature was removed. FAQ extraction was a beta feature that captured question-and-answer pairs from the data source as it was crawled. FAQ extraction generated a new subdocument for each pair and stored the question in the title field and the answer in the text field.
+
+    You cannot apply FAQ extraction to new collections. 
+
+    Any existing collections with FAQ extraction enabled retain FAQ documents in their indexes until the collection is reprocessed. At that time, most of the question-and-answer pair subdocuments are deleted. However, any FAQ subdocuments that were generated from HTML or TXT source files remain. If you want to remove these subdocuments, go to the *Manage data* page to delete them. Subdocuments that are generated from one parent document all have the same `metadata.parent_document_id` value.
+
+    If you need a way to extract question-and-answer pairs from source documents that use a consistent style and formatting for questions and answers, you can use the Smart Document Understanding tool to annotate the pairs instead. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
+
 ## 25 January 2023
 {: #discovery-25january2023}
 {: release-note}
