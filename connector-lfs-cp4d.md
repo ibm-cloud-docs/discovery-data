@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-09-28"
+lastupdated: "2023-02-09"
 
 subcollection: discovery-data
 
@@ -246,7 +246,7 @@ If the local file system files or folders that you want to crawl are stored in a
 
 If you want to crawl your local file system files or folders but you do not want to prepare an extra NFS server to store those files or folders, you can configure dynamic storage by using an NFS storage class.
 
-For more information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/cpd/plan/storage_considerations.html){: external}.
+For more information about storage providers that {{site.data.keyword.discoveryshort}} supports and for storage comparisons, see [Storage considerations](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.6.x?topic=planning-storage-considerations){: external}.
 
 Before you complete this task, copy the files that you want to crawl to the {{site.data.keyword.discoveryshort}} cluster that you are working on. If you have multiple {{site.data.keyword.discoveryshort}} clusters, you must copy the files along with the `crawler-pvc-dynamic.yaml` file that you create in this task to each cluster.
 

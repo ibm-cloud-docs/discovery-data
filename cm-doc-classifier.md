@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-09"
 
 subcollection: discovery-data
 
@@ -173,9 +173,14 @@ After the model is trained, deploy the model as an enrichment.
         1.  In the **Enrichments** tab, locate your classifier in the **Name** column. From the **Fields to enrich** field, choose the same text field that was used to train the model. (This field is determined by the system and is indexed as the *Analyzable text content* field. For more information, see [Identifying the text field](/docs/discovery-data?topic=discovery-data-cm-edit-collection#text-field).)
         1.  Click **Apply changes and reprocess**.
 
+## Results of classification
+{: #cm-doc-classifier-results}
+
 After the enrichment is applied to a collection, a facet is generated that you can use to find the predicted classes. In this example, the predicted field is named `label_answer_predicted`.
 
-![Shows the Label_answer_predicted facet](images/cm-doc-class-predicted.png){: caption="Figure 2. Shows the facet that is generated after the doc classifier enrichment is applied to a collection" caption-side="bottom"}
+![Shows the facet that is generated after the doc classifier enrichment is applied to a collection](images/cm-doc-class-predicted.png){: caption="Figure 2. A Label_answer_predicted facet is generated" caption-side="bottom"}
+
+Use the generated facet to filter documents by classification and analyze subsets of documents. Doing so helps you to find patterns and discover other insights. You can export these target documents to share with team members or to analyze further. For more information, see [Exporting data](/docs/discovery-data?topic=discovery-data-cm-export).
 
 When the document classifier classifies a document, it stores the classification in the `document_level_enrichment.classes.class_name` field.
 

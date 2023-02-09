@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-11-30"
+lastupdated: "2023-02-08"
 
 subcollection: discovery-data
 
@@ -65,7 +65,7 @@ If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn 
 | Programmatically configure external data source crawls | | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Configure the normalization process of ingestion by document type. Configuration options include things like document segmentation, HTML file inclusion or exclusion rules, and JSON normalization | | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Configure dictionary tokenization | | ![checkmark icon](../icons/checkmark-icon.svg) |
-| Advanced question-answering capabilities, such as extracting FAQs (beta) and returning the exact answer | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Advanced question-answering capabilities, such as returning the exact answer | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | {{site.data.keyword.discoveryshort}} Query Language (DQL) API support | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Retrieve passages from documents | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Perform relevancy training to improve query results | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
