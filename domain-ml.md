@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-10"
 
 subcollection: discovery-data
 
@@ -27,8 +27,10 @@ The following types of models are supported:
 
 -  Rule-based models created in {{site.data.keyword.knowledgestudioshort}} that find entities in documents based on rules that you define. (File format: .pear)
 -  Machine learning models created in {{site.data.keyword.knowledgestudioshort}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: .zip)
+-  Custom entity extractors that are created in and exported from {{site.data.keyword.discoveryshort}}. (File format: .ent)
 -  [IBM Cloud Pak for Data]{: tag-cp4d} Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: .pear)
--  [IBM Cloud Pak for Data]{: tag-cp4d} Custom entity extractor that are created in and exported from {{site.data.keyword.discoveryshort}}. (File format: .ent)
+
+From installed deployments, support for importing entity extractor models was added with the 4.6.2 release.
 
 Discovery cannot identify entity subtypes that are defined by a {{site.data.keyword.knowledgestudioshort}} model.
 {: note}

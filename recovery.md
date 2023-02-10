@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-09-19"
+lastupdated: "2023-02-10"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 {{site.data.keyword.discoveryfull}} is highly available in all {{site.data.keyword.cloud}} regions where {{site.data.keyword.discoveryshort}} is offered. However, recovering from potential disasters that affect an entire region requires planning and preparation.
 {: shortdesc}
 
-[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
+[IBM Cloud]{: tag-ibm-cloud}
 
 This information applies only to managed deployments.
 {: note}
@@ -58,6 +58,7 @@ You cannot back up certain data types and must manually re-create them. There ar
 -   **Collection:** You can restore a Content Mining collection if you stored the collection locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the collection. If you want to upload a collection .csv file, you can navigate to the **Create a collection** page in the application, click **Create collection**, and in **Import your files** in the **Dataset** tab, you can select your file.
 -   **Document classifier:** You can restore a document classifier if you stored the document classifier locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the document classifier. If you want to upload a document classifier .csv file, you can navigate to the **Create a classifier** page in the application, click **Create classifier**, and in **Import your files** in the **Training data** tab, you can select your file.
 -   Custom annotators
+
     -   **Dictionary:** You can restore a dictionary in the application if you stored the dictionary locally as a .csv file and upload it in the application. You can upload your dictionary .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Dictionary** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the dictionary, and you can download the .csv file by clicking the download icon in the **Dictionary** list. If you do not have a locally saved .csv file, you must manually re-create the dictionary.
     -   **Regular expressions:** You can restore a regular expression in the application if you stored the regular expression locally as a .csv file and upload it in the application. You can upload your regular expressions .csv file by navigating to the **Create a custom annotator** page, clicking **Create custom annotator**, selecting **Regular expressions** in **Annotator type**, and clicking **Next** and then **Import**. After you click **Import**, you can also add and edit the regular expressions .csv file, and you can download the .csv file by clicking **Export**. If you do not have a locally saved .csv file, you must manually re-create the regular expression.
     -   **Machine learning models:** You can restore a machine learning model if you stored the model locally as a .zip file and then upload it in the application. You can upload your .zip file by navigating to the **Creating a custom annotator** page, clicking **Create custom annotator**, selecting **Machine learning**, and clicking **Next** and then **Select file**, and selecting your .zip file. If you do not have a locally saved .zip file, you must manually re-create the machine learning model.
@@ -125,8 +126,8 @@ Back up your machine learning model .zip or .pear files, and store them locally.
 ### Pattern enrichments
 {: #patternenrich}
 
-1. Open your project, and click **Improve and customize**.
-1. On the **Improvement tools** panel, click **Teach domain concepts** and then **Patterns (Beta)**.
+1. Open your project.
+1. On the *Improvement tools* panel of the *Improve and customize* page, click **Teach domain concepts** and then **Patterns (Beta)**.
 1. Click the download icon next to your pattern. Your pattern model then downloads as a .zip file.
 
 ### Advanced rules models enrichment
@@ -138,6 +139,11 @@ Back up your model files as .zip files, and store them locally. For more informa
 {: #classifierenrich}
 
 Back up your classifier .csv files, and store them locally. For more information, see [Classifier](/docs/discovery-data?topic=discovery-data-domain-classifier).
+
+### Entity extractor enrichments
+{: #extractorenrich}
+
+To back up entity extractor models, download the models and store them locally. A model must be fully trained before it can be downloaded. For more information, see [Exporting the entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-export).
 
 ## Restoring your data to a new Watson Discovery instance
 {: #restoredata}
@@ -184,8 +190,8 @@ When importing an SDU existing model into a new collection, it is a best practic
 ### Restoring dictionary enrichments
 {: #restoredictionary}
 
-1. Open your project, and click **Improve and customize**.
-1. On the **Improvement tools** panel, click **Teach domain concepts**, **Dictionaries**, and then **Upload**.
+1. Open your project.
+1. On the *Improvement tools* panel of the *Improve and customize* page, click **Teach domain concepts**, **Dictionaries**, and then **Upload**.
 1. In the **Apply dictionary** dialog box, enter a name for your .csv file, select a language, specify the facet path, click **Upload**, and select your dictionary .csv file.
 1. Click **Create**.
 
@@ -199,8 +205,8 @@ For information about uploading a dictionary enrichment .csv file, see [Dictiona
 
 You can restore pattern enrichment .zip files as advanced rules models .zip files by completing the following steps:
 
-1. Open your project, and click **Improve and customize**.
-1. On the **Improvement tools** panel, click **Teach domain concepts**, **Advanced rules models**, and then **Upload**.
+1. Open your project.
+1. On the *Improvement tools* panel of the *Improve and customize* page, click **Teach domain concepts**, **Advanced rules models**, and then **Upload**.
 1. In the **Apply advanced rules model** dialog box, enter a name for your .zip file, select a language, specify a result field, click **Upload**, and select your advanced rules models .zip file.
 1. Click **Create**.
 
@@ -208,3 +214,10 @@ After you upload pattern model .zip files for recovery, you cannot use the patte
 {: note}
 
 For more information about uploading an advanced rules models .zip file, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules).
+
+### Restoring entity extractors
+{: #restoreextractorenrich}
+
+To restore an entity extractor model, import the exported .ent file to create a new machine learning model. You cannot open the exported model in the entity extractor tool to continue working with it. However, you can import a finished model and apply it to collections as an entity extractor enrichment.
+
+For more information about how to import an entity extractor model to create a machine learning enrichment, see [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-10"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,11 +24,20 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 10 Febuary 2023
+{: #discovery-10febuary2023}
+{: release-note}
+
+<!-- 4.7.0-6.0 -->
+
+Entity extractor is generally available
+:   The *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize meaningful terms for your business. Already built an entity type system in {{site.data.keyword.knowledgestudioshort}}? You can use the corpus from {{site.data.keyword.discoveryshort}} as a starting point for your entity extractor training data.
+
 ## 7 Febuary 2023
 {: #discovery-7febuary2023}
 {: release-note}
 
-<!-- 4.7.0-6.0 -->
+<!-- 4.7.0-5.0 -->
 
 Support for hourly crawls was removed
 :   You can no longer choose to crawl a data source every hour. If an existing collection is configured to crawl hourly, you will be prompted to change the scheduled crawl the next time you edit the connector settings.
