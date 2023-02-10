@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-10"
 
 subcollection: discovery-data
 
@@ -69,8 +69,7 @@ To add an entity extractor, complete the following steps:
 1.  Open the project where you want to create the entity extractor.
 
     The project must have at least one collection with documents that are representative of your domain data.
-1.  Click **Improve and customize** from the navigation panel.
-1.  From the *Improvement tools* panel, expand **Teach domain concepts**, and then click **Extract entities**.
+1.  From the *Improvement tools* panel of the *Improve and customize* page, expand **Teach domain concepts**, and then click **Extract entities**.
 1.  Click **New**.
 
     If you want to create an entity extractor that is based on the entity type system from a {{site.data.keyword.knowledgestudiofull}} corpus, click the arrow, and then choose **Import a {{site.data.keyword.knowledgestudioshort}} corpus**. For next steps, see [Importing a {{site.data.keyword.knowledgestudioshort}} corpus](#entity-extractor-import-wks).
@@ -239,7 +238,7 @@ To investigate a suggestion further, click it to see the word in context within 
 ## Importing a {{site.data.keyword.knowledgestudioshort}} corpus
 {: #entity-extractor-import-wks}
 
-From installed deployments, the import capability was added with the 4.6.2 release.
+For installed deployments, the import capability was added with the 4.6.2 release.
 {: note}
 
 You can import a corpus of documents that were annotated in {{site.data.keyword.knowledgestudiofull}} to use as the training data for an entity extractor in {{site.data.keyword.discoveryshort}}.
@@ -258,8 +257,7 @@ Although you need to download both the document set and type system for annotati
 To import a {{site.data.keyword.knowledgestudioshort}} corpus, complete the following steps:
 
 1.  Open the project where you want to import the corpus.
-1.  Click **Improve and customize** from the navigation panel.
-1.  From the *Improvement tools* panel, expand **Teach domain concepts**, and then click **Extract entities**.
+1.  From the *Improvement tools* panel of the *Improve and customize* page, expand **Teach domain concepts**, and then click **Extract entities**.
 1.  Click the arrow that is associated with the *New* button. and then click **Import a {{site.data.keyword.knowledgestudioshort}} corpus**.
 1.  Add an extractor name and optionally a description.
 
@@ -267,7 +265,7 @@ To import a {{site.data.keyword.knowledgestudioshort}} corpus, complete the foll
 
 1.  Click **Upload**, and then browse to find and select the .zip file that you exported from {{site.data.keyword.knowledgestudioshort}}. Click **Create**.
 
-    The annotated documents that you imported are stored with the entity extractor workspace, not as a new collection in the project, but you can continue to annotate them.
+    The annotated documents that you upload are stored with the entity extractor workspace, not as a new collection in the project. You can continue to annotate the documents.
 
 Give {{site.data.keyword.discoveryshort}} some time to import and process the machine learning model corpus. After the entity extractor is created, the extractor is opened to the *Label documents* page.
 
@@ -352,18 +350,19 @@ When you think the entity extractor is ready, publish the entity extractor. How 
 ## Exporting the entity extractor
 {: #entity-extractor-export}
 
-From installed deployments, the export capability was added with the 4.6.2 release.
+For installed deployments, the export capability was added with the 4.6.2 release.
 {: note}
 
-You can export an entity extractor so that you can use it in a project from another service instance. To use it elsewhere, follow the steps to create a machine learning model from [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml). You cannot continue to edit an entity extractor that you import into another project.
+An entity extractor model that you create and deploy in one project is available as an enrichment that can be added to any project in the same service instance.
+
+If you want to use the entity extractor model in a project from another service instance, you can export the entity extractor. To use it elsewhere, follow the steps to create a machine learning model from [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml). You cannot continue to edit an entity extractor that you import into another project.
 
 The entity extractor that you want to export must be fully trained.
 
 To export an entity extractor, complete the following steps:
 
 1.  Open the project with the entity extractor that you want to export.
-1.  Click **Improve and customize** from the navigation panel.
-1.  Expand *Teach domain concepts*, and then click **Extract entities**.
+1.  From the *Improvement tools* panel of the *Improve and customize* page, expand *Teach domain concepts*, and then click **Extract entities**.
 1.  From the *Entity extractors* list, find the entity extractor that you want to export. 
 1.  Click the *Actions* icon for your extractor, and then choose **Download model** to save the model to your system.
 

@@ -31,7 +31,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 <!-- 4.7.0-6.0 -->
 
 Entity extractor is generally available
-:   The *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize meaningful terms for your business. Already built an entity type system in {{site.data.keyword.knowledgestudioshort}}? You can use the corpus from {{site.data.keyword.discoveryshort}} as a starting point for your entity extractor training data.
+:   The *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize meaningful terms for your business. Already built an entity type system in {{site.data.keyword.knowledgestudioshort}}? You can use the corpus from {{site.data.keyword.knowledgestudioshort}} as a starting point for your {{site.data.keyword.discoveryshort}} entity extractor training data.
 
 ## 7 Febuary 2023
 {: #discovery-7febuary2023}
