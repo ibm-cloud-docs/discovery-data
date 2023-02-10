@@ -239,7 +239,7 @@ To investigate a suggestion further, click it to see the word in context within 
 ## Importing a {{site.data.keyword.knowledgestudioshort}} corpus
 {: #entity-extractor-import-wks}
 
-From installed deployments, the import capability is available starting with the 4.6.2 release.
+From installed deployments, the import capability was added with the 4.6.2 release.
 {: note}
 
 You can import a corpus of documents that were annotated in {{site.data.keyword.knowledgestudiofull}} to use as the training data for an entity extractor in {{site.data.keyword.discoveryshort}}.
@@ -352,7 +352,7 @@ When you think the entity extractor is ready, publish the entity extractor. How 
 ## Exporting the entity extractor
 {: #entity-extractor-export}
 
-From installed deployments, the export capability is available starting with the 4.6.2 release.
+From installed deployments, the export capability was added with the 4.6.2 release.
 {: note}
 
 You can export an entity extractor so that you can use it in a project from another service instance. To use it elsewhere, follow the steps to create a machine learning model from [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml). You cannot continue to edit an entity extractor that you import into another project.
