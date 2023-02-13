@@ -353,7 +353,7 @@ When you think the entity extractor is ready, publish the entity extractor. How 
 For installed deployments, the export capability was added with the 4.6.2 release.
 {: note}
 
-An entity extractor model that you create and deploy in one project is available as an enrichment that can be added to any project in the same service instance.
+An entity extractor model that you create and deploy in one project is available as an enrichment that can be applied to a collection from any project in the same service instance.
 
 If you want to use the entity extractor model in a project from another service instance, you can export the entity extractor. To use it elsewhere, follow the steps to create a machine learning model from [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml). You cannot continue to edit an entity extractor that you import into another project.
 
@@ -369,7 +369,7 @@ To export an entity extractor, complete the following steps:
     The *Download model* option is not available unless the model is trained.
     {: note}
 
-The entity extractor model is saved as an .ent file. You can import it into a project in another service instance as a machine learning model, and then apply it to your collections. For more information about importing the model, see [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
+The entity extractor model is saved as a .ent file. You can import it into a project in another service instance as a machine learning model, and then apply it to your collections. For more information about importing the model, see [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
 
 ## Applying an entity extractor enrichment
 {: #entity-extractor-apply}

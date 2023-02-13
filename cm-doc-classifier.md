@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-13"
 
 subcollection: discovery-data
 
@@ -110,9 +110,10 @@ To create a document classifier, complete the following steps:
 
     The *Fields* page is displayed. It shows details about the fields that are generated from the file that you added. Typically, each column in a CSV file is converted into a field and is assigned a name that is copied from the column header.
 
-1.  Deselect any fields that you want to exclude from the data set for your document classifier to learn from, and then click **Next**.
+1.  Deselect any metadata fields that you want to exclude from the data set for your document classifier to learn from, and then click **Next**.
 
-    All of the fields are selected by default. You might need to scroll horizontally to review all of the fields.
+    Any fields that you include are used as additional features in the classification. All of the fields are selected by default. You might need to scroll horizontally to review all of the fields.
+    
 1.  On the *Classifier* page, specify the fields to use for machine learning training and prediction.
 
     Answer field
@@ -133,7 +134,7 @@ To create a document classifier, complete the following steps:
     Click **Next**.
 1.  If you want to apply an enrichment to the text in your training data, select at least one field from the **Target fields** list where you want to apply enrichments. 
 
-    Typically, you want to choose the field that contains a body of text. From the earlier example, the `Feedback` field is the best choice.
+    Typically, you want to choose the field that contains the body of text that you want to classify. From the earlier example, the `Feedback` field is the best choice.
     
     Next, select any annotators that you want to apply to enrich the text in the target field or fields, and then click **Next**.
 

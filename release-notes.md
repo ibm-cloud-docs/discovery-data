@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-13"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -32,6 +32,9 @@ This information applies only to managed instances of {{site.data.keyword.discov
 
 Entity extractor is generally available
 :   The *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize meaningful terms for your business. Already built an entity type system in {{site.data.keyword.knowledgestudioshort}}? You can use the corpus from {{site.data.keyword.knowledgestudioshort}} as a starting point for your {{site.data.keyword.discoveryshort}} entity extractor training data.
+
+    If you created an entity extractor enrichment for testing purposes when the feature was in beta release, now that it is generally available, it will count toward your custom model limit. The entity extractor enrichment incurs charges whether it is applied to a collection or not. This is a good time to reassess your use of the feature.
+    {: atttention}
 
 ## 7 Febuary 2023
 {: #discovery-7febuary2023}
