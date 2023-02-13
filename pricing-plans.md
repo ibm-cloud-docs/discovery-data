@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-13"
 
 keywords: plans, pricing, service instances, billing
 
@@ -55,9 +55,7 @@ The plan includes the following features:
 -   Up to 20 projects
 -   Up to 40 collections (Up to 5 collections per project)
 -   Up to 10MB document size
--   Up to 3 {{site.data.keyword.knowledgestudioshort}} machine learning models
 -   Up to 3 entity extractor models
--   Up to 3 advanced rules learning models
 -   Up to 40 custom fields for Smart Document Understanding model and model import and export
 -   Up to 20 custom dictionaries
 -   Up to 20 custom pattern extraction models
@@ -78,7 +76,8 @@ The plan includes the following features:
 
 -   100,000 documents per month ($5 for every additional 1,000 documents per month)
 -   100,000 query or analyze API calls per month ($5 for every additional 1,000 calls per month)
--   Up to 3 custom models ({{site.data.keyword.knowledgestudioshort}} machine learning or {{site.data.keyword.discoveryshort}} entity extractor models)
+-   Up to 3 custom models ({{site.data.keyword.knowledgestudioshort}} machine learning or ({{site.data.keyword.knowledgestudioshort}} rule-based, or {{site.data.keyword.discoveryshort}} entity extractor models)
+-   Up to 10 entity extractor models
 -   Up to 5 queries per second
 -   Everything that's available in Plus
 -   Analyze API
@@ -121,6 +120,20 @@ For example, imagine there are 300,000 documents added to a collection in the fi
 Document pricing counts the number of indexed documents in each collection. If you reuse data in a second collection, it generates a second set of documents in the index which are counted separately.
 
 For more information about what counts as a document, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
+
+## What counts as a custom model?
+{: #pricing-models}
+
+Custom models include any of the following model types:
+
+-   {{site.data.keyword.discoveryshort}} entity extractor
+-   ({{site.data.keyword.knowledgestudioshort}} machine learning
+-   ({{site.data.keyword.knowledgestudioshort}} rule-based
+
+Advanced rules models are not counted as custom models.
+{: note}
+
+{{site.data.keyword.discoveryshort}} entity extractor models that are trained and published as an enrichment count toward the model limit for the plan. The entity extractor enrichment is what incurs charges, not the workspace or model. The entity extractor enrichment incurs charges whether or not it is applied to a collection.
 
 ## Premium
 {: #premiumplan}
