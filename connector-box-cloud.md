@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-13"
 
 subcollection: discovery-data
 
@@ -133,6 +133,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+
 1.  Choose the folders that you want to crawl.
 1.  If you want the web crawl to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
@@ -144,3 +145,6 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
+
+Currently, not all documents are refreshed during scheduled recrawls. For more information, see the [release note](/docs/discovery-data?topic=discovery-data-release-notes#discovery-6december2022).
+{: attention}
