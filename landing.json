@@ -1,6 +1,6 @@
 {
     "title": "Watson Discovery docs",
-    "lastupdated": "2021-05-20",
+    "lastupdated": "2023-02-16",
     "introduction": "This documentation helps you use Watson Discovery to find critical answers and insights from your business data.",
     "section_recommended": [
       {
@@ -11,7 +11,7 @@
       {
         "title": "Creating collections",
         "description": "Connect to your structured and unstructured data where it is.",
-        "href": "/docs/discovery-data?topic=discovery-data-collections#collections-video"
+        "href": "/docs/discovery-data?topic=discovery-data-collections"
       },
       {
         "title": "Adding custom fields with Smart Document Understanding",
@@ -41,25 +41,15 @@
         "thumbnail": "/images/thumb-extractor.png"
       },
       {
-        "title": "Watson Discovery Data Connector Demo",
-        "href": "/docs/discovery-data?topic=discovery-data-collections#collections-video", 
-        "thumbnail": "/images/thumb-create-collections.png" 
-      },
-      {
         "title": "Watson Discovery Demo: Extract Answers",
         "href": "https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-when",
         "thumbnail": "/images/thumb-sdu.png"
-      },
-      {
-        "title": "Watson Discovery Improving Result Relevancy",
-        "href": "/docs/discovery-data?topic=discovery-data-train",
-        "thumbnail": "/images/thumb-train.png"
       }
     ],
     "section_learn": {
       "developer": "https://developer.ibm.com/components/watson-discovery/",
       "architecture": "https://www.ibm.com/cloud/architecture/architectures/cognitiveDiscoveryDomain",
-      "training": "https://www.ibm.com/training/watsonacademy",
+      "training": "https://www.ibm.com/training/artificial-intelligence",
       "community": "https://community.ibm.com/community/user/watsonai/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f"
     }
   }
