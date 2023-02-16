@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-16"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -131,15 +131,6 @@ The number of collections you can create per service instance depends on your {{
 {: caption="Plan details" caption-side="top"}
 
 [IBM Cloud Pak for Data]{: tag-cp4d} The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
-
-## Data source overview video
-{: #collections-video}
-
-This video provides an overview of connecting to data sources in {{site.data.keyword.discoveryshort}}. The available data sources vary by version:
-
-![Watson Discovery Demo: Connect to the data source that you want](https://www.youtube.com/embed/MPCOwMgn1p4){: video output="iframe"  data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=MPCOwMgn1p4), click the *More actions* icon, and then choose *Open transcript*.
 
 ## Supported file types
 {: #supportedfiletypes}
