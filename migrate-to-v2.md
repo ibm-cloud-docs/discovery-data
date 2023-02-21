@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-17"
 
 subcollection: discovery-data
 
@@ -382,6 +382,11 @@ In addition to these high-level changes, review the differences at a per-method 
 -   The `passage` parameter for a query has a new `per_document` option that ranks the documents by document quality, and then returns the highest-ranked passages per document in a `document_passages` field for each document entry in the results list of the response. If false, ranks the passages from all of the documents by passage quality regardless of the document quality and returns them in a separate passages field in the response.
 
 -   When passages are returned for a query, you can also enable answer finding. When true, answer objects are returned as part of each passage in the query results. When `find_answers` and `per_document` are both set to true, the document search results and the passage search results within each document are reordered using the answer confidences. The goal of this reordering is to place the best answer as the first answer of the first passage of the first document. Similarly, if the `find_answers` parameter is set to true and per_document parameter is set to false, then the passage search results are reordered in decreasing order of the highest confidence answer for each document and passage.
+
+-   Both v1 and v2 support custom stop words. However, there are a few differences in how custom stop words are used:
+
+    -   There is no default custom stop words list for Japanese collections in v2.
+    -   When you define custom stop words in v1, your stop words list replaces the existing stop words list. In v2, your list augments the default list. You cannot replace the list, which means you cannot remove stop words that are part of the default list.
 
 ### Update how your application handles query results
 {: #migrate-to-v2-result-difs}

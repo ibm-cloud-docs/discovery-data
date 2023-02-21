@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-21"
 
 subcollection: discovery-data
 
@@ -249,12 +249,12 @@ enriched_text.entities.text:ib*
 ## `~n` (String variation)
 {: #variation}
 
-The number of one-character changes that need to be made to one string to make it the same as another string. For example `car~1` matches `car`,`cap`,`cat`,`can`, and so on.
+The number of character differences that are allowed when matching a string.
 
-For example:
+For example, the following query returns documents that contain `car` in the text field, as well as `cap`,`cat`,`can` and so on:
 
-```bash
-enriched_text.entities.text:Watson~3
+```json
+"query":"text:car~1"
 ```
 {: codeblock}
 

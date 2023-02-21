@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-21"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,27 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 21 Febuary 2023
+{: #discovery-21febuary2023}
+{: release-note}
+
+Optical character recognition v2 technology is used
+:   The latest version (OCR v2) is used automatically when you enable OCR for English, German, French, Spanish, Dutch, Brazilian Portuguese, and Hebrew collections in all {{site.data.keyword.cloud_notm}} service plans. 
+
+    The new optical character recognition model was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
+
+    -   Low quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, unaligned pages, and badly printed documents
+    -   Documents with irregular fonts or a variety of colors, font sizes, and backgrounds
+
+The entity extractor limits changed
+:   The number of documents that are allowed in the training data for the Plus plan increased from 100 to 200.
+
+    The number of entity types that you can create per plan decreased.
+    
+    - For Premium plans, the limit changed from 75 to 18.
+    - For Enterprise plans, the limit changed from 50 to 18.
+    - For Plus plans, the limit changed from 20 to 12.
 
 ## 10 Febuary 2023
 {: #discovery-10febuary2023}

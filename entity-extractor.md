@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-21"
 
 subcollection: discovery-data
 
@@ -414,10 +414,8 @@ The number of entity extractors that you can create per service instance depends
 
 | Plan | Entity extractors per service instance | Maximum entity types per extractor | Maximum documents in training data |
 |------|--------------------------------:|---------------------------:|-----------------------------------:|
-| Cloud Pak for Data | Unlimited | 75 | 1,000 |
-| Premium | 10 | 75 | 1,000 |
-| Enterprise | 10 | 50 | 1,000 |
-| Plus (including Trial) | 3 | 20 | 100 |
+| Cloud Pak for Data | Unlimited | 18 | 1,000 |
+| Premium | 10 | 18 | 1,000 |
+| Enterprise | 10 | 18 | 1,000 |
+| Plus (including Trial) | 3 | 12 | 200 |
 {: caption="Entity extractor plan limits" caption-side="top"}
-
-An entity extractor enrichment can identify up to 50 entities, each with one or many mentions, per document.
