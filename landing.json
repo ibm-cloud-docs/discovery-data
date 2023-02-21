@@ -1,6 +1,6 @@
 {
     "title": "Watson Discovery docs",
-    "lastupdated": "2023-02-16",
+    "lastupdated": "2023-02-17",
     "introduction": "This documentation helps you use Watson Discovery to find critical answers and insights from your business data.",
     "section_recommended": [
       {
@@ -41,8 +41,8 @@
         "thumbnail": "/images/thumb-extractor.png"
       },
       {
-        "title": "Watson Discovery Demo: Extract Answers",
-        "href": "https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-when",
+        "title": "Creating a user-defined Smart Document Understanding model",
+        "href": "https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-label",
         "thumbnail": "/images/thumb-sdu.png"
       }
     ],

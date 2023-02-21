@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-02-21"
 
 subcollection: discovery-data
 
@@ -168,7 +168,20 @@ Example response:
 ## `natural_language_query`
 {: #nlq}
 
-Use a natural language query to enter queries that are expressed in natural language, as might be received from a user in a conversational or free-text interface, such as IBM Watson Assistant. The parameter uses the entire input as the query text. It does **not** recognize operators. The `natural_language_query` parameter enables capabilities such as relevancy training. Query results include a `confidence` score. See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confidence). The maximum query string length for a natural language query is `2048`.
+Use a natural language query to enter queries that are expressed in natural language, as might be received from a user in a conversational or free-text interface, such as IBM Watson Assistant. The parameter uses the entire input as the query text. It does not recognize operators.
+
+The maximum query string length for a natural language query is `2048`.
+
+### Result confidence scores
+{: #nlq-confidence}
+
+When the query type is a natural language query, each result has a confidence score. The confidence score measures the relevancy of the result. The score is a value between 0 and 1. The higher the number, the more relevant the result. Each query result is evaluated and scored independently.
+
+A variety of techniques are used to evaluate confidence. One important factor is the frequency of word matches between the query and the document.
+
+Because a variety of techniques are used in different contexts to evaluate the result, the number range of result scores can vary widely from query to query. This variability means that comparing the confidence score to a static threshold value is an unsuitable method by which to delimit the results that are returned by your application. Results are ordered from highest to lowest confidence. You can find the best candidate answers by taking the top results, regardless of their score values.
+
+The `natural_language_query` parameter enables capabilities such as relevancy training. For more information, see [Improving result relevance with training](/docs/discovery-data?topic=discovery-data-train#confidence).
 
 ## `query`
 {: #query}
