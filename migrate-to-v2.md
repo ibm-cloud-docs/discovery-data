@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-17
+lastupdated: "2023-02-17"
 
 subcollection: discovery-data
 
@@ -387,9 +387,6 @@ In addition to these high-level changes, review the differences at a per-method 
 
     -   There is no default custom stop words list for Japanese collections in v2.
     -   When you define custom stop words in v1, your stop words list replaces the existing stop words list. In v2, your list augments the default list. You cannot replace the list, which means you cannot remove stop words that are part of the default list.
-
-
-         
 
 ### Update how your application handles query results
 {: #migrate-to-v2-result-difs}
