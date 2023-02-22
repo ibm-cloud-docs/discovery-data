@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 subcollection: discovery-data
 
@@ -251,12 +251,23 @@ enriched_text.entities.text:ib*
 
 The number of character differences that are allowed when matching a string.
 
-For example, the following query returns documents that contain `car` in the text field, as well as `cap`,`cat`,`can` and so on:
+For example, the following query returns documents that contain `car` in the text field, as well as `cap`,`cat`,`can`, `sat`, and so on:
 
 ```json
-"query":"text:car~1"
+"query":"cat~1"
 ```
 {: codeblock}
+
+When a phrase is submitted, each term in the phrase is allowed the specified number of variations to match document text. For example, the following input matches `cat dog` and `far log` in addition to `car hog`.
+
+For example:
+
+```json
+"query":"car hog~1"
+```
+{: codeblock}
+
+The normalized version of the word is used for matching. Therefore, if the input contains "cats", the search looks for "cat", which is the normalized form of the plural cats.
 
 ## `:*` (Exists)
 {: #exists}

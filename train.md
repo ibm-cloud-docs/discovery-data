@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-23"
+lastupdated: "2023-02-22"
 
 subcollection: discovery-data
 
@@ -31,12 +31,6 @@ The set of documents that constitute the training data are used only during the 
 If documents that were used previously to train the model are removed from a collection, you must remove any references to them from the training data before you start to retrain the model. The model expects both the documents and queries from training data pairs to continue to exist. To remove these references, delete the training queries that returned the deleted documents. If the queries continue to be relevant, you can add them back to the training data and pair them with other documents.
 
 For more information about the relevancy training API, see the [API reference documentation](https://cloud.ibm.com/apidocs/discovery-data#createtrainingquery){: external}.
-
-The following 15-minute video demonstrates relevancy training, along with other features. The training information starts 9 minutes in.
-
-![Demo: Watson Discovery Improving Result Relevancy](https://www.youtube.com/embed/wi_V9s8XF3c){: video output="iframe" data-script="none"  id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
-
-To read a transcript of the video, [open the video on YouTube.com](https://www.youtube.com/watch?v=wi_V9s8XF3c), click the *More actions* icon, and then choose *Open transcript*.
 
 ## When to use relevancy training
 {: #train-when}

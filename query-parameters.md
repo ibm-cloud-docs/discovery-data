@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-02-22"
 
 subcollection: discovery-data
 
@@ -175,7 +175,7 @@ The maximum query string length for a natural language query is `2048`.
 ### Result confidence scores
 {: #nlq-confidence}
 
-When the query type is a natural language query, each result has a confidence score. The confidence score is an estimate of the relevance of the result. The score is a value between 0 and 1. The higher the number, the more relevant the result. Each query result is evaluated and scored independently.
+When the query type is a natural language query, each result has a confidence score. The confidence score is a measure of the relevancy of the result. Each query result is evaluated and scored independently.
 
 A variety of techniques are used to evaluate confidence. One important factor is the frequency of word matches between the query and the document.
 
