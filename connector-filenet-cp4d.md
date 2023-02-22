@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-01-07"
+lastupdated: "2022-02-22"
 
 subcollection: discovery-data
 
@@ -71,7 +71,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     Password
     :   The password that is associated with the user.
 
-1.  In the *Specify what you want to crawl* section, enter the name of the object store that you want to use to create, search, retrieve, and store documents in the **ObjectStore Name** field.
+1.  In the *Specify what you want to crawl* section, enter the display name of the object store that you want to use to create, search, retrieve, and store documents in the **ObjectStore Name** field.
 1.  In **Crawler Space Type**, select either **Folder** or **Class**.
 1.  Complete the following field:
 

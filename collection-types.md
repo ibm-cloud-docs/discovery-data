@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-02-22"
 
 subcollection: discovery-data
 
@@ -101,7 +101,7 @@ When you query collections where document-level security is enabled, no results 
 To enable document-level security, you must complete the following steps:
 
 1.  [Create {{site.data.keyword.discoveryshort}} users that match the users available on the source system](#createusersdls).
-1.  [Associate users with your {{site.data.keyword.discoveryshort}} instance]. For more information, see [Giving users access to a Watson Discovery instance](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-admin-add-users.html){: external}.
+1.  Associate users with your {{site.data.keyword.discoveryshort}} instance. For more information, see [Giving users access to a Watson Discovery instance](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-admin-add-users.html){: external}.
 1.  Enable document-level security for the data source when you connect to it.
 
 ### Creating users for document-level security
