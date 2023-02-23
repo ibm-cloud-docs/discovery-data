@@ -161,6 +161,7 @@ toc:
               - cm-custom-annotator.md
               - cm-doc-classifier.md
               - cm-phrase-sentiment.md
+          - cm-add-collection.md
           - cm-edit-collection.md
           - cm-csv-file.md
           - cm-report.md

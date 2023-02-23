@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-07"
+lastupdated: "2023-02-23"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -97,7 +97,7 @@ Click the Help ![Help icon](images/help_icon.png) icon from the header of any pa
     :    Latest version -1 for Windows
 
     Apple Safari
-    :    Latest veresion -1 for Mac
+    :    Latest version -1 for Mac
 
 -   The {{site.data.keyword.icp4dfull_notm}} web client where you create service instances supports the {{site.data.keyword.icp4dfull_notm}} requirements. For more information, see [Supported web browsers](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.6.x?topic=requirements-software#software-reqs__web){: external}
 
