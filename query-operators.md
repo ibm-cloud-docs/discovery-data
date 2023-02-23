@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-23"
 
 subcollection: discovery-data
 
@@ -253,8 +253,8 @@ The number of character differences that are allowed when matching a string.
 
 For example, the following query returns documents that contain `car` in the text field, as well as `cap`,`cat`,`can`, `sat`, and so on:
 
-```json
-"query":"cat~1"
+```bash
+cat~1
 ```
 {: codeblock}
 
@@ -262,8 +262,8 @@ When a phrase is submitted, each term in the phrase is allowed the specified num
 
 For example:
 
-```json
-"query":"car hog~1"
+```bash
+"car hog"~1
 ```
 {: codeblock}
 
