@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing enrichments
+# Manage enrichments
 {: #manage-enrichments}
 
 Apply enrichments to fields in your documents to make meaningful information easier to find and return in searches.

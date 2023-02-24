@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -220,4 +220,4 @@ For more information about uploading an advanced rules models .zip file, see [Ad
 
 To restore an entity extractor model, import the exported .ent file to create a new machine learning model. You cannot open the exported model in the entity extractor tool to continue working with it. However, you can import a finished model and apply it to collections as an entity extractor enrichment.
 
-For more information about how to import an entity extractor model to create a machine learning enrichment, see [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
+For more information about how to import an entity extractor model to create a machine learning enrichment, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml).
