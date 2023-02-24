@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-24"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding tables
+# Understand tables
 {: #understanding_tables}
 
 Apply the *Table Understanding* enrichment to get detailed information about tables and table-related data within documents.

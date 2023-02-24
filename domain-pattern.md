@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-08-09"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Patterns [IBM Cloud]{: tag-ibm-cloud}
+# Use patterns to find terms [IBM Cloud]{: tag-ibm-cloud}
 {: #domain-pattern}
 
 Recognize terms that are mentioned in sentences that match a syntactic pattern that you teach {{site.data.keyword.discoveryshort}} to recognize.

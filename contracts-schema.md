@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding contracts
+# Read contracts
 {: #contracts-schema}
 
 The *Contracts* enrichment identifies contract-related elements in a document.

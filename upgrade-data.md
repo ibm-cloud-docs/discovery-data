@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-12-29"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -26,7 +26,7 @@ This information applies only to installed deployments.
 
 The steps to follow to upgrade your {{site.data.keyword.discoveryshort}} service instance are described in the {{site.data.keyword.icp4dfull_notm}} documentation. The following in-place upgrades are supported:
 
--   From a 4.0.x or 4.5.x release to a 4.6 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade.html)
+-   From a 4.0.x, 4.5.x, or earlier 4.6.x release to the latest 4.6 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade.html).
 -   From a 4.0.x release or from one 4.5.x release to a later 4.5.y release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-discovery/discovery-upgrade.html){: external}.
 -   From one 4.0.x release to a later 4.0.y release. For more information, see [Upgrading Watson Discovery to a newer 4.0 refresh](https://www.ibm.com/docs/SSQNUZ_4.0/svc-discovery/discovery-upgrade-v4.html){: external}.
 

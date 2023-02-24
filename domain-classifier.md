@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-08"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -10,13 +10,15 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Classifiers
+# Classify data
 {: #domain-classifier}
 
 Define categories by which text in your documents can be classified.
 {: shortdesc}
 
-Add a classifier to assign documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of documents in your collection.
+This topic describes how to classify text. If you want to classify documents, see [Classifying documents](/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
+
+Add a classifier to assign text from documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of text in your collection.
 
 1.  Create a CSV file that contains example text followed by its category label per line.
 
