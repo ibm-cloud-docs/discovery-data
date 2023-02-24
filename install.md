@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-02-23"
 
 subcollection: discovery-data
 
@@ -10,18 +10,16 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Installing 4.6.2
+# Installing 4.6.3
 {: #install}
 
-Find information about how to install and manage {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.6.2.
+Find information about how to install and manage {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.6.3.
 {: shortdesc}
 
 [IBM Cloud Pak for Data]{: tag-cp4d}
 
 This information applies only to installed deployments.
 {: note}
-
-You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.data.keyword.discoveryshort}} service.
 
 ## Full installation instructions
 {: #full-installation-instructions}

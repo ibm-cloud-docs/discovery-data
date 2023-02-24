@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-01-27"
+lastupdated: "2023-02-23"
 
 subcollection: discovery-data
 
@@ -25,6 +25,7 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 
 | {{site.data.keyword.discoveryshort}} version | {{site.data.keyword.icp4dfull_notm}} version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
+| 4.6.3 | 4.6.3 | 4.10 |
 | 4.6.2 | 4.6.2 | 4.10 |
 | 4.6.2 | 4.6.2 | 4.8 |
 | 4.6.0 | 4.6.0 | 4.10 |
@@ -69,7 +70,6 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 | 2.1.3 | 2.5 | 3.11 |
 {: caption="Support matrix" caption-side="top"}
 
-The `3.11.188` version more precisely means 3.11.188 or a later 3.11 version.
-
-{{site.data.keyword.icp4dfull_notm}} 3.0.1 deprecated support for Red Hat OpenShift 4.3 on 1 September 2020. {{site.data.keyword.icp4dfull_notm}} supports Red Hat OpenShift 4.5 instead of 4.3.
-{: important}
+- The 4.6.2 release is the last supported release on Red Hat OpenShift Container Platform 4.8.
+- The 4.5.3 release is the last supported release on Red Hat OpenShift Container Platform 4.6.29 or later.
+- The `3.11.188` version more precisely means 3.11.188 or a later 3.11 version.
