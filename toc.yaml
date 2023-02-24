@@ -108,21 +108,27 @@ toc:
       - topicgroup:
           label: Enriching your data
           topics:
+          - topic: domain.md
           - topicgroup:
-              label: Adding custom enrichments
+              label: Identify common terms
               topics:
-              - topic: domain.md
-                navtitle: Teaching Discovery about your domain
-              - domain-advanced-rules.md
-              - domain-classifier.md
+              - nlu.md
               - domain-dictionary.md
+          - topicgroup:
+              label: Identify custom terms
+              topics:
               - entity-extractor.md
               - domain-ml.md
+              - domain-advanced-rules.md
+          - topicgroup:
+              label: Identify terms by pattern
+              topics:
               - domain-pattern.md
               - domain-regex.md
-          - nlu.md
+          - domain-classifier.md
+          - nlu-sentiment.md
           - topicgroup:
-              label: Using SDU to analyze document structure
+              label: Use SDU to analyze document structure
               topics:
               - configuring-fields.md
               - sdu-pretrained.md

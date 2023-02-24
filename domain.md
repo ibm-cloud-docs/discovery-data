@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-24"
 
 keywords: choose enrichments,enrichment overview
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Adding custom enrichments
+# Choosing enrichments
 {: #domain}
 
 Add resources that can teach {{site.data.keyword.discoveryshort}} about terms or patterns that have special meaning to your application.
@@ -31,11 +31,14 @@ The following table shows you the correct resources to add to address common nee
 | Recognizes entities that you identify as being significant by training an entity extractor machine learning model. | [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor) | Supports starting from an imported {{site.data.keyword.knowledgestudioshort}} corpus. |
 {: caption="Domain tools overview" caption-side="top"}
 
-Alternatively, you can extract meaning from documents based on the document structure. Use the Smart Document Understanding tool to identify new fields by which to target enrichments or to split large documents into more manageable chunks. For more information, see [Structural meaning with SDU](/docs/discovery-data?topic=discovery-data-configuring-fields).
+Alternatively, you can apply built-in Watson NLP enrichments that find the following information in your collection:
 
-Dictionaries and classifiers that you add to one project can be used by other projects. In fact, you can add them to a Content Mining project from the deployed Content Mining application.
+-   [Entities and keywords](/docs/discovery-data?topic=discovery-data-nlu)
+-   [Sentiment](/docs/discovery-data?topic=discovery-data-nlu-sentiment)
 
-For more information about how to apply built-in enrichments to your collection, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu).
+You can extract meaning from documents based on the document structure also. Use the Smart Document Understanding tool to identify new fields by which to target enrichments or to split large documents into more manageable chunks. For more information, see [Structural meaning with SDU](/docs/discovery-data?topic=discovery-data-configuring-fields).
+
+Dictionaries and classifiers that you add to one project can be used by other projects.
 
 For more information about how to get the most from enrichments, read the [Enriching your documents can make search more effective](https://community.ibm.com/community/user/watsonai/blogs/bill-murdock1/2022/01/14/enriching-your-documents-can-make-search-more-effe){: external} blog post.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-07-29"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Regular expressions
+# Use regular expressions to find terms
 {: #domain-regex}
 
 Define regular expressions that capture patterns of significance, such as that `AB10045` is the syntax that is used for your order numbers. 

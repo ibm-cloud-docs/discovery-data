@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -10,18 +10,21 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Machine learning models
+# Use imported ML models to find custom terms
 {: #domain-ml}
 
-Use custom Machine Learning models that use rules or context to recognize and tag entities and relationships.
+Use custom Machine Learning models that use rules or context to recognize and tag entities.
 {: shortdesc}
 
 Add Machine Learning models that you created with IBM tools that you can use to define your own type system.
 
 The type of models you can add depend on your deployment:
 
-- [IBM Cloud Pak for Data]{: tag-cp4d} You can add models that were created with Watson Explorer Content Analytics Studio models, or with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}. Starting with the 4.6.2 release, you can also add custom entity extractor models that were created in and exported from another instance of {{site.data.keyword.discoveryshort}}.
-- [IBM Cloud]{: tag-ibm-cloud} You can add models that were created with a {{site.data.keyword.knowledgestudiofull}} instance that is hosted in {{site.data.keyword.cloud_notm}} only.
+-   [IBM Cloud Pak for Data]{: tag-cp4d} You can add models that were created with Watson Explorer Content Analytics Studio models, or with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}. Starting with the 4.6.2 release, you can also add custom entity extractor models that were created in and exported from another instance of {{site.data.keyword.discoveryshort}}.
+-   [IBM Cloud]{: tag-ibm-cloud} You can add models that were created with a {{site.data.keyword.knowledgestudiofull}} instance that is hosted in {{site.data.keyword.cloud_notm}} only.
+
+    To use a {{site.data.keyword.knowledgestudioshort}} model that was built with {{site.data.keyword.knowledgestudioshort}} on {{site.data.keyword.icp4dfull_notm}}, migrate the ground truth to a {{site.data.keyword.cloud_notm}} instance of {{site.data.keyword.knowledgestudioshort}}. and then retrain the model.
+    {: tip}
 
 The following types of models are supported:
 

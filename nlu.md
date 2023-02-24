@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-24"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Applying prebuilt Watson NLP enrichments
+# Use built-in Watson NLP to find terms
 {: #nlu}
 
 Take advantage of award-winning Watson Natural Language Processing (NLP) capabilities by adding prebuilt enrichments to your documents.
@@ -25,7 +25,7 @@ The following Watson NLP enrichments are available:
 -   [Entities](#nlu-entities): Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
 -   [Keywords](#nlu-keywords): Recognizes significant terms in your content.
 -   [Part of Speech](#nlu-pos): Identifies the parts of speech (nouns and verbs, for example) in the content.
--   [Sentiment](#nlu-sentiment): Understands the overall sentiment of the content.
+-   [Sentiment](/docs/discovery-data?topic=discovery-data-nlu-sentiment): Understands the overall sentiment of the content.
 
 The following other pretrained enrichments are available with {{site.data.keyword.discoveryshort}}:
 
@@ -72,7 +72,7 @@ To add an NLP enrichment, complete the following steps:
 
 1.  Click **Apply changes and reprocess**.
 
-Enrichments that you enable are applied to the documents in random order. For more information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
+Enrichments that you enable are applied to the documents in random order. For information about how to remove an enrichment, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments).
 
 ## Entities
 {: #nlu-entities}
@@ -250,43 +250,3 @@ The Keywords enrichment can identify up to 50 keywords, each with one or many me
 {: #nlu-pos}
 
 Recognizes and tags parts of speech, including nouns, verbs, adjectives, adverbs, conjunctions, interjections, and numerals.
-
-## Sentiment
-{: #nlu-sentiment}
-
-Analyzes the sentiment that is expressed in text and returns `positive`, `neutral`, or `negative` sentiment.
-
-To understand the sentiment of an entire document, apply this enrichment to a field that contains as much of the text from the document as possible, such as the `text` field.
-
-To analyze sentiment in text from multiple fields at one time and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Detecting phrases the express sentiment](/docs/discovery-data?topic=discovery-data-cm-phrase-sentiment).
-
-### Example
-{: #nlu-sentiment-example}
-
-#### Input
-{: #nlu-sentiment-example-input}
-
-```text
-"It is powerful and easy to use and integrate with third party applications."
-```
-{: codeblock}
-
-#### Response
-{: #nlu-sentiment-example-response}
-
-In the JSON output:
-
-- `score` = Sentiment score from `-1` (negative) to `1` (positive)
-- `label` = `positive`, `negative`, or `neutral`
-- `mixed` = Indicates that the document expresses a combination of different sentiments
-
-```json
-{
-  "sentiment": {
-    "score": 0.9255063900060722,
-    "mixed": false,
-    "label": "positive"
-  }
-}
- ```
-{: codeblock}
