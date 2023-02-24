@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-02-23"
 
 subcollection: discovery-data
 
@@ -49,7 +49,12 @@ Target data
 All of the CSV files (training, test, and target) must have the same column names. The data in the columns must have the same data types, such as string, number, and so on.
 {: important}
 
-For more information about formatting a CSV file, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file).
+You can use a CSV file that you uploaded at the time that you created the Content Mining project or you can create a new collection.
+
+For more information, see the following topics:
+
+-   [Adding collections](/docs/discovery-data?topic=discovery-data-cm-add-collection)
+-   [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file)
 
 ### Document classifier training data sample
 {: #create-doc-classifier-sample}

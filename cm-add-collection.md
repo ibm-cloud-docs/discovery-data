@@ -16,7 +16,7 @@ subcollection: discovery-data
 You can add a collection directly to the Content Mining application.
 {: shortdesc}
 
-You might want to add a collection that can be used as a test dataset when you create a document classifier, for example.
+You might want to add a collection that can be used as training data for a document classifier, for example.
 
 The collection can contain an uploaded CSV file only. For information about file guidelines, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file).
 
