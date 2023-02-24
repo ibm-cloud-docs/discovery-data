@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-24"
 
 subcollection: discovery-data
 
@@ -104,7 +104,7 @@ You can import a PEAR file to use as the machine learning source file from {{sit
 
 You can show Content Analytics Studio facets in the Content Mining application. Only facets with a UIMA Feature of type `Literal Value` are displayed.
 
-For more information about how to import Content Analytics Studio machine learning models for use in other project types, see [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml).
+For more information about how to import Content Analytics Studio machine learning models for use in other project types, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml).
 
 1.  From the Watson Explorer Content Analytics Studio, export the machine learning model that defines the facets that you want to use. The model file must have a `.pear` extension.
 1.  In the export configuration, remove the facet path, but keep the subfacet value. Set the Index Field name to the Facet Tree Path in Content Analytics Studio.

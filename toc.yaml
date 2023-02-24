@@ -112,8 +112,8 @@ toc:
           - topicgroup:
               label: Identify common terms
               topics:
-              - nlu.md
               - domain-dictionary.md
+              - nlu.md
           - topicgroup:
               label: Identify custom terms
               topics:
@@ -127,13 +127,13 @@ toc:
               - domain-regex.md
           - domain-classifier.md
           - nlu-sentiment.md
+          - contracts-schema.md
+          - understanding_tables.md
           - topicgroup:
               label: Use SDU to analyze document structure
               topics:
               - configuring-fields.md
               - sdu-pretrained.md
-              - contracts-schema.md
-              - understanding_tables.md
           - manage-enrichments.md
       - test.md
       - deploy.md

@@ -10,13 +10,13 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Use patterns to find terms [IBM Cloud]{: tag-ibm-cloud}
+# Use patterns to find terms
 {: #domain-pattern}
 
 Recognize terms that are mentioned in sentences that match a syntactic pattern that you teach {{site.data.keyword.discoveryshort}} to recognize.
 {: shortdesc}
 
-Patterns is a beta feature that is available in managed deployments only. The feature is available for English-language documents only.
+[IBM Cloud]{: tag-ibm-cloud} Patterns is a beta feature that is available in managed deployments only. The feature is available for English-language documents only.
 {: beta}
 
 Add a Patterns resource to teach {{site.data.keyword.discoveryshort}} to recognize patterns in your data. The Patterns feature uses pattern induction, which generates extraction patterns from examples that you provide as training data. After you specify a few examples, {{site.data.keyword.discoveryshort}} suggests more rules that you can review and accept to complete the pattern.
