@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-02-28"
 
 subcollection: discovery-data
 
@@ -83,7 +83,7 @@ To download a pattern, complete the following step:
 
     A pattern model is downloaded as a ZIP file.
 
-You can import the downloaded ZIP file as the source for an advanced rules model resource. For more information, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules).
+You can import the downloaded ZIP file as the source for an advanced rules model resource. For more information, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-ml#advanced-rules).
 
 ## Pattern limits
 {: #patterns-limits}

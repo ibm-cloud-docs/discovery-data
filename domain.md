@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-02-28"
 
 keywords: choose enrichments,enrichment overview
 
@@ -26,7 +26,7 @@ The following table shows you the correct resources to add to address common nee
 | Recognize terms and synonyms for terms that are significant to you, such as the names of products that you sell. | [Dictionary](/docs/discovery-data?topic=discovery-data-domain-dictionary) | Term suggestions are displayed if the *Part of Speech* enrichment is applied to the collection. |
 | Define regular expressions that capture patterns of significance, such as that `AB10045` is the syntax that is used for your order numbers. | [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex) | N/A |
 | Recognize and tag entities and relationships that are defined in a custom Machine Learning model. | [Machine Learning models](/docs/discovery-data?topic=discovery-data-domain-ml) | Requires a model that is built and exported from another IBM tool. |
-| Apply rules to fields that are based on rules you defined by creating an advanced rules model in {{site.data.keyword.knowledgestudiofull}}. | [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules) |  Requires an advanced rules model that is built and exported from {{site.data.keyword.knowledgestudiofull}} or that uses an exported Patterns resource. |
+| Apply rules to fields that are based on rules you defined by creating an advanced rules model in {{site.data.keyword.knowledgestudiofull}}. | [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-ml#advanced-rules) |  Requires an advanced rules model that is built and exported from {{site.data.keyword.knowledgestudiofull}} or that uses an exported Patterns resource. |
 | [IBM Cloud]{: tag-ibm-cloud} Recognize terms that are mentioned in sentences that match a syntactic pattern that you teach {{site.data.keyword.discoveryshort}} to recognize. | [Patterns (beta)](/docs/discovery-data?topic=discovery-data-domain-pattern) | Available as a beta feature for English-language collections in managed deployments only. The enrichment that is derived by defining patterns cannot be applied to Content Mining projects. You can export the resource and use it as an advanced rules model. |
 | Recognizes entities that you identify as being significant by training an entity extractor machine learning model. | [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor) | Supports starting from an imported {{site.data.keyword.knowledgestudioshort}} corpus. |
 {: caption="Domain tools overview" caption-side="top"}

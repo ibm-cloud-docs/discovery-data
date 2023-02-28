@@ -30,7 +30,7 @@ When you analyze a document with the API, you indicate how you want the document
 
 The following enrichments are supported in the Analyze API:
 
--   [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules)
+-   [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-ml#advanced-rules)
 -   [Contracts](/docs/discovery-data?topic=discovery-data-contracts-schema)
 -   [Custom entities](/docs/discovery-data?topic=discovery-data-entity-extractor)
 -   [Dictionary](/docs/discovery-data?topic=discovery-data-domain-dictionary)
