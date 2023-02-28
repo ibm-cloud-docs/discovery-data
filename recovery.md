@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-02-28"
 
 subcollection: discovery-data
 
@@ -133,7 +133,7 @@ Back up your machine learning model .zip or .pear files, and store them locally.
 ### Advanced rules models enrichment
 {: #advrmenrich}
 
-Back up your model files as .zip files, and store them locally. For more information, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules).
+Back up your model files as .zip files, and store them locally. For more information, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-ml#advanced-rules).
 
 ### Classifier enrichments
 {: #classifierenrich}
@@ -213,7 +213,7 @@ You can restore pattern enrichment .zip files as advanced rules models .zip file
 After you upload pattern model .zip files for recovery, you cannot use the pattern editor to further edit the .zip files.
 {: note}
 
-For more information about uploading an advanced rules models .zip file, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-advanced-rules).
+For more information about uploading an advanced rules models .zip file, see [Advanced rules models](/docs/discovery-data?topic=discovery-data-domain-ml#advanced-rules).
 
 ### Restoring entity extractors
 {: #restoreextractorenrich}

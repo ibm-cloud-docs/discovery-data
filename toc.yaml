@@ -119,7 +119,6 @@ toc:
               topics:
               - entity-extractor.md
               - domain-ml.md
-              - domain-advanced-rules.md
           - topicgroup:
               label: Identify terms by pattern
               topics:

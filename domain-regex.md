@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-02-28"
 
 subcollection: discovery-data
 
@@ -20,9 +20,17 @@ Define regular expressions that can identify and extract information from fields
 
 For example, this regular expression finds occurrences of credit card numbers of a specific format and length.
 
-```text
+```
 4[0-9]{15}
 ```
+{: codeblock}
+
+The following regular expression finds occurrences of a US social security number.
+
+```
+(?!666|000|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}
+```
+{: codeblock}
 
 To add a regular expression, complete the following steps:
 
@@ -67,7 +75,7 @@ In this example, the **Facet Path** is `regex.cccardnumber`, and the field that 
 ```
 {: codeblock}
 
-As a result, a customer can filter their results by the credit card number facet that you defined to show passages that include credit card number references.
+When you submit test queries from the *Improve and customize* page, you can add a facet that is based on the `enriched_text.entities.model_name` field. As a result, the `cccardnumber` regular expression enrichment that you created is displayed as a facet value by which documents can be filtered. For more information about creating facets, see [Adding facets](/docs/discovery-data?topic=discovery-data-facets#facetexist).
 
 ## Regular expression limits
 {: #regex-limits}

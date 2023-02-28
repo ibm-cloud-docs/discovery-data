@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-28"
 
 subcollection: discovery-data
 
@@ -27,6 +27,8 @@ Training applies to an entire project. It cannot be skipped for one collection a
 Relevancy training does not run continuously. Training occurs only when you initiate it. At most one trained relevancy model is used at a time per project. If you retrain a model, the existing model is used until the new model is successfully trained, at which time the new model replaces the old model.
 
 The set of documents that constitute the training data are used only during the training process. If a subsequent change is made to a document that was used to train the model, it does not change the trained model and does not trigger a new training session. Keep in mind that if many of the documents in your project change, it might be time to retrain the model to use the features from the updated documents.
+
+Stop words and query expansions that you add to a collection do not affect the relevancy training model directly. However, they can change which documents are returned from a search, which affects the documents that are ranked by the relevancy model. The model ranks the top 100 documents that are returned for a query. Changes that you make to stop words or query expansions do not initiate a relevancy training update. If you add artifacts that drastically change the documents that are returned by search, consider retraining the model.
 
 If documents that were used previously to train the model are removed from a collection, you must remove any references to them from the training data before you start to retrain the model. The model expects both the documents and queries from training data pairs to continue to exist. To remove these references, delete the training queries that returned the deleted documents. If the queries continue to be relevant, you can add them back to the training data and pair them with other documents.
 

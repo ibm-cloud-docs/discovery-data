@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-02-28"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -36,7 +36,7 @@ You can add data to your project in the following ways:
 
 -   To automate the process of adding data to your project, use the Discovery APIs to create a collection and upload documents to it.
 
-When you add documents to {{site.data.keyword.discoveryshort}}, the original documents are crawled and information from the documents is stored in an index so that it can be enriched and analyzed or retrieved later. For more information, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).
+When you add documents to {{site.data.keyword.discoveryshort}}, the original documents are crawled and information from the documents is stored in an index so that it can be enriched and analyzed or retrieved later. Not all rich content from the original document is retained. For example, images that are included in Microsoft Office files are not displayed when you open a search result from a .ppt or .doc file in the advanced text view. For more information, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).
 
 ## How do I decide what to add to a collection?
 {: #createcollection-why}
