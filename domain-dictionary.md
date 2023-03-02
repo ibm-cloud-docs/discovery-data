@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-03-02"
 
 keywords: dictionary,synonyms
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Define terms with a dictionary
+# Define a finite set of terms with a dictionary
 {: #domain-dictionary}
 
 Recognize terms and synonyms for terms that are significant to you, such as the names of products that you sell.

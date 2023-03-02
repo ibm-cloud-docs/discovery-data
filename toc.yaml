@@ -112,11 +112,11 @@ toc:
           - topicgroup:
               label: Identify common terms
               topics:
-              - domain-dictionary.md
               - nlu.md
           - topicgroup:
               label: Identify custom terms
               topics:
+              - domain-dictionary.md
               - entity-extractor.md
               - domain-ml.md
           - topicgroup:

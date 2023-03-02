@@ -22,11 +22,11 @@ A collection is a set of documents that you add to a project so that you can ana
 
 You can add data to your project in the following ways:
 
--   Upload locally-accessible files by using the product user interface. This method is the best way to get started and test your use case.
+-   Upload locally accessible files by using the product user interface. This method is the best way to get started and test your use case.
 -   Set up a scheduled crawl of documents that are stored on an external data source.
 
     The product user interface offers several built-in data source connectors for you to choose from. The options differ depending on your deployment type. For more information, see [Supported data sources](#collections-include-data-sources-reuse).
--   Connect to an external data source for which there is no built-in support:
+-   Connect to an external data source for which no built-in support is available:
 
     [IBM Cloud]{: tag-ibm-cloud}
     :    Use IBM App Connect to set up a scheduled crawl of documents that are stored on other external data sources.
@@ -38,7 +38,7 @@ You can add data to your project in the following ways:
 
 When you add documents to {{site.data.keyword.discoveryshort}}, the original documents are crawled and information from the documents is stored in an index so that it can be enriched and analyzed or retrieved later. Not all rich content from the original document is retained. For example, images that are included in Microsoft Office files are not displayed when you open a search result from a .ppt or .doc file in the advanced text view. For more information, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).
 
-## How do I decide what to add to a collection?
+## Choosing what to add to a collection
 {: #createcollection-why}
 
 There a few things to consider as you decide how to break up your source content into collections.
@@ -51,7 +51,7 @@ There a few things to consider as you decide how to break up your source content
     Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, maybe a subset of your documents contains industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
 -   Creating separate Smart Document Understanding (SDU) models
 
-    You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department that use one template and 20 PDF files that were created by your Research department that use a different template, group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
+    You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department and use one template and 20 PDF files that were created by your Research department and use a different template, group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.
 
 ## Creating a collection
 {: #createcollection}
@@ -65,7 +65,7 @@ Things to keep in mind:
 
 To create a collection, complete the following steps:
 
-1.  Open a project, go to the **Manage collections** page, and then click **New collection**.
+1.  Open a project, go to the *Manage collections* page, and then click **New collection**.
 
     -   The Conversational Search, Document Retrieval, and Custom project types can contain up to 5 collections.
     -   A Content Mining project can contain only 1 collection.
@@ -95,8 +95,8 @@ One of the optional features that you can apply to a collection when you create 
 
 [IBM Cloud]{: tag-ibm-cloud} A new version of the technology was introduced in cloud-managed instances. OCR v2 was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
 
--   Low quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, misaligned pages, and badly printed documents
--   Documents with irregular fonts or a variety of colors, font sizes, and backgrounds
+-   Low-quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, misaligned pages, and badly printed documents
+-   Documents with irregular fonts or various colors, font sizes, and backgrounds
 
 Things to keep in mind when you enable OCR:
 
@@ -277,8 +277,8 @@ To create a crawl schedule, complete the following steps:
     The choices for all of the connectors (except the *Web crawl* connector) are as follows:
 
     -   **Full crawling**: Recrawls the external data source to update documents in the collection.
-    -   **Crawling updates (look for new, modified, and deleted contents)**: Only updates the collection if data in the external data source was added, modified, or deleted since the last crawl.
-    -   **Crawling new and modified contents**: Only updates the collection if data in the external data source that was added or modified since the last crawl.
+    -   **Crawling updates (look for new, modified, and deleted contents)**: Updates the collection only if data in the external data source was added, modified, or deleted since the last crawl.
+    -   **Crawling new and modified contents**: Updates the collection only if data in the external data source that was added or modified since the last crawl.
     
     **Web crawl connector only**: The *Web crawl* connector schedules crawls differently from the other connector types. For the *Web crawl* connector only, choose among the following options:
 

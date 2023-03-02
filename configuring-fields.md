@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-02-28"
 
 keywords: document structure,smart document understanding,sdu
 
@@ -131,9 +131,9 @@ To label documents, complete the following steps:
     See the [Default field labels](#sdu-default-fields) table for a list of the fields and their descriptions.
 1.  To create a custom field label, click **Create new**.
 
-    -   Specify a field label with lowercase letters and no spaces. For example, `complex_task` is a valid field label.
+    -   Specify a field label with no spaces. For example, `complex_task` is a valid field label.
 
-        Avoid using field label names that have special meaning for {{site.data.keyword.discoveryshort}}. For more information, see [How fields are handled](/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).
+        Avoid using a field label name or including characters, such as a number sign (#) or period (.), in the name that have special meaning for {{site.data.keyword.discoveryshort}}. For more information, see [How fields are handled](/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).
         {: note}
 
     -   If you want to change the color that is used to represent the field, repeatedly click the color block ![Square block of color with two arrows that point in a circle](images/sdu-label-color.png) until it is displayed in the color that you want to use.
