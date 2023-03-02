@@ -27,19 +27,19 @@ You use the same set of backup and restore scripts to back up and restore data i
 
 The following table lists the upgrade paths that are supported by the scripts.
 
-| Version in use | Version you can upgrade to |
+| Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
 | 4.5.x | 4.6.0 |
 | 4.0.x | 4.6.0 |
 | 2.2.1 | 4.6.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
-If you are upgrading from 4.x to 4.6, there's a simpler way to complete the upgrade.
+If you are upgrading from 4.x to 4.6, a simpler way to complete the upgrade is described in the following topics:
 
 -  [Upgrading Watson Discovery from Version 4.5.x](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade-v45.html){: external}.
 -  [Upgrading Watson Discovery from Version 4.0.x](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade-v4.html){: external}.
 
-If you use {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility to backup and restore an entire cluster to 4.6, there are a few extra steps you need to take. For more information, see [Using OADP to backup a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-oadp).
+If you use {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility to back up and restore an entire cluster to 4.6, a few extra steps are required. For more information, see [Using OADP to back up a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-oadp).
 
 You can do an in-place upgrade from one 4.0.x version to a later 4.0.y version. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} to a newer 4.0 refresh](https://www.ibm.com/docs/SSQNUZ_4.0/svc-discovery/discovery-upgrade-v4.html){: external}.
 
@@ -65,7 +65,7 @@ You cannot migrate the following data:
 
 You can back up and restore some data by using the backup and restore scripts, but you must back up and restore other data manually. The following data must be backed up manually:
 
--   Local file system folders and documents that you can crawl by using the Local File System data source.
+-   Local file system folders and documents that you can crawl by using the Local file system data source.
 
 The following updates are made when your collections are restored:
 
@@ -84,7 +84,7 @@ You can back up and restore your instance of {{site.data.keyword.discoveryshort}
 
 You must have Administrative access to the {{site.data.keyword.discoveryshort}} instance on your {{site.data.keyword.discoveryshort}} cluster (where the data to be backed up is stored) and administrative access to the new instance (where the data will be restored to).
 
-The backup and restore scripts perform many operations and can take quite a bit of time to run. To avoid timeout issues, run a tool that prevents timeouts, such as `nohup`.
+The backup and restore scripts complete many operations and can take quite a bit of time to run. To avoid timeout issues, run a tool that prevents timeouts, such as `nohup`.
 {: important}
 
 ## Using the backup scripts
@@ -115,14 +115,14 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
     You need all of the files in the repository to complete a backup and restore. Follow the instructions in GitHub Help to clone or download a compressed file of the repository.
     {: important}
 
-1.  Make each script executable by running the following command:
+1.  Make each script an executable file by running the following command:
 
     ```bash
     chmod +x <name-of-script>
     ```
     {: pre}
 
-    where `<name-of-script>` is the name of the script.
+    Replace `<name-of-script>` with the name of the script.
 
 1.  Run the `all-backup-restore.sh` script.
 
@@ -135,7 +135,7 @@ Complete the following steps to back up {{site.data.keyword.discoveryfull}} data
 
     The `--pvc` parameter is optional. For more information about when to use it, see [Configuring jobs to use PVC](#pvc). By default, the backup and restore scripts create a `tmp` directory in the current directory that the script uses for extracting or compressing backup files.
 
-    If you run into issues with the back up, rerun the backup command and include the `--use-job` parameter. This parameter instructs the backup script to use a Kubernetes job to back up ElasticSearch and MinIO in addition to Postgres, which uses a Kubernetes job by default. If the size of the data in ElasticSearch and MinIO is large and ephemeral storage is insufficient, include the `--pvc` option. When you do so, the script uses the persistent volume claim that is specified with the `--pvc` option instead of the `emptyDir` ephemeral storage as the temporary working directory for the job.
+    If you run into issues with the backup, rerun the backup command and include the `--use-job` parameter. This parameter instructs the backup script to use a Kubernetes job to back up ElasticSearch and MinIO in addition to Postgres, which uses a Kubernetes job by default. If the size of the data in ElasticSearch and MinIO is large and ephemeral storage is insufficient, include the `--pvc` option. When you do so, the script uses the persistent volume claim that is specified with the `--pvc` option instead of the `emptyDir` ephemeral storage as the temporary working directory for the job.
 
 ### Extracting files from the backup archive file
 {: #backup-unpack}
@@ -156,12 +156,12 @@ The backup and restore process uses Kubernetes jobs. The jobs use ephemeral volu
 
 In most cases, you don't need to use a persistent volume. If you choose to use a persistent volume, the volume must be 3 times as large as the largest backup file in the data store. The size of the data store's backup file depends on usage. After you create a backup, you can [extract files from the archive file](#backup-unpack) to check the file sizes. 
 
-Also, you must have 2 times as much disk space available on the local system as the size of the data store because the archive of the data is split and then recombined to prevent issues that might otherwise occur when copying large files from the cluster node to the local system.
+Also, you must have 2 times as much disk space available on the local system as the size of the data store because the archive of the data is split and then recombined to prevent issues that might otherwise occur when you copy large files from the cluster node to the local system.
 
 ### Mapping multitenant clusters
 {: #backup-mapping}
 
-When restoring data that was backed up from a version earlier than 4.0.6 to version 4.0.6 or later, if you are restoring a multitenant cluster, you must perform an extra step. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
+When you restore data that was backed up from a version earlier than 4.0.6 to a 4.0.6 or later release, and if you are restoring a multitenant cluster, an extra step is required. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
 
 This mapping step is not required if the instance IDs did not change between the back up and restore steps. For example, you can skip this step if you are restoring data to the same cluster where it was backed up from or if you are restoring data to a brand new cluster that has no {{site.data.keyword.discoveryshort}} instances.
 
@@ -184,7 +184,7 @@ To create a mapping, complete the following steps:
 
 1.  Edit the mapping file. 
 
-    Add the instance IDs for the destination service instances that you listed in the previous step. The following snippet is an example mapping file.
+    Add the instance IDs for the destination service instances that you listed in the previous step. The following snippet is an example of a mapping file.
 
     ```json
     {
@@ -225,16 +225,16 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
     You need all of the files in the repository to complete a back up and restore. Follow the instructions in GitHub Help to clone or download a compressed file of the repository.
     {: important}
 
-1.  Make each script executable by running the following command:
+1.  Make each script an executable file by running the following command:
 
     ```bash
     chmod +x <name-of-script>
     ```
     {: pre}
 
-    where `<name-of-script>` is the name of the script.
+    Replace `<name-of-script>` with the name of the script.
 
-1.  Restore the data from the backup file on your local machine to the new {{site.data.keyword.discoveryshort}} deployment by running the following command:
+1.  Restore the data from the backup file on your local system to the new {{site.data.keyword.discoveryshort}} deployment by running the following command:
 
     ```bash
     ./all-backup-restore.sh restore -f backup_file_name [--pvc] [--mapping]
@@ -249,10 +249,10 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 
     The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
 
-## Using OADP to backup a cluster where {{site.data.keyword.discoveryshort}} is installed
+## Using OADP to back up a cluster where {{site.data.keyword.discoveryshort}} is installed
 {: #backup-restore-oadp}
 
-If you plan to back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} OpenShift APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present.
+If you plan to back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present.
 
 1.  Run the {{site.data.keyword.discoveryshort}} backup script.
 
