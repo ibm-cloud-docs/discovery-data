@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-08-19"
+lastupdated: "2023-03-02"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 IBM strives to provide products with usable access for everyone, regardless of age or ability.
 {: shortdesc}
 
-{{site.data.keyword.discoveryfull}} enables you to interact with all functionality of the content using only the keyboard.
+You can interact with all functions of the {{site.data.keyword.discoveryfull}} content by using only the keyboard.
 
 For more information about the accessibility compliance of the product, go to the [Product Accessibility Conformance Reports](https://www.ibm.com/able/product_accessibility/) website, and then search for {{site.data.keyword.discoveryfull}}.
 

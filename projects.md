@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-03-02"
 
 keywords: projects, project types
 
@@ -45,7 +45,7 @@ To create a project, complete the following steps:
 
 Take advantage of the following resources that are available from the page header:
 
-- To open the product documentation, select the **Help** ![Help icon](images/help_icon.png) icon.
+- To open the product documentation, click the **Help** ![Help icon](images/help_icon.png) icon.
 - To see all of your projects, click **My projects**.
 
 ## Project types
@@ -111,7 +111,7 @@ The documents that you add to this type of project are not enriched automaticall
 
 If you need to perform more complex searches from your virtual assistant, you might want to create a *Document Retrieval* project instead of *Conversational Search* project. For more information, see [Choosing the right project type for a chatbot](/docs/discovery-data?topic=discovery-data-chat-choose-project).
 
-[IBM Cloud]{: tag-ibm-cloud}  Another feature to consider enabling is the *Emphasize the answer* feature. When enabled, the answers that are returned to customers who interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
+[IBM Cloud]{: tag-ibm-cloud} Another feature to consider enabling is the *Emphasize the answer* feature. When enabled, the answers that are returned to customers who interact with the assistant show the exact answer highlighted in bold font within the search response. For more information about how the exact answer is determined, see [Answer finding](/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding).
 
 For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
@@ -169,13 +169,13 @@ You cannot rename the *Sample Project*.
 To rename a project after you create it, complete the following steps:
 
 1.  Go to the *My Projects* page.
-1.  Find the project that you want to rename, click the *Project actions* icon ![three vertical dot overflow menu icon](images/overflow-menu-vertical.png), and then choose **Rename**.
+1.  Find the project that you want to rename, click the *Project actions* icon ![Overflow menu](images/overflow-menu-vertical.png), and then choose **Rename**.
 1.  Edit the project name, and then click **Apply**.
 
 ## Deleting a project
 {: #projects-delete}
 
-If you want to delete a project, but keep a collection from the project, share the collection with another project before you complete these steps. From another project (a type that allows multiple collections), click the **Manage collections** tab, click **New collection**, click **Reuse data from an existing collection**, select the collection that you want to keep, and then click **Finish**.
+If you want to delete a project, but keep a collection from the project, share the collection with another project before you complete these steps. From another project (a type that allows multiple collections), open the *Manage collections* tab. Click **New collection**, and then click **Reuse data from an existing collection**. Select the collection that you want to keep, and then click **Finish**.
 
 You cannot delete the *Sample Project*.
 {: note}
@@ -183,5 +183,5 @@ You cannot delete the *Sample Project*.
 To delete a project, complete the following steps:
 
 1.  Go to the *My Projects* page.
-1.  Find the project that you want to delete, click the *Project actions* icon ![three vertical dot overflow menu icon](images/overflow-menu-vertical.png), and then choose **Delete**.
+1.  Find the project that you want to delete, click the *Project actions* icon ![Overflow menu](images/overflow-menu-vertical.png), and then choose **Delete**.
 1.  Click **Delete**.
