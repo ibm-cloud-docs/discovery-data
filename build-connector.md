@@ -74,7 +74,7 @@ Observe the following notes and warnings when you implement a custom connector.
     -   Filtering documents based on user access at query time. (At crawl and index time, only documents that the current user has the right to access are returned.)
     -   The `required` and `hidden` validation settings. They are ignored when the connector is displayed in {{site.data.keyword.discoveryshort}}
     -   The use of `<condition />` tags in the definition file. These tags are currently ignored.
--   When you use the example connector code in the current release, {{site.data.keyword.discoveryshort}} does not collapse and group authentication settings for the custom connector's properties. For example, if the `{connector_name}_DATASOURCE_SETTINGS_USE_KEY_LABEL` toggle is set to `Off`, the user interface shows the fields for `{connector_name}_DATASOURCE_SETTINGS_KEY_LABEL` and `{connector_name}_DATATSOURCE_SETTINGS_PASSPHRASE_LABEL` anyhow.
+-   When you use the example connector code in the current release, {{site.data.keyword.discoveryshort}} does not collapse and group authentication settings for the custom connector's properties. For example, even when the `{connector_name}_DATASOURCE_SETTINGS_USE_KEY_LABEL` toggle is set to `Off`, the user interface shows the fields for `{connector_name}_DATASOURCE_SETTINGS_KEY_LABEL` and `{connector_name}_DATATSOURCE_SETTINGS_PASSPHRASE_LABEL`.
 -   The `list` parameter type is not supported.
 -   If a custom connector fails to connect to its source for any reason, it issues a generic error message such as `Failed to create connector` or `Timed out`, or a `500` HTTP error. Specific failure information is not currently provided.
 

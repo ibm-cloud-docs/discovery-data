@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2021-11-18"
+lastupdated: "2023-03-02"
 
 subcollection: discovery-data
 
@@ -34,14 +34,14 @@ You create and manage a collection as described in [Creating and managing collec
 1.  Enter values for the following fields on the **Configure collection** page. If a field is already populated with a value, verify and change the value if needed. A prepopulated value indicates that a value was specified in the custom connector's `template.xml` or `message.properties` file.
 
     General
-    :   Fill in the following fields
+    :   Complete the following fields
 
         -   Collection name
         -   Collection language
         -   Crawl schedule
 
     Crawler properties
-    :   Fill in the following fields
+    :   Complete the following fields
 
         -   Crawler name
         -   Crawler description
@@ -58,8 +58,8 @@ You create and manage a collection as described in [Creating and managing collec
       
           The default value is `32768`.
 
-    Data Source Properties
-    :   Fill in the following fields
+    Data source properties
+    :   Complete the following fields
 
         -   Host name
       
