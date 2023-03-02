@@ -46,7 +46,7 @@ The entity extractor limits changed
     - For Plus plans, the limit changed from 20 to 12.
 
 The string variation operator now works with phrases
-:   When you include the string variation operator with query input that contains a phrase, the variation is applied to each word in the phrase. For example, `tom cat~1` matches `top hat` in addition to `tom cat`. For more information about Discovery Query Language operators, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators).
+:   When you include the string variation operator with query input that contains a phrase, the variation is applied to each word in the phrase. For example, `"tom cat"~1` matches `top hat` in addition to `tom cat`. For more information about Discovery Query Language operators, see [Query operators](/docs/discovery-data?topic=discovery-data-query-operators).
 
 ## 10 Febuary 2023
 {: #discovery-10febuary2023}
