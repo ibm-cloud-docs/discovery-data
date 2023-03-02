@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-01-26"
+lastupdated: "2023-03-02"
 
 subcollection: discovery-data
 
@@ -24,7 +24,7 @@ This information applies only to installed deployments.
 ## Custom connector components
 {: #ccs-components}
 
-A custom connector package is a .zip file that contains the following components:
+A custom connector package is a compressed file that contains the following components:
 
 | Path              | Description |
 |-------------------|-------------|
@@ -53,27 +53,27 @@ Declared settings are represented by the `<declare />` element. The element has 
 | `hidden`        | Indicates whether to hide the setting from the UI. Specify a value of `true` to hide the setting. |
 {: caption="Declare element attributes" caption-side="top"}
 
-In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discoveryshort}} tooling.
+In the current release, the `required` and `hidden` attributes are not applied in the {{site.data.keyword.discoveryshort}} product user interface.
 {: note}
 
 ### Declaration setting examples
 {: #declare-examples}
 
-To declare an `enum` type, use code similar to the following:
+To declare an `enum` type, use code similar to the following snippet:
 
 ```xml
 <declare type="enum" name="type" enum-values="PROXY|BASIC|NTLM" initial-value="BASIC"/>
 ```
 {: codeblock}
 
-To declare a hidden `string` with an initial value, use code similar to the following:
+To declare a hidden `string` with an initial value, use code similar to the following snippet:
 
 ```xml
 <declare type="string" name="custom_config_class" hidden="true" initial-value="com.example.ExampleCrawlerConfig" />
 ```
 {: codeblock}
 
-To declare a required `long`, use code similar to the following:
+To declare a required `long`, use code similar to the following snippet:
 
 ```xml
 <declare type="long" name="port" required="required" initial-value="22"/>
@@ -92,13 +92,13 @@ Conditional settings are represented by the `<condition />` element. A condition
 | `in`            | Enable the setting if the value of the `name` attribute is included in a specified list of values|
 {: caption="Condition element attributes" caption-side="top"}
 
-In the current release, conditional settings are not applied in the {{site.data.keyword.discoveryshort}} tooling.
+In the current release, conditional settings are not applied in the {{site.data.keyword.discoveryshort}} product user interface.
 {: note}
 
 ### Conditional setting examples
 {: #conditional-examples}
 
-To enable a section by using a `boolean` condition, use code similar to the following:
+To enable a section by using a `boolean` condition, use code similar to the following snippet:
 
 ```xml
 <declare type="boolean" name="use_key" initial-value="true" />
@@ -109,7 +109,7 @@ To enable a section by using a `boolean` condition, use code similar to the foll
 ```
 {: codeblock}
 
-To enable a section by using an `enum` condition, use code similar to the following:
+To enable a section by using an `enum` condition, use code similar to the following snippet:
 
 ```xml
 <declare type="enum" name="type" enum-values="PROXY|BASIC|NTLM" initial-value="BASIC"/>
@@ -135,7 +135,7 @@ Each section includes one `<declare />` element for each of its settings.
 ### Section: `general_settings`
 {: #section-general-settings}
 
-The XPath expression for this section is `/function/prototype/proto-section[@section="general_settings"]`. It includes common settings for all crawlers, including the following:
+The XPath expression is `/function/prototype/proto-section[@section="general_settings"]`. It includes common settings for all crawlers, including the following settings:
 
 ```xml
 <declare type="string" name="crawler_name" />
@@ -157,7 +157,7 @@ The custom crawler is initialized with the following settings in the `general_se
 | `document_level_security_supported`| Specifies whether document-level security is enabled (`true`) or disabled (`false`)|
 {: caption="General settings section defaults" caption-side="top"}
 
-To specify the interfaces, use code similar to the following:
+To specify the interfaces, use code similar to the following snippet:
 
 ```xml
 <!-- Configuration class -->
@@ -188,7 +188,7 @@ To hide the **Enable Document Level Security** option from {{site.data.keyword.d
 ### Section: `datasource_settings`
 {: #section-datasource-settings}
 
-The XPath expression for this section is `/function/prototype/proto-section[@section="datasource_settings"]`. It includes settings specific to the data source.
+The XPath expression is `/function/prototype/proto-section[@section="datasource_settings"]`. It includes settings specific to the data source.
 
 ```xml
 <!-- Data source settings change on each server -->
@@ -215,7 +215,7 @@ The XPath expression for this section is `/function/prototype/proto-section[@sec
 ### Section: `crawlspace_settings`
 {: #section-crawlspace-settings}
 
-The XPath expression for this section is `/function/prototype/proto-section[@section="crawlspace_settings"]`. The section contains only one `<declare />` element to specify the path. The value of the path is provided by the connector code.
+The XPath expression is `/function/prototype/proto-section[@section="crawlspace_settings"]`. The section contains only one `<declare />` element to specify the path. The value of the path is provided by the connector code.
 
 ```xml
 <!-- Do not modify, must be here -->
@@ -244,9 +244,9 @@ After you write the source code and configuration files for your custom connecto
 ### Prerequisites
 {: #ccs-compilation-prereqs}
 
-To compile a custom connector, you need to have the following items on your local machine. See [Custom connector example](/docs/discovery-data?topic=discovery-data-connector-dev#example-connection-requirements) for details.
+To compile a custom connector, you need to have the following items on your local system. See [Custom connector example](/docs/discovery-data?topic=discovery-data-connector-dev#example-connection-requirements) for details.
 
--   JDK 1.8 or higher
+-   Java SDK 1.8 or higher
 -   [Gradle](https://gradle.org/install/){: external}
 -   The `custom-crawler-docs.zip` file from an installed {{site.data.keyword.discoveryshort}} instance
 -   The JSch package
@@ -262,21 +262,21 @@ To compile a custom connector, you need to have the following items on your loca
 ### Compiling and packaging the source code
 {: #compile-connector}
 
-1.  Ensure you are in the custom connector development directory on your local machine:
+1.  Ensure you are in the custom connector development directory on your local system:
 
     ```sh
     cd {local_directory}
     ```
     {: pre}
 
-1.  Use Gradle to compile your Java source code and to create a .zip file that includes all of the required components for the custom connector:
+1.  Use Gradle to compile your Java source code and to create a compressed file that includes all of the required components for the custom connector:
 
     ```sh
     gradle build packageCustomCrawler
     ```
     {: pre}
 
-Gradle creates a file in `{local_directory}/build/distributions/{built_connector_zip_file}`, where the name of the `{built_connector_zip_file}` is based on the `rootProject.name` value of `settings.gradle`. For example, if the line reads as follows, Gradle generates a file named `{local_directory}/build/distributions/my-sftp-connector.zip`.
+Gradle creates a file in `{local_directory}/build/distributions/{built_connector_zip_file}`, where the name of the `{built_connector_zip_file}` is based on the `rootProject.name` value of `settings.gradle`. For example, if the line reads as follows, Gradle generates a file that is named `{local_directory}/build/distributions/my-sftp-connector.zip`.
 
 ```text
 rootProject.name = 'my-sftp-connector'

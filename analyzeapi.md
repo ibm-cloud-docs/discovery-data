@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-01-13"
+lastupdated: "2022-03-02"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -18,7 +18,7 @@ subcollection: discovery-data
 Use the Analyze API to process text documents through the enrichment pipeline of the {{site.data.keyword.discoveryshort}} service without storing the source documents.
 {: shortdesc}
 
-The Analyze API is supported with Enterprise plan deployments and installed deployments only.
+The Analyze API is supported by Enterprise plan deployments and installed deployments only.
 {: note}
 
 This approach is ideal for business automation purposes. For example, if you want to classify emails, you can use the Analyze API to synchronously call {{site.data.keyword.discoveryshort}} to get a classification of the email. Then, you can use the output of that classification in your business logic.
@@ -37,7 +37,7 @@ The following enrichments are supported in the Analyze API:
 -   [Document classifier](/docs/discovery-data?topic=discovery-data-cm-doc-classifier)
 -   [Entities (NLP)](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities)
 -   [Keywords (NLP)](/docs/discovery-data?topic=discovery-data-nlu#nlu-keywords)
--   [Machine Learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain-ml)
+-   [Machine learning and Watson Explorer Content Analytics Studio models](/docs/discovery-data?topic=discovery-data-domain-ml)
 -   [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex)
 -   [Patterns](/docs/discovery-data?topic=discovery-data-domain-pattern) (Enterprise plan only)
 -   [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)
@@ -70,7 +70,7 @@ The data that you submit for analysis must be in JSON format. The text must be s
 
 You know the name of a collection in your project where the *Keywords* enrichment is configured to be applied to documents in the collection. You can use the API to [list your collections](https://cloud.ibm.com/apidocs/discovery-data#listcollections){: external} to find the ID associated with the collection that you look for by name.
 
-After you get the collection ID, include it in the POST request that you submit to apply the configuration settings from the collection to your JSON file. For example, the following request submits the JSON snippet in a file named `favorites2.json` for keyword analysis.
+After you get the collection ID, include it in the POST request that you submit to apply the configuration settings from the collection to your JSON file. For example, the following request submits the JSON snippet in a file that is named `favorites2.json` for keyword analysis.
 
 ```curl
 curl --location --request POST \
@@ -208,7 +208,7 @@ If so, break each object into a separate file and analyze each file individually
 ## Analyzing a text snippet
 {: #analyzeapi-text}
 
-You can submit text for analysis as long as you specify the text in JSON format by using syntax like this:
+You can submit text for analysis when you specify the text in JSON format by using syntax like this:
 
 ```json
 {
@@ -228,7 +228,7 @@ projects/{project-id}/collections/{collection-id}/analyze?version=2020-08-30' \
 ```
 {: codeblock}
 
-The response might looks as follows.
+The response might look as follows.
 
 ```json
 {
@@ -271,7 +271,7 @@ The response might looks as follows.
 ## Analyzing HTML content
 {: #analyzeapi-html}
 
-You can analyze HTML as long as you submit the html in JSON format by using syntax like this:
+You can analyze HTML when you submit the html in JSON format by using syntax like this:
 
 ```json
 {
@@ -282,7 +282,7 @@ You can analyze HTML as long as you submit the html in JSON format by using synt
 
 The following example request shows how to analyze text that you specify in the request, not that you pass in a physical file. 
 
-The collection to which the request is made has the following enrichments applied to it, which means these enrichment will be applied to the content that you submit with the API request:
+The collection to which the request is made uses the following enrichments, which means these enrichments are applied to the content that you submit with the API request:
 
 -   Entities
 -   Keywords
@@ -436,9 +436,9 @@ The following table shows the file size and usage limits for the Analyze API.
 | Enterprise plan managed deployment | 50 KB | 5 | 5 |
 {: caption="Limits applied to Analyze API usage" caption-side="top"}
 
-Use of the Analyze API from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} affects license usage. For more information, see the latest [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
+Use of the Analyze API from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} affects license usage. For more information, see the [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
 
-## Monitoring usage  [IBM Cloud Pak for Data]{: tag-cp4d}
+## Monitoring usage [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #api-usage}
 
 You can monitor the usage of the Analyze API from the *API usage* page.
@@ -454,7 +454,7 @@ Start date
 End date
 :   The end date of the API call-monitoring period.
 
-30-day call total
+Thirty-day call total
 :   Number of calls to the Analyze API in the 30-day time interval that is indicated by the **Start date** and **End date**. The time interval is determined by calculating the consecutive time period with the highest number of API calls. The 30-day window updates as the time interval with the highest number of API call changes.
 
 The **API usage** is not displayed until some time after API usage monitoring begins. A delay in displaying the final total number of the **30-day call total** might occur, even if the 30-day period that is listed includes the current date.
