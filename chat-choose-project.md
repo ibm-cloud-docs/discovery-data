@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Choosing the right project type for a chatbot
+# Improving results for a chatbot
 {: #chat-choose-project}
 
 If the *Conversational Search* project type isn't providing the best answers and you want to understand why, switch to using a *Document Retrieval* project type.

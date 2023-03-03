@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-03-03"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -12,29 +12,19 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploying a project
+# Deploying the built-in UI components
 {: #deploy}
 
 <!-- c/s help for the *Integrate and deploy* page. Do not delete. -->
 
-Deploy your project to start gaining new insights from your data.
+For Document Retrieval and custom projects, a set of user interface components are available for your use.
 {: shortdesc}
 
-The method that you use to deploy your project differs by project type.
+Work with a developer to use the pre-built UI components that are provided by IBM to deploy an application.
 
-- [Document Retrieval projects](#dr-deploy)
-- [Document Retrieval for Contracts projects](#dr-contracts-deploy)
-- [Conversational Search projects](#cs-deploy)
-- [Content Mining projects](#cm-deploy)
+For more information about building your own app, see the [Building custom applications with the API](/docs/discovery-data?topic=discovery-data-api-use).
 
-## Deploying a Document Retrieval project
-{: #dr-deploy}
-
-Work with a developer to build a custom search application or use the pre-built UI components that are provided by IBM.
-
-For more information about building your own, see the [Building custom applications with the API](/docs/discovery-data?topic=discovery-data-api-use).
-
-For Document Retrieval and Custom (the type assigned to projects when you do not apply a specific project type) projects, a set of user interface components are available for your use. The following table describes them.
+ The following table describes the built-in UI components.
 
 | UI component | Illustration | Storybook link |
 |--------------|--------------|----------------|
@@ -52,7 +42,7 @@ To deploy your project, complete the following steps:
     - [GitHub](https://github.com/watson-developer-cloud/discovery-components#using-discovery-components){: external}
     - [Storybook](https://watson-developer-cloud.github.io/discovery-components/storybook/){: external}
 
-### Getting started with the GitHub sample app
+## Getting started with the GitHub sample app
 {: #dr-deploy-ui-comps-gs}
 
 From resources available in GitHub, you can run a script to start a sample app with prebuilt UI components. In fact, the sample app looks a lot like the *Improve and customize* page of the product because the product itself uses these UI components.
@@ -121,15 +111,14 @@ The sample app gives you a preview of your search project. Use it to test your s
 
 When you're done testing with the sample app, you can stop it by returning to the terminal window where you ran the initial script, and pressing `Ctrl + C`.
 
-## Deploying a Document Retrieval for Contracts project
-{: #dr-contracts-deploy}
-
-The original documents are displayed in a browser, regardless of the source format. In addition, key elements of the documents are recognized and you can navigate to them quickly. For example, if you are searching for the `payment terms` clauses in a contract, the preview detects those clauses and highlights the passages. For more information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
-
-## Deploying a Conversational Search project
+## Deploying other project types
 {: #cs-deploy}
 
-To deploy your project, connect this project to an assistant that is built with {{site.data.keyword.conversationshort}}. The general steps to follow include:
+To analyze data from a Content Mining project, click **Launch application** from the *Improve and customize* page. For more information, see [Analyzing your data]((/docs/discovery-data?topic=discovery-data-contentminerapp)).
+
+To analyze a contract from a Document Retreival for Contracts project, submit a query. For more information about understanding contract information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
+
+To deploy a Conversational Search project, connect this project to an assistant that is built with {{site.data.keyword.conversationshort}}. The general steps to follow include:
 
 1.  Create an assistant.
 
@@ -142,16 +131,3 @@ To deploy your project, connect this project to an assistant that is built with 
     -   [IBM Cloud]{: tag-ibm-cloud} From the new experience, see [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}.
     -   [IBM Cloud]{: tag-ibm-cloud} From the classic experience, see [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}.
     -   [IBM Cloud Pak for Data]{: tag-cp4d} [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add){: external}.
-    
-
-## Deploying a Content Mining project
-{: #cm-deploy}
-
-For content mining use cases, deploying the project is just the beginning. Use the deployed application to analyze your documents and find patterns and anomalies in your data. {{site.data.keyword.discoveryshort}} provides a full-featured application for you to use for this purpose. The Content Mining application is a web application that is hosted on an IBM site.
-
-To deploy your project, complete the following steps:
-
-1.  Go to the **Integrate and Deploy** > **Launch application** page.
-1.  Click **Launch**.
-
-For more information about how to use the application, see [Analyzing your data with the Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).

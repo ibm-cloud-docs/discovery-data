@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-03"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -15,12 +15,12 @@ subcollection: discovery-data
 # About Watson Discovery
 {: #about}
 
-{{site.data.keyword.discoveryfull}} is an AI-powered search engine that helps you to extract answers from complex business documents.
+{{site.data.keyword.discoveryfull}} is an intelligent document processing engine that helps you to gain insights from complex business documents.
 {: shortdesc}
 
 Use {{site.data.keyword.discoveryshort}} to visually train AI for deep understanding of your content, including tables and images, to help you find business value that is hidden in your enterprise data. Use natural language or structured queries to find relevant answers, surface insights, and build AI-enhanced business processes anywhere.
 
-Start by connecting your data to Discovery. Next, teach Discovery to understand the language and concepts that are unique to your business and industry. Enrich your data with award-winning Natural Language Understanding (NLU) technologies so you can identify key information and patterns. Finally, build search solutions that find answers to queries, explore your data to uncover patterns and insights, and leverage search results in automated workflows.
+Start by connecting your data to Discovery. Next, teach Discovery to understand the language and concepts that are unique to your business and industry. Enrich your data with award-winning Watson Natural Language Processing (NLP) technologies so you can identify key information and patterns. Finally, build search solutions that find answers to queries, explore your data to uncover patterns and insights, and leverage search results in automated workflows.
 
 ![Use Watson Discovery to Connect and ingest data from existing content repositories. Teach Discovery to interpret your data. Enrich data with custom NLU to help it fit your domain. Next, choose whether to 1. Use the query API to get search Results by retrieving relevant data in your applications. 2. Explore your data in Watson Assistant, with the Discovery API, or from the Content Mining application. 3. Submit queries from the product user interface to ask a question in a natural language.](images/aboutdiscovery.png){: caption="Figure 1. How to use Watson Discovery" caption-side="bottom"}
 
