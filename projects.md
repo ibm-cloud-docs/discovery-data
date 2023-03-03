@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-03"
 
 keywords: projects, project types
 
@@ -144,6 +144,22 @@ You can create a collection from the deployed Content Mining application. The co
 {: #custom}
 
 Choose this type if you prefer not to use one of the other project types. No enrichments are applied automatically, so you can add only those enrichments that are necessary for your use case.
+
+## Basic project defaults
+{: #basic-defaults}
+
+Some enrichments and query result settings are applied to each project type by default.
+
+| Project type | Default enrichments | Default query result settings |
+|--------------|---------------------|-------------------------------|
+| Document Retrieval | Entities, Part of Speech | Facets (by Entity), Passages |
+| Document Retrieval for Contracts | Entities, Parts of speech, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
+| Conversational Search | None | Passages |
+| Content Mining | Part of Speech | None |
+| Custom | None | Passages |
+{: caption="Basic project defaults" caption-side="top"}
+
+When you enter a query from the product user interface, a natural language query is submitted. The default values for the supported query parameters differ by project type. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
 
 ## Project limits
 {: #projects-limits}

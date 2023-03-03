@@ -51,14 +51,9 @@ toc:
       topics:
       - product-overview.md
       - topicgroup:
-          label: Creating a project
-          topics:
-          - projects.md
-          - chat-choose-project.md
-          - project-defaults.md
-      - topicgroup:
           label: Connecting to your data
           topics:
+          - projects.md
           - collections.md
           - upload-data.md
           - topicgroup:
@@ -95,6 +90,7 @@ toc:
           topics:
           - facets.md
           - search-bar.md
+          - chat-choose-project.md
           - query-defaults.md
       - topicgroup:
           label: Improving query results

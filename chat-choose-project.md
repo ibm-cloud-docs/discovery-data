@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-03"
 
 subcollection: discovery-data
 
@@ -13,10 +13,10 @@ subcollection: discovery-data
 # Choosing the right project type for a chatbot
 {: #chat-choose-project}
 
-For a straightforward solution to deliver answers from a virtual assistant that is built with {{site.data.keyword.conversationshort}}, choose the *Conversational Search* project type. For more complex use cases, consider using the *Document Retrieval* project type.
+If the *Conversational Search* project type isn't providing the best answers and you want to understand why, switch to using a *Document Retrieval* project type.
 {: shortdesc}
 
-When you create a project to support a chatbot, you must choose the type of project to store your data collections. Most often, the *Conversational Search* project type is the right choice. You get great results from the start, and when you enable extra features like *Emphasize the answer*, the answers are clear and concise. For advanced use cases, where you have complex data or need to return long answers, you can evaluate whether using a *Document Retrieval* project type is a better fit.
+Most often, the *Conversational Search* project type is the right choice. You get great results from the start, and when you enable extra features like *Emphasize the answer*, the answers are clear and concise. However, for advanced use cases, or if you want to be able to troubleshoot issues, a *Document Retrieval* project type might be a better fit.
 
 To help you choose the right {{site.data.keyword.discoveryshort}} project type, review the project type differences that are described in the following table.
 
@@ -27,7 +27,9 @@ To help you choose the right {{site.data.keyword.discoveryshort}} project type, 
 | Search triggers | Returns answers from the `text` field automatically. If answers are stored in another field, you must change the configuration. | You can apply a Smart Document Understanding (SDU) model or enrichments to your collections and retrieve useful information from fields other than `text` when search is triggered from the assistant. |
 {: caption="Project type details" caption-side="top"}
 
-For both project types, the best way to test is to trigger search from the {{site.data.keyword.conversationshort}} preview. When you configure search support for an assistant, you can fine-tune the experience in ways that aren't available in {{site.data.keyword.discoveryshort}}. And settings that are available from the *Search results* tool for a *Document Retrieval* project type are replaced by configuration settings that you specify in {{site.data.keyword.conversationshort}}. For example, the query response title and body are defined in {{site.data.keyword.conversationshort}}. And a passage length of 325 characters is applied to responses regardless of what you specify in the **Max characters in a passage** field.
+For both project types, the best way to test is to trigger search from the {{site.data.keyword.conversationshort}} preview. When you configure search support for an assistant, you can fine-tune the experience in ways that aren't available in {{site.data.keyword.discoveryshort}}. 
+
+And settings that are available from the *Search results* tool for a *Document Retrieval* project type are replaced by configuration settings that you specify in {{site.data.keyword.conversationshort}}. For example, the query response title and body are defined in {{site.data.keyword.conversationshort}}. And a passage length of 325 characters is applied to responses regardless of what you specify in the **Max characters in a passage** field.
 
 The way that you deploy search support in your chatbot is the same regardless of the project type. You enable search support in your assistant and then publish your assistant.
 

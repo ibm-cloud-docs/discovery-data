@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-03-03"
 
 subcollection: discovery-data
 
@@ -22,7 +22,7 @@ The major structural differences between {{site.data.keyword.discoveryshort}} v1
 
 - There is no concept of an environment in v2. The deployment details such as size and index capacity are managed for you when you choose the appropriate service plan for your needs. For managed deployments, you can choose a Plus, Enterprise, or Premium plan, for example. For installed deployments, the sizing is managed by the deployment type that you specify when you install the service in Cloud Pak for Data.
 - There is no single configuration object in v2. Control of the enrichments that are applied to documents is managed in the collections and project objects in v2. Other v1 configuration capabilities, such as the ability to customize the conversion step of ingestion, are not available in v2.
-- Greater programmatic support is available for custom enrichments in v2. New enrichment API methods are available that you can use to create enrichments. v2 also introduces document classifier API methods that you can use to train document classifier models programatically. You can subsequently apply these custom enrichments to a collection by using the API.
+- Greater programmatic support is available for custom enrichments in v2. New enrichment API methods are available that you can use to create enrichments. v2 also introduces document classifier API methods that you can use to train document classifier models programatically. You can apply these custom enrichments to a collection by using the API.
 - The capabilities of a natural language query search are expanded in v2 to enable the return of the top passages per document and of succinct answers from passages. Other advanced search capabilities are introduced, including table retrieval. In v2, the deduplication parameter is not available and the continuous relevancy training and query logging functions are not available.
 
 -  For more information about feature differences, see [the feature comparison table](/docs/discovery-data?topic=discovery-data-version-choose#version-choose-comparison).
@@ -43,6 +43,7 @@ To migrate from v1 to v2, you must complete the following high-level steps:
 1.	[Transfer your documents](#migrate-to-v2-docs).
 1.	[Update your application to use the v2 API](#migrate-to-v2-difs).
 1.  Regression test and deploy the updated application.
+1.  [Delete your v1 plan service instance](#migrate-to-v2-delete).
 
 Some steps require you to make programmatic changes by using the API and others involve changes that you can make from the product user interface.
 {: note}
@@ -50,11 +51,11 @@ Some steps require you to make programmatic changes by using the API and others 
 ## Plan the migration
 {: #migrate-to-v2-plans}
 
-Get familiar with what's new in v2 and learn about how it differs from v1 before you provision a v2 instance. Your first v2 Plus plan trial instance is available at no charge for 30 days. Learn about and plan for the migration before you provision the instance so that you can get the most from your free trial.
+Get familiar with what's new in v2 and learn about how it differs from v1 before you provision a v2 instance. Your first v2 Plus plan trial instance is available at no charge for 30 days. Learn about and plan for the migration before you provision the instance so that you can get the most from your trial.
 
-When you're ready to start the migration, create a migration schedule that you and your team can follow as you complete the process. Be sure to set up the new v2 service instance and get projects and collections recreated in the new service instance before you switch over to using the v2 service and before you delete your v1 instance.
+When you're ready to start the migration, create a migration schedule that you and your team can follow as you complete the process. Be sure to set up the new v2 service instance and get projects and collections re-created in the new service instance before you switch over to using the v2 service and before you delete your v1 instance.
 
-Learn about the {{site.data.keyword.discoveryshort}} v2 plan options, so you can choose the right plan for your long term needs. The Plus plan that you use to get started might be sufficient. However, you might choose to use an Enterprise or Premium plan instead. From a Plus plan, you can do an in-place upgrade to an Enterprise plan, but not to a Premium plan.
+Learn about the {{site.data.keyword.discoveryshort}} v2 plan options, so you can choose the right plan for your long-term needs. The Plus plan that you use to get started might be sufficient. However, you might choose to use an Enterprise or Premium plan instead. From a Plus plan, you can do an in-place upgrade to an Enterprise plan, but not to a Premium plan.
 
 ### Plan how to adapt your application
 {: #migrate-to-v2-projects}
@@ -63,7 +64,7 @@ One of the main changes between versions is that {{site.data.keyword.discoverysh
 
 Things to consider when you adapt your application to use projects:
 
--   Although the concept of an environment does not exist in v2, data is still organized into collections. In v2, collections are grouped into projects. In most cases, you will want to migrate a single v1 collection to a single v2 collection.
+-   Although the concept of an environment does not exist in v2, data is still organized into collections. In v2, collections are grouped into projects. In most cases, you want to migrate a single v1 collection to a single v2 collection.
 
     If you want to keep relevancy training information that is applied to a v1 collection, add the collection documents to a single collection in your v2 project.
 
@@ -98,7 +99,7 @@ The following table shows plan types for managed deployments that are generally 
 To get information about the current storage, documents, and collections used, click the *Environment details* icon from the product user interface header.
 {: tip}
 
-You cannot do an in-place upgrade from a v1 plan, such as Lite or Advanced, to a v2 plan. You must create a new v2 plan, and then move your data to the new service instance. While you migrate your data from v1 to v2, you will likely have both a v1 and v2 instance deployed at the same time. Consider leveraging the 30-day no charge trial that is available with your first Plus plan instance during this time.
+You cannot do an in-place upgrade from a v1 plan, such as Lite or Advanced, to a v2 plan. You must create a new v2 plan, and then move your data to the new service instance. While you migrate your data from v1 to v2, you will likely have both a v1 and v2 instance deployed at the same time. Consider using the 30-day no charge trial that is available with your first Plus plan instance during this time.
 
 ## Collecting metrics 
 {: #migrate-to-v2-metrics}
@@ -133,12 +134,12 @@ Make a note of the following information so you can compare it to your service i
 
 How you transfer your documents depends on the technique that was used to ingest the documents in v1.
 
-Recreate one collection at a time. If you start multiple ingestion processes at once, you can tax the system resources and increase the overall time it takes for the processing to be completed. You also want to keep an eye out for any informational messages that are generated by the ingestion process. It is easier to troubleshoot an ingestion issue, for example, when you ingest one collection at a time.
+Re-create one collection at a time. If you start multiple ingestion processes at the same time, you can tax the system resources and increase the overall time that it takes for the processing to be completed. You also want to keep an eye out for any informational messages that are generated by the ingestion process. It is easier to troubleshoot an ingestion issue, for example, when you ingest one collection at a time.
 
 ### Uploaded data
 {: #docs-uploaded}
 
-If you used the API to upload documents into {{site.data.keyword.discoveryshort}} v1, a similar API is available in v2 to upload documents into collections. You must update any workflows you use to automate the process to account for the new arrangement of projects and collections.
+If you used the API to upload documents into {{site.data.keyword.discoveryshort}} v1, a similar API is available in v2 to upload documents into collections. You must update any workflows that you use to automate the process to account for the new arrangement of projects and collections.
 
 If the original documents that you ingested into {{site.data.keyword.discoveryshort}} v1 are no longer available, you can use the query API to extract the document text from {{site.data.keyword.discoveryshort}} v1. You can then add the text to a collection in {{site.data.keyword.discoveryshort}} v2. For more information, see [Recovering documents](#migrate-to-v2-advanced-transfer).
 
@@ -149,7 +150,7 @@ If you crawled data from an external data source in v1, you can continue to craw
 
 To use data from an external data source, you must re-create the collections within a v2 project, and configure how the data source is crawled. For more information, see [Overview of data sources](/docs/discovery-data?topic=discovery-data-sources).
 
-The service needs time and resources to crawl and ingest documents from external data sources. Re-create the connectors one at a time. Factor the time it will take to recrawl the data into your migration plan schedule.
+The service needs time and resources to crawl and ingest documents from external data sources. Re-create the connectors one at a time. Factor the time it takes to recrawl the data into your migration plan schedule.
 
 ### Prebuilt data collections
 {: #docs-prebuilt-collections}
@@ -189,7 +190,7 @@ To ingest v1 data into a {{site.data.keyword.discoveryshort}} v2 instance, compl
 
 Document IDs are assigned to the documents that you add to a v2 collection when you upload them from the product user interface or add them by using the [Add a document](/apidocs/discovery-data#adddocument) API method.
 
-You might want to retain the IDs of your v1 documents in v2 if you are using processes that depend on these unique identifiers. For example, regression testing for the application might verify specific documents are returned by checking the document IDs. Relevancy training uses the document IDs to track documents between training runs. These processes are easier to adapt if the document IDs are the same between your v1 and v2 instances. Otherwise, the processes that are used with the {{site.data.keyword.discoveryshort}} v1 instance must be remapped to the IDs that are assigned to the documents after they are added to the {{site.data.keyword.discoveryshort}} v2 instance.
+You might want to retain the IDs of your v1 documents in v2 if you are using processes that depend on these unique identifiers. For example, regression testing for the application might verify that specific documents are returned by checking the document IDs. Relevancy training uses the document IDs to track documents between training runs. These processes are easier to adapt if the document IDs are the same between your v1 and v2 instances. Otherwise, the processes that are used with the {{site.data.keyword.discoveryshort}} v1 instance must be remapped to the IDs that are assigned to the documents after they are added to the {{site.data.keyword.discoveryshort}} v2 instance.
 
 If you specified your own documents IDs when you added documents to the v1 service instance, you can retain the IDs by using the *Update a document* method instead of the *Add a document* method. With the update method, you can assign a document ID to the document as you add it to the v2 collection. For more information, see [Update a document](/apidocs/discovery-data#updatedocument){: external}.
 
@@ -212,7 +213,7 @@ To transfer document information from v1 to v2, complete the following steps:
 
     For example, `GET {url}/v1/environment/{environment_id}/collections/{collection_id}/query?q=`.
 
-    The API returns the results. the `matching_results` field specifies the total number of results. The results object returns the matching documents. Each document is returned as a separate JSON object. It returns a maximum of 10 documents by default.
+    The API returns the results. The `matching_results` field specifies the total number of results. The results object returns the matching documents. Each document is returned as a separate JSON object. It returns a maximum of 10 documents by default.
 
     ```json
     {
@@ -241,7 +242,7 @@ To transfer document information from v1 to v2, complete the following steps:
     ```
     {: codeblock}
 
-    Repeat this process, incrementing the offset by 100, until you retrieve all of the documents.
+    Repeat this process, incrementing the offset by 100 until you retrieve all of the documents.
     
 1.  Prepare the exported documents to be ingested into v2.
 
@@ -250,9 +251,9 @@ To transfer document information from v1 to v2, complete the following steps:
     The following tips can help you decide which fields to keep:
 
     -   Include the `text` field or any other field with textual content that you want to be able to enrich or search in Disocvery v2.
-    -   Include any custom metadata that is stored in the document. This metatdata is typically specific to the application that leverages {{site.data.keyword.discoveryshort}} and is used to filter documents in a search. For example, `metadata.customer_id`.
+    -   Include any custom metadata that is stored in the document. This metatdata is typically specific to the application that uses {{site.data.keyword.discoveryshort}} and is used to filter documents in a search. For example, `metadata.customer_id`.
     -   Do not include enrichments from {{site.data.keyword.discoveryshort}} v1. For example, `enriched_text.entities`. {{site.data.keyword.discoveryshort}} v2 generates its own enrichments.
-    -   Exclude fields that are generated by {{site.data.keyword.discoveryshort}} unless they are leveraged by your application and contain information that is unique to the v1 version of the document. In that case, rename the field so that it does not get replaced when the document is ingested into {{site.data.keyword.discoveryshort}} v2. For example, `extracted_metadata.publicationdate` is a field that is generated by {{site.data.keyword.discoveryshort}} when a document is ingested. Maybe you want to retain the `metadata.parent_document_id` information from v1 to understand how subdocuments were originally generated from a single source document.
+    -   Exclude fields that are generated by {{site.data.keyword.discoveryshort}} unless they are used by your application and contain information that is unique to the v1 version of the document. In that case, rename the field so that it does not get replaced when the document is ingested into {{site.data.keyword.discoveryshort}} v2. For example, `extracted_metadata.publicationdate` is a field that is generated by {{site.data.keyword.discoveryshort}} when a document is ingested. Maybe you want to retain the `metadata.parent_document_id` information from v1 to understand how subdocuments were originally generated from a single source document.
     -   Avoid fields that have reserved field names. For more information, see [How fields are handled](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).
 
 1.  Ingest each edited v1 JSON document into the {{site.data.keyword.discoveryshort}} v2 instance. The {{site.data.keyword.discoveryshort}} v1 document ID can be maintained in {{site.data.keyword.discoveryshort}} v2. For more information about how to retain the document ID, see [Retaining document IDs](#migrate-to-v2-keep-docid).
@@ -284,7 +285,7 @@ SDU models
 :   You can use an SDU model that you built in v1. However, you cannot edit the migrated SDU model in v2. If you want to reuse a model as-is, you can [export it from v1](/docs/discovery?topic=discovery-sdu#import){: external} and [import the SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields#import) to v2.
 
 Machine learning models
-:   You cannot deploy models directly to {{site.data.keyword.discoveryshort}} v2 service instances from {{site.data.keyword.knowledgestudioshort}}. Instead, you must export the machine learning models from {{site.data.keyword.knowledgestudioshort}}, and then import them into {{site.data.keyword.discoveryshort}}. The model must have been exported from {{site.data.keyword.knowledgestudioshort}} after 16 July 2020. If you have a model that was exported before that date, you must re-export the model from {{site.data.keyword.knowledgestudioshort}}. Only paid {{site.data.keyword.knowledgestudioshort}} plans support exporting models.
+:   You cannot deploy models directly to {{site.data.keyword.discoveryshort}} v2 service instances from {{site.data.keyword.knowledgestudioshort}}. Instead, you must export the machine learning models from {{site.data.keyword.knowledgestudioshort}}, and then import them into {{site.data.keyword.discoveryshort}}. The model must have been exported from {{site.data.keyword.knowledgestudioshort}} after 16 July 2020. If you have a model that was exported before that date, you must reexport the model from {{site.data.keyword.knowledgestudioshort}}. Only paid {{site.data.keyword.knowledgestudioshort}} plans support exporting models.
 
     For more information, see one of the following topics:
     
@@ -381,12 +382,12 @@ In addition to these high-level changes, review the differences at a per-method 
 
 -   The `passage` parameter for a query has a new `per_document` option that ranks the documents by document quality, and then returns the highest-ranked passages per document in a `document_passages` field for each document entry in the results list of the response. If false, ranks the passages from all of the documents by passage quality regardless of the document quality and returns them in a separate passages field in the response.
 
--   When passages are returned for a query, you can also enable answer finding. When true, answer objects are returned as part of each passage in the query results. When `find_answers` and `per_document` are both set to true, the document search results and the passage search results within each document are reordered using the answer confidences. The goal of this reordering is to place the best answer as the first answer of the first passage of the first document. Similarly, if the `find_answers` parameter is set to true and per_document parameter is set to false, then the passage search results are reordered in decreasing order of the highest confidence answer for each document and passage.
+-   When passages are returned for a query, you can also enable answer finding. When true, answer objects are returned as part of each passage in the query results. When `find_answers` and `per_document` are both set to true, the document search results and the passage search results within each document are reordered by using the answer confidences. The goal of this reordering is to place the best answer as the first answer of the first passage of the first document. Similarly, if the `find_answers` parameter is set to true and per_document parameter is set to false, then the passage search results are reordered in decreasing order of the highest confidence answer for each document and passage.
 
 -   Both v1 and v2 support custom stop words. However, there are a few differences in how custom stop words are used:
 
     -   There is no default custom stop words list for Japanese collections in v2.
-    -   When you define custom stop words in v1, your stop words list replaces the existing stop words list. In v2, your list augments the default list. You cannot replace the list, which means you cannot remove stop words that are part of the default list.
+    -   When you define custom stop words in v1, your stop words list replaces the existing stop words list. In v2, your list augments the default list. You cannot replace the list, which means you cannot remove stop words that are part of the default list in v2.
 
 ### Update how your application handles query results
 {: #migrate-to-v2-result-difs}
@@ -433,20 +434,25 @@ To verify that the migration was successful, compare the following metrics to th
 
 -   Number of collections
 
-    Be sure to recreate all of the collections that you used in v1 and want to keep. With the v2 [List collections](https://cloud.ibm.com/apidocs/discovery-data#listcollections) API method, you can get a list of collections, but you must submit a request per project. You cannot use one call to get the total number of collections per service instance.
+    Be sure to re-create all of the collections that you used in v1 and want to keep. With the v2 [List collections](https://cloud.ibm.com/apidocs/discovery-data#listcollections) API method, you can get a list of collections, but you must submit a request per project. You cannot use one call to get the total number of collections per service instance.
 
 -   Number of documents per collection
 
     For collections with uploaded data, check the number of documents in the collection by sending an empty query with the [Query a project](https://cloud.ibm.com/apidocs/discovery-data#query) API method. Specify the collection ID parameter to limit the results to only documents in one collection. An empty query returns all documents. Therefore, you can get the total number of documents from the `matching_results` value in the response.
 
-    The number of documents per collection should be close to the number of documents that were stored in the same collection in v1. The numbers might not be exactly the same. 
+    The number of documents per collection should be close to the number of documents that were stored in the same collection in v1. The numbers might not be the same. 
     
-    For crawled data, do not be surprised if the v2 collection has fewer documents. The v1 connectors do not delete documents from a {{site.data.keyword.discoveryshort}} collection that are deleted from the external data source. Your v2 version of the collection will be a fresher crawl of the data as it exists in the external data source today.
+    For crawled data, do not be surprised if the v2 collection has fewer documents. The v1 connectors do not delete documents from a {{site.data.keyword.discoveryshort}} collection that are deleted from the external data source. Your v2 version of the collection has a fresher crawl of the data as it exists in the external data source today.
 
-Do not expect the search results to be exactly the same for queries that you submit in the v1 and v2 instances.
+Do not expect the search results to be the same for queries that you submit in the v1 and v2 instances.
 {: tip}
 
 ## Using a news service with v2
 {: #migrate-to-v2-news}
 
 If you used the Watson {{site.data.keyword.discoveryshort}} News data source in v1 and want to create a data source with equivalent function in v2, find a news and events data provider service. Look for a service that offers a News API that extracts news articles in JSON format. You can then upload the JSON files to create a News collection in your v2 project.
+
+## Delete your v1 service instance
+{: #migrate-to-v2-delete}
+
+After your data is migrated and your applications are updated to use the new v2 service instance, be sure to delete your v1 service instance. You are charged for the v1 service instance until you delete it. For more information, see [Deleting a managed service instance](/docs/discovery-data?topic=discovery-data-delete).

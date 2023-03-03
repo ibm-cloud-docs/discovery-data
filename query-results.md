@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-03"
 
 keywords: passages, query results
 
@@ -22,7 +22,7 @@ When a document is ingested, the text is extracted and indexed in the`text` fiel
 
 To preview the default query results, complete the following steps:
 
-1.  From the navigation pane, open the **Improve and customize** page.
+1.  From the navigation panel, open the **Improve and customize** page.
 1.  Take the appropriate next steps for your project type.
 
     -  [Document Retrieval](#query-results-dr)
@@ -84,13 +84,12 @@ For more information about the elements, see [Understanding contracts](/docs/dis
 
 1.  Choose a facet by which to filter the documents.
 
-    Facets based on the *Part of Speech* enrichment are shown.
+    Facets based on the *Part of Speech* enrichment are shown. To analyze your data further, open the Content Mining application by clicking **Launch application**.
 
-- If you want to learn more about what information is indexed per document, see [Interpreting the results](/docs/discovery-data?topic=discovery-data-test#test-json).
-- For tips on how you can improve the quality of your results, see [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements).
+    For more information, see [Analyzing your data](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 ## What to do next
 {: #query-next}
 
--  For more information about how to enrich your documents so that you can find key information, see [Teaching Discovery about your domain](/docs/discovery-data?topic=discovery-data-domain).
+-  For more information about how to enrich your documents so that you can find key information, see [Choosing enrichments](/docs/discovery-data?topic=discovery-data-domain).
 -  To explore ways to improve the query results, see [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements).

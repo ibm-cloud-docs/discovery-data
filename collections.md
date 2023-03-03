@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-03"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -228,7 +228,11 @@ The size of each file that you can upload depends on your {{site.data.keyword.di
 ## Field limits
 {: #collections-field-limits}
 
-When a document is added to a collection, content from the document is evaluated and added to the appropriate fields in an internal index.
+When a document is added to a collection, content from the document is evaluated and added to the appropriate fields in an internal index. 
+
+For structured data, such as uploaded CSV or JSON files, or data from crawled databases, each column or object is stored as a root-level field. For example, if you add a CSV file to collection, each column in the CSV file is stored as a separate field in the index. 
+
+A maximum of 1,000 fields can be added to the index.
 
 You cannot assign the data type, such as Date or String, of a field. The data type is detected automatically and assigned to the field during document ingestion. The assignment is based on the data type that is detected from the first document that is indexed. Ingestion errors can occur in subsequent documents if a different data type is detected for the value in the same field. Therefore, if your documents have a mix of data types in a single field, first ingest the document that has a value with the most flexible data type, such as String, in the field.
 
