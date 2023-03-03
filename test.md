@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Testing your project
+# Testing and sharing your project
 {: #test}
 
 As you improve your project, periodically test how enrichments and search setting changes impact the query results.
