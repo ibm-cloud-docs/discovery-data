@@ -85,7 +85,7 @@ toc:
           - manage-collections.md
       - index-overview.md
       - topicgroup:
-          label: Querying from the UI
+          label: Querying your data
           topics:
           - query-results.md
           - improvements.md
