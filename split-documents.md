@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-08-18"
+lastupdated: "2023-03-03"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ Be careful with documents that contain repeating sections, such as a catalog tha
 
 To split the documents in a collection, complete the following steps:
 
-1.  Click **Manage collections** from the navigation pane, and then click to open a collection.
+1.  Click **Manage collections** from the navigation panel, and then click to open a collection.
 1.  Open the **Manage fields** page.
 
     A list of the identified fields is displayed.
@@ -46,6 +46,8 @@ To split the documents in a collection, complete the following steps:
 1.  Click **Apply changes and reprocess**.
 
 You can check the status of the splitting process from the *Activity* page.
+
+The document segments that are generated when you split a document contain a `segment_metadata` field. The metadata field includes the parent document ID, the segment number, and the total number of segments that were created from the parent document. Each resulting segment of the original document can contain different information. For example, if you split the document based on the subtitle field, the first segment might contain only a title field. The next segment might contain a subtitle and a text field. The third might contain a subtitle field, a text field, and a footer field.
 
 ## Updating documents that were split
 {: #split-documents-update}

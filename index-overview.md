@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-10-12"
+lastupdated: "2023-03-03"
 
 subcollection: discovery-data
 
@@ -47,13 +47,13 @@ For most unstructured file types, the bulk of the content from the file is added
 
 The following field names have special meaning. If possible do not use these names in your structured source files.
 
-- id
-- highlight
-- html
-- metadata
-- result_metadata
-- score
-- spans
+- `id`
+- `highlight`
+- `html`
+- `metadata`
+- `result_metadata`
+- `score`
+- `spans`
 
 If your source document has a field with the name `document_id`, the field is skipped and not added to the index in the collection.
 
@@ -66,7 +66,7 @@ Avoid field names that meet the following conditions. Field names with these res
 ## How dates are handled
 {: #field-dates}
 
-Dates are captured in different ways depending on the file type.
+Dates are captured in different ways by different file types.
 
 Unstructured files
 :    The best way to capture date information from the body of a document with unstructured data is to use a natural language processing model enrichment. For example, the prebuilt Entities enrichment recognizes dates and annotates them in the `text` field (or other body fields with the `String` data type). In a document where the enrichment is applied, you can find dates by looking for fields that are labeled as `enriched_{fieldname}.entities.type`=`Date`.
@@ -111,11 +111,11 @@ To add more date formats, complete the following steps:
 
 1.  Optionally, select a date locale. 
 
-    The locale you choose is used to parse a string value that represents the date for the date-type data set fields. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
+    The locale that you choose is used to parse a string value that represents the date for the date-type data set fields. For example, by using the `EEE, MM dd, yyyy` format, the **English (United States)** locale can parse the string value of `"Wednesday, 07 01, 2020"`, and the **Japanese (Japan)** locale can parse the same string value of `"水曜日, 07 01, 2020"`.
 
 1.  If you already imported documents with dates in formats that were not recognized, reprocess the documents.
 
-{{site.data.keyword.discoveryshort}} cannot store a date that is mentioned within a text field as a *Date* field in the index. You can, however, use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
+{{site.data.keyword.discoveryshort}} cannot store a date that is mentioned within a text field as a *Date* field in the index. However, you can use an enrichment such as the *Entities* enrichment to identify dates that are mentioned in text.
 
 ## How file types are handled
 {: #file-type-notes}
@@ -123,6 +123,7 @@ To add more date formats, complete the following steps:
 When you upload a document, data in the file is indexed. Different files types are handled differently by {{site.data.keyword.discoveryshort}}.
 
 -   [CSV files](#file-type-csv)
+-   [HTML files](#file-type-html)
 -   [JSON files](#file-type-json)
 
 ### CSV files
@@ -138,6 +139,20 @@ Notes about adding data:
 Note about enhancing data:
 
 -   You cannot apply prebuilt or user-trained Smart Document Understanding models to CSV files.
+
+### HTML files
+{: #file-type-html}
+
+Notes about adding data:
+
+- If you upload an HTML file or crawl a data source with HTML files, such as a website, an `html` field is generated along with the `text` field.
+- If you use the Smart Document Understanding tool to annotate a collection, the document representation is indexed in the `html` field.
+- If you use the Smart Document Understanding tool to apply a pretrained model to a collection, the document representation is indexed both in the `html` field and `text` field.
+-   The `html` field has a size limit. For more information, see [Field limits](/docs/discovery-data?topic=discovery-data-collections#collections-field-limits).
+
+Note about enhancing data:
+
+-   If you want to apply enrichments that can read contracts or understand the tables in a document, the document must contain an `html` field.
 
 ### JSON files
 {: #file-type-json}
