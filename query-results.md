@@ -67,6 +67,8 @@ A single search field is displayed that mimics the user interface of a virtual a
 
 The query results are returned as passages by default. You can [configure the search to return a specific field](#improve-search-result) instead.
 
+If you want to investigate the results a bit more, you might want to use a different project type. For more information, see [Choosing the right project type for a chatbot](/docs/discovery-data?topic=discovery-data-chat-choose-project).
+
 ## Document Retrieval for Contracts
 {: #query-results-contract}
 
