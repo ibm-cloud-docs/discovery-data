@@ -39,11 +39,11 @@ To test your project, complete the following steps:
 
     For a *Document Retrieval for Contracts* project, the *Contract Data* page is displayed. For more information about Contract filter options, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema#contracts-elements).
 
-1.  If you want to view the query result in JSON format, you can do one of the following things depending on your deployment type:
+1.  You can learn more about information that is identified by the enrichments that are applied to your documents by reviewing the JSON representation of a document that is returned in a search result.
 
     [IBM Cloud]{: tag-ibm-cloud}
 
-      1.  Click the *Display options* menu from the advanced view header, and then select **JSON view**.
+      1.  Click the *Display options* menu from the advanced view header, and then select **JSON**.
 
           ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png){: caption="Figure 1. Overflow menu options from the Advanced text view" caption-side="bottom"}
 
@@ -70,4 +70,3 @@ To preview and share your project, complete the following steps:
 
     Don't forget to send any login credentials that are needed to access the project when you send the link to your colleagues.
 
-You can learn about information that is identified by the enrichments that are applied to your documents by reviewing the JSON representation of a document that is returned in a search result.

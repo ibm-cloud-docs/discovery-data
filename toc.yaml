@@ -84,23 +84,20 @@ toc:
           - troubleshoot-ingestion.md
           - manage-collections.md
       - index-overview.md
-      - query-results.md
       - topicgroup:
-          label: Customizing query results
+          label: Querying from the UI
           topics:
+          - query-results.md
+          - improvements.md
           - facets.md
           - search-bar.md
-          - chat-choose-project.md
-          - query-defaults.md
-      - topicgroup:
-          label: Improving query results
-          topics:
-          - improvements.md
           - search-settings.md
           - stopwords.md
           - split-documents.md
           - hide-data.md
+          - chat-choose-project.md
           - train.md
+          - query-defaults.md
       - topicgroup:
           label: Enriching your data
           topics:
