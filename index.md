@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-06"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -119,8 +119,15 @@ IBM releases services, features, and language support for your evaluation that a
 ## Terms and notices
 {: #about-terms}
 
-- [IBM Cloud Pak for Data]{: tag-cp4d} [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
-- [IBM Cloud]{: tag-ibm-cloud} [IBM Cloud Terms of use](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}
+[IBM Cloud]{: tag-ibm-cloud} 
+
+-   [IBM Cloud Terms of use](https://cloud.ibm.com/docs/overview/terms-of-use?topic=overview-terms){: external}
+-   [Service terms (Search for Watson Discovery)](https://www-03.ibm.com/software/sla/sladb.nsf/sla/saas?OpenDocument)
+-   [Data Processing and Protection Datasheet](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=A1417A507E8211E6BA51E79BE9476040)
+
+[IBM Cloud Pak for Data]{: tag-cp4d} 
+
+-   [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
 
 ## Trademarks
 {: #about-trademarks}

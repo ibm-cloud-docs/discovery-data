@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# How your data source is processed
+# How your data is processed
 {: #index-overview}
 
 When you connect to a data source, {{site.data.keyword.discoveryshort}} *processes* the information from the data source to create a *collection*.
