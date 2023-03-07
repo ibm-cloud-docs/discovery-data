@@ -22,7 +22,7 @@ When a document is ingested, the text is extracted and indexed in the`text` fiel
 
 To preview the default query results, complete the following steps:
 
-1.  From the navigation panel, open the **Improve and customize** page.
+1.  From the navigation panel, open the *Improve and customize* page.
 1.  Take the appropriate next steps for your project type.
 
     -  [Document Retrieval](#query-results-dr)

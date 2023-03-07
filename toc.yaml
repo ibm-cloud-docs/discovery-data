@@ -102,10 +102,7 @@ toc:
           label: Enriching your data
           topics:
           - topic: domain.md
-          - topicgroup:
-              label: Identify common terms
-              topics:
-              - nlu.md
+          - nlu.md
           - topicgroup:
               label: Identify custom terms
               topics:
@@ -128,6 +125,22 @@ toc:
               - sdu-pretrained.md
           - manage-enrichments.md
       - test.md
+      - analyzeapi.md
+      - topicgroup:
+          label: Analyzing data with the Content Mining application
+          topics:
+          - topic: contentminerapp.md
+            navtitle: Analyzing your data
+          - cm-analyze-data.md
+          - cm-add-facets.md
+          - cm-custom-annotator.md
+          - cm-doc-classifier.md
+          - cm-phrase-sentiment.md
+          - cm-add-collection.md
+          - cm-edit-collection.md
+          - cm-csv-file.md
+          - cm-report.md
+          - cm-export.md
       - deploy.md
       - topicgroup:
           label: Deploying a custom application
@@ -145,25 +158,6 @@ toc:
           - link:
               label: Learn with sample apps
               href: https://developer.ibm.com/learningpaths/get-started-watson-discovery/
-      - analyzeapi.md
-      - topicgroup:
-          label: Analyzing data with the Content Mining application
-          topics:
-          - topic: contentminerapp.md
-            navtitle: Analyzing your data
-          - cm-analyze-data.md
-          - topicgroup:
-              label: Customizing your analysis
-              topics:
-              - cm-add-facets.md
-              - cm-custom-annotator.md
-              - cm-doc-classifier.md
-              - cm-phrase-sentiment.md
-          - cm-add-collection.md
-          - cm-edit-collection.md
-          - cm-csv-file.md
-          - cm-report.md
-          - cm-export.md
       - topicgroup:
           label: Installing
           topics:
