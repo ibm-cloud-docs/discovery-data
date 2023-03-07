@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-07"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -114,7 +114,7 @@ When you're done testing with the sample app, you can stop it by returning to th
 ## Deploying other project types
 {: #cs-deploy}
 
-To analyze data from a Content Mining project, click **Launch application** from the *Improve and customize* page. For more information, see [Analyzing your data]((/docs/discovery-data?topic=discovery-data-contentminerapp)).
+To analyze data from a Content Mining project, click **Launch application** from the *Improve and customize* page. For more information, see [Analyzing your data](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 To analyze a contract from a Document Retreival for Contracts project, submit a query. For more information about understanding contract information, see [Understanding contracts](/docs/discovery-data?topic=discovery-data-contracts-schema).
 

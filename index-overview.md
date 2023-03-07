@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-07"
 
 subcollection: discovery-data
 
@@ -33,11 +33,10 @@ You can see a list of the fields that were indexed from the *Manage fields* page
 
 The fields that are shown can differ based on your data. However, one subset of fields is always listed. These fields, with names such as `footer` and `header`, are derived from the Smart Document Understanding (SDU) tool, and are listed even when you don't explicitly apply an SDU model to the collection. (For the full list of SDU-generated fields, see [Available fields](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-default-fields).) Only the fields with a data type specified are stored in the collection's index.
 
-One of the SDU-generated fields that is stored in the index is the `text` field. The `text` field typically contains the main body of text from the original document. Most of the content that is returned in search results originates from this one field. How to parse and return only relevant chunks of information from this field is determined by the query result configuration that is used by the project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
+One of the SDU-generated fields that is stored in the index is the `text` field. The `text` field typically contains the main body of text from the original document. Most of the content that is returned in search results that you submit from the *Improve and customize* page originates from this one field. How to parse and return only relevant chunks of information from this field is determined by the query result configuration that is used by the project. For more information, see [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results).
 
 More processing adds more fields. And more processing is applied automatically depending on the project type. When processes run on documents in a collection, extra fields are added to store information that is associated with the process. For example, when the built-in Entities enrichment is applied to a collection, it starts a process that adds fields with names that begin with `enriched_{field_name}.entities` to the documents in the collection.
 
-- For more information about fields that are added to your collection, see [Interpreting the results](/docs/discovery-data?topic=discovery-data-test#test-json).
 - For more information about the enrichments that are applied by default, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 
 ## How fields are handled
@@ -45,7 +44,7 @@ More processing adds more fields. And more processing is applied automatically d
 
 For most unstructured file types, the bulk of the content from the file is added to a field named `text`. For file types that have an inherent data structure, such JSON files, names from the source file are used to name the fields in which the content is stored. When you upload files of this type, be aware of some naming limitations that exist for fields.
 
-The following field names have special meaning. If possible do not use these names in your structured source files.
+The following field names have special meaning. If possible, do not use these names in your structured source files.
 
 - `id`
 - `highlight`
@@ -105,7 +104,7 @@ To add more date formats, complete the following steps:
     
     For example, if your records store only year values for dates, add `yyyy` to the supported date formats list. You can then set the data type for the field that contains a year value to *Date*, and reprocess your collection. As a result, an occurrence of `2019` in the date field is stored as `2019-01-01T05:00:00Z` in the index.
 
-    When you add a new date format, you must specify an associated time zone for the date.
+    When you add a date format, you must specify an associated time zone for the date.
 
 1.  Specify a time zone.
 

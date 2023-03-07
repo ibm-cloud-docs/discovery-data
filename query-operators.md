@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-07"
 
 subcollection: discovery-data
 
@@ -249,12 +249,12 @@ enriched_text.entities.text:ib*
 ## `~n` (String variation)
 {: #variation}
 
-The number of character differences that are allowed when matching a string.
+The number of character differences that are allowed when matching a string. The maximum variation number that can be used is 2.
 
-For example, the following query returns documents that contain `car` in the text field, as well as `cap`,`cat`,`can`, `sat`, and so on:
+For example, the following query returns documents that contain `car` in the title field, as well as `cap`,`cat`,`can`, `sat`, and so on:
 
 ```bash
-cat~1
+title:cat~1
 ```
 {: codeblock}
 
@@ -263,7 +263,7 @@ When a phrase is submitted, each term in the phrase is allowed the specified num
 For example:
 
 ```bash
-"car hog"~1
+title:"car hog"~1
 ```
 {: codeblock}
 
