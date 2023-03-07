@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-03-07"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Define categories by which text in your documents can be classified.
 {: shortdesc}
 
-This topic describes how to classify text. If you want to classify documents, see [Classifying documents](/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
+This topic describes how to classify text. If you want to classify documents, use the Content Mining application. For more information, see [Classifying documents](/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
 
 Add a classifier to assign text from documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of text in your collection.
 
@@ -88,7 +88,14 @@ In the output, the classifier enrichment applies the `facility_temperature` labe
 ```
 {: codeblock}
 
-The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on Part of Speech information. You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on Part of Speech information and metadata that is added by other enrichments that are applied to the collection. You can apply a document classifier to a collection in a project type other than a Content Mining project. To do so, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
+## Classifier types
+{: #domain-classifier-difs}
+
+The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on words and phrases extracted from the body text with their part of speech information taken into account. 
+
+You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on words and phrases extracted from the body text fields with information from their part of speech and the other enrichments that are applied to the body text taken into account. The information from the other non-body fields are also used. 
+
+You can apply a document classifier to a collection in a project type other than a Content Mining project. To do so, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
 
 The text classifier uses Part of Speech information regardless of whether the Part of Speech enrichment is applied to the project.
 
@@ -97,7 +104,7 @@ Text classifiers that you add to one project can be used by other projects, incl
 A text classifier does not classify the target text field with confidence scores that are lower than 0.5. You cannot change the confidence threshold that is used by the text classifier. If you expected certain types of passages to be classified that weren't, you can add passages with similar characteristics to your training data and train another classifier.
 {: tip}
 
-## Classifier limits
+## Text classifier limits
 {: #classifier-limits}
 
 The number of text classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
