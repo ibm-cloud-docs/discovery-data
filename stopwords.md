@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-07"
+lastupdated: "2023-03-08"
 
 subcollection: discovery-data
 
@@ -45,7 +45,7 @@ For the following languages, {{site.data.keyword.discoveryshort}} uses the defau
 - Arabic: [stopwords_ar.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/ar/stopwords.txt){: external}
 - Czech: [stopwords_cs.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/cz/stopwords.txt){: external}
 - Danish: [stopwords_da.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/danish_stop.txt){: external}
-- Dutch: [stopwords_nl.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/danish_stop.txt){: external}
+- Dutch: [stopwords_nl.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/dutch_stop.txt){: external}
 - Finnish: [stopwords_fi.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/finnish_stop.txt){: external}
 - French: [stopwords_fr.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/french_stop.txt){: external}
 - German: [stopwords_de.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/german_stop.txt){: external}

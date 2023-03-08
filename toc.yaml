@@ -141,7 +141,6 @@ toc:
           - cm-csv-file.md
           - cm-report.md
           - cm-export.md
-      - deploy.md
       - topicgroup:
           label: Deploying a custom application
           topics:
@@ -158,6 +157,7 @@ toc:
           - link:
               label: Learn with sample apps
               href: https://developer.ibm.com/learningpaths/get-started-watson-discovery/
+      - deploy.md
       - topicgroup:
           label: Installing
           topics:
