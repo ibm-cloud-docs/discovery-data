@@ -16,7 +16,7 @@ subcollection: discovery-data
 Define categories by which text in your documents can be classified.
 {: shortdesc}
 
-This topic describes how to classify text. If you want to classify documents, use the Content Mining application. For more information, see [Classifying documents](/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
+This topic describes how to classify text. If you want to classify documents, use the Content Mining application. For more information, see [Classifier types](#domain-classifier-difs).
 
 Add a classifier to assign text from documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of text in your collection.
 
