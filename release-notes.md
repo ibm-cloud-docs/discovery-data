@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-21"
+lastupdated: "2023-03-09"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 2 March 2023
+{: #discovery-2march2023}
+{: release-note}
+
+Now you can specify the types of files to add to a collection
+:   When you connect to an external data source, you can limit the types of files to add from the external data source to the collection. For example, you can choose to add only PDF files from a Box data source.
+
+    When you add a web crawl connector that crawls a website with page URLS that do not end in `.html`, choose the exclude option. You must add at least one file extension for a file type, such as `.js`, to exclude.
 
 ## 21 Febuary 2023
 {: #discovery-21febuary2023}

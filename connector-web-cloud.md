@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-09"
 
 subcollection: discovery-data
 
@@ -115,6 +115,13 @@ To configure the web crawl collection, complete the following steps:
     The number of web pages that are crawled is limited to 250,000, so the web crawler might not crawl all the specified websites.
 
     The number of child URLs per URL that are crawled is limited to 10,000. If the number of child URLs within any crawled URL exceeds 10,000, the crawler cannot process any of the content in the child URLs.
+
+1.  If you want to limit the types of files to add to the collection, you can list the file extensions for file types to either include or exclude. 
+
+    If the URLs for your website pages do not end in *.html*, use the exclude filter instead of the include filter. You must add at least one file extension to exclude.
+    {: important}
+
+    For a list of supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
 1.  If you want the web crawl to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
