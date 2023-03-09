@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-09"
 
 subcollection: discovery-data
 
@@ -99,11 +99,8 @@ If finding trends in your data is your goal, complete the steps that are listed 
 |:----:|------|---------------------|
 | ![checkbox](images/checkbox.png) | Create a *Content Mining* project. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add a collection that connects to an external data source or contains uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
-| ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |
-| ![checkbox](images/checkbox.png) | Take actions to improve your results. | [Improving your query results](/docs/discovery-data?topic=discovery-data-improvements) Consider adding facets to categorize documents in meaningful ways. |
 | ![checkbox](images/checkbox.png) | Use the built-in Content mining application to analyze your data. | [Analyzing your data with the content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp) |
 {: caption="Checklist for finding trends" caption-side="top"}
-
 
 ## Analyze contracts
 {: #product-overview-contracts}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-09"
 
 subcollection: discovery-data
 
@@ -61,6 +61,19 @@ Avoid field names that meet the following conditions. Field names with these res
 - Start with the characters `_`, `+`, and `-`. For example, `+extracted-content`.
 - Contain the characters `.`, `,`, `#`, `?`, or `:` or spaces. For example, `extracted content` or `new:extracted-content`.
 - End with numbers. For example, `extracted-content2`.
+
+### HTML fields
+{: #field-html}
+
+The `html` field in the document index stores structural information about the document. 
+
+- If you use the Smart Document Understanding tool to annotate a collection, the document representation is indexed in the `html` field.
+- If you use the Smart Document Understanding tool to apply a pretrained model to a collection, the document representation is indexed both in the `html` field and `text` field.
+-   The `html` field has a size limit. For more information, see [Field limits](/docs/discovery-data?topic=discovery-data-collections#collections-field-limits).
+
+Note about enhancing data:
+
+-   If you want to apply an enrichment that can understand the tables in a document, the document must contain an `html` field.
 
 ## How dates are handled
 {: #field-dates}
@@ -142,16 +155,7 @@ Note about enhancing data:
 ### HTML files
 {: #file-type-html}
 
-Notes about adding data:
-
-- If you upload an HTML file or crawl a data source with HTML files, such as a website, an `html` field is generated along with the `text` field.
-- If you use the Smart Document Understanding tool to annotate a collection, the document representation is indexed in the `html` field.
-- If you use the Smart Document Understanding tool to apply a pretrained model to a collection, the document representation is indexed both in the `html` field and `text` field.
--   The `html` field has a size limit. For more information, see [Field limits](/docs/discovery-data?topic=discovery-data-collections#collections-field-limits).
-
-Note about enhancing data:
-
--   If you want to apply enrichments that can read contracts or understand the tables in a document, the document must contain an `html` field.
+If you upload an HTML file or crawl a data source with HTML files, such as a website, an `html` field is generated along with the `text` field. For more information, see [HTML fields](#field-html).
 
 ### JSON files
 {: #file-type-json}

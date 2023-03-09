@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-10-11"
+lastupdated: "2023-03-09"
 
 subcollection: discovery-data
 
@@ -15,7 +15,7 @@ subcollection: discovery-data
 
 | Term | Definition |
 |------|------------|
-| Classifier | A resource that you can train to recognize document types and categorize them in your collection. You can create two types of classifiers, a *text classifier* and a *document classifier*. A *document classifier* can classify documents based on Part of Speech information and metadata that is added by other enrichments that are applied to the collection. You can create a document classifier from the deployed Content Mining application only. From all other project types, you can create a *text classifier*. A text classifier can classify documents based on Part of Speech information only. You can apply a document classifier that you create by using the deployed Content Mining application to categorize documents in other project types. [Learn more](/docs/discovery-data?topic=discovery-data-cm-doc-classifier) |
+| Classifier | A resource that you can train to recognize document types and categorize them in your collection. You can create two types of classifiers, a *text classifier* and a *document classifier*. A *text classifier* can classify documents based on words and phrases extracted from the body text with their part of speech information taken into account. A *document classifier* can classify documents based on words and phrases extracted from the body text fields with information from their part of speech and the other enrichments that are applied to the body text taken into account. The information from the other non-body fields are also used. [Learn more](/docs/discovery-data?topic=discovery-data-cm-doc-classifier) |
 | Collection | A set of documents that you can enrich and later search for meaningful information. [Learn more](/docs/discovery-data?topic=discovery-data-collections). |
 | Content Intelligence | A feature that you can use to enrich documents in a Document Retrieval project such that it can recognize information that is relevant to business contracts. A Document Retrieval project with this feature enabled is referred to as a *Document Retrieval for Contracts* project type. [Learn more](/docs/discovery-data?topic=discovery-data-projects#doc-retrieval-contracts) |
 | Data source | An external application or service where valuable knowledge resources are stored. Connect to a service where your data is stored so you can crawl the data without having to move it. [Learn more](/docs/discovery-data?topic=discovery-data-collections). |

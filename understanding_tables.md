@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-03-09"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -25,6 +25,11 @@ The following tasks generate an HTML field with table information and apply the 
 
     For more information, see [Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields#identify-fields).
 
+## Before you begin
+{: #table-prereq}
+
+The documents in your collection must contain a field with HTML representations of your tables. This information often is stored in the `html` field. If your collection consists of CSV or JSON files, it might have a field other than the `html` field that contains table information in HTML format.
+
 ## Applying the table understanding enrichment
 {: #table-task}
 
@@ -37,11 +42,13 @@ To apply the enrichment, complete the following steps:
 1.  Find the **Table Understanding** enrichment.
 1.  Select the `html` field from the field list.
 
-    The HTML field must contain HTML representations of your tables. If your collection has a field other than the `html` field that contains table information in HTML format, which can exist in CSV or JSON files, for example, select it from the list.
+    Choose the field that contains HTML representations of the tables.
 
 After the enrichment is applied, you can get valid results when you submit queries that require {{site.data.keyword.discoveryshort}} to find information that is stored in tables.
 
 A developer can query tables by using the API. For more information, see [Query parameters](/docs/discovery-data?topic=discovery-data-query-parameters#table_retrieval).
+
+For more information about how to apply the table understanding enrichment by using the API, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api-task).
 
 ## Output schema
 {: #table-output-schema}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-09"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
@@ -52,6 +52,8 @@ For more information about the following prebuilt enrichments, see the following
 For more information about how to create custom enrichments, see [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain).
 
 For more information about how to get the most from enrichments, read the [Enriching your documents can make search more effective](https://community.ibm.com/community/user/watsonai/blogs/bill-murdock1/2022/01/14/enriching-your-documents-can-make-search-more-effe){: external} blog post.
+
+For more information about how to apply enrichments by using the API, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api-task).
 
 ## Add enrichments
 {: #nlu-task}
