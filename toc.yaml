@@ -125,7 +125,6 @@ toc:
               - sdu-pretrained.md
           - manage-enrichments.md
       - test.md
-      - analyzeapi.md
       - topicgroup:
           label: Analyzing data with the Content Mining application
           topics:
@@ -141,6 +140,7 @@ toc:
           - cm-csv-file.md
           - cm-report.md
           - cm-export.md
+      - analyzeapi.md
       - topicgroup:
           label: Deploying a custom application
           topics:
