@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-09"
 
 subcollection: discovery-data
 
@@ -92,6 +92,13 @@ To configure the Salesforce data source, complete the following steps in {{site.
 1.  Select the objects that you want to crawl.
 
     The more objects that you select, the longer the processing of the documents takes.
+
+1.  If you want to limit the types of files to add to the collection, you can list the file extensions for file types to either include or exclude.
+
+    When you choose to list extensions for file types to exclude, you must add at least one file extension.
+    {: important}
+
+    For a list of supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
 
 1.  If you want the crawler to extract text from images on the site, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
