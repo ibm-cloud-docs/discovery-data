@@ -28,6 +28,8 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: #discovery-2march2023}
 {: release-note}
 
+<!-- 4.7.0-7.1 -->
+
 Now you can specify the types of files to add to a collection
 :   When you connect to an external data source, you can limit the types of files to add from the external data source to the collection. For example, you can choose to add only PDF files from a Box data source.
 
