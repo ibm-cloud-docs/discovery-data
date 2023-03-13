@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-13"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Classify data
+# Classify text
 {: #domain-classifier}
 
 Define categories by which text in your documents can be classified.
@@ -18,7 +18,9 @@ Define categories by which text in your documents can be classified.
 
 This topic describes how to classify text. If you want to classify documents, use the Content Mining application. For more information, see [Classifier types](#domain-classifier-difs).
 
-Add a classifier to assign text from documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of text in your collection.
+Add a text classifier to assign text from documents in your collection into categories. {{site.data.keyword.discoveryshort}} uses the labels and text examples that you provide to predict the categories of text in your collection.
+
+To create a text classifier, complete the following steps:
 
 1.  Create a CSV file that contains example text followed by its category label per line.
 
