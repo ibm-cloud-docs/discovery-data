@@ -54,7 +54,7 @@ The following field names have special meaning. If possible, do not use these na
 - `score`
 - `spans`
 
-Avoid including a `document_id` object in a JSON file. When you upload the file from the product user interface or use the API to add it with the *Add document* method, the document ID from the file is shown as the `document_id` value in query results. However, a different document ID is assigned to it and stored in the `parent_document_id` field. The assigned document ID is what is returned when you call the *List documents* method and is what must be used as the `document_id` in the endpoint URL for a *Delete document* method request. If you use the *Update document* method to assign a new `document_id`, the original ID continues to be returned in query results. The assigned ID can be used to delete the document.
+Avoid including a `document_id` object in a JSON file. When you upload the file from the product user interface or use the API to add it with the *Add document* method, the document ID from the file is shown as the `document_id` value in query results. However, a different document ID is assigned to it and stored in the `parent_document_id` field. The assigned document ID is what is returned when you call the *List documents* method and is what must be used as the `document_id` in the endpoint URL for a *Delete document* method request. When you use the *Update document* method to assign a new `document_id`, the original ID continues to be returned in query results. The assigned ID can be used to delete the document.
 {: note}
 
 Avoid field names that meet the following conditions. Field names with these restricted characters are not queried.
