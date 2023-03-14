@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-14"
 
 subcollection: discovery-data
 
@@ -46,7 +46,7 @@ For most unstructured file types, the bulk of the content from the file is added
 
 The following field names have special meaning. If possible, do not use these names in your structured source files.
 
-- `id`
+- `document_id`
 - `highlight`
 - `html`
 - `metadata`
@@ -54,7 +54,8 @@ The following field names have special meaning. If possible, do not use these na
 - `score`
 - `spans`
 
-If your source document has a field with the name `document_id`, the field is skipped and not added to the index in the collection.
+Avoid including a `document_id` object in a JSON file. When you upload the file from the product user interface or use the API to add it with the *Add document* method, the document ID from the file is shown as the `document_id` value in query results. However, a different document ID is assigned to it and stored in the `parent_document_id` field. The assigned document ID is what is returned when you call the *List documents* method and is what must be used as the `document_id` in the endpoint URL for a *Delete document* method request. When you use the *Update document* method to assign a new `document_id`, the original ID continues to be returned in query results. The assigned ID can be used to delete the document.
+{: note}
 
 Avoid field names that meet the following conditions. Field names with these restricted characters are not queried.
 

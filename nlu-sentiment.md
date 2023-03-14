@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-03-13"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
@@ -22,7 +22,7 @@ To understand the sentiment of an entire document, apply this enrichment to a fi
 
 To analyze sentiment in text from multiple fields at one time and capture the overall sentiment of the document, use the Content Mining application. For more information, see [Detecting phrases that express sentiment](/docs/discovery-data?topic=discovery-data-cm-phrase-sentiment).
 
-## Adding the enrichments
+## Adding the enrichment
 {: #nlu-sentiment-task}
 
 To add the sentiment enrichment, complete the following steps:
