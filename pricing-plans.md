@@ -24,7 +24,7 @@ Learn more about the {{site.data.keyword.discoveryfull}} service plans, so you c
 
 Find targeted answers and insights across many document types.
 
-The first Plus plan created includes a 30-day free trial.
+The first Plus plan that is created includes a 30-day trial at no cost.
 You must pay for each additional Plus plan (and for use of the first plan after the 30-day trial ends).
 
 If you continue to use a Plus plan service instance after the 30-day trial ends, you are charged for it. To avoid being charged after 30 days, you must delete the Plus plan service instance.
@@ -54,8 +54,8 @@ The plan includes the following features:
 -   Up to 500,000 documents
 -   Up to 20 projects
 -   Up to 40 collections (Up to 5 collections per project)
--   Up to 10MB document size
--   Up to 3 custom models^[Learn more](#custom-models)^
+-   Up to 10 MB document size
+-   Up to 3 custom models [Learn more](#custom-models)
 -   Up to 40 custom fields for Smart Document Understanding model and model import and export
 -   Up to 20 custom dictionaries
 -   Up to 20 custom pattern extraction models
@@ -76,7 +76,7 @@ The plan includes the following features:
 
 -   100,000 documents per month ($5 for every additional 1,000 documents per month)
 -   100,000 query or analyze API calls per month ($5 for every additional 1,000 calls per month)
--   Up to 3 custom models^[Learn more](#custom-models)^
+-   Up to 3 custom models [Learn more](#custom-models)
 -   Up to 10 entity extractor models
 -   Up to 5 queries per second
 -   Everything that's available in Plus
@@ -113,11 +113,11 @@ Autocompletion, curation, and notice requests are not billed in any plan type.
 
 IBM uses the maximum number of documents per day and then prorates the document price to calculate the cost for a month.
 
-For example, imagine there are 300,000 documents added to a collection in the first 6 days (6/30) of the month, and then another 1 million documents are added over a two-day span. In the first day (1/30) of the two-day span, 700,000 documents are added. All of the documents (1 million + 300,000 = 1,300,000) remain in the collection index for the rest of the month (23/30). The number of documents for the month might be calculated by using an equation like this: 
+For example, imagine that 300,000 documents are added to a collection in the first 6 days (6/30) of the month, and then another 1 million documents are added over a two-day span. In the first day (1/30) of the two-day span, 700,000 documents are added. All of the documents (1 million + 300,000 = 1,300,000) remain in the collection index for the rest of the month (23/30). The number of documents for the month might be calculated by using an equation like this: 
 
 `300K * (6/30) + 700K * (1/30) + 1300K * (23/30)`
 
-Document pricing counts the number of indexed documents in each collection. If you reuse data in a second collection, it generates a second set of documents in the index which are counted separately.
+Document pricing counts the number of indexed documents in each collection. If you reuse data in a second collection, it generates a second set of documents in the index, which are counted separately.
 
 For more information about what counts as a document, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
 
