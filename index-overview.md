@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-14"
+lastupdated: "2023-03-16"
 
 subcollection: discovery-data
 
@@ -163,7 +163,6 @@ If you upload an HTML file or crawl a data source with HTML files, such as a web
 
 Notes about adding data:
 
--   Each object that is defined in an array in a JSON file is added to the index as a separate document, each with the same `parent_document_id`.
 -   Object names from the source JSON file are used to name the fields in which the content is stored. Do not use names that have special meaning in {{site.data.keyword.discoveryshort}}. Be sure that the names conform to the naming rules, such as having no spaces and no appended numbers. For example, you can rename the `updated on` object to `updated_on` and `answer2` to `answer-two` before you add the file. For more information, see [How fields are handled](#field-name-limits).
 -   If a root-level field is an array but contains no items, the field is omitted from the index.
 -   If a root-level field is an array and contains only one item, the array is indexed as the data type of the one item. For example, a string array with one string is indexed as a string.
