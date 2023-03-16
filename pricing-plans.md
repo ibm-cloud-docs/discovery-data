@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-16"
 
 keywords: plans, pricing, service instances, billing
 
@@ -45,6 +45,7 @@ The plan includes the following features:
 -   Table Retrieval
 -   Custom NLP models
 -   Custom Relevance Model
+-   Entity extractor
 
 ### Artifact limits
 {: #plusplan-limits}
@@ -54,7 +55,7 @@ The plan includes the following features:
 -   Up to 20 projects
 -   Up to 40 collections (Up to 5 collections per project)
 -   Up to 10MB document size
--   Up to 3 custom models^1^
+-   Up to 3 custom models^[Learn more](#custom-models)^
 -   Up to 40 custom fields for Smart Document Understanding model and model import and export
 -   Up to 20 custom dictionaries
 -   Up to 20 custom pattern extraction models
@@ -75,7 +76,7 @@ The plan includes the following features:
 
 -   100,000 documents per month ($5 for every additional 1,000 documents per month)
 -   100,000 query or analyze API calls per month ($5 for every additional 1,000 calls per month)
--   Up to 3 custom models
+-   Up to 3 custom models^[Learn more](#custom-models)^
 -   Up to 10 entity extractor models
 -   Up to 5 queries per second
 -   Everything that's available in Plus
@@ -95,7 +96,8 @@ Your bill labels requests that are generated from both query searches and analyz
 -   Up to 100 projects
 -   Up to 300 collections (Up to 5 collections for all project types except Content Mining, which supports 1)
 -   Up to 10 MB document size
--   Up to 10 custom models
+-   Up to 10 custom {{site.data.keyword.knowledgestudioshort}} models
+-   Up to 10 entity extractor models
 -   Up to 100 custom fields for Smart Document Understanding model and model import and export
 -   Up to 100 custom dictionaries
 -   Up to 100 custom pattern extraction models
@@ -120,9 +122,9 @@ Document pricing counts the number of indexed documents in each collection. If y
 For more information about what counts as a document, see [Document limits](/docs/discovery-data?topic=discovery-data-collections#collections-doc-limits).
 
 ## What is a custom model?
-{: #pricing-models}
+{: #custom-models}
 
-^1^ Custom models include any of the following model types:
+Custom models include any of the following model types:
 
 -   {{site.data.keyword.discoveryshort}} entity extractor
 -   {{site.data.keyword.knowledgestudioshort}} machine learning
