@@ -17,7 +17,7 @@ completion-time: 1h
 # Get quick answers from existing help content
 {: #tutorial-crawl-short}
 {: toc-content-type="tutorial"}
-{: toc-services="discovery"}
+{: toc-services="discovery-data"}
 {: toc-completion-time="1h"}
 
 In this tutorial, you will use the {{site.data.keyword.discoveryshort}} service to create a simple search application that can answer questions about Watson Discovery with information from the IBM Cloud Docs site.
