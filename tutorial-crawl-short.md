@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-03-16"
 
 subcollection: discovery-data
 content-type: tutorial
-services: discovery
+services: discovery-data
 account-plan: plus
 completion-time: 1h
 
@@ -103,7 +103,7 @@ The IBM Cloud Docs site uses JavaScript to display the content dynamically on it
 
     By changing the value to 1, you limit the number of links that are followed. As a result, Discovery crawls mostly topics within the official product documentation set and adds them to the collection. It doesn't follow as many links that go to external websites.
 
-1.  Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
+1.  Set the *Execute JavaScript during crawl* switcher to **On**. Click **Enable anyway**, and then click **Save**.
 
     ![Shows the Starting URLs field](images/tut-crawl-edit-settings.png){: caption="Figure 6. Execute JavaScript feature switcher" caption-side="bottom"}
 

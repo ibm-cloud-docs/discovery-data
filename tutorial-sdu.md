@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-02-07"
+lastupdated: "2023-03-16"
 
 subcollection: discovery-data
 content-type: tutorial
-services: discovery
+services: discovery-data
 account-plan: plus
 completion-time: 3h
 

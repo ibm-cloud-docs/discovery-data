@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-16"
 
 keywords: plans, pricing, service instances, billing
 
@@ -45,6 +45,7 @@ The plan includes the following features:
 -   Table Retrieval
 -   Custom NLP models
 -   Custom Relevance Model
+-   Entity extractor
 
 ### Artifact limits
 {: #plusplan-limits}
@@ -95,7 +96,8 @@ Your bill labels requests that are generated from both query searches and analyz
 -   Up to 100 projects
 -   Up to 300 collections (Up to 5 collections for all project types except Content Mining, which supports 1)
 -   Up to 10 MB document size
--   Up to 10 custom models
+-   Up to 10 custom {{site.data.keyword.knowledgestudioshort}} models
+-   Up to 10 entity extractor models
 -   Up to 100 custom fields for Smart Document Understanding model and model import and export
 -   Up to 100 custom dictionaries
 -   Up to 100 custom pattern extraction models
