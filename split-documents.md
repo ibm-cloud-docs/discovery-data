@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-16"
 
 subcollection: discovery-data
 
@@ -23,6 +23,7 @@ To control how your documents are split, you specify a field, such as `subtitle`
 
 Before you begin, decide which field to use as the page break marker.
 
+-   You cannot split CSV or JSON files by their document fields.
 -   You can use any of the fields that are indexed by default. To see your choices, check the *Fields to index* list. Fields that have a *Type* value are stored in the index.
 -   If the fields that are created by default don't meet your needs, you can use the Smart Document Understanding tool to define a custom field, and then split documents by the custom field. For more information, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
 
