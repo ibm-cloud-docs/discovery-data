@@ -44,7 +44,7 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - tutorial-crawl-short.md
+      - tutorial-assistant.md
       - tutorial-sdu.md
   - navgroup:
       id: howto
