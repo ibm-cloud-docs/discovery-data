@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-03-17"
 
 keywords: search goals, log, logging
 
@@ -21,18 +21,19 @@ subcollection: discovery-data
 ## Query types
 {: #query-dql-params}
 
-{{site.data.keyword.discoveryshort}} accepts queries that are written in either natural language or that use a syntax called the Discovery Query Language (DQL) that can search for values in specific fields in your documents, for example.
+{{site.data.keyword.discoveryshort}} accepts the following query types:
 
-The following parameters of the Query API accept the {{site.data.keyword.discoveryshort}} Query Language syntax:
+Discovery Query Language (DQL)
+:    Finds documents with values of interest in specific fields in your documents. The following parameters of the Query API accept the {{site.data.keyword.discoveryshort}} Query Language syntax:
 
-- `filter`
-- `query`
-- `aggregation`
+    - `filter`
+    - `query`
+    - `aggregation`
 
-These Discovery Query Language parameters are not available from the product user interface.
-{: note}
+Natural Language Query (NLQ)
+:    Finds answers to queries that are written in natural language. NLQ requests accept a text string value. Queries that are submitted from the product user interface are natural language queries. NLQ queries are specifying by using the following parameter of the Query API:
 
-The `natural_language_query` parameter accepts text strings as input, not query language syntax. Queries that are submitted from the product user interface are natural language queries.
+    - `natural_language_query`
 
 A few other supported Query API parameters are specified and given default values based on the project type in use. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
 
