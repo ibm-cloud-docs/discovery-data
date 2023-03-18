@@ -20,7 +20,7 @@ completion-time: 2h
 {: toc-services="discovery-data"}
 {: toc-completion-time="2h"}
 
-In this tutorial, you will use the {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} services to create a virtual assistant that can answer questions about the entity extractor feature of {{site.data.keyword.discoveryshort}} by using existing product documentation from the IBM Cloud documentation website.
+In this tutorial, you will use the Watson {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} services to create a virtual assistant that can answer questions about the entity extractor feature of {{site.data.keyword.discoveryshort}}. The assistant will answer questions by using up-to-date, existing product documentation from the IBM Cloud documentation website.
 {: shortdesc}
 
 [IBM Cloud]{: tag-ibm-cloud} 
@@ -203,9 +203,9 @@ In a later step, we will connect the search response in this action to a search 
 {: #tutorial-convo-project}
 {: step}
 
-In {{site.data.keyword.discoveryshort}}, create a project. You'll create a Conversational Search project type. This type is optimized for retrieving answers during dialog-driven interactions. For example, unlike other project types, it does not apply prebuilt enrichments that aren't needed.
+Now that the assistant can recognize questions about a subject, let's give it access to data from which it can retrieve accurate answers.
 
-For more information about project types, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
+In {{site.data.keyword.discoveryshort}}, create a Conversational Search project type. This project type is optimized for retrieving answers during dialog-driven interactions. For example, unlike other project types, it does not apply prebuilt enrichments that aren't needed.
 
 1.  Open a new web browser page.
 
@@ -318,7 +318,7 @@ Now, let's connect your assistant to your {{site.data.keyword.discoveryshort}} d
 {: #tutorial-convo-test-chat}
 {: step}
 
-To preview an assistant that connects to data that is stored in {{site.data.keyword.discoveryshort}}, you must preview the assistant from the Environments page. When you test it separately, the assistant cannot retrieve the data from {{site.data.keyword.discoveryshort}}.
+To preview an assistant that connects to data that is stored in {{site.data.keyword.discoveryshort}}, you must preview the assistant from the Environments page. When you test it separately, the assistant is not able to retrieve data from {{site.data.keyword.discoveryshort}}.
 
 1.  From the Environments page, click **Preview this environment**.
 
