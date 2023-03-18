@@ -199,7 +199,7 @@ Congratulations! You successfully created an action that recognizes questions ab
 
 In a later step, we will connect the search response in this action to a search extension that is configured for the assistant.
 
-## Create the Conversational Search project
+## Create a Conversational Search project
 {: #tutorial-convo-project}
 {: step}
 
@@ -216,7 +216,7 @@ For more information about project types, see [Creating projects](/docs/discover
 1.  From the *My Projects* page, click **New Project**.
 1.  Name your project `Entity Extractor Docs`, and then click the **Conversational Search** tile.
 
-    ![Shows the project type options](images/tut-project.png)
+    ![Shows the project type options](images/tut-convo-project.png)
 1.  Click **Next**.
 
 You'll configure the data source for the project in the next step.
