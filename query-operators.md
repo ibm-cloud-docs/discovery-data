@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-17"
 
 subcollection: discovery-data
 
@@ -16,10 +16,35 @@ subcollection: discovery-data
 These operators are used when you write queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
 
-Operators are the separators between different parts of a query. For the complete list of available operators, see the [Query reference](/docs/discovery-data?topic=discovery-data-query-reference#operators).
-{: tip}
+## Natural Language Query (NLQ) operator
+{: #nlq-operator}
 
-## `.` (JSON delimiter)
+The `natural_language_query` parameter accepts a string value. You can change how the string is processed by including a phrase query.
+
+### `""` (Phrase query)
+{: #phrase}
+
+Use quotation marks to emphasize the word in the query that is most important to match. 
+
+Single quotation marks (`'`) are not supported. You cannot use wildcards (`*`) in phrase queries.
+
+For example, the following request returns only passages that contain the term `nomination` in them.
+
+```bash
+natural_language_query:What is the process for \"nomination\" of bonds?
+```
+{: codeblock}
+
+When you surround a phrase in quotation marks, Discovery does not do an exact match. Instead, it looks for a matching phrase with the same tokens in the same order as the quoted text.
+
+For example, the following request returns 
+
+## Discovery Query Language (DQL) operators
+{: #dql-operators}
+
+Operators are the separators between different parts of a query.
+
+### `.` (JSON delimiter)
 {: #delimiter}
 
 This delimiter separates the levels of hierarchy in the JSON schema
@@ -35,7 +60,7 @@ The JSON representation of this section looks as follows:
 
 ![JSON source that shows the enriched_text.entities.text object structure](images/api-placement.png){: caption="Figure 1. JSON representation of the enriched_text.entities.text field" caption-side="bottom"}
 
-## `:` (Includes)
+### `:` (Includes)
 {: #includes}
 
 This operator specifies inclusion of the full query term.
@@ -63,7 +88,7 @@ test_results:*p53
 
 With this syntax, occurrences of `p53`, `tp53`, `P53`, or `TP53` are all returned.
 
-## `::` (Exact match)
+### `::` (Exact match)
 {: #match}
 
 This operator specifies an exact match for the query term. Exact matches are case-sensitive.
@@ -82,7 +107,7 @@ enriched_text.entities.text::"IBM Cloud"
 ```
 {: codeblock}
 
-## `:!` (Does not include)
+### `:!` (Does not include)
 {: #notinclude}
 
 This operator specifies that the results do not contain a match for the query term.
@@ -94,7 +119,7 @@ enriched_text.entities.text:!"cloud computing"
 ```
 {: codeblock}
 
-## `::!` (Not an exact match)
+### `::!` (Not an exact match)
 {: #notamatch}
 
 This operator specifies that the results do not exactly match the query term.
@@ -108,7 +133,7 @@ enriched_text.entities.text::!"Cloud computing"
 
 Exact matches are case-sensitive.
 
-## `\` (Escape character)
+### `\` (Escape character)
 {: #escape}
 
 Escape character that preserves the literal value of the character that follows it. 
@@ -120,22 +145,7 @@ title::"Dorothy said: \"There's no place like home\""
 ```
 {: codeblock}
 
-## `""` (Phrase query)
-{: #phrase}
-
-Use phrase queries with full-text, rank-based queries, and not with Boolean filter operations. Do not use wildcards (`*`) in phrase queries. All contents of a phrase query are processed as escaped. So no special characters within a phrase query are parsed, except for double quotation marks (`"`) inside a phrase query, which must be escaped (`\"`).
-
-Single quotation marks (`'`) are not supported.
-{: note}
-
-For example:
-
-```bash
-enriched_text.entities.text:"IBM watson"
-```
-{: codeblock}
-
-## `()`,`[]` (Nested grouping)
+### `()`,`[]` (Nested grouping)
 {: #nestedquery}
 
 Logical groupings can be formed to specify more specific information.
@@ -147,7 +157,7 @@ enriched_text.entities:(text:IBM,type:Company)
 ```
 {: codeblock}
 
-## `|` (or)
+### `|` (or)
 {: #or}
 
 Boolean operator for "or".
@@ -176,7 +186,7 @@ It is treated as follows:
 ```
 {: codeblock}
 
-## `,` (and)
+### `,` (and)
 {: #and}
 
 Boolean operator for "and".
@@ -205,7 +215,7 @@ It is treated as follows:
 ```
 {: codeblock}
 
-## `<=, >=, >, <` (Numerical comparisons)
+### `<=, >=, >, <` (Numerical comparisons)
 {: #comparisons}
 
 Creates numerical comparisons of `less than` or `equal to`, `greater than` or `equal to`, `greater than`, and `less than`.
@@ -222,7 +232,7 @@ invoice.total>100.50
 ```
 {: codeblock}
 
-## `^x` (Score multiplier)
+### `^x` (Score multiplier)
 {: #multiplier}
 
 Increases the score value of a search term.
@@ -234,7 +244,7 @@ enriched_text.entities.text:IBM^3
 ```
 {: codeblock}
 
-## `*` (Wildcard)
+### `*` (Wildcard)
 {: #wildcard}
 
 Matches unknown characters in a search expression. Do not use capital letters with wildcards.
@@ -246,7 +256,7 @@ enriched_text.entities.text:ib*
 ```
 {: codeblock}
 
-## `~n` (String variation)
+### `~n` (String variation)
 {: #variation}
 
 The number of character differences that are allowed when matching a string. The maximum variation number that can be used is 2.
@@ -269,7 +279,7 @@ title:"car hog"~1
 
 The normalized version of the word is used for matching. Therefore, if the input contains "cats", the search looks for "cat", which is the normalized form of the plural cats.
 
-## `:*` (Exists)
+### `:*` (Exists)
 {: #exists}
 
 Used to return all results where the specified field exists.
@@ -281,7 +291,7 @@ title:*
 ```
 {: codeblock}
 
-## `:!*` (Does not exist)
+### `:!*` (Does not exist)
 {: #dnexist}
 
 Used to return all results that do not include the specified field.
