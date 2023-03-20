@@ -292,7 +292,7 @@ Now, let's connect your assistant to your {{site.data.keyword.discoveryshort}} d
     ```
     {: codeblock}
 
-    Verify that the *Emphasize the answer* switch is set to **On**. This setting adds the parameter to the query request. As a result, a succinct answer to the query is shown in bold in the response that is returned by the assistant.
+    Verify that the *Emphasize the answer* switch is set to **On**. This setting adds the `find_answers:true` parameter to the query request. As a result, a succinct answer to the query is shown in bold in the response that is returned by the assistant.
 
     ![Shows the updated Message text and Emphasize the answer turned on.](images/tut-convo-enviro-3.png)
 
