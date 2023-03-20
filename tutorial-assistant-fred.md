@@ -14,13 +14,13 @@ completion-time: 2h
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Power your assistant with answers from existing content
-{: #tutorial-assistant}
+# Power your assistant with answers from web resources
+{: #tutorial-assistant-fred}
 {: toc-content-type="tutorial"}
 {: toc-services="discovery-data"}
 {: toc-completion-time="2h"}
 
-In this tutorial, you will use the Watson {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} services to create a virtual assistant that can answer questions about the entity extractor feature of {{site.data.keyword.discoveryshort}}. The assistant will answer questions by using up-to-date, existing product documentation from the IBM Cloud documentation website.
+In this tutorial, you will use the Watson {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} services to create a virtual assistant that can answer questions about the latest research from the US Federal Reserve. The assistant will answer questions by using up-to-date, existing research publications from the Federal Reserve Economic Data (FRED) website.
 {: shortdesc}
 
 [IBM Cloud]{: tag-ibm-cloud} 
@@ -70,7 +70,7 @@ Both Lite and Trial plan {{site.data.keyword.conversationshort}} service instanc
 1.  From the {{site.data.keyword.conversationshort}} plan service page in {{site.data.keyword.cloud_notm}}, click **Launch {{site.data.keyword.conversationshort}}**.
 
     The {{site.data.keyword.conversationshort}} product user interface is displayed where you can create your first assistant.
-1.  Add `Product expert` as the assistant name, and then click **Next**.
+1.  Add `FRED research` as the assistant name, and then click **Next**.
 
     ![Shows the Watson Assistant welcome page](images/tut-convo-assis-intro-2.png)
 
@@ -102,7 +102,7 @@ After a congratulatory message, the home page for your new assistant is displaye
 
 Create a single action that can recognize questions about the entity extractor feature in {{site.data.keyword.discoveryshort}}. 
 
-In a real world scenario, you might want your assistant to answer questions about muni funds or insurance plan options or something else. You can complete similar steps to teach the assistant to recognize when a customer is asking about a particular subject.
+In a real world scenario, you might want your assistant to answer questions about the products in your catalog or about insurance plan options or anything else. You can complete similar steps to teach the assistant to recognize when a customer is asking about a particular subject.
 
 1.  From the navigation panel, click **Actions**.
 
@@ -112,18 +112,14 @@ In a real world scenario, you might want your assistant to answer questions abou
 
     ![Shows the actions introduction page.](images/tut-convo-action-1.png)
 
-1.  Click **Create action**.
-
-    You can choose to start the action from a template.
+1.  Click **Create action**, and then choose to start from scratch.
 
     ![Shows the actions introduction page.](images/tut-convo-action-2.png)
 
-1.  Choose to start from scratch.
-
-    Because you want the assistant to recognize when customers ask about the entity extractor feature, add the following sample user question, and then click **Save**:
+1.  Because you want the assistant to recognize when customers ask about economic research, add the following sample user question, and then click **Save**:
 
     ```
-    What is an entity extractor?
+    What are the latest working papers about?
     ```
     {: codeblock}
 
@@ -138,27 +134,22 @@ In a real world scenario, you might want your assistant to answer questions abou
 1.  Add the following questions:
 
     ```
-    Can I change the color of the entity label?
+    Are there any working papers on the shipping industry?
     ```
     {: codeblock}
 
     ```
-    What are suggestions?
+    Are there any papers that focus on inflation?
     ```
     {: codeblock}
 
     ```
-    What happens if I choose to bulk label?
+    Are there papers about how trade policy affects pricing?
     ```
     {: codeblock}
 
     ```
-    What are the entity extractor limits?
-    ```
-    {: codeblock}
-
-    ```
-    Can I import an entity model?
+    What's the latest research on municipal bond markets?
     ```
     {: codeblock}
 
@@ -171,11 +162,9 @@ In a real world scenario, you might want your assistant to answer questions abou
 1.  Add the following text to the *Assistant says* field:
 
     ```
-    I'll check the product documentation.
+    I'll check the Federal Research Economic Data website.
     ```
     {: codeblock}
-
-    ![Shows the step with a response added.](images/tut-convo-action-7.png)
 
 1.  Do not add a customer response. Instead, in the *And then* section, click **Continue to next step**, and then choose **Search for the answer**.
 
@@ -214,7 +203,7 @@ In {{site.data.keyword.discoveryshort}}, create a Conversational Search project 
 
 1.  From the {{site.data.keyword.discoveryshort}} Plus plan service page in {{site.data.keyword.cloud_notm}}, click **Launch {{site.data.keyword.discoveryshort}}**.
 1.  From the *My Projects* page, click **New Project**.
-1.  Name your project `Entity Extractor Docs`, and then click the **Conversational Search** tile.
+1.  Name your project `Federal Reserve research`, and then click the **Conversational Search** tile.
 
     ![Shows the project type options](images/tut-convo-project.png)
 1.  Click **Next**.
@@ -230,13 +219,13 @@ We want the virtual assistant to be able to answer questions about the entity ex
 1.  From the *Select data source* page, click **Web crawl**, and then click **Next**.
 
     ![Shows the data source options](images/tut-convo-web-crawl-0.png)
-1.  In the **Collection name** field, add `Entity extractor docs`.
+1.  In the **Collection name** field, add `FRED papers`.
 
     ![Shows the Web crawl name field](images/tut-convo-web-crawl-1.png)
 1.  In the **Starting URLs** field, add the following URL:
 
     ```
-    https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-entity-extractor
+    https://research.stlouisfed.org/wp
     ```
     {: codeblock}
 
@@ -248,24 +237,15 @@ We want the virtual assistant to be able to answer questions about the entity ex
 1.  Click the Edit icon for the URL that you just added.
 
     ![Shows the Starting URLs field](images/tut-convo-web-crawl-3.png)
-1.  In the **Maximum number of links to follow** field, change the value to 0.
+1.  In the **Maximum number of links to follow** field, change the value to 10.
 
     ![Shows the Starting URLs field](images/tut-convo-web-crawl-4.png)
 
-    By changing the value to 0, you indicate that you want the service to process only the page that you specified in the starting URLs field. Typically, the service would crawl the initial page and any pages that are linked to from the initial page.
-1.  Set the *Execute JavaScript during crawl* switcher to **On**.
-
-    ![Shows the Starting URLs field](images/tut-convo-web-crawl-5.png)
-
-    A notification is displayed to warn you that enabling this feature might increase the time it takes to crawl the page. If you can avoid enabling this option, do so. We need to enable this feature because the documentation site uses JavaScript to populate the web page with content.
-    
-1.  Click **Enable anyway** to continue.
-
-    ![Shows the page crawl setup with JavaScript execution enabled.](images/tut-convo-web-crawl-6.png)
+    By changing the value to 10, you indicate that you want the service to process the page that you specified plus you want it to follow up to 10 links from the starting page.
 
 1.  Click **Save**, and then click **Finish**.
 
-The {{site.data.keyword.discoveryshort}} service crawls the web page that you specified as the starting URL.
+The {{site.data.keyword.discoveryshort}} service crawls the web page that you specified starting with the page that you specified as the starting URL.
 
 While the website is being crawled and the data indexed, let's go back to our {{site.data.keyword.conversationshort}} service instance. It's time to connect the action that we created to this {{site.data.keyword.discoveryshort}} project.
 
@@ -299,7 +279,7 @@ Now, let's connect your assistant to your {{site.data.keyword.discoveryshort}} d
 
     The Search Integration page is displayed.
 
-1.  Select the {{site.data.keyword.discoveryshort}} instance where your project is stored, and then select the **Entity Extractor Docs** project that you created earlier. Click **Next**.
+1.  Select the {{site.data.keyword.discoveryshort}} instance where your project is stored, and then select the **Federal Reserve research** project that you created earlier. Click **Next**.
 
     ![Shows the search integration with the instance and project selected.](images/tut-convo-enviro-2.png)
 
@@ -308,9 +288,13 @@ Now, let's connect your assistant to your {{site.data.keyword.discoveryshort}} d
 1.  In the *Define the text your search will display to the end user* section, edit the content to show the following message:
 
     ```
-    I checked the Watson Discovery product documentation.
+    The Federal Reserve Economic Data website has this information:
     ```
     {: codeblock}
+
+    Verify that the *Emphasize the answer* switch is set to **On**. This setting adds the parameter to the query request. As a result, a succinct answer to the query is shown in bold in the response that is returned by the assistant.
+
+    ![Shows the updated Message text and Emphasize the answer turned on.](images/tut-convo-enviro-3.png)
 
 1.  Click **Create**.
 
@@ -335,7 +319,7 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 1.  Enter the following text question:
 
     ```
-    Can you export an entity extractor model?
+    What impact is inflation having on the real estate market?Can you export an entity extractor model?
     ```
     {: codeblock}
 
@@ -346,7 +330,9 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
     ![Shows a preview of the assistant where the test question is answered](images/tut-convo-test-3.png)
 
+Congratulations! You successfully created an assistant that can answer questions about economic topics by retrieving information from working papers that are available from the US Federal Research Economic Data website.
+
 ### Next steps
 {: #tutorial-convo-next}
 
-You created a draft environment in which your assistant is connected to a search extension. Next, you can publish your assistant to a production environment and deploy it. There are a variety of methods you can use to deploy the assistant. For more information, see [Overview: Previewing and publishing](/docs/watson-assistant?topic=watson-assistant-publish-overview){: external}.
+The assistant that you created and connected to a search extension is available from the Draft environment. Next, you can publish your assistant to a production environment and deploy it. There are a variety of methods you can use to deploy the assistant. For more information, see [Overview: Previewing and publishing](/docs/watson-assistant?topic=watson-assistant-publish-overview){: external}.

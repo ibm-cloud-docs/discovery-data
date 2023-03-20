@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-20"
 
 subcollection: discovery-data
 
@@ -37,7 +37,12 @@ natural_language_query:What is the process for \"nomination\" of bonds?
 
 When you surround a phrase in quotation marks, Discovery does not do an exact match. Instead, it looks for a matching phrase with the same tokens in the same order as the quoted text.
 
-For example, the following request returns 
+For example, the following request returns "changing monetary policy" in addition to "change in monetary policy" because it looks for matches against `the verb: to change + the stop word=in + monetary policy`
+
+```bash
+natural_language_query:\"change in monetary policy\"
+```
+{: codeblock}
 
 ## Discovery Query Language (DQL) operators
 {: #dql-operators}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-20"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -270,13 +270,15 @@ To create a crawl schedule, complete the following steps:
 
 1.  In the in *Crawl schedule* section, choose a frequency.
 
+    [IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments have more schedule options:
+
     -   If you want to crawl every 12 hours or every 10 days, choose **Custom intervals**. You can schedule the crawler to run on a custom number of days or hours.
     -   By default, the crawl is scheduled to start during off-peak hours.
     -   Do not set the interval to a frequency that is shorter than the time it takes for the crawl to finish.
     -   Do not configure multiple crawlers to run at short intervals.
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
+    -   You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
-1.  [IBM Cloud Pak for Data]{: tag-cp4d} In **More scheduling settings**, choose the type of schedule to use to crawl the data source. 
+1.  [IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments have a **More scheduling settings** section where you can choose the type of schedule to use to crawl the data source. 
 
     The choices for all of the connectors (except the *Web crawl* connector) are as follows:
 
