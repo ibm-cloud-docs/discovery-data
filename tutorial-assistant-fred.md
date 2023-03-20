@@ -162,7 +162,7 @@ In a real world scenario, you might want your assistant to answer questions abou
 1.  Add the following text to the *Assistant says* field:
 
     ```
-    I'll check the Federal Research Economic Data website.
+    I'll check the Federal Reserve Economic Data website.
     ```
     {: codeblock}
 
@@ -267,11 +267,11 @@ Now, let's connect your assistant to your {{site.data.keyword.discoveryshort}} d
 
     We don't want to add multiple starter questions, so we are going to turn off the home screen for the web chat. Click the **Home screen** tab.
 
-    ![Shows the web chat home screen configuration page.](images/tut-convo-enviro-1a.png)
+    ![Shows the web chat home screen configuration page.](images/tut-convo-enviro-1aa.png)
 
 1.  Set the switcher to **Off**, and then click **Save and exit**.
 
-    ![Shows the web chat home screen set to Off.](images/tut-convo-enviro-1b.png)
+    ![Shows the web chat home screen set to Off.](images/tut-convo-enviro-1bb.png)
 
 1.  We want to connect the web chat to a search extension. Click the **Add** button in the Search extension tile.
 
