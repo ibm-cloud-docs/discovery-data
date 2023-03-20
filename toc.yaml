@@ -44,7 +44,7 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - tutorial-assistant.md
+      - tutorial-assistant-fred.md
       - tutorial-sdu.md
   - navgroup:
       id: howto

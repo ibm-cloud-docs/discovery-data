@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-20"
 
 subcollection: discovery-data
 
@@ -15,29 +15,6 @@ subcollection: discovery-data
 
 These operators are used when you write queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
 {: shortdesc}
-
-## Natural Language Query (NLQ) operator
-{: #nlq-operator}
-
-The `natural_language_query` parameter accepts a string value. You can change how the string is processed by including a phrase query.
-
-### `""` (Phrase query)
-{: #phrase}
-
-Use quotation marks to emphasize the word in the query that is most important to match. 
-
-Single quotation marks (`'`) are not supported. You cannot use wildcards (`*`) in phrase queries.
-
-For example, the following request returns only passages that contain the term `nomination` in them.
-
-```bash
-natural_language_query:What is the process for \"nomination\" of bonds?
-```
-{: codeblock}
-
-When you surround a phrase in quotation marks, Discovery does not do an exact match. Instead, it looks for a matching phrase with the same tokens in the same order as the quoted text.
-
-For example, the following request returns 
 
 ## Discovery Query Language (DQL) operators
 {: #dql-operators}
