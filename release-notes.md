@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-20"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -32,8 +32,6 @@ This information applies only to managed instances of {{site.data.keyword.discov
 
 Now you can specify the types of files to add to a collection
 :   When you connect to an external data source, you can limit the types of files to add from the external data source to the collection. For example, you can choose to add only PDF files from a Box data source.
-
-    When you add a web crawl connector that crawls a website with page URLS that do not end in `.html`, choose the exclude option. You must add at least one file extension for a file type, such as `.js`, to exclude.
 
 ## 21 Febuary 2023
 {: #discovery-21febuary2023}
