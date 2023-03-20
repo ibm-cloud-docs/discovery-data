@@ -237,11 +237,11 @@ We want the virtual assistant to be able to answer questions about the entity ex
 1.  Click the Edit icon for the URL that you just added.
 
     ![Shows the Starting URLs field](images/tut-convo-web-crawl-3.png)
-1.  In the **Maximum number of links to follow** field, change the value to 10.
+1.  In the **Maximum number of links to follow** field, change the value to 5.
 
     ![Shows the Starting URLs field](images/tut-convo-web-crawl-4.png)
 
-    By changing the value to 10, you indicate that you want the service to process the page that you specified plus you want it to follow up to 10 links from the starting page.
+    By changing the value to 5, you indicate that you want the service to process the page that you specified plus you want it to follow up to 5 links from the starting page.
 
 1.  Click **Save**, and then click **Finish**.
 
@@ -306,7 +306,7 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
 1.  From the Environments page, click **Preview this environment**.
 
-    ![Shows a preview of a web page with a chat icon](images/tut-convo-test-0.png)
+    ![Shows a preview of a web page with a chat icon](images/tut-convo-test-0a.png)
 
     A sample web page is displayed that includes a chat icon.
 
@@ -319,7 +319,7 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 1.  Enter the following text question:
 
     ```
-    What impact is inflation having on the real estate market?Can you export an entity extractor model?
+    What impact is inflation having on the real estate market?
     ```
     {: codeblock}
 
@@ -328,7 +328,7 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
     The correct answer is returned and it includes a link to the source documentation page.
 
-    ![Shows a preview of the assistant where the test question is answered](images/tut-convo-test-3.png)
+    ![Shows a preview of the assistant where the test question is answered](images/tut-convo-test-3a.png)
 
 Congratulations! You successfully created an assistant that can answer questions about economic topics by retrieving information from working papers that are available from the US Federal Research Economic Data website.
 
