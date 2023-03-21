@@ -332,6 +332,11 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
 Congratulations! You successfully created an assistant that can answer questions about economic topics by retrieving information from working papers that are available from the US Federal Research Economic Data website.
 
+### Summary
+{: #tutorial-convo-summary}
+
+In this tutorial, you created a Watson {{site.data.keyword.discoveryshort}} Conversational Search project with a web crawl connector that collects information about working papers from the US Federal Reserve Economic Data website. Separately, you created a {{site.data.keyword.conversationshort}} virtual assistant with a single action that can recognize user questions about economic subjects. You added a Search extension to your assistant that connects the action's search response to the {{site.data.keyword.discoveryshort}} project where economic data is stored. Finally, you tested your virtual assistant by asking a question and getting a useful response that featured data from relevant economic research papers.
+
 ### Next steps
 {: #tutorial-convo-next}
 

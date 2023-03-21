@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-03-21"
 
 subcollection: discovery-data
 
@@ -67,6 +67,12 @@ If you have a service instance that is managed by {{site.data.keyword.cloud_notm
 {: faq}
 
 You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} to make information that is stored in external data sources available to a virtual assistant. Create a *Conversational Search* project in {{site.data.keyword.discoveryshort}}, and then add the data sources that you want to make available to it. Next, create a *search integration* in {{site.data.keyword.conversationshort}}, and connect it to your {{site.data.keyword.discoveryshort}} project and collection.
+
+## Can I increase the collection limit for a project?
+{: #faq-more-collections}
+{: faq}
+
+If you want to add more than 5 collections to your project, and you have a Premium plan, you can request an increase to the collection limit by opening a support request. For more information, see [Getting help](/docs/discovery-data?topic=discovery-data-get-help).
 
 ## Can I find related documents after I add them to a collection
 {: #faq-keep-doc-relationship}
