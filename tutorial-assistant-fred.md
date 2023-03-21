@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-21"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -100,7 +100,7 @@ After a congratulatory message, the home page for your new assistant is displaye
 {: #tutorial-convo-action}
 {: step}
 
-Create a single action that can recognize questions about the entity extractor feature in {{site.data.keyword.discoveryshort}}. 
+Create a single action that can recognize questions about the latest research papers from the US Federal Reserve Economic Data (FRED) website.
 
 In a real world scenario, you might want your assistant to answer questions about the products in your catalog or about insurance plan options or anything else. You can complete similar steps to teach the assistant to recognize when a customer is asking about a particular subject.
 
@@ -182,7 +182,7 @@ In a real world scenario, you might want your assistant to answer questions abou
 
     ![Shows the action close icon.](images/tut-convo-action-11.png)
 
-Congratulations! You successfully created an action that recognizes questions about the {{site.data.keyword.discoveryshort}} entity extractor and returns a search response.
+Congratulations! You successfully created an action that recognizes questions about FRED research papers and returns a search response.
 
 ![Shows the action that was created.](images/tut-convo-action-12.png)
 
@@ -214,7 +214,7 @@ You'll configure the data source for the project in the next step.
 {: #tutorial-convo-add-data}
 {: step}
 
-We want the virtual assistant to be able to answer questions about the entity extractor feature in {{site.data.keyword.discoveryshort}}, so we will connect our project to the {{site.data.keyword.cloud_notm}} website that hosts the {{site.data.keyword.discoveryshort}} product documentation.
+We want the virtual assistant to be able to answer questions about the latest working papers from the US Federal Reserve, so we will connect our project to the Federal Reserve Economic Data website that hosts the working papers.
 
 1.  From the *Select data source* page, click **Web crawl**, and then click **Next**.
 
@@ -253,7 +253,7 @@ While the website is being crawled and the data indexed, let's go back to our {{
 {: #tutorial-convo-search}
 {: step}
 
-Now, let's connect your assistant to your {{site.data.keyword.discoveryshort}} data.
+Let's connect your assistant to your {{site.data.keyword.discoveryshort}} data.
 
 1.  From the navigation panel in {{site.data.keyword.conversationshort}}, click **Environments**.
 
