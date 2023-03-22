@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-22"
 
 subcollection: discovery-data
 
@@ -50,7 +50,7 @@ Experimental and beta features are not intended for use with a production enviro
 
 The following stored information can be deleted by using a `customer_id` if the `customer_id` was specified when the information was originally added by using the associated method:
 
-- Queries (`/v2/projects/{project_id}/query`) Only when used with the `passages` or `natural_language_query` parameters
+- Curations (`/v2/projects/{project_id}/curations`) Only available for `natural_language_query` query types.
 - Documents (`/v2/projects/{project_id}/collections/{collection_id}/documents`)
 - Notices (`/v2/projects/{project_id}/notices`) Only ingestion `notices` are labeled.
 - Training data (`/v2/projects/{project_id}/training_data/queries`)
@@ -59,6 +59,8 @@ The following stored information can be deleted by using a `customer_id` if the 
 - Reports (Only when created in the Content Mining application)
 
 Exported documents and reports can be viewed in the *Repository* and *Report* pages of the Content Mining application. They are not available by using the API.
+
+{{site.data.keyword.discoveryshort}} does not log query request data.
 
 For more information about the options for labeling data in {{site.data.keyword.discoveryshort}}, see [Labeling data](/docs/discovery-data?topic=discovery-data-information-security#labeling).
 

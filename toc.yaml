@@ -85,7 +85,7 @@ toc:
           - manage-collections.md
       - index-overview.md
       - topicgroup:
-          label: Querying your data
+          label: Querying your data from the UI
           topics:
           - query-results.md
           - improvements.md
@@ -126,6 +126,22 @@ toc:
           - manage-enrichments.md
       - test.md
       - topicgroup:
+          label: Querying your data programmatically
+          topics:
+          - api-use.md
+          - topicgroup:
+              label: Query API
+              topics:
+              - query-concepts.md
+              - query-dql-overview.md
+              - query-parameters.md
+              - query-operators.md
+              - query-aggregations.md
+          - curations.md
+          - link:
+              label: Learn with sample apps
+              href: https://developer.ibm.com/learningpaths/get-started-watson-discovery/
+      - topicgroup:
           label: Analyzing data with the Content Mining application
           topics:
           - topic: contentminerapp.md
@@ -141,22 +157,6 @@ toc:
           - cm-report.md
           - cm-export.md
       - analyzeapi.md
-      - topicgroup:
-          label: Deploying a custom application
-          topics:
-          - api-use.md
-          - topicgroup:
-              label: Query API
-              topics:
-              - query-concepts.md
-              - query-dql-overview.md
-              - query-parameters.md
-              - query-operators.md
-              - query-aggregations.md
-          - curations.md
-          - link:
-              label: Learn with sample apps
-              href: https://developer.ibm.com/learningpaths/get-started-watson-discovery/
       - deploy.md
       - topicgroup:
           label: Installing
