@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-12-16"
+lastupdated: "2023-03-22"
 
 keywords: curation,snippet,hard-coded answers
 
@@ -18,9 +18,11 @@ subcollection: discovery-data
 The Curations feature is beta functionality.
 {: beta}
 
-Use curations to specify the exact document to return in response to a specific query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query is always `1.00000`.
+Use curations to specify the exact document to return in response to a specific natural language query. Curations can guarantee that frequent or important questions always return the most valuable document. The `confidence_score` for a curated query is always `1.00000`.
 
-This beta feature is only available when using the API and can be used to specify up to 1,000 curations. For details, see [Create curation](https://{DomainName}/apidocs/discovery-data#createcuration){: external} in the API reference.
+This beta feature is only available from the API and is applied only to natural language queries, not queries that are specified by using the Discovery Query Language. Beta features are not available from the SDKs. 
+
+You can define up to 1,000 curations. For more information, see [Create curation](https://{DomainName}/apidocs/discovery-data#createcuration){: external} in the API reference.
 
 This example shows how a curation is added with the API. When querying with the same or similar `natural_language_query` the document with the `document_id` of `document_id1234` is returned.
 

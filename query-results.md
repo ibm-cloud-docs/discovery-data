@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-22"
 
 keywords: passages, query results
 
@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Previewing query results
+# Previewing your query results
 {: #query-results}
 
 See the types of query results that are returned automatically and learn about how they are derived.
@@ -20,7 +20,9 @@ See the types of query results that are returned automatically and learn about h
 
 When a document is ingested, the text is extracted and indexed in the`text` field. To return only the subset of information that is relevant to the query, {{site.data.keyword.discoveryshort}} returns *passages* from the `text` field. For more information about passages, see [How passages are derived](/docs/discovery-data?topic=discovery-data-index-overview#query-results-passages).
 
-To preview the default query results, complete the following steps:
+When you enter a query from the product user interface, the UI submits the text as a natural language query. For more information about how to query your data programmatically, see [Query API](/docs/discovery-data?topic=discovery-data-query-concepts).
+
+To query your data from the product user interface, complete the following steps:
 
 1.  From the navigation panel, open the *Improve and customize* page.
 1.  Take the appropriate next steps for your project type.
@@ -84,11 +86,11 @@ For more information about the elements, see [Understanding contracts](/docs/dis
 ## Content Mining
 {: #query-results-cm}
 
-1.  Choose a facet by which to filter the documents.
+Facets based on the *Part of Speech* enrichment are shown. 
 
-    Facets based on the *Part of Speech* enrichment are shown. To analyze your data further, open the Content Mining application by clicking **Launch application**.
+1.  To analyze your data, open the Content Mining application. Click **Launch application**.
 
-    For more information, see [Analyzing your data](/docs/discovery-data?topic=discovery-data-contentminerapp).
+For more information, see [Analyzing your data](/docs/discovery-data?topic=discovery-data-contentminerapp).
 
 ## What to do next
 {: #query-next}
