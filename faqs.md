@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-03-22"
 
 subcollection: discovery-data
 
@@ -72,7 +72,7 @@ You can integrate {{site.data.keyword.discoveryshort}} and {{site.data.keyword.c
 {: #faq-more-collections}
 {: faq}
 
-If you want to add more than 5 collections to your project, and you have a Premium plan, you can request an increase to the collection limit by opening a support request. For more information, see [Getting help](/docs/discovery-data?topic=discovery-data-get-help).
+If you want to add more than 5 collections to your project and you have a Premium plan, you can request an increase to the collection limit by opening a support request. For more information, see [Getting help](/docs/discovery-data?topic=discovery-data-get-help).
 
 ## Can I find related documents after I add them to a collection
 {: #faq-keep-doc-relationship}
