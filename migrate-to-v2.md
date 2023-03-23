@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 A redesign of the product, {{site.data.keyword.discoveryshort}} v2, was introduced in November 2019. {{site.data.keyword.discoveryshort}} v2 offers significant advantages over {{site.data.keyword.discoveryshort}} v1.
 {: shortdesc}
 
-The information in this topic describes how to migrate a v1 {{site.data.keyword.discoveryshort}} service instance to {{site.data.keyword.discoveryshort}} v2, including how to move data and update your applications.
+Learn about how to migrate a v1 {{site.data.keyword.discoveryshort}} service instance to {{site.data.keyword.discoveryshort}} v2, including how to move data and update your applications.
 
 The major structural differences between {{site.data.keyword.discoveryshort}} v1 and v2 include:
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2021-08-25"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Guided tours
 {: #tours}
 
-You can explore the {{site.data.keyword.discoveryshort}} interface with our interactive tours. Click **Guided tours** from the header of the *My Projects* page to select a tour.
+You can explore the {{site.data.keyword.discoveryshort}} interface by taking an interactive tour. Click **Guided tours** from the header of the *My Projects* page to select a tour.
 {: shortdesc}
 
 The following tours are available:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -16,9 +16,7 @@ subcollection: discovery-data
 {{site.data.keyword.discoveryshort}} was redesigned to introduce new features and a simpler way to build solutions.
 {: shortdesc}
 
-The redesigned product is referred to as {{site.data.keyword.discoveryshort}} v2. When you create a Plus, Enterprise, or Premium plan instance on {{site.data.keyword.cloud_notm}}, you get the new and improved version of {{site.data.keyword.discoveryshort}}. {{site.data.keyword.discoveryshort}} v2 is deployed when you install and provision an instance on {{site.data.keyword.icp4dfull_notm}} also.
-
-{{site.data.keyword.discoveryshort}} v1 is provisioned when you create a Lite or Advanced plan instance on {{site.data.keyword.cloud_notm}}.
+The redesigned product is referred to as {{site.data.keyword.discoveryshort}} v2. When you create an instance on {{site.data.keyword.cloud_notm}} or install and provision an instance on {{site.data.keyword.icp4dfull_notm}}, you get the new and improved version of {{site.data.keyword.discoveryshort}}.
 
 ## Advantages of using the latest version
 {: #version-choose-v2-highlights}

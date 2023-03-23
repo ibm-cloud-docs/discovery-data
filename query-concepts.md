@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-23"
 
 keywords: search goals, log, logging
 
@@ -21,27 +21,26 @@ subcollection: discovery-data
 ## Query types
 {: #query-dql-params}
 
-{{site.data.keyword.discoveryshort}} accepts the following query types:
+{{site.data.keyword.discoveryshort}} accepts one of the following supported query types:
 
-Discovery Query Language (DQL)
-:    Finds documents with values of interest in specific fields in your documents. 
+Query
+:    Finds documents with values of interest in specific fields in your documents. Queries of this type use {{site.data.keyword.discoveryshort}} Query Language syntax to define the search criteria.
 
-    The following parameters of the Query API accept the {{site.data.keyword.discoveryshort}} Query Language syntax:
-
-    - `filter`
-    - `query`
-    - `aggregation`
-
-    For more information about the {{site.data.keyword.discoveryshort}} Query Language, see [DQL overview](/docs/discovery-data?topic=discovery-data-query-dql-overview).   
+    Parameter name: `query`
 
 Natural Language Query (NLQ)
-:    Finds answers to queries that are written in natural language. NLQ requests accept a text string value. Queries that are submitted from the product user interface are natural language queries. 
+:    Finds answers to queries that are written in natural language. NLQ requests accept a text string value.
 
-    NLQ queries are specifying by using the following parameter of the Query API:
+    Parameter name: `natural_language_query`
 
-    - `natural_language_query`
+Along with the query that you specify by using one of the supported query types, you can include one or both of the following parameters. The values for these parameters are also specified by using the {{site.data.keyword.discoveryshort}} Query Language (DQL) syntax:
 
-A few other supported parameters are specified and given default values based on the project type in use. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
+- `filter`
+- `aggregation`
+
+For more information about the {{site.data.keyword.discoveryshort}} Query Language, see [DQL overview](/docs/discovery-data?topic=discovery-data-query-dql-overview).   
+
+Queries that are submitted from the product user interface are natural language queries. A few other supported parameters are specified and given default values based on the project type in use. For more information, see [Default query settings](/docs/discovery-data?topic=discovery-data-query-defaults).
 
 {{site.data.keyword.discoveryshort}} does not log query request data. You cannot opt in to request logging.
 {: note}

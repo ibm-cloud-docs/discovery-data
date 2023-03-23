@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 You can add a collection directly to the Content Mining application.
 {: shortdesc}
 
-You might want to add a collection that can be used as training data for a document classifier, for example.
+You might want to add a collection from within the Content Mining application to make data available for use as training data for a document classifier, for example.
 
 The collection can contain an uploaded CSV file only. For information about file guidelines, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file).
 
