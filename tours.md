@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Guided tours
 {: #tours}
 
-You can explore the {{site.data.keyword.discoveryshort}} interface by taking an interactive tours. Click **Guided tours** from the header of the *My Projects* page to select a tour.
+You can explore the {{site.data.keyword.discoveryshort}} interface by taking an interactive tour. Click **Guided tours** from the header of the *My Projects* page to select a tour.
 {: shortdesc}
 
 The following tours are available:

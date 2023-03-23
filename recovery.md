@@ -162,8 +162,8 @@ You cannot back up certain data types and must manually re-create them. There ar
 -   **/** Saved analysis
 -   **/** Report
 -   **/** Dashboard
--   **Custom map:** You can restore a custom map if you stored the custom map locally as a .json file and then upload it in the application. You can upload your .json file by clicking the ![Cog](images/icon_settings.png) icon on the header of the **Create a custom annotator** page, **Manage customization resources**, and **Add resource**. In **Resource type**, select **Map**, click **Next**, and upload your .json file.
--   **Searched document export:** You can export a searched document in the **Documents** view in the Content Mining application, but you cannot reupload it in the application. If you want to export a searched document, navigate to the **Documents** view in the Content Mining application by clicking **Show documents** on the mining graph in **Guided mode**, then the **Export** icon next to the **Edit** icon, and **Export** in the **Searched document export options** dialog box. You can then download the exported file from the **Repository** pane.
+-   **Custom map:** 
+-   **Searched document export:** You can export a searched document in the **Documents** view in the Content Mining application, but you cannot reupload it in the application.
 -   **Facet analysis result export:** You can download the results of your facet analysis by clicking the **Export** icon, then **Export results**, and **Export** in the **Analysis export options** dialog box.
 -   **Collection:** You can restore a Content Mining collection if you stored the collection locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the collection. If you want to upload a collection .csv file, you can navigate to the **Create a collection** page in the application, click **Create collection**, and in **Import your files** in the **Dataset** tab, you can select your file.
 -   **Document classifier:** You can restore a document classifier if you stored the document classifier locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the document classifier. If you want to upload a document classifier .csv file, you can navigate to the **Create a classifier** page in the application, click **Create classifier**, and in **Import your files** in the **Training data** tab, you can select your file.
@@ -180,14 +180,14 @@ You cannot back up certain data types and must manually re-create them. There ar
 ## Restoring your data to a new Watson Discovery instance
 {: #restoredata}
 
-Consider using your backups to restore to a new {{site.data.keyword.discoveryshort}} instance in a different data center, also known as a region or location. These regions or locations include Dallas; Washington, DC; London; Tokyo; Sydney; and Frankfurt.
+Consider using your backups to restore to a new {{site.data.keyword.discoveryshort}} instance in a different data center, also known as a region or location.
 {: note}
 
 To begin restoration, first start by reviewing your list of collections and associated data sources, as well as your file backups.
 
 -    Create your projects and collections. Use the {{site.data.keyword.discoveryshort}} tooling, or the API. See [Create a project](https://{DomainName}/apidocs/discovery-data#createproject){: external} and [Create a collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external}.
--    Add back stopwords into the collections. See [Defining stopwords](/docs/discovery-data?topic=discovery-data-search-settings#stopwords). 
--    If you use custom query expansion, add your query expansions. See [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings#query-expansion).
+-    Add back stopwords into the collections. See [Defining stopwords](/docs/discovery-data?topic=discovery-data-stopwords). 
+-    If you use custom query expansion, add your query expansions. See [Implementing synonyms](/docs/discovery-data?topic=discovery-data-search-settings).
 -    If you use any custom entity models from {{site.data.keyword.knowledgestudiofull}} for enrichment, reimport that model into your {{site.data.keyword.discoveryshort}} instance. For details, see [Managing enrichments](/docs/discovery-data?topic=discovery-data-managing-enrichments).
 
 After you set up your projects and collections as they were before, begin ingesting your source documents. Depending upon how you ingested your documents previously, you can do so by using your own solution or one of the following methods:
