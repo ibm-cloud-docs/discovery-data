@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -13,9 +13,10 @@ subcollection: discovery-data
 # Language support
 {: #language-support}
 
-Each collection that you add to a project must contain documents of the same language. You specify the language of the collection when you create it. 
+Each collection that you add to a project must contain documents of the same language. You specify the language of the collection when you create it.
+{: shortdesc}
 
-Discovery is not optimized for multilingual search. You can add several collections, each one with documents in a separate language, into one mulitlingual project. However, the query results that are returned from the project might include irrelevant passages from a document in a language that is different from the language of the user's query.
+Discovery is not optimized for multilingual search. Although you can add several collections, each one with documents in a separate language, into one project, the query results from the project will be unpredictable. The results might include irrelevant passages from a document in a language that is different from the language of the user's query.
 {: note}
 
 The following table describes the product features that are supported in each language.

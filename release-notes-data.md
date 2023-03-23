@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-23"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -177,7 +177,7 @@ Security vulnerabilities were addressed
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data affected by vulnerability in Apache POI](https://www.ibm.com/support/pages/node/6570947)
     -   [Security Bulletin: IBM Watson Discovery for IBM Cloud Pak for Data is affected by a remote code execution in Spring Framework (CVE-2022-22965)](https://www.ibm.com/support/pages/node/6570949)
 
-## {{site.data.keyword.discoveryfull}} for ICP for Data 2.2.x End Of Support
+## {{site.data.keyword.discoveryfull}} for IBM Cloud Private (ICP) for Data 2.2.x End Of Support
 {: #release-notes-data-eos-15april2022}
 
 Effective 30 April 2022, IBM will withdraw support for the following programs:

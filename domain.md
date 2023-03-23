@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-23"
 
 keywords: choose enrichments,enrichment overview
 
@@ -22,7 +22,7 @@ The following table shows you the correct resources to add to address different 
 
 | Goal | Resource | Notes |
 |------|----------|-------|
-| Define categories by which your documents can be classified. | [Classifier](/docs/discovery-data?topic=discovery-data-domain-classifier) | N/A |
+| Define categories by which text in your documents can be classified. | [Classifier](/docs/discovery-data?topic=discovery-data-domain-classifier) | N/A |
 | Recognize terms and synonyms for terms that are significant to you, such as the names of products that you sell. | [Dictionary](/docs/discovery-data?topic=discovery-data-domain-dictionary) | Term suggestions are displayed if the *Part of Speech* enrichment is applied to the collection. |
 | Define regular expressions that capture patterns of significance, such as that `AB10045` is the syntax that is used for your order numbers. | [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex) | N/A |
 | Recognize and tag entities and relationships that are defined in a custom machine learning model. | [Machine learning models](/docs/discovery-data?topic=discovery-data-domain-ml) | Requires a model that is built and exported from another IBM tool. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-11-08"
+lastupdated: "2023-03-23"
 
 keywords: known issues
 
@@ -47,7 +47,7 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
 ## 4.0.9, 25 May 2022
 {: #25may2022ki}
 
--   {{site.data.keyword.discoveryshort}} generates a partial failure status message for the {{site.data.keyword.icp4dfull_notm}} OpenShift® APIs for Data Protection (OADP) backup and restore utility.
+-   {{site.data.keyword.discoveryshort}} generates a partial failure status message for the {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility.
 
     -  **Error**: When you check the status of the OADP backup utility after using it to backup a cluster where {{site.data.keyword.discoveryshort}} is installed, a `Phase: PartiallyFailed` message is displayed. One or more {{site.data.keyword.discoveryshort}} components are included in the `Failed` list.
     -  **Cause**: {{site.data.keyword.discoveryshort}} cannot be backed up and restored by using the OADP backup and restore utility. When the {{site.data.keyword.discoveryshort}} service is present, and an administrator backs up an entire {{site.data.keyword.icp4dfull_notm}} instance, a status message is displayed that indicates a partial failure. This status is displayed because the persistent volume claims (PVCs) for {{site.data.keyword.discoveryshort}} are not backed up. However, the message does not impact the back up of the rest of the services.

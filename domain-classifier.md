@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-13"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -67,9 +67,9 @@ To create a text classifier, complete the following steps:
 1.  Click **Create**.
 
     A classifier enrichment is created based on the training data that you provided.
-1.  Choose the collection and field where you want to apply the enrichment, and then click **Apply**.
+1.  Choose the collection and field where you want to apply the text classifier enrichment, and then click **Apply**.
 
-In the output, the classifier enrichment applies the `facility_temperature` label to the document in the collection. The `label` is stored in the `enriched_{field_name}` array, within the `classes` array.
+The following example shows how an enrichment that is created with the sample CSV file as its training data might classify text in a document. In the output, the classifier enrichment applies the `facility_temperature` label to the document text. The `label` is stored in the `enriched_{field_name}` array, within the `classes` array.
 
 ```json
 {

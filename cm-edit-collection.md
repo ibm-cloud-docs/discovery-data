@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-10-04"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 You can change the characteristics of your collection from the Content Mining application.
 {: shortdesc}
 
-You might want to change the following characteristics:
+You can change the following characteristics:
 
 -   [Change the time zone of your collection](#cm-edit-collection-time-zone)
 -   [Add document flags that you can use to tag documents of interest in your collection](#cm-flags-add)
@@ -27,9 +27,9 @@ You might want to change the following characteristics:
 ## Edit a collection
 {: #cm-edit-collection-task}
 
-1.  From the analysis view of your collection, click the **Collections** breadcrumb link in the page header.
+1.  From the analysis view of your collection, click the **Collections** link in the page header.
 
-    ![Collection breadcrumb link](images/cm-collections-breadcrumb.png){: caption="Figure 1. Collections breadcrumb link" caption-side="bottom"} 
+    ![Collection link](images/cm-collections-breadcrumb.png){: caption="Figure 1. Collections link" caption-side="bottom"} 
 1.  In the tile for your collection, click the *Open and close list of options* icon, and then choose **Edit collection**.
 
     ![Collection tile overflow menu](images/cm-edit-colxn-icon.png){: caption="Figure 2. Collection menu" caption-side="bottom"} 
