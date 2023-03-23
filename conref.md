@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-11-16"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -36,7 +36,7 @@ The following table shows the supported data sources for each deployment type.
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Supported data sources" caption-side="top"}
-{: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
+{: summary="This table has row and column headers. The row headers identify supported data sources. The column headers identify the different product deployment type options. To understand which data sources are available for your deployment type, go to the row that describes the data source, and find the columns for the type of deployment you're interested in."}
 
 ## Project descriptions
 {: #projects-reuse}

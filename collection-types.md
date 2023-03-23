@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-23"
 
 subcollection: discovery-data
 
@@ -76,7 +76,7 @@ These settings are only available when crawler plug-ins are deployed.
 
 When you are ready to configure a collection to use a crawler plug-in that was created by using the `scripts/manage_crawler_plugin.sh` script, you can see a *Plug-in settings* section with the following options:
 
-- **Enable plug-in**: By default, this switch is set to **Off**. Enable this option if you want to use a crawler plug-in to process documents.
+- **Enable plug-in**: The switch is set to **Off**. Enable this option if you want to use a crawler plug-in to process documents.
 - **Plug-in**: Lists the names of available crawler plug-ins. Select a plug-in to use.
 
 ## Supporting document-level security
