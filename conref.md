@@ -66,3 +66,17 @@ Some prebuilt enrichments are applied automatically to collections in a project 
 {: class="comparison-table"}
 {: caption="Default enrichments per project type" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify project types. The column headers identify different enrichments. To understand which enrichments are applied to a project type by default, go to the row that describes the enrichments, and find the columns for the project type that you are interested in."}
+
+## Basic project defaults
+{: #project-defaults-reuse}
+
+Some enrichments and query result settings are applied to each project type by default.
+
+| Project type | Default enrichments | Default query result settings |
+|--------------|---------------------|-------------------------------|
+| Document Retrieval | Entities, Part of Speech | Facets (by Entity), Passages |
+| Document Retrieval for Contracts | Entities, Parts of speech, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
+| Conversational Search | None | Passages |
+| Content Mining | Part of Speech | None |
+| Custom | None | Passages |
+{: caption="Basic project defaults" caption-side="top"}
