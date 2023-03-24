@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 subcollection: discovery-data
 
@@ -51,7 +51,7 @@ The following table shows the resources that you can download and re-upload to a
 
 | Resource | Download/Re-upload from the UI | API support |
 |----------|--------------------------------|-------------|
-| Uploaded and crawled files | | ^See note.^ |
+| Uploaded and crawled files | | See note. |
 | Relevancy training data | | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Expansion list | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Stop words list| ![checkmark icon](../icons/checkmark-icon.svg) | |

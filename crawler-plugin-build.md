@@ -55,35 +55,35 @@ Make sure that the following items are installed on the development server that 
 1. Log in to your {{site.data.keyword.discoveryshort}} cluster.
 1. Enter the following command to obtain your `crawler` pod name:
 
-   ```curl
+   ```sh
    oc get pods | grep crawler
    ```
    {: pre}
 
    The following example shows sample output.
 
-   ```curl
+   ```sh
    wd-discovery-crawler-57985fc5cf-rxk89     1/1     Running     0          85m
    ```
    {: codeblock}
 
 1. Enter the following command to obtain the SDK package name, replacing `{crawler-pod-name}` with the `crawler` pod name that you obtained in step 2:
 
-   ```curl
+   ```sh
    oc exec {crawler-pod-name} -- ls -l /opt/ibm/wex/zing/resources/ | grep wd-crawler-plugin-sdk
    ```
    {: pre}
 
    The following example shows sample output.
 
-   ```curl
+   ```sh
    -rw-r--r--. 1 dadmin dadmin 35575 Oct  1 16:51 wd-crawler-plugin-sdk-${build-version}.zip
    ```
    {: codeblock}
 
 1. Enter the following command to copy the SDK package to the host server, replacing `{build-version}` with the build version number from the previous step:
 
-   ```curl
+   ```sh
    oc cp {crawler-pod-name}:/opt/ibm/wex/zing/resources/wd-crawler-plugin-sdk-${build-version}.zip wd-crawler-plugin-sdk.zip
    ```
    {: pre}
