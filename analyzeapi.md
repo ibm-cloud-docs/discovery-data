@@ -72,7 +72,7 @@ You know the name of a collection in your project where the *Keywords* enrichmen
 
 After you get the collection ID, include it in the POST request that you submit to apply the configuration settings from the collection to your JSON file. For example, the following request submits the JSON snippet in a file that is named `favorites2.json` for keyword analysis.
 
-```curl
+```sh
 curl --location --request POST \
 'https://my-cloud-pak-for-data-cluster/discovery/zen-wd/instances/{instance-id}/api/v2/ \
 projects/{project-id}/collections/{collection-id}/analyze?version=2020-08-30' \
@@ -219,7 +219,7 @@ You can submit text for analysis when you specify the text in JSON format by usi
 
 The following example request shows how to analyze text that you specify in the request, not that you pass in a physical file.
 
-```curl
+```sh
 curl --location --request POST \
 'https://my-cloud-pak-for-data-cluster/discovery/zen-wd/instances/{instance-id}/api/v2/ \
 projects/{project-id}/collections/{collection-id}/analyze?version=2020-08-30' \
@@ -293,7 +293,7 @@ The collection to which the request is made uses the following enrichments, whic
 
 The body of the request contains `form-data` with the name `file`. The value is the JSON content to be analyzed.
 
-```curl
+```sh
 curl --location --request POST \
 'https://cpd-abc.example.com/discovery/abc-wd/instances/1671204318684041/api/v2/projects/d457fcd9-a4ce-4637-a340-33123b5cbe2c/collections/2d47dbcc-64c7-84e9-0000-01851bb9d998/analyze?version=2020-08-30' \
 --header 'Authorization: Bearer ...' \
@@ -309,7 +309,7 @@ curl --location --request POST \
 
 The results show the output of the Entities, Keywords, and Table Understanding enrichments on the `text` and `html` fields that were submitted.
 
-```
+```json
 {
     "result": {
         "text": [

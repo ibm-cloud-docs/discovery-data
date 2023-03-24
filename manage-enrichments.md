@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-08-15"
+lastupdated: "2023-03-24"
 
 subcollection: discovery-data
 
@@ -107,7 +107,7 @@ To apply an enrichment by using the API, complete the following steps:
 
     For example:
 
-    ```curl
+    ```sh
     GET $authentication $url/v2/projects/$project_id/collections?version=2019-11-22
     ```
     {: codeblock}
@@ -118,7 +118,7 @@ To apply an enrichment by using the API, complete the following steps:
 
     For example:
 
-    ```curl
+    ```sh
     GET $authentication $url/v2/projects/$project_id/collections/$collection_id?version=2019-11-22
     ```
     {: codeblock}
@@ -146,7 +146,7 @@ To apply an enrichment by using the API, complete the following steps:
 
     For example:
 
-    ```curl
+    ```sh
     POST $authentication -d '$requestBody' $url/v2/projects/$project_id/collections/$collection_id?version=2019-11-22
     ```
     {: codeblock}
