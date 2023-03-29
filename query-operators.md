@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-29"
 
 subcollection: discovery-data
 
@@ -13,8 +13,43 @@ subcollection: discovery-data
 # Query operators
 {: #query-operators}
 
-These operators are used when you write queries with the {{site.data.keyword.discoveryshort}} Query Language. For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
+You can use operators when you write queries to submit to {{site.data.keyword.discoveryshort}} by using the Query API.
 {: shortdesc}
+
+The types of operators that are supported differ by query type:
+
+-   [Natural language queries](#nlq-operator)
+-   [Discovery Query Language (DQL) queries](#dql-operators)
+
+## Natural Language Query (NLQ) operator
+{: #nlq-operator}
+
+The `natural_language_query` parameter accepts a string value.
+
+### `""` (Phrase query)
+{: #phrase-nlq}
+
+Use quotation marks to emphasize a single word or phrase in the query that is most important to match. For example, the following request boosts documents that contain the term “nomination” in them.
+
+```json
+{
+  "natural_language_query":"What is the process for \"nomination\" of bonds?"
+}
+```
+{: codeblock}
+
+Specifying a quoted phrase does not prevent documents without the phrase from being returned. It merely gives more weight to documents with the phrase than those without it. For example, the query results might also contain documents that mention “bonds” or “process” and do not contain the word “nomination”.
+
+The following request boosts the phrase “change in monetary policy” and also matches “change” or “monetary” or “policy”.
+
+```json
+{
+  "natural_language_query":"\"change in monetary policy\""
+}
+```
+{: codeblock}
+
+Single quotation marks (') are not supported. You cannot use wildcards (*) in phrase queries.
 
 ## Discovery Query Language (DQL) operators
 {: #dql-operators}
@@ -44,26 +79,50 @@ This operator specifies inclusion of the full query term.
 
 For example, the following query searches for documents that contain the term `cloud computing` in the `text` field:
 
-```bash
-enriched_text.entities.text:"cloud computing"
+```json
+{
+  "query":"enriched_text.entities.text:\"cloud computing\""
+}
 ```
 {: codeblock}
 
 The **includes** operator does not return a partial match for the query term. If you want to find a partial match for a term, use a **wildcard** operator with the **includes** operator. For example, if you want to find any occurrences of `TP53` or `p53` in the `test_results` field, the following query will *not* find occurrences of both terms:
 
-```bash
-test_results:P53
+```json
+{
+  "query":"test_results:P53"
+}
 ```
 {: codeblock}
 
 Instead, include a wildcard in the request. For example, use the following query request. Because we are using the wildcard operator, we also changed the term to lowercase.
 
-```bash
-test_results:*p53
+```json
+{
+  "query":"test_results:*p53"
+}
 ```
 {: codeblock}
 
 With this syntax, occurrences of `p53`, `tp53`, `P53`, or `TP53` are all returned.
+
+### `""` (Phrase query)
+{: #phrase-dql}
+
+Phrase queries only match occurrences of the whole phrase. The order of the words in the phrase must match.
+
+For example, the following query returns only documents that contain a field named `quotation` with the text, `There's no crying in baseball`.
+
+```json
+{
+  "query":"quotation:There's no crying in baseball"
+}
+```
+{: codeblock}
+
+A document with a `quotation` field that says `Jimmy Dugan said there's no crying in baseball` is also returned. However, documents that only mention `baseball` or `crying` without the entire phrase are not matched. Neither is a document with `In baseball, there's no crying`. Documents that contain the right text in the wrong field also are not matched. For example, a document with the text `There's no crying in baseball` in the `text` field is not returned.
+
+Single quotation marks (') are not supported. You cannot use wildcards (*) in phrase queries.
 
 ### `::` (Exact match)
 {: #match}
@@ -72,15 +131,19 @@ This operator specifies an exact match for the query term. Exact matches are cas
 
 For example, the following query searches for documents that contain entities of type `Organization`:
 
-```bash
-enriched_text.entities.type::"Organization"
+```json
+{
+  "query":"enriched_text.entities.type::Organization"
+}
 ```
 {: codeblock}
 
 The entire content of the field that you specify must match the phrase you specify. For example, the following query finds documents in which only entity mentions of `IBM Cloud` are detected, not `IBM Cloud Pak for Data` or `IBM cloud` or `Cloud`.
 
-```bash
-enriched_text.entities.text::"IBM Cloud"
+```json
+{
+  "query":"enriched_text.entities.text::\"IBM Cloud\""
+}
 ```
 {: codeblock}
 
@@ -91,8 +154,10 @@ This operator specifies that the results do not contain a match for the query te
 
 For example:
 
-```bash
-enriched_text.entities.text:!"cloud computing"
+```json
+{
+  "query":"enriched_text.entities.text:!\"cloud computing\""
+}
 ```
 {: codeblock}
 
@@ -103,8 +168,10 @@ This operator specifies that the results do not exactly match the query term.
 
 For example:
 
-```bash
-enriched_text.entities.text::!"Cloud computing"
+```json
+{
+  "query":"enriched_text.entities.text::!\"Cloud computing\""
+}
 ```
 {: codeblock}
 
@@ -117,8 +184,10 @@ Escape character that preserves the literal value of the character that follows 
 
 For example, you can place an escape character before a quotation mark in query text to include the quotation mark in the query string.
 
-```bash
-title::"Dorothy said: \"There's no place like home\""
+```json
+{
+  "query":"title::Dorothy said: \"There's no place like home\""
+}
 ```
 {: codeblock}
 
@@ -129,8 +198,10 @@ Logical groupings can be formed to specify more specific information.
 
 For example:
 
-```bash
-enriched_text.entities:(text:IBM,type:Company)
+```json
+{
+  "query":"enriched_text.entities:(text:IBM,type:Company)"
+}
 ```
 {: codeblock}
 
@@ -141,8 +212,10 @@ Boolean operator for "or".
 
 In the following example, documents in which `Google` or `IBM` are identified as entities are returned:
 
-```bash
-enriched_text.entities.text:Google|enriched_text.entities.text:IBM
+```json
+{
+  "query":"enriched_text.entities.text:Google|enriched_text.entities.text:IBM"
+}
 ```
 {: codeblock}
 
@@ -151,8 +224,10 @@ The includes (`:`,`:!`) and match (`::`, `::!`) operators have precedence over t
 
 For example, the following syntax searches for documents in which `Google` is identified as an entity or the string `IBM` is present:
 
-```bash
-enriched_text.entities.text:Google|IBM
+```json
+{
+  "query":"enriched_text.entities.text:Google|IBM"
+}
 ```
 {: codeblock}
 
@@ -170,8 +245,10 @@ Boolean operator for "and".
 
 In the following example, documents in which `Google` and `IBM` both are identified as entities are returned:
 
-```bash
-enriched_text.entities.text:Google,enriched_text.entities.text:IBM
+```json
+{
+  "query":"enriched_text.entities.text:Google,enriched_text.entities.text:IBM"
+}
 ```
 {: codeblock}
 
@@ -180,8 +257,10 @@ The includes (`:`,`:!`) and match (`::`, `::!`) operators have precedence over t
 
 For example, the following syntax searches for documents in which `Google` is identified as an entity and the string `IBM` is present:
 
-```bash
-enriched_text.entities.text:Google,IBM
+```json
+{
+  "query":"enriched_text.entities.text:Google,IBM"
+}
 ```
 {: codeblock}
 
@@ -204,8 +283,10 @@ Any value that is surrounded by quotations is a String. Therefore, `score>=0.5` 
 
 For example:
 
-```bash
-invoice.total>100.50
+```json
+{
+  "query":"invoice.total>100.50"
+}
 ```
 {: codeblock}
 
@@ -216,8 +297,10 @@ Increases the score value of a search term.
 
 For example:
 
-```bash
-enriched_text.entities.text:IBM^3
+```json
+{
+  "query":"enriched_text.entities.text:IBM^3"
+}
 ```
 {: codeblock}
 
@@ -228,8 +311,10 @@ Matches unknown characters in a search expression. Do not use capital letters wi
 
 For example:
 
-```bash
-enriched_text.entities.text:ib*
+```json
+{
+  "query":"enriched_text.entities.text:ib*"
+}
 ```
 {: codeblock}
 
@@ -240,8 +325,10 @@ The number of character differences that are allowed when matching a string. The
 
 For example, the following query returns documents that contain `car` in the title field, as well as `cap`,`cat`,`can`, `sat`, and so on:
 
-```bash
-title:cat~1
+```json
+{
+  "query":"title:cat~1"
+}
 ```
 {: codeblock}
 
@@ -249,8 +336,10 @@ When a phrase is submitted, each term in the phrase is allowed the specified num
 
 For example:
 
-```bash
-title:"car hog"~1
+```json
+{
+  "query":"title:\"car hog\"~1"
+}
 ```
 {: codeblock}
 
@@ -263,8 +352,10 @@ Used to return all results where the specified field exists.
 
 For example:
 
-```bash
-title:*
+```json
+{
+  "query":"title:*"
+}
 ```
 {: codeblock}
 
@@ -275,7 +366,13 @@ Used to return all results that do not include the specified field.
 
 For example:
 
-```bash
-title:!*
+```json
+{
+  "query":"title:!*"
+}
 ```
 {: codeblock}
+
+For more information, see the {{site.data.keyword.discoveryshort}} [API reference](https://{DomainName}/apidocs/discovery-data#query){: external}. 
+
+For an overview of query concepts, see the [Query overview](/docs/discovery-data?topic=discovery-data-query-concepts).
