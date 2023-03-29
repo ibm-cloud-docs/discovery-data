@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-29"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -26,6 +26,11 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.6.x?topic=issues-watson-discovery){: external}.
 
+## 4.6.4 release, 29 March 2023
+{: #discovery-data-29march2023}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} was not refreshed as part of 4.6.4. You can use {{site.data.keyword.discoveryshort}} 4.6.3 with {{site.data.keyword.icp4dfull_notm}} 4.6.4 on Red Hat OpenShift Container Platform versions 4.10 or 4.12.
+
 ## 4.6.3 release, 23 february 2023
 {: #discovery-data-23febuary2023}
 
@@ -38,6 +43,9 @@ Features that are not available in this release
 
     -   Answer finding
     -   *Manage data* page
+
+**Important:** Back up your data before upgrading to version 4.6.3
+:   Before upgrading to version 4.6.3, you must make a backup of your data. Preserve the backup in a safe location. For more information about backing up your data, see [Backing up and restoring data in {{site.data.keyword.icp4dfull_notm}}](/docs/discovery-data?topic=discovery-data-backup-restore). That topic also includes information about restoring your data if that becomes necessary.
 
 ## 4.6.2 release, 30 January 2023
 {: #discovery-data-30january2023}
