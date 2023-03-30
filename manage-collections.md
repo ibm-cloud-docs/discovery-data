@@ -119,7 +119,7 @@ Find out whether a collection is being used anywhere before you delete it from t
 
     Click **Delete from project**.
 
--   [IBM Cloud Pak for Data]{: tag-cp4d} To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/data--base.svg) icon, and then choose **Delete environment**.
+-   [IBM Cloud Pak for Data]{: tag-cp4d} To delete all of the collections in your environment, select the Environment details icon, and then choose **Delete environment**.
 
     *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
     {: tip}
