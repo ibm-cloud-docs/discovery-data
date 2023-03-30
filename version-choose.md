@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-30"
 
 subcollection: discovery-data
 
@@ -103,7 +103,7 @@ The following limits apply only to Content Mining project types:
 
 To check the current status of the limits and usage for your plan type, you can open the *Plan limits and usage* page at any time. 
 
-1.  From the product page header, click the user icon ![User icon](images/user-icon.png). 
+1.  From the product page header, click the user icon ![User icon](images/user--avatar.svg). 
 
     The *Usage* section shows a short summary. 
 1.  Click **View all** to see usage information for all of the plan limit categories. 

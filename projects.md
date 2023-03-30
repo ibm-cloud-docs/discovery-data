@@ -45,7 +45,7 @@ To create a project, complete the following steps:
 
 Take advantage of the following resources that are available from the page header:
 
-- To open the product documentation, click the **Help** ![Help icon](images/help--filled.svg) icon.
+- To open the product documentation, click the **Help** ![Help icon](images/help.svg) icon.
 - To see all of your projects, click **My projects**.
 
 ## Project types
