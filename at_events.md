@@ -127,5 +127,5 @@ not currently supported events
 | `discovery.training-query.create`  | Add a query to the training data. |
 | `discovery.training-query.delete`  | Delete a query from the training data. |
 | `discovery.training-query.read`    | Read the contents of a query. |
-
+{: caption="Unsupported events" caption-side="top"}
 -->
