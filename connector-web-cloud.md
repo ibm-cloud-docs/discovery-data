@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-10"
+lastupdated: "2023-03-30"
 
 subcollection: discovery-data
 
@@ -98,7 +98,7 @@ To configure the web crawl collection, complete the following steps:
 
     -   If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
 
-        After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/web-crawl-edit-url.png). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
+        After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/edit.svg). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
 
         When JavaScript processing is enabled, it takes 3 to 4 times longer to crawl a page. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically. If you see timeout messages or the crawl ends without adding content to the collection, decrease the number of web pages that are included in the crawl. For example, you can specify the exact page to crawl in the *Starting URLs* field, and set *Maximum number of links to follow* to 0.
         {: note}

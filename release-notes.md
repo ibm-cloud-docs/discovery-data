@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-30"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -451,7 +451,7 @@ New {{site.data.keyword.discoveryshort}} home page
 :   A new home page is displayed when you start {{site.data.keyword.discoveryshort}} and gives you quick access to a product overview video, and tours. You can collapse the home page welcome banner to see more projects.
 
 New plan usage section 
-:   Stay informed about plan usage and check your usage against the limits for your plan type from the *Plan limits and usage* page. From the product page header, click the user icon ![User icon](images/user-icon.png). The *Usage* section shows a short summary. Click **View all** to see usage information for all of the plan limit categories.
+:   Stay informed about plan usage and check your usage against the limits for your plan type from the *Plan limits and usage* page. From the product page header, click the user icon ![User icon](images/user--avatar.svg). The *Usage* section shows a short summary. Click **View all** to see usage information for all of the plan limit categories.
 
 Change to spelling settings in Search
 :   The spelling correction setting changed from being enabled automatically in new projects to being disabled by default. If you want to alert users when they misspell a term in their query, turn on *Spelling suggestions*. For more information, see [Customizing the search bar](/docs/discovery-data?topic=discovery-data-search-bar).
