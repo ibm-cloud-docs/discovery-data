@@ -22,7 +22,7 @@ You can export your data as a CSV file or you can generate a separate JSON file 
 
 To export your data, complete the following steps:
 
-1.  From the *Documents* view, click the *Export* icon ![Export icon](images/cm-export-icon.png) in the toolbar.
+1.  From the *Documents* view, click the *Export* icon ![Export icon](images/export.svg) in the toolbar.
 
 1.  Complete the appropriate steps for the format in which you want to export the data.
 

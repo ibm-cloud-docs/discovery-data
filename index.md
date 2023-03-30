@@ -77,7 +77,7 @@ To get started, take our step-by-step product tour to get familiar with the user
 - [IBM Cloud Pak for Data]{: tag-cp4d} for installed instances, such as {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}}.
 - [IBM Cloud]{: tag-ibm-cloud} for managed instances, such as {{site.data.keyword.discoveryshort}} Plus, Enterprise, and Premium plan instances that are hosted by {{site.data.keyword.cloud_notm}} or instances that are provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}.
 
-Click the Help ![Help icon](images/help--filled.svg) icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
+Click the Help ![Help icon](images/help.svg) icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
 {: tip}
 
 ## Browser support
@@ -104,7 +104,7 @@ Click the Help ![Help icon](images/help--filled.svg) icon from the header of any
 [IBM Cloud]{: tag-ibm-cloud}
 
 -   Deployments of {{site.data.keyword.discoveryshort}} that are managed by {{site.data.keyword.cloud_notm}} follow the {{site.data.keyword.cloud_notm}} requirements. For more information, see [Prerequisites](https://cloud.ibm.com/docs/overview?topic=overview-prereqs-platform){: external}
--   For more information about browser support for deployments that are provisioned with Cloud Pak for Data as a Service, see [Which web browsers are supported for Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/faq.html?audience=wdp#which-browser){: external}. 
+-   For more information about browser support for deployments that are provisioned with Cloud Pak for Data as a Service, see [Which web browsers are supported for Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/browser-support.html){: external}. 
 
 ## Language support
 {: #about-language}

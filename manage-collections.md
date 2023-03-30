@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-03-30"
 
 subcollection: discovery-data
 
@@ -119,7 +119,7 @@ Find out whether a collection is being used anywhere before you delete it from t
 
     Click **Delete from project**.
 
--   [IBM Cloud Pak for Data]{: tag-cp4d} To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/env_icon.png) icon, and then choose **Delete environment**.
+-   [IBM Cloud Pak for Data]{: tag-cp4d} To delete all of the collections in your environment, select the **Environment details** ![Environment details icon](images/data--base.svg) icon, and then choose **Delete environment**.
 
     *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
     {: tip}
