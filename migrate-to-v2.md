@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-30"
 
 subcollection: discovery-data
 
@@ -115,7 +115,7 @@ Make a note of the following information so you can compare it to your service i
     To get the number of documents in a collection in v1, use the [Get collection details](https://cloud.ibm.com/apidocs/discovery#getcollection) API. 
     
     ```sh
-    GET {url}/v1/environment/{environment_id}/collections/{collection_id}`
+    GET {url}/v1/environments/{environment_id}/collections/{collection_id}`
     ```
     {: codeblock}
     
@@ -211,7 +211,7 @@ To transfer document information from v1 to v2, complete the following steps:
 
 1.  Extract the documents from v1 by using the API to [submit an empty query](https://cloud.ibm.com/apidocs/discovery#query).
 
-    For example, `GET {url}/v1/environment/{environment_id}/collections/{collection_id}/query?q=`.
+    For example, `GET {url}/v1/environments/{environment_id}/collections/{collection_id}/query?q=`.
 
     The API returns the results. The `matching_results` field specifies the total number of results. The results object returns the matching documents. Each document is returned as a separate JSON object. It returns a maximum of 10 documents by default.
 
@@ -231,14 +231,14 @@ To transfer document information from v1 to v2, complete the following steps:
     For example, to get 100 documents at a time, you can set the `count` to `100` and `offset` to `0` and submit the query.
 
     ```sh
-    GET {url}/v1/environment/{environment_id}/collections/{collection_id}/query?q=&count=100&offset=0
+    GET {url}/v1/environments/{environment_id}/collections/{collection_id}/query?q=&count=100&offset=0
     ```
     {: codeblock}
 
     Next, you can again set the count to 100, but this time set the offset to 100 to get the next 100 documents.
 
     ```sh
-    GET {url}/v1/environment/{environment_id}/collections/{collection_id}/query?q=&count=100&offset=100`
+    GET {url}/v1/environments/{environment_id}/collections/{collection_id}/query?q=&count=100&offset=100`
     ```
     {: codeblock}
 
