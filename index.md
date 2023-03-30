@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-30"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -77,7 +77,7 @@ To get started, take our step-by-step product tour to get familiar with the user
 - [IBM Cloud Pak for Data]{: tag-cp4d} for installed instances, such as {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}}.
 - [IBM Cloud]{: tag-ibm-cloud} for managed instances, such as {{site.data.keyword.discoveryshort}} Plus, Enterprise, and Premium plan instances that are hosted by {{site.data.keyword.cloud_notm}} or instances that are provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}.
 
-Click the Help ![Help icon](images/help_icon.png) icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
+Click the Help ![Help icon](images/help--filled.svg) icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
 {: tip}
 
 ## Browser support
@@ -138,4 +138,4 @@ Microsoft, Windows, Windows NT, and the Windows logo are trademarks of Microsoft
 
 Java and all Java-based trademarks and logos are trademarks or registered trademarks of Oracle and/or its affiliates.
 
-![Java integrated logo.](images/Java_Compatible.png)
+![Java integrated logo.](images/Java_Compatible.png){: caption="Figure 2. Java logo" caption-side="bottom"}
