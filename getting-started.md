@@ -311,7 +311,7 @@ It's all about the data. Review the types of content you own that you want your 
 
 For more information about the types of search solutions you can build, see [Start getting value from your data](/docs/discovery-data?topic=discovery-data-product-overview).
 
-You can access the product documentation at any time by selecting the **Help** icon ![Help icon](images/help.svg) from the page header of the product user interface. The help content is customized to provide information that is related to what you're doing in the product.
+You can access the product documentation at any time by selecting the Help icon from the page header of the product user interface. The help content is customized to provide information that is related to what you're doing in the product.
 {: tip}
 
 No matter what you build, step one is to create a project. Decide which project type best fits your needs. 

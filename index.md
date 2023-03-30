@@ -77,7 +77,7 @@ To get started, take our step-by-step product tour to get familiar with the user
 - [IBM Cloud Pak for Data]{: tag-cp4d} for installed instances, such as {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}}.
 - [IBM Cloud]{: tag-ibm-cloud} for managed instances, such as {{site.data.keyword.discoveryshort}} Plus, Enterprise, and Premium plan instances that are hosted by {{site.data.keyword.cloud_notm}} or instances that are provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}.
 
-Click the Help ![Help icon](images/help.svg) icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
+Click the Help icon from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
 {: tip}
 
 ## Browser support
@@ -129,13 +129,6 @@ IBM releases services, features, and language support for your evaluation that a
 
 -   [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
 
-## Trademarks
-{: #about-trademarks}
-
-IBM, the IBM logo, and ibm.com are trademarks or registered trademarks of International Business Machines Corp., registered in many jurisdictions worldwide. Other product and service names might be trademarks of IBM or other companies. A current list of IBM trademarks is available on the web at [Copyright and trademark information](https://www.ibm.com/legal/copytrade){: external}.
-
-Microsoft, Windows, Windows NT, and the Windows logo are trademarks of Microsoft Corporation in the United States, other countries, or both.
-
-Java and all Java-based trademarks and logos are trademarks or registered trademarks of Oracle and/or its affiliates.
+Trademarks are listed in the [Trademarks](/docs/overview?topic=overview-notices#trademarks){: external} page for all {{site.data.keyword.cloud_notm}} services.
 
 ![Java integrated logo.](images/Java_Compatible.png){: caption="Figure 2. Java logo" caption-side="bottom"}

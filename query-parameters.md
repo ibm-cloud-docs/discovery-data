@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-03-23"
 
 subcollection: discovery-data
 
@@ -358,11 +358,11 @@ One passage is returned per document by default. You can increase the maximum nu
 ## `similar`
 {: #similar}
 
-[IBM Cloud]{: tag-ibm-cloud} The `similar` parameter is supported in managed deployments only.
-
 Finds documents that are similar to documents that you identify as being of interest to you. To find similar documents, {{site.data.keyword.discoveryshort}} identifies the 25 most relevant terms from the original document and then searches for documents with similar relevant terms.
 
 If `similar.enabled` is `true`, you must specify the `similar.document_ids` field to include a comma-separated list of the documents of interest.
+
+[IBM Cloud Pak for Data]{: tag-cp4d} This parameter is available from installed deployments starting in November 2022 with the 4.6.0 release.
 
 ## `table retrieval`
 {: #table_retrieval}
