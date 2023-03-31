@@ -625,7 +625,7 @@ Separates results into groups that you define.
 ### Syntax
 {: #group_by-syntax}
 
-```
+```json
 group_by(condition:[(condition 1),(condition 2)...])
 ```
 {: codeblock}
@@ -687,7 +687,7 @@ Creates numeric interval segments to categorize documents.
 ### Syntax
 {: #histogram-syntax}
 
-```
+```json
 histogram({field},{interval})
 ```
 {: codeblock}
@@ -825,7 +825,7 @@ Analyzes relationships between two fields.
 ### Syntax
 {: #pair-syntax}
 
-```
+```json
 pair(first:{aggregation},second:{aggregation})
 ```
 {: codeblock}
@@ -911,7 +911,7 @@ Indicates the frequency of a term or set of terms in a set of queried documents.
 ### Syntax
 {: #term-syntax}
 
-```
+```json
 term(field:{field_name})
 ```
 {: codeblock}
@@ -1005,7 +1005,7 @@ Returns the documents ranked by the score of the query or enrichment. Can be use
 ### Syntax
 {: #top_hits-syntax}
 
-```
+```json
 {aggregation}.top_hits({n})
 ```
 {: codeblock}
@@ -1089,7 +1089,7 @@ Detects sharp and unexpected changes in the frequency of a keyword value in a sp
 ### Sytnax
 {: #trend-syntax}
 
-```
+```json
 trend(facet:{aggregation},time_segments:{aggregation})
 ```
 {: codeblock}
@@ -1118,7 +1118,7 @@ The following example calculates the *trend indicator* or *trend index* by using
 -  term(flavor): vanilla, chocolate, mint
 -  timeslice(date, 1month): Jan 2020, Feb 2020, Mar 2020, Apr 2020, May 2020, Jun 2020
 
-```
+```json
 trend( facet: aggregation(<parameter>...), time_segments: timeslice(<parameter>...)), 
 show_estimated_matching_results: <true_or_false>, show_total_matching_documents: <true_or_false> )
 ```
@@ -1219,7 +1219,7 @@ Detects how much the frequency of a keyword value deviates from the expected ave
 ### Syntax
 {: #topic-syntax}
 
-```
+```json
 topic(facet:{aggregation},time_segments:{aggregation})
 ```
 {: codeblock}
@@ -1243,7 +1243,7 @@ Only one topic aggregation can be used per query request, and it cannot be combi
 ### Example
 {: #topic-example}
 
-```
+```json
 {
     "query: like",
     "aggregation": "topic( facet: term(flavor), time_segments: timeslice(date, 1month), show_estimated_matching_results: true, show_total_matching_documents: true )"

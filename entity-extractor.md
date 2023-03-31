@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-03-31"
 
 subcollection: discovery-data
 
@@ -402,7 +402,7 @@ You can retrain your entity extractor model at any time. Each time you train the
 
     The history view shows the last 5 training runs.
 
-    To retain the score information for more than the most recent 5 training runs, you can export the metrics in comma-separated value format, and track the scores in a separate application. Click the tabular representation icon, and then click **Download as CSV**.
+    To retain the score information for more than the most recent 5 training runs, you can export the metrics in comma-separated value format, and track the scores in a separate application. Click the tabular representation icon ![Tabular representation icon](images/table-of-contents.svg), and then click **Download as CSV**.
     {: tip}
 
 If a subsequent training run results in lower scores, don't publish that version of the model.

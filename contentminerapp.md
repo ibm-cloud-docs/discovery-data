@@ -57,7 +57,7 @@ In this demonstration, you saw how a citizen analyst using Watson Discovery and 
 What will you do with Watson Discovery? (Music outro)
 
 ## How it works
-{: cm-explained}
+{: #cm-explained}
 
 To analyze your data, you use *facets*. Facets give you a way to slice your data and visualize a subset of information so it is easier to comprehend.
 
@@ -91,7 +91,7 @@ With your new *`component`* and *`phenomenon`* facets, for example, you can look
 [Learn about the ways that you can analyze your data](/docs/discovery-data?topic=discovery-data-cm-analyze-data).
 
 ## Digging deeper
-{: cm-deeper}
+{: #cm-deeper}
 
 To dig even deeper into your data, apply or create AI models that can find different types of information in your documents. You can apply built-in natural language processing models, such as the *Entities* enrichment that can recognize mentions of commonly known things, such as business or location names and other types of proper nouns. Or you can apply a custom model that recognizes terms and categories that are unique to your data.
 

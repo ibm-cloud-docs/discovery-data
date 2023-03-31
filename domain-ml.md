@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-31"
 
 subcollection: discovery-data
 
@@ -36,7 +36,7 @@ The following types of models are supported:
 From installed deployments, support for importing entity extractor models was added with the 4.6.2 release.
 
 Discovery cannot identify entity subtypes that are defined by a {{site.data.keyword.knowledgestudioshort}} model.
-{: note}
+{: important}
 
 To add a Machine Learning model, complete the following steps:
 
