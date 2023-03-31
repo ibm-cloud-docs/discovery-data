@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-03-31"
 
 keywords: projects, project types
 
@@ -45,7 +45,7 @@ To create a project, complete the following steps:
 
 Take advantage of the following resources that are available from the page header:
 
-- To open the product documentation, click the Help icon.
+- To open the product documentation, click the Help icon ![Help icon](images/help.svg).
 - To see all of your projects, click **My projects**.
 
 ## Project types

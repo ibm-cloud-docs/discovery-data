@@ -195,6 +195,7 @@ The maximum allowed number can vary slightly depending on the size of the docume
 {: #collections-file-size-limits}
 
 ### Crawled documents
+{: #collections-crawled-docs}
 
 The maximum size of each file that you can crawl by using a connector differs by deployment type.
 
@@ -214,6 +215,7 @@ The maximum size of each file that you can crawl by using a connector differs by
 -   All data sources: 32 MB
 
 ### Uploaded documents
+{: #collections-uploaded-docs}
 
 The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type. See the *Maximum document size table for details.
 
@@ -252,6 +254,7 @@ If the maximum size of the fields in the document exceeds the allowed limits, th
 
     For {{site.data.keyword.icp4dfull_notm}} version 4.0 and earlier, the entire document is not indexed.
     {: note}
+
 -   For a document with oversized non-HTML fields, the document is not indexed.
 
 If you are uploading a Microsoft Excel file and a message is displayed that indicates that the non-HTML field size limit is exceeded, consider converting the XLS file into a CSV file. When you upload a comma-separated value (CSV) file, each row is indexed as a separate document. As a result, no field size limits are exceeded.
@@ -278,6 +281,7 @@ To create a crawl schedule, complete the following steps:
     -   Do not configure multiple crawlers to run at short intervals.
     -   You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
+
 1.  [IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments have a **More scheduling settings** section where you can choose the type of schedule to use to crawl the data source. 
 
     The choices for all of the connectors (except the *Web crawl* connector) are as follows:

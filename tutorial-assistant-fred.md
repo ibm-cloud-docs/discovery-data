@@ -118,7 +118,7 @@ In a real world scenario, you might want your assistant to answer questions abou
 
 1.  Because you want the assistant to recognize when customers ask about economic research, add the following sample user question, and then click **Save**:
 
-    ```
+    ```text
     What are the latest working papers about?
     ```
     {: codeblock}
@@ -133,22 +133,22 @@ In a real world scenario, you might want your assistant to answer questions abou
 
 1.  Add the following questions:
 
-    ```
+    ```text
     Are there any working papers on the shipping industry?
     ```
     {: codeblock}
 
-    ```
+    ```text
     Are there any papers that focus on inflation?
     ```
     {: codeblock}
 
-    ```
+    ```text
     Are there papers about how trade policy affects pricing?
     ```
     {: codeblock}
 
-    ```
+    ```text
     What's the latest research on municipal bond markets?
     ```
     {: codeblock}
@@ -161,7 +161,7 @@ In a real world scenario, you might want your assistant to answer questions abou
 
 1.  Add the following text to the *Assistant says* field:
 
-    ```
+    ```text
     I'll check the Federal Reserve Economic Data website.
     ```
     {: codeblock}
@@ -224,7 +224,7 @@ We want the virtual assistant to be able to answer questions about the latest wo
     ![Shows the Web crawl name field](images/tut-convo-web-crawl-1.png){: caption="Figure 20. Web crawl connector" caption-side="bottom"}
 1.  In the **Starting URLs** field, add the following URL:
 
-    ```
+    ```text
     https://research.stlouisfed.org/wp
     ```
     {: codeblock}
@@ -287,7 +287,7 @@ Let's connect your assistant to your {{site.data.keyword.discoveryshort}} data.
 
 1.  In the *Define the text your search will display to the end user* section, edit the content to show the following message:
 
-    ```
+    ```text
     The Federal Reserve Economic Data website has this information:
     ```
     {: codeblock}
@@ -318,7 +318,7 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
 1.  Enter the following text question:
 
-    ```
+    ```text
     What impact is inflation having on the real estate market?
     ```
     {: codeblock}
