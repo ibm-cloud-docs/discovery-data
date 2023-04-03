@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-03"
 
 subcollection: discovery-data
 
@@ -93,9 +93,9 @@ The following example shows how an enrichment that is created with the sample CS
 ## Classifier types
 {: #domain-classifier-difs}
 
-The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on words and phrases extracted from the body text with their part of speech information taken into account. 
+The classifier that you add from the {{site.data.keyword.discoveryshort}} user interface is a *text classifier*. A text classifier can classify documents based on words and phrases that are extracted from the body text with their part of speech information taken into account. 
 
-You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on words and phrases extracted from the body text fields with information from their part of speech and the other enrichments that are applied to the body text taken into account. The information from the other non-body fields are also used. 
+You can create another classifier type, a *document classifier*, only from the deployed Content Mining application. A document classifier can classify documents based on words and phrases that are extracted from the body text fields with information from their part of speech and the other enrichments that are applied to the body text taken into account. The information from the other non-body fields are also used. 
 
 You can apply a document classifier to a collection in a project type other than a Content Mining project. To do so, you must create the classifier in the deployed Content Mining application and export it. You can then import the classifier and apply it to your collection as an enrichment. For more information, see [Creating and applying a document classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-cm-doc-classifier).
 
