@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-03"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -27,6 +27,8 @@ The Analyze API supports JSON documents only.
 {: important}
 
 When you analyze a document with the API, you indicate how you want the document to be processed by specifying the collection to associate with the analysis. The document is not stored in the collection. Instead, the configuration settings of the collection are applied to the document. For example, if you want to find entity references in a document, run the Analyze API against a collection where the *Entities* enrichment is applied. The resulting document analysis identifies any entity mentions in the document.
+
+Submit a request for analysis against only one collection that is configured with the enrichments that you want to use to analyze your document on demand. Remember, the documents in the collection are not significant. It is the enrichments that are defined for the collection that matter. If you submit requests to several collections, then several models are initiated at the same time, which can cause request failures.
 
 The following enrichments are supported in the Analyze API:
 

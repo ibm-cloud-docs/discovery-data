@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-03"
 
 keywords: choose enrichments,enrichment overview
 
@@ -18,7 +18,7 @@ subcollection: discovery-data
 Add resources that can teach {{site.data.keyword.discoveryshort}} about terms or patterns that have special meaning to your application.
 {: shortdesc}
 
-The following table shows you the correct resources to add to address different needs.
+The following table describes the best resources to add to address different needs.
 
 | Goal | Resource | Notes |
 |------|----------|-------|
