@@ -24,6 +24,7 @@ toc:
           - migrate-to-v2-api.md
           - migration-faq.md
           - enrichmig.md
+          - migrate-wks.md
       - topicgroup:
           label: Media resources
           links:
