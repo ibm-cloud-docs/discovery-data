@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-04-06"
 
 keywords: backup,restore
 
@@ -165,7 +165,7 @@ Also, you must have 2 times as much disk space available on the local system as 
 ### Mapping multitenant clusters
 {: #backup-mapping}
 
-When you restore data that was backed up from a version earlier than 4.0.6 to a 4.0.6 or later release, and if you are restoring a multitenant cluster, an extra step is required. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
+When you restore data that was backed up from a version earlier than 4.0.6 to any later release and the backed-up deployment had more than one instance of the service provisioned, an extra step is required. You must create a JSON file that maps the service instance IDs between the backed-up cluster and the cluster where the data is being restored.
 
 This mapping step is not required if the instance IDs did not change between the back up and restore steps. For example, you can skip this step if you are restoring data to the same cluster where it was backed up from or if you are restoring data to a brand new cluster that has no {{site.data.keyword.discoveryshort}} instances.
 
@@ -213,7 +213,8 @@ When you run the restore script, include the optional `--mapping` parameter to a
 ## Using the restore scripts
 {: #wddata-restore}
 
-With version 4.0.6 or later, if you are restoring a multitenant cluster to a multitenant cluster where {{site.data.keyword.discoveryfull}} is running, see [Mapping multitenant clusters](#backup-mapping) before you begin.
+If you are restoring data from a version earlier than 4.0.6 and you are restoring a multitenant cluster to a multitenant cluster, you must take an extra step before you begin. For more information, see [Mapping multitenant clusters](#backup-mapping).
+{: important}
 
 Complete the following steps to restore data in {{site.data.keyword.discoveryfull}} by using the restore scripts:
 
