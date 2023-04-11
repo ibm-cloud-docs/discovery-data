@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-04"
+lastupdated: "2023-04-11"
 
 subcollection: discovery-data
 
@@ -39,6 +39,20 @@ The models that you can add depend on your deployment type:
 -   [IBM Cloud Pak for Data]{: tag-cp4d} You can add models that were created with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}.
 
 For more information, see [Using imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml).
+
+## Using a corpus as training data
+{: #migrate-wks-corpus}
+
+{{site.data.keyword.discoveryshort}} has an entity extractor tool that you can use to define a type system. The entity extractor user interface is similar to the {{site.data.keyword.knowledgestudioshort}} user interface that is used to annotate documents that you add to corpus for a machine learning model. However, in {{site.data.keyword.knowledgestudioshort}}, you define root-level entities only, not subtypes or relationships.
+
+As an alternative to importing a {{site.data.keyword.knowledgestudioshort}} model as is and applying it as an enrichment, you can also import a {{site.data.keyword.knowledgestudioshort}} corpus. When you add a {{site.data.keyword.knowledgestudioshort}} corpus to the {{site.data.keyword.discoveryshort}} entity extractor tool, any root-level entities from the corpus are represented as new entities in the {{site.data.keyword.discoveryshort}} entity extractor workspace. Entity subtypes and relations are not recognized.
+
+For more information, see [Importing a {{site.data.keyword.knowledgestudioshort}} corpus](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-import-wks).
+
+Things to consider when choosing whether to import a model or import a corpus:
+
+-  You can continue to edit the type system when you import the corpus. When you import a trained model, you cannot subsequently edit it in {{site.data.keyword.discoveryshort}}.
+-  An imported model that you apply to a collection as an enrichment can find and tag entity subtype and relation information in addition to root-level entities. An entity extractor enrichment can find and tag root-level entities only.
 
 ## Retaining subtype information
 {: #migrate-wks-subtypes}
