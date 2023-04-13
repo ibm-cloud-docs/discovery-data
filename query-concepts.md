@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-13"
 
 keywords: search goals, log, logging
 
@@ -15,8 +15,12 @@ subcollection: discovery-data
 # Query overview
 {: #query-concepts}
 
-{{site.data.keyword.discoveryfull}} offers powerful content search capabilities through search queries. After your content is uploaded and customized by {{site.data.keyword.discoveryshort}}, you can build queries, integrate {{site.data.keyword.discoveryshort}} into your own projects, or create a custom application.
+{{site.data.keyword.discoveryfull}} offers powerful content search capabilities through search queries.
 {: shortdesc}
+
+To retrieve data from {{site.data.keyword.discoveryshort}} after it is ingested, indexed, and enriched, submit a query. 
+
+As data is added to {{site.data.keyword.discoveryshort}}, a representation of each file is stored in the index as a JSON-formatted document. Enrichments that are applied to your collections identify meaningful information in the data and store it in new fields in these documents. To search your data, submit a query to return the most relevant documents and extract the information you're looking for.
 
 ## Query types
 {: #query-dql-params}
