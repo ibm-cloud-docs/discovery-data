@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-11"
+lastupdated: "2023-04-13"
 
 subcollection: discovery-data
 
@@ -22,8 +22,6 @@ Use custom models that you created in {{site.data.keyword.knowledgestudioshort}}
 To start using your {{site.data.keyword.knowledgestudioshort}} model immediately, export the model from {{site.data.keyword.knowledgestudioshort}} and import it to {{site.data.keyword.discoveryshort}} as a machine learning enrichment.
 
 When you import a {{site.data.keyword.knowledgestudioshort}} model to use as is in {{site.data.keyword.discoveryshort}}, root-level entity types that were defined in the model can be recognized when they occur in your documents. Any mentions of entity subtypes that occur are identified as mentions of the parent entity type. The subtype entities themselves are not preserved. If you want the model to continue to distinguish between different subtypes of an entity, you must take extra steps. For more information, see [Retaining subtype information](#migrate-wks-subtypes).
-
-Relations and coreferences from the {{site.data.keyword.knowledgestudioshort}} machine learning model are not represented, neither are any custom dictionaries that are associated with the model.
 
 You cannot continue to update a model that you import as an ML enrichment.
 {: note}
@@ -45,14 +43,16 @@ For more information, see [Using imported ML models to find custom terms](/docs/
 
 {{site.data.keyword.discoveryshort}} has an entity extractor tool that you can use to define a type system. The entity extractor user interface is similar to the {{site.data.keyword.knowledgestudioshort}} user interface that is used to annotate documents that you add to corpus for a machine learning model. However, in {{site.data.keyword.knowledgestudioshort}}, you define root-level entities only, not subtypes or relationships.
 
-As an alternative to importing a {{site.data.keyword.knowledgestudioshort}} model as is and applying it as an enrichment, you can also import a {{site.data.keyword.knowledgestudioshort}} corpus. When you add a {{site.data.keyword.knowledgestudioshort}} corpus to the {{site.data.keyword.discoveryshort}} entity extractor tool, any root-level entities from the corpus are represented as new entities in the {{site.data.keyword.discoveryshort}} entity extractor workspace. Entity subtypes and relations are not recognized.
+As an alternative to importing a {{site.data.keyword.knowledgestudioshort}} model as is and applying it as an enrichment, you can also import a {{site.data.keyword.knowledgestudioshort}} corpus. When you add a {{site.data.keyword.knowledgestudioshort}} corpus to the {{site.data.keyword.discoveryshort}} entity extractor tool, any root-level entities from the corpus are represented as new entities in the {{site.data.keyword.discoveryshort}} entity extractor workspace. Entity subtypes are not recognized unless you take steps to retain subtype information.
 
-For more information, see [Importing a {{site.data.keyword.knowledgestudioshort}} corpus](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-import-wks).
+Relations and coreferences from the {{site.data.keyword.knowledgestudioshort}} machine learning model are not represented, neither are any custom dictionaries that are associated with the model.
 
 Things to consider when choosing whether to import a model or import a corpus:
 
 -  You can continue to edit the type system when you import the corpus. When you import a trained model, you cannot subsequently edit it in {{site.data.keyword.discoveryshort}}.
--  An imported model that you apply to a collection as an enrichment can find and tag entity subtype and relation information in addition to root-level entities. An entity extractor enrichment can find and tag root-level entities only.
+-  An imported model that you apply to a collection as an enrichment can recognize any entity subtype, relation, and coreference information that the original model was trained to recognize in addition to root-level entities. An entity extractor enrichment can find and tag entities only.
+
+For more information, see [Importing a {{site.data.keyword.knowledgestudioshort}} corpus](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-import-wks).
 
 ## Retaining subtype information
 {: #migrate-wks-subtypes}
@@ -275,13 +275,13 @@ To retain entity subtype information, complete the following steps:
 
     Follow the appropriate steps for uploading documents based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
-    -   [IBM Cloud]{: tag-ibm-cloud} [Adding documents to a workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-documents-for-annotation#wks_projadd){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding documents to a workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-documents-for-annotation#wks_projadd){: external}
+    -   [IBM Cloud]{: tag-ibm-cloud} [Adding documents to a workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_doc){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding documents to a workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc){: external}
 
     Follow the appropriate steps for uploading a type system based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
-    -   [IBM Cloud]{: tag-ibm-cloud} [Adding a type system to the workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-typesystem#wks_projtypesys){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding a type system to the workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-typesystem#wks_projtypesys){: external}
+    -   [IBM Cloud]{: tag-ibm-cloud} [Adding a type system to the workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_type){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding a type system to the workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_type){: external}
 
 1.  From {{site.data.keyword.knowledgestudioshort}}, click **Train** to retrain the model.
 
