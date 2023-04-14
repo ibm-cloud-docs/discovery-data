@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-14"
 
 subcollection: discovery-data
 
@@ -271,17 +271,19 @@ To retain entity subtype information, complete the following steps:
     ```
     {: codeblock}
 
-1.  Create a {{site.data.keyword.knowledgestudioshort}} workspace, and then upload the converted type system and annotated data.
-
-    Follow the appropriate steps for uploading documents based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
-
-    -   [IBM Cloud]{: tag-ibm-cloud} [Adding documents to a workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_doc){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding documents to a workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc){: external}
+1.  Create a {{site.data.keyword.knowledgestudioshort}} workspace, and then upload the converted type system.
 
     Follow the appropriate steps for uploading a type system based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
     -   [IBM Cloud]{: tag-ibm-cloud} [Adding a type system to the workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_type){: external}
     -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding a type system to the workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_type){: external}
+
+1.  Upload the annotated documents to the workspace. Retain the original file structure of the exported data. Ensure that the compressed file has the same root-level directory as the original exported file.
+
+    Follow the appropriate steps for uploading documents based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
+
+    -   [IBM Cloud]{: tag-ibm-cloud} [Adding documents to a workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_doc){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding documents to a workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc){: external}
 
 1.  From {{site.data.keyword.knowledgestudioshort}}, click **Train** to retrain the model.
 
