@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-14"
 
 keywords: api version,api,request syntax,api key,bearer token
 
@@ -51,6 +51,8 @@ To use the API, you must construct the URL to use in your requests. Many of the 
     "{url}/v2/projects/{project_id}/collections?version=2019-11-29 -k"
     ```
     {: codeblock}
+
+To get the `{collection_id}`, you can use the [List collections](/apidocs/discovery-data#listcollections){: external} API method. Alternatively, open the collection in the product user interface, and then copy the collection ID, which is displayed after the `/collections/` segment of the page URL, from the web browser location field.
 
 ## Using the API from Cloud Pak for Data [IBM Cloud Pak for Data]{: tag-cp4d}
 {: #api-use-cpd}

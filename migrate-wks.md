@@ -10,10 +10,10 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Migrating {{site.data.keyword.knowledgestudioshort}} models
+# Migrating {{site.data.keyword.knowledgestudioshort}} solutions
 {: #migrate-wks}
 
-Use custom models that you created in {{site.data.keyword.knowledgestudioshort}} by migrating them to {{site.data.keyword.discoveryshort}}.
+Use custom models and other resources that you created in {{site.data.keyword.knowledgestudioshort}} by migrating them to {{site.data.keyword.discoveryshort}}.
 {: shortdesc}
 
 ## Using a model as is
