@@ -278,7 +278,7 @@ To retain entity subtype information, complete the following steps:
     -   [IBM Cloud]{: tag-ibm-cloud} [Adding a type system to the workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_type){: external}
     -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding a type system to the workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_type){: external}
 
-1.  Upload the annotated documents to the workspace. Retain the original file structure of the exported data. Ensure that the compressed file has the same root-level directory as the original exported file.
+1.  Upload the annotated documents to the workspace. Retain the original file structure of the exported data. Ensure that the compressed file has the same root-level directory as the original exported file, for example.
 
     Follow the appropriate steps for uploading documents based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
