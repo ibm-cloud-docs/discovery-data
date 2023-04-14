@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-12-29"
+lastupdated: "2023-04-13"
 
 keywords: api version,api,request syntax,api key,bearer token
 
@@ -20,7 +20,7 @@ Use the {{site.data.keyword.discoveryshort}} API to build a custom application o
 ## Service API Versioning
 {: #apiversioning}
 
-API requests require a version parameter that takes a date in the format `version=YYYY-MM-DD`. Whenever we change the API in a backwards-incompatible way, we release a new minor version of the API.
+API requests require a version parameter that takes a date in the format `version=YYYY-MM-DD`. Whenever a backwards-incompatible API change occurs, a new minor version of the API is released.
 
 Send the version parameter with every API request. The service uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
