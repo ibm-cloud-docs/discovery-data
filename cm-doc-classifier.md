@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-24"
 
 subcollection: discovery-data
 
@@ -32,7 +32,7 @@ What's the difference between a document classifier and a text classifier?
 ## Before you begin
 {: #cm-doc-classifier-prereqs}
 
-To train the model, you must provide sample documents that are labeled appropriately. Prepare the following files:
+To train the document classifier model, you must provide sample documents that are labeled appropriately. Prepare the following files:
 
 Training data
 :    Required. CSV file that is used to train the document classifier machine learning model. The file can contain key data points per column. The data points can vary, but the file must include the following columns:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-24"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Language support
 {: #language-support}
 
-Each collection that you add to a project must contain documents of the same language. You specify the language of the collection when you create it.
+When you create a collection, you specify the language of the collection. All of the documents that you add to a collection must be written in the same language.
 {: shortdesc}
 
 Discovery is not optimized for multilingual search. Although you can add several collections, each one with documents in a separate language, into one project, the query results from the project will be unpredictable. The results might include irrelevant passages from a document in a language that is different from the language of the user's query.

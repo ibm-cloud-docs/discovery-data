@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-04-24"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -31,7 +31,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 <!-- 4.7.0-7.1 -->
 
 Now you can specify the types of files to add to a collection
-:   When you connect to an external data source, you can limit the types of files to add from the external data source to the collection. For example, you can choose to add only PDF files from a Box data source.
+:   When you connect to an external data source, you can limit the types of files to add to the collection from the external data source. For example, you can choose to add only PDF files from a Box data source.
 
 ## 21 Febuary 2023
 {: #discovery-21febuary2023}

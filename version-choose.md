@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-04-24"
 
 subcollection: discovery-data
 
@@ -40,7 +40,7 @@ For more information, see [Migrating to {{site.data.keyword.discoveryshort}} v2]
 
 If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn more about how {{site.data.keyword.discoveryshort}} v2 compares.
 
-{{site.data.keyword.discoveryshort}} v2 has new features that were previously unavailable. The following table describes feature support in both versions right now.
+{{site.data.keyword.discoveryshort}} v2 has new features that were previously unavailable. The following table describes feature support in both versions.
 
 | Feature | Product redesign (v2) | Earlier version (v1) |
 |---------|:-------------------:|:--------------------:|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-24"
 
 subcollection: discovery-data
 
@@ -270,6 +270,8 @@ To retain entity subtype information, complete the following steps:
     },
     ```
     {: codeblock}
+
+1.  Add annotations for relationships that are missing based on the new flattened entity types.
 
 1.  Create a {{site.data.keyword.knowledgestudioshort}} workspace, and then upload the converted type system.
 
