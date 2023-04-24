@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-04-24"
 
 subcollection: discovery-data
 
@@ -30,9 +30,16 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 
 | Data source | Supports scheduled document refreshes? | Objects that are crawled |
 |-------------|----------------------------------------|--------------------------|
-| Box (**App access**) | No | Files, folders |
+| Box (**App access**) | No | Files, folders that you share explicitly |
 | Box (**Enterprise access**)  | Yes (New and modified documents only) | Files, folders |
 {: caption="Table 1. Data sources crawling support" caption-side="top"}
+
+When you configure Box with App access only, you must create App Users and share the files that you want to crawl with these users. You cannot crawl Box files that are shared only by the Service Account.
+
+For more information about access, see these Box documentation help topics:
+
+-  [App Users](https://developer.box.com/guides/getting-started/user-types/app-users/){: external}
+-  [Service Accounts](https://developer.box.com/guides/getting-started/user-types/service-account/){: external}
 
 Documents that are deleted from Box are not deleted from the collection.
 
@@ -62,7 +69,9 @@ Follow these guidelines when you create the app:
     -   App access only
     -   App access plus Enterprise access
 
-    Refreshing documents on a schedule is supported only when you choose **App access plus Enterprise access**. If you set up the connection with **App access**, new and modified documents are not crawled during a refresh.
+    Refreshing documents on a schedule is supported only when you choose **App access plus Enterprise access**. 
+    
+    If you set up the connection with **App access**, you must create App Users and share the files that you want to crawl with the App Users you define. With this configuration, new and modified documents are not crawled during a refresh.
     {: important}
 
     -   If you are an administrator, configure **App access plus Enterprise access**. Otherwise, you can configure the app to have **App access**. However, you must get application approval from a Box administrator.
