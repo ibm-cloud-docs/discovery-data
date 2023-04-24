@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-24"
 
 subcollection: discovery-data
 
@@ -28,7 +28,7 @@ To add a collection, complete the following steps:
 
 1.  Click **Create collection**.
 
-1.  Drag your CSV file to the *Import your files* dialog, or click Open, to browse for the file. When the button is available, click **Next**.
+1.  Drag your CSV file to the *Import your files* dialog, or click Open to browse for the file. When the button is available, click **Next**.
 
 1.  You can optionally customize the columns that you want to include or exclude from the collection, and adjust the data types of the fields from the *Fields* page. Click **Next**.
 

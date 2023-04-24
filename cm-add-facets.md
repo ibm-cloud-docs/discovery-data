@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-04-24"
 
 subcollection: discovery-data
 
@@ -28,7 +28,7 @@ The following table describes the types of facets that you can create from annot
 | Terms that match a syntactical pattern | [Regular expression](/docs/discovery-data?topic=discovery-data-cm-custom-annotator) |
 | Custom terms by the context in which they are used. | [Machine learning model](/docs/discovery-data?topic=discovery-data-cm-custom-annotator) |
 | Documents that fit into categories that you define. | [Document classifier](/docs/discovery-data?topic=discovery-data-cm-doc-classifier) |
-{: caption="Types of custom facets" caption-side="top"}
+{: caption="Custom facet types" caption-side="top"}
 
 ## Grouping facets
 {: #cm-facets-group}

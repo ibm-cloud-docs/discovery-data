@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-03"
+lastupdated: "2023-04-24"
 
 keywords: choose enrichments,enrichment overview
 
@@ -36,7 +36,7 @@ Alternatively, you can apply built-in Watson NLP enrichments that find the follo
 -   [Entities and keywords](/docs/discovery-data?topic=discovery-data-nlu)
 -   [Sentiment](/docs/discovery-data?topic=discovery-data-nlu-sentiment)
 
-You can extract meaning from documents based on the document structure also. Use the Smart Document Understanding tool to identify new fields by which to target enrichments or to split large documents into more manageable chunks. For more information, see [Structural meaning with SDU](/docs/discovery-data?topic=discovery-data-configuring-fields).
+You can extract meaning from documents based on the document structure by defining a Smart Document Understanding (SDU) model. Use the Smart Document Understanding tool to identify new fields by which to target enrichments or to split large documents into more manageable chunks. For more information, see [Structural meaning with SDU](/docs/discovery-data?topic=discovery-data-configuring-fields).
 
 Dictionaries and classifiers that you add to one project can be used by other projects.
 

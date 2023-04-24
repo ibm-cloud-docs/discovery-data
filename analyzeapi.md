@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-04-03"
+lastupdated: "2022-04-24"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -433,10 +433,10 @@ The results show the output of the Entities, Keywords, and Table Understanding e
 The following table shows the file size and usage limits for the Analyze API.
 
 | Deployment type | File size limit | Concurrent collections limit | Concurrent queries per collection limit |
-|-----------------|-----------------|------------------------------|-----------------------------------------|
+|-----------------|-----------------|------------------------------|----------------------------|
 | Cloud Pak for Data installed deployment | Unlimited | Unlimited | Unlimited |
 | Enterprise plan managed deployment | 50 KB | 5 | 5 |
-{: caption="Limits applied to Analyze API usage" caption-side="top"}
+{: caption="Limits that are applied to the Analyze API usage" caption-side="top"}
 
 Use of the Analyze API from {{site.data.keyword.discoveryshort}} Cartridge for {{site.data.keyword.icp4dfull_notm}} affects license usage. For more information, see the [license information](https://www-40.ibm.com/software/sla/sladb.nsf/displaylis/F644E41EA1B29A96002587F10057A1C7?OpenDocument){: external}.
 
