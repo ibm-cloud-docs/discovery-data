@@ -83,7 +83,7 @@ When you submit test queries from the *Improve and customize* page, you can add 
 The number of regular expressions that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Regular expressions per service instance |
-|--------------|--------------------------------:|
+|--------------|---------------------------------|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                             100 |
 | Enterprise |                               100 |

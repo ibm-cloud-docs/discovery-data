@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-04-24"
+lastupdated: "2022-04-25"
 
 keywords: analyze on demand, on-demand, automate analysis
 
@@ -43,10 +43,10 @@ The following enrichments are supported in the Analyze API:
 -   [Regular expressions](/docs/discovery-data?topic=discovery-data-domain-regex)
 -   [Patterns](/docs/discovery-data?topic=discovery-data-domain-pattern) (Enterprise plan only)
 -   [Sentiment of documents](/docs/discovery-data?topic=discovery-data-nlu#nlu-sentiment)
--   [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)\*
+-   [Table understanding](/docs/discovery-data?topic=discovery-data-understanding_tables)[^TU]
 -   [Text classifier](/docs/discovery-data?topic=discovery-data-domain-classifier)
 
-\* For the table understanding enrichment to produce any results, the input must contain a `<table>` HTML element to analyze.
+[^TU]: For the table understanding enrichment to produce any results, the input must contain a `<table>` HTML element to analyze.
 
 For the complete list of the enrichments that are supported in each language, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
 

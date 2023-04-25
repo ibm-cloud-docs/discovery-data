@@ -28,7 +28,7 @@ In the {{site.data.keyword.discoveryshort}} user interface, you can write and te
 Use query parameters to search your collection, identify a result set, and analyze result sets.
 
 | Parameter | Description | Example |
-|:----------|-------------|---------|
+|-----------|-------------|---------|
 | [`aggregation`](#aggregations) | A statistical query of the results set | `aggregation=term(enriched_text.entities.type)` |
 | [`filter`](/docs/discovery-data?topic=discovery-data-query-parameters#filter) | An unranked query language search for matching documents. | `filter=bees` |
 | [`natural_language_query`](/docs/discovery-data?topic=discovery-data-query-parameters#nlq) | A ranked natural language search for matching documents | `natural_language_query="How do bees fly"` |
@@ -36,7 +36,7 @@ Use query parameters to search your collection, identify a result set, and analy
 {: caption="Search parameters" caption-side="top"}
 
 | Parameter | Description | Example |
-|:----------|-------------|---------|
+|-----------|-------------|---------|
 | [`count`](/docs/discovery-data?topic=discovery-data-query-parameters#count) | The number of `result` documents to return. | `count=15` |
 | [`highlight`](/docs/discovery-data?topic=discovery-data-query-parameters#highlight) | Highlight query matches | `highlight=true` |
 | [`offset`](/docs/discovery-data?topic=discovery-data-query-parameters#offset) | The number of results to ignore before returning `result` documents from the results set | `offset=100` |
@@ -60,7 +60,7 @@ You cannot query on field names that contain the following characters:
 Operators are the separators between different parts of a query. The following table lists the available operators.
 
 | Operator | Description | Example |
-|:---------|-------------|---------|
+|----------|-------------|---------|
 | [`.`](/docs/discovery-data?topic=discovery-data-query-operators#delimiter) | JSON delimiter | `enriched_text.concepts.text` |
 | [`:`](/docs/discovery-data?topic=discovery-data-query-operators#includes) | Includes | `text:computer` |
 | [`::`](/docs/discovery-data?topic=discovery-data-query-operators#match) | Exact match | `title::"Query building"` |
@@ -85,7 +85,7 @@ Operators are the separators between different parts of a query. The following t
 Aggregations return a set of data values. The following table lists the available aggregations.
 
 | Aggregation | Description | Example |
-|:------------|-------------|---------|
+|-------------|-------------|---------|
 | [`average`](/docs/discovery-data?topic=discovery-data-query-aggregations#average) | Mean value for the specified field in the results set. | `average(product.price)` |
 | [`filter`](/docs/discovery-data?topic=discovery-data-query-aggregations#aggfilter) | Filter results based on the specified pattern | `filter(enriched_text.concepts.text:cloud computing)` |
 | [`histogram`](/docs/discovery-data?topic=discovery-data-query-aggregations#histogram) | Interval-based distribution | `histogram(product.price,interval:1)` |

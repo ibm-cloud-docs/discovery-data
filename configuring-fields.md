@@ -105,12 +105,17 @@ To apply a user-trained Smart Document Understanding model to your collection, c
 
 A subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types.
 
-## Labeling the documents
+## Labeling video
 {: #sdu-label}
 
-The following video shows you how to select a label, and then apply it to a representation of the text in your document.
+The following video shows you how to select a label, and then apply it to a representation of the text in your document. 
+
+In the video, the user clicks the `title` field label, and then clicks the text block that represents the *Table of Contents* page title to label the text as a title. Next, the user clicks the 'table_of_contents` field label and selects the table of contents text block to label it. Then, the user clicks the `footer` field label and clicks the text block that represents the page footer. After the text is labeled, the user clicks the *Submit page* button.
 
 ![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
+
+## Labeling the documents
+{: #sdu-label-task}
 
 Before you begin, get a feel for the structure of the document you plan to annotate. Are there subtitled sections that you want Discovery to return per answer? If so, identify all subtitles. Later you can split the document into discrete subdocuments, each starting with a subtitle. For more information, see [When to use Smart Document Understanding](#sdu-when).
 
@@ -229,7 +234,7 @@ Use the imported model as-is. Do not make any more annotations. If you make anno
 The number of custom fields that you can create per Smart Document Understanding model depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Custom fields per SDU model |
-|--------------|--------------------------------:|
+|--------------|---------------------|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                             100 |
 | Enterprise |                               100 |
@@ -239,7 +244,7 @@ The number of custom fields that you can create per Smart Document Understanding
 The maximum number of documents that you can annotate to train an SDU model per collection depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Documents per collection |
-|--------------|--------------------------------:|
+|--------------|------------------|
 | Cloud Pak for Data |                        40 |
 | Premium      |                              40 |
 | Enterprise |                                40 |

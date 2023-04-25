@@ -114,7 +114,7 @@ For a list of files types where you can apply OCR, see the [Supported file types
 The number of collections that you can create per project differs by project type.
 
 | Project type | Collections per project |
-|--------------|------------------------:|
+|--------------|-------------------------|
 | Document Retrieval |                 5 |
 | Document Retrieval for Contracts |   5 |
 | Conversational Search |              5 |
@@ -125,7 +125,7 @@ The number of collections that you can create per project differs by project typ
 The number of collections you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Collections per service instance |
-|------|---------------------------------:|
+|------|----------------------------------|
 | Cloud Pak for Data |                300 |
 | Premium      |                      300 |
 | Enterprise |                        300 |
@@ -142,7 +142,7 @@ The number of collections you can create per service instance depends on your {{
 The following table shows the supported file types and information about feature support that varies by file type.
 
 | File type | Text extraction support | Smart Document Understanding (SDU) support | Optical Character Recognition (OCR) support |
-|-----------|:------------------------|-------------------------------------------:|:-------------------------------------------:|
+|-----------|-------------------------|--------------------------------------------|--------------------------------------------|
 | CSV | ![checkmark icon](../icons/checkmark-icon.svg) | | |
 | DOC, DOCX | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | GIF | ![checkmark icon](../icons/checkmark-icon.svg) | | |
@@ -181,7 +181,7 @@ The document limit applies to the number of documents in the index. Upload fewer
 - Each object that is defined in an array in a JSON file results in a separate document
 
 | Plan | Documents per service instance |
-|------|-------------------------------:|
+|------|--------------------------------|
 | Cloud Pak for Data |          Unlimited |
 | Premium      |                Unlimited |
 | Enterprise |                  Unlimited |
@@ -220,7 +220,7 @@ The maximum size of each file that you can crawl by using a connector differs by
 The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type. See the *Maximum document size table for details.
 
 | Plan | File size per document |
-|--------------|--------------------------------:|
+|--------------|----------------|
 | Cloud Pak for Data |                     50 MB |
 | Premium      |                           50 MB |
 | Enterprise |                             10 MB |
@@ -243,7 +243,7 @@ When you crawl a website or upload an HTML file, the HTML content is added to th
 The following table shows the maximum size limit for fields per document.
 
 | Field type | Maximum allowed size per document |
-|------------|----------------------------------:|
+|------------|-----------------------------------|
 | `html` field | 5 MB |
 | Sum of all other fields | 1 MB |
 {: caption="Maximum field sizes" caption-side="top"}

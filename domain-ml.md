@@ -168,7 +168,7 @@ In the output, the information that is extracted by the Machine Learning enrichm
 The number of Machine Learning (ML) models you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan      | ML models per service instance |
-|-----------|-------------------:|
+|-----------|--------------------------------|
 | Cloud Pak for Data | Unlimited |
 | Premium | 10 |
 | Enterprise | 10 |
@@ -258,7 +258,7 @@ The following table describes how AQL data types are represented in JSON syntax.
 The number of advanced rules models that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Advanced rules models per service instance |
-|--------------|--------------------------------:|
+|--------------|--------------------------------|
 | Cloud Pak for Data  |                Unlimited |
 | Premium  |                      3 |
 | Enterprise |                                3 |

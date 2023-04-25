@@ -159,17 +159,17 @@ To back up entity extractor models, download the models and store them locally. 
 
 You cannot back up certain data types and must manually re-create them. There are several Content Mining custom user resources that the application does not automatically back up. If data loss occurs, you must either manually re-create the following custom user resources in the Content Mining application or upload a locally saved file that contains the resource:
 
--   **Custom map** 
--   **Searched document export:** You can export a searched document in the **Documents** view in the Content Mining application, but you cannot reupload it in the application.
--   **Facet analysis result export:** You can download the results of your facet analysis by clicking the **Export** icon, then **Export results**, and **Export** in the **Analysis export options** dialog box.
--   **Collection:** You can restore a Content Mining collection if you stored the collection locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the collection.
--   **Document classifier:** You can restore a document classifier if you stored the document classifier locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the document classifier.
+-   Custom map
+-   Searched document export: You can export a searched document in the **Documents** view in the Content Mining application, but you cannot reupload it in the application.
+-   Facet analysis result export: You can download the results of your facet analysis by clicking the **Export** icon, then **Export results**, and **Export** in the **Analysis export options** dialog box.
+-   Collection: You can restore a Content Mining collection if you stored the collection locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the collection.
+-   Document classifier: You can restore a document classifier if you stored the document classifier locally as a .csv file and then upload it in the application. Otherwise, you must manually re-create the document classifier.
 -   Custom annotators
 
-    -   **Dictionary:** You can restore a dictionary in the application if you stored the dictionary locally as a .csv file and upload it in the application. 
-    -   **Regular expressions:** You can restore a regular expression in the application if you stored the regular expression locally as a .csv file and upload it in the application.
-    -   **Machine learning models:** You can restore a machine learning model if you stored the model locally as a .zip file and then upload it in the application.
-    -   **PEAR File:** You can upload a .pear file if you stored the file locally and then upload it in the application.
+    -   Dictionary: You can restore a dictionary in the application if you stored the dictionary locally as a .csv file and upload it in the application. 
+    -   Regular expressions: You can restore a regular expression in the application if you stored the regular expression locally as a .csv file and upload it in the application.
+    -   Machine learning models: You can restore a machine learning model if you stored the model locally as a .zip file and then upload it in the application.
+    -   PEAR File: You can upload a .pear file if you stored the file locally and then upload it in the application.
 
 You cannot back up the following resources locally and must recreate them in the Content Mining application.
 

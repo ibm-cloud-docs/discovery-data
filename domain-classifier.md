@@ -112,7 +112,7 @@ A text classifier does not classify the target text field with confidence scores
 The number of text classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Limit   | Plus | Enterprise | Premium | Cloud Pak for Data |
-|---------|-----:|--------:|-----------:|-------------------:|
+|---------|------|------------|---------|--------------------|
 | Number of text classifiers per service instance | 5 | 20 | 20 | Unlimited |
 | Number of labeled data rows | 2,000 | 20,000 | 20,000 | 20,000 |
 | Maximum size in MB of training data after enrichment | 16 | 1,024 | 1,024 | 1,024 |

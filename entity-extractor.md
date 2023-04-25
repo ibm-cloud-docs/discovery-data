@@ -52,7 +52,7 @@ If you are familiar with the built-in Entities enrichment, you know that the enr
 
 The following image shows the terms that an enrichment that recognizes `family members` entity type mentions might extract from text. The example illustrates how family member mentions and other entity mentions (that are recognized by the built-in Entities enrichment) both might be predicted.
 
-![Shows an excerpt from Pride and Prejudice with family member mentions and entity mentions labeled.](images/pp3-both-annotations.png){: caption="Figure 1. Labeled entity examples" caption-side="bottom"}
+![Shows an excerpt from Pride and Prejudice with family member (daughter, sisters, mother) mentions and entity (Mr. Bennett, Mr. Bingley, Netherfield, Longbourn) mentions labeled.](images/pp3-both-annotations.png){: caption="Figure 1. Labeled entity examples" caption-side="bottom"}
 
 This excerpt comes from Chapter 3 of *Pride and Prejudice* by Jane Austen.
 
@@ -413,7 +413,7 @@ If a subsequent training run results in lower scores, don't publish that version
 The number of entity extractors that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Entity extractors per service instance | Maximum entity types per extractor | Maximum documents in training data |
-|------|--------------------------------:|---------------------------:|-----------------------------------:|
+|------|--------------------------------|---------------------------|-----------------------------------|
 | Cloud Pak for Data | Unlimited | 18 | 1,000 |
 | Premium | 10 | 18 | 1,000 |
 | Enterprise | 10 | 18 | 1,000 |

@@ -22,7 +22,7 @@ Discovery is not optimized for multilingual search. Although you can add several
 The following table describes the product features that are supported in each language.
 
 | Language | Supported features|
-|:---|:---|
+|----------|-------------------|
 | Arabic (`ar`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Bosnian (`bs`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions |
 | Chinese, simplified (`zh-CN`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding|
