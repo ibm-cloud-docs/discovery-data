@@ -32,7 +32,7 @@ This information applies only to managed deployments.
 The following table lists the {{site.data.keyword.discoveryshort}} actions that generate an event.
 
 | Action                           | Description                        |
-|:---------------------------------|:-----------------------------------|
+|----------------------------------|------------------------------------|
 | `discovery.analyze-api.read`     | Process text by using the Analyze API. |
 | `discovery.autocompletion.read`    | Suggest complete queries based on documents. |
 | `discovery.collection-notices.read` | Get notices for a collection. |
@@ -119,7 +119,7 @@ For more information about how to open {{site.data.keyword.at_full_notm}} from t
 not currently supported events
 
 | Action                           | Description                        |
-|:---------------------------------|:-----------------------------------|
+|----------------------------------|------------------------------------|
 | `discovery.query.read`             | Search a collection for relevant documents. |
 | `discovery.training-data.delete`   | Delete the training data. |
 | `discovery.training-data.read`     | Request all training data. |

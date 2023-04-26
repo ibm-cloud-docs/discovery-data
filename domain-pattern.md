@@ -91,7 +91,7 @@ You can import the downloaded ZIP file as the source for an advanced rules model
 The number of patterns that you can define per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Patterns per service instance |
-|--------------|--------------------------------:|
+|--------------|---------------------------------|
 | Premium      |                             100 |
 | Enterprise |                               100 |
 | Plus (includes Trial)  |                    20 |

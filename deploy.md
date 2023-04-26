@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-04-25"
 
 keywords: ui components, launch application, deploy, publish
 
@@ -24,15 +24,46 @@ Work with a developer to use the pre-built UI components that are provided by IB
 
 For more information about building your own app, see the [Building custom applications with the API](/docs/discovery-data?topic=discovery-data-api-use).
 
- The following table describes the built-in UI components.
+Several built-in UI components are available.
 
-| UI component | Illustration | Storybook link |
-|--------------|--------------|----------------|
-| **Search bar**  \n A search box that uses a natural language understanding query to fetch the most relevant results.  | ![Search bar type ahead](images/search-bar-example.png){: caption="Figure 1. Search bar type ahead" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external} |
-| **Search results**  \n A set of results that rank the most relevant passages and tables to a query. | ![Search results list](images/search-results-example.png){: caption="Figure 2. Search results list" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} |
-| **Facets**  \n Refine your results with facets that help users filter the search results by specific categories and domains. | ![Facets](images/search-facets-example.png){: caption="Figure 3. Facets" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external} |
-| **Rich document preview**  \n Displays your results in a document preview. This view highlights result passages within the text of the original document. It also shows any enrichment mentions that are detected in the document. The rich preview is available with source documents where an SDU model is applied, such as PDF, Microsoft PowerPoint, and Microsoft Word files. | ![Rich document preview](images/search-doc-preview-example.png){: caption="Figure 4. Rich document view" caption-side="bottom"} | [Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default){: external} |
-{: caption="Available UI components" caption-side="top"}
+## Search bar
+{: #deploy-search-bar}
+
+A search box that uses a natural language understanding query to fetch the most relevant results. 
+
+![Search bar type ahead](images/search-bar-example.png){: caption="Figure 1. Search bar type ahead" caption-side="bottom"}
+
+[Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchinput--default){: external}
+
+## Search results
+{: #deploy-search-results}
+
+A set of results that rank the most relevant passages and tables to a query.
+
+![Search results list](images/search-results-example.png){: caption="Figure 2. Search results list" caption-side="bottom"} 
+
+[Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchresults--default){: external} 
+
+## Facets
+{: #deploy-facets}
+
+Refine your results with facets that help users filter the search results by specific categories and domains. 
+
+![Facets](images/search-facets-example.png){: caption="Figure 3. Facets" caption-side="bottom"} 
+
+[Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/searchfacets--default){: external}
+
+## Rich document preview
+{: #deploy-rich-doc}
+
+Displays your results in a document preview. This view highlights result passages within the text of the original document. It also shows any enrichment mentions that are detected in the document. The rich preview is available with source documents where an SDU model is applied, such as PDF, Microsoft PowerPoint, and Microsoft Word files. 
+
+![Rich document preview](images/search-doc-preview-example.png){: caption="Figure 4. Rich document view" caption-side="bottom"}
+
+[Try it](https://watson-developer-cloud.github.io/discovery-components/storybook/?path=/story/documentpreview--default){: external} 
+
+## Deploying a project
+{: #deploy-task}
 
 To deploy your project, complete the following steps:
 

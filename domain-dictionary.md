@@ -169,7 +169,7 @@ Dictionary enrichments that you add to one project can be applied to collections
 The number of dictionaries and term entries you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan      | Number of dictionaries per service instance | Number of term entries per dictionary | Number of terms for which suggestions can be generated |
-|-----------|-------------------:|------------------------:|--------------------------:|
+|-----------|-------------------|------------------------|--------------------------|
 | Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
 | Premium | 100 | 10,000 | 1,000 |
 | Enterprise | 100 | 10,000 | 1,000 |

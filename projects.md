@@ -153,7 +153,7 @@ Choose this type if you prefer not to use one of the other project types. No enr
 The number of projects you can create depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Projects per service instance |
-|--------------|--------------------------------:|
+|--------------|---------------------------------|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                             100 |
 | Enterprise |                               100 |

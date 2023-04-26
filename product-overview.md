@@ -34,7 +34,7 @@ Help customers find answers faster. Analyze content from various connected data 
 If pinpointing answers is your goal, complete the steps that are listed in the following table.
 
 | Step |  Task | Related information |
-|:----:|-------|---------------------|
+|------|-------|---------------------|
 | ![checkbox](images/checkbox.png) | Create a *Document Retrieval* project. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add up to 5 collections that connect to external data sources or contain uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |
@@ -52,7 +52,7 @@ Use award-winning natural language processing technology to enrich your data and
 If extracting meaning is your goal, complete the steps that are listed in the following table.
 
 | Step | Task | Related information |
-|:----:|------|---------------------|
+|------|------|---------------------|
 | ![checkbox](images/checkbox.png) | Create any project type. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add collections that connect to external data sources or contain uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Chunk large documents into many smaller documents so you can apply more targeted enrichments to the content. | [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields) |
@@ -74,7 +74,7 @@ Delight your customers by fortifying your chatbot with an answer to every questi
 If enhancing your chatbot is your goal, complete the steps that are listed in the following table.
 
 | Step | Task | Related information |
-|:----:|------|---------------------|
+|------|------|---------------------|
 | ![checkbox](images/checkbox.png) | Create a *Conversational Search* project. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add a collection that connects to an external data source or contains uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |
@@ -98,7 +98,7 @@ Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Pr
 If finding trends in your data is your goal, complete the steps that are listed in the following table.
 
 | Step | Task | Related information |
-|:----:|------|---------------------|
+|------|------|---------------------|
 | ![checkbox](images/checkbox.png) | Create a *Content Mining* project. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add a collection that connects to an external data source or contains uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Use the built-in Content mining application to analyze your data. | [Analyzing your data with the content mining application](/docs/discovery-data?topic=discovery-data-contentminerapp) |
@@ -117,7 +117,7 @@ Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Pr
 If analyzing contracts is your goal, complete the steps that are listed in the following table.
 
 | Step | Task | Related information |
-|:----:|------|---------------------|
+|------|------|---------------------|
 | ![checkbox](images/checkbox.png) | Create a *Document Retrieval for Contracts* project. | [Creating projects](/docs/discovery-data?topic=discovery-data-projects) |
 | ![checkbox](images/checkbox.png) | Add up to 5 collections that connect to external data sources or contain uploaded files. | [Creating collections](/docs/discovery-data?topic=discovery-data-collections) |
 | ![checkbox](images/checkbox.png) | Run test queries to assess the quality of the initial results. | [Previewing the default query results](/docs/discovery-data?topic=discovery-data-query-results) |

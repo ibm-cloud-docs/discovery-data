@@ -200,7 +200,7 @@ For example, the following JSON excerpt shows a document that was classified wit
 The number of document classifiers and labels that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Limit   | Enterprise | Premium | Cloud Pak for Data |
-|---------|--------:|-----------:|-------------------:|
+|---------|------------|---------|--------------------|
 | Number of document classifiers per service instance | 20 | 20 | Unlimited |
 | Number of labeled data rows | 20,000 | 20,000 | 20,000 |
 | Maximum size in MB of training data after enrichment | 1,024 | 1,024 | 1,024 |

@@ -110,7 +110,7 @@ From the custom annotator page, you can see dictionaries that were created in ot
 {: #dictionary-limits}
 
 | Plan | Number of dictionaries per service instance | Number of base words per dictionary | Number of terms for which suggestions can be generated |
-|-----------|-------------------:|------------------------:|--------------------------:|
+|-----------|-------------------|------------------------|--------------------------|
 | Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
 | Premium | 100 | 10,000 | 1,000 |
 | Enterprise | 100 | 10,000 | 1,000 |
@@ -138,7 +138,7 @@ To import a model, complete the following steps:
 {: #ml-model-limits}
 
 | Plan      | ML models per service instance |
-|-----------|-------------------:|
+|-----------|-------------------|
 | Cloud Pak for Data | Unlimited |
 | Premium | 10 |
 | Enterprise | 10 |
@@ -200,7 +200,7 @@ To import patterns, complete the following steps:
 {: #regex-limits}
 
 | Plan | Regex enrichments per service instance | Regex patterns per service instance | 
-|------|------------------------------------:|---------------------------------------:|
+|------|------------------------------------|---------------------------------------|
 | Cloud Pak for Data | Unlimited | Unlimited |
 | Premium | 100 | 50 |
 | Enterprise | 100 | 50 |

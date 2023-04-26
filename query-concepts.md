@@ -121,7 +121,7 @@ A query is counted only if the request is successful, meaning it returns a respo
 The number of search queries that you can submit per month per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Queries per month per service instance |
-|--------------|-------------------------------:|
+|--------------|--------------------------------|
 | Cloud Pak for Data |                Unlimited |
 | Premium      |                      Unlimited |
 | Enterprise |                        Unlimited |
@@ -134,7 +134,7 @@ For Enterprise plans only, your bill labels requests that are generated from bot
 The number of queries that can be processed per second per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
 | Plan | Concurrent queries per service instance |
-|--------------|--------------------------------:|
+|--------------|---------------------------------|
 | Cloud Pak for Data |                 Unlimited |
 | Premium      |                              50 |
 | Enterprise |                                 5 |

@@ -160,7 +160,7 @@ You can use the v1 training data API to work with two related objects:
 -   trained queries
 -   examples that are used to train the queries
 
-These two objects have separate API endpoints in v1. In v2, the examples that are used to train each query are provided together with the query and only one top-level endpoint is used to work with the training data. 
+These two objects have separate API endpoints in v1. In v2, the examples that are used to train each query are provided together with the query and only one endpoint is used to work with the training data. 
 
 For example, to add a trained query and its training example documents in v2, you use the request `POST /v2/projects/{project_id}/training_data/queries` and pass the query and all examples in the payload of one call. Similarly, if you want to update one example in the training set in v2, you must pass the query and the modified example (along with all of the other examples) to the v2 update endpoint. In v1, to update the example information, you use the update example endpoint to modify one example only.
 

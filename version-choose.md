@@ -43,7 +43,7 @@ If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn 
 {{site.data.keyword.discoveryshort}} v2 has new features that were previously unavailable. The following table describes feature support in both versions.
 
 | Feature | Product redesign (v2) | Earlier version (v1) |
-|---------|:-------------------:|:--------------------:|
+|---------|-----------------------|----------------------|
 | Use projects to organize your work | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Use the Smart Document Understanding (SDU) to annotate your documents | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Leverage intuitive user interface tools to add domain-specific artifacts, such as dictionaries and custom machine learning models | ![checkmark icon](../icons/checkmark-icon.svg) | |
