@@ -297,6 +297,18 @@ To train the extractor, complete the following step:
 
 When you train the extractor, {{site.data.keyword.discoveryshort}} uses documents from the training set to build a machine learning model. After the model is generated, it runs a test against the documents from the test set automatically. The results of the test are displayed for you to review.
 
+### Troubleshoot training issues
+{: #entity-extractor-ts-train}
+
+Learn about possible error messages and how to address them.
+
+The training data is too large
+:   This message is displayed when your training data contains many entity types and many entity examples and the time that is needed to process them exceeds the capacity of your instance. This error can occur even when your workspace doesn't exceed the documented entity extractor limits. To decrease the size of your training data, you can try one of the following approaches:
+
+    -   Remove one or more entity types or remove any unnecessary labeled entity examples to decrease the size of the training data.
+    -   Reduce the percentage of documents that are used in the training set. For example, the default split ratio (70%-23%-7%) uses 70% of the documents in the training set. You can change the percentage of documents used in the training set to smaller number. For example, you might change the split ratio to 60%-33%-7%.
+    -   [IBM Cloud Pak for Data]{: tag-cp4d}  Increase the capacity of your deployed service instance by scaling up service pods.
+
 ## Evaluating the extractor
 {: #entity-extractor-evaluate-model}
 
