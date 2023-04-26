@@ -110,7 +110,7 @@ A subset of documents is available for you to annotate. A set of 20 - 50 documen
 
 The following video shows you how to select a label, and then apply it to a representation of the text in your document. 
 
-In the video, the user clicks the `title` field label, and then clicks the text block that represents the *Table of Contents* page title to label the text as a title. Next, the user clicks the 'table_of_contents` field label and selects the table of contents text block to label it. Then, the user clicks the `footer` field label and clicks the text block that represents the page footer. After the text is labeled, the user clicks the *Submit page* button.
+In the video, the user clicks the `title` field label, and then clicks the text block that represents the *Table of Contents* page title to label the text as a title. Next, the user clicks the `table_of_contents` field label and selects the table of contents text block to label it. Then, the user clicks the `footer` field label and clicks the text block that represents the page footer. After the text is labeled, the user clicks the *Submit page* button.
 
 ![Labeling a title, table of contents, and footer with SDU](images/sdu-snip.mp4){: video controls loop height="500"}
 
