@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-04-26"
 
 subcollection: discovery-data
 
@@ -50,16 +50,16 @@ If you have special requirements when you add source documents, such as a need t
 The following requirements and limitations are specific to {{site.data.keyword.discoveryfull}}:
 
 - The individual file size limit is 32 MB per file, which includes compressed archive files (ZIP, CZIP, TAR). When decompressed, the individual files within compressed files cannot exceed 32 MB per file. This limit is the same for collections in which you upload your own data.
-- Depending on the type of installation (default or production mode), the number of collections you can ingest simultaneously varies. A default installation includes one `crawler` pod, which allows three collections to be processed simultaneously. A production installation includes two `crawler` pods, which can process six collections simultaneously.
+- Depending on the type of installation (starter or production mode), the number of collections you can ingest simultaneously varies. A starter installation includes one `crawler` pod, which allows three collections to be processed simultaneously. A production installation includes two `crawler` pods, which can process six collections simultaneously.
 
-     If you are running a default installation and you want to process more than three collections simultaneously, you must increase the number of `crawler` pods by running the following commands:
+     If you are running a starter installation and you want to process more than three collections simultaneously, you must increase the number of `crawler` pods by running the following commands:
 
      ```bash
      oc patch wd wd --type=merge --patch='{"spec": {"ingestion": {"crawler": {"replicas": <number-of-replicas> } } } }'
      ```
      {: pre}
 
-     In a default installation, the maximum number of simultaneous collections that can crawl an external data source is 3. If you start a fourth, that collection does not start to process until the prior three crawls finish.
+     In a starter installation, the maximum number of simultaneous collections that can crawl an external data source is 3. If you start a fourth, that collection does not start to process until the prior three crawls finish.
      {: note}
 
      Each `number-of-replicas` allows 3 simultaneous crawls, so `number-of-replicas=2` increases the replicas to 6, and `number-of -replicas=3` increases them to 9.
