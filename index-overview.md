@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-04-27"
 
 subcollection: discovery-data
 
@@ -50,6 +50,7 @@ The following field names have special meaning. If possible, do not use these na
 - `highlight`
 - `html`
 - `metadata`
+- `parent_document_id`
 - `result_metadata`
 - `score`
 - `spans`
