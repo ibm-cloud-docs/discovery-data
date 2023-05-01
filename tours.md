@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-05-01"
 
 subcollection: discovery-data
 
@@ -20,5 +20,6 @@ The following tours are available:
 
 - Learn the essentials of Watson {{site.data.keyword.discoveryshort}}
 - Extract meaning from text
+- Create and apply dictionaries
 - Create a Content Mining project
 - Learn the keys to a successful mining setup
