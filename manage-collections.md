@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-05-02"
 
 subcollection: discovery-data
 
@@ -23,9 +23,7 @@ For more information about how to create a collection, see [Creating collections
 ## Managing data
 {: #manage-data}
 
-[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
-
-This procedure is available in service instances that are managed by {{site.data.keyword.cloud_notm}} only. The *Manage data* page is not available in installed deployments.
+The *Manage data* page is available in installed deployments starting with the 4.6.5 release of {{site.data.keyword.icp4dfull_notm}}.
 {: note}
 
 After you create a collection and the documents in the collection are indexed, you can see a list of the documents from the *Manage data* page.

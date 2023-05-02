@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-06"
+lastupdated: "2023-05-02"
 
 keywords: backup,restore
 
@@ -29,7 +29,7 @@ The following table lists the upgrade paths that are supported by the scripts.
 
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
-| 4.6.0 | 4.6.3 |
+| 4.6.0 | 4.6.5 |
 | 4.5.x | 4.6.0 |
 | 4.0.x | 4.6.0 |
 | 2.2.1 | 4.6.0 |

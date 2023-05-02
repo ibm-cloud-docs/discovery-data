@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-05-02"
 
 subcollection: discovery-data
 
@@ -10,10 +10,10 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Installing 4.6.3
+# Installing 4.6.5
 {: #install}
 
-Find information about how to install and manage {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.6.3.
+Find information about how to install and manage {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.6.5.
 {: shortdesc}
 
 [IBM Cloud Pak for Data]{: tag-cp4d}
