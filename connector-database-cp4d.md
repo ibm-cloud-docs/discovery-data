@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-04-05"
 
 subcollection: discovery-data
 
@@ -150,7 +150,16 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     Row filter
     :   Optional. Specify the `SQL WHERE` clause to designate which table rows to crawl. You must specify a Boolean expression that can be the condition of a `WHERE` clause in a `SELECT` statement. If there is an error in syntax or column names, the table is excluded from the crawl, and no documents are indexed.
 
-    The key and row filter values are not displayed with the schema and tables names, but the values are applied to the database connection.
+    Column with data to extract
+    :   Name of the column with data that you want to crawl. If you don't specify the column, a column with text or with a single large object is chosen to be crawled.
+
+    MIME type of data
+    :   Optional. The MIME type is detected if not specified.
+
+    The values that you specify in the table crawl settings dialog are not displayed with the schema and tables names, but the values are applied to the database connection.
+
+    The *Column with data to extract* and *MIME type of data* fields were added with the 4.6.5 release.
+    {: note}
 1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).

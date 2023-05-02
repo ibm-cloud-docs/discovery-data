@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-05-02"
 
 subcollection: discovery-data
 
@@ -84,7 +84,7 @@ When you upload a document, no such information about its relationships to other
 
 Alternatively, you can copy the document body of each document into a JSON file, where each document is an object in a single array. When the JSON file is ingested, each item in the array is added as a separate document with a seprarate document ID. Each document shares the same parent ID, which identifies the relationship between them.
 
-From an {{site.data.keyword.cloud_notm}}-managed instance, you can quickly find documents that share the same parent ID or other common metadata value from the *Manage data* page. Customize the view to show the field, such as `extracted_metadata.parent_document_id` or `extracted_metadata.foldername`, that the documents share in common.
+You can quickly find documents that share the same parent ID or other common metadata value from the *Manage data* page. Customize the view to show the field, such as `extracted_metadata.parent_document_id` or `extracted_metadata.foldername`, that the documents share in common.
 
 ## Can I customize Discovery to understand my data
 {: #faq-customize}

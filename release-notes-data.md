@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-05-02"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -34,6 +34,25 @@ After version 4.7, the operator for IBM Knowledge Studio will no longer be suppo
 Migrate your solutions to Watson Discovery, which has powerful custom natural language processing capabilities. Any existing Watson Knowledge Studio for Cloud Pak for Data rules-based or machine learning models can be imported to Watson Discovery and applied to your data as custom enrichments. And the recent release of the custom entities extraction feature brings equivalent function to label and train custom entity models into Watson Discovery. For more information about these features, see [Choose enrichments](/docs/discovery-data?topic=discovery-data-domain).
 
 For more information about migrating your solutions, see [Migrating Knowledge Studio solutions](/docs/discovery-data?topic=discovery-data-migrate-wks).
+
+## 4.6.5 release, 2 May 2023
+{: #discovery-data-2may2023}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.6.5 is available.
+
+For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.6.x/fixlist/discovery-fixlist.html){: external}
+
+Manage the data in a collection from the new *Manage data* page
+:   You can now access a *Manage data* page for a collection. From the new page, you can see a list of the documents in your collection and get a quick view of information about the documents. You can also delete documents from a collection with just a few clicks. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
+
+You have more control over the data that is crawled by the database connector
+:   When you connect to a database as an external data source, you can now specify the column from which to extract data. If you don't specify the column, a column with text or with a single large object is chosen to be crawled. You can also specify the MIME type of the data in the column that you want to crawl.
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Answer finding
+    -   Optical Character Recognition v2
 
 ## 4.6.4 release, 29 March 2023
 {: #discovery-data-29march2023}

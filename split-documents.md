@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-05-02"
 
 subcollection: discovery-data
 
@@ -60,10 +60,8 @@ When you replace the original document, all of the segments are overwritten, unl
 ## Deleting document segments from the index
 {: #split-documents-delete}
 
-[IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
-
 You can delete documents in a collection from the *Manage data* page. To find all of the document segments that were generated from a single document, check for documents with the same `metadata.parent_document_id` field value. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} before the 4.6.5 release**
 
-The *Manage data* page is not available in installed deployments. A developer can delete document segments by using the API. For more information, see the [delete document API](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}.
+The *Manage data* page is available in installed deployments starting with the 4.6.5 release. In earlier releases, a developer can delete document segments by using the API. For more information, see the [delete document API](https://{DomainName}/apidocs/discovery-data#deletedocument){: external}.

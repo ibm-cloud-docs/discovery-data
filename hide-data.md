@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-01"
+lastupdated: "2023-05-02"
 
 subcollection: discovery-data
 
@@ -37,8 +37,6 @@ You can prevent content from being included in query results in the following wa
 
 - Delete a single document.
 
-   [IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
-
    If you use the Smart Document Understanding tool to annotate a document, and then decide that you want to delete the document and its associated SDU annotations, you must remove the annotations before you delete the document. To remove the annotations, annotate the document again. This time, label all of the content as `text`.
    {: note}
 
@@ -62,8 +60,8 @@ You can prevent content from being included in query results in the following wa
       Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments. If you delete one of these generated documents, and then repeat the action that created it, the deleted document is added back in to your collection.
       {: note}
 
-   [IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+   [IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} releases before 4.6.5**
 
-   The *Manage data* page is not available in installed deployments. You must use the [Discovery API](/apidocs/discovery-data#deletedocument) to delete a document. And you must know the document ID of the document that you want to delete. To get the document ID, use the [List documents](/apidocs/discovery-data#listdocuments) API method.
+   The *Manage data* page is not available in installed deployments before the 4.6.5 release. You must use the [Discovery API](/apidocs/discovery-data#deletedocument) to delete a document. And you must know the document ID of the document that you want to delete. To get the document ID, use the [List documents](/apidocs/discovery-data#listdocuments) API method.
 
    If the document is a subdocument of another document and you want to remove it, its parent, and any other subdocuments that are associated with the parent, delete the parent document. To get the document ID of the parent document, look for the `metadata.parent_document_id` field for the document. It is specified in the JSON representation of the document when it is returned as a response in the *Improve and customize* page of the product user interface.
