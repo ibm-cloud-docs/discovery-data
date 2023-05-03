@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-05-03"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,18 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 31 March 2023
+{: #discovery-31march2023}
+{: release-note}
+
+Update to API version
+:   The current API version (v2) is now 2023-03-31. The following change was made with this version:
+
+Changed how fields named `document_id` are handled
+:    If you add a JSON file that contains a field named `document_id` to a collection, the field is ignored. The system assigns a new unique document ID to the document when it is added to the index. To assign a document ID to a document regardless of its file type, use the *Update document* method from the API.
+
+    Previously, when you uploaded a JSON file with a field named `document_id` from the product user interface or by using the *Add document* API method, the document ID from the file was shown as the `document_id` value in query results. However, a different document ID was assigned to the document, and the assigned ID had to be used for certain other tasks, such as deleting the document. If your application relies on the previous behavior, specify a version number earlier than 2023-03-31, such as `2020-08-30`, in your API calls.
 
 ## 2 March 2023
 {: #discovery-2march2023}
