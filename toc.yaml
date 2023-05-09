@@ -96,7 +96,6 @@ toc:
           - stopwords.md
           - split-documents.md
           - hide-data.md
-          - chat-choose-project.md
           - train.md
           - query-defaults.md
       - topicgroup:
@@ -158,6 +157,7 @@ toc:
           - cm-report.md
           - cm-export.md
       - analyzeapi.md
+      - chat-choose-project.md
       - deploy.md
       - topicgroup:
           label: Installing

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-05-05"
 
 keywords: api version,api,request syntax,api key,bearer token
 
@@ -24,7 +24,7 @@ API requests require a version parameter that takes a date in the format `versio
 
 Send the version parameter with every API request. The service uses the API version for the date you specify, or the most recent version before that date. Don't default to the current date. Instead, specify a date that matches a version that is compatible with your app, and don't change it until your app is ready for a later version.
 
-The current version is `2020-08-30`.
+The current version is `2023-03-31`.
 
 ## Getting your project ID [IBM Cloud]{: tag-ibm-cloud}
 {: #api-use-cloud}
