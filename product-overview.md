@@ -67,9 +67,9 @@ If extracting meaning is your goal, complete the steps that are listed in the fo
 ## Enhance your chatbot
 {: #product-overview-chat}
 
-Delight your customers by fortifying your chatbot with an answer to every question. Discovery is designed to work seemlessly with Watson Assistant to search and deliver answers from help content that you already own.
+Delight your customers by fortifying your chatbot with an answer to every question. Discovery is designed to work seemlessly with {{site.data.keyword.conversationshort}} to search and deliver answers from help content that you already own.
 
-![Shows a chat bot with emphasize the answer enabled.](images/convo-search.png){: caption="Figure 3. Answer finding enabled in the Assistant web chat" caption-side="bottom"}
+![Shows a chat bot with emphasize the answer enabled.](images/convo-search.png){: caption="Figure 3. Answer finding enabled in the {{site.data.keyword.conversationshort}} web chat" caption-side="bottom"}
 
 If enhancing your chatbot is your goal, complete the steps that are listed in the following table.
 
@@ -84,6 +84,8 @@ If enhancing your chatbot is your goal, complete the steps that are listed in th
 {: caption="Checklist for enhancing your chatbot" caption-side="top"}
 
 For a more detailed look at these steps, take a tutorial that walks you through them. For more information, see [Power your assistant with answers from web resources](/docs/discovery-data?topic=discovery-data-tutorial-assistant-fred).
+
+Alternatively, you can add a generative language service named NeuralSeek between the Watson {{site.data.keyword.discoveryshort}} and {{site.data.keyword.conversationshort}} services. For more information, see [Use NeuralSeek to return polished answers from existing help content](/docs/watson-assistant?topic=watson-assistant-tutorial-neuralseek){: external}.
 
 ## Find trends
 {: #product-overview-mining}

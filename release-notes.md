@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-05"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -29,7 +29,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: release-note}
 
 Update to API version
-:   The current API version (v2) is now 2023-03-31. The following change was made with this version:
+:   The current API version (v2) is now 2023-03-31. One change was made with this version.
 
 Changed how fields named `document_id` are handled
 :    If you add a JSON file that contains a field named `document_id` to a collection, the field is ignored. The system assigns a new unique document ID to the document when it is added to the index. To assign a document ID to a document regardless of its file type, use the *Update document* method from the API.
