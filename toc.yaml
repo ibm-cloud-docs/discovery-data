@@ -159,6 +159,7 @@ toc:
       - analyzeapi.md
       - chat-choose-project.md
       - deploy.md
+      - cloud-v-data.md
       - topicgroup:
           label: Installing
           topics:

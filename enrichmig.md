@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-05-12"
 
 subcollection: discovery-data
 
@@ -29,11 +29,8 @@ To analyze data with these migrated enrichments, you can use a Content Mining pr
 -   For more information about how to create a Content Mining project, see [Creating projects](/docs/discovery-data?topic=discovery-data-projects).
 -   For more information about how to apply enrichments to a collection in the Content Mining application, see [Applying the annotator](/docs/discovery-data?topic=discovery-data-cm-custom-annotator#cm-custom-annotator-deploy).
 
-## Importing dictionaries from Watson Explorer Analytical Components [IBM Cloud Pak for Data]{: tag-cp4d}
+## Importing dictionaries from Watson Explorer Analytical Components
 {: #enrichdictca}
-
-You can import an XML file to use as the dictionary source file from {{site.data.keyword.icp4dfull_notm}} deployments only.
-{: note}
 
 You can import [user dictionaries](https://www.ibm.com/support/knowledgecenter/en/SS8NLW_12.0.0/com.ibm.discovery.es.ad.doc/iiysatauserdict.html){: external} from IBM Watson Explorer Analytical Components.
 
