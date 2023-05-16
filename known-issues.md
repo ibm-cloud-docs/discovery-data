@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-05-16"
 
 keywords: known issues
 
@@ -290,7 +290,7 @@ For more information about known issues, see the [{{site.data.keyword.icp4dfull_
     -   **Error**: `[WKSML_MODEL_NAME]: Enrichment of a document failed`
     -   **Cause**: There is a known issue in Watson Knowledge Studio that can cause a timeout in enrichment processing.
     -   **Solution**: When you use the Analyze API to apply a Watson Knowledge Studio model enrichment to a collection, keep the size of the input document under 50 KB.
-<!--
+
 ### 2.2.1 issues that were fixed in subsequent releases
 {: #26feb2021ki-fixed}
 
@@ -721,4 +721,3 @@ Also see the issues identified in the previous release.
 - Do not use metadata for column names in your CSV files. If you upload a CSV file that uses metadata for the column names in the header, then the `metadata` property of the indexed document will be converted to an array in the index.
 - CSV files must use commas (`,`) or semicolons (`;`) as delimiters; other delimiters are not supported. If your CSV file includes values containing either commas or semicolons, you should surround those values in double quotation marks so they are not separated. If header rows are present, the values within them are processed in the same manner as values in all other rows. The last row of CSV files will not be processed if not followed by a CRLF (carriage return).
 - Currently, unique collection names are not enforced. Using duplicate collection names is not recommended and should be avoided
--->
