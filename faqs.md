@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-05-02"
+lastupdated: "2023-05-18"
 
 subcollection: discovery-data
 
@@ -124,15 +124,3 @@ When you ingest a file or crawl an external data source, the data that you add t
 {: faq}
 
 When you submit a query, you can choose to submit a natural language query or use the Discovery Query Language to customize the search to target specific fields in the index, for example. For more information about the different types of queries and how to decide which one to use, see [Choosing the right query type](/docs/discovery-data?topic=discovery-data-query-concepts#query-choose).
-
-## What's causing the errors that mention watsonplatform.net
-{: #faq-watsonplatform}
-{: faq}
-
-Old API endpoint URLs that include `watsonplatform.net` are deprecated and were retired on 26 May 2021. If you see errors that mention `watsonplatform.net`, make sure your {{site.data.keyword.discoveryshort}} service instance is using updated credentials. And, if you have any old credentials with the old endpoint URL listed in your service page, delete them. For more information about the deprecation, see [Updating endpoint URLs from watsonplatform.net](/docs/watson?topic=watson-endpoint-change).
-
-## Why am I getting a 401 error when I try to use my Lite plan
-{: #faq-lite-plan-deletion}
-{: faq}
-
-If you are seeing `401 invalid credentials` messages for a Lite plan that hasn't been used in a while, don't spend time creating new credentials. The error message is misleading. Any Lite plans with no activity for 120 days are deleted automatically. Unfortunately, the service instance deletion is not being reflected in {{site.data.keyword.cloud_notm}} Resources list.
