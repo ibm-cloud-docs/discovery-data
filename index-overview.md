@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-27"
+lastupdated: "2023-05-16"
 
 subcollection: discovery-data
 
@@ -186,7 +186,10 @@ Notes about enhancing data:
     -   The field with the longest string value and highest number of distinct values is chosen.
     -   If more than one field meets the previous condition, one of the fields is chosen at random.
 
--   If you want to apply an enrichment to a nested field, you must create a Content Mining project, and then apply the enrichment to the field. If you want to use a different project type, you can reuse the collection that you created with the Content Mining project type elsewhere. For more information, see [Applying enrichments](/docs/discovery-data?topic=discovery-data-connector-database-cp4d#connector-database-cp4d-enrich-db).
+-   If you want to apply an enrichment to a nested field, you must create a Content Mining project, and then apply the enrichment to the field. If you want to use a project type other than Content Mining, you can reuse the collection that you created with the Content Mining project type elsewhere. For more information, see [Applying enrichments](/docs/discovery-data?topic=discovery-data-connector-database-cp4d#connector-database-cp4d-enrich-db).
+
+You can specify the `normalizations` and `conversions` objects in the [Update a collection](/apidocs/discovery-data#updatecollection) method of the API to move or merge JSON fields.
+{: note}
 
 ## How passages are derived
 {: #query-results-passages}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-05-16"
 
 subcollection: discovery-data
 
@@ -61,7 +61,8 @@ If you are already familiar with {{site.data.keyword.discoveryshort}} v1, learn 
 | Support for more connectors from a {{site.data.keyword.icp4dfull_notm}} deployment, including databases, file systems, FileNet P8, and HCL Notes | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Some connectors support document-level security from a {{site.data.keyword.icp4dfull_notm}} deployment | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | Programmatically configure external data source crawls | | ![checkmark icon](../icons/checkmark-icon.svg) |
-| Configure the normalization process of ingestion by document type. Configuration options include things like document segmentation, HTML file inclusion or exclusion rules, and JSON normalization | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Configure the normalization processes of document segmentation and HTML file inclusion or exclusion rules during ingestion | | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Configure the JSON normalization process during ingestion and after enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Configure dictionary tokenization | | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Advanced question-answering capabilities, such as returning the exact answer | ![checkmark icon](../icons/checkmark-icon.svg) | |
 | {{site.data.keyword.discoveryshort}} Query Language (DQL) API support | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |

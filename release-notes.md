@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-05"
+lastupdated: "2023-05-16"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,18 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 16 May 2023
+{: #discovery-16may2023}
+{: release-note}
+
+<!-- 4.8.0-0.5 -->
+
+Improved tool for creating Smart Document Understanding (SDU) user-trained models
+:   The SDU tool that you use to annotate documents when you create a user-trained SDU model now uses the React UI framework. This update does not change the behavior of the tool, but does make it more responsive.
+
+You can now define JSON normalizations by using the Collections API
+:   The *Create a collection* and *Update a collection* methods now support the addition of `conversions` and `normalizations` objects that you can specify to apply normalization operations to the documents in the collection. For example, you can define an operation to copy or merge one field to another in the JSON representation of the documents. The `conversions` object defines normalization operations that occur during ingestion and the `normalizations` object defines normalization operations that occur after enrichments are applied. For more information, see the [Collections API reference](/apidocs/discovery-data#listcollections){: external}.
 
 ## 31 March 2023
 {: #discovery-31march2023}
