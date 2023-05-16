@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-05-16"
 
 subcollection: discovery-data
 
@@ -281,7 +281,7 @@ To transfer relevancy training, complete the following steps:
 
 You can reuse some of the models that you created in v1 with your v2 project.
 
-SDU models
+Smart Document Understading (SDU) models
 :   You can use an SDU model that you built in v1. However, you cannot edit the migrated SDU model in v2. If you want to reuse a model as-is, you can [export it from v1](/docs/discovery?topic=discovery-sdu#import){: external} and [import the SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields#import) to v2.
 
 Machine learning models
