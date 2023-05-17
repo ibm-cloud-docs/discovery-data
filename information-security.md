@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-05-17"
 
 subcollection: discovery-data
 
@@ -157,7 +157,7 @@ To label data with the product user interface:
 1.  Enter a unique ID for the customer in the **Customer ID** field. Do not include personal data in a **Customer ID**.
 1.  Click **Save ID**.
 
-After the **Customer ID** (`customer_id`) field is set, all data that is uploaded or crawled during the current browser session is labeled with the specified **Customer ID**.
+After the **Customer ID** (`customer_id`) field is set, all data that is uploaded during the current browser session is labeled with the specified **Customer ID**.
 
 Adding a **Customer ID** labels the documents, notices, dictionaries, and training data within that URL domain from that point forward, including each instance under that domain. Any actions, including document uploads, that occurred in the {{site.data.keyword.discoveryshort}} product user interface before the **Customer ID** field was added are not labeled.
 
