@@ -176,6 +176,7 @@ After the model is trained, deploy the model as an enrichment.
 
             The data in the collection where you apply the enrichment must have the same fields as the collection that you used to train the model.
             {: note}
+
         1.  In the **Enrichments** tab, locate your classifier in the **Name** column. From the **Fields to enrich** field, choose the same text field that was used to train the model. (This field is determined by the system and is indexed as the *Analyzable text content* field. For more information, see [Identifying the text field](/docs/discovery-data?topic=discovery-data-cm-edit-collection#text-field).)
         1.  Click **Apply changes and reprocess**.
 

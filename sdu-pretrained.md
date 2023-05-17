@@ -63,7 +63,7 @@ To apply a pretrained Smart Document Understanding model to your collection, com
 Follow these workarounds if you experience problems when working with the Smart Document Understanding tool.
 
 ### Insufficient resources to process document
-{: ts-insufficient-resources}
+{: #ts-insufficient-resources}
 
 Error
 :   When you apply a pretrained model to your collection, document processing does not complete successfully and an `Insufficient resources to process document` message is displayed.

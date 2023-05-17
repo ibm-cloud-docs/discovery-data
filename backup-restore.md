@@ -271,6 +271,7 @@ If you plan to back up and restore an entire {{site.data.keyword.icp4dfull_notm}
 
     A repeat of the installation is required because the utility does not always reinstall {{site.data.keyword.discoveryshort}} correctly.
     {: note}
+
 1.  Run the {{site.data.keyword.discoveryshort}} restore script to restore your data.
 
 ### Backing up data manually

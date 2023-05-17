@@ -39,6 +39,7 @@ To manage enrichments, complete the following steps:
 
         If the field that you choose comes from a JSON file, after you apply the enrichment, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, `"field1": "Discovery"` becomes `"field1": ["Discovery"]`. Only the first 50,000 characters of a custom field from a JSON file are enriched.
         {: note}
+
     -   To remove an enrichment, clear the checkboxes for fields that you want to remove the enrichment from.
 
 1. Click **Apply changes and reprocess** to apply your changes to the collection.

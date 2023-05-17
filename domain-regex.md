@@ -20,14 +20,14 @@ Define regular expressions that can identify and extract information from fields
 
 For example, this regular expression finds occurrences of credit card numbers of a specific format and length.
 
-```
+```text
 4[0-9]{15}
 ```
 {: codeblock}
 
 The following regular expression finds occurrences of a US social security number.
 
-```
+```text
 (?!666|000|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}
 ```
 {: codeblock}

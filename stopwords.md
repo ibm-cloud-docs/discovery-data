@@ -49,7 +49,7 @@ For the following languages, {{site.data.keyword.discoveryshort}} uses the defau
 - Finnish: [stopwords_fi.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/finnish_stop.txt){: external}
 - French: [stopwords_fr.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/french_stop.txt){: external}
 - German: [stopwords_de.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/german_stop.txt){: external}
-Hindi: [stopwords_hi.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/hi/stopwords.txt){: external}
+- Hindi: [stopwords_hi.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/hi/stopwords.txt){: external}
 - Italian: [stopwords_it.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/italian_stop.txt){: external}
 - Norwegian (both supported dialects): [stopwords_no.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/norwegian_stop.txt){: external}
 - Portuguese: [stopwords_pt.txt](https://github.com/apache/lucene/blob/main/lucene/analysis/common/src/resources/org/apache/lucene/analysis/snowball/portuguese_stop.txt){: external}
