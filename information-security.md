@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-05-19"
 
 subcollection: discovery-data
 
@@ -75,6 +75,9 @@ Any string fields (including but not limited to `name` and `description`) of the
 {: #labeling}
 
 Data can be labeled by using the API, or by using the {{site.data.keyword.discoveryshort}} product user interface. For more information about labeling with the product user interface, see [Labeling data in the product user interface](#labelingtooling).
+
+You cannot label data that is added by crawling external data sources.
+{: important}
 
 Data is labeled by adding the `customer_id` of your choice to the optional `X-Watson-Metadata` header. {{site.data.keyword.discoveryshort}} can then delete it by `customer_id`.
 
@@ -157,7 +160,7 @@ To label data with the product user interface:
 1.  Enter a unique ID for the customer in the **Customer ID** field. Do not include personal data in a **Customer ID**.
 1.  Click **Save ID**.
 
-After the **Customer ID** (`customer_id`) field is set, all data that is uploaded during the current browser session is labeled with the specified **Customer ID**.
+After the **Customer ID** (`customer_id`) field is set, all data that is uploaded during the current browser session is labeled with the specified **Customer ID**. (You cannot label data that is added by crawling external data sources.)
 
 Adding a **Customer ID** labels the documents, notices, dictionaries, and training data within that URL domain from that point forward, including each instance under that domain. Any actions, including document uploads, that occurred in the {{site.data.keyword.discoveryshort}} product user interface before the **Customer ID** field was added are not labeled.
 

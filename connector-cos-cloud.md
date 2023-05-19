@@ -79,7 +79,7 @@ IAM API key
 :   For example, `0viPHOY7LbLNa9eLftrtHPpTjoGv6hbLD1QalRXikliJ`.
 
 Resource instance ID
-:   For example, `crn:v1:bluemix:public:cloud-object-storage:global:a/3ag0e9402tyfd5d29761c3e97696b71n:d6f74k03-6k4f-4a82-b165-697354o63903::`.
+:   For example, `cloud-object-storage:global:a/3ag0e9402tyfd5d29761c3e97696b71n:d6f74k03-6k4f-4a82-b165-697354o63903::`.
 
 ## Connecting to the data source
 {: #connector-cos-cloud-task}
