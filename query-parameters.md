@@ -352,6 +352,7 @@ The maximum number of passages to return. The search returns fewer passages if t
 The approximate number of characters that any one passage can have. The default value is `200`. The minimum is `50`. The maximum is `2,000`. Passages that are returned can contain up to twice the requested length (if necessary) to get them to begin and end at sentence boundaries.
 
 ### `passages.max_per_document`
+{: #passages_max-per-doc}
 
 One passage is returned per document by default. You can increase the maximum number of passages to return per document by specifying a higher number in the `passages.max_per_document` parameter. 
 

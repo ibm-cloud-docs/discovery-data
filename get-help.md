@@ -102,6 +102,7 @@ Be ready to share the following information with IBM Support:
 
     Do not share code examples. IBM Support cannot debug custom code.
     {: note}
+
 -   Relevant logs, including the Red Hat OpenShift collector logs.
 
     The IBM Support representative can share a script with you that collects relevant logs from your cluster.

@@ -25,7 +25,6 @@ For full installation instructions, see the following topics:
 
 -   [Installing 4.0.x](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=discovery-installing-watson){: external}
 -   [Installing 2.2.0, 2.2.1](https://www.ibm.com/docs/cloud-paks/cp-data/3.5.0?topic=services-watson-discovery){: external}
--   [Installing 2.1.3, 2.1.4](https://www.ibm.com/docs/cloud-paks/cp-data/3.0.1?topic=services-watson-discovery){: external}
 
 ## Custom scaling in {{site.data.keyword.discovery-data_short}} 4.0.x
 {: #scaling-discovery-40x}

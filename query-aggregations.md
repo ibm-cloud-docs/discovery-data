@@ -926,7 +926,7 @@ You can optionally specify the following parameters:
     -  `estimated_matching_results`: Number of documents that are estimated to have the term in the specified field in the set of documents that are returned by the query.
 
 ### Example
-{: term-example}
+{: #term-example}
 
 The following example returns the text from the recognized entities in the document, and specifies to return a maximum of 10 terms.
 

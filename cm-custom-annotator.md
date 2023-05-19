@@ -51,7 +51,7 @@ You can import an existing dictionary by uploading it or you can create a dictio
 
 If you plan to import a dictionary, the dictionary terms must be defined in a CSV file. Specify each term and its synonyms in a separate line. Use the following syntax to specify each term:
 
-```
+```text
 {term},{synonym},{synonym},...
 ```
 {: codeblock}
