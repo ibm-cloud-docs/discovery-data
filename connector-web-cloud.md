@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-05-19"
 
 subcollection: discovery-data
 
@@ -30,13 +30,13 @@ You can connect to the following types of web content:
 -   Private company websites or other sites that require authentication
 -   Websites that are behind a corporate firewall
 
+During the initial crawl of the content, all website pages that match your search settings are crawled and added to the document index of your collection. The crawl starts on the web page that you specify in the *Starting URLs* field. If your collection is configured to follow links, the crawl follows links on the starting page that share the same subtree as the starting page. For example, if you specify `https://www.example.com/banking/faqs.html`, links with URLs that begin with `https://www.example.com/banking/` are crawled. If you specify `https://www.example.com/banking`, links with URLs that begin with `https://www.example.com/` are crawled.
+
+During subsequent scheduled recrawls, a full recrawl is performed and any changes are reflected in your collection. Documents that were added to your collection from website pages that are later deleted from the external website are not deleted from the collection. However, starting with collections that were created after April 2022, when you remove a starting URL from the web crawl configuration, any associated documents are deleted. Deleted documents include indexed documents that were added to the collection based on the content of the web page at the starting URL and documents that were derived from web pages that the starting URL linked to. You cannot limit the number of indexed documents by changing other settings, such as changing the existing URL to include a path with a more limited scope than before or reducing the maximum number of links to follow to 0. Only by deleting the URL can you remove the indexed documents that are associated with it.
+
 The web crawler can crawl web pages that use JavaScript to render content, but the crawler works best on individual pages, not entire websites. It cannot crawl sites that use dynamic URLs; if you can't see any content when you view the source code of a web page in your browser, then the service cannot crawl it.
 
 If you want to crawl a group of URLs that includes some websites that require authentication and some that don't, consider creating a different collection for each authentication type. The connector does not support cookie-based crawling.
-
-During the initial crawl of the content, all website pages that match your search settings are crawled and added to the document index of your collection.
-
-During subsequent scheduled recrawls, a full recrawl is performed and any changes are reflected in your collection. Documents that were added to your collection from website pages that are later deleted from the external website are not deleted from the collection. However, starting with collections that were created after April 2022, when you remove a starting URL from the web crawl configuration, any associated documents are deleted. Deleted documents include indexed documents that were added to the collection based on the content of the web page at the starting URL and documents that were derived from web pages that the starting URL linked to. You cannot limit the number of indexed documents by changing other settings, such as changing the existing URL to include a path with a more limited scope than before or reducing the maximum number of links to follow to 0. Only by deleting the URL can you remove the indexed documents that are associated with it.
 
 All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
