@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2021-09-13"
+lastupdated: "2023-05-19"
 
 keywords: IAM, add users, share
 
@@ -23,8 +23,20 @@ Share a preview of your search application or build a team to work on a project.
 The information in this topic applies to managed deployments only.
 {: important}
 
-Access to {{site.data.keyword.cloud_notm}} service instances is controlled by {{site.data.keyword.cloud}} Identity and Access Management (IAM). Every person who accesses Discovery in your account must be assigned an access policy with an IAM role.
+Access to {{site.data.keyword.cloud_notm}} service instances is controlled by {{site.data.keyword.cloud}} Identity and Access Management (IAM). Every person who accesses {{site.data.keyword.discoveryshort}} in your account must be assigned an access policy with an IAM role.
 
-Some services also limit the actions that people are allowed to do by using IAM service roles. With Discovery, anyone who can access a Discovery instance can perform all actions.
+Only an owner of the service account can add users. For more information, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 
-Only an administrator of the service account can add users. For more information, see [Managing access to resources](/docs/account?topic=account-assign-access-resources). For more information about how roles function in Discovery, see [IAM roles and actions](https://cloud.ibm.com/docs/account?topic=account-iam-service-roles-actions#watson-discovery){: external}.
+## Platform roles
+{: #admin-platform}
+
+A platform role controls a person's ability to access a service instance in {{site.data.keyword.cloud_notm}}. 
+
+To give someone access to your service instance, assign them any platform role other than *Viewer*. A person with the *Viewer* role cannot access the product user interface. All of the other roles allow users to perform all tasks.
+
+## Service roles 
+{: #admin-service}
+
+A service role controls what a person can do in {{site.data.keyword.discoveryshort}}. 
+
+With {{site.data.keyword.discoveryshort}}, anyone who can access a {{site.data.keyword.discoveryshort}} instance can perform all actions. The only limitation is with the *Reader* role; anyone with reader-level access cannot submit API POST requests.
