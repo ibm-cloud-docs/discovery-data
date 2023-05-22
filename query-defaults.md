@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-07-18"
+lastupdated: "2023-05-22"
 
 subcollection: discovery-data
 
@@ -20,7 +20,7 @@ When you submit a search from the product user interface, your text is passed as
 
 You can override some of the default values by using improvement tools in the user interface. For example, you can use the *Search results* tool to change parameters such as `passages.enabled`. For more information, see [Changing the result content](/docs/discovery-data?topic=discovery-data-query-results#query-results-content).
 
-The enrichments that are applied to your data autmoatically differ by project type. For more information, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
+The enrichments that are applied to your data autmoatically differ by project type. For more information, see [Default project settings](/docs/discovery-data?topic=discovery-data-projects#projects-include-project-defaults-reuse).
 
 ## Default query settings
 {: #query-defaults-table1}
