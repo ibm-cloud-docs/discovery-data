@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-05-22"
 
 subcollection: discovery-data
 
@@ -76,7 +76,7 @@ Some enrichments and query result settings are applied to each project type by d
 |--------------|---------------------|-------------------------------|
 | Document Retrieval | Entities, Part of Speech | Facets (by Entity), Passages |
 | Document Retrieval for Contracts | Entities, Parts of speech, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
-| Conversational Search | None | Passages |
+| Conversational Search | Part of Speech | Passages |
 | Content Mining | Part of Speech | None |
 | Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
