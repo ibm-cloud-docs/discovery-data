@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-05-23"
 
 subcollection: discovery-data
 
@@ -180,7 +180,7 @@ Notes about enhancing data:
 -   You cannot apply prebuilt or user-trained Smart Document Understanding models to JSON files.
 -   When you apply an enrichment to a field from the JSON file, the field data type is converted to an array. The field is converted to an array even if it contains a single value. For example, "field1": "Discovery" becomes "field1": ["Discovery"]. 
 -   Only the first 50,000 characters of a custom field from a JSON file are enriched.
--   In project types where the *Part of Speech* (POS) enrichment is applied automatically, the enrichment is applied to the field that contains the bulk of the file content. In JSON files, this field is determined by the following rules:
+-   In project types where the *Part of Speech* (POS) enrichment is applied automatically, the enrichment is applied to the field that contains the bulk of the file content in the first JSON file that is added to the collection. This field is determined by the following rules:
 
     -   If a field is named `text`, the POS enrichment is applied to it.
     -   The field with the longest string value and highest number of distinct values is chosen.
