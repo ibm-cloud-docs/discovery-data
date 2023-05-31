@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-05-26"
 
 subcollection: discovery-data
 
@@ -332,7 +332,9 @@ For example, the following query returns documents that contain `car` in the tit
 ```
 {: codeblock}
 
-When a phrase is submitted, each term in the phrase is allowed the specified number of variations to match document text. For example, the following input matches `cat dog` and `far log` in addition to `car hog`.
+The normalized version of the word is used for matching. Therefore, if the input contains "cats", the search looks for "cat", which is the normalized form of the plural cats.
+
+When a phrase is submitted, each term in the phrase is allowed the specified number of variations. For example, the following input matches `cat dog` and `far log` in addition to `car hog`.
 
 For example:
 
@@ -342,8 +344,6 @@ For example:
 }
 ```
 {: codeblock}
-
-The normalized version of the word is used for matching. Therefore, if the input contains "cats", the search looks for "cat", which is the normalized form of the plural cats.
 
 ### `:*` (Exists)
 {: #exists}
