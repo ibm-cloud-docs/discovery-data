@@ -46,7 +46,9 @@ For more information about when to use relevancy training, read the [Relevancy t
 ## How fields are handled
 {: #train-fields}
 
-Unlike Discovery Query Language queries, with natural language queries you cannot specify which fields from the document you care about or how much significance to give to each one. Instead, when a natural language query is submitted, the root-level fields are all considered to have equal significance. When you teach Discovery with examples, the service figures out for you how much weight to give to each field.
+When you train a project from the product user interface, the results are always taken from the `text` field of the documents. If your documents don't have a `text` field, use the API to train your project instead. Your documents might not have a `text` field if you uploaded a CSV file that doesn't have a column named *text*, or uploaded a JSON file that doesn't have an object named *text*, or if you used the Smart Document Understanding tool to define fields with other names in which the bulk of the content of your documents now are stored.
+
+When you train a project from the API, results are taken from all of the root-level fields and they are all considered to have equal significance. Unlike Discovery Query Language queries, with natural language queries you cannot specify which fields from the document you care about or how much significance to give to each one. When you teach Discovery with examples, the service figures out for you how much weight to give to each field.
 
 Discovery builds a model that assigns different weights to term, bigram, and skip-gram matches for each of the root-level fields and balances them against matches from all of the other document fields. With enough examples, Discovery can return better answers because it knows where the best answers are typically stored.
 
@@ -59,8 +61,8 @@ Relevancy training cannot be used to give more weight to nested fields. Nested f
 The training data that is used to train the relevancy model includes these parts:
 
 -   A natural language query that is representative of a query that your users might submit
--   Results of the query, which are returned by the service
--   The rating that you apply to the result that indicates whether the result is `relevant` or `not relevant`.
+-   Results of the query which are returned by the service
+-   The rating that you apply to the result that indicates whether the result is `relevant` or `not relevant`
 
 To apply relevancy training to a project, complete the following steps:
 
@@ -73,6 +75,9 @@ To apply relevancy training to a project, complete the following steps:
 1.  After the results are displayed, assess each result, and then select **Relevant** or **Not relevant**, whichever option applies given the quality of the result.
 
     When you select **Relevant**, you apply a score of `10` to the result. **Not relevant** applies a score of `0`. You can use a different scoring scale if you use the API to rate results, but you can't mix scoring scales within the same project.
+
+    If the result shows the message, “No content preview available for this document”, it means that the document that was returned does not contain a `text` field or that its `text` field is empty. If none of the documents in your collection have a `text` field, use the API to train the project instead of training it from the product user interface.
+
 1.  When you are finished, click **Back to queries**.
 1.  Continue adding queries and rating them.
 

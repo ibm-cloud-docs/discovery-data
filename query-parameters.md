@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-05-26"
 
 subcollection: discovery-data
 
@@ -363,7 +363,8 @@ Finds documents that are similar to documents that you identify as being of inte
 
 If `similar.enabled` is `true`, you must specify the `similar.document_ids` field to include a comma-separated list of the documents of interest.
 
-[IBM Cloud Pak for Data]{: tag-cp4d} This parameter is available from installed deployments starting in November 2022 with the 4.6.0 release.
+In installed deployments, support for this parameter was added with the 4.6.0 release.
+{: note}
 
 ## `table retrieval`
 {: #table_retrieval}

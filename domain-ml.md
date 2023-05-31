@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-05-26"
 
 subcollection: discovery-data
 
@@ -58,7 +58,11 @@ To add a Machine Learning model, complete the following steps:
     
     -   [{{site.data.keyword.discoveryshort}} entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-export)
 
-1.  From the *Teach domain concepts* section of the *Improvement tools* panel, choose **Machine learning**.
+1.  From the *Teach domain concepts* section of the *Improvement tools* panel, and then choose the appropriate option based on your deployment type:
+
+    -   [IBM Cloud]{: tag-ibm-cloud}  **Import machine learning models**
+    -   [IBM Cloud Pak for Data]{: tag-cp4d}  **Machine learning**
+
 1.  Specify a name for the model, and then choose the language that was used to define the model.
 1.  Click **Upload** to browse for the file that you exported earlier.
 1.  Click **Create**.
