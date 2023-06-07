@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-06"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ The following table describes the product features that are supported in each la
 | Finnish (`fi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | French (`fr`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | German (`de`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Hebrew (`he`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Hebrew (`he`)[^tabletext] | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Hindi (`hi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions |
 | Italian (`it`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Japanese (`ja`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
@@ -46,13 +46,14 @@ The following table describes the product features that are supported in each la
 | Portuguese, Brazilian (`pt-br`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Romanian (`ro`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Russian (`ru`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
-| Serbian (`sr`)[^tabletext] | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions|
+| Serbian (`sr`)[^tabletext1] | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions|
 | Slovak (`sk`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 | Spanish (`es`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
 | Swedish (`sv`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 {: caption="Feature support per language" caption-side="top"}
 
-[^tabletext]: Serbian supports Latin script only.
+[^tabletext]: Optical character recognition v2 is not displaying text properly in Hebrew documents.<!-- https://github.ibm.com/Watson-Discovery/disco-issue-tracker/issues/15470 !>
+[^tabletext1]: Serbian supports Latin script only.
 
 Optical character recognition (OCR) v2 was introduced in Cloud-managed service instances on 2 November 2022.
 {: note}
