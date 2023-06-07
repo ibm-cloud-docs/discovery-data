@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-06-07"
 
 subcollection: discovery-data
 
@@ -52,7 +52,8 @@ The following table describes the product features that are supported in each la
 | Swedish (`sv`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 {: caption="Feature support per language" caption-side="top"}
 
-[^tabletext]: Optical character recognition v2 is not displaying text properly in Hebrew documents.<!-- https://github.ibm.com/Watson-Discovery/disco-issue-tracker/issues/15470 !>
+[^tabletext]: Optical character recognition v2 is not displaying text properly in Hebrew documents.
+
 [^tabletext1]: Serbian supports Latin script only.
 
 Optical character recognition (OCR) v2 was introduced in Cloud-managed service instances on 2 November 2022.
