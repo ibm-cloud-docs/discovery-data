@@ -52,7 +52,7 @@ The following table describes the product features that are supported in each la
 | Swedish (`sv`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
 {: caption="Feature support per language" caption-side="top"}
 
-[^tabletext]: Optical character recognition v2 is not displaying text properly in Hebrew documents.
+[^tabletext]: If optical character recognition (OCR) v2 doesn't display text properly, you can request to use OCR v1.
 
 [^tabletext1]: Serbian supports Latin script only.
 
