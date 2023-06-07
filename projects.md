@@ -35,9 +35,11 @@ To create a project, complete the following steps:
     For more information about each type, see [Project types](#project-type).
 
     Otherwise, choose **None of the above** and a *Custom* project type is created for you.
+
 1.  If you choose a *Document Retrieval* project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
 
     If your data source contains contracts, enable the feature by selecting **Apply contracts enrichment**. Scroll to see the checkbox, if necessary.
+
 1.  Click **Next**.
 1.  Choose and configure a data source or connect to an existing collection.
 
