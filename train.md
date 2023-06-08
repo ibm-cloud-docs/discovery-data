@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-06-08"
 
 subcollection: discovery-data
 
@@ -19,6 +19,11 @@ The relevance of natural language query results can be improved in {{site.data.k
 {: shortdesc}
 
 A relevancy model determines the most relevant documents to return in search results. Without relevancy training, a standard mechanism is used to determine relevance based on common factors. When you train a relevancy model, you help {{site.data.keyword.discoveryshort}} to use features that are unique to your documents as it determines relevance.
+
+The trained relevancy training model that you create for a project is used at run time only when natural language queries are submitted. The model is not applied to Discovery Query Language (DQL) queries.
+
+You cannot use relevancy training to train the data in a *Content Mining* project type.
+{: important}
 
 To train a relevancy model, you provide sample natural language queries, submit them to get results from your documents, and then rate those results. As you add more examples, the information you provide about result relevance for each query is used to learn about your project. The system uses your assessments to assign importance to different types of structural information within the documents. For example, it learns the importance of when a keyword from the search query appears in the title versus the header, body, or in the metadata of the document. It also learns from the importance of the distance between one matching keyword and another. After a successful relevancy training session, a ranker model is created. The model is used automatically by Discovery with the next natural language query. Discovery reorders the document results so that the most relevant results according to the relevancy training model are displayed first.
 

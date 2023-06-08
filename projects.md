@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-22"
+lastupdated: "2023-06-08"
 
 keywords: projects, project types
 
@@ -141,6 +141,8 @@ After you add a collection and optionally apply more enrichments to the data, a 
 
 You can create a collection from the deployed Content Mining application. The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection. The collection can contain an uploaded CSV file only. The project that is generated is given the name that you specify for the collection.
 {: note}
+
+Because the data that you add to this type of project is often structured, consider using the API to submit queries in the Discovery Query Language (DQL). With DQL queries, you can get information from specific fields or find specific enrichment type mentions. You cannot apply relevancy training to the data in a *Content Mining* project.
 
 ### Custom
 {: #custom}
