@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-06-09"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -251,12 +251,12 @@ The schema is arranged as follows.
         - `row_index_end`: The `end` index of this cell's `row` location in the current table.
         - `column_index_begin`: The `begin` index of this cell's `column` location in the current table.
         - `column_index_end`: The `end` index of this cell's `column` location in the current table.
-        - `row_header_ids`: An array of values, each being the `cell_id` value of a row header that is applicable to this body cell.
-        - `row_header_texts`: An array of values, each being the `text` value of a row header that is applicable to this body cell.
-        - `row_header_texts_normalized`: If you provide customization input, the normalized version of the row header texts according to the customization; otherwise, the same value as `row_header_texts`.
-        - `column_header_ids`: An array of values, each being the `cell_id` value of a column header that is applicable to this body cell.
-        - `column_header_texts`: An array of values, each being the `text` value of a column header that is applicable to this body cell.
-        - `column_header_texts_normalized`: If you provide customization input, the normalized version of the column header texts according to the customization; otherwise, the same value as `column_header_texts`.
+        - `row_header_ids`: An array of values, each being the cell ID value of a row header that is associated with this body cell.
+        - `row_header_texts`: An array of values, each being the text from a row header for this body cell.
+        - `row_header_texts_normalized`: An array of values, each being the normalized text from a row header for this body cell.
+        - `column_header_ids`: An array of values, each being the cell ID value of a column header that is associated with this body cell.
+        - `column_header_texts`: An array of values, each being the text from a column header for this body cell.
+        - `column_header_texts_normalized`: An array of values, each being the normalized text from a column header for this body cell.
         - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
 
             - `type`: The type of attribute. Possible values are `Address`, `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person`.
