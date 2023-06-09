@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-09"
 
 keywords: projects, project types
 
@@ -138,6 +138,11 @@ Documents that you add as part of the initial collection are automatically enric
 - Parts of speech are identified and tagged.
 
 After you add a collection and optionally apply more enrichments to the data, a full-featured application is available for you to deploy. You can use the application to research your data in depth. For more information about using the application, see [Analyzing your data with the deployed Content Mining application](/docs/discovery-data?topic=discovery-data-contentminerapp).
+
+From the Content Mining application, you can create the following enrichment types which are not available in other project types:
+
+-   [Document classifier](/docs/discovery-data?topic=discovery-data-cm-doc-classifier)
+-   [Phrase sentiment](/docs/discovery-data?topic=discovery-data-cm-phrase-sentiment)
 
 You can create a collection from the deployed Content Mining application. The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection. The collection can contain an uploaded CSV file only. The project that is generated is given the name that you specify for the collection.
 {: note}
