@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2022-12-15"
+lastupdated: "2023-06-09"
 
 subcollection: discovery-data
 
@@ -21,6 +21,9 @@ This information applies both to managed and installed instances of {{site.data.
 
 Unable to process one or more documents
 :    This notification is displayed in the page header when a processing delay of any kind occurs in any project across the entire service instance. If the message is displayed while you are adding data to a collection, you can ignore it. If any problems occur that are related to the creation of your collection, a message is displayed in the *Activity* page for the collection. Check there for any pertinent messages.
+
+This document exceeds the 1MB limit for non-HTML fields
+:    The `html` field in the document index stores structural information about the document. If you add a single document with complex tables, images, or other objects that need to be represented in HTML, you might hit the size limit for this field. To work around this issue, consider breaking the source file up into 2 or more smaller files, and then add the files to the same collection separately so that you can apply enrichments and search them together.
 
 ## Microsoft document troubleshooting tips
 {: #upload-data-ts-ms}
