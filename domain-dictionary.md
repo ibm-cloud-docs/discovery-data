@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-06-12"
 
 keywords: dictionary,synonyms
 
@@ -53,7 +53,7 @@ To add dictionary terms one by one, complete the following steps:
 
 1.  Continue adding terms.
 
-    Similar terms from your collection are suggested as new entries.
+    Similar terms from all of the collections in the current project are suggested as new entries.
 
     Suggested terms are taken from the field to which the *Part of Speech* enrichment is applied. Suggestions are not displayed if the *Part of Speech* enrichment is not enabled.
     {: note}
