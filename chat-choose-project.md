@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-05-22"
+lastupdated: "2023-06-13"
 
 subcollection: discovery-data
 
@@ -21,6 +21,9 @@ For more information about how to search a {{site.data.keyword.discoveryshort}} 
 - From the new experience user interface, see [Search trigger](/docs/watson-assistant?topic=watson-assistant-search-add#search-add-trigger){: external}.
 - From an actions skill in the classic user interface, see [Configuring the search for an answer](/docs/assistant?topic=assistant-actions#actions-what-next-search){: external}.
 - From a dialog skill, see [Adding a search skill response type](/docs/assistant?topic=assistant-dialog-overview#dialog-overview-add-search-skill){: external}.
+
+If you use the built-in web chat, you can use answer finding by enabling the *Emphasize the answer* feature. Answer finding highlights the word or phrase that is determined to be the exact answer to the customer's question in the text that is displayed as the search result.
+{: tip}
 
 For a more detailed look at the steps to take to connect to a {{site.data.keyword.discoveryshort}} project from {{site.data.keyword.conversationshort}}, take a tutorial that walks you through them. For more information, see [Power your assistant with answers from web resources](/docs/discovery-data?topic=discovery-data-tutorial-assistant-fred).
 
