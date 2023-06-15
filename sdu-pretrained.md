@@ -63,6 +63,8 @@ The following excerpt shows the JSON representation of a table from a document w
 
 ![Shows a JSON snippet that contains an enriched_html field with a table object that contains sections such as section_title, row_headers, table_headers, location, and so on.](images/sdu-table-output.png){: caption="Figure 1. JSON table representation" caption-side="bottom"}
 
+For more information about the structure of indexed tables, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
+
 ## Troubleshooting issues
 {: #sdu-troubleshoot}
 
