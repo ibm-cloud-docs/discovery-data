@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-28"
+lastupdated: "2023-06-15"
 
 subcollection: discovery-data
 
@@ -419,6 +419,21 @@ You can retrain your entity extractor model at any time. Each time you train the
     {: tip}
 
 If a subsequent training run results in lower scores, don't publish that version of the model.
+
+## Deleting an entity extractor
+{: #entity-extractor-delete}
+
+You can delete an entity extractor if it is not in use, meaning the enrichment that is published from the entity extractor is not applied to a collection.
+
+You might want to delete an entity extractor if you hit the limit for the maximum number of extractors that are allowed for your plan, for example. Remember, limits are defined per service instance, not per project.
+
+1.  Remove the entity extractor enrichment from any collections where it is being used. 
+
+    For more information, see [Deleting enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-delete). 
+
+1.  From the *Improvement tools* panel of the *Improve and customize* page, expand **Teach domain concepts**, and then click **Extract entities**.
+
+1.  Find the entity extractor that you want to delete, click the *Actions* icon, and then select **Delete**.
 
 ## Entity extractor limits
 {: #entity-extractor-limits}
