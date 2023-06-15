@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-08-19"
+lastupdated: "2023-06-15"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Apply a pretrained SDU model
 {: #sdu-pretrained}
 
-Apply a Smart Document Understanding (SDU) model that can extract text and is trained to identify tables, lists, and sections in documents. 
+Apply a prebuilt Smart Document Understanding (SDU) model that can extract text and is trained to identify tables, lists, and sections in documents. 
 {: shortdesc}
 
 Use the pretrained model if your documents contain tables with valuable information that you want to capture. The model is also able to preserve the meaning inherent in the nesting structure of tables, lists, and sections. Using the pretrained model speeds up the process of capturing information from the structure of a document.
@@ -56,6 +56,12 @@ To apply a pretrained Smart Document Understanding model to your collection, com
 
     The **Text extraction only** option is used by default. With this model, any text that is recognized in the source documents is indexed in the `text` field.
 1.  Click **Submit**, and then click **Apply changes and reprocess**.
+
+The pretrained model adds a field named `enriched_html` that captures information about tables in the document.
+
+The following excerpt shows the JSON representation of a table from a document where the pretrained SDU model was applied.
+
+![Shows a JSON snippet that contains an enriched_html field with a table object that contains sections such as section_title, row_headers, table_headers, location, and so on.](images/sdu-table-output.png){: caption="Figure 1. JSON table representation" caption-side="bottom"}
 
 ## Troubleshooting issues
 {: #sdu-troubleshoot}

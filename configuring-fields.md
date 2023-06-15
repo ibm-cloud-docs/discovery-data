@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-06-15"
 
-keywords: document structure,smart document understanding,sdu
+keywords: smart document understanding,sdu
 
 subcollection: discovery-data
 
@@ -25,24 +25,7 @@ Use the Smart Document Understanding tool to add custom fields to a collection s
 
 For help with deciding whether SDU can help your use case, read [When to use Smart Document Understanding](#sdu-when).
 
-## Applying an SDU model
-{: #identify-fields}
-
-<!-- c/s help for the **Identify fields** tab. Do not delete.  -->
-
-First, decide whether you want to use a pretrained model or define your own.
-
-Pretrained model
-:   Applies a noncustomizable model that extracts text and identifies tables, lists, and sections.
-
-    Instead of training the model yourself, you can apply an existing model that is trained to identify tables, lists, and sections in various types of documents.
-
-    If capturing information from tables is critical to your use case, consider using a pretrained model. For more information about creating a pretrained SDU model, see [Apply a pretrained SDU model](/docs/discovery-data?topic=discovery-data-sdu-pretrained).
-
-User-trained model
-:   Opens the Smart Document Understanding tool that you can use to pick certain types of text to store in fields other than the `text` field. 
-
-    When you label a section of a document as a custom field, later you can apply enrichments to the field or split your documents on each occurrence of the field. You can search or filter by the field, or omit the field from the index.
+If capturing information from tables is critical to your use case, consider using a pretrained model. For more information about creating a pretrained SDU model, see [Apply a pretrained SDU model](/docs/discovery-data?topic=discovery-data-sdu-pretrained).
 
 ## When to use Smart Document Understanding
 {: #sdu-when}
