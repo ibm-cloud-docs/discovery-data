@@ -122,7 +122,7 @@ toc:
               label: Use SDU to analyze document structure
               topics:
               - topic: sdu-choose.md
-              navtitle: Choosing an SDU model
+                navtitle: Choosing an SDU model
               - configuring-fields.md
               - sdu-pretrained.md
           - manage-enrichments.md
