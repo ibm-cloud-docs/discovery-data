@@ -36,4 +36,5 @@ User-trained model
 
     For more information, see [Define a user-trained SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields).
 
-The **Text extraction only** option is used by default. With this model, any text that is recognized in the source documents is indexed in the `text` field.
+Text extraction only
+:   Indexes any text that is recognized in the source documents in the `text` field. This option is used by default.
