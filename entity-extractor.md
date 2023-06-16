@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-06-16"
 
 subcollection: discovery-data
 
@@ -425,9 +425,11 @@ If a subsequent training run results in lower scores, don't publish that version
 
 You can delete an entity extractor if it is not in use, meaning the enrichment that is published from the entity extractor is not applied to a collection.
 
-You might want to delete an entity extractor if you hit the limit for the maximum number of extractors that are allowed for your plan, for example. Remember, limits are defined per service instance, not per project.
+You might want to delete an entity extractor if you hit the limit for the maximum number of extractors that are allowed for your plan, for example. 
 
-1.  Remove the entity extractor enrichment from any collections where it is being used. 
+Remember, limits are defined per service instance, not per project. If you cannot create new entity extractors, but do not have the maximum number of extractors in the current project, check other projects in the same service instance. There might be entity extractors that aren't being used in other projects that can be deleted.
+
+1.  Remove the entity extractor enrichment that was published from the entity extractor that you want to delete from any collections where it is being used. 
 
     For more information, see [Deleting enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-delete). 
 
@@ -440,10 +442,12 @@ You might want to delete an entity extractor if you hit the limit for the maximu
 
 The number of entity extractors that you can create per service instance depends on your {{site.data.keyword.discoveryshort}} plan type.
 
-| Plan | Entity extractors per service instance | Maximum entity types per extractor | Maximum documents in training data |
+| Plan | Entity extractors per service instance[^tabletext] | Maximum entity types per extractor | Maximum documents in training data |
 |------|--------------------------------|---------------------------|-----------------------------------|
 | Cloud Pak for Data | Unlimited | 18 | 1,000 |
 | Premium | 10 | 18 | 1,000 |
 | Enterprise | 10 | 18 | 1,000 |
 | Plus (including Trial) | 3 | 12 | 200 |
 {: caption="Entity extractor plan limits" caption-side="top"}
+
+[^tabletext]: The entity extractor count measures the number of published entity extractor enrichments, whether they are applied to a collection or not.
