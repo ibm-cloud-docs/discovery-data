@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-06-16"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -50,10 +50,12 @@ A developer can query tables by using the API. For more information, see [Query 
 
 For more information about how to apply the table understanding enrichment by using the API, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api-task).
 
-### Working with table data
+### Working with tabular data in Python
 {: #table-pandas}
 
-Use [Text Extensions for Pandas](https://github.com/CODAIT/text-extensions-for-pandas){: external}, an open-source library from IBM, to convert table output from Discovery documents into a collection of pandas dataframes. A pandas dataframe is a 2-dimensional data structure that encodes information about the row headers, column headers, and cells that make up a table. You can then use these dataframes to construct new tables. For example, you can extract content from tables in many annual report documents and reconstruct it into a single table that includes multiyear data points of interest. For more information, read the [Structured Information Extraction from Tables in PDF Documents with Pandas and IBM Watson](https://medium.com/ibm-data-ai/structured-information-extraction-from-tables-in-pdf-documents-with-pandas-and-ibm-watson-fac302fd25bd){: external} blog post on Medium.com.
+Use [Text Extensions for Pandas](https://text-extensions-for-pandas.readthedocs.io/en/latest/io.html#module-text_extensions_for_pandas.io.watson.tables){: external}, an open-source library from IBM, to read the tables that were parsed from documents in {{site.data.keyword.discoveryshort}} into pandas DataFrame objects. A pandas DataFrame is an object that represents two-dimensional tabular data in a form that can be transformed and manipulated for downstream analysis in Python. 
+
+For example, you can extract content from tables in many annual report documents and reconstruct it into a single table that includes multiyear data points of interest. For more information, read the [Structured Information Extraction from Tables in PDF Documents with Pandas and IBM Watson](https://medium.com/ibm-data-ai/structured-information-extraction-from-tables-in-pdf-documents-with-pandas-and-ibm-watson-fac302fd25bd){: external} blog post on Medium.com.
 
 ## Output schema
 {: #table-output-schema}

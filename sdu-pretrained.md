@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-06-16"
 
 subcollection: discovery-data
 
@@ -57,13 +57,16 @@ To apply a pretrained Smart Document Understanding model to your collection, com
     The **Text extraction only** option is used by default. With this model, any text that is recognized in the source documents is indexed in the `text` field.
 1.  Click **Submit**, and then click **Apply changes and reprocess**.
 
-The pretrained model adds a field named `enriched_html` that captures information about tables in the document.
+## Understanding the output
+{: #sdu-pretrained-task}
 
-The following excerpt shows the JSON representation of a table from a document where the pretrained SDU model was applied.
+If the SDU model finds and processes a structure, such as a table, in the document, it stores a representation of the structure in a field named `enriched_{field}`, where `{field}` is the field where the structure was stored.
+
+The following excerpt shows the JSON representation of a table from the `enriched_html` field of a document that was processed by the pretrained SDU model.
 
 ![Shows a JSON snippet that contains an enriched_html field with a table object that contains sections such as section_title, row_headers, table_headers, location, and so on.](images/sdu-table-output.png){: caption="Figure 1. JSON table representation" caption-side="bottom"}
 
-If you want to extract information from both the `html` and `enriched_html` fields, you can use the `location` object to identify the content because it is common between the two fields.
+If you want to extract text from the processed structure, you can use the `location` field to find the index values that identify where the text string starts and ends.
 
 For more information about the structure of indexed tables, see [Understanding tables](/docs/discovery-data?topic=discovery-data-understanding_tables).
 
