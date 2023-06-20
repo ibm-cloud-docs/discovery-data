@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-07-22"
+lastupdated: "2023-06-20"
 
 subcollection: discovery-data
 
@@ -26,12 +26,7 @@ What's the difference between phrase and document sentiment?
 Complete the following steps to enable phrase sentiment analysis:
 
 1.  From the analysis view of your collection, click the **Collections** breadcrumb link in the page header.
-
-    ![Collection breadcrumb link](images/cm-collections-breadcrumb.png){: caption="Figure 1. Collections breadcrumb link" caption-side="bottom"} 
 1.  In the tile for your collection, click the *open and close list of options* icon, and then choose **Edit collection**.
-
-    ![Collection tile overflow menu](images/cm-edit-colxn-icon.png){: caption="Figure 2. Collection menu" caption-side="bottom"} 
-
 1.  Click the **Enrichment** tab, and then select the **Sentiment of phrases** annotator.
 1.  Click **Save**, and then click **OK** to verify the change.
 
