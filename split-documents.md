@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-19"
 
 subcollection: discovery-data
 
@@ -14,6 +14,7 @@ subcollection: discovery-data
 {: #split-documents}
 
 Split your documents so that the search function can find more concise information to return in query results.
+{: shortdesc}
 
 For more information about the benefits of splitting documents, read the [Using IBM Watson Discovery’s New Document Segmentation Feature](https://medium.com/ibm-watson/using-ibm-watson-discoverys-new-document-segmentation-feature-7a58b44d32c2){: external} blog post on Medium.com.
 
@@ -40,20 +41,22 @@ To split the documents in a collection, complete the following steps:
 1.  Open the **Manage fields** page.
 
     A list of the identified fields is displayed.
+
 1.  From the *Improve query results by splitting your documents* section, click **Split document**.
 1.  Choose the field that you want to use as your page break marker from the **Select field** dropdown.
 
     The list that you can choose from includes a subset of all the identified fields.
+
 1.  Click **Apply changes and reprocess**.
 
 You can check the status of the splitting process from the *Activity* page.
 
-The document segments that are generated when you split a document contain a `segment_metadata` field. The metadata field includes the parent document ID, the segment number, and the total number of segments that were created from the parent document. Each resulting segment of the original document can contain different information. For example, if you split the document based on the subtitle field, the first segment might contain only a title field. The next segment might contain a subtitle and a text field. The third might contain a subtitle field, a text field, and a footer field.
+The metadata field includes the parent document ID. Each resulting segment of the original document can contain different information. For example, if you split the document based on the subtitle field, the first segment might contain only a title field. The next segment might contain a subtitle and a text field. The third might contain a subtitle field, a text field, and a footer field.
 
 ## Updating documents that were split
 {: #split-documents-update}
 
-If a document that was split changes and you want to upload the document again, work with a developer to replace the document by using the API. A developer can use the *Update a document* method to replace the original parent document. For more information, see the [API reference](https://{DomainName}/apidocs/discovery-data#updatedocument){: external}. To provide the `{document_id}` path variable that must be sent with the request, copy the contents of the `parent_id` field of one of the document's segments.
+If a document that was split changes and you want to upload the document again, work with a developer to replace the document by using the API. A developer can use the *Update a document* method to replace the original parent document. For more information, see the [API reference](/apidocs/discovery-data#updatedocument){: external}. To provide the `{document_id}` path variable that must be sent with the request, copy the contents of the `parent_document_id` field of one of the document's segments.
 
 When you replace the original document, all of the segments are overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments remain in the index. 
 
