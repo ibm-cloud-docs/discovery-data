@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-20"
 
 subcollection: discovery-data
 
@@ -100,7 +100,7 @@ To create a document classifier, complete the following steps:
     The status of index creation is displayed. Wait for the collection to be fully indexed before you continue with this procedure.
 1.  To create a classifier, click **collection**, and then choose **classifier** from the list.
 
-    ![Shows the collection menu](images/cm-create-classifier.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
+    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
 
 1.  Click **Create classifier**.
 1.  Name your classifier.

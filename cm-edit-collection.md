@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-20"
 
 subcollection: discovery-data
 
@@ -28,11 +28,7 @@ You can change the following characteristics:
 {: #cm-edit-collection-task}
 
 1.  From the analysis view of your collection, click the **Collections** link in the page header.
-
-    ![Collection link](images/cm-collections-breadcrumb.png){: caption="Figure 1. Collections link" caption-side="bottom"} 
 1.  In the tile for your collection, click the *Open and close list of options* icon, and then choose **Edit collection**.
-
-    ![Collection tile overflow menu](images/cm-edit-colxn-icon.png){: caption="Figure 2. Collection menu" caption-side="bottom"} 
 1.  Use the appropriate tab to change characteristics of the collection.
 1.  When you are done making changes, click **Save**. 
 
