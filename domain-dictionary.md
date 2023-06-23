@@ -121,27 +121,33 @@ To add dictionary from a CSV file, complete the following steps:
 
       ```text
       <term>,<synonym>,<synonym>,<synonym>,...
+
       ```
+      {: codeblock}
 
       For example:
 
       ```text
-      vehicle,car,automobile,sedan,convertible,station wagon
+      vehicle,car,automobile,sedan,convertible,station wagon  /n 
       ```
+      {: codeblock}
 
       The entry in this example creates a `vehicle` dictionary entry. When the dictionary enrichment is applied to a document, any mentions of `vehicle`, `car`, `automobile`, `sedan`, `convertible`, or `station wagon` are tagged as instances of the `vehicle` dictionary entry.
 
     - To define a set of terms in the same category, use the following syntax:
 
       ```text
-      <category>,<related-term>,<related-term>,...
+      <category>,<related-term>,<related-term>,...  
       ```
+      {: codeblock}
 
       For example:
 
       ```text
       engine,gasket,carburetor,piston,valves
+      <br/>
       ```
+      {: codeblock}
 
       The entry in this example creates an `engine` dictionary entry. When the dictionary enrichment is applied to a document, any mentions of `engine`,`gasket`,`carburetor`,`piston`, or `valves` are tagged as instances of the `engine` dictionary entry.
 
