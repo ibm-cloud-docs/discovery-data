@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-23"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context
 
@@ -234,7 +234,7 @@ The schema is arranged as follows.
         - `cell_id`: The unique ID of the cell in the current table.
         - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
         - `text`: The textual contents of the cell from the input document without associated markup content.
-        - `text_normalized`: If you provide customization input, the normalized version of the cell text according to the customization; otherwise, the same value as `text`.
+        - `text_normalized`: Normalized column header text.
         - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
         - `row_index_end`: The `end` index of the cell's `row` location in the current table.
         - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
@@ -244,7 +244,7 @@ The schema is arranged as follows.
         - `cell_id`: The unique ID of the cell in the current table.
         - `location`: The location of the cell in the input document as defined by its `begin` and `end` indexes.
         - `text`: The textual contents of the cell from the input document without associated markup content.
-        - `text_normalized`: If you provide customization input, the normalized version of the cell text according to the customization; otherwise, the same value as `text`.
+        - `text_normalized`: Normalized row header text.
         - `row_index_begin`: The `begin` index of the cell's `row` location in the current table.
         - `row_index_end`: The `end` index of the cell's `row` location in the current table.
         - `column_index_begin`: The `begin` index of the cell's `column` location in the current table.
