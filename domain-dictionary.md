@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-06-23"
 
 keywords: dictionary,synonyms
 
@@ -121,14 +121,13 @@ To add dictionary from a CSV file, complete the following steps:
 
       ```text
       <term>,<synonym>,<synonym>,<synonym>,...
-
       ```
       {: codeblock}
 
       For example:
 
       ```text
-      vehicle,car,automobile,sedan,convertible,station wagon  /n 
+      vehicle,car,automobile,sedan,convertible,station wagon
       ```
       {: codeblock}
 
@@ -137,7 +136,7 @@ To add dictionary from a CSV file, complete the following steps:
     - To define a set of terms in the same category, use the following syntax:
 
       ```text
-      <category>,<related-term>,<related-term>,...  
+      <category>,<related-term>,<related-term>,...
       ```
       {: codeblock}
 
@@ -145,7 +144,6 @@ To add dictionary from a CSV file, complete the following steps:
 
       ```text
       engine,gasket,carburetor,piston,valves
-      <br/>
       ```
       {: codeblock}
 
