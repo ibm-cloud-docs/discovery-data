@@ -258,12 +258,12 @@ The schema is arranged as follows.
         - `row_index_end`: The `end` index of this cell's `row` location in the current table.
         - `column_index_begin`: The `begin` index of this cell's `column` location in the current table.
         - `column_index_end`: The `end` index of this cell's `column` location in the current table.
-        - `row_header_ids`: An array of values, each being the cell ID value of a row header that is associated with this body cell.
-        - `row_header_texts`: An array of values, each being the text from a row header for this body cell.
-        - `row_header_texts_normalized`: An array of values, each being the normalized text from a row header for this body cell.
-        - `column_header_ids`: An array of values, each being the cell ID value of a column header that is associated with this body cell.
-        - `column_header_texts`: An array of values, each being the text from a column header for this body cell.
-        - `column_header_texts_normalized`: An array of values, each being the normalized text from a column header for this body cell.
+        - `row_header_ids`: An array of values, where each value is the cell ID value of a row header that is associated with this body cell.
+        - `row_header_texts`: An array of values, where each value is the text from a row header for this body cell.
+        - `row_header_texts_normalized`: An array of values, where each value is the normalized text from a row header for this body cell.
+        - `column_header_ids`: An array of values, where each value is the cell ID value of a column header that is associated with this body cell.
+        - `column_header_texts`: An array of values, where each value is the text from a column header for this body cell.
+        - `column_header_texts_normalized`: An array of values, where each value is the normalized text from a column header for this body cell.
         - `attributes`: An array that identifies document attributes. Each object in the array consists of three elements:
 
             - `type`: The type of attribute. Possible values are `Address`, `Currency`, `DateTime`, `Duration`, `Location`, `Number`, `Organization`, `Percentage`, and `Person`.
