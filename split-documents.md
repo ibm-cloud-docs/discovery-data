@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-06-26"
 
 subcollection: discovery-data
 
@@ -58,7 +58,7 @@ The metadata field includes the parent document ID. Each resulting segment of th
 
 If a document that was split changes and you want to upload the document again, work with a developer to replace the document by using the API. A developer can use the *Update a document* method to replace the original parent document. For more information, see the [API reference](/apidocs/discovery-data#updatedocument){: external}. To provide the `{document_id}` path variable that must be sent with the request, copy the contents of the `parent_document_id` field of one of the document's segments.
 
-When you replace the original document, all of the segments are overwritten, unless the updated version of the document has fewer total sections than the original. Those older segments remain in the index. 
+When you replace the original document, all of the segments are overwritten, unless the updated version of the document has fewer total segments than the original. Those older segments remain in the index. 
 
 ## Deleting document segments from the index
 {: #split-documents-delete}
