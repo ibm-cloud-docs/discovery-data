@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-06-27"
 
 subcollection: discovery-data
 
@@ -33,10 +33,13 @@ The following types of models are supported:
 -  Custom entity extractors that are created in and exported from {{site.data.keyword.discoveryshort}}. (File format: .ent)
 -  [IBM Cloud Pak for Data]{: tag-cp4d} Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: .pear)
 
+The size of the model file that you import must be less than 750 MB.
+{: important}
+
 From installed deployments, support for importing entity extractor models was added with the 4.6.2 release.
 
 Discovery cannot identify entity subtypes that are defined by a {{site.data.keyword.knowledgestudioshort}} model.
-{: important}
+{: note}
 
 To add a Machine Learning model, complete the following steps:
 
