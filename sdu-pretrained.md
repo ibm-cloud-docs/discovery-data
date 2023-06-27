@@ -58,7 +58,7 @@ To apply a pretrained Smart Document Understanding model to your collection, com
 1.  Click **Submit**, and then click **Apply changes and reprocess**.
 
 ## Understanding the output
-{: #sdu-pretrained-task}
+{: #sdu-pretrained-output}
 
 If the SDU model finds and processes a structure, such as a table, in the document, it stores a representation of the structure in a field named `enriched_{field}`, where `{field}` is the field where the structure was stored.
 
