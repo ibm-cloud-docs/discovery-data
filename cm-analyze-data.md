@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2022-11-11"
+lastupdated: "2023-06-27"
 
 subcollection: discovery-data
 
@@ -228,6 +228,32 @@ The changes to the number ranges for vehicle speeds introduce more opportunities
 
 ![Shows a pair comparison chart where each row lists a state and each column shows a vehicle speed. Where TN and 80 plus MPH meet is highlighted in orange to show an anomaly.](images/cm-range-change.png){: caption="Figure 9. Results after changed number range" caption-side="bottom"}
 
+## Showing results in a map visualization
+{: #cm-map}
+
+Facets that represent geographical locations can be shown in a map visualization. For example, if you have a collection with a US states facet, you might want to display data per state from a visualization that enables users to select each state from a map.
+
+![Shows a map of the US with data related to the selected state shown.](images/cm-us-map.png){: caption="Figure 10. Results shown in a map visualization" caption-side="bottom"}
+
+A US Map is available by default. You can add a custom map that is built in GeoJSON format. For more information, see [RFC7946](https://datatracker.ietf.org/doc/html/rfc7946){: external}.
+
+To use a map that you define, complete the following steps to import the map definition:
+
+1.  From the Content Mining application home page, click **Collections** from the breadcrumb in the page header.
+1.  Click the *Settings* icon at the start of the page.
+1.  Click **Manage customization resources**.
+1.  Click **Add resource**.
+1.  Name the resource, and then click **Next**.
+1.  Add your map file, and then click **Save**.
+
+To make the map that you added available as a visualization option for a facet, you must edit the facet.
+
+1.  Click **Home** from the breadcrumb in the page header.
+1.  Right-click the overflow menu for your collection, and then choose **Edit Collection**
+1.  Open the *Facet* tab, and then find the facet with which you want to associated the map visualization.
+1.  Change the *Visualization type* value to **Map**, and then pick the map that you added from the list in the **Resource** field.
+1.  Click **Save**
+
 ## Flag documents of interest
 {: #cm-flags}
 
@@ -242,7 +268,7 @@ To apply flags, complete the following steps:
 1.  From the analysis view of your collection, create a query that returns a set of documents with specific characteristics.
 1.  From the documents view, click the *Document flags* icon.
 
-    ![Collection tile overflow menu](images/cm-doc-flags-icon.png){: caption="Figure 10. Document flags" caption-side="bottom"}
+    ![Collection tile overflow menu](images/cm-doc-flags-icon.png){: caption="Figure 11. Document flags" caption-side="bottom"}
 
 1.  Select a flag.
 1.  You can choose to apply the flag to all query results or to selected documents, and then click **Apply**.
