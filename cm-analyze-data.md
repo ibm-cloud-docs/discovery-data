@@ -252,7 +252,7 @@ To make the map that you added available as a visualization option for a facet, 
 1.  Right-click the overflow menu for your collection, and then choose **Edit Collection**
 1.  Open the *Facet* tab, and then find the facet with which you want to associated the map visualization.
 1.  Change the *Visualization type* value to **Map**, and then pick the map that you added from the list in the **Resource** field.
-1.  Click **Save**
+1.  Click **Save**, and then click **Close**.
 
 ## Flag documents of interest
 {: #cm-flags}
