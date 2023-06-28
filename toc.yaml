@@ -165,13 +165,11 @@ toc:
       - topicgroup:
           label: Installing
           topics:
-          - install-overview.md
           - install.md
           - upgrade-data.md
           - topic: troubleshoot.md
             navtitle: Troubleshooting deployments
           - known-issues.md
-          - install-prior.md
       - topicgroup:
           label: Advanced development
           topics:

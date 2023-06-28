@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-02-22"
+lastupdated: "2022-06-28"
 
 subcollection: discovery-data
 
@@ -24,11 +24,13 @@ This information applies only to installed deployments.
 ## What documents are crawled
 {: #connector-filenet-cp4d-docs}
 
-- Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to FileNet. {{site.data.keyword.discoveryshort}} does not support role-based security when you crawl FileNet P8.
+-  Only file types that are supported by {{site.data.keyword.discoveryshort}} are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+-  Document-level security is supported. When this option is enabled, your users can crawl and query the same content that they can access when they are logged in to FileNet. {{site.data.keyword.discoveryshort}} does not support role-based security when you crawl FileNet P8.
 
    For more information about document-level security, see [Supporting document-level security](/docs/discovery-data?topic=discovery-data-collection-types#configuredls).
-- When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
-- All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
+-  Only files with file extensions that match the file extension filter rules that you specify are crawled. *Added with the 4.7.0 release.*
+-  When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
+-  All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
 ## Data source requirements
 {: #connector-filenet-cp4d-reqs}
@@ -55,9 +57,11 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 1.  If the language of the documents in FileNet is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
 1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+
 1.  Complete the following fields in the *Enter your credentials* section:
 
     Content Engine Web Service URL
@@ -72,7 +76,9 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
     :   The password that is associated with the user.
 
 1.  In the *Specify what you want to crawl* section, enter the display name of the object store that you want to use to create, search, retrieve, and store documents in the **ObjectStore Name** field.
+
 1.  In **Crawler Space Type**, select either **Folder** or **Class**.
+
 1.  Complete the following field:
 
     Folder subpath or Subclass name
@@ -82,11 +88,20 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
         - You cannot specify a class outside the object store that you defined.
         - No support is available for specifying a class that is a subclass of a `Custom Object` and `Folder`.
 
-1. After you enter one or more paths, click **Add**.
+1.  After you enter one or more paths, click **Add**.
+
 1.  **Optional**: In the *Security* section, if you want to enable document-level security, set the **Enable Document Level Security** switch to `On`.
 
       When set to **On**, your users can crawl the same content that they have access to in FileNet.
-    1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
+
+1.  If you want to limit the types of files to add to the collection, you can list the file extensions for file types to either include or exclude.
+
+    For a list of supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+    Support for this option was added with the 4.7.0 release.
+    {: note}
+
+1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
     {: note}

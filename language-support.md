@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -23,36 +23,36 @@ The following table describes the product features that are supported in each la
 
 | Language | Supported features|
 |----------|-------------------|
-| Arabic (`ar`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Arabic (`ar`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 | Bosnian (`bs`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions |
 | Chinese, simplified (`zh-CN`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding|
 | Chinese, traditional (`zh-TW`) | Advanced rules models, Classifier (Document and Text), Custom entities, Dictionary, Regular expressions, Machine Learning, Optical character recognition v1, Parts of speech, Phrase sentiment, Smart Document Understanding, Table Understanding |
 | Croatian (`hr`) | Classifier (Document and Text), Custom entities, Dictionary, Regular expressions, Parts of speech |
-| Czech (`cs`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
-| Danish (`da`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Dutch (`nl`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
-| English (`en`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Contracts, Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
-| Finnish (`fi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| French (`fr`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| German (`de`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Czech (`cs`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding  |
+| Danish (`da`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| Dutch (`nl`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| English (`en`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Contracts, Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| Finnish (`fi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| French (`fr`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| German (`de`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 | Hebrew (`he`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Hindi (`hi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions |
-| Italian (`it`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Hindi (`hi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions, Stemmer |
+| Italian (`it`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 | Japanese (`ja`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
 | Korean (`ko`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Norwegian (Bokma&#778;l) (`nb`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Norwegian (Nynorsk) (`nn`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Norwegian (Bokma&#778;l) (`nb`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| Norwegian (Nynorsk) (`nn`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 | Polish (`pl`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Portuguese, Brazilian (`pt-br`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Romanian (`ro`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
-| Russian (`ru`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
-| Serbian (`sr`)[^tabletext1] | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions|
+| Portuguese, Brazilian (`pt-br`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| Romanian (`ro`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding  |
+| Russian (`ru`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
+| Serbian (`sr`)[^tabletext] | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions|
 | Slovak (`sk`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
-| Spanish (`es`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding  |
-| Swedish (`sv`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Spanish (`es`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1 (Installed), Optical character recognition v2 (Cloud-managed), Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding  |
+| Swedish (`sv`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 {: caption="Feature support per language" caption-side="top"}
 
-[^tabletext1]: Serbian supports Latin script only.
+[^tabletext]: Serbian supports Latin script only.
 
 Optical character recognition (OCR) v2 was introduced in Cloud-managed service instances on 2 November 2022.
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -24,9 +24,11 @@ This information applies only to installed deployments.
 ## What documents are crawled
 {: #connector-lfs-cp4d-docs}
 
-- Only documents that are supported by {{site.data.keyword.discoveryshort}} in your file path are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
-- When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
-- All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
+-  Only file types that are supported by {{site.data.keyword.discoveryshort}} in your file path are crawled; all others are ignored. For more information, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+-  Only files in the `/mnt` directory or one of its subdirectories can be accessed by the crawler.
+-  Only files with file extensions that match the file extension filter rules that you specify are crawled. *Added with the 4.7.0 release.*
+-  When a source is recrawled, new documents are added, updated documents are modified to the current version, and deleted documents are deleted from the collection's index.
+-  All {{site.data.keyword.discoveryshort}} data source connectors are read-only. Regardless of the permissions that are granted to the crawl account, {{site.data.keyword.discoveryshort}} never writes, updates, or deletes any content in the original data source.
 
 ## Prerequisite steps
 {: #connector-lfs-cp4d-prereq}
@@ -119,19 +121,34 @@ You mounted the persistent volume claim (PVC) and copied the files that you want
 From your {{site.data.keyword.discoveryshort}} project, complete the following steps:
 
 1.  From the navigation pane, choose **Manage collections**.
+
 1.  Click **New collection**.
+
 1.  Click **Local File System**, and then click **Next**.
+
 1.  Name the collection.
+
 1.  If the language of the documents that you want to crawl is not English, select the appropriate language.
 
     For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
 1.  **Optional**: Change the synchronization schedule.
 
     For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+
 1. In the *Specify what you want to crawl* section, enter the file path that you want to crawl in the **Path** field, and then click **Add**.
 
-    The file path is case-sensitive.
+    The file path is case-sensitive. Remember, only files in the `/mnt` directory or one of its subdirectories can be accessed by the crawler.
+
 1.  Optionally, add more file paths.
+
+1.  If you want to limit the types of files to add to the collection, you can list the file extensions for file types to either include or exclude.
+
+    For a list of supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+    Support for this option was added with the 4.7.0 release.
+    {: note}
+
 1.  If you want the crawler to extract text from images in documents, expand *More processing settings*, and set **Apply optical character recognition (OCR)** to `On`.
 
     When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).

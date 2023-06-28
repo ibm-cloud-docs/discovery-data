@@ -36,7 +36,7 @@ The following types of models are supported:
 From installed deployments, support for importing entity extractor models was added with the 4.6.2 release.
 
 Discovery cannot identify entity subtypes that are defined by a {{site.data.keyword.knowledgestudioshort}} model.
-{: note}
+{: important}
 
 To add a Machine Learning model, complete the following steps:
 
@@ -58,11 +58,7 @@ To add a Machine Learning model, complete the following steps:
     
     -   [{{site.data.keyword.discoveryshort}} entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-export)
 
-1.  From the *Teach domain concepts* section of the *Improvement tools* panel, and then choose the appropriate option based on your deployment type:
-
-    -   [IBM Cloud]{: tag-ibm-cloud}  **Import machine learning models**
-    -   [IBM Cloud Pak for Data]{: tag-cp4d}  **Machine learning**
-
+1.  From the *Teach domain concepts* section of the *Improvement tools* panel, and then click **Import machine learning models**.
 1.  Specify a name for the model, and then choose the language that was used to define the model.
 1.  Click **Upload** to browse for the file that you exported earlier.
 1.  Click **Create**.
