@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-16"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -24,7 +24,7 @@ An *entity extractor* is a machine learning model that recognizes and tags terms
 
 An *entity type* is a type of thing. To create an entity extractor, you define a set of *entity types* that you care about. You then annotate a collection of your own documents by finding terms or phrases that represent the type of information you want to extract and labeling them as entity examples. 
 
-After you define entity types and label entity examples, you can generate a machine learning model. The model learns about the information you care about based on how the terms or phrases that you label as examples are referenced in sentences. The model learns from the context and language with which the entity examples are referenced in the training data.
+After you define entity types and label entity examples, you can generate a machine learning model. The model learns about the information that you care about based on how the terms or phrases that you label as examples are referenced in sentences. The model learns from the context and language with which the entity examples are referenced in the training data.
 
 After the machine learning model is trained well enough to recognize your entity types, you can publish the model as an enrichment and apply the enrichment to new documents. The custom entity extractor enrichment recognizes and tags new mentions of the same and similar terms as occurrences of the entity types that you care about.
 
@@ -88,7 +88,7 @@ To add an entity extractor, complete the following steps:
 
 A document from the collection that you selected is displayed in the *Label documents* view. You will label occurrences of the entity types that you want Discovery to recognize from this and other documents in the collection.
 
-If there is no text in the body of the page, start over now by creating a new entity extractor. This time, when you select a value for the *Document body* field, be sure to choose a field from your processed documents that contains text.
+If no text is displayed in the body of the page, start over now by creating a new entity extractor. This time, when you select a value for the *Document body* field, be sure to choose a field from your processed documents that contains text.
 {: tip}
 
 ## Defining entity types
@@ -103,7 +103,7 @@ Define entity types by completing the following steps:
     Use a naming convention that works for your data. The built-in Entities enrichment uses initial capitals and no spaces, for example `EmailAddress`. To distinguish your entities from entities that are extracted by other enrichments, you might want to use a different convention.
 1.  Optional: Pick the color to use for highlighting text in the document that you want to label as an example of this entity type. 
 
-    You can click a color from the *Label color* palette, click the *Renew color* icon to tab from one color to the next, or use a custom color by specifying its hexadecimal color code (#fff0f7).
+    You can click a color from the *Label color* palette, click the *Renew color* icon to tab from one color to the next. To use a custom color, specify its hexadecimal color code (#fff0f7).
 1.  Click **Create**.
 1.  Repeat this process to add all of the entity types that you want the extractor to recognize.
     
@@ -185,7 +185,7 @@ To label entity examples, complete the following steps:
 
     After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions.
     
-    ![Shows the prompt shown to ask whether you want to accept a suggestion.](images/ee-suggestion.png){: caption="Figure 7. Decide whether to accept a suggestion" caption-side="bottom"}
+    ![Shows the prompt that is shown to ask whether you want to accept a suggestion.](images/ee-suggestion.png){: caption="Figure 7. Decide whether to accept a suggestion" caption-side="bottom"}
     
     Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions). After you accept a suggestion, you can bulk label the term.
 
@@ -202,7 +202,7 @@ To label entity examples, complete the following steps:
     At any time during the labeling process, you can click **Save entity extractor** to save your work.
 1.  If you don't have enough examples in the current set of documents, you can add more documents.
 
-    From the *Document list* panel, click **Add documents**. The option is available only if there are more documents available in the collection. You can add up to 20 documents. If bulk labeling for all documents is enabled, labels are applied to the newly-added documents automatically.
+    From the *Document list* panel, click **Add documents**. The option is available only when more documents are available in the collection. You can add up to 20 documents. If bulk labeling for all documents is enabled, labels are applied to the newly-added documents automatically.
 1.  After you label examples in as many documents in the collection as you want, click **Save entity extractor**, and then open the *Train extractor* page.
 
 ### Labeling examples in bulk
@@ -252,7 +252,7 @@ Before you can import a corpus, you must export the document set from {{site.dat
 -   [IBM Cloud](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_doc)
 -   [Cloud Pak for Data](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc)
 
-Although you need to download both the document set and type system for annotations to be included in documents that you upload to another {{site.data.keyword.knowledgestudioshort}} workspace, the same is not true in this use case. You import only the document set to {{site.data.keyword.discoveryshort}}. Any annotations in the documents are recreated in {{site.data.keyword.discoveryshort}}. The {{site.data.keyword.knowledgestudioshort}} type system is not needed.
+Although you must download both the document set and type system to include annotations in documents that you upload to another {{site.data.keyword.knowledgestudioshort}} workspace, the same is not true in this use case. You import only the document set to {{site.data.keyword.discoveryshort}}. Any annotations in the documents are recreated in {{site.data.keyword.discoveryshort}}. The {{site.data.keyword.knowledgestudioshort}} type system is not needed.
 
 To import a {{site.data.keyword.knowledgestudioshort}} corpus, complete the following steps:
 
@@ -303,7 +303,7 @@ When you train the extractor, {{site.data.keyword.discoveryshort}} uses document
 Learn about possible error messages and how to address them.
 
 The training data is too large
-:   Your training data contains large text document or many entity types and the resources that are needed to process the data is greater than the resources that are available to your service instance. This error can occur even when your workspace doesn't exceed the documented entity extractor limits. To resolve the issue, you can try one of the following approaches:
+:   Your training data contains large text document or many entity types and resources that are needed to process the data is greater than the resources that are available to your service instance. This error can occur even when your workspace doesn't exceed the documented entity extractor limits. To resolve the issue, you can try one of the following approaches:
 
     -   Remove one or more entity types to decrease the size of your training data.
     -   Remove extra large documents from the training data. For example, if one of the labeled documents is extra large, change its status from *Completed* to *In progress* to omit it from the training data.
@@ -347,8 +347,20 @@ The following table shows suggested fixes for common problems.
 | Low precision | Look for entity types that are commonly confused. Find and label more examples of each entity type to help the entity extractor distinguish between the entity types. |
 {: caption="Improvement actions" caption-side="top"}
 
-If you added 20 documents and trained the model and want to continue to improve the model, you can add more documents to label. Add the additional documents to the collection that you are using to train the model. After you label the first 20 documents, and the model is up to date with any changes, you can choose to continue labeling documents. The new documents that you added to the collection are loaded. You can label them to augment the training data, and then retrain your model.
-{: note}
+### Adding documents to the training data
+{: #entity-extractor-add-docs}
+
+To add more documents, complete the following steps:
+
+1.  Open the *Label documents* tab.
+1.  From the *Document list* panel, choose **Add documents**.
+
+    This button is disabled if no other documents are available to add to the entity extractor from the current collection. To add more documents to the collection, go to the *Activity* page for the collection, and then click the *Upload data* tile to browse for and add more files.
+
+You cannot choose the documents from the collection to show in the *Document list* for labeling purposes. If there are specific types of documents that you want to label, consider adding representative documents to a collection that you can use to create the entity extractor.
+{: tip}
+
+There are limits to the number of documents that can be included in the training data. If your training data includes documents with a combination of sections that are labeled and others that are not, the system might sample some examples from unlabeled sentences. Subsampling helps to balance the number of positive and negative examples that are used for training. Balancing the examples in the training set improves the training performance.
 
 ## Publishing the entity extractor as an enrichment
 {: #entity-extractor-publish}
@@ -400,16 +412,16 @@ For more information about how to remove an entity extractor enrichment from a c
 ### Entity extractor output
 {: #entity-extractor-json}
 
-When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with those recognized by the built-in Entities enrichment. The built-in enrichment uses the Watson NLP service to identity entites that are part of what it calls the *Natural Language Understanding* type system. For more information about the built-in Entities enrichment, see [Entities](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities).
+When the enrichment recognizes one of your custom entities in a document, an entry is added to the `enriched_text.entities` section of the JSON representation of the document. The section contains occurrences of entities that are recognized by your custom model along with entities that are recognized by the built-in Entities enrichment. The built-in enrichment uses the Watson NLP service to identity entites that are part of what it calls the *Natural Language Understanding* type system. For more information about the built-in Entities enrichment, see [Entities](/docs/discovery-data?topic=discovery-data-nlu#nlu-entities).
 
-The following JSON output is produced by a custom model named *literature* that recognizes family member mentions.
+The following JSON output is produced by a custom model that is named *literature* that recognizes family member mentions.
 
 ![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png){: caption="Figure 11. JSON representation of a custom entity mention" caption-side="bottom"}
 
 ### Monitoring performance over time
 {: #entity-extractor-history}
 
-You can retrain your entity extractor model at any time. Each time you train the model, review the performance metric scores to determine whether your most recent changes increase or decrease the model's scores.
+You can retrain your entity extractor model at any time. Each time that you train the model, review the performance metric scores to determine whether your most recent changes increase or decrease the model's scores.
 
 1.  To compare one test run against another, click **View score history**.
 
