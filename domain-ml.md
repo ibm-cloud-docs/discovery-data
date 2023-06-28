@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-27"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -32,9 +32,6 @@ The following types of models are supported:
 -  Machine learning models created in {{site.data.keyword.knowledgestudioshort}} that understand the linguistic nuances, meaning, and relationships specific to your industry (file format: .zip)
 -  Custom entity extractors that are created in and exported from {{site.data.keyword.discoveryshort}}. (File format: .ent)
 -  [IBM Cloud Pak for Data]{: tag-cp4d} Custom UIMA text analysis models created in Watson Explorer Content Analytics Studio. (File format: .pear)
-
-The size of the model file that you import must be less than 750 MB.
-{: important}
 
 From installed deployments, support for importing entity extractor models was added with the 4.6.2 release.
 
@@ -70,6 +67,9 @@ To add a Machine Learning model, complete the following steps:
 1.  Click **Upload** to browse for the file that you exported earlier.
 1.  Click **Create**.
 1.  Choose the collection and field where you want to apply the enrichments from the model, and then click **Apply**.
+
+If the model is too large to upload from the product user interface, you can use the [Create an enrichment](/apidocs/discovery-data#createenrichment){: external} method of the API to import the file.
+{: note}
 
 ## Rule-based model example
 {: #machinelearning-rules}
