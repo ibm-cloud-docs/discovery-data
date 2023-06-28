@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -282,7 +282,7 @@ To transfer relevancy training, complete the following steps:
 You can reuse some of the models that you created in v1 with your v2 project.
 
 Smart Document Understading (SDU) models
-:   You can use an SDU model that you built in v1. However, you cannot edit the migrated SDU model in v2. If you want to reuse a model as-is, you can [export it from v1](/docs/discovery?topic=discovery-sdu#import){: external} and [import the SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields#import) to v2.
+:   You can import an SDU model that was built with Discovery v1 into Discovery v2. However, the performance of the model might differ between versions. Compare the results of the v1 SDU model in v2 to verify that the behavior is the same. You cannot edit the imported v1 SDU model. If the imported model can't recognize document elements that it recognized in v1 and that are important to your use case, you must re-create the SDU model in the Discovery v2 product user interface. For more information, see [Exporting SDU models](/docs/discovery?topic=discovery-sdu#import){: external} in the v1 documentation and [importing the SDU model](/docs/discovery-data?topic=discovery-data-configuring-fields#import) in the v2 documentation.
 
 Machine learning models
 :   You cannot deploy models directly to {{site.data.keyword.discoveryshort}} v2 service instances from {{site.data.keyword.knowledgestudioshort}}. Instead, you must export the machine learning models from {{site.data.keyword.knowledgestudioshort}}, and then import them into {{site.data.keyword.discoveryshort}}. The model must have been exported from {{site.data.keyword.knowledgestudioshort}} after 16 July 2020. If you have a model that was exported before that date, you must reexport the model from {{site.data.keyword.knowledgestudioshort}}. Only paid {{site.data.keyword.knowledgestudioshort}} plans support exporting models.

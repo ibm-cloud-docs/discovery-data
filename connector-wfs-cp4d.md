@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2022-10-06"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ In addition to the [data source requirements](/docs/discovery-data?topic=discove
 -   The connector supports Microsoft Windows Server 2012 R2, 2016, 2019, and 2022.
 -   The remote agent server and the file servers to be crawled must belong to the same Windows domain. The crawler can gather access control list (ACL) data from a single Windows domain only.
 
-Support for Microsoft Windows Server 2022 was added with the 4.6 release.
+Support for Microsoft Windows Server 2022 was added with the 4.6 release. Starting with the 4.7 release, you can secure traffic that is sent between the Windows Agent service and its crawler by enabling support for the transport layer security (TLS) protocol. 
 {: note}
 
 ## Prerequisite steps
@@ -81,10 +81,10 @@ With the 4.6 release, the IBM Watson Discovery Agent for Windows File Systems wa
 
 Do one of the following tasks:
 
+-  You have a previous installation that is earlier than 4.6: [Replace the pre-4.6 agent](#connector-wfs-cp4d-prereq1-replace)
 -  You are using the connector for the first time: [Install the agent](#connector-wfs-cp4d-prereq1-new)
--  You have a previous installation: [Replace the previous agent](#connector-wfs-cp4d-prereq1-replace)
 
-#### Replacing the previous agent
+#### Replace the pre-4.6 agent
 {: #connector-wfs-cp4d-prereq1-replace}
 
 Required for deployments where a version of the IBM Watson Discovery Agent for Windows File Systems that is earlier than 4.6.0.0 is installed.
@@ -119,7 +119,9 @@ To install the IBM Watson Discovery Agent for Windows File Systems for the first
 1.  Scroll to the *Download & install Windows Agent* section, and then click **Download Windows Agent Installer**.
 
     A ZIP file is downloaded.
-1.  Extract the files from the `WindowsAgentServer.zip`.
+
+1.  Decompress the `WindowsAgentServer.zip` file.
+
 1.  You can choose one of the following methods to run the installation program:
 
     - Double-click the `install.exe` file to launch the installation wizard.
@@ -178,6 +180,13 @@ To install the IBM Watson Discovery Agent for Windows File Systems for the first
     -   You can change the paths for the installation directory and data directory.
     -   The agent server uses three TCP/IP ports for authenticating connections to the server, transferring data between the file systems and {{site.data.keyword.discoveryshort}}, and monitoring the agent server. The default port numbers are `8397` and `8398`. If those values conflict with other port assignments in your system, change the port numbers.
 1.  On the summary page, review the options that you selected, and click **Install** to start installing the software.
+1.  **Optional**: If you want to secure traffic between the Windows Agent service and the crawler, enable TLS support.
+
+    Copy the file named `tls.p12` from the decompressed directory to the root directory where the agent is installed. For example, the root directory might be `C:\Program Files\IBM\es\distributed\esadmin`.
+
+    TLS support is available starting with the 4.7 release.
+    {: note}
+
 1.  Restart your computer.
 
 ### Configuring shared directories on the agent server
@@ -357,3 +366,47 @@ If you completed the prerequisite steps, return to the Windows File System data 
 The collection is created quickly. It takes more time for the data to be processed as it is added to the collection.
 
 If you want to check the progress, go to the Activity page. From the navigation pane, click **Manage collections**, and then click to open the collection.
+
+### Enabling TLS for an existing collection
+{: #connector-wfs-cp4d-tls}
+
+To ensure that all traffic that is sent between the Windows Agent service and the crawler is sent over the transport layer security (TLS) protocol, enable TLS support. 
+
+This capability is available starting with version 4.7. Do not complete this task until after you upgrade your service software to 4.7.
+
+After you enable TLS for the Windows Agent service, any existing collections in deployments with earlier versions of Discovery will not be able to connect to this Windows Agent service.
+{: important}
+
+To add TLS support to an existing collection, complete the following steps:
+
+1.  Open the *Processing settings* page for the existing Window File System collection.
+1.  Install the latest version of the agent.
+
+    Complete the steps in the [Installing the agent](#connector-wfs-cp4d-prereq1-new) procedure, starting with Step 4 and including the optional step to enable TLS support.
+    
+    Do not complete the last step that asks you to restart your computer.
+    {: important}
+
+1.  Find and open the `as.cfg` file in a text editor, and then add the following lines to the file:
+
+    ```bash
+    agent_key_store=%ES_AGENT_NODE_ROOT%\tls.p12
+    agent_key_store_password=changeit
+    ```
+    {: codeblock}
+
+    where `%ES_AGENT_NODE_ROOT%` is the root directory for the Windows Agent server. For example:
+
+    ```text
+    agent_key_store="C:\Program Files\IBM\es\distributed\esadmin\tls.p12"
+    agent_key_store_password=changeit
+    ```
+    {: codeblock}
+
+1.  Restart the Windows Agent service by using the following commands:
+
+    ```bash
+    esagent stop
+    esagent start
+    ```
+    {: codeblock}

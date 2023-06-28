@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-09"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -40,9 +40,6 @@ Line breaks are inserted randomly
 
 After applying a pretrained Smart Document Understanding model to a PPT file, table boundaries are not recognized properly
 :    During the conversion process, text that is extracted from the table is confused with text that is outside the table in some PPT pages. This issue is more likely to occur in tables with a lot of text and that have footnotes displayed just outside the table border. If you encounter this issue, export the PPT file as a PDF file, and then upload the PDF file instead. Apply a user-trained Smart Document Understanding (SDU) model to the document, and then use the SDU tool to identify the tables in the document. The resulting model handles table boundaries properly and can extract text from the tables cleanly.
-
-Document cannot be converted to PDF format
-:    If you are using an installed deployment in a FIPS-enabled cluster, you might see a message when you ingest Microsoft Word documents that says, `Document cannot be processed because it cannot be converted to PDF format. Convert the document to PDF format before you add it to the collection`. You can ignore this message. It is displayed prematurely. Give the service more time and the document will be ingested successfully.
 
 ## PDF file troubleshooting tips
 {: #upload-data-ts-pdf}

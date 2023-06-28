@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-06-28"
 
 subcollection: discovery-data
 
@@ -60,11 +60,7 @@ To create a text classifier, complete the following steps:
     ```
     {: codeblock}
 
-1.  From the *Teach domain concepts* section of the *Improvement tools* panel, and then choose the appropriate option based on your deployment type:
-
-    -   [IBM Cloud]{: tag-ibm-cloud}  **Text classifiers**
-    -   [IBM Cloud Pak for Data]{: tag-cp4d}  **Classifiers**
-
+1.  From the *Teach domain concepts* section of the *Improvement tools* panel, and then click **Text classifiers**.
 1.  Click **Upload**.
 1.  Specify a name for the classifier, and then choose the language that was used in the CSV file.
 1.  Click **Upload** to browse for the CSV file that you created earlier.
