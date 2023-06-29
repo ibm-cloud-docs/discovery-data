@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-06-29"
 
 subcollection: discovery-data
 
@@ -462,4 +462,4 @@ The number of entity extractors that you can create per service instance depends
 | Plus (including Trial) | 3 | 12 | 200 |
 {: caption="Entity extractor plan limits" caption-side="top"}
 
-[^tabletext]: The entity extractor count measures the number of published entity extractor enrichments, whether they are applied to a collection or not.
+[^tabletext]: This number reflects the number of published entity extractor enrichments for the service instance (including from imported entity extractor models) whether they are applied to a collection or not.
