@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-06-29"
 
 subcollection: discovery-data
 
@@ -58,8 +58,8 @@ The following field names have special meaning. If possible, do not use these na
 Avoid field names that meet the following conditions. Field names with these restricted characters are not queried.
 
 - Start with the characters `_`, `+`, and `-`. For example, `+extracted-content`.
-- Contain the characters `.`, `,`, `#`, `?`, or `:` or spaces. For example, `extracted content` or `new:extracted-content`.
-- End with numbers. For example, `extracted-content2`.
+- Contain the characters `.`, `,`, `#`, `?`, `(`, `)`, or `:` or spaces. For example, `extracted content` or `new:extracted-content`.
+- End with numbers, for example, `extracted-content2`.
 
 ### HTML fields
 {: #field-html}
