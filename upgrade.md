@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-06-30"
 
 subcollection: discovery-data
 
@@ -75,7 +75,7 @@ Even though you can use the Plus plan for the first 30 days at no charge, you mu
 
             The resource group is created by the account holder. For more information, see [Managing resource groups](/docs/account?topic=account-rgs&interface=ui){: external}.
 
-You cannot directly downgrade from one plan to another. If you want to move from an Enterprise plan to a Plus plan, for example, you must remove the Enterprise plan and create a Plus plan. For more information about how to back up data from a service instance, see [High availability and disaster recovery](/docs/discovery-data?topic=discovery-data-recovery).
+You cannot directly downgrade from one plan to another. If you want to move from an Enterprise plan to a Plus plan, for example, you must provision a new Plus plan and then move data to it from your existing Enterprise plan. After the data is moved, you can delete the Enterprise plan. For more information about how to back up data that you want to move between service instances, see [High availability and disaster recovery](/docs/discovery-data?topic=discovery-data-recovery).
 {: important}
 
 For more information about plans, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
