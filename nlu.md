@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-07-10"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
@@ -83,7 +83,7 @@ Identifies entities. *Entities* are terms that typically represent proper nouns 
 
 If you want to be able to identify uncommon terms that are significant to your business, you can train your own model to recognize custom entities. For more information, see [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor).
 
-The Watson NLP entity extractor service that is used by Discovery is called the *NLU type system*. The name originates from the fact that the type system is used by the Watson Natural Language Understanding (NLU) service in addition to the Watson Discovery service. However, it is the Watson NLP implementation of the type system that is used directly by Discovery, not the Watson NLU implementation. As a result, the two implementations can produce different results. To get a general idea of the types of entities that are recognized by the service, see [Entities v2](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
+The Watson NLP entity extractor service that is used by Discovery is called the *NLU type system*. The name originates from the fact that the type system is used by the Watson Natural Language Understanding (NLU) service in addition to the Watson Discovery service. However, it is the Watson NLP implementation of the type system that is used directly by Discovery, not the Watson NLU implementation. As a result, the two implementations can produce different results. To get a general idea of the types of entities that are recognized by the service, see [Entities](/docs/natural-language-understanding?topic=natural-language-understanding-entity-types-version-2){: external}.
 
 The following screen capture shows that the Entities enrichment recognizes the terms *Systems of Government* and *King of Great Britain* (among others) and tags them as entity mentions.
 
@@ -155,9 +155,6 @@ In the JSON output:
 }
 ```
 {: codeblock}
-
-For Premium plan {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments, version 1 of the {{site.data.keyword.nlushort}} Entities type system is used by the Entities enrichment for English and Korean collections. The Entities v1 enrichment was applied automatically to any English or Korean collections that were added to Document Retrieval projects. These collections continue to use the Entities v1 classic enrichment, but it is not listed in the Enrichments page. If you want to switch to using Entities v2, apply the Entities v2 enrichment to the collection. Only one version of the Entities enrichment can be applied to a collection at one time. When you apply the v2 enrichment, the classic enrichment is disabled automatically. If you want to use the Entities v1 classic enrichment instead of Entities v2, you can use the API to swap the enrichment that is applied to your collection. For more information, see [Applying enrichments by using the API](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).
-{: note}
 
 ### Entity limits
 {: #nlu-entities-limits}

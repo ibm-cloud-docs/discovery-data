@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-24"
+lastupdated: "2023-07-10"
 
 subcollection: discovery-data
 
@@ -82,7 +82,7 @@ For prebuilt enrichments, the unique IDs do not change. The following table list
 | Name | Enrichment ID | Supported languages |
 |------|---------------|---------------------|
 | Contracts | 701db916-fc83-57ab-0000-000000000014 | en |
-| Entities v2 | 701db916-fc83-57ab-0000-00000000001e | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
+| Entities | 701db916-fc83-57ab-0000-00000000001e | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
 | Keywords | 701db916-fc83-57ab-0000-000000000018 | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
 | Part of Speech | 701db916-fc83-57ab-0000-000000000002 | All supported languages|
 | Sentiment of Document | 701db916-fc83-57ab-0000-000000000016 | ar, de, en, es, fr, it, ja, ko, nl, pt, zh-CN |
@@ -128,13 +128,13 @@ To apply an enrichment by using the API, complete the following steps:
 
 1.  Add the enrichment that you want to apply.
 
-    You can also replace an enrichment. For example, if you want to use the Entities v1 legacy enrichment instead of the Entities v2 enrichment, you can find the Entities v2 enrichment definition (it has the ID `701db916-fc83-57ab-0000-00000000001e`), and then replace it with the Entities v1 legacy enrichment ID (with the ID `701db916-fc83-57ab-0000-000000000017`).
+    For example, to add the *Keywords* enrichment, you can include the enrichment in the enrichments list. First, get its ID from the table. 
 
-    For example, to apply the Entities v1 legacy enrichment:
+    The Keywords enrichment ID is `701db916-fc83-57ab-0000-000000000018`. To indicate that you want to apply the Keywords enrichment to the content in the `text` field of the documents in the collection, you can represent it in JSON format as follows:
 
-    ```json
+    ```json   
     {
-        "enrichment_id" : "701db916-fc83-57ab-0000-000000000017",
+        "enrichment_id" : "701db916-fc83-57ab-0000-000000000018",
         "fields" : [ "text" ]
     }
     ```
@@ -142,6 +142,35 @@ To apply an enrichment by using the API, complete the following steps:
 
     Any enrichments that you specify replace the default enrichments. Therefore, if you want to retain a default enrichment, don't forget to include it in the list of enrichments that you apply to the collection. For a list of default enrichments per project type, see [Default enrichments per project type](#enrichments-defaults).
     {: note}
+
+    For example, to retain the *Entities* enrichment and add the *Keywords* enrichment, you might specify the following in the request body. 
+    
+    The *Part of Speech* enrichment is included also because it is applied to all collection automatically.
+    {: note}
+
+    ```json
+    "enrichments": [
+      {
+        "enrichment_id": "701db916-fc83-57ab-0000-000000000002",
+        "fields": [
+          "text"
+        ]
+      },
+      {
+        "enrichment_id": "701db916-fc83-57ab-0000-00000000001e",
+        "fields": [
+          "text"
+        ]
+      },
+      {
+        "enrichment_id": "701db916-fc83-57ab-0000-000000000018",
+        "fields": [
+          "text"
+        ]
+      } 
+    ]
+    ```
+    {: codeblock}
 
 1.  Submit the updated JSON request body with the [update collection](https://cloud.ibm.com/apidocs/discovery-data#updatecollection){: external} method to apply the enrichment to your collection.
 

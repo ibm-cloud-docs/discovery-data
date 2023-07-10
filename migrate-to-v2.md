@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-07-10"
 
 subcollection: discovery-data
 
@@ -415,6 +415,9 @@ The way that your application shows query results might need to be updated due t
 -   In v2, `enriched_text` is an array instead of an object.
 -   In {{site.data.keyword.discoveryshort}} v2, the Entities v2 enrichment is used. Entity type names in v2 are specified in headline case, instead of all uppercase letters. If you use a query or aggregation that specifies an entity name, you must change the capitalization. For example, change `PERSON` to `Person`.
 -   Fields from JSON files that are added to a collection are converted differently during ingestion between v1 and v2. If your application manipulates these results, you might need to make adjustments.
+
+    You can specify the `normalizations` and `conversions` objects in the [Update a collection](/apidocs/discovery-data#updatecollection){: external} method of the API to move or merge JSON fields.
+    {: note}
 
     | Original JSON field content | v1 representation | v2 representation | Notes |
     |-----------------------------|-------------------|-------------------|-------|

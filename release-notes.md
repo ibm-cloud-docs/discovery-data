@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-07-10"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,18 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 10 June 2023
+{: #discovery-10june2023}
+{: release-note}
+
+<!-- 4.8.0-3.0 -->
+
+All Entities enrichments use the Entities v2 type system
+:   {{site.data.keyword.nlushort}} Entities v1 is no longer supported. {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments used version 1 of the {{site.data.keyword.nlushort}} Entities type system for English and Korean collections. Now, all collections use only version 2 of the {{site.data.keyword.nlushort}} Entities type system.
+
+Classifiers are identified more clearly
+:   The *Enrichments* page lists classifier enrichments as either *text classifier* or *document classifier* enrichments.
 
 ## 16 May 2023
 {: #discovery-16may2023}

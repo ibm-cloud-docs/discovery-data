@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-22"
+lastupdated: "2023-07-10"
 
 subcollection: discovery-data
 
@@ -57,7 +57,7 @@ Some prebuilt enrichments are applied automatically to collections in a project 
 | Enrichment | Document Retrieval | Document Retrieval for Contracts | Conversational Search | Content Mining |
 |------------|--------------------|----------------------------------|-----------------------|----------------|
 | Contracts | | ![checkmark icon](../icons/checkmark-icon.svg) | | |
-| Entities v2 | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | | |
+| Entities | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | | |
 | Keywords | | | | |
 | Part of Speech | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Sentiment of Document | | | | |
