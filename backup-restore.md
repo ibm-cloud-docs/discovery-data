@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-02"
+lastupdated: "2023-07-26"
 
 keywords: backup,restore
 
@@ -29,19 +29,21 @@ The following table lists the upgrade paths that are supported by the scripts.
 
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
-| 4.6.0 | 4.6.5 |
-| 4.5.x | 4.6.0 |
-| 4.0.x | 4.6.0 |
-| 2.2.1 | 4.6.0 |
+| 4.7.0 | 4.7.x |
+| 4.6.x | 4.7.x |
+| 4.5.x | 4.7.x |
+| 4.0.x | 4.7.x |
 {: caption="Supported upgrade paths" caption-side="top"}
 
-If you are upgrading from 4.x to 4.6.x, a simpler way to complete the upgrade is described in the following topics:
+If you are upgrading from 4.5.x to 4.7.x, a simpler way to complete the upgrade is described in the following topics:
 
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.6](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade-v46.html){: external}.
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.5.x](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade-v45.html){: external}.
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.0.x](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade-v4.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.7](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v47.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.6](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v46.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.5.x](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v45.html){: external}.
 
 If you use {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility to back up and restore an entire cluster to 4.6, a few extra steps are required. For more information, see [Using OADP to back up a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-oadp).
+
+You can do an in-place upgrade from one 4.7.x version to a later 4.7.y version. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.7.x to a later 4.7 refresh](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v47.html){: external}.
 
 You can do an in-place upgrade from one 4.6.x version to a later 4.6.y version. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.6.x to a later 4.6 refresh](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-upgrade-v46.html){: external}.
 
