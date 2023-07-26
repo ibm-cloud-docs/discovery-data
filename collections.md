@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-07-26"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -93,7 +93,7 @@ For more information about how to create a collection programmatically, see the 
 
 One of the optional features that you can apply to a collection when you create it is optical character recognition. The optical character recognition (OCR) feature extracts text from images. This capability is useful for preserving information that is depicted in diagrams or graphs, or in text that is embedded in files such as scanned PDFs. By converting the visual information into text, it can later be searched.
 
-[IBM Cloud]{: tag-ibm-cloud} A new version of the technology was introduced in cloud-managed instances. OCR v2 was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
+A new version of the technology was introduced in cloud-managed instances. OCR v2 was developed by IBM Research to be better at extracting text from scanned documents and other images that have the following limitations:
 
 -   Low-quality images due to incorrect scanner settings, insufficient resolution, bad lighting (such as with mobile capture), loss of focus, misaligned pages, and badly printed documents
 -   Documents with irregular fonts or various colors, font sizes, and backgrounds
@@ -208,7 +208,7 @@ The number of documents that are allowed per service instance depends on your {{
 
 The document limit applies to the number of documents in the index. Upload fewer documents at the start if the enrichments that you plan to apply might increase the number of documents later. For example, the following configurations generate more documents:
 
-- Splitting documents segments one document into multiple documents
+- When you split a document, the document is segmented into multiple documents
 - CSV files that you upload generate one document per line
 - Database data sources that you crawl produce one document per database row
 - Each object that is defined in an array in a JSON file results in a separate document
@@ -220,6 +220,8 @@ The document limit applies to the number of documents in the index. Upload fewer
 | Enterprise |                  Unlimited |
 | Plus (includes Trial) |         500,000 |
 {: caption="Number of documents per service instance" caption-side="top"}
+
+For the Enterprise plan, you are charged after 100,000 documents per month. For more information about pricing, see [Discovery pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
 
 The maximum allowed number can vary slightly depending on the size of the documents. Use these values as a general guideline.
 {: note}
@@ -304,7 +306,11 @@ When you create a collection, the initial crawl starts immediately. The frequenc
 
 To create a crawl schedule, complete the following steps:
 
-1.  In the in *Crawl schedule* section, choose a frequency.
+1.  In the *Crawl schedule* section, choose a frequency.
+
+    You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. For example, you can schedule the crawl for `01:00 AM` on Saturdays.
+
+    [IBM Cloud]{: tag-ibm-cloud} You can specify any day from the first 28 days of a month for the crawl schedule.
 
     [IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments have more schedule options:
 
@@ -312,7 +318,6 @@ To create a crawl schedule, complete the following steps:
     -   By default, the crawl is scheduled to start during off-peak hours.
     -   Do not set the interval to a frequency that is shorter than the time it takes for the crawl to finish.
     -   Do not configure multiple crawlers to run at short intervals.
-    -   You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. You can schedule the crawl for `01:00 AM` on Saturdays, for example.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
 
 1.  [IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments have a **More scheduling settings** section where you can choose the type of schedule to use to crawl the data source. 

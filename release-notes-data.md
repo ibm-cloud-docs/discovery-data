@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-28"
+lastupdated: "2023-07-26"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -34,6 +34,18 @@ After version 4.7, the operator for IBM Knowledge Studio will no longer be suppo
 Migrate your solutions to Watson Discovery, which has powerful custom natural language processing capabilities. Any existing Watson Knowledge Studio for Cloud Pak for Data rules-based or machine learning models can be imported to Watson Discovery and applied to your data as custom enrichments. And the recent release of the custom entities extraction feature brings equivalent function to label and train custom entity models into Watson Discovery. For more information about these features, see [Choose enrichments](/docs/discovery-data?topic=discovery-data-domain).
 
 For more information about migrating your solutions, see [Migrating Knowledge Studio solutions](/docs/discovery-data?topic=discovery-data-migrate-wks).
+
+## 4.7.1 release, 26 July 2023
+{: #discovery-data-471-26july2023}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.7.1 is available.
+
+For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.7.x/fixlist/discovery-fixlist.html){: external}
+
+Features that are not available in this release
+:   The following features are generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Answer finding
 
 ## 4.7.0 release, 28 June 2023
 {: #discovery-data-470-28june2023}
