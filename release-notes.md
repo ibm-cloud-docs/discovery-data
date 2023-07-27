@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-07-27"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 26 July 2023
+{: #discovery-26july2023}
+{: release-note}
+
+<!--4.8.0-4.0-->
+
+You can now specify a custom date and time for the crawl schedule
+:    This option is helpful if you want to avoid heavy load on a target system during business hours. For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 
 ## 10 June 2023
 {: #discovery-10june2023}
