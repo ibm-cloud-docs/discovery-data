@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-07-27"
 
 subcollection: discovery-data
 
@@ -30,9 +30,6 @@ Pattern recognition works best on text with consistent structure in casing, leng
 - Date references, such as `8 September 2019`, `12 June 2020`.
 
 If you need to identify specific terms or text, such as product names, add a [dictionary](#dictionary).
-
-Patterns cannot be used in a Content Mining application.
-{: note}
 
 For more information, read the following blog posts:
 
