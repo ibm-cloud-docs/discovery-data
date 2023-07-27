@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-07-27"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -310,7 +310,7 @@ To create a crawl schedule, complete the following steps:
 
     You can schedule the crawler to run at a specific day and time. This option is helpful if you want to avoid heavy load on a target system during business hours. If you specify an hour in the range 1 - 9, add a zero before the hour digit. For example, you can schedule the crawl for `01:00 AM` on Saturdays.
 
-    [IBM Cloud]{: tag-ibm-cloud} You can specify any day from the first 28 days of a month for the crawl schedule.
+    [IBM Cloud]{: tag-ibm-cloud} When you schedule a crawl to run monthly, the day number options are limited to 1 through 28 because you must specify a day that occurs every month, including February which has 28 days.
 
     [IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments have more schedule options:
 
