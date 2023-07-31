@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-07-27"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -197,8 +197,6 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
 1.  Do one of the following things to explore the search result.
 
-    [IBM Cloud]{: tag-ibm-cloud}  
-    
       1.  Click **Open advanced view**.
 
           Useful summary information is displayed, such as the number of occurrences of any enrichments that are detected in the document. 
@@ -209,19 +207,13 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
       1.  To see how the information from the document is stored in JSON format, click the *View as* menu from the view header, and select **JSON**.
 
-          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png){: caption="Figure 12. Overflow menu options from the Advanced view" caption-side="bottom"}
-
-    [IBM Cloud Pak for Data]{: tag-cp4d}
-
-      1.  Click **JSON**.
-
           A JSON representation of the document is displayed.
 
-          ![Shows the JSON representation of the document.](images/gs-json-tab.png){: caption="Figure 13. JSON representation of the document" caption-side="bottom"}
+          ![Shows the JSON representation of the document.](images/gs-json-tab-new.png){: caption="Figure 12. JSON representation of the document" caption-side="bottom"}
 
           You can explore the JSON representation to see information that Discovery captured from the document. For example, if you expand the `enriched_text` section, and then expand the `entities` section, you can see mentions of entities that were recognized and tagged by the Entities enrichment.
 
-          ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png){: caption="Figure 14. Shows the enrichment_text.entities section of the JSON representation" caption-side="bottom"}
+          ![Shows the entriched_text.entities section of the JSON.](images/gs-json-entities.png){: caption="Figure 13. Shows the enrichment_text.entities section of the JSON representation" caption-side="bottom"}
 
 
 ## Customize the sample project
@@ -238,7 +230,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  Review the query results that are displayed.
 
-    ![Shows the query results for a natural language query with the Top Entities facet expanded.](images/gs-sample-entities-facet.png){: caption="Figure 15. Top Entities facet results" caption-side="bottom"}
+    ![Shows the query results for a natural language query with the Top Entities facet expanded.](images/gs-sample-entities-facet.png){: caption="Figure 14. Top Entities facet results" caption-side="bottom"}
 
     Notice that a *Top Entities* section is displayed. You can expand the entities and click one of them to filter the query results to show only those results in which the entity is mentioned. The *Top Entities* section is a built-in facet. It uses information that was added to the documents by the Entities enrichment.
 
@@ -246,15 +238,15 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  On the **Improvement tools** panel, expand **Customize display**, and then click **Facets**.
 
-    ![Shows the expanded Customize display section in the Improvement tools pane.](images/gs-facet-sidebar.png){: caption="Figure 16. Customize display options" caption-side="bottom"}
+    ![Shows the expanded Customize display section in the Improvement tools pane.](images/gs-facet-sidebar.png){: caption="Figure 15. Customize display options" caption-side="bottom"}
 
 1.  Click **New facet**, and then click the **From existing fields in a collection** button.
 
-    ![Shows the options for the types of facets you can add.](images/gs-facet-add-options.png){: caption="Figure 17. Facet options" caption-side="bottom"}
+    ![Shows the options for the types of facets you can add.](images/gs-facet-add-options.png){: caption="Figure 16. Facet options" caption-side="bottom"}
 
 1.  Choose `enriched_text.keywords.mentions.text`, change the label to `Keywords`, and then click **Apply**.
 
-    ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png){: caption="Figure 18. Creating a Keywords-based facet" caption-side="bottom"}
+    ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png){: caption="Figure 17. Creating a Keywords-based facet" caption-side="bottom"}
 
     Remember the JSON representation of the document that you looked at earlier? Now that the Keywords enrichment is applied to the `text` field, and the documents are reprocessed, any keyword mentions found in the `text` field are included in the JSON representation of the document.
 
@@ -273,7 +265,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  The new facet is displayed. You can click a keyword to filter the documents to include only those results that mention the keyword.
 
-    ![Shows how the keyword facet looks.](images/gs-keyword-facet-added.png){: caption="Figure 19. Keywords facet" caption-side="bottom"}
+    ![Shows how the keyword facet looks.](images/gs-keyword-facet-added.png){: caption="Figure 18. Keywords facet" caption-side="bottom"}
 
 You successfully added a built-in NLU enrichment that recognizes keywords in the sample collection documents. Then, you added a facet that uses the keywords enrichment to let you filter the documents by keyword.
 
@@ -287,7 +279,7 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 
 1.  Follow the on-screen instructions to add a user, and then send login credentials and the provided link to your colleague.
 
-    ![Shows the Integrate and deploy page.](images/gs-deploy.png){: caption="Figure 20. Integrate and deploy page" caption-side="bottom"}
+    ![Shows the Integrate and deploy page.](images/gs-deploy.png){: caption="Figure 19. Integrate and deploy page" caption-side="bottom"}
 
     After you build your own search application and are ready to deploy it, you can use prebuilt user interface components or build a custom application.
 
