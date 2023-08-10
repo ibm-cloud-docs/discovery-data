@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-09"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,6 +24,18 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 9 August 2023
+{: #discovery-9august2023}
+{: release-note}
+
+<!--4.8.0-5.3-->
+
+You can now specify fields from which to extract content when querying data from the UI
+:   The ability to specify fields allows you to improve the search results when content is not indexed in the default fields. Content might not be indexed in the default fields when you ingest structured files or when you apply a Smart Document Understanding model. For more information, see [Excerpt unavailable](/docs/discovery-data?topic=discovery-data-query-results#improve-search-result).
+
+Enrichments in the advanced document view for PDFs are highlighted in distinct colors
+:   When you select multiple enrichments in the advanced document view for PDFs, each enrichment type is highlighted in the document with distinct colors. Overlapping enrichments are also highlighted in a distinct color.
+
 ## 26 July 2023
 {: #discovery-26july2023}
 {: release-note}
@@ -31,7 +43,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 <!--4.8.0-4.0-->
 
 You can now specify a custom date and time for the crawl schedule
-:    This option is helpful if you want to avoid heavy load on a target system during business hours. For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
+:   This option is helpful if you want to avoid heavy load on a target system during business hours. For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 
 ## 10 June 2023
 {: #discovery-10june2023}
