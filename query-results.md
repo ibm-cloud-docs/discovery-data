@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-08-08"
 
 keywords: passages, query results
 
@@ -50,13 +50,29 @@ To query your data from the product user interface, complete the following steps
 ### Excerpt unavailable
 {: #improve-search-result}
 
-If the result shows “Excerpt unavailable”, you might need to adjust where the content of the response is taken from. By default, a passage from the document is returned as the response. You can change what is returned.
+Passages displayed in search results are extracted from the content that is indexed in the `title` and `text` fields of the documents. If the content is indexed in other fields, the search displays the `Excerpt unavailable` message.
+
+Content is indexed in other fields in the following scenarios:
+
+-   Your collection contains structured files, such as JSON or CSV files. When you ingest structured files, content is stored in custom fields with names taken from the original object names (JSON) or column headers (CSV).
+
+-   You applied a Smart Document Understanding model that moves content from the `text` field into new fields, such as `section` or `results`, based on the document's structure.
+
+To improve the search results, first choose how you want to extract content from the documents. If your documents have targeted fields with succinct content in them, such as `answer` fields for an FAQ use case, configure the search to return those specific fields. If your documents have custom fields with lots of content in them, such as `chapter` fields, configure the search to find the best passages from the custom fields.
+
+To customize the results, complete the following steps:
 
 1.  From the *Improvement tools* panel, expand **Customize display**.
-1.  Click **Search results**.
-1.  For the source of result content, select **Field**, and then choose the field from which you want to extract the response.
 
-    ![Shows the Search results dialog](images/search-result-by-field.png){: caption="Figure 1. Search results dialog" caption-side="bottom"}
+1.  Click **Search results**.
+
+1.  In the *Select source of result content* option, do one of the following things:
+
+    -   Select **Passages**, and then specify one or more fields from which to extract passages.
+
+    -   Select **Field**, and then choose one or more fields to return.
+
+    ![Shows the Search results dialog](images/search-result-by-field-revised.png){: caption="Figure 1. Search results dialog" caption-side="bottom"}
 
 1.  Click **Apply**.
 
