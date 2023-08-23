@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-31"
+lastupdated: "2023-08-17"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -130,5 +130,3 @@ IBM releases services, features, and language support for your evaluation that a
 -   [Security on Cloud Pak for Data](https://www.ibm.com/docs/SSQNUZ_4.6.x/cpd/plan/security.html){: external}
 
 Trademarks are listed in the [Trademarks](/docs/overview?topic=overview-notices#trademarks){: external} page for all {{site.data.keyword.cloud_notm}} services.
-
-![Java integrated logo.](images/Java_Compatible.png){: caption="Figure 2. Java logo" caption-side="bottom"}
