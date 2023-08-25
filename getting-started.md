@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-08-25"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -106,7 +106,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     The *Activity* page is displayed. This page shows the status of the collection. For example, it shows the total number of documents and when it was last updated. If Discovery encounters a problem when a document is uploaded or a data source is crawled, any associated messages are displayed here.
 
-    ![Shows the Activity page for the Sample Collection.](images/gs-sample-activity-tab.png){: caption="Figure 4. Activities page in the Sample project" caption-side="bottom"}
+    ![Shows the Activity page for the Sample Collection.](images/gs-sample-activity-tab-new.png){: caption="Figure 4. Activities page in the Sample project" caption-side="bottom"}
 
     After you create a collection, you can come to this page to find information about the processing status of the data in the collection.
 
@@ -114,7 +114,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     The *Enrichments* page shows you a list of available enrichments. Enrichments make meaningful information easier to find and return in searches. You can apply built-in enrichments to your collection to leverage powerful Natural Language Understanding models that tag terms, such as commonly known keywords.
 
-    ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments.png){: caption="Figure 5. Enrichments page of the Sample project" caption-side="bottom"}
+    ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments-new.png){: caption="Figure 5. Enrichments page of the Sample project" caption-side="bottom"}
 
     The following enrichments are applied to the sample collection:
 
@@ -161,11 +161,11 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     Smart Document Understanding (SDU) is a technology that learns about the content of a document based on the document's structure. You can apply a prebuilt SDU model or create a custom SDU model.
 
-    ![Shows the SDU model options.](images/gs-sample-id-fields.png){: caption="Figure 8. Smart Document Understanding model options" caption-side="bottom"}
+    ![Shows the SDU model options.](images/gs-sample-id-fields-new.png){: caption="Figure 8. Smart Document Understanding model options" caption-side="bottom"}
 
     To create a custom SDU model, you select the *User-trained model* option, and then annotate fields in your document. (You will not annotate documents as part of this tutorial.)
 
-    ![Shows the Smart Document Understanding tool.](images/gs-sample-sdu.png){: caption="Figure 9. Smart Document Understanding annotation tool" caption-side="bottom"}
+    ![Shows the Smart Document Understanding tool.](images/gs-sample-sdu-new.png){: caption="Figure 9. Smart Document Understanding annotation tool" caption-side="bottom"}
 
     For more information about SDU, see [Using Smart Document Understanding](/docs/discovery-data?topic=discovery-data-configuring-fields).
     {: tip}
@@ -242,11 +242,9 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  Click **New facet**, and then click the **From existing fields in a collection** button.
 
-    ![Shows the options for the types of facets you can add.](images/gs-facet-add-options.png){: caption="Figure 16. Facet options" caption-side="bottom"}
-
 1.  Choose `enriched_text.keywords.mentions.text`, change the label to `Keywords`, and then click **Apply**.
 
-    ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png){: caption="Figure 17. Creating a Keywords-based facet" caption-side="bottom"}
+    ![Shows the facet panel where a keyword facet is being added.](images/gs-keyword-facet-add.png){: caption="Figure 16. Creating a Keywords-based facet" caption-side="bottom"}
 
     Remember the JSON representation of the document that you looked at earlier? Now that the Keywords enrichment is applied to the `text` field, and the documents are reprocessed, any keyword mentions found in the `text` field are included in the JSON representation of the document.
 
@@ -265,7 +263,7 @@ Now, let's customize the search result view a bit by adding a facet. A facet is 
 
 1.  The new facet is displayed. You can click a keyword to filter the documents to include only those results that mention the keyword.
 
-    ![Shows how the keyword facet looks.](images/gs-keyword-facet-added.png){: caption="Figure 18. Keywords facet" caption-side="bottom"}
+    ![Shows how the keyword facet looks.](images/gs-keyword-facet-added.png){: caption="Figure 17. Keywords facet" caption-side="bottom"}
 
 You successfully added a built-in NLU enrichment that recognizes keywords in the sample collection documents. Then, you added a facet that uses the keywords enrichment to let you filter the documents by keyword.
 
@@ -279,7 +277,7 @@ You successfully added a built-in NLU enrichment that recognizes keywords in the
 
 1.  Follow the on-screen instructions to add a user, and then send login credentials and the provided link to your colleague.
 
-    ![Shows the Integrate and deploy page.](images/gs-deploy.png){: caption="Figure 19. Integrate and deploy page" caption-side="bottom"}
+    ![Shows the Integrate and deploy page.](images/gs-deploy.png){: caption="Figure 18. Integrate and deploy page" caption-side="bottom"}
 
     After you build your own search application and are ready to deploy it, you can use prebuilt user interface components or build a custom application.
 
