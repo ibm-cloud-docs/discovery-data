@@ -174,7 +174,7 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     The *Manage fields* page lists the indexed fields. From here, you can include or remove fields from the index. You can also split large documents into many smaller documents.
 
-    ![Shows the fields in the index.](images/gs-sample-field-index.png){: caption="Figure 10. Fields in the collection index" caption-side="bottom"}
+    ![Shows the fields in the index.](images/gs-sample-field-index-new.png){: caption="Figure 10. Fields in the collection index" caption-side="bottom"}
 
     For more information about splitting documents, see [Splitting documents to make query results more succinct](/docs/discovery-data?topic=discovery-data-split-documents).
     {: tip}
