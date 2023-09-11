@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-27"
+lastupdated: "2023-09-11"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -353,9 +353,34 @@ If you change the schedule frequency, the next scheduled crawl time might not be
 ## Stopping a crawl
 {: #collections-crawl-stop}
 
+You can stop a crawl without changing the crawl schedule frequency. This action is helpful if you want to perform a time-consuming task and do not want the crawl to start or run in between the task.
+
+[IBM Cloud]{: tag-ibm-cloud}
 To stop a crawl, complete the following steps:
 
 1.  Open the *Manage collections* page from the navigation panel.
-1.  From the *Activity* page, if the crawl is not in progress, click **Recrawl** to start the crawl, and then click **Stop**.
-    
-    [IBM Cloud]{: tag-ibm-cloud} After you stop a crawl, the crawl will not start again until you click **Recrawl** to restart it. When restarted, data from the data source is ingested from scratch, overwriting existing documents and adding new ones.
+1.  Select the collection for which you want to stop the crawl.
+1.  On the *Activity* page, if the crawl is in progress, click **Stop**.
+1.  Go to the *Processing settings* page.
+1.  Set **Apply Schedule** to **No**, and then click **Apply changes and reprocess**.
+
+    The crawl is stopped and will not start again until you restart it.
+
+[IBM Cloud]{: tag-ibm-cloud}
+To restart the crawl, complete the following steps:
+
+1.  Open the *Manage collections* page from the navigation panel.
+1.  Select the collection for which you want to restart the crawl.
+1.  Go to the *Processing settings* page.
+1.  Set **Apply Schedule** to **Yes**, and then click **Apply changes and reprocess**.
+
+    The crawl starts immediately.
+
+    The next crawl will start based on the frequency that is selected in the crawl schedule options. If you want to start the crawl at any time before the scheduled frequency, click **Recrawl** on the *Activity* page.
+
+[IBM Cloud Pak for Data]{: tag-cp4d}
+To stop a crawl, complete the following steps:
+
+1.  Open the *Manage collections* page from the navigation panel.
+1.  Select the collection for which you want to stop the crawl.
+1.  On the *Activity* page, if the crawl is not in progress, click **Recrawl** to start the crawl, and then click **Stop**.
