@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-08-09"
+lastupdated: "2023-09-11"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,27 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+
+## 1 September 2023
+{: #discovery-1september2023}
+{: release-note}
+
+<!--4.8.0-7.2-->
+
+Updated the tokenizer for all languages
+:   The updated tokenizer might affect the ranking order of results for certain queries. If you observe any ranking differences in your query results, you can reindex the documents in the collection. Discovery tokenizes words both when it ingests and stores data in the index, and at run time when it analyzes queries that are submitted by users. By reindexing the collection, you ensure that your documents are indexed with the same tokenizer that is used for matching queries.
+
+    To reindex documents, open the *Manage collection* page, choose a collection, and navigate to the **Enrichments** tab. Select a field to enrich, and then clear the field. Next, click **Apply changes and reprocess** and wait for the documents in the collection to be reprocessed.
+
+## 15 August 2023
+{: #discovery-15august2023}
+{: release-note}
+
+<!--4.8.0-6.0-->
+
+Option to apply or remove a crawl schedule
+:   This option is helpful for easily applying or removing a crawl schedule, and also for stopping a crawl. For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
 
 ## 9 August 2023
 {: #discovery-9august2023}
