@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-12"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -379,8 +379,14 @@ To restart the crawl, complete the following steps:
     The next crawl will start based on the frequency that is selected in the crawl schedule options. If you want to start the crawl at any time before the scheduled frequency, click **Recrawl** on the *Activity* page.
 
 [IBM Cloud Pak for Data]{: tag-cp4d}
-To stop a crawl, complete the following steps:
+
+You can temporarily stop a crawl that is in progress.
+
+To stop a crawl temporarily, complete the following steps:
 
 1.  Open the *Manage collections* page from the navigation panel.
-1.  Select the collection for which you want to stop the crawl.
-1.  On the *Activity* page, if the crawl is not in progress, click **Recrawl** to start the crawl, and then click **Stop**.
+1.  Select the collection for which you want to stop the crawl temporarily.
+1.  On the *Activity* page, click **Stop**.
+
+    The crawl starts again based on the frequency that is specified in the crawl schedule.
+    
