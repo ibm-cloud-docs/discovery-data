@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-11"
+lastupdated: "2023-09-22"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -25,8 +25,8 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: note}
 
 
-## 1 September 2023
-{: #discovery-1september2023}
+## 21 September 2023
+{: #discovery-21september2023}
 {: release-note}
 
 <!--4.8.0-7.2-->
