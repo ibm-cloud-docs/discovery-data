@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-09-21"
 
 subcollection: discovery-data
 
@@ -204,7 +204,7 @@ If your v1 documents have system-generated IDs, you can submit an empty [search 
 
 In some cases, the original documents that were ingested into {{site.data.keyword.discoveryshort}} V1 are no longer available. You can use the {{site.data.keyword.discoveryshort}} v1 instance to retrieve information from the document. {{site.data.keyword.discoveryshort}} creates a text copy of each document that it ingests. The copy is text only, so any documents in HTML, PDF, or other nontext formats are converted to a text-only version.
 
-You can recover only the first 10,000 documents in a collection by using this method.
+You can recover only the first 10,000 documents in a collection by using this method. For more information about a way to recover more than 10,000 documents, see [Recovering more than 10,000 documents from a collection](#migrate-to-v2-recover-more-docs).
 {: important}
 
 To transfer document information from v1 to v2, complete the following steps:
@@ -257,6 +257,16 @@ To transfer document information from v1 to v2, complete the following steps:
     -   Avoid fields that have reserved field names. For more information, see [How fields are handled](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-index-overview#field-name-limits).
 
 1.  Ingest each edited v1 JSON document into the {{site.data.keyword.discoveryshort}} v2 instance. The {{site.data.keyword.discoveryshort}} v1 document ID can be maintained in {{site.data.keyword.discoveryshort}} v2. For more information about how to retain the document ID, see [Retaining document IDs](#migrate-to-v2-keep-docid).
+
+### Recovering more than 10,000 documents from a collection
+{: #migrate-to-v2-recover-more-docs}
+
+A query can only return up to 10,000 documents. However, if you want to recover more than 10,000 documents from your collection, you need a way to separate the documents into non-overlapping subgroups. Each subgroup should contain fewer than 10,000 documents that can be returned by a query. Then, you can paginate through the results to retrieve the documents. 
+
+Pagination for results is restricted to the maximum of 10,000 documents that are returned by the query. Specifically, the combined use of the `count` and `offset` pagination parameters cannot exceed 10,000 documents.
+{: note}
+
+One way to separate the documents into non-overlapping subgroups is to leverage a field that exists in every document and contains a unique value. For example, the SHA-1 field contains a hash of the original source file and is formatted as a hexadecimal string value. You can use the first character of the field as a way of dividing the collection into subgroups. Because SHA-1 contains a hexadecimal value, the first character can have up of 16 possible values (0-9 or a-f). If you filter by the `first_char_of (SHA-1) == 0`, it might return approximately 1/16 of the entire collection. You can then loop through each of the possible 16 values to get the rest of the documents. If optimum number of documents are not returned in one of the subgroups, you can use the first 2 characters of the SHA-1 field to divide the collection into 256 subgroups instead.
 
 ## Transferring relevancy training
 {: #migrate-to-v2-transfer-relevance}
