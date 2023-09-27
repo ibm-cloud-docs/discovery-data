@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-09-27"
 
 subcollection: discovery-data
 
@@ -134,8 +134,6 @@ Review these tips before you begin:
 {: #entity-extractor-label-task}
 
 Label terms in the document that represent examples of the entity types you defined. When you are done with one document, switch the document status from *In progress* to *Complete*, and then move on to the next document.
-
-Only the first 40,000 characters from each document are available for labeling. 40,000 characters is approximately 20 pages.
 
 To label entity examples, complete the following steps:
 
