@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-26"
+lastupdated: "2023-09-27"
 
 keywords: backup,restore
 
@@ -31,8 +31,8 @@ The following table lists the upgrade paths that are supported by the scripts.
 |----------------|----------------------------|
 | 4.7.0 | 4.7.x |
 | 4.6.x | 4.7.x |
-| 4.5.x | 4.7.x |
-| 4.0.x | 4.7.x |
+| 4.5.x | 4.7.x except 4.7.0 |
+| 4.0.x | 4.7.x except 4.7.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
 If you are upgrading from 4.5.x to 4.7.x, a simpler way to complete the upgrade is described in the following topics:
