@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-09-28"
 
 subcollection: discovery-data
 
@@ -44,14 +44,12 @@ To group facets, complete the following steps:
 1.  From the initial search page, submit a search.
 1.  From the *Facet analysis* pane, click the *Edit* icon.
 
-    ![Facet analysis pane edit icon](images/cm-facet-edit.png){: caption="Figure 1. Facet analysis pane edit icon" caption-side="bottom"}
-
 1.  Name the group, and then select the facets that you want to group together.
 
-    ![Facet grouping dialog](images/cm-facet-group.png){: caption="Figure 2. Facet grouping dialog" caption-side="bottom"}
+    ![Facet grouping dialog](images/cm-facet-group.png){: caption="Figure 1. Facet grouping dialog" caption-side="bottom"}
 
 1.  Click **Apply**.
 
 1.  The facets that you grouped are now available from a folder with the group name. 
 
-    ![Facet folder](images/cm-facet-folder.png){: caption="Figure 3. Facet folder from the facet list" caption-side="bottom"}
+    ![Facet folder](images/cm-facet-folder.png){: caption="Figure 2. Facet folder from the facet list" caption-side="bottom"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-13"
+lastupdated: "2023-09-28"
 
 subcollection: discovery-data
 
@@ -216,8 +216,6 @@ After the annotator is created, you must apply it to your collection.
 1.  From the *Create a custom annotator for your analytics solutions* page of the Content Mining application, click **custom annotator**, and then select **collection** from the list.
 1.  In the tile for your collection, click the *options* icon, and choose **Edit collection**.
 
-    ![Collection tile overflow menu](images/cm-edit-colxn-icon.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
-
 1.  Click the **Enrichment** tab, and then select the annotator that you created. 
 
     You might need to scroll to find it.
@@ -235,4 +233,4 @@ Give the index time to rebuild.
     -   Submit an empty search to return all documents. In the *Facet analysis* pane, select the facet that you created.
     -   To access your custom facets more quickly, add them to a custom view. Select **Custom** as the view, and then click **Edit**. Select one or more facets to add to the view, and then click **Save**.
 
-        ![Custom view](images/cm-custom-view.png){: caption="Figure 2. Collection menu" caption-side="bottom"}
+        ![Custom view](images/cm-custom-view.png){: caption="Figure 1. Collection menu" caption-side="bottom"}

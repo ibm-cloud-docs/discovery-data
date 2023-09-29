@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-08-03"
+lastupdated: "2023-09-28"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -392,13 +392,9 @@ Now that we are getting more passages returned per query, it might be useful to 
 
     Add synonyms in a comma-separated list, and then click **Save term**.
 
-    ![Shows the edit dialog for the dictionary entry with synonyms that are specified for a term.](images/tut-sdu-dictionary-synonym.png){: caption="Figure 31. Synonyms are specified for a term" caption-side="bottom"}
-
 1.  Click **Save dictionary**. 
 
     You can choose a field in the document where you want the enrichment to be applied. Let's choose the `subtitle` field that was generated when we created the user-trained SDU model. From the *Fields to enrich* field, select **`subtitle`**. Click **Apply**.
-
-    ![Shows the dialog that asks where to apply the dictionary enrichment.](images/tut-sdu-dictionary-apply.png){: caption="Figure 32. Choosing where to apply the dictionary enrichment" caption-side="bottom"}
 
     The dictionary is created and each subtitle in the document is analyzed for mentions of terms or synonyms that are defined in the dictionary. Any mentions that are found are noted in the index.
 
@@ -408,29 +404,27 @@ Now that we are getting more passages returned per query, it might be useful to 
 
 1.  Click **New facet**, and then select **From existing fields in a collection**.
 
-    ![Shows the options for creating a facet.](images/tut-sdu-facet-from-field.png){: caption="Figure 33. Creating a facet" caption-side="bottom"}
-
 1.  Choose the index field that is associated with the dictionary enrichment that you applied to the `subtitle` field. From the *Field* field, select `enriched_subsection.entities.mentions.text`
 
-    ![Shows the options for the facet field.](images/tut-sdu-facet-field.png){: caption="Figure 34. Fields from which you can create a facet" caption-side="bottom"}
+    ![Shows the options for the facet field.](images/tut-sdu-facet-field.png){: caption="Figure 31. Fields from which you can create a facet" caption-side="bottom"}
 
     You might need to hover over the entries to see the full field names.
 
 1.  Add a label, such as `Dictionary terms` to the *Label* field, and then click **Apply**.
 
-    ![Shows the completed facet creation panel.](images/tut-sdu-facet-complete.png){: caption="Figure 35. Facet was created" caption-side="bottom"}
+    ![Shows the completed facet creation panel.](images/tut-sdu-facet-complete.png){: caption="Figure 32. Facet was created" caption-side="bottom"}
 
 1.  Enter `Where do muni bond trades get reported to?` as the search query.
 
     The *Dictionary terms* facet that you created is displayed along with the search results. A `Municipal Bonds` checkbox is shown, which indicates that at least one of the returned passages is extracted from a document segment with the term `Municipal Bonds` in its `subtitle` field.
 
-    ![Shows the Dictionary terms facet with a Municipal Bonds option.](images/tut-sdu-muni-bonds-facet.png){: caption="Figure 36. Dictionary term facet with a Municipal Bonds option" caption-side="bottom"}
+    ![Shows the Dictionary terms facet with a Municipal Bonds option.](images/tut-sdu-muni-bonds-facet.png){: caption="Figure 33. Dictionary term facet with a Municipal Bonds option" caption-side="bottom"}
 
 1.  To filter the results to show only passages from sections with `Municipal Bonds` in the subtitle, select the `Municipal Bonds` checkbox.
 
     The best answer is now listed as the second response instead of the third.
 
-    ![Best answer now is listed as the second result in the list](images/tut-sdu-muni-selected.png){: caption="Figure 37. Best answer is the second result" caption-side="bottom"}
+    ![Best answer now is listed as the second result in the list](images/tut-sdu-muni-selected.png){: caption="Figure 34. Best answer is the second result" caption-side="bottom"}
 
 ### Summary
 {: #tutorial-sdu-summary}

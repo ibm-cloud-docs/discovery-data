@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-09-28"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment
 
@@ -95,8 +95,6 @@ From the JSON view of the document, you can see the underlying JSON structure of
 
 If you want to search for the Organization entity type, for example, you can copy all of the JSON content into a text editor and search for `Organization`. Click the *Copy* icon from the root of the JSON tree view.
 
-![Shows the copy icon at the root of the JSON tree](images/nlu-json-root-copy.png){: caption="Figure 4. Copy icon at the root of the JSON representation of enrichments" caption-side="bottom"}
-
 ### Example
 {: #nlu-entities-example}
 
@@ -168,11 +166,11 @@ Returns important keywords in the content.
 
 For example, the following screen capture shows highlighted terms from the US Declaration of Independence that are recognized by the Keywords enrichment.
 
-![Shows the keywords that are recognized in the document text](images/nlu-rich-keywords.png){: caption="Figure 5. Terms recognized by the Keywords enrichment" caption-side="bottom"}
+![Shows the keywords that are recognized in the document text](images/nlu-rich-keywords.png){: caption="Figure 4. Terms recognized by the Keywords enrichment" caption-side="bottom"}
 
 From the JSON view of the document, you can see the underlying JSON structure of the `Declaration` keyword mention.
 
-![Shows the JSON view of keywords that are identified in the document](images/nlu-json-keywords.png){: caption="Figure 6. JSON representation of Keywords enrichment mentions" caption-side="bottom"}
+![Shows the JSON view of keywords that are identified in the document](images/nlu-json-keywords.png){: caption="Figure 5. JSON representation of Keywords enrichment mentions" caption-side="bottom"}
 
 ### Example
 {: #nlu-keywords-example}

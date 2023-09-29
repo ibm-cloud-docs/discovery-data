@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-09-28"
 
 subcollection: discovery-data
 
@@ -118,8 +118,6 @@ Before you begin labeling documents, decide whether you want to keep bulk labeli
 
 If you decide that you don't want to bulk label examples, set the **Bulk label entity examples** switch to **Off**. For more information, see [Labeling examples in bulk](#entity-extractor-bulk-label).
 
-![Shows the bulk label feature switcher.](images/ee-bulk-label-enable.png){: caption="Figure 3. Bulk labeling switcher" caption-side="bottom"}
-
 ### Labeling tips
 {: #entity-extractor-label-tips}
 
@@ -134,8 +132,6 @@ Review these tips before you begin:
 {: #entity-extractor-label-task}
 
 Label terms in the document that represent examples of the entity types you defined. When you are done with one document, switch the document status from *In progress* to *Complete*, and then move on to the next document.
-
-Only the first 40,000 characters from each document are available for labeling. 40,000 characters is approximately 20 pages.
 
 To label entity examples, complete the following steps:
 
@@ -159,7 +155,7 @@ To label entity examples, complete the following steps:
 
     The term is selected and a color label is applied to the term. The first two characters of the entity type name are shown in uppercase superscript within the label boundary. Both the 2-character ID and the label color help you to associate the example with the entity type it represents.
 
-    ![Shows that a label is applied to the word wife in a sentence.](images/wife-label.png){: caption="Figure 4. A label is applied to an entity example" caption-side="bottom"}
+    ![Shows that a label is applied to the word wife in a sentence.](images/wife-label.png){: caption="Figure 3. A label is applied to an entity example" caption-side="bottom"}
 
     The example text is also added to the *Entity types* panel. If you click the chevron to view details, you can see that the example is listed. The example text is saved in lowercase, regardless of the capitalization that is used in the original text.
     
@@ -169,11 +165,9 @@ To label entity examples, complete the following steps:
 
     When you enable this option, occurrences of the term are labeled in all of the documents in the collection, including documents that you already reviewed and marked complete.
 
-    ![Shows the notification that asks whether to apply bulk labeling to all documents.](images/ee-bulk-label-all-docs.png){: caption="Figure 5. Bulk labeling configuration" caption-side="bottom"}
-
     You are asked to confirm the action because it cannot be undone. If you don't want to have to confirm the action every time you choose to apply bulk labeling to all documents, select **Do not ask for confirmation again**. Click **Run**.
 
-    ![Shows the bulk labeling confirmation dialog box.](images/ee-bulk-label-confirmation.png){: caption="Figure 6. Bulk labeling configuration confirmation" caption-side="bottom"}
+    ![Shows the bulk labeling confirmation dialog box.](images/ee-bulk-label-confirmation.png){: caption="Figure 4. Bulk labeling configuration confirmation" caption-side="bottom"}
 
     For more information, see [Labeling examples in bulk](#entity-extractor-bulk-label).
 1.  Scroll through the document to label every valid example of every entity type that you want your extractor to recognize.
@@ -185,7 +179,7 @@ To label entity examples, complete the following steps:
 
     After you label many examples, entity example suggestions are displayed. You can accept or reject entity example suggestions.
     
-    ![Shows the prompt that is shown to ask whether you want to accept a suggestion.](images/ee-suggestion.png){: caption="Figure 7. Decide whether to accept a suggestion" caption-side="bottom"}
+    ![Shows the prompt that is shown to ask whether you want to accept a suggestion.](images/ee-suggestion.png){: caption="Figure 5. Decide whether to accept a suggestion" caption-side="bottom"}
     
     Accepting example suggestions is another way to speed up the labeling process. For more information, see [Entity example suggestions](#entity-extractor-suggestions). After you accept a suggestion, you can bulk label the term.
 
@@ -193,8 +187,6 @@ To label entity examples, complete the following steps:
 
     Hover over the labeled word until the **Delete this example** option is displayed, and then click it. You can choose to delete only this mention or all of the mentions in the document. Make a choice, and then click **Delete**.
 1.  After you label all of the entity examples in the current document, change the document status from *In progress* to **Complete**.
-
-    ![Shows the document status menu.](images/entity-extractor-mark-complete.png){: caption="Figure 8. Document status menu" caption-side="bottom"}
 
     Another document from the collection is displayed. 
 1.  Label examples of your entity types in each document in the collection. 
@@ -216,7 +208,7 @@ Did the bulk label feature miss an occurrence?
 
 Occurrences of the term are not labeled if they occur in the same phrase in which the term is already labeled. For example, the first occurrence of the term `husband` is not labeled when the bulk label feature is switched on for the second occurrence of the term in the following sentence.
 
-![Shows when an overlapping occurrence is not given a label by the bulk label feature.](images/not-bulk-labeled.png){: caption="Figure 9. Treatment of overlapping labels" caption-side="bottom"}
+![Shows when an overlapping occurrence is not given a label by the bulk label feature.](images/not-bulk-labeled.png){: caption="Figure 6. Treatment of overlapping labels" caption-side="bottom"}
 
 ### Entity example suggestions
 {: #entity-extractor-suggestions}
@@ -225,7 +217,7 @@ After you label enough examples, suggested entity type examples are displayed. T
 
 The following example shows suggestions that are made for family member mentions.
 
-![Shows suggestions for family member entities.](images/suggestions-example.png){: caption="Figure 10. Entity example suggestions" caption-side="bottom"}
+![Shows suggestions for family member entities.](images/suggestions-example.png){: caption="Figure 7. Entity example suggestions" caption-side="bottom"}
 
 You might notice that a term that you chose to bulk label is not labeled, but is displayed as a suggestion instead. A term is skipped in the following situations:
 
@@ -416,7 +408,7 @@ When the enrichment recognizes one of your custom entities in a document, an ent
 
 The following JSON output is produced by a custom model that is named *literature* that recognizes family member mentions.
 
-![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png){: caption="Figure 11. JSON representation of a custom entity mention" caption-side="bottom"}
+![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png){: caption="Figure 8. JSON representation of a custom entity mention" caption-side="bottom"}
 
 ### Monitoring performance over time
 {: #entity-extractor-history}
