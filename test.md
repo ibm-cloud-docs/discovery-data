@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-09-28"
 
 keywords: JSON, JSON representation, result JSON
 
@@ -44,8 +44,6 @@ To test your project, complete the following steps:
     [IBM Cloud]{: tag-ibm-cloud}
 
       1.  Click the *Display options* menu from the advanced view header, and then select **JSON**.
-
-          ![Shows the overflow menu options from the advanced text view.](images/gs-display-options-menu.png){: caption="Figure 1. Overflow menu options from the Advanced text view" caption-side="bottom"}
 
     [IBM Cloud Pak for Data]{: tag-cp4d}
 
