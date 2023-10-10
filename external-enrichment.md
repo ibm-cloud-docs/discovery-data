@@ -15,6 +15,8 @@ subcollection: discovery-data
 # External enrichment API
 {: #external-enrichment}
 
+[IBM Cloud]{: tag-ibm-cloud}
+
 The external enrichment is beta functionality that is only available from the API.
 {: beta}
 

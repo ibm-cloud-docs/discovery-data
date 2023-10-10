@@ -126,6 +126,7 @@ toc:
               - configuring-fields.md
               - sdu-pretrained.md
           - manage-enrichments.md
+          - external-enrichment.md
       - test.md
       - topicgroup:
           label: Querying your data programmatically
@@ -166,6 +167,7 @@ toc:
           label: Installing
           topics:
           - install.md
+          - size-cp4d.md
           - upgrade-data.md
           - topic: troubleshoot.md
             navtitle: Troubleshooting deployments
