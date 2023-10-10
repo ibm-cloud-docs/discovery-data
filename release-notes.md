@@ -25,6 +25,14 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: note}
 
 
+## 4 October 2023
+{: #discovery-4october2023}
+{: release-note}
+
+<!--4.8.1-1.1-->
+External enrichment feature to annotate documents with a model of your choice.
+:   Through a webhook interface, you can use custom models or advanced foundation models, and other third-party models for enriching your documents in a collection. For more information, see [External enrichment API](/docs/discovery-data?topic=discovery-data-external-enrichment).
+
 ## 21 September 2023
 {: #discovery-21september2023}
 {: release-note}
