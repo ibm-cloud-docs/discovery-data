@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-10-16"
 
 subcollection: discovery-data
 
@@ -147,6 +147,9 @@ The entire content of the field that you specify must match the phrase you speci
 ```
 {: codeblock}
 
+Cannot match document fields that are greater than 256 characters in length.
+{: note}
+
 ### `:!` (Does not include)
 {: #notinclude}
 
@@ -177,16 +180,29 @@ For example:
 
 Exact matches are case-sensitive.
 
+Will retrieve document fields matching the query term if the field is over 256 characters in length.
+{: note}
+
 ### `\` (Escape character)
 {: #escape}
 
-Escape character that preserves the literal value of the character that follows it. 
+Escape character that preserves the literal value of the operator that follows it. 
 
-For example, you can place an escape character before a quotation mark in query text to include the quotation mark in the query string.
+The complete list of valid escape sequences within text queries (except phrase queries):
+
+`\"`,`\\`,`\(`,`\)`,`\[`,`\]`,`\,`,`\|`,`\^`,`\~`,`\:`,`\<=`,`\>=`,`\<`,`\>`,`\:!`,`\::`,`\::!`,`\*`,`\!`
+
+For example, `message:\>=D`,`method::foo\(String\)`.
+
+Within a phrase query, the only valid escape sequence is `\"`.
+
+For example, `name:"Shane \"Rapha\" Hendrixson"`, `method::"foo(String)"`.
+
+DQL is submitted to the [Query API](https://{DomainName}/apidocs/discovery-data#query){: external} as JSON string fields, which require their own additional layer of escaping, for example:
 
 ```json
 {
-  "query":"title::Dorothy said: \"There's no place like home\""
+  "query":"name:\"Shane \\\"Rapha\\\" Hendrixson\""
 }
 ```
 {: codeblock}
