@@ -115,7 +115,7 @@ For example, the following query returns only documents that contain a field nam
 
 ```json
 {
-  "query":"quotation:There's no crying in baseball"
+  "query":"quotation:\"There's no crying in baseball\""
 }
 ```
 {: codeblock}
