@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-10-12"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -93,7 +93,7 @@ We want the search application to be able to answer questions about algorithmic 
 
     You add only one file. In a real scenario, you might upload multiple files with information about the same topic. By adding more files, you can expand the breadth of the information that your search application can leverage.
 
-The service uploads the document. As it uploads the document, {{site.data.keyword.discoveryshort}} crawls the data and indexes key information. Because you created a Document Retrieval project type, {{site.data.keyword.discoveryshort}} makes a note of the *Parts of speech* and *Entities* information that it finds and recognizes as it crawls the document.
+The service uploads the document. As it uploads the document, {{site.data.keyword.discoveryshort}} crawls the data and indexes key information. Because you created a Document Retrieval project type, {{site.data.keyword.discoveryshort}} makes a note of the *Entities* information that it finds and recognizes as it crawls the document.
 
 ## Review the document
 {: #tutorial-sdu-pdf}

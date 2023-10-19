@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-10-12"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -30,8 +30,18 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: release-note}
 
 <!--4.8.1-1.1-->
+
+Export labeled data for an entity extractor
+:   You can export the labeled data for an entity extractor for training or building large language models (LLMs). For more information, see [Exporting labeled data for an entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-export-label).
+
+Find terms that you want to label as entity examples in a document.
+:   You can now search for terms that you want to label as entity examples in a document. You can also find labeled and unlabeled entity examples, and correct any labeling inconsistencies. For more information, see [Searching for examples by using keywords](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-search).
+
 External enrichment feature to annotate documents with a model of your choice.
 :   Through a webhook interface, you can use custom models or advanced foundation models, and other third-party models for enriching your documents in a collection. For more information, see [External enrichment API](/docs/discovery-data?topic=discovery-data-external-enrichment).
+
+The *Part of Speech* enrichment is no longer available for any project types other than Content Mining
+:   The *Part of Speech* enrichment had been used for dictionary suggestion. However, dictionary suggestion has been updated and it can now work without the *Part of Speech* enrichment applied. For Content Mining projects, the *Part of Speech* enrichment is available as before.
 
 ## 21 September 2023
 {: #discovery-21september2023}

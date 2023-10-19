@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-12"
+lastupdated: "2023-10-12"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -48,7 +48,7 @@ There a few things to consider as you decide how to break up your source content
     If you store similar content in more than one type of data source (a website and Salesforce, for example), you can create one project with two separate collections. Each collection adds documents from a single data source. When they are built together into a single project, a user can search across both sources at the same time.
 -   Applying enrichments
 
-    Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, maybe a subset of your documents contains industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and apply the Parts of Speech enrichment so you can use the term suggestions feature to speed up the process of creating the dictionary.
+    Creating a collection is a good way to group documents that you want to enrich in a similar way. For example, maybe a subset of your documents contains industry jargon and you want to add a dictionary that recognizes the terms. You can create a separate collection and use the term suggestions feature to speed up the process of creating the dictionary.
 -   Creating separate Smart Document Understanding (SDU) models
 
     You can use the Smart Document Understanding tool to identify content based on the structure of a document. If you have 20 PDF files that were created by your Sales department and use one template and 20 PDF files that were created by your Research department and use a different template, group each set into its own collection. You can then use the SDU tool to build a model for each structure separately, a model that understands the unique structure. You can also use the tool to define custom fields that are unique to the source documents.

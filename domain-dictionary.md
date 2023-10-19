@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-10-12"
 
 keywords: dictionary,synonyms
 
@@ -55,7 +55,7 @@ To add dictionary terms one by one, complete the following steps:
 
     Similar terms from all of the collections in the current project are suggested as new entries.
 
-    Suggested terms are taken from the field to which the *Part of Speech* enrichment is applied. Suggestions are not displayed if the *Part of Speech* enrichment is not enabled.
+    Suggested terms are taken from a field named *text*. If the text field is missing, a field with the longest string value and highest number of distinct values is chosen. Suggestions are not displayed if there are no documents or the collection has no fields with text data.
     {: note}
 
 1.  Click **Save dictionary**.

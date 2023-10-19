@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-10-12"
 
 subcollection: discovery-data
 
@@ -144,18 +144,9 @@ To apply an enrichment by using the API, complete the following steps:
     {: note}
 
     For example, to retain the *Entities* enrichment and add the *Keywords* enrichment, you might specify the following in the request body. 
-    
-    The *Part of Speech* enrichment is included also because it is applied to all collection automatically.
-    {: note}
 
     ```json
     "enrichments": [
-      {
-        "enrichment_id": "701db916-fc83-57ab-0000-000000000002",
-        "fields": [
-          "text"
-        ]
-      },
       {
         "enrichment_id": "701db916-fc83-57ab-0000-00000000001e",
         "fields": [
