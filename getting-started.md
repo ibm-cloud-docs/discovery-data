@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-08-25"
+lastupdated: "2023-10-12"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -116,25 +116,18 @@ Learn about ways you can manage and enhance a collection by exploring the sample
 
     ![Shows the Enrichments page for the Sample Collection.](images/gs-sample-enrichments-new.png){: caption="Figure 5. Enrichments page of the Sample project" caption-side="bottom"}
 
-    The following enrichments are applied to the sample collection:
+    The *Entities* enrichment is applied to the sample collection:
 
     Entities
     :   Recognizes proper nouns such as people, cities, and organizations that are mentioned in the content.
 
-    Part of Speech
-    :   Identifies the parts of speech (nouns and verbs, for example) in the content.
-
-    These enrichments are applied automatically to collections that are added to projects of the *Document Retrieval* type.
+    This enrichment is applied automatically to collections that are added to projects of the *Document Retrieval* type.
 
 1.  For the *Entities v2* enrichment, click **1x Selected fields**.
 
     A list of available fields is displayed and the `text` field is selected. This selection means that the *Entities* enrichment was applied to content that was indexed and added to a field named `text` when documents from the collection were processed.
 
     ![Shows that the Entities enrichment is applied to the text field.](images/gs-entities-on-text.png){: caption="Figure 6. Entities enrichment being applied to the text field" caption-side="bottom"}
-
-1.  For the *Part of Speech* enrichment, click **1x Selected fields**.
-
-    Again, you can see that the enrichment is applied to the `text` field.
 
     From this page, you can apply new enrichments to your collection or change the fields where an enrichment is applied.
 

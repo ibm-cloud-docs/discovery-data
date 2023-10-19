@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-10-16"
 
 subcollection: discovery-data
 
@@ -172,6 +172,9 @@ To label entity examples, complete the following steps:
     For more information, see [Labeling examples in bulk](#entity-extractor-bulk-label).
 1.  Scroll through the document to label every valid example of every entity type that you want your extractor to recognize.
 
+    You can search for terms that you want to label as entity examples. For more information, see [Searching for examples by using keywords](#entity-extractor-search).
+    {: note}
+
     The machine learning model learns as much from the terms that you don't label as the terms that you do.
     {: important}
     
@@ -197,6 +200,41 @@ To label entity examples, complete the following steps:
     From the *Document list* panel, click **Add documents**. The option is available only when more documents are available in the collection. You can add up to 20 documents. If bulk labeling for all documents is enabled, labels are applied to the newly-added documents automatically.
 1.  After you label examples in as many documents in the collection as you want, click **Save entity extractor**, and then open the *Train extractor* page.
 
+### Searching for examples by using keywords
+{: #entity-extractor-search}
+
+Using the search feature, you can find entity examples in a document and label them easily. You can also use search to find labeled examples and unlabeled examples and correct any labeling inconsistencies. 
+
+To search by using keywords, complete the following steps:
+
+1.  On the *Label documents* view, click the *Find* icon.
+1.  In the **Find** field, specify a keyword to search in the document.
+
+    The search results from the document are displayed when you enter the keyword.
+
+    To browse the search results, you can click the *Next result* and *Previous result* icons. To choose a label for an unlabeled example in the result, click the *Edit label* icon and select a label. You can also remove a label from an already labeled example in the result by clicking the *Edit label* icon. {: note}
+
+1.  To filter the search results, click the *Show filter options* icon.
+
+    The following table describes the filter options.
+
+    | Option | Description |
+    |--------|-------------|
+    | **All** | To find all examples in a document that match the keyword. |
+    | **Labeled text** | To find existing labeled examples in a document that match the keyword. |
+    | **Unlabeled text** | To find unlabeled examples in a document that match the keyword. |
+    | **Match case** | To find examples that match both the keyword and its case. |
+    | **Whole words** | To find examples that match the word boundaries of the keyword. For example, if you specify *york* as the keyword, *yorktown* is not matched when this option is selected. |
+    {: caption="Filter options in find" caption-side="top"}
+
+For the unlabeled examples in the results, you can accept or reject a label suggestion.
+
+![Shows label suggestions to accept or reject.](images/find-accept-reject-suggestion.png){: caption="Figure 6. A label is suggested for an entity example" caption-side="bottom"}
+
+To resolve any overlapping examples, click **Review suggestions** and choose an entity example suggestion from the *Overlapping entity example suggestions* dialog box.
+
+![Shows how to resolve a suggestion conflict.](images/find-suggestion-conflict.png){: caption="Figure 7. A suggestion conflict for an entity example" caption-side="bottom"}
+
 ### Labeling examples in bulk
 {: #entity-extractor-bulk-label}
 
@@ -208,7 +246,7 @@ Did the bulk label feature miss an occurrence?
 
 Occurrences of the term are not labeled if they occur in the same phrase in which the term is already labeled. For example, the first occurrence of the term `husband` is not labeled when the bulk label feature is switched on for the second occurrence of the term in the following sentence.
 
-![Shows when an overlapping occurrence is not given a label by the bulk label feature.](images/not-bulk-labeled.png){: caption="Figure 6. Treatment of overlapping labels" caption-side="bottom"}
+![Shows when an overlapping occurrence is not given a label by the bulk label feature.](images/not-bulk-labeled.png){: caption="Figure 8. Treatment of overlapping labels" caption-side="bottom"}
 
 ### Entity example suggestions
 {: #entity-extractor-suggestions}
@@ -217,7 +255,7 @@ After you label enough examples, suggested entity type examples are displayed. T
 
 The following example shows suggestions that are made for family member mentions.
 
-![Shows suggestions for family member entities.](images/suggestions-example.png){: caption="Figure 7. Entity example suggestions" caption-side="bottom"}
+![Shows suggestions for family member entities.](images/suggestions-example.png){: caption="Figure 9. Entity example suggestions" caption-side="bottom"}
 
 You might notice that a term that you chose to bulk label is not labeled, but is displayed as a suggestion instead. A term is skipped in the following situations:
 
@@ -226,6 +264,22 @@ You might notice that a term that you chose to bulk label is not labeled, but is
 -   The service might recognize that a term is a possible example of more than one entity type. For example, the word `top` might mean *the best* or might mean *shirt*.
 
 To investigate a suggestion further, click it to see the word in context within the document. Seeing the term in context helps you to decide whether the occurrence is a valid entity example for you to label.
+
+### Exporting labeled data for an entity extractor
+{: #entity-extractor-export-label}
+
+You can export the labeled data for an entity extractor from {{site.data.keyword.discoveryshort}}. You can use the exported labeled data for training or building large language models (LLMs) on a service such as {{site.data.keyword.DSX_short}} and Natural Language Processing (NLP).
+
+To export the labeled data, complete the following steps:
+
+1.  From the *Improvement tools* panel of the *Improve and customize* page, expand *Teach domain concepts*, and then click *Extract entities*.
+
+1.  For the entity extractor from which you want to export labeled data, click the *Actions* icon, and then select **Download labeled data**.
+
+    A compressed file is downloaded with labeled data. The compressed file contains the following JSON files.
+
+    -   `labeled_data.json`: Includes the text and labels. The data format is based on the input data format for entity extraction in Watson Natural Language Processing. For more information, see [Input data format](https://www.ibm.com/docs/en/watsonx-as-a-service?topic=models-detecting-entities-custom-transformer-model#input-data-format){: external}.
+    -   `metadata.json`: Includes metadata for the workspace and labeled data.
 
 ## Importing a {{site.data.keyword.knowledgestudioshort}} corpus
 {: #entity-extractor-import-wks}
@@ -408,7 +462,7 @@ When the enrichment recognizes one of your custom entities in a document, an ent
 
 The following JSON output is produced by a custom model that is named *literature* that recognizes family member mentions.
 
-![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png){: caption="Figure 8. JSON representation of a custom entity mention" caption-side="bottom"}
+![Shows the JSON output of a document with a custom entity mention.](images/json-literature.png){: caption="Figure 10. JSON representation of a custom entity mention" caption-side="bottom"}
 
 ### Monitoring performance over time
 {: #entity-extractor-history}
