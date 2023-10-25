@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-25"
 
 keywords: external-enrichment,webhook
 
@@ -59,7 +59,7 @@ For using the external enrichment feature, do the following things:
 ## External enrichment limits
 {: #external-enrichment-limits}
 
-| Plan | Maximum amount of webhook enrichment | Maximum amount of webhook enrichment |
+| Plan | Maximum amount of webhook enrichment per collection | Maximum amount of webhook enrichment per tenant |
 |---------|-----------------------|----------------------|
 | Enterprise | 1 | 100 |
 | Plus | 1 | 10 |
