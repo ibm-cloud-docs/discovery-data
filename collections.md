@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-11-10"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -114,7 +114,7 @@ For a list of files types where you can apply OCR, see the [Supported file types
 This feature is available from {{site.data.keyword.icp4dfull_notm}} deployments only. It was introduced with the 4.7.0 release.
 {: note}
 
-You can configure {{site.data.keyword.discoveryshort}} to use stemming instead of lemmatization for normalization when you create a collection. This configuration is only occasionally useful when a collection contains data with many misspellings, missing accent marks, and grammatical errors.
+You can configure {{site.data.keyword.discoveryshort}} to use stemming instead of lemmatization for normalization when you create a collection.  This configuration is only occasionally useful when collections, queries, or both contain data with many misspellings, missing accent marks, and grammatical errors.
 
 {{site.data.keyword.discoveryshort}} normalizes words to enable faster recognition and matching of words and their various forms, such as plurals or alternative verb conjugations. By default, {{site.data.keyword.discoveryshort}} uses lemmatization to normalize words based on their meaning. Stemming normalizes words by using word stems only.
 
