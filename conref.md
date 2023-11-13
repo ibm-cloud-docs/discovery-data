@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-10-09"
 
 subcollection: discovery-data
 
@@ -59,7 +59,7 @@ Some prebuilt enrichments are applied automatically to collections in a project 
 | Contracts | | ![checkmark icon](../icons/checkmark-icon.svg) | | |
 | Entities | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | | |
 | Keywords | | | | |
-| Part of Speech | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) | ![checkmark icon](../icons/checkmark-icon.svg) |
+| Part of Speech |  |  |  | ![checkmark icon](../icons/checkmark-icon.svg) |
 | Sentiment of Document | | | | |
 | Table Understanding | | ![checkmark icon](../icons/checkmark-icon.svg) | | |
 {: row-headers}
@@ -74,9 +74,9 @@ Some enrichments and query result settings are applied to each project type by d
 
 | Project type | Default enrichments | Default query result settings |
 |--------------|---------------------|-------------------------------|
-| Document Retrieval | Entities, Part of Speech | Facets (by Entity), Passages |
-| Document Retrieval for Contracts | Entities, Parts of speech, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
-| Conversational Search | Part of Speech | Passages |
+| Document Retrieval | Entities | Facets (by Entity), Passages |
+| Document Retrieval for Contracts | Entities, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
+| Conversational Search | None | Passages |
 | Content Mining | Part of Speech | None |
 | Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
