@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-13"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -37,6 +37,8 @@ You can add data to your project in the following ways:
 -   To automate the process of adding data to your project, use the {{site.data.keyword.discoveryshort}} APIs to create a collection and upload documents to it.
 
 When you add documents to {{site.data.keyword.discoveryshort}}, the original documents are crawled and information from the documents is stored in an index so that it can be enriched and analyzed or retrieved later. Not all rich content from the original document is retained. For example, images from .ppt or .doc files are not stored. For more information, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).
+
+After you create a collection, you can click **Preview data** to preview data in the advanced document view.
 
 ## Choosing what to add to a collection
 {: #createcollection-why}
@@ -114,7 +116,7 @@ For a list of files types where you can apply OCR, see the [Supported file types
 This feature is available from {{site.data.keyword.icp4dfull_notm}} deployments only. It was introduced with the 4.7.0 release.
 {: note}
 
-You can configure {{site.data.keyword.discoveryshort}} to use stemming instead of lemmatization for normalization when you create a collection.  This configuration is only occasionally useful when collections, queries, or both contain data with many misspellings, missing accent marks, and grammatical errors.
+You can configure {{site.data.keyword.discoveryshort}} to use stemming instead of lemmatization for normalization when you create a collection. This configuration is only occasionally useful when collections, queries, or both contain data with many misspellings, missing accent marks, and grammatical errors.
 
 {{site.data.keyword.discoveryshort}} normalizes words to enable faster recognition and matching of words and their various forms, such as plurals or alternative verb conjugations. By default, {{site.data.keyword.discoveryshort}} uses lemmatization to normalize words based on their meaning. Stemming normalizes words by using word stems only.
 
