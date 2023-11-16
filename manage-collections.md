@@ -32,7 +32,10 @@ After you create a collection and the documents in the collection are indexed, y
 1.  Click to open the collection that you want to change.
 1.  Click the **Manage data** tab.
 
-    A list of the documents in the collection is displayed. To preview a document in the collection in the advanced document view, click **Preview data**.
+    A list of the documents in the collection is displayed.
+    
+    [IBM Cloud]{: tag-ibm-cloud}
+    To preview a document in the collection in the advanced document view, click **Preview data**.
 
 1.  **Optional**: You can change the information that is displayed.
 

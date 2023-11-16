@@ -38,6 +38,7 @@ You can add data to your project in the following ways:
 
 When you add documents to {{site.data.keyword.discoveryshort}}, the original documents are crawled and information from the documents is stored in an index so that it can be enriched and analyzed or retrieved later. Not all rich content from the original document is retained. For example, images from .ppt or .doc files are not stored. For more information, see [How your data source is processed](/docs/discovery-data?topic=discovery-data-index-overview).
 
+[IBM Cloud]{: tag-ibm-cloud}
 After you create a collection, you can click **Preview data** to preview data in the advanced document view.
 
 ## Choosing what to add to a collection
