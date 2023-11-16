@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-10-12"
+lastupdated: "2023-11-13"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,6 +24,14 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## 7 November 2023
+{: #discovery-7november2023}
+{: release-note}
+
+<!--4.8.1-3.0-->
+
+Preview data for collections
+:   You can preview a document in a collection. To preview data in the advanced document view, navigate to the *Manage collections* page, and click **Preview data** in the collection tile. Alternatively, you can open a collection that you want to preview, and click **Preview data**.
 
 ## 4 October 2023
 {: #discovery-4october2023}
