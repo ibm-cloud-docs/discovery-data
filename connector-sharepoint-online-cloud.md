@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-11-27"
 
 subcollection: discovery-data
 
@@ -229,7 +229,7 @@ To configure the Microsoft SharePoint Online data source, complete the following
 
 1.  If you want to limit the types of files to add to the collection, you can list the file extensions for file types to either include or exclude.
 
-    When you choose to list extensions for file types to exclude, you must add at least one file extension.
+    When you choose to list extensions for file types to exclude, you must add at least one file extension. The *Extension filter* is applicable to SharePoint *Document Libraries* and *List Item Attachments* objects only.
     {: important}
 
     For a list of supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
