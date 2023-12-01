@@ -47,6 +47,7 @@ toc:
       topics:
       - tutorial-assistant-fred.md
       - tutorial-sdu.md
+      - tutorial-external-enrichment.md
   - navgroup:
       id: howto
       topics:
