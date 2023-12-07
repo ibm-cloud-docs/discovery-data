@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-29"
+lastupdated: "2023-12-07"
 
 subcollection: discovery-data
 
@@ -60,6 +60,9 @@ Avoid field names that meet the following conditions. Field names with these res
 - Start with the characters `_`, `+`, and `-`. For example, `+extracted-content`.
 - Contain the characters `.`, `,`, `#`, `?`, `(`, `)`, or `:` or spaces. For example, `extracted content` or `new:extracted-content`.
 - End with numbers, for example, `extracted-content2`.
+
+To process documents in {{site.data.keyword.discoveryshort}}, all documents in a collection must have the same data-type for a particular field. When a data-type of a particular field varies among documents, the field indexing process fails and a failed to index error message is displayed in the *Warnings and errors at a glance* section of the *Activity* page for the collection.
+{: note}
 
 ### HTML fields
 {: #field-html}
