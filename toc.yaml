@@ -109,6 +109,7 @@ toc:
               topics:
               - domain-dictionary.md
               - entity-extractor.md
+              - sentence-classifier.md
               - domain-ml.md
           - topicgroup:
               label: Identify terms by pattern
