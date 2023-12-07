@@ -25,7 +25,7 @@ Sentence classification uses a machine learning model that classifies sentences 
 ## Before you begin
 {: #sentence-classifier-prereq}
 
-Find or create a collection with documents having various sentence examples that you want Discovery to learn about. To teach the sentence classifier, you must label examples of sentence classes. You can only label examples if your collection contains valid examples. Try to find documents that have many and varying sentences that function as examples of every sentence class that you want to define.
+Find or create a collection with documents having various sentence examples that you want {{site.data.keyword.discoveryshort}} to learn about. To teach the sentence classifier, you must label examples of sentence classes. You can only label examples if your collection contains valid examples. Try to find documents that have many and varying sentences that function as examples of every sentence class that you want to define.
 
 ## Adding a sentence classifier
 {: #sentence-classifier-add}
@@ -49,7 +49,7 @@ To add a sentence classifier, complete the following steps:
 
 1.  Click **Create**.
 
-A document from the collection that you selected is displayed in the *Label documents* view. You will label occurrences of the sentence classes that you want Discovery to recognize from this and other documents in the collection.
+A document from the collection that you selected is displayed in the *Label documents* view. You will label occurrences of the sentence classes that you want {{site.data.keyword.discoveryshort}} to recognize from this and other documents in the collection.
 
 If no text is displayed in the body of the page, start over now by creating a new sentence classifier. This time, when you select a value for the *Document body* field, be sure to choose a field from your processed documents that contains text.
 {: tip}
@@ -224,7 +224,7 @@ To train the classifier, complete the following steps:
 
 1.  Click **Train classifier**.
 
-    When you train the classifier, Discovery uses sentences from the training set to build a machine learning model. The results of the test are displayed for you to review in the *Evaluate classifier* view.
+    When you train the classifier, {{site.data.keyword.discoveryshort}} uses sentences from the training set to build a machine learning model. The results of the test are displayed for you to review in the *Evaluate classifier* view.
 
 ### Document sets for training
 {: #sentence-classifier-doc-set}
