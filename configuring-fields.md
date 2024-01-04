@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2024-01-02"
 
 keywords: smart document understanding,sdu
 
@@ -198,6 +198,9 @@ The fields are arbitrary. You can apply the `image` field to every title in the 
 {: #import}
 
 After you define a model with the SDU tool, you can save it and reuse it in other collections by exporting it from one collection and importing it to another.
+
+Importing a new model overwrites the existing model in a collection. If the existing model is already trained such as through custom field labels and annotations, then importing a new model affects the collection and can result in data loss.
+{: note}
 
 To reuse a model, complete the following steps:
 
