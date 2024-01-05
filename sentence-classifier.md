@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-12-07"
+lastupdated: "2024-01-04"
 
 subcollection: discovery-data
 
@@ -429,6 +429,40 @@ Removing a sentence classifier enrichment does not remove its workspace.
 1.  Find the sentence classifier workspace that you want to delete, click the *Actions* icon, and then select **Delete**.
 
 Removing a sentence classifier workspace does not remove the enrichment published from the workspace.
+
+## Using the APIs for sentence classifier
+{: #sentence-classifier-api}
+
+The sentence classifier API is beta functionality.
+{: beta}
+
+You can use the APIs for applying sentence classifier enrichment to your documents. Using the APIs, you can create a sentence classifier enrichment, and also manage the enrichment such as updating and deleting it.
+
+For using the sentence classifier APIs, do the following things:
+
+1.  Create a sentence classifier enrichment using the `create an enrichment` method in the API.
+
+    For more information about creating the enrichment, see [Create an enrichment](https://{DomainName}/apidocs/discovery-data#createenrichment){: external} in the API reference.
+
+    You must specify the labeled data to train the sentence classifier model when you create the sentence classifier enrichment. The labeled data must be in the following CSV format:
+
+    ```bash
+    "sentence1", class-label1, class-label2
+    "sentence2", class-label3
+    "sentence3", ...
+    ...
+    ```
+    {: codeblock}
+
+    Each row is a sentence followed by a comma-separated list of zero or more sentence class labels that are associated with the sentence.
+
+    As a best practice, each sentence class label in the CSV file should be represented by at least 100 sentences to achieve sentence classification of reasonable quality. Sentences that are associated with a sentence class label are considered as positive examples of that sentence class. Sentences that are not associated with a sentence class label are considered as negative examples of that sentence class.
+    {: note}
+
+    After the sentence classifier enrichment is successfully created, navigate to the *Manage collections* page, choose the collection, and then open the **Enrichments** tab. You can find the sentence classifier enrichment in the list of available enrichments.
+
+    After the sentence classifier enrichment **Status** is ready, you can apply the sentence classifier enrichment to the documents in your collection.
+1.  Apply the sentence classifier enrichment that you have created to the fields (text or html) in your documents to classify sentences. For more information about applying an enrichment and managing the enrichment using APIs, see [Using the API to manage enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).
 
 ## Sentence classifier limits
 {: #sentence-classifier-limits}
