@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-11-22"
 
 subcollection: discovery-data
 
@@ -73,6 +73,11 @@ You cannot subsequently download files that you add to {{site.data.keyword.disco
 {: note}
 
 For information about resources that are created with the Content Mining application, see [Content Mining resources](#cm-resources).
+
+### Sentence classifier enrichments
+{: #backup-sentence-classifier}
+
+To back up sentence classifier models that were created from the sentence labeling UI, download the models and store them locally. A model must be fully trained before it can be downloaded. For more information, see [Downloading the sentence classifier model](/docs/discovery-data?topic=discovery-data-sentence-classifier#sentence-classifier-download).
 
 ### Ingested documents
 {: #backupdocs}
@@ -194,6 +199,13 @@ After you set up your projects and collections as they were before, begin ingest
 
 -   The [API](https://{DomainName}/apidocs/discovery-data#adddocument){: external}
 -   A [connector](/docs/discovery-data?topic=discovery-data-sources)
+
+### Restoring sentence classifiers
+{: #restore-sentence-classifier}
+
+To restore a sentence classifier model that was created from the sentence labeling UI, import the exported .sc file to create a new machine learning model. You cannot open the exported model in the sentence labeling UI to continue working with it. However, you can import a finished model and apply it to collections as a sentence classifier enrichment.
+
+For more information about how to import a sentence classifier model to create a machine learning enrichment, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml).
 
 ### Restoring training data
 {: #restoretraining}
