@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-03-30"
+  years: 2021, 2024
+lastupdated: "2024-01-15"
 
 keywords: IBM, activity tracker, event, security, IBM Cloud Activity Tracker
 
@@ -69,10 +69,15 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.document.update`        | Update one document by ingesting new or modified content for a document given a document ID, or by changing the label for a specified document ID. |
 | `discovery.document-annotation.read` | Read document annotations. |
 | `discovery.document-results.read`  | Search collections for relevant documents. |
+| `discovery.enrichment.create` | Create an enrichment. |
+| `discovery.enrichment.delete` | Delete an enrichment. |
+| `discovery.enrichment.read` | Read an enrichment. |
+| `discovery.enrichment.update` | Update an enrichment. |
 | `discovery.entity-extractor.create` | Create an entity extractor. |
 | `discovery.entity-extractor.delete` | Delete an entity extractor. |
 | `discovery.entity-extractor.read` | Read an entity extractor. |
 | `discovery.entity-extractor.update` | Update an entity extractor. |
+| `discovery.entity-extractor.download` | Download an entity extractor model or labeled data. |
 | `discovery.event.create`           | Add a click event to a query. |
 | `discovery.expansions.create` | Add synonyms to a collection. |
 | `discovery.expansions.delete` | Delete synonyms from a collection. |
@@ -95,6 +100,11 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.project.create` | Create a project. |
 | `discovery.project.delete` | Delete a project. |
 | `discovery.project-notices.read` | Get notices for a project. |
+| `discovery.sentence-labeling.create` | Create a sentence labeling workspace. |
+| `discovery.sentence-labeling.delete` | Delete a sentence labeling workspace. |
+| `discovery.sentence-labeling.read` | Read a sentence labeling workspace. |
+| `discovery.sentence-labeling.update` | Update a sentence labeling workspace. |
+| `discovery.sentence-labeling.download` | Download a sentence classifier model or labeled data. |
 | `discovery.stopwords.create` | Add stopwords to a collection. |
 | `discovery.stopwords.delete` | Delete stopwords from a collection. |
 | `discovery.stopwords.read`   | Get stopwords for a collection. |
