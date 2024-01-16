@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-25"
+  years: 2019, 2024
+lastupdated: "2024-01-15"
 
 keywords: external-enrichment,webhook
 
@@ -63,7 +63,7 @@ For using the external enrichment feature, do the following things:
 |---------|-----------------------|----------------------|
 | Enterprise | 1 | 100 |
 | Plus | 1 | 10 |
-| Premium | Not available | Not available |
+| Premium | 1 | 100 |
 {: caption="External enrichment limits" caption-side="top"}
 
 ## Binary attachment from the pull batches method

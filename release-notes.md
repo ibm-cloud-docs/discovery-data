@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-11-13"
+  years: 2019, 2024
+lastupdated: "2024-01-15"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,18 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 16 November 2023
+{: #discovery-16november2023}
+{: release-note}
+
+<!--4.8.1-3.0-->
+
+APIs for get collection details, list documents, and get document details are now supported in Premium plans of IBM-Cloud managed instances
+:   In Premium plans, the APIs are supported for collections that are created after 16 November 2023.
+If you want to get information about a collection that was created earlier, trigger a process that runs the conversion step of ingestion on the documents. For example, you can enable the APIs by making changes in the *Identify fields*, *Manage fields*, *CSV settings*, or *Processing settings* (such as OCR settings) pages, or by applying a Smart Document Understanding model to the older collection.
+
+   For more information about the new API, see the [API reference documentation](/apidocs/discovery-data#listdocuments){: external}.
 
 ## 7 November 2023
 {: #discovery-7november2023}
