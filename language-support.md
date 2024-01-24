@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-07-26"
+  years: 2019, 2024
+lastupdated: "2024-01-23"
 
 subcollection: discovery-data
 
@@ -35,7 +35,7 @@ The following table describes the product features that are supported in each la
 | Finnish (`fi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 | French (`fr`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v2, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 | German (`de`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v2, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
-| Hebrew (`he`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v2 (Cloud-managed), Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding |
+| Hebrew (`he`) | Classifier (Document and Text), Custom entities, Dictionary, Optical character recognition v2, Parts of speech, Regular expressions, Smart Document Understanding, Table Understanding. The optical character recognition (OCR) feature for Hebrew language text in images is a beta feature in {{site.data.keyword.discoveryshort}}. For more information, see [Release notes for {{site.data.keyword.discoveryshort}} for IBM Cloud](/docs/discovery-data?topic=discovery-data-release-notes#discovery-4october2023). |
 | Hindi (`hi`) | Classifier (Document and Text), Custom entities, Dictionary, Parts of speech, Regular expressions, Stemmer |
 | Italian (`it`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Regular expressions, Smart Document Understanding, Stemmer, Table Understanding |
 | Japanese (`ja`) | Advanced rules models, Built-in entities, Classifier (Document and Text), Custom entities, Dictionary, Document sentiment, Keywords, Machine Learning, Optical character recognition v1, Parts of speech, Phrase sentiment, Regular expressions, Smart Document Understanding, Table Understanding |
