@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-15"
+lastupdated: "2024-01-23"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -50,6 +50,15 @@ Preview data for collections
 {: release-note}
 
 <!--4.8.1-1.1-->
+
+The optical character recognition (OCR) feature for Hebrew language text in images is a beta feature in {{site.data.keyword.discoveryshort}}
+:   When OCR is enabled, text extraction and OCR-identified text extraction have limitations for the Hebrew language. These limitations might include the following:
+
+    -   Inaccurate word order for plain text extraction
+    -   Extracted content in the text and html formats present the text in different word order
+    -   Punctuation and newlines are placed incorrectly in the text
+    -   Text order within a word is reversed depending on the collection settings
+    -   Missing text, text ordered incorrectly, or both might occur when a page contains plain text and image text.
 
 Export labeled data for an entity extractor
 :   You can export the labeled data for an entity extractor for training or building large language models (LLMs). For more information, see [Exporting labeled data for an entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-export-label).
