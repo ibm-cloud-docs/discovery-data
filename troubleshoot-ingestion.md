@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-06-28"
+  years: 2020, 2024
+lastupdated: "2024-01-22"
 
 subcollection: discovery-data
 
@@ -18,6 +18,104 @@ Learn about solutions and workarounds to warnings or errors that you might encou
 
 This information applies both to managed and installed instances of {{site.data.keyword.discoveryshort}}. For more troubleshooting tips for installed deployments only, see [Troubleshooting {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} deployments](/docs/discovery-data?topic=discovery-data-troubleshoot).
 {: note}
+
+Documents fail to index with a mapper parsing exception error
+:    {{site.data.keyword.discoveryshort}} provides a rich set of query and aggregation functions for all supported field types such as `nested`, `string`, `date`, `long`, `integer`, `short`, `byte`, `double`, `float`, `boolean`, and `binary`. To support the functions and remain schema-less, collections in {{site.data.keyword.discoveryshort}} automatically detect a field data type when the field's data is first parsed during an add or update document process.
+
+    Consider that the following document is first ingested to a collection.
+    
+   ```json
+    {
+    "foo": "lorem ipsum",
+    "bar": 12345,
+    "baz": "2024-01-01"
+    }
+    ```
+    {: codeblock}
+
+    The automatically detected field data types for the first document are shown in the following response of the `List fields` method. For more information, see [List fields](https://{DomainName}/apidocs/discovery-data#listfields){: external} in the API reference. 
+
+    ```json
+    {
+        "fields": [
+            {
+              "field": "foo",
+              "collection_id": "6537819f-8a3d-de55-0000-018d199c9c1e",
+              "type": "string"
+            },
+            {
+              "field": "bar",
+              "collection_id": "6537819f-8a3d-de55-0000-018d199c9c1e",
+              "type": "double"
+            },
+            {
+              "field": "baz",
+              "collection_id": "6537819f-8a3d-de55-0000-018d199c9c1e",
+              "type": "date"
+            },
+            ...
+        ]
+    }
+    ```
+    {: codeblock}
+
+    Now, when subsequent documents are added to the collection, they must have field data that is supported by each automatically detected field type from the first document, or must not have that field at all. If a subsequent document contains field data that is not supported by the respective field type, then {{site.data.keyword.discoveryshort}} fails to index the entire document and a `mapper_parsing_exception` error occurs.
+
+    For example, consider that the following second document is next ingested to the same collection:
+
+    ```json
+    {
+    "foo": "dolor sit amet",
+    "bar": 67890,
+    "baz": "consectetur adipiscing elit"
+    }
+    ```
+    {: codeblock}
+
+    Ingesting the second document fails because the `baz` field contains field data (`consectetur adipiscing elit`) that cannot be parsed as `date`, which is the automatically detected field type for the `baz` field from the first document ingestion process. The unsupported field data for the `baz` field results in the following `mapper parsing exception` error.
+
+    ```json
+    {
+      "severity": "error",
+      "created": "2024-01-17T23:05:30.968Z",
+      "description": "Failed to index. type=\"mapper_parsing_exception\", reason=\"failed to parse field [baz] of type [date] in document with id 'b326428e0ce9a2e829327d393b14d76f'. \"",
+      "step": "indexing",
+      "document_id": "b326428e0ce9a2e829327d393b14d76f",
+      "customer_id": "",
+      "notice_id": "index_failed_elastic_return_error"
+    }
+    ```
+    {: codeblock}
+
+    To resolve this error, plan to ingest documents in a sequence that sets the automatically detected field types to more permissive field types such as `string`.
+
+    To add both the first document and second document in the examples to the same collection, you must set the `baz` field data type to the more permissive `string` field type. To do so, you can reverse the order in which the documents are ingested to the collection. So, when the collection first parses the `baz` field, the field type is automatically detected as `string`. In general, the `string` field type accepts any data format.
+
+    Alternatively, navigate to the **Manage fields** page. To access the **Manage fields** page, click the **Manage collections** icon in the navigation panel, open the collection, and then click the **Manage fields** tab. You can change the field type of top-level fields to more permissive types such as `string` in the **Manage fields** page and then reprocess the collection. If the field type is already selected as `string`, choose a different field type and select `string` again, then click **Apply changes and reprocess**.
+
+    For example, the following image shows the field type for the `baz` field.
+
+    ![Shows the Manage fields page.](images/string-type.png){: caption="Figure 1. Manage fields page" caption-side="bottom"}
+
+    After applying changes and allowing the collection time to reprocess, you can ingest the second document in the example successfully to the same collection. For example, the following response from the `Get document details` method shows that the second document is ingested successfully. For more information, see [Get document details](https://{DomainName}/apidocs/discovery-data#getdocument){: external} in the API reference. 
+
+    ```json
+    {
+      "document_id": "b326428e0ce9a2e829327d393b14d76f",
+      "created": "2024-01-17T23:04:00.411Z",
+      "updated": "2024-01-18T00:00:36.158Z",
+      "status": "available",
+      "notices": [],
+      "children": {
+        "count": 0,
+        "have_notices": false
+      },
+      "filename": "second.json",
+      "file_type": "json",
+      "sha256": "ba280879c7c30885478563ee14e0fbb23186eaeecdf5d554c7f50efd9bab4a35"
+    }
+    ```
+    {: codeblock}
 
 Unable to process one or more documents
 :    This notification is displayed in the page header when a processing delay of any kind occurs in any project across the entire service instance. If the message is displayed while you are adding data to a collection, you can ignore it. If any problems occur that are related to the creation of your collection, a message is displayed in the *Activity* page for the collection. Check there for any pertinent messages.
