@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-16"
+  years: 2019, 2024
+lastupdated: "2024-02-01"
 
 subcollection: discovery-data
 
@@ -367,8 +367,8 @@ The following table describes the available evaluation metrics.
 |--------|-------------|
 | Confusion matrix | A table that provides a detailed numeric breakdown of annotated document sets. Use it to compare entity type mentions that are labeled by the machine learning model to entity type mentions that are labeled in the training data. |
 | F1 Score | Measures whether the optimal balance between precision and recall is reached. The F1 score can be interpreted as a weighted average of the precision and recall values. An F1 score reaches its best value at 1 and worst value at 0. Overall scores are lower if the model doesn't have enough training data to learn from. |
-| Precision | Measures how many of the overall extracted mentions are classified as the correct entity type. A false positive is when an entity label is incorrect, but was predicted to be correct (Predicted = Positive, Actual = Negative). False positives typically mean low precision. |
-| Recall | Measures how often entity type mentions that should be extracted are extracted. A false negative is when an entity type label is correct, but was predicted to be incorrect (Predicted = Negative, Actual = Positive). False negatives typically mean low recall. |
+| Precision | Measures how many of the overall extracted mentions are classified as the correct entity type. A false positive is when an entity should not be extracted, but was extracted(Predicted = Positive, Actual = Negative). False positives typically mean low precision. |
+| Recall | Measures how often entity type mentions that should be extracted are extracted. A false negative is when an entity type should be extracted, but was not extracted (Predicted = Negative, Actual = Positive). False negatives typically mean low recall. |
 {: caption="Metrics details" caption-side="top"}
 
 1.  Review the metrics that are provided about the extractor model test run to determine whether more training is needed.
