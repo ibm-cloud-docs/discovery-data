@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-22"
+lastupdated: "2024-02-02"
 
 subcollection: discovery-data
 
@@ -141,6 +141,10 @@ After applying a pretrained Smart Document Understanding model to a PPT file, ta
 
 ## PDF file troubleshooting tips
 {: #upload-data-ts-pdf}
+
+Unexpected characters are displayed in the advanced document view after ingesting PDFs exported from Word
+:    If you export PDFs from Microsoft Word, and then ingest these PDFs, certain characters such as `tt` and `ti` in the PDFs are replaced with unexpected characters when you view using the **Text** option in the advanced document view.
+To resolve this issue, ingest the original Word documents instead of the exported PDFs.
 
 Failed to parse document due to invalid encoding
 :    Enable OCR for the file.
