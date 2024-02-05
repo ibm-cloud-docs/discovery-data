@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-12-14"
+  years: 2019, 2024
+lastupdated: "2024-02-05"
 
 keywords: discovery release notes,discovery cloud pak for data release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,7 +24,7 @@ Learn about features and changes that were included for each release and update 
 This information applies only to instances of {{site.data.keyword.discoveryfull}} that are installed on {{site.data.keyword.icp4dfull}}. For information about releases and updates for managed deployments, see [Release notes for Watson Discovery for {{site.data.keyword.cloud_notm}}](/docs/discovery-data?topic=discovery-data-release-notes).
 {: note}
 
-For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.6.x?topic=issues-watson-discovery){: external}.
+For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=limitations-watson-discovery){: external}.
 
 ## {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.icp4dfull_notm}} deprecation announcement
 {: #wks-on-cp4d-deprecation}
