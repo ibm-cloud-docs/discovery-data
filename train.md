@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-06-08"
+  years: 2019, 2024
+lastupdated: "2024-02-08"
 
 subcollection: discovery-data
 
@@ -150,6 +150,17 @@ The following limits apply to relevancy training models:
 -    One model per project
 -    10,000 queries per model
 -    40 models per service instance for Enterprise and Premium plans; 20 models for Plus plan instances
+
+## Running optimal training sessions
+{: #optimal-training-sessions}
+
+The following example describes how to optimally run sessions for relevancy training in projects.
+
+Consider that you added 100 training queries to a new project, and {{site.data.keyword.discoveryshort}} runs 100 queries in one training session to create a ranker model. Later, if you add another 20 queries, the model starts to retrain and {{site.data.keyword.discoveryshort}} runs a total of 120 queries. However, for adding the last 20 queries, if you add 10 queries first, wait for an hour or so, and then add the next 10 queries, {{site.data.keyword.discoveryshort}} trains the model twice. In this case, the first training session runs 110 queries, and the second training session runs 120 queries. This way of adding queries, interspersed between time gaps, results in an increased number of training sessions and total queries run by {{site.data.keyword.discoveryshort}}.
+
+Instead, to minimize the number of training sessions, you can use the Update a training query API. The API method updates the training data for multiple collections under one project at once. For more information, see [Update a training query](https://{DomainName}/apidocs/discovery-data#updatetrainingquery){: external} in the API reference.
+
+To reduce the processing load on {{site.data.keyword.discoveryshort}}, you should create or update a ranker model through relevancy training after all the collections in a project have completed processing documents. Also, during the ranker model training process, you should have low query activities so that the limit of concurrent requests does not exceed.
 
 ## Other ways to improve relevancy
 {: #train-alternatives}
