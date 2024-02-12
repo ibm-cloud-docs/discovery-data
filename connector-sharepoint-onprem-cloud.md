@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-03-09"
+  years: 2015, 2024
+lastupdated: "2024-02-01"
 
 subcollection: discovery-data
 
@@ -77,7 +77,7 @@ To configure the Microsoft SharePoint On Prem data source, complete the followin
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **SharePoint On Prem**, and then click **Next**.
+1.  Click the link next to the **Need to connect to a data source**? field, click **SharePoint On Prem**, and then click **Next**.
 1.  Add values to the following fields:
 
     -   Username

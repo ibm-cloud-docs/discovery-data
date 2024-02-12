@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-12-15"
+  years: 2015, 2024
+lastupdated: "2024-02-01"
 
 subcollection: discovery-data
 
@@ -178,7 +178,7 @@ To configure the Microsoft SharePoint Online data source, complete the following
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **SharePoint Online**, and then click **Next**.
+1.  Click the link next to the **Need to connect to a data source**? field, click **SharePoint Online**, and then click **Next**.
 1.  Add a URL to the **Organization URL** field.
 1.  To enable access to your external data source, choose the method that you want to use to authenticate with the data source from the following options:
 
