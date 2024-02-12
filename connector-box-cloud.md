@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-04-24"
+  years: 2015, 2024
+lastupdated: "2024-02-01"
 
 subcollection: discovery-data
 
@@ -113,7 +113,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **Box**, and then click **Next**.
+1.  Click the link next to the **Need to connect to a data source**? field, click **Box**, and then click **Next**.
 1.  Refer to the values from the Box app settings JSON file that you downloaded during the previous procedure to complete the following fields:
 
     Client ID

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-02-01"
+  years: 2019, 2024
+lastupdated: "2024-02-01"
 
 keywords: upload,one-time upload,add document,add files
 
@@ -30,24 +30,54 @@ Before you upload a CSV file to a Content Mining project, consider adding header
 To upload data, complete the following steps:
 
 1.  Open your project, go to the **Manage collections** page, and then click **New collection**.
-1.  Choose **Upload data** as your data source, and then click **Next**.
-1.  Name the collection.
-1.  If the language of the documents in storage is not English, select the appropriate language.
+1.  Do the following based on your deployement type:
 
-    For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+    [IBM Cloud Pak for Data]{: tag-cp4d}
+    1.  Choose Upload data as your data source and then click Next.
 
-1.  Optionally, click **More processing settings** to expand the menu, and then click **Apply optical character recognition (OCR)**.
+        You can also connect to a different data source instead of uploading data such as reusing data from a collection or crawling an external data source. For more information, see [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse) and [Overview of Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).
 
-    When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
-    {: note}
+    1.  Name the collection. If the language of the documents in storage is not English, select the appropriate language. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+    1.  Optionally, click **More processing settings** to expand the menu. You can select the following settings:
+    
+        -  Set **Apply optical character recognition (OCR)** switcher to **On** to enable OCR.
 
-1.  Click **Next**.
-1.  Browse for the files you want to crawl.
+           When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
+           {: note}
 
-    [IBM Cloud]{: tag-ibm-cloud} You can drag documents that you want to add to your collection.
+        -  Set **Use stemming instead of lemmatization when indexing** switcher to *On* to use stemming instead of lemmatization to normalize words in the index and queries. For more information, see [Enabling stemming for uncurated data](/docs/discovery-data?topic=discovery-data-collections#stemmer).
 
-    For more information about supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
-1.  Click **Finish**.
+    1.  Click **Next**
+
+    1.  Upload data by browsing for the files you want to crawl.
+
+        You can drag documents that you want to add to your collection.
+
+        For more information about supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+    1.  Click **Finish**.
+
+    [IBM Cloud]{: tag-ibm-cloud}
+    1.  Name the collection. If the language of the documents in storage is not English, select the appropriate language. For a list of supported languages, see [Language support](/docs/discovery-data?topic=discovery-data-language-support).
+
+    1.  Upload data by browsing for the files you want to add.
+
+        You can drag documents that you want to add to your collection.
+
+        For more information about supported file types, see [Supported file types](/docs/discovery-data?topic=discovery-data-collections#supportedfiletypes).
+
+        You can also connect to a different data source instead of uploading data such as reusing data from a collection or crawling an external data source. To connect to a different data source, click the link next to the **Need to connect to a data source**? field. For more information, see [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse) and [Overview of Cloud data sources](/docs/discovery-data?topic=discovery-data-sources).
+
+    1.  Optionally, click **More processing settings** to expand the menu. You can select the following:
+    
+        -  Set **Apply optical character recognition (OCR)** switcher to **On** to enable OCR.
+
+           When OCR is enabled and your documents contain images, processing takes longer. For more information, see [Optical character recognition](/docs/discovery-data?topic=discovery-data-collections#ocr).
+           {: note}
+
+        -  Set **Use stemming instead of lemmatization when indexing** switcher to **On** to use stemming instead of lemmatization to normalize words in the index and queries. For more information, see [Enabling stemming for uncurated data](/docs/discovery-data?topic=discovery-data-collections#stemmer)
+
+    1.  Click **Finish**.
 
 The file upload is completed quickly. It takes more time for the data to be processed as it is added to the collection. After the files are uploaded and processed, the *Activity* page shows the upload results.
 

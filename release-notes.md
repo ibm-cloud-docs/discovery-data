@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-02-01"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 29 January 2024
+{: #discovery-29january2024}
+{: release-note}
+
+<!--4.8.4-0.0-->
+
+Enable stemming instead of lemmatization for normalization when you create a collection
+:   You can now select stemming instead of lemmatization to normalize words in the index and queries. For more information, see [Enabling stemming for uncurated data](/docs/discovery-data?topic=discovery-data-collections#stemmer).
 
 ## 16 November 2023
 {: #discovery-16november2023}

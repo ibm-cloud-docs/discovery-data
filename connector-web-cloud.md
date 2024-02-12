@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-07-14"
+  years: 2015, 2024
+lastupdated: "2024-02-01"
 
 subcollection: discovery-data
 
@@ -65,7 +65,7 @@ To configure the web crawl collection, complete the following steps:
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **Web crawl**, and then click **Next**.
+1.  Click the link next to the **Need to connect to a data source**? field, click **Web crawl**, and then click **Next**.
 1.  Name the collection.
 1.  If the language of the content on the website is not English, select the appropriate language.
 

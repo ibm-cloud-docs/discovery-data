@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-03-09"
+  years: 2015, 2024
+lastupdated: "2024-02-01"
 
 subcollection: discovery-data
 
@@ -72,7 +72,7 @@ To configure the Salesforce data source, complete the following steps in {{site.
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **Salesforce**, and then click **Next**.
+1.  Click the link next to the **Need to connect to a data source**? field, click **Salesforce**, and then click **Next**.
 1.  Add values to the following fields:
 
     - Username

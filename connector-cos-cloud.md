@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-03-09"
+  years: 2015, 2024
+lastupdated: "2024-02-01"
 
 subcollection: discovery-data
 
@@ -88,7 +88,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
 
 1.  From the navigation pane, choose **Manage collections**.
 1.  Click **New collection**.
-1.  Click **IBM Cloud Object Storage**, and then click **Next**.
+1.  Click the link next to the **Need to connect to a data source**? field, click **IBM Cloud Object Storage**, and then click **Next**.
 1.  Choose a credential type, and then complete the fields with the information that you collected earlier.
 
     -   IAM
