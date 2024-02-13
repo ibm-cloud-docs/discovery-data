@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-27"
+  years: 2020, 2024
+lastupdated: "2024-02-12"
 
 keywords: backup,restore
 
@@ -29,19 +29,22 @@ The following table lists the upgrade paths that are supported by the scripts.
 
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
-| 4.7.0 | 4.7.x |
-| 4.6.x | 4.7.x |
-| 4.5.x | 4.7.x except 4.7.0 |
-| 4.0.x | 4.7.x except 4.7.0 |
+| 4.8.x | 4.8.x |
+| 4.7.x | 4.8.x |
+| 4.6.x | 4.8.x |
+| 4.5.x | 4.8.x |
+| 4.0.x | 4.8.x except 4.8.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
-If you are upgrading from 4.5.x to 4.7.x, a simpler way to complete the upgrade is described in the following topics:
+If you are upgrading from 4.6.x to 4.8.x, a simpler way to complete the upgrade is described in the following topics:
 
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.7](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v47.html){: external}.
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.6](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v46.html){: external}.
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.5.x](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v45.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.8.x](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade-v48.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.7](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade-v47.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.6](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade-v46.html){: external}.
 
-If you use {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility to back up and restore an entire cluster to 4.6, a few extra steps are required. For more information, see [Using OADP to back up a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-oadp).
+If you use {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility to offline back up and restore an entire cluster, a few extra steps are required. For more information, see [Using OADP to back up a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-oadp). For information about online OADP backup and restore, see [Cloud Pak for Data online backup and restore](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-online-backup-restore){: external}.
+
+You can do an in-place upgrade from one 4.8.x version to a later 4.8.y version. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.8.x to a later 4.8 refresh](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade-v48.html){: external}.
 
 You can do an in-place upgrade from one 4.7.x version to a later 4.7.y version. For more information, see [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.7.x to a later 4.7 refresh](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-upgrade-v47.html){: external}.
 
@@ -256,10 +259,10 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 
     The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
 
-## Using OADP to back up a cluster where {{site.data.keyword.discoveryshort}} is installed
+## Using OADP to offline back up a cluster where {{site.data.keyword.discoveryshort}} is installed
 {: #backup-restore-oadp}
 
-If you plan to back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present.
+If you plan to offline back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present. See [Cloud Pak for Data offline backup and restore (OADP utility)](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-offline-backup-restore-oadp-utility){: external}.
 
 1.  Run the {{site.data.keyword.discoveryshort}} backup script.
 
