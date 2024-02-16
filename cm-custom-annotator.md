@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-09-28"
+  years: 2015, 2024
+lastupdated: "2024-02-15"
 
 subcollection: discovery-data
 
@@ -112,8 +112,8 @@ From the custom annotator page, you can see dictionaries that were created in ot
 | Plan | Number of dictionaries per service instance | Number of base words per dictionary | Number of terms for which suggestions can be generated |
 |-----------|-------------------|------------------------|--------------------------|
 | Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
-| Premium | 100 | 10,000 | 1,000 |
-| Enterprise | 100 | 10,000 | 1,000 |
+| Premium | 200 | 10,000 | 1,000 |
+| Enterprise | 200 | 10,000 | 1,000 |
 {: caption="Dictionary plan limits" caption-side="top"}
 
 Totals include enrichments that you create in this Content Mining project and in other projects in the same service instance.

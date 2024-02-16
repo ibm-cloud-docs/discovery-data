@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-12"
+  years: 2019, 2024
+lastupdated: "2024-02-15"
 
 keywords: dictionary,synonyms
 
@@ -175,7 +175,7 @@ The number of dictionaries and term entries you can create per service instance 
 | Plan      | Number of dictionaries per service instance | Number of term entries per dictionary | Number of terms for which suggestions can be generated |
 |-----------|-------------------|------------------------|--------------------------|
 | Cloud Pak for Data | Unlimited | Unlimited | 1,000 |
-| Premium | 100 | 10,000 | 1,000 |
-| Enterprise | 100 | 10,000 | 1,000 |
+| Premium | 200 | 10,000 | 1,000 |
+| Enterprise | 200 | 10,000 | 1,000 |
 | Plus (includes Trial) | 20 | 1,000 | 50 |
 {: caption="Dictionary plan limits" caption-side="top"}
