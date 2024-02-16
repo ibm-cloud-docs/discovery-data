@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-03-16"
+  years: 2021, 2024
+lastupdated: "2024-02-15"
 
 keywords: plans, pricing, service instances, billing
 
@@ -99,7 +99,7 @@ Your bill labels requests that are generated from both query searches and analyz
 -   Up to 10 custom {{site.data.keyword.knowledgestudioshort}} models
 -   Up to 10 entity extractor models
 -   Up to 100 custom fields for Smart Document Understanding model and model import and export
--   Up to 100 custom dictionaries
+-   Up to 200 custom dictionaries
 -   Up to 100 custom pattern extraction models
 -   Up to 100 custom regular expression models
 -   Up to 20 custom text classification models
