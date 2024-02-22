@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-05"
+lastupdated: "2024-02-15"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -198,7 +198,7 @@ The following table shows the supported file types and information about feature
 
 -  You can generate PDF files by using PDF generating tools such as Adobe Acrobat, Microsoft Office, Preview on Apple, and others.
 
-The vector objects, vectorized texts, and SVG images are ignored while processing PDFs.
+The vector objects, vectorized texts, and SVG images are ignored while processing PDFs. Also, {{site.data.keyword.discoveryshort}} currently does not support text extraction from images with transparency layers or transparency groups in PDFs.
 {: note}
 
 - Only images of the supported image file types that occur in the PDF are rendered.
