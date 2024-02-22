@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2022-09-30"
+  years: 2019, 2024
+lastupdated: "2024-02-21"
 
 subcollection: discovery-data
 
@@ -317,13 +317,13 @@ For both issues, where document status cannot be promoted to `Processing` and wh
 {: #shard-limit}
 {: troubleshoot}
 
-In {{site.data.keyword.discoveryshort}} version 2.2.0, there is a limit to the number of shards that can stay open on a cluster. In development instances, the limit is 1,000 open shards, and in production instances, the limit is two data nodes, which is equal to 2,000 open shards, or 1,000 open shards per data node. After you reach either limit, you cannot create any more projects and collections on your cluster, and if you try to create a new project and collection, you receive an error message.
+In {{site.data.keyword.discoveryshort}} version 4.0, there is a limit to the number of shards that can stay open on a cluster. In development instances, the limit is 1,000 open shards, and in production instances, the limit is two data nodes, which is equal to 2,000 open shards, or 1,000 open shards per data node. After you reach either limit, you cannot create any more projects and collections on your cluster, and if you try to create a new project and collection, you receive an error message.
 
-This limit is due to the fact that, when you install {{site.data.keyword.discoveryshort}} version 2.2.0, Elasticsearch version 7.8.0 automatically runs on your clusters. Because this version of Elasticsearch runs on your clusters, a new cluster stability configuration becomes available that limits the number of open shards to 1,000 for each Elasticsearch data node.
+This limit is due to the fact that, when you install {{site.data.keyword.discoveryshort}} version 4.0, Elasticsearch version 7.10.2 automatically runs on your clusters. Because this version of Elasticsearch runs on your clusters, a new cluster stability configuration becomes available that limits the number of open shards to 1,000 for each Elasticsearch data node.
 
 If you are unable to create new projects and collections and you receive errors, first check the status of your Elasticsearch cluster and the number of shards on that cluster. Consider increasing the number of data nodes on your cluster to support more shards. This method is optimal for maximizing performance. However, an increased number of nodes uses more memory. If the number of shards reaches the limit, you can also increase the limit in a data node. For more information about increasing the shard limit in a node, see [Increasing the shard limit](/docs/discovery-data?topic=discovery-data-troubleshoot#increase-shards).
 
-This limit of 1,000 shards does not apply to versions of {{site.data.keyword.discoveryshort}} that are earlier than 2.2.0.
+This limit of 1,000 shards applies to versions of {{site.data.keyword.discoveryshort}} that are 4.0 or higher.
 {: note}
 
 ### Increasing the shard limit
