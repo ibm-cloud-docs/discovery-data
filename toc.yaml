@@ -85,6 +85,7 @@ toc:
               - connector-wfs-cp4d.md
           - troubleshoot-ingestion.md
           - manage-collections.md
+          - document-status-webhook.md
       - index-overview.md
       - topicgroup:
           label: Querying your data from the UI
