@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-05-05"
+  years: 2015, 2024
+lastupdated: "2024-02-26"
 
 keywords: api version,api,request syntax,api key,bearer token
 
@@ -95,3 +95,4 @@ A developer can make the following enhancements:
 - Use the API to [define more complex queries with the Discovery Query Language](/docs/discovery-data?topic=discovery-data-query-dql-overview).
 - Specify the exact document to return in response to a specific query with [curations](/docs/discovery-data?topic=discovery-data-curations).
 - Process documents without storing them in a collection by [using the Analyze API](/docs/discovery-data?topic=discovery-data-analyzeapi).
+- Send a webhook event when the status of ingested documents becomes `available` or `failed` by using the [Document status webhook API](/docs/discovery-data?topic=discovery-data-document-status-api).
