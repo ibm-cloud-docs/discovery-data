@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-11-22"
+  years: 2019, 2024
+lastupdated: "2024-03-04"
 
 subcollection: discovery-data
 
@@ -42,28 +42,31 @@ Your disaster recovery plan includes knowing, preserving, and being prepared to 
 ## Backing up your data in Watson Discovery
 {: #backupdata}
 
-There are several methods for backing up the data that is stored in {{site.data.keyword.discoveryfull}}. Consider including these methods in your disaster recovery plan. Also, consider backing up the following data types:
+You have several methods to back up the data that is stored in {{site.data.keyword.discoveryfull}}. You can back up the following data in your disaster recovery plan:
 
--  Data that you might want a copy of, such as source documents
--  Data that {{site.data.keyword.discoveryshort}} stores and that you want to extract and back up
+-  Data as a copy of the source documents
+-  Data that is imported and exported from {{site.data.keyword.discoveryshort}}
 
-The following table shows the resources that you can download and re-upload to and from an instance.
+ You can back up the resources that are listed in the following table to prevent data loss during disaster recovery.
 
-| Resource | Download/Re-upload from the UI | API support |
-|----------|--------------------------------|-------------|
-| Uploaded and crawled files | | See note. |
-| Relevancy training data | | ![checkmark icon](../icons/checkmark-icon.svg) |
-| Expansion list | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Stop words list| ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Smart Document Understanding user-trained model | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Smart Document Understanding pretrained model | | |
-| Text classifier enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Dictionary enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Entity extractor enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Machine learning enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Regular expression enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Pattern enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | |
-| Advanced rules enrichment | ![checkmark icon](../icons/checkmark-icon.svg) | |
+| Resource | Backup process | UI support for resource download | UI support for resource upload | API support |
+|----------|--------------------------------|-------------|-------------|-------------|
+| Uploaded and crawled files | Securely store the backups for all source documents of the ingested data. For more information, see [Ingested documents](#backupdocs).  \n  \n Preserve the credentials of data sources for recrawling by reconnecting to the original data sources. For more information, see [Restoring connections to external data sources](/docs/discovery-data?topic=discovery-data-recovery#restoreconnections).  \n  \n For more information, see [Note](#note-uploaded-crawled-data). | No | No | Download – No  \n Upload - No |
+| Relevancy training data | Download all training queries and examples and save them locally to back up the training data. For more information, see [Training data](#backuptraining). | No| No| Download – Yes  \n Upload - Yes |
+| Expansion list | Download the expansion lists through [API](https://cloud.ibm.com/apidocs/discovery-data#listexpansions) and store them locally to restore the expansion lists. For more information, see [Expansion lists](#backupexpansions). | No | Yes| Download – Yes  \n Upload - Yes |
+| Stop words list| Download the stop words lists through [API](https://cloud.ibm.com/apidocs/discovery-data#getstopwordlist) and store them locally to restore the stop words lists. For more information, see [Stop words](/docs/discovery-data?topic=discovery-data-stopwords). | No | Yes | Download – Yes  \n Upload - Yes |
+| Smart Document Understanding user-trained model | Export your models and store them locally to back them up. For more information, see [Restoring Smart Document Understanding models](/docs/discovery-data?topic=discovery-data-recovery#backupsdu). | Yes | Yes | Download - No  \n Upload - No |
+| Text classifier enrichment | Back up the .csv files of the classifier and store them locally. For more information, see [Text classifier](https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-domain-classifier). | No | Yes | Upload - No  \n Download - No |
+| Sentence classifier enrichment from sentence labelling | Download the .sc files of the sentence classifier models you created from the sentence labelling UI. For more information, see [Restoring sentence classifiers](/docs/discovery-data?topic=discovery-data-recovery#restore-sentence-classifier).| Yes | Yes | Download - No  \n Upload - No |
+| Document classifier enrichment | Back up  the .csv files of the classifier and store them locally. For more information, see [Content Mining application resources](/docs/discovery-data?topic=discovery-data-recovery#cm-resources).  | No | Yes | Download - No  \n Upload - Yes |
+| Dictionary enrichment | Download the .csv files of the dictionaries that you created by using the {{site.data.keyword.discoveryshort}} UI or Content Mining application. For more information, see [Restoring dictionary enrichments](/docs/discovery-data?topic=discovery-data-recovery#restoredictionary).  \n  \n You cannot download the dictionary as CSV files, if you created the dictionary by uploading the CSV files. | Yes | Yes | Download - No  \n Upload - Yes |
+| Entity extractor enrichment | Download the entity extractor models and store them locally to back up the models. For more information, see [Restoring entity extractors](/docs/discovery-data?topic=discovery-data-recovery#restoreextractorenrich). | Yes | Yes | Download - No  \n Upload - No |
+| Regular expression enrichment | Keep the terms of the regular expression that you specified in the {{site.data.keyword.discoveryshort}} UI. For more information, see [Regular expressions enrichments](/docs/discovery-data?topic=discovery-data-recovery#backupregexpenrich).   \n  \n You can create the regular expression enrichment through [API](/apidocs/discovery-data#createenrichment), but you cannot download it. | No | Yes | Download - No  \n Upload - Yes |
+| Pattern enrichment | Download the pattern enrichments as .zip files and store them locally. For more information, see [Pattern enrichments](/docs/discovery-data?topic=discovery-data-recovery#patternenrich) and [Restoring pattern enrichments](/docs/discovery-data?topic=discovery-data-recovery#restorepatternenrich). | Yes | Yes | Download - No \n Upload - No |
+| Advanced rules enrichment | Back up the original model files as .zip files and store them locally. For more information, see [Advanced rules models enrichment](/docs/discovery-data?topic=discovery-data-recovery#advrmenrich). | No | Yes | Download - No  \n Upload - No |
+| Rule-based models created in Knowledge Studio | Back up the original model files as .pear files and store them locally. For more information, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml). | No | Yes | Download - No \n Upload - Yes |
+| Machine learning models created in Knowledge Studio | Back up the original model files as .zip files and store them locally. For more information, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml). | No | Yes | Download - No \n Upload - Yes |
+| [IBM Cloud Pak for Data]{: tag-cp4d} Custom UIMA text analysis models| Back up the original model files as .pear files and store them locally. For more information, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml). | No | Yes | Download - No  \n Upload - Yes |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Resource recovery support details" caption-side="top"}
@@ -71,6 +74,7 @@ The following table shows the resources that you can download and re-upload to a
 
 You cannot subsequently download files that you add to {{site.data.keyword.discoveryshort}} because the original files are not stored in {{site.data.keyword.discoveryshort}}. However, you can retrieve information from the file that is stored in the collection index when the original file is processed. Use the [Query API](/apidocs/discovery-data#query) to submit a query that will return a passage from the file of interest, and then check the response body for data from the file. For example, for some file types, text from the original file is stored in the `text` field.
 {: note}
+{: #note-uploaded-crawled-data}
 
 For information about resources that are created with the Content Mining application, see [Content Mining resources](#cm-resources).
 
