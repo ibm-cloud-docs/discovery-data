@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-03-05"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -23,6 +23,15 @@ Learn about features and changes that were included for each release and update 
 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
+
+## 29 February 2024
+{: #discovery-29february2024}
+{: release-note}
+
+<!--4.8.5-1.3-->
+
+New Intelligent Document Processing (IDP) project type
+:   The IDP project type is the new default project type in {{site.data.keyword.discoveryshort}}. Use the IDP project type to understand quickly what data is extracted from your documents in a rich document preview and also improve the data by applying enrichments. For more information, see [Intelligent Document Processing](/docs/discovery-data?topic=discovery-data-projects#doc-idp).
 
 ## 29 January 2024
 {: #discovery-29january2024}

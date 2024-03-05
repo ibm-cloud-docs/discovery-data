@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-03-05"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -70,7 +70,7 @@ To create a collection, complete the following steps:
 
 1.  Open a project, go to the *Manage collections* page, and then click **New collection**.
 
-    -   The Conversational Search, Document Retrieval, and Custom project types can contain up to 5 collections.
+    -   The Intelligent Document Processing, Conversational Search, Document Retrieval, and Custom project types can contain up to 5 collections.
     -   A Content Mining project can contain only 1 collection.
 
 1.  [Upload data](/docs/discovery-data?topic=discovery-data-upload-data) to your collection.
@@ -151,6 +151,7 @@ The number of collections that you can create per project differs by project typ
 
 | Project type | Collections per project |
 |--------------|-------------------------|
+| [IBM Cloud]{: tag-ibm-cloud} Intelligent Document Processing | 5 |
 | Document Retrieval |                 5 |
 | Document Retrieval for Contracts |   5 |
 | Conversational Search |              5 |
@@ -262,7 +263,7 @@ The maximum size of each file that you can crawl by using a connector differs by
 ### Uploaded documents
 {: #collections-uploaded-docs}
 
-The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type. See the *Maximum document size table for details.
+The size of each file that you can upload depends on your {{site.data.keyword.discoveryshort}} plan type. See the following Maximum document size table for details.
 
 | Plan | File size per document |
 |--------------|----------------|
