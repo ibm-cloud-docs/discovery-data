@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-12"
+  years: 2020, 2024
+lastupdated: "2024-03-05"
 
 keywords: projects, project types
 
@@ -34,14 +34,12 @@ To create a project, complete the following steps:
 
     For more information about each type, see [Project types](#project-type).
 
-    Otherwise, choose **None of the above** and a *Custom* project type is created for you.
-
 1.  If you choose a *Document Retrieval* project type and your data sources are in English, decide whether to enable the Content Intelligence feature.
 
     If your data source contains contracts, enable the feature by selecting **Apply contracts enrichment**. Scroll to see the checkbox, if necessary.
 
 1.  Click **Next**.
-1.  Choose and configure a data source or connect to an existing collection.
+1.  Choose and configure a data source.
 
     For more information about supported data sources, see [Creating collections](/docs/discovery-data?topic=discovery-data-collections).
 
@@ -59,13 +57,24 @@ Choose a project type to get the correct set of enrichments applied to your docu
 
 The following project types are available:
 
+-    [Intelligent Document Processing](#doc-idp) [IBM Cloud]{: tag-ibm-cloud}
 -    [Document Retrieval](#doc-retrieval)
 -    [Document Retrieval for Contracts](#doc-retrieval-contracts)
 -    [Conversational Search](#conversational)
 -    [Content Mining](#mining)
 -    [Custom](#custom)
 
-For more information about the different settings that are applied to each project type, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
+### Intelligent Document Processing [IBM Cloud]{: tag-ibm-cloud}
+{: #doc-idp}
+
+Use this project type to understand quickly what data {{site.data.keyword.discoveryshort}} has extracted from your documents. You can view the extracted data in a rich document preview (default view is **PDF**). If the extracted data does not meet your requirements, you can apply enrichments to improve the data.
+
+This project type is available from IBM Cloud-managed instances only.
+{: note}
+
+Documents that you add to a project of this type are automatically enriched in the following ways:
+
+- Entities, such as proper nouns, are identified and tagged.
 
 ### Document Retrieval
 {: #doc-retrieval}
@@ -75,7 +84,6 @@ Use this project type to search and find the most relevant answers from your dat
 Documents that you add to a project of this type are automatically enriched in the following ways:
 
 - Entities, such as proper nouns, are identified and tagged.
-- Parts of speech are identified and tagged.
 
 This tagged information is used later when a natural language phrase is submitted as a search query to return a smarter response.
 

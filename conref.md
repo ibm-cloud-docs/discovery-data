@@ -43,6 +43,7 @@ The following table shows the supported data sources for each deployment type.
 
 | Need | Goal | Project type |
 |--------------------|------|--------------|
+| [IBM Cloud]{: tag-ibm-cloud} *I want to extract data to support automation of repetitive document processing tasks.* | I want to understand quickly what data is extracted from my documents and improve the data by applying enrichments.| **Intelligent Document Processing** |
 | *Which document contains the answer to my question?* | Find meaningful information in sources that contain a mix of structured and unstructured data, and surface it in a stand-alone enterprise search application or in the search field of a business application. | **Document Retrieval** |
 | *Where is the part of the contract that I need for my task?* | Quickly extract critical information from contracts. | **Document Retrieval for Contracts** |
 | *I want the chatbot I'm building to use knowledge that I own.* | Give a virtual assistant quick access to technical information that is stored in various external data sources and document formats to answer customer questions. | **Conversational Search** |
@@ -74,6 +75,7 @@ Some enrichments and query result settings are applied to each project type by d
 
 | Project type | Default enrichments | Default query result settings |
 |--------------|---------------------|-------------------------------|
+| [IBM Cloud]{: tag-ibm-cloud} Intelligent Document Processing | Entities | Facets (by Entity), Passages |
 | Document Retrieval | Entities | Facets (by Entity), Passages |
 | Document Retrieval for Contracts | Entities, Table Understanding, and Contracts | Facets (by Category, Nature, Contract Term, Contract Payment Term, Contract Type, Contract Currency, Invoice Buyer, Invoice supplier, Invoice Currency, Purchase Order Buyer, Purchase Order Supplier, Purchase Order Payment Term) and Table Retrieval |
 | Conversational Search | None | Passages |
