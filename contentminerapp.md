@@ -67,7 +67,7 @@ Facets
 :    Shows facets that are derived from from annotations that are added to your documents by enrichments that are applied to your documents. Enrichments can include built-in Natural Language Processing enrichments, such as *Part of Speech* or *Entities*. They can also include custom enrichments that you add, such as dictionaries, regular expression patterns, and machine learning models.
 
 Metadata facets
-:    Shows facets that are derived from your data. When you add files to a collection, {{site.data.keyword.discoveryshort}} analyzes and indexes the data. Annotations are added to identify content types and are shown as metadata facets. The best metadata facets result when you ingest structured data, such as records from a CSV file.
+:    Shows facets that are derived from your data. When you add files to a collection, {{site.data.keyword.discoveryshort}} analyzes and indexes the data. Annotations are added to identify content types and are shown as metadata facets. The best metadata facets result when you ingest structured data, such as records from a CSV file. The maximum length of a metadata facet is 256 characters.
 
 Custom
 :    Shows only the facets that you choose to add to the view. You can add a mix of enrichment-derived and content-derived facets to your custom view.
