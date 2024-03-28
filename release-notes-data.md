@@ -50,7 +50,7 @@ Features that are not available in this release
 ## 4.8.3 release, 28 February 2024
 {: #discovery-data-483-28february2024}
 
-{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.8.0 is available.
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.8.3 is available.
 
 For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.8.x/fixlist/discovery-fixlist.html){: external}
 
@@ -62,7 +62,7 @@ Features that are not available in this release
 ## 4.8.2 release, 31 January 2024
 {: #discovery-data-482-31january2024}
 
-{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.8.0 is available.
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.8.2 is available.
 
 For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.8.x/fixlist/discovery-fixlist.html){: external}
 
