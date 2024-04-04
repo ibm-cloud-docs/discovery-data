@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-10-09"
+  years: 2019, 2024
+lastupdated: "2024-04-04"
 
 subcollection: discovery-data
 
@@ -82,3 +82,36 @@ Some enrichments and query result settings are applied to each project type by d
 | Content Mining | Part of Speech | None |
 | Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
+
+## Webhook security
+{: #webhook-security-reuse}
+
+To authenticate the webhook request, verify the JSON Web Token (JWT) that is sent with the request. The webhook microservice automatically generates a JWT and sends it in the `Authorization` header with each webhook call. It is your responsibility to add code to the external service that verifies the JWT.
+
+For example, if you specify `sample secret` in the `Secret` field of the Webhooks object in the [Create collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external} or [update collection](https://{DomainName}/apidocs/discovery-data#updatecollection){: external} APIs, you might add sample code such as the following in Node.js:
+
+```sh
+const jwt = require('jsonwebtoken');
+...
+const token = request.headers.authentication; // grab the "Authentication" header
+try {
+  const decoded = jwt.verify(token, 'sample secret');
+} catch(err) {
+  // error thrown if token is invalid
+}
+```
+{: codeblock}
+
+## Data model of the `ping` event
+{: #ping-event-reuse}
+
+Following are the `ping` event parameters:
+
+| Parameter | Description |
+|-----------|----------------------|
+| `event` | The event name is `ping`. |
+| `instance_id` | The {{site.data.keyword.discoveryshort}} instance ID. |
+| `version` | The {{site.data.keyword.discoveryshort}} API version in the format `yyyy-mm-dd`. |
+| `data` | An object with the event information: `url`, `events`, and `metadata`.  \n  \n  - `url`: The configured webhook endpoint (URL).  \n  \n  - `events`: An array of event string values. The events in this array are sent to the webhook URL.  \n  \n  - `metadata`: An object with information that is specific to the created webhook.|
+| `created_at` | The date and time the event was created. |
+{: caption="Ping event" caption-side="top"}
