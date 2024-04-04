@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-15"
+lastupdated: "2024-04-04"
 
 keywords: external-enrichment,webhook
 
@@ -55,6 +55,24 @@ For using the external enrichment feature, do the following things:
     The documents are pushed to Discovery as a binary attachment. For more information, see [Binary attachment in the push batches method](#binary-attachment-push-batches).
 
 1.  Verify that the documents are merged and indexed in the collection. The documents must contain the annotations that are applied by your external application.
+
+{{site.data.content.webhook-security-reuse}}
+
+{{site.data.content.ping-event-reuse}}
+
+## Data model of the `enrichment.batch.created` event
+{: #enrichment.batch.created}
+
+Following are the `enrichment.batch.created` event parameters:
+
+| Parameter | Description |
+|-----------|----------------------|
+| `event` | The event name is `enrichment.batch.created`. |
+| `instance_id` | The UUID of the {{site.data.keyword.discoveryshort}} instance, which is also known as the tenant ID. |
+| `version` | The webhook event version date in the `yyyy-mm-dd` format. |
+| `data` | An object with the event specific information: `project_id`, `collection_id`, `enrichment_id`, and `batch_id`.  \n  \n  - `project_id`: The Universally Unique Identifier (UUID) of a project.  \n  \n  - `collection_id`: The Universally Unique Identifier (UUID) of a collection.  \n  \n  - `enrichment_id`: The Universally Unique Identifier (UUID) of an enrichment. \n  \n  - `batch_id`: The Universally Unique Identifier (UUID) of a batch.|
+| `created_at` | The date and time the event was created. |
+{: caption="Enrichment.batch.created" caption-side="top"}
 
 ## External enrichment limits
 {: #external-enrichment-limits}
