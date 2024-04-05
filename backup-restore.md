@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-12"
+lastupdated: "2024-04-05"
 
 keywords: backup,restore
 
@@ -215,6 +215,37 @@ To create a mapping, complete the following steps:
 
 When you run the restore script, include the optional `--mapping` parameter to apply this mapping file when the data is restored.
 
+### Backing up data manually
+{: #backup-user-data}
+
+Manually back up data that is not backed up by using the scripts.
+
+To manually back up your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
+
+1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
+
+    ```bash
+    oc login https://<OpenShift administrative console URL> \
+    -u <cluster administrator username> -p <password>
+    ```
+    {: pre}
+
+1.  Enter the following command to switch to the proper namespace:
+
+    ```bash
+    oc project <discovery-install namespace>
+    ```
+    {: pre}
+
+1.  Enter `oc get pods|grep crawler`.
+
+1.  Enter the following command:
+
+    ```bash
+    oc cp <crawler pod>:/mnt <path-to-backup-directory>
+    ```
+    {: pre}
+
 ## Using the restore scripts
 {: #wddata-restore}
 
@@ -259,57 +290,6 @@ Complete the following steps to restore data in {{site.data.keyword.discoveryful
 
     The `gateway`, `ingestion`, `orchestrator`, `hadoop worker`, and `controller` pods automatically restart.
 
-## Using OADP to offline back up a cluster where {{site.data.keyword.discoveryshort}} is installed
-{: #backup-restore-oadp}
-
-If you plan to offline back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present. See [Cloud Pak for Data offline backup and restore (OADP utility)](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-offline-backup-restore-oadp-utility){: external}.
-
-1.  Run the {{site.data.keyword.discoveryshort}} backup script.
-
-1.  Use the OADP backup utility to back up the cluster.
-
-1.  Delete the project. This process removes the persistent volume claims and persistent volumes that are associated with {{site.data.keyword.discoveryshort}}.
-
-1.  Use the OADP backup utility to restore the cluster.
-
-1.  Uninstall {{site.data.keyword.discoveryshort}}, and then install {{site.data.keyword.discoveryshort}} again on the restored cluster.
-
-    A repeat of the installation is required because the utility does not always reinstall {{site.data.keyword.discoveryshort}} correctly.
-    {: note}
-
-1.  Run the {{site.data.keyword.discoveryshort}} restore script to restore your data.
-
-### Backing up data manually
-{: #backup-user-data}
-
-Manually back up data that is not backed up by using the scripts.
-
-To manually back up your data from an instance of {{site.data.keyword.discoveryshort}}, complete the following steps:
-
-1.  Enter the following command to log on to your {{site.data.keyword.discoveryshort}} cluster:
-
-    ```bash
-    oc login https://<OpenShift administrative console URL> \
-    -u <cluster administrator username> -p <password>
-    ```
-    {: pre}
-
-1.  Enter the following command to switch to the proper namespace:
-
-    ```bash
-    oc project <discovery-install namespace>
-    ```
-    {: pre}
-
-1.  Enter `oc get pods|grep crawler`.
-
-1.  Enter the following command:
-
-    ```bash
-    oc cp <crawler pod>:/mnt <path-to-backup-directory>
-    ```
-    {: pre}
-
 ### Restoring data manually
 {: #restore-user-data}
 
@@ -340,3 +320,31 @@ To manually restore your data from an instance of {{site.data.keyword.discoverys
     oc cp <path-to-backup-directory> <crawler pod>:/mnt
     ```
     {: pre}
+
+## Using OADP to offline back up a cluster where {{site.data.keyword.discoveryshort}} is installed
+{: #backup-restore-oadp}
+
+If you plan to offline back up and restore an entire {{site.data.keyword.icp4dfull_notm}} instance by using the {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility, you must do some additional steps in the right order for the utility to work properly when {{site.data.keyword.discoveryshort}} is present. See [Cloud Pak for Data offline backup and restore (OADP utility)](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-offline-backup-restore-oadp-utility){: external}.
+
+### Backing up a cluster offline
+{: #backup-cluster-offline}
+
+To take an offline back up of a cluster, complete the following steps:
+
+1.  Run the {{site.data.keyword.discoveryshort}} [backup script](#wddata-backup).
+
+1.  Use the [OADP backup utility](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-offline-backup-restore-oadp-utility){: external} to back up the cluster.
+
+### Restoring a cluster offline
+{: #restore-cluster-offline}
+
+To offline restore a cluster, complete the following steps:
+
+1.  Use the [OADP backup utility](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-offline-backup-restore-oadp-utility){: external} to restore the cluster.
+
+1.  Uninstall {{site.data.keyword.discoveryshort}}, and then install {{site.data.keyword.discoveryshort}} again on the restored cluster.
+
+    The re-installation is required because the utility does not always reinstall {{site.data.keyword.discoveryshort}} correctly.
+    {: note}
+
+1.  Run the {{site.data.keyword.discoveryshort}} [restore script](#wddata-restore) to restore your data.
