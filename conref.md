@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-10"
 
 subcollection: discovery-data
 
@@ -87,6 +87,9 @@ Some enrichments and query result settings are applied to each project type by d
 {: #webhook-security-reuse}
 
 To authenticate the webhook request, verify the JSON Web Token (JWT) that is sent with the request. The webhook microservice automatically generates a JWT and sends it in the `Authorization` header with each webhook call. It is your responsibility to add code to the external service that verifies the JWT.
+
+The system can generate a JWT based on the `sample secret` that you specify, and in the `Authorization` header, you can pass this system-generated JWT to the external application. If you specify a value in the `header`, then the webhook microservice sends that value to the external application instead of the JWT.
+{: note}
 
 For example, if you specify `sample secret` in the `Secret` field of the Webhooks object in the [Create collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external} or [update collection](https://{DomainName}/apidocs/discovery-data#updatecollection){: external} APIs, you might add sample code such as the following in Node.js:
 
