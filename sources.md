@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-02-08"
+  years: 2015, 2024
+lastupdated: "2024-04-16"
 
 subcollection: discovery-data
 
@@ -55,6 +55,9 @@ The following requirements and limitations are specific to {{site.data.keyword.d
 
 ## Installing IBM Secure Gateway for on-premises data
 {: #gatewaypublic}
+
+{{site.data.keyword.SecureGatewayfull}} is being deprecated. Existing clients who use {{site.data.keyword.SecureGateway}} can get guidance on migrating to the {{site.data.keyword.satellitelong}} Connector before the End of Support date. For more information, see the [{{site.data.keyword.SecureGateway}} deprecation dates and deprecation details.](/docs/SecureGateway?topic=SecureGateway-dep-overview){: external}.
+{: deprecated}
 
 <!-- Learn more topic WDS -->
 To connect to an on-premises data source, you first need to download, install, and configure {{site.data.keyword.SecureGatewayfull}}.

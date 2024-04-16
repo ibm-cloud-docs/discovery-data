@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-04-16"
 
 subcollection: discovery-data
 
@@ -65,6 +65,10 @@ Domain
 
 ## Prerequisite step
 {: #connector-sharepoint-onprem-cloud-prereq-task}
+
+
+{{site.data.keyword.SecureGatewayfull}} is being deprecated. After the End of Support date for {{site.data.keyword.SecureGateway}}, you cannot use {{site.data.keyword.discoveryshort}} to crawl documents stored in a Microsoft SharePoint data source that is hosted on premises. For more information, see the [{{site.data.keyword.SecureGateway}} deprecation dates and deprecation details.](/docs/SecureGateway?topic=SecureGateway-dep-overview){: external}.
+{: deprecated}
 
 Before you can connect to a SharePoint On Prem data source, you must install and configure {{site.data.keyword.SecureGatewayfull}}.
 

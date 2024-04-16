@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-04-16"
 
 subcollection: discovery-data
 
@@ -51,6 +51,9 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 
 ## Prerequisite step
 {: #connector-web-cloud-prereq-task}
+
+{{site.data.keyword.SecureGatewayfull}} is being deprecated. Existing clients who use {{site.data.keyword.SecureGateway}} can get guidance on migrating to the {{site.data.keyword.satellitelong}} Connector before the End of Support date. For more information, see the [{{site.data.keyword.SecureGateway}} deprecation dates and deprecation details.](/docs/SecureGateway?topic=SecureGateway-dep-overview){: external}.
+{: deprecated}
 
 If you want to connect to a website that is hosted behind a firewall, set up an {{site.data.keyword.SecureGatewayfull}} connection first.
 
