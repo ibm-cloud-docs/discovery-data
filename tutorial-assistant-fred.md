@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-09-28"
+  years: 2021, 2024
+lastupdated: "2024-04-22"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -201,9 +201,7 @@ In {{site.data.keyword.discoveryshort}}, create a Conversational Search project 
 
 1.  From the {{site.data.keyword.discoveryshort}} Plus plan service page in {{site.data.keyword.cloud_notm}}, click **Launch {{site.data.keyword.discoveryshort}}**.
 1.  From the *My Projects* page, click **New Project**.
-1.  Name your project `Federal Reserve research`, and then click the **Conversational Search** tile.
-
-    ![Shows the project type options](images/tut-convo-project.png){: caption="Figure 17. Project type options" caption-side="bottom"}
+1.  Name your project `Federal Reserve research`, and then select the **Conversational Search** project type.
 1.  Click **Next**.
 
 You'll configure the data source for the project in the next step.
@@ -216,10 +214,10 @@ We want the virtual assistant to be able to answer questions about the latest wo
 
 1.  From the *Select data source* page, click **Web crawl**, and then click **Next**.
 
-    ![Shows the data source options](images/tut-convo-web-crawl-0.png){: caption="Figure 18. Data source options" caption-side="bottom"}
+    ![Shows the data source options](images/tut-convo-web-crawl-0.png){: caption="Figure 17. Data source options" caption-side="bottom"}
 1.  In the **Collection name** field, add `FRED papers`.
 
-    ![Shows the Web crawl name field](images/tut-convo-web-crawl-1.png){: caption="Figure 19. Web crawl connector" caption-side="bottom"}
+    ![Shows the Web crawl name field](images/tut-convo-web-crawl-1.png){: caption="Figure 18. Web crawl connector" caption-side="bottom"}
 1.  In the **Starting URLs** field, add the following URL:
 
     ```text
@@ -234,7 +232,7 @@ We want the virtual assistant to be able to answer questions about the latest wo
 
 1.  In the **Maximum number of links to follow** field, change the value to 5.
 
-    ![Shows the Starting URLs field](images/tut-convo-web-crawl-4.png){: caption="Figure 20. Starting URL settings" caption-side="bottom"}
+    ![Shows the Starting URLs field](images/tut-convo-web-crawl-4.png){: caption="Figure 19. Starting URL settings" caption-side="bottom"}
 
     By changing the value to 5, you indicate that you want the service to process the page that you specified plus you want it to follow up to 5 links from the starting page.
 
@@ -252,31 +250,31 @@ Let's connect your assistant to your {{site.data.keyword.discoveryshort}} data.
 
 1.  From the navigation panel in {{site.data.keyword.conversationshort}}, click **Environments**.
 
-    ![Shows the Environments menu item in the navigation panel.](images/tut-convo-enviro-0.png){: caption="Figure 21. Environment menu" caption-side="bottom"}
+    ![Shows the Environments menu item in the navigation panel.](images/tut-convo-enviro-0.png){: caption="Figure 20. Environment menu" caption-side="bottom"}
 
     The draft environment is displayed. It shows that a web chat is connected to your assistant. 
 
-    ![Shows the draft environment with the web chat connected to the action.](images/tut-convo-enviro-1.png){: caption="Figure 22. Draft environment diagram" caption-side="bottom"}
+    ![Shows the draft environment with the web chat connected to the action.](images/tut-convo-enviro-1.png){: caption="Figure 21. Draft environment diagram" caption-side="bottom"}
 
 1.  Click the Web chat tile to edit the web chat. 
 
     We don't want to add multiple starter questions, so we are going to turn off the home screen for the web chat. Click the **Home screen** tab.
 
-    ![Shows the web chat home screen configuration page.](images/tut-convo-enviro-1aa.png){: caption="Figure 23. Web chat home screen configuration" caption-side="bottom"}
+    ![Shows the web chat home screen configuration page.](images/tut-convo-enviro-1aa.png){: caption="Figure 22. Web chat home screen configuration" caption-side="bottom"}
 
 1.  Set the switcher to **Off**, and then click **Save and exit**.
 
-    ![Shows the web chat home screen set to Off.](images/tut-convo-enviro-1bb.png){: caption="Figure 24. Web chat home screen disabled" caption-side="bottom"}
+    ![Shows the web chat home screen set to Off.](images/tut-convo-enviro-1bb.png){: caption="Figure 23. Web chat home screen disabled" caption-side="bottom"}
 
 1.  We want to connect the web chat to a search extension. Click the **Add** button in the Search extension tile.
 
-    ![Shows the draft environment with the search extension option.](images/tut-convo-enviro-1.png){: caption="Figure 25. Search extension in draft environment" caption-side="bottom"}
+    ![Shows the draft environment with the search extension option.](images/tut-convo-enviro-1.png){: caption="Figure 24. Search extension in draft environment" caption-side="bottom"}
 
     The Search Integration page is displayed.
 
 1.  Select the {{site.data.keyword.discoveryshort}} instance where your project is stored, and then select the **Federal Reserve research** project that you created earlier. Click **Next**.
 
-    ![Shows the search extension with the instance and project selected.](images/tut-convo-enviro-2.png){: caption="Figure 26. Search extension configuration" caption-side="bottom"}
+    ![Shows the search extension with the instance and project selected.](images/tut-convo-enviro-2.png){: caption="Figure 25. Search extension configuration" caption-side="bottom"}
 
 1.  The default result content configuration uses the best fields; you don't need to change them.
 
@@ -289,7 +287,7 @@ Let's connect your assistant to your {{site.data.keyword.discoveryshort}} data.
 
     Verify that the *Emphasize the answer* switch is set to **On**. This setting adds the `find_answers:true` parameter to the query request. As a result, a succinct answer to the query is shown in bold in the response that is returned by the assistant.
 
-    ![Shows the updated Message text and Emphasize the answer turned on.](images/tut-convo-enviro-3.png){: caption="Figure 27. Search extension settings configured" caption-side="bottom"}
+    ![Shows the updated Message text and Emphasize the answer turned on.](images/tut-convo-enviro-3.png){: caption="Figure 26. Search extension settings configured" caption-side="bottom"}
 
 1.  Click **Create**.
 
@@ -301,15 +299,15 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
 1.  From the Environments page, click **Preview this environment**.
 
-    ![Shows the draft environment with search extension enabled](images/tut-convo-test-0a.png){: caption="Figure 28. Search extension enabled" caption-side="bottom"}
+    ![Shows the draft environment with search extension enabled](images/tut-convo-test-0a.png){: caption="Figure 27. Search extension enabled" caption-side="bottom"}
 
     A sample web page is displayed that includes a chat icon.
 
-    ![Shows a preview of a web page with a chat icon](images/tut-convo-test-1.png){: caption="Figure 29. Web chat icon" caption-side="bottom"}
+    ![Shows a preview of a web page with a chat icon](images/tut-convo-test-1.png){: caption="Figure 28. Web chat icon" caption-side="bottom"}
 
 1.  Click the chat icon to open the web chat window.
 
-    ![Shows web chat welcome message](images/tut-convo-test-2.png){: caption="Figure 30. Web chat welcome message" caption-side="bottom"}
+    ![Shows web chat welcome message](images/tut-convo-test-2.png){: caption="Figure 29. Web chat welcome message" caption-side="bottom"}
 
 1.  Enter the following text question:
 
@@ -323,7 +321,7 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
     The correct answer is returned and it includes a link to the source documentation page.
 
-    ![Shows a preview of the assistant where the test question is answered](images/tut-convo-test-3a.png){: caption="Figure 31. Web chat returns search response" caption-side="bottom"}
+    ![Shows a preview of the assistant where the test question is answered](images/tut-convo-test-3a.png){: caption="Figure 30. Web chat returns search response" caption-side="bottom"}
 
 Congratulations! You successfully created an assistant that can answer questions about economic topics by retrieving information from working papers that are available from the US Federal Research Economic Data website.
 
