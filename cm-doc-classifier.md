@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-06-20"
+  years: 2015, 2024
+lastupdated: "2024-04-19"
 
 subcollection: discovery-data
 
@@ -193,7 +193,7 @@ When the document classifier classifies a document, it stores the classification
 
 For example, the following JSON excerpt shows a document that was classified with the `package_container` class.
 
-![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png){: caption="Figure 2. Document classifier enrichment syntax" caption-side="bottom"}
+![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png){: caption="Figure 3. Document classifier enrichment syntax" caption-side="bottom"}
 
 ### Document classifier limits
 {: #doc-classifier-limits}
