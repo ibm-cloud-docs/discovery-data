@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-04-22"
 
 subcollection: discovery-data
 
@@ -233,4 +233,4 @@ Give the index time to rebuild.
     -   Submit an empty search to return all documents. In the *Facet analysis* pane, select the facet that you created.
     -   To access your custom facets more quickly, add them to a custom view. Select **Custom** as the view, and then click **Edit**. Select one or more facets to add to the view, and then click **Save**.
 
-        ![Custom view](images/cm-custom-view.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
+        ![Custom view](images/cm-custom-view.png){: caption="Figure 5. Collection menu" caption-side="bottom"}
