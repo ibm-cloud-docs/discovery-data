@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2023
-lastupdated: "2023-06-16"
+  years: 2015, 2024
+lastupdated: "2024-04-29"
 
 subcollection: discovery-data
 
@@ -22,9 +22,9 @@ You can export your data as a CSV file or you can generate a separate JSON file 
 
 To export your data, complete the following steps:
 
-1.  Submit a search to find the documents of interest.
+1.  On the initial search page, submit a search to find the documents of interest.
 
-1.  Click **Show documents** to open the *Documents* view, and then click the *Export* icon ![Export icon](images/export.svg) in the toolbar.
+1.  On the search results page in guided mode, click **Show documents** to open the *Documents* view, and then click the *Export* icon ![Export icon](images/export.svg) in the toolbar.
 
 1.  Complete the appropriate steps for the format in which you want to export the data.
 
