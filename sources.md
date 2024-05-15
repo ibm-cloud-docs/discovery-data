@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-04-16"
+lastupdated: "2024-05-14"
 
 subcollection: discovery-data
 
@@ -131,8 +131,3 @@ Network addresses are subject to change from time to time. You can monitor for u
     158.176.107.48/28
     ```
     {: screen}
-
--   For a list of IP addresses that you can add to an allowlist for services instances that were created before 1 May 2020 (US) and before 21 February 2021 (non-US), see the [network addresses](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-network-address) that are listed for Cloud Foundry.
-
-    -   Refer to the **Dallas** data center IP addresses for all US-hosted service instances.
-    -   Refer to the **London** data center IP addresses for all service instances that are hosted outside the US.
