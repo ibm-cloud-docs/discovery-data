@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-12"
+  years: 2020, 2024
+lastupdated: "2024-05-27"
 
 subcollection: discovery-data
 
@@ -22,6 +22,9 @@ For more information about available enrichments, see the following topics:
 
 - [Adding domain-specific resources](/docs/discovery-data?topic=discovery-data-domain)
 - [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu)
+
+To apply enrichments to a Content Mining project, you should use the Content Mining application instead of using the Discovery user interface. When you use the Content Mining application, it ensures that the enrichments are accepted in the Content Mining project. For more information about applying enrichments such as a dictionary or phrase sentiment to a Content Mining project, see [Enrich your collection](/docs/discovery-data?topic=discovery-data-cm-edit-collection#cm-enrichments).
+{: note}
 
 To manage enrichments, complete the following steps:
 
