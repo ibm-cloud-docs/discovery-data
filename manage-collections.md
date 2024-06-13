@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Managing data collections
 {: #manage-collections}
 
-<!-- c/s help for the *Manage collections* page tabs: Activity, Processing settings, CSV settings. Do not delete. -->
+
 
 After the processing of a new data collection is finished, you can see a summary of the settings that are applied to your collection from the *Manage collections* page.
 {: shortdesc}
@@ -76,7 +76,7 @@ To change how a data source is processed, complete the following steps:
 ## Finding where a collection is used
 {: #collection-usage}
 
-<!-- c/s help for the *Collection usage and sharing* page. Do not delete. -->
+
 
 To find out whether a collection is being shared, open the *My Projects* page, and then complete the appropriate step for your deployment:
 

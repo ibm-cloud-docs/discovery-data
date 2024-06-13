@@ -8,7 +8,6 @@ toc:
     product-page: https://www.ibm.com/cloud/watson-discovery
     path: discovery-data
     label: Discovery v2
-
   entries:
   - navgroup:
       id: learn

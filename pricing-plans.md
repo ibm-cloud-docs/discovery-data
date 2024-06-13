@@ -15,7 +15,7 @@ subcollection: discovery-data
 # {{site.data.keyword.discoveryshort}} pricing plans
 {: #pricing-plans}
 
-<!-- Learn more topic WDS -->
+
 Learn more about the {{site.data.keyword.discoveryfull}} service plans, so you can pick the plan type that best meets your needs.
 {: shortdesc}
 

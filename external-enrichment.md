@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-06-10"
 
 keywords: external-enrichment,webhook
 
@@ -15,14 +15,12 @@ subcollection: discovery-data
 # External enrichment API
 {: #external-enrichment}
 
-[IBM Cloud]{: tag-ibm-cloud}
-
-The external enrichment is beta functionality that is only available from the API.
-{: beta}
+The external enrichment feature is not supported in the Analyze API.
+{: note}
 
 The external enrichment feature allows you to annotate documents with a model of your choice. Through a webhook interface, you can use custom models or advanced foundation models, and other third-party models for enriching your documents in a collection. The documents are enriched by your external application and then merged to a collection in a Discovery project.
 
-The external enrichment feature is not supported in the Analyze API.
+[IBM Cloud Pak for Data]{: tag-cp4d} When you run {{site.data.keyword.discoveryshort}} in an air-gapped environment, you must connect to the external application through an HTTP proxy. For more information, see [Setting up HTTP proxy in air-gapped environments](/docs/discovery-data?topic=discovery-data-collection-types#sethttpproxyae).
 {: note}
 
 For using the external enrichment feature, do the following things:

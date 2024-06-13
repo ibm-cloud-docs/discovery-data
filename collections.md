@@ -15,7 +15,7 @@ subcollection: discovery-data
 # Creating collections
 {: #collections}
 
-<!-- c/s help for the *Manage collections* page. Do not delete. -->
+
 
 A collection is a set of documents that you add to a project so that you can analyze, enrich, and extract useful information from it.
 {: shortdesc}

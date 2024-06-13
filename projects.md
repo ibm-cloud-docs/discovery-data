@@ -15,7 +15,7 @@ subcollection: discovery-data
 # Creating projects
 {: #projects}
 
-<!-- c/s help for the *Projects* page. Do not delete. -->
+
 
 A project is a convenient way to collect and manage the resources in your {{site.data.keyword.discoveryfull}} application. You can assign a *Project type* and connect your data to the project by creating a collection.
 {: shortdesc}
@@ -51,7 +51,7 @@ Take advantage of the following resources that are available from the page heade
 ## Project types
 {: #project-type}
 
-<!-- c/s help for the *Project types* page. Do not delete. -->
+
 
 Choose a project type to get the correct set of enrichments applied to your documents automatically. The improvement tools that are available differ by project type, as do the deployment methods, which are optimized for each use case.
 

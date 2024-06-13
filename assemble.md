@@ -102,7 +102,7 @@ To enable a section by using a `boolean` condition, use code similar to the foll
 
 ```xml
 <declare type="boolean" name="use_key" initial-value="true" />
-<!-- Enable setting only if use_key is true -->
+
 <condition name="use_key" enabled="true">
   <declare type="string" name="key" hidden="false" />
 </condition>
@@ -113,10 +113,10 @@ To enable a section by using an `enum` condition, use code similar to the follow
 
 ```xml
 <declare type="enum" name="type" enum-values="PROXY|BASIC|NTLM" initial-value="BASIC"/>
-<!-- Enable setting for BASIC, NTLM or PROXY -->
+
 <condition name="type" in="BASIC|NTLM|PROXY">
 </condition>
-<!-- Enable setting for PROXY -->
+
 <condition name="type" in="PROXY">
 ```
 {: codeblock}
@@ -160,13 +160,13 @@ The custom crawler is initialized with the following settings in the `general_se
 To specify the interfaces, use code similar to the following snippet:
 
 ```xml
-<!-- Configuration class -->
+
   <declare type="string" name="custom_config_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
-<!-- Crawler class -->
+
   <declare type="string" name="custom_crawler_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
-<!-- Document level security class -->
+
   <declare type="string" name="custom_security_class" hidden="true" initial-value="com.ibm.es.ama.custom.crwler.sample.sftp.SftpCrawler" />
-<!-- Document level security is enabled or not -->
+
   <declare type="boolean" name="document_level_security_supported" initial-value="true" hidden="true"/>
 ```
 {: codeblock}
@@ -191,20 +191,20 @@ To hide the **Enable Document Level Security** option from {{site.data.keyword.d
 The XPath expression is `/function/prototype/proto-section[@section="datasource_settings"]`. It includes settings specific to the data source.
 
 ```xml
-<!-- Data source settings change on each server -->
+
   <proto-section section="datasource_settings">
-    <!-- Sample: SFTP server settings -->
+    
       <declare type="string" name="host" required="required" initial-value="localhost"/>
       <declare type="long" name="port" required="required" initial-value="22"/>
       <declare type="string" name="user" required="required" />
-    <!-- Sample: Use key file or password -->
+    
       <declare type="boolean" name="use_key" initial-value="true" />
-    <!-- Sample: If use key, input key and passphrase -->
+    
       <condition name="use_key" enabled="true">
         <declare type="string" name="key" hidden="false" />
         <declare type="password" name="passphrase" hidden="false" />
       </condition>
-    <!-- Sample: If use password, input password -->
+    
       <condition name="use_key" enabled="false">
         <declare type="password" name="secret_key" hidden="false" />
       </condition>
@@ -218,7 +218,7 @@ The XPath expression is `/function/prototype/proto-section[@section="datasource_
 The XPath expression is `/function/prototype/proto-section[@section="crawlspace_settings"]`. The section contains only one `<declare />` element to specify the path. The value of the path is provided by the connector code.
 
 ```xml
-<!-- Do not modify, must be here -->
+
   <proto-section section="crawlspace_settings" cardinality="multiple">
     <declare type="string" name="path" hidden="true" />
   </proto-section>

@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Improving result relevance with training
 {: #train}
 
-<!-- c/s help for the *Train* page. Do not delete.  -->
+
 
 The relevance of natural language query results can be improved in {{site.data.keyword.discoveryfull}} with training.
 {: shortdesc}
@@ -79,9 +79,9 @@ To apply relevancy training to a project, complete the following steps:
 1.  Click **Rate results**.
 1.  After the results are displayed, assess each result, and then select **Relevant** or **Not relevant**, whichever option applies given the quality of the result.
 
-    In the {{site.data.keyword.discoveryshort}} UI, when you mark a document as **Relevant**, the service applies a relevancy score of `10` to the result and a score of `0` when you mark it as **Not relevant**. The only two score values that you can assign when you apply the relevancy training through the {{site.data.keyword.discoveryshort}} UI are `0` and `10`.
+    In the {{site.data.keyword.discoveryshort}} UI, when you mark a document as **Relevant**, the service applies a relevancy score of `10` to the result and a score of `0` when you mark it as **Not relevant**. The only two score values that you can assign when you apply the relevancy training through {{site.data.keyword.discoveryshort}} UI are `0` and `10`.
     
-    In the {{site.data.keyword.discoveryshort}} API, you can assign relevancy score values between `0` and every integer between up to `100`. In the same project, you cannot mix training examples that are created in the {{site.data.keyword.discoveryshort}} UI (scores of `0` and `10`) with examples created that use confidence score levels other than `0` and `10`. If you use any custom score scale through the API, you must continue to apply all your training through the API. You cannot edit the training examples that are applied through the API in the {{site.data.keyword.discoveryshort}} UI unless they use only the two scores of `0` and `10`.
+    In the {{site.data.keyword.discoveryshort}} API, you can assign relevancy score values between `0` and every integer between up to `100`. In the same project, you cannot mix training examples that are created in {{site.data.keyword.discoveryshort}} UI (scores of `0` and `10`) with examples created that use confidence score levels other than `0` and `10`. If you use any custom score scale through the API, you must continue to apply all your training through the API. You cannot edit the training examples that are applied through the API in {{site.data.keyword.discoveryshort}} UI unless they use only the two scores of `0` and `10`.
 
     If the result shows the message, “No content preview available for this document”, it means that the document that was returned does not contain a `text` field or that its `text` field is empty. If none of the documents in your collection have a `text` field, use the API to train the project instead of training it from the product user interface.
 

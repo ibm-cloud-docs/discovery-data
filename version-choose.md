@@ -96,6 +96,7 @@ For more information about artifact limits per plan, see the feature documentati
 -   [Query limits](/docs/discovery-data?topic=discovery-data-query-concepts#query-limits)
 -   [Regular expression limits](/docs/discovery-data?topic=discovery-data-domain-regex#regex-limits)
 -   [SDU limits](/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-limits)
+-   [External enrichment limits](/docs/discovery-data?topic=discovery-data-external-enrichment#external-enrichment-limits)
 
 The following limits apply only to Content Mining project types:
 

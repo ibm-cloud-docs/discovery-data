@@ -240,7 +240,7 @@ The maximum number of documents that you can annotate to train an SDU model per 
 ## Managing fields
 {: #field-settings}
 
-<!-- c/s help for **Manage fields** page. Do not delete. -->
+
 
 The **Manage fields** tab contains several options:
 

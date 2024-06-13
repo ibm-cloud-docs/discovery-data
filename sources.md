@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Overview of IBM Cloud data sources
 {: #sources}
 
-<!-- V2 c/s help for the *Select a Collection type* page for IBM Cloud. Do not delete. -->
+
 
 You can use {{site.data.keyword.discoveryfull}} on the {{site.data.keyword.cloud}} to connect to and crawl documents from remote sources.
 {: shortdesc}
@@ -59,7 +59,7 @@ The following requirements and limitations are specific to {{site.data.keyword.d
 {{site.data.keyword.SecureGatewayfull}} is being deprecated. Existing clients who use {{site.data.keyword.SecureGateway}} can get guidance on migrating to the {{site.data.keyword.satellitelong}} Connector before the End of Support date. For more information, see the [{{site.data.keyword.SecureGateway}} deprecation dates and deprecation details.](/docs/SecureGateway?topic=SecureGateway-dep-overview){: external}.
 {: deprecated}
 
-<!-- Learn more topic WDS -->
+
 To connect to an on-premises data source, you first need to download, install, and configure {{site.data.keyword.SecureGatewayfull}}.
 {: shortdesc}
 
@@ -131,3 +131,4 @@ Network addresses are subject to change from time to time. You can monitor for u
     158.176.107.48/28
     ```
     {: screen}
+    

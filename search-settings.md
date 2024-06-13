@@ -15,7 +15,7 @@ subcollection: discovery-data
 # Expanding the meaning of queries
 {: #search-settings}
 
-<!-- c/s help for *Search settings* page. Do not delete. -->
+
 
 You can improve the quality of search results by expanding the meaning of the queries that are submitted by customers.
 {: shortdesc}

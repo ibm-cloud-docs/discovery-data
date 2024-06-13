@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-06-11"
 
 keywords: external-enrichment,webhook
 
@@ -15,12 +15,10 @@ subcollection: discovery-data
 # Document status webhook API
 {: #document-status-api}
 
-[IBM Cloud]{: tag-ibm-cloud}
-
-The document status webhook API is beta functionality that is only available from the API. This feature is available only from service instances that are managed by IBM Cloud.
-{: beta}
-
 You can use the document status webhook feature to send a webhook event to your external application when the status of ingested documents becomes `available` or `failed`. The webhook event helps you to take the next action on indexed documents, without having to get the document status first through the [Get document details API](https://{DomainName}/apidocs/discovery-data#getdocument){: external}.
+
+[IBM Cloud Pak for Data]{: tag-cp4d} When you run {{site.data.keyword.discoveryshort}} in an air-gapped environment, you must connect to the external application through an HTTP proxy. For more information, see [Setting up HTTP proxy in air-gapped environments](/docs/discovery-data?topic=discovery-data-collection-types#sethttpproxyae).
+{: note}
 
 For using the document status webhook feature, do the following things:
 
@@ -46,38 +44,9 @@ For more information about the query API, see [Query a project API method](https
 
 You can also refer to the webhook-doc-status-sample application for the document status webhook API feature. To view the sample application, you must have access to the Discovery [doc-tutorial-downloads](https://github.com/watson-developer-cloud/doc-tutorial-downloads/tree/master/discovery-data/webhook-doc-status-sample){: external} repository.
 
-## Webhook security
-{: #webhook-security}
+{{site.data.content.webhook-security-reuse}}
 
-To authenticate the webhook request, verify the JSON Web Token (JWT) that is sent with the request. The webhook microservice automatically generates a JWT and sends it in the `Authorization` header with each webhook call. It is your responsibility to add code to the external service that verifies the JWT.
-
-For example, if you specify `sample secret` in the `Secret` field of the Webhooks object in the [Create collection](https://{DomainName}/apidocs/discovery-data#createcollection){: external} or [update collection](https://{DomainName}/apidocs/discovery-data#updatecollection){: external} APIs, you might add sample code such as the following in Node.js:
-
-```sh
-const jwt = require('jsonwebtoken');
-...
-const token = request.headers.authentication; // grab the "Authentication" header
-try {
-  const decoded = jwt.verify(token, 'sample secret');
-} catch(err) {
-  // error thrown if token is invalid
-}
-```
-{: codeblock}
-
-## Data model of the `ping` event
-{: #ping-event}
-
-Following are the `ping` event parameters:
-
-| Parameter | Description |
-|-----------|----------------------|
-| `event` | The event name is `ping`. |
-| `instance_id` | The {{site.data.keyword.discoveryshort}} instance ID. |
-| `version` | The {{site.data.keyword.discoveryshort}} API version in the format `yyyy-mm-dd`. |
-| `data` | An object with the event information: `url`, `events`, and `metadata`.  \n  \n  - `url`: The configured webhook endpoint (URL).  \n  \n  - `events`: An array of event string values. The events in this array are sent to the webhook URL.  \n  \n  - `metadata`: An object with information that is specific to the created webhook.|
-| `created_at` | The date and time the event was created. |
-{: caption="Ping event" caption-side="top"}
+{{site.data.content.ping-event-reuse}}
 
 For example, following is a `ping` event that is sent to a webhook:
 

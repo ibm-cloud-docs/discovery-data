@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2023
-lastupdated: "2023-04-26"
+  years: 2019, 2024
+lastupdated: "2024-06-05"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Overview of Cloud Pak for Data data sources
 {: #collection-types}
 
-<!-- 2.1.3 c/s help for the *Select a Data Source* page CP4D. Do not delete. -->
+
 
 In {{site.data.keyword.discovery-data_short}}, you can crawl documents from a local source that you upload or from a remote data source that you connect to. Learn more about the supported data sources and how to configure them.
 {: shortdesc}
@@ -43,6 +43,57 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 *Your data source isn't listed?* You can work with a developer to create a custom connector. For more information, see [Building a Cloud Pak for Data custom connector](/docs/discovery-data?topic=discovery-data-build-connector).
 
 If you have special requirements when you add source documents, such as a need to exclude certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
+
+## Setting up the HTTP proxy configuration in the air gap environment [IBM Cloud Pak for Data]{: tag-cp4d}
+{: #sethttpproxyae}
+
+When {{site.data.keyword.discoveryshort}} is running in the air gap environment, you must set up HTTP proxy to connect to the external servers.
+
+You can crawl from the following data sources by using an HTTP proxy server in an air-gapped environment:
+
+- [Box](/docs/discovery-data?topic=discovery-data-connector-box-cp4d)
+- [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cp4d)
+- [SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cp4d)
+- [SharePoint On Prem](/docs/discovery-data?topic=discovery-data-connector-sharepoint-onprem-cp4d)
+- [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cp4d)
+
+You can either use the specific proxy settings for each data source type or the system-wide proxy settings that are provided by resource specification injection (RSI) from CPD 5.0.0.
+
+1. Run the following command to install the RSI webhook.
+    ```bash
+    $ cpd-cli manage install-rsi --cpd_instance_ns=${PROJECT_CPD_INST_OPERANDS}
+    ```
+    For more information, see [Install RSI](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-install-rsi).
+1. Run the following command to enable the RSI webhook.
+    ```bash
+    $ cpd-cli manage enable-rsi --cpd_instance_ns=${PROJECT_CPD_INST_OPERANDS}
+    ```
+    For more information, see [Enable RSI](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-enable-rsi).
+1. Run the following command to set up the proxy configuration.
+    ```bash
+    $ cpd-cli manage create-proxy-config \
+        --cpd_instance_ns=${PROJECT_CPD_INST_OPERANDS} \
+        --proxy_host=$PROXY_HOST \
+        --proxy_port=$PROXY_PORT \
+        --proxy_user=$PROXY_USER \
+        --proxy_password=$PROXY_PASSWORD
+    ```
+    For more information, see [Manage proxy configuration](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-create-proxy-config).
+1. Run the following command to enable the proxy configuration.
+    ```bash 
+    $ cpd-cli manage enable-proxy --cpd_instance_ns=${PROJECT_CPD_INST_OPERANDS}
+    ```
+    For more information, see [Enable proxy configuration](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-enable-proxy).
+
+For more information about applying proxy settings to an air-gapped cluster, see [Applying cluster HTTP proxy settings to IBM Cloud Pak for Data](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=environment-applying-cluster-http-proxy-settings#taskhttp-proxy__steps__1){: external}.
+
+Following are the specific requirements and limitations that are related to HTTP proxy servers:
+- HTTP proxy servers that require TLS communication are not supported.
+- HTTP proxy servers that require authentication are necessary for:
+  - SharePoint On Prem
+  - SharePoint Online with User principal
+- HTTP proxy servers must support NTLM when the target web and SharePoint On Prem servers require NTLM authentication.
+- HTTP proxy servers must support the LDAP protocol for SharePoint On Prem document-level security.
 
 ## Data source requirements
 {: #requirements}

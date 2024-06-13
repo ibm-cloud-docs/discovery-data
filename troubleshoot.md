@@ -29,7 +29,7 @@ The information in this topic suggests steps you can take to investigate issues 
 {: #ts-minio-loop}
 {: troubleshoot}
 
-<!-- disco support 1566-->
+
 -   **Error**: `Cannot find volume "export" to mount into container "ibm-minio"` is displayed during an installation or upgrade of {{site.data.keyword.discoveryshort}}. When you check the status of the Minio pods by using the command, `oc get pods -l release=wd-minio -o wide`, and then check the `Minio operator` logs by using the commands, `oc get pods -A | grep ibm-minio-operator`, and then `oc logs -n <namespace> ibm-minio-operator-XXXXX`, you see an error similar to the following one in the logs:
 
     ```text

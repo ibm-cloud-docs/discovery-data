@@ -15,7 +15,7 @@ subcollection: discovery-data
 # Deploying the built-in UI components
 {: #deploy}
 
-<!-- c/s help for the *Integrate and deploy* page. Do not delete. -->
+
 
 For Document Retrieval and custom projects, a set of user interface components are available for your use.
 {: shortdesc}
