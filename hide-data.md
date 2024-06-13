@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-05-02"
+  years: 2020, 2024
+lastupdated: "2024-06-13"
 
 subcollection: discovery-data
 
@@ -57,7 +57,7 @@ You can prevent content from being included in query results in the following wa
 
       Documents that are added to a collection from an external data source will be added back to the collection with the next scheduled crawl of the data source. The delete function removes the document from the index of the collection, not from the external data source.
 
-      Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments. If you delete one of these generated documents, and then repeat the action that created it, the deleted document is added back in to your collection.
+      Some file types, such as CSV or JSON files, generate subdocuments when they are added to a collection. Splitting a document turns one document into multiple document segments. If you delete one of these generated documents, and then repeat the action that created it, the deleted document is added back in to your collection. To completely delete the original document, you must delete the parent document by using the [Delete document](/apidocs/discovery-data#deletedocument) API and remove the original document from the crawled data source.
       {: note}
 
    [IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} releases before 4.6.5**
