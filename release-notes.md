@@ -28,7 +28,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 {: #discovery-29february2024}
 {: release-note}
 
-<!--4.8.5-1.3-->
+
 
 New Intelligent Document Processing (IDP) project type
 :   The IDP project type is the new default project type in {{site.data.keyword.discoveryshort}}. Use the IDP project type to understand quickly what data is extracted from your documents in a rich document preview and also improve the data by applying enrichments. For more information, see [Intelligent Document Processing](/docs/discovery-data?topic=discovery-data-projects#doc-idp).
@@ -37,7 +37,7 @@ New Intelligent Document Processing (IDP) project type
 {: #discovery-29january2024}
 {: release-note}
 
-<!--4.8.4-0.0-->
+
 
 Enable stemming instead of lemmatization for normalization when you create a collection
 :   You can now select stemming instead of lemmatization to normalize words in the index and queries. For more information, see [Enabling stemming for uncurated data](/docs/discovery-data?topic=discovery-data-collections#stemmer).
@@ -46,7 +46,7 @@ Enable stemming instead of lemmatization for normalization when you create a col
 {: #discovery-16november2023}
 {: release-note}
 
-<!--4.8.1-3.0-->
+
 
 APIs for get collection details, list documents, and get document details are now supported in Premium plans of IBM-Cloud managed instances
 :   In Premium plans, the APIs are supported for collections that are created after 16 November 2023.
@@ -58,7 +58,7 @@ If you want to get information about a collection that was created earlier, trig
 {: #discovery-7november2023}
 {: release-note}
 
-<!--4.8.1-3.0-->
+
 
 Preview data for collections
 :   You can preview a document in a collection. To preview data in the advanced document view, navigate to the *Manage collections* page, and click **Preview data** in the collection tile. Alternatively, you can open a collection that you want to preview, and click **Preview data**.
@@ -67,7 +67,7 @@ Preview data for collections
 {: #discovery-4october2023}
 {: release-note}
 
-<!--4.8.1-1.1-->
+
 
 The optical character recognition (OCR) feature for Hebrew language text in images is a beta feature in {{site.data.keyword.discoveryshort}}
 :   When OCR is enabled, text extraction and OCR-identified text extraction have limitations for the Hebrew language. These limitations might include the following:
@@ -94,7 +94,7 @@ The *Part of Speech* enrichment is no longer available for any project types oth
 {: #discovery-21september2023}
 {: release-note}
 
-<!--4.8.0-7.2-->
+
 
 Updated the tokenizer for all languages
 :   The updated tokenizer might affect the ranking order of results for certain queries. If you observe any ranking differences in your query results, you can reindex the documents in the collection. Discovery tokenizes words both when it ingests and stores data in the index, and at run time when it analyzes queries that are submitted by users. By reindexing the collection, you ensure that your documents are indexed with the same tokenizer that is used for matching queries.
@@ -105,7 +105,7 @@ Updated the tokenizer for all languages
 {: #discovery-15august2023}
 {: release-note}
 
-<!--4.8.0-6.0-->
+
 
 Option to apply or remove a crawl schedule
 :   This option is helpful for easily applying or removing a crawl schedule, and also for stopping a crawl. For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
@@ -114,7 +114,7 @@ Option to apply or remove a crawl schedule
 {: #discovery-9august2023}
 {: release-note}
 
-<!--4.8.0-5.3-->
+
 
 You can now specify fields from which to extract content when querying data from the UI
 :   The ability to specify fields allows you to improve the search results when content is not indexed in the default fields. Content might not be indexed in the default fields when you ingest structured files or when you apply a Smart Document Understanding model. For more information, see [Excerpt unavailable](/docs/discovery-data?topic=discovery-data-query-results#improve-search-result).
@@ -126,7 +126,7 @@ Enrichments in the advanced document view for PDFs are highlighted in distinct c
 {: #discovery-26july2023}
 {: release-note}
 
-<!--4.8.0-4.0-->
+
 
 You can now specify a custom date and time for the crawl schedule
 :   This option is helpful if you want to avoid heavy load on a target system during business hours. For more information, see [Crawl schedule options](/docs/discovery-data?topic=discovery-data-collections#crawlschedule).
@@ -135,7 +135,7 @@ You can now specify a custom date and time for the crawl schedule
 {: #discovery-10june2023}
 {: release-note}
 
-<!-- 4.8.0-3.0 -->
+
 
 All Entities enrichments use the Entities v2 type system
 :   {{site.data.keyword.nlushort}} Entities v1 is no longer supported. {{site.data.keyword.cloud_notm}} instances that were created before 2 June 2021 and Discovery for {{site.data.keyword.icp4dfull_notm}} 2.x deployments used version 1 of the {{site.data.keyword.nlushort}} Entities type system for English and Korean collections. Now, all collections use only version 2 of the {{site.data.keyword.nlushort}} Entities type system.
@@ -147,7 +147,7 @@ Classifiers are identified more clearly
 {: #discovery-16may2023}
 {: release-note}
 
-<!-- 4.8.0-0.5 -->
+
 
 Improved tool for creating Smart Document Understanding (SDU) user-trained models
 :   The SDU tool that you use to annotate documents when you create a user-trained SDU model now uses the React UI framework. This update does not change the behavior of the tool, but does make it more responsive.
@@ -171,7 +171,7 @@ Changed how fields named `document_id` are handled
 {: #discovery-2march2023}
 {: release-note}
 
-<!-- 4.7.0-7.1 -->
+
 
 Now you can specify the types of files to add to a collection
 :   When you connect to an external data source, you can limit the types of files to add to the collection from the external data source. For example, you can choose to add only PDF files from a Box data source.
@@ -204,7 +204,7 @@ The string variation operator now works with phrases
 {: #discovery-10febuary2023}
 {: release-note}
 
-<!-- 4.7.0-6.0 -->
+
 
 Entity extractor is generally available
 :   The *Extract entities* enrichment brings the powerful ability to build a custom type system into {{site.data.keyword.discoveryshort}}. Use the tool to label entity examples within your industry data to build a machine learning model that {{site.data.keyword.discoveryshort}} can use to recognize meaningful terms for your business. Already built an entity type system in {{site.data.keyword.knowledgestudioshort}}? You can use the corpus from {{site.data.keyword.knowledgestudioshort}} as a starting point for your {{site.data.keyword.discoveryshort}} entity extractor training data. For more information, see [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor).
@@ -216,7 +216,7 @@ Entity extractor is generally available
 {: #discovery-7febuary2023}
 {: release-note}
 
-<!-- 4.7.0-5.0 -->
+
 
 Support for hourly crawls was removed
 :   You can no longer choose to crawl a data source every hour. If an existing collection is configured to crawl hourly, you will be prompted to change the scheduled crawl the next time you edit the connector settings.
@@ -234,7 +234,7 @@ You can no longer enable FAQ extraction for a collection
 {: #discovery-25january2023}
 {: release-note}
 
-<!-- 4.7.0-4.0 -->
+
 
 Set up a Microsoft SharePoint Online data store connector that has *Read* permission
 :   When you create a Microsoft SharePoint Online connector to crawl a SharePoint data source by using Open Authentication v2, the enterprise application that is created by Discovery to make the connection requires *Read* permission only. The enterprise application that was configured for you previously required *Write* permission.
@@ -252,7 +252,7 @@ The beta FAQ extraction feature that detects and extracts question-and-answer pa
 {: #discovery-6december2022}
 {: release-note}
 
-<!-- 4.7.0-3.0 -->
+
 
 Now you can stop a data source crawl
 :   You can stop a crawl that is in progress or that is scheduled to occur in the future. For more information, see [Stopping a crawl](/docs/discovery-data?topic=discovery-data-collections#collections-crawl-stop).
@@ -294,7 +294,7 @@ A new and improved optical character recognition technology is available
 {: #discovery-1november2022}
 {: release-note}
 
-<!-- 4.7.0-1.0 -->
+
 
 Entity extractor loads the first 40,000 characters from training data documents
 :   Even extra long documents from the collection that you use to define custom entity examples are loaded into the document view of the tool. However, only the first 40,000 characters, which is approximately 15-20 pages, are displayed. The rest of the file content is truncated. You'll know if your document is truncated because a notification is displayed in the document view. For more information, see [Entity extractor](/docs/discovery-data?topic=discovery-data-entity-extractor).
@@ -326,7 +326,7 @@ You cannot apply a Smart Document Understanding model to Microsoft Excel files
 {: #discovery-16september2022}
 {: release-note}
 
-<!-- 4.6.0-6.4 -->
+
 
 In-context document preview is now available for PDF files that are crawled
 :   When you click to view a passage from a search result that is extracted from a PDF document, a document preview page is displayed that shows the returned passage in the context of the original PDF page. The in-context view is available for PDF files to which a Smart Document Understanding model is applied.
@@ -361,7 +361,7 @@ Larger documents can be crawled
 {: #discovery-2august2022}
 {: release-note}
 
-<!-- 4.6.0-4.2 -->
+
 
 IAM authentication support was added to the IBM Cloud Object Storage connector
 :   You can now choose to authenticate with the IBM Cloud Identity and Access Management (IAM) service. For more information, see [IBM Cloud Object Storage](/docs/discovery-data?topic=discovery-data-connector-cos-cloud).
@@ -390,7 +390,7 @@ Watson Discovery v1 is being deprecated. Existing clients who use Watson Discove
 {: #discovery-11july2022}
 {: release-note}
 
-<!-- 4.6.0-2.5 -->
+
 
 The advanced document view highlights even more enrichments
 :   In addition to the built-in *Entities* and *Keywords* enrichments that are recognized by Watson Natural Language Processing models, the advanced document view now highlights the following types of enrichments:
@@ -420,7 +420,7 @@ Watson SDK support change
 {: #discovery-1june2022}
 {: release-note}
 
-<!--  4.6.0-0.1 -->
+
 
 The entity extractor tool is now easier to use
 :   The user interface was redesigned to better support the workflow of adding entity types and labeling examples of them. As part of the new design, the bulk labeling feature now is enabled by default, the documents view is easier to find and use, the suggestions pane is more responsive, and you can track metrics scores across multiple training runs. For more information about the entity extractor, see [Customizing the terms that Discovery can recognize](/docs/discovery-data?topic=discovery-data-entity-extractor).
@@ -442,7 +442,7 @@ Added API methods for working with stop words and expansion lists
 {: #discovery-13may2022}
 {: release-note}
 
-<!--  4.5.0-0.1 -->
+
 
 An improved JSON view is available
 :   You can now use keyboard keys to tab through elements in the view. The new JSON view also numbers the occurrences of elements in each JSON object, which makes it easier to keep track of information and to read totals at a glance.
@@ -471,7 +471,7 @@ More messages are shown to keep you informed about the status of document proces
 {: #discovery-6april2022}
 {: release-note}
 
-<!-- 4.0.9-0.1 -->
+
 
 Project tile has a more intuitive menu
 :   The project tile was updated to include an overflow menu that you can use to perform actions such as deleting or renaming a project.
@@ -489,7 +489,7 @@ A new document classifier API is available
 {: #discovery-21march2022}
 {: release-note}
 
-<!-- 4.0.8-1.0 -->
+
 
 Visualize enrichments found in your documents
 :   When you click to view the passage from a search result, a document preview page is displayed that shows a representation of the original document where the search result was found. For most document types, you can open a new *advanced view* of the document to see useful summary information, such as the number of occurrences of any enrichments that are detected in the document. You also can select one of the enrichments to highlight every occurrence of the element within the document text.
@@ -510,7 +510,7 @@ Tell us what you think
 {: #discovery-10march2022}
 {: release-note}
 
-<!-- 4.0.8-0.6 -->
+
 
 Manage the data in a collection from the new *Manage data* page
 :   You can now access the *Manage data* page for a collection from the *Manage collections* navigation pane. Go there to see a list of the documents in your collection and get a quick view of information about the documents. You can also delete documents from a collection with just a few clicks. For more information, see [Excluding content from query results](/docs/discovery-data?topic=discovery-data-hide-data).
@@ -519,7 +519,7 @@ Manage the data in a collection from the new *Manage data* page
 {: #discovery-15february2022}
 {: release-note}
 
-<!-- 4.0.6-1.0 -->
+
 
 An alternative authentication mechanism is available for Microsoft Sharepoint Online connectors
 :   You can now use Open Authentication to sign in to Microsoft SharePoint directly when you configure a new {{site.data.keyword.cloud_notm}} connector. The *Sign in with Microsoft* option that uses Open Authentication to authenticate with the external data source is a beta feature. For more information, see [Microsoft SharePoint Online](/docs/discovery-data?topic=discovery-data-connector-sharepoint-online-cloud).
@@ -529,7 +529,7 @@ An alternative authentication mechanism is available for Microsoft Sharepoint On
 {: #discovery-7january2022}
 {: release-note}
 
-<!-- 4.0.5-4.0 -->
+
 
 Upgrade from Plus to Enterprise without help
 :   You can perform an in-place upgrade from a Plus plan to an Enterprise plan. For more information, see [Upgrading](/docs/discovery-data?topic=discovery-data-upgrade).
@@ -538,7 +538,7 @@ Upgrade from Plus to Enterprise without help
 {: #discovery-6december2021}
 {: release-note}
 
-<!-- 4.0.5-2.4 -->
+
 
 Crawling web pages with dynamic content is now generally available
 :   The *Execute JavaScript during crawl* feature was introduced as a beta feature, but is now generally available. For more information, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
@@ -570,7 +570,7 @@ New locations for Enterprise plan now available
 {: #discovery-3november2021}
 {: release-note}
 
-<!--4.0.4-0.5-->
+
 
 New Enterprise plan
 :   Scale and secure your {{site.data.keyword.discoveryshort}} application with enterprise-grade support and performance and address more use cases, including contract analysis and content mining to explore insights across documents. Currently, the Enterprise plan is available only from the Dallas location. For more information, see [{{site.data.keyword.discoveryshort}} pricing plans](/docs/discovery-data?topic=discovery-data-pricing-plans).
@@ -588,7 +588,7 @@ Improved field selection choices
 {: #discovery-14october2021}
 {: release-note}
 
-<!--4.0.3-3.2-->
+
 
 New {{site.data.keyword.discoveryshort}} home page
 :   A new home page is displayed when you start {{site.data.keyword.discoveryshort}} and gives you quick access to a product overview video, and tours. You can collapse the home page welcome banner to see more projects.
@@ -613,7 +613,7 @@ Change to Lite and Advanced plans in all locations
 {: #discovery-24september2021}
 {: release-note}
 
-<!--4.0.3-1.2-->
+
 
 New scoring for NLU enrichments
 :   Relevance and confidence scores are displayed for NLU enrichments that are returned by search. For example, when you open the JSON view of the document preview from a query result, you can see confidence scores for Entities mentions and relevance scores for Keyword mentions.
