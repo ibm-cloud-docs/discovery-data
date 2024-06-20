@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-06-19"
 
 keywords: backup,restore
 
@@ -29,6 +29,8 @@ The following table lists the upgrade paths that are supported by the scripts.
 
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
+| 4.8.x | 5.0.x |
+| 4.7.x | 5.0.x |
 | 4.8.x | 4.8.x |
 | 4.7.x | 4.8.x |
 | 4.6.x | 4.8.x |
@@ -36,11 +38,11 @@ The following table lists the upgrade paths that are supported by the scripts.
 | 4.0.x | 4.8.x except 4.8.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
-If you are upgrading from 4.6.x to 4.8.x, a simpler way to complete the upgrade is described in the following topics:
+If you are upgrading to 5.0.x, a simpler way to complete the upgrade is described in the following topics:
 
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.8.x](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade-v48.html){: external}.
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.7](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade-v47.html){: external}.
--  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.6](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade-v46.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.8.x](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-upgrade-v48.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.7](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-upgrade-v47.html){: external}.
+
 
 If you use {{site.data.keyword.icp4dfull_notm}} Red Hat OpenShift APIs for Data Protection (OADP) backup and restore utility to offline back up and restore an entire cluster, a few extra steps are required. For more information, see [Using OADP to back up a cluster where {{site.data.keyword.discoveryshort}} is installed](#backup-restore-oadp). For information about online OADP backup and restore, see [Cloud Pak for Data online backup and restore](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=data-online-backup-restore){: external}.
 
