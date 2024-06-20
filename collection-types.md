@@ -63,12 +63,12 @@ You can either use the specific proxy settings for each data source type or the 
     ```bash
     $ cpd-cli manage install-rsi --cpd_instance_ns=${PROJECT_CPD_INST_OPERANDS}
     ```
-    For more information, see [Install RSI](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-install-rsi).
+    For more information, see [Install RSI](https://www.ibm.com/docs/en/cloud-paks/cp-data/5.0.x?topic=manage-install-rsi){: external}.
 1. Run the following command to enable the RSI webhook.
     ```bash
     $ cpd-cli manage enable-rsi --cpd_instance_ns=${PROJECT_CPD_INST_OPERANDS}
     ```
-    For more information, see [Enable RSI](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-enable-rsi).
+    For more information, see [Enable RSI](https://www.ibm.com/docs/en/cloud-paks/cp-data/5.0.x?topic=manage-enable-rsi){: external}.
 1. Run the following command to set up the proxy configuration.
     ```bash
     $ cpd-cli manage create-proxy-config \
@@ -78,20 +78,20 @@ You can either use the specific proxy settings for each data source type or the 
         --proxy_user=$PROXY_USER \
         --proxy_password=$PROXY_PASSWORD
     ```
-    For more information, see [Manage proxy configuration](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-create-proxy-config).
+    For more information, see [Manage proxy configuration](https://www.ibm.com/docs/en/cloud-paks/cp-data/5.0.x?topic=manage-create-proxy-config){: external}.
 1. Run the following command to enable the proxy configuration.
     ```bash 
     $ cpd-cli manage enable-proxy --cpd_instance_ns=${PROJECT_CPD_INST_OPERANDS}
     ```
-    For more information, see [Enable proxy configuration](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=manage-enable-proxy).
+    For more information, see [Enable proxy configuration](https://www.ibm.com/docs/en/cloud-paks/cp-data/5.0.x?topic=manage-enable-proxy){: external}.
 
-For more information about applying proxy settings to an air-gapped cluster, see [Applying cluster HTTP proxy settings to IBM Cloud Pak for Data](https://ibmdocs-test.dcs.ibm.com/docs/en/SSQNUZ_5.0_test?topic=environment-applying-cluster-http-proxy-settings#taskhttp-proxy__steps__1){: external}.
+For more information about applying proxy settings to an air-gapped cluster, see [Applying cluster HTTP proxy settings to IBM Cloud Pak for Data](https://www.ibm.com/docs/en/cloud-paks/cp-data/5.0.x?topic=environment-applying-cluster-http-proxy-settings){: external}.
 
 Following are the specific requirements and limitations that are related to HTTP proxy servers:
 - HTTP proxy servers that require TLS communication are not supported.
 - HTTP proxy servers that require authentication are necessary for:
-  - SharePoint On Prem
-  - SharePoint Online with User principal
+    - SharePoint On Prem
+    - SharePoint Online with User principal
 - HTTP proxy servers must support NTLM when the target web and SharePoint On Prem servers require NTLM authentication.
 - HTTP proxy servers must support the LDAP protocol for SharePoint On Prem document-level security.
 
