@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-09"
+lastupdated: "2024-06-19"
 
 keywords: known issues
 
@@ -26,8 +26,10 @@ Known issues are listed by the release in which they were identified.
 The known issues that are described in this topic apply to installed deployments only.
 {: note}
 
-Known issues are cumulative. Issues from previous releases persist in later releases unless otherwise noted.
-{: important}
+## 5.0.x releases
+{: #5dot0}
+
+See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-known-issues.html)
 
 ## 4.8.x releases
 {: #4dot8}
