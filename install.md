@@ -24,6 +24,7 @@ This information applies only to installed deployments.
 ## Full installation instructions
 {: #full-installation-instructions}
 
+- [5.0.0](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-install-overview.html){: external}
 - [4.8.x](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-install-overview.html){: external}
 - [4.7.x](https://www.ibm.com/docs/SSQNUZ_4.7.x/svc-discovery/discovery-install-overview.html){: external}
 - [4.6.x](https://www.ibm.com/docs/SSQNUZ_4.6.x/svc-discovery/discovery-install-overview.html){: external}
@@ -43,6 +44,7 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 
 | {{site.data.keyword.discoveryshort}} version | {{site.data.keyword.icp4dfull_notm}} version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
+| 5.0.0 | 5.0.0 | 4.12 |
 | 4.8.0 | 4.8.0 | 4.12 |
 | 4.8.0 | 4.8.0 | 4.10 |
 | 4.7.3 | 4.7.3 | 4.12 |

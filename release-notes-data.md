@@ -35,6 +35,18 @@ Migrate your solutions to Watson Discovery, which has powerful custom natural la
 
 For more information about migrating your solutions, see [Migrating Knowledge Studio solutions](/docs/discovery-data?topic=discovery-data-migrate-wks).
 
+## 5.0.0 release, 19 June 2024
+{: #discovery-data-5-19june2024}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 5.0.0 is available.
+
+For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_5.0.x/fixlist/discovery-fixlist.html){: external}
+
+Features that are not available in this release
+:   The following feature is generally available from managed {{site.data.keyword.cloud_notm}} deployments at the time of this release, but not from installed deployments:
+
+    -   Answer finding
+
 ## 4.8.5 release, 24 April 2024
 {: #discovery-data-485-24april2024}
 
