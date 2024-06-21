@@ -31,6 +31,8 @@ The following table lists the upgrade paths that are supported by the scripts.
 |----------------|----------------------------|
 | 4.8.x | 5.0.x |
 | 4.7.x | 5.0.x |
+| 4.6.x | 5.0.x |
+| 4.5.x | 5.0.x |
 | 4.8.x | 4.8.x |
 | 4.7.x | 4.8.x |
 | 4.6.x | 4.8.x |
