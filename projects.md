@@ -57,14 +57,14 @@ Choose a project type to get the correct set of enrichments applied to your docu
 
 The following project types are available:
 
--    [Intelligent Document Processing](#doc-idp) [IBM Cloud]{: tag-ibm-cloud}
+-    [Intelligent Document Processing](#doc-idp)
 -    [Document Retrieval](#doc-retrieval)
 -    [Document Retrieval for Contracts](#doc-retrieval-contracts)
 -    [Conversational Search](#conversational)
 -    [Content Mining](#mining)
 -    [Custom](#custom)
 
-### Intelligent Document Processing [IBM Cloud]{: tag-ibm-cloud}
+### Intelligent Document Processing
 {: #doc-idp}
 
 Use this project type to understand quickly what data {{site.data.keyword.discoveryshort}} has extracted from your documents. You can view the extracted data in a rich document preview (default view is **PDF**). If the extracted data does not meet your requirements, you can apply enrichments to improve the data.
