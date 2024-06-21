@@ -151,7 +151,7 @@ The number of collections that you can create per project differs by project typ
 
 | Project type | Collections per project |
 |--------------|-------------------------|
-| [IBM Cloud]{: tag-ibm-cloud} Intelligent Document Processing | 5 |
+| Intelligent Document Processing | 5 |
 | Document Retrieval |                 5 |
 | Document Retrieval for Contracts |   5 |
 | Conversational Search |              5 |
