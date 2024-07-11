@@ -15,8 +15,6 @@ subcollection: discovery-data
 # Activity Tracker events
 {: #at_events}
 
-
-
 As a security officer, auditor, or manager, you can use the Activity Tracker service to track how users and applications interact with the {{site.data.keyword.discoveryshort}} service in {{site.data.keyword.cloud}}.
 {: shortdesc}
 

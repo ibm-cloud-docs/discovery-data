@@ -212,7 +212,6 @@ toc:
             - information-security.md
             - admin.md
             - at_events.md
-            - documentation-at-template.md
             - include: ../watson/service-endpoints.md
             - include: ../watson/virtual-endpoints.md
         - topicgroup:
