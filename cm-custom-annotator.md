@@ -75,6 +75,9 @@ To add a dictionary, complete the following steps:
 
 1.  Name the dictionary.
 1.  If you plan to define terms with a part of speech other than a noun, specify the part of speech.
+
+
+
 1.  Decide how you want to handle case.
 
     When case is ignored, the terms `Sat`, `SAT`, and `sat` are all labeled as occurrences of the `Sat` dictionary term.
