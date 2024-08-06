@@ -61,7 +61,7 @@ Valuable content is often stored on your company's internal website. Typically, 
 
 To configure the {{site.data.keyword.satelliteshort}} Connector, complete the following steps:
 
-1.  Create a {{site.data.keyword.satelliteshort}} connector. For more information, see [Creating a Connector](/docs/satellite?topic=satellite-create-connecto){: external}.
+1.  Create a {{site.data.keyword.satelliteshort}} connector. For more information, see [Creating a Connector](/docs/satellite?topic=satellite-create-connector){: external}.
 1.  Run a connector agent. For more information, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally){: external}.
 1.  Create and manage the Connector endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints){: external}.
 
