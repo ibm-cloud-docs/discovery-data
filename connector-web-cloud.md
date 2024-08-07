@@ -75,7 +75,7 @@ Limitations when using the {{site.data.keyword.satelliteshort}} Connector are th
 -   Basic Authentication is not supported when using the {{site.data.keyword.satelliteshort}} Connector.
 -   If the crawled web page has an absolute URL, for example, https://<seed_url_domain>/sample.html, then the linked page is not crawled. 
 
-## Connecting to the data source with the {{site.data.keyword.satellitelong_notm}} Connector
+## Connecting to the data source
 {: #connector-web-cloud-task}
 
 To configure the web crawl collection, complete the following steps:
