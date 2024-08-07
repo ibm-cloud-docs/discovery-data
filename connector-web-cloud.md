@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-08-06"
 
 subcollection: discovery-data
 
@@ -49,17 +49,31 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 | Websites, website subdirectories |
 {: caption="Table 1. Data sources crawling support" caption-side="top"}
 
-## Prerequisite step
+## Prerequisite step for connecting to a website that is hosted behind a firewall
 {: #connector-web-cloud-prereq-task}
 
-{{site.data.keyword.SecureGatewayfull}} is being deprecated. Existing clients who use {{site.data.keyword.SecureGateway}} can get guidance on migrating to the {{site.data.keyword.satellitelong}} Connector before the End of Support date. For more information, see the [{{site.data.keyword.SecureGateway}} deprecation dates and deprecation details.](/docs/SecureGateway?topic=SecureGateway-dep-overview){: external}.
+If you want to connect to a website that is hosted behind a firewall, configure the {{site.data.keyword.satellitelong}} Connector outside {{site.data.keyword.discoveryshort}} first. For more information, see the [{{site.data.keyword.satelliteshort}} Connector overview](/docs/satellite?topic=satellite-understand-connectors){: external}.
+
+{{site.data.keyword.SecureGatewayfull}} is being deprecated. Existing collections that use {{site.data.keyword.SecureGateway}} can migrate to the {{site.data.keyword.satellitelong}} Connector before the End of Support date. For more information, see the [{{site.data.keyword.SecureGateway}} deprecation dates and deprecation details](/docs/SecureGateway?topic=SecureGateway-dep-overview){: external}.
 {: deprecated}
 
-If you want to connect to a website that is hosted behind a firewall, set up an {{site.data.keyword.SecureGatewayfull}} connection first.
+Valuable content is often stored on your company's internal website. Typically, such intranet websites are accessible only from a computer that is connected to your office network or through a VPN connection. You can establish a persistent and more secure connection between the web crawler and this type of internal site by using the {{site.data.keyword.satelliteshort}} Connector.
 
-Valuable content is often stored on your company's internal website. Typically, such intranet websites are accessible only from a computer that is connected to your office network or through a VPN connection. You can establish a persistent and more secure connection between the web crawler and this type of internal site by using {{site.data.keyword.SecureGateway}}.
+To configure the {{site.data.keyword.satelliteshort}} Connector, complete the following steps:
 
-For more information about how to set up the connection, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
+1.  Create a {{site.data.keyword.satelliteshort}} connector. For more information, see [Creating a Connector](/docs/satellite?topic=satellite-create-connector){: external}.
+1.  Run a connector agent. For more information, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally){: external}.
+1.  Create and manage the Connector endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints){: external}.
+
+### Limitations
+{: #connector-web-cloud-limitations}
+
+Limitations when using the {{site.data.keyword.satelliteshort}} Connector are the following:
+
+-   You can configure the {{site.data.keyword.satelliteshort}} Connector when creating a new Web crawl collection only (cannot modify after the collection is created).
+-   If *Connect to on-premises network* is set to `On` in *More connection settings*, all seed URLs must be in the same domain.
+-   Basic Authentication is not supported when using the {{site.data.keyword.satelliteshort}} Connector.
+-   If the crawled web page has an absolute URL, for example, https://<seed_url_domain>/sample.html, then the linked page is not crawled. 
 
 ## Connecting to the data source
 {: #connector-web-cloud-task}
@@ -108,9 +122,17 @@ To configure the web crawl collection, complete the following steps:
         When JavaScript processing is enabled, it takes 3 to 4 times longer to crawl a page. Use it only on individual web pages where you know it is necessary because the page renders its content dynamically. If you see timeout messages or the crawl ends without adding content to the collection, decrease the number of web pages that are included in the crawl. For example, you can specify the exact page to crawl in the *Starting URLs* field, and set *Maximum number of links to follow* to 0.
         {: note}
 
-    -   To connect to a website that is hosted behind a firewall, [set up an {{site.data.keyword.SecureGatewayfull}} connection first](#connector-web-cloud-prereq-task).
+    -   To connect to a website that is hosted behind a firewall, [set up the {{site.data.keyword.satellitelong_notm}} Connector first](#connector-web-cloud-prereq-task).
 
-        Expand *More connection settings*, and then set **Connect to on-premises network** to `On`. Provide details about your {{site.data.keyword.SecureGateway}} connection.
+        Specify the {{site.data.keyword.satelliteshort}} Connector details. 
+        
+        To specify the details, complete the following steps:
+        
+        1.  Expand *More connection settings*, and then set **Connect to on-premises network** to `On`.
+        1.  Select **{{site.data.keyword.satellitelong}} Connector** as the connection type. By default, this option is selected.
+        1.  Specify the **{{site.data.keyword.satelliteshort}} Connector Endpoint URL**.
+
+        ![Shows the {{site.data.keyword.satelliteshort}} Connector details](images/sat.png){: caption="Figure 1. {{site.data.keyword.satelliteshort}} Connector details" caption-side="bottom"}
 
 1.  Optional: Add another web address to the **Starting URLs** field.
 
