@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-16"
 
 subcollection: discovery-data
 
@@ -15,6 +15,11 @@ subcollection: discovery-data
 
 Add a web crawl collection to crawl a website, analyze its page content, and store meaningful information. Specify one or more base web page URLs and configure how many linked pages for the web crawl to follow. You can configure how often to synchronize with the website, so you control how up to date the data in your collection is.
 {: shortdesc}
+
+<staging>
+Before creating a web crawl collection, contact the website owner to get permissions for crawling the website. Currently, the managed deployment of {{site.data.keyword.discoveryshort}} cannot crawl [https://www.ibm.com](https://www.ibm.com){: external}.
+{: important}
+</staging>
 
 [IBM Cloud]{: tag-ibm-cloud} **{{site.data.keyword.cloud_notm}} only**
 
