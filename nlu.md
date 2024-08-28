@@ -154,11 +154,6 @@ In the JSON output:
 ```
 {: codeblock}
 
-### Entity limits
-{: #nlu-entities-limits}
-
-The Entities enrichment can identify up to 50 entities, each with one or many mentions, per document.
-
 ## Keywords
 {: #nlu-keywords}
 
