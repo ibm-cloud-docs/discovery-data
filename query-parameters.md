@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2023
+  years: 2019, 2024
 lastupdated: "2023-05-26"
 
 subcollection: discovery-data
@@ -485,4 +485,3 @@ When `true`, a `table_results` array is included in the response with a list of 
 {: #table_count}
 
 This parameter specifies the maximum number of tables that can be included in the `table_results` array. Only returned if `table_results.enabled`=`true`. The default value is `10`.
-

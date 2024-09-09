@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2023
+  years: 2019, 2024
 lastupdated: "2023-09-28"
 
 keywords: JSON, JSON representation, result JSON
@@ -67,4 +67,3 @@ To preview and share your project, complete the following steps:
 1.  Paste the URL into a web browser to test it yourself or send the URL to team members.
 
     Don't forget to send any login credentials that are needed to access the project when you send the link to your colleagues.
-

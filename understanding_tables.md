@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2018, 2023
+  years: 2018, 2024
 lastupdated: "2023-06-23"
 
 keywords: table,tables,table understanding,row,column,cell,header,key,value,key value pair,context

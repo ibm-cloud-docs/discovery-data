@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2023
+  years: 2019, 2024
 lastupdated: "2022-10-20"
 
 keywords: expansions,synonyms,query expansion
