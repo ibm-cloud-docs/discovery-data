@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2023
+  years: 2019, 2024
 lastupdated: "2023-03-13"
 
 keywords: Watson NLP, entities, keywords, pos, part of speech, sentiment

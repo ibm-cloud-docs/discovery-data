@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2023
+  years: 2019, 2024
 lastupdated: "2023-08-17"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
