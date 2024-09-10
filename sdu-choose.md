@@ -29,6 +29,9 @@ Pretrained model
 
     For more information, see [Apply a pretrained SDU model](/docs/discovery-data?topic=discovery-data-sdu-pretrained).
 
+    Superscripts and subscripts are only identified when the collection is using the pretrained model. It is not supported in collections that use the custom model.
+    {: note}
+
 User-trained model
 :   Opens the Smart Document Understanding tool that you can use to pick certain types of text to store in fields other than the `text` field. 
 
