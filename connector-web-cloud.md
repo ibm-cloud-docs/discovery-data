@@ -75,8 +75,10 @@ Limitations when using the {{site.data.keyword.satelliteshort}} Connector are th
 
 -   You can configure the {{site.data.keyword.satelliteshort}} Connector when creating a new Web crawl collection only (cannot modify after the collection is created).
 -   If *Connect to on-premises network* is set to `On` in *More connection settings*, all seed URLs must be in the same domain.
--   Basic Authentication is not supported when using the {{site.data.keyword.satelliteshort}} Connector.
--   If the crawled web page has an absolute URL, for example, https://<seed_url_domain>/sample.html, then the linked page is not crawled. 
+-   If the seed URL uses SSL (`https://`), you can use basic authentication and absolute URLs. 
+-   If the seed URL uses HTTP (`http://`), the following limitations apply:
+    -   Basic authentication is not available when using the {{site.data.keyword.satelliteshort}} Connector.
+    -   If the crawled web page has an absolute URL, for example, `http://<seed_url_domain>/sample.html`, then the linked page is not crawled. 
 
 ## Connecting to the data source
 {: #connector-web-cloud-task}
