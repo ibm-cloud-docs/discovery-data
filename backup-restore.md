@@ -42,6 +42,7 @@ The following table lists the upgrade paths that are supported by the scripts.
 | 4.0.x | 4.8.x except 4.8.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
+
 If you are upgrading to 5.0.x, a simpler way to complete the upgrade is described in the following topics:
 
 -  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.8.x](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-upgrade-v48.html){: external}.
