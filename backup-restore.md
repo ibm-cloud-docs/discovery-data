@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-10-03"
 
 keywords: backup,restore
 
@@ -27,9 +27,11 @@ You use the same set of backup and restore scripts to back up and restore data i
 
 The following table lists the upgrade paths that are supported by the scripts.
 
+
+
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
-| 4.8.x | 5.0.x  |
+| 4.8.x | 5.0.x |
 | 4.7.x | 5.0.x |
 | 4.6.x | 5.0.x |
 | 4.5.x | 5.0.x |
