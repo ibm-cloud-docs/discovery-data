@@ -65,7 +65,7 @@ The following table shows an example of the type of content that might be stored
 |----------|------|--------------|---------|-----------------|-----------------|------------|----------|-------|
 | 0 | `2016/1/1` | tea | lemon tea | Not Member | Manhattan | 20 | The straw was peeled off from the juice pack. | package_container |
 | 1 | `2016/1/2` | ice cream | vanilla ice cream | Silver Member | Queens | 20 | I got some ice cream for my children, but there was something like a piece of thread inside the cup. | contamination_tampering |
-{: caption="Table 1. Sample data for CSV files" caption-side="top"}
+{: caption="Sample data for CSV files" caption-side="top"}
 
 Note that the two required fields are present in the sample. The required fields have the following names:
 
@@ -100,7 +100,7 @@ To create a document classifier, complete the following steps:
     The status of index creation is displayed. Wait for the collection to be fully indexed before you continue with this procedure.
 1.  To create a classifier, click **collection**, and then choose **classifier** from the list.
 
-    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Figure 1. Collection menu" caption-side="bottom"}
+    ![Shows the collection menu](images/cm-collection-menu.png){: caption="Collection menu" caption-side="bottom"}
 
 1.  Click **Create classifier**.
 1.  Name your classifier.
@@ -185,7 +185,7 @@ After the model is trained, deploy the model as an enrichment.
 
 After the enrichment is applied to a collection, a facet is generated that you can use to find the predicted classes. In this example, the predicted field is named `label_answer_predicted`.
 
-![Shows the facet that is generated after the doc classifier enrichment is applied to a collection](images/cm-doc-class-predicted.png){: caption="Figure 2. A Label_answer_predicted facet is generated" caption-side="bottom"}
+![Shows the facet that is generated after the doc classifier enrichment is applied to a collection](images/cm-doc-class-predicted.png){: caption="A Label_answer_predicted facet is generated" caption-side="bottom"}
 
 Use the generated facet to filter documents by classification and analyze subsets of documents. Doing so helps you to find patterns and discover other insights. You can export these target documents to share with team members or to analyze further. For more information, see [Exporting data](/docs/discovery-data?topic=discovery-data-cm-export).
 
@@ -193,7 +193,7 @@ When the document classifier classifies a document, it stores the classification
 
 For example, the following JSON excerpt shows a document that was classified with the `package_container` class.
 
-![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png){: caption="Figure 3. Document classifier enrichment syntax" caption-side="bottom"}
+![Shows the JSON source for a document that has been classified with the package_container class.](images/json-classifier-found.png){: caption="Document classifier enrichment syntax" caption-side="bottom"}
 
 ### Document classifier limits
 {: #doc-classifier-limits}

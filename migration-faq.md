@@ -24,7 +24,7 @@ Do the two versions have all the same features?
 How do I know which version I'm using now?
 :   When you open the product user interface in v2, the following page is displayed:
 
-![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png){: caption="Figure 1. Home page from the Sample Project" caption-side="bottom"}
+![Shows the main My Projects page with a single Sample Project tile.](images/gs-home-page.png){: caption="Home page from the Sample Project" caption-side="bottom"}
 
 How long will the migration take?
 :   The time you need to set aside for the migration differs based on the amount of data you want to retain in your existing v1 service instance.

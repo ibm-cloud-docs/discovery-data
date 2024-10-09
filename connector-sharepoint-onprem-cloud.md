@@ -35,7 +35,7 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 | Data source | Objects that are crawled |
 |-------------|--------------------------|
 | Microsoft SharePoint On Prem | SiteCollections, Sites, SubSites, Lists, List Items, Document Libraries, List Item Attachments |
-{: caption="Table 1. Data sources crawling support" caption-side="top"}
+{: caption="Data sources crawling support" caption-side="top"}
 
 ## Data source requirements
 {: #connector-sharepoint-onprem-cloud-reqs}

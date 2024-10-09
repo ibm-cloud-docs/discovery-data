@@ -298,11 +298,11 @@ The schema is arranged as follows.
 
 The following table is an example table from an input document.
 
-![Example table](images/example-table.png){: caption="Figure 1. Table example" caption-side="bottom"}
+![Example table](images/example-table.png){: caption="Table example" caption-side="bottom"}
 
 The table is composed as follows:
 
-![Table composition](images/table-comp.png){: caption="Figure 2. Anatomy of the example table" caption-side="bottom"}
+![Table composition](images/table-comp.png){: caption="Anatomy of the example table" caption-side="bottom"}
 
 The following syntax is used in the table:
 

@@ -50,7 +50,7 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 | Objects that are crawled |
 |--------------------------|
 | Websites, website subdirectories |
-{: caption="Table 1. Data sources crawling support" caption-side="top"}
+{: caption="Data sources crawling support" caption-side="top"}
 
 ## Prerequisite step for connecting to a website that is hosted behind a firewall
 {: #connector-web-cloud-prereq-task}
@@ -137,7 +137,7 @@ To configure the web crawl collection, complete the following steps:
         1.  Select **{{site.data.keyword.satellitelong}} Connector** as the connection type. By default, this option is selected.
         1.  Specify the **{{site.data.keyword.satelliteshort}} Connector Endpoint URL**.
 
-        ![Shows the {{site.data.keyword.satelliteshort}} Connector details](images/sat.png){: caption="Figure 1. {{site.data.keyword.satelliteshort}} Connector details" caption-side="bottom"}
+        ![Shows the {{site.data.keyword.satelliteshort}} Connector details](images/sat.png){: caption="{{site.data.keyword.satelliteshort}} Connector details" caption-side="bottom"}
 
 1.  Optional: Add another web address to the **Starting URLs** field.
 

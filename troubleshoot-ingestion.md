@@ -95,7 +95,7 @@ Documents fail to index with a mapper parsing exception error
 
     For example, the following image shows the field type for the `baz` field.
 
-    ![Shows the Manage fields page.](images/string-type.png){: caption="Figure 1. Manage fields page" caption-side="bottom"}
+    ![Shows the Manage fields page.](images/string-type.png){: caption="Manage fields page" caption-side="bottom"}
 
     After applying changes and allowing the collection time to reprocess, you can ingest the second document in the example successfully to the same collection. For example, the following response from the `Get document details` method shows that the second document is ingested successfully. For more information, see [Get document details](https://{DomainName}/apidocs/discovery-data#getdocument){: external} in the API reference. 
 

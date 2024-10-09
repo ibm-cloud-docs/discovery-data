@@ -51,7 +51,7 @@ Try the following adjustments for collections with 20,000 or more documents:
 | IngestionAPI | coreapi.wlpMaxHeap | 2,048 MB |
 | IngestionAPI | coreapi.ingestionApi.ingestion.resources.limits.cpu | "2" |
 | IngestionAPI | coreapi.ingestionApi.ingestion.resources.limits.memory | 4 Gi |
-{: caption="Table 1. Configuration parameters for best ingestion performance" caption-side="top"}
+{: caption="Configuration parameters for best ingestion performance" caption-side="top"}
 
 The following YAML excerpt shows a sample custom resource patch file that applies these changes:
 

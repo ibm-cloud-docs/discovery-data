@@ -35,7 +35,7 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 | Data source | Objects that are crawled |
 |-------------|--------------------------|
 | {{site.data.keyword.cos_full_notm}} | Buckets, files |
-{: caption="Table 1. Data sources crawling support" caption-side="top"}
+{: caption="Data sources crawling support" caption-side="top"}
 
 ## What you need before you begin
 {: #connector-cos-cloud-prereqs}

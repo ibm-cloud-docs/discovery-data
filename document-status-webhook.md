@@ -34,11 +34,11 @@ For using the document status webhook feature, do the following things:
 
 The following image shows the webhook configuration flow.
 
-![Shows the document status webhook feature configuration flow](images/webhook-conf-flow.png){: caption="Figure 1. Document status webhook feature configuration flow" caption-side="bottom"}
+![Shows the document status webhook feature configuration flow](images/webhook-conf-flow.png){: caption="Document status webhook feature configuration flow" caption-side="bottom"}
 
 The following image shows the document status webhook feature process flow.
 
-![Shows the document status webhook feature process flow](images/webhook-process-flow.png){: caption="Figure 2. Document status webhook feature process flow" caption-side="bottom"}
+![Shows the document status webhook feature process flow](images/webhook-process-flow.png){: caption="Document status webhook feature process flow" caption-side="bottom"}
 
 For more information about the query API, see [Query a project API method](https://{DomainName}/apidocs/discovery-data#query){: external} in the API reference.
 

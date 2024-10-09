@@ -97,7 +97,7 @@ Smart Document Understanding (SDU) uses visual imaging technologies to understan
 
     Click **Manage collections** from the navigation panel.
 
-    ![Shows the Manage collections menu option from the navigation panel.](images/tut-sdu-activity-tab.png){: caption="Figure 1. Manage collections menu option from the navigation panel" caption-side="bottom"}
+    ![Shows the Manage collections menu option from the navigation panel.](images/tut-sdu-activity-tab.png){: caption="Manage collections menu option from the navigation panel" caption-side="bottom"}
 
     Click the *Algorithmic Trading PDF* collection tile. The collection opens to the Activity tab.
 
@@ -118,7 +118,7 @@ Smart Document Understanding (SDU) uses visual imaging technologies to understan
 
 Processing is finished when the page shows that one document is available.
 
-![Shows the Activity page when it's ready.](images/tut-sdu-activity.png){: caption="Figure 2. Activity page that shows the data upload is finished" caption-side="bottom"}
+![Shows the Activity page when it's ready.](images/tut-sdu-activity.png){: caption="Activity page that shows the data upload is finished" caption-side="bottom"}
 
 ## Test your project
 {: #tutorial-sdu-test}
@@ -134,7 +134,7 @@ Processing is finished when the page shows that one document is available.
 
     The returned passage contains an accurate answer to the question.
 
-    ![Shows the passages that are returned by search.](images/tut-sdu-search-fast-crash.png){: caption="Figure 3. Search results" caption-side="bottom"}
+    ![Shows the passages that are returned by search.](images/tut-sdu-search-fast-crash.png){: caption="Search results" caption-side="bottom"}
 
 1.  Ask another question, `What is the purpose of Rule 15c3-5?`
 
@@ -168,10 +168,10 @@ To improve the quality of the search results, build a Smart Document Understandi
 
 1.  From the *Improvement tools* panel of the *Improve and customize* page, expand *Define structure*, and then click **New fields**.
 
-    ![Shows the New fields tool in the Improvement tools panel.](images/tut-sdu-new-fields.png){: caption="Figure 4. New fields tool in the Improvement tools panel" caption-side="bottom"}
+    ![Shows the New fields tool in the Improvement tools panel.](images/tut-sdu-new-fields.png){: caption="New fields tool in the Improvement tools panel" caption-side="bottom"}
 1.  The *Identify fields* tab is displayed, where you can choose the type of Smart Document Understanding model that you want to use.
 
-    ![Shows the Identify fields tab.](images/tut-sdu-model-options.png){: caption="Figure 5. Identify fields tab" caption-side="bottom"}
+    ![Shows the Identify fields tab.](images/tut-sdu-model-options.png){: caption="Identify fields tab" caption-side="bottom"}
 
     -   The *pretrained model* applies a noncustomizable model that extracts text and identifies tables, lists, and sections. The pretrained model is a great choice to save time. 
     -   For the purposes of this tutorial, where we want to explore how the Smart Document Understanding tool works, we'll choose to use the *user-trained model*.
@@ -179,14 +179,14 @@ To improve the quality of the search results, build a Smart Document Understandi
     If you don't choose a model, the *text extraction* model is applied automatically. With the text extraction model, most of the document content is treated as standard text and is indexed in the `text` field.
 1.  Click **User-trained models**, and then click **Submit**.
 
-    ![Shows the confirmation dialog after you choose the User-trained models option.](images/tut-sdu-pick-user-trained.png){: caption="Figure 6. Confirmation dialog for user-trained model" caption-side="bottom"}
+    ![Shows the confirmation dialog after you choose the User-trained models option.](images/tut-sdu-pick-user-trained.png){: caption="Confirmation dialog for user-trained model" caption-side="bottom"}
 1.  Click **Apply changes and reprocess**.
 
-    ![Shows the Apply changes and reprocess button is active.](images/tut-sdu-extra-step.png){: caption="Figure 7. Apply changes and reprocess button" caption-side="bottom"}
+    ![Shows the Apply changes and reprocess button is active.](images/tut-sdu-extra-step.png){: caption="Apply changes and reprocess button" caption-side="bottom"}
 
     After the evaluation process is complete, a representation of the document is displayed in the Smart Document Understanding tool.
 
-    ![Shows the PDF as it is displayed in the SDU tool.](images/tut-sdu-tool.png){: caption="Figure 8. PDF is displayed in the SDU tool" caption-side="bottom"}
+    ![Shows the PDF as it is displayed in the SDU tool.](images/tut-sdu-tool.png){: caption="PDF is displayed in the SDU tool" caption-side="bottom"}
     
     The tool shows you a view of the original document along with a representation of the document, where the text is replaced by blocks. The blocks represent field types.
 
@@ -200,7 +200,7 @@ To improve the quality of the search results, build a Smart Document Understandi
 
     Click `title` from the *Field labels* list, and then, in the document representation, click the yellow block that is situated in the location of the document title.
 
-    ![Shows the title that is being labeled in the SDU tool.](images/tut-sdu-label-title.png){: caption="Figure 9. A title is being labeled in the Smart Document Understanding tool" caption-side="bottom"}
+    ![Shows the title that is being labeled in the SDU tool.](images/tut-sdu-label-title.png){: caption="A title is being labeled in the Smart Document Understanding tool" caption-side="bottom"}
 
     You labeled the title of the document successfully!
 
@@ -208,7 +208,7 @@ To improve the quality of the search results, build a Smart Document Understandi
 
 1.  The next page is the *Table of contents* for the document. Click the `table_of_contents` label, and then select all of the text on the page to label it. (You can click and drag the mouse to select all.) Click **Submit page** to move to the next page.
 
-    ![Shows the Table of contents that is being labeled in the SDU tool.](images/tut-sdu-label-toc.png){: caption="Figure 10. A table of contents is being labeled in the Smart Document Understanding tool" caption-side="bottom"}
+    ![Shows the Table of contents that is being labeled in the SDU tool.](images/tut-sdu-label-toc.png){: caption="A table of contents is being labeled in the Smart Document Understanding tool" caption-side="bottom"}
 
 1.  The two headings on the page are subtitles. Click the `subtitle` label, and then select the headings.
 
@@ -216,17 +216,17 @@ To improve the quality of the search results, build a Smart Document Understandi
 
 1.  From the *Field labels* list, click **Create new**. Add the name `footnote` as the label name. Click the color block repeatedly until you find a unique color to use for the label, and then click **Create**.
 
-    ![Shows the new label dialog.](images/tut-sdu-add-label.png){: caption="Figure 11. New label dialog" caption-side="bottom"}
+    ![Shows the new label dialog.](images/tut-sdu-add-label.png){: caption="New label dialog" caption-side="bottom"}
 
 1.  Click the new footnote label that you added, and then label the footnote on the page with the label. Click **Submit page** to move to the next page.
 
-    ![Shows the footnote that is being labeled in the SDU tool.](images/tut-sdu-label-footnote.png){: caption="Figure 12. A footnote is being labeled in the Smart Document Understanding tool" caption-side="bottom"}
+    ![Shows the footnote that is being labeled in the SDU tool.](images/tut-sdu-label-footnote.png){: caption="A footnote is being labeled in the Smart Document Understanding tool" caption-side="bottom"}
 
 1.  Repeat this process to label and submit multiple pages.
 
     For most pages, the content includes a `subtitle`, a `footnote`, and the bulk of the content on the page remains labeled as `text`.
 
-    ![Shows the subtitle, footnote, and text labels that are being applied to a page in the SDU tool.](images/tut-sdu-typical-labels.png){: caption="Figure 13. Subtitle, footnote, and text labels are being applied" caption-side="bottom"}
+    ![Shows the subtitle, footnote, and text labels that are being applied to a page in the SDU tool.](images/tut-sdu-typical-labels.png){: caption="Subtitle, footnote, and text labels are being applied" caption-side="bottom"}
 
     As you label and submit pages, the model learns from the annotations that you make. Gradually, the labels that are applied automatically become accurate and don't require any adjustments. 
 
@@ -234,7 +234,7 @@ To improve the quality of the search results, build a Smart Document Understandi
 
 1.  For tables, select the table caption and the entire table and label them with the `table` label.
 
-    ![Shows how to label a table in the SDU tool.](images/tut-sdu-table.png){: caption="Figure 14. A table is being labeled" caption-side="bottom"}
+    ![Shows how to label a table in the SDU tool.](images/tut-sdu-table.png){: caption="A table is being labeled" caption-side="bottom"}
 
 1.  When a page contains an image, the image is not displayed in the representation of the page. 
 
@@ -242,15 +242,15 @@ To improve the quality of the search results, build a Smart Document Understandi
     
     After you enable OCR, if you want to remove annotated image text from the collection index, you can label the image so that you can exclude the associated text. You will learn about how to configure the index in the next procedure.
 
-    ![Shows an image in the page.](images/tut-sdu-image.png){: caption="Figure 15. Shows an image in the page" caption-side="bottom"}
+    ![Shows an image in the page.](images/tut-sdu-image.png){: caption="Shows an image in the page" caption-side="bottom"}
     
 1.  When you reach the *Bibliography*, create a new label named `bibliography`.
 
-    ![Shows how to create the bibliography label.](images/tut-sdu-bibliography.png){: caption="Figure 16. Creating a bibliography label" caption-side="bottom"}
+    ![Shows how to create the bibliography label.](images/tut-sdu-bibliography.png){: caption="Creating a bibliography label" caption-side="bottom"}
 
     Apply the new label to each page.
 
-    ![Shows the bibliography label that is being applied to an entire page.](images/tut-sdu-apply-biblio.png){: caption="Figure 17. A bibliography label is being applied" caption-side="bottom"}
+    ![Shows the bibliography label that is being applied to an entire page.](images/tut-sdu-apply-biblio.png){: caption="A bibliography label is being applied" caption-side="bottom"}
 
 1.  After you annotate and submit all the pages, click **Apply changes and reprocess**.
 
@@ -268,7 +268,7 @@ Now that you have an SDU model that can recognize the different types of section
 
 1.  Click **Manage fields**.
 
-    ![Shows the Manage fields tab to click after SDU processing.](images/tut-sdu-manage-fields-tab.png){: caption="Figure 18. The Manage fields tab" caption-side="bottom"}
+    ![Shows the Manage fields tab to click after SDU processing.](images/tut-sdu-manage-fields-tab.png){: caption="The Manage fields tab" caption-side="bottom"}
 
 1.  From the list of fields to index, set the switcher to **No** for all fields except these ones:
 
@@ -278,7 +278,7 @@ Now that you have an SDU model that can recognize the different types of section
     -  `table`
     -  `text`
 
-    ![Shows the fields to index list](images/tut-sdu-fields-to-index.png){: caption="Figure 19. Fields in the index list" caption-side="bottom"}
+    ![Shows the fields to index list](images/tut-sdu-fields-to-index.png){: caption="Fields in the index list" caption-side="bottom"}
 
 1.  Click **Apply changes and reprocess**.
 
@@ -303,7 +303,7 @@ When you annotated the document, you identified the `subtitle` field. These subt
 
 1.  Select **`subtitle`** from the *Split document on each occurrence of* field.
 
-    ![Shows the subtitle field that is being selected from the split document field](images/tut-sdu-split-doc.png){: caption="Figure 20. Choosing to split documents on the subtitle field" caption-side="bottom"}
+    ![Shows the subtitle field that is being selected from the split document field](images/tut-sdu-split-doc.png){: caption="Choosing to split documents on the subtitle field" caption-side="bottom"}
 
 1.  Click **Apply changes and reprocess**.
 
@@ -327,13 +327,13 @@ Let's find out whether we improved the search function by adding a user-trained 
 
     In the *Search* field, enter `What is the purpose of Rule 15c3-5?`
 
-    ![Shows a query that is being entered into the Improve and customize page.](images/tut-sdu-retest-query.png){: caption="Figure 21. Query added to the Improve and customize page" caption-side="bottom"}
+    ![Shows a query that is being entered into the Improve and customize page.](images/tut-sdu-retest-query.png){: caption="Query added to the Improve and customize page" caption-side="bottom"}
 
     Multiple responses are returned this time. The following response contains the exact answer to the question without any extraneous text:
 
     `In November 2011, the SEC implemented the final provision of Rule 15c3-5 curbing unfiltered market access. The provision mandated that brokers verify their clients’ order flow for compliance with credit and capital thresholds before routing to market centers.`
 
-    ![Shows that multiple responses are returned for the query.](images/tut-sdu-rule-response.png){: caption="Figure 22. Multiple responses are returned for the query" caption-side="bottom"}
+    ![Shows that multiple responses are returned for the query.](images/tut-sdu-rule-response.png){: caption="Multiple responses are returned for the query" caption-side="bottom"}
 
     Our updates only improved the quality of the accurate responses that were returned before.
 
@@ -343,13 +343,13 @@ Let's find out whether we improved the search function by adding a user-trained 
 
     `(“principal trading firms” or “PTFs”)`
 
-    ![Shows responses that are returned to answer the question about PTFs.](images/tut-sdu-ptf-responses.png){: caption="Figure 23. Responses that answer the question about PTFs" caption-side="bottom"}
+    ![Shows responses that are returned to answer the question about PTFs.](images/tut-sdu-ptf-responses.png){: caption="Responses that answer the question about PTFs" caption-side="bottom"}
 
 1.  Let's try the other problematic search query. Enter `Where do muni bond trades get reported to?` as the search query.
 
     This time it's the third response that provides an answer to the question. You must view the full passage to see the entire definition.
 
-    ![Shows responses that are returned to answer the question about muni bonds.](images/tut-sdu-muni-responses.png){: caption="Figure 24. Responses that answer the question about muni bonds" caption-side="bottom"}
+    ![Shows responses that are returned to answer the question about muni bonds.](images/tut-sdu-muni-responses.png){: caption="Responses that answer the question about muni bonds" caption-side="bottom"}
 
     Click the *View passage in document* link to see the full definition highlighted in the document.
 
@@ -367,11 +367,11 @@ Now that we are getting more passages returned per query, it might be useful to 
 
 1.  Click **New**.
 
-    ![Shows the New button in the dictionary page.](images/tut-sdu-dictionary-new.png){: caption="Figure 25. New button in the dictionary page" caption-side="bottom"}
+    ![Shows the New button in the dictionary page.](images/tut-sdu-dictionary-new.png){: caption="New button in the dictionary page" caption-side="bottom"}
 
 1.  Enter `Financial instruments` as the dictionary name, add the term `municipal bond`, and then click the *Add term* button.
 
-    ![Shows the Financial instruments dictionary with one term.](images/tut-sdu-dictionary-add.png){: caption="Figure 26. Financial instruments dictionary with one term" caption-side="bottom"}
+    ![Shows the Financial instruments dictionary with one term.](images/tut-sdu-dictionary-add.png){: caption="Financial instruments dictionary with one term" caption-side="bottom"}
 
 1.  Add synonyms for the term by clicking the edit icon for the term.
 
@@ -396,25 +396,25 @@ Now that we are getting more passages returned per query, it might be useful to 
 
 1.  Choose the index field that is associated with the dictionary enrichment that you applied to the `subtitle` field. From the *Field* field, select `enriched_subsection.entities.mentions.text`
 
-    ![Shows the options for the facet field.](images/tut-sdu-facet-field.png){: caption="Figure 27. Fields from which you can create a facet" caption-side="bottom"}
+    ![Shows the options for the facet field.](images/tut-sdu-facet-field.png){: caption="Fields from which you can create a facet" caption-side="bottom"}
 
     You might need to hover over the entries to see the full field names.
 
 1.  Add a label, such as `Dictionary terms` to the *Label* field, and then click **Apply**.
 
-    ![Shows the completed facet creation panel.](images/tut-sdu-facet-complete.png){: caption="Figure 28. Facet was created" caption-side="bottom"}
+    ![Shows the completed facet creation panel.](images/tut-sdu-facet-complete.png){: caption="Facet was created" caption-side="bottom"}
 
 1.  Enter `Where do muni bond trades get reported to?` as the search query.
 
     The *Dictionary terms* facet that you created is displayed along with the search results. A `Municipal Bonds` checkbox is shown, which indicates that at least one of the returned passages is extracted from a document segment with the term `Municipal Bonds` in its `subtitle` field.
 
-    ![Shows the Dictionary terms facet with a Municipal Bonds option.](images/tut-sdu-muni-bonds-facet.png){: caption="Figure 29. Dictionary term facet with a Municipal Bonds option" caption-side="bottom"}
+    ![Shows the Dictionary terms facet with a Municipal Bonds option.](images/tut-sdu-muni-bonds-facet.png){: caption="Dictionary term facet with a Municipal Bonds option" caption-side="bottom"}
 
 1.  To filter the results to show only passages from sections with `Municipal Bonds` in the subtitle, select the `Municipal Bonds` checkbox.
 
     The best answer is now listed as the second response instead of the third.
 
-    ![Best answer now is listed as the second result in the list](images/tut-sdu-muni-selected.png){: caption="Figure 30. Best answer is the second result" caption-side="bottom"}
+    ![Best answer now is listed as the second result in the list](images/tut-sdu-muni-selected.png){: caption="Best answer is the second result" caption-side="bottom"}
 
 ### Summary
 {: #tutorial-sdu-summary}

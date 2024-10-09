@@ -48,7 +48,7 @@ In this example, the recognized entity is the company name `IBM`.
 
 To create a query that returns all of the documents in which the entity `IBM` is mentioned, use the following syntax:
 
-![The structure of the query enriched_text.entities.text:IBM, where text in enriched_text is the field where the enrichment is applied, and IBM is the term you are looking for in the enriched_text.entities.text subfield.](images/query_structure.png){: caption="Figure 1. Example query structure" caption-side="bottom"}
+![The structure of the query enriched_text.entities.text:IBM, where text in enriched_text is the field where the enrichment is applied, and IBM is the term you are looking for in the enriched_text.entities.text subfield.](images/query_structure.png){: caption="Example query structure" caption-side="bottom"}
 
 This basic query contains a nested path expression before the `:` operator. Each path element is the name of a field in the document separated by a period (`.`). The `:` operator indicates that the text that follows the operator must be included in the result.
 

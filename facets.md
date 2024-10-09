@@ -20,11 +20,11 @@ Facets help you to filter documents so that you can perform deep analysis faster
 
 -   For *Content Mining* projects, facets are extracted from your collection based on parts of speech information (that is captured by the *Part of Speech* enrichment that is applied to projects of this type by default). You can also view facets that are derived from metadata in your documents.
 
-    ![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page that shows parts of speech facets that are extracted by default"){: caption="Figure 1. Extracted facets" caption-side="bottom"}
+    ![Default facets in Content Mining projects](images/cmdeffacetsnhtsa.png "The **Improve and customize** page that shows parts of speech facets that are extracted by default"){: caption="Extracted facets" caption-side="bottom"}
 
 -   For *Document Retrieval* projects, facets are extracted from your collection based on recognized entities (that are captured by the *Entities* enrichment that is applied to projects of this type by default).
 
-    ![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Figure 2. Top Entities facet" caption-side="bottom"}
+    ![Watson Discovery "Customize display" section](images/drdeffacets2.png "The **Improve and customize** page showing the default Top Entities facet"){: caption="Top Entities facet" caption-side="bottom"}
 
 For more information about the *Entities* and *Part of Speech* enrichments, see [Applying prebuilt enrichments](/docs/discovery-data?topic=discovery-data-nlu). For more information about the enrichments that are applied to projects by default, see [Default project settings](/docs/discovery-data?topic=discovery-data-project-defaults).
 

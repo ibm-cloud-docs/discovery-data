@@ -104,7 +104,7 @@ To label manually, complete the following steps:
 
     If you don't find appropriate sentence examples, select a different document from the *Document list*.
 
-    ![Shows an excerpt from a document with positive and negative example labels.](images/positive-negative-label.png){: caption="Figure 1. Labeled sentence examples" caption-side="bottom"}
+    ![Shows an excerpt from a document with positive and negative example labels.](images/positive-negative-label.png){: caption="Labeled sentence examples" caption-side="bottom"}
 
 1.  Repeat the steps to label example sentences as positive or negative in other documents of the collection.
 
@@ -127,7 +127,7 @@ To find examples and label them in a document, complete the following steps:
 
     To browse the search results, you can click the *Next result* and *Previous result* icons. To choose a label for an unlabeled example in the result, click the *Edit labels* icon and select a sentence class from the list. You can also remove labels from an already labeled example in the result by clicking the *Edit label* icon and selecting **Remove labels**. {: note}
 
-    ![Shows the search results.](images/find-sentence-label.png){: caption="Figure 2. Search results" caption-side="bottom"}
+    ![Shows the search results.](images/find-sentence-label.png){: caption="Search results" caption-side="bottom"}
 
 1.  To filter the search results, click the *Show filter options* icon.
 
@@ -159,13 +159,13 @@ To use smart labeling, complete the following steps:
 
 1.  Click **Use smart labeling**.
 
-    ![Smart labeling](images/smart-label.png){: caption="Figure 3. Smart labeling" caption-side="bottom"}
+    ![Smart labeling](images/smart-label.png){: caption="Smart labeling" caption-side="bottom"}
 
     The Smart labeling pane is displayed. In this pane, you can label sentences for a specific sentence class.
 
 1.  Select an example from the suggested *Examples*, and click **Yes** to label the example sentence as a positive label. You can click **No** to label the example sentence as a negative label.
 
-    ![Smart labeling](images/smart-pane.png){: caption="Figure 4. Smart labeling pane" caption-side="bottom"}
+    ![Smart labeling](images/smart-pane.png){: caption="Smart labeling pane" caption-side="bottom"}
     
 1.  Repeat the previous step to label other suggested examples.
 
@@ -259,7 +259,7 @@ The following table describes the available evaluation metrics.
 1.  Review the metrics that are provided about the classifier model test run to determine whether more training is needed.
 1.  Explore the test results in more detail by clicking **Review training results in test set**.
 
-    ![Review training results in test set](images/review-training-results.png){: caption="Figure 5. Review training results in test set" caption-side="bottom"}
+    ![Review training results in test set](images/review-training-results.png){: caption="Review training results in test set" caption-side="bottom"}
 
     Sentences from the test set are displayed with the actual and predicted labels shown in the list on the left pane. If you click on a sentence in the list, it is shown in the document view on the right pane.
 
@@ -387,7 +387,7 @@ A sentence classifier does not classify sentences with confidence scores that ar
 
 The following JSON output is an example result of sentence classification.
 
-![Shows the JSON output as an example](images/json-sentence.png){: caption="Figure 6. JSON representation" caption-side="bottom"}
+![Shows the JSON output as an example](images/json-sentence.png){: caption="JSON representation" caption-side="bottom"}
 
 ### Monitoring performance over time
 {: #sentence-classifier-history}
