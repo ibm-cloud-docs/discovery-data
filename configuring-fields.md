@@ -206,7 +206,7 @@ To reuse a model, complete the following steps:
 
 1.  Export the model that you want to reuse. From the SDU toolbar menu, select **Export model**.
 
-    ![Import and export menu](images/sdu-import-export.png){: caption="Figure 1. Import and export menu" caption-side="bottom"}
+    ![Import and export menu](images/sdu-import-export.png){: caption="Import and export menu" caption-side="bottom"}
 
 1.  Create the collection where you want to reuse the model. Add only one document to the collection at first.
 1.  Import the model from the SDU toolbar. The exported model has a file extension of `.sdumodel`.

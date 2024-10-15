@@ -35,7 +35,7 @@ To see the elements that are identified by the *Contracts* enrichment, complete 
 
       1.  Click **Open advanced view** to see the *Contract Data* page.
 
-          ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png){: caption="Figure 1. Contract Data view" caption-side="bottom"}
+          ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png){: caption="Contract Data view" caption-side="bottom"}
     
     [IBM Cloud Pak for Data]{: tag-cp4d}
 

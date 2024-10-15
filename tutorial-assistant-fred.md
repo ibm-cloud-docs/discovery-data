@@ -72,21 +72,21 @@ Both Lite and Trial plan {{site.data.keyword.conversationshort}} service instanc
     The {{site.data.keyword.conversationshort}} product user interface is displayed where you can create your first assistant.
 1.  Add `FRED research` as the assistant name, and then click **Next**.
 
-    ![Shows the Watson Assistant welcome page](images/tut-convo-assis-intro-2.png){: caption="Figure 1. Watson Assistant welcome page" caption-side="bottom"}
+    ![Shows the Watson Assistant welcome page](images/tut-convo-assis-intro-2.png){: caption="Watson Assistant welcome page" caption-side="bottom"}
 
 1.  Fill out the fields to share information about you and your assistant, and then click **Next**.
 
     In the *Which statement describes your needs best* field, choose **I'm using Watson Assistant to complete a course or certification.**.
 
-    ![Shows the Tell us where your assistant will live page](images/tut-convo-assis-intro-3.png){: caption="Figure 2. Assistant details page" caption-side="bottom"}
+    ![Shows the Tell us where your assistant will live page](images/tut-convo-assis-intro-3.png){: caption="Assistant details page" caption-side="bottom"}
     
 1.  When you create an assistant, a web chat application is created for you automatically.
 
-    ![Shows the chat bot style settings](images/tut-convo-assis-intro-4.png){: caption="Figure 3. Web chat settings" caption-side="bottom"}
+    ![Shows the chat bot style settings](images/tut-convo-assis-intro-4.png){: caption="Web chat settings" caption-side="bottom"}
 
 1.  Click **Next** to accept the default style for the web chat.
 
-    ![Shows the chat bot preview in a fake web page](images/tut-convo-assis-intro-5.png){: caption="Figure 4. Web chat preview" caption-side="bottom"}
+    ![Shows the chat bot preview in a fake web page](images/tut-convo-assis-intro-5.png){: caption="Web chat preview" caption-side="bottom"}
 
     A preview of the web chat as it would be displayed in a web page is shown.
 
@@ -94,7 +94,7 @@ Both Lite and Trial plan {{site.data.keyword.conversationshort}} service instanc
 
 After a congratulatory message, the home page for your new assistant is displayed.
 
-![Shows the assistant page](images/tut-convo-assis-intro-6.png){: caption="Figure 5. Assistant home page" caption-side="bottom"}
+![Shows the assistant page](images/tut-convo-assis-intro-6.png){: caption="Assistant home page" caption-side="bottom"}
 
 ## Create an action
 {: #tutorial-convo-action}
@@ -106,15 +106,15 @@ In a real world scenario, you might want your assistant to answer questions abou
 
 1.  From the navigation panel, click **Actions**.
 
-    ![Shows the Watson Assistant navigation panel](images/tut-convo-action-0.png){: caption="Figure 6. Actions menu" caption-side="bottom"}
+    ![Shows the Watson Assistant navigation panel](images/tut-convo-action-0.png){: caption="Actions menu" caption-side="bottom"}
 
     The Actions page is displayed.
 
-    ![Shows the actions introduction page.](images/tut-convo-action-1.png){: caption="Figure 7. Actions page" caption-side="bottom"}
+    ![Shows the actions introduction page.](images/tut-convo-action-1.png){: caption="Actions page" caption-side="bottom"}
 
 1.  Click **Create action**, and then choose to start from scratch.
 
-    ![Shows the action creation method options.](images/tut-convo-action-2.png){: caption="Figure 8. Action creation method options" caption-side="bottom"}
+    ![Shows the action creation method options.](images/tut-convo-action-2.png){: caption="Action creation method options" caption-side="bottom"}
 
 1.  Because you want the assistant to recognize when customers ask about economic research, add the following sample user question, and then click **Save**:
 
@@ -127,7 +127,7 @@ In a real world scenario, you might want your assistant to answer questions abou
 
 1.  Click the *Customer starts with* tile to continue adding examples.
 
-    ![Shows the actions page with the customer prompt tile selected.](images/tut-convo-action-4.png){: caption="Figure 9. User question examples" caption-side="bottom"}
+    ![Shows the actions page with the customer prompt tile selected.](images/tut-convo-action-4.png){: caption="User question examples" caption-side="bottom"}
 
 1.  Add the following questions:
 
@@ -151,11 +151,11 @@ In a real world scenario, you might want your assistant to answer questions abou
     ```
     {: codeblock}
 
-    ![Shows the list of example prompt questions.](images/tut-convo-action-5.png){: caption="Figure 10. User examples list" caption-side="bottom"}
+    ![Shows the list of example prompt questions.](images/tut-convo-action-5.png){: caption="User examples list" caption-side="bottom"}
 
 1.  Click the first step in the *Conversation steps* section.
 
-    ![Shows the first step selected.](images/tut-convo-action-6.png){: caption="Figure 11. First step" caption-side="bottom"}
+    ![Shows the first step selected.](images/tut-convo-action-6.png){: caption="First step" caption-side="bottom"}
 
 1.  Add the following text to the *Assistant says* field:
 
@@ -166,23 +166,23 @@ In a real world scenario, you might want your assistant to answer questions abou
 
 1.  Do not add a customer response. Instead, in the *And then* section, click **Continue to next step**, and then choose **Search for the answer**.
 
-    ![Shows the And then section of the action step.](images/tut-convo-action-8.png){: caption="Figure 12. And then options" caption-side="bottom"}
+    ![Shows the And then section of the action step.](images/tut-convo-action-8.png){: caption="And then options" caption-side="bottom"}
 
 1.  Click **Edit settings**.
 
-    ![Shows the Search step details.](images/tut-convo-action-9.png){: caption="Figure 13. Search step" caption-side="bottom"}
+    ![Shows the Search step details.](images/tut-convo-action-9.png){: caption="Search step" caption-side="bottom"}
 
 1.  Select **End the action after returning results**, and then click **Apply**.
 
-    ![Shows the search step with End the action checkbox selected.](images/tut-convo-action-10.png){: caption="Figure 14. Search step settings" caption-side="bottom"}
+    ![Shows the search step with End the action checkbox selected.](images/tut-convo-action-10.png){: caption="Search step settings" caption-side="bottom"}
 
 1.  Save your changes, and then click the X to close the step.
 
-    ![Shows the action close icon.](images/tut-convo-action-11.png){: caption="Figure 15. Close action" caption-side="bottom"}
+    ![Shows the action close icon.](images/tut-convo-action-11.png){: caption="Close action" caption-side="bottom"}
 
 Congratulations! You successfully created an action that recognizes questions about FRED research papers and returns a search response.
 
-![Shows the action that was created.](images/tut-convo-action-12.png){: caption="Figure 16. Created action" caption-side="bottom"}
+![Shows the action that was created.](images/tut-convo-action-12.png){: caption="Created action" caption-side="bottom"}
 
 In a later step, we will connect the search response in this action to a search extension that is configured for the assistant.
 
@@ -214,10 +214,10 @@ We want the virtual assistant to be able to answer questions about the latest wo
 
 1.  From the *Select data source* page, click **Web crawl**, and then click **Next**.
 
-    ![Shows the data source options](images/tut-convo-web-crawl-0.png){: caption="Figure 17. Data source options" caption-side="bottom"}
+    ![Shows the data source options](images/tut-convo-web-crawl-0.png){: caption="Data source options" caption-side="bottom"}
 1.  In the **Collection name** field, add `FRED papers`.
 
-    ![Shows the Web crawl name field](images/tut-convo-web-crawl-1.png){: caption="Figure 18. Web crawl connector" caption-side="bottom"}
+    ![Shows the Web crawl name field](images/tut-convo-web-crawl-1.png){: caption="Web crawl connector" caption-side="bottom"}
 1.  In the **Starting URLs** field, add the following URL:
 
     ```text
@@ -232,7 +232,7 @@ We want the virtual assistant to be able to answer questions about the latest wo
 
 1.  In the **Maximum number of links to follow** field, change the value to 5.
 
-    ![Shows the Starting URLs field](images/tut-convo-web-crawl-4.png){: caption="Figure 19. Starting URL settings" caption-side="bottom"}
+    ![Shows the Starting URLs field](images/tut-convo-web-crawl-4.png){: caption="Starting URL settings" caption-side="bottom"}
 
     By changing the value to 5, you indicate that you want the service to process the page that you specified plus you want it to follow up to 5 links from the starting page.
 
@@ -250,31 +250,31 @@ Let's connect your assistant to your {{site.data.keyword.discoveryshort}} data.
 
 1.  From the navigation panel in {{site.data.keyword.conversationshort}}, click **Environments**.
 
-    ![Shows the Environments menu item in the navigation panel.](images/tut-convo-enviro-0.png){: caption="Figure 20. Environment menu" caption-side="bottom"}
+    ![Shows the Environments menu item in the navigation panel.](images/tut-convo-enviro-0.png){: caption="Environment menu" caption-side="bottom"}
 
     The draft environment is displayed. It shows that a web chat is connected to your assistant. 
 
-    ![Shows the draft environment with the web chat connected to the action.](images/tut-convo-enviro-1.png){: caption="Figure 21. Draft environment diagram" caption-side="bottom"}
+    ![Shows the draft environment with the web chat connected to the action.](images/tut-convo-enviro-1.png){: caption="Draft environment diagram" caption-side="bottom"}
 
 1.  Click the Web chat tile to edit the web chat. 
 
     We don't want to add multiple starter questions, so we are going to turn off the home screen for the web chat. Click the **Home screen** tab.
 
-    ![Shows the web chat home screen configuration page.](images/tut-convo-enviro-1aa.png){: caption="Figure 22. Web chat home screen configuration" caption-side="bottom"}
+    ![Shows the web chat home screen configuration page.](images/tut-convo-enviro-1aa.png){: caption="Web chat home screen configuration" caption-side="bottom"}
 
 1.  Set the switcher to **Off**, and then click **Save and exit**.
 
-    ![Shows the web chat home screen set to Off.](images/tut-convo-enviro-1bb.png){: caption="Figure 23. Web chat home screen disabled" caption-side="bottom"}
+    ![Shows the web chat home screen set to Off.](images/tut-convo-enviro-1bb.png){: caption="Web chat home screen disabled" caption-side="bottom"}
 
 1.  We want to connect the web chat to a search extension. Click the **Add** button in the Search extension tile.
 
-    ![Shows the draft environment with the search extension option.](images/tut-convo-enviro-1.png){: caption="Figure 24. Search extension in draft environment" caption-side="bottom"}
+    ![Shows the draft environment with the search extension option.](images/tut-convo-enviro-1.png){: caption="Search extension in draft environment" caption-side="bottom"}
 
     The Search Integration page is displayed.
 
 1.  Select the {{site.data.keyword.discoveryshort}} instance where your project is stored, and then select the **Federal Reserve research** project that you created earlier. Click **Next**.
 
-    ![Shows the search extension with the instance and project selected.](images/tut-convo-enviro-2.png){: caption="Figure 25. Search extension configuration" caption-side="bottom"}
+    ![Shows the search extension with the instance and project selected.](images/tut-convo-enviro-2.png){: caption="Search extension configuration" caption-side="bottom"}
 
 1.  The default result content configuration uses the best fields; you don't need to change them.
 
@@ -287,7 +287,7 @@ Let's connect your assistant to your {{site.data.keyword.discoveryshort}} data.
 
     Verify that the *Emphasize the answer* switch is set to **On**. This setting adds the `find_answers:true` parameter to the query request. As a result, a succinct answer to the query is shown in bold in the response that is returned by the assistant.
 
-    ![Shows the updated Message text and Emphasize the answer turned on.](images/tut-convo-enviro-3.png){: caption="Figure 26. Search extension settings configured" caption-side="bottom"}
+    ![Shows the updated Message text and Emphasize the answer turned on.](images/tut-convo-enviro-3.png){: caption="Search extension settings configured" caption-side="bottom"}
 
 1.  Click **Create**.
 
@@ -299,15 +299,15 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
 1.  From the Environments page, click **Preview this environment**.
 
-    ![Shows the draft environment with search extension enabled](images/tut-convo-test-0a.png){: caption="Figure 27. Search extension enabled" caption-side="bottom"}
+    ![Shows the draft environment with search extension enabled](images/tut-convo-test-0a.png){: caption="Search extension enabled" caption-side="bottom"}
 
     A sample web page is displayed that includes a chat icon.
 
-    ![Shows a preview of a web page with a chat icon](images/tut-convo-test-1.png){: caption="Figure 28. Web chat icon" caption-side="bottom"}
+    ![Shows a preview of a web page with a chat icon](images/tut-convo-test-1.png){: caption="Web chat icon" caption-side="bottom"}
 
 1.  Click the chat icon to open the web chat window.
 
-    ![Shows web chat welcome message](images/tut-convo-test-2.png){: caption="Figure 29. Web chat welcome message" caption-side="bottom"}
+    ![Shows web chat welcome message](images/tut-convo-test-2.png){: caption="Web chat welcome message" caption-side="bottom"}
 
 1.  Enter the following text question:
 
@@ -321,7 +321,7 @@ To preview an assistant that connects to data that is stored in {{site.data.keyw
 
     The correct answer is returned and it includes a link to the source documentation page.
 
-    ![Shows a preview of the assistant where the test question is answered](images/tut-convo-test-3a.png){: caption="Figure 30. Web chat returns search response" caption-side="bottom"}
+    ![Shows a preview of the assistant where the test question is answered](images/tut-convo-test-3a.png){: caption="Web chat returns search response" caption-side="bottom"}
 
 Congratulations! You successfully created an assistant that can answer questions about economic topics by retrieving information from working papers that are available from the US Federal Research Economic Data website.
 

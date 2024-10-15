@@ -20,7 +20,7 @@ An aggregation is defined by an `aggregation` parameter that you can specify in 
 
 You can use an aggregation to do calculatations from values in the result document set. For example, to get information about the highest dollar amount in the `order.total` field of the documents that are returned as query results, use `max(order.total)` as the value of the `aggregation` parameter.
 
-![Example aggregation query structure that shows max as the aggregation type and order.total as a grouping of field details](images/aggregation_structure.png){: caption="Figure 1. Aggregation query structure example" caption-side="bottom"}
+![Example aggregation query structure that shows max as the aggregation type and order.total as a grouping of field details](images/aggregation_structure.png){: caption="Aggregation query structure example" caption-side="bottom"}
 
 The aggregation parameter returns data about the field with the highest value.
 
@@ -479,7 +479,7 @@ average(field)
 | I Series | 200 |
 | J Series | 450 |
 | X Series | 325 |
-{: caption="Table 1. Sample product prices" caption-side="top"}
+{: caption="Sample product prices" caption-side="top"}
 
 When the `average` aggregation type is applied to a set of documents in which the `price` field contains the values that are shown in Table 1, the result is `325`.
 
@@ -733,7 +733,7 @@ max(field)
 | I Series | 200 |
 | J Series | 450 |
 | X Series | 325 |
-{: caption="Table 2. Sample product prices" caption-side="top"}
+{: caption="Sample product prices" caption-side="top"}
 
 When the `max` aggregation type is applied to a set of documents in which the `price` field contains the values that are shown in Table 2, the result is `450`.
 
@@ -765,7 +765,7 @@ min(field)
 | I Series | 200 |
 | J Series | 450 |
 | X Series | 325 |
-{: caption="Table 3. Sample product prices" caption-side="top"}
+{: caption="Sample product prices" caption-side="top"}
 
 When the `min` aggregation type is applied to a set of documents in which the `price` field contains the values that are shown in Table 3, the result is `200`.
 
@@ -866,7 +866,7 @@ The response defines a two-dimensional array of aggregation results, which can b
 | CR-V | CR-V x engine | CR-V x brake | CR-V x radiator |
 {: row-headers}
 {: class="comparison-table"}
-{: caption="Table 4. Pair aggregation example" caption-side="top"}
+{: caption="Pair aggregation example" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify car models. The column headers identify car component parts. Each cell calculates a relevancy score by multiplying the car model (row) relevancy value times the car component (header) relevancy value."}
 
 Each array of columns and rows of the table is sorted in the same order of the results of the first and second aggregations. For example, if you specify the `term` aggregation as the first argument, the resulting column arrays are sorted by frequency of terms. If you use the `timeslice` aggregation as the second argument, the row arrays are sorted by date or time.
@@ -892,7 +892,7 @@ sum(field)
 | I Series | 200 |
 | J Series | 450 |
 | X Series | 325 |
-{: caption="Table 6. Sample product prices" caption-side="top"}
+{: caption="Sample product prices" caption-side="top"}
 
 When the `sum` aggregation type is applied to a set of documents in which the `price` field contains the values that are shown in Table 6, the result is `975`.
 
@@ -1136,7 +1136,7 @@ The resulting matrix can be represented in a table.
 | Jun | vanilla x Jun | chocolate x Jun | mint x Jun |
 {: row-headers}
 {: class="comparison-table"}
-{: caption="Table 5. Trend aggregation example" caption-side="top"}
+{: caption="Trend aggregation example" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify months of the year 2020. The column headers identify ice cream flavors. Each cell calculates a relevancy score by multiplying the month (row) relevancy value times the flavor (header) relevancy value."}
 
 In the following sample response, the key information is the `trend_indicator` value. The trend indicator measures the increase ratio of the frequency of a given facet value for a given time interval compared to the expected average frequency. The excepted average frequency is calculated based on the changes in the past time interval frequencies of the given facet value, using a weighted arithmetic mean.

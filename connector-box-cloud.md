@@ -32,7 +32,7 @@ The following table illustrates the objects that {{site.data.keyword.discoverysh
 |-------------|----------------------------------------|--------------------------|
 | Box (**App access**) | No | Files, folders that you share explicitly |
 | Box (**Enterprise access**)  | Yes (New and modified documents only) | Files, folders |
-{: caption="Table 1. Data sources crawling support" caption-side="top"}
+{: caption="Data sources crawling support" caption-side="top"}
 
 When you configure Box with App access only, you must create App Users and share the files that you want to crawl with these users. You cannot crawl Box files that are shared only by the Service Account.
 

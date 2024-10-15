@@ -53,7 +53,7 @@ To analyze keyword relevance, complete the following steps:
 
     After the characteristic words pane, a pane with relevancy information for each facet type is displayed.
 
-    ![Facet relevancy graphs](images/cm-facet-relevancy.png){: caption="Figure 1. Facet relevancy" caption-side="bottom"}
+    ![Facet relevancy graphs](images/cm-facet-relevancy.png){: caption="Facet relevancy" caption-side="bottom"}
 
     Each relevancy pane shows a list of the keywords that occur in the documents that match the facet type.
     
@@ -75,13 +75,13 @@ To find trends, complete the following steps:
 
     The resulting bar graph shows the number of documents that mention the term or facet value that you specified in the search query over time.
 
-    ![Facet trend heat map](images/cm-heatmap.png){: caption="Figure 2. Facet trend graph" caption-side="bottom"}
+    ![Facet trend heat map](images/cm-heatmap.png){: caption="Facet trend graph" caption-side="bottom"}
 
     The time series chart is rendered as a heat map. Each cell color indicates a level of relevancy.
 
 1.  You can click a facet to investigate it more closely. The facet is shown in a bar graph.
 
-    ![Facet trend graph](images/cm-bar-graph.png){: caption="Figure 3. Facet trend detail in bar graph" caption-side="bottom"}
+    ![Facet trend graph](images/cm-bar-graph.png){: caption="Facet trend detail in bar graph" caption-side="bottom"}
 
     Each individual bar graph highlights trends in your data that deviate from the normal distribution by displaying *increase indicators*. 
     
@@ -117,7 +117,7 @@ To find anomalies, complete the following steps:
 
     The resulting time series graph shows changes in the frequency of keyword mentions over time.
 
-    ![Topic analysis graph shows that Equipment has some orange bars in the summer months](images/cm-facet-topic.png){: caption="Figure 4. Topic analysis time series view" caption-side="bottom"}
+    ![Topic analysis graph shows that Equipment has some orange bars in the summer months](images/cm-facet-topic.png){: caption="Topic analysis time series view" caption-side="bottom"}
 
     Color coding is used to highlight when the number of mentions deviates from the expected frequency. The higher the deviation, the more intense the color, from yellow to orange to red. The average is calculated based on the frequency of occurrence of other keywords in the same time period.
 
@@ -136,7 +136,7 @@ To find significant terms, complete the following steps:
 
     The characteristic words view is displayed.
 
-    ![Facet word cloud](images/cm-word-cloud.png){: caption="Figure 5. Characteristic word cloud" caption-side="bottom"}
+    ![Facet word cloud](images/cm-word-cloud.png){: caption="Characteristic word cloud" caption-side="bottom"}
 
     The different font colors help to distinguish the words from one another; they have no statistical meaning.
     {: note}
@@ -156,7 +156,7 @@ To compare two facets, complete the following steps:
 
     Data from the two facets is displayed in a graph.
 
-    ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Figure 6. Facet comparison graph" caption-side="bottom"}
+    ![Facet pair comparison graph](images/cm-facet-pair.png){: caption="Facet comparison graph" caption-side="bottom"}
 
 The graph shows two numbers. The first number is a frequency count and the second number is a relevancy value. The frequency count measures how many times the two data points are found together in a document. Relevancy measures the level of uniqueness of the frequency count compared to other documents that match your query. If the relevancy shows 2.0, it means that the number of times that the two data points intersect is 2 times larger than expected. To help you identify anomalies that might require more in-depth analysis, high relevancy values are shown in shades of color with increasing intensity, from yellow to orange to red.
 
@@ -173,7 +173,7 @@ To compare two or more facets, complete the following steps:
 
     Pair analysis is done between the first facet and each other facet in turn.
 
-    ![Facet group comparison graph](images/cm-facet-network.png){: caption="Figure 7. Facet network graph" caption-side="bottom"}
+    ![Facet group comparison graph](images/cm-facet-network.png){: caption="Facet network graph" caption-side="bottom"}
 
     The resulting network graph shows only highly relevant and high-frequency pairs. Each node represents a facet value. The node color reflects the facet type. A solid-line connection between nodes identifies highly relevant pairs. A dotted-line connection identifies high-frequency pairs.
 
@@ -224,14 +224,14 @@ To change the scale of a graph for a facet, complete the following steps:
 
 The changes to the number ranges for vehicle speeds introduce more opportunities for relationships or anomalies in the data to be highlighted.
 
-![Shows a pair comparison chart where each row lists a state and each column shows a vehicle speed. Where TN and 80 plus MPH meet is highlighted in orange to show an anomaly.](images/cm-range-change.png){: caption="Figure 8. Results after changed number range" caption-side="bottom"}
+![Shows a pair comparison chart where each row lists a state and each column shows a vehicle speed. Where TN and 80 plus MPH meet is highlighted in orange to show an anomaly.](images/cm-range-change.png){: caption="Results after changed number range" caption-side="bottom"}
 
 ## Showing results in a map visualization
 {: #cm-map}
 
 Facets that represent geographical locations can be shown in a map visualization. For example, if you have a collection with a US states facet, you might want to display data per state from a visualization that enables users to select each state from a map.
 
-![Shows a map of the US with data related to the selected state shown.](images/cm-us-map.png){: caption="Figure 9. Results shown in a map visualization" caption-side="bottom"}
+![Shows a map of the US with data related to the selected state shown.](images/cm-us-map.png){: caption="Results shown in a map visualization" caption-side="bottom"}
 
 A US Map is available by default. You can add a custom map that is built in GeoJSON format. For more information, see [RFC7946](https://datatracker.ietf.org/doc/html/rfc7946){: external}.
 

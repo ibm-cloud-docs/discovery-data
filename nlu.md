@@ -38,7 +38,7 @@ The following other pretrained enrichments are available with {{site.data.keywor
 
 For example, the following screen capture shows a transcript of the US Declaration of Independence that was added to a {{site.data.keyword.discoveryshort}} collection where the Entities and Keywords enrichments are enabled. The mentions that are recognized by the enrichments are highlighted in the document text.
 
-![Shows an excerpt of the US Declaration of Independence with several terms highlighted.](images/nlu-rich-both.png){: caption="Figure 1. Excerpt of the US Declaration of Independence with highlighted terms" caption-side="bottom"}
+![Shows an excerpt of the US Declaration of Independence with several terms highlighted.](images/nlu-rich-both.png){: caption="Excerpt of the US Declaration of Independence with highlighted terms" caption-side="bottom"}
 
 Some of the NLP enrichments are applied to projects automatically. You don't need to apply them yourself if you are using one of these project types.
 
@@ -87,11 +87,11 @@ The Watson NLP entity extractor service that is used by Discovery is called the 
 
 The following screen capture shows that the Entities enrichment recognizes the terms *Systems of Government* and *King of Great Britain* (among others) and tags them as entity mentions.
 
-![Shows the declaration with the terms Governments and King of Great Britain highlighted.](images/nlu-rich-view.png){: caption="Figure 2. The recognized entities, Governments and King of Great Britain, are highlighted" caption-side="bottom"}
+![Shows the declaration with the terms Governments and King of Great Britain highlighted.](images/nlu-rich-view.png){: caption="The recognized entities, Governments and King of Great Britain, are highlighted" caption-side="bottom"}
 
 From the JSON view of the document, you can see the underlying JSON structure of the entity mentions.
 
-![Shows the JSON view of the Systems of Government and King of Great Britain entities that are identified in the document](images/nlu-json-view.png){: caption="Figure 3. JSON representation of recognized entity mentions" caption-side="bottom"}
+![Shows the JSON view of the Systems of Government and King of Great Britain entities that are identified in the document](images/nlu-json-view.png){: caption="JSON representation of recognized entity mentions" caption-side="bottom"}
 
 If you want to search for the Organization entity type, for example, you can copy all of the JSON content into a text editor and search for `Organization`. Click the *Copy* icon from the root of the JSON tree view.
 
@@ -161,11 +161,11 @@ Returns important keywords in the content.
 
 For example, the following screen capture shows highlighted terms from the US Declaration of Independence that are recognized by the Keywords enrichment.
 
-![Shows the keywords that are recognized in the document text](images/nlu-rich-keywords.png){: caption="Figure 4. Terms recognized by the Keywords enrichment" caption-side="bottom"}
+![Shows the keywords that are recognized in the document text](images/nlu-rich-keywords.png){: caption="Terms recognized by the Keywords enrichment" caption-side="bottom"}
 
 From the JSON view of the document, you can see the underlying JSON structure of the `Declaration` keyword mention.
 
-![Shows the JSON view of keywords that are identified in the document](images/nlu-json-keywords.png){: caption="Figure 5. JSON representation of Keywords enrichment mentions" caption-side="bottom"}
+![Shows the JSON view of keywords that are identified in the document](images/nlu-json-keywords.png){: caption="JSON representation of Keywords enrichment mentions" caption-side="bottom"}
 
 ### Example
 {: #nlu-keywords-example}

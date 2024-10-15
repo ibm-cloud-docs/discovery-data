@@ -83,7 +83,7 @@ The same analysis is performed on all queries, whether they are submitted as nat
 
 The following diagram shows a conceptual illustration of how a search request is handled by {{site.data.keyword.discoveryshort}}.
 
-![Shows the different ways that query and natural language query requests are handled by {{site.data.keyword.discoveryshort}}](images/query-flow.png){: caption="Figure 1. Flow chart that shows the processes that are used for Natural Language Queries versus Discovery Query Language queries" caption-side="bottom"}
+![Shows the different ways that query and natural language query requests are handled by {{site.data.keyword.discoveryshort}}](images/query-flow.png){: caption="Flow chart that shows the processes that are used for Natural Language Queries versus Discovery Query Language queries" caption-side="bottom"}
 
 The following processes are shown in the flow diagram:
 

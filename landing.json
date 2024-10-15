@@ -1,55 +1,51 @@
 {
-  "title": "Watson Discovery docs",
-  "lastupdated": "2023-02-17",
+  "version": 2,
+  "title": "IBM Watson Discovery",
   "introduction": "This documentation helps you use Watson Discovery to find critical answers and insights from your business data.",
-  "section_recommended": [
+  "product_page": "https://www.ibm.com/products/watson-discovery",
+  "console_page": "/catalog/services/watson-discovery",
+  "section_topics": {
+    "links": [
+      {
+        "title": "Getting started with Watson Discovery",
+        "href": "/docs/discovery-data?topic=discovery-data-getting-started"
+      },
+      {
+        "title": "Getting value from your data",
+        "href": "/docs/discovery-data?topic=discovery-data-product-overview"
+      },
+      {
+        "title": "Managing IAM access for Discovery",
+        "href": "/docs/discovery-data?topic=discovery-data-admin"
+      },
+      {
+        "title": "Tracking events for Discovery",
+        "href": "/docs/discovery-data?topic=discovery-data-at_events"
+      },
+      {
+        "title": "FAQs",
+        "href": "/docs/discovery-data?topic=discovery-data-faqs"
+      }
+    ]
+  },
+  "section_highlights": [
     {
-      "title": "Creating projects",
-      "description": "Figure out which project type best fits your use case.",
-      "href": "/docs/discovery-data?topic=discovery-data-projects"
+      "title": "Medium.com blogs",
+      "description": "Watson Discovery blogs on Medium",
+      "href": "https://medium.com/ibm-data-ai/search?q=Watson+Discovery",
+      "type": "blog"
     },
     {
-      "title": "Creating collections",
-      "description": "Connect to your structured and unstructured data where it is.",
-      "href": "/docs/discovery-data?topic=discovery-data-collections"
-    },
-    {
-      "title": "Adding custom fields with Smart Document Understanding",
-      "description": "Identify meaningful information based on the structure of your documents.",
-      "href": "/docs/discovery-data?topic=discovery-data-configuring-fields"
-    },
-    {
-      "title": "Adding domain-specific resources",
-      "description": "Teach Watson about the information that matters to your use case.",
-      "href": "/docs/discovery-data?topic=discovery-data-domain"
+      "title": "IBM.com blogs",
+      "description": "Watson Discovery blogs",
+      "href": "https://www.ibm.com/blog/?lang=en&cc=undefined&lnk=mhsrch&q=Watson+Discovery",
+      "type": "blog"
     }
   ],
-  "section_videos": [
-    {
-      "title": "Get started with Watson Discovery",
-      "href": "/docs/discovery-data?topic=discovery-data-about#about-video",
-      "thumbnail": "/images/thumb-intro.png"
-    },
-    {
-      "title": "IBM Watson Discovery: Content Mining",
-      "href": "/docs/discovery-data?topic=discovery-data-contentminerapp#cmvideo",
-      "thumbnail": "/images/thumb-content-mining.png"
-    },
-    {
-      "title": "Defining custom entity types with Watson Discovery",
-      "href": "/docs/discovery-data?topic=discovery-data-entity-extractor#entity-extractor-video",
-      "thumbnail": "/images/thumb-extractor.png"
-    },
-    {
-      "title": "Creating a user-defined Smart Document Understanding model",
-      "href": "https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-configuring-fields#sdu-label",
-      "thumbnail": "/images/thumb-sdu.png"
-    }
-  ],
-  "section_learn": {
-    "developer": "https://developer.ibm.com/components/watson-discovery/",
-    "architecture": "https://www.ibm.com/cloud/architecture/architectures/cognitiveDiscoveryDomain",
-    "training": "https://www.ibm.com/training/artificial-intelligence",
-    "community": "https://community.ibm.com/community/user/watsonai/communities/community-home?CommunityKey=80650291-2ff4-4a43-9ff8-5188fdb9552f"
+  "section_devtools": {
+    "api": "/apidocs/discovery-data"
+  },
+  "section_updates": {
+    "view_more": "/docs/discovery-data?topic=discovery-data-release-notes"
   }
 }

@@ -70,7 +70,7 @@ enriched_text.entities.text
 
 The JSON representation of this section looks as follows:
 
-![JSON source that shows the enriched_text.entities.text object structure](images/api-placement.png){: caption="Figure 1. JSON representation of the enriched_text.entities.text field" caption-side="bottom"}
+![JSON source that shows the enriched_text.entities.text object structure](images/api-placement.png){: caption="JSON representation of the enriched_text.entities.text field" caption-side="bottom"}
 
 ### `:` (Includes)
 {: #includes}

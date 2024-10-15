@@ -64,7 +64,7 @@ If the SDU model finds and processes a structure, such as a table, in the docume
 
 The following excerpt shows the JSON representation of a table from the `enriched_html` field of a document that was processed by the pretrained SDU model.
 
-![Shows a JSON snippet that contains an enriched_html field with a table object that contains sections such as section_title, row_headers, table_headers, location, and so on.](images/sdu-table-output.png){: caption="Figure 1. JSON table representation" caption-side="bottom"}
+![Shows a JSON snippet that contains an enriched_html field with a table object that contains sections such as section_title, row_headers, table_headers, location, and so on.](images/sdu-table-output.png){: caption="JSON table representation" caption-side="bottom"}
 
 If you want to extract text from the processed structure, you can use the `location` field to find the index values that identify where the text string starts and ends.
 

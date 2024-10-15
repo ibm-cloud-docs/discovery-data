@@ -30,11 +30,11 @@ Follow this tutorial only if you are using a managed deployment.
 
 The following image shows the external enrichment configuration flow.
 
-![Shows the external enrichment configuration flow](images/enrichment-configuration.png){: caption="Figure 1. External enrichment configuration flow" caption-side="bottom"}
+![Shows the external enrichment configuration flow](images/enrichment-configuration.png){: caption="External enrichment configuration flow" caption-side="bottom"}
 
 The following image shows the external enrichment process flow.
 
-![Shows the external enrichment process flow](images/enrichment-process.png){: caption="Figure 2. External enrichment process flow" caption-side="bottom"}
+![Shows the external enrichment process flow](images/enrichment-process.png){: caption="External enrichment process flow" caption-side="bottom"}
 
 For more information about the external enrichment APIs, see [External enrichment API](/docs/discovery-data?topic=discovery-data-external-enrichment).
 

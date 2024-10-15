@@ -166,8 +166,4 @@ The following table lists the {{site.data.keyword.discoveryshort}} actions that 
 | `discovery.table-annotation.read`  | Read document page table annotations. |
 | `discovery.table-cell.read`        | Read document page table cell. |
 | `discovery.user-data.delete`       | Delete all data associated with a customer ID. |
-{: caption="Table 1. Actions that generate events" caption-side="top"}
-
-
-
-
+{: caption="Actions that generate events" caption-side="top"}

@@ -72,7 +72,7 @@ To customize the results, complete the following steps:
 
     -   Select **Field**, and then choose one or more fields to return.
 
-    ![Shows the Search results dialog](images/search-result-by-field-revised.png){: caption="Figure 1. Search results dialog" caption-side="bottom"}
+    ![Shows the Search results dialog](images/search-result-by-field-revised.png){: caption="Search results dialog" caption-side="bottom"}
 
 1.  Click **Apply**.
 
