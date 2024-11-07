@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-10-03"
+lastupdated: "2024-11-07"
 
 subcollection: discovery-data
 
@@ -54,6 +54,10 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 | 5.0.0 | 5.0.0 | 4.15 |
 | 5.0.0 | 5.0.0 | 4.14 |
 | 5.0.0 | 5.0.0 | 4.12 |
+| 4.8.7 | 4.8.x | 4.16 |
+| 4.8.7 | 4.8.x | 4.15 |
+| 4.8.7 | 4.8.x | 4.14 |
+| 4.8.7 | 4.8.x | 4.12 |
 | 4.8.6 | 4.8.6 | 4.15 |
 | 4.8.6 | 4.8.6 | 4.14 |
 | 4.8.6 | 4.8.6 | 4.12 |
