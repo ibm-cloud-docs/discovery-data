@@ -220,6 +220,8 @@ See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confiden
 
 The following list has explanations for some common error and warning messages.
 
+
+
 ### Warning: `Invalid training data found: The document was not returned in the top 100 search results for the given query, and will not be used for training`
 {: #warning-docnotreturned}
 

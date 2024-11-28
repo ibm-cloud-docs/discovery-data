@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# External enrichment API
+# Using the External enrichment API
 {: #external-enrichment}
 
 The external enrichment feature is not supported in the Analyze API.

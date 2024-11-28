@@ -83,7 +83,7 @@ Some enrichments and query result settings are applied to each project type by d
 | Custom | None | Passages |
 {: caption="Basic project defaults" caption-side="top"}
 
-## Webhook security
+## Authentiating the request for webhook security
 {: #webhook-security-reuse}
 
 To authenticate the webhook request, verify the JSON Web Token (JWT) that is sent with the request. The webhook microservice automatically generates a JWT and sends it in the `Authorization` header with each webhook call. It is your responsibility to add code to the external service that verifies the JWT.
