@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Classify sentences
+# Classifying sentences
 {: #sentence-classifier}
 
 [IBM Cloud]{: tag-ibm-cloud}
@@ -121,7 +121,7 @@ Using the search feature, you can find sentence examples in a document and label
 To find examples and label them in a document, complete the following steps:
 
 1.  On the *Label documents* view, click the *Find* icon.
-1.  In the **Find** field, specify the text to search in the document.
+1.  In the *Find* field, specify the text to search in the document.
 
     The search results from the document are displayed when you enter the text.
 
@@ -275,7 +275,7 @@ The following table describes the available evaluation metrics.
 
 To review training results from the performance breakdown, complete the following steps:
 
-1.  Click a number in the **Performance breakdown by sentence class** table. 
+1.  Click a number in the *Performance breakdown by sentence class* table. 
 
     The *Review training results* dialog box is displayed.
 
@@ -297,6 +297,8 @@ The following table shows suggested fixes for common problems.
 {: #sentence-classifier-publish}
 
 When you think the sentence classifier is ready, publish the sentence classifier model. You can consider that the model is ready when the score doesn't change after several test runs in which you make improvements. You can return to update and retrain the model after you publish it.
+
+To publish a sentence classifier, complete the following steps:
 
 1.  Navigate to the *Evaluate classifier* view, and click **Publish classifier**.
 1.  Click **Publish**.
@@ -364,7 +366,9 @@ The labeled data is converted to the following format:
 ## Applying a sentence classifier enrichment
 {: #sentence-classifier-apply}
 
-When you publish the sentence classifier, you specify the field where you want the sentence classifier to be applied. If you decide to apply the enrichment to different or more fields later, you can follow these steps to do so.
+When you publish the sentence classifier, you specify the field where you want the sentence classifier to be applied.
+
+To apply the enrichment to different or more fields later, complete the following steps:
 
 1.  From the navigation panel, click **Manage collections**.
 1.  Click to open the collection where you want to apply the enrichment.
@@ -394,9 +398,8 @@ The following JSON output is an example result of sentence classification.
 
 You can retrain your sentence classifier model at any time. Each time that you train the model, review the performance metric scores to determine whether your most recent changes increase or decrease the model's scores.
 
-1.  To compare one test run against another, click **View score history** in the *Evaluate classifier* view.
-
-    The history view shows the last 5 training runs.
+To compare one test run against another, click **View score history** in the *Evaluate classifier* view.
+The history view shows the last 5 training runs.
 
     To retain the score information for more than the most recent 5 training runs, you can export the metrics in comma-separated value format, and track the scores in a separate application. Click the tabular representation icon ![Tabular representation icon](images/table-of-contents.svg), and then click **Download as CSV**.
     {: tip}
@@ -424,6 +427,8 @@ Removing a sentence classifier enrichment does not remove its workspace.
 ### Removing sentence classifier workspaces
 {: #sentence-classifier-remove-workspace}
 
+To remove a sentence classifier workspace, complete the following steps:
+
 1.  From the *Improvement tools* panel of the *Improve and customize* page, expand *Teach domain concepts*, and then click **Sentence classifiers**.
 
 1.  Find the sentence classifier workspace that you want to delete, click the *Actions* icon, and then select **Delete**.
@@ -438,7 +443,7 @@ The sentence classifier API is beta functionality.
 
 You can use the APIs for applying sentence classifier enrichment to your documents. Using the APIs, you can create a sentence classifier enrichment, and also manage the enrichment such as updating and deleting it.
 
-For using the sentence classifier APIs, do the following things:
+To use the sentence classifier APIs, do the following things:
 
 1.  Create a sentence classifier enrichment using the `create an enrichment` method in the API.
 
@@ -461,7 +466,7 @@ For using the sentence classifier APIs, do the following things:
 
     After the sentence classifier enrichment is successfully created, navigate to the *Manage collections* page, choose the collection, and then open the **Enrichments** tab. You can find the sentence classifier enrichment in the list of available enrichments.
 
-    After the sentence classifier enrichment **Status** is ready, you can apply the sentence classifier enrichment to the documents in your collection.
+    After the sentence classifier enrichment *Status* is ready, you can apply the sentence classifier enrichment to the documents in your collection.
 1.  Apply the sentence classifier enrichment that you have created to the fields (text or html) in your documents to classify sentences. For more information about applying an enrichment and managing the enrichment using APIs, see [Using the API to manage enrichments](/docs/discovery-data?topic=discovery-data-manage-enrichments#enrichments-api).
 
 ## Sentence classifier limits
