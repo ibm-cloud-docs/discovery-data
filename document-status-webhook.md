@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Document status webhook API
+# Using the document status webhook API
 {: #document-status-api}
 
 You can use the document status webhook feature to send a webhook event to your external application when the status of ingested documents becomes `available` or `failed`. The webhook event helps you to take the next action on indexed documents, without having to get the document status first through the [Get document details API](https://{DomainName}/apidocs/discovery-data#getdocument){: external}.
