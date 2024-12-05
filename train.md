@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-11-05"
 
 subcollection: discovery-data
 
@@ -220,7 +220,12 @@ See [confidence scores](/docs/discovery-data?topic=discovery-data-train#confiden
 
 The following list has explanations for some common error and warning messages.
 
+### The message **Watson will begin learning soon** is displayed for a long time when creating a ranker model
+{: #error-rankernotcreated}
 
+This issue may occur if the total number of existing ranker models has reached the limit of 40 models. In this case, a new model is not created and the message **Watson will begin learning soon** is displayed on the UI for a long time.
+
+To resolve this issue, you can either delete old ranker models from unused projects, or contact IBM support for upgrading to a premium instance.
 
 ### Warning: `Invalid training data found: The document was not returned in the top 100 search results for the given query, and will not be used for training`
 {: #warning-docnotreturned}
