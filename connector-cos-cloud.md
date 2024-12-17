@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2024
-lastupdated: "2024-02-01"
+lastupdated: "2024-12-17"
 
 subcollection: discovery-data
 
@@ -80,6 +80,8 @@ IAM API key
 
 Resource instance ID
 :   For example, `cloud-object-storage:global:a/3ag0e9402tyfd5d29761c3e97696b71n:d6f74k03-6k4f-4a82-b165-697354o63903::`.
+
+
 
 ## Connecting to the data source
 {: #connector-cos-cloud-task}
