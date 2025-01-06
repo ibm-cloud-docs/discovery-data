@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-11-07"
+  years: 2020, 2025
+lastupdated: "2025-01-06"
 
 keywords: backup,restore
 
@@ -14,7 +14,7 @@ subcollection: discovery-data
 
 
 
-# Backing up and restoring data in Cloud Pak for Data
+## Backing up and restoring data in Cloud Pak for Data
 {: #backup-restore}
 
 Use the following procedures to back up and restore data in your {{site.data.keyword.discovery-data_long}} instance.
