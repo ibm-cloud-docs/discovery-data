@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-11-05"
+  years: 2019, 2025
+lastupdated: "2025-01-20"
 
 subcollection: discovery-data
 
@@ -177,6 +177,7 @@ Adding a custom stopwords list can also improve the relevance of results for nat
 {: #understanding-training}
 
 Answers to common questions about training a project.
+
 
 ### How do I know whether my system is trained?
 {: #understanding-system}
