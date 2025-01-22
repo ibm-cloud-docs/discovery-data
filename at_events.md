@@ -46,6 +46,13 @@ As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecate
 
 
 
+
+
+
+
+
+
+
 ## Viewing activity tracking events for {{site.data.keyword.discoveryshort}}
 {: #at-viewing}
 
