@@ -22,7 +22,8 @@ The collection can contain an uploaded CSV file only. For information about file
 
 The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection. The project that is generated is given the name that you specify for the collection.
 
-
+When a collection is created from the Content Mining application, you must not ingest additional documents (CSV files) using the {{site.data.keyword.discoveryshort}} API. Use the {{site.data.keyword.discoveryshort}} UI or Content Miner UI to add additional documents to an existing collection that is created from the Content Miner UI.
+{: note}
 
 To add a collection, complete the following steps:
 

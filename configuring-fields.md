@@ -88,6 +88,8 @@ To apply a user-trained Smart Document Understanding model to your collection, c
 
 A subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types.
 
+If any training documents, which are used to train an SDU model, undergoes layout or structure changes in {{site.data.keyword.discoveryshort}}, the previous annotations are no longer valid. To update the SDU model, you must annotate the updated documents again after ingesting them. Otherwise, the previous annotations are incorrectly mapped with the text content, and the corresponding annotation pages in the UI become confusing.
+
 
 ## Labeling video
 {: #sdu-label}
