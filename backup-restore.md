@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-11-07"
+  years: 2020, 2025
+lastupdated: "2025-01-06"
 
 keywords: backup,restore
 

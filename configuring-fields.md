@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2024-01-02"
+  years: 2019, 2025
+lastupdated: "2025-01-20"
 
 keywords: smart document understanding,sdu
 
@@ -87,6 +87,7 @@ To apply a user-trained Smart Document Understanding model to your collection, c
 1.  Click **Submit**, and then click **Apply changes and reprocess**.
 
 A subset of documents is available for you to annotate. A set of 20 - 50 documents is displayed in a list. The number of documents that are available differs based on several factors, including the overall number of documents in your collection and how many of them are supported file types.
+
 
 ## Labeling video
 {: #sdu-label}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2015, 2024
-lastupdated: "2023-04-24"
+  years: 2015, 2025
+lastupdated: "2025-01-20"
 
 subcollection: discovery-data
 
@@ -21,6 +21,8 @@ You might want to add a collection from within the Content Mining application to
 The collection can contain an uploaded CSV file only. For information about file guidelines, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file).
 
 The collection that you create is not added to your existing Content Mining project. A new Content Mining project is created to store the collection. The project that is generated is given the name that you specify for the collection.
+
+
 
 To add a collection, complete the following steps:
 
