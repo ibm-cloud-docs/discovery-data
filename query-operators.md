@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-01-20"
+lastupdated: "2025-01-27"
 
 subcollection: discovery-data
 
@@ -150,7 +150,19 @@ The entire content of the field that you specify must match the phrase you speci
 Cannot match document fields that are greater than 256 characters in length.
 {: note}
 
+To get the query results for a given character symbol, see the following example:
 
+```json
+curl -X POST "https://api.jp-tok.discovery.watson.cloud.ibm.com/instances/<instance-id>/v2/projects/<project-id>/query?version=2023-03-31" \
+  -u "apikey:<wd-api-key>" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "query": "<field-with-symbol>::*￥*"
+  }'
+```
+{: codeblock}
+
+This example query is to query ￥. You can replace ￥ with the required character symbol that you want to search. The search returns the matched value provided the field's value that includes the searchable symbol has a length less than [256 chars](#match). Also, the whole document is matched regardless of which part of a document is relevant to the query.
 
 ### `:!` (Does not include)
 {: #notinclude}
