@@ -178,7 +178,6 @@ Adding a custom stopwords list can also improve the relevance of results for nat
 
 Answers to common questions about training a project.
 
-
 ### How do I know whether my system is trained?
 {: #understanding-system}
 
