@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2024
+  years: 2019, 2025
 lastupdated: "2024-03-05"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
