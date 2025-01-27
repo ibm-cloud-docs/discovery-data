@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2024
+  years: 2020, 2025
 lastupdated: "2023-12-07"
 
 subcollection: discovery-data

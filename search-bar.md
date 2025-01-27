@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2024
+  years: 2019, 2025
 lastupdated: "2022-11-04"
 
 keywords: autocompletion,auto-completion,spelling correction,autocorrection,auto-correction,type ahead,type-ahead

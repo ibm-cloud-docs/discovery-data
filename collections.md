@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2024
+  years: 2019, 2025
 lastupdated: "2024-03-05"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits

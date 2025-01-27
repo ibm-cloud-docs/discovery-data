@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2019, 2024
+  years: 2019, 2025
 lastupdated: "2023-03-22"
 
 keywords: curation,snippet,hard-coded answers

@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2024
+  years: 2020, 2025
 lastupdated: "2023-02-01"
 
 keywords: improving results, troubleshooting search

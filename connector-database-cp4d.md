@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2024
-lastupdated: "2023-04-05"
+  years: 2019, 2025
+lastupdated: "2025-01-27"
 
 subcollection: discovery-data
 
@@ -109,7 +109,7 @@ From your {{site.data.keyword.discoveryshort}} project, complete the following s
         |----------|--------|---------|
         | Data virtualization (same cluster) | `jdbc:db2://{fully-qualified-hostname-of-dv-service}:{jdbc-nonssl-internal-port}/bigsql` | `jdbc:db2://c-db2u-dv-db2u-engn-svc.myproject.svc.cluster.local:50000/bigsql` |
         | Data virtualization (separate cluster) | jdbc:db2://{cluster-address}:{jdbc-nonssl-external-port}/bigsql | jdbc:db2://api.conn.cp.example.com:30269/bigsql |
-        | Db2 | `jdbc:db2://{server}:{port}/{database_name}` | `jdbc:db2://localhost:50000/sample` |
+        | Db2 | `jdbc:db2://{server}:{port}/{database_name}` | `jdbc:db2://localhost:50000/sample:sslConnection=true;` |
         | Oracle | `jdbc:oracle:thin:@//{host}:{TCPport}/{service_name}` | `jdbc:oracle:thin:@localhost:1521/sample` |
         | SQL Server | `jdbc:sqlserver://{serverName}[\{instanceName}]:{port}[;property=value]` | `jdbc:sqlserver://localhost:1433;DatabaseName=sample` |
         | Postgresql | `jdbc:postgresql://{host}:{port}/{database}` | `jdbc:postgresql://localhost/sample` |
