@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-11-07"
+lastupdated: "2025-01-28"
 
 subcollection: discovery-data
 
@@ -13,10 +13,10 @@ subcollection: discovery-data
 # Installation overview
 {: #install}
 
-Find information about how to install {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}.
+Find information about how to install {{site.data.keyword.discoveryfull}}.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}
@@ -41,6 +41,10 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 
 - The 4.6.2 release is the last supported release on Red Hat OpenShift Container Platform 4.8.
 - The 4.5.3 release is the last supported release on Red Hat OpenShift Container Platform 4.6.29 or later.
+
+
+
+
 
 | {{site.data.keyword.discoveryshort}} version | {{site.data.keyword.icp4dfull_notm}} version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
@@ -134,5 +138,7 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 | 2.1.3 | 3.0.1 | 3.11.188 |
 | 2.1.3 | 2.5 | 3.11 |
 {: caption="Support matrix" caption-side="top"}
+
+
 
 The `3.11.188` version more precisely means 3.11.188 or a later 3.11 version.
