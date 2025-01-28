@@ -12,7 +12,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Backing up and restoring data in Cloud Pak for Data
+# Backing up and restoring data
 {: #backup-restore}
 
 Use the following procedures to back up and restore data in {{site.data.keyword.discoveryfull}}.
