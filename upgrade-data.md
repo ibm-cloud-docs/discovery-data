@@ -24,7 +24,7 @@ This information applies only to installed deployments.
 ## Upgrade your deployment
 {: #upgrade-data-overview}
 
-The steps to follow to upgrade your {{site.data.keyword.discoveryshort}} service instance are described in the {{site.data.keyword.icp4dfull_notm}} documentation. The following in-place upgrades are supported:
+The following in-place upgrades are supported:
 
 
 
