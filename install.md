@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-01-28"
+lastupdated: "2025-02-12"
 
 subcollection: discovery-data
 
@@ -140,7 +140,3 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 | 2.1.3 | 3.0.1 | 3.11.188 |
 | 2.1.3 | 2.5 | 3.11 |
 {: caption="Support matrix" caption-side="top"}
-
-
-
-The `3.11.188` version more precisely means 3.11.188 or a later 3.11 version.
