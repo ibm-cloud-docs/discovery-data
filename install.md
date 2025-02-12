@@ -139,4 +139,4 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 | 2.1.4 | 2.5 | 3.11 |
 | 2.1.3 | 3.0.1 | 3.11.188 |
 | 2.1.3 | 2.5 | 3.11 |
-{: caption="Support matrix" caption-side="top"}
+{: caption="{{site.data.keyword.icp4dfull_notm}} - Support matrix" caption-side="top"}
