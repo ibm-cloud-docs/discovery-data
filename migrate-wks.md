@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2023-04-24"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -34,7 +34,7 @@ The following types of models can be imported and used as is:
 The models that you can add depend on your deployment type:
 
 -   [IBM Cloud]{: tag-ibm-cloud} You can add models that were created with a {{site.data.keyword.knowledgestudiofull}} instance that is hosted in {{site.data.keyword.cloud_notm}} only.
--   [IBM Cloud Pak for Data]{: tag-cp4d} You can add models that were created with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}.
+-   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} You can add models that were created with an instance of {{site.data.keyword.knowledgestudiofull}} that is hosted on {{site.data.keyword.icp4dfull}} or {{site.data.keyword.cloud_notm}}.
 
 For more information, see [Using imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml).
 
@@ -101,7 +101,7 @@ To retain entity subtype information, complete the following steps:
     Follow the appropriate steps for exporting based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
     -   [IBM Cloud]{: tag-ibm-cloud} [Uploading resources from another workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_type){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Uploading resources from another workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_type){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} [Uploading resources from another workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_type){: external}
 
 1.  Modify the type system JSON file. For each subtype, add a new root-level entity type.
 
@@ -195,7 +195,7 @@ To retain entity subtype information, complete the following steps:
     Follow the appropriate steps for exporting based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
     -   [IBM Cloud]{: tag-ibm-cloud} [Uploading resources from another workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_doc){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Uploading resources from another workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} [Uploading resources from another workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc){: external}
 
 1.  In the downloaded corpus, for all mentions with a subtype defined, update the type information for the mention to specify the new root-level entity type.
 
@@ -278,21 +278,21 @@ To retain entity subtype information, complete the following steps:
     Follow the appropriate steps for uploading a type system based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
     -   [IBM Cloud]{: tag-ibm-cloud} [Adding a type system to the workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_type){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding a type system to the workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_type){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} [Adding a type system to the workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_type){: external}
 
 1.  Upload the annotated documents to the workspace. Retain the original file structure of the exported data. Ensure that the compressed file has the same root-level directory as the original exported file, for example.
 
     Follow the appropriate steps for uploading documents based on your {{site.data.keyword.knowledgestudioshort}} deployment type:
 
     -   [IBM Cloud]{: tag-ibm-cloud} [Adding documents to a workspace](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-exportimport#wks_exportimport_expimp_doc){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding documents to a workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} [Adding documents to a workspace](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-exportimport#wks_exportimport_expimp_doc){: external}
 
 1.  From {{site.data.keyword.knowledgestudioshort}}, click **Train** to retrain the model.
 
     For more information, see the appropriate topic for your deployment type:
     
     -   [IBM Cloud]{: tag-ibm-cloud} [Training the machine learning model](/docs/watson-knowledge-studio?topic=watson-knowledge-studio-train-ml){: external}
-    -   [IBM Cloud Pak for Data]{: tag-cp4d} [Training the machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-train-ml){: external}
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} [Training the machine learning model](/docs/watson-knowledge-studio-data?topic=watson-knowledge-studio-data-train-ml){: external}
 
 1.  Now, you're ready to export the model from {{site.data.keyword.knowledgestudioshort}} and import it to {{site.data.keyword.discoveryshort}} to use the model as a machine learning enrichment.
 

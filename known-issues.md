@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2024-06-19"
+lastupdated: "2025-02-13"
 
 keywords: known issues
 
@@ -18,13 +18,17 @@ subcollection: discovery-data
 Known issues are listed by the release in which they were identified.
 {: shortdesc}
 
--   For the list of release notes, see [Release notes](/docs/discovery-data?topic=discovery-data-release-notes-data).
--   For troubleshooting information, see [Troubleshooting](/docs/discovery-data?topic=discovery-data-troubleshoot).
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 The known issues that are described in this topic apply to installed deployments only.
 {: note}
+
+## 5.1.x releases
+{: #5dot1}
+
+See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/en/SSNFH6_5.1.x/svc-discovery/discovery-known-issues.html)
 
 ## 5.0.x releases
 {: #5dot0}

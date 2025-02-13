@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2022-01-26"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -10,13 +10,13 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Building a Cloud Pak for Data custom connector
+# Building a custom connector
 {: #build-connector}
 
 {{site.data.keyword.discoveryshort}} provides connectors to many popular data sources, as described in [Configuring Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types). If you need to connect to a different data source, you can write and deploy a *custom connector*.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}

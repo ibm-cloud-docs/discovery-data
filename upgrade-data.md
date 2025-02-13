@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2024-10-03"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Learn how to upgrade the version of your installed service deployment.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}
@@ -24,8 +24,9 @@ This information applies only to installed deployments.
 ## Upgrade your deployment
 {: #upgrade-data-overview}
 
-The steps to follow to upgrade your {{site.data.keyword.discoveryshort}} service instance are described in the {{site.data.keyword.icp4dfull_notm}} documentation. The following in-place upgrades are supported:
+The following in-place upgrades are supported:
 
+-   From a 4.8.x release or 5.0.x release to the latest 5.1 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-upgrade.html){: external}.
 -   From a 5.0.x release to a later 5.0 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-upgrade.html){: external}.
 -   From a 4.7.x release or 4.8.x release to the latest 5.0 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-upgrade.html){: external}.
 -   From one 4.8.x release to a later 4.8 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-upgrade.html){: external}.

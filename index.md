@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2023-08-17"
+lastupdated: "2025-02-13"
 
 keywords: document enrichment, enterprise search, document intelligence, language intelligence
 
@@ -74,7 +74,7 @@ To get started, take our step-by-step product tour to get familiar with the user
 
 {{site.data.keyword.discoveryshort}} can be deployed as a managed cloud service or can be installed on premises. This documentation describes how to use the product regardless of how it is deployed. Information that applies exclusively to one deployment type is denoted by the appropriate icon:
 
-- [IBM Cloud Pak for Data]{: tag-cp4d} for installed instances, such as {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}}.
+- [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} for installed instances, such as {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.cloud}}.
 - [IBM Cloud]{: tag-ibm-cloud} for managed instances, such as {{site.data.keyword.discoveryshort}} Plus, Enterprise, and Premium plan instances that are hosted by {{site.data.keyword.cloud_notm}} or instances that are provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}.
 
 Click the Help icon ![Help icon](images/help.svg) from the header of any page in the product user interface to open the {{site.data.keyword.discoveryshort}} documentation.
@@ -83,7 +83,7 @@ Click the Help icon ![Help icon](images/help.svg) from the header of any page in
 ## Browser support
 {: #about-browser}
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 -   The minimum required browser software for the product user interface includes the following browsers:
 

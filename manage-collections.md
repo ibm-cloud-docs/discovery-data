@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2023-11-13"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -80,7 +80,7 @@ To change how a data source is processed, complete the following steps:
 
 To find out whether a collection is being shared, open the *My Projects* page, and then complete the appropriate step for your deployment:
 
-- [IBM Cloud Pak for Data]{: tag-cp4d} Click **Collection usage and sharing**.
+- [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} Click **Collection usage and sharing**.
 - [IBM Cloud]{: tag-ibm-cloud} Click **Data usage and GDPR**, and then review the **Collection usage** page.
 
 Collections can be associated with a single project, shared by two or more projects, or not associated with any project.
@@ -107,7 +107,7 @@ Enrichments and improvement tool settings are not included when a collection is 
 For more information about the other tabs, see the following topics:
 
 - **GDPR data label** [IBM Cloud]{: tag-ibm-cloud}: For more information about GDPR and labeling data, see [European Union General Data Protection Regulation (GDPR)](/docs/discovery-data?topic=discovery-data-information-security#gdpr).
-- **API usage** [IBM Cloud Pak for Data]{: tag-cp4d} For more information about monitoring Analyze API usage, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
+- **API usage** [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} For more information about monitoring Analyze API usage, see [Monitoring usage](/docs/discovery-data?topic=discovery-data-analyzeapi#api-usage).
 
 ## Deleting collections
 {: #collection-delete}
@@ -120,7 +120,7 @@ Find out whether a collection is being used anywhere before you delete it from t
 
     Click **Delete from project**.
 
--   [IBM Cloud Pak for Data]{: tag-cp4d} To delete all of the collections in your environment, select the Environment details icon ![Environment details icon](images/data--base.svg), and then choose **Delete environment**.
+-   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} To delete all of the collections in your environment, select the Environment details icon ![Environment details icon](images/data--base.svg), and then choose **Delete environment**.
 
     *Environment* refers to the {{site.data.keyword.discoveryshort}} instance that you provisioned in {{site.data.keyword.icp4dfull_notm}}.
     {: tip}

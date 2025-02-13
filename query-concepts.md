@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2023-04-13"
+lastupdated: "2025-02-13"
 
 keywords: search goals, log, logging
 
@@ -154,7 +154,7 @@ How to estimate the number of queries your application will use per month depend
 ## Querying with document-level security enabled
 {: #querydls}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}

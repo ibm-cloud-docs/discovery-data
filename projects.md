@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2024-03-05"
+lastupdated: "2025-02-13"
 
 keywords: projects, project types
 
@@ -95,7 +95,7 @@ A sample Document Retrieval project is available for you to explore. For more in
 
 If you are working with English-language legal contracts, enable the Content Intelligence feature to apply a contracts enrichment that can recognize and tag contract-related concepts in your data. Use this project type to automate complex business processes, such as contract review and negotiation. This project type can help to increase productivity, minimize costs, and reduce your legal exposure.
 
-Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
+Only users of installed deployments or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
 In addition to the enrichments that are applied to a typical document retrieval project, the following enrichments are made automatically:
@@ -125,7 +125,7 @@ If you need to perform more complex searches from your virtual assistant, you mi
 
 For more information about building a {{site.data.keyword.conversationshort}} search skill, see the appropriate documentation for your deployment:
 
--   [IBM Cloud Pak for Data]{: tag-cp4d} [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}.
+-   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} [Adding a search integration](/docs/watson-assistant?topic=watson-assistant-search-add){: external}.
 -   [IBM Cloud]{: tag-ibm-cloud} [Embedding existing help content](/docs/assistant?topic=assistant-skill-search-add){: external}
 
     From the classic {{site.data.keyword.conversationshort}} experience, see [Creating a search skill](/docs/assistant-data?topic=assistant-data-skill-search-add){: external}.
@@ -136,7 +136,7 @@ For more information about building a {{site.data.keyword.conversationshort}} se
 
 Use this project type to discover hidden insights, trends, and relationships in your data.
 
-Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan managed deployments can create this type of project.
+Only users of installed deployments or Premium or Enterprise plan managed deployments can create this type of project.
 {: note}
 
 This project type is especially useful for analyzing structured data, such as data that you add by uploading a CSV file or by connecting to a database data source. You can add only one collection to a project of this type from the {{site.data.keyword.discoveryshort}} user interface.

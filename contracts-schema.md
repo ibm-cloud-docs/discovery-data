@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2025
-lastupdated: "2023-02-24"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -37,7 +37,7 @@ To see the elements that are identified by the *Contracts* enrichment, complete 
 
           ![Shows the Contract Data page for a PDF file.](images/contracts-cloud-sla.png){: caption="Contract Data view" caption-side="bottom"}
     
-    [IBM Cloud Pak for Data]{: tag-cp4d}
+    [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
       1.  Click **Contract Data**.
 

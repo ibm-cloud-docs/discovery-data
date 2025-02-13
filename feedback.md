@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2024-11-07"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -25,7 +25,7 @@ How you share product feedback differs depending on the type of deployment you a
 
 From the documentation page header, click **Send feedback** to open a simple feedback form. You can share your opinion and submit it to the product team for consideration. We appreciate your insights and suggestions.
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 To share ideas or suggest new features for the {{site.data.keyword.discoveryshort}} service on {{site.data.keyword.icp4dfull_notm}}, go to the [IBM Data and AI Ideas Portal for Customers](https://ibm-data-and-ai.ideas.ibm.com/){: external}
 

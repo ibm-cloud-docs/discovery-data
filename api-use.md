@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2024-02-26"
+lastupdated: "2025-02-13"
 
 keywords: api version,api,request syntax,api key,bearer token
 
@@ -54,7 +54,7 @@ To use the API, you must construct the URL to use in your requests. Many of the 
 
 To get the `{collection_id}`, you can use the [List collections](/apidocs/discovery-data#listcollections){: external} API method. Alternatively, open the collection in the product user interface, and then copy the collection ID, which is displayed after the `/collections/` segment of the page URL, from the web browser location field.
 
-## Using the API from Cloud Pak for Data [IBM Cloud Pak for Data]{: tag-cp4d}
+## Using the API [IBM Cloud Pak for Data]{: tag-cp4d}[IBM Software Hub]{: tag-teal}
 {: #api-use-cpd}
 
 This information applies to {{site.data.keyword.discovery-data_short}} only.
@@ -62,7 +62,7 @@ This information applies to {{site.data.keyword.discovery-data_short}} only.
 
 To use the API, you must construct the URL to use in your requests.
 
-1.  From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand **Services**, and then click **Instances**.
+1.  From the web client main menu, expand **Services**, and then click **Instances**.
 1.  Find your instance, and then click it to open its summary page.
 1.  Scroll to the *Access information* section of the page, and then copy the URL. You will specify this value as the `{url}`.
 

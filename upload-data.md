@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-02-01"
+lastupdated: "2025-02-13"
 
 keywords: upload,one-time upload,add document,add files
 
@@ -32,7 +32,7 @@ To upload data, complete the following steps:
 1.  Open your project, go to the **Manage collections** page, and then click **New collection**.
 1.  Do the following based on your deployement type:
 
-    [IBM Cloud Pak for Data]{: tag-cp4d}
+    [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
     1.  Choose Upload data as your data source and then click Next.
 
         You can also connect to a different data source instead of uploading data such as reusing data from a collection or crawling an external data source. For more information, see [Reusing data from a collection](/docs/discovery-data?topic=discovery-data-manage-collections#manage-collections-reuse) and [Overview of Cloud Pak for Data data sources](/docs/discovery-data?topic=discovery-data-collection-types).

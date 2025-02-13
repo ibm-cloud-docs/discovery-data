@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2023-05-12"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -93,7 +93,7 @@ You can import [character patterns](https://www.ibm.com/support/knowledgecenter/
 1.  Click the **Import** button.
 1.  Select the JSON file that you want to import, and then click **Save**.
 
-## Importing facets from Watson Explorer Content Analytics Studio [IBM Cloud Pak for Data]{: tag-cp4d}
+## Importing facets from Watson Explorer Content Analytics Studio [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 {: #enrichml}
 
 You can import a PEAR file to use as the machine learning source file from {{site.data.keyword.icp4dfull_notm}} deployments only.

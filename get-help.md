@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2022-06-16"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -71,7 +71,7 @@ Be ready to share the following information with IBM Support:
 
 -   If the problem is related to querying documents, describe the kind of query being used.
 
-## [IBM Cloud Pak for Data]{: tag-cp4d}  Contacting IBM Support for installed deployments 
+## [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} Contacting IBM Support for installed deployments 
 {: #get-help-support-cp4d}
 
 Installed deployments are deployment that you provision on {{site.data.keyword.icp4dfull_notm}}.

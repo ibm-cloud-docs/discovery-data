@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2023-05-12"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -27,6 +27,7 @@ Although the documentation that describes how to use the product is the same (wh
 
 To keep up with product changes, check the following topics periodically:
 
+-   [IBM Software Hub]{: tag-teal} [Release notes for IBM Software Hub service instances](/docs/discovery-data?topic=discovery-data-release-notes-hub)
 -   [IBM Cloud Pak for Data]{: tag-cp4d} [Release notes for {{site.data.keyword.icp4dfull_notm}} service instances](/docs/discovery-data?topic=discovery-data-release-notes-data)
 -   [IBM Cloud]{: tag-ibm-cloud} [Release notes for {{site.data.keyword.cloud_notm}} service instances](/docs/discovery-data?topic=discovery-data-release-notes)
 

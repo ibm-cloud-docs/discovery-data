@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-06"
+lastupdated: "2025-02-13"
 
 keywords: backup,restore
 
@@ -12,34 +12,38 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Backing up and restoring data in Cloud Pak for Data
+# Backing up and restoring data
 {: #backup-restore}
 
-Use the following procedures to back up and restore data in your {{site.data.keyword.discovery-data_long}} instance.
+Use the following procedures to back up and restore data in {{site.data.keyword.discoveryfull}}.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}
 
-You use the same set of backup and restore scripts to back up and restore data in any of the supported upgrade paths. The backup script stores the version number of the service with data to back up from the existing deployment. The restore script detects the version of the service that is installed on the new {{site.data.keyword.icp4dfull_notm}} deployment, and then follows the appropriate steps to restore data to the detected version.
+You use the same set of backup and restore scripts to back up and restore data in any of the supported upgrade paths. The backup script stores the version number of the service with data to back up from the existing deployment. The restore script detects the version of the service that is installed on the new deployment, and then follows the appropriate steps to restore data to the detected version.
 
 The following table lists the upgrade paths that are supported by the scripts.
 
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
-| 4.8.6 | 5.0.3 |
-| 4.8.0 to 4.8.5 | 5.0.x |
-| 4.7.x | 5.0.x |
-| 4.6.x | 5.0.x |
-| 4.5.x | 5.0.x |
-| 4.8.x | 4.8.x |
-| 4.7.x | 4.8.x |
-| 4.6.x | 4.8.x |
-| 4.5.x | 4.8.x |
+| 5.0.x | Later versions of 5.0.x, 5.1.x |
+| 4.8.8 | 5.1.1 or later versions |
+| 4.8.7 | Later versions of 4.8.x, 5.1.x |
+| 4.8.6 | Later versions of 4.8.x, 5.0.3, 5.1.x |
+| 4.8.x | Later versions of 4.8.x, 5.0.x, 5.1.x |
+| 4.7.x | 4.8.x, 5.0.x, 5.1.x |
+| 4.6.x | 4.8.x, 5.0.x, 5.1.x |
+| 4.5.x | 4.8.x, 5.0.x, 5.1.x |
 | 4.0.x | 4.8.x except 4.8.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
+
+If you are upgrading to 5.1.x, a simpler way to complete the upgrade is described in the following topics:
+
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 5.0](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-upgrade-v50.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.8](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-upgrade-v48.html){: external}.
 
 If you are upgrading to 5.0.x, a simpler way to complete the upgrade is described in the following topics:
 

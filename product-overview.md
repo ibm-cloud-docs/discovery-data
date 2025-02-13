@@ -92,7 +92,7 @@ Alternatively, you can add a generative language service named NeuralSeek betwee
 
 Uncover patterns, trends, and relationships in structured and unstructured data. Use text analytics to gain insights into social media, e-commerce trends, and user behavior. Or start to address problems by finding their root cause.
 
-Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan-managed deployments can create this type of project.
+Only users of installed deployments or Premium or Enterprise plan-managed deployments can create this type of project.
 {: note}
 
 ![Shows the content mining application user interface.](images/mining-search.png){: caption="Analyzing data with the Content Mining application" caption-side="bottom"}
@@ -111,7 +111,7 @@ If finding trends in your data is your goal, complete the steps that are listed 
 
 Accelerate the pace at which experts can analyze complex documents.
 
-Only users of installed deployments ({{site.data.keyword.icp4dfull_notm}}) or Premium or Enterprise plan-managed deployments can create this type of project.
+Only users of installed deployments or Premium or Enterprise plan-managed deployments can create this type of project.
 {: note}
 
 ![Shows the Contract Info tab for a contract document query result.](images/contract-search.png){: caption="Analyzing contracts" caption-side="bottom"}

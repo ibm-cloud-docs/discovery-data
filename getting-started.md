@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-03-05"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 content-type: tutorial
@@ -27,7 +27,7 @@ In this tutorial, we introduce {{site.data.keyword.discoveryfull}} and walk you 
 
 Choose the appropriate step to complete for your deployment:
 
--   [IBM Cloud Pak for Data]{: tag-cp4d} Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
+-   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} Install {{site.data.keyword.discoveryshort}}. See [Installing Discovery for Cloud Pak for Data](/docs/discovery-data?topic=discovery-data-install).
 -   [IBM Cloud]{: tag-ibm-cloud} Complete the following steps:
 
     1.  Sign up for a {{site.data.keyword.cloud_notm}} account or log in.
@@ -54,11 +54,11 @@ These instructions apply to all managed deployments, including {{site.data.keywo
 
     If you're prompted to log in, provide your {{site.data.keyword.cloud_notm}} credentials.
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 These instructions apply to {{site.data.keyword.discoveryshort}} deployments:
 
-1.  From the {{site.data.keyword.icp4dfull_notm}} web client main menu, expand **Services**, and then click **Instances**.
+1.  From the web client main menu, expand **Services**, and then click **Instances**.
 1.  Find your instance, and then click it to open its summary page.
 
     You can create a maximum of 10 instances per deployment. After you reach the maximum number, the *New instance* button is not displayed in {{site.data.keyword.icp4dfull_notm}}.
