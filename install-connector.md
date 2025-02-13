@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2022-03-09"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -10,13 +10,13 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Installing a custom Cloud Pak for Data connector
+# Installing a custom connector
 {: #install-connector}
 
 After you have compiled and packaged your custom connector, you need to install it to your {{site.data.keyword.discoveryshort}} instance.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}

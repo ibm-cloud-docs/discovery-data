@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-03-05"
+lastupdated: "2025-02-13"
 
 keywords: data sources,supported data sources,supported file types,document types,file size,field limits,OCR,optical character recognition,file limits
 
@@ -31,7 +31,7 @@ You can add data to your project in the following ways:
     [IBM Cloud]{: tag-ibm-cloud}
     :    Use IBM App Connect to set up a scheduled crawl of documents that are stored on other external data sources.
     
-    [IBM Cloud Pak for Data]{: tag-cp4d}
+    [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
     :    Build a connector to crawl documents that are stored on other external data sources.
 
 -   To automate the process of adding data to your project, use the {{site.data.keyword.discoveryshort}} APIs to create a collection and upload documents to it.
@@ -84,7 +84,7 @@ To create a collection, complete the following steps:
     
         For supported data sources, see the appropriate topic for your deployment type:
 
-        -   [IBM Cloud Pak for Data]{: tag-cp4d} [{{site.data.keyword.icp4dfull_notm}} data sources](/docs/discovery-data?topic=discovery-data-collection-types)
+        -   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} [{{site.data.keyword.icp4dfull_notm}} data sources](/docs/discovery-data?topic=discovery-data-collection-types)
         -   [IBM Cloud]{: tag-ibm-cloud} [{{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources)
 
         These topics also describe how to connect to data sources that are not supported by default per deployment type.
@@ -169,7 +169,7 @@ The number of collections you can create per service instance depends on your {{
 | Plus (includes Trial) |              40 |
 {: caption="Plan details" caption-side="top"}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} The number of collections you can create depends on your hardware configuration. {{site.data.keyword.discoveryshort}} supports a maximum of 300 collections per instance and installation, but that number depends on many factors, including memory.
 
 ## Supported file types
 {: #supportedfiletypes}
@@ -256,7 +256,7 @@ The maximum size of each file that you can crawl by using a connector differs by
 
 -   All other plans: 10 MB
 
-[IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments on {{site.data.keyword.icp4dfull_notm}}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} Installed deployments on {{site.data.keyword.icp4dfull_notm}}
 
 -   All data sources: 32 MB
 
@@ -331,7 +331,7 @@ To create a crawl schedule, complete the following steps:
     -   Do not configure multiple crawlers to run at short intervals.
     -   If you open a collection in a time zone other than the one in which the collection was created, the Coordinated Universal Time (UTC) offset information is displayed.
 
-1.  [IBM Cloud Pak for Data]{: tag-cp4d} Installed deployments have a **More scheduling settings** section where you can choose the type of schedule to use to crawl the data source. 
+1.  [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} Installed deployments have a **More scheduling settings** section where you can choose the type of schedule to use to crawl the data source. 
 
     The choices for all of the connectors (except the *Web crawl* connector) are as follows:
 
@@ -389,7 +389,7 @@ To restart the crawl, complete the following steps:
 
     The next crawl will start based on the frequency that is selected in the crawl schedule options. If you want to start the crawl at any time before the scheduled frequency, click **Recrawl** on the *Activity* page.
 
-[IBM Cloud Pak for Data]{: tag-cp4d}
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 You can temporarily stop a crawl that is in progress.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-12"
+lastupdated: "2025-02-13"
 
 keywords: backup,restore
 
@@ -27,27 +27,23 @@ You use the same set of backup and restore scripts to back up and restore data i
 
 The following table lists the upgrade paths that are supported by the scripts.
 
-
-
-
-
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
-| 4.8.6 | 5.0.3 |
-| 4.8.0 to 4.8.5 | 5.0.x |
-| 4.7.x | 5.0.x |
-| 4.6.x | 5.0.x |
-| 4.5.x | 5.0.x |
-| 4.8.x | 4.8.x |
-| 4.7.x | 4.8.x |
-| 4.6.x | 4.8.x |
-| 4.5.x | 4.8.x |
+| 5.0.x | Later versions of 5.0.x, 5.1.x |
+| 4.8.8 | 5.1.1 or later versions |
+| 4.8.7 | Later versions of 4.8.x, 5.1.x |
+| 4.8.6 | Later versions of 4.8.x, 5.0.3, 5.1.x |
+| 4.8.x | Later versions of 4.8.x, 5.0.x, 5.1.x |
+| 4.7.x | 4.8.x, 5.0.x, 5.1.x |
+| 4.6.x | 4.8.x, 5.0.x, 5.1.x |
+| 4.5.x | 4.8.x, 5.0.x, 5.1.x |
 | 4.0.x | 4.8.x except 4.8.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
 
+If you are upgrading to 5.1.x, a simpler way to complete the upgrade is described in the following topics:
 
-
-
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 5.0](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-upgrade-v50.html){: external}.
+-  [Upgrading Watson {{site.data.keyword.discoveryshort}} from Version 4.8](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-upgrade-v48.html){: external}.
 
 If you are upgrading to 5.0.x, a simpler way to complete the upgrade is described in the following topics:
 

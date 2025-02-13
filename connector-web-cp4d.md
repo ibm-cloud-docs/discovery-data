@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2022-12-21"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -16,7 +16,7 @@ subcollection: discovery-data
 Crawl a website. You can crawl public websites and websites that require authentication.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments. For more information about crawling a website from a managed deployment, see [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud).
 {: note}

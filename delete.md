@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2022-12-08"
+lastupdated: "2025-02-13"
 
 keywords: delete service
 
@@ -40,14 +40,14 @@ For more information about how data is handled by {{site.data.keyword.cloud_notm
 
 For more information about how to delete a deployment of the service from Cloud Pak for Data as a Service, see [Deleting a deployment](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-deploy-delete.html?audience=wdp){: external}.
 
-## Deleting an installed service instance [IBM Cloud Pak for Data]{: tag-cp4d}
+## Deleting an installed service instance [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 {: #delete-cp4d}
 
 Only the owner or an Administrator of the provisioned service instance can delete it.
 
 To deprovision a service instance of {{site.data.keyword.discoveryshort}} for {{site.data.keyword.icp4dfull_notm}}, complete the following steps:
 
-1.  From the {{site.data.keyword.icp4dfull_notm}} web client menu, click **Services > Instances**.
+1.  From the web client menu, click **Services > Instances**.
 1.  Find your service instance, and then click the menu icon and choose **Delete**.
 
 For more information about how to uninstall the service, see [Uninstalling {{site.data.keyword.discoveryshort}}](https://www.ibm.com/docs/SSQNUZ_4.5.x/svc-discovery/discovery-uninstall.html){: external}.

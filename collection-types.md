@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-06-05"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overview of Cloud Pak for Data data sources
+# Overview of data sources
 {: #collection-types}
 
 
@@ -18,7 +18,7 @@ subcollection: discovery-data
 In {{site.data.keyword.discovery-data_short}}, you can crawl documents from a local source that you upload or from a remote data source that you connect to. Learn more about the supported data sources and how to configure them.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments. For more information about {{site.data.keyword.cloud_notm}} data sources, see [Overview of the {{site.data.keyword.cloud_notm}} data sources](/docs/discovery-data?topic=discovery-data-sources).
 {: note}
@@ -44,7 +44,7 @@ You can use {{site.data.keyword.discovery-data_short}} to crawl from the followi
 
 If you have special requirements when you add source documents, such as a need to exclude certain files, you can work with a developer to create a custom crawler plug-in. The crawler plug-in can apply more nuanced rules to what documents and what fields in the documents get added. For more information, see [Building a Cloud Pak for Data custom crawler plug-in](/docs/discovery-data?topic=discovery-data-crawler-plugin-build).
 
-## Setting up the HTTP proxy configuration in the air gap environment [IBM Cloud Pak for Data]{: tag-cp4d}
+## Setting up the HTTP proxy configuration in the air gap environment [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 {: #sethttpproxyae}
 
 When {{site.data.keyword.discoveryshort}} is running in the air gap environment, you must set up HTTP proxy to connect to the external servers.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-03-04"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -66,7 +66,7 @@ You have several methods to back up the data that is stored in {{site.data.keywo
 | Advanced rules enrichment | Back up the original model files as .zip files and store them locally. For more information, see [Advanced rules models enrichment](/docs/discovery-data?topic=discovery-data-recovery#advrmenrich). | No | Yes | Download - No  \n Upload - No |
 | Rule-based models created in Knowledge Studio | Back up the original model files as .pear files and store them locally. For more information, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml). | No | Yes | Download - No \n Upload - Yes |
 | Machine learning models created in Knowledge Studio | Back up the original model files as .zip files and store them locally. For more information, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml). | No | Yes | Download - No \n Upload - Yes |
-| [IBM Cloud Pak for Data]{: tag-cp4d} Custom UIMA text analysis models| Back up the original model files as .pear files and store them locally. For more information, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml). | No | Yes | Download - No  \n Upload - Yes |
+| [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} Custom UIMA text analysis models| Back up the original model files as .pear files and store them locally. For more information, see [Use imported ML models to find custom terms](/docs/discovery-data?topic=discovery-data-domain-ml). | No | Yes | Download - No  \n Upload - Yes |
 {: row-headers}
 {: class="comparison-table"}
 {: caption="Resource recovery support details" caption-side="top"}

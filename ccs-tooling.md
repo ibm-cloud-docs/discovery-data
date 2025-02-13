@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2023-03-02"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -10,13 +10,13 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using a custom Cloud Pak for Data connector from the Discovery user interface
+# Using a custom connector from the Discovery user interface
 {: #ccs-tooling}
 
 After you build and deploy a custom connector, you can configure and run it in the {{site.data.keyword.discoveryshort}} user interface to create a collection.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}

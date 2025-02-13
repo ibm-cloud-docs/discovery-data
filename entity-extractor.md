@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-02-01"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -354,7 +354,7 @@ The training data is too large
     -   Remove one or more entity types to decrease the size of your training data.
     -   Remove extra large documents from the training data. For example, if one of the labeled documents is extra large, change its status from *Completed* to *In progress* to omit it from the training data.
     -   Reduce the number of documents that are included in the training set. The default split ratio (70%-23%-7%) for the training data uses 70% of the documents in the training set. You can change the percentage of documents that are used in the training set to a smaller number. For example, you might change the split ratio to 60%-33%-7%.
-    -   [IBM Cloud Pak for Data]{: tag-cp4d}  Increase the capacity of your deployed service instance by scaling up service pods.
+    -   [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} Increase the capacity of your deployed service instance by scaling up service pods.
 
 ## Evaluating the extractor
 {: #entity-extractor-evaluate-model}

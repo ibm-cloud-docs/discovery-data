@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2023-09-28"
+lastupdated: "2025-02-13"
 
 keywords: JSON, JSON representation, result JSON
 
@@ -45,7 +45,7 @@ To test your project, complete the following steps:
 
       1.  Click the *Display options* menu from the advanced view header, and then select **JSON**.
 
-    [IBM Cloud Pak for Data]{: tag-cp4d}
+    [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
       1.  Click **JSON**.
 

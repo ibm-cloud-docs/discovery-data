@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-06-11"
+lastupdated: "2025-02-13"
 
 keywords: external-enrichment,webhook
 
@@ -17,7 +17,7 @@ subcollection: discovery-data
 
 You can use the document status webhook feature to send a webhook event to your external application when the status of ingested documents becomes `available` or `failed`. The webhook event helps you to take the next action on indexed documents, without having to get the document status first through the [Get document details API](https://{DomainName}/apidocs/discovery-data#getdocument){: external}.
 
-[IBM Cloud Pak for Data]{: tag-cp4d} When you run {{site.data.keyword.discoveryshort}} in an air-gapped environment, you must connect to the external application through an HTTP proxy. For more information, see [Setting up HTTP proxy in air-gapped environments](/docs/discovery-data?topic=discovery-data-collection-types#sethttpproxyae).
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal} When you run {{site.data.keyword.discoveryshort}} in an air-gapped environment, you must connect to the external application through an HTTP proxy. For more information, see [Setting up HTTP proxy in air-gapped environments](/docs/discovery-data?topic=discovery-data-collection-types#sethttpproxyae).
 {: note}
 
 For using the document status webhook feature, do the following things:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2021-10-01"
+lastupdated: "2025-02-13"
 
 subcollection: discovery-data
 
@@ -10,13 +10,13 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using a Cloud Pak for Data custom crawler plug-in from the Discovery user interface
+# Using a custom crawler plug-in from the Discovery user interface
 {: #crawler-plugin-tooling}
 
 After you build and deploy a crawler plug-in, you can configure your {{site.data.keyword.discoveryshort}} collection to use your plug-in to process documents.
 {: shortdesc}
 
-[IBM Cloud Pak for Data]{: tag-cp4d} **{{site.data.keyword.icp4dfull_notm}} only**
+[IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
 
 This information applies only to installed deployments.
 {: note}
