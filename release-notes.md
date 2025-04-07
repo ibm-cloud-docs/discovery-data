@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-03-05"
+lastupdated: "2025-04-07"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -706,9 +706,6 @@ Improved Web crawl connector
 
 New drag and drop feature when uploading
 :   Upload collections now support dragging and dropping documents before and during document upload. For more information, see [Uploading data](/docs/discovery-data?topic=discovery-data-upload-data).
-
-New list view for collections
-:   You can view a list of collections that are connected to a particular gateway. For more information, see [Viewing collections connected to a gateway](/docs/discovery-data?topic=discovery-data-sources#gateway-connection).
 
 ## 17 December 2020
 {: #discovery-17december2020}
