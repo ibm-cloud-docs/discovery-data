@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-03-03"
+lastupdated: "2025-04-07"
 
 subcollection: discovery-data
 
@@ -50,9 +50,9 @@ The following table describes which versions of {{site.data.keyword.discoverysho
 
 | {{site.data.keyword.discoveryshort}} version | IBM Software Hub version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
-| 5.1.2 | 5.1.2 | 4.12, 4.14, 4.15, 4.16 |
-| 5.1.1 | 5.1.1 | 4.12, 4.14, 4.15, 4.16 |
-| 5.1.0 | 5.1.0 | 4.12, 4.14, 4.15, 4.16 |
+| 5.1.2 | 5.1.2 | 4.12, 4.14, 4.15, 4.16, 4.17 |
+| 5.1.1 | 5.1.1 | 4.12, 4.14, 4.15, 4.16, 4.17 |
+| 5.1.0 | 5.1.0 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 {: caption="IBM Software Hub - Support matrix" caption-side="top"}
 
 ### {{site.data.keyword.icp4dfull_notm}} - Support matrix

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2023-06-21"
+lastupdated: "2025-04-07"
 
 subcollection: discovery-data
 
@@ -199,11 +199,6 @@ The v1 events and feedback API (`/v1/events`) is not available in v2.
 {: #migrate-to-v2-api-credentials}
 
 The v1 credentials API (`/v1/environments/{environment_id}/credentials`) is not available in v2. The function is available from the v2 product user interface.
-
-## Gateway configuration
-{: #migrate-to-v2-api-gateway-configuration}
-
-The v1 gateways API (`/v1/environments/{environment_id}/gateways`) is not available in v2. The function is available from the v2 product user interface. For more information, see [Installing IBM Secure Gateway for on-premises data](/docs/discovery-data?topic=discovery-data-sources#gatewaypublic).
 
 ## Status codes
 {: #migrate-to-v2-api-status-codes}
