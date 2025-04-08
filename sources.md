@@ -37,11 +37,7 @@ You can use {{site.data.keyword.discoveryshort}} to crawl from the following dat
 -   [Salesforce](/docs/discovery-data?topic=discovery-data-connector-salesforce-cloud)
 -   [Web crawl](/docs/discovery-data?topic=discovery-data-connector-web-cloud)
 
- 
-*Your data source isn't listed?* Check whether {{site.data.keyword.appconserviceshort}} has a connector to the data source. You can use a default connector that is built for {{site.data.keyword.appconnect_notm}} to send data from a data source to {{site.data.keyword.discoveryshort}}. For a list of the data sources supported by {{site.data.keyword.appconnect_notm}} default connectors, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}. For more information about integrating {{site.data.keyword.appconnect_notm}} with {{site.data.keyword.discoveryshort}}, see [How to use IBM App Connect with {{site.data.keyword.discoveryfull}}](https://www.ibm.com/support/knowledgecenter/SS6KM6/com.ibm.appconnect.dev.doc/how-to-guides-for-apps/watson-discovery.html){: external}.
-
-
-
+*Your data source isn't listed?* Check whether {{site.data.keyword.appconserviceshort}} has a connector to the data source. You can use a default connector that is built for {{site.data.keyword.appconnect_notm}} to send data from a data source to {{site.data.keyword.discoveryshort}}. For a list of the data sources supported by {{site.data.keyword.appconnect_notm}} default connectors, see [Connectors A-Z](https://www.ibm.com/cloud/app-connect/connectors/){: external}. For more information about integrating {{site.data.keyword.appconnect_notm}} with {{site.data.keyword.discoveryshort}}, see [How to use IBM App Connect with {{site.data.keyword.discoveryfull}}](https://www.ibm.com/docs/en/app-connect/saas?topic=apps-watson-discovery){: external}.
 
 To use an {{site.data.keyword.appconnect_notm}} connector, you must create a separate {{site.data.keyword.appconnect_notm}} instance. Costs that are incurred from a paid {{site.data.keyword.appconnect_notm}} instance are not included with the cost of using {{site.data.keyword.discoveryshort}}. Except for indexing, {{site.data.keyword.discoveryshort}} does not support any integration with {{site.data.keyword.appconnect_notm}} that you perform on your own.
 {: note}
