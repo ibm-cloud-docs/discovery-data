@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-05-06"
+lastupdated: "2025-05-07"
 
 subcollection: discovery-data
 
@@ -21,7 +21,7 @@ Crawl documents that are stored in a database that supports the Java Database Co
 This information applies only to installed deployments.
 {: note}
 
-
+{{site.data.keyword.discoveryfull}} does not support Kerberos authentication on {{site.data.keyword.cpd_short}}.
 
 ## What documents are crawled
 {: #connector-database-cp4d-docs}
