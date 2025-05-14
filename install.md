@@ -65,7 +65,7 @@ The following table describes which versions of {{site.data.keyword.discovery-da
 | 5.0.3 | 5.0.3 | 4.12, 4.14, 4.15, 4.16 |
 | 5.0.1 | 5.0.1, 5.0.2 | 4.12, 4.14, 4.15 |
 | 5.0.0 | 5.0.0 | 4.12, 4.14, 4.15 |
-| 4.8.7, 4.8.8 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14, 4.15, 4.16 |
+| 4.8.7, 4.8.9 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14, 4.15, 4.16 |
 | 4.8.5, 4.8.6 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14, 4.15 |
 | 4.8.2, 4.8.3, 4.8.4 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14 |
 | 4.8.0 | 4.8.1 | 4.12, 4.14 |

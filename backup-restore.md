@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-13"
+lastupdated: "2025-05-14"
 
 keywords: backup,restore
 
@@ -27,6 +27,10 @@ You use the same set of backup and restore scripts to back up and restore data i
 
 The following table lists the upgrade paths that are supported by the scripts.
 
+
+
+
+
 | Version in use | Version that you can upgrade to |
 |----------------|----------------------------|
 | 5.0.x | Later versions of 5.0.x, 5.1.x |
@@ -39,6 +43,8 @@ The following table lists the upgrade paths that are supported by the scripts.
 | 4.5.x | 4.8.x, 5.0.x, 5.1.x |
 | 4.0.x | 4.8.x except 4.8.0 |
 {: caption="Supported upgrade paths" caption-side="top"}
+
+
 
 If you are upgrading to 5.1.x, a simpler way to complete the upgrade is described in the following topics:
 
