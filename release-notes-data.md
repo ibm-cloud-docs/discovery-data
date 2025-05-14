@@ -35,6 +35,13 @@ Migrate your solutions to Watson Discovery, which has powerful custom natural la
 
 For more information about migrating your solutions, see [Migrating Knowledge Studio solutions](/docs/discovery-data?topic=discovery-data-migrate-wks).
 
+## 4.8.9 release, 30 April 2025
+{: #discovery-data-488-30April2025}
+
+{{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}} 4.8.9 is available.
+
+For a list of new features and bug fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/SSQNUZ_4.8.x/fixlist/discovery-fixlist.html){: external}
+
 ## 4.8.8 release, 29 January 2025
 {: #discovery-data-488-29January2025}
 

@@ -26,6 +26,13 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/en/software-hub/5.1.x?topic=issues-watson-discovery){: external}.
 
+## 5.1.2 release, 26 March 2025
+{: #discovery-hub-511-26march2025}
+
+Discovery for IBM Software Hub Version 5.1.2 is now available.
+
+For a list of new features and fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/en/software-hub/5.1.x?topic=new-watson-discovery){: external}
+
 ## 5.1.1 release, 26 February 2025
 {: #discovery-hub-511-26february2025}
 
