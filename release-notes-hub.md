@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2024-03-03"
+lastupdated: "2025-05-14"
 
 keywords: discovery release notes,discovery software hub release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
