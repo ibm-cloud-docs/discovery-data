@@ -120,9 +120,9 @@ To configure the web crawl collection, complete the following steps:
 
         -   If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
 
+        
+
     -   If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
-
-
 
         After you enter the starting URL and click **Add**, edit the URL by clicking the edit icon ![Edit icon](images/edit.svg). Set the *Execute JavaScript during crawl* switcher to **On**, and then click **Save**.
 
