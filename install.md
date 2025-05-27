@@ -55,6 +55,8 @@ The following table describes which versions of {{site.data.keyword.discoverysho
 | 5.1.0 | 5.1.0 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 {: caption="IBM Software Hub - Support matrix" caption-side="top"}
 
+For more information, see the supported [Red Hat OpenShift Container Platform versions](https://www.ibm.com/docs/en/software-hub/5.1.x?topic=requirements-software#platform__ocp__title__1){: external}. 
+
 ### {{site.data.keyword.icp4dfull_notm}} - Support matrix
 {: #support-matrix-cpd}
 
@@ -65,7 +67,8 @@ The following table describes which versions of {{site.data.keyword.discovery-da
 | 5.0.3 | 5.0.3 | 4.12, 4.14, 4.15, 4.16 |
 | 5.0.1 | 5.0.1, 5.0.2 | 4.12, 4.14, 4.15 |
 | 5.0.0 | 5.0.0 | 4.12, 4.14, 4.15 |
-| 4.8.7, 4.8.9 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14, 4.15, 4.16 |
+| 4.8.9 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14, 4.15, 4.16, 4.18 |
+| 4.8.7, 4.8.8 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14, 4.15, 4.16 |
 | 4.8.5, 4.8.6 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14, 4.15 |
 | 4.8.2, 4.8.3, 4.8.4 | Same version as {{site.data.keyword.discovery-data_short}} | 4.12, 4.14 |
 | 4.8.0 | 4.8.1 | 4.12, 4.14 |
@@ -85,3 +88,5 @@ The following table describes which versions of {{site.data.keyword.discovery-da
 | 4.0.2 | 4.0.2 | 4.6, 4.8 |
 | 4.0.0 | 4.0.0, 4.0.1 | 4.6 |
 {: caption="IBM Cloud Pak for Data - Support matrix" caption-side="top"}
+
+For more information, see the supported [Red Hat OpenShift Container Platform versions](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=requirements-software#software-reqs__platform__title__1){: external}. 
