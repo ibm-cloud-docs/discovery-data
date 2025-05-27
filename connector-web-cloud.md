@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2024-09-03"
+lastupdated: "2025-05-22"
 
 subcollection: discovery-data
 
@@ -119,6 +119,8 @@ To configure the web crawl collection, complete the following steps:
             Any section of the web address that contains the site path you specify is excluded. For example, if you specify `/licenses/`, the page `https://example.com/products/licenses/europe` is excluded, among others.
 
         -   If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
+
+        
 
     -   If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
 
