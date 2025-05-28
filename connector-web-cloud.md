@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-05-28"
 
 subcollection: discovery-data
 
@@ -120,7 +120,8 @@ To configure the web crawl collection, complete the following steps:
 
         -   If you want to restrict the crawl to a single page, add the URL to the **Starting URLs** field. For example, `https://www.example.com/banking/faqs.html`. Click the edit icon to set the **Maximum number of links to follow** to `0`.
 
-        
+        The dynamic website web crawl feature, which is controlled by the **Execute JavaScript during crawl switcher** in *Crawl* settings, will be deprecated by September 2025. For more information, see [Release notes](/docs/discovery-data?topic=discovery-data-release-notes).
+        {: deprecated}
 
     -   If the website that you want to crawl uses JavaScript to customize the page content before it is displayed, you must take an extra step.
 
