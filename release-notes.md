@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-05-28"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -24,7 +24,33 @@ Learn about features and changes that were included for each release and update 
 This information applies only to managed instances of {{site.data.keyword.discoveryfull}} that are hosted on {{site.data.keyword.cloud_notm}} or that were provisioned with [IBM Cloud Pak for Data as a Service](https://dataplatform.cloud.ibm.com/docs/content/wsj/landings/watsondisc.html){: external}. For information about releases and updates for installed deployments, see [Release notes for {{site.data.keyword.discoveryfull}} Cartridge for {{site.data.keyword.icp4dfull}}](/docs/discovery-data?topic=discovery-data-release-notes-data).
 {: note}
 
+## Deprecation announcement of dynamic website web crawl feature
+{: #dynamic-web-crawl-deprecation-16may2025}
 
+The dynamic website web crawl feature, which is controlled by the **Execute JavaScript during crawl switcher** in *Crawl* settings, will be deprecated by September 2025.
+{: deprecated}
+
+### Action required to preserve any existing index
+{: #discovery-preserve-index}
+
+To prevent the loss of your existing index, it is essential to:
+
+- Disable the **Execute JavaScript during crawl** switcher
+
+- Suspend any scheduled crawls that use the dynamic website web crawl feature
+
+Once the **Execute JavaScript during crawl** switcher is disabled, it cannot be enabled again.
+{: note}
+
+### Consequences of not disabling the switcher
+{: #discovery-switcher-not-disabled}
+
+If you do not disable the switcher, it will be automatically disabled, and the following scheduled web crawls will be suspended. This action prevents the existing index from being replaced with a reduced index, which depends on how JavaScript is used in the crawled site. The suspended crawls will not resume until they are reconfigured in the UI.
+
+### Impact on scheduled web crawls
+{: #discovery-switcher-disabled-impact}
+
+Scheduled web crawls that do not use the dynamic website web crawl feature will continue to run as usual, without any interruptions.
 
 ## 29 February 2024
 {: #discovery-29february2024}

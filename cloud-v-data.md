@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-05-28"
 
 subcollection: discovery-data
 
@@ -36,7 +36,8 @@ To keep up with product changes, check the following topics periodically:
 
 The following table describes the feature support differences between the two deployment types.
 
-
+The dynamic website web crawl feature, which is controlled by the **Execute JavaScript during crawl switcher** in *Crawl* settings, will be deprecated by September 2025. For more information, see [Release notes](/docs/discovery-data?topic=discovery-data-release-notes).
+{: deprecated}
 
 The features that are listed in the {{site.data.keyword.cloud_notm}} column apply to service instances that are deployed from {{site.data.keyword.icp4dfull_notm}} as a Service also.
 {: note}
