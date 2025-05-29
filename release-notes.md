@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 keywords: discovery release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -27,7 +27,7 @@ This information applies only to managed instances of {{site.data.keyword.discov
 ## Deprecation announcement of dynamic website web crawl feature
 {: #dynamic-web-crawl-deprecation-16may2025}
 
-The dynamic website web crawl feature, which is controlled by the **Execute JavaScript during crawl switcher** in *Crawl* settings, will be deprecated by September 2025.
+The dynamic website web crawl feature, which is controlled by the **Execute JavaScript during crawl switcher** in *Crawl* settings, is deprecated and will be removed by September 2025.
 {: deprecated}
 
 ### Action required to preserve any existing index
@@ -35,7 +35,7 @@ The dynamic website web crawl feature, which is controlled by the **Execute Java
 
 To prevent the loss of your existing index, it is essential to:
 
-- Disable the **Execute JavaScript during crawl** switcher
+- Disable the **Execute JavaScript during crawl** switcher. To disable the switcher, go to the **Manage collections** page, open the collection that uses dynamic website web crawl, and click the **Processing settings** tab. Under **Specify where you want to crawl**, click the edit icon for each URL, and disable the **Execute JavaScript during crawl** switcher.
 
 - Suspend any scheduled crawls that use the dynamic website web crawl feature
 
@@ -45,7 +45,7 @@ Once the **Execute JavaScript during crawl** switcher is disabled, it cannot be 
 ### Consequences of not disabling the switcher
 {: #discovery-switcher-not-disabled}
 
-If you do not disable the switcher, it will be automatically disabled, and the following scheduled web crawls will be suspended. This action prevents the existing index from being replaced with a reduced index, which depends on how JavaScript is used in the crawled site. The suspended crawls will not resume until they are reconfigured in the UI.
+If you do not disable the switcher, it will be automatically disabled by September 2025, and the following scheduled web crawls will be suspended. This action prevents the existing index from being replaced with a reduced index, which depends on how JavaScript is used in the crawled site. The suspended crawls will not resume until they are reconfigured in the UI.
 
 ### Impact on scheduled web crawls
 {: #discovery-switcher-disabled-impact}
