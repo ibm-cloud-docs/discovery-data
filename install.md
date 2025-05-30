@@ -50,6 +50,7 @@ The following table describes which versions of {{site.data.keyword.discoverysho
 
 | {{site.data.keyword.discoveryshort}} version | IBM Software Hub version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
+| 5.1.2 | 5.1.3 | 4.12, 4.14, 4.15, 4.16, 4.17, 4.18 |
 | 5.1.2 | 5.1.2 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 | 5.1.1 | 5.1.1 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 | 5.1.0 | 5.1.0 | 4.12, 4.14, 4.15, 4.16, 4.17 |
