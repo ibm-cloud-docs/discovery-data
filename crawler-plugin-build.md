@@ -2,13 +2,15 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-13"
+lastupdated: "2025-06-25"
 
 subcollection: discovery-data
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+
 
 # Building a custom crawler plug-in
 {: #crawler-plugin-build}

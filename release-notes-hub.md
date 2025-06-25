@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-05-14"
+lastupdated: "2025-06-25"
 
 keywords: discovery release notes,discovery software hub release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -25,6 +25,8 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 {: note}
 
 For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/en/software-hub/5.1.x?topic=issues-watson-discovery){: external}.
+
+
 
 ## 5.1.2 release, 26 March 2025
 {: #discovery-hub-511-26march2025}
