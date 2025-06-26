@@ -26,7 +26,12 @@ This information applies only to instances of {{site.data.keyword.discoveryfull}
 
 For the list of {{site.data.keyword.discoveryshort}} known issues, see [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/en/cloud-paks/cp-data/4.8.x?topic=limitations-watson-discovery){: external}.
 
+In an upcoming release, the bundled JVM for the crawler plug-in and customer connector features will be transitioned to IBM Semeru Runtimes, Version 21. If your crawler plug-in or custom connectors utilize any features that are incompatible between IBM SDK, Java Technology Edition, Version 8 and IBM Semeru Runtimes, Version 21, you need to revise your code to ensure compatibility with future releases, such as Discovery 5.2.x and later.
+{: note}
 
+For JVM migration, see the following pages:
+* https://www.ibm.com/support/pages/semeru-runtimes-migration-guide
+* https://www.ibm.com/support/pages/semeru-runtimes-security-migration-guide
 
 ## {{site.data.keyword.knowledgestudioshort}} for {{site.data.keyword.icp4dfull_notm}} deprecation announcement
 {: #wks-on-cp4d-deprecation}
