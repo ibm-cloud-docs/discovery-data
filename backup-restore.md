@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-14"
+lastupdated: "2025-07-22"
 
 keywords: backup,restore
 
@@ -31,8 +31,7 @@ The following table lists the upgrade paths that are supported by the scripts.
 |----------------|----------------------------|
 | 5.1.x | Later versions of 5.1.x, 5.2.0 |
 | 5.0.x | Later versions of 5.0.x, 5.1.x, 5.2.0 |
-| 4.8.9 | Later versions of 5.0.x, 5.1.x, 5.2.0 |
-| 4.8.8 | 5.1.1 or later versions |
+| 4.8.8, 4.8.9 | 5.1.1 or later versions |
 | 4.8.7 | Later versions of 4.8.x, 5.1.x, 5.2.0 |
 | 4.8.6 | Later versions of 4.8.x, 5.0.3, 5.1.x, 5.2.0 |
 | 4.8.x | Later versions of 4.8.x, 5.0.x, 5.1.x, 5.2.0 |
