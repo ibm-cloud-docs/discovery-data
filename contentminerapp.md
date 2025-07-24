@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2023-02-07"
+lastupdated: "2025-07-24"
 
 keywords: content mining,content analytics studio,facets
 
@@ -91,6 +91,8 @@ The resulting annotations function as new facets that you can use to filter and 
 With your new *`component`* and *`phenomenon`* facets, for example, you can look for correlations between components and phenomena that are involved in traffic incidents.
 
 [Learn about the ways that you can analyze your data](/docs/discovery-data?topic=discovery-data-cm-analyze-data).
+
+
 
 ## Digging deeper
 {: #cm-deeper}
