@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-07-29"
 
 keywords: content mining,content analytics studio,facets
 
@@ -92,7 +92,17 @@ With your new *`component`* and *`phenomenon`* facets, for example, you can look
 
 [Learn about the ways that you can analyze your data](/docs/discovery-data?topic=discovery-data-cm-analyze-data).
 
+### Ingesting documents
+{: #cm-diffs}
 
+If all the documents to be ingested into a Content Miner application are in CSV format, use only Content Miner for ingestion. Do not use the {{site.data.keyword.discoveryshort}} UI and Content Miner interchangeably for ingesting documents. You can also use the API for ingestion, but in that case, all documents must be ingested using the API only—do not mix UI and API ingestion methods.
+
+After the first CSV document is added, if you modify the same document (a file with the same name) and re-ingest it into {{site.data.keyword.discoveryshort}}, the behavior differs depending on whether you use the UI or Content Miner:
+
+- If only the UI is used, {{site.data.keyword.discoveryshort}} will overwrite the previous file content.
+- If only Content Miner is used, {{site.data.keyword.discoveryshort}} will retain all previous records and add all records from the new ingestion, including duplicates.
+
+Best practice: Use either Content Miner or the API for document ingestion—not both.
 
 ## Digging deeper
 {: #cm-deeper}
