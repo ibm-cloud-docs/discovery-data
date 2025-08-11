@@ -178,7 +178,15 @@ Adding a custom stopwords list can also improve the relevance of results for nat
 
 Answers to common questions about training a project.
 
+### When a ranker training is in progress, which ranker model will be used for any search query made during this time?
+{: #understanding-ranker-model}
 
+If you trained a previous ranker model, that model is used while the new training is in progress. However, the previous model is marked for soft deletion when new training is triggered. If the new training gets delayed by a long time, the previous model is deleted and no longer used. Any subsequent search query uses the default model until the new model gets created.
+
+### What will be the ranker status shown in the collection status API response when a ranker training is initiated?
+{: #understanding-ranker-status}
+
+While ranker training is in progress, the `successfully_trained` key will not be set. This key will be updated only after the current training completes successfully.
 
 ### How do I know whether my system is trained?
 {: #understanding-system}
