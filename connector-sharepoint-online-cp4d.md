@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-02-13"
+lastupdated: "2025-08-29"
 
 subcollection: discovery-data
 
@@ -43,6 +43,8 @@ This information applies only to installed deployments. For more information abo
 
 ## Data source requirements
 {: #connector-sharepoint-online-cp4d-reqs}
+
+
 
 In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your SharePoint Online data source must meet the following requirements:
 
