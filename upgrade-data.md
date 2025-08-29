@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-07-14"
+lastupdated: "2025-08-29"
 
 subcollection: discovery-data
 
@@ -26,6 +26,7 @@ This information applies only to installed deployments.
 
 The following in-place upgrades are supported:
 
+-   From a 5.2.x release to a later 5.2 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSNFH6_5.2.x/svc-discovery/discovery-upgrade.html){: external}.
 -   From a 4.8.x, 5.0.x, or 5.1.x release to the latest 5.2 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSNFH6_5.2.x/svc-discovery/discovery-upgrade.html){: external}.
 -   From a 5.1.x release to a later 5.1 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-upgrade.html){: external}.
 -   From a 4.8.x release or 5.0.x release to the latest 5.1 release. For more information, see [Upgrading Watson Discovery](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-upgrade.html){: external}.

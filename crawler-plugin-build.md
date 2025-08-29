@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-08-29"
 
 subcollection: discovery-data
 
@@ -10,7 +10,7 @@ subcollection: discovery-data
 
 {{site.data.keyword.attribute-definition-list}}
 
-In an upcoming release, the bundled JVM for the crawler plug-in and customer connector features will be transitioned to IBM Semeru Runtimes, Version 21. If your crawler plug-in or custom connectors utilize any features that are incompatible between IBM SDK, Java Technology Edition, Version 8 and IBM Semeru Runtimes, Version 21, you need to revise your code to ensure compatibility with future releases, such as Discovery 5.2.x and later.
+In the 5.2.1 release, the bundled JVM for the crawler plug-in and customer connector features will be transitioned to IBM Semeru Runtimes, Version 21. If your crawler plug-in or custom connectors used in version 5.2.0 or earlier utilize any features that are incompatible between IBM SDK, Java Technology Edition, Version 8 and IBM Semeru Runtimes, Version 21, you need to revise your code to ensure compatibility with future releases, and re-deploy the built package for version 5.2.1.
 {: note}
 
 For JVM migration, see the following pages:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-13"
+lastupdated: "2025-08-29"
 
 subcollection: discovery-data
 
@@ -13,7 +13,7 @@ subcollection: discovery-data
 # Managing custom crawler plug-ins on your Watson Discovery cluster
 {: #manage-plugin}
 
-You can use the `scripts/manage_crawler_plugin.sh` script to perform common plug-in management actions. The `scripts/manage_crawler_plugin.sh` script is located in the [crawler plug-in SDK package](/docs/discovery-data?topic=discovery-data-crawler-plugin-build#obtain-sdk). When you use the script in a command, you must have the endpoint URL of your {{site.data.keyword.discoveryshort}} cluster and the username and password of your {{site.data.keyword.cpd_full}} instance.
+You can use the `plugin/scripts/manage_crawler_plugin.sh` script to perform common plug-in management actions. The `plugin/scripts/manage_crawler_plugin.sh` script is located in the [crawler plug-in SDK package](/docs/discovery-data?topic=discovery-data-crawler-plugin-build#obtain-sdk). When you use the script in a command, you must have the endpoint URL of your {{site.data.keyword.discoveryshort}} cluster and the username and password of your {{site.data.keyword.cpd_full}} instance.
 {: shortdesc}
 
 [IBM Cloud Pak for Data]{: tag-cp4d} [IBM Software Hub]{: tag-teal}
@@ -24,10 +24,10 @@ This information applies only to installed deployments.
 ## Commands and options for managing your crawler plug-ins
 {: #mng-plugin-cmd-opt}
 
-You can enter `scripts/manage_crawler_plugin.sh --help` to view the following help messages in the script:
+You can enter `plugin/scripts/manage_crawler_plugin.sh --help` to view the following help messages in the script:
 
 ```sh
-Usage: scripts/manage_crawler_plugin.sh --endpoint endpoint --user username [--password password] command
+Usage: plugin/scripts/manage_crawler_plugin.sh --endpoint endpoint --user username [--password password] command
 
 Watson Discovery Crawler Plug-in Manager
 
@@ -53,8 +53,8 @@ Options:
 
 You can use the following commands to deploy, undeploy, and list your crawler plug-ins. Replace the variable references `{variable}` with the required information:
 
-- Deploy crawler plug-in: `scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} deploy --name {plugin_name}`
-- Undeploy crawler plug-in: `scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} undeploy --id {crawler_resource_id}`
-- List deployed crawler plug-in: `scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} list`
+- Deploy crawler plug-in: `plugin/scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} deploy --name {plugin_name}`
+- Undeploy crawler plug-in: `plugin/scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} undeploy --id {crawler_resource_id}`
+- List deployed crawler plug-in: `plugin/scripts/manage_crawler_plugin.sh --endpoint {endpoint_URL} --user {username} list`
 
-After you use the `scripts/manage_crawler_plugin.sh` script to deploy a crawler plug-in, you can select the plug-in in the {{site.data.keyword.discoveryshort}} tooling when you create a collection. For more information about the crawler plug-in settings in {{site.data.keyword.discoveryshort}}, see [Crawler plug-in settings](/docs/discovery-data?topic=discovery-data-collection-types#plugin-settings).
+After you use the `plugin/scripts/manage_crawler_plugin.sh` script to deploy a crawler plug-in, you can select the plug-in in the {{site.data.keyword.discoveryshort}} tooling when you create a collection. For more information about the crawler plug-in settings in {{site.data.keyword.discoveryshort}}, see [Crawler plug-in settings](/docs/discovery-data?topic=discovery-data-collection-types#plugin-settings).
