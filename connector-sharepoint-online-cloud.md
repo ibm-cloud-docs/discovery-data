@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2024-02-01"
+lastupdated: "2024-08-29"
 
 subcollection: discovery-data
 
@@ -42,6 +42,8 @@ All {{site.data.keyword.discoveryshort}} data source connectors are read-only. R
 
 ## Data source requirements
 {: #connector-sharepoint-online-cloud-reqs}
+
+
 
 In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements) for all managed deployments, your SharePoint Online data source must meet the following requirements:
 
