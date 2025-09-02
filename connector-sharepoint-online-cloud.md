@@ -43,7 +43,8 @@ All {{site.data.keyword.discoveryshort}} data source connectors are read-only. R
 ## Data source requirements
 {: #connector-sharepoint-online-cloud-reqs}
 
-
+In August 2025, Microsoft blocked SharePoint Online legacy authentication protocols. Due to this change, SharePoint Online collection with the *Security Assertion Markup Language (SAML)* authentication type is no longer able to crawl documents. Instead, you must move to *Open Authentication (OAuth v2)*.
+{: deprecated}
 
 In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-sources#public-requirements) for all managed deployments, your SharePoint Online data source must meet the following requirements:
 
