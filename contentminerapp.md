@@ -2,7 +2,7 @@
 
 copyright:
   years: 2015, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-09-22"
 
 keywords: content mining,content analytics studio,facets
 
