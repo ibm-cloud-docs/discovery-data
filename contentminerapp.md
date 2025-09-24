@@ -121,3 +121,11 @@ For more information, see [Creating projects](/docs/discovery-data?topic=discove
 Of course, you can't get out useful insights if you don't put the right type of information in. Be sure to include consistent data. If you want to find trends over time, your data must include data points that specify a date. 
 
 Data that is submitted in CSV file format is optimal. For a sample of a CSV file that provides interesting analysis capabilities, see [Analyzing CSV files](/docs/discovery-data?topic=discovery-data-cm-csv-file).
+
+### Advanced configuration in content mining projects
+{: #advanced-config}
+
+Advanced configuration for Content Miner is not supported and is not documented for general use. 
+
+Advanced configuration is intended solely for service teams to assist customers in specific and exceptional requirements. This configuration includes settings from older products such as Watson Explorer (WEX), and many settings are not applicable or compatible with Watson Discovery.
+{: important}
