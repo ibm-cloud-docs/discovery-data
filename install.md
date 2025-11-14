@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-07-14"
+lastupdated: "2025-11-14"
 
 subcollection: discovery-data
 
@@ -24,7 +24,7 @@ This information applies only to installed deployments.
 ## Full installation instructions
 {: #full-installation-instructions}
 
-- [5.2.0](https://www.ibm.com/docs/SSNFH6_5.2.x/svc-discovery/discovery-install-overview.html){: external}
+- [5.2.x](https://www.ibm.com/docs/SSNFH6_5.2.x/svc-discovery/discovery-install-overview.html){: external}
 - [5.1.x](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-install-overview.html){: external}
 - [5.0.x](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-install-overview.html){: external}
 - [4.8.x](https://www.ibm.com/docs/SSQNUZ_4.8.x/svc-discovery/discovery-install-overview.html){: external}
@@ -49,6 +49,9 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 
 The following table describes which versions of {{site.data.keyword.discoveryshort}} are supported on which versions of IBM Software Hub and Red Hat OpenShift.
 
+
+
+
 | {{site.data.keyword.discoveryshort}} version | IBM Software Hub version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
 | 5.2.0 | 5.2.0 | 4.12, 4.14, 4.15, 4.16, 4.17, 4.18 |
@@ -57,6 +60,7 @@ The following table describes which versions of {{site.data.keyword.discoverysho
 | 5.1.1 | 5.1.1 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 | 5.1.0 | 5.1.0 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 {: caption="IBM Software Hub - Support matrix" caption-side="top"}
+
 
 For more information, see the supported [Red Hat OpenShift Container Platform versions](https://www.ibm.com/docs/en/software-hub/5.1.x?topic=requirements-software#platform__ocp__title__1){: external}. 
 
