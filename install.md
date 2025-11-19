@@ -49,18 +49,16 @@ You install {{site.data.keyword.icp4dfull_notm}}, and then install the {{site.da
 
 The following table describes which versions of {{site.data.keyword.discoveryshort}} are supported on which versions of IBM Software Hub and Red Hat OpenShift.
 
-
-
-
 | {{site.data.keyword.discoveryshort}} version | IBM Software Hub version | Red Hat OpenShift version |
 | ----------------------------------|----------------|----------------|
+| 5.2.2 | 5.2.2 | 4.12, 4.14, 4.15, 4.16, 4.17, 4.18, 4.19 |
+| 5.2.1 | 5.2.1 | 4.12, 4.14, 4.15, 4.16, 4.17, 4.18 |
 | 5.2.0 | 5.2.0 | 4.12, 4.14, 4.15, 4.16, 4.17, 4.18 |
 | 5.1.2 | 5.1.3 | 4.12, 4.14, 4.15, 4.16, 4.17, 4.18 |
 | 5.1.2 | 5.1.2 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 | 5.1.1 | 5.1.1 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 | 5.1.0 | 5.1.0 | 4.12, 4.14, 4.15, 4.16, 4.17 |
 {: caption="IBM Software Hub - Support matrix" caption-side="top"}
-
 
 For more information, see the supported [Red Hat OpenShift Container Platform versions](https://www.ibm.com/docs/en/software-hub/5.1.x?topic=requirements-software#platform__ocp__title__1){: external}. 
 
