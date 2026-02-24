@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-11-14"
+lastupdated: "2026-02-24"
 
 keywords: discovery release notes,discovery software hub release notes,watson discovery release notes,what's new,new features,improvements,change log,changelog
 
@@ -33,8 +33,15 @@ For JVM migration, see the following pages:
 * https://www.ibm.com/support/pages/semeru-runtimes-migration-guide
 * https://www.ibm.com/support/pages/semeru-runtimes-security-migration-guide
 
+## 5.3.0 release, 15 December 2025
+{: #discovery-hub-530-15december2025}
+
+Discovery for IBM Software Hub Version 5.3.0 is now available.
+
+For a list of new features and fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/en/software-hub/5.3.x?topic=new-watson-discovery){: external}
+
 ## 5.2.2 release, 30 October 2025
-{: #discovery-hub-521-30october2025}
+{: #discovery-hub-522-30october2025}
 
 Discovery for IBM Software Hub Version 5.2.2 is now available.
 

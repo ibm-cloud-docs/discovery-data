@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2025
-lastupdated: "2025-11-14"
+lastupdated: "2026-02-24"
 
 subcollection: discovery-data
 
@@ -24,6 +24,7 @@ This information applies only to installed deployments.
 ## Full installation instructions
 {: #full-installation-instructions}
 
+- [5.3.x](https://www.ibm.com/docs/SSNFH6_5.3.x/svc-discovery/discovery-install-overview.html){: external}
 - [5.2.x](https://www.ibm.com/docs/SSNFH6_5.2.x/svc-discovery/discovery-install-overview.html){: external}
 - [5.1.x](https://www.ibm.com/docs/SSNFH6_5.1.x/svc-discovery/discovery-install-overview.html){: external}
 - [5.0.x](https://www.ibm.com/docs/SSQNUZ_5.0.x/svc-discovery/discovery-install-overview.html){: external}
