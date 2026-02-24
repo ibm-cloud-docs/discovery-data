@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-14"
+lastupdated: "2026-02-24"
 
 keywords: known issues
 
@@ -24,6 +24,11 @@ Known issues are listed by the release in which they were identified.
 
 The known issues that are described in this topic apply to installed deployments only.
 {: note}
+
+## 5.3.x releases
+{: #5dot3}
+
+See [Limitations and known issues in Watson Discovery](https://www.ibm.com/docs/en/SSNFH6_5.3.x/svc-discovery/discovery-known-issues.html)
 
 ## 5.2.x releases
 {: #5dot2}
