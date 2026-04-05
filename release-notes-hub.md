@@ -33,6 +33,13 @@ For JVM migration, see the following pages:
 * https://www.ibm.com/support/pages/semeru-runtimes-migration-guide
 * https://www.ibm.com/support/pages/semeru-runtimes-security-migration-guide
 
+## 5.3.1 release, 26 February 2026
+{: #discovery-hub-531-26february2026}
+
+Discovery for IBM Software Hub Version 5.3.1 is now available.
+
+For a list of new features and fixes, see [What's new and changed in Watson Discovery](https://www.ibm.com/docs/en/software-hub/5.3.x?topic=new-watson-discovery){: external}
+
 ## 5.3.0 release, 15 December 2025
 {: #discovery-hub-530-15december2025}
 
