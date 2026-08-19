@@ -47,6 +47,8 @@ This information applies only to installed deployments. For more information abo
 In August 2025, Microsoft blocked SharePoint Online legacy authentication protocols. Due to this change, SharePoint Online collection with the authentication principal type *User* is no longer able to crawl documents. Instead, you must move to the *Service* type authentication.
 {: deprecated}
 
+
+
 In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your SharePoint Online data source must meet the following requirements:
 
 -   The Site Collection that you connect to must be one that was created with an Enterprise plan. It cannot be a collection that was created with a frontline worker plan.
