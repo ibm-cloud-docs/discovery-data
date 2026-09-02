@@ -45,7 +45,10 @@ This information applies only to installed deployments. For more information abo
 {: #connector-sharepoint-online-cp4d-reqs}
 
 In August 2025, Microsoft blocked SharePoint Online legacy authentication protocols. Due to this change, SharePoint Online collection with the authentication principal type *User* is no longer able to crawl documents. Instead, you must move to the *Service* type authentication.
-{: deprecated}
+{: important}
+
+Microsoft retired Azure Access Control Service (ACS) for SharePoint Online on April 2, 2026. As a result, Discovery features that rely on ACS-based authorization are no longer supported.
+{: important}
 
 In addition to the [data source requirements](/docs/discovery-data?topic=discovery-data-collection-types#requirements) for all installed deployments, your SharePoint Online data source must meet the following requirements:
 
